@@ -1,0 +1,3 @@
+[submodule "Sources/GodotExtensionHeaders/include"]
+	path = Sources/GodotExtensionHeaders/include
+	url = https://github.com/godotengine/godot-headers
