@@ -24,7 +24,8 @@ extension ExtensionApi.Enum {
 
         var cases = [(String, T)]()
         for i in 0..<values.count {
-            cases.append((translatedEnum.cases[i], T(values[i].value)))
+            let translatedCase = CodeLanguage.swift.protectNameIfKeyword(for: translatedEnum.cases[i])
+            cases.append((translatedCase, T(values[i].value)))
         }
 
         return (translatedEnum.name, cases)

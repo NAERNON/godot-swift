@@ -22,7 +22,9 @@ struct GenerateGodotAPI: CommandPlugin {
         let codeFormatter = CodeFormatter(indentationWidth: 4)
         let generatedFilesPath = godotTarget.directory.appending(["_Generated"])
         
-        try FileManager.default.removeItem(atPath: generatedFilesPath.string)
+        if FileManager.default.fileExists(atPath: generatedFilesPath.string) {
+            try FileManager.default.removeItem(atPath: generatedFilesPath.string)
+        }
         
         let file = GlobalEnumsFile(enums: extensionApi.globalEnums, translated: true)
         try saveFile(file, withFormatter: codeFormatter, at: generatedFilesPath)
@@ -32,8 +34,8 @@ struct GenerateGodotAPI: CommandPlugin {
                           withFormatter codeFormatter: CodeFormatter,
                           at path: Path) throws {
         Diagnostics.remark("Generating file named named \"\(file.name)\".")
-#warning("Comments on top of file")
-        let code = file.code
+        
+        let code = prefixedCode(file.code)
         let codeString = codeFormatter.codeString(from: code)
         
         let data = codeString.data(using: .utf8)!
@@ -47,5 +49,16 @@ struct GenerateGodotAPI: CommandPlugin {
         if !fileManager.createFile(atPath: filePath.string, contents: data) {
             Diagnostics.error("Cannot save file named \"\(file.name)\".")
         }
+    }
+    
+    @CodeBuilder
+    private func prefixedCode(_ code: some SwiftCode) -> some SwiftCode {
+        Comment(type: .line) {
+            "THIS FILE IS GENERATED. EDITS WILL BE LOST."
+        }
+        
+        Spacer()
+        
+        code
     }
 }

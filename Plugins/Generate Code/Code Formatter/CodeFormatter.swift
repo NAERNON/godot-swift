@@ -2,7 +2,7 @@ import Foundation
 
 public struct CodeFormatter {
     let indentationWidth: Int
-    fileprivate(set) var currentIndentation = 0
+    private(set) var currentIndentation = 0
     
     public init(indentationWidth: Int) {
         self.indentationWidth = indentationWidth
@@ -19,6 +19,12 @@ public struct CodeFormatter {
             return optionalCodeString(from: swiftCode.body)
         }
     }
+    
+    func withIdentation(_ indentation: Int) -> CodeFormatter {
+        var new = self
+        new.currentIndentation = indentation
+        return new
+    }
 }
 
 // MARK: - Swift base code
@@ -29,13 +35,7 @@ private protocol SwiftBaseCode: SwiftCode {
 
 extension String: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
-        var codeString = ""
-        let whitespaces = String(repeating: " ", count: formatter.currentIndentation)
-        self.enumerateLines { line, stop in
-            codeString += whitespaces + line + "\n"
-        }
-        _ = codeString.popLast()
-        return codeString
+        return self.linesPrefixed(with: String(repeating: " ", count: formatter.currentIndentation))
     }
 }
 
@@ -65,10 +65,29 @@ extension ForEachAligned: SwiftBaseCode {
 
 extension Indentation: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
-        var newFormatter = formatter
-        newFormatter.currentIndentation += indentation ?? formatter.indentationWidth
-        
-        return newFormatter.optionalCodeString(from: content())
+        formatter
+            .withIdentation(indentation ?? formatter.indentationWidth)
+            .optionalCodeString(from: content())
+    }
+}
+
+extension Prefix: SwiftBaseCode {
+    func codeString(with formatter: CodeFormatter) -> String? {
+        if prefixAtIndentationLevel {
+            let unindentedFormatter = formatter.withIdentation(0)
+            guard let formattedCodeString = unindentedFormatter.optionalCodeString(from: content()) else {
+                return nil
+            }
+            
+            let unindentedCodeString = formattedCodeString.linesPrefixed(with: self.prefix)
+            return formatter.optionalCodeString(from: unindentedCodeString)
+        } else {
+            guard let formattedCodeString = formatter.optionalCodeString(from: content()) else {
+                return nil
+            }
+            
+            return formattedCodeString.linesPrefixed(with: self.prefix)
+        }
     }
 }
 
@@ -136,5 +155,18 @@ private extension Array where Element == String? {
             }
         }
         return codeString
+    }
+}
+
+// MARK: - Extension
+
+private extension String {
+    func linesPrefixed(with prefix: String) -> String {
+        var string = ""
+        self.enumerateLines { line, stop in
+            string += prefix + line + "\n"
+        }
+        _ = string.popLast()
+        return string
     }
 }
