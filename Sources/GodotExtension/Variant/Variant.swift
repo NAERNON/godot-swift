@@ -9,7 +9,6 @@ import GodotExtensionHeaders
 private let GODOT_CPP_VARIANT_SIZE = 24
 
 final public class Variant {
-    
     static var sharedConstructorCollection: VariantConstructorCollection?
     
     private var opaque = UnsafeMutablePointer<UInt8>.allocate(capacity: GODOT_CPP_VARIANT_SIZE)
@@ -80,5 +79,4 @@ final public class Variant {
         sharedConstructor(toType: .int)?(valuePtr, nativePtr)
         return valuePtr.pointee
     }
-    
 }

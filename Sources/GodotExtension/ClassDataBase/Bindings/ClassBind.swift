@@ -59,5 +59,4 @@ final class ClassBind {
     func functionExists(withSignature functionSignature: String) -> Bool {
         signatureToUnmanagedFunction[functionSignature] != nil
     }
-    
 }

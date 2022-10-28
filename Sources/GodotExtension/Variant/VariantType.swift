@@ -2,7 +2,6 @@ import Foundation
 import GodotExtensionHeaders
 
 enum VariantType: CaseIterable {
-    
     case `nil`
     
     // MARK: Atomic types
@@ -53,7 +52,6 @@ enum VariantType: CaseIterable {
     case packedVector2Array
     case packedVector3Array
     case packedColorArray
-    
 }
 
 // MARK: - Godot type

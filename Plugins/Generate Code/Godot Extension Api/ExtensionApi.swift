@@ -2,7 +2,6 @@ import Foundation
 
 /// The structure representing the file `extension_api.json`.
 struct ExtensionApi: Codable {
-    
     let header: Header
     let builtinClassSizes: [ClassSize]
     let builtinClassMemberOffsets: [MemberOffset]
@@ -281,5 +280,4 @@ struct ExtensionApi: Codable {
         let name: String
         let format: String
     }
-    
 }

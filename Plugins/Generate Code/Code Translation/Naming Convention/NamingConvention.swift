@@ -1,7 +1,6 @@
 import Foundation
 
 public enum NamingConvention {
-    
     case camel
     case pascal
     case snake
@@ -19,5 +18,4 @@ public enum NamingConvention {
         
         return self.recompose(components: convention.decompose(string: string))
     }
-    
 }

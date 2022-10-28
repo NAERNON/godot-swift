@@ -29,5 +29,4 @@ final class VariantConstructorCollection {
     func to(type: VariantType) -> GDNativeTypeFromVariantConstructorFunc? {
         toTypeConstructors[type]
     }
-    
 }

@@ -192,5 +192,4 @@ T::notification_bind, // GDNativeExtensionClassNotification notification_func;
         
         return true
     }
-    
 }

@@ -2,7 +2,6 @@ import Foundation
 import GodotExtensionHeaders
 
 final public class FunctionBind {
-    
     let definition: FunctionDefinition
     let hintFlags: UInt32
     let defaultArgumentValues: [Variant]
@@ -115,5 +114,4 @@ final public class FunctionBind {
             return functionDefinition.arguments[Int(argumentIndex)].type.metaData
         }
     }
-    
 }

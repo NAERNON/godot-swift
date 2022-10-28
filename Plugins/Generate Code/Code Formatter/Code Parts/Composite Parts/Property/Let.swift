@@ -1,7 +1,6 @@
 import Foundation
 
 public struct Let: SwiftCode {
-    
     private let property: Property
     
     public init(_ name: String,
@@ -33,7 +32,6 @@ public struct Let: SwiftCode {
     public var body: some SwiftCode {
         property
     }
-    
 }
 
 extension Let: AlignableCode {

@@ -3,7 +3,6 @@ import Foundation
 
 @main
 struct GenerateGodotAPI: CommandPlugin {
-    
 #warning("Use arguments to define translation and indentation")
     func performCommand(context: PackagePlugin.PluginContext, arguments: [String]) async throws {
         guard let extensionHeaderTarget = try context.package.targets(named: ["GodotExtensionHeaders"]).first else {
@@ -32,5 +31,4 @@ struct GenerateGodotAPI: CommandPlugin {
         #warning("Save file")
         print(codeString)
     }
-    
 }

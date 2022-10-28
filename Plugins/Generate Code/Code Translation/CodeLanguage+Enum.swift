@@ -1,7 +1,6 @@
 import Foundation
 
 extension CodeLanguage {
-    
     public func translateEnum(to language: CodeLanguage,
                               name: String,
                               cases: [String]) -> (name: String, cases: [String]) {
@@ -97,5 +96,4 @@ extension CodeLanguage {
         
         return (name, translatedCases)
     }
-    
 }

@@ -63,7 +63,6 @@ public enum ArgumentType {
     case packedVector2Array
     case packedVector3Array
     case packedColorArray
-
 }
 
 // MARK: - Variant type

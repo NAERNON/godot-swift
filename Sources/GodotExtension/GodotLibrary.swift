@@ -4,7 +4,6 @@ let GDNativeFalse: UInt8 = 0
 let GDNativeTrue: UInt8  = 1
 
 public final class GodotLibrary {
-    
     public typealias Callback = (GDNativeInitializationLevel) -> Void
     
     // MARK: Properties
@@ -65,7 +64,6 @@ public final class GodotLibrary {
             interfacePtr?.pointee.print_warning(message, function, file, Int32(line))
         }
     }
-    
 }
 
 // MARK: - Initialization and deinitialization levels

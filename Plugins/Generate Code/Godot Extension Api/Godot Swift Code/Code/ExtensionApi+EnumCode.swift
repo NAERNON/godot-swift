@@ -1,7 +1,6 @@
 import Foundation
 
 extension ExtensionApi.Enum {
-
     @CodeBuilder
     func code(translated: Bool) -> some SwiftCode {
         if isBitfield == true {
@@ -48,5 +47,4 @@ extension ExtensionApi.Enum {
                                options: nameAndCases.cases,
                                additionalAlignmentLength: 1)
     }
-
 }

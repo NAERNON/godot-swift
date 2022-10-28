@@ -1,7 +1,6 @@
 import Foundation
 
 public struct FunctionDefinition {
-    
     let name: String
     let arguments: [FunctionArgument]
     let returnType: ArgumentType?
@@ -32,7 +31,6 @@ public struct FunctionDefinition {
     var numberOfArguments: UInt32 { UInt32(arguments.count) }
     
     var hasReturnValue: Bool { returnType != nil }
-    
 }
 
 // MARK: - FunctionArgument

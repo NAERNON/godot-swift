@@ -1,7 +1,6 @@
 import Foundation
 
 public struct CodeFormatter {
-    
     let indentationWidth: Int
     fileprivate(set) var currentIndentation = 0
     
@@ -20,7 +19,6 @@ public struct CodeFormatter {
             return optionalCodeString(from: swiftCode.body)
         }
     }
-    
 }
 
 // MARK: - Swift base code

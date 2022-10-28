@@ -1,7 +1,6 @@
 import Foundation
 
 extension NamingConvention {
-    
     func decompose(string: String) -> [String] {
         switch self {
         case .camel:
@@ -54,5 +53,4 @@ extension NamingConvention {
     static func decomposeSnakeCase(string: String) -> [String] {
         return string.components(separatedBy: "_").map { $0.lowercased() }
     }
-    
 }

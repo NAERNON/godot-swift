@@ -89,5 +89,4 @@ public enum CodeBuilder {
             EmptyCode()
         }
     }
-    
 }

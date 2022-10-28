@@ -1,7 +1,6 @@
 import Foundation
 
 extension NamingConvention {
-    
     func recompose(components: [String]) -> String {
         switch self {
         case .camel:
@@ -50,5 +49,4 @@ extension NamingConvention {
         
         return string
     }
-    
 }
