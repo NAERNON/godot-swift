@@ -1,6 +1,8 @@
 import Foundation
 
 extension ExtensionApi.Enum {
+    private typealias CaseData<T> = (name: String, value: T)
+    
     @CodeBuilder
     func code(translated: Bool) -> some SwiftCode {
         if isBitfield == true {
@@ -15,7 +17,7 @@ extension ExtensionApi.Enum {
     }
 
     private func nameAndCases<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> (name: String,
-                                                                                            cases: [(name: String, value: T)]) {
+                                                                                            cases: [CaseData<T>]) {
         let translatedEnum = CodeLanguage.c.translateEnum(
             to: translated ? .swift : .c,
             name: name,
@@ -33,11 +35,33 @@ extension ExtensionApi.Enum {
 
     private func enumCode<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> some SwiftCode {
         let nameAndCases = self.nameAndCases(forType: type, translated: translated)
+        
+        // Sometimes, given enum don't have unique values, and two cases can have the same value.
+        // When it's the case, every value already in the enum will be considered static properties.
+        var cases = [CaseData<T>]()
+        var staticProperties = [(name: String, caseName: String)]()
+        
+        for `case` in nameAndCases.cases {
+            if let alreadyAddedCase = cases.first(where: { $0.value == `case`.value }) {
+                // The value isn't unique.
+                staticProperties.append((`case`.name, alreadyAddedCase.name))
+            } else {
+                // The value is unique.
+                cases.append((`case`.name, `case`.value))
+            }
+        }
 
         return Enum(nameAndCases.name, type: T.self) {
-            ForEach(nameAndCases.cases) { caseCode in
-                Case(caseCode.name, typedValue: caseCode.value)
+            ForEach(cases) { `case` in
+                Case(`case`.name, typedValue: `case`.value)
             }.aligned(additionalLength: 1)
+            
+            if !staticProperties.isEmpty {
+                Spacer()   
+                ForEach(staticProperties) { property in
+                    Let(property.name, value: ".\(property.caseName)", type: nameAndCases.name, isStatic: true)
+                }.aligned(additionalLength: 1)
+            }
         }
     }
 
