@@ -5,35 +5,40 @@ import PackageDescription
 
 let package = Package(
     name: "Godot Swift",
-    platforms: [.macOS(.v10_11)],
+    platforms: [.macOS(.v12)],
     products: [
         .library(
             name: "Godot",
             targets: ["Godot", "GodotExtension", "GodotExtensionHeaders"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.0"),
-    ],
+    dependencies: [],
     targets: [
+        // Targets
         .target(
             name: "GodotExtensionHeaders",
-            dependencies: []),
+            dependencies: []
+        ),
         .target(
             name: "Godot",
-            dependencies: []),
+            dependencies: []
+        ),
         .target(
             name: "GodotExtension",
-            dependencies: ["Godot", "GodotExtensionHeaders"]),
-        .plugin(
-            name: "GodotExtensionBridgePlugin",
-            capability: .buildTool(),
-            dependencies: [.target(name: "GodotExtensionBridgeExecutable")]
+            dependencies: ["Godot", "GodotExtensionHeaders"]
         ),
-        .executableTarget(
-            name: "GodotExtensionBridgeExecutable",
-            dependencies: [
-                .product(name: "ArgumentParser", package: "swift-argument-parser")
-            ]
+        
+        .plugin(
+            name: "Generate Godot API",
+            capability: .command(
+                intent: .custom(
+                    verb: "generate-godot-api",
+                    description: "Generates the Godot API code by reading the extension_api.json file."
+                ),
+                permissions: [
+                    .writeToPackageDirectory(reason: "This plugin generates the Godot API code in the Godot target.")
+                ]
+            ),
+            path: "Plugins/Generate Code"
         )
     ]
 )
