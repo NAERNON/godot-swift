@@ -3,7 +3,6 @@ import Foundation
 
 @main
 struct GenerateGodotAPI: CommandPlugin {
-#warning("Use arguments to define translation and indentation")
     func performCommand(context: PackagePlugin.PluginContext, arguments: [String]) async throws {
         guard let extensionHeaderTarget = try context.package.targets(named: ["GodotExtensionHeaders"]).first,
               let godotTarget = try context.package.targets(named: ["Godot"]).first else {
@@ -19,14 +18,16 @@ struct GenerateGodotAPI: CommandPlugin {
         
         // MARK: Generate files
         
-        let codeFormatter = CodeFormatter(indentationWidth: 4)
+        let options = try Options(arguments: arguments)
+        
+        let codeFormatter = CodeFormatter(indentationWidth: options.indentation)
         let generatedFilesPath = godotTarget.directory.appending(["_Generated"])
         
         if FileManager.default.fileExists(atPath: generatedFilesPath.string) {
             try FileManager.default.removeItem(atPath: generatedFilesPath.string)
         }
         
-        let file = GlobalEnumsFile(enums: extensionApi.globalEnums, translated: true)
+        let file = GlobalEnumsFile(enums: extensionApi.globalEnums, translated: options.translatesCode)
         try saveFile(file, withFormatter: codeFormatter, at: generatedFilesPath)
     }
     
@@ -60,5 +61,44 @@ struct GenerateGodotAPI: CommandPlugin {
         Spacer()
         
         code
+    }
+}
+
+private struct Options {
+    enum InitError: Error {
+        case unrecognizedArgument(String)
+        case noValueForIndentation
+    }
+    
+    let translatesCode: Bool
+    let indentation: Int
+    
+    init(arguments: [String]) throws {
+        var translatesCode = true
+        var indentation = 4
+        
+        var index = 0
+        while index < arguments.count {
+            let argument = arguments[index]
+            switch argument {
+            case "--untranslated":
+                translatesCode = false
+                index += 1
+            case "--indentation", "-i":
+                index += 1
+                guard index < arguments.count,
+                      let value = Int(arguments[index]) else {
+                    throw InitError.noValueForIndentation
+                }
+                
+                indentation = value
+                index += 1
+            default:
+                throw InitError.unrecognizedArgument(argument)
+            }
+        }
+        
+        self.translatesCode = translatesCode
+        self.indentation = indentation
     }
 }
