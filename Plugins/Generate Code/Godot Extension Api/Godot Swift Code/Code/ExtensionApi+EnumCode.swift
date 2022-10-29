@@ -15,7 +15,11 @@ extension ExtensionApi.Enum {
             }
         }
     }
-
+    
+    /// Returns the name and cases of the enum.
+    /// - Parameters:
+    ///   - type: The type of the values.
+    ///   - translated: A Boolean value indicating whether the cases should be translated to Swift.
     private func nameAndCases<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> (name: String,
                                                                                             cases: [CaseData<T>]) {
         let translatedEnum = CodeLanguage.c.translateEnum(
@@ -36,7 +40,7 @@ extension ExtensionApi.Enum {
     private func enumCode<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> some SwiftCode {
         let nameAndCases = self.nameAndCases(forType: type, translated: translated)
         
-        // Sometimes, given enum don't have unique values, and two cases can have the same value.
+        // Sometimes, given enums don't have unique values, and two cases can have the same value.
         // When it's the case, every value already in the enum will be considered static properties.
         var cases = [CaseData<T>]()
         var staticProperties = [(name: String, caseName: String)]()
