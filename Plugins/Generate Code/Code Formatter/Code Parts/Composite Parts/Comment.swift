@@ -18,12 +18,12 @@ struct Comment<Content>: SwiftCode where Content: SwiftCode {
     var body: some SwiftCode {
         switch type {
         case .line:
-            LinesPrefix("// ", content: content)
+            content().linesPrefixed(by: "// ")
         case .doc:
-            LinesPrefix("/// ", content: content)
+            content().linesPrefixed(by: "/// ")
         case .block:
             "/*"
-            LinesPrefix(" ", content: content)
+            content().linesPrefixed(by: " ")
             " */"
         }
     }

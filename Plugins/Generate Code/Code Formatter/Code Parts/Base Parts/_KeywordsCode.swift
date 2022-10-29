@@ -1,6 +1,6 @@
 import Foundation
 
-struct KeywordsCode<Content>: SwiftCode where Content: SwiftCode {
+struct _KeywordsCode<Content>: SwiftCode where Content: SwiftCode {
     let keywords: [Keyword]
     let content: () -> Content
     
@@ -28,7 +28,7 @@ struct KeywordsCode<Content>: SwiftCode where Content: SwiftCode {
 
 extension SwiftCode {
     public func prefixed(by keywords: [Keyword]) -> some SwiftCode {
-        KeywordsCode(keywords) {
+        _KeywordsCode(keywords) {
             self
         }
     }

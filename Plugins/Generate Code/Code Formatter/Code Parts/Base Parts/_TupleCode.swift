@@ -1,6 +1,6 @@
 import Foundation
 
-public struct TupleCode2<C0, C1>: SwiftCode
+public struct _TupleCode2<C0, C1>: SwiftCode
 where C0: SwiftCode,
       C1: SwiftCode
 {
@@ -15,7 +15,7 @@ where C0: SwiftCode,
     public var body: Never { fatalError() }
 }
 
-public struct TupleCode3<C0, C1, C2>: SwiftCode
+public struct _TupleCode3<C0, C1, C2>: SwiftCode
 where C0: SwiftCode,
       C1: SwiftCode,
       C2: SwiftCode
@@ -33,7 +33,7 @@ where C0: SwiftCode,
     public var body: Never { fatalError() }
 }
 
-public struct TupleCode4<C0, C1, C2, C3>: SwiftCode
+public struct _TupleCode4<C0, C1, C2, C3>: SwiftCode
 where C0: SwiftCode,
       C1: SwiftCode,
       C2: SwiftCode,
@@ -54,7 +54,7 @@ where C0: SwiftCode,
     public var body: Never { fatalError() }
 }
 
-public struct TupleCode5<C0, C1, C2, C3, C4>: SwiftCode
+public struct _TupleCode5<C0, C1, C2, C3, C4>: SwiftCode
 where C0: SwiftCode,
       C1: SwiftCode,
       C2: SwiftCode,

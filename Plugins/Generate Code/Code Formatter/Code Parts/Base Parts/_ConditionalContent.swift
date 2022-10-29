@@ -1,7 +1,7 @@
 import Foundation
 
-public struct ConditionalContent<TrueContent, FalseContent>: SwiftCode where TrueContent: SwiftCode,
-                                                                      FalseContent: SwiftCode {
+public struct _ConditionalContent<TrueContent, FalseContent>: SwiftCode where TrueContent: SwiftCode,
+                                                                              FalseContent: SwiftCode {
     let trueContent: (() -> TrueContent)?
     let falseContent: (() -> FalseContent)?
     let isTrue: Bool

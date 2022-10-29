@@ -45,7 +45,7 @@ extension EmptyCode: SwiftBaseCode {
     }
 }
 
-extension KeywordsCode: SwiftBaseCode {
+extension _KeywordsCode: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
         let unindentedFormatter = formatter.withIdentation(0)
         guard let formattedCodeString = unindentedFormatter.optionalCodeString(from: content()) else {
@@ -75,7 +75,7 @@ extension ForEachAligned: SwiftBaseCode {
     }
 }
 
-extension Indentation: SwiftBaseCode {
+extension _Indentation: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
         formatter
             .withIdentation(indentation ?? formatter.indentationWidth)
@@ -83,7 +83,7 @@ extension Indentation: SwiftBaseCode {
     }
 }
 
-extension LinesPrefix: SwiftBaseCode {
+extension _LinesPrefix: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
         if prefixAtIndentationLevel {
             let unindentedFormatter = formatter.withIdentation(0)
@@ -103,7 +103,7 @@ extension LinesPrefix: SwiftBaseCode {
     }
 }
 
-extension ConditionalContent: SwiftBaseCode {
+extension _ConditionalContent: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
         if isTrue {
             return formatter.optionalCodeString(from: trueContent!())
@@ -113,7 +113,7 @@ extension ConditionalContent: SwiftBaseCode {
     }
 }
 
-extension TupleCode2: SwiftBaseCode {
+extension _TupleCode2: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
         [formatter.optionalCodeString(from: code0),
          formatter.optionalCodeString(from: code1)]
@@ -121,7 +121,7 @@ extension TupleCode2: SwiftBaseCode {
     }
 }
 
-extension TupleCode3: SwiftBaseCode {
+extension _TupleCode3: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
         [formatter.optionalCodeString(from: code0),
          formatter.optionalCodeString(from: code1),
@@ -130,7 +130,7 @@ extension TupleCode3: SwiftBaseCode {
     }
 }
 
-extension TupleCode4: SwiftBaseCode {
+extension _TupleCode4: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
         [formatter.optionalCodeString(from: code0),
          formatter.optionalCodeString(from: code1),
@@ -140,7 +140,7 @@ extension TupleCode4: SwiftBaseCode {
     }
 }
 
-extension TupleCode5: SwiftBaseCode {
+extension _TupleCode5: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
         [formatter.optionalCodeString(from: code0),
          formatter.optionalCodeString(from: code1),
