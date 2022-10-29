@@ -26,7 +26,7 @@ public struct OptionSetStruct<RawType>: SwiftCode where RawType: BinaryInteger {
                 Property(option.name, value: ".init(rawValue: " + option.value.description + ")", type: name)
                     .withAccessControl(isPrivate: isPrivate, isPublic: isPublic)
                     .static()
-            }.aligned(additionalLength: additionalAlignmentLength ?? 0)
+            }.aligned(additionalAlignmentLength ?? 0)
         }.withAccessControl(isPrivate: isPrivate, isPublic: isPublic)
     }
     

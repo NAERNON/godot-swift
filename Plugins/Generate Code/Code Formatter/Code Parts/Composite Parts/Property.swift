@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Property: SwiftCode, AlignableCode {
+public struct Property: SwiftCode {
     let name: String
     let value: String?
     let type: String?
@@ -39,7 +39,7 @@ public struct Property: SwiftCode, AlignableCode {
     }
     
     public var body: some SwiftCode {
-        bodyString.prefixed(by: keywords)
+        bodyString.keywords(keywords)
     }
     
     private var bodyString: String {

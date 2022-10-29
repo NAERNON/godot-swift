@@ -16,7 +16,7 @@ public struct Struct<Content>: SwiftCode where Content: SwiftCode {
     
     public var body: some SwiftCode {
         BlockWithExtension(type: "struct", name: name, extensions: extensions, content: content)
-            .prefixed(by: keywords)
+            .keywords(keywords)
     }
     
     // MARK: Modifiers

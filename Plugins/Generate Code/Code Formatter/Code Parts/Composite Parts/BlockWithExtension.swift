@@ -6,6 +6,7 @@ public struct BlockWithExtension<Content>: SwiftCode where Content: SwiftCode {
     let name: String
     let extensions: [String]
     let content: () -> Content
+    private var keywords: [Keyword] = []
     
     public init(type: String,
                 name: String,
@@ -20,7 +21,7 @@ public struct BlockWithExtension<Content>: SwiftCode where Content: SwiftCode {
     public var body: some SwiftCode {
         Block(blockHeader()) {
             content()
-        }
+        }.keywords(keywords)
     }
     
     private func blockHeader() -> String {
@@ -40,5 +41,13 @@ public struct BlockWithExtension<Content>: SwiftCode where Content: SwiftCode {
         }
         
         return header
+    }
+    
+    // MARK: Modifiers
+    
+    public func keywords(_ keywords: [Keyword]) -> BlockWithExtension<Content> {
+        var new = self
+        new.keywords = new.keywords + keywords
+        return new
     }
 }

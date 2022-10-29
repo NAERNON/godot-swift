@@ -1,184 +1,210 @@
 import Foundation
 
 public struct CodeFormatter {
-    let indentationWidth: Int
-    private(set) var currentIndentation = 0
-    
-    public init(indentationWidth: Int) {
-        self.indentationWidth = indentationWidth
-    }
+    public init() {}
     
     public func codeString(from swiftCode: some SwiftCode) -> String {
-        optionalCodeString(from: swiftCode) ?? ""
-    }
-    
-    fileprivate func optionalCodeString(from swiftCode: some SwiftCode) -> String? {
-        if let baseCode = swiftCode as? (any SwiftBaseCode) {
-            return baseCode.codeString(with: self)
-        } else {
-            return optionalCodeString(from: swiftCode.body)
+        guard let startTree = swiftCode.codeTree() else {
+            return ""
         }
+        
+        var stack: [(tree: CodeTree, options: [CodeTreeOption])] = [(startTree, [])]
+        var lines: [[String]] = []
+        
+        while !stack.isEmpty {
+            let (tree, options) = stack.removeFirst()
+            switch tree {
+            case .line(let components):
+                var preLineComponents = [String]()
+                var prefixComponents = [String]()
+                for option in options {
+                    switch option {
+                    case .aligned:
+                        break
+                    case .prefix(let string):
+                        prefixComponents.append(string)
+                    case .preLine(let string):
+                        preLineComponents.append(string)
+                    }
+                }
+                lines.append(preLineComponents + prefixComponents + components)
+            case .group(let subtrees, let option):
+                let newOptions = (options + [option]).compactMap { $0 }
+                let newSubtrees = subtrees.map({ subtree in
+                    (subtree, newOptions)
+                })
+                
+                stack = newSubtrees + stack
+            }
+        }
+        
+        var finalCodeString = ""
+        for (index, line) in lines.enumerated() {
+            for component in line {
+                finalCodeString.append(component)
+            }
+            
+            if index < lines.count - 1 {
+                finalCodeString.append("\n")
+            }
+        }
+        return finalCodeString
     }
+}
+
+// MARK: - Code Tree
+
+private enum CodeTree {
+    /// A code line is made of several `String`. This is used to separate code parts (usefull for alignment).
+    case line(components: [String])
+    case group(subtrees: [CodeTree], option: CodeTreeOption?)
     
-    func withIdentation(_ indentation: Int) -> CodeFormatter {
-        var new = self
-        new.currentIndentation = indentation
-        return new
+    func option(_ option: CodeTreeOption) -> CodeTree {
+        .group(subtrees: [self], option: option)
     }
 }
 
-// MARK: - Swift base code
-
-private protocol SwiftBaseCode: SwiftCode {
-    func codeString(with formatter: CodeFormatter) -> String?
+private enum CodeTreeOption {
+    /// The tree should be aligned.
+    case aligned
+    /// The tree should be prefixed with the given `String`.
+    case prefix(String)
+    /// The tree should be prefixed with the given `String` at the beginning of the line.
+    case preLine(String)
 }
 
-extension String: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
-        return self.linesPrefixed(with: String(repeating: " ", count: formatter.currentIndentation))
+// MARK: - Swift Code extensions
+
+private protocol SwiftRootCode: SwiftCode {
+    func rootCodeTree() -> CodeTree?
+}
+
+extension SwiftCode {
+    fileprivate func codeTree() -> CodeTree? {
+        if let rootCode = self as? (any SwiftRootCode) {
+            return rootCode.rootCodeTree()
+        }
+        
+        return body.codeTree()
     }
 }
 
-extension EmptyCode: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
-        return nil
+extension String: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        var lines = [String]()
+        self.enumerateLines(invoking: { line, stop in
+            lines.append(line)
+        })
+        if lines.isEmpty {
+            lines.append("")
+        }
+        return .group(subtrees: lines.map { .line(components: [$0]) },
+                      option: nil)
     }
 }
 
-extension _KeywordsCode: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
-        let unindentedFormatter = formatter.withIdentation(0)
-        guard let formattedCodeString = unindentedFormatter.optionalCodeString(from: content()) else {
+extension EmptyCode: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        nil
+    }
+}
+
+extension _Aligned: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        guard let tree = content().codeTree() else {
             return nil
         }
         
-        let unindentedCodeString = keywordsWithSpaceString() + formattedCodeString
-        return formatter.optionalCodeString(from: unindentedCodeString)
+        return tree.option(.aligned)
     }
 }
 
-extension ForEach: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
-        data.map { formatter.optionalCodeString(from: content($0)) }
-            .arrayCodeString()
+extension _LineComponentsCode: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        guard !components.contains(where: { $0.contains("\n") }) else {
+            print("Cannot create line components code because one component contains a line break.")
+            return nil
+        }
+        return .line(components: components)
     }
 }
 
-extension ForEachAligned: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
-        let generatedContents = data.map { content($0) }
-        let maxAlignmentLength = generatedContents.map({ $0.alignableContentLength }).max() ?? 0
-        let alignmentLength = maxAlignmentLength + additionalAlignmentLength
+extension ForEach: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        .group(subtrees: data.compactMap { content($0).codeTree() },
+               option: nil)
+    }
+}
+
+extension _Indentation: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        guard let tree = content().codeTree() else {
+            return nil
+        }
         
-        return generatedContents.map { formatter.optionalCodeString(from: $0.aligned(alignmentLength)) }
-            .arrayCodeString()
+        let indentationString = String(repeating: " ", count: indentation ?? 4)
+        return tree.option(.prefix(indentationString))
     }
 }
 
-extension _Indentation: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
-        formatter
-            .withIdentation(indentation ?? formatter.indentationWidth)
-            .optionalCodeString(from: content())
-    }
-}
-
-extension _LinesPrefix: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
+extension _LinesPrefix: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        guard let tree = content().codeTree() else {
+            return nil
+        }
+        
         if prefixAtIndentationLevel {
-            let unindentedFormatter = formatter.withIdentation(0)
-            guard let formattedCodeString = unindentedFormatter.optionalCodeString(from: content()) else {
-                return nil
-            }
-            
-            let unindentedCodeString = formattedCodeString.linesPrefixed(with: self.prefix)
-            return formatter.optionalCodeString(from: unindentedCodeString)
+            return tree.option(.prefix(prefix))
         } else {
-            guard let formattedCodeString = formatter.optionalCodeString(from: content()) else {
-                return nil
-            }
-            
-            return formattedCodeString.linesPrefixed(with: self.prefix)
+            return tree.option(.preLine(prefix))
         }
     }
 }
 
-extension _ConditionalContent: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
+extension _ConditionalContent: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
         if isTrue {
-            return formatter.optionalCodeString(from: trueContent!())
+            return trueContent!().codeTree()
         } else {
-            return formatter.optionalCodeString(from: falseContent!())
+            return falseContent!().codeTree()
         }
     }
 }
 
-extension _TupleCode2: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
-        [formatter.optionalCodeString(from: code0),
-         formatter.optionalCodeString(from: code1)]
-            .arrayCodeString()
+extension _TupleCode2: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        .group(subtrees: [code0.codeTree(),
+                          code1.codeTree()].compactMap { $0 },
+               option: nil)
     }
 }
 
-extension _TupleCode3: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
-        [formatter.optionalCodeString(from: code0),
-         formatter.optionalCodeString(from: code1),
-         formatter.optionalCodeString(from: code2)]
-            .arrayCodeString()
+extension _TupleCode3: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        .group(subtrees: [code0.codeTree(),
+                          code1.codeTree(),
+                          code2.codeTree()].compactMap { $0 },
+               option: nil)
     }
 }
 
-extension _TupleCode4: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
-        [formatter.optionalCodeString(from: code0),
-         formatter.optionalCodeString(from: code1),
-         formatter.optionalCodeString(from: code2),
-         formatter.optionalCodeString(from: code3)]
-            .arrayCodeString()
+extension _TupleCode4: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        .group(subtrees: [code0.codeTree(),
+                          code1.codeTree(),
+                          code2.codeTree(),
+                          code3.codeTree()].compactMap { $0 },
+               option: nil)
     }
 }
 
-extension _TupleCode5: SwiftBaseCode {
-    func codeString(with formatter: CodeFormatter) -> String? {
-        [formatter.optionalCodeString(from: code0),
-         formatter.optionalCodeString(from: code1),
-         formatter.optionalCodeString(from: code2),
-         formatter.optionalCodeString(from: code3),
-         formatter.optionalCodeString(from: code4)]
-            .arrayCodeString()
-    }
-}
-
-private extension Array where Element == String? {
-    func arrayCodeString() -> String? {
-        let strings = self.compactMap { $0 }
-        guard !strings.isEmpty else {
-            return nil
-        }
-        
-        var codeString = ""
-        for index in 0..<strings.count {
-            codeString += strings[index]
-            
-            if index < strings.count-1 {
-                codeString += "\n"
-            }
-        }
-        return codeString
-    }
-}
-
-// MARK: - Extension
-
-private extension String {
-    func linesPrefixed(with prefix: String) -> String {
-        var string = ""
-        self.enumerateLines { line, stop in
-            string += prefix + line + "\n"
-        }
-        _ = string.popLast()
-        return string
+extension _TupleCode5: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        .group(subtrees: [code0.codeTree(),
+                          code1.codeTree(),
+                          code2.codeTree(),
+                          code3.codeTree(),
+                          code4.codeTree()].compactMap { $0 },
+               option: nil)
     }
 }

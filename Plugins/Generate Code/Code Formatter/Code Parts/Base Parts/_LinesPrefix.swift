@@ -6,7 +6,7 @@ struct _LinesPrefix<Content>: SwiftCode where Content: SwiftCode {
     let prefixAtIndentationLevel: Bool
     let content: () -> Content
     
-    init(_ prefix: String, atIndentationLevel: Bool = true, @CodeBuilder content: @escaping () -> Content) {
+    init(_ prefix: String, atIndentationLevel: Bool, @CodeBuilder content: @escaping () -> Content) {
         self.prefix = prefix
         self.prefixAtIndentationLevel = atIndentationLevel
         self.content = content

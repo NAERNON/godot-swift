@@ -1,22 +1,22 @@
 import Foundation
 
-struct Comment<Content>: SwiftCode where Content: SwiftCode {
-    enum CommentType {
-        case line
-        case doc
-        case block
-    }
-    
-    let type: CommentType
+public enum CommentStyle {
+    case line
+    case doc
+    case block
+}
+
+public struct Comment<Content>: SwiftCode where Content: SwiftCode {
+    let style: CommentStyle
     let content: () -> Content
     
-    init(type: CommentType, @CodeBuilder content: @escaping () -> Content) {
-        self.type = type
+    public init(style: CommentStyle, @CodeBuilder content: @escaping () -> Content) {
+        self.style = style
         self.content = content
     }
     
-    var body: some SwiftCode {
-        switch type {
+    public var body: some SwiftCode {
+        switch style {
         case .line:
             content().linesPrefixed(by: "// ")
         case .doc:
@@ -30,8 +30,8 @@ struct Comment<Content>: SwiftCode where Content: SwiftCode {
 }
 
 extension SwiftCode {
-    public func commented() -> some SwiftCode {
-        Comment(type: .line) {
+    public func comment(style: CommentStyle = .line) -> some SwiftCode {
+        Comment(style: style) {
             self
         }
     }
