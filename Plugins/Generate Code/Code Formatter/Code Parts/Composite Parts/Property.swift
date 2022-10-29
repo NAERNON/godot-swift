@@ -1,26 +1,21 @@
 import Foundation
 
-public struct Property: SwiftCode {
+public struct Property: SwiftCode, AccessibleCode, AlignableCode {
     let name: String
     let value: String?
     let type: String?
-    let isVar: Bool
-    let isOptional: Bool
-    let isStatic: Bool
+    fileprivate var isVar: Bool = false
+    fileprivate var isOptional: Bool = false
+    fileprivate var isStatic: Bool = false
     fileprivate var alignmentLength: Int? = nil
+    public var accessControl: AccessControl = .hiddenInternal
     
     init(_ name: String,
          value: String?,
-         type: String?,
-         isVar: Bool,
-         isOptional: Bool,
-         isStatic: Bool) {
+         type: String?) {
         self.name = name
         self.value = value
         self.type = type
-        self.isVar = isVar
-        self.isOptional = isOptional
-        self.isStatic = isStatic
     }
     
     public enum TypedValue<T> where T: CustomStringConvertible {
@@ -31,11 +26,7 @@ public struct Property: SwiftCode {
     
     init<T>(_ name: String,
             typedValue: TypedValue<T>,
-            type: T.Type,
-            isVar: Bool,
-            isOptional: Bool,
-            isStatic: Bool) where T: CustomStringConvertible {
-        
+            type: T.Type) where T: CustomStringConvertible {
         let valueString: String?
         switch typedValue {
         case .none: valueString = nil
@@ -45,10 +36,7 @@ public struct Property: SwiftCode {
         
         self.init(name,
                   value: valueString,
-                  type: String(describing: T.self),
-                  isVar: isVar,
-                  isOptional: isOptional,
-                  isStatic: isStatic)
+                  type: String(describing: T.self))
     }
     
     public var body: some SwiftCode {
@@ -64,6 +52,7 @@ public struct Property: SwiftCode {
     
     private var keywordsString: String {
         var string = ""
+        string += accessControl.keywordWithSpace
         if isStatic {
             string += "static "
         }
@@ -103,9 +92,29 @@ public struct Property: SwiftCode {
         
         return "= " + value
     }
+    
+    // MARK: Modifiers
+    
+    func variable() -> Property {
+        var new = self
+        new.isVar = true
+        return new
+    }
+    
+    func `optional`() -> Property {
+        var new = self
+        new.isOptional = true
+        return new
+    }
+    
+    func `static`() -> Property {
+        var new = self
+        new.isStatic = true
+        return new
+    }
 }
 
-extension Property: AlignableCode {
+extension Property {
     public func aligned(_ length: Int) -> some SwiftCode {
         var code = self
         code.alignmentLength = length

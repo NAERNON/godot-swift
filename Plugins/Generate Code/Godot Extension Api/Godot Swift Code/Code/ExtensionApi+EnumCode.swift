@@ -63,10 +63,12 @@ extension ExtensionApi.Enum {
             if !staticProperties.isEmpty {
                 Spacer()   
                 ForEach(staticProperties) { property in
-                    Let(property.name, value: ".\(property.caseName)", type: nameAndCases.name, isStatic: true)
+                    Property(property.name, value: ".\(property.caseName)", type: nameAndCases.name)
+                        .static()
+                        .public()
                 }.aligned(additionalLength: 1)
             }
-        }
+        }.public()
     }
 
     private func optionSetCode<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> some SwiftCode {
@@ -74,6 +76,6 @@ extension ExtensionApi.Enum {
 
         return OptionSetStruct(nameAndCases.name,
                                options: nameAndCases.cases,
-                               additionalAlignmentLength: 1)
+                               additionalAlignmentLength: 1).public()
     }
 }

@@ -1,9 +1,10 @@
 import Foundation
 
-public struct Struct<Content>: SwiftCode where Content: SwiftCode {
+public struct Struct<Content>: SwiftCode, AccessibleCode where Content: SwiftCode {
     let name: String
     let extensions: [String]
     let content: () -> Content
+    public var accessControl: AccessControl = .hiddenInternal
     
     public init(_ name: String,
                 extensions: [String] = [],
@@ -15,5 +16,6 @@ public struct Struct<Content>: SwiftCode where Content: SwiftCode {
     
     public var body: some SwiftCode {
         BlockWithExtension(type: "struct", name: name, extensions: extensions, content: content)
+            .accessControl(accessControl)
     }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Case: SwiftCode {
+public struct Case: SwiftCode, AlignableCode {
     let name: String
     let value: String?
     fileprivate var alignmentLength: Int? = nil
@@ -54,7 +54,7 @@ public struct Case: SwiftCode {
     }
 }
 
-extension Case: AlignableCode {
+extension Case {
     public func aligned(_ length: Int) -> some SwiftCode {
         var code = self
         code.alignmentLength = length

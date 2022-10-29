@@ -1,9 +1,10 @@
 import Foundation
 
-public struct Enum<Content>: SwiftCode where Content: SwiftCode {
+public struct Enum<Content>: SwiftCode, AccessibleCode where Content: SwiftCode {
     let name: String
     let type: String?
     let content: () -> Content
+    public var accessControl: AccessControl = .hiddenInternal
     
     public init(_ name: String,
                 type: String? = nil,
@@ -22,7 +23,7 @@ public struct Enum<Content>: SwiftCode where Content: SwiftCode {
     public var body: some SwiftCode {
         Block(enumString) {
             content()
-        }
+        }.accessControl(accessControl)
     }
     
     private var enumString: String {
