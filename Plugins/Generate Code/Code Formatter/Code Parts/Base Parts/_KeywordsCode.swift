@@ -27,7 +27,7 @@ struct _KeywordsCode<Content>: SwiftCode where Content: SwiftCode {
 }
 
 extension SwiftCode {
-    public func prefixed(by keywords: [Keyword]) -> some SwiftCode {
+    func prefixed(by keywords: [Keyword]) -> some SwiftCode {
         _KeywordsCode(keywords) {
             self
         }
