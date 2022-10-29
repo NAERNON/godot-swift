@@ -1,7 +1,7 @@
 import Foundation
 
 /// A code with each lined being prefixed by a given `String`.
-struct Prefix<Content>: SwiftCode where Content: SwiftCode {
+struct LinesPrefix<Content>: SwiftCode where Content: SwiftCode {
     let prefix: String
     let prefixAtIndentationLevel: Bool
     let content: () -> Content
@@ -17,7 +17,7 @@ struct Prefix<Content>: SwiftCode where Content: SwiftCode {
 
 extension SwiftCode {
     public func prefixed(by prefix: String, atIndentationLevel: Bool = true) -> some SwiftCode {
-        Prefix(prefix, atIndentationLevel: atIndentationLevel) {
+        LinesPrefix(prefix, atIndentationLevel: atIndentationLevel) {
             self
         }
     }
