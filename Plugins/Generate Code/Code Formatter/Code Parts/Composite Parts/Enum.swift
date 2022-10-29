@@ -1,10 +1,10 @@
 import Foundation
 
-public struct Enum<Content>: SwiftCode, AccessibleCode where Content: SwiftCode {
+public struct Enum<Content>: SwiftCode where Content: SwiftCode {
     let name: String
     let type: String?
     let content: () -> Content
-    public var accessControl: AccessControl = .hiddenInternal
+    fileprivate var keywords: [Keyword] = []
     
     public init(_ name: String,
                 type: String? = nil,
@@ -21,9 +21,11 @@ public struct Enum<Content>: SwiftCode, AccessibleCode where Content: SwiftCode 
     }
     
     public var body: some SwiftCode {
-        Block(enumString) {
-            content()
-        }.accessControl(accessControl)
+        KeywordsCode(keywords) {
+            Block(enumString) {
+                content()
+            }
+        }
     }
     
     private var enumString: String {
@@ -33,5 +35,19 @@ public struct Enum<Content>: SwiftCode, AccessibleCode where Content: SwiftCode 
             string += ": " + type
         }
         return string
+    }
+    
+    // MARK: Modifiers
+    
+    public func `private`() -> some SwiftCode {
+        var new = self
+        new.keywords.append(.private)
+        return new
+    }
+    
+    public func `public`() -> some SwiftCode {
+        var new = self
+        new.keywords.append(.public)
+        return new
     }
 }

@@ -45,6 +45,18 @@ extension EmptyCode: SwiftBaseCode {
     }
 }
 
+extension KeywordsCode: SwiftBaseCode {
+    func codeString(with formatter: CodeFormatter) -> String? {
+        let unindentedFormatter = formatter.withIdentation(0)
+        guard let formattedCodeString = unindentedFormatter.optionalCodeString(from: content()) else {
+            return nil
+        }
+        
+        let unindentedCodeString = keywordsWithSpaceString() + formattedCodeString
+        return formatter.optionalCodeString(from: unindentedCodeString)
+    }
+}
+
 extension ForEach: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
         data.map { formatter.optionalCodeString(from: content($0)) }

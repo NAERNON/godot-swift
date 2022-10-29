@@ -1,14 +1,13 @@
 import Foundation
 
-public struct Property: SwiftCode, AccessibleCode, AlignableCode {
+public struct Property: SwiftCode, AlignableCode {
     let name: String
     let value: String?
     let type: String?
     fileprivate var isVar: Bool = false
     fileprivate var isOptional: Bool = false
-    fileprivate var isStatic: Bool = false
     fileprivate var alignmentLength: Int? = nil
-    public var accessControl: AccessControl = .hiddenInternal
+    fileprivate var keywords: [Keyword] = []
     
     init(_ name: String,
          value: String?,
@@ -40,6 +39,12 @@ public struct Property: SwiftCode, AccessibleCode, AlignableCode {
     }
     
     public var body: some SwiftCode {
+        KeywordsCode(keywords) {
+            bodyString
+        }
+    }
+    
+    private var bodyString: String {
         var string = ""
         string += keywordsString
         string += nameWithTypeString
@@ -51,14 +56,7 @@ public struct Property: SwiftCode, AccessibleCode, AlignableCode {
     }
     
     private var keywordsString: String {
-        var string = ""
-        string += accessControl.keywordWithSpace
-        if isStatic {
-            string += "static "
-        }
-        string += isVar ? "var" : "let"
-        string += " "
-        return string
+        isVar ? "var " : "let "
     }
     
     private var nameWithTypeString: String {
@@ -109,7 +107,19 @@ public struct Property: SwiftCode, AccessibleCode, AlignableCode {
     
     func `static`() -> Property {
         var new = self
-        new.isStatic = true
+        new.keywords.append(.static)
+        return new
+    }
+    
+    func `private`() -> Property {
+        var new = self
+        new.keywords.append(.private)
+        return new
+    }
+    
+    func `public`() -> Property {
+        var new = self
+        new.keywords.append(.public)
         return new
     }
 }

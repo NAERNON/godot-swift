@@ -1,9 +1,8 @@
 import Foundation
 
-public struct Block<Content>: SwiftCode, AccessibleCode where Content: SwiftCode {
+public struct Block<Content>: SwiftCode where Content: SwiftCode {
     let statement: String
     let content: () -> Content
-    public var accessControl: AccessControl = .hiddenInternal
     
     public init(_ statement: String, @CodeBuilder content: @escaping () -> Content) {
         self.statement = statement
@@ -11,7 +10,7 @@ public struct Block<Content>: SwiftCode, AccessibleCode where Content: SwiftCode
     }
     
     public var body: some SwiftCode {
-        "\(accessControl.keywordWithSpace)\(statement) {"
+        "\(statement) {"
         content().indentation()
         "}"
     }
