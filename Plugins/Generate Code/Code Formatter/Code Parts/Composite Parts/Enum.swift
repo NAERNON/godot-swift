@@ -21,11 +21,9 @@ public struct Enum<Content>: SwiftCode where Content: SwiftCode {
     }
     
     public var body: some SwiftCode {
-        KeywordsCode(keywords) {
-            Block(enumString) {
-                content()
-            }
-        }
+        Block(enumString) {
+            content()
+        }.prefixed(by: keywords)
     }
     
     private var enumString: String {

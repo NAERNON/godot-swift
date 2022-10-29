@@ -39,9 +39,7 @@ public struct Property: SwiftCode, AlignableCode {
     }
     
     public var body: some SwiftCode {
-        KeywordsCode(keywords) {
-            bodyString
-        }
+        bodyString.prefixed(by: keywords)
     }
     
     private var bodyString: String {

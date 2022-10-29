@@ -83,7 +83,7 @@ extension Indentation: SwiftBaseCode {
     }
 }
 
-extension Prefix: SwiftBaseCode {
+extension LinesPrefix: SwiftBaseCode {
     func codeString(with formatter: CodeFormatter) -> String? {
         if prefixAtIndentationLevel {
             let unindentedFormatter = formatter.withIdentation(0)

@@ -26,7 +26,15 @@ struct KeywordsCode<Content>: SwiftCode where Content: SwiftCode {
     }
 }
 
-enum Keyword {
+extension SwiftCode {
+    public func prefixed(by keywords: [Keyword]) -> some SwiftCode {
+        KeywordsCode(keywords) {
+            self
+        }
+    }
+}
+
+public enum Keyword {
     case `static`
     
     case `private`
