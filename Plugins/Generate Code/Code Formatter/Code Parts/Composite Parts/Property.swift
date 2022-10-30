@@ -39,18 +39,11 @@ public struct Property: SwiftCode {
     }
     
     public var body: some SwiftCode {
-        bodyString.keywords(keywords)
-    }
-    
-    private var bodyString: String {
-        var string = ""
-        string += keywordsString
-        string += nameWithTypeString
-        if value != nil {
-            string += alignmentString
-            string += equalValueString
-        }
-        return string
+        _LineComponentsCode(components: [
+            keywordsString,
+            nameWithTypeString,
+            equalValueString
+        ].compactMap { $0 }).keywords(keywords)
     }
     
     private var keywordsString: String {
@@ -66,27 +59,12 @@ public struct Property: SwiftCode {
         return string
     }
     
-    public var alignableContentLength: Int {
-        (keywordsString + nameWithTypeString).count + 1
-    }
-    
-    private var alignmentString: String {
-        let numberOfAlignmentSpaces: Int
-        if let alignmentLength {
-            numberOfAlignmentSpaces = max(alignmentLength - alignableContentLength + 1, 0)
-        } else {
-            numberOfAlignmentSpaces = 1
-        }
-        
-        return String(repeating: " ", count: numberOfAlignmentSpaces)
-    }
-    
-    private var equalValueString: String {
+    private var equalValueString: String? {
         guard let value else {
-            return ""
+            return nil
         }
         
-        return "= " + value
+        return " = " + value
     }
     
     // MARK: Modifiers

@@ -17,39 +17,21 @@ public struct Case: SwiftCode {
     }
     
     public var body: some SwiftCode {
-        var string = ""
-        string += caseWithNameString
-        if value != nil {
-            string += alignmentString
-            string += equalValueString
-        }
-        return string
+        _LineComponentsCode(components: [
+            caseWithNameString,
+            equalValueString
+        ].compactMap { $0 })
     }
     
     private var caseWithNameString: String {
         return "case " + name
     }
     
-    public var alignableContentLength: Int {
-        caseWithNameString.count + 1
-    }
-    
-    private var alignmentString: String {
-        let numberOfAlignmentSpaces: Int
-        if let alignmentLength {
-            numberOfAlignmentSpaces = max(alignmentLength - alignableContentLength + 1, 0)
-        } else {
-            numberOfAlignmentSpaces = 1
-        }
-        
-        return String(repeating: " ", count: numberOfAlignmentSpaces)
-    }
-    
-    private var equalValueString: String {
+    private var equalValueString: String? {
         guard let value else {
-            return ""
+            return nil
         }
         
-        return "= " + value
+        return " = " + value
     }
 }
