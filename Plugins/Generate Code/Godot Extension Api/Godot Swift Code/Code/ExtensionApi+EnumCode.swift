@@ -56,18 +56,20 @@ extension ExtensionApi.Enum {
         }
 
         return Enum(nameAndCases.name, type: T.self) {
-            ForEach(cases) { `case` in
-                Case(`case`.name, typedValue: `case`.value)
+            Group {
+                ForEach(cases) { `case` in
+                    Case(`case`.name, typedValue: `case`.value)
+                }
+                
+                if !staticProperties.isEmpty {
+                    Spacer()   
+                    ForEach(staticProperties) { property in
+                        Property(property.name, value: ".\(property.caseName)", type: nameAndCases.name)
+                            .static()
+                            .public()
+                    }
+                }
             }.aligned(1)
-            
-            if !staticProperties.isEmpty {
-                Spacer()   
-                ForEach(staticProperties) { property in
-                    Property(property.name, value: ".\(property.caseName)", type: nameAndCases.name)
-                        .static()
-                        .public()
-                }.aligned(1)
-            }
         }.public()
     }
 
