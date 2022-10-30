@@ -20,7 +20,7 @@ struct GenerateGodotAPI: CommandPlugin {
         
         let options = try Options(arguments: arguments)
         
-        let codeFormatter = CodeFormatter(indentationWidth: options.indentation)
+        let codeFormatter = CodeFormatter()
         let generatedFilesPath = godotTarget.directory.appending(["_Generated"])
         
         if FileManager.default.fileExists(atPath: generatedFilesPath.string) {
@@ -28,16 +28,24 @@ struct GenerateGodotAPI: CommandPlugin {
         }
         
         let file = GlobalEnumsFile(enums: extensionApi.globalEnums, translated: options.translatesCode)
-        try saveFile(file, withFormatter: codeFormatter, at: generatedFilesPath)
+        try saveFile(file, withFormatter: codeFormatter, options: options, at: generatedFilesPath)
     }
     
     private func saveFile(_ file: some SwiftFile,
                           withFormatter codeFormatter: CodeFormatter,
+                          options: Options,
                           at path: Path) throws {
         Diagnostics.remark("Generating file named named \"\(file.name)\".")
         
         let code = prefixedCode(file.code)
         let codeString = codeFormatter.codeString(from: code)
+        
+        guard !options.printInsteadOfSave else {
+            print("-----BEGIN PRINT \"\(file.name)\"-----")
+            print(codeString)
+            print("-----END PRINT \"\(file.name)\"-----")
+            return
+        }
         
         let data = codeString.data(using: .utf8)!
         
@@ -54,7 +62,7 @@ struct GenerateGodotAPI: CommandPlugin {
     
     @CodeBuilder
     private func prefixedCode(_ code: some SwiftCode) -> some SwiftCode {
-        Comment(type: .line) {
+        Comment(style: .line) {
             "THIS FILE IS GENERATED. EDITS WILL BE LOST."
         }
         
@@ -67,15 +75,14 @@ struct GenerateGodotAPI: CommandPlugin {
 private struct Options {
     enum InitError: Error {
         case unrecognizedArgument(String)
-        case noValueForIndentation
     }
     
     let translatesCode: Bool
-    let indentation: Int
+    let printInsteadOfSave: Bool
     
     init(arguments: [String]) throws {
         var translatesCode = true
-        var indentation = 4
+        var printInsteadOfSave = false
         
         var index = 0
         while index < arguments.count {
@@ -84,14 +91,8 @@ private struct Options {
             case "--untranslated":
                 translatesCode = false
                 index += 1
-            case "--indentation", "-i":
-                index += 1
-                guard index < arguments.count,
-                      let value = Int(arguments[index]) else {
-                    throw InitError.noValueForIndentation
-                }
-                
-                indentation = value
+            case "--print":
+                printInsteadOfSave = true
                 index += 1
             default:
                 throw InitError.unrecognizedArgument(argument)
@@ -99,6 +100,6 @@ private struct Options {
         }
         
         self.translatesCode = translatesCode
-        self.indentation = indentation
+        self.printInsteadOfSave = printInsteadOfSave
     }
 }
