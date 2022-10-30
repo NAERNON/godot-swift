@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Condition<Content>: SwiftCode where Content: SwiftCode {
+public struct If<Content>: SwiftCode where Content: SwiftCode {
     let condition: String
     let content: () -> Content
     
@@ -16,7 +16,7 @@ public struct Condition<Content>: SwiftCode where Content: SwiftCode {
     }
 }
 
-public struct ConditionElse<Content, ElseContent>: SwiftCode where Content: SwiftCode, ElseContent: SwiftCode {
+public struct IfElse<Content, ElseContent>: SwiftCode where Content: SwiftCode, ElseContent: SwiftCode {
     let condition: String
     let content: () -> Content
     let elseContent: () -> ElseContent

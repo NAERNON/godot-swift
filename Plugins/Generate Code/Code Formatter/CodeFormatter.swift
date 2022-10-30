@@ -175,6 +175,7 @@ private protocol SwiftRootCode: SwiftCode {
 
 extension SwiftCode {
     fileprivate func codeTree() -> CodeTree? {
+#warning("Remove the any keyword")
         if let rootCode = self as? (any SwiftRootCode) {
             return rootCode.rootCodeTree()
         }
@@ -203,7 +204,7 @@ extension EmptyCode: SwiftRootCode {
     }
 }
 
-extension _Aligned: SwiftRootCode {
+extension _AlignedContent: SwiftRootCode {
     fileprivate func rootCodeTree() -> CodeTree? {
         guard let tree = content().codeTree() else {
             return nil
@@ -213,7 +214,7 @@ extension _Aligned: SwiftRootCode {
     }
 }
 
-extension _LineComponentsCode: SwiftRootCode {
+extension _CodeComponentsLine: SwiftRootCode {
     fileprivate func rootCodeTree() -> CodeTree? {
         guard !components.contains(where: { $0.contains("\n") }) else {
             print("Cannot create line components code because one component contains a line break.")
@@ -230,7 +231,7 @@ extension ForEach: SwiftRootCode {
     }
 }
 
-extension _Indentation: SwiftRootCode {
+extension _IndentedContent: SwiftRootCode {
     fileprivate func rootCodeTree() -> CodeTree? {
         guard let tree = content().codeTree() else {
             return nil
@@ -241,7 +242,7 @@ extension _Indentation: SwiftRootCode {
     }
 }
 
-extension _LinesPrefix: SwiftRootCode {
+extension _LinesPrefixedContent: SwiftRootCode {
     fileprivate func rootCodeTree() -> CodeTree? {
         guard let tree = content().codeTree() else {
             return nil

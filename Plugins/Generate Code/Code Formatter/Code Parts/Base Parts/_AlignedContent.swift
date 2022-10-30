@@ -1,6 +1,6 @@
 import Foundation
 
-struct _Aligned<Content>: SwiftCode where Content: SwiftCode {
+struct _AlignedContent<Content>: SwiftCode where Content: SwiftCode {
     let offset: Int
     let content: () -> Content
     
@@ -15,7 +15,7 @@ struct _Aligned<Content>: SwiftCode where Content: SwiftCode {
 
 extension SwiftCode {
     func aligned(_ offset: Int = 0) -> some SwiftCode {
-        _Aligned(offset) {
+        _AlignedContent(offset) {
             self
         }
     }

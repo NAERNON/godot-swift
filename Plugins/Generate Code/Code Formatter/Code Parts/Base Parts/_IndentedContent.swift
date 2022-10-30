@@ -1,6 +1,6 @@
 import Foundation
 
-struct _Indentation<Content>: SwiftCode where Content: SwiftCode {
+struct _IndentedContent<Content>: SwiftCode where Content: SwiftCode {
     /// The length of the indentation. A `nil` indentation will use the basic indentation.
     let indentation: Int?
     let content: () -> Content
@@ -15,7 +15,7 @@ struct _Indentation<Content>: SwiftCode where Content: SwiftCode {
 
 extension SwiftCode {
     public func indentation(_ indentation: Int? = nil) -> some SwiftCode {
-        _Indentation(indentation) {
+        _IndentedContent(indentation) {
             self
         }
     }

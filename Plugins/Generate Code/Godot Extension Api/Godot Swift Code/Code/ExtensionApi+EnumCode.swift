@@ -76,8 +76,8 @@ extension ExtensionApi.Enum {
     private func optionSetCode<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> some SwiftCode {
         let nameAndCases = self.nameAndCases(forType: type, translated: translated)
 
-        return OptionSetStruct(nameAndCases.name,
-                               options: nameAndCases.cases,
-                               additionalAlignmentLength: 1).public()
+        return OptionSet(nameAndCases.name,
+                         options: nameAndCases.cases,
+                         additionalAlignmentLength: 1).public()
     }
 }

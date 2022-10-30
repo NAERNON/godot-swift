@@ -1,6 +1,6 @@
 import Foundation
 
-public struct OptionSetStruct<RawType>: SwiftCode where RawType: BinaryInteger {
+public struct OptionSet<RawType>: SwiftCode where RawType: BinaryInteger {
     let name: String
     let options: [(name: String, value: RawType)]
     let additionalAlignmentLength: Int?

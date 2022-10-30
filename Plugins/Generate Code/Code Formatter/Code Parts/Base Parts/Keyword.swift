@@ -1,14 +1,14 @@
 import Foundation
 
-extension _LineComponentsCode {
+extension _CodeComponentsLine {
     func keywords(_ keywords: [Keyword]) -> some SwiftCode {
-        _LineComponentsCode(components: keywords.codeStringComponents() + components)
+        _CodeComponentsLine(components: keywords.codeStringComponents() + components)
     }
 }
 
 extension String {
     func keywords(_ keywords: [Keyword]) -> some SwiftCode {
-        _LineComponentsCode(components: keywords.codeStringComponents() + [self])
+        _CodeComponentsLine(components: keywords.codeStringComponents() + [self])
     }
 }
 

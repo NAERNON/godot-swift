@@ -17,7 +17,7 @@ public struct Case: SwiftCode {
     }
     
     public var body: some SwiftCode {
-        _LineComponentsCode(components: [
+        _CodeComponentsLine(components: [
             caseWithNameString,
             equalValueString
         ].compactMap { $0 })

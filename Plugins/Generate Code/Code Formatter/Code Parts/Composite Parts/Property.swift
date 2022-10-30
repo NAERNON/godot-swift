@@ -39,7 +39,7 @@ public struct Property: SwiftCode {
     }
     
     public var body: some SwiftCode {
-        _LineComponentsCode(components: [
+        _CodeComponentsLine(components: [
             keywordsString,
             nameWithTypeString,
             equalValueString
