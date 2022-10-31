@@ -23,7 +23,8 @@ struct GenerateGodotAPI: CommandPlugin {
         let codeFormatter = CodeFormatter()
         let generatedFilesPath = godotTarget.directory.appending(["_Generated"])
         
-        if FileManager.default.fileExists(atPath: generatedFilesPath.string) {
+        if !options.printInsteadOfSave,
+           FileManager.default.fileExists(atPath: generatedFilesPath.string) {
             try FileManager.default.removeItem(atPath: generatedFilesPath.string)
         }
         
