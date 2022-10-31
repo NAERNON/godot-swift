@@ -16,11 +16,6 @@ public struct Case: SwiftCode {
     }
     
     public var body: some SwiftCode {
-        _AlignableLine(components: [
-            caseWithNameString,
-            equalValueString
-        ].compactMap { $0 })
-        
         if let equalValueString {
             _AlignableLine(caseWithNameString).alignableCode(equalValueString)
         } else {

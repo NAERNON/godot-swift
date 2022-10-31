@@ -59,20 +59,19 @@ extension ExtensionApi.Enum {
             Group {
                 ForEach(cases) { `case` in
                     Case(`case`.name, typedValue: `case`.value)
-                }
+                }.aligned(1)
                 
                 if !staticProperties.isEmpty {
-                    Spacer()   
+                    Spacer()
                     ForEach(staticProperties) { property in
                         Property(property.name)
                             .letDefined().type(nameAndCases.name).static().public()
                             .assign(value: ".\(property.caseName)")
-                    }
+                    }.aligned(1)
                 }
             }
         }
         .public()
-        .aligned(1)
     }
 
     private func optionSetCode<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> some SwiftCode {
