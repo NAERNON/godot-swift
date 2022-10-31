@@ -1,69 +1,87 @@
 import Foundation
 
-public struct Property: SwiftCode, AccessControlCode {
+// MARK: - Base Property
+
+public protocol _BaseProperty: SwiftCode {
+    var body: _CodeComponentsLine { get }
+}
+
+public extension _BaseProperty {
+    func letDefined() -> _PropertyDefinition<Self> {
+        _PropertyDefinition(self, definitionType: .let)
+    }
+    
+    func varDefined() -> _PropertyDefinition<Self> {
+        _PropertyDefinition(self, definitionType: .var)
+    }
+}
+
+// MARK: - Property
+
+public struct Property: SwiftCode, _BaseProperty, _AssignableProperty {
     let name: String
-    let value: String?
-    let type: String?
-    private var isVar: Bool = false
-    private var isOptional: Bool = false
+    
+    public init(_ name: String) {
+        self.name = name
+    }
+    
+    public var body: _CodeComponentsLine {
+        _CodeComponentsLine(components: [name])
+    }
+    
+    // MARK: Modifiers
+    
+    public func selfProperty() -> _SelfProperty {
+        _SelfProperty(property: self)
+    }
+}
+
+// MARK: - Self Property
+
+public struct _SelfProperty: SwiftCode, _BaseProperty, _AssignableProperty {
+    private let property: Property
+    
+    fileprivate init(property: Property) {
+        self.property = property
+    }
+    
+    public var body: _CodeComponentsLine {
+        _CodeComponentsLine(components: ["self." + property.name])
+    }
+}
+
+// MARK: - Property Definition
+
+private enum DefinitionType {
+    case `let`
+    case `var`
+    
+    var codeString: String {
+        switch self {
+        case .let:
+            return "let "
+        case .var:
+            return "var "
+        }
+    }
+}
+
+public struct _PropertyDefinition<PropertyType: _BaseProperty>: SwiftCode, _AssignableProperty, AccessControlCode {
+    private let property: PropertyType
+    private let definitionType: DefinitionType
+    private var type: String?
     private var isStatic: Bool = false
     private var accessControl: AccessControl? = nil
     
-    public init(_ name: String,
-                value: String?,
-                type: String?) {
-        self.name = name
-        self.value = value
-        self.type = type
+    fileprivate init(_ property: PropertyType, definitionType: DefinitionType) {
+        self.property = property
+        self.definitionType = definitionType
     }
     
-    public enum TypedValue<T> where T: CustomStringConvertible {
-        case none
-        case `nil`
-        case value(T)
-    }
-    
-    public init<T>(_ name: String,
-                   typedValue: TypedValue<T>,
-                   type: T.Type) where T: CustomStringConvertible {
-        let valueString: String?
-        switch typedValue {
-        case .none: valueString = nil
-        case .nil: valueString = "nil"
-        case .value(let value): valueString = value.description
-        }
-        
-        self.init(name,
-                  value: valueString,
-                  type: String(describing: T.self))
-    }
-    
-    public var body: some SwiftCode {
-        _CodeComponentsLine(components: [keywordsString,
-                                         nameWithTypeString,
-                                         equalValueString].compactMap { $0 })
-        .keywords(keywords)
-    }
-    
-    private var keywordsString: String {
-        isVar ? "var " : "let "
-    }
-    
-    private var nameWithTypeString: String {
-        var string = ""
-        string += name
-        if let type {
-            string += ": " + type
-        }
-        return string
-    }
-    
-    private var equalValueString: String? {
-        guard let value else {
-            return nil
-        }
-        
-        return " = " + value
+    public var body: _CodeComponentsLine {
+        _CodeComponentsLine(components: [definitionType.codeString]).keywords(keywords)
+        + property.body
+        + _CodeComponentsLine(components: [typeCodeString])
     }
     
     private var keywords: [Keyword] {
@@ -77,29 +95,60 @@ public struct Property: SwiftCode, AccessControlCode {
         return keywords
     }
     
+    private var typeCodeString: String {
+        if let type {
+            return ": " + type
+        }
+        return ""
+    }
+    
     // MARK: Modifiers
     
-    public func variable() -> Property {
-        var new = self
-        new.isVar = true
-        return new
-    }
-    
-    public func `optional`() -> Property {
-        var new = self
-        new.isOptional = true
-        return new
-    }
-    
-    public func `static`() -> Property {
+    public func `static`() -> _PropertyDefinition {
         var new = self
         new.isStatic = true
         return new
     }
     
-    public func accessControl(_ accessControl: AccessControl?) -> Property {
+    public func type(_ type: String) -> _PropertyDefinition {
+        var new = self
+        new.type = type
+        return new
+    }
+    
+    public func type<T>(_ type: T.Type) -> _PropertyDefinition {
+        self.type(String(describing: type.self))
+    }
+    
+    public func accessControl(_ accessControl: AccessControl?) -> _PropertyDefinition {
         var new = self
         new.accessControl = accessControl
         return new
+    }
+}
+
+// MARK: - Equals To
+
+public protocol _AssignableProperty {
+    var body: _CodeComponentsLine { get }
+}
+
+public extension _AssignableProperty {
+    func assign(value: String?) -> _PropertyAssignment<Self> {
+        _PropertyAssignment(self, value: value ?? "nil")
+    }
+}
+
+public struct _PropertyAssignment<PropertyType: _AssignableProperty>: SwiftCode {
+    private let property: PropertyType
+    private let value: String
+    
+    fileprivate init(_ property: PropertyType, value: String) {
+        self.property = property
+        self.value = value
+    }
+    
+    public var body: some SwiftCode {
+        property.body + _CodeComponentsLine(components: [" = " + value])
     }
 }

@@ -1,13 +1,13 @@
 import Foundation
 
 extension _CodeComponentsLine {
-    func keywords(_ keywords: [Keyword]) -> some SwiftCode {
+    func keywords(_ keywords: [Keyword]) -> _CodeComponentsLine {
         _CodeComponentsLine(components: keywords.codeStringComponents() + components)
     }
 }
 
 extension String {
-    func keywords(_ keywords: [Keyword]) -> some SwiftCode {
+    func keywords(_ keywords: [Keyword]) -> _CodeComponentsLine {
         _CodeComponentsLine(components: keywords.codeStringComponents() + [self])
     }
 }

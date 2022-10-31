@@ -16,8 +16,14 @@ public struct OptionSet<RawType>: SwiftCode, AccessControlCode where RawType: Bi
     
     public var body: some SwiftCode {
         Struct(name, extensions: ["OptionSet"]) {
-            Property("rawValue", typedValue: .none, type: RawType.self)
-                .accessControl(innerPropertiesAccessControl)
+            Property("rawValue")
+                .letDefined().type(RawType.self).accessControl(innerPropertiesAccessControl)
+            
+            Spacer()
+            
+            Init(parameters: .init(name: "rawValue", type: String(describing: RawType.self))) {
+                Property("rawValue").selfProperty().assign(value: "rawValue")
+            }.accessControl(innerPropertiesAccessControl)
             
             Spacer()
             
@@ -31,9 +37,9 @@ public struct OptionSet<RawType>: SwiftCode, AccessControlCode where RawType: Bi
     
     private var properties: some SwiftCode {
         ForEach(options) { option in
-            Property(option.name, value: ".init(rawValue: " + option.value.description + ")", type: name)
-                .accessControl(innerPropertiesAccessControl)
-                .static()
+            Property(option.name)
+                .letDefined().static().accessControl(innerPropertiesAccessControl)
+                .assign(value: ".init(rawValue: " + option.value.description + ")")
         }
     }
     
