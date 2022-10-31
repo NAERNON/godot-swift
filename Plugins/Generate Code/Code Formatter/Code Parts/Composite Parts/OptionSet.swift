@@ -26,7 +26,7 @@ public struct OptionSet<RawType>: SwiftCode, AccessControlCode where RawType: Bi
             
             ForEach(options) { option in
                 Property(option.name)
-                    .letDefined().static().accessControl(innerPropertiesAccessControl)
+                    .letDefined().static().type("Self").accessControl(innerPropertiesAccessControl)
                     .assign(value: ".init(rawValue: " + option.value.description + ")")
             }
         }.accessControl(accessControl)
