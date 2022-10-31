@@ -64,9 +64,9 @@ extension ExtensionApi.Enum {
                 if !staticProperties.isEmpty {
                     Spacer()   
                     ForEach(staticProperties) { property in
-                        Property(property.name, value: ".\(property.caseName)", type: nameAndCases.name)
-                            .static()
-                            .public()
+                        Property(property.name)
+                            .letDefined().type(nameAndCases.name).static().public()
+                            .assign(value: ".\(property.caseName)")
                     }
                 }
             }.aligned(1)
