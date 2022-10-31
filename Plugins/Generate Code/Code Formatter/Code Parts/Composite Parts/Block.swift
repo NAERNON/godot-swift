@@ -31,29 +31,3 @@ public struct Block<Content>: SwiftCode, AccessControlCode where Content: SwiftC
         return new
     }
 }
-
-#warning("Necessary ? If used only by if.")
-public struct BlockWithFallback<Content, Fallback>: SwiftCode where Content: SwiftCode, Fallback: SwiftCode {
-    let statement: String
-    let content: () -> Content
-    let fallbackStatement: String
-    let fallback: () -> Fallback
-    
-    public init(_ statement: String,
-                @CodeBuilder content: @escaping () -> Content,
-                fallbackStatement: String,
-                @CodeBuilder fallback: @escaping () -> Fallback) {
-        self.statement = statement
-        self.content = content
-        self.fallbackStatement = fallbackStatement
-        self.fallback = fallback
-    }
-    
-    public var body: some SwiftCode {
-        "\(statement) {"
-        content().indentation()
-        "} \(fallbackStatement) {"
-        fallback().indentation()
-        "}"
-    }
-}

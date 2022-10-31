@@ -1,6 +1,6 @@
 import Foundation
 
-struct EmptyCode: SwiftCode {
+public struct EmptyCode: SwiftCode {
     public init() {}
     
     public var body: Never { fatalError() }
