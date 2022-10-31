@@ -3,7 +3,7 @@ import Foundation
 // MARK: - Base Property
 
 public protocol _BaseProperty: SwiftCode {
-    var body: _CodeComponentsLine { get }
+    var body: _AlignableLine { get }
 }
 
 public extension _BaseProperty {
@@ -25,8 +25,8 @@ public struct Property: SwiftCode, _BaseProperty, _AssignableProperty {
         self.name = name
     }
     
-    public var body: _CodeComponentsLine {
-        _CodeComponentsLine(components: [name])
+    public var body: _AlignableLine {
+        _AlignableLine(name)
     }
     
     // MARK: Modifiers
@@ -45,8 +45,8 @@ public struct _SelfProperty: SwiftCode, _BaseProperty, _AssignableProperty {
         self.property = property
     }
     
-    public var body: _CodeComponentsLine {
-        _CodeComponentsLine(components: ["self." + property.name])
+    public var body: _AlignableLine {
+        _AlignableLine("self." + property.name)
     }
 }
 
@@ -78,10 +78,10 @@ public struct _PropertyDefinition<PropertyType: _BaseProperty>: SwiftCode, _Assi
         self.definitionType = definitionType
     }
     
-    public var body: _CodeComponentsLine {
-        _CodeComponentsLine(components: [definitionType.codeString]).keywords(keywords)
+    public var body: _AlignableLine {
+        _AlignableLine(definitionType.codeString).keywords(keywords)
         + property.body
-        + _CodeComponentsLine(components: [typeCodeString])
+        + _AlignableLine(typeCodeString)
     }
     
     private var keywords: [Keyword] {
@@ -130,7 +130,7 @@ public struct _PropertyDefinition<PropertyType: _BaseProperty>: SwiftCode, _Assi
 // MARK: - Equals To
 
 public protocol _AssignableProperty {
-    var body: _CodeComponentsLine { get }
+    var body: _AlignableLine { get }
 }
 
 public extension _AssignableProperty {
@@ -142,6 +142,7 @@ public extension _AssignableProperty {
 public struct _PropertyAssignment<PropertyType: _AssignableProperty>: SwiftCode {
     private let property: PropertyType
     private let value: String
+    private var isAlignable: Bool = true
     
     fileprivate init(_ property: PropertyType, value: String) {
         self.property = property
@@ -149,6 +150,22 @@ public struct _PropertyAssignment<PropertyType: _AssignableProperty>: SwiftCode 
     }
     
     public var body: some SwiftCode {
-        property.body + _CodeComponentsLine(components: [" = " + value])
+        if isAlignable {
+            mainLine
+        } else {
+            mainLine.unaligned()
+        }
+    }
+    
+    private var mainLine: _AlignableLine {
+        property.body.alignableCode(" = " + value)
+    }
+    
+    // MARK: Modifiers
+    
+    public func unaligned() -> _PropertyAssignment {
+        var new = self
+        new.isAlignable = false
+        return new
     }
 }

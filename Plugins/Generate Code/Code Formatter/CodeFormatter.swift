@@ -1,7 +1,5 @@
 import Foundation
 
-private typealias CodeLine = [String]
-
 public struct CodeFormatter {
     public init() {}
     
@@ -23,7 +21,7 @@ public struct CodeFormatter {
             let lineIndex = lines.count
             
             switch tree {
-            case .line(let components):
+            case .line(let codeLine):
                 var preLineComponents = [String]()
                 var prefixComponents = [String]()
                 
@@ -48,7 +46,7 @@ public struct CodeFormatter {
                     alignmentStart = nil
                 }
                 
-                lines.append(preLineComponents + prefixComponents + components)
+                lines.append(codeLine.prefixed(by: preLineComponents + prefixComponents))
             case .group(let subtrees, let option):
                 let newOptions = (options + [option]).compactMap { $0 }
                 let newSubtrees = subtrees.map({ subtree in
@@ -64,17 +62,14 @@ public struct CodeFormatter {
             alignmentRanges[start] = (lines.count, alignmentOffset)
         }
         
-        lines = alignedCodeLines(fromLines: lines, alignmentRanges: alignmentRanges)
-        
-        return codeString(fromLines: lines)
+        let stringLines = alignedStringCodeLines(fromLines: lines, alignmentRanges: alignmentRanges)
+        return codeString(fromStringLines: stringLines)
     }
     
-    private func codeString(fromLines lines: [CodeLine]) -> String {
+    private func codeString(fromStringLines lines: [String]) -> String {
         var codeString = ""
         for (index, line) in lines.enumerated() {
-            for component in line {
-                codeString.append(component)
-            }
+            codeString.append(line)
             
             if index < lines.count - 1 {
                 codeString.append("\n")
@@ -84,46 +79,35 @@ public struct CodeFormatter {
         return codeString
     }
     
-    private func alignedCodeLines(fromLines lines: [CodeLine],
-                                  alignmentRanges: [Int : (endLine: Int, offset: Int)]) -> [CodeLine] {
-        var returnLines = [CodeLine]()
+    private func alignedStringCodeLines(fromLines lines: [CodeLine],
+                                        alignmentRanges: [Int : (endLine: Int, offset: Int)]) -> [String] {
+        var stringLines = [String]()
         var lineIndex = 0
         while lineIndex < lines.count {
             guard let (endLineIndex, offset) = alignmentRanges[lineIndex] else {
-                returnLines.append(lines[lineIndex])
+                stringLines.append(lines[lineIndex].codeString(alignmentLength: nil))
                 lineIndex += 1
                 continue
             }
             
-            returnLines.append(contentsOf: alignedCodeLines(fromLines: lines[lineIndex..<endLineIndex].map { $0 },
-                                                           offset: offset))
+            let alignableLines = lines[lineIndex..<endLineIndex]
+            stringLines.append(contentsOf: alignedStringCodeLines(fromLines: alignableLines,
+                                                                  offset: offset))
             lineIndex = endLineIndex
         }
         
-        return returnLines
+        return stringLines
     }
     
-    private func alignedCodeLines(fromLines lines: [CodeLine], offset: Int) -> [CodeLine] {
+    private func alignedStringCodeLines<Data: Sequence>(fromLines lines: Data, offset: Int) -> [String]
+    where Data.Element == CodeLine
+    {
         guard offset >= 0 else {
             print("Offset in aligned code negative (\(offset)). Block is skipped.")
             return []
         }
         
-        var lengthsOfAllComponentsButLast = [Int?]()
-        for line in lines {
-            guard line.count > 1,
-                  !line.last!.trimmingCharacters(in: .whitespaces).isEmpty else {
-                lengthsOfAllComponentsButLast.append(nil)
-                continue
-            }
-            
-            let count = line[0..<(line.count-1)].reduce(0) { partialResult, string in
-                partialResult + string.count
-            }
-            lengthsOfAllComponentsButLast.append(count)
-        }
-        
-        let maxLength: Int? = lengthsOfAllComponentsButLast.reduce(nil) { partialResult, length in
+        let maxLength: Int? = lines.filter { $0.isAlignable }.map { $0.alignableLength }.reduce(nil) { partialResult, length in
             if let partialResult, let length {
                 return max(partialResult, length)
             } else if let length {
@@ -133,29 +117,64 @@ public struct CodeFormatter {
             }
         }
         
-        guard let maxLength else { return lines }
-        
-        var newLines = [CodeLine]()
-        for lineIndex in 0..<lines.count {
-            var line = lines[lineIndex]
-            guard let length = lengthsOfAllComponentsButLast[lineIndex] else {
-                newLines.append(line)
-                continue
+        var stringLines = [String]()
+        for line in lines {
+            let alignmentLength: Int?
+            if let maxLength {
+                alignmentLength = maxLength + offset
+            } else {
+                alignmentLength = nil
             }
             
-            line.insert(String(repeating: " ", count: maxLength - length + offset), at: line.count - 1)
-            newLines.append(line)
+            stringLines.append(line.codeString(alignmentLength: alignmentLength))
         }
         
-        return newLines
+        return stringLines
+    }
+}
+
+// MARK: - Code Line
+
+private struct CodeLine {
+    let mainString: String
+    let alignableComponent: String?
+    
+    var isAlignable: Bool { alignableComponent != nil }
+    
+    init(components: [String], alignableComponent: String?) {
+        self.mainString = components.reduce("", { partialResult, component in
+            partialResult + component
+        })
+        self.alignableComponent = alignableComponent
+    }
+    
+    func prefixed(by components: [String]) -> CodeLine {
+        CodeLine(components: components + [mainString],
+                 alignableComponent: alignableComponent)
+    }
+    
+    var alignableLength: Int? {
+        mainString.count
+    }
+    
+    func codeString(alignmentLength: Int?) -> String {
+        guard let alignmentLength,
+              let alignableComponent else {
+            if let alignableComponent {
+                return mainString + alignableComponent
+            } else {
+                return mainString
+            }
+        }
+        
+        return mainString + String(repeating: " ", count: alignmentLength - mainString.count) + alignableComponent
     }
 }
 
 // MARK: - Code Tree
 
 private enum CodeTree {
-    /// A code line is made of several `String`. This is used to separate code parts (usefull for alignment).
-    case line(components: [String])
+    case line(CodeLine)
     case group(subtrees: [CodeTree], option: CodeTreeOption?)
     
     func option(_ option: CodeTreeOption) -> CodeTree {
@@ -198,8 +217,11 @@ extension String: SwiftRootCode {
         if lines.isEmpty {
             lines.append("")
         }
-        return .group(subtrees: lines.map { .line(components: [$0]) },
-                      option: nil)
+        
+        return .group(subtrees: lines.map {
+            .line(CodeLine(components: [$0],
+                           alignableComponent: nil))
+        }, option: nil)
     }
 }
 
@@ -219,13 +241,13 @@ extension _AlignedContent: SwiftRootCode {
     }
 }
 
-extension _CodeComponentsLine: SwiftRootCode {
+extension _AlignableLine: SwiftRootCode {
     fileprivate func rootCodeTree() -> CodeTree? {
-        guard !components.contains(where: { $0.contains("\n") }) else {
+        guard !containsNewLinesCharacter() else {
             print("Cannot create line components code because one component contains a line break.")
             return nil
         }
-        return .line(components: components)
+        return .line(CodeLine(components: [mainCodeString], alignableComponent: alignableCode))
     }
 }
 

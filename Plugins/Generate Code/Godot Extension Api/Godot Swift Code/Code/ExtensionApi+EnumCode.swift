@@ -69,15 +69,18 @@ extension ExtensionApi.Enum {
                             .assign(value: ".\(property.caseName)")
                     }
                 }
-            }.aligned(1)
-        }.public()
+            }
+        }
+        .public()
+        .aligned(1)
     }
 
     private func optionSetCode<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> some SwiftCode {
         let nameAndCases = self.nameAndCases(forType: type, translated: translated)
 
         return OptionSet(nameAndCases.name,
-                         options: nameAndCases.cases,
-                         alignProperties: true).public()
+                         options: nameAndCases.cases)
+        .public()
+        .aligned(1)
     }
 }

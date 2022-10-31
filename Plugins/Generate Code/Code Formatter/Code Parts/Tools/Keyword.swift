@@ -1,14 +1,14 @@
 import Foundation
 
-extension _CodeComponentsLine {
-    func keywords(_ keywords: [Keyword]) -> _CodeComponentsLine {
-        _CodeComponentsLine(components: keywords.codeStringComponents() + components)
+extension _AlignableLine {
+    func keywords(_ keywords: [Keyword]) -> _AlignableLine {
+        _AlignableLine(components: keywords.codeStringComponents()) + self
     }
 }
 
 extension String {
-    func keywords(_ keywords: [Keyword]) -> _CodeComponentsLine {
-        _CodeComponentsLine(components: keywords.codeStringComponents() + [self])
+    func keywords(_ keywords: [Keyword]) -> _AlignableLine {
+        _AlignableLine(components: keywords.codeStringComponents() + [self])
     }
 }
 
