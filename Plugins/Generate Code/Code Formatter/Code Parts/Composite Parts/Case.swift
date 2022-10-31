@@ -3,7 +3,6 @@ import Foundation
 public struct Case: SwiftCode {
     let name: String
     let value: String?
-    fileprivate var alignmentLength: Int? = nil
     
     public init(_ name: String,
                 value: String? = nil) {

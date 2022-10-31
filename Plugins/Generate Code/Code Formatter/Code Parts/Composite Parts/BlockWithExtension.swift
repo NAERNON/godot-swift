@@ -1,12 +1,12 @@
 import Foundation
 
 /// A block with an extension like `Type: Extension1, Extension2`.
-public struct BlockWithExtension<Content>: SwiftCode where Content: SwiftCode {
+public struct BlockWithExtension<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
     let type: String
     let name: String
     let extensions: [String]
     let content: () -> Content
-    private var keywords: [Keyword] = []
+    private var accessControl: AccessControl? = nil
     
     public init(type: String,
                 name: String,
@@ -21,7 +21,7 @@ public struct BlockWithExtension<Content>: SwiftCode where Content: SwiftCode {
     public var body: some SwiftCode {
         Block(blockHeader()) {
             content()
-        }.keywords(keywords)
+        }.accessControl(accessControl)
     }
     
     private func blockHeader() -> String {
@@ -45,9 +45,9 @@ public struct BlockWithExtension<Content>: SwiftCode where Content: SwiftCode {
     
     // MARK: Modifiers
     
-    public func keywords(_ keywords: [Keyword]) -> BlockWithExtension<Content> {
+    public func accessControl(_ accessControl: AccessControl?) -> BlockWithExtension {
         var new = self
-        new.keywords = new.keywords + keywords
+        new.accessControl = accessControl
         return new
     }
 }

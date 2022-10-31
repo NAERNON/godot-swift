@@ -1,10 +1,10 @@
 import Foundation
 
-public struct Struct<Content>: SwiftCode where Content: SwiftCode {
+public struct Struct<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
     let name: String
     let extensions: [String]
     let content: () -> Content
-    fileprivate var keywords: [Keyword] = []
+    private var accessControl: AccessControl? = nil
     
     public init(_ name: String,
                 extensions: [String] = [],
@@ -16,20 +16,14 @@ public struct Struct<Content>: SwiftCode where Content: SwiftCode {
     
     public var body: some SwiftCode {
         BlockWithExtension(type: "struct", name: name, extensions: extensions, content: content)
-            .keywords(keywords)
+            .accessControl(accessControl)
     }
     
     // MARK: Modifiers
     
-    func `private`() -> Struct {
+    public func accessControl(_ accessControl: AccessControl?) -> Struct {
         var new = self
-        new.keywords.append(.private)
-        return new
-    }
-    
-    func `public`() -> Struct {
-        var new = self
-        new.keywords.append(.public)
+        new.accessControl = accessControl
         return new
     }
 }

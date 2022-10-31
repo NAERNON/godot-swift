@@ -1,70 +1,60 @@
 import Foundation
 
-public struct OptionSet<RawType>: SwiftCode where RawType: BinaryInteger {
+public struct OptionSet<RawType>: SwiftCode, AccessControlCode where RawType: BinaryInteger {
     let name: String
     let options: [(name: String, value: RawType)]
-    let additionalAlignmentLength: Int?
-    private var isPrivate: Bool = false
-    private var isPublic: Bool = false
+    let alignProperties: Bool
+    private var accessControl: AccessControl? = nil
     
     public init(_ name: String,
                 options: [(name: String, value: RawType)],
-                additionalAlignmentLength: Int? = nil) {
+                alignProperties: Bool = true) {
         self.name = name
         self.options = options
-        self.additionalAlignmentLength = additionalAlignmentLength
+        self.alignProperties = alignProperties
     }
     
     public var body: some SwiftCode {
         Struct(name, extensions: ["OptionSet"]) {
             Property("rawValue", typedValue: .none, type: RawType.self)
-                .withAccessControl(isPrivate: isPrivate, isPublic: isPublic)
+                .accessControl(innerPropertiesAccessControl)
             
             Spacer()
             
-            ForEach(options) { option in
-                Property(option.name, value: ".init(rawValue: " + option.value.description + ")", type: name)
-                    .withAccessControl(isPrivate: isPrivate, isPublic: isPublic)
-                    .static()
-            }.aligned(additionalAlignmentLength ?? 0)
-        }.withAccessControl(isPrivate: isPrivate, isPublic: isPublic)
+            if alignProperties {
+                properties.aligned(1)
+            } else {
+                properties
+            }
+        }.accessControl(accessControl)
+    }
+    
+    private var properties: some SwiftCode {
+        ForEach(options) { option in
+            Property(option.name, value: ".init(rawValue: " + option.value.description + ")", type: name)
+                .accessControl(innerPropertiesAccessControl)
+                .static()
+        }
+    }
+    
+    private var innerPropertiesAccessControl: AccessControl? {
+        guard let accessControl else {
+            return nil
+        }
+        
+        switch accessControl {
+        case .private, .fileprivate, .internal:
+            return nil
+        case .public:
+            return .public
+        }
     }
     
     // MARK: Modifiers
     
-    func `private`() -> some SwiftCode {
+    public func accessControl(_ accessControl: AccessControl?) -> OptionSet {
         var new = self
-        new.isPrivate = true
+        new.accessControl = accessControl
         return new
-    }
-    
-    func `public`() -> some SwiftCode {
-        var new = self
-        new.isPublic = true
-        return new
-    }
-}
-
-private extension Property {
-    func withAccessControl(isPrivate: Bool, isPublic: Bool) -> Property {
-        if isPrivate {
-            return self.private()
-        } else if isPublic {
-            return self.public()
-        } else {
-            return self
-        }
-    }
-}
-
-private extension Struct {
-    func withAccessControl(isPrivate: Bool, isPublic: Bool) -> some SwiftCode {
-        if isPrivate {
-            return self.private()
-        } else if isPublic {
-            return self.public()
-        } else {
-            return self
-        }
     }
 }

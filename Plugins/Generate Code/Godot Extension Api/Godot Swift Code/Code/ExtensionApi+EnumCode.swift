@@ -78,6 +78,6 @@ extension ExtensionApi.Enum {
 
         return OptionSet(nameAndCases.name,
                          options: nameAndCases.cases,
-                         additionalAlignmentLength: 1).public()
+                         alignProperties: true).public()
     }
 }
