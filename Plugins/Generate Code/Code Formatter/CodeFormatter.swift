@@ -59,6 +59,11 @@ public struct CodeFormatter {
             }
         }
         
+        // If the last line is also aligned, we need to check if at the end of the stack.
+        if let start = alignmentStart {
+            alignmentRanges[start] = (lines.count, alignmentOffset)
+        }
+        
         lines = alignedCodeLines(fromLines: lines, alignmentRanges: alignmentRanges)
         
         return codeString(fromLines: lines)
