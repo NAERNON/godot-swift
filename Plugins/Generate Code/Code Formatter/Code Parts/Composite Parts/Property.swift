@@ -21,8 +21,8 @@ public struct Property: SwiftCode, _AssignableProperty {
     
     // MARK: Modifiers
     
-    public func selfProperty() -> _SelfProperty {
-        _SelfProperty(property: self)
+    public func selfDefined() -> _SelfDefinedProperty {
+        _SelfDefinedProperty(property: self)
     }
     
     public func letDefined() -> _PropertyDefinition {
@@ -34,7 +34,7 @@ public struct Property: SwiftCode, _AssignableProperty {
     }
 }
 
-// MARK: - Self Property
+// MARK: - Self Defined Property
 
 /// A property with a self before the name.
 ///
@@ -42,7 +42,7 @@ public struct Property: SwiftCode, _AssignableProperty {
 /// ```
 /// self.aValue
 /// ```
-public struct _SelfProperty: SwiftCode, _AssignableProperty {
+public struct _SelfDefinedProperty: SwiftCode, _AssignableProperty {
     private let property: Property
     
     fileprivate init(property: Property) {
