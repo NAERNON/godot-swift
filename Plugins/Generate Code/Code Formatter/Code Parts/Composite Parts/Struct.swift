@@ -15,8 +15,9 @@ public struct Struct<Content>: SwiftCode, AccessControlCode where Content: Swift
     }
     
     public var body: some SwiftCode {
-        BlockWithExtension(type: "struct", name: name, extensions: extensions, content: content)
-            .accessControl(accessControl)
+        _Construct(type: "struct", name: name, extensions: extensions) {
+            content()
+        }.accessControl(accessControl)
     }
     
     // MARK: Modifiers

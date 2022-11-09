@@ -21,18 +21,16 @@ public struct Enum<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     }
     
     public var body: some SwiftCode {
-        Block(enumString) {
+        _Construct(type: "enum", name: name, extensions: extensions) {
             content()
         }.accessControl(accessControl)
     }
     
-    private var enumString: String {
-        var string = ""
-        string += "enum " + name
+    private var extensions: [String] {
         if let type {
-            string += ": " + type
+            return [type]
         }
-        return string
+        return []
     }
     
     // MARK: Modifiers

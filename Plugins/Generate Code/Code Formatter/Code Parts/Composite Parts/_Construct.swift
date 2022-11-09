@@ -1,17 +1,21 @@
 import Foundation
 
-/// A block with an extension like `Type: Extension1, Extension2`.
-public struct BlockWithExtension<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
+/// A construct is a type defined by a keyword, and that can have extensions.
+///
+/// Ex:
+/// ```
+/// class SomeClass: SomeExtension {
+///     ...
+/// }
+/// ```
+public struct _Construct<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
     let type: String
     let name: String
-    let extensions: [String]
     let content: () -> Content
+    let extensions: [String]
     private var accessControl: AccessControl? = nil
     
-    public init(type: String,
-                name: String,
-                extensions: [String],
-                @CodeBuilder content: @escaping () -> Content) {
+    public init(type: String, name: String, extensions: [String] = [], @CodeBuilder content: @escaping () -> Content) {
         self.type = type
         self.name = name
         self.extensions = extensions
@@ -19,12 +23,12 @@ public struct BlockWithExtension<Content>: SwiftCode, AccessControlCode where Co
     }
     
     public var body: some SwiftCode {
-        Block(blockHeader()) {
-            content()
-        }.accessControl(accessControl)
+        header().keywords(keywords)
+        content().indentation()
+        "}"
     }
     
-    private func blockHeader() -> String {
+    private func header() -> String {
         var header = type + " " + name
         
         guard !extensions.isEmpty else {
@@ -43,9 +47,16 @@ public struct BlockWithExtension<Content>: SwiftCode, AccessControlCode where Co
         return header
     }
     
+    private var keywords: [Keyword] {
+        if let accessControl {
+            return [accessControl.keyword]
+        }
+        return []
+    }
+    
     // MARK: Modifiers
     
-    public func accessControl(_ accessControl: AccessControl?) -> BlockWithExtension {
+    public func accessControl(_ accessControl: AccessControl?) -> _Construct {
         var new = self
         new.accessControl = accessControl
         return new
