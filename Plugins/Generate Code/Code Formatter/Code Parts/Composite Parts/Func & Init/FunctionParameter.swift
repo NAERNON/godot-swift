@@ -1,43 +1,88 @@
 import Foundation
 
 public struct FunctionParameter {
+    public enum Label {
+        case hidden
+        case name(String)
+        case none
+    }
+    
+    public enum DefaultValue {
+        case `nil`
+        case codeString(String)
+        case none
+    }
+    
     let name: String
     let type: String
-    let defaultValue: String?
-    let label: String?
-    let isImplicit: Bool
+    let defaultValue: DefaultValue
+    let label: Label
     
-    public init(name: String, type: String, defaultValue: String? = nil, label: String? = nil) {
+    private init(name: String, type: String, defaultValue: DefaultValue, label: Label) {
         self.name = name
         self.type = type
         self.defaultValue = defaultValue
         self.label = label
-        self.isImplicit = false
     }
     
-    public init(name: String, type: String, defaultValue: String? = nil, isImplicit: Bool) {
-        self.name = name
-        self.type = type
-        self.defaultValue = defaultValue
-        self.label = nil
-        self.isImplicit = isImplicit
+    public static func named(_ name: String,
+                             type: String,
+                             defaultValue: DefaultValue = .none,
+                             label: Label = .none) -> FunctionParameter {
+        FunctionParameter(name: name,
+                          type: type,
+                          defaultValue: defaultValue,
+                          label: label)
+    }
+    
+    public static func named<Parameter>(_ name: String,
+                                        type: Parameter.Type,
+                                        defaultValue: DefaultValue = .none,
+                                        label: Label = .none) -> FunctionParameter {
+        if case .nil = defaultValue {
+            fatalError("An unoptional parameter cannot have a nil default value.")
+        }
+        return FunctionParameter(name: name,
+                                 type: String(describing: Parameter.self),
+                                 defaultValue: defaultValue,
+                                 label: label)
+    }
+    
+    public static func named<Parameter>(_ name: String,
+                                        type: Optional<Parameter>.Type,
+                                        defaultValue: DefaultValue = .none,
+                                        label: Label = .none) -> FunctionParameter {
+        let typeString = String(describing: Parameter.self) + "?"
+        return FunctionParameter(name: name,
+                                 type: typeString,
+                                 defaultValue: defaultValue,
+                                 label: label)
     }
     
     func codeString() -> String {
         var codeString = ""
-        if isImplicit {
+        switch label {
+        case .hidden:
             codeString += "_ "
-        } else if let label {
-            codeString += label + " "
+        case .name(let name):
+            codeString += name + " "
+        case .none:
+            break
         }
         
         codeString += name
         codeString += ": "
         codeString += type
         
-        if let defaultValue {
-            codeString += " = " + defaultValue
+        switch defaultValue {
+        case .nil:
+            codeString += " = nil"
+        case .codeString(let string):
+            codeString += " = " + string
+        case .none:
+            break
         }
+        
         return codeString
     }
     

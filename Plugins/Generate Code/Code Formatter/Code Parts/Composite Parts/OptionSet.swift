@@ -18,7 +18,7 @@ public struct OptionSet<RawType>: SwiftCode, AccessControlCode where RawType: Bi
             
             Spacer()
             
-            Init(parameters: .init(name: "rawValue", type: String(describing: RawType.self))) {
+            Init(parameters: .named("rawValue", type: RawType.self)) {
                 Property("rawValue").selfProperty().assign(value: "rawValue").unaligned()
             }.accessControl(innerPropertiesAccessControl)
             

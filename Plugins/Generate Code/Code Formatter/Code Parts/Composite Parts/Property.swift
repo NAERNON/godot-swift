@@ -1,24 +1,14 @@
 import Foundation
 
-// MARK: - Base Property
-
-public protocol _BaseProperty: SwiftCode {
-    var body: _AlignableLine { get }
-}
-
-public extension _BaseProperty {
-    func letDefined() -> _PropertyDefinition<Self> {
-        _PropertyDefinition(self, definitionType: .let)
-    }
-    
-    func varDefined() -> _PropertyDefinition<Self> {
-        _PropertyDefinition(self, definitionType: .var)
-    }
-}
-
 // MARK: - Property
 
-public struct Property: SwiftCode, _BaseProperty, _AssignableProperty {
+/// A simple property with a name. This is the start for any definition or assignment.
+///
+/// Ex:
+/// ```
+/// aValue
+/// ```
+public struct Property: SwiftCode, _AssignableProperty {
     let name: String
     
     public init(_ name: String) {
@@ -34,11 +24,25 @@ public struct Property: SwiftCode, _BaseProperty, _AssignableProperty {
     public func selfProperty() -> _SelfProperty {
         _SelfProperty(property: self)
     }
+    
+    public func letDefined() -> _PropertyDefinition {
+        _PropertyDefinition(self, definitionType: .let)
+    }
+    
+    public func varDefined() -> _PropertyDefinition {
+        _PropertyDefinition(self, definitionType: .var)
+    }
 }
 
 // MARK: - Self Property
 
-public struct _SelfProperty: SwiftCode, _BaseProperty, _AssignableProperty {
+/// A property with a self before the name.
+///
+/// Ex:
+/// ```
+/// self.aValue
+/// ```
+public struct _SelfProperty: SwiftCode, _AssignableProperty {
     private let property: Property
     
     fileprivate init(property: Property) {
@@ -66,14 +70,20 @@ private enum DefinitionType {
     }
 }
 
-public struct _PropertyDefinition<PropertyType: _BaseProperty>: SwiftCode, _AssignableProperty, AccessControlCode {
-    private let property: PropertyType
+/// A property definition. It can be let defined or var defined.
+///
+/// Ex:
+/// ```
+/// let aValue
+/// ```
+public struct _PropertyDefinition: SwiftCode, _AssignableProperty, AccessControlCode {
+    private let property: Property
     private let definitionType: DefinitionType
     private var type: String?
     private var isStatic: Bool = false
     private var accessControl: AccessControl? = nil
     
-    fileprivate init(_ property: PropertyType, definitionType: DefinitionType) {
+    fileprivate init(_ property: Property, definitionType: DefinitionType) {
         self.property = property
         self.definitionType = definitionType
     }
@@ -139,6 +149,12 @@ public extension _AssignableProperty {
     }
 }
 
+/// A property assignment. A given property is followed by an `=`and a value.
+///
+/// Ex:
+/// ```
+/// let aValue = 3
+/// ```
 public struct _PropertyAssignment<PropertyType: _AssignableProperty>: SwiftCode {
     private let property: PropertyType
     private let value: String
