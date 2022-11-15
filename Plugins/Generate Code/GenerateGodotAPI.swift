@@ -28,8 +28,19 @@ struct GenerateGodotAPI: CommandPlugin {
             try FileManager.default.removeItem(atPath: generatedFilesPath.string)
         }
         
-        let file = GlobalEnumsFile(enums: extensionApi.globalEnums, translated: options.translatesCode)
-        try saveFile(file, withFormatter: codeFormatter, options: options, at: generatedFilesPath)
+        for generatedFile in generateAllGododFiles(withExtensionApi: extensionApi,
+                                                   codeFormatter: codeFormatter,
+                                                   translatesCode: options.translatesCode) {
+            try saveFile(generatedFile, withFormatter: codeFormatter, options: options, at: generatedFilesPath)
+        }
+    }
+    
+    private func generateAllGododFiles(withExtensionApi extensionApi: ExtensionApi,
+                                       codeFormatter: CodeFormatter,
+                                       translatesCode: Bool) -> [any SwiftFile] {
+        [
+            GlobalEnumsFile(enums: extensionApi.globalEnums, translated: translatesCode)
+        ]
     }
     
     private func saveFile(_ file: some SwiftFile,
