@@ -44,6 +44,7 @@ public struct _Construct<Content>: SwiftCode, AccessControlCode where Content: S
             header += " " + extensionName
         }
         
+        header += " {"
         return header
     }
     
