@@ -1,9 +1,9 @@
 import Foundation
 
 extension CodeLanguage {
-    public func translateEnum(to language: CodeLanguage,
-                              name: String,
-                              cases: [String]) -> (name: String, cases: [String]) {
+    public func translateEnum(name: String,
+                              cases: [String],
+                              to language: CodeLanguage) -> (name: String, cases: [String]) {
         switch self {
         case .swift:
             switch language {

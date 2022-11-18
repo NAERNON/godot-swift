@@ -1,8 +1,11 @@
 import Foundation
 
 public enum NamingConvention {
+    /// `camelNamingConvention`.
     case camel
+    /// `PascalNamingConvention`.
     case pascal
+    /// `snake_naming_convention`.
     case snake
     
     // MARK: Convert
