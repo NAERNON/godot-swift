@@ -39,7 +39,8 @@ struct GenerateGodotAPI: CommandPlugin {
                                        codeFormatter: CodeFormatter,
                                        translatesCode: Bool) -> [any SwiftFile] {
         [
-            GlobalEnumsFile(enums: extensionApi.globalEnums, translated: translatesCode)
+            GlobalEnumsFile(enums: extensionApi.globalEnums, translated: translatesCode),
+            UtilityFunctionsFile(functions: extensionApi.utilityFunctions, translated: translatesCode),
         ]
     }
     

@@ -18,6 +18,16 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         self.content = content
     }
     
+    public init(name: String,
+                parameters: [FunctionParameter],
+                returnType: String? = nil,
+                @CodeBuilder content: @escaping () -> Content) {
+        self.name = name
+        self.parameters = parameters
+        self.returnType = returnType
+        self.content = content
+    }
+    
     public var body: some SwiftCode {
         mainLineString.keywords(keywords)
         content().indentation()
