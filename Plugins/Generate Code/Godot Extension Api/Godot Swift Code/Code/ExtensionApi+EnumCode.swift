@@ -23,9 +23,9 @@ extension ExtensionApi.Enum {
     private func nameAndCases<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> (name: String,
                                                                                             cases: [CaseData<T>]) {
         let translatedEnum = CodeLanguage.c.translateEnum(
-            to: translated ? .swift : .c,
             name: name,
-            cases: values.map { $0.name }
+            cases: values.map { $0.name },
+            to: translated ? .swift : .c
         )
 
         var cases = [(String, T)]()

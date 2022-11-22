@@ -61,6 +61,44 @@ public enum CodeBuilder {
         _TupleCode5(c0, c1, c2, c3, c4)
     }
     
+    public static func buildBlock<C0, C1, C2, C3, C4, C5>(
+        _ c0: C0,
+        _ c1: C1,
+        _ c2: C2,
+        _ c3: C3,
+        _ c4: C4,
+        _ c5: C5
+    ) -> _TupleCode6<C0, C1, C2, C3, C4, C5>
+    where C0: SwiftCode,
+          C1: SwiftCode,
+          C2: SwiftCode,
+          C3: SwiftCode,
+          C4: SwiftCode,
+          C5: SwiftCode
+    {
+        _TupleCode6(c0, c1, c2, c3, c4, c5)
+    }
+    
+    public static func buildBlock<C0, C1, C2, C3, C4, C5, C6>(
+        _ c0: C0,
+        _ c1: C1,
+        _ c2: C2,
+        _ c3: C3,
+        _ c4: C4,
+        _ c5: C5,
+        _ c6: C6
+    ) -> _TupleCode7<C0, C1, C2, C3, C4, C5, C6>
+    where C0: SwiftCode,
+          C1: SwiftCode,
+          C2: SwiftCode,
+          C3: SwiftCode,
+          C4: SwiftCode,
+          C5: SwiftCode,
+          C6: SwiftCode
+    {
+        _TupleCode7(c0, c1, c2, c3, c4, c5, c6)
+    }
+    
     // MARK: Either
     
     public static func buildEither<TrueContent, FalseContent>(
@@ -87,6 +125,14 @@ public enum CodeBuilder {
             component
         } else {
             EmptyCode()
+        }
+    }
+    
+    // MARK: Loop
+    
+    public static func buildArray<Content>(_ components: [Content]) -> some SwiftCode where Content: SwiftCode {
+        ForEach(components) { component in
+            component
         }
     }
 }

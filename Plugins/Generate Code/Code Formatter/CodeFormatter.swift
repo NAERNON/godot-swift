@@ -330,3 +330,28 @@ extension _TupleCode5: SwiftRootCode {
                option: nil)
     }
 }
+
+extension _TupleCode6: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        .group(subtrees: [code0.codeTree(),
+                          code1.codeTree(),
+                          code2.codeTree(),
+                          code3.codeTree(),
+                          code4.codeTree(),
+                          code5.codeTree()].compactMap { $0 },
+               option: nil)
+    }
+}
+
+extension _TupleCode7: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        .group(subtrees: [code0.codeTree(),
+                          code1.codeTree(),
+                          code2.codeTree(),
+                          code3.codeTree(),
+                          code4.codeTree(),
+                          code5.codeTree(),
+                          code6.codeTree()].compactMap { $0 },
+               option: nil)
+    }
+}

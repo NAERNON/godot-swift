@@ -38,8 +38,8 @@ extension CodeLanguage {
         var isLabelHidden = true
         for parameter in parameters {
             // If the previous label is hidden and that either :
-            // - the next parameter is made of only one caracter
-            // - there is only one caracter
+            // - the next parameter is made of only one character
+            // - there is only one character
             // then the label is hidden.
             isLabelHidden = isLabelHidden && (parameter.name.count == 1 || parameters.count == 1)
             translatedParameters.append(
