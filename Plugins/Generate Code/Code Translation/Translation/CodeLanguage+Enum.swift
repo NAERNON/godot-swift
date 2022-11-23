@@ -46,7 +46,8 @@ extension CodeLanguage {
             let component = firstCaseComponents[numberOfComponentsToRemove]
             var areSameComponents = true
             for caseComponents in casesComponents {
-                if caseComponents[numberOfComponentsToRemove] != component {
+                if caseComponents.count <= numberOfComponentsToRemove
+                    || caseComponents[numberOfComponentsToRemove] != component {
                     areSameComponents = false
                     break
                 }
@@ -59,7 +60,9 @@ extension CodeLanguage {
         
         var editedCasesComponents = casesComponents
         for caseIndex in 0..<editedCasesComponents.count {
-            editedCasesComponents[caseIndex].removeFirst(numberOfComponentsToRemove)
+            if editedCasesComponents[caseIndex].count > numberOfComponentsToRemove {
+                editedCasesComponents[caseIndex].removeFirst(numberOfComponentsToRemove)
+            }
         }
         
         var casesStrings = [String]()

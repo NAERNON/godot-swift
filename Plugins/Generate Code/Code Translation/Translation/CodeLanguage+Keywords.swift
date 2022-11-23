@@ -15,7 +15,8 @@ extension CodeLanguage {
         case "continue",
             "enum",
             "internal",
-            "default":
+            "default",
+            "repeat":
             shouldBeProtected = true
         default: shouldBeProtected = false
         }
