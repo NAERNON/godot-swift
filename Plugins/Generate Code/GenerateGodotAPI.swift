@@ -41,13 +41,13 @@ struct GenerateGodotAPI: CommandPlugin {
                                        translatesCode: Bool) -> [any SwiftFile] {
         [
             GlobalEnumsFile(enums: extensionApi.globalEnums, translated: translatesCode),
-            UtilityFunctionsFile(functions: extensionApi.utilityFunctions, translated: translatesCode),
+            UtilityFunctionsFile(functions: extensionApi.utilityFunctions, translated: translatesCode)
         ]
-        
         +
-        
         extensionApi.classes.map({ `class` in
-            ClassFile(class: `class`, translated: translatesCode).insideDirectory("Classes")
+            ClassFile(class: `class`, translated: translatesCode)
+                .insideDirectory(NamingConvention.snake.convert(string: `class`.apiType, to: .pascal))
+                .insideDirectory("Classes")
         })
     }
     
