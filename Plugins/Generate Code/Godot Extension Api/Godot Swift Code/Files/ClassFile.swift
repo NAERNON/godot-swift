@@ -16,28 +16,6 @@ struct ClassFile: SwiftFile {
         
         Spacer()
         
-        Class(`class`.name, extensions: extensions) {
-            enumsCode
-        }.public()
-    }
-    
-    private var extensions: [String] {
-        if let superclass = `class`.inherits {
-            return [superclass]
-        }
-        return []
-    }
-    
-    @CodeBuilder
-    private var enumsCode: some SwiftCode {
-        if let enums = `class`.enums {
-            Mark(text: "Enums", isSeparator: true)
-            
-            for `enum` in enums {
-                Spacer()
-                
-                `enum`.code(translated: translated)
-            }
-        }
+        `class`.code(translated: translated)
     }
 }
