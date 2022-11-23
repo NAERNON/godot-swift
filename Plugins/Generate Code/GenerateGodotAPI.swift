@@ -21,17 +21,18 @@ struct GenerateGodotAPI: CommandPlugin {
         let options = try Options(arguments: arguments)
         
         let codeFormatter = CodeFormatter()
-        let generatedFilesPath = godotTarget.directory.appending(["_Generated"])
+        let generatedFilesDirectoryPath = godotTarget.directory.appending(["_Generated"])
+        let generatedFilesDirectoryURL = URL(fileURLWithPath: generatedFilesDirectoryPath.string, isDirectory: true)
         
         if !options.printInsteadOfSave,
-           FileManager.default.fileExists(atPath: generatedFilesPath.string) {
-            try FileManager.default.removeItem(atPath: generatedFilesPath.string)
+           FileManager.default.fileExists(atPath: generatedFilesDirectoryURL.path) {
+            try FileManager.default.removeItem(atPath: generatedFilesDirectoryURL.path)
         }
         
         for generatedFile in generateAllGododFiles(withExtensionApi: extensionApi,
                                                    codeFormatter: codeFormatter,
                                                    translatesCode: options.translatesCode) {
-            try saveFile(generatedFile, withFormatter: codeFormatter, options: options, at: generatedFilesPath)
+            try saveFile(generatedFile, withFormatter: codeFormatter, options: options, at: generatedFilesDirectoryPath)
         }
     }
     
@@ -48,29 +49,29 @@ struct GenerateGodotAPI: CommandPlugin {
                           withFormatter codeFormatter: CodeFormatter,
                           options: Options,
                           at path: Path) throws {
-        Diagnostics.remark("Generating file named named \"\(file.name)\".")
+        Diagnostics.remark("Generating file named named \"\(file.name())\".")
         
         let code = prefixedCode(file.code)
         let codeString = codeFormatter.codeString(from: code)
         
         guard !options.printInsteadOfSave else {
-            print("-----BEGIN PRINT \"\(file.name)\"-----")
+            print("-----BEGIN PRINT \"\(file.name())\"-----")
             print(codeString)
-            print("-----END PRINT \"\(file.name)\"-----")
+            print("-----END PRINT \"\(file.name())\"-----")
             return
         }
         
         let data = codeString.data(using: .utf8)!
         
         let fileManager = FileManager.default
-        let filePath = path.appending([file.name])
-        if !fileManager.fileExists(atPath: path.string) {
-            try fileManager.createDirectory(atPath: path.string, withIntermediateDirectories: true)
+        let filePath = path.appending([file.path])
+        
+        let filePathWithoutFileName = filePath.removingLastComponent()
+        if !fileManager.fileExists(atPath: filePathWithoutFileName.string) {
+            try fileManager.createDirectory(atPath: filePathWithoutFileName.string, withIntermediateDirectories: true)
         }
         
-        if !fileManager.createFile(atPath: filePath.string, contents: data) {
-            Diagnostics.error("Cannot save file named \"\(file.name)\".")
-        }
+        try data.write(to: URL(fileURLWithPath: filePath.string))
     }
     
     @CodeBuilder
