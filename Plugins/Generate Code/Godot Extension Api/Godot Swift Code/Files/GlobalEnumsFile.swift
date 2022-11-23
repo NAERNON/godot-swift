@@ -1,7 +1,7 @@
 import Foundation
 
 struct GlobalEnumsFile: SwiftFile {
-    let name = "GlobalEnums.swift"
+    let path = "GlobalEnums.swift"
     let enums: [ExtensionApi.Enum]
     let translated: Bool
 

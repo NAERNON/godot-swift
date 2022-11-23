@@ -1,7 +1,7 @@
 import Foundation
 
 struct UtilityFunctionsFile: SwiftFile {
-    let name = "UtilityFunctions.swift"
+    let path = "UtilityFunctions.swift"
     let functions: [ExtensionApi.UtilityFunction]
     let translated: Bool
     
