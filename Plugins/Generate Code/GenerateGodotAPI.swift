@@ -43,6 +43,12 @@ struct GenerateGodotAPI: CommandPlugin {
             GlobalEnumsFile(enums: extensionApi.globalEnums, translated: translatesCode),
             UtilityFunctionsFile(functions: extensionApi.utilityFunctions, translated: translatesCode),
         ]
+        
+        +
+        
+        extensionApi.classes.map({ `class` in
+            ClassFile(class: `class`, translated: translatesCode).insideDirectory("Classes")
+        })
     }
     
     private func saveFile(_ file: some SwiftFile,

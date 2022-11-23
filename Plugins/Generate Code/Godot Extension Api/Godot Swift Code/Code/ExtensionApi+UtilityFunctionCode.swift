@@ -1,5 +1,7 @@
 import Foundation
 
+#warning("We are never using the isVararg argument from UtilityFunction. Is this a feature or a bug ?")
+
 extension ExtensionApi.UtilityFunction {
     func code(functionPointerName: String, translated: Bool) -> some SwiftCode {
         let nameAndParameters = self.nameAndParameters(translated: translated)
