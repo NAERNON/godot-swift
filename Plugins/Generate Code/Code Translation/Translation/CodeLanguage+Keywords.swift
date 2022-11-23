@@ -1,5 +1,13 @@
 import Foundation
 
+private let protectedStrings: Set<String> = [
+    "continue",
+    "enum",
+    "internal",
+    "default",
+    "repeat"
+]
+
 extension CodeLanguage {
     /// Returns a `String` value where the given `String` doesn't collide with the compiler.
     ///
@@ -10,21 +18,10 @@ extension CodeLanguage {
             return string
         }
         
-        let shouldBeProtected: Bool
-        switch string {
-        case "continue",
-            "enum",
-            "internal",
-            "default",
-            "repeat":
-            shouldBeProtected = true
-        default: shouldBeProtected = false
+        if protectedStrings.contains(string) {
+            return "`" + string + "`"
         }
         
-        guard shouldBeProtected else {
-            return string
-        }
-        
-        return "`" + string + "`"
+        return string
     }
 }
