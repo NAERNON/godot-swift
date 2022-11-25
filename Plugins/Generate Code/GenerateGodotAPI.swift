@@ -24,7 +24,7 @@ struct GenerateGodotAPI: CommandPlugin {
         let generatedFilesDirectoryPath = godotTarget.directory.appending(["_Generated"])
         let generatedFilesDirectoryURL = URL(fileURLWithPath: generatedFilesDirectoryPath.string, isDirectory: true)
         
-        if !options.printInsteadOfSave,
+        if options.writesFiles,
            FileManager.default.fileExists(atPath: generatedFilesDirectoryURL.path) {
             try FileManager.default.removeItem(atPath: generatedFilesDirectoryURL.path)
         }
@@ -60,10 +60,13 @@ struct GenerateGodotAPI: CommandPlugin {
         let code = prefixedCode(file.code)
         let codeString = codeFormatter.codeString(from: code)
         
-        guard !options.printInsteadOfSave else {
+        if options.print {
             print("-----BEGIN PRINT \"\(file.name())\"-----")
             print(codeString)
             print("-----END PRINT \"\(file.name())\"-----")
+        }
+        
+        guard options.writesFiles else {
             return
         }
         
@@ -98,11 +101,15 @@ private struct Options {
     }
     
     let translatesCode: Bool
-    let printInsteadOfSave: Bool
+    let print: Bool
+    let noWrite: Bool
+    
+    var writesFiles: Bool { !noWrite }
     
     init(arguments: [String]) throws {
         var translatesCode = true
-        var printInsteadOfSave = false
+        var print = false
+        var noWrite = false
         
         var index = 0
         while index < arguments.count {
@@ -111,8 +118,11 @@ private struct Options {
             case "--untranslated":
                 translatesCode = false
                 index += 1
-            case "--print":
-                printInsteadOfSave = true
+            case "--print", "-p":
+                print = true
+                index += 1
+            case "--nowrite", "-nw":
+                noWrite = true
                 index += 1
             default:
                 throw InitError.unrecognizedArgument(argument)
@@ -120,6 +130,7 @@ private struct Options {
         }
         
         self.translatesCode = translatesCode
-        self.printInsteadOfSave = printInsteadOfSave
+        self.print = print
+        self.noWrite = noWrite
     }
 }
