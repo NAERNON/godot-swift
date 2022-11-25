@@ -13,6 +13,8 @@ struct ClassFile: SwiftFile {
     
     var code: some SwiftCode {
         Import.foundation
+        Import.godotExtension
+        Import.godotExtensionHeaders
         
         Spacer()
         

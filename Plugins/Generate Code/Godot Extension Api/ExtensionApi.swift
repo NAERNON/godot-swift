@@ -30,6 +30,15 @@ struct ExtensionApi: Codable {
     struct Argument: Codable {
         let name: String
         let type: String
+        let meta: String?
+        let defaultValue: String?
+        
+        private enum CodingKeys: String, CodingKey {
+            case name
+            case type
+            case meta
+            case defaultValue = "default_value"
+        }
     }
     
     // MARK: - Header
@@ -249,20 +258,21 @@ struct ExtensionApi: Codable {
             let arguments: [Argument]?
             
             private enum CodingKeys: String, CodingKey {
-                case name = "name"
+                case name
                 case isConst = "is_const"
                 case isVararg = "is_vararg"
                 case isStatic = "is_static"
                 case isVirtual = "is_virtual"
-                case hash = "hash"
+                case hash
                 case returnValue = "return_value"
-                case arguments = "arguments"
+                case arguments
             }
             
             // MARK: Return value
             
             struct ReturnValue: Codable {
                 let type: String
+                let meta: String?
             }
         }
     }
