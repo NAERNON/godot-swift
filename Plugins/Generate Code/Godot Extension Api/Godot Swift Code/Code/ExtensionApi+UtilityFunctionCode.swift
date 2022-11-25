@@ -11,13 +11,7 @@ extension ExtensionApi.UtilityFunction {
         return Func(name: nameAndParameters.name,
                     parameters: codeParameters(withLanguageParameters: nameAndParameters.parameters),
                     returnType: convertedReturnType) {
-            If(functionPointerName + " == nil") {
-                "\"\(name)\".withCString { cName in"
-                Property(functionPointerName).assign(value: functionPointerAssignedValue).indentation()
-                "}"
-            }
-            
-            Guard(condition: "let function = \(functionPointerName)") {
+            Guard(condition: "let functionPtr = " + functionPointerName) {
                 "printGodotError(\"Method bind was not found. Likely the engine method changed to an incompatible version.\")"
                 if let returnType {
                     Return(ExtensionApi.defaultValue(forType: returnType))
@@ -80,10 +74,10 @@ extension ExtensionApi.UtilityFunction {
                 .letDefined()
                 .assign(value: "UnsafeMutablePointer<\(convertedReturnType)>.allocate(capacity: 1)")
             
-            "function(\(returnPointerName), \(argumentsArrayPointerName), \(parametersCount))"
+            "functionPtr(\(returnPointerName), \(argumentsArrayPointerName), \(parametersCount))"
             Property(returnValueName).letDefined().assign(value: returnPointerName + ".pointee")
         } else {
-            "function(nil, \(argumentsArrayPointerName), \(parametersCount))"
+            "functionPtr(nil, \(argumentsArrayPointerName), \(parametersCount))"
         }
     }
     
@@ -104,9 +98,7 @@ extension ExtensionApi.UtilityFunction {
         var parameters = [FunctionParameter]()
         for (index, argument) in arguments.enumerated() {
             let languageParameter = languageParameters[index]
-            parameters.append(.named(languageParameter.name,
-                                     type: ExtensionApi.convert(type: argument.type),
-                                     label: languageParameter.functionParameterLabel))
+            parameters.append(argument.functionParameter(withLanguageParameter: languageParameter))
         }
         
         return parameters
@@ -116,10 +108,6 @@ extension ExtensionApi.UtilityFunction {
         guard let returnType else { return nil }
         
         return ExtensionApi.convert(type: returnType)
-    }
-    
-    private var functionPointerAssignedValue: String {
-        "GodotLibrary.main.interface?.variant_get_ptr_utility_function(cName, \(hash))"
     }
     
     private func parameterPointerName(with name: String) -> String {
