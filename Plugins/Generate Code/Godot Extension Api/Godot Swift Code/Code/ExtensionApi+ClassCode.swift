@@ -21,7 +21,11 @@ extension ExtensionApi.Class {
     private func methodsCode(translated: Bool) -> some SwiftCode {
         if let methods {
             for method in methods {
+                Spacer()
+                method.code(className: name, methodPointerName: methodPointerName(with: method), translated: translated)
+                
                 if let hash = method.hash {
+                    Spacer()
                     methodPointerDefinitionCode(with: method, methodHash: hash)
                 }
             }
