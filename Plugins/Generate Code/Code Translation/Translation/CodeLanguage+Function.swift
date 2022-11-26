@@ -55,7 +55,7 @@ extension CodeLanguage {
         name: String,
         parameters: [FunctionParameter]
     ) -> (name: String, parameters: [FunctionParameter]) {
-        var nameComponents = NamingConvention.camel.decompose(string: name)
+        var nameDecomposition = NamingConvention.camel.decompose(string: name)
         
         // If there is only one parameter, we will use its label to add to the name
         // Example: doSomething(withVariable variable) -> do_something_with_variable(variable)
@@ -67,12 +67,12 @@ extension CodeLanguage {
             if labelComponents.count > 1 {
                 let acceptedKeywords = Set(["with", "for"])
                 if acceptedKeywords.contains(labelComponents[0]) {
-                    nameComponents += labelComponents
+                    nameDecomposition = nameDecomposition + labelComponents
                 }
             }
         }
         
-        let translatedName = NamingConvention.snake.recompose(components: nameComponents)
+        let translatedName = NamingConvention.snake.recompose(nameDecomposition)
         let translatedParameters = parameters.map { parameter in
             FunctionParameter(name: NamingConvention.camel.convert(string: parameter.name, to: .snake),
                               label: nil,

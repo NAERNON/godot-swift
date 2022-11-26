@@ -1,7 +1,9 @@
 import Foundation
 
 extension NamingConvention {
-    func decompose(string: String) -> [String] {
+    typealias Decomposition = [String]
+    
+    func decompose(string: String) -> Decomposition {
         switch self {
         case .camel:
             return NamingConvention.decomposeCamelOrPascalCase(string: string)
@@ -12,7 +14,7 @@ extension NamingConvention {
         }
     }
     
-    static func decomposeCamelOrPascalCase(string: String) -> [String] {
+    static func decomposeCamelOrPascalCase(string: String) -> Decomposition {
         var stringComponents = [String]()
         
         var component = ""
@@ -43,14 +45,34 @@ extension NamingConvention {
             stringComponents.append(component)
         }
         
-        if stringComponents.isEmpty {
-            stringComponents = [""]
-        }
-        
         return stringComponents
     }
     
-    static func decomposeSnakeCase(string: String) -> [String] {
-        return string.components(separatedBy: "_").map { $0.lowercased() }
+    static func decomposeSnakeCase(string: String) -> Decomposition {
+        var stringComponents = [String]()
+        
+        var component = ""
+        var previousCharacterIsUnderscore = true
+        for char in string {
+            let shouldAddCharacterToComponent: Bool
+            if char == "_" && !previousCharacterIsUnderscore {
+                stringComponents.append(component)
+                component = ""
+                shouldAddCharacterToComponent = false
+            } else {
+                shouldAddCharacterToComponent = true
+            }
+            
+            if shouldAddCharacterToComponent {
+                component.append(char)
+            }
+            previousCharacterIsUnderscore = char == "_"
+        }
+        
+        if !component.isEmpty {
+            stringComponents.append(component)
+        }
+        
+        return stringComponents
     }
 }

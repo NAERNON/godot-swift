@@ -1,20 +1,20 @@
 import Foundation
 
 extension NamingConvention {
-    func recompose(components: [String]) -> String {
+    func recompose(_ decomposition: Decomposition) -> String {
         switch self {
         case .camel:
-            return NamingConvention.recomposeCamelOrPascalCase(components: components, uppercaseFirstChar: false)
+            return NamingConvention.recomposeCamelOrPascalCase(decomposition, uppercaseFirstChar: false)
         case .pascal:
-            return NamingConvention.recomposeCamelOrPascalCase(components: components, uppercaseFirstChar: true)
+            return NamingConvention.recomposeCamelOrPascalCase(decomposition, uppercaseFirstChar: true)
         case .snake:
-            return NamingConvention.recomposeSnakeCase(components: components)
+            return NamingConvention.recomposeSnakeCase(decomposition)
         }
     }
     
-    static func recomposeCamelOrPascalCase(components: [String], uppercaseFirstChar: Bool) -> String {
+    static func recomposeCamelOrPascalCase(_ decomposition: Decomposition, uppercaseFirstChar: Bool) -> String {
         var string = ""
-        for (index, component) in components.enumerated() {
+        for (index, component) in decomposition.enumerated() {
             if index == 0 && !uppercaseFirstChar {
                 string.append(component.lowercased())
                 continue
@@ -24,9 +24,12 @@ extension NamingConvention {
             if isAllUppercase {
                 string.append(component)
             } else {
-                for (charIndex, char) in component.enumerated() {
-                    if charIndex == 0 {
+                // We uppercase the first char which is not an underscore.
+                var isFirstLetterUppercased = false
+                for char in component {
+                    if !isFirstLetterUppercased && char != "_" {
                         string.append(char.uppercased())
+                        isFirstLetterUppercased = true
                     } else {
                         string.append(char.lowercased())
                     }
@@ -37,12 +40,12 @@ extension NamingConvention {
         return string
     }
     
-    static func recomposeSnakeCase(components: [String]) -> String {
+    static func recomposeSnakeCase(_ decomposition: Decomposition) -> String {
         var string = ""
-        for (index, component) in components.enumerated() {
+        for (index, component) in decomposition.enumerated() {
             string.append(component.lowercased())
             
-            if index < components.count-1 {
+            if index < decomposition.count-1 && string.last != "_" {
                 string.append("_")
             }
         }

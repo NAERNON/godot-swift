@@ -70,11 +70,11 @@ extension CodeLanguage {
         
         for caseIndex in 0..<casesComponents.count {
             let editedCaseComponents = editedCasesComponents[caseIndex]
-            var caseString = NamingConvention.camel.recompose(components: editedCaseComponents)
+            var caseString = NamingConvention.camel.recompose(editedCaseComponents)
             
             /// If the case string generated is empty, or doesn't begin with a letter, we use the original components, not the one without the same components..
             if caseString.isEmpty || !caseString.first!.isLetter {
-                caseString = NamingConvention.camel.recompose(components: casesComponents[caseIndex])
+                caseString = NamingConvention.camel.recompose(casesComponents[caseIndex])
             }
             
             guard casesStringsSet.insert(caseString).inserted else {
@@ -93,7 +93,7 @@ extension CodeLanguage {
         
         let translatedCases = cases.map { caseString in
             let caseStringComponents = NamingConvention.camel.decompose(string: caseString)
-            let convertedString = NamingConvention.snake.recompose(components: nameComponents + caseStringComponents)
+            let convertedString = NamingConvention.snake.recompose(nameComponents + caseStringComponents)
             return convertedString.uppercased()
         }
         
