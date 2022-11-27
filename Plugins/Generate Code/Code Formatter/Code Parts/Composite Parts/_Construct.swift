@@ -31,17 +31,15 @@ public struct _Construct<Content>: SwiftCode, AccessControlCode where Content: S
     private func header() -> String {
         var header = type + " " + name
         
-        guard !extensions.isEmpty else {
-            return header
-        }
-        
-        header += ":"
-        for (index, extensionName) in extensions.enumerated() {
-            if index > 0 {
-                header += ","
+        if !extensions.isEmpty {
+            header += ":"
+            for (index, extensionName) in extensions.enumerated() {
+                if index > 0 {
+                    header += ","
+                }
+                
+                header += " " + extensionName
             }
-            
-            header += " " + extensionName
         }
         
         header += " {"
