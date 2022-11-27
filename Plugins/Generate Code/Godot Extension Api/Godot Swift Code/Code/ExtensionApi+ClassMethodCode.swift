@@ -11,29 +11,39 @@ extension ExtensionApi.Class.Method {
         let funcCode = Func(name: nameAndParameters.name,
                             parameters: codeParameters(withLanguageParameters: nameAndParameters.parameters),
                             returnType: convertedReturnType) {
-            Guard(condition: "let methodPtr = \(className).\(methodPointerName)") {
-                "printGodotError(\"Method bind was not found. Likely the engine method changed to an incompatible version.\")"
+            // If the function is virtual, then it seems that no hash is given, so no pointer
+            // can be retreived. It is just a very simple function.
+            if isVirtual {
                 if let returnValue {
                     Return(ExtensionApi.defaultValue(forType: returnValue.type))
-                } else {
-                    Return()
+                }
+            } else {
+                Guard(condition: "let methodPtr = \(className).\(methodPointerName)") {
+                    "printGodotError(\"Method bind was not found. Likely the engine method changed to an incompatible version.\")"
+                    if let returnValue {
+                        Return(ExtensionApi.defaultValue(forType: returnValue.type))
+                    } else {
+                        Return()
+                    }
+                }
+                
+                Group {
+                    Spacer()
+                    parametersPointerAllocation(withNames: parametersNames, arguments: arguments)
+                    Spacer()
+                    methodCall()
+                    Spacer()
+                    parametersPointerDeallocation(withNames: parametersNames, arguments: arguments)
+                }
+                
+                if returnValue != nil {
+                    Spacer()
+                    Return(returnValueName)
                 }
             }
-            
-            Group {
-                Spacer()
-                parametersPointerAllocation(withNames: parametersNames, arguments: arguments)
-                Spacer()
-                methodCall()
-                Spacer()
-                parametersPointerDeallocation(withNames: parametersNames, arguments: arguments)
-            }
-            
-            if returnValue != nil {
-                Spacer()
-                Return(returnValueName)
-            }
-        }.public()
+        }
+            .public()
+            .final()
         
         if isStatic {
             return funcCode.static()
