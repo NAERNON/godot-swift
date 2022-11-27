@@ -7,6 +7,7 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     let content: () -> Content
     private var accessControl: AccessControl? = nil
     private var isStatic: Bool = false
+    private var isFinal: Bool = false
     
     public init(name: String,
                 parameters: FunctionParameter...,
@@ -48,6 +49,9 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         if isStatic {
             keywords.append(.static)
         }
+        if isFinal {
+            keywords.append(.final)
+        }
         if let accessControl {
             keywords.append(accessControl.keyword)
         }
@@ -65,6 +69,12 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     public func `static`() -> Func {
         var new = self
         new.isStatic = true
+        return new
+    }
+    
+    public func `final`() -> Func {
+        var new = self
+        new.isFinal = true
         return new
     }
 }

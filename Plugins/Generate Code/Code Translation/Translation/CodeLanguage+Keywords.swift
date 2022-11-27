@@ -5,7 +5,8 @@ private let protectedStrings: Set<String> = [
     "enum",
     "internal",
     "default",
-    "repeat"
+    "repeat",
+    "final"
 ]
 
 extension CodeLanguage {

@@ -19,6 +19,7 @@ public enum Keyword {
     case `fileprivate`
     case `internal`
     case `public`
+    case `final`
     
     fileprivate var string: String {
         switch self {
@@ -27,6 +28,7 @@ public enum Keyword {
         case .fileprivate: return "fileprivate"
         case .internal: return "internal"
         case .public: return "public"
+        case .final: return "final"
         }
     }
     
@@ -36,10 +38,12 @@ public enum Keyword {
     /// cannot be together on the same statement.
     fileprivate var priority: Int {
         switch self {
-        case .static:
-            return 10
         case .private, .fileprivate, .internal, .public:
             return 100
+        case .static:
+            return 50
+        case .final:
+            return 10
         }
     }
 }
@@ -53,7 +57,7 @@ private extension Array where Element == Keyword {
         }
         
         return priorityToKeyword.values
-            .sorted { $0.priority < $1.priority }
+            .sorted { $0.priority > $1.priority }
             .map { $0.string + " " }
     }
 }
