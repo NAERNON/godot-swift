@@ -3,6 +3,7 @@
 
 import PackageDescription
 
+#warning("v12 really ?")
 let package = Package(
     name: "Godot Swift",
     platforms: [.macOS(.v12)],

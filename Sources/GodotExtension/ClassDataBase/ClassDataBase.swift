@@ -44,10 +44,8 @@ public final class ClassDataBase {
                               toStringFunction: @escaping GDNativeExtensionClassToString,
                               createInstanceFunction: @escaping GDNativeExtensionClassCreateInstance,
                               freeInstanceFunction: @escaping GDNativeExtensionClassFreeInstance) -> Bool {
-        printGodotError("Cannot register already registered class.")
-
         guard nameToUnmanagedClass[name] == nil else {
-            printGodotError("Cannot register already registered class.")
+            printGodotError("Cannot register class \(name) because it is already registered.")
             return false
         }
         
@@ -143,12 +141,12 @@ T::notification_bind, // GDNativeExtensionClassNotification notification_func;
     public func registerFunction(withDefinition functionDefinition: FunctionDefinition,
                                  callFunction: GDNativeExtensionClassMethodCall) -> Bool {
         guard let classBind = nameToUnmanagedClass[functionDefinition.className]?.takeUnretainedValue() else {
-            printGodotError("Cannot register function because the class doesn't exist.")
+            printGodotError("Cannot register function \(functionDefinition.name) because the class doesn't exist.")
             return false
         }
         
         guard !classBind.functionExists(withSignature: functionDefinition.signature) else {
-            printGodotError("Cannot register function because the class alreay registered the same function name.")
+            printGodotError("Cannot register function \(functionDefinition.name) because it is already registered.")
             return false
         }
         
