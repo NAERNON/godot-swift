@@ -90,10 +90,10 @@ extension ExtensionApi.Class.Method {
                 .letDefined()
                 .assign(value: "UnsafeMutablePointer<\(convertedReturnType)>.allocate(capacity: 1)")
             
-            "GodotLibrary.main.interface?.object_method_bind_call(methodPtr, __owner__TOREPLACE, \(argumentsArrayPointerName), \(returnPointerName))"
+            "GodotLibrary.main.interface?.object_method_bind_ptrcall(methodPtr, __owner__TOREPLACE, \(argumentsArrayPointerName), \(returnPointerName))"
             Property(returnValueName).letDefined().assign(value: returnPointerName + ".pointee")
         } else {
-            "GodotLibrary.main.interface?.object_method_bind_call(methodPtr, __owner__TOREPLACE, \(argumentsArrayPointerName), nil)"
+            "GodotLibrary.main.interface?.object_method_bind_ptrcall(methodPtr, __owner__TOREPLACE, \(argumentsArrayPointerName), nil)"
         }
     }
     
