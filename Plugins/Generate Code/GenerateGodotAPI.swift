@@ -55,9 +55,11 @@ struct GenerateGodotAPI: CommandPlugin {
                           withFormatter codeFormatter: CodeFormatter,
                           options: Options,
                           at path: Path) throws {
-        Diagnostics.remark("Generating file named named \"\(file.name())\".")
+        Diagnostics.remark("Generating file named \"\(file.name())\".")
         
         let code = prefixedCode(file.code)
+        
+        print("Generating \(file.path.components(separatedBy: "/").last ?? file.path)")
         let codeString = codeFormatter.codeString(from: code)
         
         if options.print {
@@ -92,45 +94,5 @@ struct GenerateGodotAPI: CommandPlugin {
         Spacer()
         
         code
-    }
-}
-
-private struct Options {
-    enum InitError: Error {
-        case unrecognizedArgument(String)
-    }
-    
-    let translatesCode: Bool
-    let print: Bool
-    let noWrite: Bool
-    
-    var writesFiles: Bool { !noWrite }
-    
-    init(arguments: [String]) throws {
-        var translatesCode = true
-        var print = false
-        var noWrite = false
-        
-        var index = 0
-        while index < arguments.count {
-            let argument = arguments[index]
-            switch argument {
-            case "--untranslated":
-                translatesCode = false
-                index += 1
-            case "--print", "-p":
-                print = true
-                index += 1
-            case "--nowrite", "-nw":
-                noWrite = true
-                index += 1
-            default:
-                throw InitError.unrecognizedArgument(argument)
-            }
-        }
-        
-        self.translatesCode = translatesCode
-        self.print = print
-        self.noWrite = noWrite
     }
 }
