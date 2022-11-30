@@ -32,6 +32,10 @@ public struct _AlignableLine: SwiftCode {
         }
     }
     
+    static func + (lhs: _AlignableLine, rhs: String) -> _AlignableLine {
+        lhs + _AlignableLine(rhs)
+    }
+    
     func containsNewLinesCharacter() -> Bool {
         if mainCodeString.unicodeScalars.contains(where: { char in
             CharacterSet.newlines.contains(char)
