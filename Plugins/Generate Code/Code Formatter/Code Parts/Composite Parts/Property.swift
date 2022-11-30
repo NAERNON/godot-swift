@@ -147,6 +147,14 @@ public extension _AssignableProperty {
     func assign(value: String?) -> _PropertyAssignment<Self> {
         _PropertyAssignment(self, value: value ?? "nil")
     }
+    
+    func computed(inline: String) -> _PropertyComputed<Self, EmptyCode> {
+        _PropertyComputed(self, inline: inline)
+    }
+    
+    func computed<Content: SwiftCode>(@CodeBuilder content: @escaping () -> Content) -> _PropertyComputed<Self, Content> {
+        _PropertyComputed(self, content: content)
+    }
 }
 
 /// A property assignment. A given property is followed by an `=`and a value.
@@ -183,5 +191,39 @@ public struct _PropertyAssignment<PropertyType: _AssignableProperty>: SwiftCode 
         var new = self
         new.isAlignable = false
         return new
+    }
+}
+
+/// A computed property with some content.
+///
+/// Ex:
+/// ```
+/// var aValue: Int { 3 }
+/// ```
+public struct _PropertyComputed<PropertyType: _AssignableProperty, Content: SwiftCode>: SwiftCode {
+    private let property: PropertyType
+    private let inlineString: String?
+    private let content: (() -> Content)?
+    
+    fileprivate init(_ property: PropertyType, content: @escaping () -> Content) {
+        self.property = property
+        self.inlineString = nil
+        self.content = content
+    }
+    
+    fileprivate init(_ property: PropertyType, inline string: String) {
+        self.property = property
+        self.inlineString = string
+        self.content = nil
+    }
+    
+    public var body: some SwiftCode {
+        if let inlineString {
+            property.body + " { " + inlineString + " }"
+        } else if let content = content?() {
+            property.body + " {"
+            content.indentation()
+            "}"
+        }
     }
 }
