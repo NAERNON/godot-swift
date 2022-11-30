@@ -3,8 +3,8 @@ import Foundation
 /// The structure representing the file `extension_api.json`.
 struct ExtensionApi: Codable {
     let header: Header
-    let builtinClassSizes: [ClassSize]
-    let builtinClassMemberOffsets: [MemberOffset]
+    let builtinClassSizes: [ClassSizes]
+    let builtinClassMemberOffsets: [MemberOffsets]
 //-- not used but defined in the json file --//    let globalConstants
     let globalEnums: [Enum]
     let utilityFunctions: [UtilityFunction]
@@ -61,9 +61,9 @@ struct ExtensionApi: Codable {
         }
     }
     
-    // MARK: - Class size
+    // MARK: - Class sizes
     
-    struct ClassSize: Codable {
+    struct ClassSizes: Codable {
         let buildConfiguration: String
         let sizes: [Size]
         
@@ -80,9 +80,9 @@ struct ExtensionApi: Codable {
         }
     }
     
-    // MARK: - Member offset
+    // MARK: - Member offsets
     
-    struct MemberOffset: Codable {
+    struct MemberOffsets: Codable {
         let buildConfiguration: String
         let classes: [Class]
         

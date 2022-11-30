@@ -31,15 +31,22 @@ struct GenerateGodotAPI: CommandPlugin {
         
         for generatedFile in generateAllGododFiles(withExtensionApi: extensionApi,
                                                    codeFormatter: codeFormatter,
+                                                   buildConfiguration: options.buildConfiguration,
                                                    translatesCode: options.translatesCode) {
             try saveFile(generatedFile, withFormatter: codeFormatter, options: options, at: generatedFilesDirectoryPath)
         }
     }
     
+    // MARK: Generate code
+    
     private func generateAllGododFiles(withExtensionApi extensionApi: ExtensionApi,
                                        codeFormatter: CodeFormatter,
+                                       buildConfiguration: BuildConfiguration,
                                        translatesCode: Bool) -> [any SwiftFile] {
-        [
+        let builtinClassSizes = extensionApi.builtinClassSizes.first { $0.buildConfiguration == buildConfiguration.rawValue }!
+        let memberOffsets = extensionApi.builtinClassMemberOffsets.first { $0.buildConfiguration == buildConfiguration.rawValue }!
+        
+        return [
             GlobalEnumsFile(enums: extensionApi.globalEnums, translated: translatesCode),
             UtilityFunctionsFile(functions: extensionApi.utilityFunctions, translated: translatesCode)
         ]
@@ -48,8 +55,27 @@ struct GenerateGodotAPI: CommandPlugin {
             ClassFile(class: `class`, translated: translatesCode)
                 .insideDirectory(NamingConvention.snake.convert(string: `class`.apiType, to: .pascal))
                 .insideDirectory("Classes")
+        extensionApi.builtinClasses.filter({ !$0.isPodType }).map({ builtinClass in
+            BuiltinClassFile(builtinClass: builtinClass,
+                             builtinClassSizes: builtinClassSizes,
+                             builtinClassMemberOffset: memberOffsets,
+                             translated: translatesCode)
+                .insideDirectory("Builtin Classes")
         })
     }
+    
+    @CodeBuilder
+    private func prefixedCode(_ code: some SwiftCode) -> some SwiftCode {
+        Comment(style: .line) {
+            "THIS FILE IS GENERATED. EDITS WILL BE LOST."
+        }
+        
+        Spacer()
+        
+        code
+    }
+    
+    // MARK: Save file
     
     private func saveFile(_ file: some SwiftFile,
                           withFormatter codeFormatter: CodeFormatter,
@@ -83,16 +109,5 @@ struct GenerateGodotAPI: CommandPlugin {
         }
         
         try data.write(to: URL(fileURLWithPath: filePath.string))
-    }
-    
-    @CodeBuilder
-    private func prefixedCode(_ code: some SwiftCode) -> some SwiftCode {
-        Comment(style: .line) {
-            "THIS FILE IS GENERATED. EDITS WILL BE LOST."
-        }
-        
-        Spacer()
-        
-        code
     }
 }
