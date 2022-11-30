@@ -38,12 +38,8 @@ extension ExtensionApi.Class {
         Group {
             Property("methodPtr").varDefined().type("GDNativeMethodBindPtr?")
             
-            CStringDefinition(string: name, name: "classCName") {
-                CStringDefinition(string: method.name, name: "methodCName") {
-                    Property("methodPtr")
-                        .assign(value: "GodotLibrary.main.interface?.classdb_get_method_bind(classCName, methodCName, \(methodHash))")
-                }
-            }
+            Property("methodPtr")
+                .assign(value: "GodotLibrary.main.interface?.classdb_get_method_bind(\"\(name)\", \"\(method.name)\", \(methodHash))")
             
             Return("methodPtr")
         }.indentation()

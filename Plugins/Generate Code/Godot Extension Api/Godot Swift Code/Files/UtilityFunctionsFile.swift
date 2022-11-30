@@ -33,10 +33,8 @@ struct UtilityFunctionsFile: SwiftFile {
         Group {
             Property("functionPtr").varDefined().type("GDNativePtrUtilityFunction?")
             
-            CStringDefinition(string: function.name, name: "cName") {
-                Property("functionPtr")
-                    .assign(value: "GodotLibrary.main.interface?.variant_get_ptr_utility_function(cName, \(function.hash))")
-            }
+            Property("functionPtr")
+                .assign(value: "GodotLibrary.main.interface?.variant_get_ptr_utility_function(\"\(function.name)\", \(function.hash))")
             
             Return("functionPtr")
         }.indentation()
