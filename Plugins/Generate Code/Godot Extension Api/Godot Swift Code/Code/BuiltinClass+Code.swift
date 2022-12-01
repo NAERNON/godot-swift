@@ -17,7 +17,13 @@ extension ExtensionApi.BuiltinClass {
     
     @CodeBuilder
     private func nativePtrCode(classSize: Int) -> some SwiftCode {
-        Property("opaque").letDefined().type("_Opaque").private().assign(value: ".init(size: \(classSize))")
+        Property("opaque").letDefined().type("_Opaque").private().assignComputed {
+            if hasDestructor {
+                ".init(size: \(classSize), destructorPtr: \(name).\(destructorPtrName()))"
+            } else {
+                ".init(size: \(classSize))"
+            }
+        }
         Spacer()
         Comment(style: .doc) {
             "The pointer to the underlying object. Should only be called by the `GodotLibrary`."
@@ -65,11 +71,11 @@ extension ExtensionApi.BuiltinClass {
         Mark(text: "Bindings", isSeparator: false).padding(top: 1, bottom: 1)
         
         for constructor in constructors {
-            Property(constructorMethodName(index: constructor.index))
+            Property(constructorPtrName(index: constructor.index))
                 .varDefined().private().static().type("GDNativePtrConstructor!")
         }
         if hasDestructor {
-            Property(destructorMethodName()).varDefined().private().static().type("GDNativePtrDestructor!")
+            Property(destructorPtrName()).varDefined().private().static().type("GDNativePtrDestructor!")
         }
         
         Spacer()
@@ -86,11 +92,11 @@ This function should only called by the `GodotLibrary`.
         }
         Func(name: "setInitAndDeinitBindings", parameters: .named("interface", type: "GDNativeInterface", label: .name("with"))) {
             for constructor in constructors {
-                Property(constructorMethodName(index: constructor.index))
+                Property(constructorPtrName(index: constructor.index))
                     .assign(value: "interface.variant_get_ptr_constructor(\(variantTypeName), \(constructor.index))")
             }
             if hasDestructor {
-                Property(destructorMethodName())
+                Property(destructorPtrName())
                     .assign(value: "interface.variant_get_ptr_destructor(\(variantTypeName))")
             }
         }.public().static()
@@ -118,11 +124,11 @@ This function should only called by the `GodotLibrary`.
         return NamingConvention.snake.convert(string: name.lowercased(), to: .camel)
     }
     
-    private func constructorMethodName(index: Int) -> String {
+    private func constructorPtrName(index: Int) -> String {
         "_constructor\(index)"
     }
     
-    private func destructorMethodName() -> String {
+    private func destructorPtrName() -> String {
         "_destructor"
     }
     
