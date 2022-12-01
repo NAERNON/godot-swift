@@ -148,6 +148,11 @@ public extension _AssignableProperty {
         _PropertyAssignment(self, value: value ?? "nil")
     }
     
+    func assignComputed<Content: SwiftCode>(@CodeBuilder content: @escaping () -> Content)
+    -> _PropertyComputedAssignment<Self, Content> {
+        _PropertyComputedAssignment(self, content: content)
+    }
+    
     func computed(inline: String) -> _PropertyComputed<Self, EmptyCode> {
         _PropertyComputed(self, inline: inline)
     }
@@ -193,6 +198,32 @@ public struct _PropertyAssignment<PropertyType: _AssignableProperty>: SwiftCode 
         return new
     }
 }
+
+/// A property computed assignment. A given property is followed by an `=`and a block.
+///
+/// Ex:
+/// ```
+/// let aValue = {
+///     3
+/// }()
+/// ```
+public struct _PropertyComputedAssignment<PropertyType: _AssignableProperty, Content: SwiftCode>: SwiftCode {
+    private let property: PropertyType
+    private let content: () -> Content
+    
+    fileprivate init(_ property: PropertyType, @CodeBuilder content: @escaping () -> Content) {
+        self.property = property
+        self.content = content
+    }
+    
+    public var body: some SwiftCode {
+        property.body + " = {"
+        content().indentation()
+        "}()"
+    }
+}
+
+// MARK: - Computed var
 
 /// A computed property with some content.
 ///
