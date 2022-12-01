@@ -22,13 +22,13 @@ internal class _Opaque {
     }
     
     deinit {
+        destructorPtr?(ptr)
+        
         data.deinitialize(count: size)
         data.deallocate()
         
         dataPtr.deinitialize(count: 1)
         dataPtr.deallocate()
-        
-        destructorPtr?(ptr)
     }
     
     var ptr: UnsafeMutableRawPointer {
