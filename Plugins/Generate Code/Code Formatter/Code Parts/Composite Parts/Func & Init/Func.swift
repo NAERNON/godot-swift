@@ -13,10 +13,10 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
                 parameters: FunctionParameter...,
                 returnType: String? = nil,
                 @CodeBuilder content: @escaping () -> Content) {
-        self.name = name
-        self.parameters = parameters
-        self.returnType = returnType
-        self.content = content
+        self.init(name: name,
+                  parameters: Array(parameters),
+                  returnType: returnType,
+                  content: content)
     }
     
     public init(name: String,

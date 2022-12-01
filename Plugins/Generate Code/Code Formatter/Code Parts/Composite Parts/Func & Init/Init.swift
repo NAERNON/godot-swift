@@ -6,6 +6,10 @@ public struct Init<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     private var accessControl: AccessControl? = nil
     
     public init(parameters: FunctionParameter..., @CodeBuilder content: @escaping () -> Content) {
+        self.init(parameters: Array(parameters), content: content)
+    }
+    
+    public init(parameters: [FunctionParameter], @CodeBuilder content: @escaping () -> Content) {
         self.parameters = parameters
         self.content = content
     }
