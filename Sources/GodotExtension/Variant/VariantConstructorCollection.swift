@@ -11,9 +11,9 @@ final class VariantConstructorCollection {
         let constructor = VariantConstructorCollection()
         
         for variant in VariantType.allCases where variant != .nil {
-            constructor.fromTypeConstructors[variant] = GodotLibrary.main.interface?
+            constructor.fromTypeConstructors[variant] = GodotLibrary.main.interface
                 .get_variant_from_type_constructor(variant.godotType)
-            constructor.toTypeConstructors[variant] = GodotLibrary.main.interface?
+            constructor.toTypeConstructors[variant] = GodotLibrary.main.interface
                 .get_variant_to_type_constructor(variant.godotType)
         }
         

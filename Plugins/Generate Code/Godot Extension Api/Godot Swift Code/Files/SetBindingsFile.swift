@@ -10,15 +10,15 @@ struct SetBindingsFile: SwiftFile {
     
     var code: some SwiftCode {
         Import.foundation
-        Import.godotExtensionHeaders
         Import.godot
         
         Spacer()
         
-        Func(name: "setInitAndDeinitBindingsOnBuiltinClasses",
-             parameters: .named("interface", type: "GDNativeInterface", label: .name("with"))) {
-            for builtinClass in builtinClasses {
-                "Godot." + builtinClass.name + ".setInitAndDeinitBindings(with: interface)"
+        Extension("GodotLibrary") {
+            Func(name: "setBindingsOnBuiltinClasses") {
+                for builtinClass in builtinClasses {
+                    "Godot." + builtinClass.name + ".setBindings(with: interface)"
+                }
             }
         }.internal()
     }

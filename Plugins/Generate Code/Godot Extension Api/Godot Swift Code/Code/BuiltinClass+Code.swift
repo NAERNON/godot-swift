@@ -10,7 +10,7 @@ extension ExtensionApi.BuiltinClass {
             membersCode(with: members, translated: translated)
             constantsCode(translated: translated)
             enumCode(translated: translated)
-            setInitAndDeinitBindingsCode()
+            setBindingsCode()
             constructorsCode(translated: translated)
         }.public()
     }
@@ -19,7 +19,7 @@ extension ExtensionApi.BuiltinClass {
     private func nativePtrCode(classSize: Int) -> some SwiftCode {
         Property("opaque").letDefined().type("_Opaque").private().assignComputed {
             if hasDestructor {
-                ".init(size: \(classSize), destructorPtr: \(name).\(destructorPtrName()))"
+                ".init(size: \(classSize), destructorPtr: Self.\(destructorPtrName()))"
             } else {
                 ".init(size: \(classSize))"
             }
@@ -67,8 +67,10 @@ extension ExtensionApi.BuiltinClass {
     }
     
     @CodeBuilder
-    private func setInitAndDeinitBindingsCode() -> some SwiftCode {
+    private func setBindingsCode() -> some SwiftCode {
         Mark(text: "Bindings", isSeparator: false).padding(top: 1, bottom: 1)
+        
+        Property("interface").varDefined().static().internal().type("GDNativeInterface!").padding(bottom: 1)
         
         for constructor in constructors {
             Property(constructorPtrName(index: constructor.index))
@@ -82,7 +84,7 @@ extension ExtensionApi.BuiltinClass {
         
         Comment(style: .doc) {
 """
-Sets the constructors and destructor pointers used to communicate with Godot.
+Sets all the bindings used to communicate with Godot, as well as the static `interface` property.
 
 This function must be called before the creation of any `\(name)` instance since the bindings will be needed
 for any initialization.
@@ -90,7 +92,11 @@ for any initialization.
 This function should only called by the `GodotLibrary`.
 """
         }
-        Func(name: "setInitAndDeinitBindings", parameters: .named("interface", type: "GDNativeInterface", label: .name("with"))) {
+        Func(name: "setBindings", parameters: .named("interface", type: "GDNativeInterface", label: .name("with"))) {
+            Property("self.interface").assign(value: "interface")
+            
+            Spacer()
+            
             for constructor in constructors {
                 Property(constructorPtrName(index: constructor.index))
                     .assign(value: "interface.variant_get_ptr_constructor(\(variantTypeName), \(constructor.index))")
@@ -111,7 +117,7 @@ This function should only called by the `GodotLibrary`.
             Init(parameters: constructorArguments(forConstructor: constructor, translated: translated)) {
                 PointerArray(pointersNames: constructorArgumentsPointers(forConstructor: constructor, translated: translated),
                              arrayPointerName: "_arrayPtr") {
-                    name + "." + constructorPtrName(index: constructor.index) + "(self.nativePtr, _arrayPtr)"
+                    "Self." + constructorPtrName(index: constructor.index) + "(self.nativePtr, _arrayPtr)"
                 }
             }.public()
         }

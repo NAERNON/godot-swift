@@ -11,8 +11,8 @@ public final class GodotLibrary {
     public static let main = GodotLibrary()
     
     /// The pointer to the Godot native interface.
-    private var interfacePtr: UnsafePointer<GDNativeInterface>?
-    public var interface: GDNativeInterface? { interfacePtr?.pointee }
+    private var interfacePtr: UnsafePointer<GDNativeInterface>!
+    public var interface: GDNativeInterface { interfacePtr.pointee }
     
     var libraryPtr: GDNativeExtensionClassLibraryPtr?
     
@@ -46,10 +46,8 @@ public final class GodotLibrary {
         initializationPtr.pointee.deinitialize = deinitializeLevel
         initializationPtr.pointee.minimum_initialization_level = minimumInitializationLevel
         
+        setBindingsOnBuiltinClasses()
         Variant.sharedConstructorCollection = .loaded()
-        if let interface {
-            setInitAndDeinitBindingsOnBuiltinClasses(with: interface)
-        }
         
         return GDNativeTrue
     }
@@ -62,9 +60,9 @@ public final class GodotLibrary {
                line: Int = #line,
                isError: Bool) {
         if isError {
-            interfacePtr?.pointee.print_error(message, function, file, Int32(line))
+            interfacePtr.pointee.print_error(message, function, file, Int32(line))
         } else {
-            interfacePtr?.pointee.print_warning(message, function, file, Int32(line))
+            interfacePtr.pointee.print_warning(message, function, file, Int32(line))
         }
     }
 }
