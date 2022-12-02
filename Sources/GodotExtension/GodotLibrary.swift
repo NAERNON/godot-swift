@@ -47,6 +47,9 @@ public final class GodotLibrary {
         initializationPtr.pointee.minimum_initialization_level = minimumInitializationLevel
         
         Variant.sharedConstructorCollection = .loaded()
+        if let interface {
+            setInitAndDeinitBindingsOnBuiltinClasses(with: interface)
+        }
         
         return GDNativeTrue
     }

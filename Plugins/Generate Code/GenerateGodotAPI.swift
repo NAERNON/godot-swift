@@ -4,12 +4,13 @@ import Foundation
 @main
 struct GenerateGodotAPI: CommandPlugin {
     func performCommand(context: PackagePlugin.PluginContext, arguments: [String]) async throws {
-        guard let extensionHeaderTarget = try context.package.targets(named: ["GodotExtensionHeaders"]).first,
+        guard let godotExtensionHeadersTarget = try context.package.targets(named: ["GodotExtensionHeaders"]).first,
+              let godotExtensionTarget = try context.package.targets(named: ["GodotExtension"]).first,
               let godotTarget = try context.package.targets(named: ["Godot"]).first else {
             return
         }
 
-        let extensionApiFilePath = extensionHeaderTarget.directory.appending(["include", "extension_api.json"])
+        let extensionApiFilePath = godotExtensionHeadersTarget.directory.appending(["include", "extension_api.json"])
         let extensionApiFileUrl = URL(fileURLWithPath: extensionApiFilePath.string)
         let data = try Data(contentsOf: extensionApiFileUrl)
         
@@ -19,49 +20,63 @@ struct GenerateGodotAPI: CommandPlugin {
         // MARK: Generate files
         
         let options = try Options(arguments: arguments)
-        
         let codeFormatter = CodeFormatter()
-        let generatedFilesDirectoryPath = godotTarget.directory.appending(["_Generated"])
-        let generatedFilesDirectoryURL = URL(fileURLWithPath: generatedFilesDirectoryPath.string, isDirectory: true)
         
-        if options.writesFiles,
-           FileManager.default.fileExists(atPath: generatedFilesDirectoryURL.path) {
-            try FileManager.default.removeItem(atPath: generatedFilesDirectoryURL.path)
+        // Delete _Generated directories if needed before making new ones.
+        if options.writesFiles {
+            try godotTarget.removeGeneratedDirectoryIfNecessary()
+            try godotExtensionTarget.removeGeneratedDirectoryIfNecessary()
         }
         
-        for generatedFile in generateAllGododFiles(withExtensionApi: extensionApi,
-                                                   codeFormatter: codeFormatter,
-                                                   buildConfiguration: options.buildConfiguration,
-                                                   translatesCode: options.translatesCode) {
-            try saveFile(generatedFile, withFormatter: codeFormatter, options: options, at: generatedFilesDirectoryPath)
+        let (godotFiles, godotExtensionFiles) = generateGododFiles(withExtensionApi: extensionApi,
+                                                                   codeFormatter: codeFormatter,
+                                                                   buildConfiguration: options.buildConfiguration,
+                                                                   translatesCode: options.translatesCode)
+        
+        for file in godotFiles {
+            try saveFile(file, withFormatter: codeFormatter, options: options, at: godotTarget.generatedPath)
+        }
+
+        for file in godotExtensionFiles {
+            try saveFile(file, withFormatter: codeFormatter, options: options, at: godotExtensionTarget.generatedPath)
         }
     }
     
     // MARK: Generate code
     
-    private func generateAllGododFiles(withExtensionApi extensionApi: ExtensionApi,
-                                       codeFormatter: CodeFormatter,
-                                       buildConfiguration: BuildConfiguration,
-                                       translatesCode: Bool) -> [any SwiftFile] {
+    private func generateGododFiles(withExtensionApi extensionApi: ExtensionApi,
+                                    codeFormatter: CodeFormatter,
+                                    buildConfiguration: BuildConfiguration,
+                                    translatesCode: Bool) -> (godotFiles: [any SwiftFile], godotExtensionFiles: [any SwiftFile]) {
         let builtinClassSizes = extensionApi.builtinClassSizes.first { $0.buildConfiguration == buildConfiguration.rawValue }!
         let memberOffsets = extensionApi.builtinClassMemberOffsets.first { $0.buildConfiguration == buildConfiguration.rawValue }!
+        let builtinClassesToGenerate = extensionApi.builtinClasses.filter({ !$0.isPodType })
         
-        return [
+        let utilityFiles: [any SwiftFile] = [
             GlobalEnumsFile(enums: extensionApi.globalEnums, translated: translatesCode),
             UtilityFunctionsFile(functions: extensionApi.utilityFunctions, translated: translatesCode)
         ]
-        +
-        extensionApi.classes.map({ `class` in
+        
+        let classesFiles: [any SwiftFile] = extensionApi.classes.map({ `class` in
             ClassFile(class: `class`, translated: translatesCode)
                 .insideDirectory(NamingConvention.snake.convert(string: `class`.apiType, to: .pascal))
                 .insideDirectory("Classes")
-        extensionApi.builtinClasses.filter({ !$0.isPodType }).map({ builtinClass in
+        })
+        
+        let builtinClassesFiles: [any SwiftFile] = builtinClassesToGenerate.map({ builtinClass in
             BuiltinClassFile(builtinClass: builtinClass,
                              builtinClassSizes: builtinClassSizes,
                              builtinClassMemberOffset: memberOffsets,
                              translated: translatesCode)
-                .insideDirectory("Builtin Classes")
+                .insideDirectory("Builtin Structs")
         })
+        
+        let setBindingsFiles: [any SwiftFile] = [
+            SetBindingsFile(builtinClasses: builtinClassesToGenerate)
+        ]
+        
+        return (utilityFiles /*+ classesFiles */+ builtinClassesFiles,
+                setBindingsFiles)
     }
     
     @CodeBuilder
@@ -109,5 +124,21 @@ struct GenerateGodotAPI: CommandPlugin {
         }
         
         try data.write(to: URL(fileURLWithPath: filePath.string))
+    }
+}
+
+private extension Target {
+    var generatedPath: Path {
+        self.directory.appending(["_Generated"])
+    }
+    
+    var generatedURL: URL {
+        URL(fileURLWithPath: generatedPath.string, isDirectory: true)
+    }
+    
+    func removeGeneratedDirectoryIfNecessary() throws {
+        if FileManager.default.fileExists(atPath: self.generatedURL.path) {
+            try FileManager.default.removeItem(atPath: self.generatedURL.path)
+        }
     }
 }

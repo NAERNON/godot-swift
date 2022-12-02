@@ -20,12 +20,12 @@ let package = Package(
             dependencies: []
         ),
         .target(
-            name: "GodotExtension",
+            name: "Godot",
             dependencies: ["GodotExtensionHeaders"]
         ),
         .target(
-            name: "Godot",
-            dependencies: ["GodotExtension", "GodotExtensionHeaders"]
+            name: "GodotExtension",
+            dependencies: ["GodotExtensionHeaders", "Godot"]
         ),
         
         .plugin(

@@ -1,7 +1,7 @@
 import Foundation
 import GodotExtensionHeaders
 
-internal class _Opaque {
+internal final class _Opaque {
     typealias Data = UnsafeMutablePointer<UInt8>
     
     private let dataPtr: UnsafeMutablePointer<Data>
