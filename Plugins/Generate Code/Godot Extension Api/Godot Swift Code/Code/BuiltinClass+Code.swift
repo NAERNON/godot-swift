@@ -151,7 +151,13 @@ This function should only called by the `GodotLibrary`.
             return []
         }
         
-        return arguments.map { $0.functionParameter(translated: translated) }
+        return arguments.map { argument in
+            var parameter = argument.functionParameter(translated: translated)
+            if parameter.name == "from" {
+                parameter.name = NamingConvention.pascal.convert(string: parameter.type, to: .camel)
+            }
+            return parameter
+        }
     }
     
     private func constructorArgumentsPointers(forConstructor constructor: ExtensionApi.BuiltinClass.Constructor,

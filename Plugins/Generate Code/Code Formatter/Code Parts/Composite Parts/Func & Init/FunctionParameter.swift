@@ -13,10 +13,10 @@ public struct FunctionParameter {
         case none
     }
     
-    let name: String
-    let type: String
-    let defaultValue: DefaultValue
-    let label: Label
+    var name: String
+    var type: String
+    var defaultValue: DefaultValue
+    var label: Label
     
     private init(name: String, type: String, defaultValue: DefaultValue, label: Label) {
         self.name = name
