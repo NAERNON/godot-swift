@@ -109,7 +109,10 @@ This function should only called by the `GodotLibrary`.
         for constructor in constructors {
             Spacer()
             Init(parameters: constructorArguments(forConstructor: constructor, translated: translated)) {
-                "// DO SOMETHING HERE"
+                PointerArray(pointersNames: constructorArgumentsPointers(forConstructor: constructor, translated: translated),
+                             arrayPointerName: "_arrayPtr") {
+                    name + "." + constructorPtrName(index: constructor.index) + "(self.nativePtr, _arrayPtr)"
+                }
             }.public()
         }
     }
@@ -143,5 +146,13 @@ This function should only called by the `GodotLibrary`.
         }
         
         return arguments.map { $0.functionParameter(translated: translated) }
+    }
+    
+    private func constructorArgumentsPointers(forConstructor constructor: ExtensionApi.BuiltinClass.Constructor,
+                                              translated: Bool) -> [String] {
+        let arguments = constructorArguments(forConstructor: constructor, translated: translated)
+        return arguments.map { parameter in
+            parameter.name + ".nativePtr"
+        }
     }
 }
