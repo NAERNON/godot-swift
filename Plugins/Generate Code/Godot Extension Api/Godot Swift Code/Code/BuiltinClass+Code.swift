@@ -46,10 +46,13 @@ extension ExtensionApi.BuiltinClass {
     @CodeBuilder
     private func constantsCode(translated: Bool) -> some SwiftCode {
         if constants?.isEmpty == false {
-            Mark(text: "Constants", isSeparator: false).padding(top: 1, bottom: 1)
-            for constant in constants! {
-                Property(propertyName(constant.name, translated: translated))
-                    .letDefined().public().static().type(constant.type).assign(value: constant.value)
+            Mark(text: "Constants", isSeparator: false).padding(top: 1)
+            ForEach(constants!.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
+                Spacer()
+                ForEach(sameTypeConstants) { constant in
+                    Property(propertyName(constant.name, translated: translated))
+                        .letDefined().public().static().type(ExtensionApi.convert(type: constant.type)).assign(value: constant.value)
+                }.aligned(1)
             }
         }
     }
