@@ -99,11 +99,11 @@ This function should only called by the `GodotLibrary`.
             
             for constructor in constructors {
                 Property(constructorPtrName(index: constructor.index))
-                    .assign(value: "interface.variant_get_ptr_constructor(\(variantTypeName), \(constructor.index))")
+                    .assign(value: "interface.variant_get_ptr_constructor(\(godotVariantType), \(constructor.index))")
             }
             if hasDestructor {
                 Property(destructorPtrName())
-                    .assign(value: "interface.variant_get_ptr_destructor(\(variantTypeName))")
+                    .assign(value: "interface.variant_get_ptr_destructor(\(godotVariantType))")
             }
         }.public().static()
     }
@@ -114,10 +114,25 @@ This function should only called by the `GodotLibrary`.
         Mark(text: "Init", isSeparator: false)
         for constructor in constructors {
             Spacer()
-            Init(parameters: constructorArguments(forConstructor: constructor, translated: translated)) {
+            
+            let constructorParameters = constructorArguments(forConstructor: constructor, translated: translated)
+            let baseConstructorParameters = constructorParameters.filter { ExtensionApi.isBaseType($0.type) }
+            
+            Init(parameters: constructorParameters) {
+                // For all base types, no nativePtr is usable. So we must get their pointers with the
+                // withUnsafePointer(to:) function...
+                for (index, parameter) in baseConstructorParameters.enumerated() {
+                    "withUnsafePointer(to: \(parameter.name)) { \(parameterPointerName(parameter.name)) in".indentation(level: index)
+                }
+                
                 PointerArray(pointersNames: constructorArgumentsPointers(forConstructor: constructor, translated: translated),
                              arrayPointerName: "_arrayPtr") {
                     "Self." + constructorPtrName(index: constructor.index) + "(self.nativePtr, _arrayPtr)"
+                }.indentation(level: baseConstructorParameters.count)
+                
+                // ...We then close the withUnsafePointer closure.
+                for (index, _) in baseConstructorParameters.enumerated() {
+                    "}".indentation(level: baseConstructorParameters.count - index - 1)
                 }
             }.public()
         }
@@ -141,10 +156,6 @@ This function should only called by the `GodotLibrary`.
         "_destructor"
     }
     
-    private var variantTypeName: String {
-        NamingConvention.camel.convert(string: "gdnativeVariantType" + name, to: .snake).uppercased()
-    }
-    
     private func constructorArguments(forConstructor constructor: ExtensionApi.BuiltinClass.Constructor,
                                       translated: Bool) -> [FunctionParameter] {
         guard let arguments = constructor.arguments else {
@@ -164,7 +175,15 @@ This function should only called by the `GodotLibrary`.
                                               translated: Bool) -> [String] {
         let arguments = constructorArguments(forConstructor: constructor, translated: translated)
         return arguments.map { parameter in
-            parameter.name + ".nativePtr"
+            if ExtensionApi.isBaseType(parameter.type) {
+                return "UnsafeMutableRawPointer(mutating: \(parameterPointerName(parameter.name)))"
+            } else {
+                return parameter.name + ".nativePtr"
+            }
         }
+    }
+    
+    private func parameterPointerName(_ parameterName: String) -> String {
+        parameterName + "_ptr"
     }
 }

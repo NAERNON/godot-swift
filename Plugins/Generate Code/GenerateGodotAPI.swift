@@ -50,7 +50,7 @@ struct GenerateGodotAPI: CommandPlugin {
                                     translatesCode: Bool) -> (godotFiles: [any SwiftFile], godotExtensionFiles: [any SwiftFile]) {
         let builtinClassSizes = extensionApi.builtinClassSizes.first { $0.buildConfiguration == buildConfiguration.rawValue }!
         let memberOffsets = extensionApi.builtinClassMemberOffsets.first { $0.buildConfiguration == buildConfiguration.rawValue }!
-        let builtinClassesToGenerate = extensionApi.builtinClasses.filter({ !$0.isPodType })
+        let builtinClassesToGenerate = extensionApi.builtinClasses.filter({ !ExtensionApi.isBaseType($0.name) })
         
         let utilityFiles: [any SwiftFile] = [
             GlobalEnumsFile(enums: extensionApi.globalEnums, translated: translatesCode),
