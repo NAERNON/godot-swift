@@ -1,11 +1,16 @@
 import Foundation
 
 struct _IndentedContent<Content>: SwiftCode where Content: SwiftCode {
-    /// The length of the indentation. A `nil` indentation will use the basic indentation.
-    let indentation: Int?
+    enum Indentation {
+        case level(Int)
+        case spaces(Int)
+    }
+    
+    /// The length of the indentation. Can be defined as a level or as spaces.
+    let indentation: Indentation
     let content: () -> Content
     
-    init(_ indentation: Int? = nil, @CodeBuilder content: @escaping () -> Content) {
+    fileprivate init(_ indentation: Indentation, @CodeBuilder content: @escaping () -> Content) {
         self.indentation = indentation
         self.content = content
     }
@@ -14,8 +19,14 @@ struct _IndentedContent<Content>: SwiftCode where Content: SwiftCode {
 }
 
 extension SwiftCode {
-    public func indentation(_ indentation: Int? = nil) -> some SwiftCode {
-        _IndentedContent(indentation) {
+    public func indentation(level: Int = 1) -> some SwiftCode {
+        _IndentedContent(.level(level)) {
+            self
+        }
+    }
+    
+    public func indentation(spaces: Int) -> some SwiftCode {
+        _IndentedContent(.spaces(spaces)) {
             self
         }
     }

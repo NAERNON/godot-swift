@@ -264,7 +264,14 @@ extension _IndentedContent: SwiftRootCode {
             return nil
         }
         
-        let indentationString = String(repeating: " ", count: indentation ?? 4)
+        let spacesCount: Int
+        switch indentation {
+        case .spaces(let spaces):
+            spacesCount = spaces
+        case .level(let level):
+            spacesCount = level * 4
+        }
+        let indentationString = String(repeating: " ", count: spacesCount)
         return tree.option(.prefix(indentationString))
     }
 }
