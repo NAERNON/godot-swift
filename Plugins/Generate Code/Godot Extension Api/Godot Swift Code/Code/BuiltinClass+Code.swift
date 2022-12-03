@@ -51,10 +51,20 @@ extension ExtensionApi.BuiltinClass {
                 Spacer()
                 ForEach(sameTypeConstants) { constant in
                     Property(propertyName(constant.name, translated: translated))
-                        .letDefined().public().static().type(ExtensionApi.convert(type: constant.type)).assign(value: constant.value)
+                        .letDefined().public().static().type(ExtensionApi.convert(type: constant.type))
+                        .assign(value: constantValue(from: constant.value))
                 }.aligned(1)
             }
         }
+    }
+    
+    /// Converts a valeu string such as `Vector2(inf, 0)` to `Vector2(.infinity, 0)` for example.
+    private func constantValue(from string: String) -> String {
+        guard let firstParenthesisIndex = string.firstIndex(of: "(") else {
+            return string
+        }
+        
+        return string.replacingOccurrences(of: "inf", with: ".infinity", range: firstParenthesisIndex..<string.endIndex)
     }
     
     @CodeBuilder
@@ -148,7 +158,8 @@ This function should only called by the `GodotLibrary`.
             return name
         }
         
-        return NamingConvention.snake.convert(string: name.lowercased(), to: .camel)
+        let newName = NamingConvention.snake.convert(string: name.lowercased(), to: .camel)
+        return CodeLanguage.swift.protectNameIfKeyword(for: newName)
     }
     
     private func constructorPtrName(index: Int) -> String {
