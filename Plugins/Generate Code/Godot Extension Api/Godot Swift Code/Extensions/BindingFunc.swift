@@ -73,15 +73,15 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         return new
     }
     
-    public func `static`() -> BindingFunc {
+    public func `static`(_ state: Bool = true) -> BindingFunc {
         var new = self
-        new.isStatic = true
+        new.isStatic = state
         return new
     }
     
-    public func `final`() -> BindingFunc {
+    public func `final`(_ state: Bool = true) -> BindingFunc {
         var new = self
-        new.isFinal = true
+        new.isFinal = state
         return new
     }
 }

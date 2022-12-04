@@ -11,15 +11,8 @@ extension ExtensionApi.BuiltinClass.Method {
             ObjectsPointersAccess(functionParameters: formatted.parameters, generatePointersArray: true) {
                 Spacer()
                 
-                if let returnType = formatted.returnType {
-                    ObjectsPointersAccess(parameters: [.init(name: "self", type: className),
-                                                       .init(name: "_returnValue", type: returnType, isMutable: true)]) {
-                        "Self.\(methodPointerName)(self_ptr, _accessPtr, _returnValue_ptr, \(formatted.parametersCount))"
-                    }
-                } else {
-                    ObjectsPointersAccess(parameters: [.init(name: "self", type: className)]) {
-                        "Self.\(methodPointerName)(self_ptr, _accessPtr, nil, \(formatted.parametersCount))"
-                    }
+                ObjectsPointersAccess(parameters: objectsPointerAccessParameters(className: className, returnType: formatted.returnType)) {
+                    "Self.\(methodPointerName)(\(selfPointerName), _accessPtr, \(returnValuePointer(returnType: formatted.returnType)), \(formatted.parametersCount))"
                 }
                 
                 Spacer()
@@ -29,6 +22,27 @@ extension ExtensionApi.BuiltinClass.Method {
                 Spacer()
                 Return("_returnValue")
             }
-        }.public()
+        }
+        .public()
+        .static(isStatic)
+    }
+    
+    private var selfPointerName: String {
+        isStatic ? "nil" : "self_ptr"
+    }
+    
+    private func returnValuePointer(returnType: String?) -> String {
+        returnType == nil ? "nil" : "_returnValue_ptr"
+    }
+    
+    private func objectsPointerAccessParameters<T: SwiftCode>(className: String, returnType: String?) -> [ObjectsPointersAccess<T>.Parameter] {
+        var parameters = [ObjectsPointersAccess<T>.Parameter]()
+        if !isStatic {
+            parameters.append(.init(name: "self", type: className))
+        }
+        if let returnType {
+            parameters.append(.init(name: "_returnValue", type: returnType, isMutable: true))
+        }
+        return parameters
     }
 }
