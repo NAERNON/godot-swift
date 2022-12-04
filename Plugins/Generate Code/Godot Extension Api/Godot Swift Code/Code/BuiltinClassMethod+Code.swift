@@ -8,15 +8,16 @@ extension ExtensionApi.BuiltinClass.Method {
                 Spacer()
             }
             
-            ObjectsPointersAccess(parameters: formatted.parameters, generatePointersArray: true) {
+            ObjectsPointersAccess(functionParameters: formatted.parameters, generatePointersArray: true) {
                 Spacer()
                 
                 if let returnType = formatted.returnType {
-                    ObjectsPointersAccess(parameters: [.named("self", type: className), .named("_returnValue", type: returnType)]) {
+                    ObjectsPointersAccess(parameters: [.init(name: "self", type: className),
+                                                       .init(name: "_returnValue", type: returnType, isMutable: true)]) {
                         "Self.\(methodPointerName)(self_ptr, _accessPtr, _returnValue_ptr, \(formatted.parametersCount))"
                     }
                 } else {
-                    ObjectsPointersAccess(parameters: [.named("self", type: className)]) {
+                    ObjectsPointersAccess(parameters: [.init(name: "self", type: className)]) {
                         "Self.\(methodPointerName)(self_ptr, _accessPtr, nil, \(formatted.parametersCount))"
                     }
                 }

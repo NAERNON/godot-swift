@@ -34,12 +34,34 @@ import Foundation
 /// }
 /// ```
 struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
-    let parameters: [FunctionParameter]
+    struct Parameter {
+        let name: String
+        let type: String
+        let isMutable: Bool
+        
+        init(name: String, type: String, isMutable: Bool = false) {
+            self.name = name
+            self.type = type
+            self.isMutable = isMutable
+        }
+    }
+    
+    let parameters: [Parameter]
     let generatePointersArray: Bool
     let content: () -> Content
     
-    public init(parameters: [FunctionParameter], generatePointersArray: Bool = false, @CodeBuilder content: @escaping () -> Content) {
+    public init(parameters: [Parameter],
+                generatePointersArray: Bool = false,
+                @CodeBuilder content: @escaping () -> Content) {
         self.parameters = parameters
+        self.generatePointersArray = generatePointersArray
+        self.content = content
+    }
+    
+    public init(functionParameters: [FunctionParameter],
+                generatePointersArray: Bool = false,
+                @CodeBuilder content: @escaping () -> Content) {
+        self.parameters = functionParameters.map { .init(name: $0.name, type: $0.type, isMutable: false) }
         self.generatePointersArray = generatePointersArray
         self.content = content
     }
@@ -48,11 +70,19 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
         for (index, parameter) in parameters.enumerated() {
             let name = parameter.name
             if ExtensionApi.isBaseType(parameter.type) {
-                "withUnsafePointer(to: \(name)) { \(parameterPointer(for: parameter.name, typed: true)) in"
-                    .indentation(level: index)
-                Property(parameterPointer(for: parameter.name, typed: false)).letDefined()
-                    .assign(value: "UnsafeMutableRawPointer(mutating: \(parameterPointer(for: parameter.name, typed: true)))")
-                    .indentation(level: index+1)
+                if parameter.isMutable {
+                    "withUnsafeMutablePointer(to: &\(name)) { \(parameterPointer(for: parameter.name, typed: true)) in"
+                        .indentation(level: index)
+                    Property(parameterPointer(for: parameter.name, typed: false)).letDefined()
+                        .assign(value: "UnsafeMutableRawPointer(\(parameterPointer(for: parameter.name, typed: true)))")
+                        .indentation(level: index+1)
+                } else {
+                    "withUnsafePointer(to: \(name)) { \(parameterPointer(for: parameter.name, typed: true)) in"
+                        .indentation(level: index)
+                    Property(parameterPointer(for: parameter.name, typed: false)).letDefined()
+                        .assign(value: "UnsafeMutableRawPointer(mutating: \(parameterPointer(for: parameter.name, typed: true)))")
+                        .indentation(level: index+1)
+                }
             } else {
                 "\(name).withUnsafeNativePointer { \(parameterPointer(for: parameter.name, typed: false)) in".indentation(level: index)
             }

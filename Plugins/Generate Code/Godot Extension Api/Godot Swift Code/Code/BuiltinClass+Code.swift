@@ -202,7 +202,7 @@ This function should only called by the `GodotLibrary`.
                     Spacer()
                 }
                 
-                ObjectsPointersAccess(parameters: formatted.parameters, generatePointersArray: true) {
+                ObjectsPointersAccess(functionParameters: formatted.parameters, generatePointersArray: true) {
                     if ExtensionApi.isBuiltinBaseType(self.name) {
                         "withUnsafeMutablePointer(to: &_temporary) { self_ptr in"
                         ("Self." + constructorPtrName(index: constructor.index) + "(UnsafeMutableRawPointer(self_ptr), _accessPtr)").indentation()
