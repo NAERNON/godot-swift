@@ -109,12 +109,14 @@ extension ExtensionApi.BuiltinClass {
         
         Property("interface").varDefined().static().internal().type("GDNativeInterface!").padding(bottom: 1)
         
-        for constructor in constructors {
-            Property(constructorPtrName(index: constructor.index))
-                .varDefined().private().static().type("GDNativePtrConstructor!")
-        }
-        if hasDestructor {
-            Property(destructorPtrName()).varDefined().private().static().type("GDNativePtrDestructor!")
+        Group {
+            for constructor in constructors {
+                Property(constructorPtrName(index: constructor.index))
+                    .varDefined().private().static().type("GDNativePtrConstructor!")
+            }
+            if hasDestructor {
+                Property(destructorPtrName()).varDefined().private().static().type("GDNativePtrDestructor!")
+            }
         }
         
         if let methods {
@@ -126,14 +128,15 @@ extension ExtensionApi.BuiltinClass {
         
         Spacer()
         
-        setBindingsFunctionCode()
+        setInitBindingsFunctionCode()
+        setFunctionBindingsFunctionCode()
     }
     
     @CodeBuilder
-    private func setBindingsFunctionCode() -> some SwiftCode {
+    private func setInitBindingsFunctionCode() -> some SwiftCode {
         Comment(style: .doc) {
 """
-Sets all the bindings used to communicate with Godot, as well as the static `interface` property.
+Sets all the init bindings and the deinit (if applicable) used to communicate with Godot, as well as the static `interface` property.
 
 This function must be called before the creation of any `\(name)` instance since the bindings will be needed
 for any initialization.
@@ -141,7 +144,7 @@ for any initialization.
 This function should only called by the `GodotLibrary`.
 """
         }
-        Func(name: "setBindings", parameters: .named("interface", type: "GDNativeInterface", label: .name("with"))) {
+        Func(name: "setInitBindings", parameters: .named("interface", type: "GDNativeInterface", label: .name("with"))) {
             Property("self.interface").assign(value: "interface")
             
             Spacer()
@@ -155,9 +158,19 @@ This function should only called by the `GodotLibrary`.
                 Property(destructorPtrName())
                     .assign(value: "interface.variant_get_ptr_destructor(\(godotVariantType))")
             }
-            
-            Spacer()
-            
+        }.public().static()
+    }
+    
+    @CodeBuilder
+    private func setFunctionBindingsFunctionCode() -> some SwiftCode {
+        Comment(style: .doc) {
+"""
+Sets all the function bindings used to communicate with Godot.
+
+This function should only called by the `GodotLibrary`.
+"""
+        }
+        Func(name: "setFunctionBindings") {
             if let methods {
                 Property("_method_name").varDefined().type("StringName!")
                 for method in methods {
