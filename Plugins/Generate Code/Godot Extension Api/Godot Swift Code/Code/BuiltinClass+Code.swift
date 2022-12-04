@@ -3,17 +3,31 @@ import Foundation
 extension ExtensionApi.BuiltinClass {
     @CodeBuilder
     func code(classSize: Int,
-              members: [ExtensionApi.MemberOffsets.Class.Member],
               translated: Bool) -> some SwiftCode {
-        Struct(name) {
-            nativePtrCode(classSize: classSize)
-            membersCode(with: members, translated: translated)
-            constantsCode(translated: translated)
-            enumCode(translated: translated)
-            setBindingsCode()
-            constructorsCode(translated: translated)
-        }.public()
+        if ExtensionApi.isBuiltinBaseType(name) {
+            Extension(name) {
+                insideStructOrExtensionCode(classSize: classSize, translated: translated)
+            }
+        } else {
+            Struct(name) {
+                insideStructOrExtensionCode(classSize: classSize, translated: translated)
+            }.public()
+        }
     }
+    
+    @CodeBuilder
+    private func insideStructOrExtensionCode(classSize: Int,
+                                             translated: Bool) -> some SwiftCode {
+        if !ExtensionApi.isBuiltinBaseType(name) {
+            nativePtrCode(classSize: classSize)
+        }
+        constantsCode(translated: translated)
+        enumCode(translated: translated)
+        setBindingsCode()
+        constructorsCode(translated: translated)
+    }
+    
+    // MARK: Native Opaque
     
     @CodeBuilder
     private func nativePtrCode(classSize: Int) -> some SwiftCode {
@@ -33,17 +47,7 @@ extension ExtensionApi.BuiltinClass {
         }.public()
     }
     
-    @CodeBuilder
-    private func membersCode(with members: [ExtensionApi.MemberOffsets.Class.Member],
-                             translated: Bool) -> some SwiftCode {
-        if !members.isEmpty {
-            Mark(text: "Members", isSeparator: false).padding(top: 1, bottom: 1)
-            for member in members {
-                Property(propertyName(member.member, translated: translated))
-                    .varDefined().public().type("_TYPE_").computed(inline: "")
-            }
-        }
-    }
+    // MARK: Constants
     
     @CodeBuilder
     private func constantsCode(translated: Bool) -> some SwiftCode {
@@ -69,6 +73,8 @@ extension ExtensionApi.BuiltinClass {
         return string.replacingOccurrences(of: "inf", with: ".infinity", range: firstParenthesisIndex..<string.endIndex)
     }
     
+    // MARK: Enum
+    
     @CodeBuilder
     private func enumCode(translated: Bool) -> some SwiftCode {
         if enums?.isEmpty == false {
@@ -80,6 +86,8 @@ extension ExtensionApi.BuiltinClass {
             }
         }
     }
+    
+    // MARK: Set bindings
     
     @CodeBuilder
     private func setBindingsCode() -> some SwiftCode {
@@ -123,16 +131,25 @@ This function should only called by the `GodotLibrary`.
         }.public().static()
     }
     
+    // MARK: Consturctor
+    
     @CodeBuilder
     private func constructorsCode(translated: Bool) -> some SwiftCode {
         Spacer()
         Mark(text: "Init", isSeparator: false)
-        for constructor in constructors {
+        for constructor in filteredConstructors() {
             Spacer()
             
             let constructorParameters = constructorArguments(forConstructor: constructor, translated: translated)
             
             Init(parameters: constructorParameters) {
+                // If the type is builtin, we need to make a temporary value
+                // that will be modified by the Godot constructor.
+                if ExtensionApi.isBuiltinBaseType(self.name) {
+                    "var _temporary = \(self.name)()"
+                    Spacer()
+                }
+                
                 for (index, parameter) in constructorParameters.enumerated() {
                     if ExtensionApi.isBaseType(parameter.type) {
                         "withUnsafePointer(to: \(parameter.name)) { \(parameterPointerName(parameter.name)) in"
@@ -145,15 +162,51 @@ This function should only called by the `GodotLibrary`.
                 
                 PointerArray(pointersNames: constructorArgumentsPointers(forConstructor: constructor, translated: translated),
                              arrayPointerName: "_arrayPtr") {
-                    "self.withUnsafeNativePointer { self_nativePtr in"
-                    ("Self." + constructorPtrName(index: constructor.index) + "(self_nativePtr, _arrayPtr)").indentation()
+                    if ExtensionApi.isBuiltinBaseType(self.name) {
+                        "withUnsafeMutablePointer(to: &_temporary) { self_ptr in"
+                        ("Self." + constructorPtrName(index: constructor.index) + "(UnsafeMutableRawPointer(self_ptr), _arrayPtr)").indentation()
+                    } else {
+                        "self.withUnsafeNativePointer { self_ptr in"
+                        ("Self." + constructorPtrName(index: constructor.index) + "(self_ptr, _arrayPtr)").indentation()
+                    }
                     "}"
                 }.indentation(level: constructorParameters.count)
                 
                 for (index, _) in constructorParameters.enumerated() {
                     "}".indentation(level: constructorParameters.count - index - 1)
                 }
+                
+                // If the type is builtin, we use the temporary value set it to self.
+                if ExtensionApi.isBuiltinBaseType(self.name) {
+                    Spacer()
+                    "self = _temporary"
+                }
             }.public()
+        }
+    }
+    
+    private func filteredConstructors() -> [ExtensionApi.BuiltinClass.Constructor] {
+        self.constructors.filter { constructor in
+            // If the type is not a base builtin type, then we need all the initializers.
+            if !ExtensionApi.isBuiltinBaseType(self.name) {
+                return true
+            }
+            
+            // If the type is a base builtin type, then the `init()` is already coded.
+            if constructor.arguments == nil || constructor.arguments?.isEmpty == true {
+                return false
+            }
+            
+            // If all the arguments inside the constructor are the same as the members of the BuiltinClass,
+            // then the constructor is already coded since it is the base constructor.
+            if let arguments = constructor.arguments {
+                let constructorArgumentsNames = arguments.map { NamingConvention.snake.convert(string: $0.name, from: .camel) }
+                if constructorArgumentsNames == ExtensionApi.builtinBaseConstructorArguments(forType: self.name) {
+                    return false
+                }
+            }
+            
+            return true
         }
     }
     

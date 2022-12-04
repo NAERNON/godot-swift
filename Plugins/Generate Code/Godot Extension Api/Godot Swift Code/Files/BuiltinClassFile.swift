@@ -4,17 +4,21 @@ struct BuiltinClassFile: SwiftFile {
     let path: String
     let builtinClass: ExtensionApi.BuiltinClass
     let classSize: Int
-    let members: [ExtensionApi.MemberOffsets.Class.Member]
     let translated: Bool
     
     init(builtinClass: ExtensionApi.BuiltinClass,
          builtinClassSizes: ExtensionApi.ClassSizes,
          builtinClassMemberOffset: ExtensionApi.MemberOffsets,
          translated: Bool) {
-        self.path = builtinClass.name + ".swift"
+        let fileName: String
+        if ExtensionApi.isBuiltinBaseType(builtinClass.name) {
+            fileName = builtinClass.name + "+Bindings"
+        } else {
+            fileName = builtinClass.name
+        }
+        self.path = fileName + ".swift"
         self.builtinClass = builtinClass
         self.classSize = builtinClassSizes.sizes.first(where: { $0.name == builtinClass.name })?.size ?? 0
-        self.members = builtinClassMemberOffset.classes.first(where: { $0.name == builtinClass.name })?.members ?? []
         self.translated = translated
     }
     
@@ -24,6 +28,6 @@ struct BuiltinClassFile: SwiftFile {
         
         Spacer()
         
-        builtinClass.code(classSize: classSize, members: members, translated: translated)
+        builtinClass.code(classSize: classSize, translated: translated)
     }
 }
