@@ -26,9 +26,11 @@ extension ExtensionApi.BuiltinClass {
         }
         Spacer()
         Comment(style: .doc) {
-            "The pointer to the underlying object. Should only be called by the `GodotLibrary`."
+            "Calls a closure with a native type pointer of the underlying object. Should only be called by the `GodotLibrary`."
         }
-        Property("nativePtr").varDefined().public().type("GDNativeTypePtr").computed(inline: "opaque.ptr")
+        Func(name: "withUnsafeNativePointer", parameters: .named("body", type: "(GDNativeTypePtr) -> ()", label: .hidden)) {
+            "opaque.withUnsafeMutableRawPointer(body)"
+        }.public()
     }
     
     @CodeBuilder
@@ -129,23 +131,27 @@ This function should only called by the `GodotLibrary`.
             Spacer()
             
             let constructorParameters = constructorArguments(forConstructor: constructor, translated: translated)
-            let baseConstructorParameters = constructorParameters.filter { ExtensionApi.isBaseType($0.type) }
             
             Init(parameters: constructorParameters) {
-                // For all base types, no nativePtr is usable. So we must get their pointers with the
-                // withUnsafePointer(to:) function...
-                for (index, parameter) in baseConstructorParameters.enumerated() {
-                    "withUnsafePointer(to: \(parameter.name)) { \(parameterPointerName(parameter.name)) in".indentation(level: index)
+                for (index, parameter) in constructorParameters.enumerated() {
+                    if ExtensionApi.isBaseType(parameter.type) {
+                        "withUnsafePointer(to: \(parameter.name)) { \(parameterPointerName(parameter.name)) in"
+                            .indentation(level: index)
+                    } else {
+                        "\(parameter.name).withUnsafeNativePointer { \(parameterPointerName(parameter.name)) in"
+                            .indentation(level: index)
+                    }
                 }
                 
                 PointerArray(pointersNames: constructorArgumentsPointers(forConstructor: constructor, translated: translated),
                              arrayPointerName: "_arrayPtr") {
-                    "Self." + constructorPtrName(index: constructor.index) + "(self.nativePtr, _arrayPtr)"
-                }.indentation(level: baseConstructorParameters.count)
+                    "self.withUnsafeNativePointer { self_nativePtr in"
+                    ("Self." + constructorPtrName(index: constructor.index) + "(self_nativePtr, _arrayPtr)").indentation()
+                    "}"
+                }.indentation(level: constructorParameters.count)
                 
-                // ...We then close the withUnsafePointer closure.
-                for (index, _) in baseConstructorParameters.enumerated() {
-                    "}".indentation(level: baseConstructorParameters.count - index - 1)
+                for (index, _) in constructorParameters.enumerated() {
+                    "}".indentation(level: constructorParameters.count - index - 1)
                 }
             }.public()
         }
@@ -192,7 +198,7 @@ This function should only called by the `GodotLibrary`.
             if ExtensionApi.isBaseType(parameter.type) {
                 return "UnsafeMutableRawPointer(mutating: \(parameterPointerName(parameter.name)))"
             } else {
-                return parameter.name + ".nativePtr"
+                return parameterPointerName(parameter.name)
             }
         }
     }

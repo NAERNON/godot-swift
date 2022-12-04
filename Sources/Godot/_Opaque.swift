@@ -2,10 +2,7 @@ import Foundation
 import GodotExtensionHeaders
 
 internal final class _Opaque {
-    typealias Data = UnsafeMutablePointer<UInt8>
-    
-    private let dataPtr: UnsafeMutablePointer<Data>
-    private let data: Data
+    private let data: UnsafeMutablePointer<UInt8>
     let size: Int
     
     /// The destructor pointer for the opaque type.
@@ -13,25 +10,23 @@ internal final class _Opaque {
     let destructorPtr: GDNativePtrDestructor?
     
     init(size: Int, destructorPtr: GDNativePtrDestructor? = nil) {
-        dataPtr = .allocate(capacity: 1)
-        data = .allocate(capacity: size)
-        dataPtr.initialize(to: data)
-        
+        self.data = .allocate(capacity: size)
         self.size = size
         self.destructorPtr = destructorPtr
     }
     
     deinit {
-        destructorPtr?(ptr)
+        if let destructorPtr {
+            withUnsafeMutableRawPointer { pointer in
+                destructorPtr(pointer)
+            }
+        }
         
         data.deinitialize(count: size)
         data.deallocate()
-        
-        dataPtr.deinitialize(count: 1)
-        dataPtr.deallocate()
     }
     
-    var ptr: UnsafeMutableRawPointer {
-        UnsafeMutableRawPointer(dataPtr)
+    func withUnsafeMutableRawPointer(_ body: (UnsafeMutableRawPointer) -> ()) {
+        body(UnsafeMutableRawPointer(data))
     }
 }
