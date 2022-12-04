@@ -1,7 +1,7 @@
 import Foundation
 import GodotExtensionHeaders
 
-internal final class _Opaque {
+internal final class Opaque {
     private let data: UnsafeMutablePointer<UInt8>
     let size: Int
     

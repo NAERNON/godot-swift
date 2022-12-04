@@ -34,7 +34,7 @@ extension ExtensionApi.BuiltinClass {
     @CodeBuilder
     private func nativePtrCode(classSize: Int) -> some SwiftCode {
         Spacer()
-        Property("opaque").letDefined().type("_Opaque").private().assignComputed {
+        Property("opaque").letDefined().type("Opaque").private().assignComputed {
             if hasDestructor {
                 ".init(size: \(classSize), destructorPtr: Self.\(destructorPtrName()))"
             } else {
@@ -174,7 +174,7 @@ This function should only called by the `GodotLibrary`.
             if let methods {
                 Property("_method_name").varDefined().type("StringName!")
                 for method in methods {
-                    Property("_method_name").assign(value: "StringName(swiftString: \"\(method.name)\")")
+                    Property("_method_name").assign(value: "\"\(method.name)\"")
                     "_method_name.withUnsafeNativePointer { _name_ptr in"
                     Property(methodPtrName(methodName: method.name))
                         .assign(value: "interface.variant_get_ptr_builtin_method(\(godotVariantType), _name_ptr, \(method.hash))")

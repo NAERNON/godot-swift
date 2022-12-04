@@ -11,3 +11,9 @@ extension String {
         }
     }
 }
+
+extension String: ExpressibleByStringLiteral {
+    public init(stringLiteral value: Swift.String) {
+        self.init(swiftString: value)
+    }
+}
