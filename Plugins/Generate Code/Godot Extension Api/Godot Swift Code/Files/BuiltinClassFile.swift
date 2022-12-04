@@ -12,7 +12,7 @@ struct BuiltinClassFile: SwiftFile {
          translated: Bool) {
         let fileName: String
         if ExtensionApi.isBuiltinBaseType(builtinClass.name) {
-            fileName = builtinClass.name + "+Bindings"
+            fileName = builtinClass.name + "+GeneratedExtensions"
         } else {
             fileName = builtinClass.name
         }

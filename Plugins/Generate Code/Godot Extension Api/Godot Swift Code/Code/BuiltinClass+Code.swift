@@ -18,19 +18,22 @@ extension ExtensionApi.BuiltinClass {
     @CodeBuilder
     private func insideStructOrExtensionCode(classSize: Int,
                                              translated: Bool) -> some SwiftCode {
+        constantsCode(translated: translated)
+        enumCode(translated: translated)
+        constructorsCode(translated: translated)
+        methodsCode(translated: translated)
+        
+        bindingsCode()
         if !ExtensionApi.isBuiltinBaseType(name) {
             nativePtrCode(classSize: classSize)
         }
-        constantsCode(translated: translated)
-        enumCode(translated: translated)
-        setBindingsCode()
-        constructorsCode(translated: translated)
     }
     
     // MARK: Native Opaque
     
     @CodeBuilder
     private func nativePtrCode(classSize: Int) -> some SwiftCode {
+        Spacer()
         Property("opaque").letDefined().type("_Opaque").private().assignComputed {
             if hasDestructor {
                 ".init(size: \(classSize), destructorPtr: Self.\(destructorPtrName()))"
@@ -51,9 +54,10 @@ extension ExtensionApi.BuiltinClass {
     
     @CodeBuilder
     private func constantsCode(translated: Bool) -> some SwiftCode {
-        if constants?.isEmpty == false {
+        if let constants,
+           !constants.isEmpty {
             Mark(text: "Constants", isSeparator: false).padding(top: 1)
-            ForEach(constants!.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
+            ForEach(constants.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
                 Spacer()
                 ForEach(sameTypeConstants) { constant in
                     Property(propertyName(constant.name, translated: translated))
@@ -77,21 +81,22 @@ extension ExtensionApi.BuiltinClass {
     
     @CodeBuilder
     private func enumCode(translated: Bool) -> some SwiftCode {
-        if enums?.isEmpty == false {
+        if let enums,
+           !enums.isEmpty {
             Spacer()
             Mark(text: "Enums", isSeparator: false)
-            for `enum` in enums! {
+            for `enum` in enums {
                 Spacer()
                 `enum`.code(translated: translated)
             }
         }
     }
     
-    // MARK: Set bindings
+    // MARK: Bindings
     
     @CodeBuilder
-    private func setBindingsCode() -> some SwiftCode {
-        Mark(text: "Bindings", isSeparator: false).padding(top: 1, bottom: 1)
+    private func bindingsCode() -> some SwiftCode {
+        Mark(text: "Bindings", isSeparator: true).padding(top: 1, bottom: 1)
         
         Property("interface").varDefined().static().internal().type("GDNativeInterface!").padding(bottom: 1)
         
@@ -103,8 +108,20 @@ extension ExtensionApi.BuiltinClass {
             Property(destructorPtrName()).varDefined().private().static().type("GDNativePtrDestructor!")
         }
         
+        if let methods {
+            for method in methods {
+                Property(methodPtrName(methodName: method.name))
+                    .varDefined().private().static().type("GDNativePtrBuiltInMethod!")
+            }
+        }
+        
         Spacer()
         
+        setBindingsFunctionCode()
+    }
+    
+    @CodeBuilder
+    private func setBindingsFunctionCode() -> some SwiftCode {
         Comment(style: .doc) {
 """
 Sets all the bindings used to communicate with Godot, as well as the static `interface` property.
@@ -124,9 +141,24 @@ This function should only called by the `GodotLibrary`.
                 Property(constructorPtrName(index: constructor.index))
                     .assign(value: "interface.variant_get_ptr_constructor(\(godotVariantType), \(constructor.index))")
             }
+            
             if hasDestructor {
                 Property(destructorPtrName())
                     .assign(value: "interface.variant_get_ptr_destructor(\(godotVariantType))")
+            }
+            
+            Spacer()
+            
+            if let methods {
+                Property("_method_name").varDefined().type("StringName!")
+                for method in methods {
+                    Property("_method_name").assign(value: "StringName(swiftString: \"\(method.name)\")")
+                    "_method_name.withUnsafeNativePointer { _name_ptr in"
+                    Property(methodPtrName(methodName: method.name))
+                        .assign(value: "interface.variant_get_ptr_builtin_method(\(godotVariantType), _name_ptr, \(method.hash))")
+                        .indentation()
+                    "}"
+                }
             }
         }.public().static()
     }
@@ -150,30 +182,15 @@ This function should only called by the `GodotLibrary`.
                     Spacer()
                 }
                 
-                for (index, parameter) in constructorParameters.enumerated() {
-                    if ExtensionApi.isBaseType(parameter.type) {
-                        "withUnsafePointer(to: \(parameter.name)) { \(parameterPointerName(parameter.name)) in"
-                            .indentation(level: index)
-                    } else {
-                        "\(parameter.name).withUnsafeNativePointer { \(parameterPointerName(parameter.name)) in"
-                            .indentation(level: index)
-                    }
-                }
-                
-                PointerArray(pointersNames: constructorArgumentsPointers(forConstructor: constructor, translated: translated),
-                             arrayPointerName: "_arrayPtr") {
+                ObjectsPointersAccess(parameters: constructorParameters, generatePointersArray: true) {
                     if ExtensionApi.isBuiltinBaseType(self.name) {
                         "withUnsafeMutablePointer(to: &_temporary) { self_ptr in"
-                        ("Self." + constructorPtrName(index: constructor.index) + "(UnsafeMutableRawPointer(self_ptr), _arrayPtr)").indentation()
+                        ("Self." + constructorPtrName(index: constructor.index) + "(UnsafeMutableRawPointer(self_ptr), _accessPtr)").indentation()
                     } else {
                         "self.withUnsafeNativePointer { self_ptr in"
-                        ("Self." + constructorPtrName(index: constructor.index) + "(self_ptr, _arrayPtr)").indentation()
+                        ("Self." + constructorPtrName(index: constructor.index) + "(self_ptr, _accessPtr)").indentation()
                     }
                     "}"
-                }.indentation(level: constructorParameters.count)
-                
-                for (index, _) in constructorParameters.enumerated() {
-                    "}".indentation(level: constructorParameters.count - index - 1)
                 }
                 
                 // If the type is builtin, we use the temporary value set it to self.
@@ -210,6 +227,23 @@ This function should only called by the `GodotLibrary`.
         }
     }
     
+    // MARK: Methods
+    
+    @CodeBuilder
+    private func methodsCode(translated: Bool) -> some SwiftCode {
+        if let methods,
+           !methods.isEmpty {
+            Spacer()
+            Mark(text: "Functions", isSeparator: false)
+            for method in methods {
+                Spacer()
+                method.code(methodPointerName: methodPtrName(methodName: method.name),
+                            className: name,
+                            translated: translated)
+            }
+        }
+    }
+    
     // MARK: Naming
     
     private func propertyName(_ name: String, translated: Bool) -> String {
@@ -227,6 +261,10 @@ This function should only called by the `GodotLibrary`.
     
     private func destructorPtrName() -> String {
         "_destructor"
+    }
+    
+    private func methodPtrName(methodName: String) -> String {
+        "_method_binding_\(methodName)"
     }
     
     private func constructorArguments(forConstructor constructor: ExtensionApi.BuiltinClass.Constructor,
