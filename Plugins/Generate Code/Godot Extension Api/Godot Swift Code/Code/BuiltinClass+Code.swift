@@ -60,7 +60,7 @@ extension ExtensionApi.BuiltinClass {
             ForEach(constants.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
                 Spacer()
                 ForEach(sameTypeConstants) { constant in
-                    Property(propertyName(constant.name, translated: translated))
+                    Property(constantName(constant.name, translated: translated))
                         .letDefined().public().static().type(ExtensionApi.convert(type: constant.type))
                         .assign(value: constantValue(from: constant.value))
                 }.aligned(1)
@@ -75,6 +75,15 @@ extension ExtensionApi.BuiltinClass {
         }
         
         return string.replacingOccurrences(of: "inf", with: ".infinity", range: firstParenthesisIndex..<string.endIndex)
+    }
+    
+    private func constantName(_ name: String, translated: Bool) -> String {
+        guard translated else {
+            return name
+        }
+        
+        let newName = NamingConvention.snake.convert(string: name.lowercased(), to: .camel)
+        return CodeLanguage.swift.protectNameIfKeyword(for: newName)
     }
     
     // MARK: Enum
@@ -172,9 +181,7 @@ This function should only called by the `GodotLibrary`.
         for constructor in filteredConstructors() {
             Spacer()
             
-            let constructorParameters = constructorArguments(forConstructor: constructor, translated: translated)
-            
-            Init(parameters: constructorParameters) {
+            BindingInit(arguments: constructor.arguments, translated: translated) { formatted in
                 // If the type is builtin, we need to make a temporary value
                 // that will be modified by the Godot constructor.
                 if ExtensionApi.isBuiltinBaseType(self.name) {
@@ -182,7 +189,7 @@ This function should only called by the `GodotLibrary`.
                     Spacer()
                 }
                 
-                ObjectsPointersAccess(parameters: constructorParameters, generatePointersArray: true) {
+                ObjectsPointersAccess(parameters: formatted.parameters, generatePointersArray: true) {
                     if ExtensionApi.isBuiltinBaseType(self.name) {
                         "withUnsafeMutablePointer(to: &_temporary) { self_ptr in"
                         ("Self." + constructorPtrName(index: constructor.index) + "(UnsafeMutableRawPointer(self_ptr), _accessPtr)").indentation()
@@ -198,6 +205,7 @@ This function should only called by the `GodotLibrary`.
                     Spacer()
                     "self = _temporary"
                 }
+
             }.public()
         }
     }
@@ -246,15 +254,6 @@ This function should only called by the `GodotLibrary`.
     
     // MARK: Naming
     
-    private func propertyName(_ name: String, translated: Bool) -> String {
-        guard translated else {
-            return name
-        }
-        
-        let newName = NamingConvention.snake.convert(string: name.lowercased(), to: .camel)
-        return CodeLanguage.swift.protectNameIfKeyword(for: newName)
-    }
-    
     private func constructorPtrName(index: Int) -> String {
         "_constructor\(index)"
     }
@@ -265,36 +264,5 @@ This function should only called by the `GodotLibrary`.
     
     private func methodPtrName(methodName: String) -> String {
         "_method_binding_\(methodName)"
-    }
-    
-    private func constructorArguments(forConstructor constructor: ExtensionApi.BuiltinClass.Constructor,
-                                      translated: Bool) -> [FunctionParameter] {
-        guard let arguments = constructor.arguments else {
-            return []
-        }
-        
-        return arguments.map { argument in
-            var parameter = argument.functionParameter(translated: translated)
-            if parameter.name == "from" {
-                parameter.name = NamingConvention.pascal.convert(string: parameter.type, to: .camel)
-            }
-            return parameter
-        }
-    }
-    
-    private func constructorArgumentsPointers(forConstructor constructor: ExtensionApi.BuiltinClass.Constructor,
-                                              translated: Bool) -> [String] {
-        let arguments = constructorArguments(forConstructor: constructor, translated: translated)
-        return arguments.map { parameter in
-            if ExtensionApi.isBaseType(parameter.type) {
-                return "UnsafeMutableRawPointer(mutating: \(parameterPointerName(parameter.name)))"
-            } else {
-                return parameterPointerName(parameter.name)
-            }
-        }
-    }
-    
-    private func parameterPointerName(_ parameterName: String) -> String {
-        parameterName + "_ptr"
     }
 }
