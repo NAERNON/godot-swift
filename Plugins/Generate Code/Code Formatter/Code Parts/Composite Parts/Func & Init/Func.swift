@@ -66,15 +66,15 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         return new
     }
     
-    public func `static`() -> Func {
+    public func `static`(_ state: Bool = true) -> Func {
         var new = self
-        new.isStatic = true
+        new.isStatic = state
         return new
     }
     
-    public func `final`() -> Func {
+    public func `final`(_ state: Bool = true) -> Func {
         var new = self
-        new.isFinal = true
+        new.isFinal = state
         return new
     }
 }
