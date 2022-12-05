@@ -21,6 +21,7 @@ extension ExtensionApi.BuiltinClass {
         constantsCode(translated: translated)
         enumCode(translated: translated)
         constructorsCode(translated: translated)
+        operatorsCode()
         methodsCode(translated: translated)
         
         bindingsCode()
@@ -106,17 +107,23 @@ extension ExtensionApi.BuiltinClass {
     @CodeBuilder
     private func bindingsCode() -> some SwiftCode {
         Mark(text: "Bindings", isSeparator: true).padding(top: 1, bottom: 1)
+        bindingsPropertiesCode()
+        Spacer()
         
+        setInitBindingsFunctionCode()
+        setFunctionBindingsFunctionCode()
+    }
+    
+    @CodeBuilder
+    private func bindingsPropertiesCode() -> some SwiftCode {
         Property("interface").varDefined().static().internal().type("GDNativeInterface!").padding(bottom: 1)
         
-        Group {
-            for constructor in constructors {
-                Property(constructorPtrName(index: constructor.index))
-                    .varDefined().private().static().type("GDNativePtrConstructor!")
-            }
-            if hasDestructor {
-                Property(destructorPtrName()).varDefined().private().static().type("GDNativePtrDestructor!")
-            }
+        for constructor in constructors {
+            Property(constructorPtrName(index: constructor.index))
+                .varDefined().private().static().type("GDNativePtrConstructor!")
+        }
+        if hasDestructor {
+            Property(destructorPtrName()).varDefined().private().static().type("GDNativePtrDestructor!")
         }
         
         if let methods {
@@ -126,10 +133,10 @@ extension ExtensionApi.BuiltinClass {
             }
         }
         
-        Spacer()
-        
-        setInitBindingsFunctionCode()
-        setFunctionBindingsFunctionCode()
+        for op in operators {
+            Property(operatorPtrName(for: op))
+                .varDefined().private().static().type("GDNativePtrOperatorEvaluator!")
+        }
     }
     
     @CodeBuilder
@@ -165,7 +172,7 @@ This function should only called by the `GodotLibrary`.
     private func setFunctionBindingsFunctionCode() -> some SwiftCode {
         Comment(style: .doc) {
 """
-Sets all the function bindings used to communicate with Godot.
+Sets all the function bindings and operators used to communicate with Godot.
 
 This function should only called by the `GodotLibrary`.
 """
@@ -181,6 +188,13 @@ This function should only called by the `GodotLibrary`.
                         .indentation()
                     "}"
                 }
+            }
+            
+            Spacer()
+            
+            for op in operators {
+                Property(operatorPtrName(for: op))
+                    .assign(value: "interface.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(ExtensionApi.godotVariantType(for: op.rightType)))")
             }
         }.public().static()
     }
@@ -265,7 +279,25 @@ This function should only called by the `GodotLibrary`.
         }
     }
     
+    // MARK: Operators
+    
+    @CodeBuilder
+    private func operatorsCode() -> some SwiftCode {
+        if !operators.isEmpty {
+            Spacer()
+            Mark(text: "Operators", isSeparator: false)
+            for op in operators {
+                Spacer()
+                op.code(className: name, operatorPtrName: operatorPtrName(for: op))
+            }
+        }
+    }
+    
     // MARK: Naming
+    
+    private var godotVariantType: String {
+        ExtensionApi.godotVariantType(for: name)
+    }
     
     private func constructorPtrName(index: Int) -> String {
         "_constructor\(index)"
@@ -277,5 +309,18 @@ This function should only called by the `GodotLibrary`.
     
     private func methodPtrName(methodName: String) -> String {
         "_method_binding_\(methodName)"
+    }
+    
+    private func operatorPtrName(for op: Operator) -> String {
+        guard var name = op.operationName else {
+            return "ERROR"
+        }
+        
+        name = "_operator_binding_" + name
+        if let rightType = op.rightType {
+            name += "_" + rightType
+        }
+        
+        return name.lowercased()
     }
 }

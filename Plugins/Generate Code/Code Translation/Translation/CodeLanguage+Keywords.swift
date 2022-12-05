@@ -6,7 +6,8 @@ private let protectedStrings: Set<String> = [
     "internal",
     "default",
     "repeat",
-    "final"
+    "final",
+    "in"
 ]
 
 extension CodeLanguage {

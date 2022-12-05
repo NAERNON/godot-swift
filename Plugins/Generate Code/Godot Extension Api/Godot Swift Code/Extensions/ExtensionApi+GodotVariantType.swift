@@ -1,9 +1,9 @@
 import Foundation
 
-extension ExtensionApi.BuiltinClass {
-    var godotVariantType: String {
-        switch name {
-        case "Nil": return "GDNATIVE_VARIANT_TYPE_NIL"
+extension ExtensionApi {
+    static func godotVariantType(for type: String?) -> String {
+        switch type {
+        case nil, "Nil", "Variant": return "GDNATIVE_VARIANT_TYPE_NIL"
         case "bool": return "GDNATIVE_VARIANT_TYPE_BOOL"
         case "int": return "GDNATIVE_VARIANT_TYPE_INT"
         case "float": return "GDNATIVE_VARIANT_TYPE_FLOAT"
@@ -41,7 +41,7 @@ extension ExtensionApi.BuiltinClass {
         case "PackedVector2Array": return "GDNATIVE_VARIANT_TYPE_PACKED_VECTOR2_ARRAY"
         case "PackedVector3Array": return "GDNATIVE_VARIANT_TYPE_PACKED_VECTOR3_ARRAY"
         case "PackedColorArray": return "GDNATIVE_VARIANT_TYPE_PACKED_COLOR_ARRAY"
-        default: fatalError("No variant type provided for \(name)")
+        default: fatalError("No variant type provided for \"\(type ?? "")\"")
         }
     }
 }
