@@ -2,6 +2,7 @@ import Foundation
 
 /// A `BindingFunc` is a shortcut to a function with many translation being done for Godot.
 /// Use the `Formatted` value given with the closure to use the formatted values such as the arguments and the return type.
+/// The code can also generate a `var` instead of a `func` when applicable.
 struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
     let name: String
     let arguments: [ExtensionApi.Argument]?
@@ -26,16 +27,26 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     
     var body: some SwiftCode {
         let nameAndParameters = nameAndParameters(translated: translated)
+        let convertedFunctionName = convertedFunction(name: nameAndParameters.name, translated: translated)
         let functionParameters = functionParameters(withLanguageParameters: nameAndParameters.parameters)
         
-        Func(name: nameAndParameters.name,
-             parameters: functionParameters,
-             returnType: convertedReturnType) {
-            content(Formatted(parameters: functionParameters, returnType: convertedReturnType))
+        if isVarInsteadOfFunc(shouldBeVar: convertedFunctionName.shouldBeVar, translated: translated) {
+            Var(convertedFunctionName.name, type: convertedReturnType!) {
+                content(Formatted(parameters: functionParameters, returnType: convertedReturnType))
+            }
+            .accessControl(accessControl)
+            .static(isStatic)
+            .final(isFinal)
+        } else {
+            Func(name: convertedFunctionName.name,
+                 parameters: functionParameters,
+                 returnType: convertedReturnType) {
+                content(Formatted(parameters: functionParameters, returnType: convertedReturnType))
+            }
+                 .accessControl(accessControl)
+                 .static(isStatic)
+                 .final(isFinal)
         }
-             .accessControl(accessControl)
-             .static(isStatic)
-             .final(isFinal)
     }
     
     private func nameAndParameters(translated: Bool) -> (name: String, parameters: [CodeLanguage.FunctionParameter]) {
@@ -57,6 +68,24 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         }
         
         return parameters
+    }
+    
+    private func convertedFunction(name: String, translated: Bool) -> (name: String, shouldBeVar: Bool) {
+        if translated {
+            return ExtensionApi.functionSwiftName(for: name)
+        } else {
+            return (name, false)
+        }
+    }
+    
+    private func isVarInsteadOfFunc(shouldBeVar: Bool, translated: Bool) -> Bool {
+        guard translated else {
+            return false
+        }
+        
+        let noArguments = arguments == nil || arguments?.isEmpty == true
+        let returns = returnType != nil
+        return shouldBeVar && noArguments && returns
     }
     
     private var convertedReturnType: String? {

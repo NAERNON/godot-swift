@@ -7,26 +7,26 @@ extension ExtensionApi.BuiltinClass.Operator {
         if let convertedRightType {
             // If there is a right type, it should be a function.
             
-            if let memberFunctionName {
+            if isMemberFunction {
                 // If the memberFunctionName exists, that means that it should be a
                 // member function instead of a static func.
-                Func(name: memberFunctionName,
+                Func(name: convertedFunctionName,
                      parameters: [.named(parameterName(for: convertedRightType),
                                          type: convertedRightType, label: .hidden)],
                      returnType: convertedReturnType) {
                     functionContentCode(className: className, operatorPtrName: operatorPtrName)
                 }.public()
             } else {
-                Func(name: name,
+                Func(name: convertedFunctionName,
                      parameters: [.named("lhs", type: className),
                                   .named("rhs", type: convertedRightType)],
                      returnType: convertedReturnType) {
                     functionContentCode(className: className, operatorPtrName: operatorPtrName)
                 }.static().public()
             }
-        } else if let memberFunctionName {
+        } else if isMemberFunction {
             // If there is no right type, it should be a var.
-            Var(memberFunctionName, type: convertedReturnType) {
+            Var(convertedFunctionName, type: convertedReturnType) {
                 functionContentCode(className: className, operatorPtrName: operatorPtrName)
             }.public()
         } else {
@@ -118,19 +118,23 @@ extension ExtensionApi.BuiltinClass.Operator {
         }
     }
     
-    /// Godot operations might not be correct operator in Swift. In this case, we make it a function.
-    /// If the result is not `nil`, then it should be a member function with the given name.
-    private var memberFunctionName: String? {
+    /// Godot operators might not be correct operators in Swift.
+    /// In this case, we make it a member function, and not a static function.
+    private var isMemberFunction: Bool {
+        if rightType == nil {
+            return true
+        }
+        
         switch name {
-        case "unary-": return "negative"
-        case "unary+": return "positive"
-        case "in": return "`in`"
-        default: return nil
+        case "unary-",
+            "unary+",
+            "in": return true
+        default: return false
         }
     }
     
-    private var isMemberFunction: Bool {
-        rightType == nil || memberFunctionName != nil
+    private var convertedFunctionName: String {
+        ExtensionApi.functionSwiftName(for: name).name
     }
     
     private var convertedReturnType: String {

@@ -57,7 +57,7 @@ extension ExtensionApi.BuiltinClass {
     private func constantsCode(translated: Bool) -> some SwiftCode {
         if let constants,
            !constants.isEmpty {
-            Mark(text: "Constants", isSeparator: false).padding(top: 1)
+            Mark(text: "Constants", isSeparator: true).padding(top: 1)
             ForEach(constants.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
                 Spacer()
                 ForEach(sameTypeConstants) { constant in
@@ -94,7 +94,7 @@ extension ExtensionApi.BuiltinClass {
         if let enums,
            !enums.isEmpty {
             Spacer()
-            Mark(text: "Enums", isSeparator: false)
+            Mark(text: "Enums", isSeparator: true)
             for `enum` in enums {
                 Spacer()
                 `enum`.code(translated: translated)
@@ -204,7 +204,7 @@ This function should only called by the `GodotLibrary`.
     @CodeBuilder
     private func constructorsCode(translated: Bool) -> some SwiftCode {
         Spacer()
-        Mark(text: "Init", isSeparator: false)
+        Mark(text: "Init", isSeparator: true)
         for constructor in filteredConstructors() {
             Spacer()
             
@@ -269,7 +269,7 @@ This function should only called by the `GodotLibrary`.
         if let methods,
            !methods.isEmpty {
             Spacer()
-            Mark(text: "Functions", isSeparator: false)
+            Mark(text: "Functions", isSeparator: true)
             for method in methods {
                 Spacer()
                 method.code(methodPointerName: methodPtrName(methodName: method.name),
@@ -285,7 +285,7 @@ This function should only called by the `GodotLibrary`.
     private func operatorsCode() -> some SwiftCode {
         if !operators.isEmpty {
             Spacer()
-            Mark(text: "Operators", isSeparator: false)
+            Mark(text: "Operators", isSeparator: true)
             for op in operators {
                 Spacer()
                 op.code(className: name, operatorPtrName: operatorPtrName(for: op))
