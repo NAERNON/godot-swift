@@ -207,33 +207,9 @@ This function should only called by the `GodotLibrary`.
         Mark(text: "Init", isSeparator: true)
         for constructor in filteredConstructors() {
             Spacer()
-            
-            BindingInit(arguments: constructor.arguments, translated: translated) { formatted in
-                // If the type is builtin, we need to make a temporary value
-                // that will be modified by the Godot constructor.
-                if ExtensionApi.isBuiltinBaseType(self.name) {
-                    "var _temporary = \(self.name)()"
-                    Spacer()
-                }
-                
-                ObjectsPointersAccess(functionParameters: formatted.parameters, generatePointersArray: true) {
-                    if ExtensionApi.isBuiltinBaseType(self.name) {
-                        "withUnsafeMutablePointer(to: &_temporary) { self_ptr in"
-                        ("Self." + constructorPtrName(index: constructor.index) + "(UnsafeMutableRawPointer(self_ptr), _accessPtr)").indentation()
-                    } else {
-                        "self.withUnsafeNativePointer { self_ptr in"
-                        ("Self." + constructorPtrName(index: constructor.index) + "(self_ptr, _accessPtr)").indentation()
-                    }
-                    "}"
-                }
-                
-                // If the type is builtin, we use the temporary value set it to self.
-                if ExtensionApi.isBuiltinBaseType(self.name) {
-                    Spacer()
-                    "self = _temporary"
-                }
-
-            }.public()
+            constructor.code(constructorPointerName: constructorPtrName(index: constructor.index),
+                             className: name,
+                             translated: translated)
         }
     }
     
@@ -300,15 +276,15 @@ This function should only called by the `GodotLibrary`.
     }
     
     private func constructorPtrName(index: Int) -> String {
-        "_constructor\(index)"
+        "__constructor\(index)"
     }
     
     private func destructorPtrName() -> String {
-        "_destructor"
+        "__destructor"
     }
     
     private func methodPtrName(methodName: String) -> String {
-        "_method_binding_\(methodName)"
+        "__method_binding_\(methodName)"
     }
     
     private func operatorPtrName(for op: Operator) -> String {
@@ -316,7 +292,7 @@ This function should only called by the `GodotLibrary`.
             return "ERROR"
         }
         
-        name = "_operator_binding_" + name
+        name = "__operator_binding_" + name
         if let rightType = op.rightType {
             name += "_" + rightType
         }
