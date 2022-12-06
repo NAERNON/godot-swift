@@ -3,6 +3,8 @@ import Foundation
 /// A code block that generates the pointers for each given parameter as `GDNativeTypedPtr`.
 ///
 /// It is also possible to generate an array that will contain all the pointers.
+/// When no parameters are given but an array is still requested, the array is not generated
+/// and the given name for it is "nil".
 ///
 /// Use the `PointerNames` given in the closure to retreive the names of the parameters pointers,
 /// as well as the name of the array pointer if applicable.
@@ -106,13 +108,13 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
             }
         }
         
-        if generatePointersArray {
+        if !pointersArrayIsNil {
             PointerArray(pointersNames: parameters.map { parameterPointer(for: $0.name, typed: false) },
-                         arrayPointerName: pointerArrayName) {
-                content(PointerNames(parameters: parametersPointerNames(), array: pointerArrayName))
+                         arrayPointerName: pointersArrayName!) {
+                content(PointerNames(parameters: parametersPointerNames(), array: pointersArrayName))
             }.indentation(level: parameters.count)
         } else {
-            content(PointerNames(parameters: parametersPointerNames(), array: nil))
+            content(PointerNames(parameters: parametersPointerNames(), array: pointersArrayName))
                 .indentation(level: parameters.count)
         }
         
@@ -129,7 +131,17 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
         (typed ? "__typedPtr_" : "__ptr_") + name
     }
     
-    private let pointerArrayName = "__accessPtr"
+    private var pointersArrayIsNil: Bool {
+        parameters.count == 0 || !generatePointersArray
+    }
+    
+    private var pointersArrayName: String? {
+        guard generatePointersArray else {
+            return nil
+        }
+        
+        return pointersArrayIsNil ? "nil" : "__accessPtr"
+    }
 }
 
 /// This code creates an array with the given pointers, and makes its address usable during the given closure.
