@@ -4,15 +4,19 @@ extension ExtensionApi.BuiltinClass.Method {
     func code(methodPointerName: String, className: String, translated: Bool) -> some SwiftCode {
         return BindingFunc(name: name, arguments: arguments, returnType: returnType, translated: translated) { formatted in
             if let returnType = formatted.returnType {
-                Property("_returnValue").varDefined().assign(value: returnType + "()")
+                Property("__returnValue").varDefined().assign(value: returnType + "()")
                 Spacer()
             }
             
-            ObjectsPointersAccess(functionParameters: formatted.parameters, generatePointersArray: true) {
+            ObjectsPointersAccess(functionParameters: formatted.parameters,
+                                  generatePointersArray: true) { pointerNames in
                 Spacer()
                 
-                ObjectsPointersAccess(parameters: objectsPointerAccessParameters(className: className, returnType: formatted.returnType)) {
-                    "Self.\(methodPointerName)(\(selfPointerName), _accessPtr, \(returnValuePointer(returnType: formatted.returnType)), \(formatted.parametersCount))"
+                ObjectsPointersAccess(parameters: returnParameters(className: className,
+                                                                   returnType: formatted.returnType)) { returnPointerNames in
+                    let selfPointer = isStatic ? "nil" : returnPointerNames.parameters.first!
+                    let returnPointer = returnType == nil ? "nil" : returnPointerNames.parameters.last!
+                    "Self.\(methodPointerName)(\(selfPointer), \(pointerNames.array!), \(returnPointer), \(formatted.parametersCount))"
                 }
                 
                 Spacer()
@@ -20,28 +24,20 @@ extension ExtensionApi.BuiltinClass.Method {
             
             if formatted.returns {
                 Spacer()
-                Return("_returnValue")
+                Return("__returnValue")
             }
         }
         .public()
         .static(isStatic)
     }
-    
-    private var selfPointerName: String {
-        isStatic ? "nil" : "self_ptr"
-    }
-    
-    private func returnValuePointer(returnType: String?) -> String {
-        returnType == nil ? "nil" : "_returnValue_ptr"
-    }
-    
-    private func objectsPointerAccessParameters<T: SwiftCode>(className: String, returnType: String?) -> [ObjectsPointersAccess<T>.Parameter] {
+        
+    private func returnParameters<T: SwiftCode>(className: String, returnType: String?) -> [ObjectsPointersAccess<T>.Parameter] {
         var parameters = [ObjectsPointersAccess<T>.Parameter]()
         if !isStatic {
-            parameters.append(.init(name: "self", type: className))
+            parameters.append(.named("self", type: className))
         }
         if let returnType {
-            parameters.append(.init(name: "_returnValue", type: returnType, isMutable: true))
+            parameters.append(.named("__returnValue", type: returnType, isMutable: true))
         }
         return parameters
     }

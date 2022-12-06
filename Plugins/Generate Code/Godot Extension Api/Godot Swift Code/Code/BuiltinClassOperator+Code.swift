@@ -36,21 +36,24 @@ extension ExtensionApi.BuiltinClass.Operator {
     
     @CodeBuilder
     private func functionContentCode(className: String, operatorPtrName: String) -> some SwiftCode {
-        Property("_returnValue").varDefined().assign(value: convertedReturnType + "()")
+        Property("__returnValue").varDefined().assign(value: convertedReturnType + "()")
         Spacer()
         
-        ObjectsPointersAccess(parameters: objectsPointerAccessParameters(className: className)) {
-            if let convertedRightType {
-                let lhsName = isMemberFunction ? "self_ptr" : "lhs_ptr"
-                let rhsName = isMemberFunction ? "\(parameterName(for: convertedRightType))_ptr" : "rhs_ptr"
-                "Self.\(operatorPtrName)(\(lhsName), \(rhsName), _returnValue_ptr)"
+        ObjectsPointersAccess(parameters: objectsPointerAccessParameters(className: className)) { pointerNames in
+            if rightType != nil {
+                let lhsName = pointerNames.parameters[0]
+                let rhsName = pointerNames.parameters[1]
+                let returnName = pointerNames.parameters[2]
+                "Self.\(operatorPtrName)(\(lhsName), \(rhsName), \(returnName))"
             } else {
-                "Self.\(operatorPtrName)(self_ptr, nil, _returnValue_ptr)"
+                let selfName = pointerNames.parameters[0]
+                let returnName = pointerNames.parameters[1]
+                "Self.\(operatorPtrName)(\(selfName), nil, \(returnName))"
             }
         }
         
         Spacer()
-        Return("_returnValue")
+        Return("__returnValue")
     }
     
     private func objectsPointerAccessParameters<T: SwiftCode>(className: String) -> [ObjectsPointersAccess<T>.Parameter] {
@@ -58,17 +61,17 @@ extension ExtensionApi.BuiltinClass.Operator {
         
         if let convertedRightType {
             if isMemberFunction {
-                parameters.append(.init(name: "self", type: className))
-                parameters.append(.init(name: parameterName(for: convertedRightType), type: convertedRightType))
+                parameters.append(.named("self", type: className))
+                parameters.append(.named(parameterName(for: convertedRightType), type: convertedRightType))
             } else {
-                parameters.append(.init(name: "lhs", type: className))
-                parameters.append(.init(name: "rhs", type: convertedRightType))
+                parameters.append(.named("lhs", type: className))
+                parameters.append(.named("rhs", type: convertedRightType))
             }
         } else {
-            parameters.append(.init(name: "self", type: className))
+            parameters.append(.named("self", type: className))
         }
         
-        parameters.append(.init(name: "_returnValue", type: returnType, isMutable: true))
+        parameters.append(.named("__returnValue", type: returnType, isMutable: true))
 
         return parameters
     }

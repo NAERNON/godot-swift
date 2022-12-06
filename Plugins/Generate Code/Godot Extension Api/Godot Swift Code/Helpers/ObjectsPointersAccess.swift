@@ -1,16 +1,19 @@
 import Foundation
 
 /// A code block that generates the pointers for each given parameter as `GDNativeTypedPtr`.
-/// Each pointer is called `<parameterName>_ptr`.
 ///
 /// It is also possible to generate an array that will contain all the pointers.
-/// The pointer array name is called `_accessPtr`.
 ///
-/// When no array pointer is generated, code looks like this for the two properties `axis` and `string`:
+/// Use the `PointerNames` given in the closure to retreive the names of the parameters pointers,
+/// as well as the name of the array pointer if applicable.
+///
+/// When no array pointer is generated, code looks like this for the two properties `axis` and `string` where
+///  `axis` is a base type, and `string` a Godot type with underlying reference:
 /// ```
-/// withUnsafePointer(to: axis) { axis_ptrTyped in
-///     let axis_ptr = UnsafeMutableRawPointer(mutating: axis_typedPtr)
-///     string.withUnsafeNativePointer { angle_ptr in
+/// withUnsafePointer(to: axis) { __ptrTyped_axis in
+///     let __ptr_axis = UnsafeMutableRawPointer(mutating: __ptrTyped_axis)
+///     string.withUnsafeNativePointer { __ptr_string in
+///
 ///             ...
 ///
 ///     }
@@ -19,12 +22,12 @@ import Foundation
 ///
 /// When an array is generated, code looks like this for the two properties `axis` and `string`:
 /// ```swift
-/// withUnsafePointer(to: axis) { axis_ptrTyped in
-///     let axis_ptr = UnsafeMutableRawPointer(mutating: axis_typedPtr)
-///     string.withUnsafeNativePointer { angle_ptr in
+/// withUnsafePointer(to: axis) { __ptrTyped_axis in
+///     let __ptr_axis = UnsafeMutableRawPointer(mutating: __ptrTyped_axis)
+///     string.withUnsafeNativePointer { __ptr_string in
 ///         let _accessPtr = UnsafeMutablePointer<GDNativeTypePtr?>.allocate(capacity: 2)
-///         _accessPtr[0] = axis_ptr
-///         _accessPtr[1] = angle_ptr
+///         _accessPtr[0] = __ptr_axis
+///         _accessPtr[1] = __ptr_string
 ///
 ///             ...
 ///
@@ -39,31 +42,46 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
         let type: String
         let isMutable: Bool
         
-        init(name: String, type: String, isMutable: Bool = false) {
+        private init(name: String, type: String, isMutable: Bool = false) {
             self.name = name
             self.type = type
             self.isMutable = isMutable
         }
+        
+        static func named(_ name: String, type: String, isMutable: Bool = false) -> Parameter {
+            self.init(name: name, type: type, isMutable: isMutable)
+        }
+    }
+    
+    struct PointerNames {
+        let parameters: [String]
+        let array: String?
     }
     
     let parameters: [Parameter]
     let generatePointersArray: Bool
-    let content: () -> Content
+    let content: (PointerNames) -> Content
     
     public init(parameters: [Parameter],
                 generatePointersArray: Bool = false,
-                @CodeBuilder content: @escaping () -> Content) {
+                @CodeBuilder content: @escaping (PointerNames) -> Content) {
         self.parameters = parameters
         self.generatePointersArray = generatePointersArray
         self.content = content
     }
     
+    public init(parameters: Parameter...,
+                generatePointersArray: Bool = false,
+                @CodeBuilder content: @escaping (PointerNames) -> Content) {
+        self.init(parameters: parameters, generatePointersArray: generatePointersArray, content: content)
+    }
+    
     public init(functionParameters: [FunctionParameter],
                 generatePointersArray: Bool = false,
-                @CodeBuilder content: @escaping () -> Content) {
-        self.parameters = functionParameters.map { .init(name: $0.name, type: $0.type, isMutable: false) }
-        self.generatePointersArray = generatePointersArray
-        self.content = content
+                @CodeBuilder content: @escaping (PointerNames) -> Content) {
+        self.init(parameters: functionParameters.map { .named($0.name, type: $0.type, isMutable: false) },
+                  generatePointersArray: generatePointersArray,
+                  content: content)
     }
     
     var body: some SwiftCode {
@@ -90,10 +108,12 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
         
         if generatePointersArray {
             PointerArray(pointersNames: parameters.map { parameterPointer(for: $0.name, typed: false) },
-                         arrayPointerName: "_accessPtr",
-                         content: content).indentation(level: parameters.count)
+                         arrayPointerName: pointerArrayName) {
+                content(PointerNames(parameters: parametersPointerNames(), array: pointerArrayName))
+            }.indentation(level: parameters.count)
         } else {
-            content().indentation(level: parameters.count)
+            content(PointerNames(parameters: parametersPointerNames(), array: nil))
+                .indentation(level: parameters.count)
         }
         
         for index in 0..<parameters.count {
@@ -101,9 +121,15 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
         }
     }
     
-    private func parameterPointer(for name: String, typed: Bool) -> String {
-        name + (typed ? "_typedPtr" : "_ptr")
+    private func parametersPointerNames() -> [String] {
+        parameters.map { parameterPointer(for: $0.name, typed: false) }
     }
+    
+    private func parameterPointer(for name: String, typed: Bool) -> String {
+        (typed ? "__typedPtr_" : "__ptr_") + name
+    }
+    
+    private let pointerArrayName = "__accessPtr"
 }
 
 /// This code creates an array with the given pointers, and makes its address usable during the given closure.
