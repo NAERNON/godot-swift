@@ -14,4 +14,12 @@ public struct Transform2D {
     public init() {
         self.init(x: Vector2(), y: Vector2(), origin: Vector2())
     }
+    
+    public init(xAxisX: Real, xAxisY: Real,
+                yAxisX: Real, yAxisY: Real,
+                originX: Real, originY: Real) {
+        self.init(x: Vector2(x: xAxisX, y: xAxisY),
+                  y: Vector2(x: yAxisX, y: yAxisY),
+                  origin: Vector2(x: originX, y: originY))
+    }
 }
