@@ -8,6 +8,7 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     private var accessControl: AccessControl? = nil
     private var isStatic: Bool = false
     private var isFinal: Bool = false
+    private var isMutating: Bool = false
     
     public init(name: String,
                 parameters: FunctionParameter...,
@@ -52,6 +53,9 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         if isFinal {
             keywords.append(.final)
         }
+        if isMutating {
+            keywords.append(.mutating)
+        }
         if let accessControl {
             keywords.append(accessControl.keyword)
         }
@@ -75,6 +79,12 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     public func `final`(_ state: Bool = true) -> Func {
         var new = self
         new.isFinal = state
+        return new
+    }
+    
+    public func `mutating`(_ state: Bool = true) -> Func {
+        var new = self
+        new.isMutating = state
         return new
     }
 }

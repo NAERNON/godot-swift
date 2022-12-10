@@ -18,7 +18,8 @@ private let swiftBaseTypes: Set<String> = [
     "uint64_t",
     "Real",
     "Float",
-    "Double"
+    "Double",
+    "GDNativeInt"
 ]
 
 private let builtinBaseTypes: Set<String> = [

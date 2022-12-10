@@ -1,12 +1,20 @@
 import Foundation
 
 extension _AlignableLine {
+    func keywords(_ keywords: Keyword...) -> _AlignableLine {
+        self.keywords(keywords)
+    }
+    
     func keywords(_ keywords: [Keyword]) -> _AlignableLine {
         _AlignableLine(components: keywords.codeStringComponents()) + self
     }
 }
 
 extension String {
+    func keywords(_ keywords: Keyword...) -> _AlignableLine {
+        self.keywords(keywords)
+    }
+    
     func keywords(_ keywords: [Keyword]) -> _AlignableLine {
         _AlignableLine(components: keywords.codeStringComponents() + [self])
     }
@@ -21,6 +29,8 @@ public enum Keyword {
     case `public`
     case `final`
     
+    case `mutating`
+    
     fileprivate var string: String {
         switch self {
         case .static: return "static"
@@ -29,6 +39,7 @@ public enum Keyword {
         case .internal: return "internal"
         case .public: return "public"
         case .final: return "final"
+        case .mutating: return "mutating"
         }
     }
     
@@ -40,6 +51,8 @@ public enum Keyword {
         switch self {
         case .private, .fileprivate, .internal, .public:
             return 100
+        case .mutating:
+            return 75
         case .static:
             return 50
         case .final:

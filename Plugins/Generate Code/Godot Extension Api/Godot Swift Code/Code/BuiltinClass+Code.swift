@@ -18,14 +18,19 @@ extension ExtensionApi.BuiltinClass {
     @CodeBuilder
     private func insideStructOrExtensionCode(classSize: Int,
                                              translated: Bool) -> some SwiftCode {
-        constantsCode(translated: translated)
-        enumCode(translated: translated)
-        constructorsCode(translated: translated)
-        operatorsCode()
-        methodsCode(translated: translated)
+        Group {
+            constantsCode(translated: translated)
+            enumCode(translated: translated)
+            constructorsCode(translated: translated)
+            operatorsCode()
+            getterSetterCode()
+            methodsCode(translated: translated)
+        }
         
         bindingsCode()
         if !ExtensionApi.isBuiltinBaseType(name) {
+            Spacer()
+            replaceOpaqueValueCode(translated: translated)
             nativePtrCode(classSize: classSize)
         }
     }
@@ -33,9 +38,30 @@ extension ExtensionApi.BuiltinClass {
     // MARK: Native Opaque
     
     @CodeBuilder
+    private func replaceOpaqueValueCode(translated: Bool) -> some SwiftCode {
+        Comment(style: .doc) {
+"""
+When a function modifies the opaque array or any value associated,
+we should check that the `Opaque` value is uniquely referenced and if not,
+duplicate its value.
+"""
+        }
+        Func(name: "replaceOpaqueValueIfNecessary") {
+            // We find a constructor that will duplicate our value.
+            Guard(condition: "!isKnownUniquelyReferenced(&opaque)") {
+                Return()
+            }
+                        
+            Spacer()
+            Property("tmp").letDefined().assign(value: "Self(self)")
+            Property("opaque").selfDefined().assign(value: "tmp.opaque")
+        }.private().mutating()
+    }
+    
+    @CodeBuilder
     private func nativePtrCode(classSize: Int) -> some SwiftCode {
         Spacer()
-        Property("opaque").letDefined().type("Opaque").private().assignComputed {
+        Property("opaque").varDefined().type("Opaque").private().assignComputed {
             if hasDestructor {
                 ".init(size: \(classSize), destructorPtr: Self.\(destructorPtrName()))"
             } else {
@@ -126,6 +152,11 @@ extension ExtensionApi.BuiltinClass {
             Property(destructorPtrName()).varDefined().private().static().type("GDNativePtrDestructor!")
         }
         
+        if indexingReturnType != nil {
+            Property(indexedSetterPtrName()).varDefined().private().static().type("GDNativePtrIndexedSetter!")
+            Property(indexedGetterPtrName()).varDefined().private().static().type("GDNativePtrIndexedGetter!")
+        }
+        
         if let methods {
             for method in methods {
                 Property(methodPtrName(methodName: method.name))
@@ -178,6 +209,13 @@ This function should only called by the `GodotLibrary`.
 """
         }
         Func(name: "setFunctionBindings") {
+            if indexingReturnType != nil {
+                Property(indexedSetterPtrName()).assign(value: "interface.variant_get_ptr_indexed_setter(\(godotVariantType))")
+                Property(indexedGetterPtrName()).assign(value: "interface.variant_get_ptr_indexed_getter(\(godotVariantType))")
+                
+                Spacer()
+            }
+            
             if let methods {
                 Property("_method_name").varDefined().type("StringName!")
                 for method in methods {
@@ -269,6 +307,50 @@ This function should only called by the `GodotLibrary`.
         }
     }
     
+    // MARK: Getter/Setter
+    
+    @CodeBuilder
+    private func getterSetterCode() -> some SwiftCode {
+        if let indexingReturnType {
+            // Getter/setters are internal, and public extensions should be
+            // made to generate the subscripts.
+            Spacer()
+            Mark(text: "Getter/Setter", isSeparator: true)
+            Spacer()
+            
+            let indexingType = ExtensionApi.convert(type: indexingReturnType, insideType: self.name)
+            
+            Func(name: "_getValue",
+                 parameters: .named("index", type: "GDNativeInt", label: .name("at")),
+                 returnType: indexingType) {
+                Property("__tmp").varDefined().assign(value: indexingType + "()")
+                
+                ObjectsPointersAccess(functionParameters: [.named("__tmp", type: indexingType),
+                                                           .named("self", type: self.name)])
+                { pointerNames in
+                    "Self.__indexed_getter(\(pointerNames.parameters[1]), index, \(pointerNames.parameters[0]))"
+                }.padding(top: 1, bottom: 1)
+                
+                Return("__tmp")
+            }.internal()
+            
+            Spacer()
+            
+            let setValueParameter = FunctionParameter.named("value", type: indexingType, label: .hidden)
+            
+            Func(name: "_setValue",
+                 parameters: setValueParameter, .named("index", type: "GDNativeInt", label: .name("at"))) {
+                "replaceOpaqueValueIfNecessary()"
+                Spacer()
+                ObjectsPointersAccess(functionParameters: [setValueParameter,
+                                                           .named("self", type: self.name)])
+                { pointerNames in
+                    "Self.__indexed_setter(\(pointerNames.parameters[1]), index, \(pointerNames.parameters[0]))"
+                }
+            }.internal().mutating()
+        }
+    }
+    
     // MARK: Naming
     
     private var godotVariantType: String {
@@ -281,6 +363,14 @@ This function should only called by the `GodotLibrary`.
     
     private func destructorPtrName() -> String {
         "__destructor"
+    }
+    
+    private func indexedSetterPtrName() -> String {
+        "__indexed_setter"
+    }
+    
+    private func indexedGetterPtrName() -> String {
+        "__indexed_getter"
     }
     
     private func methodPtrName(methodName: String) -> String {
