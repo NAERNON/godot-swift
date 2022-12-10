@@ -87,21 +87,13 @@ duplicate its value.
             ForEach(constants.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
                 Spacer()
                 ForEach(sameTypeConstants) { constant in
+                    let type = ExtensionApi.convert(type: constant.type)
                     Property(constantName(constant.name, translated: translated))
-                        .letDefined().public().static().type(ExtensionApi.convert(type: constant.type))
-                        .assign(value: constantValue(from: constant.value))
+                        .letDefined().public().static().type(type)
+                        .assign(value: ExtensionApi.correctTypeInitValue(constant.value, forType: type))
                 }.aligned(1)
             }
         }
-    }
-    
-    /// Converts a valeu string such as `Vector2(inf, 0)` to `Vector2(.infinity, 0)` for example.
-    private func constantValue(from string: String) -> String {
-        guard let firstParenthesisIndex = string.firstIndex(of: "(") else {
-            return string
-        }
-        
-        return string.replacingOccurrences(of: "inf", with: ".infinity", range: firstParenthesisIndex..<string.endIndex)
     }
     
     private func constantName(_ name: String, translated: Bool) -> String {
@@ -323,11 +315,7 @@ This function should only called by the `GodotLibrary`.
             Func(name: "_getValue",
                  parameters: .named("index", type: "GDNativeInt", label: "at"),
                  returnType: indexingType) {
-                if ExtensionApi.isBaseType(indexingType) {
-                    Property("__returnValue").varDefined().assign(value: indexingType + "()")
-                } else {
-                    Property("__returnValue").letDefined().assign(value: indexingType + "()")
-                }
+                Property("__returnValue").defined(isVar: ExtensionApi.isBaseType(indexingType)).assign(value: indexingType + "()")
                 
                 ObjectsPointersAccess(parameters:
                                         [.named("__returnValue", type: indexingType, isMutable: true),
@@ -341,14 +329,17 @@ This function should only called by the `GodotLibrary`.
             
             Spacer()
             
-            let setValueParameter = FunctionParameter.named("value", type: indexingType, label: .hidden)
-            
             Func(name: "_setValue",
-                 parameters: setValueParameter, .named("index", type: "GDNativeInt", label: "at")) {
-                "replaceOpaqueValueIfNecessary()"
-                Spacer()
-                ObjectsPointersAccess(functionParameters: [setValueParameter,
-                                                           .named("self", type: self.name)])
+                 parameters: [.named("value", type: indexingType, label: .hidden),
+                              .named("index", type: "GDNativeInt", label: "at")])
+            {
+                if !ExtensionApi.isBuiltinBaseType(self.name) {
+                    "replaceOpaqueValueIfNecessary()"
+                    Spacer()
+                }
+                
+                ObjectsPointersAccess(parameters: [.named("value", type: indexingType, isMutable: false),
+                                                   .named("self", type: self.name, isMutable: true)])
                 { pointerNames in
                     "Self.__indexed_setter(\(pointerNames.parameters[1]), index, \(pointerNames.parameters[0]))"
                 }

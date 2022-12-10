@@ -25,6 +25,10 @@ public struct Property: SwiftCode, _AssignableProperty {
         _SelfDefinedProperty(property: self)
     }
     
+    public func defined(isVar: Bool) -> _PropertyDefinition {
+        _PropertyDefinition(self, definitionType: isVar ? .var : .let)
+    }
+    
     public func letDefined() -> _PropertyDefinition {
         _PropertyDefinition(self, definitionType: .let)
     }

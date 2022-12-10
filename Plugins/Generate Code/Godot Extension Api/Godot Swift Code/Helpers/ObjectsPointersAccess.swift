@@ -88,7 +88,7 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
     
     var body: some SwiftCode {
         for (index, parameter) in parameters.enumerated() {
-            let name = parameter.name
+            let name = CodeLanguage.swift.protectNameIfKeyword(for: parameter.name)
             if ExtensionApi.isBaseType(parameter.type) {
                 if parameter.isMutable {
                     "withUnsafeMutablePointer(to: &\(name)) { \(parameterPointer(for: parameter.name, typed: true)) in"

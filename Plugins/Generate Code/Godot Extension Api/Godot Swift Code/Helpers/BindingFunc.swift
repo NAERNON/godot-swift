@@ -57,7 +57,9 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     private func nameAndParameters(translated: Bool) -> (name: String, parameters: [CodeLanguage.FunctionParameter]) {
         CodeLanguage.c.translateFunction(
             name: name,
-            parameters: arguments?.map({ .init(name: $0.name, label: nil, isLabelHidden: false) }) ?? [],
+            parameters: arguments?.map({ .init(name: $0.name.replacingOccurrences(of: " ", with: ""),
+                                               label: nil,
+                                               isLabelHidden: false) }) ?? [],
             to: translated ? .swift : .c)
     }
     
@@ -135,15 +137,16 @@ extension BindingFunc {
 
 private extension ExtensionApi.Argument {
     func functionParameter(withLanguageParameter languageParameter: CodeLanguage.FunctionParameter, insideType: String) -> FunctionParameter {
+        let type = ExtensionApi.convert(type: type, insideType: insideType)
         let defaultParameterValue: FunctionParameter.DefaultValue
         if let defaultValue {
-            defaultParameterValue = .codeString(defaultValue)
+            defaultParameterValue = .codeString(ExtensionApi.correctTypeInitValue(defaultValue, forType: type))
         } else {
             defaultParameterValue = .none
         }
         
         return .named(languageParameter.name,
-                      type: ExtensionApi.convert(type: type, insideType: insideType),
+                      type: type,
                       defaultValue: defaultParameterValue,
                       label: languageParameter.functionParameterLabel)
     }

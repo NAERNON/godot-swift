@@ -36,7 +36,7 @@ extension ExtensionApi.BuiltinClass.Operator {
     
     @CodeBuilder
     private func functionContentCode(className: String, operatorPtrName: String) -> some SwiftCode {
-        Property("__returnValue").varDefined().assign(value: convertedReturnType(className: className) + "()")
+        Property("__returnValue").defined(isVar: ExtensionApi.isBaseType(convertedReturnType(className: className))).assign(value: convertedReturnType(className: className) + "()")
         Spacer()
         
         ObjectsPointersAccess(parameters: objectsPointerAccessParameters(className: className)) { pointerNames in
