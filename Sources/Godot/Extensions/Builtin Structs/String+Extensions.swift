@@ -15,16 +15,16 @@ extension String {
         self.init(string: value)
     }
     
+    public init(_ c: Character) {
+        self = String(swiftString: .init(c))
+    }
+    
     public subscript(index: Int) -> Character {
         get {
-#warning("Maybe not pass through a Swift.String")
-            let string = self._getValue(at: Int64(index))
-            return Character(.init(godotString: string))
+            Character(self._getValue(at: Int64(index)))
         }
         set(newValue) {
-#warning("Maybe not pass through a Swift.String")
-            let string = String(swiftString: .init(newValue))
-            self._setValue(string, at: Int64(index))
+            self._setValue(String(newValue), at: Int64(index))
         }
     }
 }
