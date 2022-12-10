@@ -10,7 +10,6 @@ extension ExtensionApi.BuiltinClass.Method {
             
             ObjectsPointersAccess(functionParameters: formatted.parameters,
                                   generatePointersArray: true) { pointerNames in
-                Spacer()
                 
                 ObjectsPointersAccess(parameters: returnParameters(className: className,
                                                                    returnType: formatted.returnType)) { returnPointerNames in
@@ -19,7 +18,6 @@ extension ExtensionApi.BuiltinClass.Method {
                     "Self.\(methodPointerName)(\(selfPointer), \(pointerNames.array!), \(returnPointer), \(formatted.parametersCount))"
                 }
                 
-                Spacer()
             }
             
             if formatted.returns {
