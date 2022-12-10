@@ -1,10 +1,10 @@
 import Foundation
 
 public struct Vector2 {
-    public var x: Float
-    public var y: Float
+    public var x: Real
+    public var y: Real
     
-    public init(x: Float, y: Float) {
+    public init(x: Real, y: Real) {
         self.x = x
         self.y = y
     }

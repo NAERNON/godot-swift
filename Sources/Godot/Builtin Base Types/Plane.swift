@@ -2,9 +2,9 @@ import Foundation
 
 public struct Plane {
     public var normal: Vector3
-    public var d: Float
+    public var d: Real
     
-    public init(normal: Vector3, d: Float) {
+    public init(normal: Vector3, d: Real) {
         self.normal = normal
         self.d = d
     }
