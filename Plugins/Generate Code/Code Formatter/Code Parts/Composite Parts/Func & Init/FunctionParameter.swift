@@ -1,10 +1,14 @@
 import Foundation
 
 public struct FunctionParameter {
-    public enum Label {
+    public enum Label: ExpressibleByStringLiteral {
         case hidden
         case name(String)
         case none
+        
+        public init(stringLiteral value: String) {
+            self = .name(value)
+        }
     }
     
     public enum DefaultValue {

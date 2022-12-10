@@ -182,7 +182,7 @@ for any initialization.
 This function should only called by the `GodotLibrary`.
 """
         }
-        Func(name: "setInitBindings", parameters: .named("interface", type: "GDNativeInterface", label: .name("with"))) {
+        Func(name: "setInitBindings", parameters: .named("interface", type: "GDNativeInterface", label: "with")) {
             Property("self.interface").assign(value: "interface")
             
             Spacer()
@@ -321,7 +321,7 @@ This function should only called by the `GodotLibrary`.
             let indexingType = ExtensionApi.convert(type: indexingReturnType, insideType: self.name)
             
             Func(name: "_getValue",
-                 parameters: .named("index", type: "GDNativeInt", label: .name("at")),
+                 parameters: .named("index", type: "GDNativeInt", label: "at"),
                  returnType: indexingType) {
                 if ExtensionApi.isBaseType(indexingType) {
                     Property("__returnValue").varDefined().assign(value: indexingType + "()")
@@ -344,7 +344,7 @@ This function should only called by the `GodotLibrary`.
             let setValueParameter = FunctionParameter.named("value", type: indexingType, label: .hidden)
             
             Func(name: "_setValue",
-                 parameters: setValueParameter, .named("index", type: "GDNativeInt", label: .name("at"))) {
+                 parameters: setValueParameter, .named("index", type: "GDNativeInt", label: "at")) {
                 "replaceOpaqueValueIfNecessary()"
                 Spacer()
                 ObjectsPointersAccess(functionParameters: [setValueParameter,
