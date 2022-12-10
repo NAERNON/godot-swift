@@ -7,6 +7,8 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     let name: String
     let arguments: [ExtensionApi.Argument]?
     let returnType: String?
+    /// The type inside which the function will be.
+    let insideType: String
     let translated: Bool
     let content: (Formatted) -> Content
     private var accessControl: AccessControl? = nil
@@ -16,11 +18,13 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     public init(name: String,
                 arguments: [ExtensionApi.Argument]?,
                 returnType: String?,
+                insideType: String,
                 translated: Bool,
                 @CodeBuilder content: @escaping (Formatted) -> Content) {
         self.name = name
         self.arguments = arguments
         self.returnType = returnType
+        self.insideType = insideType
         self.translated = translated
         self.content = content
     }
@@ -28,11 +32,12 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     var body: some SwiftCode {
         let nameAndParameters = nameAndParameters(translated: translated)
         let convertedFunctionName = convertedFunction(name: nameAndParameters.name, translated: translated)
-        let functionParameters = functionParameters(withLanguageParameters: nameAndParameters.parameters)
+        let functionParameters = functionParameters(withLanguageParameters: nameAndParameters.parameters, insideType: insideType)
+        let returnType = convertedReturnType(insideType: insideType)
         
         if isVarInsteadOfFunc(shouldBeVar: convertedFunctionName.shouldBeVar, translated: translated) {
-            Var(convertedFunctionName.name, type: convertedReturnType!) {
-                content(Formatted(parameters: functionParameters, returnType: convertedReturnType))
+            Var(convertedFunctionName.name, type: returnType!) {
+                content(Formatted(parameters: functionParameters, returnType: returnType))
             }
             .accessControl(accessControl)
             .static(isStatic)
@@ -40,8 +45,8 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         } else {
             Func(name: convertedFunctionName.name,
                  parameters: functionParameters,
-                 returnType: convertedReturnType) {
-                content(Formatted(parameters: functionParameters, returnType: convertedReturnType))
+                 returnType: returnType) {
+                content(Formatted(parameters: functionParameters, returnType: returnType))
             }
                  .accessControl(accessControl)
                  .static(isStatic)
@@ -56,7 +61,7 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
             to: translated ? .swift : .c)
     }
     
-    private func functionParameters(withLanguageParameters languageParameters: [CodeLanguage.FunctionParameter]) -> [FunctionParameter] {
+    private func functionParameters(withLanguageParameters languageParameters: [CodeLanguage.FunctionParameter], insideType: String) -> [FunctionParameter] {
         guard let arguments else {
             return []
         }
@@ -64,7 +69,7 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         var parameters = [FunctionParameter]()
         for (index, argument) in arguments.enumerated() {
             let languageParameter = languageParameters[index]
-            parameters.append(argument.functionParameter(withLanguageParameter: languageParameter))
+            parameters.append(argument.functionParameter(withLanguageParameter: languageParameter, insideType: insideType))
         }
         
         return parameters
@@ -88,10 +93,10 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         return shouldBeVar && noArguments && returns
     }
     
-    private var convertedReturnType: String? {
+    private func convertedReturnType(insideType: String) -> String? {
         guard let returnType else { return nil }
         
-        return ExtensionApi.convert(type: returnType)
+        return ExtensionApi.convert(type: returnType, insideType: insideType)
     }
     
     // MARK: Modifiers
@@ -135,7 +140,7 @@ extension BindingFunc {
 // MARK: Argument
 
 private extension ExtensionApi.Argument {
-    func functionParameter(withLanguageParameter languageParameter: CodeLanguage.FunctionParameter) -> FunctionParameter {
+    func functionParameter(withLanguageParameter languageParameter: CodeLanguage.FunctionParameter, insideType: String) -> FunctionParameter {
         let defaultParameterValue: FunctionParameter.DefaultValue
         if let defaultValue {
             defaultParameterValue = .codeString(defaultValue)
@@ -144,7 +149,7 @@ private extension ExtensionApi.Argument {
         }
         
         return .named(languageParameter.name,
-                      type: ExtensionApi.convert(type: type),
+                      type: ExtensionApi.convert(type: type, insideType: insideType),
                       defaultValue: defaultParameterValue,
                       label: languageParameter.functionParameterLabel)
     }

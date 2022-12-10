@@ -2,7 +2,11 @@ import Foundation
 
 extension ExtensionApi.BuiltinClass.Method {
     func code(methodPointerName: String, className: String, translated: Bool) -> some SwiftCode {
-        return BindingFunc(name: name, arguments: arguments, returnType: returnType, translated: translated) { formatted in
+        return BindingFunc(name: name,
+                           arguments: arguments,
+                           returnType: returnType,
+                           insideType: className,
+                           translated: translated) { formatted in
             if let returnType = formatted.returnType {
                 Property("__returnValue").varDefined().assign(value: returnType + "()")
                 Spacer()

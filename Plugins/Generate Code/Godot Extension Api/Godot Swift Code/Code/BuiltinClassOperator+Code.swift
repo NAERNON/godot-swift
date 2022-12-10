@@ -4,7 +4,7 @@ import PackagePlugin
 extension ExtensionApi.BuiltinClass.Operator {
     @CodeBuilder
     func code(className: String, operatorPtrName: String) -> some SwiftCode {
-        if let convertedRightType {
+        if let convertedRightType = convertedRightType(className: className) {
             // If there is a right type, it should be a function.
             
             if isMemberFunction {
@@ -13,20 +13,20 @@ extension ExtensionApi.BuiltinClass.Operator {
                 Func(name: convertedFunctionName,
                      parameters: [.named(parameterName(for: convertedRightType),
                                          type: convertedRightType, label: .hidden)],
-                     returnType: convertedReturnType) {
+                     returnType: convertedReturnType(className: className)) {
                     functionContentCode(className: className, operatorPtrName: operatorPtrName)
                 }.public()
             } else {
                 Func(name: convertedFunctionName,
                      parameters: [.named("lhs", type: className),
                                   .named("rhs", type: convertedRightType)],
-                     returnType: convertedReturnType) {
+                     returnType: convertedReturnType(className: className)) {
                     functionContentCode(className: className, operatorPtrName: operatorPtrName)
                 }.static().public()
             }
         } else if isMemberFunction {
             // If there is no right type, it should be a var.
-            Var(convertedFunctionName, type: convertedReturnType) {
+            Var(convertedFunctionName, type: convertedReturnType(className: className)) {
                 functionContentCode(className: className, operatorPtrName: operatorPtrName)
             }.public()
         } else {
@@ -36,7 +36,7 @@ extension ExtensionApi.BuiltinClass.Operator {
     
     @CodeBuilder
     private func functionContentCode(className: String, operatorPtrName: String) -> some SwiftCode {
-        Property("__returnValue").varDefined().assign(value: convertedReturnType + "()")
+        Property("__returnValue").varDefined().assign(value: convertedReturnType(className: className) + "()")
         Spacer()
         
         ObjectsPointersAccess(parameters: objectsPointerAccessParameters(className: className)) { pointerNames in
@@ -59,7 +59,7 @@ extension ExtensionApi.BuiltinClass.Operator {
     private func objectsPointerAccessParameters<T: SwiftCode>(className: String) -> [ObjectsPointersAccess<T>.Parameter] {
         var parameters = [ObjectsPointersAccess<T>.Parameter]()
         
-        if let convertedRightType {
+        if let convertedRightType = convertedRightType(className: className) {
             if isMemberFunction {
                 parameters.append(.named("self", type: className))
                 parameters.append(.named(parameterName(for: convertedRightType), type: convertedRightType))
@@ -140,17 +140,17 @@ extension ExtensionApi.BuiltinClass.Operator {
         ExtensionApi.functionSwiftName(for: name).name
     }
     
-    private var convertedReturnType: String {
-        ExtensionApi.convert(type: returnType)
+    private func convertedReturnType(className: String) -> String {
+        ExtensionApi.convert(type: returnType, insideType: className)
     }
     
     private func parameterName(for name: String) -> String {
         NamingConvention.pascal.convert(string: name, to: .camel)
     }
     
-    private var convertedRightType: String? {
+    private func convertedRightType(className: String) -> String? {
         if let rightType {
-            return ExtensionApi.convert(type: rightType)
+            return ExtensionApi.convert(type: rightType, insideType: className)
         } else {
             return nil
         }

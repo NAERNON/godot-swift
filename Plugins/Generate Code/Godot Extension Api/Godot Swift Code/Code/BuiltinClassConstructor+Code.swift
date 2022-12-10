@@ -2,7 +2,9 @@ import Foundation
 
 extension ExtensionApi.BuiltinClass.Constructor {
     func code(constructorPointerName: String, className: String, translated: Bool) -> some SwiftCode {
-        BindingInit(arguments: arguments, translated: translated) { formatted in
+        BindingInit(arguments: arguments,
+                    insideType: className,
+                    translated: translated) { formatted in
             // If the type is builtin, we need to make a temporary value
             // that will be modified by the Godot constructor.
             if ExtensionApi.isBuiltinBaseType(className) {
