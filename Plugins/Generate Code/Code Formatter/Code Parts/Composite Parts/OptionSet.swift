@@ -3,7 +3,7 @@ import Foundation
 public struct OptionSet<RawType>: SwiftCode, AccessControlCode where RawType: BinaryInteger {
     let name: String
     let options: [(name: String, value: RawType)]
-    private var accessControl: AccessControl? = nil
+    public var accessControl: AccessControl? = nil
     
     public init(_ name: String,
                 options: [(name: String, value: RawType)]) {
@@ -43,13 +43,5 @@ public struct OptionSet<RawType>: SwiftCode, AccessControlCode where RawType: Bi
         case .public:
             return .public
         }
-    }
-    
-    // MARK: Modifiers
-    
-    public func accessControl(_ accessControl: AccessControl?) -> OptionSet {
-        var new = self
-        new.accessControl = accessControl
-        return new
     }
 }

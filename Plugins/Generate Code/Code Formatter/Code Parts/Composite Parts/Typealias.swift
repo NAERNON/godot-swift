@@ -3,7 +3,7 @@ import Foundation
 public struct Typealias: SwiftCode, AccessControlCode {
     let newType: String
     let type: String
-    private var accessControl: AccessControl? = nil
+    public var accessControl: AccessControl? = nil
     
     public init(_ newType: String, type: String) {
         self.newType = newType
@@ -19,13 +19,5 @@ public struct Typealias: SwiftCode, AccessControlCode {
             return [accessControl.keyword]
         }
         return []
-    }
-    
-    // MARK: Modifiers
-    
-    public func accessControl(_ accessControl: AccessControl?) -> Typealias {
-        var new = self
-        new.accessControl = accessControl
-        return new
     }
 }

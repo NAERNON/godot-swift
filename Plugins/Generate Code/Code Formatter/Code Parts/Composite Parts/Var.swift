@@ -4,9 +4,9 @@ public struct Var<Content>: SwiftCode, AccessControlCode where Content: SwiftCod
     let name: String
     let type: String
     let content: () -> Content
-    private var accessControl: AccessControl? = nil
-    private var isStatic: Bool = false
-    private var isFinal: Bool = false
+    public var accessControl: AccessControl? = nil
+    public var isStatic: Bool = false
+    public var isFinal: Bool = false
     
     public init(_ name: String,
                 type: String,
@@ -37,12 +37,6 @@ public struct Var<Content>: SwiftCode, AccessControlCode where Content: SwiftCod
     }
     
     // MARK: Modifiers
-    
-    public func accessControl(_ accessControl: AccessControl?) -> Var {
-        var new = self
-        new.accessControl = accessControl
-        return new
-    }
     
     public func `static`(_ state: Bool = true) -> Var {
         var new = self

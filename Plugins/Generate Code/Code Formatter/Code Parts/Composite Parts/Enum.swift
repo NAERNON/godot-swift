@@ -4,7 +4,7 @@ public struct Enum<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     let name: String
     let type: String?
     let content: () -> Content
-    private var accessControl: AccessControl? = nil
+    public var accessControl: AccessControl? = nil
     
     public init(_ name: String,
                 type: String? = nil,
@@ -31,13 +31,5 @@ public struct Enum<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
             return [type]
         }
         return []
-    }
-    
-    // MARK: Modifiers
-    
-    public func accessControl(_ accessControl: AccessControl?) -> Enum {
-        var new = self
-        new.accessControl = accessControl
-        return new
     }
 }

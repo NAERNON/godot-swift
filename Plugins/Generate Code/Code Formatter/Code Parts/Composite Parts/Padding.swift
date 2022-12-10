@@ -1,6 +1,6 @@
 import Foundation
 
-struct Padding<Content>: SwiftCode where Content: SwiftCode {
+internal struct Padding<Content>: SwiftCode where Content: SwiftCode {
     let topPadding: Int
     let bottomPadding: Int
     let content: () -> Content

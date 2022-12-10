@@ -13,7 +13,7 @@ public struct _Construct<Content>: SwiftCode, AccessControlCode where Content: S
     let name: String
     let content: () -> Content
     let extensions: [String]
-    private var accessControl: AccessControl? = nil
+    public var accessControl: AccessControl? = nil
     
     public init(type: String, name: String, extensions: [String] = [], @CodeBuilder content: @escaping () -> Content) {
         self.type = type
@@ -51,13 +51,5 @@ public struct _Construct<Content>: SwiftCode, AccessControlCode where Content: S
             return [accessControl.keyword]
         }
         return []
-    }
-    
-    // MARK: Modifiers
-    
-    public func accessControl(_ accessControl: AccessControl?) -> _Construct {
-        var new = self
-        new.accessControl = accessControl
-        return new
     }
 }

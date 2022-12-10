@@ -8,7 +8,7 @@ struct BindingInit<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     let insideType: String
     let translated: Bool
     let content: (Formatted) -> Content
-    private var accessControl: AccessControl? = nil
+    var accessControl: AccessControl? = nil
     
     public init(arguments: [ExtensionApi.Argument]?,
                 insideType: String,
@@ -40,15 +40,6 @@ struct BindingInit<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
             }
             return parameter
         }
-    }
-
-    
-    // MARK: Modifiers
-    
-    public func accessControl(_ accessControl: AccessControl?) -> BindingInit {
-        var new = self
-        new.accessControl = accessControl
-        return new
     }
 }
 

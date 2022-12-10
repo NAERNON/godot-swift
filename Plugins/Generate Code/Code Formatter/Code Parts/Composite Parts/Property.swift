@@ -81,7 +81,7 @@ public struct _PropertyDefinition: SwiftCode, _AssignableProperty, AccessControl
     private let definitionType: DefinitionType
     private var type: String?
     private var isStatic: Bool = false
-    private var accessControl: AccessControl? = nil
+    public var accessControl: AccessControl? = nil
     
     fileprivate init(_ property: Property, definitionType: DefinitionType) {
         self.property = property
@@ -128,12 +128,6 @@ public struct _PropertyDefinition: SwiftCode, _AssignableProperty, AccessControl
     
     public func type<T>(_ type: T.Type) -> _PropertyDefinition {
         self.type(String(describing: type.self))
-    }
-    
-    public func accessControl(_ accessControl: AccessControl?) -> _PropertyDefinition {
-        var new = self
-        new.accessControl = accessControl
-        return new
     }
 }
 

@@ -11,9 +11,9 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     let insideType: String
     let translated: Bool
     let content: (Formatted) -> Content
-    private var accessControl: AccessControl? = nil
-    private var isStatic: Bool = false
-    private var isFinal: Bool = false
+    var accessControl: AccessControl? = nil
+    var isStatic: Bool = false
+    var isFinal: Bool = false
     
     public init(name: String,
                 arguments: [ExtensionApi.Argument]?,
@@ -100,12 +100,6 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     }
     
     // MARK: Modifiers
-    
-    public func accessControl(_ accessControl: AccessControl?) -> BindingFunc {
-        var new = self
-        new.accessControl = accessControl
-        return new
-    }
     
     public func `static`(_ state: Bool = true) -> BindingFunc {
         var new = self

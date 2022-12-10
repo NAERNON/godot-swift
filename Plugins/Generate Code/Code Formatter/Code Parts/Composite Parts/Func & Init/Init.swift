@@ -3,7 +3,7 @@ import Foundation
 public struct Init<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
     let parameters: [FunctionParameter]
     let content: () -> Content
-    private var accessControl: AccessControl? = nil
+    public var accessControl: AccessControl? = nil
     
     public init(parameters: FunctionParameter..., @CodeBuilder content: @escaping () -> Content) {
         self.init(parameters: Array(parameters), content: content)
@@ -25,13 +25,5 @@ public struct Init<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
             return [accessControl.keyword]
         }
         return []
-    }
-    
-    // MARK: Modifiers
-    
-    public func accessControl(_ accessControl: AccessControl?) -> Init {
-        var new = self
-        new.accessControl = accessControl
-        return new
     }
 }

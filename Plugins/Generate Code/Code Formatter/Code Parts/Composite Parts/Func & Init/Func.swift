@@ -5,10 +5,10 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     let parameters: [FunctionParameter]
     let returnType: String?
     let content: () -> Content
-    private var accessControl: AccessControl? = nil
-    private var isStatic: Bool = false
-    private var isFinal: Bool = false
-    private var isMutating: Bool = false
+    public var accessControl: AccessControl? = nil
+    public var isStatic: Bool = false
+    public var isFinal: Bool = false
+    public var isMutating: Bool = false
     
     public init(name: String,
                 parameters: FunctionParameter...,
@@ -63,12 +63,6 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     }
     
     // MARK: Modifiers
-    
-    public func accessControl(_ accessControl: AccessControl?) -> Func {
-        var new = self
-        new.accessControl = accessControl
-        return new
-    }
     
     public func `static`(_ state: Bool = true) -> Func {
         var new = self

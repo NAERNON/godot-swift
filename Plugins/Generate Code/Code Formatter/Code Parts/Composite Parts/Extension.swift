@@ -4,7 +4,7 @@ public struct Extension<Content>: SwiftCode, AccessControlCode where Content: Sw
     let name: String
     let extensions: [String]
     let content: () -> Content
-    private var accessControl: AccessControl? = nil
+    public var accessControl: AccessControl? = nil
     
     public init(_ name: String,
                 extensions: [String] = [],
@@ -18,13 +18,5 @@ public struct Extension<Content>: SwiftCode, AccessControlCode where Content: Sw
         _Construct(type: "extension", name: name, extensions: extensions) {
             content()
         }.accessControl(accessControl)
-    }
-    
-    // MARK: Modifiers
-    
-    public func accessControl(_ accessControl: AccessControl?) -> Extension {
-        var new = self
-        new.accessControl = accessControl
-        return new
     }
 }
