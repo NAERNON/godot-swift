@@ -323,15 +323,20 @@ This function should only called by the `GodotLibrary`.
             Func(name: "_getValue",
                  parameters: .named("index", type: "GDNativeInt", label: .name("at")),
                  returnType: indexingType) {
-                Property("__tmp").varDefined().assign(value: indexingType + "()")
+                if ExtensionApi.isBaseType(indexingType) {
+                    Property("__returnValue").varDefined().assign(value: indexingType + "()")
+                } else {
+                    Property("__returnValue").letDefined().assign(value: indexingType + "()")
+                }
                 
-                ObjectsPointersAccess(functionParameters: [.named("__tmp", type: indexingType),
-                                                           .named("self", type: self.name)])
-                { pointerNames in
+                ObjectsPointersAccess(parameters:
+                                        [.named("__returnValue", type: indexingType, isMutable: true),
+                                         .named("self", type: self.name)]
+                ) { pointerNames in
                     "Self.__indexed_getter(\(pointerNames.parameters[1]), index, \(pointerNames.parameters[0]))"
                 }.padding(top: 1, bottom: 1)
                 
-                Return("__tmp")
+                Return("__returnValue")
             }.internal()
             
             Spacer()

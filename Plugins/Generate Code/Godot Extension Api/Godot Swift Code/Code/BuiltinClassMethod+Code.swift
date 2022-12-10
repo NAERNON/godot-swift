@@ -8,7 +8,11 @@ extension ExtensionApi.BuiltinClass.Method {
                            insideType: className,
                            translated: translated) { formatted in
             if let returnType = formatted.returnType {
-                Property("__returnValue").varDefined().assign(value: returnType + "()")
+                if ExtensionApi.isBaseType(returnType) {
+                    Property("__returnValue").varDefined().assign(value: returnType + "()")
+                } else {
+                    Property("__returnValue").letDefined().assign(value: returnType + "()")
+                }
                 Spacer()
             }
             
