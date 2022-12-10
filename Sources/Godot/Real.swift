@@ -1017,7 +1017,7 @@ extension Real: CustomDebugStringConvertible {
     ///
     /// This property has the same value as the `description` property, except
     /// that NaN values are printed in an extended format.
-    public var debugDescription: String {
+    public var debugDescription: Swift.String {
         undefinedRawValue.debugDescription
     }
 }
@@ -1030,7 +1030,7 @@ extension Real: CustomStringConvertible {
     /// is, if `x` is an instance of `Real`, then `Real(x.description) ==
     /// x` is always true.  For any NaN value, the property's value is "nan", and
     /// for positive and negative infinity its value is "inf" and "-inf".
-    public var description: String {
+    public var description: Swift.String {
         undefinedRawValue.description
     }
 }
@@ -1187,7 +1187,7 @@ extension Real: LosslessStringConvertible {
     ///
     /// - Parameter text: An input string to convert to a `Real?` instance.
     ///
-    @inlinable public init?(_ description: String) {
+    @inlinable public init?(_ description: Swift.String) {
         if let value = RealRawValue(description) {
             undefinedRawValue = value
         } else {

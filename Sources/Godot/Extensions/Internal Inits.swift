@@ -3,9 +3,9 @@ import Foundation
 // Inits used only for static properties inside the Godot target.
 
 internal extension Basis {
-    init(_ xAxisX: Float, _ xAxisY: Float, _ xAxisZ: Float,
-         _ yAxisX: Float, _ yAxisY: Float, _ yAxisZ: Float,
-         _ zAxisX: Float, _ zAxisY: Float, _ zAxisZ: Float) {
+    init(_ xAxisX: Real, _ xAxisY: Real, _ xAxisZ: Real,
+         _ yAxisX: Real, _ yAxisY: Real, _ yAxisZ: Real,
+         _ zAxisX: Real, _ zAxisY: Real, _ zAxisZ: Real) {
         self.init(x: Vector3(x: xAxisX, y: xAxisY, z: xAxisZ),
                   y: Vector3(x: yAxisX, y: yAxisY, z: yAxisZ),
                   z: Vector3(x: zAxisX, y: zAxisY, z: zAxisZ))
@@ -19,16 +19,16 @@ internal extension Color {
 }
 
 internal extension Plane {
-    init(_ a: Float, _ b: Float, _ c: Float, _ d: Float) {
+    init(_ a: Real, _ b: Real, _ c: Real, _ d: Real) {
         self.init(normal: Vector3(x: a, y: b, z: c), d: d)
     }
 }
 
 internal extension Projection {
-    init(_ xAxisX: Float, _ xAxisY: Float, _ xAxisZ: Float, _ xAxisW: Float,
-         _ yAxisX: Float, _ yAxisY: Float, _ yAxisZ: Float, _ yAxisW: Float,
-         _ zAxisX: Float, _ zAxisY: Float, _ zAxisZ: Float, _ zAxisW: Float,
-         _ wAxisX: Float, _ wAxisY: Float, _ wAxisZ: Float, _ wAxisW: Float) {
+    init(_ xAxisX: Real, _ xAxisY: Real, _ xAxisZ: Real, _ xAxisW: Real,
+         _ yAxisX: Real, _ yAxisY: Real, _ yAxisZ: Real, _ yAxisW: Real,
+         _ zAxisX: Real, _ zAxisY: Real, _ zAxisZ: Real, _ zAxisW: Real,
+         _ wAxisX: Real, _ wAxisY: Real, _ wAxisZ: Real, _ wAxisW: Real) {
         self.init(x: Vector4(x: xAxisX, y: xAxisY, z: xAxisZ, w: xAxisW),
                   y: Vector4(x: yAxisX, y: yAxisY, z: yAxisZ, w: yAxisW),
                   z: Vector4(x: zAxisX, y: zAxisY, z: zAxisZ, w: zAxisW),
@@ -37,15 +37,15 @@ internal extension Projection {
 }
 
 internal extension Quaternion {
-    init(_ x: Float, _ y: Float, _ z: Float, _ w: Float) {
+    init(_ x: Real, _ y: Real, _ z: Real, _ w: Real) {
         self.init(x: x, y: y, z: z, w: w)
     }
 }
 
 internal extension Transform2D {
-    init(_ xAxisX: Float, _ xAxisY: Float,
-         _ yAxisX: Float, _ yAxisY: Float,
-         _ originX: Float, _ originY: Float) {
+    init(_ xAxisX: Real, _ xAxisY: Real,
+         _ yAxisX: Real, _ yAxisY: Real,
+         _ originX: Real, _ originY: Real) {
         self.init(x: Vector2(x: xAxisX, y: xAxisY),
                   y: Vector2(x: yAxisX, y: yAxisY),
                   origin: Vector2(x: originX, y: originY))
@@ -53,10 +53,10 @@ internal extension Transform2D {
 }
 
 internal extension Transform3D {
-    init(_ xAxisX: Float, _ xAxisY: Float, _ xAxisZ: Float,
-         _ yAxisX: Float, _ yAxisY: Float, _ yAxisZ: Float,
-         _ zAxisX: Float, _ zAxisY: Float, _ zAxisZ: Float,
-         _ originX: Float, _ originY: Float, _ originZ: Float) {
+    init(_ xAxisX: Real, _ xAxisY: Real, _ xAxisZ: Real,
+         _ yAxisX: Real, _ yAxisY: Real, _ yAxisZ: Real,
+         _ zAxisX: Real, _ zAxisY: Real, _ zAxisZ: Real,
+         _ originX: Real, _ originY: Real, _ originZ: Real) {
         self.init(basis: Basis(x: Vector3(x: xAxisX, y: xAxisY, z: xAxisZ),
                                y: Vector3(x: yAxisX, y: yAxisY, z: yAxisZ),
                                z: Vector3(x: zAxisX, y: zAxisY, z: zAxisZ)),
@@ -65,7 +65,7 @@ internal extension Transform3D {
 }
 
 internal extension Vector2 {
-    init(_ x: Float, _ y: Float) {
+    init(_ x: Real, _ y: Real) {
         self.init(x: x, y: y)
     }
 }
@@ -77,7 +77,7 @@ internal extension Vector2i {
 }
 
 internal extension Vector3 {
-    init(_ x: Float, _ y: Float, _ z: Float) {
+    init(_ x: Real, _ y: Real, _ z: Real) {
         self.init(x: x, y: y, z: z)
     }
 }
@@ -89,7 +89,7 @@ internal extension Vector3i {
 }
 
 internal extension Vector4 {
-    init(_ x: Float, _ y: Float, _ z: Float, _ w: Float) {
+    init(_ x: Real, _ y: Real, _ z: Real, _ w: Real) {
         self.init(x: x, y: y, z: z, w: w)
     }
 }
