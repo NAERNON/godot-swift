@@ -777,6 +777,10 @@ public struct Variant {
         return VariantType(godotType: nativeVariantType)
     }
     
+    public var isNil: Bool {
+        type == .nil
+    }
+    
     // MARK: - Bindings
     
     internal static var interface: GDNativeInterface!
@@ -950,5 +954,21 @@ public struct Variant {
         toTypeConstructor_packedVector2Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
         toTypeConstructor_packedVector3Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
         toTypeConstructor_packedColorArray = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_COLOR_ARRAY)
+    }
+}
+
+// MARK: - Extensions
+
+extension Variant: CustomDebugStringConvertible {
+    public var debugDescription: Swift.String {
+        let string = String()
+        
+        self.withUnsafeNativePointer { nativeTypePtr in
+            string.withUnsafeNativePointer { stringNativeTypePtr in
+                Variant.interface.variant_stringify(nativeTypePtr, stringNativeTypePtr)
+            }
+        }
+        
+        return Swift.String(godotString: string)
     }
 }
