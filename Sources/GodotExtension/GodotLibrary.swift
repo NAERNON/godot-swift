@@ -1,7 +1,5 @@
 import GodotExtensionHeaders
-
-let GDNativeFalse: UInt8 = 0
-let GDNativeTrue: UInt8  = 1
+import Godot
 
 public final class GodotLibrary {
     public typealias Callback = (GDNativeInitializationLevel) -> Void
@@ -46,17 +44,17 @@ public final class GodotLibrary {
         initializationPtr.pointee.deinitialize = deinitializeLevel
         initializationPtr.pointee.minimum_initialization_level = minimumInitializationLevel
         
+        Variant.setInitBindings(with: interface)
         setBindingsOnBuiltinClasses()
-        Variant.sharedConstructorCollection = .loaded()
         
-        return GDNativeTrue
+        return 1
     }
     
     // MARK: Print
     
-    func print(message: String,
-               function: String = #function,
-               file: String = #file,
+    func print(message: Swift.String,
+               function: Swift.String = #function,
+               file: Swift.String = #file,
                line: Int = #line,
                isError: Bool) {
         if isError {
