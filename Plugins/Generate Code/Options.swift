@@ -4,7 +4,6 @@ import Foundation
 
 /// The options of the code generation plugin.
 struct Options {
-    let translatesCode: Bool
     let print: Bool
     let noWrite: Bool
     let buildConfiguration: BuildConfiguration
@@ -12,7 +11,6 @@ struct Options {
     var writesFiles: Bool { !noWrite }
     
     init(arguments: [String]) throws {
-        var translatesCode = true
         var print = false
         var noWrite = false
         var buildConfiguration = BuildConfiguration.double64
@@ -21,9 +19,6 @@ struct Options {
         while index < arguments.count {
             let argument = arguments[index]
             switch argument {
-            case "--untranslated":
-                translatesCode = false
-                index += 1
             case "--print", "-p":
                 print = true
                 index += 1
@@ -45,7 +40,6 @@ struct Options {
             }
         }
         
-        self.translatesCode = translatesCode
         self.print = print
         self.noWrite = noWrite
         self.buildConfiguration = buildConfiguration

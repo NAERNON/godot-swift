@@ -30,8 +30,7 @@ struct GenerateGodotAPI: CommandPlugin {
         
         let (godotFiles, godotExtensionFiles) = generateGododFiles(withExtensionApi: extensionApi,
                                                                    codeFormatter: codeFormatter,
-                                                                   buildConfiguration: options.buildConfiguration,
-                                                                   translatesCode: options.translatesCode)
+                                                                   buildConfiguration: options.buildConfiguration)
         
         for file in godotFiles {
             try saveFile(file, withFormatter: codeFormatter, options: options, at: godotTarget.generatedPath)
@@ -46,11 +45,11 @@ struct GenerateGodotAPI: CommandPlugin {
     
     private func generateGododFiles(withExtensionApi extensionApi: ExtensionApi,
                                     codeFormatter: CodeFormatter,
-                                    buildConfiguration: BuildConfiguration,
-                                    translatesCode: Bool) -> (godotFiles: [any SwiftFile], godotExtensionFiles: [any SwiftFile]) {
-        let builtinClassSizes = extensionApi.builtinClassSizes.first { $0.buildConfiguration == buildConfiguration.rawValue }!
-        let memberOffsets = extensionApi.builtinClassMemberOffsets.first { $0.buildConfiguration == buildConfiguration.rawValue }!
-        let builtinClassesToGenerate = extensionApi.builtinClasses.filter({ !ExtensionApi.isSwiftBaseType($0.name) })
+                                    buildConfiguration: BuildConfiguration) -> (godotFiles: [any SwiftFile], godotExtensionFiles: [any SwiftFile]) {
+        let builtinClassSizes = extensionApi.builtinClassSizes.first { $0.buildConfiguration == buildConfiguration }!
+        let memberOffsets = extensionApi.builtinClassMemberOffsets.first { $0.buildConfiguration == buildConfiguration }!
+        let builtinClassesToGenerate = extensionApi.builtinClasses.filter({ !$0.name.isSwiftBaseType })
+        let variantSize = builtinClassSizes.sizes.first(where: { $0.name == "Variant" })!.size
         
         let utilityFiles: [any SwiftFile] = [
             GlobalEnumsFile(enums: extensionApi.globalEnums, translated: translatesCode),
@@ -58,7 +57,7 @@ struct GenerateGodotAPI: CommandPlugin {
         ]
         
         let classesFiles: [any SwiftFile] = extensionApi.classes.map({ `class` in
-            ClassFile(class: `class`, translated: translatesCode)
+            ClassFile(class: `class`)
                 .insideDirectory(NamingConvention.snake.convert(string: `class`.apiType, to: .pascal))
                 .insideDirectory("Classes")
         })
@@ -66,8 +65,7 @@ struct GenerateGodotAPI: CommandPlugin {
         let builtinClassesFiles: [any SwiftFile] = builtinClassesToGenerate.map({ builtinClass in
             BuiltinClassFile(builtinClass: builtinClass,
                              builtinClassSizes: builtinClassSizes,
-                             builtinClassMemberOffset: memberOffsets,
-                             translated: translatesCode)
+                             builtinClassMemberOffset: memberOffsets)
                 .insideDirectory("Builtin Structs")
         })
         

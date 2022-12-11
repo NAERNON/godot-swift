@@ -29,9 +29,9 @@ struct ExtensionApi: Codable {
     
     struct Argument: Codable {
         let name: String
-        let type: String
+        let type: InstanceType
         let meta: String?
-        let defaultValue: String?
+        let defaultValue: ConstantValue?
         
         private enum CodingKeys: String, CodingKey {
             case name
@@ -64,7 +64,7 @@ struct ExtensionApi: Codable {
     // MARK: - Class sizes
     
     struct ClassSizes: Codable {
-        let buildConfiguration: String
+        let buildConfiguration: BuildConfiguration
         let sizes: [Size]
         
         private enum CodingKeys: String, CodingKey {
@@ -75,7 +75,7 @@ struct ExtensionApi: Codable {
         // MARK: Size
         
         struct Size: Codable {
-            let name: String
+            let name: InstanceType
             let size: Int
         }
     }
@@ -83,7 +83,7 @@ struct ExtensionApi: Codable {
     // MARK: - Member offsets
     
     struct MemberOffsets: Codable {
-        let buildConfiguration: String
+        let buildConfiguration: BuildConfiguration
         let classes: [Class]
         
         private enum CodingKeys: String, CodingKey {
@@ -94,7 +94,7 @@ struct ExtensionApi: Codable {
         // MARK: Class
         
         struct Class: Codable {
-            let name: String
+            let name: InstanceType
             let members: [Member]
             
             struct Member: Codable {
@@ -128,8 +128,8 @@ struct ExtensionApi: Codable {
     // MARK: - Utility function
     
     struct UtilityFunction: Codable {
-        let name: String
-        let returnType: String?
+        let name: FunctionName
+        let returnType: InstanceType?
         let category: String
         let isVararg: Bool
         let hash: Int
@@ -148,8 +148,8 @@ struct ExtensionApi: Codable {
     // MARK: - Builtin class
     
     struct BuiltinClass: Codable {
-        let name: String
-        let indexingReturnType: String?
+        let name: InstanceType
+        let indexingReturnType: InstanceType?
         let isKeyed: Bool
         let members: [Argument]?
         let constants: [Constant]?
@@ -176,16 +176,16 @@ struct ExtensionApi: Codable {
         
         struct Constant: Codable {
             let name: String
-            let type: String
-            let value: String
+            let type: InstanceType
+            let value: ConstantValue
         }
         
         // MARK: Operator
         
         struct Operator: Codable {
-            let name: String
-            let rightType: String?
-            let returnType: String
+            let name: FunctionName
+            let rightType: InstanceType?
+            let returnType: InstanceType
             
             private enum CodingKeys: String, CodingKey {
                 case name
@@ -197,8 +197,8 @@ struct ExtensionApi: Codable {
         // MARK: Method
         
         struct Method: Codable {
-            let name: String
-            let returnType: String?
+            let name: FunctionName
+            let returnType: InstanceType?
             let isVararg: Bool
             let isConst: Bool
             let isStatic: Bool
@@ -227,7 +227,7 @@ struct ExtensionApi: Codable {
     // MARK: - Class
     
     struct Class: Codable {
-        let name: String
+        let name: InstanceType
         let isRefcounted: Bool
         let isInstantiable: Bool
         let inherits: String?
@@ -248,7 +248,7 @@ struct ExtensionApi: Codable {
         // MARK: Method
         
         struct Method: Codable {
-            let name: String
+            let name: FunctionName
             let isConst: Bool
             let isVararg: Bool
             let isStatic: Bool
@@ -271,7 +271,7 @@ struct ExtensionApi: Codable {
             // MARK: Return value
             
             struct ReturnValue: Codable {
-                let type: String
+                let type: InstanceType
                 let meta: String?
             }
         }
@@ -281,7 +281,7 @@ struct ExtensionApi: Codable {
     
     struct Singleton: Codable {
         let name: String
-        let type: String
+        let type: InstanceType
     }
     
     // MARK: - Native structure

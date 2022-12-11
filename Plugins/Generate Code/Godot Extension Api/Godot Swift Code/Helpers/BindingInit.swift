@@ -3,82 +3,48 @@ import Foundation
 /// A `BindingInit` is a shortcut to an init with many translation being done for Godot.
 /// Use the `Formatted` value given with the closure to use the formatted values such as the arguments.
 struct BindingInit<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
+    let type: InstanceType
     let arguments: [ExtensionApi.Argument]?
-    /// The type inside which the init will be.
-    let insideType: String
-    let translated: Bool
-    let content: (Formatted) -> Content
+    let content: ([String]) -> Content
     var accessControl: AccessControl? = nil
     
-    public init(arguments: [ExtensionApi.Argument]?,
-                insideType: String,
-                translated: Bool,
-                @CodeBuilder content: @escaping (Formatted) -> Content) {
+    public init(type: InstanceType,
+                arguments: [ExtensionApi.Argument]?,
+                @CodeBuilder content: @escaping ([String]) -> Content) {
+        self.type = type
         self.arguments = arguments
-        self.insideType = insideType
-        self.translated = translated
         self.content = content
     }
     
     var body: some SwiftCode {
-        let parameters = initArguments(translated: translated, insideType: insideType)
+        let translatedParameters = translatedParameters()
+        let translatedParametersNames = translatedParameters.map { $0.name }
         
-        Init(parameters: parameters) {
-            content(Formatted(parameters: parameters))
+        Init(parameters: translatedParameters) {
+            content(translatedParametersNames)
         }.accessControl(accessControl)
     }
     
-    private func initArguments(translated: Bool, insideType: String) -> [FunctionParameter] {
-        guard let arguments else {
-            return []
-        }
-        
-        return arguments.map { argument in
-            var parameter = argument.functionParameter(translated: translated, insideType: insideType)
-            if parameter.name == "from" {
-                parameter.name = NamingConvention.pascal.convert(string: parameter.type, to: .camel)
+    private func translatedParameters() -> [FunctionParameter] {
+        arguments?.map { argument in
+            let name: String
+            if argument.name == "from" {
+                name = NamingConvention.pascal.convert(string: argument.type.toSwift(scopeType: self.type), to: .camel)
+            } else {
+                name = NamingConvention.snake.convert(string: argument.name, to: .camel)
             }
-            return parameter
-        }
-    }
-}
-
-// MARK: Formatted
-
-extension BindingInit {
-    struct Formatted {
-        let parameters: [FunctionParameter]
-        
-        init(parameters: [FunctionParameter]) {
-            self.parameters = parameters
-        }
-        
-        var parametersCount: Int { parameters.count }
-    }
-}
-
-// MARK: Argument
-
-private extension ExtensionApi.Argument {
-    func functionParameter(translated: Bool, insideType: String) -> FunctionParameter {
-        let defaultParameterValue: FunctionParameter.DefaultValue
-        if let defaultValue {
-            defaultParameterValue = .codeString(defaultValue)
-        } else {
-            defaultParameterValue = .none
-        }
-        
-        let name: String
-        if translated {
-            name = NamingConvention.snake.convert(string: self.name, to: .camel)
-        } else {
-            name = self.name
-        }
-        
-        return .named(name,
-                      type: ExtensionApi.convert(type: type, insideType: insideType),
-                      defaultValue: defaultParameterValue,
-                      label: .none)
-        
+            
+            let defaultParameterValue: FunctionParameter.DefaultValue
+            if let defaultValue = argument.defaultValue {
+                defaultParameterValue = .codeString(defaultValue.toSwift(forType: argument.type))
+            } else {
+                defaultParameterValue = .none
+            }
+            
+            return FunctionParameter.named(name,
+                                           type: argument.type.toSwift(scopeType: self.type),
+                                           defaultValue: defaultParameterValue,
+                                           label: .none)
+        } ?? []
     }
 }

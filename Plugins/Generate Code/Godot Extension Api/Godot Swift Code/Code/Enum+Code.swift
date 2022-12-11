@@ -4,14 +4,14 @@ extension ExtensionApi.Enum {
     private typealias CaseData<T> = (name: String, value: T)
     
     @CodeBuilder
-    func code(translated: Bool) -> some SwiftCode {
+    func code() -> some SwiftCode {
         if isBitfield == true {
-            optionSetCode(forType: UInt32.self, translated: translated)
+            optionSetCode(forType: UInt32.self)
         } else {
             if values.contains(where: { $0.value < 0 }) {
-                enumCode(forType: Int32.self, translated: translated)
+                enumCode(forType: Int32.self)
             } else {
-                enumCode(forType: UInt32.self, translated: translated)
+                enumCode(forType: UInt32.self)
             }
         }
     }
@@ -19,13 +19,12 @@ extension ExtensionApi.Enum {
     /// Returns the name and cases of the enum.
     /// - Parameters:
     ///   - type: The type of the values.
-    ///   - translated: A Boolean value indicating whether the cases should be translated to Swift.
-    private func nameAndCases<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> (name: String,
-                                                                                            cases: [CaseData<T>]) {
+    private func nameAndCases<T: BinaryInteger>(forType type: T.Type) -> (name: String,
+                                                                          cases: [CaseData<T>]) {
         let translatedEnum = CodeLanguage.c.translateEnum(
             name: name,
             cases: values.map { $0.name },
-            to: translated ? .swift : .c
+            to: .swift
         )
 
         var cases = [(String, T)]()
@@ -37,8 +36,8 @@ extension ExtensionApi.Enum {
         return (translatedEnum.name, cases)
     }
 
-    private func enumCode<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> some SwiftCode {
-        let nameAndCases = self.nameAndCases(forType: type, translated: translated)
+    private func enumCode<T: BinaryInteger>(forType type: T.Type) -> some SwiftCode {
+        let nameAndCases = self.nameAndCases(forType: type)
         
         // Sometimes, given enums don't have unique values, and two cases can have the same value.
         // When it's the case, every value already in the enum will be considered static properties.
@@ -74,8 +73,8 @@ extension ExtensionApi.Enum {
         .public()
     }
 
-    private func optionSetCode<T: BinaryInteger>(forType type: T.Type, translated: Bool) -> some SwiftCode {
-        let nameAndCases = self.nameAndCases(forType: type, translated: translated)
+    private func optionSetCode<T: BinaryInteger>(forType type: T.Type) -> some SwiftCode {
+        let nameAndCases = self.nameAndCases(forType: type)
 
         return OptionSet(nameAndCases.name,
                          options: nameAndCases.cases)

@@ -39,32 +39,16 @@ import Foundation
 /// }
 /// ```
 struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
-    struct Parameter {
-        let name: String
-        let type: String
-        let isMutable: Bool
-        
-        private init(name: String, type: String, isMutable: Bool = false) {
-            self.name = name
-            self.type = type
-            self.isMutable = isMutable
-        }
-        
-        static func named(_ name: String, type: String, isMutable: Bool = false) -> Parameter {
-            self.init(name: name, type: type, isMutable: isMutable)
-        }
-    }
-    
     struct PointerNames {
         let parameters: [String]
         let array: String?
     }
     
-    let parameters: [Parameter]
+    let parameters: [ObjectsPointersAccessParameter]
     let generatePointersArray: Bool
     let content: (PointerNames) -> Content
     
-    public init(parameters: [Parameter],
+    public init(parameters: [ObjectsPointersAccessParameter],
                 generatePointersArray: Bool = false,
                 @CodeBuilder content: @escaping (PointerNames) -> Content) {
         self.parameters = parameters
@@ -72,24 +56,16 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
         self.content = content
     }
     
-    public init(parameters: Parameter...,
+    public init(parameters: ObjectsPointersAccessParameter...,
                 generatePointersArray: Bool = false,
                 @CodeBuilder content: @escaping (PointerNames) -> Content) {
         self.init(parameters: parameters, generatePointersArray: generatePointersArray, content: content)
     }
     
-    public init(functionParameters: [FunctionParameter],
-                generatePointersArray: Bool = false,
-                @CodeBuilder content: @escaping (PointerNames) -> Content) {
-        self.init(parameters: functionParameters.map { .named($0.name, type: $0.type, isMutable: false) },
-                  generatePointersArray: generatePointersArray,
-                  content: content)
-    }
-    
     var body: some SwiftCode {
         for (index, parameter) in parameters.enumerated() {
             let name = CodeLanguage.swift.protectNameIfKeyword(for: parameter.name)
-            if ExtensionApi.isBaseType(parameter.type) {
+            if parameter.type.isValueType {
                 if parameter.isMutable {
                     "withUnsafeMutablePointer(to: &\(name)) { \(parameterPointer(for: parameter.name, typed: true)) in"
                         .indentation(level: index)
@@ -169,5 +145,21 @@ private struct PointerArray<Content>: SwiftCode where Content: SwiftCode {
         
         arrayPointerName + ".deinitialize(count: \(pointersNames.count))"
         arrayPointerName + ".deallocate()"
+    }
+}
+
+struct ObjectsPointersAccessParameter {
+    let name: String
+    let type: InstanceType
+    let isMutable: Bool
+    
+    private init(name: String, type: InstanceType, isMutable: Bool = false) {
+        self.name = name
+        self.type = type
+        self.isMutable = isMutable
+    }
+    
+    static func named(_ name: String, type: InstanceType, isMutable: Bool = false) -> ObjectsPointersAccessParameter {
+        self.init(name: name, type: type, isMutable: isMutable)
     }
 }

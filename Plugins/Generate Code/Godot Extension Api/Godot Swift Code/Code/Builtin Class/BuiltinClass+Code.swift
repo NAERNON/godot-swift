@@ -2,36 +2,34 @@ import Foundation
 
 extension ExtensionApi.BuiltinClass {
     @CodeBuilder
-    func code(classSize: Int,
-              translated: Bool) -> some SwiftCode {
-        if ExtensionApi.isBuiltinBaseType(name) {
-            Extension(name) {
-                insideStructOrExtensionCode(classSize: classSize, translated: translated)
+    func code(classSize: Int) -> some SwiftCode {
+        if name.isBuiltinValueType {
+            Extension(name.toSwift()) {
+                insideStructOrExtensionCode(classSize: classSize)
             }
         } else {
-            Struct(name) {
-                insideStructOrExtensionCode(classSize: classSize, translated: translated)
+            Struct(name.toSwift()) {
+                insideStructOrExtensionCode(classSize: classSize)
             }.public()
         }
     }
     
     @CodeBuilder
-    private func insideStructOrExtensionCode(classSize: Int,
-                                             translated: Bool) -> some SwiftCode {
+    private func insideStructOrExtensionCode(classSize: Int) -> some SwiftCode {
         Group {
-            constantsCode(translated: translated)
-            enumCode(translated: translated)
-            constructorsCode(translated: translated)
+            constantsCode()
+            enumCode()
+            constructorsCode()
             operatorsCode()
             getterSetterCode()
             keyedCode()
-            methodsCode(translated: translated)
+            methodsCode()
         }
         
         bindingsCode()
-        if !ExtensionApi.isBuiltinBaseType(name) {
+        if !name.isBuiltinValueType {
             Spacer()
-            replaceOpaqueValueCode(translated: translated)
+            replaceOpaqueValueCode()
             nativePtrCode(classSize: classSize)
         }
     }
@@ -39,7 +37,7 @@ extension ExtensionApi.BuiltinClass {
     // MARK: Native Opaque
     
     @CodeBuilder
-    private func replaceOpaqueValueCode(translated: Bool) -> some SwiftCode {
+    private func replaceOpaqueValueCode() -> some SwiftCode {
         Comment(style: .doc) {
 """
 When a function modifies the opaque array or any value associated,
@@ -64,7 +62,7 @@ duplicate its value.
         Spacer()
         Property("opaque").varDefined().type("Opaque").private().assignComputed {
             if hasDestructor {
-                ".init(size: \(classSize), destructorPtr: Self.\(destructorPtrName()))"
+                ".init(size: \(classSize), destructorPtr: Self.\(godotDestructorPtrName))"
             } else {
                 ".init(size: \(classSize))"
             }
@@ -81,27 +79,22 @@ duplicate its value.
     // MARK: Constants
     
     @CodeBuilder
-    private func constantsCode(translated: Bool) -> some SwiftCode {
+    private func constantsCode() -> some SwiftCode {
         if let constants,
            !constants.isEmpty {
             Mark(text: "Constants", isSeparator: true).padding(top: 1)
             ForEach(constants.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
                 Spacer()
                 ForEach(sameTypeConstants) { constant in
-                    let type = ExtensionApi.convert(type: constant.type)
-                    Property(constantName(constant.name, translated: translated))
-                        .letDefined().public().static().type(type)
-                        .assign(value: ExtensionApi.correctTypeInitValue(constant.value, forType: type))
+                    Property(constantName(constant.name))
+                        .letDefined().public().static().type(constant.type.toSwift())
+                        .assign(value: constant.value.toSwift(forType: constant.type))
                 }.aligned(1)
             }
         }
     }
     
-    private func constantName(_ name: String, translated: Bool) -> String {
-        guard translated else {
-            return name
-        }
-        
+    private func constantName(_ name: String) -> String {
         let newName = NamingConvention.snake.convert(string: name.lowercased(), to: .camel)
         return CodeLanguage.swift.protectNameIfKeyword(for: newName)
     }
@@ -109,14 +102,14 @@ duplicate its value.
     // MARK: Enum
     
     @CodeBuilder
-    private func enumCode(translated: Bool) -> some SwiftCode {
+    private func enumCode() -> some SwiftCode {
         if let enums,
            !enums.isEmpty {
             Spacer()
             Mark(text: "Enums", isSeparator: true)
             for `enum` in enums {
                 Spacer()
-                `enum`.code(translated: translated)
+                `enum`.code()
             }
         }
     }
@@ -138,33 +131,33 @@ duplicate its value.
         Property("interface").varDefined().static().internal().type("GDNativeInterface!").padding(bottom: 1)
         
         for constructor in constructors {
-            Property(constructorPtrName(index: constructor.index))
+            Property(constructor.godotConstructorPtrName)
                 .varDefined().private().static().type("GDNativePtrConstructor!")
         }
         if hasDestructor {
-            Property(destructorPtrName()).varDefined().private().static().type("GDNativePtrDestructor!")
+            Property(godotDestructorPtrName).varDefined().private().static().type("GDNativePtrDestructor!")
         }
         
         if indexingReturnType != nil {
-            Property(indexedSetterPtrName()).varDefined().private().static().type("GDNativePtrIndexedSetter!")
-            Property(indexedGetterPtrName()).varDefined().private().static().type("GDNativePtrIndexedGetter!")
+            Property(godotIndexedSetterPtrName).varDefined().private().static().type("GDNativePtrIndexedSetter!")
+            Property(godotIndexedGetterPtrName).varDefined().private().static().type("GDNativePtrIndexedGetter!")
         }
         
         if isKeyed {
-            Property(keyedSetterPtrName()).varDefined().private().static().type("GDNativePtrKeyedSetter!")
-            Property(keyedGetterPtrName()).varDefined().private().static().type("GDNativePtrKeyedGetter!")
-            Property(keyedCheckerPtrName()).varDefined().private().static().type("GDNativePtrKeyedChecker!")
+            Property(godotKeyedSetterPtrName).varDefined().private().static().type("GDNativePtrKeyedSetter!")
+            Property(godotKeyedGetterPtrName).varDefined().private().static().type("GDNativePtrKeyedGetter!")
+            Property(godotKeyedCheckerPtrName).varDefined().private().static().type("GDNativePtrKeyedChecker!")
         }
         
         if let methods {
             for method in methods {
-                Property(methodPtrName(methodName: method.name))
+                Property(method.godotMethodPtrName	)
                     .varDefined().private().static().type("GDNativePtrBuiltInMethod!")
             }
         }
         
         for op in operators {
-            Property(operatorPtrName(for: op))
+            Property(op.godotOperatorPtrName)
                 .varDefined().private().static().type("GDNativePtrOperatorEvaluator!")
         }
     }
@@ -175,7 +168,7 @@ duplicate its value.
 """
 Sets all the init bindings and the deinit (if applicable) used to communicate with Godot, as well as the static `interface` property.
 
-This function must be called before the creation of any `\(name)` instance since the bindings will be needed
+This function must be called before the creation of any `\(name.toSwift())` instance since the bindings will be needed
 for any initialization.
 
 This function should only called by the `GodotLibrary`.
@@ -187,12 +180,12 @@ This function should only called by the `GodotLibrary`.
             Spacer()
             
             for constructor in constructors {
-                Property(constructorPtrName(index: constructor.index))
+                Property(constructor.godotConstructorPtrName)
                     .assign(value: "interface.variant_get_ptr_constructor(\(godotVariantType), \(constructor.index))")
             }
             
             if hasDestructor {
-                Property(destructorPtrName())
+                Property(godotDestructorPtrName)
                     .assign(value: "interface.variant_get_ptr_destructor(\(godotVariantType))")
             }
         }.public().static()
@@ -209,16 +202,16 @@ This function should only called by the `GodotLibrary`.
         }
         Func(name: "setFunctionBindings") {
             if indexingReturnType != nil {
-                Property(indexedSetterPtrName()).assign(value: "interface.variant_get_ptr_indexed_setter(\(godotVariantType))")
-                Property(indexedGetterPtrName()).assign(value: "interface.variant_get_ptr_indexed_getter(\(godotVariantType))")
+                Property(godotIndexedSetterPtrName).assign(value: "interface.variant_get_ptr_indexed_setter(\(godotVariantType))")
+                Property(godotIndexedGetterPtrName).assign(value: "interface.variant_get_ptr_indexed_getter(\(godotVariantType))")
                 
                 Spacer()
             }
             
             if isKeyed {
-                Property(keyedSetterPtrName()).assign(value: "interface.variant_get_ptr_keyed_setter(\(godotVariantType))")
-                Property(keyedGetterPtrName()).assign(value: "interface.variant_get_ptr_keyed_getter(\(godotVariantType))")
-                Property(keyedCheckerPtrName()).assign(value: "interface.variant_get_ptr_keyed_checker(\(godotVariantType))")
+                Property(godotKeyedSetterPtrName).assign(value: "interface.variant_get_ptr_keyed_setter(\(godotVariantType))")
+                Property(godotKeyedGetterPtrName).assign(value: "interface.variant_get_ptr_keyed_getter(\(godotVariantType))")
+                Property(godotKeyedCheckerPtrName).assign(value: "interface.variant_get_ptr_keyed_checker(\(godotVariantType))")
                 
                 Spacer()
             }
@@ -226,9 +219,9 @@ This function should only called by the `GodotLibrary`.
             if let methods {
                 Property("_method_name").varDefined().type("StringName!")
                 for method in methods {
-                    Property("_method_name").assign(value: "\"\(method.name)\"")
+                    Property("_method_name").assign(value: "\"\(method.name.godotName)\"")
                     "_method_name.withUnsafeNativePointer { _name_ptr in"
-                    Property(methodPtrName(methodName: method.name))
+                    Property(method.godotMethodPtrName)
                         .assign(value: "interface.variant_get_ptr_builtin_method(\(godotVariantType), _name_ptr, \(method.hash))")
                         .indentation()
                     "}"
@@ -238,30 +231,28 @@ This function should only called by the `GodotLibrary`.
             Spacer()
             
             for op in operators {
-                Property(operatorPtrName(for: op))
-                    .assign(value: "interface.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(ExtensionApi.godotVariantType(for: op.rightType)))")
+                Property(op.godotOperatorPtrName)
+                    .assign(value: "interface.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(op.rightType.godotVariantType))")
             }
         }.public().static()
     }
     
-    // MARK: Consturctor
+    // MARK: Constructors
     
     @CodeBuilder
-    private func constructorsCode(translated: Bool) -> some SwiftCode {
+    private func constructorsCode() -> some SwiftCode {
         Spacer()
         Mark(text: "Init", isSeparator: true)
         for constructor in filteredConstructors() {
             Spacer()
-            constructor.code(constructorPointerName: constructorPtrName(index: constructor.index),
-                             className: name,
-                             translated: translated)
+            constructor.code(type: name)
         }
     }
     
     private func filteredConstructors() -> [ExtensionApi.BuiltinClass.Constructor] {
         self.constructors.filter { constructor in
             // If the type is not a base builtin type, then we need all the initializers.
-            if !ExtensionApi.isBuiltinBaseType(self.name) {
+            if !self.name.isBuiltinValueType {
                 return true
             }
             
@@ -274,7 +265,7 @@ This function should only called by the `GodotLibrary`.
             // then the constructor is already coded since it is the base constructor.
             if let arguments = constructor.arguments {
                 let constructorArgumentsNames = arguments.map { NamingConvention.snake.convert(string: $0.name, from: .camel) }
-                if constructorArgumentsNames == ExtensionApi.builtinBaseConstructorArguments(forType: self.name) {
+                if constructorArgumentsNames == self.name.builtinBaseConstructorArguments() {
                     return false
                 }
             }
@@ -286,16 +277,15 @@ This function should only called by the `GodotLibrary`.
     // MARK: Methods
     
     @CodeBuilder
-    private func methodsCode(translated: Bool) -> some SwiftCode {
+    private func methodsCode() -> some SwiftCode {
         if let methods,
            !methods.isEmpty {
             Spacer()
             Mark(text: "Functions", isSeparator: true)
+            
             for method in methods {
                 Spacer()
-                method.code(methodPointerName: methodPtrName(methodName: method.name),
-                            className: name,
-                            translated: translated)
+                method.code(type: name)
             }
         }
     }
@@ -309,7 +299,7 @@ This function should only called by the `GodotLibrary`.
             Mark(text: "Operators", isSeparator: true)
             for op in operators {
                 Spacer()
-                op.code(className: name, operatorPtrName: operatorPtrName(for: op))
+                op.code(type: name)
             }
         }
     }
@@ -325,15 +315,15 @@ This function should only called by the `GodotLibrary`.
             Mark(text: "Getter/Setter", isSeparator: true)
             Spacer()
             
-            let indexingType = ExtensionApi.convert(type: indexingReturnType, insideType: self.name)
+            let indexingType = indexingReturnType.toSwift(scopeType: name)
             
             Func(name: "_getValue",
                  parameters: .named("index", type: "GDNativeInt", label: "at"),
                  returnType: indexingType) {
-                Property("__returnValue").defined(isVar: ExtensionApi.isBaseType(indexingType)).assign(value: indexingType + "()")
+                Property("__returnValue").defined(isVar: indexingReturnType.isValueType).assign(value: indexingType + "()")
                 
                 ObjectsPointersAccess(parameters:
-                                        [.named("__returnValue", type: indexingType, isMutable: true),
+                                        [.named("__returnValue", type: indexingReturnType, isMutable: true),
                                          .named("self", type: self.name)]
                 ) { pointerNames in
                     "Self.__indexed_getter(\(pointerNames.parameters[1]), index, \(pointerNames.parameters[0]))"
@@ -348,12 +338,12 @@ This function should only called by the `GodotLibrary`.
                  parameters: [.named("value", type: indexingType, label: .hidden),
                               .named("index", type: "GDNativeInt", label: "at")])
             {
-                if !ExtensionApi.isBuiltinBaseType(self.name) {
+                if !self.name.isBuiltinValueType {
                     "replaceOpaqueValueIfNecessary()"
                     Spacer()
                 }
                 
-                ObjectsPointersAccess(parameters: [.named("value", type: indexingType, isMutable: false),
+                ObjectsPointersAccess(parameters: [.named("value", type: indexingReturnType, isMutable: false),
                                                    .named("self", type: self.name, isMutable: true)])
                 { pointerNames in
                     "Self.__indexed_setter(\(pointerNames.parameters[1]), index, \(pointerNames.parameters[0]))"
@@ -379,8 +369,8 @@ This function should only called by the `GodotLibrary`.
                 Property("__returnValue").letDefined().assign(value: "Variant()")
                 
                 ObjectsPointersAccess(parameters:
-                                        [.named("__returnValue", type: "Variant", isMutable: true),
-                                         .named("key", type: "Variant", isMutable: false),
+                                        [.named("__returnValue", type: .variant, isMutable: true),
+                                         .named("key", type: .variant, isMutable: false),
                                          .named("self", type: self.name)]
                 ) { pointerNames in
                     "Self.__keyed_getter(\(pointerNames.parameters[2]), \(pointerNames.parameters[1]), \(pointerNames.parameters[0]))"
@@ -395,8 +385,8 @@ This function should only called by the `GodotLibrary`.
                 "replaceOpaqueValueIfNecessary()"
                 
                 ObjectsPointersAccess(parameters:
-                                        [.named("value", type: "Variant", isMutable: false),
-                                         .named("key", type: "Variant", isMutable: false),
+                                        [.named("value", type: .variant, isMutable: false),
+                                         .named("key", type: .variant, isMutable: false),
                                          .named("self", type: self.name)]
                 ) { pointerNames in
                     "Self.__keyed_setter(\(pointerNames.parameters[2]), \(pointerNames.parameters[1]), \(pointerNames.parameters[0]))"
@@ -409,7 +399,7 @@ This function should only called by the `GodotLibrary`.
                 Property("keyCheck").varDefined().assign(value: "UInt32()")
                 
                 ObjectsPointersAccess(parameters:
-                                        [.named("key", type: "Variant", isMutable: false),
+                                        [.named("key", type: .variant, isMutable: false),
                                          .named("self", type: self.name)]
                 ) { pointerNames in
                     "keyCheck = Self.__keyed_checker(\(pointerNames.parameters[1]), \(pointerNames.parameters[0]))"
@@ -423,51 +413,30 @@ This function should only called by the `GodotLibrary`.
     // MARK: Naming
     
     private var godotVariantType: String {
-        ExtensionApi.godotVariantType(for: name)
+        name.godotVariantType
     }
     
-    private func constructorPtrName(index: Int) -> String {
-        "__constructor\(index)"
-    }
-    
-    private func destructorPtrName() -> String {
+    private var godotDestructorPtrName: String {
         "__destructor"
     }
     
-    private func indexedSetterPtrName() -> String {
+    private var godotIndexedSetterPtrName: String {
         "__indexed_setter"
     }
     
-    private func indexedGetterPtrName() -> String {
+    private var godotIndexedGetterPtrName: String {
         "__indexed_getter"
     }
     
-    private func keyedSetterPtrName() -> String {
+    private var godotKeyedSetterPtrName: String {
         "__keyed_setter"
     }
     
-    private func keyedGetterPtrName() -> String {
+    private var godotKeyedGetterPtrName: String {
         "__keyed_getter"
     }
     
-    private func keyedCheckerPtrName() -> String {
+    private var godotKeyedCheckerPtrName: String {
         "__keyed_checker"
-    }
-    
-    private func methodPtrName(methodName: String) -> String {
-        "__method_binding_\(methodName)"
-    }
-    
-    private func operatorPtrName(for op: Operator) -> String {
-        guard var name = op.operationName else {
-            return "ERROR"
-        }
-        
-        name = "__operator_binding_" + name
-        if let rightType = op.rightType {
-            name += "_" + rightType
-        }
-        
-        return name.lowercased()
     }
 }

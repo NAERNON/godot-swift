@@ -3,11 +3,9 @@ import Foundation
 struct GlobalEnumsFile: SwiftFile {
     let path = "GlobalEnums.swift"
     let enums: [ExtensionApi.Enum]
-    let translated: Bool
 
-    init(enums: [ExtensionApi.Enum], translated: Bool) {
+    init(enums: [ExtensionApi.Enum]) {
         self.enums = enums
-        self.translated = translated
     }
 
     var code: some SwiftCode {
@@ -16,7 +14,7 @@ struct GlobalEnumsFile: SwiftFile {
         ForEach(enums.filter { !$0.name.contains(".") }) { enumCode in
             Spacer()
 
-            enumCode.code(translated: translated)
+            enumCode.code()
         }
     }
 }

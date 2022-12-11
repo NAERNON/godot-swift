@@ -17,13 +17,13 @@ struct SetBindingsFile: SwiftFile {
         Extension("GodotLibrary") {
             Func(name: "setBindingsOnBuiltinClasses") {
                 for builtinClass in builtinClasses {
-                    "Godot." + builtinClass.name + ".setInitBindings(with: interface)"
+                    "Godot." + builtinClass.name.toSwift() + ".setInitBindings(with: interface)"
                 }
                 
                 Spacer()
                 
                 for builtinClass in builtinClasses {
-                    "Godot." + builtinClass.name + ".setFunctionBindings()"
+                    "Godot." + builtinClass.name.toSwift() + ".setFunctionBindings()"
                 }
             }
         }.internal()
