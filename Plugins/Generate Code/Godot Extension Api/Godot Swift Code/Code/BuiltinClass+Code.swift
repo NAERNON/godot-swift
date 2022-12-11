@@ -24,6 +24,7 @@ extension ExtensionApi.BuiltinClass {
             constructorsCode(translated: translated)
             operatorsCode()
             getterSetterCode()
+            keyedCode()
             methodsCode(translated: translated)
         }
         
@@ -149,6 +150,12 @@ duplicate its value.
             Property(indexedGetterPtrName()).varDefined().private().static().type("GDNativePtrIndexedGetter!")
         }
         
+        if isKeyed {
+            Property(keyedSetterPtrName()).varDefined().private().static().type("GDNativePtrKeyedSetter!")
+            Property(keyedGetterPtrName()).varDefined().private().static().type("GDNativePtrKeyedGetter!")
+            Property(keyedCheckerPtrName()).varDefined().private().static().type("GDNativePtrKeyedChecker!")
+        }
+        
         if let methods {
             for method in methods {
                 Property(methodPtrName(methodName: method.name))
@@ -204,6 +211,14 @@ This function should only called by the `GodotLibrary`.
             if indexingReturnType != nil {
                 Property(indexedSetterPtrName()).assign(value: "interface.variant_get_ptr_indexed_setter(\(godotVariantType))")
                 Property(indexedGetterPtrName()).assign(value: "interface.variant_get_ptr_indexed_getter(\(godotVariantType))")
+                
+                Spacer()
+            }
+            
+            if isKeyed {
+                Property(keyedSetterPtrName()).assign(value: "interface.variant_get_ptr_keyed_setter(\(godotVariantType))")
+                Property(keyedGetterPtrName()).assign(value: "interface.variant_get_ptr_keyed_getter(\(godotVariantType))")
+                Property(keyedCheckerPtrName()).assign(value: "interface.variant_get_ptr_keyed_checker(\(godotVariantType))")
                 
                 Spacer()
             }
@@ -303,7 +318,7 @@ This function should only called by the `GodotLibrary`.
     
     @CodeBuilder
     private func getterSetterCode() -> some SwiftCode {
-        if let indexingReturnType {
+        if let indexingReturnType, !isKeyed {
             // Getter/setters are internal, and public extensions should be
             // made to generate the subscripts.
             Spacer()
@@ -347,6 +362,64 @@ This function should only called by the `GodotLibrary`.
         }
     }
     
+    // MARK: Keyed
+    
+    @CodeBuilder
+    private func keyedCode() -> some SwiftCode {
+        if isKeyed {
+            // Keyed functions are internal, and public extensions should be
+            // made to generate the subscripts.
+            Spacer()
+            Mark(text: "Keyed", isSeparator: true)
+            Spacer()
+                        
+            Func(name: "_getValue",
+                 parameters: .named("key", type: "Variant", label: "forKey"),
+                 returnType: "Variant") {
+                Property("__returnValue").letDefined().assign(value: "Variant()")
+                
+                ObjectsPointersAccess(parameters:
+                                        [.named("__returnValue", type: "Variant", isMutable: true),
+                                         .named("key", type: "Variant", isMutable: false),
+                                         .named("self", type: self.name)]
+                ) { pointerNames in
+                    "Self.__keyed_getter(\(pointerNames.parameters[2]), \(pointerNames.parameters[1]), \(pointerNames.parameters[0]))"
+                }.padding(top: 1, bottom: 1)
+                
+                Return("__returnValue")
+            }.internal().bottomPadding()
+            
+            Func(name: "_set",
+                 parameters: [.named("value", type: "Variant"),
+                              .named("key", type: "Variant", label: "forKey")]) {
+                "replaceOpaqueValueIfNecessary()"
+                
+                ObjectsPointersAccess(parameters:
+                                        [.named("value", type: "Variant", isMutable: false),
+                                         .named("key", type: "Variant", isMutable: false),
+                                         .named("self", type: self.name)]
+                ) { pointerNames in
+                    "Self.__keyed_setter(\(pointerNames.parameters[2]), \(pointerNames.parameters[1]), \(pointerNames.parameters[0]))"
+                }.padding(top: 1)
+            }.internal().mutating().bottomPadding()
+            
+            Func(name: "_check",
+                 parameters: [.named("key", type: "Variant")],
+                 returnType: "Bool") {
+                Property("keyCheck").varDefined().assign(value: "UInt32()")
+                
+                ObjectsPointersAccess(parameters:
+                                        [.named("key", type: "Variant", isMutable: false),
+                                         .named("self", type: self.name)]
+                ) { pointerNames in
+                    "keyCheck = Self.__keyed_checker(\(pointerNames.parameters[1]), \(pointerNames.parameters[0]))"
+                }.padding(top: 1, bottom: 1)
+                
+                Return("keyCheck != 0")
+            }.internal()
+        }
+    }
+    
     // MARK: Naming
     
     private var godotVariantType: String {
@@ -367,6 +440,18 @@ This function should only called by the `GodotLibrary`.
     
     private func indexedGetterPtrName() -> String {
         "__indexed_getter"
+    }
+    
+    private func keyedSetterPtrName() -> String {
+        "__keyed_setter"
+    }
+    
+    private func keyedGetterPtrName() -> String {
+        "__keyed_getter"
+    }
+    
+    private func keyedCheckerPtrName() -> String {
+        "__keyed_checker"
     }
     
     private func methodPtrName(methodName: String) -> String {
