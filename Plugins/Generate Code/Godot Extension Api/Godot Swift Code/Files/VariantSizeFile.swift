@@ -1,6 +1,6 @@
 import Foundation
 
-struct VariantSizeFile: SwiftFile {
+struct VariantSizeFile: GeneratedSwiftFile {
     let path = "VariantSize.swift"
     let size: Int
     

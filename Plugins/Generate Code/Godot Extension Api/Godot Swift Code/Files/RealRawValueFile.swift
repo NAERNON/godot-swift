@@ -1,6 +1,6 @@
 import Foundation
 
-struct RealRawValueFile: SwiftFile {
+struct RealRawValueFile: GeneratedSwiftFile {
     let path: String
     let floatingPointType: BuildConfiguration.FloatingPointType
     

@@ -1,6 +1,6 @@
 import Foundation
 
-struct GlobalEnumsFile: SwiftFile {
+struct GlobalEnumsFile: GeneratedSwiftFile {
     let path = "GlobalEnums.swift"
     let enums: [ExtensionApi.Enum]
 

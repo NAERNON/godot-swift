@@ -1,25 +1,22 @@
 import Foundation
 
-struct BuiltinClassFile: SwiftFile {
+struct BuiltinClassFile: GeneratedSwiftFile {
     let path: String
     let builtinClass: ExtensionApi.BuiltinClass
     let classSize: Int
-    let translated: Bool
     
     init(builtinClass: ExtensionApi.BuiltinClass,
          builtinClassSizes: ExtensionApi.ClassSizes,
-         builtinClassMemberOffset: ExtensionApi.MemberOffsets,
-         translated: Bool) {
+         builtinClassMemberOffset: ExtensionApi.MemberOffsets) {
         let fileName: String
-        if ExtensionApi.isBuiltinBaseType(builtinClass.name) {
-            fileName = builtinClass.name + "+GeneratedExtensions"
+        if builtinClass.name.isBuiltinValueType {
+            fileName = builtinClass.name.toSwift() + "+GeneratedExtensions"
         } else {
-            fileName = builtinClass.name
+            fileName = builtinClass.name.toSwift()
         }
         self.path = fileName + ".swift"
         self.builtinClass = builtinClass
         self.classSize = builtinClassSizes.sizes.first(where: { $0.name == builtinClass.name })?.size ?? 0
-        self.translated = translated
     }
     
     var code: some SwiftCode {
@@ -28,6 +25,6 @@ struct BuiltinClassFile: SwiftFile {
         
         Spacer()
         
-        builtinClass.code(classSize: classSize, translated: translated)
+        builtinClass.code(classSize: classSize)
     }
 }

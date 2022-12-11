@@ -45,31 +45,31 @@ struct GenerateGodotAPI: CommandPlugin {
     
     private func generateGododFiles(withExtensionApi extensionApi: ExtensionApi,
                                     codeFormatter: CodeFormatter,
-                                    buildConfiguration: BuildConfiguration) -> (godotFiles: [any SwiftFile], godotExtensionFiles: [any SwiftFile]) {
+                                    buildConfiguration: BuildConfiguration) -> (godotFiles: [any GeneratedSwiftFile], godotExtensionFiles: [any GeneratedSwiftFile]) {
         let builtinClassSizes = extensionApi.builtinClassSizes.first { $0.buildConfiguration == buildConfiguration }!
         let memberOffsets = extensionApi.builtinClassMemberOffsets.first { $0.buildConfiguration == buildConfiguration }!
         let builtinClassesToGenerate = extensionApi.builtinClasses.filter({ !$0.name.isSwiftBaseType })
         let variantSize = builtinClassSizes.sizes.first(where: { $0.name == "Variant" })!.size
         
-        let utilityFiles: [any SwiftFile] = [
             GlobalEnumsFile(enums: extensionApi.globalEnums, translated: translatesCode),
             UtilityFunctionsFile(functions: extensionApi.utilityFunctions, translated: translatesCode)
+        let utilityFiles: [any GeneratedSwiftFile] = [
         ]
         
-        let classesFiles: [any SwiftFile] = extensionApi.classes.map({ `class` in
+        let classesFiles: [any GeneratedSwiftFile] = extensionApi.classes.map({ `class` in
             ClassFile(class: `class`)
                 .insideDirectory(NamingConvention.snake.convert(string: `class`.apiType, to: .pascal))
                 .insideDirectory("Classes")
         })
         
-        let builtinClassesFiles: [any SwiftFile] = builtinClassesToGenerate.map({ builtinClass in
+        let builtinClassesFiles: [any GeneratedSwiftFile] = builtinClassesToGenerate.map({ builtinClass in
             BuiltinClassFile(builtinClass: builtinClass,
                              builtinClassSizes: builtinClassSizes,
                              builtinClassMemberOffset: memberOffsets)
                 .insideDirectory("Builtin Structs")
         })
         
-        let setBindingsFiles: [any SwiftFile] = [
+        let setBindingsFiles: [any GeneratedSwiftFile] = [
             SetBindingsFile(builtinClasses: builtinClassesToGenerate)
         ]
         
@@ -90,7 +90,7 @@ struct GenerateGodotAPI: CommandPlugin {
     
     // MARK: Save file
     
-    private func saveFile(_ file: some SwiftFile,
+    private func saveFile(_ file: some GeneratedSwiftFile,
                           withFormatter codeFormatter: CodeFormatter,
                           options: Options,
                           at path: Path) throws {

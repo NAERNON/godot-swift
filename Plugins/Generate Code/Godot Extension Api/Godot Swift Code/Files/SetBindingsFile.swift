@@ -1,6 +1,6 @@
 import Foundation
 
-struct SetBindingsFile: SwiftFile {
+struct SetBindingsFile: GeneratedSwiftFile {
     let path = "SetBindings.swift"
     let builtinClasses: [ExtensionApi.BuiltinClass]
     

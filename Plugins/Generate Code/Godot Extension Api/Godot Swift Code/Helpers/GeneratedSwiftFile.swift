@@ -1,6 +1,6 @@
 import Foundation
 
-protocol SwiftFile {
+protocol GeneratedSwiftFile {
     associatedtype Code: SwiftCode
     
     var path: String { get }
@@ -9,13 +9,13 @@ protocol SwiftFile {
     var code: Code { get }
 }
 
-extension SwiftFile {
+extension GeneratedSwiftFile {
     func name() -> String {
         path.components(separatedBy: "/").last ?? ""
     }
 }
 
-private struct PrefixedPathSwiftFile<Content: SwiftFile>: SwiftFile {
+private struct PrefixedPathSwiftFile<Content: GeneratedSwiftFile>: GeneratedSwiftFile {
     let file: Content
     let prefix: String
     
@@ -29,8 +29,8 @@ private struct PrefixedPathSwiftFile<Content: SwiftFile>: SwiftFile {
     var code: Content.Code { file.code }
 }
 
-extension SwiftFile {
-    func insideDirectory(_ folderName: String) -> some SwiftFile {
+extension GeneratedSwiftFile {
+    func insideDirectory(_ folderName: String) -> some GeneratedSwiftFile {
         PrefixedPathSwiftFile(file: self, prefix: folderName + "/")
     }
 }
