@@ -123,11 +123,7 @@ struct InstanceType {
     }
 }
 
-extension InstanceType: Codable {
-    func encode(to encoder: Encoder) throws {
-        try godotName.encode(to: encoder)
-    }
-    
+extension InstanceType: Decodable {
     init(from decoder: Decoder) throws {
         godotName = try String(from: decoder)
     }

@@ -120,11 +120,7 @@ struct FunctionName {
     }
 }
 
-extension FunctionName: Codable {
-    func encode(to encoder: Encoder) throws {
-        try godotName.encode(to: encoder)
-    }
-    
+extension FunctionName: Decodable {
     init(from decoder: Decoder) throws {
         godotName = try String(from: decoder)
     }

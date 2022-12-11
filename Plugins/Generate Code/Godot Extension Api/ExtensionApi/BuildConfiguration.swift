@@ -29,11 +29,7 @@ enum BuildConfiguration: String {
     }
 }
 
-extension BuildConfiguration: Codable {
-    func encode(to encoder: Encoder) throws {
-        try rawValue.encode(to: encoder)
-    }
-    
+extension BuildConfiguration: Decodable {
     init(from decoder: Decoder) throws {
         let string = try String(from: decoder)
         self = BuildConfiguration(rawValue: string)!

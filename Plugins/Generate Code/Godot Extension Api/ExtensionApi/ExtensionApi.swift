@@ -1,7 +1,7 @@
 import Foundation
 
 /// The structure representing the file `extension_api.json`.
-struct ExtensionApi: Codable {
+struct ExtensionApi: Decodable {
     let header: Header
     let builtinClassSizes: [ClassSizes]
     let builtinClassMemberOffsets: [MemberOffsets]
@@ -27,7 +27,7 @@ struct ExtensionApi: Codable {
     
     // MARK: - Argument
     
-    struct Argument: Codable {
+    struct Argument: Decodable {
         let name: String
         let type: InstanceType
         let meta: String?
@@ -43,7 +43,7 @@ struct ExtensionApi: Codable {
     
     // MARK: - Header
     
-    struct Header: Codable {
+    struct Header: Decodable {
         let versionMajor: Int
         let versionMinor: Int
         let versionPatch: Int
@@ -63,7 +63,7 @@ struct ExtensionApi: Codable {
     
     // MARK: - Class sizes
     
-    struct ClassSizes: Codable {
+    struct ClassSizes: Decodable {
         let buildConfiguration: BuildConfiguration
         let sizes: [Size]
         
@@ -74,7 +74,7 @@ struct ExtensionApi: Codable {
         
         // MARK: Size
         
-        struct Size: Codable {
+        struct Size: Decodable {
             let name: InstanceType
             let size: Int
         }
@@ -82,7 +82,7 @@ struct ExtensionApi: Codable {
     
     // MARK: - Member offsets
     
-    struct MemberOffsets: Codable {
+    struct MemberOffsets: Decodable {
         let buildConfiguration: BuildConfiguration
         let classes: [Class]
         
@@ -93,11 +93,11 @@ struct ExtensionApi: Codable {
         
         // MARK: Class
         
-        struct Class: Codable {
+        struct Class: Decodable {
             let name: InstanceType
             let members: [Member]
             
-            struct Member: Codable {
+            struct Member: Decodable {
                 let member: String
                 let offset: Int
             }
@@ -106,7 +106,7 @@ struct ExtensionApi: Codable {
     
     // MARK: - Enum
     
-    struct Enum: Codable {
+    struct Enum: Decodable {
         let name: String
         let isBitfield: Bool?
         let values: [Value]
@@ -119,7 +119,7 @@ struct ExtensionApi: Codable {
         
         // MARK: Value
         
-        struct Value: Codable {
+        struct Value: Decodable {
             let name: String
             let value: Int
         }
@@ -127,7 +127,7 @@ struct ExtensionApi: Codable {
     
     // MARK: - Utility function
     
-    struct UtilityFunction: Codable {
+    struct UtilityFunction: Decodable {
         let name: FunctionName
         let returnType: InstanceType?
         let category: String
@@ -147,7 +147,7 @@ struct ExtensionApi: Codable {
     
     // MARK: - Builtin class
     
-    struct BuiltinClass: Codable {
+    struct BuiltinClass: Decodable {
         let name: InstanceType
         let indexingReturnType: InstanceType?
         let isKeyed: Bool
@@ -174,7 +174,7 @@ struct ExtensionApi: Codable {
         
         // MARK: Constant
         
-        struct Constant: Codable {
+        struct Constant: Decodable {
             let name: String
             let type: InstanceType
             let value: ConstantValue
@@ -182,7 +182,7 @@ struct ExtensionApi: Codable {
         
         // MARK: Operator
         
-        struct Operator: Codable {
+        struct Operator: Decodable {
             let name: FunctionName
             let rightType: InstanceType?
             let returnType: InstanceType
@@ -196,7 +196,7 @@ struct ExtensionApi: Codable {
         
         // MARK: Method
         
-        struct Method: Codable {
+        struct Method: Decodable {
             let name: FunctionName
             let returnType: InstanceType?
             let isVararg: Bool
@@ -218,7 +218,7 @@ struct ExtensionApi: Codable {
         
         // MARK: Constructor
         
-        struct Constructor: Codable {
+        struct Constructor: Decodable {
             let index: Int
             let arguments: [Argument]?
         }
@@ -226,7 +226,7 @@ struct ExtensionApi: Codable {
     
     // MARK: - Class
     
-    struct Class: Codable {
+    struct Class: Decodable {
         let name: InstanceType
         let isRefcounted: Bool
         let isInstantiable: Bool
@@ -247,7 +247,7 @@ struct ExtensionApi: Codable {
         
         // MARK: Method
         
-        struct Method: Codable {
+        struct Method: Decodable {
             let name: FunctionName
             let isConst: Bool
             let isVararg: Bool
@@ -270,7 +270,7 @@ struct ExtensionApi: Codable {
             
             // MARK: Return value
             
-            struct ReturnValue: Codable {
+            struct ReturnValue: Decodable {
                 let type: InstanceType
                 let meta: String?
             }
@@ -279,14 +279,14 @@ struct ExtensionApi: Codable {
     
     // MARK: - Singleton
     
-    struct Singleton: Codable {
+    struct Singleton: Decodable {
         let name: String
         let type: InstanceType
     }
     
     // MARK: - Native structure
     
-    struct NativeStructure: Codable {
+    struct NativeStructure: Decodable {
         let name: String
         let format: String
     }

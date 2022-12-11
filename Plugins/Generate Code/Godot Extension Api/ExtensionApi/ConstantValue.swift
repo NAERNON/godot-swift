@@ -113,11 +113,7 @@ struct ConstantValue {
     }
 }
 
-extension ConstantValue: Codable {
-    func encode(to encoder: Encoder) throws {
-        try string.encode(to: encoder)
-    }
-    
+extension ConstantValue: Decodable {
     init(from decoder: Decoder) throws {
         string = try String(from: decoder)
     }
