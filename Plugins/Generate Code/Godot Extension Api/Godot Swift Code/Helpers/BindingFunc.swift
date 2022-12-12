@@ -5,7 +5,7 @@ import Foundation
 /// The code can also generate a `var` instead of a `func` when applicable.
 struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
     let name: FunctionName
-    let type: InstanceType
+    let type: InstanceType?
     let arguments: [ExtensionApi.Argument]?
     let returnType: InstanceType?
     let content: ([String]) -> Content
@@ -14,7 +14,7 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     var isFinal: Bool = false
     
     public init(name: FunctionName,
-                type: InstanceType,
+                type: InstanceType?,
                 arguments: [ExtensionApi.Argument]?,
                 returnType: InstanceType?,
                 @CodeBuilder content: @escaping ([String]) -> Content) {

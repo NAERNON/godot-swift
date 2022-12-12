@@ -46,16 +46,18 @@ struct GenerateGodotAPI: CommandPlugin {
         let builtinClassesToGenerate = extensionApi.builtinClasses.filter({ !$0.name.isSwiftBaseType })
         let variantSize = builtinClassSizes.sizes.first(where: { $0.name == "Variant" })!.size
         
-            GlobalEnumsFile(enums: extensionApi.globalEnums, translated: translatesCode),
-            UtilityFunctionsFile(functions: extensionApi.utilityFunctions, translated: translatesCode)
         let utilityFiles: [any GeneratedSwiftFile] = [
+            UtilityFunctionsFile(functions: extensionApi.utilityFunctions),
+            RealRawValueFile(floatingPointType: buildConfiguration.floatingPointType),
+            VariantSizeFile(size: variantSize),
+            SetBindingsFile(builtinClasses: builtinClassesToGenerate)
         ]
         
-        let classesFiles: [any GeneratedSwiftFile] = extensionApi.classes.map({ `class` in
-            ClassFile(class: `class`)
-                .insideDirectory(NamingConvention.snake.convert(string: `class`.apiType, to: .pascal))
-                .insideDirectory("Classes")
-        })
+//        let classesFiles: [any GeneratedSwiftFile] = extensionApi.classes.map({ `class` in
+//            ClassFile(class: `class`)
+//                .insideDirectory(NamingConvention.snake.convert(string: `class`.apiType, to: .pascal))
+//                .insideDirectory("Classes")
+//        })
         
         let builtinClassesFiles: [any GeneratedSwiftFile] = builtinClassesToGenerate.map({ builtinClass in
             BuiltinClassFile(builtinClass: builtinClass,
@@ -64,12 +66,7 @@ struct GenerateGodotAPI: CommandPlugin {
                 .insideDirectory("Builtin Structs")
         })
         
-        let setBindingsFiles: [any GeneratedSwiftFile] = [
-            SetBindingsFile(builtinClasses: builtinClassesToGenerate)
-        ]
-        
-        return (utilityFiles /*+ classesFiles */+ builtinClassesFiles,
-                setBindingsFiles)
+        return (utilityFiles + builtinClassesFiles)
     }
     
     @CodeBuilder

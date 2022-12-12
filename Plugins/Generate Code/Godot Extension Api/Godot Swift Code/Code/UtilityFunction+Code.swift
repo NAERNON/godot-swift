@@ -3,120 +3,56 @@ import Foundation
 #warning("We are never using the isVararg argument from UtilityFunction. Is this a feature or a bug ?")
 
 extension ExtensionApi.UtilityFunction {
-    func code(functionPointerName: String, translated: Bool) -> some SwiftCode {
-        let nameAndParameters = self.nameAndParameters(translated: translated)
-        let parameters = nameAndParameters.parameters
-        let parametersNames = parameters.map { $0.name }
-        
-        return Func(name: nameAndParameters.name,
-                    parameters: codeParameters(withLanguageParameters: nameAndParameters.parameters),
-                    returnType: convertedReturnType) {
-            Guard(condition: "let functionPtr = " + functionPointerName) {
-                "printGodotError(\"Method bind was not found. Likely the engine method changed to an incompatible version.\")"
+    func code() -> some SwiftCode {
+        BindingFunc(name: realName,
+                    type: nil,
+                    arguments: arguments,
+                    returnType: returnType) { parameters in
+            if let returnType {
+                Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.toSwift() + "()")
+                Spacer()
+            }
+
+            ObjectsPointersAccess(parameters: functionParameters(withParameters: parameters),
+                                  generatePointersArray: true) { pointerNames in
+
                 if let returnType {
-                    Return(ExtensionApi.defaultValue(forType: returnType))
+                    ObjectsPointersAccess(parameters: .named("__returnValue", type: returnType, isMutable: true)) { returnPointerNames in
+                        "UtilityFunctions.\(godotFunctionPtrName)(\(returnPointerNames.parameters[0]), \(pointerNames.array!), \(pointerNames.parameters.count))"
+                    }
                 } else {
-                    Return()
+                    "UtilityFunctions.\(godotFunctionPtrName)(nil, \(pointerNames.array!), \(pointerNames.parameters.count))"
                 }
+
             }
-            
-            Group {
-                Spacer()
-                parametersPointerAllocation(withNames: parametersNames, arguments: arguments)
-                Spacer()
-                functionCall(withParametersCount: parameters.count)
-                Spacer()
-                parametersPointerDeallocation(withNames: parametersNames, arguments: arguments)
-            }
-            
+
             if returnType != nil {
                 Spacer()
-                Return(returnValueName)
+                Return("__returnValue")
             }
         }.public()
     }
     
-    // MARK: - SwiftCode
-    
-    @CodeBuilder
-    private func parametersPointerAllocation(withNames parametersNames: [String], arguments: [ExtensionApi.Argument]?) -> some SwiftCode {
-        for (i, parameterName) in parametersNames.enumerated() {
-            Property(parameterPointerName(with: parameterName))
-                .letDefined()
-                .assign(value: "UnsafeMutablePointer<\(ExtensionApi.convert(type: arguments![i].type))>.allocate(capacity: 1)")
-            parameterPointerName(with: parameterName) + ".pointee = " + parameterName
+    private func functionParameters(withParameters parameters: [String]) -> [ObjectsPointersAccessParameter] {
+        var accessParameters = [ObjectsPointersAccessParameter]()
+        for index in 0..<parameters.count {
+            let accessParameter = ObjectsPointersAccessParameter.named(parameters[index],
+                                                                       type: arguments![index].type)
+            accessParameters.append(accessParameter)
         }
-        
-        Property(argumentsArrayPointerName)
-            .letDefined()
-            .assign(value: "UnsafeMutablePointer<GDNativeTypePtr?>.allocate(capacity: \(parametersNames.count))")
-        
-        for (i, parameterName) in parametersNames.enumerated() {
-            argumentsArrayPointerName + "[\(i)] = " + "UnsafeMutableRawPointer(\(parameterPointerName(with: parameterName)))"
+        return accessParameters
+    }
+    
+    private var realName: FunctionName {
+        var new = name
+        // We protect the name print for the Swift print function.
+        if name.godotName == "print" {
+            new.godotName = "print_variant"
         }
+        return new
     }
     
-    @CodeBuilder
-    private func parametersPointerDeallocation(withNames parametersNames: [String], arguments: [ExtensionApi.Argument]?) -> some SwiftCode {
-        for parameterName in parametersNames {
-            parameterPointerName(with: parameterName) + ".deinitialize(count: 1)"
-            parameterPointerName(with: parameterName) + ".deallocate()"
-        }
-        
-        argumentsArrayPointerName + ".deinitialize(count: \(parametersNames.count))"
-        argumentsArrayPointerName + ".deallocate()"
+    var godotFunctionPtrName: String {
+        "__function_binding_\(name.godotName)"
     }
-    
-    @CodeBuilder
-    private func functionCall(withParametersCount parametersCount: Int) -> some SwiftCode {
-        if let convertedReturnType {
-            Property(returnPointerName)
-                .letDefined()
-                .assign(value: "UnsafeMutablePointer<\(convertedReturnType)>.allocate(capacity: 1)")
-            
-            "functionPtr(\(returnPointerName), \(argumentsArrayPointerName), \(parametersCount))"
-            Property(returnValueName).letDefined().assign(value: returnPointerName + ".pointee")
-        } else {
-            "functionPtr(nil, \(argumentsArrayPointerName), \(parametersCount))"
-        }
-    }
-    
-    // MARK: - Naming and translation
-    
-    private func nameAndParameters(translated: Bool) -> (name: String, parameters: [CodeLanguage.FunctionParameter]) {
-        CodeLanguage.c.translateFunction(
-            name: name,
-            parameters: arguments?.map({ .init(name: $0.name, label: nil, isLabelHidden: false) }) ?? [],
-            to: translated ? .swift : .c)
-    }
-    
-    private func codeParameters(withLanguageParameters languageParameters: [CodeLanguage.FunctionParameter]) -> [FunctionParameter] {
-        guard let arguments else {
-            return []
-        }
-        
-        var parameters = [FunctionParameter]()
-        for (index, argument) in arguments.enumerated() {
-            let languageParameter = languageParameters[index]
-            parameters.append(argument.functionParameter(withLanguageParameter: languageParameter))
-        }
-        
-        return parameters
-    }
-    
-    private var convertedReturnType: String? {
-        guard let returnType else { return nil }
-        
-        return ExtensionApi.convert(type: returnType)
-    }
-    
-    private func parameterPointerName(with name: String) -> String {
-        "_" + name + "Ptr"
-    }
-    
-    private var argumentsArrayPointerName: String { "_argumentsAccessArrayPtr" }
-    
-    private var returnPointerName: String { "_returnAccessPtr" }
-    
-    private var returnValueName: String { "_returnAccessValue" }
 }

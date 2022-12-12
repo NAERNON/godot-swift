@@ -2,10 +2,10 @@ import Foundation
 
 extension ExtensionApi.BuiltinClass.Method {
     func code(type: InstanceType) -> some SwiftCode {
-        return BindingFunc(name: name,
-                           type: type,
-                           arguments: arguments,
-                           returnType: returnType) { parameters in
+        BindingFunc(name: name,
+                    type: type,
+                    arguments: arguments,
+                    returnType: returnType) { parameters in
             if let returnType {
                 Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.toSwift(scopeType: type) + "()")
                 Spacer()
@@ -26,9 +26,7 @@ extension ExtensionApi.BuiltinClass.Method {
                 Spacer()
                 Return("__returnValue")
             }
-        }
-        .public()
-        .static(isStatic)
+        }.public().static(isStatic)
     }
     
     private func functionParameters(withParameters parameters: [String]) -> [ObjectsPointersAccessParameter] {

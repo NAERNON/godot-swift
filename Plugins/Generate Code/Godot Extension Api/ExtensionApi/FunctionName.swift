@@ -1,9 +1,9 @@
 import Foundation
 
 struct FunctionName {
-    let godotName: String
+    var godotName: String
     
-    func toSwift(withType type: InstanceType,
+    func toSwift(withType type: InstanceType?,
                  arguments: [ExtensionApi.Argument]?) -> (name: String,
                                                           parameters: [FunctionParameter]) {
         let (translatedName, translatedParameters) = CodeLanguage.c.translateFunction(
@@ -28,7 +28,7 @@ struct FunctionName {
     }
     
     private func functionParameters(translatedParameters: [CodeLanguage.FunctionParameter],
-                                    type: InstanceType,
+                                    type: InstanceType?,
                                     arguments: [ExtensionApi.Argument]?) -> [FunctionParameter] {
         guard let arguments else {
             return []
@@ -48,7 +48,7 @@ struct FunctionName {
     }
     
     private func functionParameter(translatedParameter: CodeLanguage.FunctionParameter,
-                                   type: InstanceType,
+                                   type: InstanceType?,
                                    argument: ExtensionApi.Argument) -> FunctionParameter {
         let type = argument.type.toSwift(scopeType: type)
         let defaultParameterValue: FunctionParameter.DefaultValue

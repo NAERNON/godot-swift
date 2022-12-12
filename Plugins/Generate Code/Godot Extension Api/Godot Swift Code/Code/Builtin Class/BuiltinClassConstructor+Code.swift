@@ -44,6 +44,6 @@ extension ExtensionApi.BuiltinClass.Constructor {
     }
     
     var godotConstructorPtrName: String {
-        "__constructor\(index)"
+        "__constructor_\(index)"
     }
 }
