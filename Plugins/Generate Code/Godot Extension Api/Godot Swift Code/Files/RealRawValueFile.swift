@@ -13,14 +13,16 @@ struct RealRawValueFile: GeneratedSwiftFile {
         Import.foundation
         
         Spacer()
-                
-        Comment(style: .doc) {
+        
+        Extension("Real") {
+            Comment(style: .doc) {
 """
 The underlying type of a `Real` value.
 It can either be a `Float` or a `Double` depending on the build configuration.
 """
+            }
+            Typealias("RawValue", type: floatingTypeString).public()
         }
-        Typealias("RealRawValue", type: floatingTypeString).public()
     }
     
     private var floatingTypeString: String {

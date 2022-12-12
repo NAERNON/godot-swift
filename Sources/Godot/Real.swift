@@ -28,10 +28,10 @@ public struct Real {
     /// The raw value of the real. Its type is undefined since it is dependent on the Godot build configuration.
     /// It can either be a `Float` value or a `Double` value depending on the build configuration.
     /// Use this value with care.
-    public var undefinedRawValue: RealRawValue
+    public var undefinedRawValue: RawValue
     
     @inlinable public init() {
-        undefinedRawValue = RealRawValue()
+        undefinedRawValue = RawValue()
     }
     
     /// Creates a new instance from the given value, rounded to the closest
@@ -63,7 +63,7 @@ extension Real: AdditiveArithmetic {
     /// Zero is the identity element for addition. For any value,
     /// `x + .zero == x` and `.zero + x == x`.
     @inlinable public static var zero: Real {
-        Real(RealRawValue.zero)
+        Real(RawValue.zero)
     }
     
     /// Adds two values and produces their sum, rounded to a
@@ -123,7 +123,7 @@ extension Real: ExpressibleByFloatLiteral {
     /// floating-point literal initializer behind the scenes.
     ///
     /// - Parameter value: The value to create.
-    @inlinable public init(floatLiteral value: RealRawValue) {
+    @inlinable public init(floatLiteral value: RawValue) {
         undefinedRawValue = value
     }
 }
@@ -141,7 +141,7 @@ extension Real: ExpressibleByIntegerLiteral {
     ///
     /// - Parameter value: The value to create.
     @inlinable public init(integerLiteral value: Int64) {
-        undefinedRawValue = RealRawValue(integerLiteral: value)
+        undefinedRawValue = RawValue(integerLiteral: value)
     }
 }
 
@@ -154,11 +154,11 @@ extension Real: BinaryFloatingPoint {
     ///
     /// - Parameter value: A floating-point value to be converted.
     @inlinable public init<Source>(_ value: Source) where Source : BinaryFloatingPoint {
-        undefinedRawValue = RealRawValue(value)
+        undefinedRawValue = RawValue(value)
     }
     
     /// Creates a new instance from the specified sign and bit patterns.
-    /// This init is dependent on the `RealRawValue` type and the
+    /// This init is dependent on the `RawValue` type and the
     /// `significandBitPattern` value could change depending on the build configuration.
     ///
     /// The values passed as `exponentBitPattern` and `significandBitPattern` are
@@ -173,8 +173,8 @@ extension Real: BinaryFloatingPoint {
     ///     the new value.
     ///   - significandBitPattern: The bit pattern to use for the significand
     ///     field of the new value.
-    @inlinable public init(sign: FloatingPointSign, exponentBitPattern: UInt, significandBitPattern: RealRawValue.RawSignificand) {
-        undefinedRawValue = RealRawValue(sign: sign, exponentBitPattern: exponentBitPattern, significandBitPattern: significandBitPattern)
+    @inlinable public init(sign: FloatingPointSign, exponentBitPattern: UInt, significandBitPattern: RawValue.RawSignificand) {
+        undefinedRawValue = RawValue(sign: sign, exponentBitPattern: exponentBitPattern, significandBitPattern: significandBitPattern)
     }
     
     /// Creates a new value from the given sign, exponent, and significand.
@@ -221,7 +221,7 @@ extension Real: BinaryFloatingPoint {
     ///   - exponent: The new value's exponent.
     ///   - significand: The new value's significand.
     @inlinable public init(sign: FloatingPointSign, exponent: Int, significand: Real) {
-        undefinedRawValue = RealRawValue(sign: sign, exponent: exponent, significand: significand.undefinedRawValue)
+        undefinedRawValue = RawValue(sign: sign, exponent: exponent, significand: significand.undefinedRawValue)
     }
     
     /// The raw encoding of the value's exponent field.
@@ -232,13 +232,13 @@ extension Real: BinaryFloatingPoint {
     }
     
     /// The raw encoding of the value's significand field.
-    /// This var is dependent on the `RealRawValue` type
+    /// This var is dependent on the `RawValue` type
     /// so its type could change depending on the build configuration.
     ///
     /// The `significandBitPattern` property does not include the leading
     /// integral bit of the significand, even for types like `Float80` that
     /// store it explicitly.
-    @inlinable public var significandBitPattern: RealRawValue.RawSignificand {
+    @inlinable public var significandBitPattern: RawValue.RawSignificand {
         undefinedRawValue.significandBitPattern
     }
     
@@ -344,7 +344,7 @@ extension Real: BinaryFloatingPoint {
     ///     print(Float.leastNormalMagnitude.exponent)
     ///     // Prints "-126"
     @inlinable public static var exponentBitCount: Int {
-        RealRawValue.exponentBitCount
+        RawValue.exponentBitCount
     }
     
     /// The available number of fractional significand bits.
@@ -364,7 +364,7 @@ extension Real: BinaryFloatingPoint {
     /// `BinaryFloatingPoint` APIs provide an abstraction so that users don't
     /// need to be aware of this detail).
     @inlinable public static var significandBitCount: Int {
-        RealRawValue.significandBitCount
+        RawValue.significandBitCount
     }
     
     /// The floating-point value with the same sign and exponent as this value,
@@ -429,7 +429,7 @@ extension Real: BinaryFloatingPoint {
     ///     print(y.isNaN)
     ///     // Prints "true"
     @inlinable public static var nan: Real {
-        Real(RealRawValue.nan)
+        Real(RawValue.nan)
     }
     
     /// A signaling NaN ("not a number").
@@ -448,7 +448,7 @@ extension Real: BinaryFloatingPoint {
     /// Other than these signaling operations, a signaling NaN behaves in the
     /// same manner as a quiet NaN.
     @inlinable public static var signalingNaN: Real {
-        Real(RealRawValue.signalingNaN)
+        Real(RawValue.signalingNaN)
     }
     
     /// Positive infinity.
@@ -461,7 +461,7 @@ extension Real: BinaryFloatingPoint {
     ///     // y == Real.infinity
     ///     // y > x
     @inlinable public static var infinity: Real {
-        Real(RealRawValue.infinity)
+        Real(RawValue.infinity)
     }
     
     /// The greatest finite number representable by this type.
@@ -473,7 +473,7 @@ extension Real: BinaryFloatingPoint {
     /// `DBL_MAX`. The naming of those macros is slightly misleading, because
     /// `infinity` is greater than this value.
     @inlinable public static var greatestFiniteMagnitude: Real {
-        Real(RealRawValue.greatestFiniteMagnitude)
+        Real(RawValue.greatestFiniteMagnitude)
     }
     
     /// The mathematical constant pi.
@@ -486,7 +486,7 @@ extension Real: BinaryFloatingPoint {
     ///     print(Real.pi)
     ///     // Prints "3.14159265358979"
     @inlinable public static var pi: Real {
-        Real(RealRawValue.pi)
+        Real(RawValue.pi)
     }
     
     /// The unit in the last place of this value.
@@ -518,7 +518,7 @@ extension Real: BinaryFloatingPoint {
     /// `DBL_MIN`. The naming of those macros is slightly misleading, because
     /// subnormals, zeros, and negative numbers are smaller than this value.
     @inlinable public static var leastNormalMagnitude: Real {
-        Real(RealRawValue.leastNormalMagnitude)
+        Real(RawValue.leastNormalMagnitude)
     }
     
     /// The least positive number.
@@ -528,7 +528,7 @@ extension Real: BinaryFloatingPoint {
     /// `leastNonzeroMagnitude` is smaller than `leastNormalMagnitude`;
     /// otherwise they are equal.
     @inlinable public static var leastNonzeroMagnitude: Real {
-        Real(RealRawValue.leastNonzeroMagnitude)
+        Real(RawValue.leastNonzeroMagnitude)
     }
     
     /// The sign of the floating-point value.
@@ -1053,7 +1053,7 @@ extension Real: Codable {
     ///
     /// - Parameter decoder: The decoder to read data from.
     @inlinable public init(from decoder: Decoder) throws {
-        undefinedRawValue = try RealRawValue(from: decoder)
+        undefinedRawValue = try RawValue(from: decoder)
     }
 }
 
@@ -1188,7 +1188,7 @@ extension Real: LosslessStringConvertible {
     /// - Parameter text: An input string to convert to a `Real?` instance.
     ///
     @inlinable public init?(_ description: Swift.String) {
-        if let value = RealRawValue(description) {
+        if let value = RawValue(description) {
             undefinedRawValue = value
         } else {
             return nil
