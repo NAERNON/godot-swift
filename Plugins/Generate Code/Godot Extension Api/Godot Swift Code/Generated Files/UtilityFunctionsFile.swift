@@ -14,6 +14,15 @@ struct UtilityFunctionsFile: GeneratedSwiftFile {
         
         Spacer()
         
+        for function in functions {
+            function.code()
+            Spacer()
+        }
+        
+        Mark(text: "Bindings", isSeparator: true)
+        
+        Spacer()
+        
         Enum("UtilityFunctions") {
             Func(name: "setBindings") {
                 Property("_function_name").varDefined().type("StringName!")
@@ -36,11 +45,6 @@ struct UtilityFunctionsFile: GeneratedSwiftFile {
                     .type("GDNativePtrUtilityFunction!")
             }
         }.internal()
-        
-        for function in functions {
-            Spacer()
-            function.code()
-        }
     }
 }
 
