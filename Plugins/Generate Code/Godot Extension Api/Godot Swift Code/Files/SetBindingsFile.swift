@@ -14,7 +14,7 @@ struct SetBindingsFile: GeneratedSwiftFile {
         Spacer()
         
         Extension("GodotInterface") {
-            Func(name: "setAllBindings") {
+            Func(name: "setAllBuiltinStructsBindings") {
                 for builtinClass in builtinClasses {
                     "Godot." + builtinClass.name.toSwift() + ".setInitBindings()"
                 }

@@ -20,9 +20,9 @@ public enum GodotInterface {
         
         isGodotSetup = true
         
-        GodotInterface.native = nativeInterface
+        self.native = nativeInterface
         
         Variant.setInitBindings(with: nativeInterface)
-        setAllBindings()
+        setAllBuiltinStructsBindings()
     }
 }
