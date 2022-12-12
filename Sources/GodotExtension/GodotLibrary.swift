@@ -44,24 +44,9 @@ public final class GodotLibrary {
         initializationPtr.pointee.deinitialize = deinitializeLevel
         initializationPtr.pointee.minimum_initialization_level = minimumInitializationLevel
         
-        Variant.setInitBindings(with: interface)
-        setBindingsOnBuiltinClasses()
+        Godot.GodotInterface.setupGodot(withNativeInterface: interface)
         
         return 1
-    }
-    
-    // MARK: Print
-    
-    func print(message: Swift.String,
-               function: Swift.String = #function,
-               file: Swift.String = #file,
-               line: Int = #line,
-               isError: Bool) {
-        if isError {
-            interfacePtr.pointee.print_error(message, function, file, Int32(line))
-        } else {
-            interfacePtr.pointee.print_warning(message, function, file, Int32(line))
-        }
     }
 }
 

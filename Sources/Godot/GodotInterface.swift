@@ -14,6 +14,7 @@ public enum GodotInterface {
     /// Almost every type in the target are using this interface for calling Godot.
     static public func setupGodot(withNativeInterface nativeInterface: GDNativeInterface) {
         guard !isGodotSetup else {
+            printGodotWarning("Trying to setup Godot but is already setup.")
             return
         }
         
