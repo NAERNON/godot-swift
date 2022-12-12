@@ -22,7 +22,8 @@ public enum GodotInterface {
         
         self.native = nativeInterface
         
-        Variant.setInitBindings(with: nativeInterface)
         setAllBuiltinStructsBindings()
+        Variant.setInitBindings()
+        UtilityFunctions.setBindings()
     }
 }
