@@ -6,7 +6,7 @@ extension String {
         
         withUnsafeNativePointer { nativePtr in
             swiftString.withCString { cString in
-                Self.interface.string_new_with_utf8_chars(nativePtr, cString)
+                GodotInterface.native.string_new_with_utf8_chars(nativePtr, cString)
             }
         }
     }

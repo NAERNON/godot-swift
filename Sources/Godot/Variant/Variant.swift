@@ -13,20 +13,20 @@ public struct Variant {
     /// Creates a new `Variant` as a `nil` variant.
     public init() {
         withUnsafeNativePointer { nativeTypePtr in
-            Variant.interface.variant_new_nil(nativeTypePtr)
+            GodotInterface.native.variant_new_nil(nativeTypePtr)
         }
     }
     
     public init(nativeVariantPtr: GDNativeVariantPtr) {
         withUnsafeNativePointer { nativeTypePtr in
-            Variant.interface.variant_new_copy(nativeTypePtr, nativeVariantPtr)
+            GodotInterface.native.variant_new_copy(nativeTypePtr, nativeVariantPtr)
         }
     }
     
     public init(_ other: Variant) {
         withUnsafeNativePointer { nativeTypePtr in
             other.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.interface.variant_new_copy(nativeTypePtr, otherNativeTypePtr)
+                GodotInterface.native.variant_new_copy(nativeTypePtr, otherNativeTypePtr)
             }
         }
     }
@@ -771,7 +771,7 @@ public struct Variant {
         var nativeVariantType: GDNativeVariantType!
         
         withUnsafeNativePointer { nativeTypePtr in
-            nativeVariantType = Variant.interface.variant_get_type(nativeTypePtr)
+            nativeVariantType = GodotInterface.native.variant_get_type(nativeTypePtr)
         }
         
         return VariantType(godotType: nativeVariantType)
@@ -782,8 +782,6 @@ public struct Variant {
     }
     
     // MARK: - Bindings
-    
-    internal static var interface: GDNativeInterface!
     
     private static var fromTypeConstructor_bool: GDNativeVariantFromTypeConstructorFunc!
     private static var fromTypeConstructor_int: GDNativeVariantFromTypeConstructorFunc!
@@ -866,7 +864,7 @@ public struct Variant {
     }()
     
     /// Calls a closure with a native type pointer of the underlying object. Should only be called by the `GodotLibrary`.
-    public func withUnsafeNativePointer(_ body: (GDNativeTypePtr) -> ()) {
+    internal func withUnsafeNativePointer(_ body: (GDNativeTypePtr) -> ()) {
         opaque.withUnsafeMutableRawPointer(body)
     }
     
@@ -876,9 +874,7 @@ public struct Variant {
     /// for any initialization.
     ///
     /// This function should only called by the `GodotLibrary`.
-    public static func setInitBindings(with interface: GDNativeInterface) {
-        self.interface = interface
-        
+    internal static func setInitBindings(with interface: GDNativeInterface) {
         fromTypeConstructor_bool = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_BOOL)
         fromTypeConstructor_int = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_INT)
         fromTypeConstructor_float = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_FLOAT)
@@ -965,7 +961,7 @@ extension Variant: CustomDebugStringConvertible {
         
         self.withUnsafeNativePointer { nativeTypePtr in
             string.withUnsafeNativePointer { stringNativeTypePtr in
-                Variant.interface.variant_stringify(nativeTypePtr, stringNativeTypePtr)
+                GodotInterface.native.variant_stringify(nativeTypePtr, stringNativeTypePtr)
             }
         }
         

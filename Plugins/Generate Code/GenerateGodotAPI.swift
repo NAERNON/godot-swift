@@ -25,19 +25,14 @@ struct GenerateGodotAPI: CommandPlugin {
         // Delete _Generated directories if needed before making new ones.
         if options.writesFiles {
             try godotTarget.removeGeneratedDirectoryIfNecessary()
-            try godotExtensionTarget.removeGeneratedDirectoryIfNecessary()
         }
         
-        let (godotFiles, godotExtensionFiles) = generateGododFiles(withExtensionApi: extensionApi,
-                                                                   codeFormatter: codeFormatter,
-                                                                   buildConfiguration: options.buildConfiguration)
+        let godotFiles = generateGododFiles(withExtensionApi: extensionApi,
+                                            codeFormatter: codeFormatter,
+                                            buildConfiguration: options.buildConfiguration)
         
         for file in godotFiles {
             try saveFile(file, withFormatter: codeFormatter, options: options, at: godotTarget.generatedPath)
-        }
-
-        for file in godotExtensionFiles {
-            try saveFile(file, withFormatter: codeFormatter, options: options, at: godotExtensionTarget.generatedPath)
         }
     }
     
@@ -45,7 +40,7 @@ struct GenerateGodotAPI: CommandPlugin {
     
     private func generateGododFiles(withExtensionApi extensionApi: ExtensionApi,
                                     codeFormatter: CodeFormatter,
-                                    buildConfiguration: BuildConfiguration) -> (godotFiles: [any GeneratedSwiftFile], godotExtensionFiles: [any GeneratedSwiftFile]) {
+                                    buildConfiguration: BuildConfiguration) -> [any GeneratedSwiftFile] {
         let builtinClassSizes = extensionApi.builtinClassSizes.first { $0.buildConfiguration == buildConfiguration }!
         let memberOffsets = extensionApi.builtinClassMemberOffsets.first { $0.buildConfiguration == buildConfiguration }!
         let builtinClassesToGenerate = extensionApi.builtinClasses.filter({ !$0.name.isSwiftBaseType })

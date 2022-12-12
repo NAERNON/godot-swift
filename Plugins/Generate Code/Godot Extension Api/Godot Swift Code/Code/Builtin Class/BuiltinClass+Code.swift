@@ -123,13 +123,12 @@ duplicate its value.
         Spacer()
         
         setInitBindingsFunctionCode()
+        Spacer()
         setFunctionBindingsFunctionCode()
     }
     
     @CodeBuilder
     private func bindingsPropertiesCode() -> some SwiftCode {
-        Property("interface").varDefined().static().internal().type("GDNativeInterface!").padding(bottom: 1)
-        
         for constructor in constructors {
             Property(constructor.godotConstructorPtrName)
                 .varDefined().private().static().type("GDNativePtrConstructor!")
@@ -166,29 +165,23 @@ duplicate its value.
     private func setInitBindingsFunctionCode() -> some SwiftCode {
         Comment(style: .doc) {
 """
-Sets all the init bindings and the deinit (if applicable) used to communicate with Godot, as well as the static `interface` property.
+Sets all the init bindings and the deinit (if applicable) used to communicate with Godot.
 
 This function must be called before the creation of any `\(name.toSwift())` instance since the bindings will be needed
 for any initialization.
-
-This function should only called by the `GodotLibrary`.
 """
         }
-        Func(name: "setInitBindings", parameters: .named("interface", type: "GDNativeInterface", label: "with")) {
-            Property("self.interface").assign(value: "interface")
-            
-            Spacer()
-            
+        Func(name: "setInitBindings") {
             for constructor in constructors {
                 Property(constructor.godotConstructorPtrName)
-                    .assign(value: "interface.variant_get_ptr_constructor(\(godotVariantType), \(constructor.index))")
+                    .assign(value: "GodotInterface.native.variant_get_ptr_constructor(\(godotVariantType), \(constructor.index))")
             }
             
             if hasDestructor {
                 Property(godotDestructorPtrName)
-                    .assign(value: "interface.variant_get_ptr_destructor(\(godotVariantType))")
+                    .assign(value: "GodotInterface.native.variant_get_ptr_destructor(\(godotVariantType))")
             }
-        }.public().static()
+        }.internal().static()
     }
     
     @CodeBuilder
@@ -196,22 +189,20 @@ This function should only called by the `GodotLibrary`.
         Comment(style: .doc) {
 """
 Sets all the function bindings and operators used to communicate with Godot.
-
-This function should only called by the `GodotLibrary`.
 """
         }
         Func(name: "setFunctionBindings") {
             if indexingReturnType != nil {
-                Property(godotIndexedSetterPtrName).assign(value: "interface.variant_get_ptr_indexed_setter(\(godotVariantType))")
-                Property(godotIndexedGetterPtrName).assign(value: "interface.variant_get_ptr_indexed_getter(\(godotVariantType))")
+                Property(godotIndexedSetterPtrName).assign(value: "GodotInterface.native.variant_get_ptr_indexed_setter(\(godotVariantType))")
+                Property(godotIndexedGetterPtrName).assign(value: "GodotInterface.native.variant_get_ptr_indexed_getter(\(godotVariantType))")
                 
                 Spacer()
             }
             
             if isKeyed {
-                Property(godotKeyedSetterPtrName).assign(value: "interface.variant_get_ptr_keyed_setter(\(godotVariantType))")
-                Property(godotKeyedGetterPtrName).assign(value: "interface.variant_get_ptr_keyed_getter(\(godotVariantType))")
-                Property(godotKeyedCheckerPtrName).assign(value: "interface.variant_get_ptr_keyed_checker(\(godotVariantType))")
+                Property(godotKeyedSetterPtrName).assign(value: "GodotInterface.native.variant_get_ptr_keyed_setter(\(godotVariantType))")
+                Property(godotKeyedGetterPtrName).assign(value: "GodotInterface.native.variant_get_ptr_keyed_getter(\(godotVariantType))")
+                Property(godotKeyedCheckerPtrName).assign(value: "GodotInterface.native.variant_get_ptr_keyed_checker(\(godotVariantType))")
                 
                 Spacer()
             }
@@ -222,7 +213,7 @@ This function should only called by the `GodotLibrary`.
                     Property("_method_name").assign(value: "\"\(method.name.godotName)\"")
                     "_method_name.withUnsafeNativePointer { _name_ptr in"
                     Property(method.godotMethodPtrName)
-                        .assign(value: "interface.variant_get_ptr_builtin_method(\(godotVariantType), _name_ptr, \(method.hash))")
+                        .assign(value: "GodotInterface.native.variant_get_ptr_builtin_method(\(godotVariantType), _name_ptr, \(method.hash))")
                         .indentation()
                     "}"
                 }
@@ -232,9 +223,9 @@ This function should only called by the `GodotLibrary`.
             
             for op in operators {
                 Property(op.godotOperatorPtrName)
-                    .assign(value: "interface.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(op.rightType.godotVariantType))")
+                    .assign(value: "GodotInterface.native.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(op.rightType.godotVariantType))")
             }
-        }.public().static()
+        }.internal().static()
     }
     
     // MARK: Constructors
