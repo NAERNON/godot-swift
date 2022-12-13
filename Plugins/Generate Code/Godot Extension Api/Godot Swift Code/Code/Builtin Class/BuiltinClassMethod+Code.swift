@@ -6,6 +6,11 @@ extension ExtensionApi.BuiltinClass.Method {
                     type: type,
                     arguments: arguments,
                     returnType: returnType) { parameters in
+            if isMutating && !type.isValueType {
+                "replaceOpaqueValueIfNecessary()"
+                Spacer()
+            }
+            
             if let returnType {
                 Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.toSwift(scopeType: type) + "()")
                 Spacer()
@@ -26,7 +31,7 @@ extension ExtensionApi.BuiltinClass.Method {
                 Spacer()
                 Return("__returnValue")
             }
-        }.public().static(isStatic)
+        }.public().static(isStatic).mutating(isMutating)
     }
     
     private func functionParameters(withParameters parameters: [String]) -> [ObjectsPointersAccessParameter] {
@@ -42,12 +47,16 @@ extension ExtensionApi.BuiltinClass.Method {
     private func returnParameters(type: InstanceType, returnType: InstanceType?) -> [ObjectsPointersAccessParameter] {
         var returnParameters = [ObjectsPointersAccessParameter]()
         if !isStatic {
-            returnParameters.append(.named("self", type: type))
+            returnParameters.append(.named("self", type: type, isMutable: isMutating))
         }
         if let returnType {
             returnParameters.append(.named("__returnValue", type: returnType, isMutable: true))
         }
         return returnParameters
+    }
+    
+    private var isMutating: Bool {
+        !isConst && !isStatic
     }
     
     var godotMethodPtrName: String {

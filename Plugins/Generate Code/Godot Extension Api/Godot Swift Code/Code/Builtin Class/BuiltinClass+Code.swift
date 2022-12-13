@@ -245,6 +245,14 @@ Sets all the function bindings and operators used to communicate with Godot.
     
     private func filteredConstructors() -> [ExtensionApi.BuiltinClass.Constructor] {
         self.constructors.filter { constructor in
+            // For some reason, Array and Dictionary types do not copy their values with
+            // the default constructor. So we don't want it.
+            if constructor.arguments?.count == 1 && constructor.arguments![0].type == self.name {
+                if self.name == "Array" || self.name == "Dictionary" {
+                    return false
+                }
+            }
+            
             // If the type is not a base builtin type, then we need all the initializers.
             if !self.name.isBuiltinValueType {
                 return true

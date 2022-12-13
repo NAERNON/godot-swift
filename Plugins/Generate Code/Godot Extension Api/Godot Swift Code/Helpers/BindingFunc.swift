@@ -12,6 +12,7 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     var accessControl: AccessControl? = nil
     var isStatic: Bool = false
     var isFinal: Bool = false
+    var isMutating: Bool = false
     
     public init(name: FunctionName,
                 type: InstanceType?,
@@ -45,6 +46,7 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
                  .accessControl(accessControl)
                  .static(isStatic)
                  .final(isFinal)
+                 .mutating(isMutating)
         }
     }
     
@@ -65,6 +67,12 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     public func `final`(_ state: Bool = true) -> BindingFunc {
         var new = self
         new.isFinal = state
+        return new
+    }
+    
+    public func `mutating`(_ state: Bool = true) -> BindingFunc {
+        var new = self
+        new.isMutating = state
         return new
     }
 }
