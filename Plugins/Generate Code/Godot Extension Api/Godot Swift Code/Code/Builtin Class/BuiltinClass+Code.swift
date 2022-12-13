@@ -14,6 +14,7 @@ extension ExtensionApi.BuiltinClass {
         }
         
         customDebugStringConvertibleExtensionCode()
+        equatableExtensionCode()
     }
     
     @CodeBuilder
@@ -412,6 +413,16 @@ Sets all the function bindings and operators used to communicate with Godot.
             Property("debugDescription").varDefined().public().type("Swift.String").computed {
                 "Variant(self).debugDescription"
             }
+        }
+    }
+    
+    // MARK: Equatable
+    
+    @CodeBuilder
+    private func equatableExtensionCode() -> some SwiftCode {
+        Spacer()
+        Extension(name.toSwift(), extensions: ["Equatable"]) {
+            EmptyCode()
         }
     }
     
