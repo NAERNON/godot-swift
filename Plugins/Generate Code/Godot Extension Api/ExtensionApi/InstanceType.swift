@@ -118,6 +118,20 @@ struct InstanceType {
         }
     }
     
+    /// Builtin base types, when converted to Swift, are value types.
+    /// But for some types, the default initializer does not copy data.
+    /// For those types, the default initalizer should use the `duplicate()`
+    /// function istead of the init.
+    ///
+    /// For the `Array` type for instance, `init(array: Array)` should not be available.
+    var duplicateInsteadOfInit: Bool {
+        switch godotName {
+        case "Array": return true
+        case "Dictionary": return true
+        default: return false
+        }
+    }
+    
     static func == (lhs: InstanceType, rhs: String) -> Bool {
         lhs.godotName == rhs || lhs.toSwift() == rhs
     }
