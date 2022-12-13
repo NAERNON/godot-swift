@@ -13,3 +13,5 @@ public struct AABB {
         self.init(position: Vector3(), size: Vector3())
     }
 }
+
+extension AABB: Hashable {}

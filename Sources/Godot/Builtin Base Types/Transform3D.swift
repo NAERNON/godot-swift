@@ -23,3 +23,5 @@ public struct Transform3D {
                   origin: Vector3(x: originX, y: originY, z: originZ))
     }
 }
+
+extension Transform3D: Hashable {}

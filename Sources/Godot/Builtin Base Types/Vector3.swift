@@ -15,3 +15,5 @@ public struct Vector3 {
         self.init(x: 0, y: 0, z: 0)
     }
 }
+
+extension Vector3: Hashable {}

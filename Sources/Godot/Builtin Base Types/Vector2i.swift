@@ -13,3 +13,5 @@ public struct Vector2i {
         self.init(x: 0, y: 0)
     }
 }
+
+extension Vector2i: Hashable {}

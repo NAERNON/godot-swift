@@ -17,3 +17,5 @@ public struct Color {
         self.init(r: 0, g: 0, b: 0, a: 0)
     }
 }
+
+extension Color: Hashable {}

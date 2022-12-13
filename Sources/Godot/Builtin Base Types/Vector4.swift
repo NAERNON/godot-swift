@@ -17,3 +17,5 @@ public struct Vector4 {
         self.init(x: 0, y: 0, z: 0, w: 0)
     }
 }
+
+extension Vector4: Hashable {}

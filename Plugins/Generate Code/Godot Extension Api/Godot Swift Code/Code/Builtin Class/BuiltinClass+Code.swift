@@ -15,6 +15,7 @@ extension ExtensionApi.BuiltinClass {
         
         customDebugStringConvertibleExtensionCode()
         equatableExtensionCode()
+        hashableExtensionCode()
     }
     
     @CodeBuilder
@@ -430,6 +431,23 @@ Sets all the function bindings and operators used to communicate with Godot.
         Spacer()
         Extension(name.toSwift(), extensions: ["Equatable"]) {
             EmptyCode()
+        }
+    }
+    
+    // MARK: Hashable
+    
+    @CodeBuilder
+    private func hashableExtensionCode() -> some SwiftCode {
+        // Only conform the type if it has a hash value.
+        if methods?.contains { $0.name.godotName == "hash" } == true {
+            Spacer()
+            Extension(name.toSwift(), extensions: ["Hashable"]) {
+"""
+public func hash(into hasher: inout Hasher) {
+    hasher.combine(hashValue)
+}
+"""
+            }
         }
     }
     

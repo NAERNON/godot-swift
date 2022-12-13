@@ -13,3 +13,5 @@ public struct Rect2i {
         self.init(position: Vector2i(), size: Vector2i())
     }
 }
+
+extension Rect2i: Hashable {}

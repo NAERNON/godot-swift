@@ -23,3 +23,5 @@ public struct Transform2D {
                   origin: Vector2(x: originX, y: originY))
     }
 }
+
+extension Transform2D: Hashable {}

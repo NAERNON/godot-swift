@@ -23,6 +23,7 @@ struct FunctionName {
         switch godotName {
         case "unary-": return true
         case "unary+": return false
+        case "hash": return true
         default: return false
         }
     }
@@ -69,6 +70,7 @@ struct FunctionName {
         switch godotName {
         case "unary-": return "negative"
         case "unary+": return "positive"
+        case "hash": return "hashValue"
         default: return nil
         }
     }

@@ -27,3 +27,5 @@ public struct Projection {
                   w: Vector4(x: wAxisX, y: wAxisY, z: wAxisZ, w: wAxisW))
     }
 }
+
+extension Projection: Hashable {}

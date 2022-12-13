@@ -17,3 +17,5 @@ public struct Plane {
         self.init(normal: Vector3(x: x, y: y, z: z), d: d)
     }
 }
+
+extension Plane: Hashable {}

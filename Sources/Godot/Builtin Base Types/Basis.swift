@@ -23,3 +23,5 @@ public struct Basis {
                   z: Vector3(x: zAxisX, y: zAxisY, z: zAxisZ))
     }
 }
+
+extension Basis: Hashable {}
