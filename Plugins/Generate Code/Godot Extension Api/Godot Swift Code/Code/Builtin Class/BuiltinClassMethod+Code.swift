@@ -31,7 +31,7 @@ extension ExtensionApi.BuiltinClass.Method {
                 Spacer()
                 Return("__returnValue")
             }
-        }.public().static(isStatic).mutating(isMutating)
+        }.public().static(isStatic).mutating(isMutating).attributes(isResultDiscardable ? [.discardableResult] : [])
     }
     
     private func functionParameters(withParameters parameters: [String]) -> [ObjectsPointersAccessParameter] {
@@ -57,6 +57,10 @@ extension ExtensionApi.BuiltinClass.Method {
     
     private var isMutating: Bool {
         !isConst && !isStatic
+    }
+    
+    private var isResultDiscardable: Bool {
+        isMutating && returnType != nil
     }
     
     var godotMethodPtrName: String {
