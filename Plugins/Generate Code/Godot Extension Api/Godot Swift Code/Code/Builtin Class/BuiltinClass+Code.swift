@@ -12,6 +12,8 @@ extension ExtensionApi.BuiltinClass {
                 insideStructOrExtensionCode(classSize: classSize)
             }.public()
         }
+        
+        customDebugStringConvertibleExtensionCode()
     }
     
     @CodeBuilder
@@ -398,6 +400,18 @@ Sets all the function bindings and operators used to communicate with Godot.
                 
                 Return("keyCheck != 0")
             }.internal()
+        }
+    }
+    
+    // MARK: Custom Debug String Convertible
+    
+    @CodeBuilder
+    private func customDebugStringConvertibleExtensionCode() -> some SwiftCode {
+        Spacer()
+        Extension(name.toSwift(), extensions: ["CustomDebugStringConvertible"]) {
+            Property("debugDescription").varDefined().public().type("Swift.String").computed {
+                "Variant(self).debugDescription"
+            }
         }
     }
     
