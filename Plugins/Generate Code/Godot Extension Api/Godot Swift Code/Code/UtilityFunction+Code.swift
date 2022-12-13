@@ -13,15 +13,14 @@ extension ExtensionApi.UtilityFunction {
                 Spacer()
             }
 
-            ObjectsPointersAccess(parameters: functionParameters(withParameters: parameters),
-                                  generatePointersArray: true) { pointerNames in
+            ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
 
                 if let returnType {
                     ObjectsPointersAccess(parameters: .named("__returnValue", type: returnType, isMutable: true)) { returnPointerNames in
-                        "UtilityFunctions.\(godotFunctionPtrName)(\(returnPointerNames.parameters[0]), \(pointerNames.array!), \(pointerNames.parameters.count))"
+                        "UtilityFunctions.\(godotFunctionPtrName)(\(returnPointerNames[0]), \(arrayName), \(pointerNames.count))"
                     }
                 } else {
-                    "UtilityFunctions.\(godotFunctionPtrName)(nil, \(pointerNames.array!), \(pointerNames.parameters.count))"
+                    "UtilityFunctions.\(godotFunctionPtrName)(nil, \(arrayName), \(pointerNames.count))"
                 }
 
             }

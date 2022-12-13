@@ -16,13 +16,12 @@ extension ExtensionApi.BuiltinClass.Method {
                 Spacer()
             }
             
-            ObjectsPointersAccess(parameters: functionParameters(withParameters: parameters),
-                                  generatePointersArray: true) { pointerNames in
+            ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
                 
                 ObjectsPointersAccess(parameters: returnParameters(type: type, returnType: returnType)) { returnPointerNames in
-                    let selfPointer = isStatic ? "nil" : returnPointerNames.parameters.first!
-                    let returnPointer = returnType == nil ? "nil" : returnPointerNames.parameters.last!
-                    "Self.\(godotMethodPtrName)(\(selfPointer), \(pointerNames.array!), \(returnPointer), \(parameters.count))"
+                    let selfPointer = isStatic ? "nil" : returnPointerNames.first!
+                    let returnPointer = returnType == nil ? "nil" : returnPointerNames.last!
+                    "Self.\(godotMethodPtrName)(\(selfPointer), \(arrayName), \(returnPointer), \(parameters.count))"
                 }
                 
             }

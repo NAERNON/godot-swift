@@ -328,7 +328,7 @@ Sets all the function bindings and operators used to communicate with Godot.
                                         [.named("__returnValue", type: indexingReturnType, isMutable: true),
                                          .named("self", type: self.name)]
                 ) { pointerNames in
-                    "Self.__indexed_getter(\(pointerNames.parameters[1]), index, \(pointerNames.parameters[0]))"
+                    "Self.__indexed_getter(\(pointerNames[1]), index, \(pointerNames[0]))"
                 }.padding(top: 1, bottom: 1)
                 
                 Return("__returnValue")
@@ -348,7 +348,7 @@ Sets all the function bindings and operators used to communicate with Godot.
                 ObjectsPointersAccess(parameters: [.named("value", type: indexingReturnType, isMutable: false),
                                                    .named("self", type: self.name, isMutable: true)])
                 { pointerNames in
-                    "Self.__indexed_setter(\(pointerNames.parameters[1]), index, \(pointerNames.parameters[0]))"
+                    "Self.__indexed_setter(\(pointerNames[1]), index, \(pointerNames[0]))"
                 }
             }.internal().mutating()
         }
@@ -375,7 +375,7 @@ Sets all the function bindings and operators used to communicate with Godot.
                                          .named("key", type: .variant, isMutable: false),
                                          .named("self", type: self.name)]
                 ) { pointerNames in
-                    "Self.__keyed_getter(\(pointerNames.parameters[2]), \(pointerNames.parameters[1]), \(pointerNames.parameters[0]))"
+                    "Self.__keyed_getter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
                 }.padding(top: 1, bottom: 1)
                 
                 Return("__returnValue")
@@ -391,7 +391,7 @@ Sets all the function bindings and operators used to communicate with Godot.
                                          .named("key", type: .variant, isMutable: false),
                                          .named("self", type: self.name)]
                 ) { pointerNames in
-                    "Self.__keyed_setter(\(pointerNames.parameters[2]), \(pointerNames.parameters[1]), \(pointerNames.parameters[0]))"
+                    "Self.__keyed_setter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
                 }.padding(top: 1)
             }.internal().mutating().bottomPadding()
             
@@ -404,7 +404,7 @@ Sets all the function bindings and operators used to communicate with Godot.
                                         [.named("key", type: .variant, isMutable: false),
                                          .named("self", type: self.name)]
                 ) { pointerNames in
-                    "keyCheck = Self.__keyed_checker(\(pointerNames.parameters[1]), \(pointerNames.parameters[0]))"
+                    "keyCheck = Self.__keyed_checker(\(pointerNames[1]), \(pointerNames[0]))"
                 }.padding(top: 1, bottom: 1)
                 
                 Return("keyCheck != 0")

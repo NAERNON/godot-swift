@@ -50,13 +50,13 @@ extension ExtensionApi.BuiltinClass.Operator {
         
         ObjectsPointersAccess(parameters: objectsPointerAccessParameters(type: type)) { pointerNames in
             if rightType != nil {
-                let lhsName = pointerNames.parameters[0]
-                let rhsName = pointerNames.parameters[1]
-                let returnName = pointerNames.parameters[2]
+                let lhsName = pointerNames[0]
+                let rhsName = pointerNames[1]
+                let returnName = pointerNames[2]
                 "Self.\(operatorPtrName)(\(lhsName), \(rhsName), \(returnName))"
             } else {
-                let selfName = pointerNames.parameters[0]
-                let returnName = pointerNames.parameters[1]
+                let selfName = pointerNames[0]
+                let returnName = pointerNames[1]
                 "Self.\(operatorPtrName)(\(selfName), nil, \(returnName))"
             }
         }

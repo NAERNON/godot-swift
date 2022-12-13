@@ -10,15 +10,15 @@ extension ExtensionApi.BuiltinClass.Constructor {
                 Spacer()
             }
             
-            ObjectsPointersAccess(parameters: functionParameters(withParameters: parameters), generatePointersArray: true) { pointerNames in
+            ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
                 
                 if type.isBuiltinValueType {
                     ObjectsPointersAccess(parameters: .named("__temporary", type: type, isMutable: true)) { temporaryPointerNames in
-                        "Self." + godotConstructorPtrName + "(\(temporaryPointerNames.parameters[0]), \(pointerNames.array!))"
+                        "Self." + godotConstructorPtrName + "(\(temporaryPointerNames[0]), \(arrayName))"
                     }
                 } else {
                     ObjectsPointersAccess(parameters: .named("self", type: type, isMutable: false)) { selfPointerNames in
-                        "Self." + godotConstructorPtrName + "(\(selfPointerNames.parameters[0]), \(pointerNames.array!))"
+                        "Self." + godotConstructorPtrName + "(\(selfPointerNames[0]), \(arrayName))"
                     }
                 }
                 
