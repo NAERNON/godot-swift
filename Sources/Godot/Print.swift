@@ -25,17 +25,18 @@ public func printGodotWarning(_ message: Swift.String,
 /// print("Salut", 13.12, to: &godotOutput)
 /// // prints "Salut 13.12" to Godot
 /// ```
-public final class GodotOutput: TextOutputStream {
+public struct GodotOutput: TextOutputStream {
     /// This value holds the `String` to print.
     private(set) var stringToPrint = Swift.String()
     
     /// Each `write(_:)` call increments the `stringToPrint` value.
-    /// Only when the `write(_:)` function receives the `"\n"` string
-    /// will it print the hole string.
+    /// Only when the `write(_:)` function receives a string
+    /// ending by the `"\n"` character will it print the hole string.
     ///
     /// You can force the Godot printing by calling `print()`.
-    public func write(_ string: Swift.String) {
-        if string == "\n" {
+    public mutating func write(_ string: Swift.String) {
+        if string.last?.isNewline == true {
+            stringToPrint += string[..<string.index(before: string.endIndex)]
             print()
         } else {
             stringToPrint += string
@@ -43,7 +44,7 @@ public final class GodotOutput: TextOutputStream {
     }
     
     /// Prints the current string to print to Godot and erases it.
-    public func print() {
+    public mutating func print() {
         printVariant(Variant(String(swiftString: stringToPrint)))
         stringToPrint.removeAll()
     }
