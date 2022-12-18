@@ -6,6 +6,7 @@ struct InstanceType {
     let godotName: String
     
     static let variant = InstanceType(godotName: "Variant")
+    static let stringName = InstanceType(godotName: "StringName")
     
     var isSwiftBaseType: Bool {
         swiftBaseTypes.contains(toSwift())

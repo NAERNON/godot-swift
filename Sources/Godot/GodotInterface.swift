@@ -7,12 +7,13 @@ import GodotExtensionHeaders
 /// It is the starting point of the Godot target and has to be setup.
 public enum GodotInterface {
     internal static private(set) var native: GDNativeInterface!
+    internal static private(set) var token: UnsafeMutableRawPointer!
     
     private static var isGodotSetup = false
     
     /// This function must be called in order for Godot to work.
     /// Almost every type in the target are using this interface for calling Godot.
-    static public func setupGodot(withNativeInterface nativeInterface: GDNativeInterface) {
+    static public func setupGodot(withNativeInterfacePtr nativeInterfacePtr: UnsafePointer<GDNativeInterface>) {
         guard !isGodotSetup else {
             printGodotWarning("Trying to setup Godot but is already setup.")
             return
@@ -20,9 +21,11 @@ public enum GodotInterface {
         
         isGodotSetup = true
         
-        self.native = nativeInterface
+        self.native = nativeInterfacePtr.pointee
+        self.token = UnsafeMutableRawPointer(mutating: nativeInterfacePtr)
         
         setAllBuiltinStructsBindings()
+        setAllClassesBindings()
         Variant.setInitBindings()
         UtilityFunctions.setBindings()
     }

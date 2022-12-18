@@ -44,20 +44,22 @@ struct GenerateGodotAPI: CommandPlugin {
         let builtinClassSizes = extensionApi.builtinClassSizes.first { $0.buildConfiguration == buildConfiguration }!
         let memberOffsets = extensionApi.builtinClassMemberOffsets.first { $0.buildConfiguration == buildConfiguration }!
         let builtinClassesToGenerate = extensionApi.builtinClasses.filter({ !$0.name.isSwiftBaseType })
+        let classesToGenerate = extensionApi.classes
         let variantSize = builtinClassSizes.sizes.first(where: { $0.name == "Variant" })!.size
         
         let utilityFiles: [any GeneratedSwiftFile] = [
             UtilityFunctionsFile(functions: extensionApi.utilityFunctions),
+            GlobalEnumsFile(enums: extensionApi.globalEnums),
             RealRawValueFile(floatingPointType: buildConfiguration.floatingPointType),
             VariantSizeFile(size: variantSize),
-            SetBindingsFile(builtinClasses: builtinClassesToGenerate)
+            SetBindingsFile(builtinClasses: builtinClassesToGenerate, classes: classesToGenerate)
         ]
         
-//        let classesFiles: [any GeneratedSwiftFile] = extensionApi.classes.map({ `class` in
-//            ClassFile(class: `class`)
-//                .insideDirectory(NamingConvention.snake.convert(string: `class`.apiType, to: .pascal))
-//                .insideDirectory("Classes")
-//        })
+        let classesFiles: [any GeneratedSwiftFile] = classesToGenerate.map({ `class` in
+            ClassFile(class: `class`)
+                .insideDirectory(NamingConvention.snake.convert(string: `class`.apiType, to: .pascal))
+                .insideDirectory("Classes")
+        })
         
         let builtinClassesFiles: [any GeneratedSwiftFile] = builtinClassesToGenerate.map({ builtinClass in
             BuiltinClassFile(builtinClass: builtinClass,
@@ -66,7 +68,7 @@ struct GenerateGodotAPI: CommandPlugin {
                 .insideDirectory("Builtin Structs")
         })
         
-        return (utilityFiles + builtinClassesFiles)
+        return (utilityFiles + builtinClassesFiles + classesFiles)
     }
     
     @CodeBuilder

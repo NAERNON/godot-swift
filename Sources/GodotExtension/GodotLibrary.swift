@@ -10,11 +10,8 @@ public final class GodotLibrary {
     
     /// The pointer to the Godot native interface.
     private var interfacePtr: UnsafePointer<GDNativeInterface>!
-    public var interface: GDNativeInterface { interfacePtr.pointee }
     
-    var libraryPtr: GDNativeExtensionClassLibraryPtr?
-    
-    var token: UnsafeMutableRawPointer?
+    private var libraryPtr: GDNativeExtensionClassLibraryPtr?
     
     fileprivate var initializerCallback: Callback?
     fileprivate var terminatorCallback: Callback?
@@ -35,7 +32,6 @@ public final class GodotLibrary {
                              minimumInitializationLevel: GDNativeInitializationLevel) -> GDNativeBool {
         self.interfacePtr = interfacePtr
         self.libraryPtr = libraryPtr
-        self.token = UnsafeMutableRawPointer(mutating: interfacePtr)
         
         self.initializerCallback = initializerCallback
         self.terminatorCallback = terminatorCallback
@@ -44,7 +40,7 @@ public final class GodotLibrary {
         initializationPtr.pointee.deinitialize = deinitializeLevel
         initializationPtr.pointee.minimum_initialization_level = minimumInitializationLevel
         
-        Godot.GodotInterface.setupGodot(withNativeInterface: interface)
+        Godot.GodotInterface.setupGodot(withNativeInterfacePtr: interfacePtr)
         
         return 1
     }

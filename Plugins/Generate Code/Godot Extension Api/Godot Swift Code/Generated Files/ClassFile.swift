@@ -5,7 +5,7 @@ struct ClassFile: GeneratedSwiftFile {
     let `class`: ExtensionApi.Class
     
     init(`class`: ExtensionApi.Class) {
-        self.path = `class`.name.toSwift() + ".swift"
+        self.path = `class`.name.toSwift() + (`class`.isRootClass ? "+GeneratedExtensions" : "") + ".swift"
         self.class = `class`
     }
     
