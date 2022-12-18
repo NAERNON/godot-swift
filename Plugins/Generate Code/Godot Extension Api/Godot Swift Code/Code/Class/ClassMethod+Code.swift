@@ -6,7 +6,24 @@ extension ExtensionApi.Class.Method {
                     type: type,
                     arguments: arguments,
                     returnType: returnValue?.type) { parameters in
-            "//ok"
+            if let returnType = returnValue?.type {
+                Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.toSwift(scopeType: type) + "()")
+                Spacer()
+            }
+            
+            ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
+                
+                ObjectsPointersAccess(parameters: returnParameters(type: type, returnType: returnValue?.type)) { returnPointerNames in
+                    let selfPointer = isStatic ? "nil" : returnPointerNames.first!
+                    let returnPointer = returnValue == nil ? "nil" : returnPointerNames.last!
+                    "GodotInterface.native.object_method_bind_ptrcall(Self.\(godotMethodPtrName), \(selfPointer), \(arrayName), \(returnPointer))"
+                }
+            }
+            
+            if returnValue != nil {
+                Spacer()
+                Return("__returnValue")
+            }
         }.public().static(isStatic)
     }
     
@@ -22,7 +39,7 @@ extension ExtensionApi.Class.Method {
     private func returnParameters(type: InstanceType, returnType: InstanceType?) -> [ObjectsPointersAccessParameter] {
         var returnParameters = [ObjectsPointersAccessParameter]()
         if !isStatic {
-            returnParameters.append(.named("self", type: type, mutability: isMutating ? .mutable : .constMutablePointer))
+            returnParameters.append(.named("self", type: type, mutability: .mutable))
         }
         if let returnType {
             returnParameters.append(.named("__returnValue", type: returnType, mutability: .mutable))

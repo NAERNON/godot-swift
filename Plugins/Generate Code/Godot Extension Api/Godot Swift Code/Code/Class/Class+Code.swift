@@ -84,10 +84,6 @@ Sets all the function bindings used to communicate with Godot.
                                 Property(method.godotMethodPtrName)
                                     .assign(value: "GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(hash))")
                             }
-                        } else if method.isVirtual {
-                            "// Cannot retreive method \(method.name.godotName) binding because the method is virtual"
-                        } else {
-                            "// Cannot retreive method \(method.name.godotName) binding because no hash is provided"
                         }
                     }
                 }
