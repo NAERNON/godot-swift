@@ -215,11 +215,10 @@ Sets all the function bindings and operators used to communicate with Godot.
                 Property("_method_name").varDefined().type("StringName!")
                 for method in methods {
                     Property("_method_name").assign(value: "\"\(method.name.godotName)\"")
-                    "_method_name.withUnsafeNativePointer { _name_ptr in"
-                    Property(method.godotMethodPtrName)
-                        .assign(value: "GodotInterface.native.variant_get_ptr_builtin_method(\(godotVariantType), _name_ptr, \(method.hash))")
-                        .indentation()
-                    "}"
+                    Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
+                        Property(method.godotMethodPtrName)
+                            .assign(value: "GodotInterface.native.variant_get_ptr_builtin_method(\(godotVariantType), \(methodPointerName), \(method.hash))")
+                    }
                 }
             }
             

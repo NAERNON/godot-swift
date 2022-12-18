@@ -30,11 +30,10 @@ struct UtilityFunctionsFile: GeneratedSwiftFile {
                 
                 for function in functions {
                     Property("_function_name").assign(value: "\"\(function.name.godotName)\"")
-                    "_function_name.withUnsafeNativePointer { _name_ptr in"
-                    Property(function.godotFunctionPtrName)
-                        .assign(value: "GodotInterface.native.variant_get_ptr_utility_function(_name_ptr, \(function.hash))")
-                        .indentation()
-                    "}"
+                    Property("_function_name").pointerAccess(type: .stringName, mutability: .mutable) { functionNamePointer in
+                        Property(function.godotFunctionPtrName)
+                            .assign(value: "GodotInterface.native.variant_get_ptr_utility_function(\(functionNamePointer), \(function.hash))")
+                    }
                 }
             }.internal().static()
             

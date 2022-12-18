@@ -80,11 +80,10 @@ Sets all the function bindings used to communicate with Godot.
                     for method in methods {
                         if let hash = method.hash {
                             Property("_method_name").assign(value: "\"\(method.name.godotName)\"")
-                            "_method_name.withUnsafeNativePointer { _name_ptr in"
-                            Property(method.godotMethodPtrName)
-                                .assign(value: "GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), _name_ptr, \(hash))")
-                                .indentation()
-                            "}"
+                            Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
+                                Property(method.godotMethodPtrName)
+                                    .assign(value: "GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(hash))")
+                            }
                         } else if method.isVirtual {
                             "// Cannot retreive method \(method.name.godotName) binding because the method is virtual"
                         } else {

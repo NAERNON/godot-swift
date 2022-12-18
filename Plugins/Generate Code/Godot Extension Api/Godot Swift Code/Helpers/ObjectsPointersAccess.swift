@@ -237,3 +237,15 @@ private struct PointerArray<Content>: SwiftCode where Content: SwiftCode {
         arrayPointerName + ".deallocate()"
     }
 }
+
+// MARK: Property extension
+
+extension Property {
+    func pointerAccess(type: InstanceType,
+                       mutability: ObjectsPointersAccessParameter.Mutability,
+                       @CodeBuilder content: @escaping (String) -> some SwiftCode) -> some SwiftCode {
+        ObjectsPointersAccess(parameters: [.named(self.name, type: type, mutability: mutability)]) { pointerNames in
+            content(pointerNames[0])
+        }
+    }
+}
