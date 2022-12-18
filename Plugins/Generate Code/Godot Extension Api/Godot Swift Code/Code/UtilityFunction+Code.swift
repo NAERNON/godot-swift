@@ -16,7 +16,7 @@ extension ExtensionApi.UtilityFunction {
             ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
 
                 if let returnType {
-                    ObjectsPointersAccess(parameters: .named("__returnValue", type: returnType, isMutable: true)) { returnPointerNames in
+                    ObjectsPointersAccess(parameters: .named("__returnValue", type: returnType, mutability: .mutable)) { returnPointerNames in
                         "UtilityFunctions.\(godotFunctionPtrName)(\(returnPointerNames[0]), \(arrayName), \(pointerNames.count))"
                     }
                 } else {
@@ -35,9 +35,8 @@ extension ExtensionApi.UtilityFunction {
     private func functionParameters(withParameters parameters: [String]) -> [ObjectsPointersAccessParameter] {
         var accessParameters = [ObjectsPointersAccessParameter]()
         for index in 0..<parameters.count {
-            let accessParameter = ObjectsPointersAccessParameter.named(parameters[index],
-                                                                       type: arguments![index].type)
-            accessParameters.append(accessParameter)
+            accessParameters
+                .append(.named(parameters[index], type: arguments![index].type, mutability: .const))
         }
         return accessParameters
     }

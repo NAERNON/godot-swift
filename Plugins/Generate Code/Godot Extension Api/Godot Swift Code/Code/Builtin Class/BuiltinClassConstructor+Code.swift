@@ -13,11 +13,11 @@ extension ExtensionApi.BuiltinClass.Constructor {
             ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
                 
                 if type.isBuiltinValueType {
-                    ObjectsPointersAccess(parameters: .named("__temporary", type: type, isMutable: true)) { temporaryPointerNames in
+                    ObjectsPointersAccess(parameters: .named("__temporary", type: type, mutability: .mutable)) { temporaryPointerNames in
                         "Self." + godotConstructorPtrName + "(\(temporaryPointerNames[0]), \(arrayName))"
                     }
                 } else {
-                    ObjectsPointersAccess(parameters: .named("self", type: type, isMutable: false)) { selfPointerNames in
+                    ObjectsPointersAccess(parameters: .named("self", type: type, mutability: .mutable)) { selfPointerNames in
                         "Self." + godotConstructorPtrName + "(\(selfPointerNames[0]), \(arrayName))"
                     }
                 }
@@ -36,9 +36,8 @@ extension ExtensionApi.BuiltinClass.Constructor {
     private func functionParameters(withParameters parameters: [String]) -> [ObjectsPointersAccessParameter] {
         var accessParameters = [ObjectsPointersAccessParameter]()
         for index in 0..<parameters.count {
-            let accessParameter = ObjectsPointersAccessParameter.named(parameters[index],
-                                                                       type: arguments![index].type)
-            accessParameters.append(accessParameter)
+            accessParameters
+                .append(.named(parameters[index], type: arguments![index].type, mutability: .const))
         }
         return accessParameters
     }

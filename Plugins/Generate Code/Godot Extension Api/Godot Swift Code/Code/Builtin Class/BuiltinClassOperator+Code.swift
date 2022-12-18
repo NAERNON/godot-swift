@@ -70,17 +70,17 @@ extension ExtensionApi.BuiltinClass.Operator {
         
         if let rightType {
             if isMemberFunction {
-                parameters.append(.named("self", type: type))
-                parameters.append(.named(rightType.toVariableName(scopeType: type), type: rightType))
+                parameters.append(.named("self", type: type, mutability: .const))
+                parameters.append(.named(rightType.toVariableName(scopeType: type), type: rightType, mutability: .const))
             } else {
-                parameters.append(.named("lhs", type: type))
-                parameters.append(.named("rhs", type: rightType))
+                parameters.append(.named("lhs", type: type, mutability: .const))
+                parameters.append(.named("rhs", type: rightType, mutability: .const))
             }
         } else {
-            parameters.append(.named("self", type: type))
+            parameters.append(.named("self", type: type, mutability: .const))
         }
         
-        parameters.append(.named("__returnValue", type: returnType, isMutable: true))
+        parameters.append(.named("__returnValue", type: returnType, mutability: .mutable))
         
         return parameters
     }

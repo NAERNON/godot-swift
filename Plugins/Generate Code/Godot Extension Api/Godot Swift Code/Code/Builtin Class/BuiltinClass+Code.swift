@@ -325,8 +325,8 @@ Sets all the function bindings and operators used to communicate with Godot.
                 Property("__returnValue").defined(isVar: indexingReturnType.isValueType).assign(value: indexingType + "()")
                 
                 ObjectsPointersAccess(parameters:
-                                        [.named("__returnValue", type: indexingReturnType, isMutable: true),
-                                         .named("self", type: self.name)]
+                                        [.named("__returnValue", type: indexingReturnType, mutability: .mutable),
+                                         .named("self", type: self.name, mutability: .const)]
                 ) { pointerNames in
                     "Self.__indexed_getter(\(pointerNames[1]), index, \(pointerNames[0]))"
                 }.padding(top: 1, bottom: 1)
@@ -345,8 +345,8 @@ Sets all the function bindings and operators used to communicate with Godot.
                     Spacer()
                 }
                 
-                ObjectsPointersAccess(parameters: [.named("value", type: indexingReturnType, isMutable: false),
-                                                   .named("self", type: self.name, isMutable: true)])
+                ObjectsPointersAccess(parameters: [.named("value", type: indexingReturnType, mutability: .const),
+                                                   .named("self", type: self.name, mutability: .mutable)])
                 { pointerNames in
                     "Self.__indexed_setter(\(pointerNames[1]), index, \(pointerNames[0]))"
                 }
@@ -371,9 +371,9 @@ Sets all the function bindings and operators used to communicate with Godot.
                 Property("__returnValue").letDefined().assign(value: "Variant()")
                 
                 ObjectsPointersAccess(parameters:
-                                        [.named("__returnValue", type: .variant, isMutable: true),
-                                         .named("key", type: .variant, isMutable: false),
-                                         .named("self", type: self.name)]
+                                        [.named("__returnValue", type: .variant, mutability: .mutable),
+                                         .named("key", type: .variant, mutability: .const),
+                                         .named("self", type: self.name, mutability: .const)]
                 ) { pointerNames in
                     "Self.__keyed_getter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
                 }.padding(top: 1, bottom: 1)
@@ -387,9 +387,9 @@ Sets all the function bindings and operators used to communicate with Godot.
                 "replaceOpaqueValueIfNecessary()"
                 
                 ObjectsPointersAccess(parameters:
-                                        [.named("value", type: .variant, isMutable: false),
-                                         .named("key", type: .variant, isMutable: false),
-                                         .named("self", type: self.name)]
+                                        [.named("value", type: .variant, mutability: .const),
+                                         .named("key", type: .variant, mutability: .const),
+                                         .named("self", type: self.name, mutability: .mutable)]
                 ) { pointerNames in
                     "Self.__keyed_setter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
                 }.padding(top: 1)
@@ -401,8 +401,8 @@ Sets all the function bindings and operators used to communicate with Godot.
                 Property("keyCheck").varDefined().assign(value: "UInt32()")
                 
                 ObjectsPointersAccess(parameters:
-                                        [.named("key", type: .variant, isMutable: false),
-                                         .named("self", type: self.name)]
+                                        [.named("key", type: .variant, mutability: .const),
+                                         .named("self", type: self.name, mutability: .const)]
                 ) { pointerNames in
                     "keyCheck = Self.__keyed_checker(\(pointerNames[1]), \(pointerNames[0]))"
                 }.padding(top: 1, bottom: 1)
