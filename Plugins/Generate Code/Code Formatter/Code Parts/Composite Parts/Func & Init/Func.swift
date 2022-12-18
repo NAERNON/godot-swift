@@ -7,7 +7,9 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     let content: () -> Content
     public var accessControl: AccessControl? = nil
     public var isStatic: Bool = false
+    public var isClass: Bool = false
     public var isFinal: Bool = false
+    public var isOverride: Bool = false
     public var isMutating: Bool = false
     
     public init(name: String,
@@ -50,8 +52,14 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         if isStatic {
             keywords.append(.static)
         }
+        if isClass {
+            keywords.append(.class)
+        }
         if isFinal {
             keywords.append(.final)
+        }
+        if isOverride {
+            keywords.append(.override)
         }
         if isMutating {
             keywords.append(.mutating)
@@ -70,9 +78,21 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         return new
     }
     
+    public func `class`(_ state: Bool = true) -> Func {
+        var new = self
+        new.isClass = state
+        return new
+    }
+    
     public func `final`(_ state: Bool = true) -> Func {
         var new = self
         new.isFinal = state
+        return new
+    }
+    
+    public func `override`(_ state: Bool = true) -> Func {
+        var new = self
+        new.isOverride = state
         return new
     }
     

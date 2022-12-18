@@ -22,6 +22,7 @@ extension String {
 
 public enum Keyword {
     case `static`
+    case `class`
     
     case `private`
     case `fileprivate`
@@ -29,16 +30,19 @@ public enum Keyword {
     case `public`
     case `final`
     
+    case `override`
     case `mutating`
     
     fileprivate var string: String {
         switch self {
         case .static: return "static"
+        case .class: return "class"
         case .private: return "private"
         case .fileprivate: return "fileprivate"
         case .internal: return "internal"
         case .public: return "public"
         case .final: return "final"
+        case .override: return "override"
         case .mutating: return "mutating"
         }
     }
@@ -53,7 +57,9 @@ public enum Keyword {
             return 100
         case .mutating:
             return 75
-        case .static:
+        case .override:
+            return 60
+        case .static, .class:
             return 50
         case .final:
             return 10
