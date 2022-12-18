@@ -107,7 +107,7 @@ struct ExtensionApi: Decodable {
     // MARK: - Enum
     
     struct Enum: Decodable {
-        let name: String
+        let name: InstanceType
         let isBitfield: Bool?
         let values: [Value]
         

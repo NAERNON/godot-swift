@@ -321,7 +321,8 @@ Sets all the function bindings and operators used to communicate with Godot.
             Func(name: "_getValue",
                  parameters: .named("index", type: "GDNativeInt", label: "at"),
                  returnType: indexingType) {
-                Property("__returnValue").defined(isVar: indexingReturnType.isValueType).assign(value: indexingType + "()")
+                Property("__returnValue").defined(isVar: indexingReturnType.isValueType)
+                    .assign(value: indexingReturnType.defaultInitializer(scopeType: name))
                 
                 ObjectsPointersAccess(parameters:
                                         [.named("__returnValue", type: indexingReturnType, mutability: .mutable),

@@ -17,7 +17,11 @@ struct InstanceType {
     }
     
     var isValueType: Bool {
-        isSwiftBaseType || isBuiltinValueType
+        isSwiftBaseType || isBuiltinValueType || isEnumValue
+    }
+    
+    var isEnumValue: Bool {
+        godotName.starts(with: "enum::")
     }
     
     /// Converts this type to a variable name. Ex: `PackedByteArray` becomes `packedByteArray`.
@@ -47,6 +51,7 @@ struct InstanceType {
             return scopeType.godotName == "Color" ? "Float" : "Real"
         case "int": return "Int"
         case "bool": return "Bool"
+        case "enum::Error", "Error": return "ErrorType"
         default: return godotName
         }
     }
@@ -117,6 +122,15 @@ struct InstanceType {
         case "Vector4i": return ["x", "y", "z", "w"]
         default: return []
         }
+    }
+    
+    /// Returns the default initializer for a given type. For instance, a `String` type will return `String()`.
+    func defaultInitializer(scopeType: InstanceType? = nil) -> String {
+        if isEnumValue {
+            return toSwift(scopeType: scopeType) + "(rawValue: 0)!"
+        }
+        
+        return toSwift(scopeType: scopeType) + "()"
     }
     
     /// Builtin base types, when converted to Swift, are value types.

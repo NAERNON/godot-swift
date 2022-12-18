@@ -11,7 +11,7 @@ struct GlobalEnumsFile: GeneratedSwiftFile {
     var code: some SwiftCode {
         Import.foundation
 
-        ForEach(enums.filter { !$0.name.contains(".") }) { enumCode in
+        ForEach(enums.filter { !$0.name.godotName.contains(".") }) { enumCode in
             Spacer()
 
             enumCode.code()

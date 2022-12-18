@@ -45,7 +45,8 @@ extension ExtensionApi.BuiltinClass.Operator {
     
     @CodeBuilder
     private func functionContentCode(type: InstanceType, operatorPtrName: String) -> some SwiftCode {
-        Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.toSwift(scopeType: type) + "()")
+        Property("__returnValue").defined(isVar: returnType.isValueType)
+            .assign(value: returnType.defaultInitializer(scopeType: type))
         Spacer()
         
         ObjectsPointersAccess(parameters: objectsPointerAccessParameters(type: type)) { pointerNames in

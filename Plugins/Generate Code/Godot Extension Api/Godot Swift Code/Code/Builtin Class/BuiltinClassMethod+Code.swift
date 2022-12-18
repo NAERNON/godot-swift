@@ -12,7 +12,8 @@ extension ExtensionApi.BuiltinClass.Method {
             }
             
             if let returnType {
-                Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.toSwift(scopeType: type) + "()")
+                Property("__returnValue").defined(isVar: returnType.isValueType)
+                    .assign(value: returnType.defaultInitializer(scopeType: type))
                 Spacer()
             }
             

@@ -22,7 +22,7 @@ extension ExtensionApi.Enum {
     private func nameAndCases<T: BinaryInteger>(forType type: T.Type) -> (name: String,
                                                                           cases: [CaseData<T>]) {
         let translatedEnum = CodeLanguage.c.translateEnum(
-            name: name,
+            name: name.toSwift(),
             cases: values.map { $0.name },
             to: .swift
         )

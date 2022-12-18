@@ -9,7 +9,7 @@ extension ExtensionApi.UtilityFunction {
                     arguments: arguments,
                     returnType: returnType) { parameters in
             if let returnType {
-                Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.toSwift() + "()")
+                Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.defaultInitializer())
                 Spacer()
             }
 

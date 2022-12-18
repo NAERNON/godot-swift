@@ -7,7 +7,7 @@ extension ExtensionApi.Class.Method {
                     arguments: arguments,
                     returnType: returnValue?.type) { parameters in
             if let returnType = returnValue?.type {
-                Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.toSwift(scopeType: type) + "()")
+                Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.defaultInitializer())
                 Spacer()
             }
             
