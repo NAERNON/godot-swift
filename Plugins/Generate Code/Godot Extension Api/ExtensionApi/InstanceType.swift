@@ -61,8 +61,18 @@ struct InstanceType {
     /// For instance, an `int` value would give an `Int` value in Swift.
     /// - Parameter scopeType: The scope in which the type is used.
     /// Depending on the scope, the same type could return different types.
-    func toSwift(scopeType: InstanceType? = nil) -> String {
-        finalGodotType.toSwift(scopeType: scopeType != nil ? scopeType?.finalGodotType : scopeGodotType)
+    ///
+    /// It is also possible to show the scope of the type.
+    /// For instance, defining a type `Flag` within the scope `Node` will give `"Flag.Node"`.
+    func toSwift(scopeType: InstanceType? = nil, showScope: Bool = false) -> String {
+        let scope = scopeType != nil ? scopeType?.finalGodotType : scopeGodotType
+        let typeString = finalGodotType.toSwift(scopeType: scopeType != nil ? scopeType?.finalGodotType : scopeGodotType)
+        
+        if let scopeString = scopeGodotType?.toSwift(), showScope, finalGodotType.isSwiftBaseType == false {
+            return scopeString + "." + typeString
+        } else {
+            return typeString
+        }
     }
     
     var godotVariantType: String {
