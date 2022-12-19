@@ -11,10 +11,20 @@ struct GlobalEnumsFile: GeneratedSwiftFile {
     var code: some SwiftCode {
         Import.foundation
 
-        ForEach(enums.filter { !$0.name.godotName.contains(".") }) { enumCode in
+        ForEach(enums) { enumCode in
             Spacer()
-
-            enumCode.code()
+            
+            if let scope = enumCode.name.scope {
+                // We do not generate the enums for the Variant type since
+                // they are already generated.
+                if scope.toSwift() != "Variant" {
+                    Extension(scope.toSwift()) {
+                        enumCode.code()
+                    }
+                }
+            } else {
+                enumCode.code()
+            }
         }
     }
 }

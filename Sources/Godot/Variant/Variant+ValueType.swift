@@ -1,62 +1,52 @@
 import Foundation
 import GodotExtensionHeaders
 
-public enum VariantType {
-    case `nil`
-    
-    // MARK: Atomic types
-    
-    case bool
-    case int
-    case float
-    case string
-    
-    // MARK: Math types
-    
-    case vector2
-    case vector2i
-    case rect2
-    case rect2i
-    case vector3
-    case vector3i
-    case transform2D
-    case vector4
-    case vector4i
-    case plane
-    case quaternion
-    case axisAlignedBoundingBox
-    case basis
-    case transform3D
-    case projection
-    
-    // MARK: Misc types
-    
-    case color
-    case stringName
-    case nodePath
-    case rid
-    case object
-    case callable
-    case signal
-    case dictionary
-    case array
-    
-    // MARK: Types arrays
-    
-    case packedByteArray
-    case packedInt32Array
-    case packedInt64Array
-    case packedFloat32Array
-    case packedFloat64Array
-    case packedStringArray
-    case packedVector2Array
-    case packedVector3Array
-    case packedColorArray
+extension Variant {
+    public enum ValueType: UInt32 {
+        case `nil`               = 0
+        case bool                = 1
+        case int                 = 2
+        case float               = 3
+        case string              = 4
+        case vector2             = 5
+        case vector2i            = 6
+        case rect2               = 7
+        case rect2i              = 8
+        case vector3             = 9
+        case vector3i            = 10
+        case transform2D         = 11
+        case vector4             = 12
+        case vector4i            = 13
+        case plane               = 14
+        case quaternion          = 15
+        case aabb                = 16
+        case basis               = 17
+        case transform3D         = 18
+        case projection          = 19
+        case color               = 20
+        case stringName          = 21
+        case nodePath            = 22
+        case rid                 = 23
+        case object              = 24
+        case callable            = 25
+        case signal              = 26
+        case dictionary          = 27
+        case array               = 28
+        case packedByteArray     = 29
+        case packedInt32Array    = 30
+        case packedInt64Array    = 31
+        case packedFloat32Array  = 32
+        case packedFloat64Array  = 33
+        case packedStringArray   = 34
+        case packedVector2Array  = 35
+        case packedVector3Array  = 36
+        case packedColorArray    = 37
+    }
 }
 
 // MARK: - Godot type
 
-extension VariantType {
+extension Variant.ValueType {
     init(godotType: GDNativeVariantType) {
         switch godotType {
         case GDNATIVE_VARIANT_TYPE_NIL: self = .nil
@@ -75,7 +65,7 @@ extension VariantType {
         case GDNATIVE_VARIANT_TYPE_VECTOR4I: self = .vector4i
         case GDNATIVE_VARIANT_TYPE_PLANE: self = .plane
         case GDNATIVE_VARIANT_TYPE_QUATERNION: self = .quaternion
-        case GDNATIVE_VARIANT_TYPE_AABB: self = .axisAlignedBoundingBox
+        case GDNATIVE_VARIANT_TYPE_AABB: self = .aabb
         case GDNATIVE_VARIANT_TYPE_BASIS: self = .basis
         case GDNATIVE_VARIANT_TYPE_TRANSFORM3D: self = .transform3D
         case GDNATIVE_VARIANT_TYPE_PROJECTION: self = .projection
@@ -119,7 +109,7 @@ extension VariantType {
         case .vector4i: return GDNATIVE_VARIANT_TYPE_VECTOR4I
         case .plane: return GDNATIVE_VARIANT_TYPE_PLANE
         case .quaternion: return GDNATIVE_VARIANT_TYPE_QUATERNION
-        case .axisAlignedBoundingBox: return GDNATIVE_VARIANT_TYPE_AABB
+        case .aabb: return GDNATIVE_VARIANT_TYPE_AABB
         case .basis: return GDNATIVE_VARIANT_TYPE_BASIS
         case .transform3D: return GDNATIVE_VARIANT_TYPE_TRANSFORM3D
         case .projection: return GDNATIVE_VARIANT_TYPE_PROJECTION

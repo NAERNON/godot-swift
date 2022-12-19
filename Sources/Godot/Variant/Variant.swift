@@ -767,14 +767,14 @@ public struct Variant {
     
     // MARK: - Functions
     
-    public var type: VariantType {
+    public var type: ValueType {
         var nativeVariantType: GDNativeVariantType!
         
         withUnsafeNativePointer { nativeTypePtr in
             nativeVariantType = GodotInterface.native.variant_get_type(nativeTypePtr)
         }
         
-        return VariantType(godotType: nativeVariantType)
+        return ValueType(godotType: nativeVariantType)
     }
     
     public var isNil: Bool {

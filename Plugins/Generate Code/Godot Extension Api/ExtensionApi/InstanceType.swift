@@ -1,19 +1,44 @@
 import Foundation
 
+// MARK: - InstanceType
+
 /// All types in the `ExtensionApi` are `InstanceType`.
 /// This type provides helpers functions for translation and more.
 struct InstanceType {
+    /// For instance, `"enum"` if the Godot type is `"enum::SomeType.Flag"`.
+    private let preGodotType: String?
+    /// For instance, `"SomeType"` if the Godot type is `"enum::SomeType.Flag"`.
+    private let scopeGodotType: InstanceTypePart?
+    /// For instance, `"Flag"` if the Godot type is `"enum::SomeType.Flag"`.
+    private let finalGodotType: InstanceTypePart
+    
+    /// The name of the type as given by the Extension Api file.
     let godotName: String
+    
+    var scope: InstanceTypePart? { scopeGodotType }
+    
+    fileprivate init(godotName: String) {
+        let preAndPost = godotName.components(separatedBy: ":")
+        preGodotType = preAndPost.count == 1 ? nil : preAndPost[0]
+        
+        let post = preAndPost.last!
+        let components = post.components(separatedBy: ".")
+        scopeGodotType = components.count == 1 ? nil : InstanceTypePart(godotName: components[0])
+        
+        finalGodotType = InstanceTypePart(godotName: components.last!)
+        
+        self.godotName = godotName
+    }
     
     static let variant = InstanceType(godotName: "Variant")
     static let stringName = InstanceType(godotName: "StringName")
     
     var isSwiftBaseType: Bool {
-        swiftBaseTypes.contains(toSwift())
+        finalGodotType.isSwiftBaseType
     }
     
     var isBuiltinValueType: Bool {
-        builtinValueTypes.contains(toSwift())
+        finalGodotType.isBuiltinValueType
     }
     
     var isValueType: Bool {
@@ -21,7 +46,7 @@ struct InstanceType {
     }
     
     var isEnumValue: Bool {
-        godotName.starts(with: "enum::")
+        preGodotType == "enum"
     }
     
     /// Converts this type to a variable name. Ex: `PackedByteArray` becomes `packedByteArray`.
@@ -37,6 +62,123 @@ struct InstanceType {
     /// - Parameter scopeType: The scope in which the type is used.
     /// Depending on the scope, the same type could return different types.
     func toSwift(scopeType: InstanceType? = nil) -> String {
+        finalGodotType.toSwift(scopeType: scopeType != nil ? scopeType?.finalGodotType : scopeGodotType)
+    }
+    
+    var godotVariantType: String {
+        finalGodotType.godotVariantType
+    }
+    
+    /// Builtin base types already have a default constructor. This function returns the name of the arguments.
+    func builtinBaseConstructorArguments() -> [String] {
+        switch finalGodotType.toSwift() {
+        case "AABB": return ["position", "size"]
+        case "Basis": return ["x", "y", "z"]
+        case "Color": return ["r", "g", "b", "a"]
+        case "Plane": return ["normal", "d"]
+        case "Projection": return ["x", "y", "z", "w"]
+        case "Quaternion": return ["x", "y", "z", "w"]
+        case "Rect2": return ["position", "size"]
+        case "Rect2i": return ["position", "size"]
+        case "Transform2D": return ["x", "y", "origin"]
+        case "Transform3D": return ["basis", "origin"]
+        case "Vector2": return ["x", "y"]
+        case "Vector2i": return ["x", "y"]
+        case "Vector3": return ["x", "y", "z"]
+        case "Vector3i": return ["x", "y", "z"]
+        case "Vector4": return ["x", "y", "z", "w"]
+        case "Vector4i": return ["x", "y", "z", "w"]
+        default: return []
+        }
+    }
+    
+    /// Returns the default initializer for a given type. For instance, a `String` type will return `String()`.
+    func defaultInitializer(scopeType: InstanceType? = nil) -> String {
+        if isEnumValue {
+            return toSwift(scopeType: scopeType) + "(rawValue: 0)!"
+        }
+        
+        return toSwift(scopeType: scopeType) + "()"
+    }
+    
+    /// Builtin base types, when converted to Swift, are value types.
+    /// But for some types, the default initializer does not copy data.
+    /// For those types, the default initalizer should use the `duplicate()`
+    /// function istead of the init.
+    ///
+    /// For the `Array` type for instance, `init(array: Array)` should not be available.
+    var duplicateInsteadOfInit: Bool {
+        switch finalGodotType.toSwift() {
+        case "Array": return true
+        case "Dictionary": return true
+        default: return false
+        }
+    }
+    
+    static func == (lhs: InstanceType, rhs: String) -> Bool {
+        lhs.godotName == rhs || lhs.toSwift() == rhs
+    }
+    
+    static func == (lhs: InstanceType, rhs: InstanceType) -> Bool {
+        lhs.godotName == rhs.godotName
+    }
+}
+
+extension InstanceType: Decodable {
+    init(from decoder: Decoder) throws {
+        self.init(godotName: try String(from: decoder))
+    }
+}
+
+extension InstanceType: Equatable {}
+
+// MARK: Extensions
+
+extension Optional where Wrapped == InstanceType {
+    var godotVariantType: String {
+        self?.godotVariantType ?? "GDNATIVE_VARIANT_TYPE_NIL"
+    }
+}
+
+// MARK: - InstanceType Part
+
+/// A part of an `InstanceType` only as a simple name with no "." character.
+/// An `InstanceType` is made of several `InstanceTypePart` values.
+///
+/// ```
+/// "enum::SomeType.Flag"
+/// // -> InstanceTypePart("SomeType")
+/// // -> InstanceTypePart("Flag")
+/// ```
+struct InstanceTypePart {
+    let godotName: String
+    
+    init(godotName: String) {
+        self.godotName = godotName
+        
+        if godotName.contains(".") {
+            fatalError("An InstanceTypePart should not contain a \".\". character.")
+        }
+    }
+    
+    var isSwiftBaseType: Bool {
+        swiftBaseTypes.contains(toSwift())
+    }
+    
+    var isBuiltinValueType: Bool {
+        builtinValueTypes.contains(toSwift())
+    }
+    
+    var isValueType: Bool {
+        isSwiftBaseType || isBuiltinValueType
+    }
+    
+    /// Converts a given Godot type to the Swift equivalent.
+    ///
+    /// For instance, an `int` value would give an `Int` value in Swift.
+    /// - Parameter scopeType: The scope in which the type is used.
+    /// Depending on the scope, the same type could return different types.
+    func toSwift(scopeType: InstanceTypePart? = nil) -> String {
         switch godotName {
         case "float":
             // For Float types, it can be either a Float, a Double or a Real.
@@ -48,10 +190,11 @@ struct InstanceType {
                 return "Double"
             }
             
-            return scopeType.godotName == "Color" ? "Float" : "Real"
+            return scopeType.toSwift() == "Color" ? "Float" : "Real"
         case "int": return "Int"
         case "bool": return "Bool"
-        case "enum::Error", "Error": return "ErrorType"
+        case "Error": return "ErrorType"
+        case "Type": return scopeType?.toSwift() == "Variant" ? "ValueType" : "Type"
         default: return godotName
         }
     }
@@ -101,106 +244,34 @@ struct InstanceType {
         }
     }
     
-    /// Builtin base types already have a default constructor. This function returns the name of the arguments.
-    func builtinBaseConstructorArguments() -> [String] {
-        switch godotName {
-        case "AABB": return ["position", "size"]
-        case "Basis": return ["x", "y", "z"]
-        case "Color": return ["r", "g", "b", "a"]
-        case "Plane": return ["normal", "d"]
-        case "Projection": return ["x", "y", "z", "w"]
-        case "Quaternion": return ["x", "y", "z", "w"]
-        case "Rect2": return ["position", "size"]
-        case "Rect2i": return ["position", "size"]
-        case "Transform2D": return ["x", "y", "origin"]
-        case "Transform3D": return ["basis", "origin"]
-        case "Vector2": return ["x", "y"]
-        case "Vector2i": return ["x", "y"]
-        case "Vector3": return ["x", "y", "z"]
-        case "Vector3i": return ["x", "y", "z"]
-        case "Vector4": return ["x", "y", "z", "w"]
-        case "Vector4i": return ["x", "y", "z", "w"]
-        default: return []
-        }
-    }
+    /// The base types defined by Swift.
+    private let swiftBaseTypes: Set<String> = [
+        "Nil",
+        "Bool",
+        "Int",
+        "Float",
+        "Double",
+        "GDNativeInt",
+    ]
     
-    /// Returns the default initializer for a given type. For instance, a `String` type will return `String()`.
-    func defaultInitializer(scopeType: InstanceType? = nil) -> String {
-        if isEnumValue {
-            return toSwift(scopeType: scopeType) + "(rawValue: 0)!"
-        }
-        
-        return toSwift(scopeType: scopeType) + "()"
-    }
-    
-    /// Builtin base types, when converted to Swift, are value types.
-    /// But for some types, the default initializer does not copy data.
-    /// For those types, the default initalizer should use the `duplicate()`
-    /// function istead of the init.
-    ///
-    /// For the `Array` type for instance, `init(array: Array)` should not be available.
-    var duplicateInsteadOfInit: Bool {
-        switch godotName {
-        case "Array": return true
-        case "Dictionary": return true
-        default: return false
-        }
-    }
-    
-    static func == (lhs: InstanceType, rhs: String) -> Bool {
-        lhs.godotName == rhs || lhs.toSwift() == rhs
-    }
-}
-
-extension InstanceType: Decodable {
-    init(from decoder: Decoder) throws {
-        godotName = try String(from: decoder)
-    }
-}
-
-extension InstanceType: Equatable {
-    static func == (lhs: InstanceType, rhs: InstanceType) -> Bool {
-        lhs.godotName == rhs.godotName
-    }
-}
-
-// MARK: Types
-
-/// The base types defined by Swift.
-private let swiftBaseTypes: Set<String> = [
-    "Nil",
-    "Bool",
-    "Int",
-    "Float",
-    "Double",
-    "GDNativeInt",
-]
-
-/// The builtin structs defined as value types.
-private let builtinValueTypes: Set<String> = [
-    "AABB",
-    "Basis",
-    "Color",
-    "Plane",
-    "Projection",
-    "Quaternion",
-    "Rect2",
-    "Rect2i",
-    "Transform2D",
-    "Transform3D",
-    "Vector2",
-    "Vector2i",
-    "Vector3",
-    "Vector3i",
-    "Vector4",
-    "Vector4i",
-    "Real",
-]
-
-// MARK: Extensions
-
-extension Optional where Wrapped == InstanceType {
-    var godotVariantType: String {
-        self?.godotVariantType ?? "GDNATIVE_VARIANT_TYPE_NIL"
-    }
+    /// The builtin structs defined as value types.
+    private let builtinValueTypes: Set<String> = [
+        "AABB",
+        "Basis",
+        "Color",
+        "Plane",
+        "Projection",
+        "Quaternion",
+        "Rect2",
+        "Rect2i",
+        "Transform2D",
+        "Transform3D",
+        "Vector2",
+        "Vector2i",
+        "Vector3",
+        "Vector3i",
+        "Vector4",
+        "Vector4i",
+        "Real",
+    ]
 }

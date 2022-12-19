@@ -8,7 +8,8 @@ private let protectedStrings: Set<String> = [
     "repeat",
     "final",
     "in",
-    "func"
+    "func",
+    "nil"
 ]
 
 extension CodeLanguage {
