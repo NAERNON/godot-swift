@@ -40,5 +40,3 @@ extension Array: BidirectionalCollection {
 extension Array: RandomAccessCollection {}
 
 extension Array: MutableCollection {}
-
-extension Array: Hashable {}

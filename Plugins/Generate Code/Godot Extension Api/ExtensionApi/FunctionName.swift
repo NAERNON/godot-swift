@@ -25,7 +25,19 @@ struct FunctionName {
         case "unary+": return false
         case "hash": return true
         case "size": return true
+        case "isEmpty": return true
         default: return false
+        }
+    }
+    
+    /// A custom name for the function.
+    private func customName() -> String? {
+        switch godotName {
+        case "unary-": return "negative"
+        case "unary+": return "positive"
+        case "hash": return "hashValue"
+        case "size": return "count"
+        default: return nil
         }
     }
     
@@ -64,17 +76,6 @@ struct FunctionName {
                       type: type,
                       defaultValue: defaultParameterValue,
                       label: translatedParameter.functionParameterLabel)
-    }
-    
-    /// A custom name for the function.
-    private func customName() -> String? {
-        switch godotName {
-        case "unary-": return "negative"
-        case "unary+": return "positive"
-        case "hash": return "hashValue"
-        case "size": return "count"
-        default: return nil
-        }
     }
     
     /// Godot operators might not be correct operators in Swift.
