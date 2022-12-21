@@ -24,6 +24,7 @@ struct FunctionName {
         case "unary-": return true
         case "unary+": return false
         case "hash": return true
+        case "size": return true
         default: return false
         }
     }
@@ -71,6 +72,7 @@ struct FunctionName {
         case "unary-": return "negative"
         case "unary+": return "positive"
         case "hash": return "hashValue"
+        case "size": return "count"
         default: return nil
         }
     }

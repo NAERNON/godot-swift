@@ -87,7 +87,7 @@ extension Variant.ValueType {
         case GDNATIVE_VARIANT_TYPE_PACKED_VECTOR2_ARRAY: self = .packedVector2Array
         case GDNATIVE_VARIANT_TYPE_PACKED_VECTOR3_ARRAY: self = .packedVector3Array
         case GDNATIVE_VARIANT_TYPE_PACKED_COLOR_ARRAY: self = .packedColorArray
-        default: fatalError("Cannot retreive GDNATIVE_VARIANT_TYPE")
+        default: fatalError("Cannot retreive Variant type from GDNativeVariantType")
         }
     }
     

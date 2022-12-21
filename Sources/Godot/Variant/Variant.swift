@@ -808,6 +808,43 @@ public struct Variant {
         type == .nil
     }
     
+    fileprivate func evaluate(other: Variant, `operator`: Operator) -> Variant? {
+        var isValid: GDNativeBool = 0
+        let returnVariant = Variant()
+        
+        self.withUnsafeNativePointer { nativeTypePtr in
+            other.withUnsafeNativePointer { otherNativeTypePtr in
+                returnVariant.withUnsafeNativePointer { returnNativeTypePtr in
+                    withUnsafeMutablePointer(to: &isValid) { validPtr in
+                        GodotInterface.native.variant_evaluate(
+                            `operator`.godotOperator,
+                            nativeTypePtr,
+                            otherNativeTypePtr,
+                            returnNativeTypePtr,
+                            validPtr
+                        )
+                    }
+                }
+            }
+        }
+        
+        if isValid != 0 {
+            return returnVariant
+        } else {
+            return nil
+        }
+    }
+    
+    public var hashValue: Int {
+        var result: GDNativeInt = 0
+        
+        withUnsafeNativePointer { nativeTypePtr in
+            result = GodotInterface.native.variant_hash(nativeTypePtr)
+        }
+        
+        return Int(result)
+    }
+    
     // MARK: - Bindings
     
     private static var fromTypeConstructor_bool: GDNativeVariantFromTypeConstructorFunc!
@@ -991,5 +1028,21 @@ extension Variant: CustomDebugStringConvertible {
         }
         
         return Swift.String(godotString: string)
+    }
+}
+
+extension Variant: Equatable {
+    static public func == (lhs: Variant, rhs: Variant) -> Bool {
+        lhs.evaluate(other: rhs, operator: .equal)?.boolValue == true
+    }
+    
+    static public func != (lhs: Variant, rhs: Variant) -> Bool {
+        lhs.evaluate(other: rhs, operator: .notEqual)?.boolValue == true
+    }
+}
+
+extension Variant: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(hashValue)
     }
 }
