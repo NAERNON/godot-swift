@@ -31,6 +31,10 @@ public struct Variant {
         }
     }
     
+    public init<T>(_ encodable: T) where T: VariantEncodable {
+        self = encodable.makeVariant()
+    }
+    
     public init(_ boolValue: Bool) {
         let value: UInt8 = boolValue ? 1 : 0
         self.withUnsafeNativePointer { nativeTypePtr in
@@ -217,8 +221,13 @@ public struct Variant {
     }
     
     public init(_ objectValue: Object) {
-#warning("Do this init")
-        self.init()
+        self.withUnsafeNativePointer { nativeTypePtr in
+            objectValue.withUnsafeNativePointer { otherNativeTypePtr in
+                withUnsafePointer(to: otherNativeTypePtr) { pointer in
+                    Variant.fromTypeConstructor_object(nativeTypePtr, UnsafeMutableRawPointer(mutating: pointer))
+                }
+            }
+        }
     }
     
     public init(_ callableValue: Callable) {
@@ -326,6 +335,10 @@ public struct Variant {
     }
 
     // MARK: Getters
+    
+    public func value<T>(ofType type: T.Type) -> T where T: VariantDecodable {
+        type.valueFromVariant(self)
+    }
     
     public var boolValue: Bool {
         var newValue = UInt8()
@@ -603,9 +616,23 @@ public struct Variant {
         return newValue
     }
     
-    public var objectValue: Object {
-        let newValue = Object()
-#warning("DO THIS")
+    public func objectValue<ObjectType>(ofType type: ObjectType.Type) -> ObjectType where ObjectType: Object {
+        var newValue: ObjectType!
+        var instanceOwner = UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity: 1)
+        
+        self.withUnsafeNativePointer { nativeTypePtr in
+            Variant.toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), nativeTypePtr)
+            
+            let finalPtr = withUnsafePointer(to: ObjectType.instanceBindingsCallbacks()) { bindingsPtr in
+                GodotInterface.native.object_get_instance_binding(instanceOwner.pointee, GodotInterface.token, bindingsPtr)
+            }
+            
+            newValue = Unmanaged<ObjectType>.fromOpaque(finalPtr!).takeUnretainedValue()
+        }
+        
+        instanceOwner.deinitialize(count: 1)
+        instanceOwner.deallocate()
+        
         return newValue
     }
     
