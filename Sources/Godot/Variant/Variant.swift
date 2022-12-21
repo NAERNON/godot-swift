@@ -1046,3 +1046,35 @@ extension Variant: Hashable {
         hasher.combine(hashValue)
     }
 }
+
+extension Variant: ExpressibleByFloatLiteral {
+    public init(floatLiteral value: Double) {
+        self.init(value)
+    }
+}
+
+extension Variant: ExpressibleByStringLiteral {
+    public init(stringLiteral value: Swift.String) {
+        self.init(String(swiftString: value))
+    }
+}
+
+extension Variant: ExpressibleByStringInterpolation {}
+
+extension Variant: ExpressibleByIntegerLiteral {
+    public init(integerLiteral value: Int) {
+        self.init(value)
+    }
+}
+
+extension Variant: ExpressibleByBooleanLiteral {
+    public init(booleanLiteral value: BooleanLiteralType) {
+        self.init(value)
+    }
+}
+
+extension Variant: ExpressibleByNilLiteral {
+    public init(nilLiteral: ()) {
+        self.init()
+    }
+}
