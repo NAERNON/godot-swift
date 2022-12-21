@@ -12,16 +12,19 @@ extension ExtensionApi.Class {
         if isRootClass {
             Extension(name.godotName) {
                 insideClassOrExtensionCode()
-            }
+            }.public()
         } else {
             Class(name.godotName, extensions: extensions) {
                 insideClassOrExtensionCode()
-            }
+            }.open()
         }
     }
     
     @CodeBuilder
     private func insideClassOrExtensionCode() -> some SwiftCode {
+        if !isRootClass {
+            initsCode()
+        }
         enumCode()
         methodsCode()
         bindingsCode()
@@ -105,5 +108,48 @@ Sets all the function bindings used to communicate with Godot.
                 method.code(type: name)
             }
         }
+    }
+    
+    // MARK: Inits
+    
+    @CodeBuilder
+    private func initsCode() -> some SwiftCode {
+        Mark(text: "Inits", isSeparator: true).padding(top: 1, bottom: 1)
+        
+        Init() {
+            "super.init()"
+        }.public().override()
+        
+        Spacer()
+        
+        Func(name: "instanceBindingsCallbacks", returnType: "GDNativeInstanceBindingCallbacks") {
+"""
+if isExtentionClass() {
+    // When the class is an extension class, we should not generate any binding.
+    
+    return GDNativeInstanceBindingCallbacks { token, instance in
+        return nil
+    } free_callback: { token, instance, bindings in
+        // Nothing to do
+    } reference_callback: { token, instance, reference in
+        return 1
+    }
+} else {
+    return GDNativeInstanceBindingCallbacks { token, instance in
+        return Unmanaged.passRetained(\(name.toSwift())(nativeObjectPtr: instance!)).toOpaque()
+    } free_callback: { token, instance, bindings in
+        Unmanaged<\(name.toSwift())>.fromOpaque(instance!).release()
+    } reference_callback: { token, instance, reference in
+        return 1
+    }
+}
+"""
+        }.internal().override().class()
+        
+        Spacer()
+        
+        Init(parameters: .named("nativeObjectPtr", type: "GDNativeObjectPtr")) {
+            "super.init(nativeObjectPtr: nativeObjectPtr)"
+        }.internal().override()
     }
 }

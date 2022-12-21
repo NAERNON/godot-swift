@@ -12,17 +12,19 @@ struct GlobalEnumsFile: GeneratedSwiftFile {
         Import.foundation
 
         ForEach(enums) { enumCode in
-            Spacer()
-            
             if let scope = enumCode.name.scope {
                 // We do not generate the enums for the Variant type since
                 // they are already generated.
                 if scope.toSwift() != "Variant" {
+                    Spacer()
+                    
                     Extension(scope.toSwift()) {
                         enumCode.code()
                     }
                 }
             } else {
+                Spacer()
+                
                 enumCode.code()
             }
         }
