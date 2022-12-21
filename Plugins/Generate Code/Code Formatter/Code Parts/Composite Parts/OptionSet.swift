@@ -40,7 +40,7 @@ public struct OptionSet<RawType>: SwiftCode, AccessControlCode where RawType: Bi
         switch accessControl {
         case .private, .fileprivate, .internal:
             return nil
-        case .public:
+        case .public, .open:
             return .public
         }
     }

@@ -5,6 +5,7 @@ public enum AccessControl: Comparable {
     case `fileprivate`
     case `internal`
     case `public`
+    case `open`
     
     var keyword: Keyword {
         switch self {
@@ -16,6 +17,8 @@ public enum AccessControl: Comparable {
             return .internal
         case .public:
             return .public
+        case .open:
+            return .open
         }
     }
 }
@@ -28,6 +31,7 @@ public protocol AccessControlCode: SwiftCode {
     func `fileprivate`() -> Self
     func `internal`() -> Self
     func `public`() -> Self
+    func `open`() -> Self
 }
 
 extension AccessControlCode {
@@ -51,5 +55,9 @@ extension AccessControlCode {
     
     public func `public`() -> Self {
         self.accessControl(.public)
+    }
+    
+    public func `open`() -> Self {
+        self.accessControl(.open)
     }
 }

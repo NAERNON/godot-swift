@@ -28,10 +28,12 @@ public enum Keyword {
     case `fileprivate`
     case `internal`
     case `public`
+    case `open`
     case `final`
     
     case `override`
     case `mutating`
+    case `required`
     
     fileprivate var string: String {
         switch self {
@@ -41,9 +43,11 @@ public enum Keyword {
         case .fileprivate: return "fileprivate"
         case .internal: return "internal"
         case .public: return "public"
+        case .open: return "open"
         case .final: return "final"
         case .override: return "override"
         case .mutating: return "mutating"
+        case .required: return "required"
         }
     }
     
@@ -53,8 +57,10 @@ public enum Keyword {
     /// cannot be together on the same statement.
     fileprivate var priority: Int {
         switch self {
-        case .private, .fileprivate, .internal, .public:
+        case .private, .fileprivate, .internal, .public, .open:
             return 100
+        case .required:
+            return 80
         case .mutating:
             return 75
         case .override:
