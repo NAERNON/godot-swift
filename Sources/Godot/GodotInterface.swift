@@ -9,7 +9,7 @@ public enum GodotInterface {
     internal static private(set) var native: GDNativeInterface!
     internal static private(set) var token: UnsafeMutableRawPointer!
     
-    private static var isGodotSetup = false
+    public static var isGodotSetup = false
     
     /// This function must be called in order for Godot to work.
     /// Almost every type in the target are using this interface for calling Godot.
@@ -19,8 +19,6 @@ public enum GodotInterface {
             return
         }
         
-        isGodotSetup = true
-        
         self.native = nativeInterfacePtr.pointee
         self.token = UnsafeMutableRawPointer(mutating: nativeInterfacePtr)
         
@@ -28,5 +26,7 @@ public enum GodotInterface {
         setAllClassesBindings()
         Variant.setInitBindings()
         UtilityFunctions.setBindings()
+        
+        isGodotSetup = true
     }
 }
