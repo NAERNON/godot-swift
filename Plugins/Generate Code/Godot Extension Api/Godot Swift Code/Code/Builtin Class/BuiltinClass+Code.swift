@@ -439,9 +439,13 @@ Sets all the function bindings and operators used to communicate with Godot.
     @CodeBuilder
     private func hashableExtensionCode() -> some SwiftCode {
         // Only conform the type if it has a hash value.
-        if methods?.contains { $0.name.godotName == "hash" } == true {
+        if methods?.contains(where: { $0.name.godotName == "hash" }) == true {
             Spacer()
             Extension(name.toSwift(), extensions: ["Hashable"]) {
+                Var("hashValue", type: "Int") {
+                    "_hash()"
+                }.public()
+                Spacer()
 """
 public func hash(into hasher: inout Hasher) {
     hasher.combine(_hash())

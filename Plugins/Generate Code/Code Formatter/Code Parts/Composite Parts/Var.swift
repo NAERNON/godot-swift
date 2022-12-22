@@ -17,7 +17,7 @@ public struct Var<Content>: SwiftCode, AccessControlCode where Content: SwiftCod
     }
     
     public var body: some SwiftCode {
-        "var \(name): \(type)  {".keywords(keywords)
+        "var \(name): \(type) {".keywords(keywords)
         content().indentation()
         "}"
     }
