@@ -7,14 +7,6 @@ extension Array {
         self = value._duplicate()
     }
     
-    public init(repeating repeatedVariant: Variant, count: Int) {
-        var new = Array()
-        for _ in 0..<count {
-            new._append(repeatedVariant)
-        }
-        self = new
-    }
-    
     public subscript(index: Int) -> Variant {
         get {
             self._getValue(at: Int64(index))
@@ -27,11 +19,11 @@ extension Array {
     public mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C)
     where C : Collection, Variant == C.Element {
         var rangeIndex = subrange.lowerBound
-        for (collectionIndex, variant) in newElements.enumerated() {
+        for (collectionIndex, element) in newElements.enumerated() {
             if collectionIndex + subrange.lowerBound < subrange.upperBound {
-                self[rangeIndex] = variant
+                self[rangeIndex] = element
             } else {
-                self._insert(position: rangeIndex, value: variant)
+                self._insert(position: rangeIndex, value: element)
             }
             rangeIndex += 1
         }
@@ -41,7 +33,6 @@ extension Array {
             self._removeAt(removeIndex)
             rangeIndex += 1
         }
-
     }
 }
 
@@ -75,10 +66,6 @@ extension Array: MutableCollection {}
 
 extension Array: ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: Variant...) {
-        var new = Array()
-        for element in elements {
-            new._append(element)
-        }
-        self = new
+        self.init(elements)
     }
 }
