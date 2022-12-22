@@ -444,7 +444,7 @@ Sets all the function bindings and operators used to communicate with Godot.
             Extension(name.toSwift(), extensions: ["Hashable"]) {
 """
 public func hash(into hasher: inout Hasher) {
-    hasher.combine(hashValue)
+    hasher.combine(_hash())
 }
 """
             }
