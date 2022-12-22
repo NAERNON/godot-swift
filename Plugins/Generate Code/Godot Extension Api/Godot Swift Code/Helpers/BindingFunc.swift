@@ -30,30 +30,15 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         let (translatedName, translatedParameters) = name.toSwift(withType: type, arguments: arguments)
         let translatedParametersNames = translatedParameters.map { $0.name }
         
-        if isVarInsteadOfFunc {
-            Var(translatedName, type: returnType!.toSwift(scopeType: type)) {
-                content(translatedParametersNames)
-            }
-            .accessControl(accessControl)
-            .static(isStatic)
-            .final(isFinal)
-        } else {
-            Func(name: translatedName,
-                 parameters: translatedParameters,
-                 returnType: returnType?.toSwift(scopeType: type)) {
-                content(translatedParametersNames)
-            }
-                 .accessControl(accessControl)
-                 .static(isStatic)
-                 .final(isFinal)
-                 .mutating(isMutating)
+        Func(name: translatedName,
+             parameters: translatedParameters,
+             returnType: returnType?.toSwift(scopeType: type)) {
+            content(translatedParametersNames)
         }
-    }
-    
-    private var isVarInsteadOfFunc: Bool {
-        let noArguments = arguments == nil || arguments?.isEmpty == true
-        let returns = returnType != nil
-        return name.shouldBeVar() && noArguments && returns
+             .accessControl(accessControl)
+             .static(isStatic)
+             .final(isFinal)
+             .mutating(isMutating)
     }
     
     // MARK: Modifiers

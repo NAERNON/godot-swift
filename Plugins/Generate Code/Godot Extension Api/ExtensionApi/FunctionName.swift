@@ -3,11 +3,13 @@ import Foundation
 struct FunctionName {
     var godotName: String
     
+    private var isUnderscored: Bool = false
+    
     func toSwift(withType type: InstanceType?,
                  arguments: [ExtensionApi.Argument]?) -> (name: String,
                                                           parameters: [FunctionParameter]) {
         let (translatedName, translatedParameters) = CodeLanguage.c.translateFunction(
-            name: godotName,
+            name: (isUnderscored ? "_" : "") + godotName,
             parameters: arguments?.map({ .init(name: $0.name.replacingOccurrences(of: " ", with: ""),
                                                label: nil,
                                                isLabelHidden: false) }) ?? [],
@@ -18,25 +20,11 @@ struct FunctionName {
         return (functionName, functionParameters)
     }
     
-    /// Returns `true` if the function should not be a function but a var.
-    func shouldBeVar() -> Bool {
-        switch godotName {
-        case "unary-": return true
-        case "unary+": return false
-        case "hash": return true
-        case "size": return true
-        case "isEmpty": return true
-        default: return false
-        }
-    }
-    
     /// A custom name for the function.
     private func customName() -> String? {
         switch godotName {
         case "unary-": return "negative"
         case "unary+": return "positive"
-        case "hash": return "hashValue"
-        case "size": return "count"
         default: return nil
         }
     }
@@ -122,6 +110,12 @@ struct FunctionName {
         case "in": return "IN"
         default: return nil
         }
+    }
+    
+    var underscored: FunctionName {
+        var new = self
+        new.isUnderscored = true
+        return new
     }
 }
 

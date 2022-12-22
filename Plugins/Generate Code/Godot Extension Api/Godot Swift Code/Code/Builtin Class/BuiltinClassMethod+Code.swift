@@ -2,7 +2,7 @@ import Foundation
 
 extension ExtensionApi.BuiltinClass.Method {
     func code(type: InstanceType) -> some SwiftCode {
-        BindingFunc(name: name,
+        BindingFunc(name: name.underscored,
                     type: type,
                     arguments: arguments,
                     returnType: returnType) { parameters in
@@ -31,7 +31,7 @@ extension ExtensionApi.BuiltinClass.Method {
                 Spacer()
                 Return("__returnValue")
             }
-        }.public().static(isStatic).mutating(isMutating).attributes(isResultDiscardable ? [.discardableResult] : [])
+        }.internal().static(isStatic).mutating(isMutating).attributes(isResultDiscardable ? [.discardableResult] : [])
     }
     
     private func functionParameters(withParameters parameters: [String]) -> [ObjectsPointersAccessParameter] {
