@@ -1,6 +1,8 @@
 import GodotExtensionHeaders
 
 extension String {
+    // MARK: Init
+    
     public init() {
         self = Self._constructor()
     }
@@ -23,6 +25,8 @@ extension String {
         self = String(swiftString: .init(c))
     }
     
+    // MARK: Editing
+    
     public subscript(index: Int) -> Character {
         get {
             Character(self._getValue(at: Int64(index)))
@@ -30,6 +34,10 @@ extension String {
         set(newValue) {
             self._setValue(String(newValue), at: Int64(index))
         }
+    }
+    
+    public static func + (lhs: String, rhs: String) -> String {
+        Self._operatorAdd(lhs, rhs)
     }
     
     public mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C)
@@ -90,10 +98,46 @@ extension String: Equatable {
     }
 }
 
+extension String: Comparable {
+    public static func > (lhs: String, rhs: String) -> Bool {
+        Self._operatorGreater(lhs, rhs)
+    }
+    
+    public static func < (lhs: String, rhs: String) -> Bool {
+        Self._operatorLess(lhs, rhs)
+    }
+    
+    public static func >= (lhs: String, rhs: String) -> Bool {
+        Self._operatorGreaterEqual(lhs, rhs)
+    }
+    
+    public static func <= (lhs: String, rhs: String) -> Bool {
+        Self._operatorLessEqual(lhs, rhs)
+    }
+}
+
 extension String: Hashable {
     public var hashValue: Int { _hash() }
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(_hash())
+    }
+}
+
+extension String: TextOutputStreamable {
+    public func write<Target>(to target: inout Target) where Target : TextOutputStream {
+        target.write(.init(godotString: self))
+    }
+}
+
+extension String: TextOutputStream {
+    public mutating func write(_ string: Swift.String) {
+        self += String(swiftString: string)
+    }
+}
+
+extension String: LosslessStringConvertible {
+    public var description: Swift.String {
+        .init(godotString: self)
     }
 }
