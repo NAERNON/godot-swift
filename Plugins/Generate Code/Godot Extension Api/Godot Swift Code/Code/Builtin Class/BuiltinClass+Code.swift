@@ -14,7 +14,6 @@ extension ExtensionApi.BuiltinClass {
         }
         
         customDebugStringConvertibleExtensionCode()
-        equatableExtensionCode()
     }
     
     @CodeBuilder
@@ -22,7 +21,7 @@ extension ExtensionApi.BuiltinClass {
         Group {
             constantsCode()
             enumCode()
-            constructorsCode()
+            constructorsCode(classSize: classSize)
             operatorsCode()
             getterSetterCode()
             keyedCode()
@@ -33,7 +32,7 @@ extension ExtensionApi.BuiltinClass {
         if !name.isBuiltinValueType {
             Spacer()
             replaceOpaqueValueCode()
-            nativePtrCode(classSize: classSize)
+            nativePtrCode()
         }
     }
     
@@ -61,15 +60,9 @@ duplicate its value.
     }
     
     @CodeBuilder
-    private func nativePtrCode(classSize: Int) -> some SwiftCode {
+    private func nativePtrCode() -> some SwiftCode {
         Spacer()
-        Property("opaque").varDefined().type("Opaque").private().assignComputed {
-            if hasDestructor {
-                ".init(size: \(classSize), destructorPtr: Self.\(godotDestructorPtrName))"
-            } else {
-                ".init(size: \(classSize))"
-            }
-        }
+        Property("opaque").varDefined().type("Opaque").private()
         Spacer()
         Comment(style: .doc) {
             "Calls a closure with a native type pointer of the underlying object. Should only be called by the `GodotLibrary`."
@@ -233,44 +226,23 @@ Sets all the function bindings and operators used to communicate with Godot.
     // MARK: Constructors
     
     @CodeBuilder
-    private func constructorsCode() -> some SwiftCode {
+    private func constructorsCode(classSize: Int) -> some SwiftCode {
         Spacer()
         Mark(text: "Init", isSeparator: true)
-        for constructor in filteredConstructors() {
+        
+        if !name.isBuiltinValueType {
             Spacer()
-            constructor.code(type: name)
+            Init(parameters: .named("opaque", type: "Opaque")) {
+                Property("opaque").selfDefined().assign(value: "opaque")
+            }.private()
         }
-    }
-    
-    private func filteredConstructors() -> [ExtensionApi.BuiltinClass.Constructor] {
-        self.constructors.filter { constructor in
-            // When using duplicate instead of init, the default initalizer for the type should not be used.
-            if self.name.duplicateInsteadOfInit
-                && constructor.arguments?.count == 1
-                && constructor.arguments?.first?.type == self.name {
-                return false
-            }
-            
-            // If the type is not a base builtin type, then we need all the initializers.
-            if !self.name.isBuiltinValueType {
-                return true
-            }
-            
-            // If the type is a base builtin type, then the `init()` is already coded.
-            if constructor.arguments == nil || constructor.arguments?.isEmpty == true {
-                return false
-            }
-            
-            // If all the arguments inside the constructor are the same as the members of the BuiltinClass,
-            // then the constructor is already coded since it is the base constructor.
-            if let arguments = constructor.arguments {
-                let constructorArgumentsNames = arguments.map { NamingConvention.snake.convert(string: $0.name, from: .camel) }
-                if constructorArgumentsNames == self.name.builtinBaseConstructorArguments() {
-                    return false
-                }
-            }
-            
-            return true
+        
+        for constructor in constructors {
+            Spacer()
+            constructor.code(type: name,
+                             classSize: classSize,
+                             hasDestructor: hasDestructor,
+                             godotDestructorPtrName: godotDestructorPtrName)
         }
     }
     
@@ -420,16 +392,6 @@ Sets all the function bindings and operators used to communicate with Godot.
             Property("debugDescription").varDefined().public().type("Swift.String").computed {
                 "Variant(self).debugDescription"
             }
-        }
-    }
-    
-    // MARK: Equatable
-    
-    @CodeBuilder
-    private func equatableExtensionCode() -> some SwiftCode {
-        Spacer()
-        Extension(name.toSwift(), extensions: ["Equatable"]) {
-            EmptyCode()
         }
     }
     

@@ -8,13 +8,7 @@ struct BuiltinClassFile: GeneratedSwiftFile {
     init(builtinClass: ExtensionApi.BuiltinClass,
          builtinClassSizes: ExtensionApi.ClassSizes,
          builtinClassMemberOffset: ExtensionApi.MemberOffsets) {
-        let fileName: String
-        if builtinClass.name.isBuiltinValueType {
-            fileName = builtinClass.name.toSwift() + "+Bindings"
-        } else {
-            fileName = builtinClass.name.toSwift()
-        }
-        self.path = fileName + ".swift"
+        self.path = builtinClass.name.toSwift() + "+PrivateBindings.swift"
         self.builtinClass = builtinClass
         self.classSize = builtinClassSizes.sizes.first(where: { $0.name == builtinClass.name })?.size ?? 0
     }

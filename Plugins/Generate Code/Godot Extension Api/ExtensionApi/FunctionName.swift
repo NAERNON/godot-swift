@@ -3,6 +3,10 @@ import Foundation
 struct FunctionName {
     var godotName: String
     
+    init(godotName: String) {
+        self.godotName = godotName
+    }
+    
     private var isUnderscored: Bool = false
     
     func toSwift(withType type: InstanceType?,
@@ -21,13 +25,7 @@ struct FunctionName {
     }
     
     /// A custom name for the function.
-    private func customName() -> String? {
-        switch godotName {
-        case "unary-": return "negative"
-        case "unary+": return "positive"
-        default: return nil
-        }
-    }
+    private func customName() -> String? { nil }
     
     private func functionParameters(translatedParameters: [CodeLanguage.FunctionParameter],
                                     type: InstanceType?,
@@ -64,19 +62,6 @@ struct FunctionName {
                       type: type,
                       defaultValue: defaultParameterValue,
                       label: translatedParameter.functionParameterLabel)
-    }
-    
-    /// Godot operators might not be correct operators in Swift.
-    /// In this case, we make it a member function, and not a static function.
-    ///
-    /// For instance, the `in` operator in Godot should be a member function: `value.in(_ other: )`.
-    var isImpossibleOperator: Bool {
-        switch godotName {
-        case "unary-",
-            "unary+",
-            "in": return true
-        default: return false
-        }
     }
     
     /// The name of the operation (if applies).

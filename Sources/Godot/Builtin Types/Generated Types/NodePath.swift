@@ -1,0 +1,25 @@
+import Foundation
+
+extension NodePath {
+    public init() {
+        self = Self._constructor()
+    }
+    
+    public init(_ value: NodePath) {
+        self = Self._constructor(value)
+    }
+}
+
+extension NodePath: Equatable {
+    public static func == (lhs: NodePath, rhs: NodePath) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+}
+
+extension NodePath: Hashable {
+    public var hashValue: Int { _hash() }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(_hash())
+    }
+}
