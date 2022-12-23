@@ -69,3 +69,11 @@ extension Array: ExpressibleByArrayLiteral {
         self.init(elements)
     }
 }
+
+extension Array: Hashable {
+    public var hashValue: Int { _hash() }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(_hash())
+    }
+}

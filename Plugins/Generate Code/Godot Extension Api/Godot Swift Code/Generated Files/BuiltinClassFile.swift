@@ -10,7 +10,7 @@ struct BuiltinClassFile: GeneratedSwiftFile {
          builtinClassMemberOffset: ExtensionApi.MemberOffsets) {
         let fileName: String
         if builtinClass.name.isBuiltinValueType {
-            fileName = builtinClass.name.toSwift() + "+GeneratedExtensions"
+            fileName = builtinClass.name.toSwift() + "+Bindings"
         } else {
             fileName = builtinClass.name.toSwift()
         }
