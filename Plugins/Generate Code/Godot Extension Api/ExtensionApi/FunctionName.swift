@@ -58,7 +58,7 @@ struct FunctionName {
             defaultParameterValue = .none
         }
         
-        return .named(translatedParameter.name,
+        return .named(CodeLanguage.swift.protectNameIfKeyword(for: translatedParameter.name),
                       type: type,
                       defaultValue: defaultParameterValue,
                       label: translatedParameter.functionParameterLabel)

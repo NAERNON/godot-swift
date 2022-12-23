@@ -6,7 +6,7 @@ import Foundation
 /// This type provides helpers functions for translation and more.
 struct InstanceType {
     /// For instance, `"enum"` if the Godot type is `"enum::SomeType.Flag"`.
-    private let preGodotType: String?
+    private let preGodotType: PreGodotType?
     /// For instance, `"SomeType"` if the Godot type is `"enum::SomeType.Flag"`.
     private let scopeGodotType: InstanceTypePart?
     /// For instance, `"Flag"` if the Godot type is `"enum::SomeType.Flag"`.
@@ -19,7 +19,7 @@ struct InstanceType {
     
     fileprivate init(godotName: String) {
         let preAndPost = godotName.components(separatedBy: ":")
-        preGodotType = preAndPost.count == 1 ? nil : preAndPost[0]
+        preGodotType = preAndPost.count == 1 ? nil : PreGodotType(rawValue: preAndPost[0])
         
         let post = preAndPost.last!
         let components = post.components(separatedBy: ".")
@@ -42,18 +42,17 @@ struct InstanceType {
     }
     
     var isValueType: Bool {
-        isSwiftBaseType || isBuiltinValueType || isEnumValue
-    }
-    
-    var isEnumValue: Bool {
-        preGodotType == "enum"
+        isSwiftBaseType || isBuiltinValueType || preGodotType == .enum || preGodotType == .bitfield
     }
     
     /// Converts this type to a variable name. Ex: `PackedByteArray` becomes `packedByteArray`.
     /// - Parameter scopeType: The scope in which the type is used.
     /// Depending on the scope, the same type could return different types.
     func toVariableName(scopeType: InstanceType? = nil) -> String {
-        NamingConvention.pascal.convert(string: toSwift(scopeType: scopeType), to: .camel)
+        NamingConvention.pascal.convert(string: toSwift(scopeType: scopeType)
+            .replacingOccurrences(of: "<", with: "")
+            .replacingOccurrences(of: ">", with: ""),
+                                        to: .camel)
     }
     
     /// Converts a given Godot type to the Swift equivalent.
@@ -68,10 +67,17 @@ struct InstanceType {
         let scope = scopeType != nil ? scopeType?.finalGodotType : scopeGodotType
         let typeString = finalGodotType.toSwift(scopeType: scopeType != nil ? scopeType?.finalGodotType : scopeGodotType)
         
+        let finalType: String
         if let scopeString = scopeGodotType?.toSwift(), showScope, finalGodotType.isSwiftBaseType == false {
-            return scopeString + "." + typeString
+            finalType = scopeString + "." + typeString
         } else {
-            return typeString
+            finalType = typeString
+        }
+        
+        switch preGodotType {
+        case .typedarray:
+            return "TypedArray<\(finalType)>"
+        default: return finalType
         }
     }
     
@@ -104,25 +110,11 @@ struct InstanceType {
     
     /// Returns the default initializer for a given type. For instance, a `String` type will return `String()`.
     func defaultInitializer(scopeType: InstanceType? = nil) -> String {
-        if isEnumValue {
+        if preGodotType == .enum || preGodotType == .bitfield {
             return toSwift(scopeType: scopeType) + "(rawValue: 0)!"
         }
         
         return toSwift(scopeType: scopeType) + "()"
-    }
-    
-    /// Builtin base types, when converted to Swift, are value types.
-    /// But for some types, the default initializer does not copy data.
-    /// For those types, the default initalizer should use the `duplicate()`
-    /// function istead of the init.
-    ///
-    /// For the `Array` type for instance, `init(array: Array)` should not be available.
-    var duplicateInsteadOfInit: Bool {
-        switch finalGodotType.toSwift() {
-        case "Array": return true
-        case "Dictionary": return true
-        default: return false
-        }
     }
     
     static func == (lhs: InstanceType, rhs: String) -> Bool {
@@ -141,6 +133,16 @@ extension InstanceType: Decodable {
 }
 
 extension InstanceType: Equatable {}
+
+// MARK: Pre Godot Type
+
+/// In Godot, some types are defined this way: `"typedarray::String"`.
+/// This type enumerates all the possible types before the `"::"`.
+private enum PreGodotType: String {
+    case `enum` = "enum"
+    case typedarray = "typedarray"
+    case bitfield = "bitfield"
+}
 
 // MARK: Extensions
 

@@ -9,6 +9,7 @@ private let protectedStrings: Set<String> = [
     "final",
     "in",
     "func",
+    "class",
     "nil"
 ]
 
