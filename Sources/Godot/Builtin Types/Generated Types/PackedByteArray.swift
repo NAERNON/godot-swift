@@ -23,4 +23,63 @@ extension PackedByteArray {
             self._setValue(Int(newValue), at: Int64(index))
         }
     }
+    
+    public mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C)
+    where C : Collection, UInt8 == C.Element {
+        var rangeIndex = subrange.lowerBound
+        for (collectionIndex, element) in newElements.enumerated() {
+            if collectionIndex + subrange.lowerBound < subrange.upperBound {
+                self[rangeIndex] = element
+            } else {
+                self._insert(atIndex: rangeIndex, value: Int(element))
+            }
+            rangeIndex += 1
+        }
+        
+        let removeIndex = subrange.lowerBound + newElements.count
+        while rangeIndex < subrange.upperBound {
+            self._removeAt(removeIndex)
+            rangeIndex += 1
+        }
+    }
+}
+
+extension PackedByteArray: Sequence {}
+
+extension PackedByteArray: Collection {
+    public var startIndex: Int {
+        0
+    }
+    
+    public var endIndex: Int {
+        self._size()
+    }
+    
+    public func index(after i: Int) -> Int {
+        i+1
+    }
+}
+
+extension PackedByteArray: BidirectionalCollection {
+    public func index(before i: Int) -> Int {
+        i-1
+    }
+}
+
+extension PackedByteArray: RandomAccessCollection {}
+
+extension PackedByteArray: RangeReplaceableCollection {}
+
+extension PackedByteArray: MutableCollection {}
+
+extension PackedByteArray: ExpressibleByArrayLiteral {
+    public init(arrayLiteral elements: UInt8...) {
+        self.init(elements)
+    }
+}
+
+extension PackedByteArray: Equatable {
+    public static func == (lhs: PackedByteArray, rhs: PackedByteArray) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
 }
