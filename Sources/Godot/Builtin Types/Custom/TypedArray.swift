@@ -17,34 +17,6 @@ public struct TypedArray<Element> where Element: VariantCodable {
         self.underlyingArray = array
     }
     
-    public subscript(index: Int) -> Element {
-        get {
-            Element.valueFromVariant(underlyingArray[index])
-        }
-        set(newValue) {
-            underlyingArray[index] = newValue.makeVariant()
-        }
-    }
-    
-    public mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C)
-    where C : Collection, Self.Element == C.Element {
-        var rangeIndex = subrange.lowerBound
-        for (collectionIndex, element) in newElements.enumerated() {
-            if collectionIndex + subrange.lowerBound < subrange.upperBound {
-                self[rangeIndex] = element
-            } else {
-                underlyingArray.insert(element.makeVariant(), at: rangeIndex)
-            }
-            rangeIndex += 1
-        }
-        
-        let removeIndex = subrange.lowerBound + newElements.count
-        while rangeIndex < subrange.upperBound {
-            underlyingArray.remove(at: removeIndex)
-            rangeIndex += 1
-        }
-    }
-    
     internal func withUnsafeNativePointer(_ body: (GDNativeTypePtr) -> ()) {
         underlyingArray.withUnsafeNativePointer(body)
     }
@@ -96,7 +68,35 @@ extension TypedArray: BidirectionalCollection {
 
 extension TypedArray: RandomAccessCollection {}
 
-extension TypedArray: RangeReplaceableCollection {}
+extension TypedArray: RangeReplaceableCollection {
+    public subscript(index: Int) -> Element {
+        get {
+            Element.valueFromVariant(underlyingArray[index])
+        }
+        set(newValue) {
+            underlyingArray[index] = newValue.makeVariant()
+        }
+    }
+    
+    public mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C)
+    where C : Collection, Self.Element == C.Element {
+        var rangeIndex = subrange.lowerBound
+        for (collectionIndex, element) in newElements.enumerated() {
+            if collectionIndex + subrange.lowerBound < subrange.upperBound {
+                self[rangeIndex] = element
+            } else {
+                underlyingArray.insert(element.makeVariant(), at: rangeIndex)
+            }
+            rangeIndex += 1
+        }
+        
+        let removeIndex = subrange.lowerBound + newElements.count
+        while rangeIndex < subrange.upperBound {
+            underlyingArray.remove(at: removeIndex)
+            rangeIndex += 1
+        }
+    }
+}
 
 extension TypedArray: MutableCollection {}
 
