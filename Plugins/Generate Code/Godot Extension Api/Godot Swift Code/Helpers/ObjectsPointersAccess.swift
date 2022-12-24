@@ -92,7 +92,7 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
     ///   - parameter: The parameter.
     ///   - prime: A Boolean value indicating whether the name will be a slightly modified version.
     private func pointerName(for parameter: ObjectsPointersAccessParameter, prime: Bool = false) -> String {
-        "__ptr_" + (prime ? "p_" : "") + parameter.name
+        "__ptr_" + (prime ? "p_" : "") + parameter.name.replacingOccurrences(of: "`", with: "")
     }
 }
 

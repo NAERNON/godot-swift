@@ -12,7 +12,7 @@ extension ExtensionApi.Class {
         if isRootClass {
             Extension(name.godotName) {
                 insideClassOrExtensionCode()
-            }.public()
+            }
         } else {
             Class(name.godotName, extensions: extensions) {
                 insideClassOrExtensionCode()
