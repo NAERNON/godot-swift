@@ -3,6 +3,11 @@ import GodotExtensionHeaders
 
 // MARK: - Definition
 
+/// A `TypedArray` is a Godot array that is constrained by a type.
+///
+/// Under the hood, this collection uses the Godot `Array` type.
+///
+/// Only `VariantCodable` elements can be contained inside a `TypedArray`.
 public struct TypedArray<Element> where Element: VariantCodable {
     private var underlyingArray: Array
     

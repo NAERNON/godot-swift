@@ -4,7 +4,7 @@ import Foundation
 
 /// A type that can encode itself to a `Variant`.
 public protocol VariantEncodable {
-    /// The type of the `Variant` created by the `createVariant()` function.
+    /// The type of the `Variant` created by the `makeVariant()` function.
     static var variantType: Variant.ValueType { get }
     
     /// Encodes this value into a newly created `Variant`.
