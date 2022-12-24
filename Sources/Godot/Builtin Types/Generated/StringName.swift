@@ -12,6 +12,10 @@ extension StringName {
     public init(_ value: StringName) {
         self = Self._constructor(value)
     }
+    
+    public init(string: String) {
+        self = Self._constructor(string)
+    }
 }
 
 extension StringName: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {

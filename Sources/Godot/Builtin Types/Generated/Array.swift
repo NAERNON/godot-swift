@@ -1,8 +1,6 @@
 import Foundation
 
 extension Array {
-    // MARK: Init
-    
     public init() {
         self = Self._constructor()
     }
@@ -46,9 +44,33 @@ extension Array {
     public init(packedColorArray: PackedColorArray) {
         self = Self._constructor(packedColorArray)
     }
-    
-    // MARK: Editing
-    
+}
+
+extension Array: Sequence {}
+
+extension Array: Collection {
+    public var startIndex: Int {
+        0
+    }
+
+    public var endIndex: Int {
+        self._size()
+    }
+
+    public func index(after i: Int) -> Int {
+        i+1
+    }
+}
+
+extension Array: BidirectionalCollection {
+    public func index(before i: Int) -> Int {
+        i-1
+    }
+}
+
+extension Array: RandomAccessCollection {}
+
+extension Array: RangeReplaceableCollection {
     public subscript(index: Int) -> Variant {
         get {
             self._getValue(at: Int64(index))
@@ -77,32 +99,6 @@ extension Array {
         }
     }
 }
-
-extension Array: Sequence {}
-
-extension Array: Collection {
-    public var startIndex: Int {
-        0
-    }
-
-    public var endIndex: Int {
-        self._size()
-    }
-
-    public func index(after i: Int) -> Int {
-        i+1
-    }
-}
-
-extension Array: BidirectionalCollection {
-    public func index(before i: Int) -> Int {
-        i-1
-    }
-}
-
-extension Array: RandomAccessCollection {}
-
-extension Array: RangeReplaceableCollection {}
 
 extension Array: MutableCollection {}
 

@@ -1,8 +1,6 @@
 import GodotExtensionHeaders
 
 extension String {
-    // MARK: Init
-    
     public init() {
         self = Self._constructor()
     }
@@ -21,40 +19,20 @@ extension String {
         self = Self._constructor(value)
     }
     
+    public init(stringName: StringName) {
+        self = Self._constructor(stringName)
+    }
+    
+    public init(nodePath: NodePath) {
+        self = Self._constructor(nodePath)
+    }
+    
     public init(_ c: Character) {
         self = String(swiftString: .init(c))
     }
     
-    // MARK: Editing
-    
-    public subscript(index: Int) -> Character {
-        get {
-            Character(self._getValue(at: Int64(index)))
-        }
-        set(newValue) {
-            self._setValue(String(newValue), at: Int64(index))
-        }
-    }
-    
     public static func + (lhs: String, rhs: String) -> String {
         Self._operatorAdd(lhs, rhs)
-    }
-    
-    public mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C)
-    where C : Collection, Character == C.Element {
-        if subrange.isEmpty {
-            var new = self
-            for (index, element) in newElements.enumerated() {
-                new = new._insert(position: subrange.lowerBound + index, what: .init(element))
-            }
-            self = new
-            return
-        }
-        
-        var substringStart = _substr(from: 0, len: subrange.lowerBound)
-        var substringEnd = _substr(from: subrange.upperBound, len: _length() - subrange.upperBound)
-        
-        self = substringStart + String(newElements) + substringEnd
     }
 }
 
@@ -88,7 +66,33 @@ extension String: BidirectionalCollection {
 
 extension String: RandomAccessCollection {}
 
-extension String: RangeReplaceableCollection {}
+extension String: RangeReplaceableCollection {
+    public subscript(index: Int) -> Character {
+        get {
+            Character(self._getValue(at: Int64(index)))
+        }
+        set(newValue) {
+            self._setValue(String(newValue), at: Int64(index))
+        }
+    }
+    
+    public mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C)
+    where C : Collection, Character == C.Element {
+        if subrange.isEmpty {
+            var new = self
+            for (index, element) in newElements.enumerated() {
+                new = new._insert(position: subrange.lowerBound + index, what: .init(element))
+            }
+            self = new
+            return
+        }
+        
+        let substringStart = _substr(from: 0, len: subrange.lowerBound)
+        let substringEnd = _substr(from: subrange.upperBound, len: _length() - subrange.upperBound)
+        
+        self = substringStart + String(newElements) + substringEnd
+    }
+}
 
 extension String: MutableCollection {}
 

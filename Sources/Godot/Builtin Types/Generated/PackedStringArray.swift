@@ -9,6 +9,36 @@ extension PackedStringArray {
         self = Self._constructor(value)
     }
     
+    public init(array: Array) {
+        self = Self._constructor(array)
+    }
+}
+
+extension PackedStringArray: Sequence {}
+
+extension PackedStringArray: Collection {
+    public var startIndex: Int {
+        0
+    }
+    
+    public var endIndex: Int {
+        self._size()
+    }
+    
+    public func index(after i: Int) -> Int {
+        i+1
+    }
+}
+
+extension PackedStringArray: BidirectionalCollection {
+    public func index(before i: Int) -> Int {
+        i-1
+    }
+}
+
+extension PackedStringArray: RandomAccessCollection {}
+
+extension PackedStringArray: RangeReplaceableCollection {
     public subscript(index: Int) -> String {
         get {
             self._getValue(at: Int64(index))
@@ -37,32 +67,6 @@ extension PackedStringArray {
         }
     }
 }
-
-extension PackedStringArray: Sequence {}
-
-extension PackedStringArray: Collection {
-    public var startIndex: Int {
-        0
-    }
-    
-    public var endIndex: Int {
-        self._size()
-    }
-    
-    public func index(after i: Int) -> Int {
-        i+1
-    }
-}
-
-extension PackedStringArray: BidirectionalCollection {
-    public func index(before i: Int) -> Int {
-        i-1
-    }
-}
-
-extension PackedStringArray: RandomAccessCollection {}
-
-extension PackedStringArray: RangeReplaceableCollection {}
 
 extension PackedStringArray: MutableCollection {}
 

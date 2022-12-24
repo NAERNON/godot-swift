@@ -8,6 +8,10 @@ extension Callable {
     public init(_ value: Callable) {
         self = Self._constructor(value)
     }
+    
+    public init(object: Object, method: StringName) {
+        self = Self._constructor(object: object, method: method)
+    }
 }
 
 extension Callable: Equatable {

@@ -8,6 +8,10 @@ extension NodePath {
     public init(_ value: NodePath) {
         self = Self._constructor(value)
     }
+    
+    public init(string: String) {
+        self = Self._constructor(string)
+    }
 }
 
 extension NodePath: Equatable {

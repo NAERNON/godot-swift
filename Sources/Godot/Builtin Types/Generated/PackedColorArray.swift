@@ -9,6 +9,36 @@ extension PackedColorArray {
         self = Self._constructor(value)
     }
     
+    public init(array: Array) {
+        self = Self._constructor(array)
+    }
+}
+
+extension PackedColorArray: Sequence {}
+
+extension PackedColorArray: Collection {
+    public var startIndex: Int {
+        0
+    }
+    
+    public var endIndex: Int {
+        self._size()
+    }
+    
+    public func index(after i: Int) -> Int {
+        i+1
+    }
+}
+
+extension PackedColorArray: BidirectionalCollection {
+    public func index(before i: Int) -> Int {
+        i-1
+    }
+}
+
+extension PackedColorArray: RandomAccessCollection {}
+
+extension PackedColorArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Color {
         get {
             self._getValue(at: Int64(index))
@@ -37,32 +67,6 @@ extension PackedColorArray {
         }
     }
 }
-
-extension PackedColorArray: Sequence {}
-
-extension PackedColorArray: Collection {
-    public var startIndex: Int {
-        0
-    }
-    
-    public var endIndex: Int {
-        self._size()
-    }
-    
-    public func index(after i: Int) -> Int {
-        i+1
-    }
-}
-
-extension PackedColorArray: BidirectionalCollection {
-    public func index(before i: Int) -> Int {
-        i-1
-    }
-}
-
-extension PackedColorArray: RandomAccessCollection {}
-
-extension PackedColorArray: RangeReplaceableCollection {}
 
 extension PackedColorArray: MutableCollection {}
 

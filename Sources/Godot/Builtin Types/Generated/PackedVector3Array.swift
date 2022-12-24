@@ -9,6 +9,36 @@ extension PackedVector3Array {
         self = Self._constructor(value)
     }
     
+    public init(array: Array) {
+        self = Self._constructor(array)
+    }
+}
+
+extension PackedVector3Array: Sequence {}
+
+extension PackedVector3Array: Collection {
+    public var startIndex: Int {
+        0
+    }
+    
+    public var endIndex: Int {
+        self._size()
+    }
+    
+    public func index(after i: Int) -> Int {
+        i+1
+    }
+}
+
+extension PackedVector3Array: BidirectionalCollection {
+    public func index(before i: Int) -> Int {
+        i-1
+    }
+}
+
+extension PackedVector3Array: RandomAccessCollection {}
+
+extension PackedVector3Array: RangeReplaceableCollection {
     public subscript(index: Int) -> Vector3 {
         get {
             self._getValue(at: Int64(index))
@@ -37,32 +67,6 @@ extension PackedVector3Array {
         }
     }
 }
-
-extension PackedVector3Array: Sequence {}
-
-extension PackedVector3Array: Collection {
-    public var startIndex: Int {
-        0
-    }
-    
-    public var endIndex: Int {
-        self._size()
-    }
-    
-    public func index(after i: Int) -> Int {
-        i+1
-    }
-}
-
-extension PackedVector3Array: BidirectionalCollection {
-    public func index(before i: Int) -> Int {
-        i-1
-    }
-}
-
-extension PackedVector3Array: RandomAccessCollection {}
-
-extension PackedVector3Array: RangeReplaceableCollection {}
 
 extension PackedVector3Array: MutableCollection {}
 

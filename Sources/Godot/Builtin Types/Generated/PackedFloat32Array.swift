@@ -9,6 +9,36 @@ extension PackedFloat32Array {
         self = Self._constructor(value)
     }
     
+    public init(array: Array) {
+        self = Self._constructor(array)
+    }
+}
+
+extension PackedFloat32Array: Sequence {}
+
+extension PackedFloat32Array: Collection {
+    public var startIndex: Int {
+        0
+    }
+    
+    public var endIndex: Int {
+        self._size()
+    }
+    
+    public func index(after i: Int) -> Int {
+        i+1
+    }
+}
+
+extension PackedFloat32Array: BidirectionalCollection {
+    public func index(before i: Int) -> Int {
+        i-1
+    }
+}
+
+extension PackedFloat32Array: RandomAccessCollection {}
+
+extension PackedFloat32Array: RangeReplaceableCollection {
     public subscript(index: Int) -> Double {
         get {
             self._getValue(at: Int64(index))
@@ -37,32 +67,6 @@ extension PackedFloat32Array {
         }
     }
 }
-
-extension PackedFloat32Array: Sequence {}
-
-extension PackedFloat32Array: Collection {
-    public var startIndex: Int {
-        0
-    }
-    
-    public var endIndex: Int {
-        self._size()
-    }
-    
-    public func index(after i: Int) -> Int {
-        i+1
-    }
-}
-
-extension PackedFloat32Array: BidirectionalCollection {
-    public func index(before i: Int) -> Int {
-        i-1
-    }
-}
-
-extension PackedFloat32Array: RandomAccessCollection {}
-
-extension PackedFloat32Array: RangeReplaceableCollection {}
 
 extension PackedFloat32Array: MutableCollection {}
 

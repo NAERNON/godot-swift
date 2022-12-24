@@ -9,6 +9,36 @@ extension PackedInt32Array {
         self = Self._constructor(value)
     }
     
+    public init(array: Array) {
+        self = Self._constructor(array)
+    }
+}
+
+extension PackedInt32Array: Sequence {}
+
+extension PackedInt32Array: Collection {
+    public var startIndex: Int {
+        0
+    }
+    
+    public var endIndex: Int {
+        self._size()
+    }
+    
+    public func index(after i: Int) -> Int {
+        i+1
+    }
+}
+
+extension PackedInt32Array: BidirectionalCollection {
+    public func index(before i: Int) -> Int {
+        i-1
+    }
+}
+
+extension PackedInt32Array: RandomAccessCollection {}
+
+extension PackedInt32Array: RangeReplaceableCollection {
     public subscript(index: Int) -> Int32 {
         get {
             Int32(self._getValue(at: Int64(index)))
@@ -37,32 +67,6 @@ extension PackedInt32Array {
         }
     }
 }
-
-extension PackedInt32Array: Sequence {}
-
-extension PackedInt32Array: Collection {
-    public var startIndex: Int {
-        0
-    }
-    
-    public var endIndex: Int {
-        self._size()
-    }
-    
-    public func index(after i: Int) -> Int {
-        i+1
-    }
-}
-
-extension PackedInt32Array: BidirectionalCollection {
-    public func index(before i: Int) -> Int {
-        i-1
-    }
-}
-
-extension PackedInt32Array: RandomAccessCollection {}
-
-extension PackedInt32Array: RangeReplaceableCollection {}
 
 extension PackedInt32Array: MutableCollection {}
 
