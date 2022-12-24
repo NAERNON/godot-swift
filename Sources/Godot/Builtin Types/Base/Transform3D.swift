@@ -13,13 +13,31 @@ public struct Transform3D {
         self.init(basis: Basis(), origin: Vector3())
     }
     
-    public init(xAxisX: Real, xAxisY: Real, xAxisZ: Real,
-                yAxisX: Real, yAxisY: Real, yAxisZ: Real,
-                zAxisX: Real, zAxisY: Real, zAxisZ: Real,
-                originX: Real, originY: Real, originZ: Real) {
-        self.init(basis: Basis(x: Vector3(x: xAxisX, y: xAxisY, z: xAxisZ),
-                               y: Vector3(x: yAxisX, y: yAxisY, z: yAxisZ),
-                               z: Vector3(x: zAxisX, y: zAxisY, z: zAxisZ)),
+    public init(xAxis: Vector3, yAxis: Vector3, zAxis: Vector3, origin: Vector3) {
+        self = Self._constructor(xAxis: yAxis, yAxis: yAxis, zAxis: zAxis, origin: origin)
+    }
+    
+    public init(projection: Projection) {
+        self = Self._constructor(projection)
+    }
+    
+    public init<T>(xAxisX: T, xAxisY: T, xAxisZ: T,
+                   yAxisX: T, yAxisY: T, yAxisZ: T,
+                   zAxisX: T, zAxisY: T, zAxisZ: T,
+                   originX: T, originY: T, originZ: T) where T : BinaryFloatingPoint {
+        self.init(basis: Basis(xAxis: Vector3(x: xAxisX, y: xAxisY, z: xAxisZ),
+                               yAxis: Vector3(x: yAxisX, y: yAxisY, z: yAxisZ),
+                               zAxis: Vector3(x: zAxisX, y: zAxisY, z: zAxisZ)),
+                  origin: Vector3(x: originX, y: originY, z: originZ))
+    }
+    
+    public init<T>(xAxisX: T, xAxisY: T, xAxisZ: T,
+                   yAxisX: T, yAxisY: T, yAxisZ: T,
+                   zAxisX: T, zAxisY: T, zAxisZ: T,
+                   originX: T, originY: T, originZ: T) where T : BinaryInteger {
+        self.init(basis: Basis(xAxis: Vector3(x: xAxisX, y: xAxisY, z: xAxisZ),
+                               yAxis: Vector3(x: yAxisX, y: yAxisY, z: yAxisZ),
+                               zAxis: Vector3(x: zAxisX, y: zAxisY, z: zAxisZ)),
                   origin: Vector3(x: originX, y: originY, z: originZ))
     }
 }

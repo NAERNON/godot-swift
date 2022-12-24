@@ -1,26 +1,50 @@
 import Foundation
 
 public struct Transform2D {
-    public var x: Vector2
-    public var y: Vector2
+    public var xAxis: Vector2
+    public var yAxis: Vector2
     public var origin: Vector2
     
-    public init(x: Vector2, y: Vector2, origin: Vector2) {
-        self.x = x
-        self.y = y
+    public init(xAxis: Vector2, yAxis: Vector2, origin: Vector2) {
+        self.xAxis = xAxis
+        self.yAxis = yAxis
         self.origin = origin
     }
     
     public init() {
-        self.init(x: Vector2(), y: Vector2(), origin: Vector2())
+        self.init(xAxis: Vector2(), yAxis: Vector2(), origin: Vector2())
     }
     
-    public init(xAxisX: Real, xAxisY: Real,
-                yAxisX: Real, yAxisY: Real,
-                originX: Real, originY: Real) {
-        self.init(x: Vector2(x: xAxisX, y: xAxisY),
-                  y: Vector2(x: yAxisX, y: yAxisY),
+    public init<T>(xAxisX: T, xAxisY: T,
+                   yAxisX: T, yAxisY: T,
+                   originX: T, originY: T) where T : BinaryFloatingPoint {
+        self.init(xAxis: Vector2(x: xAxisX, y: xAxisY),
+                  yAxis: Vector2(x: yAxisX, y: yAxisY),
                   origin: Vector2(x: originX, y: originY))
+    }
+    
+    public init<T>(xAxisX: T, xAxisY: T,
+                   yAxisX: T, yAxisY: T,
+                   originX: T, originY: T) where T : BinaryInteger {
+        self.init(xAxis: Vector2(x: xAxisX, y: xAxisY),
+                  yAxis: Vector2(x: yAxisX, y: yAxisY),
+                  origin: Vector2(x: originX, y: originY))
+    }
+    
+    public init<T>(rotation: T, position: Vector2) where T : BinaryFloatingPoint {
+        self = Self._constructor(rotation: Real(rotation), position: position)
+    }
+    
+    public init<T>(rotation: T, position: Vector2) where T : BinaryInteger {
+        self = Self._constructor(rotation: Real(rotation), position: position)
+    }
+    
+    public init<T>(rotation: T, scale: Vector2, skew: T, position: Vector2) where T : BinaryFloatingPoint {
+        self = Self._constructor(rotation: Real(rotation), scale: scale, skew: Real(skew), position: position)
+    }
+    
+    public init<T>(rotation: T, scale: Vector2, skew: T, position: Vector2) where T : BinaryInteger {
+        self = Self._constructor(rotation: Real(rotation), scale: scale, skew: Real(skew), position: position)
     }
 }
 

@@ -13,6 +13,22 @@ public struct Color {
         self.a = a
     }
     
+    public init<T>(r: T, g: T, b: T, a: T) where T: BinaryFloatingPoint {
+        self.init(r: Float(r), g: Float(g), b: Float(b), a: Float(a))
+    }
+    
+    public init<T>(r: T, g: T, b: T) where T: BinaryFloatingPoint {
+        self.init(r: Float(r), g: Float(g), b: Float(b), a: 1)
+    }
+    
+    public init(code: String) {
+        self = Self._constructor(code)
+    }
+    
+    public init<T>(code: String, a: T) where T: BinaryFloatingPoint {
+        self = Self._constructor(code: code, alpha: Float(a))
+    }
+    
     public init() {
         self.init(r: 0, g: 0, b: 0, a: 0)
     }
