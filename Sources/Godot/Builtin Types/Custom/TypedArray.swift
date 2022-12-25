@@ -113,7 +113,7 @@ extension TypedArray: ExpressibleByArrayLiteral {
 
 extension TypedArray: Codable where Element : Codable {
     public func encode(to encoder: Encoder) throws {
-        try self.map { $0 }.encode(to: encoder)
+        try Swift.Array(self).encode(to: encoder)
     }
 
     public init(from decoder: Decoder) throws {
