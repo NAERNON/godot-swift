@@ -17,8 +17,12 @@ struct InstanceType {
     
     var scope: InstanceTypePart? { scopeGodotType }
     
-    fileprivate init(godotName: String) {
+    fileprivate init?(godotName: String) {
         let preAndPost = godotName.components(separatedBy: ":")
+        guard !preAndPost.isEmpty else {
+            return nil
+        }
+        
         preGodotType = preAndPost.count == 1 ? nil : PreGodotType(rawValue: preAndPost[0])
         
         let post = preAndPost.last!
@@ -30,8 +34,8 @@ struct InstanceType {
         self.godotName = godotName
     }
     
-    static let variant = InstanceType(godotName: "Variant")
-    static let stringName = InstanceType(godotName: "StringName")
+    static let variant = InstanceType(godotName: "Variant")!
+    static let stringName = InstanceType(godotName: "StringName")!
     
     var isSwiftBaseType: Bool {
         finalGodotType.isSwiftBaseType
@@ -128,7 +132,12 @@ struct InstanceType {
 
 extension InstanceType: Decodable {
     init(from decoder: Decoder) throws {
-        self.init(godotName: try String(from: decoder))
+        guard let instanceType = InstanceType(godotName: try String(from: decoder)) else {
+            throw DecodingError.dataCorrupted(.init(codingPath: decoder.codingPath,
+                                                    debugDescription: "Instance type could not be inferred"))
+        }
+        
+        self = instanceType
     }
 }
 

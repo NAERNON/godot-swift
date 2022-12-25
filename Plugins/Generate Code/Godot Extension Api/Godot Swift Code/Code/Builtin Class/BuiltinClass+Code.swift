@@ -390,7 +390,7 @@ Sets all the function bindings and operators used to communicate with Godot.
         Spacer()
         Extension(name.toSwift(), extensions: ["CustomDebugStringConvertible"]) {
             Property("debugDescription").varDefined().public().type("Swift.String").computed {
-                "Variant(self).debugDescription"
+                "Variant(from: self).debugDescription"
             }
         }
     }

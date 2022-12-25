@@ -32,6 +32,10 @@ enum BuildConfiguration: String {
 extension BuildConfiguration: Decodable {
     init(from decoder: Decoder) throws {
         let string = try String(from: decoder)
-        self = BuildConfiguration(rawValue: string)!
+        guard let buildConfiguration = BuildConfiguration(rawValue: string) else {
+            throw DecodingError.dataCorrupted(.init(codingPath: decoder.codingPath,
+                                                    debugDescription: "No correct build configuration found"))
+        }
+        self = buildConfiguration
     }
 }
