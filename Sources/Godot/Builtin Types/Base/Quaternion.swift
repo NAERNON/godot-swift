@@ -103,3 +103,17 @@ public struct Quaternion {
 // MARK: - Extensions
 
 extension Quaternion: Equatable, Hashable {}
+
+extension Quaternion: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try [x, y, z, w].encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        x = try container.decode(Real.self)
+        y = try container.decode(Real.self)
+        z = try container.decode(Real.self)
+        w = try container.decode(Real.self)
+    }
+}

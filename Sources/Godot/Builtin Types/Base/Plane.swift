@@ -71,3 +71,18 @@ public struct Plane {
 // MARK: - Extensions
 
 extension Plane: Equatable, Hashable {}
+
+extension Plane: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try [normal.x, normal.y, normal.z, d].encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        let x = try container.decode(Real.self)
+        let y = try container.decode(Real.self)
+        let z = try container.decode(Real.self)
+        let d = try container.decode(Real.self)
+        self.init(x: x, y: y, z: z, d: d)
+    }
+}

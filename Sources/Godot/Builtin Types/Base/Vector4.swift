@@ -113,3 +113,17 @@ public struct Vector4 {
 extension Vector4: Equatable, Hashable {}
 
 extension Vector4: AdditiveArithmetic, Comparable {}
+
+extension Vector4: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try [x, y, z].encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        x = try container.decode(Real.self)
+        y = try container.decode(Real.self)
+        z = try container.decode(Real.self)
+        w = try container.decode(Real.self)
+    }
+}

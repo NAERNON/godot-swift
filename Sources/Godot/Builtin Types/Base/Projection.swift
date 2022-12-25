@@ -63,3 +63,17 @@ public struct Projection {
 // MARK: - Extensions
 
 extension Projection: Equatable, Hashable {}
+
+extension Projection: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try [xAxis, yAxis, zAxis, wAxis].encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        xAxis = try container.decode(Vector4.self)
+        yAxis = try container.decode(Vector4.self)
+        zAxis = try container.decode(Vector4.self)
+        wAxis = try container.decode(Vector4.self)
+    }
+}

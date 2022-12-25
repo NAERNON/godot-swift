@@ -65,3 +65,16 @@ public struct Basis {
 // MARK: - Extensions
 
 extension Basis: Equatable, Hashable {}
+
+extension Basis: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try [xAxis, yAxis, zAxis].encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        xAxis = try container.decode(Vector3.self)
+        yAxis = try container.decode(Vector3.self)
+        zAxis = try container.decode(Vector3.self)
+    }
+}

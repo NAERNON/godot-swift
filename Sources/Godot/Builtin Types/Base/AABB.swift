@@ -31,3 +31,15 @@ public struct AABB {
 // MARK: - Extensions
 
 extension AABB: Equatable, Hashable {}
+
+extension AABB: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try [position, size].encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        position = try container.decode(Vector3.self)
+        size = try container.decode(Vector3.self)
+    }
+}

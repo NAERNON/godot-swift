@@ -113,3 +113,15 @@ public struct Vector2i {
 extension Vector2i: Equatable, Hashable {}
 
 extension Vector2i: AdditiveArithmetic, Comparable {}
+
+extension Vector2i: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try [x, y].encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        x = try container.decode(Int.self)
+        y = try container.decode(Int.self)
+    }
+}

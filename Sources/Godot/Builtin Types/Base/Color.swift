@@ -79,3 +79,17 @@ public struct Color {
 // MARK: - Extensions
 
 extension Color: Equatable, Hashable {}
+
+extension Color: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try [r, g, b, a].encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        r = try container.decode(Float.self)
+        g = try container.decode(Float.self)
+        b = try container.decode(Float.self)
+        a = try container.decode(Float.self)
+    }
+}

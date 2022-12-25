@@ -83,3 +83,13 @@ extension PackedFloat64Array: Equatable {
         Self._operatorEqual(lhs, rhs)
     }
 }
+
+extension PackedFloat64Array: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try self.map { $0 }.encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        self.init(try Swift.Array<Element>(from: decoder))
+    }
+}

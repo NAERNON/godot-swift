@@ -45,3 +45,15 @@ public struct Rect2 {
 // MARK: - Extensions
 
 extension Rect2: Equatable, Hashable {}
+
+extension Rect2: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try [position, size].encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        position = try container.decode(Vector2.self)
+        size = try container.decode(Vector2.self)
+    }
+}

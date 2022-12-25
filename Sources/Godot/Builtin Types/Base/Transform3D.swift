@@ -93,3 +93,18 @@ public struct Transform3D {
 // MARK: - Extensions
 
 extension Transform3D: Equatable, Hashable {}
+
+extension Transform3D: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try [basis.xAxis, basis.yAxis, basis.zAxis, origin].encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        let xAxis = try container.decode(Vector3.self)
+        let yAxis = try container.decode(Vector3.self)
+        let zAxis = try container.decode(Vector3.self)
+        let origin = try container.decode(Vector3.self)
+        self.init(xAxis: xAxis, yAxis: yAxis, zAxis: zAxis, origin: origin)
+    }
+}

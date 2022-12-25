@@ -39,3 +39,13 @@ extension StringName: Hashable {
         hasher.combine(_hash())
     }
 }
+
+extension StringName: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try Swift.String(godotStringName: self).encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        self.init(swiftString: try Swift.String(from: decoder))
+    }
+}

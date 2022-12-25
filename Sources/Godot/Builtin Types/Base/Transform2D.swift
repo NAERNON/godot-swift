@@ -95,3 +95,16 @@ public struct Transform2D {
 // MARK: - Extensions
 
 extension Transform2D: Equatable, Hashable {}
+
+extension Transform2D: Codable {
+    public func encode(to encoder: Encoder) throws {
+        try [xAxis, yAxis, origin].encode(to: encoder)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        xAxis = try container.decode(Vector2.self)
+        yAxis = try container.decode(Vector2.self)
+        origin = try container.decode(Vector2.self)
+    }
+}
