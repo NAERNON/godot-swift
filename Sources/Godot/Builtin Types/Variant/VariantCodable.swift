@@ -3,6 +3,23 @@ import Foundation
 // MARK: - Protocol definition
 
 /// A type that can encode itself to a `Variant`.
+///
+/// When conforming your own type to the `VariantEncodable` protocol,
+/// do not use the `init<T>(_ encodable: T) where T: VariantEncodable`
+/// initializer for the `makeVariant()`.
+///
+/// ```
+/// extension YourOwnType: VariantEncodable {
+///     static var variantType: Variant.ValueType { .bool }
+///
+///     func makeVariant() -> Variant {
+///         Variant(self) // <-- Error here
+///     }
+/// }
+/// ```
+/// Now, `YourOwnType` conforms to the `VariantEncodable` protocol,
+/// but uses the `Variant` initializer that itself uses the `makeVariant()`
+/// function.
 public protocol VariantEncodable {
     /// The type of the `Variant` created by the `makeVariant()` function.
     static var variantType: Variant.ValueType { get }
@@ -26,7 +43,7 @@ extension Bool: VariantCodable {
     public static var variantType: Variant.ValueType { .bool }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(boolValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Bool {
@@ -38,7 +55,7 @@ extension Int: VariantCodable {
     public static var variantType: Variant.ValueType { .int }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(intValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Int {
@@ -46,107 +63,11 @@ extension Int: VariantCodable {
     }
 }
 
-extension Int8: VariantCodable {
-    public static var variantType: Variant.ValueType { .int }
-    
-    public func makeVariant() -> Variant {
-        Variant(self)
-    }
-    
-    public static func valueFromVariant(_ variant: Variant) -> Int8 {
-        Int8(variant.intValue)
-    }
-}
-
-extension Int16: VariantCodable {
-    public static var variantType: Variant.ValueType { .int }
-    
-    public func makeVariant() -> Variant {
-        Variant(self)
-    }
-    
-    public static func valueFromVariant(_ variant: Variant) -> Int16 {
-        Int16(variant.intValue)
-    }
-}
-
-extension Int32: VariantCodable {
-    public static var variantType: Variant.ValueType { .int }
-    
-    public func makeVariant() -> Variant {
-        Variant(self)
-    }
-    
-    public static func valueFromVariant(_ variant: Variant) -> Int32 {
-        Int32(variant.intValue)
-    }
-}
-
-extension Int64: VariantCodable {
-    public static var variantType: Variant.ValueType { .int }
-    
-    public func makeVariant() -> Variant {
-        Variant(self)
-    }
-    
-    public static func valueFromVariant(_ variant: Variant) -> Int64 {
-        Int64(variant.intValue)
-    }
-}
-
-extension UInt8: VariantCodable {
-    public static var variantType: Variant.ValueType { .int }
-    
-    public func makeVariant() -> Variant {
-        Variant(self)
-    }
-    
-    public static func valueFromVariant(_ variant: Variant) -> UInt8 {
-        UInt8(variant.intValue)
-    }
-}
-
-extension UInt16: VariantCodable {
-    public static var variantType: Variant.ValueType { .int }
-    
-    public func makeVariant() -> Variant {
-        Variant(self)
-    }
-    
-    public static func valueFromVariant(_ variant: Variant) -> UInt16 {
-        UInt16(variant.intValue)
-    }
-}
-
-extension UInt32: VariantCodable {
-    public static var variantType: Variant.ValueType { .int }
-    
-    public func makeVariant() -> Variant {
-        Variant(self)
-    }
-    
-    public static func valueFromVariant(_ variant: Variant) -> UInt32 {
-        UInt32(variant.intValue)
-    }
-}
-
-extension UInt64: VariantCodable {
-    public static var variantType: Variant.ValueType { .int }
-    
-    public func makeVariant() -> Variant {
-        Variant(self)
-    }
-    
-    public static func valueFromVariant(_ variant: Variant) -> UInt64 {
-        UInt64(variant.intValue)
-    }
-}
-
 extension Double: VariantCodable {
     public static var variantType: Variant.ValueType { .float }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(doubleValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Double {
@@ -158,7 +79,7 @@ extension Float: VariantCodable {
     public static var variantType: Variant.ValueType { .float }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(doubleValue: Double(self))
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Float {
@@ -170,7 +91,7 @@ extension Real: VariantCodable {
     public static var variantType: Variant.ValueType { .float }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(doubleValue: Double(self))
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Real {
@@ -182,7 +103,7 @@ extension String: VariantCodable {
     public static var variantType: Variant.ValueType { .string }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(stringValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> String {
@@ -194,7 +115,7 @@ extension Vector2: VariantCodable {
     public static var variantType: Variant.ValueType { .vector2 }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(vector2Value: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Vector2 {
@@ -206,7 +127,7 @@ extension Vector2i: VariantCodable {
     public static var variantType: Variant.ValueType { .vector2i }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(vector2iValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Vector2i {
@@ -218,7 +139,7 @@ extension Rect2: VariantCodable {
     public static var variantType: Variant.ValueType { .rect2 }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(rect2Value: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Rect2 {
@@ -230,7 +151,7 @@ extension Rect2i: VariantCodable {
     public static var variantType: Variant.ValueType { .rect2i }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(rect2iValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Rect2i {
@@ -242,7 +163,7 @@ extension Vector3: VariantCodable {
     public static var variantType: Variant.ValueType { .vector3 }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(vector3Value: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Vector3 {
@@ -254,7 +175,7 @@ extension Vector3i: VariantCodable {
     public static var variantType: Variant.ValueType { .vector3i }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(vector3iValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Vector3i {
@@ -266,7 +187,7 @@ extension Transform2D: VariantCodable {
     public static var variantType: Variant.ValueType { .transform2D }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(transform2DValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Transform2D {
@@ -278,7 +199,7 @@ extension Vector4: VariantCodable {
     public static var variantType: Variant.ValueType { .vector4 }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(vector4Value: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Vector4 {
@@ -290,7 +211,7 @@ extension Vector4i: VariantCodable {
     public static var variantType: Variant.ValueType { .vector4i }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(vector4iValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Vector4i {
@@ -302,7 +223,7 @@ extension Plane: VariantCodable {
     public static var variantType: Variant.ValueType { .plane }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(planeValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Plane {
@@ -314,7 +235,7 @@ extension Quaternion: VariantCodable {
     public static var variantType: Variant.ValueType { .quaternion }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(quaternionValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Quaternion {
@@ -326,7 +247,7 @@ extension AABB: VariantCodable {
     public static var variantType: Variant.ValueType { .aabb }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(aabbValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> AABB {
@@ -338,7 +259,7 @@ extension Basis: VariantCodable {
     public static var variantType: Variant.ValueType { .basis }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(basisValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Basis {
@@ -350,7 +271,7 @@ extension Transform3D: VariantCodable {
     public static var variantType: Variant.ValueType { .transform3D }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(transform3DValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Transform3D {
@@ -362,7 +283,7 @@ extension Projection: VariantCodable {
     public static var variantType: Variant.ValueType { .projection }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(projectionValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Projection {
@@ -374,7 +295,7 @@ extension Color: VariantCodable {
     public static var variantType: Variant.ValueType { .color }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(colorValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Color {
@@ -386,7 +307,7 @@ extension StringName: VariantCodable {
     public static var variantType: Variant.ValueType { .stringName }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(stringNameValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> StringName {
@@ -398,7 +319,7 @@ extension NodePath: VariantCodable {
     public static var variantType: Variant.ValueType { .nodePath }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(nodePathValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> NodePath {
@@ -410,7 +331,7 @@ extension RID: VariantCodable {
     public static var variantType: Variant.ValueType { .rid }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(ridValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> RID {
@@ -422,7 +343,7 @@ extension Object: VariantCodable {
     public static var variantType: Variant.ValueType { .object }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(objectValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Self {
@@ -434,7 +355,7 @@ extension Callable: VariantCodable {
     public static var variantType: Variant.ValueType { .callable }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(callableValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Callable {
@@ -446,7 +367,7 @@ extension Signal: VariantCodable {
     public static var variantType: Variant.ValueType { .signal }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(signalValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Signal {
@@ -458,7 +379,7 @@ extension Dictionary: VariantCodable {
     public static var variantType: Variant.ValueType { .dictionary }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(dictionaryValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Dictionary {
@@ -470,7 +391,7 @@ extension Array: VariantCodable {
     public static var variantType: Variant.ValueType { .array }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(arrayValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> Array {
@@ -482,7 +403,7 @@ extension PackedByteArray: VariantCodable {
     public static var variantType: Variant.ValueType { .packedByteArray }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(packedByteArrayValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> PackedByteArray {
@@ -494,7 +415,7 @@ extension PackedInt32Array: VariantCodable {
     public static var variantType: Variant.ValueType { .packedInt32Array }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(packedInt32ArrayValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> PackedInt32Array {
@@ -506,7 +427,7 @@ extension PackedInt64Array: VariantCodable {
     public static var variantType: Variant.ValueType { .packedInt64Array }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(packedInt64ArrayValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> PackedInt64Array {
@@ -518,7 +439,7 @@ extension PackedFloat32Array: VariantCodable {
     public static var variantType: Variant.ValueType { .packedFloat32Array }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(packedFloat32ArrayValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> PackedFloat32Array {
@@ -530,7 +451,7 @@ extension PackedFloat64Array: VariantCodable {
     public static var variantType: Variant.ValueType { .packedFloat64Array }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(packedFloat64ArrayValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> PackedFloat64Array {
@@ -542,7 +463,7 @@ extension PackedStringArray: VariantCodable {
     public static var variantType: Variant.ValueType { .packedStringArray }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(packedStringArrayValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> PackedStringArray {
@@ -554,7 +475,7 @@ extension PackedVector2Array: VariantCodable {
     public static var variantType: Variant.ValueType { .packedVector2Array }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(packedVector2ArrayValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> PackedVector2Array {
@@ -566,7 +487,7 @@ extension PackedVector3Array: VariantCodable {
     public static var variantType: Variant.ValueType { .packedVector3Array }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(packedVector3ArrayValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> PackedVector3Array {
@@ -578,7 +499,7 @@ extension PackedColorArray: VariantCodable {
     public static var variantType: Variant.ValueType { .packedColorArray }
     
     public func makeVariant() -> Variant {
-        Variant(self)
+        Variant(packedColorArrayValue: self)
     }
     
     public static func valueFromVariant(_ variant: Variant) -> PackedColorArray {

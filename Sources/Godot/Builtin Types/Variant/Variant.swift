@@ -35,7 +35,7 @@ public struct Variant {
         self = encodable.makeVariant()
     }
     
-    public init(_ boolValue: Bool) {
+    public init(boolValue: Bool) {
         let value: UInt8 = boolValue ? 1 : 0
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
@@ -44,7 +44,7 @@ public struct Variant {
         }
     }
     
-    public init(_ intValue: Int) {
+    public init(intValue: Int) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: intValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_int(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -52,7 +52,7 @@ public struct Variant {
         }
     }
     
-    public init(_ doubleValue: Double) {
+    public init(doubleValue: Double) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: doubleValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_float(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -60,7 +60,7 @@ public struct Variant {
         }
     }
     
-    public init(_ stringValue: String) {
+    public init(stringValue: String) {
         self.withUnsafeNativePointer { nativeTypePtr in
             stringValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_string(nativeTypePtr, otherNativeTypePtr)
@@ -68,7 +68,7 @@ public struct Variant {
         }
     }
     
-    public init(_ vector2Value: Vector2) {
+    public init(vector2Value: Vector2) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: vector2Value) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector2(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -76,7 +76,7 @@ public struct Variant {
         }
     }
     
-    public init(_ vector2iValue: Vector2i) {
+    public init(vector2iValue: Vector2i) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: vector2iValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector2i(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -84,7 +84,7 @@ public struct Variant {
         }
     }
     
-    public init(_ rect2Value: Rect2) {
+    public init(rect2Value: Rect2) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: rect2Value) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_rect2(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -92,7 +92,7 @@ public struct Variant {
         }
     }
     
-    public init(_ rect2iValue: Rect2i) {
+    public init(rect2iValue: Rect2i) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: rect2iValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_rect2i(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -100,7 +100,7 @@ public struct Variant {
         }
     }
     
-    public init(_ vector3Value: Vector3) {
+    public init(vector3Value: Vector3) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: vector3Value) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector3(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -108,7 +108,7 @@ public struct Variant {
         }
     }
     
-    public init(_ vector3iValue: Vector3i) {
+    public init(vector3iValue: Vector3i) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: vector3iValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector3i(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -116,7 +116,7 @@ public struct Variant {
         }
     }
     
-    public init(_ transform2DValue: Transform2D) {
+    public init(transform2DValue: Transform2D) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: transform2DValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_transform2D(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -124,7 +124,7 @@ public struct Variant {
         }
     }
     
-    public init(_ vector4Value: Vector4) {
+    public init(vector4Value: Vector4) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: vector4Value) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector4(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -132,7 +132,7 @@ public struct Variant {
         }
     }
     
-    public init(_ vector4iValue: Vector4i) {
+    public init(vector4iValue: Vector4i) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: vector4iValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector4i(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -140,7 +140,7 @@ public struct Variant {
         }
     }
     
-    public init(_ planeValue: Plane) {
+    public init(planeValue: Plane) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: planeValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_plane(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -148,7 +148,7 @@ public struct Variant {
         }
     }
     
-    public init(_ quaternionValue: Quaternion) {
+    public init(quaternionValue: Quaternion) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: quaternionValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_quaternion(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -156,7 +156,7 @@ public struct Variant {
         }
     }
     
-    public init(_ aabbValue: AABB) {
+    public init(aabbValue: AABB) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: aabbValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_aabb(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -164,7 +164,7 @@ public struct Variant {
         }
     }
     
-    public init(_ basisValue: Basis) {
+    public init(basisValue: Basis) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: basisValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_basis(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -172,7 +172,7 @@ public struct Variant {
         }
     }
     
-    public init(_ transform3DValue: Transform3D) {
+    public init(transform3DValue: Transform3D) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: transform3DValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_transform3D(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -180,7 +180,7 @@ public struct Variant {
         }
     }
     
-    public init(_ projectionValue: Projection) {
+    public init(projectionValue: Projection) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: projectionValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_projection(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -188,7 +188,7 @@ public struct Variant {
         }
     }
     
-    public init(_ colorValue: Color) {
+    public init(colorValue: Color) {
         self.withUnsafeNativePointer { nativeTypePtr in
             withUnsafePointer(to: colorValue) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_color(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
@@ -196,7 +196,7 @@ public struct Variant {
         }
     }
     
-    public init(_ stringNameValue: StringName) {
+    public init(stringNameValue: StringName) {
         self.withUnsafeNativePointer { nativeTypePtr in
             stringNameValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_stringName(nativeTypePtr, otherNativeTypePtr)
@@ -204,7 +204,7 @@ public struct Variant {
         }
     }
     
-    public init(_ nodePathValue: NodePath) {
+    public init(nodePathValue: NodePath) {
         self.withUnsafeNativePointer { nativeTypePtr in
             nodePathValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_nodePath(nativeTypePtr, otherNativeTypePtr)
@@ -212,7 +212,7 @@ public struct Variant {
         }
     }
     
-    public init(_ ridValue: RID) {
+    public init(ridValue: RID) {
         self.withUnsafeNativePointer { nativeTypePtr in
             ridValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_rid(nativeTypePtr, otherNativeTypePtr)
@@ -220,7 +220,7 @@ public struct Variant {
         }
     }
     
-    public init(_ objectValue: Object) {
+    public init(objectValue: Object) {
         self.withUnsafeNativePointer { nativeTypePtr in
             objectValue.withUnsafeNativePointer { otherNativeTypePtr in
                 withUnsafePointer(to: otherNativeTypePtr) { pointer in
@@ -230,7 +230,7 @@ public struct Variant {
         }
     }
     
-    public init(_ callableValue: Callable) {
+    public init(callableValue: Callable) {
         self.withUnsafeNativePointer { nativeTypePtr in
             callableValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_callable(nativeTypePtr, otherNativeTypePtr)
@@ -238,7 +238,7 @@ public struct Variant {
         }
     }
     
-    public init(_ signalValue: Signal) {
+    public init(signalValue: Signal) {
         self.withUnsafeNativePointer { nativeTypePtr in
             signalValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_signal(nativeTypePtr, otherNativeTypePtr)
@@ -246,7 +246,7 @@ public struct Variant {
         }
     }
     
-    public init(_ dictionaryValue: Dictionary) {
+    public init(dictionaryValue: Dictionary) {
         self.withUnsafeNativePointer { nativeTypePtr in
             dictionaryValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_dictionary(nativeTypePtr, otherNativeTypePtr)
@@ -254,7 +254,7 @@ public struct Variant {
         }
     }
     
-    public init(_ arrayValue: Array) {
+    public init(arrayValue: Array) {
         self.withUnsafeNativePointer { nativeTypePtr in
             arrayValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_array(nativeTypePtr, otherNativeTypePtr)
@@ -262,7 +262,7 @@ public struct Variant {
         }
     }
     
-    public init(_ packedByteArrayValue: PackedByteArray) {
+    public init(packedByteArrayValue: PackedByteArray) {
         self.withUnsafeNativePointer { nativeTypePtr in
             packedByteArrayValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedByteArray(nativeTypePtr, otherNativeTypePtr)
@@ -270,7 +270,7 @@ public struct Variant {
         }
     }
     
-    public init(_ packedInt32ArrayValue: PackedInt32Array) {
+    public init(packedInt32ArrayValue: PackedInt32Array) {
         self.withUnsafeNativePointer { nativeTypePtr in
             packedInt32ArrayValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedInt32Array(nativeTypePtr, otherNativeTypePtr)
@@ -278,7 +278,7 @@ public struct Variant {
         }
     }
     
-    public init(_ packedInt64ArrayValue: PackedInt64Array) {
+    public init(packedInt64ArrayValue: PackedInt64Array) {
         self.withUnsafeNativePointer { nativeTypePtr in
             packedInt64ArrayValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedInt64Array(nativeTypePtr, otherNativeTypePtr)
@@ -286,7 +286,7 @@ public struct Variant {
         }
     }
     
-    public init(_ packedFloat32ArrayValue: PackedFloat32Array) {
+    public init(packedFloat32ArrayValue: PackedFloat32Array) {
         self.withUnsafeNativePointer { nativeTypePtr in
             packedFloat32ArrayValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedFloat32Array(nativeTypePtr, otherNativeTypePtr)
@@ -294,7 +294,7 @@ public struct Variant {
         }
     }
     
-    public init(_ packedFloat64ArrayValue: PackedFloat64Array) {
+    public init(packedFloat64ArrayValue: PackedFloat64Array) {
         self.withUnsafeNativePointer { nativeTypePtr in
             packedFloat64ArrayValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedFloat64Array(nativeTypePtr, otherNativeTypePtr)
@@ -302,7 +302,7 @@ public struct Variant {
         }
     }
     
-    public init(_ packedStringArrayValue: PackedStringArray) {
+    public init(packedStringArrayValue: PackedStringArray) {
         self.withUnsafeNativePointer { nativeTypePtr in
             packedStringArrayValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedStringArray(nativeTypePtr, otherNativeTypePtr)
@@ -310,7 +310,7 @@ public struct Variant {
         }
     }
     
-    public init(_ packedVector2ArrayValue: PackedVector2Array) {
+    public init(packedVector2ArrayValue: PackedVector2Array) {
         self.withUnsafeNativePointer { nativeTypePtr in
             packedVector2ArrayValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedVector2Array(nativeTypePtr, otherNativeTypePtr)
@@ -318,7 +318,7 @@ public struct Variant {
         }
     }
     
-    public init(_ packedVector3ArrayValue: PackedVector3Array) {
+    public init(packedVector3ArrayValue: PackedVector3Array) {
         self.withUnsafeNativePointer { nativeTypePtr in
             packedVector3ArrayValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedVector3Array(nativeTypePtr, otherNativeTypePtr)
@@ -326,7 +326,7 @@ public struct Variant {
         }
     }
     
-    public init(_ packedColorArrayValue: PackedColorArray) {
+    public init(packedColorArrayValue: PackedColorArray) {
         self.withUnsafeNativePointer { nativeTypePtr in
             packedColorArrayValue.withUnsafeNativePointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedColorArray(nativeTypePtr, otherNativeTypePtr)
