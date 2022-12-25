@@ -26,6 +26,18 @@ public struct Rect2i {
     public init() {
         self.init(position: Vector2i(), size: Vector2i())
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Rect2i, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Rect2i) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
 }
+
+// MARK: - Extensions
 
 extension Rect2i: Equatable, Hashable {}

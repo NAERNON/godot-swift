@@ -14,6 +14,8 @@ extension PackedInt32Array {
     }
 }
 
+// MARK: - Extensions
+
 extension PackedInt32Array: Sequence {}
 
 extension PackedInt32Array: Collection {

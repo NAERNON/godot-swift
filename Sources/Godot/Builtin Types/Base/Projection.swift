@@ -40,6 +40,26 @@ public struct Projection {
     public init() {
         self.init(xAxis: Vector4(), yAxis: Vector4(), zAxis: Vector4(), wAxis: Vector4())
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Projection, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Projection) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
+    
+    public static func * (lhs: Projection, rhs: Vector4) -> Vector4 {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func * (lhs: Projection, rhs: Projection) -> Projection {
+        Self._operatorMultiply(lhs, rhs)
+    }
 }
+
+// MARK: - Extensions
 
 extension Projection: Equatable, Hashable {}

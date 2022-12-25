@@ -14,6 +14,8 @@ extension PackedColorArray {
     }
 }
 
+// MARK: - Extensions
+
 extension PackedColorArray: Sequence {}
 
 extension PackedColorArray: Collection {

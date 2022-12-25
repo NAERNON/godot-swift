@@ -28,6 +28,92 @@ public struct Vector4i {
     public init() {
         self.init(x: 0, y: 0, z: 0, w: 0)
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Vector4i, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Vector4i) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
+    
+    public static prefix func - (vector4i: Vector4i) -> Vector4i {
+        Self._operatorNegate(vector4i)
+    }
+    
+    public static prefix func + (vector4i: Vector4i) -> Vector4i {
+        Self._operatorPositive(vector4i)
+    }
+    
+    public static func * <T>(lhs: Vector4i, rhs: T) -> Vector4i where T : BinaryInteger {
+        Self._operatorMultiply(lhs, Int(rhs))
+    }
+    
+    public static func * <T>(lhs: T, rhs: Vector4i) -> Vector4i where T : BinaryInteger {
+        Self._operatorMultiply(rhs, Int(lhs))
+    }
+    
+    public static func * <T>(lhs: Vector4i, rhs: T) -> Vector4 where T : BinaryFloatingPoint {
+        Self._operatorMultiply(lhs, Real(rhs))
+    }
+    
+    public static func * <T>(lhs: T, rhs: Vector4i) -> Vector4 where T : BinaryFloatingPoint {
+        Self._operatorMultiply(rhs, Real(lhs))
+    }
+    
+    public static func / <T>(lhs: Vector4i, rhs: T) -> Vector4i where T : BinaryInteger {
+        Self._operatorDivide(lhs, Int(rhs))
+    }
+    
+    public static func / <T>(lhs: Vector4i, rhs: T) -> Vector4 where T : BinaryFloatingPoint {
+        Self._operatorDivide(lhs, Real(rhs))
+    }
+    
+    public static func % <T>(lhs: Vector4i, rhs: T) -> Vector4i where T : BinaryInteger {
+        Self._operatorModule(lhs, Int(rhs))
+    }
+    
+    public static func < (lhs: Vector4i, rhs: Vector4i) -> Bool {
+        Self._operatorLess(lhs, rhs)
+    }
+    
+    public static func <= (lhs: Vector4i, rhs: Vector4i) -> Bool {
+        Self._operatorLessEqual(lhs, rhs)
+    }
+    
+    public static func > (lhs: Vector4i, rhs: Vector4i) -> Bool {
+        Self._operatorGreater(lhs, rhs)
+    }
+    
+    public static func >= (lhs: Vector4i, rhs: Vector4i) -> Bool {
+        Self._operatorGreaterEqual(lhs, rhs)
+    }
+    
+    public static func + (lhs: Vector4i, rhs: Vector4i) -> Vector4i {
+        Self._operatorAdd(lhs, rhs)
+    }
+    
+    public static func - (lhs: Vector4i, rhs: Vector4i) -> Vector4i {
+        Self._operatorSubtract(lhs, rhs)
+    }
+    
+    public static func * (lhs: Vector4i, rhs: Vector4i) -> Vector4i {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func / (lhs: Vector4i, rhs: Vector4i) -> Vector4i {
+        Self._operatorDivide(lhs, rhs)
+    }
+    
+    public static func % (lhs: Vector4i, rhs: Vector4i) -> Vector4i {
+        Self._operatorModule(lhs, rhs)
+    }
 }
 
+// MARK: - Extensions
+
 extension Vector4i: Equatable, Hashable {}
+
+extension Vector4i: AdditiveArithmetic, Comparable {}

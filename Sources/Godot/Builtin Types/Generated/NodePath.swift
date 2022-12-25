@@ -14,6 +14,8 @@ extension NodePath {
     }
 }
 
+// MARK: - Extensions
+
 extension NodePath: Equatable {
     public static func == (lhs: NodePath, rhs: NodePath) -> Bool {
         Self._operatorEqual(lhs, rhs)

@@ -40,6 +40,56 @@ public struct Transform3D {
                                zAxis: Vector3(x: zAxisX, y: zAxisY, z: zAxisZ)),
                   origin: Vector3(x: originX, y: originY, z: originZ))
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Transform3D, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Transform3D) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
+    
+    public static func * <T>(lhs: Transform3D, rhs: T) -> Transform3D where T : BinaryInteger {
+        Self._operatorMultiply(lhs, Int(rhs))
+    }
+    
+    public static func * <T>(lhs: T, rhs: Transform3D) -> Transform3D where T : BinaryInteger {
+        Self._operatorMultiply(rhs, Int(lhs))
+    }
+    
+    public static func * <T>(lhs: Transform3D, rhs: T) -> Transform3D where T : BinaryFloatingPoint {
+        Self._operatorMultiply(lhs, Real(rhs))
+    }
+    
+    public static func * <T>(lhs: T, rhs: Transform3D) -> Transform3D where T : BinaryFloatingPoint {
+        Self._operatorMultiply(rhs, Real(lhs))
+    }
+    
+    public static func * (lhs: Transform3D, rhs: Vector3) -> Vector3 {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func * (lhs: Transform3D, rhs: Plane) -> Plane {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func * (lhs: Transform3D, rhs: AABB) -> AABB {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func * (lhs: Transform3D, rhs: Transform3D) -> Transform3D {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    // MARK: Functions
+    
+    public func multipliedWith(packedVector3Array: PackedVector3Array) -> PackedVector3Array {
+        Self._operatorMultiply(self, packedVector3Array)
+    }
 }
+
+// MARK: - Extensions
 
 extension Transform3D: Equatable, Hashable {}

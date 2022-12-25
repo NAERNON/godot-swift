@@ -36,6 +36,8 @@ extension String {
     }
 }
 
+// MARK: - Extensions
+
 extension String: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
     public init(stringLiteral value: Swift.String) {
         self.init(swiftString: value)

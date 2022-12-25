@@ -46,6 +46,8 @@ extension Array {
     }
 }
 
+// MARK: - Extensions
+
 extension Array: Sequence {}
 
 extension Array: Collection {

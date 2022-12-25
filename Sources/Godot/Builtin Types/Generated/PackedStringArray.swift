@@ -14,6 +14,8 @@ extension PackedStringArray {
     }
 }
 
+// MARK: - Extensions
+
 extension PackedStringArray: Sequence {}
 
 extension PackedStringArray: Collection {

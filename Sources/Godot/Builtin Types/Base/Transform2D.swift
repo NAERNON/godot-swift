@@ -46,6 +46,52 @@ public struct Transform2D {
     public init<T>(rotation: T, scale: Vector2, skew: T, position: Vector2) where T : BinaryInteger {
         self = Self._constructor(rotation: Real(rotation), scale: scale, skew: Real(skew), position: position)
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Transform2D, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Transform2D) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
+    
+    public static func * <T>(lhs: Transform2D, rhs: T) -> Transform2D where T : BinaryInteger {
+        Self._operatorMultiply(lhs, Int(rhs))
+    }
+    
+    public static func * <T>(lhs: T, rhs: Transform2D) -> Transform2D where T : BinaryInteger {
+        Self._operatorMultiply(rhs, Int(lhs))
+    }
+    
+    public static func * <T>(lhs: Transform2D, rhs: T) -> Transform2D where T : BinaryFloatingPoint {
+        Self._operatorMultiply(lhs, Real(rhs))
+    }
+    
+    public static func * <T>(lhs: T, rhs: Transform2D) -> Transform2D where T : BinaryFloatingPoint {
+        Self._operatorMultiply(rhs, Real(lhs))
+    }
+    
+    public static func * (lhs: Transform2D, rhs: Vector2) -> Vector2 {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func * (lhs: Transform2D, rhs: Rect2) -> Rect2 {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func * (lhs: Transform2D, rhs: Transform2D) -> Transform2D {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    // MARK: Functions
+    
+    public func multipliedWith(packedVector2Array: PackedVector2Array) -> PackedVector2Array {
+        Self._operatorMultiply(self, packedVector2Array)
+    }
 }
+
+// MARK: - Extensions
 
 extension Transform2D: Equatable, Hashable {}

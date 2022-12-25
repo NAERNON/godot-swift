@@ -18,6 +18,8 @@ extension StringName {
     }
 }
 
+// MARK: - Extensions
+
 extension StringName: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
     public init(stringLiteral value: Swift.String) {
         self.init(swiftString: value)

@@ -14,6 +14,8 @@ extension PackedFloat64Array {
     }
 }
 
+// MARK: - Extensions
+
 extension PackedFloat64Array: Sequence {}
 
 extension PackedFloat64Array: Collection {

@@ -10,6 +10,8 @@ extension Dictionary {
     }
 }
 
+// MARK: - Extensions
+
 extension Dictionary: Equatable {
     public static func == (lhs: Dictionary, rhs: Dictionary) -> Bool {
         Self._operatorEqual(lhs, rhs)

@@ -14,6 +14,8 @@ extension Callable {
     }
 }
 
+// MARK: - Extensions
+
 extension Callable: Equatable {
     public static func == (lhs: Callable, rhs: Callable) -> Bool {
         Self._operatorEqual(lhs, rhs)

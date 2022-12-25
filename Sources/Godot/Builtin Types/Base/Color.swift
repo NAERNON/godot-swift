@@ -32,6 +32,50 @@ public struct Color {
     public init() {
         self.init(r: 0, g: 0, b: 0, a: 0)
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Color, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Color) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
+    
+    public static func * <T>(lhs: Color, rhs: T) -> Color where T : BinaryInteger {
+        Self._operatorMultiply(lhs, Int(rhs))
+    }
+    
+    public static func * <T>(lhs: Color, rhs: T) -> Color where T : BinaryFloatingPoint {
+        Self._operatorMultiply(lhs, Float(rhs))
+    }
+    
+    public static func / <T>(lhs: Color, rhs: T) -> Color where T : BinaryInteger {
+        Self._operatorDivide(lhs, Int(rhs))
+    }
+    
+    public static func / <T>(lhs: Color, rhs: T) -> Color where T : BinaryFloatingPoint {
+        Self._operatorDivide(lhs, Float(rhs))
+    }
+    
+    public static func + (lhs: Color, rhs: Color) -> Color {
+        Self._operatorAdd(lhs, rhs)
+    }
+    
+    public static func - (lhs: Color, rhs: Color) -> Color {
+        Self._operatorSubtract(lhs, rhs)
+    }
+    
+    public static func * (lhs: Color, rhs: Color) -> Color {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func / (lhs: Color, rhs: Color) -> Color {
+        Self._operatorDivide(lhs, rhs)
+    }
 }
+
+// MARK: - Extensions
 
 extension Color: Equatable, Hashable {}

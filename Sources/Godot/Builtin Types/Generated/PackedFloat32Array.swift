@@ -14,6 +14,8 @@ extension PackedFloat32Array {
     }
 }
 
+// MARK: - Extensions
+
 extension PackedFloat32Array: Sequence {}
 
 extension PackedFloat32Array: Collection {

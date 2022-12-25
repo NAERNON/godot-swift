@@ -34,6 +34,34 @@ public struct Basis {
     public init<T>(axis: Vector3, angle: T) where T : BinaryInteger {
         self = Self._constructor(axis: axis, angle: Real(angle))
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Basis, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Basis) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
+    
+    public static func * <T>(lhs: Basis, rhs: T) -> Basis where T : BinaryInteger {
+        Self._operatorMultiply(lhs, Int(rhs))
+    }
+    
+    public static func * <T>(lhs: Basis, rhs: T) -> Basis where T : BinaryFloatingPoint {
+        Self._operatorMultiply(lhs, Real(rhs))
+    }
+    
+    public static func * (lhs: Basis, rhs: Vector3) -> Vector3 {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func * (lhs: Basis, rhs: Basis) -> Basis {
+        Self._operatorMultiply(lhs, rhs)
+    }
 }
+
+// MARK: - Extensions
 
 extension Basis: Equatable, Hashable {}

@@ -26,6 +26,96 @@ public struct Vector3 {
     public init() {
         self.init(x: 0, y: 0, z: 0)
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Vector3, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Vector3) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
+    
+    public static prefix func - (vector3: Vector3) -> Vector3 {
+        Self._operatorNegate(vector3)
+    }
+    
+    public static prefix func + (vector3: Vector3) -> Vector3 {
+        Self._operatorPositive(vector3)
+    }
+    
+    public static func * <T>(lhs: Vector3, rhs: T) -> Vector3 where T : BinaryInteger {
+        Self._operatorMultiply(lhs, Int(rhs))
+    }
+    
+    public static func * <T>(lhs: T, rhs: Vector3) -> Vector3 where T : BinaryInteger {
+        Self._operatorMultiply(rhs, Int(lhs))
+    }
+    
+    public static func * <T>(lhs: Vector3, rhs: T) -> Vector3 where T : BinaryFloatingPoint {
+        Self._operatorMultiply(lhs, Real(rhs))
+    }
+    
+    public static func * <T>(lhs: T, rhs: Vector3) -> Vector3 where T : BinaryFloatingPoint {
+        Self._operatorMultiply(rhs, Real(lhs))
+    }
+    
+    public static func / <T>(lhs: Vector3, rhs: T) -> Vector3 where T : BinaryInteger {
+        Self._operatorDivide(lhs, Int(rhs))
+    }
+    
+    public static func / <T>(lhs: Vector3, rhs: T) -> Vector3 where T : BinaryFloatingPoint {
+        Self._operatorDivide(lhs, Real(rhs))
+    }
+    
+    public static func < (lhs: Vector3, rhs: Vector3) -> Bool {
+        Self._operatorLess(lhs, rhs)
+    }
+    
+    public static func <= (lhs: Vector3, rhs: Vector3) -> Bool {
+        Self._operatorLessEqual(lhs, rhs)
+    }
+    
+    public static func > (lhs: Vector3, rhs: Vector3) -> Bool {
+        Self._operatorGreater(lhs, rhs)
+    }
+    
+    public static func >= (lhs: Vector3, rhs: Vector3) -> Bool {
+        Self._operatorGreaterEqual(lhs, rhs)
+    }
+    
+    public static func + (lhs: Vector3, rhs: Vector3) -> Vector3 {
+        Self._operatorAdd(lhs, rhs)
+    }
+    
+    public static func - (lhs: Vector3, rhs: Vector3) -> Vector3 {
+        Self._operatorSubtract(lhs, rhs)
+    }
+    
+    public static func * (lhs: Vector3, rhs: Vector3) -> Vector3 {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func / (lhs: Vector3, rhs: Vector3) -> Vector3 {
+        Self._operatorDivide(lhs, rhs)
+    }
+    
+    public static func * (lhs: Vector3, rhs: Quaternion) -> Vector3 {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func * (lhs: Vector3, rhs: Basis) -> Vector3 {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func * (lhs: Vector3, rhs: Transform3D) -> Vector3 {
+        Self._operatorMultiply(lhs, rhs)
+    }
 }
 
+// MARK: - Extensions
+
 extension Vector3: Equatable, Hashable {}
+
+extension Vector3: AdditiveArithmetic, Comparable {}

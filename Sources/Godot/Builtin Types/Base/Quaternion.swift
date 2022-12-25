@@ -40,6 +40,66 @@ public struct Quaternion {
     public init() {
         self.init(x: 0, y: 0, z: 0, w: 0)
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Quaternion, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Quaternion) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
+    
+    public static prefix func - (quaternion: Quaternion) -> Quaternion {
+        Self._operatorNegate(quaternion)
+    }
+    
+    public static prefix func + (quaternion: Quaternion) -> Quaternion {
+        Self._operatorPositive(quaternion)
+    }
+    
+    public static func * <T>(lhs: Quaternion, rhs: T) -> Quaternion where T : BinaryInteger {
+        Self._operatorMultiply(lhs, Int(rhs))
+    }
+    
+    public static func * <T>(lhs: T, rhs: Quaternion) -> Quaternion where T : BinaryInteger {
+        Self._operatorMultiply(rhs, Int(lhs))
+    }
+    
+    public static func * <T>(lhs: Quaternion, rhs: T) -> Quaternion where T : BinaryFloatingPoint {
+        Self._operatorMultiply(lhs, Real(rhs))
+    }
+    
+    public static func * <T>(lhs: T, rhs: Quaternion) -> Quaternion where T : BinaryFloatingPoint {
+        Self._operatorMultiply(rhs, Real(lhs))
+    }
+    
+    public static func / <T>(lhs: Quaternion, rhs: T) -> Quaternion where T : BinaryInteger {
+        Self._operatorDivide(lhs, Int(rhs))
+    }
+    
+    public static func / <T>(lhs: Quaternion, rhs: T) -> Quaternion where T : BinaryFloatingPoint {
+        Self._operatorDivide(lhs, Real(rhs))
+    }
+    
+    public static func * (lhs: Quaternion, rhs: Vector3) -> Vector3 {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
+    public static func + (lhs: Quaternion, rhs: Quaternion) -> Quaternion {
+        Self._operatorAdd(lhs, rhs)
+    }
+    
+    public static func - (lhs: Quaternion, rhs: Quaternion) -> Quaternion {
+        Self._operatorSubtract(lhs, rhs)
+    }
+    
+    public static func * (lhs: Quaternion, rhs: Quaternion) -> Quaternion {
+        Self._operatorMultiply(lhs, rhs)
+    }
 }
+
+// MARK: - Extensions
 
 extension Quaternion: Equatable, Hashable {}

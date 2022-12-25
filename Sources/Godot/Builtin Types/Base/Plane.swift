@@ -44,6 +44,30 @@ public struct Plane {
     public init() {
         self.init(normal: Vector3(), d: 0)
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Plane, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Plane) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
+    
+    public static prefix func - (plane: Plane) -> Plane {
+        Self._operatorNegate(plane)
+    }
+    
+    public static prefix func + (plane: Plane) -> Plane {
+        Self._operatorPositive(plane)
+    }
+    
+    public static func * (lhs: Plane, rhs: Transform3D) -> Plane {
+        Self._operatorMultiply(lhs, rhs)
+    }
 }
+
+// MARK: - Extensions
 
 extension Plane: Equatable, Hashable {}

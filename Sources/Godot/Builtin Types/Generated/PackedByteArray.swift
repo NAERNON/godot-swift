@@ -20,6 +20,8 @@ extension PackedByteArray {
     }
 }
 
+// MARK: - Extensions
+
 extension PackedByteArray: Sequence {}
 
 extension PackedByteArray: Collection {

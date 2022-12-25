@@ -14,6 +14,8 @@ extension PackedVector2Array {
     }
 }
 
+// MARK: - Extensions
+
 extension PackedVector2Array: Sequence {}
 
 extension PackedVector2Array: Collection {
