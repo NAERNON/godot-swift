@@ -31,7 +31,7 @@ public struct Variant {
         }
     }
     
-    public init<T>(_ encodable: T) where T: VariantEncodable {
+    public init<T>(from encodable: T) where T: VariantEncodable {
         self = encodable.makeVariant()
     }
     
@@ -1049,13 +1049,13 @@ extension Variant: Hashable {
 
 extension Variant: ExpressibleByFloatLiteral {
     public init(floatLiteral value: Double) {
-        self.init(value)
+        self.init(doubleValue: value)
     }
 }
 
 extension Variant: ExpressibleByStringLiteral {
     public init(stringLiteral value: Swift.String) {
-        self.init(String(swiftString: value))
+        self.init(stringValue: String(swiftString: value))
     }
 }
 
@@ -1063,13 +1063,13 @@ extension Variant: ExpressibleByStringInterpolation {}
 
 extension Variant: ExpressibleByIntegerLiteral {
     public init(integerLiteral value: Int) {
-        self.init(value)
+        self.init(intValue: value)
     }
 }
 
 extension Variant: ExpressibleByBooleanLiteral {
     public init(booleanLiteral value: BooleanLiteralType) {
-        self.init(value)
+        self.init(boolValue: value)
     }
 }
 

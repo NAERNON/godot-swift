@@ -45,7 +45,7 @@ public struct GodotOutput: TextOutputStream {
     
     /// Prints the current string to print to Godot and erases it.
     public mutating func print() {
-        printVariant(Variant(String(swiftString: stringToPrint)))
+        printVariant(Variant(from: String(swiftString: stringToPrint)))
         stringToPrint.removeAll()
     }
     

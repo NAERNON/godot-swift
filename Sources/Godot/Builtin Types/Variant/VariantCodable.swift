@@ -5,15 +5,15 @@ import Foundation
 /// A type that can encode itself to a `Variant`.
 ///
 /// When conforming your own type to the `VariantEncodable` protocol,
-/// do not use the `init<T>(_ encodable: T) where T: VariantEncodable`
-/// initializer for the `makeVariant()`.
+/// do not use the `init<T>(from encodable: T) where T : VariantEncodable`
+/// initializer for the `makeVariant()` function.
 ///
 /// ```
 /// extension YourOwnType: VariantEncodable {
 ///     static var variantType: Variant.ValueType { .bool }
 ///
 ///     func makeVariant() -> Variant {
-///         Variant(self) // <-- Error here
+///         Variant(from: self) // <-- Error here
 ///     }
 /// }
 /// ```

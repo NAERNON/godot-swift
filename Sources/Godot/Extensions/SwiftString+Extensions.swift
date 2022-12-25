@@ -8,4 +8,8 @@ extension Swift.String {
         }
         self = string
     }
+    
+    public init(godotStringName: Godot.StringName) {
+        self.init(godotString: Godot.String(stringName: godotStringName))
+    }
 }
