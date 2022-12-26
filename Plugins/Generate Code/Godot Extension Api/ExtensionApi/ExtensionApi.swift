@@ -13,18 +13,6 @@ struct ExtensionApi: Decodable {
     let singletons: [Singleton]
     let nativeStructures: [NativeStructure]
     
-    private enum CodingKeys: String, CodingKey {
-        case header
-        case builtinClassSizes = "builtin_class_sizes"
-        case builtinClassMemberOffsets = "builtin_class_member_offsets"
-        case globalEnums = "global_enums"
-        case utilityFunctions = "utility_functions"
-        case builtinClasses = "builtin_classes"
-        case classes
-        case singletons
-        case nativeStructures = "native_structures"
-    }
-    
     // MARK: - Argument
     
     struct Argument: Decodable {
@@ -32,13 +20,6 @@ struct ExtensionApi: Decodable {
         let type: InstanceType
         let meta: String?
         let defaultValue: ConstantValue?
-        
-        private enum CodingKeys: String, CodingKey {
-            case name
-            case type
-            case meta
-            case defaultValue = "default_value"
-        }
     }
     
     // MARK: - Header
@@ -50,15 +31,6 @@ struct ExtensionApi: Decodable {
         let versionStatus: String
         let versionBuild: String
         let versionFullName: String
-        
-        private enum CodingKeys: String, CodingKey {
-            case versionMajor = "version_major"
-            case versionMinor = "version_minor"
-            case versionPatch = "version_patch"
-            case versionStatus = "version_status"
-            case versionBuild = "version_build"
-            case versionFullName = "version_full_name"
-        }
     }
     
     // MARK: - Class sizes
@@ -66,11 +38,6 @@ struct ExtensionApi: Decodable {
     struct ClassSizes: Decodable {
         let buildConfiguration: BuildConfiguration
         let sizes: [Size]
-        
-        private enum CodingKeys: String, CodingKey {
-            case buildConfiguration = "build_configuration"
-            case sizes
-        }
         
         // MARK: Size
         
@@ -85,11 +52,6 @@ struct ExtensionApi: Decodable {
     struct MemberOffsets: Decodable {
         let buildConfiguration: BuildConfiguration
         let classes: [Class]
-        
-        private enum CodingKeys: String, CodingKey {
-            case buildConfiguration = "build_configuration"
-            case classes
-        }
         
         // MARK: Class
         
@@ -111,12 +73,6 @@ struct ExtensionApi: Decodable {
         let isBitfield: Bool?
         let values: [Value]
         
-        private enum CodingKeys: String, CodingKey {
-            case name
-            case isBitfield = "is_bitfield"
-            case values
-        }
-        
         // MARK: Value
         
         struct Value: Decodable {
@@ -134,15 +90,6 @@ struct ExtensionApi: Decodable {
         let isVararg: Bool
         let hash: Int
         let arguments: [Argument]?
-        
-        private enum CodingKeys: String, CodingKey {
-            case name
-            case returnType = "return_type"
-            case category
-            case isVararg = "is_vararg"
-            case hash
-            case arguments
-        }
     }
     
     // MARK: - Builtin class
@@ -159,19 +106,6 @@ struct ExtensionApi: Decodable {
         let constructors: [Constructor]
         let hasDestructor: Bool
         
-        private enum CodingKeys: String, CodingKey {
-            case name
-            case indexingReturnType = "indexing_return_type"
-            case isKeyed = "is_keyed"
-            case members
-            case constants
-            case enums
-            case operators
-            case methods
-            case constructors
-            case hasDestructor = "has_destructor"
-        }
-        
         // MARK: Constant
         
         struct Constant: Decodable {
@@ -186,12 +120,6 @@ struct ExtensionApi: Decodable {
             let name: FunctionName
             let rightType: InstanceType?
             let returnType: InstanceType
-            
-            private enum CodingKeys: String, CodingKey {
-                case name
-                case rightType = "right_type"
-                case returnType = "return_type"
-            }
         }
         
         // MARK: Method
@@ -204,16 +132,6 @@ struct ExtensionApi: Decodable {
             let isStatic: Bool
             let hash: Int
             let arguments: [Argument]?
-            
-            private enum CodingKeys: String, CodingKey {
-                case name
-                case returnType = "return_type"
-                case isVararg = "is_vararg"
-                case isConst = "is_const"
-                case isStatic = "is_static"
-                case hash
-                case arguments
-            }
         }
         
         // MARK: Constructor
@@ -235,16 +153,6 @@ struct ExtensionApi: Decodable {
         let enums: [Enum]?
         let methods: [Method]?
         
-        private enum CodingKeys: String, CodingKey {
-            case name
-            case isRefcounted = "is_refcounted"
-            case isInstantiable = "is_instantiable"
-            case inherits
-            case apiType = "api_type"
-            case enums
-            case methods
-        }
-        
         // MARK: Method
         
         struct Method: Decodable {
@@ -256,17 +164,6 @@ struct ExtensionApi: Decodable {
             let hash: Int?
             let returnValue: ReturnValue?
             let arguments: [Argument]?
-            
-            private enum CodingKeys: String, CodingKey {
-                case name
-                case isConst = "is_const"
-                case isVararg = "is_vararg"
-                case isStatic = "is_static"
-                case isVirtual = "is_virtual"
-                case hash
-                case returnValue = "return_value"
-                case arguments
-            }
             
             // MARK: Return value
             

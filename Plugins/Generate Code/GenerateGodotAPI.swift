@@ -15,6 +15,7 @@ struct GenerateGodotAPI: CommandPlugin {
         let data = try Data(contentsOf: extensionApiFileUrl)
         
         let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         let extensionApi = try jsonDecoder.decode(ExtensionApi.self, from: data)
         
         // MARK: Generate files
