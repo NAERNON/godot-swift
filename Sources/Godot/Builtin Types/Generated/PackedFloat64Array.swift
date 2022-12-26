@@ -12,6 +12,16 @@ extension PackedFloat64Array {
     public init(array: Array) {
         self = Self._constructor(array)
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: PackedFloat64Array, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: PackedFloat64Array) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
 }
 
 // MARK: - Extensions

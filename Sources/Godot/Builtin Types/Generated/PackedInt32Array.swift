@@ -12,6 +12,16 @@ extension PackedInt32Array {
     public init(array: Array) {
         self = Self._constructor(array)
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: PackedInt32Array, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: PackedInt32Array) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
 }
 
 // MARK: - Extensions

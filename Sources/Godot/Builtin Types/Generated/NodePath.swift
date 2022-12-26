@@ -12,6 +12,16 @@ extension NodePath {
     public init(string: String) {
         self = Self._constructor(string)
     }
+        
+    // MARK: Operators
+    
+    public static func == (lhs: NodePath, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: NodePath) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
 }
 
 // MARK: - Extensions

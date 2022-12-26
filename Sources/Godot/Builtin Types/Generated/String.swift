@@ -31,8 +31,22 @@ extension String {
         self = String(swiftString: .init(c))
     }
     
+    // MARK: Operators
+    
+    public static func == (lhs: String, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: String) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
+    
     public static func + (lhs: String, rhs: String) -> String {
         Self._operatorAdd(lhs, rhs)
+    }
+    
+    public static func == (lhs: String, rhs: StringName) -> Bool {
+        Self._operatorEqual(lhs, rhs)
     }
 }
 

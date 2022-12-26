@@ -16,6 +16,20 @@ extension StringName {
     public init(string: String) {
         self = Self._constructor(string)
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: StringName, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: StringName) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
+    
+    public static func == (lhs: StringName, rhs: String) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
 }
 
 // MARK: - Extensions

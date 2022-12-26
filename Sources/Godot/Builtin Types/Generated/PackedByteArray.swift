@@ -18,6 +18,16 @@ extension PackedByteArray {
             body(GodotInterface.native.packed_byte_array_operator_index(nativeTypePtr, 0)!)
         }
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: PackedByteArray, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: PackedByteArray) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
 }
 
 // MARK: - Extensions

@@ -12,6 +12,16 @@ extension Callable {
     public init(object: Object, method: StringName) {
         self = Self._constructor(object: object, method: method)
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Callable, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Callable) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
 }
 
 // MARK: - Extensions

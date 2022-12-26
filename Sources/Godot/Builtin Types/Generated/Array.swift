@@ -44,6 +44,16 @@ extension Array {
     public init(packedColorArray: PackedColorArray) {
         self = Self._constructor(packedColorArray)
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Array, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Array) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
 }
 
 // MARK: - Extensions

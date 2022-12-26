@@ -8,6 +8,16 @@ extension Dictionary {
     public init(_ value: Dictionary) {
         self = value._duplicate()
     }
+    
+    // MARK: Operators
+    
+    public static func == (lhs: Dictionary, rhs: Variant) -> Bool {
+        Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: Variant, rhs: Dictionary) -> Bool {
+        Self._operatorEqual(rhs, lhs)
+    }
 }
 
 // MARK: - Extensions
