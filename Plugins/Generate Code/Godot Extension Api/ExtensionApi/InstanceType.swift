@@ -46,7 +46,7 @@ struct InstanceType {
     }
     
     var isValueType: Bool {
-        isSwiftBaseType || isBuiltinValueType || isEnumType || isBitfieldType
+        finalGodotType.isValueType || isEnumType || isBitfieldType
     }
     
     var isEnumType: Bool {
@@ -73,7 +73,7 @@ struct InstanceType {
     /// - Parameter scopeType: The scope in which the type is used.
     /// Depending on the scope, the same type could return different types.
     func toSwift(scopeType: InstanceType? = nil) -> String {
-        let typeString = finalGodotType.toSwift(scopeType: scopeType != nil ? scopeType?.finalGodotType : scopeGodotType)
+        let typeString = finalGodotType.toSwift(scopeType: scopeGodotType != nil ? scopeGodotType : scopeType?.finalGodotType)
         
         let finalType: String
         if let scopeString = self.scopeGodotType?.toSwift(),
@@ -197,7 +197,15 @@ struct InstanceTypePart: Equatable {
     }
     
     var isValueType: Bool {
-        isSwiftBaseType || isBuiltinValueType
+        isSwiftBaseType || isBuiltinValueType || isPointer
+    }
+    
+    var isPointer: Bool {
+        godotName.last == "*"
+    }
+    
+    var isConst: Bool {
+        godotName.starts(with: "const ")
     }
     
     /// Converts a given Godot type to the Swift equivalent.
@@ -206,23 +214,61 @@ struct InstanceTypePart: Equatable {
     /// - Parameter scopeType: The scope in which the type is used.
     /// Depending on the scope, the same type could return different types.
     func toSwift(scopeType: InstanceTypePart? = nil) -> String {
-        switch godotName {
+        // Defines if the type is pointer
+        var typeString = godotName
+        if isPointer {
+            typeString.removeLast()
+        }
+        if isConst {
+            typeString.removeFirst(6)
+        }
+        
+        // Transforms the base type
+        switch typeString {
         case "float":
             // For Float types, it can be either a Float, a Double or a Real.
             // Double is used for builtin base classes that do use opaque.
             // Float is used for Color.
             // Real is used for all the other types
-            guard let scopeType,
-                  scopeType.isBuiltinValueType else {
-                return "Double"
+            if let scopeType,
+               scopeType.isBuiltinValueType {
+                typeString = scopeType.toSwift() == "Color" ? "Float" : "Real"
+            } else {
+                typeString = "Double"
             }
-            
-            return scopeType.toSwift() == "Color" ? "Float" : "Real"
-        case "int": return "Int"
-        case "bool": return "Bool"
-        case "Error": return "ErrorType"
-        case "Type": return scopeType?.toSwift() == "Variant" ? "ValueType" : "Type"
-        default: return godotName
+        case "int": typeString = "Int"
+        case "int8_t": typeString = "Int8"
+        case "int16_t": typeString = "Int16"
+        case "int32_t": typeString = "Int32"
+        case "int64_t": typeString = "Int64"
+        case "uint8_t": typeString = "UInt8"
+        case "uint16_t": typeString = "UInt16"
+        case "uint32_t": typeString = "UInt32"
+        case "uint64_t": typeString = "UInt64"
+        case "int8_t *": typeString = "UnsafeMutablePointer<Int8>"
+        case "int16_t *": typeString = "UnsafeMutablePointer<Int16>"
+        case "int32_t *": typeString = "UnsafeMutablePointer<Int32>"
+        case "int64_t *": typeString = "UnsafeMutablePointer<Int64>"
+        case "uint8_t *": typeString = "UnsafeMutablePointer<UInt8>"
+        case "uint16_t *": typeString = "UnsafeMutablePointer<UInt16>"
+        case "uint32_t *": typeString = "UnsafeMutablePointer<UInt32>"
+        case "uint64_t *": typeString = "UnsafeMutablePointer<UInt64>"
+        case "bool": typeString = "Bool"
+        case "Error": typeString = "ErrorType"
+        case "Type": typeString = scopeType?.toSwift() == "Variant" ? "ValueType" : "Type"
+        default: break
+        }
+        
+        // Return the correct type with the pointer
+        if isPointer {
+            let mutableString = isConst ? "" : "Mutable"
+            if typeString == "void" {
+                return "Unsafe\(mutableString)RawPointer"
+            } else {
+                return "Unsafe\(mutableString)Pointer<\(typeString)>"
+            }
+        } else {
+            return typeString
         }
     }
     
@@ -276,6 +322,14 @@ struct InstanceTypePart: Equatable {
         "Nil",
         "Bool",
         "Int",
+        "Int8",
+        "Int16",
+        "Int32",
+        "Int64",
+        "UInt8",
+        "UInt16",
+        "UInt32",
+        "UInt64",
         "Float",
         "Double",
         "GDNativeInt",

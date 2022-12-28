@@ -2,7 +2,7 @@ import Foundation
 import GodotExtensionHeaders
 
 extension Variant {
-    public enum ValueType: UInt32 {
+    public enum ValueType: Int {
         case `nil`               = 0
         case bool                = 1
         case int                 = 2

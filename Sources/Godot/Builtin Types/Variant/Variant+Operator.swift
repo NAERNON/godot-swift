@@ -2,7 +2,7 @@ import Foundation
 import GodotExtensionHeaders
 
 extension Variant {
-    public enum Operator: UInt32 {
+    public enum Operator: Int {
         case equal         = 0
         case notEqual      = 1
         case less          = 2
