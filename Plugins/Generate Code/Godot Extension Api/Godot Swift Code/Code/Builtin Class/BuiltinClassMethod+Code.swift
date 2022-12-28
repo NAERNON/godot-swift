@@ -27,9 +27,15 @@ extension ExtensionApi.BuiltinClass.Method {
                 
             }
             
-            if returnType != nil {
+            if let returnType {
                 Spacer()
-                Return("__returnValue")
+                if returnType.isEnumType {
+                    Return(returnType.toSwift(scopeType: type) + "(rawValue: __returnValue)!")
+                } else if returnType.isBitfieldType {
+                    Return(returnType.toSwift(scopeType: type) + "(rawValue: __returnValue)")
+                } else {
+                    Return("__returnValue")
+                }
             }
         }.internal().static(isStatic).mutating(isMutating).attributes(isResultDiscardable ? [.discardableResult] : [])
     }

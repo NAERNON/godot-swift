@@ -11,7 +11,7 @@ struct ConstantValue {
     /// - Parameter type: The type of the value.
     func toSwift(forType type: InstanceType) -> String {
         if type == "Variant" && string == "null" {
-            return ".nil"
+            return "nil"
         }
         
         if type == "Basis",
@@ -59,6 +59,32 @@ struct ConstantValue {
             return string
         }
         
+        if type == "Rect2" || type == "Rect2i",
+           let string = decomposeAndRecomposeInitParameters(labels: "x", "y", "width", "height") {
+            return string
+        }
+        
+        if type.isEnumType {
+            return type.toSwift(scopeType: type) + "(rawValue: \(string))!"
+        }
+        
+        if type.isBitfieldType {
+            return type.toSwift(scopeType: type) + "(rawValue: \(string))"
+        }
+        
+        if type == "Dictionary" {
+            return "[:]"
+        }
+        
+        if type == "String" || type == "StringName",
+           string.first == "&" {
+            return String(string[string.index(after: string.startIndex)...])
+        }
+        
+        if string == "" {
+            return type.toSwift() + "()"
+        }
+        
         return string
     }
     
@@ -71,6 +97,8 @@ struct ConstantValue {
         return recomposeInitParameters(forType: type, parameters: parameters, labels: labels)
     }
     
+    /// Decomposes the parameters of an init. For instance, the String "`Rect(1, 3, 2, 0)`"
+    /// would return `(type: "Rect", parameters: ["1", "3", "2", "0"])`.
     private func decomposeInitParameters() -> (type: String, parameters: [String]) {
         let scanner = Scanner(string: string)
         let type = scanner.scanUpToString("(") ?? ""

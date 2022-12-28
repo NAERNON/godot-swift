@@ -46,7 +46,15 @@ struct InstanceType {
     }
     
     var isValueType: Bool {
-        isSwiftBaseType || isBuiltinValueType || preGodotType == .enum || preGodotType == .bitfield
+        isSwiftBaseType || isBuiltinValueType || isEnumType || isBitfieldType
+    }
+    
+    var isEnumType: Bool {
+        preGodotType == .enum
+    }
+    
+    var isBitfieldType: Bool {
+        preGodotType == .bitfield
     }
     
     /// Converts this type to a variable name. Ex: `PackedByteArray` becomes `packedByteArray`.
@@ -64,15 +72,13 @@ struct InstanceType {
     /// For instance, an `int` value would give an `Int` value in Swift.
     /// - Parameter scopeType: The scope in which the type is used.
     /// Depending on the scope, the same type could return different types.
-    ///
-    /// It is also possible to show the scope of the type.
-    /// For instance, defining a type `Flag` within the scope `Node` will give `"Flag.Node"`.
-    func toSwift(scopeType: InstanceType? = nil, showScope: Bool = false) -> String {
-        let scope = scopeType != nil ? scopeType?.finalGodotType : scopeGodotType
+    func toSwift(scopeType: InstanceType? = nil) -> String {
         let typeString = finalGodotType.toSwift(scopeType: scopeType != nil ? scopeType?.finalGodotType : scopeGodotType)
         
         let finalType: String
-        if let scopeString = scopeGodotType?.toSwift(), showScope, finalGodotType.isSwiftBaseType == false {
+        if let scopeString = self.scopeGodotType?.toSwift(),
+           finalGodotType.isSwiftBaseType == false,
+           scopeType?.finalGodotType != self.scopeGodotType {
             finalType = scopeString + "." + typeString
         } else {
             finalType = typeString
@@ -115,7 +121,7 @@ struct InstanceType {
     /// Returns the default initializer for a given type. For instance, a `String` type will return `String()`.
     func defaultInitializer(scopeType: InstanceType? = nil) -> String {
         if preGodotType == .enum || preGodotType == .bitfield {
-            return toSwift(scopeType: scopeType) + "(rawValue: 0)!"
+            return "Int(0)"
         }
         
         return toSwift(scopeType: scopeType) + "()"
@@ -171,7 +177,7 @@ extension Optional where Wrapped == InstanceType {
 /// // -> InstanceTypePart("SomeType")
 /// // -> InstanceTypePart("Flag")
 /// ```
-struct InstanceTypePart {
+struct InstanceTypePart: Equatable {
     let godotName: String
     
     init(godotName: String) {

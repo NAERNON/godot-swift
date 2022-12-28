@@ -10,6 +10,8 @@ private let protectedStrings: Set<String> = [
     "in",
     "func",
     "class",
+    "self",
+    "static",
     "nil"
 ]
 

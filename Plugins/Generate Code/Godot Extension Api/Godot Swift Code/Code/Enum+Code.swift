@@ -6,13 +6,9 @@ extension ExtensionApi.Enum {
     @CodeBuilder
     func code() -> some SwiftCode {
         if isBitfield == true {
-            optionSetCode(forType: UInt32.self)
+            optionSetCode(forType: Int.self)
         } else {
-            if values.contains(where: { $0.value < 0 }) {
-                enumCode(forType: Int32.self)
-            } else {
-                enumCode(forType: UInt32.self)
-            }
+            enumCode(forType: Int.self)
         }
     }
     

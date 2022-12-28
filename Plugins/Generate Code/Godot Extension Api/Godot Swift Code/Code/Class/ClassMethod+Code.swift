@@ -1,5 +1,7 @@
 import Foundation
 
+#warning("Not using isVirtual")
+
 extension ExtensionApi.Class.Method {
     func code(type: InstanceType) -> some SwiftCode {
         BindingFunc(name: name,
@@ -20,9 +22,15 @@ extension ExtensionApi.Class.Method {
                 }
             }
             
-            if returnValue != nil {
+            if let returnType = returnValue?.type {
                 Spacer()
-                Return("__returnValue")
+                if returnType.isEnumType {
+                    Return(returnType.toSwift(scopeType: type) + "(rawValue: __returnValue)!")
+                } else if returnType.isBitfieldType {
+                    Return(returnType.toSwift(scopeType: type) + "(rawValue: __returnValue)")
+                } else {
+                    Return("__returnValue")
+                }
             }
         }.public().static(isStatic)
     }
