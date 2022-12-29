@@ -46,6 +46,7 @@ struct GenerateGodotAPI: CommandPlugin {
         let memberOffsets = extensionApi.builtinClassMemberOffsets.first { $0.buildConfiguration == buildConfiguration }!
         let builtinClassesToGenerate = extensionApi.builtinClasses.filter({ !$0.name.isSwiftBaseType })
         let classesToGenerate = extensionApi.classes
+        let nativeStructsToGenerate = extensionApi.nativeStructures
         let variantSize = builtinClassSizes.sizes.first(where: { $0.name == "Variant" })!.size
         
         let utilityFiles: [any GeneratedSwiftFile] = [
@@ -69,7 +70,12 @@ struct GenerateGodotAPI: CommandPlugin {
                 .insideDirectory("Builtin Structs")
         })
         
-        return (utilityFiles + builtinClassesFiles + classesFiles)
+        let nativeStructsFiles: [any GeneratedSwiftFile] = nativeStructsToGenerate.map({ nativeStruct in
+            NativeStructsFile(nativeStruct: nativeStruct)
+                .insideDirectory("Native Structs")
+        })
+        
+        return (utilityFiles + builtinClassesFiles + classesFiles + nativeStructsFiles)
     }
     
     @CodeBuilder

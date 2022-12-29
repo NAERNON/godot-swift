@@ -17,7 +17,7 @@ struct InstanceType {
     
     var scope: InstanceTypePart? { scopeGodotType }
     
-    fileprivate init?(godotName: String) {
+    init?(godotName: String) {
         let preAndPost = godotName.components(separatedBy: ":")
         guard !preAndPost.isEmpty else {
             return nil
@@ -188,6 +188,10 @@ struct InstanceTypePart: Equatable {
         }
     }
     
+    var isValueType: Bool {
+        isSwiftBaseType || isBuiltinValueType || isNativeStructType || isPointer
+    }
+    
     var isSwiftBaseType: Bool {
         swiftBaseTypes.contains(toSwift())
     }
@@ -196,8 +200,8 @@ struct InstanceTypePart: Equatable {
         builtinValueTypes.contains(toSwift())
     }
     
-    var isValueType: Bool {
-        isSwiftBaseType || isBuiltinValueType || isPointer
+    var isNativeStructType: Bool {
+        nativeStructuresTypes.contains(toSwift())
     }
     
     var isPointer: Bool {
@@ -236,6 +240,7 @@ struct InstanceTypePart: Equatable {
             } else {
                 typeString = "Double"
             }
+        case "real_t": typeString = "Real"
         case "int": typeString = "Int"
         case "int8_t": typeString = "Int8"
         case "int16_t": typeString = "Int16"
@@ -354,5 +359,23 @@ struct InstanceTypePart: Equatable {
         "Vector4",
         "Vector4i",
         "Real",
+    ]
+    
+    /// The native structs of Godot..
+    private let nativeStructuresTypes: Set<String> = [
+        "AudioFrame",
+        "CaretInfo",
+        "Glyph",
+        "ObjectID",
+        "PhysicsServer2DExtensionMotionResult",
+        "PhysicsServer2DExtensionRayResult",
+        "PhysicsServer2DExtensionShapeRestInfo",
+        "PhysicsServer2DExtensionShapeResult",
+        "PhysicsServer3DExtensionMotionCollision",
+        "PhysicsServer3DExtensionMotionResult",
+        "PhysicsServer3DExtensionRayResult",
+        "PhysicsServer3DExtensionShapeRestInfo",
+        "PhysicsServer3DExtensionShapeResult",
+        "ScriptLanguageExtensionProfilingInfo",
     ]
 }

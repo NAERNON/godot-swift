@@ -7,6 +7,10 @@ import Foundation
 struct ConstantValue {
     private let string: String
     
+    init(string: String) {
+        self.string = string
+    }
+    
     /// Returns a converted string code for the value.
     /// - Parameter type: The type of the value.
     func toSwift(forType type: InstanceType) -> String {

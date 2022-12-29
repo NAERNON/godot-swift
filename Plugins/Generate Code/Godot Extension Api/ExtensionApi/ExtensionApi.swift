@@ -185,6 +185,6 @@ struct ExtensionApi: Decodable {
     
     struct NativeStructure: Decodable {
         let name: String
-        let format: String
+        let format: NativeStructureFormat
     }
 }
