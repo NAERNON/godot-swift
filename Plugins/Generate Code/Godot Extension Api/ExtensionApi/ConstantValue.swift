@@ -68,6 +68,11 @@ struct ConstantValue {
             return string
         }
         
+        if type == "NodePath",
+           let string = decomposeAndRecomposeInitParameters(labels: "string") {
+            return string
+        }
+        
         if type.isEnumType {
             return type.toSwift(scopeType: type) + "(rawValue: \(string))!"
         }
@@ -86,6 +91,11 @@ struct ConstantValue {
         }
         
         if string == "" {
+            return type.toSwift() + "()"
+        }
+        
+#warning("Deal with null objects the right way.")
+        if string == "null" {
             return type.toSwift() + "()"
         }
         
