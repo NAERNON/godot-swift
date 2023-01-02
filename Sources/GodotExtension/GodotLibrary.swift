@@ -9,7 +9,7 @@ public final class GodotLibrary {
     public static let main = GodotLibrary()
     
     /// The pointer to the Godot native interface.
-    private var interfacePtr: UnsafePointer<GDNativeInterface>!
+    fileprivate var interfacePtr: UnsafePointer<GDNativeInterface>!
     
     private var libraryPtr: GDNativeExtensionClassLibraryPtr?
     
@@ -40,15 +40,17 @@ public final class GodotLibrary {
         initializationPtr.pointee.deinitialize = deinitializeLevel
         initializationPtr.pointee.minimum_initialization_level = minimumInitializationLevel
         
-        Godot.GodotInterface.setupGodot(withNativeInterfacePtr: interfacePtr)
-        
         return 1
     }
 }
 
-// MARK: - Initialization and deinitialization levels
+// MARK: - Levels
 
 private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDNativeInitializationLevel) {
+    if level == GDNATIVE_INITIALIZATION_SCENE {
+        Godot.GodotInterface.setupGodot(withNativeInterfacePtr: GodotLibrary.main.interfacePtr)
+    }
+    
     ClassDataBase.main.currentLevel = level
     
     if let callback = GodotLibrary.main.initializerCallback {
