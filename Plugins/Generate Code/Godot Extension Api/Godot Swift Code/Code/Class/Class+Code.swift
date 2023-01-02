@@ -1,6 +1,6 @@
 import Foundation
 
-#warning("isRefcounted and isInstantiable isVararg not used from ExtensionApi.Class. Is it ok or am I dumb ?")
+#warning("isRefcounted and isInstantiable, isVararg, isVirtual not used from ExtensionApi.Class. Is it ok or am I dumb ?")
 
 extension ExtensionApi.Class {
     var isRootClass: Bool { name == "Object" }
@@ -59,8 +59,10 @@ extension ExtensionApi.Class {
     private func bindingsPropertiesCode() -> some SwiftCode {
         if let methods {
             for method in methods {
-                Property(method.godotMethodPtrName    )
-                    .varDefined().private().static().type("GDNativeMethodBindPtr!")
+                if let methodPtrName = method.godotMethodPtrName {
+                    Property(methodPtrName)
+                        .varDefined().private().static().type("GDNativeMethodBindPtr!")
+                }
             }
         }
     }
@@ -74,18 +76,27 @@ Sets all the function bindings used to communicate with Godot.
         }
         Func(name: isRootClass ? "setRootClassFunctionBindings" : "setFunctionBindings") {
             if let methods {
-                Property("_class_name").letDefined().type("StringName").assign(value: "\"\(name.godotName)\"")
-                Property("_method_name").varDefined().type("StringName!")
-                
-                ObjectsPointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .mutable)]) { classPointerNames in
-                    let classNamePointerName = classPointerNames[0]
+                let methodData: [(name: String, hash: Int, ptrName: String)] = methods.compactMap { method in
+                    guard let hash = method.hash,
+                          let methodPtrName = method.godotMethodPtrName else {
+                        return nil
+                    }
                     
-                    for method in methods {
-                        if let hash = method.hash {
-                            Property("_method_name").assign(value: "\"\(method.name.godotName)\"")
+                    return (name: method.name.godotName, hash: hash, ptrName: methodPtrName)
+                }
+                
+                if !methodData.isEmpty {
+                    Property("_class_name").letDefined().type("StringName").assign(value: "\"\(name.godotName)\"")
+                    Property("_method_name").varDefined().type("StringName!")
+                    
+                    ObjectsPointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .mutable)]) { classPointerNames in
+                        let classNamePointerName = classPointerNames[0]
+                        
+                        for method in methodData {
+                            Property("_method_name").assign(value: "\"\(method.name)\"")
                             Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
-                                Property(method.godotMethodPtrName)
-                                    .assign(value: "GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(hash))")
+                                Property(method.ptrName)
+                                    .assign(value: "GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
                             }
                         }
                     }

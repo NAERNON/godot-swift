@@ -8,29 +8,34 @@ extension ExtensionApi.Class.Method {
                     type: type,
                     arguments: arguments,
                     returnType: returnValue?.type) { parameters in
-            if let returnType = returnValue?.type {
-                Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.defaultInitializer())
-                Spacer()
-            }
-            
-            ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
+            if let godotMethodPtrName {
+                if let returnType = returnValue?.type {
+                    Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.defaultInitializer())
+                    Spacer()
+                }
                 
-                ObjectsPointersAccess(parameters: returnParameters(type: type, returnType: returnValue?.type)) { returnPointerNames in
-                    let selfPointer = isStatic ? "nil" : returnPointerNames.first!
-                    let returnPointer = returnValue == nil ? "nil" : returnPointerNames.last!
-                    "GodotInterface.native.object_method_bind_ptrcall(Self.\(godotMethodPtrName), \(selfPointer), \(arrayName), \(returnPointer))"
+                ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
+                    
+                    ObjectsPointersAccess(parameters: returnParameters(type: type, returnType: returnValue?.type)) { returnPointerNames in
+                        let selfPointer = isStatic ? "nil" : returnPointerNames.first!
+                        let returnPointer = returnValue == nil ? "nil" : returnPointerNames.last!
+                        "GodotInterface.native.object_method_bind_ptrcall(Self.\(godotMethodPtrName), \(selfPointer), \(arrayName), \(returnPointer))"
+                    }
                 }
-            }
-            
-            if let returnType = returnValue?.type {
-                Spacer()
-                if returnType.isEnumType {
-                    Return(returnType.toSwift(scopeType: type) + "(rawValue: __returnValue)!")
-                } else if returnType.isBitfieldType {
-                    Return(returnType.toSwift(scopeType: type) + "(rawValue: __returnValue)")
-                } else {
-                    Return("__returnValue")
+                
+                if let returnType = returnValue?.type {
+                    Spacer()
+                    if returnType.isEnumType {
+                        Return(returnType.toSwift(scopeType: type) + "(rawValue: __returnValue)!")
+                    } else if returnType.isBitfieldType {
+                        Return(returnType.toSwift(scopeType: type) + "(rawValue: __returnValue)")
+                    } else {
+                        Return("__returnValue")
+                    }
                 }
+            } else {
+#warning("Deal with virtual functions")
+                "fatalError()"
             }
         }.public().static(isStatic)
     }
@@ -59,7 +64,7 @@ extension ExtensionApi.Class.Method {
         !isConst && !isStatic
     }
     
-    var godotMethodPtrName: String {
-        "__method_binding_\(name.godotName)"
+    var godotMethodPtrName: String? {
+        hash != nil ? "__method_binding_\(name.godotName)" : nil
     }
 }
