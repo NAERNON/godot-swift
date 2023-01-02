@@ -60,7 +60,7 @@ extension PackedInt64Array: RangeReplaceableCollection {
         }
     }
     
-    public mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C)
+    public mutating func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
     where C : Collection, Int64 == C.Element {
         var rangeIndex = subrange.lowerBound
         for (collectionIndex, element) in newElements.enumerated() {
