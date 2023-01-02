@@ -40,7 +40,7 @@ extension ExtensionApi.Class {
             Mark(text: "Enums", isSeparator: true)
             for `enum` in enums {
                 Spacer()
-                `enum`.code()
+                `enum`.code(scopeType: name)
             }
         }
     }

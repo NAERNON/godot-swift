@@ -260,7 +260,17 @@ struct InstanceTypePart: Equatable {
         case "uint64_t *": typeString = "UnsafeMutablePointer<UInt64>"
         case "bool": typeString = "Bool"
         case "Error": typeString = "ErrorType"
-        case "Type": typeString = scopeType?.toSwift() == "Variant" ? "ValueType" : "Type"
+        case "Type":
+            guard let scope = scopeType?.toSwift() else {
+                typeString = "Type"
+                break
+            }
+            
+            if scope == "Variant" {
+                typeString = "ValueType"
+            } else {
+                typeString = scope + "Type"
+            }
         default: break
         }
         
