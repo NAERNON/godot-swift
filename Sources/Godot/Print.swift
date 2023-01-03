@@ -20,7 +20,7 @@ public func printGodotWarning(_ message: Swift.String,
 
 /// The `GodotOutput` can print a given `String` to the Godot output debugging area.
 ///
-/// Use the standart Swift `print(_:to:_)` function to print to Godot.
+/// Use the standard Swift `print(_:to:_)` function to print to Godot.
 /// ```
 /// print("Salut", 13.12, to: &godotOutput)
 /// // prints "Salut 13.12" to Godot
@@ -54,7 +54,7 @@ public struct GodotOutput: TextOutputStream {
 
 /// The main Godot output.
 ///
-/// Use the standart Swift `print(_:to:_)` function to print to Godot.
+/// Use the standard Swift `print(_:to:_)` function to print to Godot.
 /// ```
 /// print("Salut", 13.12, to: &godotOutput)
 /// // prints "Salut 13.12" to Godot
