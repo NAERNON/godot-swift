@@ -12,8 +12,7 @@ extension ExtensionApi.BuiltinClass.Method {
             }
             
             if let returnType {
-                Property("__returnValue").defined(isVar: returnType.isValueType)
-                    .assign(value: returnType.defaultInitializer(scopeType: type))
+                returnType.initializerCode(propertyName: "__returnValue", usedInside: type)
                 Spacer()
             }
             
@@ -29,13 +28,7 @@ extension ExtensionApi.BuiltinClass.Method {
             
             if let returnType {
                 Spacer()
-                if returnType.isEnumType {
-                    Return(returnType.toSwift(scopeType: type) + "(rawValue: __returnValue)!")
-                } else if returnType.isBitfieldType {
-                    Return(returnType.toSwift(scopeType: type) + "(rawValue: __returnValue)")
-                } else {
-                    Return("__returnValue")
-                }
+                returnType.returnCode(propertyName: "__returnValue", usedInside: type)
             }
         }.internal().static(isStatic).mutating(isMutating).attributes(isResultDiscardable ? [.discardableResult] : [])
     }
@@ -55,7 +48,7 @@ extension ExtensionApi.BuiltinClass.Method {
             returnParameters.append(.named("self", type: type, mutability: isMutating ? .mutable : .constMutablePointer))
         }
         if let returnType {
-            returnParameters.append(.named("__returnValue", type: returnType, mutability: .mutable))
+            returnParameters.append(.named("__returnValue", type: returnType.initializerType(), mutability: .mutable))
         }
         return returnParameters
     }

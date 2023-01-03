@@ -50,7 +50,7 @@ struct FunctionName {
     private func functionParameter(translatedParameter: CodeLanguage.FunctionParameter,
                                    type: InstanceType?,
                                    argument: ExtensionApi.Argument) -> FunctionParameter {
-        let type = argument.type.toSwift(scopeType: type)
+        let type = argument.type.toSwift(usedInside: type)
         let defaultParameterValue: FunctionParameter.DefaultValue
         if let defaultValue = argument.defaultValue {
             defaultParameterValue = .codeString(defaultValue.toSwift(forType: argument.type))

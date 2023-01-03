@@ -9,14 +9,14 @@ extension ExtensionApi.UtilityFunction {
                     arguments: arguments,
                     returnType: returnType) { parameters in
             if let returnType {
-                Property("__returnValue").defined(isVar: returnType.isValueType).assign(value: returnType.defaultInitializer())
+                returnType.initializerCode(propertyName: "__returnValue")
                 Spacer()
             }
 
             ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
 
                 if let returnType {
-                    ObjectsPointersAccess(parameters: .named("__returnValue", type: returnType, mutability: .mutable)) { returnPointerNames in
+                    ObjectsPointersAccess(parameters: .named("__returnValue", type: returnType.initializerType(), mutability: .mutable)) { returnPointerNames in
                         "UtilityFunctions.\(godotFunctionPtrName)(\(returnPointerNames[0]), \(arrayName), \(pointerNames.count))"
                     }
                 } else {
@@ -25,9 +25,9 @@ extension ExtensionApi.UtilityFunction {
 
             }
 
-            if returnType != nil {
+            if let returnType {
                 Spacer()
-                Return("__returnValue")
+                returnType.returnCode(propertyName: "__returnValue")
             }
         }.public()
     }

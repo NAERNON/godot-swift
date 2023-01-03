@@ -9,10 +9,9 @@ extension ExtensionApi.BuiltinClass.Operator {
         
         Func(name: translatedName,
              parameters: functionParameters(type: type),
-             returnType: returnType.toSwift(scopeType: type)) {
+             returnType: returnType.toSwift(usedInside: type)) {
             
-            Property("__returnValue").defined(isVar: returnType.isValueType)
-                .assign(value: returnType.defaultInitializer(scopeType: type))
+            returnType.initializerCode(propertyName: "__returnValue", usedInside: type)
             Spacer()
             
             ObjectsPointersAccess(parameters: objectsPointerAccessParameters(type: type)) { pointerNames in
@@ -36,9 +35,9 @@ extension ExtensionApi.BuiltinClass.Operator {
     
     private func functionParameters(type: InstanceType) -> [FunctionParameter] {
         var parameters = [FunctionParameter]()
-        parameters.append(.named("lhs", type: type.toSwift(scopeType: type), label: .hidden))
+        parameters.append(.named("lhs", type: type.toSwift(usedInside: type), label: .hidden))
         if let rightType {
-            parameters.append(.named("rhs", type: rightType.toSwift(scopeType: type), label: .hidden))
+            parameters.append(.named("rhs", type: rightType.toSwift(usedInside: type), label: .hidden))
         }
         return parameters
     }
@@ -70,7 +69,7 @@ extension ExtensionApi.BuiltinClass.Operator {
     var godotOperatorPtrName: String {
         var name = "__operator_binding_" + name.operationName!
         if let rightType {
-            name += "_" + rightType.godotName
+            name += "_" + rightType.toSwift()
         }
         
         return name.lowercased()

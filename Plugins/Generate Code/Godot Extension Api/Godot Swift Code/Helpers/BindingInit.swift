@@ -29,7 +29,7 @@ struct BindingInit<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         arguments?.map { argument in
             let name: String
             if argument.name == "from" {
-                name = NamingConvention.pascal.convert(string: argument.type.toSwift(scopeType: self.type), to: .camel)
+                name = NamingConvention.pascal.convert(string: argument.type.toSwift(usedInside: self.type), to: .camel)
             } else {
                 name = NamingConvention.snake.convert(string: argument.name, to: .camel)
             }
@@ -42,7 +42,7 @@ struct BindingInit<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
             }
             
             return FunctionParameter.named(name,
-                                           type: argument.type.toSwift(scopeType: self.type),
+                                           type: argument.type.toSwift(usedInside: self.type),
                                            defaultValue: defaultParameterValue,
                                            label: .none)
         } ?? []

@@ -11,21 +11,22 @@ struct GlobalEnumsFile: GeneratedSwiftFile {
     var code: some SwiftCode {
         Import.foundation
 
-        ForEach(enums) { enumCode in
-            if let scope = enumCode.name.scope {
+        ForEach(enums) { `enum` in
+            if let scopeTypes = `enum`.name.scopeTypes,
+               let scope = scopeTypes.first {
                 // We do not generate the enums for the Variant type since
                 // they are already generated.
-                if scope.toSwift() != "Variant" {
+                if scope != "Variant" {
                     Spacer()
                     
                     Extension(scope.toSwift()) {
-                        enumCode.code()
+                        `enum`.code()
                     }
                 }
             } else {
                 Spacer()
                 
-                enumCode.code()
+                `enum`.code()
             }
         }
     }

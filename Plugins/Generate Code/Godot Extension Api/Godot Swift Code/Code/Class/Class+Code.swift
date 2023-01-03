@@ -10,11 +10,11 @@ extension ExtensionApi.Class {
         let extensions = inherits == nil ? [] : [inherits!]
         
         if isRootClass {
-            Extension(name.godotName) {
+            Extension(name.toSwift()) {
                 insideClassOrExtensionCode()
             }
         } else {
-            Class(name.godotName, extensions: extensions) {
+            Class(name.toSwift(), extensions: extensions) {
                 insideClassOrExtensionCode()
             }.open()
         }
@@ -40,7 +40,7 @@ extension ExtensionApi.Class {
             Mark(text: "Enums", isSeparator: true)
             for `enum` in enums {
                 Spacer()
-                `enum`.code(scopeType: name)
+                `enum`.code(usedInside: name)
             }
         }
     }
@@ -86,7 +86,7 @@ Sets all the function bindings used to communicate with Godot.
                 }
                 
                 if !methodData.isEmpty {
-                    Property("_class_name").letDefined().type("StringName").assign(value: "\"\(name.godotName)\"")
+                    Property("_class_name").letDefined().type("StringName").assign(value: "\"\(name.toSwift())\"")
                     Property("_method_name").varDefined().type("StringName!")
                     
                     ObjectsPointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .mutable)]) { classPointerNames in

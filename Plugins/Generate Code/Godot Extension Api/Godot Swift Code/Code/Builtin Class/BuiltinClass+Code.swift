@@ -3,7 +3,7 @@ import Foundation
 extension ExtensionApi.BuiltinClass {
     @CodeBuilder
     func code(classSize: Int) -> some SwiftCode {
-        if name.isBuiltinValueType {
+        if name.isBuiltinBaseValueType {
             Extension(name.toSwift()) {
                 insideStructOrExtensionCode(classSize: classSize)
             }
@@ -29,7 +29,7 @@ extension ExtensionApi.BuiltinClass {
         }
         
         bindingsCode()
-        if !name.isBuiltinValueType {
+        if name.isBuiltinOpaqueValueType {
             Spacer()
             replaceOpaqueValueCode()
             nativePtrCode()
@@ -105,7 +105,7 @@ duplicate its value.
             Mark(text: "Enums", isSeparator: true)
             for `enum` in enums {
                 Spacer()
-                `enum`.code()
+                `enum`.code(usedInside: name)
             }
         }
     }
@@ -230,7 +230,7 @@ Sets all the function bindings and operators used to communicate with Godot.
         Spacer()
         Mark(text: "Init", isSeparator: true)
         
-        if !name.isBuiltinValueType {
+        if name.isBuiltinOpaqueValueType {
             Spacer()
             Init(parameters: .named("opaque", type: "Opaque")) {
                 Property("opaque").selfDefined().assign(value: "opaque")
@@ -287,13 +287,12 @@ Sets all the function bindings and operators used to communicate with Godot.
             Mark(text: "Getter/Setter", isSeparator: true)
             Spacer()
             
-            let indexingType = indexingReturnType.toSwift(scopeType: name)
+            let indexingType = indexingReturnType.toSwift(usedInside: name)
             
             Func(name: "_getValue",
                  parameters: .named("index", type: "GDNativeInt", label: "at"),
                  returnType: indexingType) {
-                Property("__returnValue").defined(isVar: indexingReturnType.isValueType)
-                    .assign(value: indexingReturnType.defaultInitializer(scopeType: name))
+                indexingReturnType.initializerCode(propertyName: "__returnValue", usedInside: name)
                 
                 ObjectsPointersAccess(parameters:
                                         [.named("__returnValue", type: indexingReturnType, mutability: .mutable),
@@ -302,7 +301,7 @@ Sets all the function bindings and operators used to communicate with Godot.
                     "Self.__indexed_getter(\(pointerNames[1]), index, \(pointerNames[0]))"
                 }.padding(top: 1, bottom: 1)
                 
-                Return("__returnValue")
+                indexingReturnType.returnCode(propertyName: "__returnValue", usedInside: name)
             }.internal()
             
             Spacer()
@@ -311,7 +310,7 @@ Sets all the function bindings and operators used to communicate with Godot.
                  parameters: [.named("value", type: indexingType, label: .hidden),
                               .named("index", type: "GDNativeInt", label: "at")])
             {
-                if !self.name.isBuiltinValueType {
+                if self.name.isBuiltinOpaqueValueType {
                     "replaceOpaqueValueIfNecessary()"
                     Spacer()
                 }

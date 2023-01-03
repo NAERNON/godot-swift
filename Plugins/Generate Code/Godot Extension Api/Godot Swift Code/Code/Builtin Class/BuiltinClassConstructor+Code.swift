@@ -9,7 +9,7 @@ extension ExtensionApi.BuiltinClass.Constructor {
                     type: type,
                     arguments: arguments,
                     returnType: type) { parameters in
-            if type.isBuiltinValueType {
+            if type.isBuiltinBaseValueType {
                 "var __temporary = \(type.toSwift())()"
             } else {
                 if hasDestructor {
@@ -23,7 +23,7 @@ extension ExtensionApi.BuiltinClass.Constructor {
             Spacer()
             
             ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
-                if type.isBuiltinValueType {
+                if type.isBuiltinBaseValueType {
                     Property("__temporary").pointerAccess(type: type, mutability: .mutable) { temporaryPtrName in
                         "Self." + godotConstructorPtrName + "(\(temporaryPtrName), \(arrayName))"
                     }
@@ -35,7 +35,7 @@ extension ExtensionApi.BuiltinClass.Constructor {
             }
             
             Spacer()
-            if type.isBuiltinValueType {
+            if type.isBuiltinBaseValueType {
                 Return("__temporary")
             } else {
                 Return("Self.init(opaque: __opaque)")

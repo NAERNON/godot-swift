@@ -32,7 +32,7 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         
         Func(name: translatedName,
              parameters: translatedParameters,
-             returnType: returnType?.toSwift(scopeType: type)) {
+             returnType: returnType?.toSwift(usedInside: type)) {
             content(translatedParametersNames)
         }
              .accessControl(accessControl)

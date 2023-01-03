@@ -74,11 +74,11 @@ struct ConstantValue {
         }
         
         if type.isEnumType {
-            return type.toSwift(scopeType: type) + "(rawValue: \(string))!"
+            return type.toSwift() + "(rawValue: \(string))!"
         }
         
         if type.isBitfieldType {
-            return type.toSwift(scopeType: type) + "(rawValue: \(string))"
+            return type.toSwift() + "(rawValue: \(string))"
         }
         
         if type == "Dictionary" {

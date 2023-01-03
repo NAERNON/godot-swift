@@ -41,7 +41,16 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
             let pointerName = self.pointerName(for: parameter, prime: false)
             let pointerNamePrime = self.pointerName(for: parameter, prime: true)
             
-            if parameter.type.isValueType {
+            if parameter.type.accessPointerWithGodotNative {
+                if parameter.mutability == .mutable || parameter.mutability == .constMutablePointer {
+                    "\(name).withUnsafeNativePointer { \(pointerName) in".indentation(level: index)
+                } else {
+                    "\(name).withUnsafeNativePointer { \(pointerNamePrime) in".indentation(level: index)
+                    Property(pointerName).letDefined()
+                        .assign(value: "UnsafeRawPointer(\(pointerNamePrime))")
+                        .indentation(level: index+1)
+                }
+            } else {
                 if parameter.mutability == .mutable {
                     "withUnsafeMutablePointer(to: &\(name)) { \(pointerNamePrime) in"
                         .indentation(level: index)
@@ -59,15 +68,6 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
                         .assign(value: "UnsafeMutableRawPointer(mutating: \(pointerNamePrime))")
                         .indentation(level: index+1)
                 } else {
-                    Property(pointerName).letDefined()
-                        .assign(value: "UnsafeRawPointer(\(pointerNamePrime))")
-                        .indentation(level: index+1)
-                }
-            } else {
-                if parameter.mutability == .mutable || parameter.mutability == .constMutablePointer {
-                    "\(name).withUnsafeNativePointer { \(pointerName) in".indentation(level: index)
-                } else {
-                    "\(name).withUnsafeNativePointer { \(pointerNamePrime) in".indentation(level: index)
                     Property(pointerName).letDefined()
                         .assign(value: "UnsafeRawPointer(\(pointerNamePrime))")
                         .indentation(level: index+1)
