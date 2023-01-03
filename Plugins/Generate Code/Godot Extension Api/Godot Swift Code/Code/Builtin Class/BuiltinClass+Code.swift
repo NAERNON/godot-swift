@@ -61,15 +61,22 @@ duplicate its value.
     
     @CodeBuilder
     private func nativePtrCode() -> some SwiftCode {
-        Spacer()
-        Property("opaque").varDefined().type("Opaque").private()
-        Spacer()
+        Property("opaque").varDefined().type("Opaque").private().padding(top: 1, bottom: 1)
+        
         Comment(style: .doc) {
             "Calls a closure with a native type pointer of the underlying object. Should only be called by the `GodotLibrary`."
         }
         Func(name: "withUnsafeNativePointer", parameters: .named("body", type: "(GDNativeTypePtr) -> ()", label: .hidden)) {
             "opaque.withUnsafeMutableRawPointer(body)"
         }.internal()
+        
+        Func(name: "opaqueIsZero", returnType: "Bool") {
+            "opaque.isZero()"
+        }.internal().topPadding()
+            
+        Var("opaqueDescription", type: "Swift.String") {
+            "opaque.debugDescription"
+        }.internal().topPadding()
     }
     
     // MARK: Constants

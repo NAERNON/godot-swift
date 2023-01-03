@@ -1,7 +1,7 @@
 import Foundation
 import GodotExtensionHeaders
 
-internal class BaseOpaque {
+internal class BaseOpaque: CustomDebugStringConvertible {
     private let data: UnsafeMutablePointer<UInt8>
     let size: Int
     
@@ -17,6 +17,25 @@ internal class BaseOpaque {
     
     func withUnsafeMutableRawPointer(_ body: (UnsafeMutableRawPointer) -> ()) {
         body(UnsafeMutableRawPointer(data))
+    }
+    
+    func isZero() -> Bool {
+        for index in 0..<size {
+            if data[index] != 0 { return false }
+        }
+        return true
+    }
+    
+    var debugDescription: Swift.String {
+        var string = "["
+        for index in 0..<size {
+            string += Swift.String(format: "%02X", data[index])
+            if index < size-1 {
+                string += "|"
+            }
+        }
+        string += "]"
+        return string
     }
 }
 
