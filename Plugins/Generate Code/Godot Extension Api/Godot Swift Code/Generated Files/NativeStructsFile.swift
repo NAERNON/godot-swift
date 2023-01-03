@@ -19,7 +19,7 @@ struct NativeStructsFile: GeneratedSwiftFile {
                 let property = Property(variable.nameToSwift()).letDefined().type(variable.typeToSwift()).public()
                 
                 if let defaultValue = variable.defaultValue {
-                    property.assign(value: defaultValue.toSwift(forType: variable.type))
+                    property.assign(value: variable.type.instantationCode(forValue: defaultValue))
                 } else {
                     property
                 }

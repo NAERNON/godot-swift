@@ -1,6 +1,26 @@
 import Foundation
 
-struct GodotInstanceType: Equatable {
+// MARK: - InstanceType
+
+/// All types in the `ExtensionApi` are `InstanceType`.
+/// This type provides helpers functions for translation and more.
+struct InstanceType: Equatable {
+    /// Defines how an `InstanceType` should be accessed.
+    enum PointerAccessMethod {
+        /// ```
+        /// withUnsafePointer(to: value) { ptr in
+        ///     ...
+        /// }
+        /// ```
+        case standard
+        
+        /// ```
+        /// value.withUnsafeNativePointer { ptr in
+        ///     ...
+        /// }
+        case godotNative
+    }
+    
     /// In Godot, some types are defined this way: `"typedarray::String"`.
     /// This type enumerates all the possible types before the `"::"`.
     enum PreGodotType: String {
@@ -9,79 +29,50 @@ struct GodotInstanceType: Equatable {
         case bitfield = "bitfield"
     }
     
-    /// For instance, `"enum"` if the Godot type is `"enum::AType.SomeType.Flag"`.
-    let preType: PreGodotType?
-    /// For instance, `"[SomeType, AType]"` if the Godot type is `"enum::AType.SomeType.Flag"`.
-    /// They are sorted from most local to most global scope.
-    let scopeTypes: [InstanceTypePart]
-    /// For instance, `"Flag"` if the Godot type is `"enum::AType.SomeType.Flag"`.
-    let finalType: InstanceTypePart
-    
-    init?(godotName: String) {
-        let preAndPost = godotName.components(separatedBy: ":")
-        guard !preAndPost.isEmpty else {
-            return nil
-        }
-        
-        preType = preAndPost.count == 1 ? nil : PreGodotType(rawValue: preAndPost[0])
-        
-        let post = preAndPost.last!
-        let components = post.components(separatedBy: ".")
-        
-        guard components.count > 0 else {
-            return nil
-        }
-        
-        scopeTypes = components[0..<components.count-1].reversed().map { InstanceTypePart(godotName: $0) }
-        finalType = InstanceTypePart(godotName: components.last!)
-    }
-}
-
-struct SwiftInstanceType: Equatable {
-    let scopeTypes: [InstanceTypePart]
-    let finalType: InstanceTypePart
-}
-
-// MARK: - InstanceType
-
-/// All types in the `ExtensionApi` are `InstanceType`.
-/// This type provides helpers functions for translation and more.
-enum InstanceType {
-    case godot(GodotInstanceType)
-    case swift(SwiftInstanceType)
-    
-    init?(godotName: String) {
-        guard let type = GodotInstanceType(godotName: godotName) else {
-            return nil
-        }
-        
-        self = .godot(type)
-    }
-    
-    init(swiftType: String) {
-        let type = SwiftInstanceType(scopeTypes: [], finalType: InstanceTypePart(swiftName: swiftType))
-        self = .swift(type)
+    enum InitError: Error {
+        case couldNotInferTypes
     }
     
     static let variant = InstanceType(swiftType: "Variant")
     static let stringName = InstanceType(swiftType: "StringName")
     
-    var finalType: InstanceTypePart {
-        switch self {
-        case .godot(let godotInstanceType):
-            return godotInstanceType.finalType
-        case .swift(let swiftInstanceType):
-            return swiftInstanceType.finalType
-        }
+    /// For instance, `"enum"` if the Godot type is `"enum::AType.SomeType.Flag"`.
+    private let preType: PreGodotType?
+    /// For instance, `"Flag"` if the Godot type is `"enum::AType.SomeType.Flag"`.
+    let finalType: InstanceTypePart
+    /// For instance, `"[SomeType, AType]"` if the Godot type is `"enum::AType.SomeType.Flag"`.
+    /// They are sorted from most local to most global scope.
+    let scopeTypes: [InstanceTypePart]
+    
+    init(finalType: InstanceTypePart, scopeTypes: [InstanceTypePart], preType: PreGodotType?) {
+        self.finalType = finalType
+        self.scopeTypes = scopeTypes
+        self.preType = preType
     }
     
-    var scopeTypes: [InstanceTypePart] {
-        switch self {
-        case .godot(let godotInstanceType):
-            return godotInstanceType.scopeTypes
-        case .swift(let swiftInstanceType):
-            return swiftInstanceType.scopeTypes
+    init(godotName: String) throws {
+        let preAndPost = godotName.components(separatedBy: ":")
+        guard !preAndPost.isEmpty else {
+            throw InitError.couldNotInferTypes
         }
+        
+        let preType = preAndPost.count == 1 ? nil : PreGodotType(rawValue: preAndPost[0])
+        
+        let post = preAndPost.last!
+        let components = post.components(separatedBy: ".")
+        
+        guard components.count > 0 else {
+            throw InitError.couldNotInferTypes
+        }
+        
+        let scopeTypes = components[0..<components.count-1].reversed().map { InstanceTypePart(godotName: $0) }
+        let finalType = InstanceTypePart(godotName: components.last!)
+        
+        self.init(finalType: finalType, scopeTypes: scopeTypes, preType: preType)
+    }
+    
+    fileprivate init(swiftType: String) {
+        self.init(finalType: .swiftName(swiftType), scopeTypes: [], preType: nil)
     }
     
     var isSwiftBaseType: Bool {
@@ -104,50 +95,29 @@ enum InstanceType {
         !isValueType
     }
     
-    var isEnumType: Bool {
-        switch self {
-        case .godot(let godotInstanceType):
-            return godotInstanceType.preType == .enum
-        case .swift(_):
-            return false
-        }
+    private var isEnumType: Bool {
+        preType == .enum
     }
     
-    var isBitfieldType: Bool {
-        switch self {
-        case .godot(let godotInstanceType):
-            return godotInstanceType.preType == .bitfield
-        case .swift(_):
-            return false
-        }
+    private var isBitfieldType: Bool {
+        preType == .bitfield
     }
     
-    var isTypedArray: Bool {
-        switch self {
-        case .godot(let godotInstanceType):
-            return godotInstanceType.preType == .typedArray
-        case .swift(_):
-            return false
-        }
+    private var isTypedArray: Bool {
+        preType == .typedArray
     }
     
-    /// Returns `true` if, for accessing the pointer of the underlying object,
-    /// it should be called using `withUnsafeNativePointer(:)` instead of the
-    /// Swift `withUnsafePointer(to:)`.
-    ///
-    /// ```
-    /// // If true:
-    /// value.withUnsafeNativePointer { ptr in
-    ///     ...
-    /// }
-    ///
-    /// // If false:
-    /// withUnsafePointer(to: value) { ptr in
-    ///     ...
-    /// }
-    /// ```
-    var accessPointerWithGodotNative: Bool {
-        (finalType.accessPointerWithGodotNative || isTypedArray) && !isEnumType && !isBitfieldType
+    /// Returns how this type should be accessed for Godot.
+    func accessPointerMethod() -> PointerAccessMethod {
+        if isEnumType || isBitfieldType {
+            return .standard
+        } else if isTypedArray {
+            return .godotNative
+        } else if finalType.accessPointerWithGodotNative {
+            return .godotNative
+        } else {
+            return .standard
+        }
     }
     
     /// Converts this type to a variable name. Ex: `PackedByteArray` becomes `packedByteArray`.
@@ -186,12 +156,8 @@ enum InstanceType {
             typeString = scopeString + typeString
         }
         
-        switch self {
-        case .godot(let godotInstanceType):
-            if godotInstanceType.preType == .typedArray {
-                typeString = "TypedArray<\(typeString)>"
-            }
-        default: break
+        if preType == .typedArray {
+            typeString = "TypedArray<\(typeString)>"
         }
         
         return typeString
@@ -201,28 +167,7 @@ enum InstanceType {
         finalType.godotVariantType
     }
     
-    /// Builtin base types already have a default constructor. This function returns the name of the arguments.
-    func builtinBaseConstructorArguments() -> [String] {
-        switch finalType.toSwift() {
-        case "AABB": return ["position", "size"]
-        case "Basis": return ["x", "y", "z"]
-        case "Color": return ["r", "g", "b", "a"]
-        case "Plane": return ["normal", "d"]
-        case "Projection": return ["x", "y", "z", "w"]
-        case "Quaternion": return ["x", "y", "z", "w"]
-        case "Rect2": return ["position", "size"]
-        case "Rect2i": return ["position", "size"]
-        case "Transform2D": return ["x", "y", "origin"]
-        case "Transform3D": return ["basis", "origin"]
-        case "Vector2": return ["x", "y"]
-        case "Vector2i": return ["x", "y"]
-        case "Vector3": return ["x", "y", "z"]
-        case "Vector3i": return ["x", "y", "z"]
-        case "Vector4": return ["x", "y", "z", "w"]
-        case "Vector4i": return ["x", "y", "z", "w"]
-        default: return []
-        }
-    }
+    // MARK: Code
     
     /// Returns the type that will be generated for returning the given type.
     /// For instance, a `String` type will return `String`,
@@ -243,11 +188,14 @@ enum InstanceType {
     @CodeBuilder
     func initializerCode(propertyName: String, usedInside insideType: InstanceType? = nil) -> some SwiftCode {
         if isEnumType || isBitfieldType {
-            Property(propertyName).defined(isVar: true).assign(value: "Int(0)")
+            Property(propertyName).defined(isVar: true)
+                .assign(value: "Int(0)")
         } else if isGodotClassType {
-            Property(propertyName).defined(isVar: true).type("GDNativeObjectPtr!")
+            Property(propertyName).defined(isVar: true)
+                .type("GDNativeObjectPtr!")
         } else {
-            Property(propertyName).defined(isVar: !accessPointerWithGodotNative).assign(value: toSwift(usedInside: insideType) + "()")
+            Property(propertyName).defined(isVar: accessPointerMethod() == .standard)
+                .assign(value: toSwift(usedInside: insideType) + "()")
         }
     }
     
@@ -272,8 +220,104 @@ return withUnsafePointer(to: \(toSwift(usedInside: insideType)).instanceBindings
         }
     }
     
+    // MARK: Instantiation code
+    
+    /// Returns a `String` for a given instantation string.
+    ///
+    /// Types such as `Vector2` are initialized with the code **`Vector2(a, b)`** in Godot.
+    /// But in Swift, we need to use default initializers and convert this code to **`Vector2(x: a, y: b)`**.
+    func instantationCode(forValue constantValue: ConstantValue) -> String {
+        if finalType == "Variant" && constantValue.string == "null" {
+            return "nil"
+        }
+        
+        if finalType == "Basis",
+           let string = constantValue.instantationCode(withLabels: "xAxisX", "xAxisY", "xAxisZ", "yAxisX", "yAxisY", "yAxisZ", "zAxisX", "zAxisY", "zAxisZ") {
+            return string
+        }
+        
+        if finalType == "Projection",
+           let string = constantValue.instantationCode(withLabels: "xAxisX", "xAxisY", "xAxisZ", "xAxisW", "yAxisX", "yAxisY", "yAxisZ", "yAxisW", "zAxisX", "zAxisY", "zAxisZ", "zAxisW", "wAxisX", "wAxisY", "wAxisZ", "wAxisW") {
+            return string
+        }
+        
+        if finalType == "Transform2D",
+           let string = constantValue.instantationCode(withLabels: "xAxisX", "xAxisY", "yAxisX", "yAxisY", "originX", "originY") {
+            return string
+        }
+        
+        if finalType == "Transform3D",
+           let string = constantValue.instantationCode(withLabels: "xAxisX", "xAxisY", "xAxisZ", "yAxisX", "yAxisY", "yAxisZ", "zAxisX", "zAxisY", "zAxisZ", "originX", "originY", "originZ") {
+            return string
+        }
+        
+        if finalType == "Color",
+           let string = constantValue.instantationCode(withLabels: "r", "g", "b", "a") {
+            return string
+        }
+        
+        if finalType == "Plane",
+           let string = constantValue.instantationCode(withLabels: "x", "y", "z", "d") {
+            return string
+        }
+        
+        if finalType == "Vector2" || finalType == "Vector2i",
+           let string = constantValue.instantationCode(withLabels: "x", "y") {
+            return string
+        }
+        
+        if finalType == "Vector3" || finalType == "Vector3i",
+           let string = constantValue.instantationCode(withLabels: "x", "y", "z") {
+            return string
+        }
+        
+        if finalType == "Vector4" || finalType == "Vector4i" || finalType == "Quaternion",
+           let string = constantValue.instantationCode(withLabels: "x", "y", "z", "w") {
+            return string
+        }
+        
+        if finalType == "Rect2" || finalType == "Rect2i",
+           let string = constantValue.instantationCode(withLabels: "x", "y", "width", "height") {
+            return string
+        }
+        
+        if finalType == "NodePath",
+           let string = constantValue.instantationCode(withLabels: "string") {
+            return string
+        }
+        
+        if finalType == "Dictionary" {
+            return "[:]"
+        }
+        
+        if finalType == "String" || finalType == "StringName",
+           constantValue.string.first == "&" {
+            let string = constantValue.string
+            return String(string[string.index(after: string.startIndex)...])
+        }
+        
+        if constantValue.string == "" {
+            return finalType.toSwift() + "()"
+        }
+        
+#warning("Deal with null objects the right way.")
+        if constantValue.string == "null" {
+            return finalType.toSwift() + "()"
+        }
+        
+        if isEnumType {
+            return toSwift() + "(rawValue: \(constantValue.string))!"
+        }
+        
+        if isBitfieldType {
+            return toSwift() + "(rawValue: \(constantValue.string))"
+        }
+        
+        return constantValue.string
+    }
+    
     static func == (lhs: InstanceType, rhs: String) -> Bool {
-        lhs.toSwift() == rhs
+        lhs.toSwift(showScope: false) == rhs
     }
     
     static func != (lhs: InstanceType, rhs: String) -> Bool {
@@ -283,36 +327,15 @@ return withUnsafePointer(to: \(toSwift(usedInside: insideType)).instanceBindings
 
 extension InstanceType: Decodable {
     init(from decoder: Decoder) throws {
-        guard let instanceType = InstanceType(godotName: try String(from: decoder)) else {
-            throw DecodingError.dataCorrupted(.init(codingPath: decoder.codingPath,
-                                                    debugDescription: "Instance type could not be inferred"))
-        }
-        
-        self = instanceType
+        try self.init(godotName: try String(from: decoder))
     }
 }
-
-extension InstanceType: Equatable {}
 
 extension Optional where Wrapped == InstanceType {
     var godotVariantType: String {
         self?.godotVariantType ?? "GDNATIVE_VARIANT_TYPE_NIL"
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // MARK: - InstanceType Part

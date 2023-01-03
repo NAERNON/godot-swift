@@ -5,7 +5,6 @@ import Foundation
 struct NativeStructureFormat {
     enum InitError: Error {
         case cannotRetreiveTypeAndValue(String)
-        case cannotGenerateInstanceType
     }
     
     private let format: String
@@ -21,9 +20,7 @@ struct NativeStructureFormat {
                 throw InitError.cannotRetreiveTypeAndValue(part)
             }
             
-            guard let type = InstanceType(godotName: String(typeAndValue[0])) else {
-                throw InitError.cannotGenerateInstanceType
-            }
+            let type = try InstanceType(godotName: String(typeAndValue[0]))
             
             let name = typeAndValue[1]
             

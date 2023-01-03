@@ -36,7 +36,7 @@ struct BindingInit<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
             
             let defaultParameterValue: FunctionParameter.DefaultValue
             if let defaultValue = argument.defaultValue {
-                defaultParameterValue = .codeString(defaultValue.toSwift(forType: argument.type))
+                defaultParameterValue = .codeString(argument.type.instantationCode(forValue: defaultValue))
             } else {
                 defaultParameterValue = .none
             }

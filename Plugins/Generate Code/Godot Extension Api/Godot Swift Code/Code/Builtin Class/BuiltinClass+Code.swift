@@ -91,7 +91,7 @@ duplicate its value.
                 ForEach(sameTypeConstants) { constant in
                     Property(constantName(constant.name))
                         .letDefined().public().static().type(constant.type.toSwift())
-                        .assign(value: constant.value.toSwift(forType: constant.type))
+                        .assign(value: constant.type.instantationCode(forValue: constant.value))
                 }.aligned(1)
             }
         }
