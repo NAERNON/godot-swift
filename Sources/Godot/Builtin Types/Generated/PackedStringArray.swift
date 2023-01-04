@@ -6,11 +6,11 @@ extension PackedStringArray {
     }
     
     public init(_ value: PackedStringArray) {
-        self = Self._constructor(value)
+        self = Self._constructor(from: value)
     }
     
     public init(array: Array) {
-        self = Self._constructor(array)
+        self = Self._constructor(from: array)
     }
     
     // MARK: Operators
@@ -74,7 +74,7 @@ extension PackedStringArray: RangeReplaceableCollection {
         
         let removeIndex = subrange.lowerBound + newElements.count
         while rangeIndex < subrange.upperBound {
-            self._removeAt(removeIndex)
+            self._removeAt(index: removeIndex)
             rangeIndex += 1
         }
     }

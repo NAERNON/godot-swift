@@ -6,11 +6,11 @@ extension PackedFloat64Array {
     }
     
     public init(_ value: PackedFloat64Array) {
-        self = Self._constructor(value)
+        self = Self._constructor(from: value)
     }
     
     public init(array: Array) {
-        self = Self._constructor(array)
+        self = Self._constructor(from: array)
     }
     
     // MARK: Operators
@@ -74,7 +74,7 @@ extension PackedFloat64Array: RangeReplaceableCollection {
         
         let removeIndex = subrange.lowerBound + newElements.count
         while rangeIndex < subrange.upperBound {
-            self._removeAt(removeIndex)
+            self._removeAt(index: removeIndex)
             rangeIndex += 1
         }
     }

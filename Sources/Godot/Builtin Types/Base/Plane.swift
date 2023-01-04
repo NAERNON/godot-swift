@@ -30,7 +30,7 @@ public struct Plane {
     }
     
     public init(normal: Vector3) {
-        self = Self._constructor(normal)
+        self = Self._constructor(normal: normal)
     }
     
     public init(normal: Vector3, point: Vector3) {

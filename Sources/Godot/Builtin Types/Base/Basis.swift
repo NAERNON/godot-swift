@@ -24,7 +24,7 @@ public struct Basis {
     }
     
     public init(quaternion: Quaternion) {
-        self = Self._constructor(quaternion)
+        self = Self._constructor(from: quaternion)
     }
     
     public init<T>(axis: Vector3, angle: T) where T : BinaryFloatingPoint {

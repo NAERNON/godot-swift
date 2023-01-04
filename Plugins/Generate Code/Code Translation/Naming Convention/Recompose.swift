@@ -21,8 +21,10 @@ extension NamingConvention {
             }
             
             let isAllUppercase = component.uppercased() == component
+            || componentsToCapitalizeForCamelOrPascalCase.contains(component)
+            
             if isAllUppercase {
-                string.append(component)
+                string.append(component.uppercased())
             } else {
                 // We uppercase the first char which is not an underscore.
                 var isFirstLetterUppercased = false
@@ -53,3 +55,8 @@ extension NamingConvention {
         return string
     }
 }
+
+/// Some components should always be capitalized on camel or pascal case.
+private let componentsToCapitalizeForCamelOrPascalCase: Set<String> = [
+    "2d", "3d"
+]

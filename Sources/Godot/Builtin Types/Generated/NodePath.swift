@@ -6,11 +6,11 @@ extension NodePath {
     }
     
     public init(_ value: NodePath) {
-        self = Self._constructor(value)
+        self = Self._constructor(from: value)
     }
     
     public init(string: String) {
-        self = Self._constructor(string)
+        self = Self._constructor(from: string)
     }
         
     // MARK: Operators

@@ -6,15 +6,15 @@ extension StringName {
     }
     
     public init(swiftString: Swift.String) {
-        self = Self._constructor(String(swiftString: swiftString))
+        self = Self._constructor(from: String(swiftString: swiftString))
     }
     
     public init(_ value: StringName) {
-        self = Self._constructor(value)
+        self = Self._constructor(from: value)
     }
     
     public init(string: String) {
-        self = Self._constructor(string)
+        self = Self._constructor(from: string)
     }
     
     // MARK: Operators

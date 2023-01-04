@@ -6,7 +6,7 @@ extension Signal {
     }
     
     public init(_ value: Signal) {
-        self = Self._constructor(value)
+        self = Self._constructor(from: value)
     }
     
     public init(object: Object, signal: StringName) {

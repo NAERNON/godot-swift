@@ -16,15 +16,15 @@ extension String {
     }
     
     public init(_ value: String) {
-        self = Self._constructor(value)
+        self = Self._constructor(from: value)
     }
     
     public init(stringName: StringName) {
-        self = Self._constructor(stringName)
+        self = Self._constructor(from: stringName)
     }
     
     public init(nodePath: NodePath) {
-        self = Self._constructor(nodePath)
+        self = Self._constructor(from: nodePath)
     }
     
     public init(_ c: Character) {

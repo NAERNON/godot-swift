@@ -18,7 +18,7 @@ public struct Transform3D {
     }
     
     public init(projection: Projection) {
-        self = Self._constructor(projection)
+        self = Self._constructor(from: projection)
     }
     
     public init<T>(xAxisX: T, xAxisY: T, xAxisZ: T,

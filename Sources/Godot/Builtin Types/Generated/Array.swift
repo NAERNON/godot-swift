@@ -10,39 +10,39 @@ extension Array {
     }
     
     public init(packedByteArray: PackedByteArray) {
-        self = Self._constructor(packedByteArray)
+        self = Self._constructor(from: packedByteArray)
     }
     
     public init(packedInt32Array: PackedInt32Array) {
-        self = Self._constructor(packedInt32Array)
+        self = Self._constructor(from: packedInt32Array)
     }
     
     public init(packedInt64Array: PackedInt64Array) {
-        self = Self._constructor(packedInt64Array)
+        self = Self._constructor(from: packedInt64Array)
     }
     
     public init(packedFloat32Array: PackedFloat32Array) {
-        self = Self._constructor(packedFloat32Array)
+        self = Self._constructor(from: packedFloat32Array)
     }
     
     public init(packedFloat64Array: PackedFloat64Array) {
-        self = Self._constructor(packedFloat64Array)
+        self = Self._constructor(from: packedFloat64Array)
     }
     
     public init(packedStringArray: PackedStringArray) {
-        self = Self._constructor(packedStringArray)
+        self = Self._constructor(from: packedStringArray)
     }
     
     public init(packedVector2Array: PackedVector2Array) {
-        self = Self._constructor(packedVector2Array)
+        self = Self._constructor(from: packedVector2Array)
     }
     
     public init(packedVector3Array: PackedVector3Array) {
-        self = Self._constructor(packedVector3Array)
+        self = Self._constructor(from: packedVector3Array)
     }
     
     public init(packedColorArray: PackedColorArray) {
-        self = Self._constructor(packedColorArray)
+        self = Self._constructor(from: packedColorArray)
     }
     
     // MARK: Operators
@@ -106,7 +106,7 @@ extension Array: RangeReplaceableCollection {
         
         let removeIndex = subrange.lowerBound + newElements.count
         while rangeIndex < subrange.upperBound {
-            self._removeAt(removeIndex)
+            self._removeAt(position: removeIndex)
             rangeIndex += 1
         }
     }

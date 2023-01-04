@@ -22,7 +22,7 @@ public struct Color {
     }
     
     public init(code: String) {
-        self = Self._constructor(code)
+        self = Self._constructor(code: code)
     }
     
     public init<T>(code: String, a: T) where T: BinaryFloatingPoint {

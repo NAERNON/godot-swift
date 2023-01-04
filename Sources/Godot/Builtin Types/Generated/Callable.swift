@@ -6,7 +6,7 @@ extension Callable {
     }
     
     public init(_ value: Callable) {
-        self = Self._constructor(value)
+        self = Self._constructor(from: value)
     }
     
     public init(object: Object, method: StringName) {
