@@ -131,8 +131,7 @@ if isExtentionClass() {
     return GDNativeInstanceBindingCallbacks { token, instance in
         return Unmanaged.passRetained(\(name.toSwift())(nativeObjectPtr: instance!)).toOpaque()
     } free_callback: { token, instance, bindings in
-        let instance = Unmanaged<RefCounted>.fromOpaque(instance!).takeRetainedValue()
-        instance.withUnsafeNativePointer { __ptr_self in
+        Unmanaged<\(name.toSwift())>.fromOpaque(instance!).takeRetainedValue().withUnsafeNativePointer { __ptr_self in
             GodotInterface.native.mem_free(__ptr_self)
         }
     } reference_callback: { token, instance, reference in

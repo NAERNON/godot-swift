@@ -22,8 +22,7 @@ open class Object {
         return GDNativeInstanceBindingCallbacks { token, instance in
             return Unmanaged.passRetained(Object(nativeObjectPtr: instance!)).toOpaque()
         } free_callback: { token, instance, bindings in
-            let instance = Unmanaged<RefCounted>.fromOpaque(instance!).takeRetainedValue()
-            instance.withUnsafeNativePointer { __ptr_self in
+            Unmanaged<Object>.fromOpaque(instance!).takeRetainedValue().withUnsafeNativePointer { __ptr_self in
                 GodotInterface.native.mem_free(__ptr_self)
             }
         } reference_callback: { token, instance, reference in
@@ -63,5 +62,16 @@ extension Object: CustomDebugStringConvertible {
 extension Object: Equatable {
     public static func == (lhs: Object, rhs: Object) -> Bool {
         lhs.getInstanceId() == rhs.getInstanceId()
+    }
+}
+
+extension Optional where Wrapped: Object {
+    internal func withUnsafeNativePointer(_ body: (UnsafeMutableRawPointer?) -> ()) {
+        switch self {
+        case .none:
+            body(nil)
+        case .some(let wrapped):
+            wrapped.withUnsafeNativePointer(body)
+        }
     }
 }

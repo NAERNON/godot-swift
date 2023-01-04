@@ -50,7 +50,6 @@ struct FunctionName {
     private func functionParameter(translatedParameter: CodeLanguage.FunctionParameter,
                                    type: InstanceType?,
                                    argument: ExtensionApi.Argument) -> FunctionParameter {
-        let type = argument.type.toSwift(usedInside: type)
         let defaultParameterValue: FunctionParameter.DefaultValue
         if let defaultValue = argument.defaultValue {
             defaultParameterValue = .codeString(argument.type.instantationCode(forValue: defaultValue))
@@ -59,7 +58,7 @@ struct FunctionName {
         }
         
         return .named(CodeLanguage.swift.protectNameIfKeyword(for: translatedParameter.name),
-                      type: type,
+                      type: argument.type.optional(argument.type.isGodotClassType).toSwift(usedInside: type),
                       defaultValue: defaultParameterValue,
                       label: translatedParameter.functionParameterLabel)
     }

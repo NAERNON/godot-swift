@@ -32,7 +32,7 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         
         Func(name: translatedName,
              parameters: translatedParameters,
-             returnType: returnType?.toSwift(usedInside: type)) {
+             returnType: returnType?.optional(returnType?.isGodotClassType == true).toSwift(usedInside: type)) {
             content(translatedParametersNames)
         }
              .accessControl(accessControl)

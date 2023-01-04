@@ -43,11 +43,14 @@ struct InstanceType: Equatable {
     /// For instance, `"[SomeType, AType]"` if the Godot type is `"enum::AType.SomeType.Flag"`.
     /// They are sorted from most local to most global scope.
     let scopeTypes: [InstanceTypePart]
+    /// A Boolean value indicating whether the type is optional.
+    private var isOptional: Bool
     
-    init(finalType: InstanceTypePart, scopeTypes: [InstanceTypePart], preType: PreGodotType?) {
+    init(finalType: InstanceTypePart, scopeTypes: [InstanceTypePart], preType: PreGodotType?, isOptional: Bool) {
         self.finalType = finalType
         self.scopeTypes = scopeTypes
         self.preType = preType
+        self.isOptional = isOptional
     }
     
     init(godotName: String) throws {
@@ -68,11 +71,21 @@ struct InstanceType: Equatable {
         let scopeTypes = components.dropLast(1).reversed().map { InstanceTypePart(godotName: $0) }
         let finalType = InstanceTypePart(godotName: components.last!)
         
-        self.init(finalType: finalType, scopeTypes: scopeTypes, preType: preType)
+        self.init(finalType: finalType, scopeTypes: scopeTypes, preType: preType, isOptional: false)
     }
     
     fileprivate init(swiftType: String) {
-        self.init(finalType: .swiftName(swiftType), scopeTypes: [], preType: nil)
+        let isOptional = swiftType.last == "?"
+        self.init(finalType: .swiftName(String(swiftType.dropLast(isOptional ? 1 : 0))),
+                  scopeTypes: [],
+                  preType: nil,
+                  isOptional: isOptional)
+    }
+    
+    func `optional`(_ state: Bool = true) -> InstanceType {
+        var new = self
+        new.isOptional = state
+        return new
     }
     
     var isSwiftBaseType: Bool {
@@ -160,6 +173,10 @@ struct InstanceType: Equatable {
             typeString = "TypedArray<\(typeString)>"
         }
         
+        if isOptional {
+            typeString += "?"
+        }
+        
         return typeString
     }
     
@@ -210,9 +227,17 @@ struct InstanceType: Equatable {
             Return(toSwift(usedInside: insideType) + "(rawValue: __returnValue)")
         } else if isGodotClassType {
 """
-return withUnsafePointer(to: \(toSwift(usedInside: insideType)).instanceBindingsCallbacks()) { callbacksPointer in
-    let opaque = GodotInterface.native.object_get_instance_binding(\(propertyName), GodotInterface.token, callbacksPointer)
-    return Unmanaged<\(toSwift(usedInside: insideType))>.fromOpaque(opaque!).takeUnretainedValue()
+if let __returnValue {
+    return withUnsafePointer(to: \(toSwift(usedInside: insideType)).instanceBindingsCallbacks()) { callbacksPointer in
+        let opaque = GodotInterface.native.object_get_instance_binding(
+            __returnValue,
+            GodotInterface.token,
+            callbacksPointer)
+        
+        return Unmanaged<\(toSwift(usedInside: insideType))>.fromOpaque(opaque!).takeUnretainedValue()
+    }
+} else {
+    return nil
 }
 """
         } else {
@@ -300,9 +325,8 @@ return withUnsafePointer(to: \(toSwift(usedInside: insideType)).instanceBindings
             return finalType.toSwift() + "()"
         }
         
-#warning("Deal with null objects the right way.")
         if constantValue.string == "null" {
-            return finalType.toSwift() + "()"
+            return "nil"
         }
         
         if isEnumType {
