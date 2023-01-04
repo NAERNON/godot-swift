@@ -65,7 +65,7 @@ struct InstanceType: Equatable {
             throw InitError.couldNotInferTypes
         }
         
-        let scopeTypes = components[0..<components.count-1].reversed().map { InstanceTypePart(godotName: $0) }
+        let scopeTypes = components.dropLast(1).reversed().map { InstanceTypePart(godotName: $0) }
         let finalType = InstanceTypePart(godotName: components.last!)
         
         self.init(finalType: finalType, scopeTypes: scopeTypes, preType: preType)

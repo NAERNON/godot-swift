@@ -36,7 +36,7 @@ public struct GodotOutput: TextOutputStream {
     /// You can force the Godot printing by calling `print()`.
     public mutating func write(_ string: Swift.String) {
         if string.last?.isNewline == true {
-            stringToPrint += string[..<string.index(before: string.endIndex)]
+            stringToPrint += string.dropLast(1)
             print()
         } else {
             stringToPrint += string

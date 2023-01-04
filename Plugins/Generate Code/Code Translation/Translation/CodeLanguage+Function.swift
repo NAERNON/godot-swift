@@ -42,7 +42,7 @@ extension CodeLanguage {
             && preParameterNameKeywords.contains { keyword in
                 decomposedParameterLabel[0].caseInsensitiveCompare(keyword) == .orderedSame
             }
-            let decomposedParameterName = firstParameterComponentIsKeyword ? Array(decomposedParameterLabel[1..<decomposedParameterLabel.count]) : decomposedParameterLabel
+            let decomposedParameterName = firstParameterComponentIsKeyword ? Array(decomposedParameterLabel.dropFirst()) : decomposedParameterLabel
             
             let translatedLabel = NamingConvention.camel.recompose(decomposedParameterLabel)
             let translatedName = NamingConvention.camel.recompose(decomposedParameterName)
