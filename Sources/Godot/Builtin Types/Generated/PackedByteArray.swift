@@ -13,9 +13,9 @@ extension PackedByteArray {
         self = Self._constructor(from: array)
     }
     
-    public func withUnsafeBytesArray(_ body: (UnsafeMutablePointer<UInt8>) -> Void) {
+    public func withUnsafeBytesArray(_ body: (UnsafeMutablePointer<UInt8>?) -> Void) {
         self.withUnsafeNativePointer { nativeTypePtr in
-            body(GodotInterface.native.packed_byte_array_operator_index(nativeTypePtr, 0)!)
+            body(GodotInterface.native.packed_byte_array_operator_index(nativeTypePtr, 0))
         }
     }
     
