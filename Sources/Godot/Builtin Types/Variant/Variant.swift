@@ -618,7 +618,7 @@ public struct Variant {
     
     public func objectValue<ObjectType>(ofType type: ObjectType.Type) -> ObjectType where ObjectType: Object {
         var newValue: ObjectType!
-        var instanceOwner = UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity: 1)
+        let instanceOwner = UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity: 1)
         
         self.withUnsafeNativePointer { nativeTypePtr in
             Variant.toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), nativeTypePtr)
@@ -930,6 +930,10 @@ public struct Variant {
     /// Calls a closure with a native type pointer of the underlying object. Should only be called by the `GodotLibrary`.
     internal func withUnsafeNativePointer(_ body: (GDNativeTypePtr) -> ()) {
         opaque.withUnsafeMutableRawPointer(body)
+    }
+    
+    internal var opaqueDescription: Swift.String {
+        opaque.debugDescription
     }
     
     /// Sets all the init bindings and the deinit used to communicate with Godot.
