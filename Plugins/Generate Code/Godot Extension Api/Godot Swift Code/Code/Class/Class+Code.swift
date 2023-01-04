@@ -30,6 +30,10 @@ extension ExtensionApi.Class {
         bindingsCode()
     }
     
+    private var isRefCountedRootClass: Bool {
+        name == "RefCounted"
+    }
+    
     // MARK: Enum
     
     @CodeBuilder
@@ -116,9 +120,13 @@ Sets all the function bindings used to communicate with Godot.
             
             for method in methods {
                 Spacer()
-                method.code(type: name)
+                method.code(type: name, accessControl: methodsAccessControl)
             }
         }
+    }
+    
+    private var methodsAccessControl: AccessControl {
+        isRefCountedRootClass ? .private : .public
     }
     
     // MARK: Inits
@@ -127,9 +135,48 @@ Sets all the function bindings used to communicate with Godot.
     private func initsCode() -> some SwiftCode {
         Mark(text: "Inits", isSeparator: true).padding(top: 1, bottom: 1)
         
-        Init() {
-            "super.init()"
-        }.public().override()
+        if isRefCountedRootClass {
+            Property("_isReferenced").varDefined().private().type("Bool")
+            
+            Spacer()
+            
+            Init() {
+                Property("_isReferenced").assign(value: "true")
+                "super.init()"
+                Spacer()
+                "_ = initRef()"
+            }.public().override()
+            
+            Spacer()
+            
+            Deinit {
+                Guard(condition: "_isReferenced") {
+                    Return()
+                }
+                
+                Spacer()
+                
+                If("unreference()") {
+                    Property("self").pointerAccess(type: name, mutability: .constMutablePointer) { pointerName in
+                        "GodotInterface.native.mem_free(\(pointerName))"
+                    }
+                }
+            }
+        } else {
+            Init() {
+                "super.init()"
+            }.public().override()
+        }
+        
+        Spacer()
+        
+        Init(parameters: .named("nativeObjectPtr", type: "GDNativeObjectPtr")) {
+            if isRefCountedRootClass {
+                Property("_isReferenced").assign(value: "false")
+            }
+            
+            "super.init(nativeObjectPtr: nativeObjectPtr)"
+        }.internal().override()
         
         Spacer()
         
@@ -149,18 +196,15 @@ if isExtentionClass() {
     return GDNativeInstanceBindingCallbacks { token, instance in
         return Unmanaged.passRetained(\(name.toSwift())(nativeObjectPtr: instance!)).toOpaque()
     } free_callback: { token, instance, bindings in
-        Unmanaged<\(name.toSwift())>.fromOpaque(instance!).release()
+        let instance = Unmanaged<RefCounted>.fromOpaque(instance!).takeRetainedValue()
+        instance.withUnsafeNativePointer { __ptr_self in
+            GodotInterface.native.mem_free(__ptr_self)
+        }
     } reference_callback: { token, instance, reference in
         return 1
     }
 }
 """
         }.internal().override().class()
-        
-        Spacer()
-        
-        Init(parameters: .named("nativeObjectPtr", type: "GDNativeObjectPtr")) {
-            "super.init(nativeObjectPtr: nativeObjectPtr)"
-        }.internal().override()
     }
 }

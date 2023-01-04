@@ -3,7 +3,7 @@ import Foundation
 #warning("Not using isVirtual")
 
 extension ExtensionApi.Class.Method {
-    func code(type: InstanceType) -> some SwiftCode {
+    func code(type: InstanceType, accessControl: AccessControl) -> some SwiftCode {
         BindingFunc(name: name,
                     type: type,
                     arguments: arguments,
@@ -31,7 +31,7 @@ extension ExtensionApi.Class.Method {
 #warning("Deal with virtual functions")
                 "fatalError()"
             }
-        }.public().static(isStatic)
+        }.accessControl(accessControl).static(isStatic)
     }
     
     private func functionParameters(withParameters parameters: [String]) -> [ObjectsPointersAccessParameter] {
