@@ -24,6 +24,7 @@ extension ExtensionApi.Class {
     private func insideClassOrExtensionCode() -> some SwiftCode {
         if !isRootClass {
             initsCode()
+            bindingsCallbackCode()
         }
         enumCode()
         methodsCode()
@@ -109,6 +110,39 @@ Sets all the function bindings used to communicate with Godot.
         }.internal().class(!isRootClass).static(isRootClass).override(!isRootClass)
     }
     
+    // MARK: Bindings callback
+    
+    @CodeBuilder
+    private func bindingsCallbackCode() -> some SwiftCode {
+        Spacer()
+        Func(name: "instanceBindingsCallbacks", returnType: "GDNativeInstanceBindingCallbacks") {
+"""
+if isExtentionClass() {
+    // When the class is an extension class, we should not generate any binding.
+    
+    return GDNativeInstanceBindingCallbacks { token, instance in
+        return nil
+    } free_callback: { token, instance, bindings in
+        // Nothing to do
+    } reference_callback: { token, instance, reference in
+        return 1
+    }
+} else {
+    return GDNativeInstanceBindingCallbacks { token, instance in
+        return Unmanaged.passRetained(\(name.toSwift())(nativeObjectPtr: instance!)).toOpaque()
+    } free_callback: { token, instance, bindings in
+        let instance = Unmanaged<RefCounted>.fromOpaque(instance!).takeRetainedValue()
+        instance.withUnsafeNativePointer { __ptr_self in
+            GodotInterface.native.mem_free(__ptr_self)
+        }
+    } reference_callback: { token, instance, reference in
+        return 1
+    }
+}
+"""
+        }.internal().override().class()
+    }
+    
     // MARK: Methods
     
     @CodeBuilder
@@ -177,34 +211,5 @@ Sets all the function bindings used to communicate with Godot.
             
             "super.init(nativeObjectPtr: nativeObjectPtr)"
         }.internal().override()
-        
-        Spacer()
-        
-        Func(name: "instanceBindingsCallbacks", returnType: "GDNativeInstanceBindingCallbacks") {
-"""
-if isExtentionClass() {
-    // When the class is an extension class, we should not generate any binding.
-    
-    return GDNativeInstanceBindingCallbacks { token, instance in
-        return nil
-    } free_callback: { token, instance, bindings in
-        // Nothing to do
-    } reference_callback: { token, instance, reference in
-        return 1
-    }
-} else {
-    return GDNativeInstanceBindingCallbacks { token, instance in
-        return Unmanaged.passRetained(\(name.toSwift())(nativeObjectPtr: instance!)).toOpaque()
-    } free_callback: { token, instance, bindings in
-        let instance = Unmanaged<RefCounted>.fromOpaque(instance!).takeRetainedValue()
-        instance.withUnsafeNativePointer { __ptr_self in
-            GodotInterface.native.mem_free(__ptr_self)
-        }
-    } reference_callback: { token, instance, reference in
-        return 1
-    }
-}
-"""
-        }.internal().override().class()
     }
 }
