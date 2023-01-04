@@ -34,6 +34,7 @@ public enum Keyword {
     case `override`
     case `mutating`
     case `required`
+    case privateSet
     
     fileprivate var string: String {
         switch self {
@@ -48,6 +49,7 @@ public enum Keyword {
         case .override: return "override"
         case .mutating: return "mutating"
         case .required: return "required"
+        case .privateSet: return "private(set)"
         }
     }
     
@@ -59,6 +61,8 @@ public enum Keyword {
         switch self {
         case .private, .fileprivate, .internal, .public, .open:
             return 100
+        case .privateSet:
+            return 90
         case .required:
             return 80
         case .mutating:

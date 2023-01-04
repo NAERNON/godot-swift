@@ -7,28 +7,16 @@ extension ExtensionApi.Class {
     
     @CodeBuilder
     func code() -> some SwiftCode {
-        let extensions = inherits == nil ? [] : [inherits!]
-        
-        if isRootClass {
-            Extension(name.toSwift()) {
-                insideClassOrExtensionCode()
-            }
-        } else {
-            Class(name.toSwift(), extensions: extensions) {
-                insideClassOrExtensionCode()
-            }.open()
-        }
-    }
-    
-    @CodeBuilder
-    private func insideClassOrExtensionCode() -> some SwiftCode {
-        if !isRootClass {
+        Class(name.toSwift(), extensions: inherits == nil ? [] : [inherits!]) {
             initsCode()
+            if isRootClass {
+                isExtensionClassCode()
+            }
             bindingsCallbackCode()
-        }
-        enumCode()
-        methodsCode()
-        bindingsCode()
+            enumCode()
+            methodsCode()
+            bindingsCode()
+        }.open()
     }
     
     private var isRefCountedRootClass: Bool {
@@ -48,6 +36,26 @@ extension ExtensionApi.Class {
                 `enum`.code(usedInside: name)
             }
         }
+    }
+    
+    // MARK: Is extension class
+    
+    @CodeBuilder
+    private func isExtensionClassCode() -> some SwiftCode {
+#warning("Return true for all necessary classes")
+        Spacer()
+        Comment(style: .doc) {
+"""
+Returns a Boolean value indicating whether the class is an extension
+of a base Godot class.
+
+Every class inside the Godot target are not extension classes,
+and all others should be.
+"""
+        }
+        Func(name: "isExtentionClass", returnType: "Bool") {
+            "false"
+        }.open().class()
     }
     
     // MARK: Bindings
@@ -79,7 +87,7 @@ extension ExtensionApi.Class {
 Sets all the function bindings used to communicate with Godot.
 """
         }
-        Func(name: isRootClass ? "setRootClassFunctionBindings" : "setFunctionBindings") {
+        Func(name: "setFunctionBindings") {
             if let methods {
                 let methodData: [(name: String, hash: Int, ptrName: String)] = methods.compactMap { method in
                     guard let hash = method.hash,
@@ -107,7 +115,7 @@ Sets all the function bindings used to communicate with Godot.
                     }
                 }
             }
-        }.internal().class(!isRootClass).static(isRootClass).override(!isRootClass)
+        }.internal().class().override(!isRootClass)
     }
     
     // MARK: Bindings callback
@@ -139,7 +147,7 @@ if isExtentionClass() {
     }
 }
 """
-        }.internal().override().class()
+        }.internal().override(!isRootClass).class()
     }
     
     // MARK: Methods
@@ -168,7 +176,22 @@ if isExtentionClass() {
     private func initsCode() -> some SwiftCode {
         Mark(text: "Inits", isSeparator: true).padding(top: 1, bottom: 1)
         
-        if isRefCountedRootClass {
+        if isRootClass {
+            Property("nativeObjectPtr").varDefined().type("GDNativeObjectPtr")
+                .internal().privateSet()
+            Spacer()
+#warning("Store in dictionary the StringNames for optimization ?")
+            Init() {
+"""
+var nativeObjectPtr: GDNativeObjectPtr!
+StringName(swiftString: Self.classNameForGodot()).withUnsafeNativePointer { namePtr in
+    nativeObjectPtr = GodotInterface.native.classdb_construct_object(namePtr)!
+}
+
+self.nativeObjectPtr = nativeObjectPtr
+"""
+            }.public()
+        } else if isRefCountedRootClass {
             Property("_isReferenced").varDefined().private().type("Bool")
             
             Spacer()
@@ -203,12 +226,18 @@ if isExtentionClass() {
         
         Spacer()
         
-        Init(parameters: .named("nativeObjectPtr", type: "GDNativeObjectPtr")) {
-            if isRefCountedRootClass {
-                Property("_isReferenced").assign(value: "false")
-            }
-            
-            "super.init(nativeObjectPtr: nativeObjectPtr)"
-        }.internal().override()
+        if isRootClass {
+            Init(parameters: .named("nativeObjectPtr", type: "GDNativeObjectPtr")) {
+                Property("nativeObjectPtr").selfDefined().assign(value: "nativeObjectPtr")
+            }.internal()
+        } else {
+            Init(parameters: .named("nativeObjectPtr", type: "GDNativeObjectPtr")) {
+                if isRefCountedRootClass {
+                    Property("_isReferenced").assign(value: "false")
+                }
+                
+                "super.init(nativeObjectPtr: nativeObjectPtr)"
+            }.internal().override()
+        }
     }
 }

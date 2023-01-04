@@ -86,6 +86,7 @@ public struct _PropertyDefinition: SwiftCode, _AssignableProperty, AccessControl
     private var type: String?
     private var isStatic: Bool = false
     public var accessControl: AccessControl? = nil
+    public var isPrivateSet: Bool = false
     
     fileprivate init(_ property: Property, definitionType: DefinitionType) {
         self.property = property
@@ -106,6 +107,9 @@ public struct _PropertyDefinition: SwiftCode, _AssignableProperty, AccessControl
         if let accessControl {
             keywords.append(accessControl.keyword)
         }
+        if isPrivateSet {
+            keywords.append(.privateSet)
+        }
         return keywords
     }
     
@@ -121,6 +125,12 @@ public struct _PropertyDefinition: SwiftCode, _AssignableProperty, AccessControl
     public func `static`() -> _PropertyDefinition {
         var new = self
         new.isStatic = true
+        return new
+    }
+    
+    public func privateSet() -> _PropertyDefinition {
+        var new = self
+        new.isPrivateSet = true
         return new
     }
     
