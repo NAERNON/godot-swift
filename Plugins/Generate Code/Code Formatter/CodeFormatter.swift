@@ -208,6 +208,12 @@ extension SwiftCode {
     }
 }
 
+extension AnySwiftCode: SwiftRootCode {
+    fileprivate func rootCodeTree() -> CodeTree? {
+        content().codeTree()
+    }
+}
+
 extension String: SwiftRootCode {
     fileprivate func rootCodeTree() -> CodeTree? {
         var lines = [String]()
