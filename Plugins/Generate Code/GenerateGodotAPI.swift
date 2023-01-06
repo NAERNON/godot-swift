@@ -44,7 +44,7 @@ struct GenerateGodotAPI: CommandPlugin {
                                     buildConfiguration: BuildConfiguration) -> [any GeneratedSwiftFile] {
         let builtinClassSizes = extensionApi.builtinClassSizes.first { $0.buildConfiguration == buildConfiguration }!
         let memberOffsets = extensionApi.builtinClassMemberOffsets.first { $0.buildConfiguration == buildConfiguration }!
-        let builtinClassesToGenerate = extensionApi.builtinClasses.filter({ !$0.name.isSwiftBaseType })
+        let builtinClassesToGenerate = extensionApi.builtinClasses.filter { !$0.name.isSwiftBaseType }
         let classesToGenerate = extensionApi.classes
         let nativeStructsToGenerate = extensionApi.nativeStructures
         let variantSize = builtinClassSizes.sizes.first(where: { $0.name == "Variant" })!.size

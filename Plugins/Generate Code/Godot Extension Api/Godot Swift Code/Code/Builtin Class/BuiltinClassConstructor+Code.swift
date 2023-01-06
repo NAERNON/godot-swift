@@ -5,46 +5,35 @@ extension ExtensionApi.BuiltinClass.Constructor {
               classSize: Int,
               hasDestructor: Bool,
               godotDestructorPtrName: String) -> some SwiftCode {
-        BindingFunc(name: FunctionName(godotName: "constructor").underscored,
-                    type: type,
-                    arguments: arguments,
-                    addVariantVarargs: isVararg,
-                    returnType: type) { parameters in
-            if type.isBuiltinBaseValueType {
-                "var __temporary = \(type.toSwift())()"
-            } else {
-                if hasDestructor {
-                    Property("__opaque").letDefined().type("Opaque")
-                        .assign(value: ".init(size: \(classSize), destructorPtr: Self.\(godotDestructorPtrName))")
-                } else {
-                    Property("__opaque").letDefined().type("Opaque")
-                        .assign(value: ".init(size: \(classSize))")
-                }
-            }
-            Spacer()
-            
-            ObjectsArrayPointersAccess(parameters: self.objectsPointersAccessParameters(named: parameters)) { pointerNames, arrayName, _ in
-                if type.isBuiltinBaseValueType {
-                    Property("__temporary").pointerAccess(type: type, mutability: .mutable) { temporaryPtrName in
-                        "Self." + godotConstructorPtrName + "(\(temporaryPtrName), \(arrayName))"
-                    }
-                } else {
-                    "__opaque.withUnsafeMutableRawPointer { __opaque_ptr in"
-                    ("Self." + godotConstructorPtrName + "(__opaque_ptr, \(arrayName))").indentation()
-                    "}"
-                }
-            }
-            
-            Spacer()
-            if type.isBuiltinBaseValueType {
-                Return("__temporary")
-            } else {
-                Return("Self.init(opaque: __opaque)")
-            }
-        }.internal().static()
+        GodotBindingFunc(self,
+                         type: type,
+                         overrideReturnType: type,
+                         overrideTemporaryType: type.isBuiltinOpaqueValueType ? .opaque : nil,
+                         overridesInit: type.isBuiltinOpaqueValueType,
+                         overridesReturn: type.isBuiltinOpaqueValueType) { temporaryValueName in
+            let destructorString = hasDestructor ? ", destructorPtr: Self.\(godotDestructorPtrName)" : ""
+            Property(temporaryValueName).letDefined().type("Opaque")
+                .assign(value: ".init(size: \(classSize)\(destructorString))")
+        } content: { values in
+            "Self." + godotConstructorPtrName + "(\(values.temporaryPointerName), \(values.pointersArrayName))"
+        } overrideReturnContent: { temporaryValueName in
+            Return("Self.init(opaque: \(temporaryValueName))")
+        }.internal()
     }
     
     var godotConstructorPtrName: String {
         "__constructor_\(index)"
     }
+}
+
+extension ExtensionApi.BuiltinClass.Constructor: GodotFunction {
+    var bindingName: FunctionName {
+        FunctionName(godotName: "constructor").underscored
+    }
+    
+    var isVararg: Bool { false }
+    var isStatic: Bool { true }
+    var isConst: Bool { true }
+    var isMutating: Bool { false }
+    var returnType: InstanceType? { nil }
 }

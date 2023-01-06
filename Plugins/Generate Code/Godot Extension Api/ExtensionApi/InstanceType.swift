@@ -21,6 +21,12 @@ struct InstanceType: Equatable {
         case godotNative
         
         /// ```
+        /// value.withUnsafeMutableRawPointer { ptr in
+        ///     ...
+        /// }
+        case opaque
+        
+        /// ```
         /// VariantVarargs(value).withUnsafeNativePointers { ptrs in
         ///     ...
         /// }
@@ -40,6 +46,7 @@ struct InstanceType: Equatable {
     }
     
     static let variant = InstanceType(swiftType: "Variant")
+    static let opaque = InstanceType(swiftType: "Opaque")
     static let stringName = InstanceType(swiftType: "StringName")
     static let variantVarargs = InstanceType(swiftType: "VariantVarargs")
     
@@ -129,8 +136,10 @@ struct InstanceType: Equatable {
     
     /// Returns how this type should be accessed for Godot.
     func accessPointerMethod() -> PointerAccessMethod {
-        if toSwift() == "VariantVarargs" {
+        if self == .variantVarargs {
             return .variantVarargs
+        } else if self == .opaque {
+            return .opaque
         } else if isEnumType || isBitfieldType {
             return .swiftStandard
         } else if isTypedArray {
@@ -231,15 +240,15 @@ struct InstanceType: Equatable {
     @CodeBuilder
     func returnCode(propertyName: String, usedInside insideType: InstanceType? = nil) -> some SwiftCode {
         if isEnumType {
-            Return(toSwift(usedInside: insideType) + "(rawValue: __returnValue)!")
+            Return(toSwift(usedInside: insideType) + "(rawValue: \(propertyName))!")
         } else if isBitfieldType {
-            Return(toSwift(usedInside: insideType) + "(rawValue: __returnValue)")
+            Return(toSwift(usedInside: insideType) + "(rawValue: \(propertyName))")
         } else if isGodotClassType {
 """
-if let __returnValue {
+if let \(propertyName) {
     return withUnsafePointer(to: \(toSwift(usedInside: insideType)).instanceBindingsCallbacks()) { callbacksPointer in
         let opaque = GodotInterface.native.object_get_instance_binding(
-            __returnValue,
+            \(propertyName),
             GodotInterface.token,
             callbacksPointer)
         
@@ -250,7 +259,7 @@ if let __returnValue {
 }
 """
         } else {
-            Return("__returnValue")
+            Return(propertyName)
         }
     }
     
@@ -634,6 +643,7 @@ enum InstanceTypePart: Equatable {
         "Double",
         "GDNativeInt",
         "GDNativeObjectPtr",
+        "Real",
     ]
     
     /// The builtin base structs defined as value types.
@@ -656,7 +666,6 @@ enum InstanceTypePart: Equatable {
         "Vector3i",
         "Vector4",
         "Vector4i",
-        "Real",
     ]
     
     /// The builtin generated structs defined as value types, but with underlying `Opaque` value.
@@ -680,6 +689,7 @@ enum InstanceTypePart: Equatable {
         "StringName",
         "TypedArray",
         "Variant",
+        "Opaque",
     ]
     
     /// The native structs of Godot..
