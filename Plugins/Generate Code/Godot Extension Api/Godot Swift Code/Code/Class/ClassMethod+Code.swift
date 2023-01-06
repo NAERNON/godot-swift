@@ -9,7 +9,7 @@ extension ExtensionApi.Class.Method {
             }.accessControl(accessControl)
         } else {
 #warning("Deal with virtual functions")
-            "VIRTUAL FUNCTION : " + self.name.godotName
+            "//VIRTUAL FUNCTION : " + self.name.godotName
         }
     }
     
