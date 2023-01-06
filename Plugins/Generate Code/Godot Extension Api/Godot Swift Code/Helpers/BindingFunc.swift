@@ -7,6 +7,7 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     let name: FunctionName
     let type: InstanceType?
     let arguments: [ExtensionApi.Argument]?
+    let addVariantVarargs: Bool
     let returnType: InstanceType?
     let content: ([String]) -> Content
     var accessControl: AccessControl? = nil
@@ -17,28 +18,36 @@ struct BindingFunc<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     public init(name: FunctionName,
                 type: InstanceType?,
                 arguments: [ExtensionApi.Argument]?,
+                addVariantVarargs: Bool,
                 returnType: InstanceType?,
                 @CodeBuilder content: @escaping ([String]) -> Content) {
         self.name = name
         self.type = type
         self.arguments = arguments
+        self.addVariantVarargs = addVariantVarargs
         self.returnType = returnType
         self.content = content
     }
     
     var body: some SwiftCode {
         let (translatedName, translatedParameters) = name.toSwift(withType: type, arguments: arguments)
-        let translatedParametersNames = translatedParameters.map { $0.name }
         
-        Func(name: translatedName,
-             parameters: translatedParameters,
-             returnType: returnType?.optional(returnType?.isGodotClassType == true).toSwift(usedInside: type)) {
-            content(translatedParametersNames)
+        var parameters = translatedParameters
+        if addVariantVarargs {
+            parameters.append(.named("args", type: "(any VariantEncodable)", isVararg: true))
         }
-             .accessControl(accessControl)
-             .static(isStatic)
-             .final(isFinal)
-             .mutating(isMutating)
+        
+        let parametersNames = parameters.map { $0.name }
+        
+        return Func(name: translatedName,
+                    parameters: parameters,
+                    returnType: returnType?.optional(returnType?.isGodotClassType == true).toSwift(usedInside: type)) {
+            content(parametersNames)
+        }
+                    .accessControl(accessControl)
+                    .static(isStatic)
+                    .final(isFinal)
+                    .mutating(isMutating)
     }
     
     // MARK: Modifiers

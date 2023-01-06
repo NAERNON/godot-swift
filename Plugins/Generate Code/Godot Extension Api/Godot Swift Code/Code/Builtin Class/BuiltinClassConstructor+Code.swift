@@ -8,6 +8,7 @@ extension ExtensionApi.BuiltinClass.Constructor {
         BindingFunc(name: FunctionName(godotName: "constructor").underscored,
                     type: type,
                     arguments: arguments,
+                    addVariantVarargs: isVararg,
                     returnType: type) { parameters in
             if type.isBuiltinBaseValueType {
                 "var __temporary = \(type.toSwift())()"
@@ -22,7 +23,7 @@ extension ExtensionApi.BuiltinClass.Constructor {
             }
             Spacer()
             
-            ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
+            ObjectsArrayPointersAccess(parameters: self.objectsPointersAccessParameters(named: parameters)) { pointerNames, arrayName, _ in
                 if type.isBuiltinBaseValueType {
                     Property("__temporary").pointerAccess(type: type, mutability: .mutable) { temporaryPtrName in
                         "Self." + godotConstructorPtrName + "(\(temporaryPtrName), \(arrayName))"
@@ -41,15 +42,6 @@ extension ExtensionApi.BuiltinClass.Constructor {
                 Return("Self.init(opaque: __opaque)")
             }
         }.internal().static()
-    }
-    
-    private func functionParameters(withParameters parameters: [String]) -> [ObjectsPointersAccessParameter] {
-        var accessParameters = [ObjectsPointersAccessParameter]()
-        for index in 0..<parameters.count {
-            accessParameters
-                .append(.named(parameters[index], type: arguments![index].type, mutability: .const))
-        }
-        return accessParameters
     }
     
     var godotConstructorPtrName: String {

@@ -21,46 +21,54 @@ public struct FunctionParameter {
     var type: String
     var defaultValue: DefaultValue
     var label: Label
+    var isVararg: Bool
     
-    private init(name: String, type: String, defaultValue: DefaultValue, label: Label) {
+    private init(name: String, type: String, defaultValue: DefaultValue, label: Label, isVararg: Bool) {
         self.name = name
         self.type = type
         self.defaultValue = defaultValue
         self.label = label
+        self.isVararg = isVararg
     }
     
     public static func named(_ name: String,
                              type: String,
                              defaultValue: DefaultValue = .none,
-                             label: Label = .none) -> FunctionParameter {
+                             label: Label = .none,
+                             isVararg: Bool = false) -> FunctionParameter {
         FunctionParameter(name: name,
                           type: type,
                           defaultValue: defaultValue,
-                          label: label)
+                          label: label,
+                          isVararg: isVararg)
     }
     
     public static func named<Parameter>(_ name: String,
                                         type: Parameter.Type,
                                         defaultValue: DefaultValue = .none,
-                                        label: Label = .none) -> FunctionParameter {
+                                        label: Label = .none,
+                                        isVararg: Bool = false) -> FunctionParameter {
         if case .nil = defaultValue {
             fatalError("An unoptional parameter cannot have a nil default value.")
         }
         return FunctionParameter(name: name,
                                  type: String(describing: Parameter.self),
                                  defaultValue: defaultValue,
-                                 label: label)
+                                 label: label,
+                                 isVararg: isVararg)
     }
     
     public static func named<Parameter>(_ name: String,
                                         type: Optional<Parameter>.Type,
                                         defaultValue: DefaultValue = .none,
-                                        label: Label = .none) -> FunctionParameter {
+                                        label: Label = .none,
+                                        isVararg: Bool = false) -> FunctionParameter {
         let typeString = String(describing: Parameter.self) + "?"
         return FunctionParameter(name: name,
                                  type: typeString,
                                  defaultValue: defaultValue,
-                                 label: label)
+                                 label: label,
+                                 isVararg: isVararg)
     }
     
     func codeString() -> String {
@@ -77,6 +85,10 @@ public struct FunctionParameter {
         codeString += name
         codeString += ": "
         codeString += type
+        
+        if isVararg {
+            codeString += "..."
+        }
         
         switch defaultValue {
         case .nil:

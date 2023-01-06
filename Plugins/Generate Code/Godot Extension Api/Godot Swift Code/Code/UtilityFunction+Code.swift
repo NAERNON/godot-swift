@@ -1,44 +1,34 @@
 import Foundation
 
-#warning("We are never using the isVararg argument from UtilityFunction. Is this a feature or a bug ?")
-
 extension ExtensionApi.UtilityFunction {
     func code() -> some SwiftCode {
         BindingFunc(name: realName,
                     type: nil,
                     arguments: arguments,
+                    addVariantVarargs: isVararg,
                     returnType: returnType) { parameters in
             if let returnType {
                 returnType.initializerCode(propertyName: "__returnValue")
                 Spacer()
             }
-
-            ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
-
+            
+            ObjectsArrayPointersAccess(parameters: self.objectsPointersAccessParameters(named: parameters)) { pointerNames, arrayName, argumentsCountName in
+                
                 if let returnType {
                     ObjectsPointersAccess(parameters: .named("__returnValue", type: returnType.initializerType(), mutability: .mutable)) { returnPointerNames in
-                        "UtilityFunctions.\(godotFunctionPtrName)(\(returnPointerNames[0]), \(arrayName), \(pointerNames.count))"
+                        "UtilityFunctions.\(godotFunctionPtrName)(\(returnPointerNames[0]), \(arrayName), Int32(\(argumentsCountName)))"
                     }
                 } else {
-                    "UtilityFunctions.\(godotFunctionPtrName)(nil, \(arrayName), \(pointerNames.count))"
+                    "UtilityFunctions.\(godotFunctionPtrName)(nil, \(arrayName), Int32(\(argumentsCountName)))"
                 }
-
+                
             }
-
+            
             if let returnType {
                 Spacer()
                 returnType.returnCode(propertyName: "__returnValue")
             }
         }.public()
-    }
-    
-    private func functionParameters(withParameters parameters: [String]) -> [ObjectsPointersAccessParameter] {
-        var accessParameters = [ObjectsPointersAccessParameter]()
-        for index in 0..<parameters.count {
-            accessParameters
-                .append(.named(parameters[index], type: arguments![index].type, mutability: .const))
-        }
-        return accessParameters
     }
     
     private var realName: FunctionName {

@@ -83,7 +83,7 @@ struct ExtensionApi: Decodable {
     
     // MARK: - Utility function
     
-    struct UtilityFunction: Decodable {
+    struct UtilityFunction: Decodable, GodotFunction {
         let name: FunctionName
         let returnType: InstanceType?
         let category: String
@@ -124,7 +124,7 @@ struct ExtensionApi: Decodable {
         
         // MARK: Method
         
-        struct Method: Decodable {
+        struct Method: Decodable, GodotFunction {
             let name: FunctionName
             let returnType: InstanceType?
             let isVararg: Bool
@@ -136,9 +136,11 @@ struct ExtensionApi: Decodable {
         
         // MARK: Constructor
         
-        struct Constructor: Decodable {
+        struct Constructor: Decodable, GodotFunction {
             let index: Int
             let arguments: [Argument]?
+            
+            var isVararg: Bool { false }
         }
     }
     
@@ -155,7 +157,7 @@ struct ExtensionApi: Decodable {
         
         // MARK: Method
         
-        struct Method: Decodable {
+        struct Method: Decodable, GodotFunction {
             let name: FunctionName
             let isConst: Bool
             let isVararg: Bool

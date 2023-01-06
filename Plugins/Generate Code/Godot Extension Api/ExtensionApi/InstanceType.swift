@@ -12,13 +12,19 @@ struct InstanceType: Equatable {
         ///     ...
         /// }
         /// ```
-        case standard
+        case swiftStandard
         
         /// ```
         /// value.withUnsafeNativePointer { ptr in
         ///     ...
         /// }
         case godotNative
+        
+        /// ```
+        /// VariantVarargs(value).withUnsafeNativePointers { ptrs in
+        ///     ...
+        /// }
+        case variantVarargs
     }
     
     /// In Godot, some types are defined this way: `"typedarray::String"`.
@@ -35,6 +41,7 @@ struct InstanceType: Equatable {
     
     static let variant = InstanceType(swiftType: "Variant")
     static let stringName = InstanceType(swiftType: "StringName")
+    static let variantVarargs = InstanceType(swiftType: "VariantVarargs")
     
     /// For instance, `"enum"` if the Godot type is `"enum::AType.SomeType.Flag"`.
     private let preType: PreGodotType?
@@ -122,14 +129,16 @@ struct InstanceType: Equatable {
     
     /// Returns how this type should be accessed for Godot.
     func accessPointerMethod() -> PointerAccessMethod {
-        if isEnumType || isBitfieldType {
-            return .standard
+        if toSwift() == "VariantVarargs" {
+            return .variantVarargs
+        } else if isEnumType || isBitfieldType {
+            return .swiftStandard
         } else if isTypedArray {
             return .godotNative
         } else if finalType.accessPointerWithGodotNative {
             return .godotNative
         } else {
-            return .standard
+            return .swiftStandard
         }
     }
     
@@ -211,7 +220,7 @@ struct InstanceType: Equatable {
             Property(propertyName).defined(isVar: true)
                 .type("GDNativeObjectPtr!")
         } else {
-            Property(propertyName).defined(isVar: accessPointerMethod() == .standard)
+            Property(propertyName).defined(isVar: accessPointerMethod() == .swiftStandard)
                 .assign(value: toSwift(usedInside: insideType) + "()")
         }
     }

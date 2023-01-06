@@ -7,6 +7,7 @@ extension ExtensionApi.Class.Method {
         BindingFunc(name: name,
                     type: type,
                     arguments: arguments,
+                    addVariantVarargs: isVararg,
                     returnType: returnValue?.type) { parameters in
             if let godotMethodPtrName {
                 if let returnType = returnValue?.type {
@@ -14,7 +15,7 @@ extension ExtensionApi.Class.Method {
                     Spacer()
                 }
                 
-                ObjectsArrayPointersAccess(parameters: functionParameters(withParameters: parameters)) { pointerNames, arrayName in
+                ObjectsArrayPointersAccess(parameters: self.objectsPointersAccessParameters(named: parameters)) { pointerNames, arrayName, _ in
                     
                     ObjectsPointersAccess(parameters: returnParameters(type: type, returnType: returnValue?.type)) { returnPointerNames in
                         let selfPointer = isStatic ? "nil" : returnPointerNames.first!
@@ -32,15 +33,6 @@ extension ExtensionApi.Class.Method {
                 "fatalError()"
             }
         }.accessControl(accessControl).static(isStatic)
-    }
-    
-    private func functionParameters(withParameters parameters: [String]) -> [ObjectsPointersAccessParameter] {
-        var accessParameters = [ObjectsPointersAccessParameter]()
-        for index in 0..<parameters.count {
-            accessParameters
-                .append(.named(parameters[index], type: arguments![index].type, mutability: .const))
-        }
-        return accessParameters
     }
     
     private func returnParameters(type: InstanceType, returnType: InstanceType?) -> [ObjectsPointersAccessParameter] {

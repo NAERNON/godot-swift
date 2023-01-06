@@ -51,7 +51,7 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
                         .assign(value: "UnsafeRawPointer(\(pointerNamePrime))")
                         .indentation(level: index+1)
                 }
-            case .standard:
+            case .swiftStandard:
                 if parameter.mutability == .mutable {
                     "withUnsafeMutablePointer(to: &\(name)) { \(pointerNamePrime) in"
                         .indentation(level: index)
@@ -73,6 +73,8 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
                         .assign(value: "UnsafeRawPointer(\(pointerNamePrime))")
                         .indentation(level: index+1)
                 }
+            case .variantVarargs:
+                "VariantVarargs(\(name)).withUnsafeNativePointers { \(pointerName) in".indentation(level: index)
             }
         }
         
@@ -106,7 +108,7 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
 /// and the given name for it is "nil".
 ///
 /// Use the data given in the closure to retreive the names of the parameters pointers,
-/// as well as the name of the array pointer.
+/// the name of the array pointer, as well as the name of the number of parameters.
 /// The generated pointers are either `UnsafeRawPointer` or `UnsafeMutableRawPointer`
 /// depending on the mutability state of the parameters.
 ///
@@ -130,10 +132,10 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
 /// ```
 struct ObjectsArrayPointersAccess<Content>: SwiftCode where Content: SwiftCode {
     let parameters: [ObjectsPointersAccessParameter]
-    let content: ([String], String) -> Content
+    let content: ([String], String, String) -> Content
     
     public init(parameters: [ObjectsPointersAccessParameter],
-                @CodeBuilder content: @escaping ([String], String) -> Content) {
+                @CodeBuilder content: @escaping ([String], String, String) -> Content) {
         self.parameters = parameters
         self.content = content
         
@@ -143,17 +145,19 @@ struct ObjectsArrayPointersAccess<Content>: SwiftCode where Content: SwiftCode {
     }
     
     public init(parameters: ObjectsPointersAccessParameter...,
-                @CodeBuilder content: @escaping ([String], String) -> Content) {
+                @CodeBuilder content: @escaping ([String], String, String) -> Content) {
         self.init(parameters: parameters, content: content)
     }
     
     var body: some SwiftCode {
         ObjectsPointersAccess(parameters: parameters) { pointerNames in
             if pointersArrayIsNil {
-                content(pointerNames, pointersArrayName)
+                content(pointerNames, pointersArrayName, "0")
             } else {
-                PointerArray(pointersNames: pointerNames, arrayPointerName: pointersArrayName) {
-                    content(pointerNames, pointersArrayName)
+                PointerArray(pointersNames: pointerNames,
+                             pointersVararg: parameters.map { $0.isVararg },
+                             arrayPointerName: pointersArrayName) { argumentsCountName in
+                    content(pointerNames, pointersArrayName, argumentsCountName)
                 }
             }
         }
@@ -183,15 +187,17 @@ struct ObjectsPointersAccessParameter {
     let name: String
     let type: InstanceType
     let mutability: Mutability
+    let isVararg: Bool
     
-    private init(name: String, type: InstanceType, mutability: Mutability) {
+    private init(name: String, type: InstanceType, mutability: Mutability, isVararg: Bool) {
         self.name = name
         self.type = type
         self.mutability = mutability
+        self.isVararg = isVararg
     }
     
-    static func named(_ name: String, type: InstanceType, mutability: Mutability) -> ObjectsPointersAccessParameter {
-        self.init(name: name, type: type, mutability: mutability)
+    static func named(_ name: String, type: InstanceType, mutability: Mutability, isVararg: Bool = false) -> ObjectsPointersAccessParameter {
+        self.init(name: name, type: type, mutability: mutability, isVararg: isVararg)
     }
 }
 
@@ -201,6 +207,8 @@ struct ObjectsPointersAccessParameter {
 /// This code creates an array with the given pointers, and makes its address usable during the given closure.
 ///
 /// All the pointers must be `UnsafeRawPointer`.
+/// The `String` given in the closure is the value of the number of parameters.
+///
 /// In this example, `pointer_1` and `pointer_2` are two `UnsafeRawPointer`.
 /// ```
 /// let _accessPtr = UnsafeMutablePointer<UnsafeRawPointer?>.allocate(capacity: 2)
@@ -214,28 +222,78 @@ struct ObjectsPointersAccessParameter {
 /// ```
 private struct PointerArray<Content>: SwiftCode where Content: SwiftCode {
     let pointersNames: [String]
+    let pointersVararg: [Bool]
     let arrayPointerName: String
-    let content: () -> Content
+    let content: (String) -> Content
     
-    public init(pointersNames: [String], arrayPointerName: String, @CodeBuilder content: @escaping () -> Content) {
+    public init(pointersNames: [String],
+                pointersVararg: [Bool],
+                arrayPointerName: String,
+                @CodeBuilder content: @escaping (String) -> Content) {
+        guard pointersNames.count == pointersVararg.count else {
+            fatalError("Cannot generate PointerArray instance with different counts of pointersNames and pointersVararg")
+        }
+        
         self.pointersNames = pointersNames
+        self.pointersVararg = pointersVararg
         self.arrayPointerName = arrayPointerName
         self.content = content
     }
     
     var body: some SwiftCode {
+        Property("___arguments_count").letDefined().type("Int")
+            .assign(value: pointersCountString(pointerCount: pointersNames.count))
         Property(arrayPointerName)
             .letDefined()
-            .assign(value: "UnsafeMutablePointer<UnsafeRawPointer?>.allocate(capacity: \(pointersNames.count))")
-        
-        for (i, pointerName) in pointersNames.enumerated() {
-            arrayPointerName + "[\(i)] = " + pointerName
+            .assign(value: "UnsafeMutablePointer<UnsafeRawPointer?>.allocate(capacity: ___arguments_count)")
+
+        setPointersInsideArrayCode
+
+        content("___arguments_count")
+
+        arrayPointerName + ".deinitialize(count: ___arguments_count)"
+        arrayPointerName + ".deallocate()"
+    }
+    
+    @CodeBuilder
+    private var setPointersInsideArrayCode: some SwiftCode {
+        for (index, pointerName) in pointersNames.enumerated() {
+            let pointerIndexString = pointersCountString(pointerCount: index)
+            if pointersVararg[index] {
+                For("(___index, ___ptr) in \(pointerName).enumerated()") {
+                    arrayPointerName + "[\(pointerIndexString) + ___index] = UnsafeRawPointer(___ptr)"
+                }
+            } else {
+                arrayPointerName + "[\(pointerIndexString)] = " + pointerName
+            }
+        }
+    }
+    
+    /// Returns a string of the number of parameters.
+    ///
+    /// - Parameter pointerCount: The number of first parameters that should be considered for the count.
+    ///
+    /// For two simple parameters, the return value would be:
+    /// ```
+    /// "2"
+    /// ```
+    /// For two simple parameters and one vararg parameter, the return value would be:
+    /// ```
+    /// "2 + args.count"
+    /// ```
+    private func pointersCountString(pointerCount: Int) -> String {
+        let staticCountString = String(pointersVararg[..<pointerCount].filter({ $0 == false }).count)
+        let varargsString = pointersNames[..<pointerCount].enumerated().compactMap { (index, name) -> String? in
+            if pointersVararg[index] {
+                return "\(name).count"
+            } else {
+                return nil
+            }
+        }.reduce("") { partialResult, string in
+            return partialResult + " + " + string
         }
         
-        content()
-        
-        arrayPointerName + ".deinitialize(count: \(pointersNames.count))"
-        arrayPointerName + ".deallocate()"
+        return staticCountString + varargsString
     }
 }
 
@@ -245,7 +303,10 @@ extension Property {
     func pointerAccess(type: InstanceType,
                        mutability: ObjectsPointersAccessParameter.Mutability,
                        @CodeBuilder content: @escaping (String) -> some SwiftCode) -> some SwiftCode {
-        ObjectsPointersAccess(parameters: [.named(self.name, type: type, mutability: mutability)]) { pointerNames in
+        ObjectsPointersAccess(parameters: [.named(self.name,
+                                                  type: type,
+                                                  mutability: mutability,
+                                                  isVararg: false)]) { pointerNames in
             content(pointerNames[0])
         }
     }
