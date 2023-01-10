@@ -11,6 +11,7 @@ ReturnContent: SwiftCode,
 Function: GodotFunction {
     let godotFunction: Function
     let type: InstanceType?
+    
     let overrideReturnType: InstanceType?
     let overrideTemporaryType: InstanceType?
     
@@ -36,6 +37,7 @@ Function: GodotFunction {
                 @CodeBuilder overrideReturnContent: @escaping (String) -> ReturnContent = { _ in EmptyCode() }) {
         self.godotFunction = godotFunction
         self.type = type
+        
         self.overrideReturnType = overrideReturnType
         self.overrideTemporaryType = overrideTemporaryType
         
@@ -59,7 +61,7 @@ Function: GodotFunction {
                 Spacer()
             } else {
                 if let temporaryType {
-                    temporaryType.initializerCode(propertyName: temporaryValueName, usedInside: type)
+                    temporaryType.temporaryInitializerCode(propertyName: temporaryValueName, definedInside: type)
                     Spacer()
                 }
             }
@@ -83,7 +85,7 @@ Function: GodotFunction {
                 overrideReturnContent(temporaryValueName)
             } else if let temporaryType {
                 Spacer()
-                temporaryType.returnCode(propertyName: temporaryValueName, usedInside: type)
+                temporaryType.temporaryReturnCode(propertyName: temporaryValueName, definedInside: type)
             }
         }
              .accessControl(accessControl)
@@ -106,7 +108,7 @@ Function: GodotFunction {
     
     private var returnTypeString: String? {
         returnType?.optional(returnType?.isGodotClassType == true)
-            .toSwift(usedInside: type)
+            .toSwift(definedInside: type)
     }
     
     private var temporaryType: InstanceType? {
@@ -155,7 +157,7 @@ Function: GodotFunction {
     private func temporaryParameterPointerAccess(@CodeBuilder _ body: @escaping (String?) -> some SwiftCode) -> some SwiftCode {
         var parameters = [ObjectsPointersAccessParameter]()
         if let temporaryType {
-            parameters.append(.named(temporaryValueName, type: temporaryType.initializerType(), mutability: .mutable))
+            parameters.append(.named(temporaryValueName, type: temporaryType.temporaryInstanceType(), mutability: .mutable))
         }
         
         return ObjectsPointersAccess(parameters: parameters) { pointerNames in

@@ -4,45 +4,70 @@ import Foundation
 
 /// All types in the `ExtensionApi` are `InstanceType`.
 /// This type provides helpers functions for translation and more.
-struct InstanceType: Equatable {
-    /// Defines how an `InstanceType` should be accessed.
-    enum PointerAccessMethod {
-        /// ```
-        /// withUnsafePointer(to: value) { ptr in
-        ///     ...
-        /// }
-        /// ```
-        case swiftStandard
-        
-        /// ```
-        /// value.withUnsafeNativePointer { ptr in
-        ///     ...
-        /// }
-        case godotNative
-        
-        /// ```
-        /// value.withUnsafeMutableRawPointer { ptr in
-        ///     ...
-        /// }
-        case opaque
-        
-        /// ```
-        /// VariantVarargs(value).withUnsafeNativePointers { ptrs in
-        ///     ...
-        /// }
-        case variantVarargs
+indirect enum InstanceType: Equatable {
+    case type(StringType)
+    
+    case `enum`(InstanceType)
+    case bitfield(InstanceType)
+    
+    /// A type preceded by another type like `Lhs.Rhs`.
+    case scope(scopeType: InstanceType, type: InstanceType)
+    
+    /// A type with a generic like `Lhs<Rhs>`.
+    case generic(type: InstanceType, genericType: InstanceType)
+    
+    case optional(InstanceType)
+    
+    case const(InstanceType)
+    case pointer(InstanceType)
+}
+
+// MARK: - StringType
+
+extension InstanceType {
+    enum StringType: Equatable {
+        case godot(String)
+        case swift(String)
+    }
+}
+
+// MARK: - InstanceType Extensions
+
+extension InstanceType {
+    enum InstanceTypeInitError: Error {
+        case cannotRetreiveGeneric
     }
     
-    /// In Godot, some types are defined this way: `"typedarray::String"`.
-    /// This type enumerates all the possible types before the `"::"`.
-    enum PreGodotType: String {
-        case `enum` = "enum"
-        case typedArray = "typedarray"
-        case bitfield = "bitfield"
+    init(godotString: some StringProtocol) throws {
+        let string = godotString.trimmingCharacters(in: .whitespacesAndNewlines)
+        if string.starts(with: "const ") {
+            self = .const(try InstanceType(godotString: godotString.dropFirst(6)))
+        } else if string.last == "*" {
+            self = .pointer(try InstanceType(godotString: godotString.dropLast(1)))
+        } else if string.last == ">" {
+            guard let index = string.firstIndex(of: "<") else {
+                throw InstanceTypeInitError.cannotRetreiveGeneric
+            }
+            
+            self = .generic(type: try InstanceType(godotString: string[..<index]),
+                            genericType: try InstanceType(godotString: string[string.index(after: index)...]))
+        } else if string.starts(with: "enum::") {
+            self = .enum(try InstanceType(godotString: godotString.dropFirst(6)))
+        } else if string.starts(with: "bitfield::") {
+            self = .bitfield(try InstanceType(godotString: godotString.dropFirst(10)))
+        } else if string.starts(with: "typedarray::") {
+            self = .generic(type: .type(.swift("TypedArray")),
+                            genericType: try InstanceType(godotString: godotString.dropFirst(12)))
+        } else if let index = string.lastIndex(of: ".") {
+            self = .scope(scopeType: try InstanceType(godotString: string[..<index]),
+                          type: try InstanceType(godotString: string[string.index(after: index)...]))
+        } else {
+            self = .type(.godot(string))
+        }
     }
     
-    enum InitError: Error {
-        case couldNotInferTypes
+    init(swiftType: String) {
+        self = .type(.swift(swiftType))
     }
     
     static let variant = InstanceType(swiftType: "Variant")
@@ -50,164 +75,237 @@ struct InstanceType: Equatable {
     static let stringName = InstanceType(swiftType: "StringName")
     static let variantVarargs = InstanceType(swiftType: "VariantVarargs")
     
-    /// For instance, `"enum"` if the Godot type is `"enum::AType.SomeType.Flag"`.
-    private let preType: PreGodotType?
-    /// For instance, `"Flag"` if the Godot type is `"enum::AType.SomeType.Flag"`.
-    let finalType: InstanceTypePart
-    /// For instance, `"[SomeType, AType]"` if the Godot type is `"enum::AType.SomeType.Flag"`.
-    /// They are sorted from most local to most global scope.
-    let scopeTypes: [InstanceTypePart]
-    /// A Boolean value indicating whether the type is optional.
-    private var isOptional: Bool
-    
-    init(finalType: InstanceTypePart, scopeTypes: [InstanceTypePart], preType: PreGodotType?, isOptional: Bool) {
-        self.finalType = finalType
-        self.scopeTypes = scopeTypes
-        self.preType = preType
-        self.isOptional = isOptional
+    static func == (lhs: InstanceType, rhs: String) -> Bool {
+        lhs.toSwift(definedInside: nil) == rhs
     }
     
-    init(godotName: String) throws {
-        let preAndPost = godotName.components(separatedBy: ":")
-        guard !preAndPost.isEmpty else {
-            throw InitError.couldNotInferTypes
-        }
-        
-        let preType = preAndPost.count == 1 ? nil : PreGodotType(rawValue: preAndPost[0])
-        
-        let post = preAndPost.last!
-        let components = post.components(separatedBy: ".")
-        
-        guard components.count > 0 else {
-            throw InitError.couldNotInferTypes
-        }
-        
-        let scopeTypes = components.dropLast(1).reversed().map { InstanceTypePart(godotName: $0) }
-        let finalType = InstanceTypePart(godotName: components.last!)
-        
-        self.init(finalType: finalType, scopeTypes: scopeTypes, preType: preType, isOptional: false)
+    static func != (lhs: InstanceType, rhs: String) -> Bool {
+        !(lhs == rhs)
     }
     
-    fileprivate init(swiftType: String) {
-        let isOptional = swiftType.last == "?"
-        self.init(finalType: .swiftName(String(swiftType.dropLast(isOptional ? 1 : 0))),
-                  scopeTypes: [],
-                  preType: nil,
-                  isOptional: isOptional)
-    }
-    
-    func `optional`(_ state: Bool = true) -> InstanceType {
-        var new = self
-        new.isOptional = state
-        return new
-    }
+    // MARK: Vars
     
     var isSwiftBaseType: Bool {
-        finalType.isSwiftBaseType
+        switch self {
+        case .type(let stringType):
+            return stringType.isSwiftBaseType
+        case .enum(let instanceType):
+            return instanceType.isSwiftBaseType
+        case .bitfield(let instanceType):
+            return instanceType.isSwiftBaseType
+        case .scope(let scopeType, type: _):
+            return scopeType.isSwiftBaseType
+        case .generic(let type, _):
+            return type.isSwiftBaseType
+        case .optional(let instanceType):
+            return instanceType.isSwiftBaseType
+        case .const(let instanceType):
+            return instanceType.isSwiftBaseType
+        case .pointer(_):
+            return false
+        }
     }
     
     var isBuiltinBaseValueType: Bool {
-        finalType.isBuiltinBaseValueType
+        switch self {
+        case .type(let stringType):
+            return stringType.isBuiltinBaseValueType
+        case .enum(let instanceType):
+            return instanceType.isBuiltinBaseValueType
+        case .bitfield(let instanceType):
+            return instanceType.isBuiltinBaseValueType
+        case .scope(let scopeType, type: _):
+            return scopeType.isBuiltinBaseValueType
+        case .generic(let type, _):
+            return type.isBuiltinBaseValueType
+        case .optional(let instanceType):
+            return instanceType.isBuiltinBaseValueType
+        case .const(let instanceType):
+            return instanceType.isBuiltinBaseValueType
+        case .pointer(_):
+            return false
+        }
     }
     
     var isBuiltinOpaqueValueType: Bool {
-        finalType.isBuiltinOpaqueValueType || isTypedArray
+        switch self {
+        case .type(let stringType):
+            return stringType.isBuiltinOpaqueValueType
+        case .enum(let instanceType):
+            return instanceType.isBuiltinOpaqueValueType
+        case .bitfield(let instanceType):
+            return instanceType.isBuiltinOpaqueValueType
+        case .scope(let scopeType, type: _):
+            return scopeType.isBuiltinOpaqueValueType
+        case .generic(let type, _):
+            return type.isBuiltinOpaqueValueType
+        case .optional(let instanceType):
+            return instanceType.isBuiltinOpaqueValueType
+        case .const(let instanceType):
+            return instanceType.isBuiltinOpaqueValueType
+        case .pointer(_):
+            return false
+        }
     }
     
     var isValueType: Bool {
-        finalType.isValueType || isEnumType || isBitfieldType || isTypedArray
+        switch self {
+        case .type(let stringType):
+            return stringType.isValueType
+        case .enum(_):
+            return true
+        case .bitfield(_):
+            return true
+        case .scope(let scopeType, type: _):
+            return scopeType.isValueType
+        case .generic(let type, _):
+            return type.isValueType
+        case .optional(let instanceType):
+            return instanceType.isValueType
+        case .const(let instanceType):
+            return instanceType.isValueType
+        case .pointer(_):
+            return false
+        }
     }
     
     var isGodotClassType: Bool {
         !isValueType
     }
     
-    private var isEnumType: Bool {
-        preType == .enum
+    var isEnumType: Bool {
+        switch self {
+        case .type(_):
+            return false
+        case .enum(_):
+            return true
+        case .bitfield(_):
+            return false
+        case .scope(_, let type):
+            return type.isEnumType
+        case .generic(let type, _):
+            return type.isEnumType
+        case .optional(let instanceType):
+            return instanceType.isEnumType
+        case .const(let instanceType):
+            return instanceType.isEnumType
+        case .pointer(let instanceType):
+            return instanceType.isEnumType
+        }
     }
     
-    private var isBitfieldType: Bool {
-        preType == .bitfield
-    }
-    
-    private var isTypedArray: Bool {
-        preType == .typedArray
+    var isBitfieldType: Bool {
+        switch self {
+        case .type(_):
+            return false
+        case .enum(_):
+            return false
+        case .bitfield(_):
+            return true
+        case .scope(_, let type):
+            return type.isBitfieldType
+        case .generic(let type, _):
+            return type.isBitfieldType
+        case .optional(let instanceType):
+            return instanceType.isBitfieldType
+        case .const(let instanceType):
+            return instanceType.isBitfieldType
+        case .pointer(let instanceType):
+            return instanceType.isBitfieldType
+        }
     }
     
     /// Returns how this type should be accessed for Godot.
-    func accessPointerMethod() -> PointerAccessMethod {
+    var accessPointerMethod: PointerAccessMethod {
         if self == .variantVarargs {
             return .variantVarargs
         } else if self == .opaque {
             return .opaque
         } else if isEnumType || isBitfieldType {
             return .swiftStandard
-        } else if isTypedArray {
-            return .godotNative
-        } else if finalType.accessPointerWithGodotNative {
+        } else if !isValueType || isBuiltinOpaqueValueType {
             return .godotNative
         } else {
             return .swiftStandard
         }
     }
     
-    /// Converts this type to a variable name. Ex: `PackedByteArray` becomes `packedByteArray`.
-    func toVariableName(usedInside insideType: InstanceType? = nil) -> String {
-        NamingConvention.pascal.convert(string: toSwift(usedInside: insideType)
-            .replacingOccurrences(of: "<", with: "")
-            .replacingOccurrences(of: ">", with: ""),
-                                        to: .camel)
-    }
-    
-    /// Converts a given Godot type to the Swift equivalent.
-    ///
-    /// For instance, an `int` value would give an `Int` value in Swift.
-    /// - Parameter insideType: The type in which this type is used.
-    /// Depending on this type, the same type could return different types.
-    /// - Parameter showScope: A Boolean value indicating whether the scope of the type should be visible.
-    func toSwift(usedInside insideType: InstanceType? = nil, showScope: Bool = true) -> String {
-        var concatenatedScopeTypes = scopeTypes
-        if let insideType {
-            concatenatedScopeTypes.append(insideType.finalType)
-            concatenatedScopeTypes.append(contentsOf: insideType.scopeTypes)
+    var godotVariantType: String {
+        guard let type = typeToGodotVariantType[toSwift(definedInside: nil)] else {
+            fatalError("No variant type provided for \"\(toSwift(definedInside: nil))\"")
         }
         
-        var typeString = finalType.toSwift(scopeTypes: concatenatedScopeTypes)
-        
-        if !finalType.isSwiftBaseType && showScope {
-            var scopeTypesToShow = scopeTypes
-            
-            // If the insideType is the same as the last scope type, then no need to show it.
-            if let insideType,
-               insideType.finalType == scopeTypes.last {
-                scopeTypesToShow.removeLast()
+        return type
+    }
+    
+    var finalType: StringType {
+        switch self {
+        case .type(let stringType):
+            return stringType
+        case .enum(let instanceType):
+            return instanceType.finalType
+        case .bitfield(let instanceType):
+            return instanceType.finalType
+        case .scope(scopeType: _, let type):
+            return type.finalType
+        case .generic(let type, _):
+            return type.finalType
+        case .optional(let instanceType):
+            return instanceType.finalType
+        case .const(let instanceType):
+            return instanceType.finalType
+        case .pointer(let instanceType):
+            return instanceType.finalType
+        }
+    }
+    
+    func firstScopeType() -> InstanceType? {
+        switch self {
+        case .scope(let scopeType, let type):
+            if let firstScopeType = type.firstScopeType() {
+                return firstScopeType
             }
             
-            let scopeString = scopeTypesToShow.reversed().reduce(into: "") { $0 += $1.toSwift() + "."}
-            typeString = scopeString + typeString
+            return scopeType
+        default:
+            return nil
         }
-        
-        if preType == .typedArray {
-            typeString = "TypedArray<\(typeString)>"
-        }
-        
-        if isOptional {
-            typeString += "?"
-        }
-        
-        return typeString
-    }
-    
-    var godotVariantType: String {
-        finalType.godotVariantType
     }
     
     // MARK: Code
     
+    func toSwift(definedInside insideType: InstanceType? = nil) -> String {
+        _toSwift(isConst: false, definedInside: insideType)
+    }
+    
+    private func _toSwift(isConst: Bool, definedInside insideType: InstanceType?) -> String {
+        switch self {
+        case .type(let stringType):
+            return stringType.toSwift(definedInside: insideType)
+        case .enum(let stringType):
+            return stringType.toSwift(definedInside: insideType)
+        case .bitfield(let stringType):
+            return stringType.toSwift(definedInside: insideType)
+        case .scope(let scopeType, let type):
+            let scopeString = insideType == scopeType ? "" : scopeType._toSwift(isConst: false, definedInside: insideType) + "."
+            return scopeString + type._toSwift(isConst: isConst, definedInside: scopeType)
+        case .generic(let type, let genericType):
+            return type._toSwift(isConst: isConst, definedInside: insideType)
+            + "<" + genericType._toSwift(isConst: false, definedInside: insideType) + ">"
+        case .optional(let instanceType):
+            return instanceType._toSwift(isConst: isConst, definedInside: insideType) + "?"
+        case .const(let instanceType):
+            return instanceType._toSwift(isConst: true, definedInside: insideType)
+        case .pointer(let instanceType):
+            let pointerType = isConst ? "UnsafePointer" : "UnsafeMutablePointer"
+            return pointerType + "<" + instanceType._toSwift(isConst: false, definedInside: insideType) + ">"
+        }
+    }
+    
     /// Returns the type that will be generated for returning the given type.
     /// For instance, a `String` type will return `String`,
     /// while an `Enum` type will return `Int`.
-    func initializerType() -> InstanceType {
+    func temporaryInstanceType() -> InstanceType {
         if isEnumType || isBitfieldType {
             return InstanceType(swiftType: "Int")
         } else if isGodotClassType {
@@ -217,11 +315,11 @@ struct InstanceType: Equatable {
         }
     }
     
-    /// Returns the initializer for a given type.
+    /// Returns the temporary initializer for a given type.
     /// For instance, a `String` type will return `var returnValue = String()`,
     /// while an `Enum` type will return `var returnValue = Int(0)`.
     @CodeBuilder
-    func initializerCode(propertyName: String, usedInside insideType: InstanceType? = nil) -> some SwiftCode {
+    func temporaryInitializerCode(propertyName: String, definedInside insideType: InstanceType?) -> some SwiftCode {
         if isEnumType || isBitfieldType {
             Property(propertyName).defined(isVar: true)
                 .assign(value: "Int(0)")
@@ -229,30 +327,31 @@ struct InstanceType: Equatable {
             Property(propertyName).defined(isVar: true)
                 .type("GDNativeObjectPtr!")
         } else {
-            Property(propertyName).defined(isVar: accessPointerMethod() == .swiftStandard)
-                .assign(value: toSwift(usedInside: insideType) + "()")
+            Property(propertyName).defined(isVar: accessPointerMethod == .swiftStandard)
+                .assign(value: toSwift(definedInside: insideType) + "()")
         }
     }
     
-    /// Returns the  return code for a given type.
+    /// Returns the temporary return code for a given type.
     /// For instance, a `String` type will return `return returnValue`,
     /// while an `Enum` type will return `return = Type(rawValue: returnValue)`.
     @CodeBuilder
-    func returnCode(propertyName: String, usedInside insideType: InstanceType? = nil) -> some SwiftCode {
+    func temporaryReturnCode(propertyName: String,
+                             definedInside insideType: InstanceType?) -> some SwiftCode {
         if isEnumType {
-            Return(toSwift(usedInside: insideType) + "(rawValue: \(propertyName))!")
+            Return(toSwift(definedInside: insideType) + "(rawValue: \(propertyName))!")
         } else if isBitfieldType {
-            Return(toSwift(usedInside: insideType) + "(rawValue: \(propertyName))")
+            Return(toSwift(definedInside: insideType) + "(rawValue: \(propertyName))")
         } else if isGodotClassType {
 """
 if let \(propertyName) {
-    return withUnsafePointer(to: \(toSwift(usedInside: insideType)).instanceBindingsCallbacks()) { callbacksPointer in
+    return withUnsafePointer(to: \(toSwift(definedInside: insideType)).instanceBindingsCallbacks()) { callbacksPointer in
         let opaque = GodotInterface.native.object_get_instance_binding(
             \(propertyName),
             GodotInterface.token,
             callbacksPointer)
         
-        return Unmanaged<\(toSwift(usedInside: insideType))>.fromOpaque(opaque!).takeUnretainedValue()
+        return Unmanaged<\(toSwift(definedInside: insideType))>.fromOpaque(opaque!).takeUnretainedValue()
     }
 } else {
     return nil
@@ -262,8 +361,6 @@ if let \(propertyName) {
             Return(propertyName)
         }
     }
-    
-    // MARK: Instantiation code
     
     /// Returns a `String` for a given instantation string.
     ///
@@ -340,7 +437,7 @@ if let \(propertyName) {
         }
         
         if constantValue.string == "" {
-            return finalType.toSwift() + "()"
+            return finalType.toSwift(definedInside: nil) + "()"
         }
         
         if constantValue.string == "null" {
@@ -348,30 +445,27 @@ if let \(propertyName) {
         }
         
         if isEnumType {
-            return toSwift() + "(rawValue: \(constantValue.string))!"
+            return toSwift(definedInside: nil) + "(rawValue: \(constantValue.string))!"
         }
         
         if isBitfieldType {
-            return toSwift() + "(rawValue: \(constantValue.string))"
+            return toSwift(definedInside: nil) + "(rawValue: \(constantValue.string))"
         }
         
         return constantValue.string
     }
     
-    static func == (lhs: InstanceType, rhs: String) -> Bool {
-        lhs.toSwift(showScope: false) == rhs
-    }
+    // MARK: Modifiers
     
-    static func != (lhs: InstanceType, rhs: String) -> Bool {
-        !(lhs == rhs)
+    func `optional`(_ state: Bool = true) -> InstanceType {
+        if state {
+            return .optional(self)
+        } else {
+            return self
+        }
     }
 }
 
-extension InstanceType: Decodable {
-    init(from decoder: Decoder) throws {
-        try self.init(godotName: try String(from: decoder))
-    }
-}
 
 extension Optional where Wrapped == InstanceType {
     var godotVariantType: String {
@@ -379,334 +473,272 @@ extension Optional where Wrapped == InstanceType {
     }
 }
 
+extension InstanceType: Decodable {
+    init(from decoder: Decoder) throws {
+        let string = try String(from: decoder)
+        try self.init(godotString: string)
+    }
+}
 
-// MARK: - InstanceType Part
+// MARK: - StringType Extensions
 
-/// A part of an `InstanceType` only as a simple name with no "." character.
-/// An `InstanceType` is made of several `InstanceTypePart` values.
-///
-/// ```
-/// "enum::SomeType.Flag"
-/// // -> InstanceTypePart("SomeType")
-/// // -> InstanceTypePart("Flag")
-/// ```
-enum InstanceTypePart: Equatable {
-    case godotName(String)
-    case swiftName(String)
-    
-    var underlyingType: String {
+extension InstanceType.StringType {
+    var string: String {
         switch self {
-        case .godotName(let string):
+        case .godot(let string):
             return string
-        case .swiftName(let string):
+        case .swift(let string):
             return string
         }
     }
     
-    init(godotName: String) {
-        if godotName.contains(".") {
-            fatalError("An InstanceTypePart should not contain a \".\". character.")
-        }
-        
-        self = .godotName(godotName)
-    }
-    
-    init(swiftName: String) {
-        if swiftName.contains(".") {
-            fatalError("An InstanceTypePart should not contain a \".\". character.")
-        }
-        
-        self = .swiftName(swiftName)
-    }
-    
-    var isValueType: Bool {
-        isSwiftBaseType || isBuiltinBaseValueType || isBuiltinOpaqueValueType || isNativeStructType || isPointer
-    }
-    
-    var isSwiftBaseType: Bool {
-        InstanceTypePart.swiftBaseTypes.contains(toSwift())
-    }
-    
-    var isBuiltinBaseValueType: Bool {
-        InstanceTypePart.builtinBaseValueTypes.contains(toSwift())
-    }
-    
-    var isBuiltinOpaqueValueType: Bool {
-        InstanceTypePart.builtinOpaqueValueTypes.contains(toSwift())
-    }
-    
-    var isNativeStructType: Bool {
-        InstanceTypePart.nativeStructuresTypes.contains(toSwift())
-    }
-    
-    /// Returns `true` if, for accessing the pointer of the underlying object,
-    /// it should be called using `withUnsafeNativePointer(:)` instead of the
-    /// Swift `withUnsafePointer(to:)`.
-    ///
-    /// ```
-    /// // If true:
-    /// value.withUnsafeNativePointer { ptr in
-    ///     ...
-    /// }
-    ///
-    /// // If false:
-    /// withUnsafePointer(to: value) { ptr in
-    ///     ...
-    /// }
-    /// ```
-    var accessPointerWithGodotNative: Bool {
-        !isValueType || isBuiltinOpaqueValueType
-    }
-    
-    var isPointer: Bool {
+    func toSwift(definedInside insideType: InstanceType?) -> String {
         switch self {
-        case .godotName(let string):
-            return string.last == "*"
-        case .swiftName(let string):
-            return string.starts(with: "UnsafePointer")
-            || string.starts(with: "UnsafeMutablePointer")
-            || string.starts(with: "UnsafeRawPointer")
-            || string.starts(with: "UnsafeMutableRawPointer")
-        }
-    }
-    
-    /// Converts a given Godot type to the Swift equivalent.
-    ///
-    /// For instance, an `int` value would give an `Int` value in Swift.
-    /// - Parameter scopeTypes: The scopes in which the type is used.
-    /// They are sorted from the most local scope to the most global scope.
-    /// Depending on the scope, the same type could return different types.
-    func toSwift(scopeTypes: InstanceTypePart...) -> String {
-        toSwift(scopeTypes: scopeTypes)
-    }
-    
-    /// Converts a given Godot type to the Swift equivalent.
-    ///
-    /// For instance, an `int` value would give an `Int` value in Swift.
-    /// - Parameter scopeTypes: The scopes in which the type is used.
-    /// They are sorted from the most local scope to the most global scope.
-    /// Depending on the scope, the same type could return different types.
-    func toSwift(scopeTypes: [InstanceTypePart]) -> String {
-        switch self {
-        case .godotName(let string):
-            let isConst = string.starts(with: "const ")
-            
-            // Defines if the type is pointer
-            var typeString = string
-            if isPointer {
-                typeString.removeLast()
-            }
-            if isConst {
-                typeString.removeFirst(6)
-            }
-            
-            // Transforms the base type
-            switch typeString {
+        case .godot(let string):
+            switch string {
             case "float":
                 // For Float types, it can be either a Float, a Double or a Real.
                 // Double is used for builtin base classes that do use opaque.
                 // Float is used for Color.
-                // Real is used for all the other types
-                if let scopeType = scopeTypes.first,
-                   scopeType.isBuiltinBaseValueType {
-                    typeString = scopeType.toSwift() == "Color" ? "Float" : "Real"
+                // Real is used for all the other types.
+                if let insideType,
+                   insideType.isBuiltinBaseValueType {
+                    return insideType == "Color" ? "Float" : "Real"
                 } else {
-                    typeString = "Double"
+                    return "Double"
                 }
-            case "real_t": typeString = "Real"
-            case "int": typeString = "Int"
-            case "int8_t": typeString = "Int8"
-            case "int16_t": typeString = "Int16"
-            case "int32_t": typeString = "Int32"
-            case "int64_t": typeString = "Int64"
-            case "uint8_t": typeString = "UInt8"
-            case "uint16_t": typeString = "UInt16"
-            case "uint32_t": typeString = "UInt32"
-            case "uint64_t": typeString = "UInt64"
-            case "int8_t *": typeString = "UnsafeMutablePointer<Int8>"
-            case "int16_t *": typeString = "UnsafeMutablePointer<Int16>"
-            case "int32_t *": typeString = "UnsafeMutablePointer<Int32>"
-            case "int64_t *": typeString = "UnsafeMutablePointer<Int64>"
-            case "uint8_t *": typeString = "UnsafeMutablePointer<UInt8>"
-            case "uint16_t *": typeString = "UnsafeMutablePointer<UInt16>"
-            case "uint32_t *": typeString = "UnsafeMutablePointer<UInt32>"
-            case "uint64_t *": typeString = "UnsafeMutablePointer<UInt64>"
-            case "bool": typeString = "Bool"
-            case "Error": typeString = "ErrorType"
+            case "real_t": return "Real"
+            case "int": return "Int"
+            case "int8_t": return "Int8"
+            case "int16_t": return "Int16"
+            case "int32_t": return "Int32"
+            case "int64_t": return "Int64"
+            case "uint8_t": return "UInt8"
+            case "uint16_t": return "UInt16"
+            case "uint32_t": return "UInt32"
+            case "uint64_t": return "UInt64"
+            case "bool": return "Bool"
+            case "Error": return "ErrorType"
             case "Type":
-                guard let scope = scopeTypes.first?.toSwift() else {
-                    typeString = "Type"
-                    break
+                guard let insideType else {
+                    return "Type"
                 }
                 
-                if scope == "Variant" {
-                    typeString = "ValueType"
+                if insideType == "Variant" {
+                    return "ValueType"
                 } else {
-                    typeString = scope + "Type"
+                    return insideType.toSwift(definedInside: insideType) + "Type"
                 }
-            default: break
+            default: return string
             }
-            
-            // Return the correct type with the pointer
-            if isPointer {
-                let mutableString = isConst ? "" : "Mutable"
-                if typeString == "void" {
-                    return "Unsafe\(mutableString)RawPointer"
-                } else {
-                    return "Unsafe\(mutableString)Pointer<\(typeString)>"
-                }
-            } else {
-                return typeString
-            }
-        case .swiftName(let string):
+        case .swift(let string):
             return string
         }
     }
     
-    static func == (lhs: InstanceTypePart, rhs: String) -> Bool {
-        lhs.toSwift() == rhs
+    var isValueType: Bool {
+        isSwiftBaseType || isBuiltinBaseValueType || isBuiltinOpaqueValueType || isNativeStructType
     }
     
-    static func != (lhs: InstanceTypePart, rhs: String) -> Bool {
-        !(lhs == rhs)
+    var isSwiftBaseType: Bool {
+        swiftBaseTypes.contains(string)
     }
     
-    var godotVariantType: String {
-        guard let type = InstanceTypePart.typeToGodotVariantType[underlyingType] else {
-            fatalError("No variant type provided for \"\(underlyingType)\"")
-        }
-        
-        return type
+    var isBuiltinBaseValueType: Bool {
+        builtinBaseValueTypes.contains(string)
     }
     
-    /// The godot native variant enum value: `GDNATIVE_VARIANT_TYPE_<type>`.
-    private static let typeToGodotVariantType: [String : String] = [
-        "Nil": "GDNATIVE_VARIANT_TYPE_NIL",
-        "Variant": "GDNATIVE_VARIANT_TYPE_NIL",
-        "bool": "GDNATIVE_VARIANT_TYPE_BOOL",
-        "Bool": "GDNATIVE_VARIANT_TYPE_BOOL",
-        "int": "GDNATIVE_VARIANT_TYPE_INT",
-        "Int": "GDNATIVE_VARIANT_TYPE_INT",
-        "float": "GDNATIVE_VARIANT_TYPE_FLOAT",
-        "Float": "GDNATIVE_VARIANT_TYPE_FLOAT",
-        "Double": "GDNATIVE_VARIANT_TYPE_FLOAT",
-        "String": "GDNATIVE_VARIANT_TYPE_STRING",
-        "Vector2": "GDNATIVE_VARIANT_TYPE_VECTOR2",
-        "Vector2i": "GDNATIVE_VARIANT_TYPE_VECTOR2I",
-        "Rect2": "GDNATIVE_VARIANT_TYPE_RECT2",
-        "Rect2i": "GDNATIVE_VARIANT_TYPE_RECT2I",
-        "Vector3": "GDNATIVE_VARIANT_TYPE_VECTOR3",
-        "Vector3i": "GDNATIVE_VARIANT_TYPE_VECTOR3I",
-        "Transform2D": "GDNATIVE_VARIANT_TYPE_TRANSFORM2D",
-        "Vector4": "GDNATIVE_VARIANT_TYPE_VECTOR4",
-        "Vector4i": "GDNATIVE_VARIANT_TYPE_VECTOR4I",
-        "Plane": "GDNATIVE_VARIANT_TYPE_PLANE",
-        "Quaternion": "GDNATIVE_VARIANT_TYPE_QUATERNION",
-        "AABB": "GDNATIVE_VARIANT_TYPE_AABB",
-        "Basis": "GDNATIVE_VARIANT_TYPE_BASIS",
-        "Transform3D": "GDNATIVE_VARIANT_TYPE_TRANSFORM3D",
-        "Projection": "GDNATIVE_VARIANT_TYPE_PROJECTION",
-        "Color": "GDNATIVE_VARIANT_TYPE_COLOR",
-        "StringName": "GDNATIVE_VARIANT_TYPE_STRING_NAME",
-        "NodePath": "GDNATIVE_VARIANT_TYPE_NODE_PATH",
-        "RID": "GDNATIVE_VARIANT_TYPE_RID",
-        "Object": "GDNATIVE_VARIANT_TYPE_OBJECT",
-        "Callable": "GDNATIVE_VARIANT_TYPE_CALLABLE",
-        "Signal": "GDNATIVE_VARIANT_TYPE_SIGNAL",
-        "Dictionary": "GDNATIVE_VARIANT_TYPE_DICTIONARY",
-        "Array": "GDNATIVE_VARIANT_TYPE_ARRAY",
-        "PackedByteArray": "GDNATIVE_VARIANT_TYPE_PACKED_BYTE_ARRAY",
-        "PackedInt32Array": "GDNATIVE_VARIANT_TYPE_PACKED_INT32_ARRAY",
-        "PackedInt64Array": "GDNATIVE_VARIANT_TYPE_PACKED_INT64_ARRAY",
-        "PackedFloat32Array": "GDNATIVE_VARIANT_TYPE_PACKED_FLOAT32_ARRAY",
-        "PackedFloat64Array": "GDNATIVE_VARIANT_TYPE_PACKED_FLOAT64_ARRAY",
-        "PackedStringArray": "GDNATIVE_VARIANT_TYPE_PACKED_STRING_ARRAY",
-        "PackedVector2Array": "GDNATIVE_VARIANT_TYPE_PACKED_VECTOR2_ARRAY",
-        "PackedVector3Array": "GDNATIVE_VARIANT_TYPE_PACKED_VECTOR3_ARRAY",
-        "PackedColorArray": "GDNATIVE_VARIANT_TYPE_PACKED_COLOR_ARRAY",
-    ]
+    var isBuiltinOpaqueValueType: Bool {
+        builtinOpaqueValueTypes.contains(string)
+    }
     
-    /// The base types defined by Swift.
-    private static let swiftBaseTypes: Set<String> = [
-        "Nil",
-        "Bool",
-        "Int",
-        "Int8",
-        "Int16",
-        "Int32",
-        "Int64",
-        "UInt8",
-        "UInt16",
-        "UInt32",
-        "UInt64",
-        "Float",
-        "Double",
-        "GDNativeInt",
-        "GDNativeObjectPtr",
-        "Real",
-    ]
+    var isNativeStructType: Bool {
+        nativeStructuresTypes.contains(string)
+    }
     
-    /// The builtin base structs defined as value types.
-    /// `Vector2` is a builtin struct and also a *base* one because there is no underlying `Opaque` value.
-    /// `Array` is a builtin struct but not a *base* one because there is an underlying `Opaque` value.
-    private static let builtinBaseValueTypes: Set<String> = [
-        "AABB",
-        "Basis",
-        "Color",
-        "Plane",
-        "Projection",
-        "Quaternion",
-        "Rect2",
-        "Rect2i",
-        "Transform2D",
-        "Transform3D",
-        "Vector2",
-        "Vector2i",
-        "Vector3",
-        "Vector3i",
-        "Vector4",
-        "Vector4i",
-    ]
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.toSwift(definedInside: nil) == rhs.toSwift(definedInside: nil)
+    }
     
-    /// The builtin generated structs defined as value types, but with underlying `Opaque` value.
-    private static let builtinOpaqueValueTypes: Set<String> = [
-        "Array",
-        "Callable",
-        "Dictionary",
-        "NodePath",
-        "PackedByteArray",
-        "PackedColorArray",
-        "PackedFloat32Array",
-        "PackedFloat64Array",
-        "PackedInt32Array",
-        "PackedInt64Array",
-        "PackedStringArray",
-        "PackedVector2Array",
-        "PackedVector3Array",
-        "RID",
-        "Signal",
-        "String",
-        "StringName",
-        "TypedArray",
-        "Variant",
-        "Opaque",
-    ]
-    
-    /// The native structs of Godot..
-    private static let nativeStructuresTypes: Set<String> = [
-        "AudioFrame",
-        "CaretInfo",
-        "Glyph",
-        "ObjectID",
-        "PhysicsServer2DExtensionMotionResult",
-        "PhysicsServer2DExtensionRayResult",
-        "PhysicsServer2DExtensionShapeRestInfo",
-        "PhysicsServer2DExtensionShapeResult",
-        "PhysicsServer3DExtensionMotionCollision",
-        "PhysicsServer3DExtensionMotionResult",
-        "PhysicsServer3DExtensionRayResult",
-        "PhysicsServer3DExtensionShapeRestInfo",
-        "PhysicsServer3DExtensionShapeResult",
-        "ScriptLanguageExtensionProfilingInfo",
-    ]
+    static func == (lhs: Self, rhs: String) -> Bool {
+        lhs.string == rhs
+    }
 }
+
+// MARK: - PointerAccessMethod
+
+extension InstanceType {
+    /// Defines how an `InstanceType` should be accessed.
+    enum PointerAccessMethod {
+        /// ```
+        /// withUnsafePointer(to: value) { ptr in
+        ///     ...
+        /// }
+        /// ```
+        case swiftStandard
+        
+        /// ```
+        /// value.withUnsafeNativePointer { ptr in
+        ///     ...
+        /// }
+        case godotNative
+        
+        /// ```
+        /// value.withUnsafeMutableRawPointer { ptr in
+        ///     ...
+        /// }
+        case opaque
+        
+        /// ```
+        /// VariantVarargs(value).withUnsafeNativePointers { ptrs in
+        ///     ...
+        /// }
+        case variantVarargs
+    }
+}
+
+// MARK: - Types
+
+/// The godot native variant enum value: `GDNATIVE_VARIANT_TYPE_<type>`.
+private let typeToGodotVariantType: [String : String] = [
+    "Nil": "GDNATIVE_VARIANT_TYPE_NIL",
+    "Variant": "GDNATIVE_VARIANT_TYPE_NIL",
+    "bool": "GDNATIVE_VARIANT_TYPE_BOOL",
+    "Bool": "GDNATIVE_VARIANT_TYPE_BOOL",
+    "int": "GDNATIVE_VARIANT_TYPE_INT",
+    "Int": "GDNATIVE_VARIANT_TYPE_INT",
+    "float": "GDNATIVE_VARIANT_TYPE_FLOAT",
+    "Float": "GDNATIVE_VARIANT_TYPE_FLOAT",
+    "Double": "GDNATIVE_VARIANT_TYPE_FLOAT",
+    "String": "GDNATIVE_VARIANT_TYPE_STRING",
+    "Vector2": "GDNATIVE_VARIANT_TYPE_VECTOR2",
+    "Vector2i": "GDNATIVE_VARIANT_TYPE_VECTOR2I",
+    "Rect2": "GDNATIVE_VARIANT_TYPE_RECT2",
+    "Rect2i": "GDNATIVE_VARIANT_TYPE_RECT2I",
+    "Vector3": "GDNATIVE_VARIANT_TYPE_VECTOR3",
+    "Vector3i": "GDNATIVE_VARIANT_TYPE_VECTOR3I",
+    "Transform2D": "GDNATIVE_VARIANT_TYPE_TRANSFORM2D",
+    "Vector4": "GDNATIVE_VARIANT_TYPE_VECTOR4",
+    "Vector4i": "GDNATIVE_VARIANT_TYPE_VECTOR4I",
+    "Plane": "GDNATIVE_VARIANT_TYPE_PLANE",
+    "Quaternion": "GDNATIVE_VARIANT_TYPE_QUATERNION",
+    "AABB": "GDNATIVE_VARIANT_TYPE_AABB",
+    "Basis": "GDNATIVE_VARIANT_TYPE_BASIS",
+    "Transform3D": "GDNATIVE_VARIANT_TYPE_TRANSFORM3D",
+    "Projection": "GDNATIVE_VARIANT_TYPE_PROJECTION",
+    "Color": "GDNATIVE_VARIANT_TYPE_COLOR",
+    "StringName": "GDNATIVE_VARIANT_TYPE_STRING_NAME",
+    "NodePath": "GDNATIVE_VARIANT_TYPE_NODE_PATH",
+    "RID": "GDNATIVE_VARIANT_TYPE_RID",
+    "Object": "GDNATIVE_VARIANT_TYPE_OBJECT",
+    "Callable": "GDNATIVE_VARIANT_TYPE_CALLABLE",
+    "Signal": "GDNATIVE_VARIANT_TYPE_SIGNAL",
+    "Dictionary": "GDNATIVE_VARIANT_TYPE_DICTIONARY",
+    "Array": "GDNATIVE_VARIANT_TYPE_ARRAY",
+    "PackedByteArray": "GDNATIVE_VARIANT_TYPE_PACKED_BYTE_ARRAY",
+    "PackedInt32Array": "GDNATIVE_VARIANT_TYPE_PACKED_INT32_ARRAY",
+    "PackedInt64Array": "GDNATIVE_VARIANT_TYPE_PACKED_INT64_ARRAY",
+    "PackedFloat32Array": "GDNATIVE_VARIANT_TYPE_PACKED_FLOAT32_ARRAY",
+    "PackedFloat64Array": "GDNATIVE_VARIANT_TYPE_PACKED_FLOAT64_ARRAY",
+    "PackedStringArray": "GDNATIVE_VARIANT_TYPE_PACKED_STRING_ARRAY",
+    "PackedVector2Array": "GDNATIVE_VARIANT_TYPE_PACKED_VECTOR2_ARRAY",
+    "PackedVector3Array": "GDNATIVE_VARIANT_TYPE_PACKED_VECTOR3_ARRAY",
+    "PackedColorArray": "GDNATIVE_VARIANT_TYPE_PACKED_COLOR_ARRAY",
+]
+
+/// The base types defined by Swift.
+private let swiftBaseTypes: Set<String> = [
+    "Nil",
+    "Bool",
+    "Int",
+    "Int8",
+    "Int16",
+    "Int32",
+    "Int64",
+    "UInt8",
+    "UInt16",
+    "UInt32",
+    "UInt64",
+    "Float",
+    "Double",
+    "Real",
+    "GDNativeInt",
+    "GDNativeObjectPtr",
+    
+    "float",
+    "real_t",
+    "int",
+    "int8_t",
+    "int16_t",
+    "int32_t",
+    "int64_t",
+    "uint8_t",
+    "uint16_t",
+    "uint32_t",
+    "uint64_t",
+    "bool",
+]
+
+/// The builtin base structs defined as value types.
+/// `Vector2` is a builtin struct and also a *base* one because there is no underlying `Opaque` value.
+/// `Array` is a builtin struct but not a *base* one because there is an underlying `Opaque` value.
+private let builtinBaseValueTypes: Set<String> = [
+    "AABB",
+    "Basis",
+    "Color",
+    "Plane",
+    "Projection",
+    "Quaternion",
+    "Rect2",
+    "Rect2i",
+    "Transform2D",
+    "Transform3D",
+    "Vector2",
+    "Vector2i",
+    "Vector3",
+    "Vector3i",
+    "Vector4",
+    "Vector4i",
+]
+
+/// The builtin generated structs defined as value types, but with underlying `Opaque` value.
+private let builtinOpaqueValueTypes: Set<String> = [
+    "Array",
+    "Callable",
+    "Dictionary",
+    "NodePath",
+    "PackedByteArray",
+    "PackedColorArray",
+    "PackedFloat32Array",
+    "PackedFloat64Array",
+    "PackedInt32Array",
+    "PackedInt64Array",
+    "PackedStringArray",
+    "PackedVector2Array",
+    "PackedVector3Array",
+    "RID",
+    "Signal",
+    "String",
+    "StringName",
+    "TypedArray",
+    "Variant",
+    "Opaque",
+]
+
+/// The native structs of Godot..
+private let nativeStructuresTypes: Set<String> = [
+    "AudioFrame",
+    "CaretInfo",
+    "Glyph",
+    "ObjectID",
+    "PhysicsServer2DExtensionMotionResult",
+    "PhysicsServer2DExtensionRayResult",
+    "PhysicsServer2DExtensionShapeRestInfo",
+    "PhysicsServer2DExtensionShapeResult",
+    "PhysicsServer3DExtensionMotionCollision",
+    "PhysicsServer3DExtensionMotionResult",
+    "PhysicsServer3DExtensionRayResult",
+    "PhysicsServer3DExtensionShapeRestInfo",
+    "PhysicsServer3DExtensionShapeResult",
+    "ScriptLanguageExtensionProfilingInfo",
+]

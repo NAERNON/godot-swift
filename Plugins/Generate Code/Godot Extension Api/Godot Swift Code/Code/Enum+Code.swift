@@ -4,11 +4,11 @@ extension ExtensionApi.Enum {
     private typealias CaseData<T> = (name: String, value: T)
     
     @CodeBuilder
-    func code(usedInside insideType: InstanceType? = nil) -> some SwiftCode {
+    func code(definedInside insideType: InstanceType? = nil) -> some SwiftCode {
         if isBitfield == true {
-            optionSetCode(forType: Int.self, usedInside: insideType)
+            optionSetCode(forType: Int.self, definedInside: insideType)
         } else {
-            enumCode(forType: Int.self, usedInside: insideType)
+            enumCode(forType: Int.self, definedInside: insideType)
         }
     }
     
@@ -17,10 +17,10 @@ extension ExtensionApi.Enum {
     ///   - type: The type of the values.
     private func nameAndCases<T: BinaryInteger>(
         forType type: T.Type,
-        usedInside insideType: InstanceType?
+        definedInside insideType: InstanceType?
     ) -> (name: String, cases: [CaseData<T>]) {
         let translatedEnum = CodeLanguage.c.translateEnum(
-            name: name.toSwift(usedInside: insideType),
+            name: name.toSwift(definedInside: insideType),
             cases: values.map { $0.name },
             to: .swift
         )
@@ -35,8 +35,8 @@ extension ExtensionApi.Enum {
     }
 
     private func enumCode<T: BinaryInteger>(forType type: T.Type,
-                                            usedInside insideType: InstanceType?) -> some SwiftCode {
-        let nameAndCases = self.nameAndCases(forType: type, usedInside: insideType)
+                                            definedInside insideType: InstanceType?) -> some SwiftCode {
+        let nameAndCases = self.nameAndCases(forType: type, definedInside: insideType)
         
         // Sometimes, given enums don't have unique values, and two cases can have the same value.
         // When it's the case, every value already in the enum will be considered static properties.
@@ -73,8 +73,8 @@ extension ExtensionApi.Enum {
     }
 
     private func optionSetCode<T: BinaryInteger>(forType type: T.Type,
-                                                 usedInside insideType: InstanceType?) -> some SwiftCode {
-        let nameAndCases = self.nameAndCases(forType: type, usedInside: insideType)
+                                                 definedInside insideType: InstanceType?) -> some SwiftCode {
+        let nameAndCases = self.nameAndCases(forType: type, definedInside: insideType)
 
         return OptionSet(nameAndCases.name,
                          options: nameAndCases.cases)

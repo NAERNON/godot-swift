@@ -12,8 +12,7 @@ struct GlobalEnumsFile: GeneratedSwiftFile {
         Import.foundation
 
         ForEach(enums) { `enum` in
-            if let scopeTypes = `enum`.name.scopeTypes,
-               let scope = scopeTypes.first {
+            if let scope = `enum`.name.firstScopeType() {
                 // We do not generate the enums for the Variant type since
                 // they are already generated.
                 if scope != "Variant" {

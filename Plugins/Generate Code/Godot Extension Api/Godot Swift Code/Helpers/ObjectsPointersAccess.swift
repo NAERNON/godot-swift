@@ -41,7 +41,7 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
             let pointerName = self.pointerName(for: parameter, prime: false)
             let pointerNamePrime = self.pointerName(for: parameter, prime: true)
             
-            switch parameter.type.accessPointerMethod() {
+            switch parameter.type.accessPointerMethod {
             case .godotNative:
                 if parameter.mutability == .mutable || parameter.mutability == .constMutablePointer {
                     "\(name).withUnsafeNativePointer { \(pointerName) in".indentation(level: index)

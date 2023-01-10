@@ -112,7 +112,7 @@ duplicate its value.
             Mark(text: "Enums", isSeparator: true)
             for `enum` in enums {
                 Spacer()
-                `enum`.code(usedInside: name)
+                `enum`.code(definedInside: name)
             }
         }
     }
@@ -294,12 +294,12 @@ Sets all the function bindings and operators used to communicate with Godot.
             Mark(text: "Getter/Setter", isSeparator: true)
             Spacer()
             
-            let indexingType = indexingReturnType.toSwift(usedInside: name)
+            let indexingType = indexingReturnType.toSwift(definedInside: name)
             
             Func(name: "_getValue",
                  parameters: .named("index", type: "GDNativeInt", label: "at"),
                  returnType: indexingType) {
-                indexingReturnType.initializerCode(propertyName: "__returnValue", usedInside: name)
+                indexingReturnType.temporaryInitializerCode(propertyName: "__returnValue", definedInside: name)
                 
                 ObjectsPointersAccess(parameters:
                                         [.named("__returnValue", type: indexingReturnType, mutability: .mutable),
@@ -308,7 +308,7 @@ Sets all the function bindings and operators used to communicate with Godot.
                     "Self.__indexed_getter(\(pointerNames[1]), index, \(pointerNames[0]))"
                 }.padding(top: 1, bottom: 1)
                 
-                indexingReturnType.returnCode(propertyName: "__returnValue", usedInside: name)
+                indexingReturnType.temporaryReturnCode(propertyName: "__returnValue", definedInside: name)
             }.internal()
             
             Spacer()

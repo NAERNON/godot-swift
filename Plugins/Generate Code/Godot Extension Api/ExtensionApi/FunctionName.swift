@@ -58,7 +58,7 @@ struct FunctionName {
         }
         
         return .named(CodeLanguage.swift.protectNameIfKeyword(for: translatedParameter.name),
-                      type: argument.type.optional(argument.type.isGodotClassType).toSwift(usedInside: type),
+                      type: argument.type.optional(argument.type.isGodotClassType).toSwift(definedInside: type),
                       defaultValue: defaultParameterValue,
                       label: translatedParameter.functionParameterLabel)
     }

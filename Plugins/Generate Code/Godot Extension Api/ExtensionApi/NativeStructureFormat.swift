@@ -20,7 +20,7 @@ struct NativeStructureFormat {
                 throw InitError.cannotRetreiveTypeAndValue(part)
             }
             
-            let type = try InstanceType(godotName: String(typeAndValue[0]))
+            let type = try InstanceType(godotString: String(typeAndValue[0]))
             
             let name = typeAndValue[1]
             

@@ -33,7 +33,7 @@ extension ExtensionApi.Class {
             Mark(text: "Enums", isSeparator: true)
             for `enum` in enums {
                 Spacer()
-                `enum`.code(usedInside: name)
+                `enum`.code(definedInside: name)
             }
         }
     }

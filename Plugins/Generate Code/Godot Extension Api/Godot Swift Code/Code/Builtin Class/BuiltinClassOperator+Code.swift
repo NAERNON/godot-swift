@@ -9,9 +9,9 @@ extension ExtensionApi.BuiltinClass.Operator {
         
         Func(name: translatedName,
              parameters: functionParameters(type: type),
-             returnType: returnType.toSwift(usedInside: type)) {
+             returnType: returnType.toSwift(definedInside: type)) {
             
-            returnType.initializerCode(propertyName: "__returnValue", usedInside: type)
+            returnType.temporaryInitializerCode(propertyName: "__returnValue", definedInside: type)
             Spacer()
             
             ObjectsPointersAccess(parameters: objectsPointerAccessParameters(type: type)) { pointerNames in
@@ -35,9 +35,9 @@ extension ExtensionApi.BuiltinClass.Operator {
     
     private func functionParameters(type: InstanceType) -> [FunctionParameter] {
         var parameters = [FunctionParameter]()
-        parameters.append(.named("lhs", type: type.toSwift(usedInside: type), label: .hidden))
+        parameters.append(.named("lhs", type: type.toSwift(definedInside: type), label: .hidden))
         if let rightType {
-            parameters.append(.named("rhs", type: rightType.toSwift(usedInside: type), label: .hidden))
+            parameters.append(.named("rhs", type: rightType.toSwift(definedInside: type), label: .hidden))
         }
         return parameters
     }
