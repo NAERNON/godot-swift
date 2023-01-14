@@ -490,7 +490,7 @@ extension PackedColorArray: TypedVariantTransformable {
     }
 }
 
-// MARK: - Optional
+// MARK: - Optional extensions
 
 extension Optional: VariantConvertible where Wrapped : VariantConvertible {
     public var variant: Variant {
@@ -510,5 +510,17 @@ extension Optional: ExpressibleByVariant where Wrapped : ExpressibleByVariant {
         } else {
             self = .some(Wrapped(variant: variant))
         }
+    }
+}
+
+// MARK: - Variant extensions
+
+extension Variant: VariantTransformable {
+    public var variant: Variant {
+        self
+    }
+    
+    public init(variant: Variant) {
+        self = variant
     }
 }
