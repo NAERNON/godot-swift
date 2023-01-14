@@ -12,7 +12,7 @@ public struct TypedArray<Element> where Element: TypedVariantTransformable {
     private var underlyingArray: Array
     
     public init(_ value: TypedArray<Element>) {
-        self.underlyingArray = value.underlyingArray._duplicate()
+        self.underlyingArray = value.underlyingArray
     }
     
     /// This init is private to this file because public initializers are provided in extensions.
