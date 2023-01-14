@@ -75,7 +75,7 @@ struct GenerateGodotAPI: CommandPlugin {
                 .insideDirectory("Native Structs")
         })
         
-        return (utilityFiles + builtinClassesFiles + classesFiles + nativeStructsFiles)
+        return utilityFiles + builtinClassesFiles + classesFiles + nativeStructsFiles
     }
     
     @CodeBuilder
