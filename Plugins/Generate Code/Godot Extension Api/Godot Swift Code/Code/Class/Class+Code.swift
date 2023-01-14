@@ -239,5 +239,18 @@ self.nativeObjectPtr = nativeObjectPtr
                 "super.init(nativeObjectPtr: nativeObjectPtr)"
             }.internal().override()
         }
+        
+        Spacer()
+        
+        Init(parameters: .named("variant", type: "Variant")) {
+            if isRootClass {
+                "nativeObjectPtr = variant.objectValue(ofType: Self.self).nativeObjectPtr"
+            } else {
+                if isRefCountedRootClass {
+                    Property("_isReferenced").assign(value: "false")
+                }
+                "super.init(variant: variant)"
+            }
+        }.public().required()
     }
 }

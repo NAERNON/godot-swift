@@ -31,8 +31,8 @@ public struct Variant {
         }
     }
     
-    public init<T>(from encodable: T) where T: VariantEncodable {
-        self = encodable.makeVariant()
+    public init<T>(from variantConvertible: T) where T: VariantConvertible {
+        self = variantConvertible.variant
     }
     
     public init(boolValue: Bool) {
@@ -336,8 +336,8 @@ public struct Variant {
 
     // MARK: Getters
     
-    public func value<T>(ofType type: T.Type) -> T where T: VariantDecodable {
-        type.valueFromVariant(self)
+    public func value<T>(ofType type: T.Type) -> T where T: ExpressibleByVariant {
+        type.init(variant: self)
     }
     
     public var boolValue: Bool {

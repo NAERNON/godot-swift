@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 ///
 /// Under the hood, this collection uses the Godot `Array` type.
 ///
-/// Only `VariantCodable` elements can be contained inside a `TypedArray`.
-public struct TypedArray<Element> where Element: VariantCodable {
+/// Only `TypedVariantTransformable` elements can be contained inside a `TypedArray`.
+public struct TypedArray<Element> where Element: TypedVariantTransformable {
     private var underlyingArray: Array
     
     public init(_ value: TypedArray<Element>) {
@@ -18,7 +18,7 @@ public struct TypedArray<Element> where Element: VariantCodable {
     /// This init is private to this file because public initializers are provided in extensions.
     fileprivate init(className: StringName) {
         var array = Array()
-        array._setTyped(type: Int(Element.variantType.rawValue), className: className, script: .nil)
+        array._setTyped(type: Int(Element.variantStorageType.rawValue), className: className, script: .nil)
         self.underlyingArray = array
     }
     
@@ -76,10 +76,10 @@ extension TypedArray: RandomAccessCollection {}
 extension TypedArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Element {
         get {
-            Element.valueFromVariant(underlyingArray[index])
+            Element(variant: underlyingArray[index])
         }
         set(newValue) {
-            underlyingArray[index] = newValue.makeVariant()
+            underlyingArray[index] = newValue.variant
         }
     }
     
@@ -90,7 +90,7 @@ extension TypedArray: RangeReplaceableCollection {
             if collectionIndex + subrange.lowerBound < subrange.upperBound {
                 self[rangeIndex] = element
             } else {
-                underlyingArray.insert(element.makeVariant(), at: rangeIndex)
+                underlyingArray.insert(element.variant, at: rangeIndex)
             }
             rangeIndex += 1
         }

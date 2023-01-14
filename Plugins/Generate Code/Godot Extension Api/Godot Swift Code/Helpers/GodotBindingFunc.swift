@@ -127,7 +127,7 @@ Function: GodotFunction {
         var (translatedName, translatedParameters) = godotFunction.bindingName.toSwift(withType: type, arguments: arguments)
         
         if godotFunction.isVararg {
-            translatedParameters.append(.named("args", type: "(any VariantEncodable)", isVararg: true))
+            translatedParameters.append(.named("args", type: "(any VariantConvertible)", isVararg: true))
         }
         
         return (translatedName, translatedParameters)
