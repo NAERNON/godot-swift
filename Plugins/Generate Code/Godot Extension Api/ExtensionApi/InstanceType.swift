@@ -305,7 +305,7 @@ extension InstanceType {
     /// Returns the type that will be generated for returning the given type.
     /// For instance, a `String` type will return `String`,
     /// while an `Enum` type will return `Int`.
-    func temporaryInstanceType() -> InstanceType {
+    var temporaryInstanceType: InstanceType {
         if isEnumType || isBitfieldType {
             return InstanceType(swiftType: "Int")
         } else if isGodotClassType {
@@ -327,8 +327,8 @@ extension InstanceType {
             Property(propertyName).defined(isVar: true)
                 .type("GDNativeObjectPtr!")
         } else {
-            Property(propertyName).defined(isVar: accessPointerMethod == .swiftStandard)
-                .assign(value: toSwift(definedInside: insideType) + "()")
+            Property(propertyName).defined(isVar: temporaryInstanceType.accessPointerMethod == .swiftStandard)
+                .assign(value: temporaryInstanceType.toSwift(definedInside: insideType) + "()")
         }
     }
     

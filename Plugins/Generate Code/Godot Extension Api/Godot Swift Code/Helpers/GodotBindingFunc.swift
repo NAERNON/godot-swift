@@ -157,7 +157,7 @@ Function: GodotFunction {
     private func temporaryParameterPointerAccess(@CodeBuilder _ body: @escaping (String?) -> some SwiftCode) -> some SwiftCode {
         var parameters = [ObjectsPointersAccessParameter]()
         if let temporaryType {
-            parameters.append(.named(temporaryValueName, type: temporaryType.temporaryInstanceType(), mutability: .mutable))
+            parameters.append(.named(temporaryValueName, type: temporaryType.temporaryInstanceType, mutability: .mutable))
         }
         
         return ObjectsPointersAccess(parameters: parameters) { pointerNames in
