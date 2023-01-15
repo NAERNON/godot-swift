@@ -4,7 +4,7 @@ import PackagePlugin
 extension ExtensionApi.BuiltinClass.Operator {
     @CodeBuilder
     func code(type: InstanceType) -> some SwiftCode {
-        let (translatedName, _) = FunctionName(godotName: "operator_" + name.operationName!.lowercased()).underscored
+        let (translatedName, _) = FunctionName(godotName: "operator_" + name.operationName!.lowercased()).underscored()
             .toSwift(withType: type, arguments: nil)
         
         Func(name: translatedName,

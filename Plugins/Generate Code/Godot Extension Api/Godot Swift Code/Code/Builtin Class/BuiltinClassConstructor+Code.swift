@@ -28,7 +28,7 @@ extension ExtensionApi.BuiltinClass.Constructor {
 
 extension ExtensionApi.BuiltinClass.Constructor: GodotFunction {
     var bindingName: FunctionName {
-        FunctionName(godotName: "constructor").underscored
+        FunctionName(godotName: "constructor").underscored()
     }
     
     var isVararg: Bool { false }

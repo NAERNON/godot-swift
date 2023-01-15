@@ -18,7 +18,7 @@ extension ExtensionApi.BuiltinClass.Method {
 
 extension ExtensionApi.BuiltinClass.Method: GodotFunction {
     var bindingName: FunctionName {
-        name.underscored
+        name.underscored()
     }
     
     var isMutating: Bool { !isConst && !isStatic }

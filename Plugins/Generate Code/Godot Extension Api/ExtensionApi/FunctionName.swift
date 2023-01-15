@@ -7,13 +7,24 @@ struct FunctionName {
         self.godotName = godotName
     }
     
-    private var isUnderscored: Bool = false
+    private var isUnderscored: Bool? = nil
     
     func toSwift(withType type: InstanceType?,
                  arguments: [ExtensionApi.Argument]?) -> (name: String,
                                                           parameters: [FunctionParameter]) {
+        let name: String
+        if let isUnderscored {
+            if isUnderscored {
+                name = godotName.first == "_" ? godotName : "_" + godotName
+            } else {
+                name = godotName.first == "_" ? String(godotName.dropFirst()) : godotName
+            }
+        } else {
+            name = godotName
+        }
+        
         let (translatedName, translatedParameters) = CodeLanguage.c.translateFunction(
-            name: (isUnderscored ? "_" : "") + godotName,
+            name: name,
             parameters: arguments?.map({ .init(name: $0.name.replacingOccurrences(of: " ", with: ""),
                                                label: nil,
                                                isLabelHidden: false) }) ?? [],
@@ -96,9 +107,9 @@ struct FunctionName {
         }
     }
     
-    var underscored: FunctionName {
+    func underscored(_ state: Bool = true) -> FunctionName {
         var new = self
-        new.isUnderscored = true
+        new.isUnderscored = state
         return new
     }
 }
