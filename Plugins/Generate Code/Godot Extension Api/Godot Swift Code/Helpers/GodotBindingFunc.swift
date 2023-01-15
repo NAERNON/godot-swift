@@ -136,7 +136,7 @@ Function: GodotFunction {
     private func objectsPointersAccessParameters(with parameters: [FunctionParameter]) -> [ObjectsPointersAccessParameter] {
         var accessParameters = [ObjectsPointersAccessParameter]()
         for (index, parameter) in parameters.enumerated() {
-            let type: InstanceType = parameter.isVararg ? .variantPointerArray : arguments[index].type
+            let type: InstanceType = parameter.isVararg ? .variantVarargs : arguments[index].type
             accessParameters
                 .append(.named(parameter.name, type: type, mutability: .const, isVararg: parameter.isVararg))
         }

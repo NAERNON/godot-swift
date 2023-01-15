@@ -10,13 +10,16 @@ indirect enum InstanceType: Equatable {
     case `enum`(InstanceType)
     case bitfield(InstanceType)
     
-    /// A type preceded by another type like `Lhs.Rhs`.
+    /// A type preceded by another type like "`Lhs.Rhs`".
     case scope(scopeType: InstanceType, type: InstanceType)
     
-    /// A type with a generic like `Lhs<Rhs>`.
+    /// A type with a generic like "`Lhs<Rhs>`".
     case generic(type: InstanceType, genericType: InstanceType)
     
     case optional(InstanceType)
+    
+    /// A type with varargs like "`Type...`".
+    case varargs(InstanceType)
     
     case const(InstanceType)
     case pointer(InstanceType)
@@ -73,7 +76,7 @@ extension InstanceType {
     static let variant = InstanceType(swiftType: "Variant")
     static let opaque = InstanceType(swiftType: "Opaque")
     static let stringName = InstanceType(swiftType: "StringName")
-    static let variantPointerArray = InstanceType(swiftType: "VariantPointerArray")
+    static let variantVarargs = InstanceType.varargs(InstanceType(swiftType: "Variant"))
     
     static func == (lhs: InstanceType, rhs: String) -> Bool {
         lhs.toSwift(definedInside: nil) == rhs
@@ -99,6 +102,8 @@ extension InstanceType {
             return type.isSwiftBaseType
         case .optional(let instanceType):
             return instanceType.isSwiftBaseType
+        case .varargs(_):
+            return true
         case .const(let instanceType):
             return instanceType.isSwiftBaseType
         case .pointer(_):
@@ -120,6 +125,8 @@ extension InstanceType {
             return type.isBuiltinBaseValueType
         case .optional(let instanceType):
             return instanceType.isBuiltinBaseValueType
+        case .varargs(_):
+            return false
         case .const(let instanceType):
             return instanceType.isBuiltinBaseValueType
         case .pointer(_):
@@ -141,6 +148,8 @@ extension InstanceType {
             return type.isBuiltinOpaqueValueType
         case .optional(let instanceType):
             return instanceType.isBuiltinOpaqueValueType
+        case .varargs(_):
+            return false
         case .const(let instanceType):
             return instanceType.isBuiltinOpaqueValueType
         case .pointer(_):
@@ -162,6 +171,8 @@ extension InstanceType {
             return type.isValueType
         case .optional(let instanceType):
             return instanceType.isValueType
+        case .varargs(_):
+            return true
         case .const(let instanceType):
             return instanceType.isValueType
         case .pointer(_):
@@ -187,6 +198,8 @@ extension InstanceType {
             return type.isEnumType
         case .optional(let instanceType):
             return instanceType.isEnumType
+        case .varargs(_):
+            return false
         case .const(let instanceType):
             return instanceType.isEnumType
         case .pointer(let instanceType):
@@ -208,6 +221,8 @@ extension InstanceType {
             return type.isBitfieldType
         case .optional(let instanceType):
             return instanceType.isBitfieldType
+        case .varargs(_):
+            return false
         case .const(let instanceType):
             return instanceType.isBitfieldType
         case .pointer(let instanceType):
@@ -217,8 +232,8 @@ extension InstanceType {
     
     /// Returns how this type should be accessed for Godot.
     var accessPointerMethod: PointerAccessMethod {
-        if self == .variantPointerArray {
-            return .variantPointerArray
+        if self == .variantVarargs {
+            return .variantCollection
         } else if self == .opaque {
             return .opaque
         } else if isEnumType || isBitfieldType {
@@ -251,6 +266,8 @@ extension InstanceType {
         case .generic(let type, _):
             return type.finalType
         case .optional(let instanceType):
+            return instanceType.finalType
+        case .varargs(let instanceType):
             return instanceType.finalType
         case .const(let instanceType):
             return instanceType.finalType
@@ -294,6 +311,8 @@ extension InstanceType {
             + "<" + genericType._toSwift(isConst: false, definedInside: insideType) + ">"
         case .optional(let instanceType):
             return instanceType._toSwift(isConst: isConst, definedInside: insideType) + "?"
+        case .varargs(let instanceType):
+            return instanceType._toSwift(isConst: isConst, definedInside: insideType) + "..."
         case .const(let instanceType):
             return instanceType._toSwift(isConst: true, definedInside: insideType)
         case .pointer(let instanceType):
@@ -590,10 +609,10 @@ extension InstanceType {
         case opaque
         
         /// ```
-        /// VariantPointerArray(values).withUnsafeNativePointers { ptrs in
+        /// values.withUnsafeNativePointers { ptrs in
         ///     ...
         /// }
-        case variantPointerArray
+        case variantCollection
     }
 }
 
