@@ -68,7 +68,7 @@ duplicate its value.
         }
         Func(name: "withUnsafeNativePointer", parameters: .named("body", type: "(GDNativeTypePtr) -> ()", label: .hidden)) {
             "opaque.withUnsafeMutableRawPointer(body)"
-        }.internal()
+        }.public()
         
         Func(name: "opaqueIsZero", returnType: "Bool") {
             "opaque.isZero()"
