@@ -1,19 +1,19 @@
 import Foundation
 import GodotExtensionHeaders
 
-/// Use this structure to deal with an array of pointers to `VariantConvertible` values.
+/// Use this structure to deal with an array of pointers to `Variant` values.
 ///
 /// ```
-/// let args: [any VariantConvertible] = [3, 2, 10]
-/// VariantVarargs(args).withUnsafeNativePointers { ptrs in
+/// let args: [Variant] = [3, 2, 10]
+/// VariantPointerArray(args).withUnsafeNativePointers { ptrs in
 ///     ...
 /// }
 /// ```
-internal struct VariantVarargs {
-    let variantConvertibles: [any VariantConvertible]
+internal struct VariantPointerArray {
+    let variants: [Variant]
     
-    init(_ variantConvertibles: [any VariantConvertible]) {
-        self.variantConvertibles = variantConvertibles
+    init(_ variants: [Variant]) {
+        self.variants = variants
     }
     
     /// Calls a closure with a native type pointer of the variants. Should only be called by the `GodotLibrary`.
@@ -22,14 +22,12 @@ internal struct VariantVarargs {
     }
     
     private func _withUnsafeNativePointers(startIndex: Int, _ body: ([GDNativeTypePtr]) -> ()) {
-        guard startIndex < variantConvertibles.count else {
+        guard startIndex < variants.count else {
             body([])
             return
         }
         
-        let variant = variantConvertibles[startIndex].variant
-        
-        variant.withUnsafeNativePointer { ptr in
+        variants[startIndex].withUnsafeNativePointer { ptr in
             _withUnsafeNativePointers(startIndex: startIndex + 1) { ptrs in
                 body([ptr] + ptrs)
             }

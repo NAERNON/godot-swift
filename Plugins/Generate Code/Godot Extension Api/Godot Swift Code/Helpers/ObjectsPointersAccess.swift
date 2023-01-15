@@ -75,8 +75,8 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
                 }
             case .opaque:
                 "\(name).withUnsafeMutableRawPointer { \(pointerName) in".indentation(level: index)
-            case .variantVarargs:
-                "VariantVarargs(\(name)).withUnsafeNativePointers { \(pointerName) in".indentation(level: index)
+            case .variantPointerArray:
+                "VariantPointerArray(\(name)).withUnsafeNativePointers { \(pointerName) in".indentation(level: index)
             }
         }
         

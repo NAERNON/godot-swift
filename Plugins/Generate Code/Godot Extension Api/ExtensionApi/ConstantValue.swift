@@ -12,6 +12,10 @@ struct ConstantValue {
         self.string = string
     }
     
+    var isNil: Bool {
+        string == "null"
+    }
+    
     func instantationCode(withLabels labels: String...) -> String? {
         let (type, parameters) = decomposeInitParameters()
         guard parameters.count == labels.count else {

@@ -73,7 +73,7 @@ extension InstanceType {
     static let variant = InstanceType(swiftType: "Variant")
     static let opaque = InstanceType(swiftType: "Opaque")
     static let stringName = InstanceType(swiftType: "StringName")
-    static let variantVarargs = InstanceType(swiftType: "VariantVarargs")
+    static let variantPointerArray = InstanceType(swiftType: "VariantPointerArray")
     
     static func == (lhs: InstanceType, rhs: String) -> Bool {
         lhs.toSwift(definedInside: nil) == rhs
@@ -217,8 +217,8 @@ extension InstanceType {
     
     /// Returns how this type should be accessed for Godot.
     var accessPointerMethod: PointerAccessMethod {
-        if self == .variantVarargs {
-            return .variantVarargs
+        if self == .variantPointerArray {
+            return .variantPointerArray
         } else if self == .opaque {
             return .opaque
         } else if isEnumType || isBitfieldType {
@@ -590,10 +590,10 @@ extension InstanceType {
         case opaque
         
         /// ```
-        /// VariantVarargs(value).withUnsafeNativePointers { ptrs in
+        /// VariantPointerArray(values).withUnsafeNativePointers { ptrs in
         ///     ...
         /// }
-        case variantVarargs
+        case variantPointerArray
     }
 }
 

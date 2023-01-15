@@ -127,7 +127,7 @@ Function: GodotFunction {
         var (translatedName, translatedParameters) = godotFunction.bindingName.toSwift(withType: type, arguments: arguments)
         
         if godotFunction.isVararg {
-            translatedParameters.append(.named("args", type: "(any VariantConvertible)", isVararg: true))
+            translatedParameters.append(.named("args", type: InstanceType.variant.toSwift(), isVararg: true))
         }
         
         return (translatedName, translatedParameters)
@@ -136,7 +136,7 @@ Function: GodotFunction {
     private func objectsPointersAccessParameters(with parameters: [FunctionParameter]) -> [ObjectsPointersAccessParameter] {
         var accessParameters = [ObjectsPointersAccessParameter]()
         for (index, parameter) in parameters.enumerated() {
-            let type: InstanceType = parameter.isVararg ? .variantVarargs : arguments[index].type
+            let type: InstanceType = parameter.isVararg ? .variantPointerArray : arguments[index].type
             accessParameters
                 .append(.named(parameter.name, type: type, mutability: .const, isVararg: parameter.isVararg))
         }

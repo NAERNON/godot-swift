@@ -18,7 +18,7 @@ public struct TypedArray<Element> where Element: TypedVariantTransformable {
     /// This init is private to this file because public initializers are provided in extensions.
     fileprivate init(className: StringName) {
         var array = Array()
-        array._setTyped(type: Int(Element.variantStorageType.rawValue), className: className, script: .nil)
+        array._setTyped(type: Int(Element.variantStorageType.rawValue), className: className, script: nil)
         self.underlyingArray = array
     }
     
