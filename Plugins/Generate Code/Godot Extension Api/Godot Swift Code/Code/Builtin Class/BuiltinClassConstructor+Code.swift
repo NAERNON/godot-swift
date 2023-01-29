@@ -31,6 +31,10 @@ extension ExtensionApi.BuiltinClass.Constructor: GodotFunction {
         FunctionName(godotName: "constructor").underscored()
     }
     
+    var bindingArguments: [ExtensionApi.Argument]? {
+        arguments
+    }
+    
     var isVararg: Bool { false }
     var isStatic: Bool { true }
     var isConst: Bool { true }

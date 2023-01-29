@@ -22,4 +22,8 @@ extension ExtensionApi.BuiltinClass.Method: GodotFunction {
     }
     
     var isMutating: Bool { !isConst && !isStatic }
+    
+    var bindingArguments: [ExtensionApi.Argument]? {
+        arguments
+    }
 }

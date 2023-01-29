@@ -176,7 +176,7 @@ extension InstanceType {
         case .const(let instanceType):
             return instanceType.isValueType
         case .pointer(_):
-            return false
+            return true
         }
     }
     
@@ -227,6 +227,26 @@ extension InstanceType {
             return instanceType.isBitfieldType
         case .pointer(let instanceType):
             return instanceType.isBitfieldType
+        }
+    }
+    
+    var isPointer: Bool {
+        switch self {
+        case .const(let instanceType):
+            return instanceType.isPointer
+        case .pointer(_):
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var isOptional: Bool {
+        switch self {
+        case .optional(_):
+            return true
+        default:
+            return false
         }
     }
     
@@ -316,8 +336,13 @@ extension InstanceType {
         case .const(let instanceType):
             return instanceType._toSwift(isConst: true, definedInside: insideType)
         case .pointer(let instanceType):
-            let pointerType = isConst ? "UnsafePointer" : "UnsafeMutablePointer"
-            return pointerType + "<" + instanceType._toSwift(isConst: false, definedInside: insideType) + ">"
+            let pointedType = instanceType._toSwift(isConst: false, definedInside: insideType)
+            if pointedType == "void" {
+                return isConst ? "UnsafeRawPointer" : "UnsafeMutableRawPointer"
+            } else {
+                let pointerString = isConst ? "UnsafePointer" : "UnsafeMutablePointer"
+                return pointerString + "<" + pointedType + ">"
+            }
         }
     }
     
@@ -472,6 +497,20 @@ if let \(propertyName) {
         }
         
         return constantValue.string
+    }
+    
+    func defaultValue() -> String {
+        if isGodotClassType
+            || self == .variant
+            || isOptional {
+            return "nil"
+        } else if isEnumType {
+            return toSwift() + "(rawValue: 0)!"
+        } else if isPointer {
+            return "fatalError(\"No default value provided for pointers.\")"
+        }
+        
+        return toSwift() + "()"
     }
     
     // MARK: Modifiers

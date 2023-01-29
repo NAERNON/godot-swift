@@ -16,6 +16,7 @@ private let protectedStrings: Set<String> = [
     "static",
     "operator",
     "extension",
+    "import",
     "nil"
 ]
 

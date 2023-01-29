@@ -31,6 +31,10 @@ extension ExtensionApi.UtilityFunction: GodotFunction {
         return new
     }
     
+    var bindingArguments: [ExtensionApi.Argument]? {
+        arguments
+    }
+    
     var isStatic: Bool { false }
     var isConst: Bool { true }
     var isMutating: Bool { false }

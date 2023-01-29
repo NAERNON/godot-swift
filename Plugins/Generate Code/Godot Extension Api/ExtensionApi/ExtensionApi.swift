@@ -2,66 +2,66 @@ import Foundation
 
 /// The structure representing the file `extension_api.json`.
 struct ExtensionApi: Decodable {
-    let header: Header
-    let builtinClassSizes: [ClassSizes]
-    let builtinClassMemberOffsets: [MemberOffsets]
-//-- not used but defined in the json file --//    let globalConstants
-    let globalEnums: [Enum]
-    let utilityFunctions: [UtilityFunction]
-    let builtinClasses: [BuiltinClass]
-    let classes: [Class]
-    let singletons: [Singleton]
-    let nativeStructures: [NativeStructure]
+    var header: Header
+    var builtinClassSizes: [ClassSizes]
+    var builtinClassMemberOffsets: [MemberOffsets]
+//-- not used but defined in the json file --//    var globalConstants
+    var globalEnums: [Enum]
+    var utilityFunctions: [UtilityFunction]
+    var builtinClasses: [BuiltinClass]
+    var classes: [Class]
+    var singletons: [Singleton]
+    var nativeStructures: [NativeStructure]
     
     // MARK: - Argument
     
     struct Argument: Decodable {
-        let name: String
-        let type: InstanceType
-        let meta: String?
-        let defaultValue: ConstantValue?
+        var name: String
+        var type: InstanceType
+        var meta: String?
+        var defaultValue: ConstantValue?
     }
     
     // MARK: - Header
     
     struct Header: Decodable {
-        let versionMajor: Int
-        let versionMinor: Int
-        let versionPatch: Int
-        let versionStatus: String
-        let versionBuild: String
-        let versionFullName: String
+        var versionMajor: Int
+        var versionMinor: Int
+        var versionPatch: Int
+        var versionStatus: String
+        var versionBuild: String
+        var versionFullName: String
     }
     
     // MARK: - Class sizes
     
     struct ClassSizes: Decodable {
-        let buildConfiguration: BuildConfiguration
-        let sizes: [Size]
+        var buildConfiguration: BuildConfiguration
+        var sizes: [Size]
         
         // MARK: Size
         
         struct Size: Decodable {
-            let name: InstanceType
-            let size: Int
+            var name: InstanceType
+            var size: Int
         }
     }
     
     // MARK: - Member offsets
     
     struct MemberOffsets: Decodable {
-        let buildConfiguration: BuildConfiguration
-        let classes: [Class]
+        var buildConfiguration: BuildConfiguration
+        var classes: [Class]
         
         // MARK: Class
         
         struct Class: Decodable {
-            let name: InstanceType
-            let members: [Member]
+            var name: InstanceType
+            var members: [Member]
             
             struct Member: Decodable {
-                let member: String
-                let offset: Int
+                var member: String
+                var offset: Int
             }
         }
     }
@@ -69,107 +69,107 @@ struct ExtensionApi: Decodable {
     // MARK: - Enum
     
     struct Enum: Decodable {
-        let name: InstanceType
-        let isBitfield: Bool?
-        let values: [Value]
+        var name: InstanceType
+        var isBitfield: Bool?
+        var values: [Value]
         
         // MARK: Value
         
         struct Value: Decodable {
-            let name: String
-            let value: Int
+            var name: String
+            var value: Int
         }
     }
     
     // MARK: - Utility function
     
     struct UtilityFunction: Decodable {
-        let name: FunctionName
-        let returnType: InstanceType?
-        let category: String
-        let isVararg: Bool
-        let hash: Int
-        let arguments: [Argument]?
+        var name: FunctionName
+        var returnType: InstanceType?
+        var category: String
+        var isVararg: Bool
+        var hash: Int
+        var arguments: [Argument]?
     }
     
     // MARK: - Builtin class
     
     struct BuiltinClass: Decodable {
-        let name: InstanceType
-        let indexingReturnType: InstanceType?
-        let isKeyed: Bool
-        let members: [Argument]?
-        let constants: [Constant]?
-        let enums: [Enum]?
-        let operators: [Operator]
-        let methods: [Method]?
-        let constructors: [Constructor]
-        let hasDestructor: Bool
+        var name: InstanceType
+        var indexingReturnType: InstanceType?
+        var isKeyed: Bool
+        var members: [Argument]?
+        var constants: [Constant]?
+        var enums: [Enum]?
+        var operators: [Operator]
+        var methods: [Method]?
+        var constructors: [Constructor]
+        var hasDestructor: Bool
         
         // MARK: Constant
         
         struct Constant: Decodable {
-            let name: String
-            let type: InstanceType
-            let value: ConstantValue
+            var name: String
+            var type: InstanceType
+            var value: ConstantValue
         }
         
         // MARK: Operator
         
         struct Operator: Decodable {
-            let name: FunctionName
-            let rightType: InstanceType?
-            let returnType: InstanceType
+            var name: FunctionName
+            var rightType: InstanceType?
+            var returnType: InstanceType
         }
         
         // MARK: Method
         
         struct Method: Decodable {
-            let name: FunctionName
-            let returnType: InstanceType?
-            let isVararg: Bool
-            let isConst: Bool
-            let isStatic: Bool
-            let hash: Int
-            let arguments: [Argument]?
+            var name: FunctionName
+            var returnType: InstanceType?
+            var isVararg: Bool
+            var isConst: Bool
+            var isStatic: Bool
+            var hash: Int
+            var arguments: [Argument]?
         }
         
         // MARK: Constructor
         
         struct Constructor: Decodable {
-            let index: Int
-            let arguments: [Argument]?
+            var index: Int
+            var arguments: [Argument]?
         }
     }
     
     // MARK: - Class
     
     struct Class: Decodable {
-        let name: InstanceType
-        let isRefcounted: Bool
-        let isInstantiable: Bool
-        let inherits: String?
-        let apiType: String
-        let enums: [Enum]?
-        let methods: [Method]?
+        var name: InstanceType
+        var isRefcounted: Bool
+        var isInstantiable: Bool
+        var inherits: InstanceType?
+        var apiType: String
+        var enums: [Enum]?
+        var methods: [Method]?
         
         // MARK: Method
         
         struct Method: Decodable {
-            let name: FunctionName
-            let isConst: Bool
-            let isVararg: Bool
-            let isStatic: Bool
-            let isVirtual: Bool
-            let hash: Int?
-            let returnValue: ReturnValue?
-            let arguments: [Argument]?
+            var name: FunctionName
+            var isConst: Bool
+            var isVararg: Bool
+            var isStatic: Bool
+            var isVirtual: Bool
+            var hash: Int?
+            var returnValue: ReturnValue?
+            var arguments: [Argument]?
             
             // MARK: Return value
             
             struct ReturnValue: Decodable {
-                let type: InstanceType
-                let meta: String?
+                var type: InstanceType
+                var meta: String?
             }
         }
     }
@@ -177,14 +177,14 @@ struct ExtensionApi: Decodable {
     // MARK: - Singleton
     
     struct Singleton: Decodable {
-        let name: String
-        let type: InstanceType
+        var name: String
+        var type: InstanceType
     }
     
     // MARK: - Native structure
     
     struct NativeStructure: Decodable {
-        let name: String
-        let format: NativeStructureFormat
+        var name: String
+        var format: NativeStructureFormat
     }
 }

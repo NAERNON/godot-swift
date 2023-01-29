@@ -9,22 +9,23 @@ struct FunctionName {
     
     private var isUnderscored: Bool? = nil
     
+    var correctUnderscoredName: String {
+        if let isUnderscored {
+            if isUnderscored {
+                return godotName.first == "_" ? godotName : "_" + godotName
+            } else {
+                return godotName.first == "_" ? String(godotName.dropFirst()) : godotName
+            }
+        } else {
+            return godotName
+        }
+    }
+    
     func toSwift(withType type: InstanceType?,
                  arguments: [ExtensionApi.Argument]?) -> (name: String,
                                                           parameters: [FunctionParameter]) {
-        let name: String
-        if let isUnderscored {
-            if isUnderscored {
-                name = godotName.first == "_" ? godotName : "_" + godotName
-            } else {
-                name = godotName.first == "_" ? String(godotName.dropFirst()) : godotName
-            }
-        } else {
-            name = godotName
-        }
-        
         let (translatedName, translatedParameters) = CodeLanguage.c.translateFunction(
-            name: name,
+            name: correctUnderscoredName,
             parameters: arguments?.map({ .init(name: $0.name.replacingOccurrences(of: " ", with: ""),
                                                label: nil,
                                                isLabelHidden: false) }) ?? [],
@@ -36,7 +37,13 @@ struct FunctionName {
     }
     
     /// A custom name for the function.
-    private func customName() -> String? { nil }
+    private func customName() -> String? {
+        if correctUnderscoredName == "init" {
+            return "initialize"
+        }
+        
+        return nil
+    }
     
     private func functionParameters(translatedParameters: [CodeLanguage.FunctionParameter],
                                     type: InstanceType?,
@@ -111,6 +118,10 @@ struct FunctionName {
         var new = self
         new.isUnderscored = state
         return new
+    }
+    
+    static func == (lhs: FunctionName, rhs: FunctionName) -> Bool {
+        lhs.correctUnderscoredName == rhs.correctUnderscoredName
     }
 }
 
