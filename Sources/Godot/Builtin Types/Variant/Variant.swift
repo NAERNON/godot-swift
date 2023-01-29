@@ -6,10 +6,6 @@ import GodotExtensionHeaders
 public struct Variant {
     // MARK: Inits
     
-    public static var `nil`: Variant {
-        Variant()
-    }
-    
     /// Creates a new `Variant` as a `nil` variant.
     public init() {
         withUnsafeNativePointer { nativeTypePtr in
@@ -336,8 +332,45 @@ public struct Variant {
 
     // MARK: Getters
     
+    /// Returns the value contained inside the `Variant`.
+    /// - Parameter type: The type inside the `Variant`.
     public func value<T>(ofType type: T.Type) -> T where T: ExpressibleByVariant {
         type.init(variant: self)
+    }
+    
+    /// Returns the value contained inside the `Variant`.
+    ///
+    /// This function infers the return type.
+    /// Use the `value(ofType:)` function to explicitly specify the type.
+    public func value<T>() -> T where T: ExpressibleByVariant {
+        value(ofType: T.self)
+    }
+    
+    /// Returns the value contained inside the `Variant`,
+    /// while checking that the given type is the same as the
+    /// underlying type.
+    /// - Parameter type: The type inside the `Variant`.
+    /// - Returns: The underlying value if the underlying type match the given type,
+    /// `nil` otherwise.
+    public func safeValue<T>(ofType type: T.Type) -> T? where T: TypedVariantTransformable {
+        guard type.variantStorageType == self.type else {
+            return nil
+        }
+        
+        return value(ofType: type)
+    }
+    
+    /// Returns the value contained inside the `Variant`,
+    /// while checking that the given type is the same as the
+    /// underlying type.
+    /// - Parameter type: The type inside the `Variant`.
+    /// - Returns: The underlying value if the underlying type match the given type,
+    /// `nil` otherwise.
+    ///
+    /// This function infers the return type.
+    /// Use the `safeValue(ofType:)` function to explicitly specify the type.
+    public func safeValue<T>() -> T? where T: TypedVariantTransformable {
+        safeValue(ofType: T.self)
     }
     
     public var boolValue: Bool {
