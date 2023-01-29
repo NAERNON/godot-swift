@@ -26,7 +26,7 @@ extension ExtensionApi.BuiltinClass.Constructor {
     }
 }
 
-extension ExtensionApi.BuiltinClass.Constructor: GodotFunction {
+extension ExtensionApi.BuiltinClass.Constructor: GodotBindingFuncDefinition {
     var bindingName: FunctionName {
         FunctionName(godotName: "constructor").underscored()
     }
@@ -35,9 +35,10 @@ extension ExtensionApi.BuiltinClass.Constructor: GodotFunction {
         arguments
     }
     
+    var bindingReturnType: InstanceType? { nil }
+    
     var isVararg: Bool { false }
     var isStatic: Bool { true }
     var isConst: Bool { true }
     var isMutating: Bool { false }
-    var returnType: InstanceType? { nil }
 }

@@ -16,14 +16,18 @@ extension ExtensionApi.BuiltinClass.Method {
     }
 }
 
-extension ExtensionApi.BuiltinClass.Method: GodotFunction {
+extension ExtensionApi.BuiltinClass.Method: GodotBindingFuncDefinition {
     var bindingName: FunctionName {
         name.underscored()
     }
     
-    var isMutating: Bool { !isConst && !isStatic }
-    
     var bindingArguments: [ExtensionApi.Argument]? {
         arguments
     }
+    
+    var bindingReturnType: InstanceType? {
+        returnType
+    }
+    
+    var isMutating: Bool { !isConst && !isStatic }
 }

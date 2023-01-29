@@ -8,7 +8,7 @@ where
 Content: SwiftCode,
 InitContent: SwiftCode,
 ReturnContent: SwiftCode,
-Function: GodotFunction {
+Function: GodotBindingFuncDefinition {
     let godotFunction: Function
     let type: InstanceType?
     
@@ -23,18 +23,22 @@ Function: GodotFunction {
     let overridesReturn: Bool
     let overrideReturnContent: (String) -> ReturnContent
     
+    let usePointerAccess: Bool
+    
     var accessControl: AccessControl? = nil
+    var isOverride: Bool = false
     var isFinal: Bool = false
     
-    public init(_ godotFunction: Function,
-                type: InstanceType?,
-                overrideReturnType: InstanceType? = nil,
-                overrideTemporaryType: InstanceType? = nil,
-                overridesInit: Bool = false,
-                overridesReturn: Bool = false,
-                @CodeBuilder overrideInitContent: @escaping (String) -> InitContent = { _ in EmptyCode() },
-                @CodeBuilder content: @escaping (GodotBindingFuncValues) -> Content,
-                @CodeBuilder overrideReturnContent: @escaping (String) -> ReturnContent = { _ in EmptyCode() }) {
+    init(_ godotFunction: Function,
+         type: InstanceType?,
+         overrideReturnType: InstanceType? = nil,
+         overrideTemporaryType: InstanceType? = nil,
+         overridesInit: Bool = false,
+         overridesReturn: Bool = false,
+         usePointerAccess: Bool = true,
+         @CodeBuilder overrideInitContent: @escaping (String) -> InitContent = { _ in EmptyCode() },
+         @CodeBuilder content: @escaping (GodotBindingFuncValues) -> Content,
+         @CodeBuilder overrideReturnContent: @escaping (String) -> ReturnContent = { _ in EmptyCode() }) {
         self.godotFunction = godotFunction
         self.type = type
         
@@ -48,6 +52,8 @@ Function: GodotFunction {
         
         self.overridesReturn = overridesReturn
         self.overrideReturnContent = overrideReturnContent
+        
+        self.usePointerAccess = usePointerAccess
     }
     
     var body: some SwiftCode {
@@ -58,33 +64,33 @@ Function: GodotFunction {
              returnType: returnTypeString) {
             if overridesInit {
                 overrideInitContent(temporaryValueName)
-                Spacer()
             } else {
                 if let temporaryType {
                     temporaryType.temporaryInitializerCode(propertyName: temporaryValueName, definedInside: type)
-                    Spacer()
                 }
             }
             
-            ObjectsArrayPointersAccess(parameters: objectsPointersAccessParameters(with: parameters)) { pointerNames, arrayName, argumentsCountName in
-                
-                selfParameterPointerAccess { selfPointerName in
-                    temporaryParameterPointerAccess { temporaryPointerName in
-                        let values = GodotBindingFuncValues(pointerNames: pointerNames,
-                                                            pointersArrayName: arrayName,
-                                                            pointersCountValue: argumentsCountName,
-                                                            selfPointerName: selfPointerName ?? "nil",
-                                                            temporaryPointerName: temporaryPointerName ?? "nil")
-                        content(values)
+            if usePointerAccess {
+                ObjectsArrayPointersAccess(parameters: objectsPointersAccessParameters(with: parameters))
+                { pointerNames, arrayName, argumentsCountName in
+                    selfParameterPointerAccess { selfPointerName in
+                        temporaryParameterPointerAccess { temporaryPointerName in
+                            let values = GodotBindingFuncValues(pointerNames: pointerNames,
+                                                                pointersArrayName: arrayName,
+                                                                pointersCountValue: argumentsCountName,
+                                                                selfPointerName: selfPointerName ?? "nil",
+                                                                temporaryPointerName: temporaryPointerName ?? "nil")
+                            content(values)
+                        }
                     }
                 }
+            } else {
+                content(.empty)
             }
             
             if overridesReturn {
-                Spacer()
                 overrideReturnContent(temporaryValueName)
             } else if let temporaryType {
-                Spacer()
                 temporaryType.temporaryReturnCode(propertyName: temporaryValueName, definedInside: type)
             }
         }
@@ -92,17 +98,18 @@ Function: GodotFunction {
              .static(godotFunction.isStatic)
              .final(isFinal)
              .mutating(godotFunction.isMutating)
+             .override(isOverride)
     }
     
     private var arguments: [ExtensionApi.Argument] {
-        godotFunction.arguments ?? []
+        godotFunction.bindingArguments ?? []
     }
     
     private var returnType: InstanceType? {
         if let type = overrideReturnType {
             return type
         } else {
-            return godotFunction.returnType
+            return godotFunction.bindingReturnType
         }
     }
     
@@ -167,9 +174,15 @@ Function: GodotFunction {
     
     // MARK: Modifiers
     
-    public func `final`(_ state: Bool = true) -> GodotBindingFunc {
+    func `final`(_ state: Bool = true) -> GodotBindingFunc {
         var new = self
         new.isFinal = state
+        return new
+    }
+    
+    func overrides(_ state: Bool = true) -> GodotBindingFunc {
+        var new = self
+        new.isOverride = state
         return new
     }
 }
@@ -182,16 +195,23 @@ struct GodotBindingFuncValues {
     let pointersCountValue: String
     let selfPointerName: String
     let temporaryPointerName: String
+    
+    static let empty = GodotBindingFuncValues(pointerNames: [],
+                                              pointersArrayName: "",
+                                              pointersCountValue: "",
+                                              selfPointerName: "",
+                                              temporaryPointerName: "")
 }
 
-// MARK: - GodotFunction protocol
+// MARK: - GodotBindingFuncDefinition
 
-protocol GodotFunction {
+protocol GodotBindingFuncDefinition {
     var bindingName: FunctionName { get }
-    var arguments: [ExtensionApi.Argument]? { get }
+    var bindingArguments: [ExtensionApi.Argument]? { get }
+    var bindingReturnType: InstanceType? { get }
+    
     var isVararg: Bool { get }
     var isStatic: Bool { get }
     var isConst: Bool { get }
     var isMutating: Bool { get }
-    var returnType: InstanceType? { get }
 }

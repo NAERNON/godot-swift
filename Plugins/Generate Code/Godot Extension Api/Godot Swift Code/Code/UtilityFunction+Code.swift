@@ -21,7 +21,7 @@ extension ExtensionApi.UtilityFunction {
     }
 }
 
-extension ExtensionApi.UtilityFunction: GodotFunction {
+extension ExtensionApi.UtilityFunction: GodotBindingFuncDefinition {
     var bindingName: FunctionName {
         var new = name
         // We protect the name print for the Swift print function.
@@ -33,6 +33,10 @@ extension ExtensionApi.UtilityFunction: GodotFunction {
     
     var bindingArguments: [ExtensionApi.Argument]? {
         arguments
+    }
+    
+    var bindingReturnType: InstanceType? {
+        returnType
     }
     
     var isStatic: Bool { false }

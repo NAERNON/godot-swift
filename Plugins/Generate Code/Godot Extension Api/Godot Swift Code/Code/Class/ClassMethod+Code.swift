@@ -19,8 +19,8 @@ Override it to make custom behaviors.
                              overridesInit: true,
                              overridesReturn: true,
                              usePointerAccess: false) { _ in
-                if let returnType {
-                    returnType.defaultValue()
+                if let bindingReturnType {
+                    bindingReturnType.defaultValue()
                 }
             }
             .accessControl(accessControl)
@@ -32,14 +32,12 @@ Override it to make custom behaviors.
     }
 }
 
-extension ExtensionApi.Class.Method: GodotFunction {
+extension ExtensionApi.Class.Method: GodotBindingFuncDefinition {
     var bindingName: FunctionName {
         name
     }
     
-    var isMutating: Bool { false }
-    
-    var returnType: InstanceType? {
+    var bindingReturnType: InstanceType? {
         guard let type = returnValue?.type else {
             return nil
         }
@@ -62,4 +60,6 @@ extension ExtensionApi.Class.Method: GodotFunction {
             return bindingArgument
         }
     }
+    
+    var isMutating: Bool { false }
 }
