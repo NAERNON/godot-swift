@@ -134,7 +134,7 @@ Function: GodotBindingFuncDefinition {
         var (translatedName, translatedParameters) = godotFunction.bindingName.toSwift(withType: type, arguments: arguments)
         
         if godotFunction.isVararg {
-            translatedParameters.append(.named("args", type: InstanceType.variant.toSwift(), isVararg: true))
+            translatedParameters.append(.named("rest", type: InstanceType.variant.toSwift(), isVararg: true))
         }
         
         return (translatedName, translatedParameters)
