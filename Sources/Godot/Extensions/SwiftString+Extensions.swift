@@ -23,7 +23,7 @@ extension Swift.String: TypedVariantTransformable {
         String(swiftString: self).variant
     }
     
-    public init(variant: Variant) {
-        self = Swift.String(godotString: variant.stringValue)
+    public init(variant: Variant) throws {
+        self = Swift.String(godotString: try variant.value())
     }
 }

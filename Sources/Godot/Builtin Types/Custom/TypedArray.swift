@@ -76,7 +76,7 @@ extension TypedArray: RandomAccessCollection {}
 extension TypedArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Element {
         get {
-            Element(variant: underlyingArray[index])
+            try! Element(variant: underlyingArray[index])
         }
         set(newValue) {
             underlyingArray[index] = newValue.variant

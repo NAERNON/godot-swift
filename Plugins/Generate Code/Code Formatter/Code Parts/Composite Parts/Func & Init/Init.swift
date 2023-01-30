@@ -6,6 +6,7 @@ public struct Init<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     public var accessControl: AccessControl? = nil
     public var isRequired: Bool = false
     public var isOverride: Bool = false
+    public var isThrowing: Bool = false
     
     public init(parameters: FunctionParameter..., @CodeBuilder content: @escaping () -> Content) {
         self.init(parameters: Array(parameters), content: content)
@@ -17,7 +18,7 @@ public struct Init<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     }
     
     public var body: some SwiftCode {
-        ("init" + FunctionParameter.parametersCodeString(parameters) + " {").keywords(keywords)
+        ("init" + FunctionParameter.parametersCodeString(parameters) + throwsAlignableLine + " {").keywords(keywords)
         content().indentation()
         "}"
     }
@@ -36,6 +37,10 @@ public struct Init<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         return keywords
     }
     
+    private var throwsAlignableLine: String {
+        isThrowing ? " throws" : ""
+    }
+    
     // MARK: Modifiers
     
     public func `override`(_ state: Bool = true) -> Init {
@@ -47,6 +52,12 @@ public struct Init<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     public func `required`(_ state: Bool = true) -> Init {
         var new = self
         new.isRequired = state
+        return new
+    }
+    
+    public func `throws`(_ state: Bool = true) -> Init {
+        var new = self
+        new.isThrowing = state
         return new
     }
 }

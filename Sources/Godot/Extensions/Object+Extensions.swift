@@ -13,7 +13,7 @@ extension Object {
 
 extension Object: CustomDebugStringConvertible {
     public var debugDescription: Swift.String {
-        Variant(from: self).debugDescription
+        Variant(self).debugDescription
     }
 }
 

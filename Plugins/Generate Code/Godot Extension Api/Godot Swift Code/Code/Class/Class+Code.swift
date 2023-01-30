@@ -244,13 +244,19 @@ self.nativeObjectPtr = nativeObjectPtr
         
         Init(parameters: .named("variant", type: "Variant")) {
             if isRootClass {
-                "nativeObjectPtr = variant.objectValue(ofType: Self.self).nativeObjectPtr"
+                Guard(condition: "variant.type == Self.variantStorageType") {
+                    "throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)"
+                }
+                
+                Spacer()
+                
+                "nativeObjectPtr = variant.uncheckedObjectValue(ofType: Self.self).nativeObjectPtr"
             } else {
                 if isRefCountedRootClass {
                     Property("_isReferenced").assign(value: "false")
                 }
-                "super.init(variant: variant)"
+                "try super.init(variant: variant)"
             }
-        }.public().required()
+        }.public().required().throws()
     }
 }
