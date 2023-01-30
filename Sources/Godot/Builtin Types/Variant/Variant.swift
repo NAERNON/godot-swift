@@ -338,10 +338,10 @@ extension Variant: ExpressibleByNilLiteral {
 
 extension Variant {
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     /// - Parameter type: The type of the `Object`.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public func uncheckedObjectValue<ObjectType>(ofType type: ObjectType.Type) -> ObjectType where ObjectType: Object {
         var newValue: ObjectType!
         let instanceOwner = UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity: 1)
@@ -363,9 +363,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedBoolValue: Bool {
         var newValue = UInt8()
         
@@ -379,9 +379,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedIntValue: Int {
         var newValue = Int()
         
@@ -395,9 +395,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedDoubleValue: Double {
         var newValue = Double()
         
@@ -411,9 +411,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedStringValue: String {
         let newValue = String()
         
@@ -427,9 +427,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedVector2Value: Vector2 {
         var newValue = Vector2()
         
@@ -443,9 +443,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedVector2iValue: Vector2i {
         var newValue = Vector2i()
         
@@ -459,9 +459,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedRect2Value: Rect2 {
         var newValue = Rect2()
         
@@ -475,9 +475,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedRect2iValue: Rect2i {
         var newValue = Rect2i()
         
@@ -491,9 +491,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedVector3Value: Vector3 {
         var newValue = Vector3()
         
@@ -507,9 +507,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedVector3iValue: Vector3i {
         var newValue = Vector3i()
         
@@ -523,9 +523,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedTransform2DValue: Transform2D {
         var newValue = Transform2D()
         
@@ -539,9 +539,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedVector4Value: Vector4 {
         var newValue = Vector4()
         
@@ -555,9 +555,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedVector4iValue: Vector4i {
         var newValue = Vector4i()
         
@@ -571,9 +571,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedPlaneValue: Plane {
         var newValue = Plane()
         
@@ -587,9 +587,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedQuaternionValue: Quaternion {
         var newValue = Quaternion()
         
@@ -603,9 +603,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedAABBValue: AABB {
         var newValue = AABB()
         
@@ -619,9 +619,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedBasisValue: Basis {
         var newValue = Basis()
         
@@ -635,9 +635,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedTransform3DValue: Transform3D {
         var newValue = Transform3D()
         
@@ -651,9 +651,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedProjectionValue: Projection {
         var newValue = Projection()
         
@@ -667,9 +667,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedColorValue: Color {
         var newValue = Color()
         
@@ -683,9 +683,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedStringNameValue: StringName {
         let newValue = StringName()
         
@@ -699,9 +699,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedNodePathValue: NodePath {
         let newValue = NodePath()
         
@@ -715,9 +715,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedRIDValue: RID {
         let newValue = RID()
         
@@ -731,9 +731,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedCallableValue: Callable {
         let newValue = Callable()
         
@@ -747,9 +747,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedSignalValue: Signal {
         let newValue = Signal()
         
@@ -763,9 +763,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedDictionaryValue: Dictionary {
         let newValue = Dictionary()
         
@@ -779,9 +779,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedArrayValue: Array {
         let newValue = Array()
         
@@ -795,9 +795,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedPackedByteArrayValue: PackedByteArray {
         let newValue = PackedByteArray()
         
@@ -811,9 +811,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedPackedInt32ArrayValue: PackedInt32Array {
         let newValue = PackedInt32Array()
         
@@ -827,9 +827,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedPackedInt64ArrayValue: PackedInt64Array {
         let newValue = PackedInt64Array()
         
@@ -843,9 +843,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedPackedFloat32ArrayValue: PackedFloat32Array {
         let newValue = PackedFloat32Array()
         
@@ -859,9 +859,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedPackedFloat64ArrayValue: PackedFloat64Array {
         let newValue = PackedFloat64Array()
         
@@ -875,9 +875,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedPackedStringArrayValue: PackedStringArray {
         let newValue = PackedStringArray()
         
@@ -891,9 +891,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedPackedVector2ArrayValue: PackedVector2Array {
         let newValue = PackedVector2Array()
         
@@ -907,9 +907,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedPackedVector3ArrayValue: PackedVector3Array {
         let newValue = PackedVector3Array()
         
@@ -923,9 +923,9 @@ extension Variant {
     }
     
     /// Returns the underlying value, without checking that the underlying type
-    /// match the requested type.
+    /// matches the requested type.
     ///
-    /// Godot might stop when requesting a non matching type.
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedPackedColorArrayValue: PackedColorArray {
         let newValue = PackedColorArray()
         
