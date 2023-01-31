@@ -19,14 +19,6 @@ public struct Variant {
         }
     }
     
-    public init(_ other: Variant) {
-        withUnsafeNativePointer { nativeTypePtr in
-            other.withUnsafeNativePointer { otherNativeTypePtr in
-                GodotInterface.native.variant_new_copy(nativeTypePtr, otherNativeTypePtr)
-            }
-        }
-    }
-    
     public init<T>(_ variantConvertible: T) where T: VariantConvertible {
         self = variantConvertible.variant
     }
