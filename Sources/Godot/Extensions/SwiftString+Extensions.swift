@@ -17,13 +17,13 @@ extension Swift.String {
 }
 
 extension Swift.String: TypedVariantTransformable {
-    public static var variantStorageType: Variant.ValueType { String.variantStorageType }
+    public static let variantStorageType: Variant.ValueType = String.variantStorageType
     
     public var variant: Variant {
         String(swiftString: self).variant
     }
     
-    public init(variant: Variant) throws {
-        self = Swift.String(godotString: try variant.value())
+    public init(typedVariant: Variant) {
+        self = Swift.String(godotString: String(typedVariant: typedVariant))
     }
 }

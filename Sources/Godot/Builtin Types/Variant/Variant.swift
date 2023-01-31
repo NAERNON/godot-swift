@@ -941,12 +941,6 @@ extension Variant {
 
 // MARK: - Variant Transformable
 
-extension Variant {
-    enum VariantConversionError: Error {
-        case cannotRetreive(type: ValueType, fromType: ValueType)
-    }
-}
-
 extension Bool: TypedVariantTransformable {
     public static let variantStorageType: Variant.ValueType = .int
     
@@ -960,12 +954,8 @@ extension Bool: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedBoolValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedBoolValue
     }
 }
 
@@ -982,12 +972,8 @@ extension Int: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedIntValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedIntValue
     }
 }
 
@@ -1004,36 +990,32 @@ extension Double: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedDoubleValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedDoubleValue
     }
 }
 
 extension Float: TypedVariantTransformable {
-    public static let variantStorageType: Variant.ValueType = .float
+    public static let variantStorageType: Variant.ValueType = Double.variantStorageType
 
     public var variant: Variant {
         Double(self).variant
     }
 
-    public init(variant: Variant) throws {
-        self = Float(try variant.value(ofType: Double.self))
+    public init(typedVariant: Variant) {
+        self = Float(Double(typedVariant: typedVariant))
     }
 }
 
 extension Real: TypedVariantTransformable {
-    public static let variantStorageType: Variant.ValueType = .float
+    public static let variantStorageType: Variant.ValueType = Double.variantStorageType
 
     public var variant: Variant {
         Double(self).variant
     }
 
-    public init(variant: Variant) throws {
-        self = Real(try variant.value(ofType: Double.self))
+    public init(typedVariant: Variant) {
+        self = Real(Double(typedVariant: typedVariant))
     }
 }
 
@@ -1050,12 +1032,8 @@ extension String: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedStringValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedStringValue
     }
 }
 
@@ -1072,12 +1050,8 @@ extension Vector2: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedVector2Value
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedVector2Value
     }
 }
 
@@ -1094,12 +1068,8 @@ extension Vector2i: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedVector2iValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedVector2iValue
     }
 }
 
@@ -1116,12 +1086,8 @@ extension Rect2: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedRect2Value
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedRect2Value
     }
 }
 
@@ -1138,12 +1104,8 @@ extension Rect2i: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedRect2iValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedRect2iValue
     }
 }
 
@@ -1160,12 +1122,8 @@ extension Vector3: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedVector3Value
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedVector3Value
     }
 }
 
@@ -1182,12 +1140,8 @@ extension Vector3i: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedVector3iValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedVector3iValue
     }
 }
 
@@ -1204,12 +1158,8 @@ extension Transform2D: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedTransform2DValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedTransform2DValue
     }
 }
 
@@ -1226,12 +1176,8 @@ extension Vector4: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedVector4Value
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedVector4Value
     }
 }
 
@@ -1248,12 +1194,8 @@ extension Vector4i: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedVector4iValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedVector4iValue
     }
 }
 
@@ -1270,12 +1212,8 @@ extension Plane: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedPlaneValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedPlaneValue
     }
 }
 
@@ -1292,12 +1230,8 @@ extension Quaternion: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedQuaternionValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedQuaternionValue
     }
 }
 
@@ -1314,12 +1248,8 @@ extension AABB: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedAABBValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedAABBValue
     }
 }
 
@@ -1336,12 +1266,8 @@ extension Basis: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedBasisValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedBasisValue
     }
 }
 
@@ -1358,12 +1284,8 @@ extension Transform3D: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedTransform3DValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedTransform3DValue
     }
 }
 
@@ -1380,12 +1302,8 @@ extension Projection: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedProjectionValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedProjectionValue
     }
 }
 
@@ -1402,12 +1320,8 @@ extension Color: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedColorValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedColorValue
     }
 }
 
@@ -1424,12 +1338,8 @@ extension StringName: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedStringNameValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedStringNameValue
     }
 }
 
@@ -1446,12 +1356,8 @@ extension NodePath: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedNodePathValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedNodePathValue
     }
 }
 
@@ -1468,12 +1374,8 @@ extension RID: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedRIDValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedRIDValue
     }
 }
 
@@ -1506,12 +1408,8 @@ extension Callable: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedCallableValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedCallableValue
     }
 }
 
@@ -1528,12 +1426,8 @@ extension Signal: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedSignalValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedSignalValue
     }
 }
 
@@ -1550,12 +1444,8 @@ extension Dictionary: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedDictionaryValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedDictionaryValue
     }
 }
 
@@ -1572,12 +1462,8 @@ extension Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedArrayValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedArrayValue
     }
 }
 
@@ -1594,12 +1480,8 @@ extension PackedByteArray: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedPackedByteArrayValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedPackedByteArrayValue
     }
 }
 
@@ -1616,12 +1498,8 @@ extension PackedInt32Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedPackedInt32ArrayValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedPackedInt32ArrayValue
     }
 }
 
@@ -1638,12 +1516,8 @@ extension PackedInt64Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedPackedInt64ArrayValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedPackedInt64ArrayValue
     }
 }
 
@@ -1660,12 +1534,8 @@ extension PackedFloat32Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedPackedFloat32ArrayValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedPackedFloat32ArrayValue
     }
 }
 
@@ -1682,12 +1552,8 @@ extension PackedFloat64Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedPackedFloat64ArrayValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedPackedFloat64ArrayValue
     }
 }
 
@@ -1704,12 +1570,8 @@ extension PackedStringArray: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedPackedStringArrayValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedPackedStringArrayValue
     }
 }
 
@@ -1726,12 +1588,8 @@ extension PackedVector2Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedPackedVector2ArrayValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedPackedVector2ArrayValue
     }
 }
 
@@ -1748,12 +1606,8 @@ extension PackedVector3Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedPackedVector3ArrayValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedPackedVector3ArrayValue
     }
 }
 
@@ -1770,11 +1624,7 @@ extension PackedColorArray: TypedVariantTransformable {
         return variant
     }
     
-    public init(variant: Variant) throws {
-        guard variant.type == Self.variantStorageType else {
-            throw Variant.VariantConversionError.cannotRetreive(type: Self.variantStorageType, fromType: variant.type)
-        }
-        
-        self = variant.uncheckedPackedColorArrayValue
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedPackedColorArrayValue
     }
 }

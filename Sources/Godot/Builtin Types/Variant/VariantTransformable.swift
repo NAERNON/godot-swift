@@ -14,14 +14,44 @@ public protocol ExpressibleByVariant {
     init(variant: Variant) throws
 }
 
+/// A type that can be initialized using a `Variant`, and that specifies the
+/// needed type a `Variant` should be to be initialized with `init(typedVariant:)`.
+///
+/// Conforming to `ExpressibleByTypedVariant` also conforms the type to the
+/// `ExpressibleByVariant` protocol, and provides a default implementation for
+/// `init(variant:)`.
+public protocol ExpressibleByTypedVariant: ExpressibleByVariant {
+    /// The underlying variant storage type.
+    static var variantStorageType: Variant.ValueType { get }
+    
+    /// Creates an instance initialized with the given `Variant`.
+    ///
+    /// The given `Variant` type *must* match `variantStorageType`.
+    init(typedVariant: Variant)
+}
+
 /// A type that can be represented as, and initialized with, a `Variant`.
 public typealias VariantTransformable = VariantConvertible & ExpressibleByVariant
 
-/// A type that can be represented as, and initialized with, a `Variant`
-/// and knows its underlying variant storage type.
-public protocol TypedVariantTransformable: VariantTransformable {
-    /// The underlying variant storage type.
-    static var variantStorageType: Variant.ValueType { get }
+/// A type that can be represented as, and initialized with, a `Variant`.
+public typealias TypedVariantTransformable = VariantConvertible & ExpressibleByTypedVariant
+
+// MARK: - Default ExpressibleByTypedVariant implementation
+
+private extension Variant {
+    enum ConversionError: Error {
+        case unmatchingTypes(ValueType, ValueType)
+    }
+}
+
+extension ExpressibleByTypedVariant {
+    public init(variant: Variant) throws {
+        guard variant.type == Self.variantStorageType else {
+            throw Variant.ConversionError.unmatchingTypes(variant.type, Self.variantStorageType)
+        }
+        
+        self.init(typedVariant: variant)
+    }
 }
 
 // MARK: - Optional extensions
