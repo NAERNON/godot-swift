@@ -5,10 +5,6 @@ extension Object {
     public func withUnsafeNativePointer(_ body: (UnsafeMutableRawPointer) -> ()) {
         body(nativeObjectPtr)
     }
-    
-    internal final class func classNameForGodot() -> Swift.String {
-        .init(describing: Self.self)
-    }
 }
 
 extension Object: CustomDebugStringConvertible {

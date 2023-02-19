@@ -37,7 +37,7 @@ extension TypedArray {
 
 extension TypedArray where Element: Object {
     public init() {
-        self.init(className: StringName(swiftString: Element.classNameForGodot()))
+        self.init(className: Element.lastDerivedGodotClassName())
     }
 }
 

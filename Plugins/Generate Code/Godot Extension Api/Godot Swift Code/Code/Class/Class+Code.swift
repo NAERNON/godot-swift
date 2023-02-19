@@ -174,23 +174,39 @@ if isExtentionClass() {
     
     @CodeBuilder
     private func initsCode() -> some SwiftCode {
-        Mark(text: "Inits", isSeparator: true).padding(top: 1, bottom: 1)
+        Mark(text: "Inits", isSeparator: true).padding(top: 1)
         
+        baseInitCode().padding(top: 1)
+        nativeObjectInitCode().padding(top: 1)
+        variantInitCode().padding(top: 1)
+        classNameFunctionCode().padding(top: 1)
+    }
+    
+    @CodeBuilder
+    private func baseInitCode() -> some SwiftCode {
         if isRootClass {
-            Property("nativeObjectPtr").varDefined().type("GDNativeObjectPtr")
-                .internal().privateSet()
+            Property("nativeObjectPtr").letDefined().type("GDNativeObjectPtr")
+                .internal()
             Spacer()
-#warning("Store in dictionary the StringNames for optimization ?")
-            Init() {
+            Init() { #warning("Check another way to know if the class is an extension class.")
 """
 var nativeObjectPtr: GDNativeObjectPtr!
-StringName(swiftString: Self.classNameForGodot()).withUnsafeNativePointer { namePtr in
+Self.lastDerivedGodotClassName().withUnsafeNativePointer { namePtr in
     nativeObjectPtr = GodotInterface.native.classdb_construct_object(namePtr)!
 }
 
 self.nativeObjectPtr = nativeObjectPtr
+
+let className = StringName(swiftString: .init(describing: Self.self))
+if className != Self.lastDerivedGodotClassName() {
+    self.withUnsafeNativePointer { ptr in
+        className.withUnsafeNativePointer { classNamePtr in
+            GodotInterface.native.object_set_instance(ptr, classNamePtr, Unmanaged.passRetained(self).toOpaque())
+        }
+    }
+}
 """
-            }.public()
+            }.public().required()
         } else if isRefCountedRootClass {
             Property("_isReferenced").varDefined().private().type("Bool")
             
@@ -201,7 +217,7 @@ self.nativeObjectPtr = nativeObjectPtr
                 "super.init()"
                 Spacer()
                 "_ = initRef()"
-            }.public().override()
+            }.public().required()
             
             Spacer()
             
@@ -221,11 +237,12 @@ self.nativeObjectPtr = nativeObjectPtr
         } else {
             Init() {
                 "super.init()"
-            }.public().override()
+            }.public().required()
         }
-        
-        Spacer()
-        
+    }
+    
+    @CodeBuilder
+    private func nativeObjectInitCode() -> some SwiftCode {
         if isRootClass {
             Init(parameters: .named("nativeObjectPtr", type: "GDNativeObjectPtr")) {
                 Property("nativeObjectPtr").selfDefined().assign(value: "nativeObjectPtr")
@@ -239,12 +256,13 @@ self.nativeObjectPtr = nativeObjectPtr
                 "super.init(nativeObjectPtr: nativeObjectPtr)"
             }.internal().override()
         }
-        
-        Spacer()
-        
+    }
+    
+    @CodeBuilder
+    private func variantInitCode() -> some SwiftCode {
         Init(parameters: .named("typedVariant", type: "Variant")) {
             if isRootClass {
-                "nativeObjectPtr = typedVariant.uncheckedObjectValue(ofType: Self.self).nativeObjectPtr"
+                Property("nativeObjectPtr").assign(value: "typedVariant.uncheckedObjectValue(ofType: Self.self).nativeObjectPtr")
             } else {
                 if isRefCountedRootClass {
                     Property("_isReferenced").assign(value: "false")
@@ -252,5 +270,19 @@ self.nativeObjectPtr = nativeObjectPtr
                 "super.init(typedVariant: typedVariant)"
             }
         }.public().required()
+    }
+    
+    @CodeBuilder
+    private func classNameFunctionCode() -> some SwiftCode {
+        Property("_className").letDefined().static().private().assign(value: "StringName(string: \"\(name.toSwift())\")")
+        Spacer()
+        Comment(style: .doc) {
+"""
+Returns the last derived Godot class name.
+"""
+        }
+        Func(name: "lastDerivedGodotClassName", returnType: "StringName") {
+            "_className"
+        }.class().public().override(!isRootClass)
     }
 }

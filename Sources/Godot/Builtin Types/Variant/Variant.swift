@@ -13,7 +13,7 @@ public struct Variant {
         }
     }
     
-    public init(nativeVariantPtr: GDNativeVariantPtr) {
+    internal init(nativeVariantPtr: GDNativeVariantPtr) {
         withUnsafeNativePointer { nativeTypePtr in
             GodotInterface.native.variant_new_copy(nativeTypePtr, nativeVariantPtr)
         }
@@ -29,14 +29,6 @@ public struct Variant {
     /// - Parameter type: The type inside the `Variant`.
     public func value<T>(ofType type: T.Type) throws -> T where T: ExpressibleByVariant {
         try type.init(variant: self)
-    }
-    
-    /// Returns the value contained inside the `Variant`.
-    ///
-    /// This function infers the return type.
-    /// Use the `value(ofType:)` function to explicitly specify the type.
-    public func value<T>() throws -> T where T: ExpressibleByVariant {
-        try value(ofType: T.self)
     }
     
     // MARK: - Functions
