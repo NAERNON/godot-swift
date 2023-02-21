@@ -102,7 +102,7 @@ Sets all the function bindings used to communicate with Godot.
                     Property("_class_name").letDefined().type("StringName").assign(value: "\"\(name.toSwift())\"")
                     Property("_method_name").varDefined().type("StringName!")
                     
-                    ObjectsPointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .mutable)]) { classPointerNames in
+                    ObjectsPointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .const)]) { classPointerNames in
                         let classNamePointerName = classPointerNames[0]
                         
                         for method in methodData {

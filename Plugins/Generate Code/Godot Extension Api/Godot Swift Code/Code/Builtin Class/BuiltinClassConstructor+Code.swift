@@ -12,7 +12,7 @@ extension ExtensionApi.BuiltinClass.Constructor {
                          overridesInit: type.isBuiltinOpaqueValueType,
                          overridesReturn: type.isBuiltinOpaqueValueType) { temporaryValueName in
             let destructorString = hasDestructor ? ", destructorPtr: Self.\(godotDestructorPtrName)" : ""
-            Property(temporaryValueName).letDefined().type("Opaque")
+            Property(temporaryValueName).varDefined().type("Opaque")
                 .assign(value: ".init(size: \(classSize)\(destructorString))")
         } content: { values in
             "Self." + godotConstructorPtrName + "(\(values.temporaryPointerName), \(values.pointersArrayName))"

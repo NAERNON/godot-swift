@@ -72,12 +72,12 @@ Function: GodotBindingFuncDefinition {
             
             if usePointerAccess {
                 ObjectsArrayPointersAccess(parameters: objectsPointersAccessParameters(with: parameters))
-                { pointerNames, arrayName, argumentsCountName in
+                { pointerNames, arrayName in
                     selfParameterPointerAccess { selfPointerName in
                         temporaryParameterPointerAccess { temporaryPointerName in
                             let values = GodotBindingFuncValues(pointerNames: pointerNames,
                                                                 pointersArrayName: arrayName,
-                                                                pointersCountValue: argumentsCountName,
+                                                                pointersCountValue: argumentCountString,
                                                                 selfPointerName: selfPointerName ?? "nil",
                                                                 temporaryPointerName: temporaryPointerName ?? "nil")
                             content(values)
@@ -138,6 +138,15 @@ Function: GodotBindingFuncDefinition {
         }
         
         return (translatedName, translatedParameters)
+    }
+    
+    private var argumentCountString: String {
+        let countString = String(arguments.count)
+        guard godotFunction.isVararg else {
+            return countString
+        }
+        
+        return countString + " + Int32(rest.count)"
     }
     
     private func objectsPointersAccessParameters(with parameters: [FunctionParameter]) -> [ObjectsPointersAccessParameter] {

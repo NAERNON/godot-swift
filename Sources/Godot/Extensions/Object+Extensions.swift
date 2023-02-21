@@ -18,14 +18,3 @@ extension Object: Equatable {
         lhs.getInstanceId() == rhs.getInstanceId()
     }
 }
-
-extension Optional where Wrapped: Object {
-    public func withUnsafeNativePointer(_ body: (UnsafeMutableRawPointer?) -> ()) {
-        switch self {
-        case .none:
-            body(nil)
-        case .some(let wrapped):
-            wrapped.withUnsafeNativePointer(body)
-        }
-    }
-}

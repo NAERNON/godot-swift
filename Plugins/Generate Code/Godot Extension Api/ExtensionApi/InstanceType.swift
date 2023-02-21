@@ -250,21 +250,6 @@ extension InstanceType {
         }
     }
     
-    /// Returns how this type should be accessed for Godot.
-    var accessPointerMethod: PointerAccessMethod {
-        if self == .variantVarargs {
-            return .variantCollection
-        } else if self == .opaque {
-            return .opaque
-        } else if isEnumType || isBitfieldType {
-            return .swiftStandard
-        } else if !isValueType || isBuiltinOpaqueValueType {
-            return .godotNative
-        } else {
-            return .swiftStandard
-        }
-    }
-    
     var godotVariantType: String {
         guard let type = typeToGodotVariantType[toSwift(definedInside: nil)] else {
             fatalError("No variant type provided for \"\(toSwift(definedInside: nil))\"")
@@ -365,13 +350,13 @@ extension InstanceType {
     @CodeBuilder
     func temporaryInitializerCode(propertyName: String, definedInside insideType: InstanceType?) -> some SwiftCode {
         if isEnumType || isBitfieldType {
-            Property(propertyName).defined(isVar: true)
+            Property(propertyName).varDefined()
                 .assign(value: "Int(0)")
         } else if isGodotClassType {
-            Property(propertyName).defined(isVar: true)
+            Property(propertyName).varDefined()
                 .type("GDNativeObjectPtr!")
         } else {
-            Property(propertyName).defined(isVar: temporaryInstanceType.accessPointerMethod == .swiftStandard)
+            Property(propertyName).varDefined()
                 .assign(value: temporaryInstanceType.toSwift(definedInside: insideType) + "()")
         }
     }
@@ -387,20 +372,7 @@ extension InstanceType {
         } else if isBitfieldType {
             Return(toSwift(definedInside: insideType) + "(rawValue: \(propertyName))")
         } else if isGodotClassType {
-"""
-if let \(propertyName) {
-    return withUnsafePointer(to: \(toSwift(definedInside: insideType)).instanceBindingsCallbacks()) { callbacksPointer in
-        let opaque = GodotInterface.native.object_get_instance_binding(
-            \(propertyName),
-            GodotInterface.token,
-            callbacksPointer)
-        
-        return Unmanaged<\(toSwift(definedInside: insideType))>.fromOpaque(opaque!).takeUnretainedValue()
-    }
-} else {
-    return nil
-}
-"""
+            Return("retreiveObject(ofType: \(toSwift(definedInside: insideType)).self, from: \(propertyName))")
         } else {
             Return(propertyName)
         }
@@ -620,38 +592,6 @@ extension InstanceType.StringType {
     
     static func == (lhs: Self, rhs: String) -> Bool {
         lhs.string == rhs
-    }
-}
-
-// MARK: - PointerAccessMethod
-
-extension InstanceType {
-    /// Defines how an `InstanceType` should be accessed.
-    enum PointerAccessMethod {
-        /// ```
-        /// withUnsafePointer(to: value) { ptr in
-        ///     ...
-        /// }
-        /// ```
-        case swiftStandard
-        
-        /// ```
-        /// value.withUnsafeNativePointer { ptr in
-        ///     ...
-        /// }
-        case godotNative
-        
-        /// ```
-        /// value.withUnsafeMutableRawPointer { ptr in
-        ///     ...
-        /// }
-        case opaque
-        
-        /// ```
-        /// values.withUnsafeNativePointers { ptrs in
-        ///     ...
-        /// }
-        case variantCollection
     }
 }
 

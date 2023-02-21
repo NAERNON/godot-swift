@@ -3,7 +3,7 @@ import Foundation
 extension ExtensionApi.UtilityFunction {
     func code() -> some SwiftCode {
         GodotBindingFunc(self, type: nil) { values in
-            "UtilityFunctions.\(godotFunctionPtrName)(\(values.temporaryPointerName), \(values.pointersArrayName), Int32(\(values.pointersCountValue)))"
+            "UtilityFunctions.\(godotFunctionPtrName)(\(values.temporaryPointerName), \(values.pointersArrayName), \(values.pointersCountValue))"
         }.public()
     }
     

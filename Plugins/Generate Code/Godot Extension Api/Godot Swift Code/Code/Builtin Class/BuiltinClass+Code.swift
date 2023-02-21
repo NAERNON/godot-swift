@@ -61,7 +61,7 @@ duplicate its value.
     
     @CodeBuilder
     private func nativePtrCode() -> some SwiftCode {
-        Property("opaque").varDefined().type("Opaque").private().padding(top: 1, bottom: 1)
+        Property("opaque").varDefined().type("Opaque").privateSet().padding(top: 1, bottom: 1)
         
         Comment(style: .doc) {
             "Calls a closure with a native type pointer of the underlying object. Should only be called by the `GodotLibrary`."
@@ -345,7 +345,7 @@ Sets all the function bindings and operators used to communicate with Godot.
             Func(name: "_getValue",
                  parameters: .named("key", type: "Variant", label: "forKey"),
                  returnType: "Variant") {
-                Property("__returnValue").letDefined().assign(value: "Variant()")
+                Property("__returnValue").varDefined().assign(value: "Variant()")
                 
                 ObjectsPointersAccess(parameters:
                                         [.named("__returnValue", type: .variant, mutability: .mutable),

@@ -3,7 +3,7 @@ import Foundation
 extension ExtensionApi.BuiltinClass.Method {
     func code(type: InstanceType) -> some SwiftCode {
         GodotBindingFunc(self, type: type) { values in
-            "Self.\(godotMethodPtrName)(\(values.selfPointerName), \(values.pointersArrayName), \(values.temporaryPointerName), Int32(\(values.pointersCountValue)))"
+            "Self.\(godotMethodPtrName)(\(values.selfPointerName), \(values.pointersArrayName), \(values.temporaryPointerName), \(values.pointersCountValue))"
         }.internal().attributes(isResultDiscardable ? [.discardableResult] : [])
     }
     
