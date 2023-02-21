@@ -66,6 +66,8 @@ and all others should be.
         bindingsPropertiesCode()
         Spacer()
         setFunctionBindingsFunctionCode()
+        Spacer()
+        setVirtualFunctionBindingsFunctionCode()
     }
     
     @CodeBuilder
@@ -112,6 +114,41 @@ Sets all the function bindings used to communicate with Godot.
                                     .assign(value: "GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
                             }
                         }
+                    }
+                }
+            }
+        }.internal().class().override(!isRootClass)
+    }
+    
+    @CodeBuilder
+    private func setVirtualFunctionBindingsFunctionCode() -> some SwiftCode {
+        Comment(style: .doc) {
+"""
+Sets all the virtual function bindings used to communicate with Godot.
+"""
+        }
+        Func(name: "setVirtualFunctionCalls", parameters: .named("appendCall",
+                                                                 type: "(StringName, GDNativeExtensionClassCallVirtual) -> Void",
+                                                                 label: .hidden)) {
+            if let methods {
+                let virtualMethods = methods.filter { $0.isVirtual }
+                if !virtualMethods.isEmpty {
+                    Property("_method_name").varDefined().type("StringName!")
+                    for method in virtualMethods {
+                        Property("_method_name").assign(value: "\"\(method.name.godotName)\"")
+                        "appendCall(_method_name, { instancePtr, args, returnPtr in"
+                        Group {
+                            Guard(condition: "let instancePtr, let args") {
+                                Return()
+                            }
+                            
+                            Property("instance")
+                                .letDefined()
+                                .assign(value: "Unmanaged<\(name.toSwift())>.fromOpaque(instancePtr).takeUnretainedValue()")
+                            
+                            GodotBindingFuncCall(method, type: name)
+                        }.indentation()
+                        "})"
                     }
                 }
             }
@@ -167,7 +204,7 @@ if isExtentionClass() {
     }
     
     private var methodsAccessControl: AccessControl {
-        isRefCountedRootClass ? .private : .public
+        isRefCountedRootClass ? .private : .open
     }
     
     // MARK: Inits
