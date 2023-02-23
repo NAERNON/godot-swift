@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 struct SetBindingsFile: GeneratedSwiftFile {
     let path = "SetBindings.swift"
@@ -11,10 +12,8 @@ struct SetBindingsFile: GeneratedSwiftFile {
         self.classes = classes
     }
     
-    var code: some SwiftCode {
+    var code: some Code {
         Import.foundation
-        
-        Spacer()
         
         Extension("GodotInterface") {
             Func(name: "setAllBuiltinStructsBindings") {
@@ -22,14 +21,10 @@ struct SetBindingsFile: GeneratedSwiftFile {
                     "Godot." + builtinClass.name.toSwift() + ".setInitBindings()"
                 }
                 
-                Spacer()
-                
                 for builtinClass in builtinClasses {
                     "Godot." + builtinClass.name.toSwift() + ".setFunctionBindings()"
                 }
             }.static()
-            
-            Spacer()
             
             Func(name: "setAllClassesBindings") {
                 for `class` in classes {

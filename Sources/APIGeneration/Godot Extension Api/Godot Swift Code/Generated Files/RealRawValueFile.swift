@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 struct RealRawValueFile: GeneratedSwiftFile {
     let path: String
@@ -9,19 +10,17 @@ struct RealRawValueFile: GeneratedSwiftFile {
         self.floatingPointType = floatingPointType
     }
     
-    var code: some SwiftCode {
+    var code: some Code {
         Import.foundation
         
-        Spacer()
-        
         Extension("Real") {
-            Comment(style: .doc) {
+            Typealias("RawValue", type: floatingTypeString).public()
+                .documentation {
 """
 The underlying type of a `Real` value.
 It can either be a `Float` or a `Double` depending on the build configuration.
 """
-            }
-            Typealias("RawValue", type: floatingTypeString).public()
+                }
         }
     }
     

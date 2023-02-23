@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 // MARK: ObjectsPointersAccess
 
@@ -16,7 +17,7 @@ import Foundation
 ///     }
 /// }
 /// ```
-struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
+struct ObjectsPointersAccess<Content>: Code where Content: Code {
     let parameters: [ObjectsPointersAccessParameter]
     let content: ([String]) -> Content
     
@@ -31,27 +32,27 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
         self.init(parameters: parameters, content: content)
     }
     
-    var body: some SwiftCode {
+    var body: some Code {
         for (index, parameter) in parameters.enumerated() {
             let name = CodeLanguage.swift.protectNameIfKeyword(for: parameter.name)
             let pointerName = self.pointerName(for: parameter)
             
             if parameter.isVararg {
-                "withUnsafeGodotAccessVarargsPointer(to: \(name)) { \(pointerName) in".indentation(level: index)
+                "withUnsafeGodotAccessVarargsPointer(to: \(name)) { \(pointerName) in".indent(index)
             } else if parameter.mutability == .mutable {
-                "withUnsafeGodotMutableAccessPointer(to: &\(name)) { \(pointerName) in".indentation(level: index)
+                "withUnsafeGodotMutableAccessPointer(to: &\(name)) { \(pointerName) in".indent(index)
             } else if parameter.mutability == .constMutablePointer {
-                "withUnsafeGodotMutableConstAccessPointer(to: \(name)) { \(pointerName) in".indentation(level: index)
+                "withUnsafeGodotMutableConstAccessPointer(to: \(name)) { \(pointerName) in".indent(index)
             } else {
-                "withUnsafeGodotAccessPointer(to: \(name)) { \(pointerName) in".indentation(level: index)
+                "withUnsafeGodotAccessPointer(to: \(name)) { \(pointerName) in".indent(index)
             }
         }
         
         content(parametersPointerNames())
-            .indentation(level: parameters.count)
+            .indent(parameters.count)
         
         for index in 0..<parameters.count {
-            "}".indentation(level: parameters.count - index - 1)
+            "}".indent(parameters.count - index - 1)
         }
     }
     
@@ -90,7 +91,7 @@ struct ObjectsPointersAccess<Content>: SwiftCode where Content: SwiftCode {
 ///     }
 /// }
 /// ```
-struct ObjectsArrayPointersAccess<Content>: SwiftCode where Content: SwiftCode {
+struct ObjectsArrayPointersAccess<Content>: Code where Content: Code {
     let parameters: [ObjectsPointersAccessParameter]
     let content: ([String], String) -> Content
     
@@ -109,7 +110,7 @@ struct ObjectsArrayPointersAccess<Content>: SwiftCode where Content: SwiftCode {
         self.init(parameters: parameters, content: content)
     }
     
-    var body: some SwiftCode {
+    var body: some Code {
         ObjectsPointersAccess(parameters: parameters) { pointerNames in
             if pointersArrayIsNil {
                 content(pointerNames, pointersArrayName)
@@ -165,7 +166,7 @@ struct ObjectsPointersAccessParameter {
 // MARK: PointerArray
 
 /// This code creates an array with the given pointers, and makes its address usable during the given closure.
-private struct PointerArray<Content>: SwiftCode where Content: SwiftCode {
+private struct PointerArray<Content>: Code where Content: Code {
     let pointersNames: [String]
     let pointersVararg: [Bool]
     let arrayPointerName: String
@@ -185,9 +186,9 @@ private struct PointerArray<Content>: SwiftCode where Content: SwiftCode {
         self.content = content
     }
     
-    var body: some SwiftCode {
+    var body: some Code {
         "withUnsafeArgumentPointer(\(argumentArrayCodeString)) { \(arrayPointerName) in"
-        content().indentation()
+        content().indent()
         "}"
     }
     
@@ -209,7 +210,7 @@ private struct PointerArray<Content>: SwiftCode where Content: SwiftCode {
 extension Property {
     func pointerAccess(type: InstanceType,
                        mutability: ObjectsPointersAccessParameter.Mutability,
-                       @CodeBuilder content: @escaping (String) -> some SwiftCode) -> some SwiftCode {
+                       @CodeBuilder content: @escaping (String) -> some Code) -> some Code {
         ObjectsPointersAccess(parameters: [.named(self.name,
                                                   type: type,
                                                   mutability: mutability,

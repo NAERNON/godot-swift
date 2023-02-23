@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 #warning("isRefcounted and isInstantiable, isVararg, isVirtual not used from ExtensionApi.Class. Is it ok or am I dumb ?")
 
@@ -6,7 +7,7 @@ extension ExtensionApi.Class {
     var isRootClass: Bool { name == "Object" }
     
     @CodeBuilder
-    func code() -> some SwiftCode {
+    func code() -> some Code {
         Class(name.toSwift(), extensions: inherits == nil ? [] : [inherits!.toSwift()]) {
             initsCode()
             if isRootClass {
@@ -26,13 +27,12 @@ extension ExtensionApi.Class {
     // MARK: Enum
     
     @CodeBuilder
-    private func enumCode() -> some SwiftCode {
+    private func enumCode() -> some Code {
         if let enums,
            !enums.isEmpty {
-            Spacer()
-            Mark(text: "Enums", isSeparator: true)
+            Mark("Enums", isSeparator: true)
+            
             for `enum` in enums {
-                Spacer()
                 `enum`.code(definedInside: name)
             }
         }
@@ -41,10 +41,14 @@ extension ExtensionApi.Class {
     // MARK: Is extension class
     
     @CodeBuilder
-    private func isExtensionClassCode() -> some SwiftCode {
+    private func isExtensionClassCode() -> some Code {
 #warning("Return true for all necessary classes")
-        Spacer()
-        Comment(style: .doc) {
+        Func(name: "isExtentionClass", returnType: "Bool") {
+            "false"
+        }
+        .open()
+        .class()
+        .documentation {
 """
 Returns a Boolean value indicating whether the class is an extension
 of a base Godot class.
@@ -53,42 +57,33 @@ Every class inside the Godot target are not extension classes,
 and all others should be.
 """
         }
-        Func(name: "isExtentionClass", returnType: "Bool") {
-            "false"
-        }.open().class()
     }
     
     // MARK: Bindings
     
     @CodeBuilder
-    private func bindingsCode() -> some SwiftCode {
-        Mark(text: "Bindings", isSeparator: true).padding(top: 1, bottom: 1)
+    private func bindingsCode() -> some Code {
+        Mark("Bindings", isSeparator: true)
+        
         bindingsPropertiesCode()
-        Spacer()
         setFunctionBindingsFunctionCode()
-        Spacer()
         setVirtualFunctionBindingsFunctionCode()
     }
     
     @CodeBuilder
-    private func bindingsPropertiesCode() -> some SwiftCode {
+    private func bindingsPropertiesCode() -> some Code {
         if let methods {
             for method in methods {
                 if let methodPtrName = method.godotMethodPtrName {
-                    Property(methodPtrName)
-                        .varDefined().private().static().type("GDNativeMethodBindPtr!")
+                    Var(methodPtrName)
+                        .private().static().typed("GDNativeMethodBindPtr!")
                 }
             }
         }
     }
     
     @CodeBuilder
-    private func setFunctionBindingsFunctionCode() -> some SwiftCode {
-        Comment(style: .doc) {
-"""
-Sets all the function bindings used to communicate with Godot.
-"""
-        }
+    private func setFunctionBindingsFunctionCode() -> some Code {
         Func(name: "setFunctionBindings") {
             if let methods {
                 let methodData: [(name: String, hash: Int, ptrName: String)] = methods.compactMap { method in
@@ -101,65 +96,71 @@ Sets all the function bindings used to communicate with Godot.
                 }
                 
                 if !methodData.isEmpty {
-                    Property("_class_name").letDefined().type("StringName").assign(value: "\"\(name.toSwift())\"")
-                    Property("_method_name").varDefined().type("StringName!")
+                    Let("_class_name").typed("StringName").assign("\"\(name.toSwift())\"")
+                    Var("_method_name").typed("StringName!")
                     
                     ObjectsPointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .const)]) { classPointerNames in
                         let classNamePointerName = classPointerNames[0]
                         
                         for method in methodData {
-                            Property("_method_name").assign(value: "\"\(method.name)\"")
+                            Property("_method_name").assign("\"\(method.name)\"")
                             Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
                                 Property(method.ptrName)
-                                    .assign(value: "GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
+                                    .assign("GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
                             }
                         }
                     }
                 }
             }
-        }.internal().class().override(!isRootClass)
+        }
+        .internal()
+        .class()
+        .override(!isRootClass)
+        .documentation {
+            "Sets all the function bindings used to communicate with Godot."
+        }
     }
     
     @CodeBuilder
-    private func setVirtualFunctionBindingsFunctionCode() -> some SwiftCode {
-        Comment(style: .doc) {
-"""
-Sets all the virtual function bindings used to communicate with Godot.
-"""
-        }
+    private func setVirtualFunctionBindingsFunctionCode() -> some Code {
         Func(name: "setVirtualFunctionCalls", parameters: .named("appendCall",
                                                                  type: "(StringName, GDNativeExtensionClassCallVirtual) -> Void",
-                                                                 label: .hidden)) {
+                                                                 label: .hidden))
+        {
             if let methods {
                 let virtualMethods = methods.filter { $0.isVirtual }
                 if !virtualMethods.isEmpty {
-                    Property("_method_name").varDefined().type("StringName!")
+                    Var("_method_name").typed("StringName!")
                     for method in virtualMethods {
-                        Property("_method_name").assign(value: "\"\(method.name.godotName)\"")
+                        Property("_method_name").assign("\"\(method.name.godotName)\"")
                         "appendCall(_method_name, { instancePtr, args, returnPtr in"
                         Group {
                             Guard(condition: "let instancePtr, let args") {
                                 Return()
                             }
                             
-                            Property("instance")
-                                .letDefined()
-                                .assign(value: "Unmanaged<\(name.toSwift())>.fromOpaque(instancePtr).takeUnretainedValue()")
+                            Let("instance")
+                                .assign("Unmanaged<\(name.toSwift())>.fromOpaque(instancePtr).takeUnretainedValue()")
                             
                             GodotBindingFuncCall(method, type: name)
-                        }.indentation()
+                        }.indent()
                         "})"
                     }
                 }
             }
-        }.internal().class().override(!isRootClass)
+        }
+        .internal()
+        .class()
+        .override(!isRootClass)
+        .documentation {
+            "Sets all the virtual function bindings used to communicate with Godot."
+        }
     }
     
     // MARK: Bindings callback
     
     @CodeBuilder
-    private func bindingsCallbackCode() -> some SwiftCode {
-        Spacer()
+    private func bindingsCallbackCode() -> some Code {
         Func(name: "instanceBindingsCallbacks", returnType: "GDNativeInstanceBindingCallbacks") {
 """
 if isExtentionClass() {
@@ -190,14 +191,12 @@ if isExtentionClass() {
     // MARK: Methods
     
     @CodeBuilder
-    private func methodsCode() -> some SwiftCode {
+    private func methodsCode() -> some Code {
         if let methods,
            !methods.isEmpty {
-            Spacer()
-            Mark(text: "Functions", isSeparator: true)
+            Mark("Functions", isSeparator: true)
             
             for method in methods {
-                Spacer()
                 method.code(type: name, accessControl: methodsAccessControl)
             }
         }
@@ -210,21 +209,20 @@ if isExtentionClass() {
     // MARK: Inits
     
     @CodeBuilder
-    private func initsCode() -> some SwiftCode {
-        Mark(text: "Inits", isSeparator: true).padding(top: 1)
+    private func initsCode() -> some Code {
+        Mark("Inits", isSeparator: true)
         
-        baseInitCode().padding(top: 1)
-        nativeObjectInitCode().padding(top: 1)
-        variantInitCode().padding(top: 1)
-        classNameFunctionCode().padding(top: 1)
+        baseInitCode()
+        nativeObjectInitCode()
+        variantInitCode()
+        classNameFunctionCode()
     }
     
     @CodeBuilder
-    private func baseInitCode() -> some SwiftCode {
+    private func baseInitCode() -> some Code {
         if isRootClass {
-            Property("nativeObjectPtr").letDefined().type("GDNativeObjectPtr")
-                .internal()
-            Spacer()
+            Let("nativeObjectPtr").typed("GDNativeObjectPtr").internal()
+            
             Init() { #warning("Check another way to know if the class is an extension class.")
 """
 var nativeObjectPtr: GDNativeObjectPtr!
@@ -245,25 +243,19 @@ if className != Self.lastDerivedGodotClassName() {
 """
             }.public().required()
         } else if isRefCountedRootClass {
-            Property("_isReferenced").varDefined().private().type("Bool")
+            Var("_isReferenced").private().typed("Bool")
             
-            Spacer()
             
             Init() {
-                Property("_isReferenced").assign(value: "true")
+                Property("_isReferenced").assign("true")
                 "super.init()"
-                Spacer()
                 "_ = initRef()"
             }.public().required()
-            
-            Spacer()
             
             Deinit {
                 Guard(condition: "_isReferenced") {
                     Return()
                 }
-                
-                Spacer()
                 
                 If("unreference()") {
                     Property("self").pointerAccess(type: name, mutability: .constMutablePointer) { pointerName in
@@ -279,15 +271,15 @@ if className != Self.lastDerivedGodotClassName() {
     }
     
     @CodeBuilder
-    private func nativeObjectInitCode() -> some SwiftCode {
+    private func nativeObjectInitCode() -> some Code {
         if isRootClass {
             Init(parameters: .named("nativeObjectPtr", type: "GDNativeObjectPtr")) {
-                Property("nativeObjectPtr").selfDefined().assign(value: "nativeObjectPtr")
+                Property("nativeObjectPtr").selfDefined().assign("nativeObjectPtr")
             }.internal()
         } else {
             Init(parameters: .named("nativeObjectPtr", type: "GDNativeObjectPtr")) {
                 if isRefCountedRootClass {
-                    Property("_isReferenced").assign(value: "false")
+                    Property("_isReferenced").assign("false")
                 }
                 
                 "super.init(nativeObjectPtr: nativeObjectPtr)"
@@ -296,13 +288,13 @@ if className != Self.lastDerivedGodotClassName() {
     }
     
     @CodeBuilder
-    private func variantInitCode() -> some SwiftCode {
+    private func variantInitCode() -> some Code {
         Init(parameters: .named("typedVariant", type: "Variant")) {
             if isRootClass {
-                Property("nativeObjectPtr").assign(value: "typedVariant.uncheckedObjectValue(ofType: Self.self).nativeObjectPtr")
+                Property("nativeObjectPtr").assign("typedVariant.uncheckedObjectValue(ofType: Self.self).nativeObjectPtr")
             } else {
                 if isRefCountedRootClass {
-                    Property("_isReferenced").assign(value: "false")
+                    Property("_isReferenced").assign("false")
                 }
                 "super.init(typedVariant: typedVariant)"
             }
@@ -310,16 +302,16 @@ if className != Self.lastDerivedGodotClassName() {
     }
     
     @CodeBuilder
-    private func classNameFunctionCode() -> some SwiftCode {
-        Property("_className").letDefined().static().private().assign(value: "StringName(string: \"\(name.toSwift())\")")
-        Spacer()
-        Comment(style: .doc) {
-"""
-Returns the last derived Godot class name.
-"""
-        }
+    private func classNameFunctionCode() -> some Code {
+        Let("_className").static().private().assign("StringName(string: \"\(name.toSwift())\")")
         Func(name: "lastDerivedGodotClassName", returnType: "StringName") {
             "_className"
-        }.class().public().override(!isRootClass)
+        }
+        .class()
+        .public()
+        .override(!isRootClass)
+        .documentation {
+            "Returns the last derived Godot class name."
+        }
     }
 }

@@ -1,7 +1,8 @@
 import Foundation
+import CodeGenerator
 
 /// A `GodotBindingFuncCall` is a shortcut to a function with many translation being done for Godot.
-struct GodotBindingFuncCall<Function>: SwiftCode where Function: GodotBindingFuncDefinition {
+struct GodotBindingFuncCall<Function>: Code where Function: GodotBindingFuncDefinition {
     let godotFunction: Function
     let type: InstanceType?
     
@@ -11,7 +12,7 @@ struct GodotBindingFuncCall<Function>: SwiftCode where Function: GodotBindingFun
         self.type = type
     }
     
-    var body: some SwiftCode {
+    var body: some Code {
         let (name, parameters) = translatedNameAndParameters
         
         name

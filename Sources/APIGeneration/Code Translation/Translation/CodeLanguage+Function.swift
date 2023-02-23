@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 extension CodeLanguage {
     public struct FunctionParameter {

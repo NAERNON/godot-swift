@@ -12,7 +12,9 @@ let package = Package(
             name: "Godot",
             targets: ["Godot", "GodotExtension", "GodotExtensionHeaders"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "1.0.0")),
+    ],
     targets: [
         // Targets
         .target(
@@ -29,7 +31,11 @@ let package = Package(
         ),
         
         .executableTarget(
-            name: "APIGeneration",
-            dependencies: [.product(name: "CodeGenerator", package: "code-generator")]),
+            name: "generate-api",
+            dependencies: [
+                "CodeGenerator",
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+            ],
+            path: "Sources/APIGeneration"),
     ]
 )

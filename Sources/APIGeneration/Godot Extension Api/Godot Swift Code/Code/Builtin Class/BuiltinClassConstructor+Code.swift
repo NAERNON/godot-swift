@@ -1,10 +1,11 @@
 import Foundation
+import CodeGenerator
 
 extension ExtensionApi.BuiltinClass.Constructor {
     func code(type: InstanceType,
               classSize: Int,
               hasDestructor: Bool,
-              godotDestructorPtrName: String) -> some SwiftCode {
+              godotDestructorPtrName: String) -> some Code {
         GodotBindingFunc(self,
                          type: type,
                          overrideReturnType: type,
@@ -12,8 +13,8 @@ extension ExtensionApi.BuiltinClass.Constructor {
                          overridesInit: type.isBuiltinOpaqueValueType,
                          overridesReturn: type.isBuiltinOpaqueValueType) { temporaryValueName in
             let destructorString = hasDestructor ? ", destructorPtr: Self.\(godotDestructorPtrName)" : ""
-            Property(temporaryValueName).varDefined().type("Opaque")
-                .assign(value: ".init(size: \(classSize)\(destructorString))")
+            Var(temporaryValueName).typed("Opaque")
+                .assign(".init(size: \(classSize)\(destructorString))")
         } content: { values in
             "Self." + godotConstructorPtrName + "(\(values.temporaryPointerName), \(values.pointersArrayName))"
         } overrideReturnContent: { temporaryValueName in

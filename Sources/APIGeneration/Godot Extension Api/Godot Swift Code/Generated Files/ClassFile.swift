@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 struct ClassFile: GeneratedSwiftFile {
     let path: String
@@ -9,11 +10,9 @@ struct ClassFile: GeneratedSwiftFile {
         self.class = `class`
     }
     
-    var code: some SwiftCode {
+    var code: some Code {
         Import.foundation
         Import.godotExtensionHeaders
-        
-        Spacer()
         
         `class`.code()
     }

@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 struct BuiltinClassFile: GeneratedSwiftFile {
     let path: String
@@ -13,11 +14,9 @@ struct BuiltinClassFile: GeneratedSwiftFile {
         self.classSize = builtinClassSizes.sizes.first(where: { $0.name == builtinClass.name })?.size ?? 0
     }
     
-    var code: some SwiftCode {
+    var code: some Code {
         Import.foundation
         Import.godotExtensionHeaders
-        
-        Spacer()
         
         builtinClass.code(classSize: classSize)
     }

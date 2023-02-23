@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 // MARK: - InstanceType
 
@@ -348,16 +349,16 @@ extension InstanceType {
     /// For instance, a `String` type will return `var returnValue = String()`,
     /// while an `Enum` type will return `var returnValue = Int(0)`.
     @CodeBuilder
-    func temporaryInitializerCode(propertyName: String, definedInside insideType: InstanceType?) -> some SwiftCode {
+    func temporaryInitializerCode(propertyName: String, definedInside insideType: InstanceType?) -> some Code {
         if isEnumType || isBitfieldType {
-            Property(propertyName).varDefined()
-                .assign(value: "Int(0)")
+            Var(propertyName)
+                .assign("Int(0)")
         } else if isGodotClassType {
-            Property(propertyName).varDefined()
-                .type("GDNativeObjectPtr!")
+            Var(propertyName)
+                .typed("GDNativeObjectPtr!")
         } else {
-            Property(propertyName).varDefined()
-                .assign(value: temporaryInstanceType.toSwift(definedInside: insideType) + "()")
+            Var(propertyName)
+                .assign(temporaryInstanceType.toSwift(definedInside: insideType) + "()")
         }
     }
     
@@ -366,7 +367,7 @@ extension InstanceType {
     /// while an `Enum` type will return `return = Type(rawValue: returnValue)`.
     @CodeBuilder
     func temporaryReturnCode(propertyName: String,
-                             definedInside insideType: InstanceType?) -> some SwiftCode {
+                             definedInside insideType: InstanceType?) -> some Code {
         if isEnumType {
             Return(toSwift(definedInside: insideType) + "(rawValue: \(propertyName))!")
         } else if isBitfieldType {

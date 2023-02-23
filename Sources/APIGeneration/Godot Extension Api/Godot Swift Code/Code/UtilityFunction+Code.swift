@@ -1,7 +1,8 @@
 import Foundation
+import CodeGenerator
 
 extension ExtensionApi.UtilityFunction {
-    func code() -> some SwiftCode {
+    func code() -> some Code {
         GodotBindingFunc(self, type: nil) { values in
             "UtilityFunctions.\(godotFunctionPtrName)(\(values.temporaryPointerName), \(values.pointersArrayName), \(values.pointersCountValue))"
         }.public()

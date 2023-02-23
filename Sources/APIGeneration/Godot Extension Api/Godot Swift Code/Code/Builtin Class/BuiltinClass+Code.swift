@@ -1,8 +1,9 @@
 import Foundation
+import CodeGenerator
 
 extension ExtensionApi.BuiltinClass {
     @CodeBuilder
-    func code(classSize: Int) -> some SwiftCode {
+    func code(classSize: Int) -> some Code {
         if name.isBuiltinBaseValueType {
             Extension(name.toSwift()) {
                 insideStructOrExtensionCode(classSize: classSize)
@@ -17,7 +18,7 @@ extension ExtensionApi.BuiltinClass {
     }
     
     @CodeBuilder
-    private func insideStructOrExtensionCode(classSize: Int) -> some SwiftCode {
+    private func insideStructOrExtensionCode(classSize: Int) -> some Code {
         Group {
             constantsCode()
             enumCode()
@@ -29,8 +30,8 @@ extension ExtensionApi.BuiltinClass {
         }
         
         bindingsCode()
+        
         if name.isBuiltinOpaqueValueType {
-            Spacer()
             replaceOpaqueValueCode()
             nativePtrCode()
         }
@@ -39,60 +40,62 @@ extension ExtensionApi.BuiltinClass {
     // MARK: Native Opaque
     
     @CodeBuilder
-    private func replaceOpaqueValueCode() -> some SwiftCode {
-        Comment(style: .doc) {
+    private func replaceOpaqueValueCode() -> some Code {
+        Func(name: "replaceOpaqueValueIfNecessary") {
+            // We find a constructor that will duplicate our value.
+            Guard(condition: "!isKnownUniquelyReferenced(&opaque)") {
+                Return()
+            }
+            
+            Property("tmp").letDefined().assign("Self(self)")
+            Property("opaque").selfDefined().assign("tmp.opaque")
+        }
+        .private()
+        .mutating()
+        .documentation {
 """
 When a function modifies the opaque array or any value associated,
 we should check that the `Opaque` value is uniquely referenced and if not,
 duplicate its value.
 """
         }
-        Func(name: "replaceOpaqueValueIfNecessary") {
-            // We find a constructor that will duplicate our value.
-            Guard(condition: "!isKnownUniquelyReferenced(&opaque)") {
-                Return()
-            }
-                        
-            Spacer()
-            Property("tmp").letDefined().assign(value: "Self(self)")
-            Property("opaque").selfDefined().assign(value: "tmp.opaque")
-        }.private().mutating()
     }
     
     @CodeBuilder
-    private func nativePtrCode() -> some SwiftCode {
-        Property("opaque").varDefined().type("Opaque").privateSet().padding(top: 1, bottom: 1)
+    private func nativePtrCode() -> some Code {
+        Var("opaque").typed("Opaque").privateSet()
         
-        Comment(style: .doc) {
-            "Calls a closure with a native type pointer of the underlying object. Should only be called by the `GodotLibrary`."
-        }
         Func(name: "withUnsafeNativePointer", parameters: .named("body", type: "(GDNativeTypePtr) -> ()", label: .hidden)) {
             "opaque.withUnsafeMutableRawPointer(body)"
-        }.public()
+        }
+        .public()
+        .documentation {
+            "Calls a closure with a native type pointer of the underlying object. Should only be called by the `GodotLibrary`."
+        }
         
         Func(name: "opaqueIsZero", returnType: "Bool") {
             "opaque.isZero()"
-        }.internal().topPadding()
+        }.internal()
             
-        Var("opaqueDescription", type: "Swift.String") {
+        Var("opaqueDescription").typed("Swift.String").curlyBraces {
             "opaque.debugDescription"
-        }.internal().topPadding()
+        }.internal()
     }
     
     // MARK: Constants
     
     @CodeBuilder
-    private func constantsCode() -> some SwiftCode {
+    private func constantsCode() -> some Code {
         if let constants,
            !constants.isEmpty {
-            Mark(text: "Constants", isSeparator: true).padding(top: 1)
+            Mark("Constants", isSeparator: true)
+            
             ForEach(constants.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
-                Spacer()
                 ForEach(sameTypeConstants) { constant in
-                    Property(constantName(constant.name))
-                        .letDefined().public().static().type(constant.type.toSwift())
-                        .assign(value: constant.type.instantationCode(forValue: constant.value))
-                }.aligned(1)
+                    Let(constantName(constant.name))
+                        .public().static().typed(constant.type.toSwift())
+                        .assign(constant.type.instantationCode(forValue: constant.value))
+                }.align(offset: 1)
             }
         }
     }
@@ -105,13 +108,11 @@ duplicate its value.
     // MARK: Enum
     
     @CodeBuilder
-    private func enumCode() -> some SwiftCode {
+    private func enumCode() -> some Code {
         if let enums,
            !enums.isEmpty {
-            Spacer()
-            Mark(text: "Enums", isSeparator: true)
+            Mark("Enums", isSeparator: true)
             for `enum` in enums {
-                Spacer()
                 `enum`.code(definedInside: name)
             }
         }
@@ -120,53 +121,63 @@ duplicate its value.
     // MARK: Bindings
     
     @CodeBuilder
-    private func bindingsCode() -> some SwiftCode {
-        Mark(text: "Bindings", isSeparator: true).padding(top: 1, bottom: 1)
-        bindingsPropertiesCode()
-        Spacer()
+    private func bindingsCode() -> some Code {
+        Mark("Bindings", isSeparator: true)
         
+        bindingsPropertiesCode()
         setInitBindingsFunctionCode()
-        Spacer()
         setFunctionBindingsFunctionCode()
     }
     
     @CodeBuilder
-    private func bindingsPropertiesCode() -> some SwiftCode {
+    private func bindingsPropertiesCode() -> some Code {
         for constructor in constructors {
-            Property(constructor.godotConstructorPtrName)
-                .varDefined().private().static().type("GDNativePtrConstructor!")
+            Var(constructor.godotConstructorPtrName).private().static().typed("GDNativePtrConstructor!")
         }
         if hasDestructor {
-            Property(godotDestructorPtrName).varDefined().private().static().type("GDNativePtrDestructor!")
+            Var(godotDestructorPtrName).private().static().typed("GDNativePtrDestructor!")
         }
         
         if indexingReturnType != nil {
-            Property(godotIndexedSetterPtrName).varDefined().private().static().type("GDNativePtrIndexedSetter!")
-            Property(godotIndexedGetterPtrName).varDefined().private().static().type("GDNativePtrIndexedGetter!")
+            Var(godotIndexedSetterPtrName).private().static().typed("GDNativePtrIndexedSetter!")
+            Var(godotIndexedGetterPtrName).private().static().typed("GDNativePtrIndexedGetter!")
         }
         
         if isKeyed {
-            Property(godotKeyedSetterPtrName).varDefined().private().static().type("GDNativePtrKeyedSetter!")
-            Property(godotKeyedGetterPtrName).varDefined().private().static().type("GDNativePtrKeyedGetter!")
-            Property(godotKeyedCheckerPtrName).varDefined().private().static().type("GDNativePtrKeyedChecker!")
+            Var(godotKeyedSetterPtrName).private().static().typed("GDNativePtrKeyedSetter!")
+            Var(godotKeyedGetterPtrName).private().static().typed("GDNativePtrKeyedGetter!")
+            Var(godotKeyedCheckerPtrName).private().static().typed("GDNativePtrKeyedChecker!")
         }
         
         if let methods {
             for method in methods {
-                Property(method.godotMethodPtrName	)
-                    .varDefined().private().static().type("GDNativePtrBuiltInMethod!")
+                Var(method.godotMethodPtrName)
+                    .private().static().typed("GDNativePtrBuiltInMethod!")
             }
         }
         
         for op in operators {
-            Property(op.godotOperatorPtrName)
-                .varDefined().private().static().type("GDNativePtrOperatorEvaluator!")
+            Var(op.godotOperatorPtrName)
+                .private().static().typed("GDNativePtrOperatorEvaluator!")
         }
     }
     
     @CodeBuilder
-    private func setInitBindingsFunctionCode() -> some SwiftCode {
-        Comment(style: .doc) {
+    private func setInitBindingsFunctionCode() -> some Code {
+        Func(name: "setInitBindings") {
+            for constructor in constructors {
+                Property(constructor.godotConstructorPtrName)
+                    .assign("GodotInterface.native.variant_get_ptr_constructor(\(godotVariantType), \(constructor.index))")
+            }
+            
+            if hasDestructor {
+                Property(godotDestructorPtrName)
+                    .assign("GodotInterface.native.variant_get_ptr_destructor(\(godotVariantType))")
+            }
+        }
+        .internal()
+        .static()
+        .documentation {
 """
 Sets all the init bindings and the deinit (if applicable) used to communicate with Godot.
 
@@ -174,78 +185,65 @@ This function must be called before the creation of any `\(name.toSwift())` inst
 for any initialization.
 """
         }
-        Func(name: "setInitBindings") {
-            for constructor in constructors {
-                Property(constructor.godotConstructorPtrName)
-                    .assign(value: "GodotInterface.native.variant_get_ptr_constructor(\(godotVariantType), \(constructor.index))")
-            }
-            
-            if hasDestructor {
-                Property(godotDestructorPtrName)
-                    .assign(value: "GodotInterface.native.variant_get_ptr_destructor(\(godotVariantType))")
-            }
-        }.internal().static()
     }
     
     @CodeBuilder
-    private func setFunctionBindingsFunctionCode() -> some SwiftCode {
-        Comment(style: .doc) {
-"""
-Sets all the function bindings and operators used to communicate with Godot.
-"""
-        }
+    private func setFunctionBindingsFunctionCode() -> some Code {
         Func(name: "setFunctionBindings") {
             if indexingReturnType != nil {
-                Property(godotIndexedSetterPtrName).assign(value: "GodotInterface.native.variant_get_ptr_indexed_setter(\(godotVariantType))")
-                Property(godotIndexedGetterPtrName).assign(value: "GodotInterface.native.variant_get_ptr_indexed_getter(\(godotVariantType))")
-                
-                Spacer()
+                Property(godotIndexedSetterPtrName)
+                    .assign("GodotInterface.native.variant_get_ptr_indexed_setter(\(godotVariantType))")
+                Property(godotIndexedGetterPtrName)
+                    .assign("GodotInterface.native.variant_get_ptr_indexed_getter(\(godotVariantType))")
             }
             
             if isKeyed {
-                Property(godotKeyedSetterPtrName).assign(value: "GodotInterface.native.variant_get_ptr_keyed_setter(\(godotVariantType))")
-                Property(godotKeyedGetterPtrName).assign(value: "GodotInterface.native.variant_get_ptr_keyed_getter(\(godotVariantType))")
-                Property(godotKeyedCheckerPtrName).assign(value: "GodotInterface.native.variant_get_ptr_keyed_checker(\(godotVariantType))")
-                
-                Spacer()
+                Property(godotKeyedSetterPtrName)
+                    .assign("GodotInterface.native.variant_get_ptr_keyed_setter(\(godotVariantType))")
+                Property(godotKeyedGetterPtrName)
+                    .assign("GodotInterface.native.variant_get_ptr_keyed_getter(\(godotVariantType))")
+                Property(godotKeyedCheckerPtrName)
+                    .assign("GodotInterface.native.variant_get_ptr_keyed_checker(\(godotVariantType))")
             }
             
             if let methods {
-                Property("_method_name").varDefined().type("StringName!")
+                Var("_method_name").typed("StringName!")
                 for method in methods {
-                    Property("_method_name").assign(value: "\"\(method.name.godotName)\"")
+                    Property("_method_name").assign("\"\(method.name.godotName)\"")
                     Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
                         Property(method.godotMethodPtrName)
-                            .assign(value: "GodotInterface.native.variant_get_ptr_builtin_method(\(godotVariantType), \(methodPointerName), \(method.hash))")
+                            .assign("GodotInterface.native.variant_get_ptr_builtin_method(\(godotVariantType), \(methodPointerName), \(method.hash))")
                     }
                 }
             }
             
-            Spacer()
-            
             for op in operators {
                 Property(op.godotOperatorPtrName)
-                    .assign(value: "GodotInterface.native.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(op.rightType.godotVariantType))")
+                    .assign("GodotInterface.native.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(op.rightType.godotVariantType))")
             }
-        }.internal().static()
+        }
+        .internal()
+        .static()
+        .documentation {
+"""
+Sets all the function bindings and operators used to communicate with Godot.
+"""
+        }
     }
     
     // MARK: Constructors
     
     @CodeBuilder
-    private func constructorsCode(classSize: Int) -> some SwiftCode {
-        Spacer()
-        Mark(text: "Init", isSeparator: true)
+    private func constructorsCode(classSize: Int) -> some Code {
+        Mark("Init", isSeparator: true)
         
         if name.isBuiltinOpaqueValueType {
-            Spacer()
             Init(parameters: .named("opaque", type: "Opaque")) {
-                Property("opaque").selfDefined().assign(value: "opaque")
+                Property("opaque").selfDefined().assign("opaque")
             }.private()
         }
         
         for constructor in constructors {
-            Spacer()
             constructor.code(type: name,
                              classSize: classSize,
                              hasDestructor: hasDestructor,
@@ -256,14 +254,12 @@ Sets all the function bindings and operators used to communicate with Godot.
     // MARK: Methods
     
     @CodeBuilder
-    private func methodsCode() -> some SwiftCode {
+    private func methodsCode() -> some Code {
         if let methods,
            !methods.isEmpty {
-            Spacer()
-            Mark(text: "Functions", isSeparator: true)
+            Mark("Functions", isSeparator: true)
             
             for method in methods {
-                Spacer()
                 method.code(type: name)
             }
         }
@@ -272,12 +268,10 @@ Sets all the function bindings and operators used to communicate with Godot.
     // MARK: Operators
     
     @CodeBuilder
-    private func operatorsCode() -> some SwiftCode {
+    private func operatorsCode() -> some Code {
         if !operators.isEmpty {
-            Spacer()
-            Mark(text: "Operators", isSeparator: true)
+            Mark("Operators", isSeparator: true)
             for op in operators {
-                Spacer()
                 op.code(type: name)
             }
         }
@@ -286,13 +280,11 @@ Sets all the function bindings and operators used to communicate with Godot.
     // MARK: Getter/Setter
     
     @CodeBuilder
-    private func getterSetterCode() -> some SwiftCode {
+    private func getterSetterCode() -> some Code {
         if let indexingReturnType, !isKeyed {
             // Getter/setters are internal, and public extensions should be
             // made to generate the subscripts.
-            Spacer()
-            Mark(text: "Getter/Setter", isSeparator: true)
-            Spacer()
+            Mark("Getter/Setter", isSeparator: true)
             
             let indexingType = indexingReturnType.toSwift(definedInside: name)
             
@@ -306,12 +298,10 @@ Sets all the function bindings and operators used to communicate with Godot.
                                          .named("self", type: self.name, mutability: .const)]
                 ) { pointerNames in
                     "Self.__indexed_getter(\(pointerNames[1]), index, \(pointerNames[0]))"
-                }.padding(top: 1, bottom: 1)
+                }
                 
                 indexingReturnType.temporaryReturnCode(propertyName: "__returnValue", definedInside: name)
             }.internal()
-            
-            Spacer()
             
             Func(name: "_setValue",
                  parameters: [.named("value", type: indexingType, label: .hidden),
@@ -319,7 +309,6 @@ Sets all the function bindings and operators used to communicate with Godot.
             {
                 if self.name.isBuiltinOpaqueValueType {
                     "replaceOpaqueValueIfNecessary()"
-                    Spacer()
                 }
                 
                 ObjectsPointersAccess(parameters: [.named("value", type: indexingReturnType, mutability: .const),
@@ -334,18 +323,16 @@ Sets all the function bindings and operators used to communicate with Godot.
     // MARK: Keyed
     
     @CodeBuilder
-    private func keyedCode() -> some SwiftCode {
+    private func keyedCode() -> some Code {
         if isKeyed {
             // Keyed functions are internal, and public extensions should be
             // made to generate the subscripts.
-            Spacer()
-            Mark(text: "Keyed", isSeparator: true)
-            Spacer()
+            Mark("Keyed", isSeparator: true)
                         
             Func(name: "_getValue",
                  parameters: .named("key", type: "Variant", label: "forKey"),
                  returnType: "Variant") {
-                Property("__returnValue").varDefined().assign(value: "Variant()")
+                Var("__returnValue").assign("Variant()")
                 
                 ObjectsPointersAccess(parameters:
                                         [.named("__returnValue", type: .variant, mutability: .mutable),
@@ -353,10 +340,10 @@ Sets all the function bindings and operators used to communicate with Godot.
                                          .named("self", type: self.name, mutability: .const)]
                 ) { pointerNames in
                     "Self.__keyed_getter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
-                }.padding(top: 1, bottom: 1)
+                }
                 
                 Return("__returnValue")
-            }.internal().bottomPadding()
+            }.internal()
             
             Func(name: "_set",
                  parameters: [.named("value", type: "Variant"),
@@ -369,20 +356,20 @@ Sets all the function bindings and operators used to communicate with Godot.
                                          .named("self", type: self.name, mutability: .mutable)]
                 ) { pointerNames in
                     "Self.__keyed_setter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
-                }.padding(top: 1)
-            }.internal().mutating().bottomPadding()
+                }
+            }.internal().mutating()
             
             Func(name: "_check",
                  parameters: [.named("key", type: "Variant")],
                  returnType: "Bool") {
-                Property("keyCheck").varDefined().assign(value: "UInt32()")
+                Var("keyCheck").assign("UInt32()")
                 
                 ObjectsPointersAccess(parameters:
                                         [.named("key", type: .variant, mutability: .const),
                                          .named("self", type: self.name, mutability: .const)]
                 ) { pointerNames in
                     "keyCheck = Self.__keyed_checker(\(pointerNames[1]), \(pointerNames[0]))"
-                }.padding(top: 1, bottom: 1)
+                }
                 
                 Return("keyCheck != 0")
             }.internal()
@@ -391,11 +378,9 @@ Sets all the function bindings and operators used to communicate with Godot.
     
     // MARK: Custom Debug String Convertible
     
-    @CodeBuilder
-    private func customDebugStringConvertibleExtensionCode() -> some SwiftCode {
-        Spacer()
+    private func customDebugStringConvertibleExtensionCode() -> some Code {
         Extension(name.toSwift(), extensions: ["CustomDebugStringConvertible"]) {
-            Property("debugDescription").varDefined().public().type("Swift.String").computed {
+            Var("debugDescription").public().typed("Swift.String").assignComputed {
                 "Variant(self).debugDescription"
             }
         }

@@ -1,12 +1,13 @@
 import Foundation
+import CodeGenerator
 
 protocol GeneratedSwiftFile {
-    associatedtype Code: SwiftCode
+    associatedtype FileCode: Code
     
     var path: String { get }
     
     @CodeBuilder
-    var code: Code { get }
+    var code: FileCode { get }
 }
 
 extension GeneratedSwiftFile {
@@ -26,7 +27,7 @@ private struct PrefixedPathSwiftFile<Content: GeneratedSwiftFile>: GeneratedSwif
     
     var path: String { prefix + file.path }
     
-    var code: Content.Code { file.code }
+    var code: Content.FileCode { file.code }
 }
 
 extension GeneratedSwiftFile {

@@ -1,13 +1,14 @@
 import Foundation
+import CodeGenerator
 
 // MARK: - GodotBindingFunc
 
 /// A `GodotBindingFunc` is a shortcut to a function with many translation being done for Godot.
-struct GodotBindingFunc<Content, InitContent, ReturnContent, Function>: SwiftCode, AccessControlCode
+struct GodotBindingFunc<Content, InitContent, ReturnContent, Function>: Code
 where
-Content: SwiftCode,
-InitContent: SwiftCode,
-ReturnContent: SwiftCode,
+Content: Code,
+InitContent: Code,
+ReturnContent: Code,
 Function: GodotBindingFuncDefinition {
     let godotFunction: Function
     let type: InstanceType?
@@ -24,10 +25,6 @@ Function: GodotBindingFuncDefinition {
     let overrideReturnContent: (String) -> ReturnContent
     
     let usePointerAccess: Bool
-    
-    var accessControl: AccessControl? = nil
-    var isOverride: Bool = false
-    var isFinal: Bool = false
     
     init(_ godotFunction: Function,
          type: InstanceType?,
@@ -56,7 +53,7 @@ Function: GodotBindingFuncDefinition {
         self.usePointerAccess = usePointerAccess
     }
     
-    var body: some SwiftCode {
+    var body: some Code {
         let (name, parameters) = translatedNameAndParameters
         
         Func(name: name,
@@ -94,11 +91,6 @@ Function: GodotBindingFuncDefinition {
                 temporaryType.temporaryReturnCode(propertyName: temporaryValueName, definedInside: type)
             }
         }
-             .accessControl(accessControl)
-             .static(godotFunction.isStatic)
-             .final(isFinal)
-             .mutating(godotFunction.isMutating)
-             .override(isOverride)
     }
     
     private var arguments: [ExtensionApi.Argument] {
@@ -159,7 +151,7 @@ Function: GodotBindingFuncDefinition {
         return accessParameters
     }
     
-    private func selfParameterPointerAccess(@CodeBuilder _ body: @escaping (String?) -> some SwiftCode) -> some SwiftCode {
+    private func selfParameterPointerAccess(@CodeBuilder _ body: @escaping (String?) -> some Code) -> some Code {
         var parameters = [ObjectsPointersAccessParameter]()
         if let type, !godotFunction.isStatic {
             parameters.append(.named("self", type: type, mutability: godotFunction.isMutating ? .mutable : .constMutablePointer))
@@ -170,7 +162,7 @@ Function: GodotBindingFuncDefinition {
         }
     }
     
-    private func temporaryParameterPointerAccess(@CodeBuilder _ body: @escaping (String?) -> some SwiftCode) -> some SwiftCode {
+    private func temporaryParameterPointerAccess(@CodeBuilder _ body: @escaping (String?) -> some Code) -> some Code {
         var parameters = [ObjectsPointersAccessParameter]()
         if let temporaryType {
             parameters.append(.named(temporaryValueName, type: temporaryType.temporaryInstanceType, mutability: .mutable))
@@ -179,20 +171,6 @@ Function: GodotBindingFuncDefinition {
         return ObjectsPointersAccess(parameters: parameters) { pointerNames in
             body(pointerNames.first)
         }
-    }
-    
-    // MARK: Modifiers
-    
-    func `final`(_ state: Bool = true) -> GodotBindingFunc {
-        var new = self
-        new.isFinal = state
-        return new
-    }
-    
-    func overrides(_ state: Bool = true) -> GodotBindingFunc {
-        var new = self
-        new.isOverride = state
-        return new
     }
 }
 

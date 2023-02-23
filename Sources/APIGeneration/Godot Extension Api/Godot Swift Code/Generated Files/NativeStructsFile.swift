@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 struct NativeStructsFile: GeneratedSwiftFile {
     let path: String
@@ -9,17 +10,15 @@ struct NativeStructsFile: GeneratedSwiftFile {
         self.nativeStruct = nativeStruct
     }
     
-    var code: some SwiftCode {
+    var code: some Code {
         Import.foundation
-        
-        Spacer()
         
         Struct(nativeStruct.name) {
             for variable in nativeStruct.format.variables {
-                let property = Property(variable.nameToSwift()).letDefined().type(variable.typeToSwift()).public()
+                let property = Let(variable.nameToSwift()).typed(variable.typeToSwift()).public()
                 
                 if let defaultValue = variable.defaultValue {
-                    property.assign(value: variable.type.instantationCode(forValue: defaultValue))
+                    property.assign(variable.type.instantationCode(forValue: defaultValue))
                 } else {
                     property
                 }

@@ -1,10 +1,11 @@
 import Foundation
+import CodeGenerator
 
 extension ExtensionApi.Enum {
     private typealias CaseData<T> = (name: String, value: T)
     
     @CodeBuilder
-    func code(definedInside insideType: InstanceType? = nil) -> some SwiftCode {
+    func code(definedInside insideType: InstanceType? = nil) -> some Code {
         if isBitfield == true {
             optionSetCode(forType: Int.self, definedInside: insideType)
         } else {
@@ -35,7 +36,7 @@ extension ExtensionApi.Enum {
     }
 
     private func enumCode<T: BinaryInteger>(forType type: T.Type,
-                                            definedInside insideType: InstanceType?) -> some SwiftCode {
+                                            definedInside insideType: InstanceType?) -> some Code {
         let nameAndCases = self.nameAndCases(forType: type, definedInside: insideType)
         
         // Sometimes, given enums don't have unique values, and two cases can have the same value.
@@ -57,15 +58,14 @@ extension ExtensionApi.Enum {
             Group {
                 ForEach(cases) { `case` in
                     Case(`case`.name, typedValue: `case`.value)
-                }.aligned(1)
+                }.align(offset: 1)
                 
                 if !staticProperties.isEmpty {
-                    Spacer()
                     ForEach(staticProperties) { property in
-                        Property(property.name)
-                            .letDefined().type("Self").static().public()
-                            .assign(value: ".\(property.caseName)")
-                    }.aligned(1)
+                        Let(property.name)
+                            .typed("Self").static().public()
+                            .assign(".\(property.caseName)")
+                    }.align(offset: 1)
                 }
             }
         }
@@ -73,12 +73,11 @@ extension ExtensionApi.Enum {
     }
 
     private func optionSetCode<T: BinaryInteger>(forType type: T.Type,
-                                                 definedInside insideType: InstanceType?) -> some SwiftCode {
+                                                 definedInside insideType: InstanceType?) -> some Code {
         let nameAndCases = self.nameAndCases(forType: type, definedInside: insideType)
 
-        return OptionSet(nameAndCases.name,
-                         options: nameAndCases.cases)
-        .public()
-        .aligned(1)
+        return OptionSet(nameAndCases.name, options: nameAndCases.cases)
+            .public()
+            .align(offset: 1)
     }
 }

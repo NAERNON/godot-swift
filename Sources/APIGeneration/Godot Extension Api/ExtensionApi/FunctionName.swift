@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 struct FunctionName {
     var godotName: String

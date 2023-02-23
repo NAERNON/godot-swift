@@ -1,7 +1,8 @@
 import Foundation
+import CodeGenerator
 
 extension ExtensionApi.BuiltinClass.Method {
-    func code(type: InstanceType) -> some SwiftCode {
+    func code(type: InstanceType) -> some Code {
         GodotBindingFunc(self, type: type) { values in
             "Self.\(godotMethodPtrName)(\(values.selfPointerName), \(values.pointersArrayName), \(values.temporaryPointerName), \(values.pointersCountValue))"
         }.internal().attributes(isResultDiscardable ? [.discardableResult] : [])

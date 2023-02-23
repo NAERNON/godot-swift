@@ -1,19 +1,17 @@
 import Foundation
-import PackagePlugin
+import CodeGenerator
 
 extension ExtensionApi.BuiltinClass.Operator {
     @CodeBuilder
-    func code(type: InstanceType) -> some SwiftCode {
+    func code(type: InstanceType) -> some Code {
         let (translatedName, _) = FunctionName(godotName: "operator_" + name.operationName!.lowercased()).underscored()
             .toSwift(withType: type, arguments: nil)
         
         Func(name: translatedName,
              parameters: functionParameters(type: type),
              returnType: returnType.toSwift(definedInside: type)) {
-            
             returnType.temporaryInitializerCode(propertyName: "__returnValue", definedInside: type)
-            Spacer()
-            
+
             ObjectsPointersAccess(parameters: objectsPointerAccessParameters(type: type)) { pointerNames in
                 if rightType != nil {
                     let lhsName = pointerNames[0]
@@ -27,9 +25,7 @@ extension ExtensionApi.BuiltinClass.Operator {
                 }
             }
             
-            Spacer()
             Return("__returnValue")
-            
         }.static().internal()
     }
     
@@ -57,9 +53,8 @@ extension ExtensionApi.BuiltinClass.Operator {
         return parameters
     }
     
-    private func emptyErrorCode() -> some SwiftCode {
-        Diagnostics.error("The operator \"\(name)\" could not be generated.")
-        return EmptyCode()
+    private func emptyErrorCode() -> some Code {
+        EmptyCode()
     }
     
     var godotVariantOperation: String? {

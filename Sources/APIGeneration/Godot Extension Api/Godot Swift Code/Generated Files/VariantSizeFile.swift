@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 struct VariantSizeFile: GeneratedSwiftFile {
     let path = "VariantSize.swift"
@@ -8,13 +9,11 @@ struct VariantSizeFile: GeneratedSwiftFile {
         self.size = size
     }
     
-    var code: some SwiftCode {
+    var code: some Code {
         Import.foundation
         
-        Spacer()
-        
         Extension("Variant") {
-            Property("opaqueSize").letDefined().static().internal().type("Int").assign(value: "\(size)")
+            Let("opaqueSize").static().internal().typed("Int").assign("\(size)")
         }
     }
 }

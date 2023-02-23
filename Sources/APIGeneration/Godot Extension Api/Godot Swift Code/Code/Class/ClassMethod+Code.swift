@@ -1,20 +1,15 @@
 import Foundation
+import CodeGenerator
 
 extension ExtensionApi.Class.Method {
     @CodeBuilder
-    func code(type: InstanceType, accessControl: AccessControl) -> some SwiftCode {
+    func code(type: InstanceType, accessControl: AccessControl) -> some Code {
         if let godotMethodPtrName {
             GodotBindingFunc(self, type: type) { values in
                 "GodotInterface.native.object_method_bind_ptrcall(Self.\(godotMethodPtrName), \(values.selfPointerName), \(values.pointersArrayName), \(values.temporaryPointerName))"
             }
             .accessControl(accessControl)
         } else if isVirtual {
-            Comment(style: .doc) {
-"""
-This function should only be called by Godot.
-Override it to make custom behaviors.
-"""
-            }
             GodotBindingFunc(self, type: type,
                              overridesInit: true,
                              overridesReturn: true,
@@ -24,6 +19,12 @@ Override it to make custom behaviors.
                 }
             }
             .accessControl(accessControl)
+            .documentation {
+"""
+This function should only be called by Godot.
+Override it to make custom behaviors.
+"""
+            }
         }
     }
     

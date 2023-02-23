@@ -1,4 +1,5 @@
 import Foundation
+import CodeGenerator
 
 struct GlobalEnumsFile: GeneratedSwiftFile {
     let path = "GlobalEnums.swift"
@@ -8,7 +9,7 @@ struct GlobalEnumsFile: GeneratedSwiftFile {
         self.enums = enums
     }
 
-    var code: some SwiftCode {
+    var code: some Code {
         Import.foundation
 
         ForEach(enums) { `enum` in
@@ -16,15 +17,11 @@ struct GlobalEnumsFile: GeneratedSwiftFile {
                 // We do not generate the enums for the Variant type since
                 // they are already generated.
                 if scope != "Variant" {
-                    Spacer()
-                    
                     Extension(scope.toSwift()) {
                         `enum`.code()
                     }
                 }
             } else {
-                Spacer()
-                
                 `enum`.code()
             }
         }
