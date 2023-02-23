@@ -28,18 +28,8 @@ let package = Package(
             dependencies: ["GodotExtensionHeaders", "Godot"]
         ),
         
-        .plugin(
-            name: "Generate Godot API",
-            capability: .command(
-                intent: .custom(
-                    verb: "generate-godot-api",
-                    description: "Generates the Godot API code by reading the extension_api.json file."
-                ),
-                permissions: [
-                    .writeToPackageDirectory(reason: "This plugin generates the Godot API code in the Godot target.")
-                ]
-            ),
-            path: "Plugins/Generate Code"
-        )
+        .executableTarget(
+            name: "APIGeneration",
+            dependencies: [.product(name: "CodeGenerator", package: "code-generator")]),
     ]
 )
