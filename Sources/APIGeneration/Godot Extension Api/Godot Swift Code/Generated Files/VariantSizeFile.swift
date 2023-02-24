@@ -1,7 +1,7 @@
 import Foundation
 import CodeGenerator
 
-struct VariantSizeFile: GeneratedSwiftFile {
+struct VariantSizeFile: GeneratedFile {
     let path = "VariantSize.swift"
     let size: Int
     

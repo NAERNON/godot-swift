@@ -1,7 +1,7 @@
 import Foundation
 import CodeGenerator
 
-struct ClassFile: GeneratedSwiftFile {
+struct ClassFile: GeneratedFile {
     let path: String
     let `class`: ExtensionApi.Class
     

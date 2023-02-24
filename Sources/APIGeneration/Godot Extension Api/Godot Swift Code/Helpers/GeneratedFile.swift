@@ -1,7 +1,7 @@
 import Foundation
 import CodeGenerator
 
-protocol GeneratedSwiftFile {
+protocol GeneratedFile {
     associatedtype FileCode: Code
     
     var path: String { get }
@@ -10,13 +10,13 @@ protocol GeneratedSwiftFile {
     var code: FileCode { get }
 }
 
-extension GeneratedSwiftFile {
+extension GeneratedFile {
     func name() -> String {
         path.components(separatedBy: "/").last ?? ""
     }
 }
 
-private struct PrefixedPathSwiftFile<Content: GeneratedSwiftFile>: GeneratedSwiftFile {
+private struct PrefixedPathFile<Content: GeneratedFile>: GeneratedFile {
     let file: Content
     let prefix: String
     
@@ -30,8 +30,8 @@ private struct PrefixedPathSwiftFile<Content: GeneratedSwiftFile>: GeneratedSwif
     var code: Content.FileCode { file.code }
 }
 
-extension GeneratedSwiftFile {
-    func insideDirectory(_ folderName: String) -> some GeneratedSwiftFile {
-        PrefixedPathSwiftFile(file: self, prefix: folderName + "/")
+extension GeneratedFile {
+    func insideDirectory(_ folderName: String) -> some GeneratedFile {
+        PrefixedPathFile(file: self, prefix: folderName + "/")
     }
 }

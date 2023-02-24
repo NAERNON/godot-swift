@@ -1,7 +1,7 @@
 import Foundation
 import CodeGenerator
 
-struct UtilityFunctionsFile: GeneratedSwiftFile {
+struct UtilityFunctionsFile: GeneratedFile {
     let path = "UtilityFunctions.swift"
     let functions: [ExtensionApi.UtilityFunction]
     
