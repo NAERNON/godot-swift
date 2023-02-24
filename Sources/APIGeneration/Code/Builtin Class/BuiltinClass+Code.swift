@@ -1,5 +1,6 @@
 import Foundation
 import CodeGenerator
+import CodeTranslation
 
 extension ExtensionApi.BuiltinClass {
     @CodeBuilder

@@ -1,5 +1,6 @@
 import Foundation
 import CodeGenerator
+import CodeTranslation
 
 struct FunctionName {
     var godotName: String
@@ -24,7 +25,7 @@ struct FunctionName {
     
     func toSwift(withType type: InstanceType?,
                  arguments: [ExtensionApi.Argument]?) -> (name: String,
-                                                          parameters: [FunctionParameter]) {
+                                                          parameters: [CodeGenerator.FunctionParameter]) {
         let (translatedName, translatedParameters) = CodeLanguage.c.translateFunction(
             name: correctUnderscoredName,
             parameters: arguments?.map({ .init(name: $0.name.replacingOccurrences(of: " ", with: ""),
@@ -46,14 +47,14 @@ struct FunctionName {
         return nil
     }
     
-    private func functionParameters(translatedParameters: [CodeLanguage.FunctionParameter],
+    private func functionParameters(translatedParameters: [CodeTranslation.FunctionParameter],
                                     type: InstanceType?,
-                                    arguments: [ExtensionApi.Argument]?) -> [FunctionParameter] {
+                                    arguments: [ExtensionApi.Argument]?) -> [CodeGenerator.FunctionParameter] {
         guard let arguments else {
             return []
         }
         
-        var parameters = [FunctionParameter]()
+        var parameters = [CodeGenerator.FunctionParameter]()
         for (index, argument) in arguments.enumerated() {
             let translatedParameter = translatedParameters[index]
             let parameter = functionParameter(translatedParameter: translatedParameter,
@@ -66,10 +67,10 @@ struct FunctionName {
         return parameters
     }
     
-    private func functionParameter(translatedParameter: CodeLanguage.FunctionParameter,
+    private func functionParameter(translatedParameter: CodeTranslation.FunctionParameter,
                                    type: InstanceType?,
-                                   argument: ExtensionApi.Argument) -> FunctionParameter {
-        let defaultParameterValue: FunctionParameter.DefaultValue
+                                   argument: ExtensionApi.Argument) -> CodeGenerator.FunctionParameter {
+        let defaultParameterValue: CodeGenerator.FunctionParameter.DefaultValue
         if let defaultValue = argument.defaultValue {
             defaultParameterValue = .codeString(argument.type.instantationCode(forValue: defaultValue))
         } else {
@@ -79,7 +80,7 @@ struct FunctionName {
         return .named(CodeLanguage.swift.protectNameIfKeyword(for: translatedParameter.name),
                       type: argument.type.optional(argument.type.isGodotClassType).toSwift(definedInside: type),
                       defaultValue: defaultParameterValue,
-                      label: translatedParameter.functionParameterLabel)
+                      label: translatedParameter.codeLabel)
     }
     
     /// The name of the operation (if applies).
@@ -129,5 +130,17 @@ struct FunctionName {
 extension FunctionName: Decodable {
     init(from decoder: Decoder) throws {
         godotName = try String(from: decoder)
+    }
+}
+
+private extension CodeTranslation.FunctionParameter {
+    var codeLabel: CodeGenerator.FunctionParameter.Label {
+        if isLabelHidden {
+            return .hidden
+        } else if let label {
+            return .name(label)
+        } else {
+            return .none
+        }
     }
 }

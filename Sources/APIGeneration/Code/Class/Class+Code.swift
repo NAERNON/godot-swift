@@ -69,7 +69,7 @@ and all others should be.
         
         bindingsPropertiesCode()
         setFunctionBindingsFunctionCode()
-        setVirtualFunctionBindingsFunctionCode()
+//        setVirtualFunctionBindingsFunctionCode()
     }
     
     @CodeBuilder

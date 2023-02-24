@@ -1,4 +1,5 @@
 import Foundation
+import CodeTranslation
 
 func gododFiles(fromApi extensionApi: ExtensionApi, buildConfiguration: BuildConfiguration) -> [any GeneratedFile] {
     let builtinClassSizes = extensionApi.builtinClassSizes.first { $0.buildConfiguration == buildConfiguration }!
