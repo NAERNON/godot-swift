@@ -16,7 +16,8 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "1.0.0")),
     ],
     targets: [
-        // Targets
+        // MARK: Main targets
+        
         .target(
             name: "GodotExtensionHeaders",
             dependencies: []
@@ -29,10 +30,16 @@ let package = Package(
             name: "GodotExtension",
             dependencies: ["GodotExtensionHeaders", "Godot"]
         ),
+        
+        // MARK: Utils targets
+        
         .target(
             name: "CodeGenerator",
-            dependencies: []
+            dependencies: [],
+            path: "Utils/CodeGenerator"
         ),
+        
+        // MARK: Executable targets
         
         .executableTarget(
             name: "generate-api",
