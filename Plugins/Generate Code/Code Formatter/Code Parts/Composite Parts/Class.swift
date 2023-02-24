@@ -1,10 +1,9 @@
 import Foundation
 
-public struct Class<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
+public struct Class<Content>: Code where Content : Code {
     let name: String
     let extensions: [String]
     let content: () -> Content
-    public var accessControl: AccessControl? = nil
     
     public init(_ name: String,
                 extensions: [String] = [],
@@ -14,9 +13,9 @@ public struct Class<Content>: SwiftCode, AccessControlCode where Content: SwiftC
         self.content = content
     }
     
-    public var body: some SwiftCode {
+    public var body: some Code {
         _Construct(type: "class", name: name, extensions: extensions) {
             content()
-        }.accessControl(accessControl)
+        }
     }
 }

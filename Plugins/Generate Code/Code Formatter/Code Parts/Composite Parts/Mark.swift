@@ -1,16 +1,16 @@
 import Foundation
 
-public struct Mark: SwiftCode {
+public struct Mark: Code {
     let text: String
     let isSeparator: Bool
     
-    public init(text: String, isSeparator: Bool = false) {
+    public init(_ text: String, isSeparator: Bool = false) {
         self.text = text
         self.isSeparator = isSeparator
     }
     
-    public var body: some SwiftCode {
-        Comment(style: .line) {
+    public var body: some Code {
+        Comment(.line) {
             markString
         }
     }

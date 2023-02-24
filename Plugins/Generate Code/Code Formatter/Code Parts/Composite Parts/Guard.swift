@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Guard<Content>: SwiftCode where Content: SwiftCode {
+public struct Guard<Content>: Code where Content : Code {
     let condition: String
     let content: () -> Content
     
@@ -10,9 +10,9 @@ public struct Guard<Content>: SwiftCode where Content: SwiftCode {
         self.content = content
     }
     
-    public var body: some SwiftCode {
-        "guard \(condition) else {"
-        content().indentation()
-        "}"
+    public var body: some Code {
+        "guard \(condition) else".curlyBraces {
+            content()
+        }
     }
 }

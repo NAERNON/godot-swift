@@ -1,47 +1,36 @@
 import Foundation
 
-public struct OptionSet<RawType>: SwiftCode, AccessControlCode where RawType: BinaryInteger {
+public struct OptionSet<RawType>: Code where RawType : BinaryInteger {
     let name: String
     let options: [(name: String, value: RawType)]
-    public var accessControl: AccessControl? = nil
+    let propertiesAccessControl: AccessControl?
     
     public init(_ name: String,
-                options: [(name: String, value: RawType)]) {
+                options: [(name: String, value: RawType)],
+                propertiesAccessControl: AccessControl? = nil) {
         self.name = name
         self.options = options
+        self.propertiesAccessControl = propertiesAccessControl
     }
     
-    public var body: some SwiftCode {
+    public var body: some Code {
         Struct(name, extensions: ["OptionSet"]) {
-            Property("rawValue")
-                .letDefined().type(RawType.self).accessControl(innerPropertiesAccessControl)
-            
-            Spacer()
-            
-            Init(parameters: .named("rawValue", type: RawType.self)) {
-                Property("rawValue").selfDefined().assign(value: "rawValue").unaligned()
-            }.accessControl(innerPropertiesAccessControl)
-            
-            Spacer()
-            
-            ForEach(options) { option in
-                Property(option.name)
-                    .letDefined().static().type("Self").accessControl(innerPropertiesAccessControl)
-                    .assign(value: ".init(rawValue: " + option.value.description + ")")
+            Stack {
+                Let("rawValue").typed(RawType.self).accessControl(propertiesAccessControl)
+                
+                Init(parameters: .named("rawValue", type: RawType.self)) {
+                    Property("rawValue").selfDefined().assign("rawValue").unalign()
+                }.accessControl(propertiesAccessControl)
+                
+                Group {
+                    ForEach(options) { option in
+                        Let(option.name)
+                            .typed("Self")
+                            .assign(".init(rawValue: " + option.value.description + ")")
+                            .static().accessControl(propertiesAccessControl)
+                    }
+                }
             }
-        }.accessControl(accessControl)
-    }
-    
-    private var innerPropertiesAccessControl: AccessControl? {
-        guard let accessControl else {
-            return nil
-        }
-        
-        switch accessControl {
-        case .private, .fileprivate, .internal:
-            return nil
-        case .public, .open:
-            return .public
         }
     }
 }

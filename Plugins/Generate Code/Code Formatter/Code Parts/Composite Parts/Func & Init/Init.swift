@@ -1,12 +1,9 @@
 import Foundation
 
-public struct Init<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
+public struct Init<Content>: Code where Content : Code {
     let parameters: [FunctionParameter]
     let content: () -> Content
-    public var accessControl: AccessControl? = nil
-    public var isRequired: Bool = false
-    public var isOverride: Bool = false
-    public var isThrowing: Bool = false
+    var isThrowing: Bool = false
     
     public init(parameters: FunctionParameter..., @CodeBuilder content: @escaping () -> Content) {
         self.init(parameters: Array(parameters), content: content)
@@ -17,24 +14,10 @@ public struct Init<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         self.content = content
     }
     
-    public var body: some SwiftCode {
-        ("init" + FunctionParameter.parametersCodeString(parameters) + throwsAlignableLine + " {").keywords(keywords)
-        content().indentation()
-        "}"
-    }
-    
-    private var keywords: [Keyword] {
-        var keywords = [Keyword]()
-        if isRequired {
-            keywords.append(.required)
+    public var body: some Code {
+        ("init" + FunctionParameter.parametersCodeString(parameters) + throwsAlignableLine).curlyBraces {
+            content()
         }
-        if isOverride {
-            keywords.append(.override)
-        }
-        if let accessControl {
-            keywords.append(accessControl.keyword)
-        }
-        return keywords
     }
     
     private var throwsAlignableLine: String {
@@ -42,18 +25,6 @@ public struct Init<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
     }
     
     // MARK: Modifiers
-    
-    public func `override`(_ state: Bool = true) -> Init {
-        var new = self
-        new.isOverride = state
-        return new
-    }
-    
-    public func `required`(_ state: Bool = true) -> Init {
-        var new = self
-        new.isRequired = state
-        return new
-    }
     
     public func `throws`(_ state: Bool = true) -> Init {
         var new = self

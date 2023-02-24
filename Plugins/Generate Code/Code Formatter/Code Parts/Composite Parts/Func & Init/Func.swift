@@ -1,16 +1,11 @@
 import Foundation
 
-public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
+public struct Func<Content>: Code where Content : Code {
     let name: String
     let parameters: [FunctionParameter]
     let returnType: String?
     let content: () -> Content
-    public var accessControl: AccessControl? = nil
-    public var isStatic: Bool = false
-    public var isClass: Bool = false
-    public var isFinal: Bool = false
-    public var isOverride: Bool = false
-    public var isMutating: Bool = false
+    var isThrowing: Bool = false
     
     public init(name: String,
                 parameters: FunctionParameter...,
@@ -32,10 +27,10 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         self.content = content
     }
     
-    public var body: some SwiftCode {
-        mainLineString.keywords(keywords)
-        content().indentation()
-        "}"
+    public var body: some Code {
+        mainLineString.curlyBraces {
+            content()
+        }
     }
     
     private var mainLineString: String {
@@ -43,62 +38,19 @@ public struct Func<Content>: SwiftCode, AccessControlCode where Content: SwiftCo
         if let returnType {
             string += " -> " + returnType
         }
-        string += " {"
+        string += throwsAlignableLine
         return string
     }
     
-    private var keywords: [Keyword] {
-        var keywords = [Keyword]()
-        if isStatic {
-            keywords.append(.static)
-        }
-        if isClass {
-            keywords.append(.class)
-        }
-        if isFinal {
-            keywords.append(.final)
-        }
-        if isOverride {
-            keywords.append(.override)
-        }
-        if isMutating {
-            keywords.append(.mutating)
-        }
-        if let accessControl {
-            keywords.append(accessControl.keyword)
-        }
-        return keywords
+    private var throwsAlignableLine: String {
+        isThrowing ? " throws" : ""
     }
     
     // MARK: Modifiers
     
-    public func `static`(_ state: Bool = true) -> Func {
+    public func `throws`(_ state: Bool = true) -> Func {
         var new = self
-        new.isStatic = state
-        return new
-    }
-    
-    public func `class`(_ state: Bool = true) -> Func {
-        var new = self
-        new.isClass = state
-        return new
-    }
-    
-    public func `final`(_ state: Bool = true) -> Func {
-        var new = self
-        new.isFinal = state
-        return new
-    }
-    
-    public func `override`(_ state: Bool = true) -> Func {
-        var new = self
-        new.isOverride = state
-        return new
-    }
-    
-    public func `mutating`(_ state: Bool = true) -> Func {
-        var new = self
-        new.isMutating = state
+        new.isThrowing = state
         return new
     }
 }

@@ -1,30 +1,33 @@
 import Foundation
 
 /// An attribute in Swift is preceeded by `@`.
-public struct Attribute: SwiftCode {
-    let name: String
+public struct Attribute: Code {
+    public let name: String
     
     public init(_ name: String) {
         self.name = name
     }
     
-    public var body: some SwiftCode {
+    public var body: some Code {
         "@" + name
     }
     
-    static let discardableResult = Attribute("discardableResult")
+    public static let discardableResult = Attribute("discardableResult")
 }
 
-extension SwiftCode {
+public extension Code {
     @CodeBuilder
-    public func attributes(_ attributes: [Attribute]) -> some SwiftCode {
-        for attribute in attributes {
-            attribute
+    func attributes(_ attributes: [Attribute]) -> some Code {
+        Group {
+            for attribute in attributes {
+                attribute
+            }
+            
+            self
         }
-        self
     }
     
-    public func attributes(_ attributes: Attribute...) -> some SwiftCode {
+    func attributes(_ attributes: Attribute...) -> some Code {
         self.attributes(attributes)
     }
     

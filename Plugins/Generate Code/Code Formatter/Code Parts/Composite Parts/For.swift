@@ -1,6 +1,6 @@
 import Foundation
 
-public struct For<Content>: SwiftCode where Content: SwiftCode {
+public struct For<Content>: Code where Content : Code {
     let loopContent: String
     let content: () -> Content
     
@@ -10,9 +10,9 @@ public struct For<Content>: SwiftCode where Content: SwiftCode {
         self.content = content
     }
     
-    public var body: some SwiftCode {
-        "for \(loopContent) {"
-        content().indentation()
-        "}"
+    public var body: some Code {
+        "for \(loopContent)".curlyBraces {
+            content()
+        }
     }
 }

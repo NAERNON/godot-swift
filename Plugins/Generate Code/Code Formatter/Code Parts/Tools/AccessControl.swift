@@ -23,41 +23,33 @@ public enum AccessControl: Comparable {
     }
 }
 
-public protocol AccessControlCode: SwiftCode {
-    var accessControl: AccessControl? { get set }
-    
-    func accessControl(_ accessControl: AccessControl?) -> Self
-    func `private`() -> Self
-    func `fileprivate`() -> Self
-    func `internal`() -> Self
-    func `public`() -> Self
-    func `open`() -> Self
-}
-
-extension AccessControlCode {
-    public func accessControl(_ accessControl: AccessControl?) -> Self {
-        var new = self
-        new.accessControl = accessControl
-        return new
+public extension Code {
+    @CodeBuilder
+    func accessControl(_ accessControl: AccessControl?) -> some Code {
+        if let accessControl {
+            keyword(accessControl.keyword)
+        } else {
+            self
+        }
     }
     
-    public func `private`() -> Self {
+    func `private`() -> some Code {
         self.accessControl(.private)
     }
     
-    public func `fileprivate`() -> Self {
+    func `fileprivate`() -> some Code {
         self.accessControl(.fileprivate)
     }
     
-    public func `internal`() -> Self {
+    func `internal`() -> some Code {
         self.accessControl(.internal)
     }
     
-    public func `public`() -> Self {
+    func `public`() -> some Code {
         self.accessControl(.public)
     }
     
-    public func `open`() -> Self {
+    func `open`() -> some Code {
         self.accessControl(.open)
     }
 }

@@ -17,11 +17,11 @@ public struct FunctionParameter {
         case none
     }
     
-    var name: String
-    var type: String
-    var defaultValue: DefaultValue
-    var label: Label
-    var isVararg: Bool
+    public var name: String
+    public var type: String
+    public var defaultValue: DefaultValue
+    public var label: Label
+    public var isVararg: Bool
     
     private init(name: String, type: String, defaultValue: DefaultValue, label: Label, isVararg: Bool) {
         self.name = name

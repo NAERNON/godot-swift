@@ -7,11 +7,11 @@ private enum IfType {
     case twoConditionsWithElse
 }
 
-public struct If<ConditionContent1, ConditionContent2, ElseContent>: SwiftCode
+public struct If<ConditionContent1, ConditionContent2, ElseContent>: Code
 where
-ConditionContent1: SwiftCode,
-ConditionContent2: SwiftCode,
-ElseContent: SwiftCode
+ConditionContent1 : Code,
+ConditionContent2 : Code,
+ElseContent : Code
 {
     private let ifType: IfType
     let condition1: String
@@ -32,21 +32,24 @@ ElseContent: SwiftCode
         self.elseContent = elseContent
     }
     
-    public var body: some SwiftCode {
-        "if \(condition1) {"
-        conditionContent1().indentation()
-        
-        if ifType == .twoConditions || ifType == .twoConditionsWithElse {
-            "} else \(condition2) {"
-            conditionContent2().indentation()
+    public var body: some Code {
+        Group {
+            "if \(condition1) {"
+            
+            conditionContent1().indent()
+            
+            if ifType == .twoConditions || ifType == .twoConditionsWithElse {
+                "} else \(condition2) {"
+                conditionContent2().indent()
+            }
+            
+            if ifType == .oneConditionWithElse || ifType == .twoConditionsWithElse {
+                "} else {"
+                elseContent().indent()
+            }
+            
+            "}"
         }
-        
-        if ifType == .oneConditionWithElse || ifType == .twoConditionsWithElse {
-            "} else {"
-            elseContent().indentation()
-        }
-        
-        "}"
     }
 }
 

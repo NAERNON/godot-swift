@@ -8,24 +8,23 @@ import Foundation
 ///     ...
 /// }
 /// ```
-public struct _Construct<Content>: SwiftCode, AccessControlCode where Content: SwiftCode {
+struct _Construct<Content>: Code where Content : Code {
     let type: String
     let name: String
     let content: () -> Content
     let extensions: [String]
-    public var accessControl: AccessControl? = nil
     
-    public init(type: String, name: String, extensions: [String] = [], @CodeBuilder content: @escaping () -> Content) {
+    init(type: String, name: String, extensions: [String] = [], @CodeBuilder content: @escaping () -> Content) {
         self.type = type
         self.name = name
         self.extensions = extensions
         self.content = content
     }
     
-    public var body: some SwiftCode {
-        header().keywords(keywords)
-        content().indentation()
-        "}"
+    public var body: some Code {
+        header().curlyBraces {
+            content()
+        }
     }
     
     private func header() -> String {
@@ -42,14 +41,6 @@ public struct _Construct<Content>: SwiftCode, AccessControlCode where Content: S
             }
         }
         
-        header += " {"
         return header
-    }
-    
-    private var keywords: [Keyword] {
-        if let accessControl {
-            return [accessControl.keyword]
-        }
-        return []
     }
 }

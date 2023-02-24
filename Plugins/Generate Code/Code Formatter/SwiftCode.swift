@@ -1,7 +1,7 @@
 import Foundation
 
-public protocol SwiftCode {
-    associatedtype Body: SwiftCode
+public protocol Code {
+    associatedtype Body: Code
     
     @CodeBuilder
     var body: Body { get }

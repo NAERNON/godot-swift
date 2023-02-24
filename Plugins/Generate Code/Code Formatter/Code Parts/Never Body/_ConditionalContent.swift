@@ -1,9 +1,10 @@
 import Foundation
 
-public struct _ConditionalContent<TrueContent, FalseContent>: SwiftCode where TrueContent: SwiftCode,
-                                                                              FalseContent: SwiftCode {
-    let trueContent: (() -> TrueContent)?
-    let falseContent: (() -> FalseContent)?
+public struct _ConditionalContent<TrueContent, FalseContent>: Code, RootCode
+where TrueContent : Code,
+      FalseContent : Code {
+    let trueContent: (() -> TrueContent)!
+    let falseContent: (() -> FalseContent)!
     let isTrue: Bool
     
     init(trueContent: @escaping () -> TrueContent) {
@@ -19,4 +20,12 @@ public struct _ConditionalContent<TrueContent, FalseContent>: SwiftCode where Tr
     }
     
     public var body: Never { fatalError() }
+    
+    func formattedCode() -> FormattedCode {
+        if isTrue {
+            return trueContent().formatted()
+        } else {
+            return falseContent().formatted()
+        }
+    }
 }

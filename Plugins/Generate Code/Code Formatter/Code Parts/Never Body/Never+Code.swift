@@ -1,8 +1,6 @@
 import Foundation
 
-public struct EmptyCode: Code, RootCode {
-    public init() {}
-    
+extension Never: Code, RootCode {
     public var body: Never { fatalError() }
     
     func formattedCode() -> FormattedCode {

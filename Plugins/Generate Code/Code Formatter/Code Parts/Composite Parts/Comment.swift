@@ -6,32 +6,42 @@ public enum CommentStyle {
     case block
 }
 
-public struct Comment<Content>: SwiftCode where Content: SwiftCode {
+public struct Comment<Content>: Code where Content : Code {
     let style: CommentStyle
     let content: () -> Content
     
-    public init(style: CommentStyle, @CodeBuilder content: @escaping () -> Content) {
+    public init(_ style: CommentStyle, @CodeBuilder content: @escaping () -> Content) {
         self.style = style
         self.content = content
     }
     
-    public var body: some SwiftCode {
+    public var body: some Code {
         switch style {
         case .line:
-            content().linesPrefixed(by: "// ")
+            content().indent(prefix: "// ")
         case .doc:
-            content().linesPrefixed(by: "/// ")
+            content().indent(prefix: "/// ")
         case .block:
             "/*"
-            content().linesPrefixed(by: " ")
+            content().indent(prefix: " ")
             " */"
         }
     }
 }
 
-extension SwiftCode {
-    public func comment(style: CommentStyle = .line) -> some SwiftCode {
-        Comment(style: style) {
+public extension Code {
+    func comment(_ style: CommentStyle = .line) -> some Code {
+        Comment(style) {
+            self
+        }
+    }
+    
+    func documentation(@CodeBuilder _ content: @escaping () -> some Code) -> some Code {
+        Group {
+            Comment(.doc) {
+                content()
+            }
+            
             self
         }
     }

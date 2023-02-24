@@ -1,6 +1,8 @@
 import Foundation
 
-public struct ForEach<Data, Content>: SwiftCode where Data: RandomAccessCollection, Content: SwiftCode {
+public struct ForEach<Data, Content>: Code, RootCode
+where Data : RandomAccessCollection,
+      Content : Code {
     let data: Data
     let content: (Data.Element) -> Content
     
@@ -10,4 +12,8 @@ public struct ForEach<Data, Content>: SwiftCode where Data: RandomAccessCollecti
     }
     
     public var body: Never { fatalError() }
+    
+    func formattedCode() -> FormattedCode {
+        .stack(data.map { content($0).formatted() })
+    }
 }
