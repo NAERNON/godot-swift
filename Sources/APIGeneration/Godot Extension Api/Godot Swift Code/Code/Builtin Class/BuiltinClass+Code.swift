@@ -50,8 +50,8 @@ extension ExtensionApi.BuiltinClass {
             Property("tmp").letDefined().assign("Self(self)")
             Property("opaque").selfDefined().assign("tmp.opaque")
         }
-        .private()
         .mutating()
+        .private()
         .documentation {
 """
 When a function modifies the opaque array or any value associated,
@@ -132,33 +132,33 @@ duplicate its value.
     @CodeBuilder
     private func bindingsPropertiesCode() -> some Code {
         for constructor in constructors {
-            Var(constructor.godotConstructorPtrName).private().static().typed("GDNativePtrConstructor!")
+            Var(constructor.godotConstructorPtrName).static().private().typed("GDNativePtrConstructor!")
         }
         if hasDestructor {
-            Var(godotDestructorPtrName).private().static().typed("GDNativePtrDestructor!")
+            Var(godotDestructorPtrName).static().private().typed("GDNativePtrDestructor!")
         }
         
         if indexingReturnType != nil {
-            Var(godotIndexedSetterPtrName).private().static().typed("GDNativePtrIndexedSetter!")
-            Var(godotIndexedGetterPtrName).private().static().typed("GDNativePtrIndexedGetter!")
+            Var(godotIndexedSetterPtrName).static().private().typed("GDNativePtrIndexedSetter!")
+            Var(godotIndexedGetterPtrName).static().private().typed("GDNativePtrIndexedGetter!")
         }
         
         if isKeyed {
-            Var(godotKeyedSetterPtrName).private().static().typed("GDNativePtrKeyedSetter!")
-            Var(godotKeyedGetterPtrName).private().static().typed("GDNativePtrKeyedGetter!")
-            Var(godotKeyedCheckerPtrName).private().static().typed("GDNativePtrKeyedChecker!")
+            Var(godotKeyedSetterPtrName).static().private().typed("GDNativePtrKeyedSetter!")
+            Var(godotKeyedGetterPtrName).static().private().typed("GDNativePtrKeyedGetter!")
+            Var(godotKeyedCheckerPtrName).static().private().typed("GDNativePtrKeyedChecker!")
         }
         
         if let methods {
             for method in methods {
                 Var(method.godotMethodPtrName)
-                    .private().static().typed("GDNativePtrBuiltInMethod!")
+                    .static().private().typed("GDNativePtrBuiltInMethod!")
             }
         }
         
         for op in operators {
             Var(op.godotOperatorPtrName)
-                .private().static().typed("GDNativePtrOperatorEvaluator!")
+                .static().private().typed("GDNativePtrOperatorEvaluator!")
         }
     }
     
@@ -175,8 +175,8 @@ duplicate its value.
                     .assign("GodotInterface.native.variant_get_ptr_destructor(\(godotVariantType))")
             }
         }
-        .internal()
         .static()
+        .internal()
         .documentation {
 """
 Sets all the init bindings and the deinit (if applicable) used to communicate with Godot.
@@ -222,8 +222,8 @@ for any initialization.
                     .assign("GodotInterface.native.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(op.rightType.godotVariantType))")
             }
         }
-        .internal()
         .static()
+        .internal()
         .documentation {
 """
 Sets all the function bindings and operators used to communicate with Godot.
@@ -380,7 +380,7 @@ Sets all the function bindings and operators used to communicate with Godot.
     
     private func customDebugStringConvertibleExtensionCode() -> some Code {
         Extension(name.toSwift(), extensions: ["CustomDebugStringConvertible"]) {
-            Var("debugDescription").public().typed("Swift.String").assignComputed {
+            Var("debugDescription").public().typed("Swift.String").curlyBraces {
                 "Variant(self).debugDescription"
             }
         }

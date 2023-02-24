@@ -46,8 +46,8 @@ extension ExtensionApi.Class {
         Func(name: "isExtentionClass", returnType: "Bool") {
             "false"
         }
-        .open()
         .class()
+        .open()
         .documentation {
 """
 Returns a Boolean value indicating whether the class is an extension
@@ -76,7 +76,7 @@ and all others should be.
             for method in methods {
                 if let methodPtrName = method.godotMethodPtrName {
                     Var(methodPtrName)
-                        .private().static().typed("GDNativeMethodBindPtr!")
+                        .static().private().typed("GDNativeMethodBindPtr!")
                 }
             }
         }
@@ -113,9 +113,9 @@ and all others should be.
                 }
             }
         }
-        .internal()
         .class()
         .override(!isRootClass)
+        .internal()
         .documentation {
             "Sets all the function bindings used to communicate with Godot."
         }
@@ -185,7 +185,7 @@ if isExtentionClass() {
     }
 }
 """
-        }.internal().override(!isRootClass).class()
+        }.class().override(!isRootClass).internal()
     }
     
     // MARK: Methods
@@ -203,7 +203,7 @@ if isExtentionClass() {
     }
     
     private var methodsAccessControl: AccessControl {
-        isRefCountedRootClass ? .private : .open
+        isRefCountedRootClass ? .private : .public
     }
     
     // MARK: Inits
@@ -241,7 +241,7 @@ if className != Self.lastDerivedGodotClassName() {
     }
 }
 """
-            }.public().required()
+            }.required().public()
         } else if isRefCountedRootClass {
             Var("_isReferenced").private().typed("Bool")
             
@@ -250,7 +250,7 @@ if className != Self.lastDerivedGodotClassName() {
                 Property("_isReferenced").assign("true")
                 "super.init()"
                 "_ = initRef()"
-            }.public().required()
+            }.required().public()
             
             Deinit {
                 Guard(condition: "_isReferenced") {
@@ -266,7 +266,7 @@ if className != Self.lastDerivedGodotClassName() {
         } else {
             Init() {
                 "super.init()"
-            }.public().required()
+            }.required().public()
         }
     }
     
@@ -283,7 +283,7 @@ if className != Self.lastDerivedGodotClassName() {
                 }
                 
                 "super.init(nativeObjectPtr: nativeObjectPtr)"
-            }.internal().override()
+            }.override().internal()
         }
     }
     
@@ -298,7 +298,7 @@ if className != Self.lastDerivedGodotClassName() {
                 }
                 "super.init(typedVariant: typedVariant)"
             }
-        }.public().required()
+        }.required().public()
     }
     
     @CodeBuilder
@@ -308,8 +308,8 @@ if className != Self.lastDerivedGodotClassName() {
             "_className"
         }
         .class()
-        .public()
         .override(!isRootClass)
+        .public()
         .documentation {
             "Returns the last derived Godot class name."
         }

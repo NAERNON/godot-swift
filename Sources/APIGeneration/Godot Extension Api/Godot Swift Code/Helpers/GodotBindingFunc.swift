@@ -90,7 +90,8 @@ Function: GodotBindingFuncDefinition {
             } else if let temporaryType {
                 temporaryType.temporaryReturnCode(propertyName: temporaryValueName, definedInside: type)
             }
-        }
+        }.static(godotFunction.isStatic)
+            .mutating(godotFunction.isMutating)
     }
     
     private var arguments: [ExtensionApi.Argument] {
