@@ -9,7 +9,7 @@ extension ExtensionApi.BuiltinClass {
             // made to generate the subscripts.
             Mark("Getter/Setter", isSeparator: true)
             
-            let indexingType = indexingReturnType.toSwift(definedInside: name)
+            let indexingType = indexingReturnType.code(definedInside: name)
             
             Func(name: "_getValue",
                  parameters: .named("index", type: "GDNativeInt", label: "at"),

@@ -69,7 +69,7 @@ extension ExtensionApi.BuiltinClass {
 """
 Sets all the init bindings and the deinit (if applicable) used to communicate with Godot.
 
-This function must be called before the creation of any `\(name.toSwift())` instance since the bindings will be needed
+This function must be called before the creation of any `\(name.code())` instance since the bindings will be needed
 for any initialization.
 """
         }

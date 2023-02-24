@@ -5,11 +5,11 @@ extension ExtensionApi.BuiltinClass.Operator {
     @CodeBuilder
     func code(type: InstanceType) -> some Code {
         let (translatedName, _) = FunctionName(godotName: "operator_" + name.operationName!.lowercased()).underscored()
-            .toSwift(withType: type, arguments: nil)
+            .code(withType: type, arguments: nil)
         
         Func(name: translatedName,
              parameters: functionParameters(type: type),
-             returnType: returnType.toSwift(definedInside: type)) {
+             returnType: returnType.code(definedInside: type)) {
             Stack {
                 returnType.temporaryInitializerCode(propertyName: "__returnValue", definedInside: type)
                 
@@ -33,9 +33,9 @@ extension ExtensionApi.BuiltinClass.Operator {
     
     private func functionParameters(type: InstanceType) -> [FunctionParameter] {
         var parameters = [FunctionParameter]()
-        parameters.append(.named("lhs", type: type.toSwift(definedInside: type), label: .hidden))
+        parameters.append(.named("lhs", type: type.code(definedInside: type), label: .hidden))
         if let rightType {
-            parameters.append(.named("rhs", type: rightType.toSwift(definedInside: type), label: .hidden))
+            parameters.append(.named("rhs", type: rightType.code(definedInside: type), label: .hidden))
         }
         return parameters
     }
@@ -66,7 +66,7 @@ extension ExtensionApi.BuiltinClass.Operator {
     var godotOperatorPtrName: String {
         var name = "__operator_binding_" + name.operationName!
         if let rightType {
-            name += "_" + rightType.toSwift()
+            name += "_" + rightType.code()
         }
         
         return name.lowercased()

@@ -6,7 +6,7 @@ struct ClassFile: GeneratedFile {
     let `class`: ExtensionApi.Class
     
     init(`class`: ExtensionApi.Class) {
-        self.path = `class`.name.toSwift() + ".swift"
+        self.path = `class`.name.code() + ".swift"
         self.class = `class`
     }
     

@@ -5,11 +5,11 @@ extension ExtensionApi.BuiltinClass {
     @CodeBuilder
     func code(classSize: Int) -> some Code {
         if name.isBuiltinBaseValueType {
-            Extension(name.toSwift()) {
+            Extension(name.code()) {
                 insideStructOrExtensionCode(classSize: classSize)
             }
         } else {
-            Struct(name.toSwift()) {
+            Struct(name.code()) {
                 insideStructOrExtensionCode(classSize: classSize)
             }.public()
         }
@@ -89,7 +89,7 @@ extension ExtensionApi.BuiltinClass {
     }
     
     private func customDebugStringConvertibleExtensionCode() -> some Code {
-        Extension(name.toSwift(), extensions: ["CustomDebugStringConvertible"]) {
+        Extension(name.code(), extensions: ["CustomDebugStringConvertible"]) {
             Var("debugDescription").public().typed("Swift.String").curlyBraces {
                 "Variant(self).debugDescription"
             }

@@ -13,7 +13,7 @@ extension ExtensionApi.BuiltinClass {
                 ForEach(constants.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
                     ForEach(sameTypeConstants) { constant in
                         Let(constantName(constant.name))
-                            .static().public().typed(constant.type.toSwift())
+                            .static().public().typed(constant.type.code())
                             .assign(constant.type.instantationCode(forValue: constant.value))
                     }.align(offset: 1)
                 }

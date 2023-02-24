@@ -9,7 +9,7 @@ struct BuiltinClassFile: GeneratedFile {
     init(builtinClass: ExtensionApi.BuiltinClass,
          builtinClassSizes: ExtensionApi.ClassSizes,
          builtinClassMemberOffset: ExtensionApi.MemberOffsets) {
-        self.path = builtinClass.name.toSwift() + "+Bindings.swift"
+        self.path = builtinClass.name.code() + "+Bindings.swift"
         self.builtinClass = builtinClass
         self.classSize = builtinClassSizes.sizes.first(where: { $0.name == builtinClass.name })?.size ?? 0
     }

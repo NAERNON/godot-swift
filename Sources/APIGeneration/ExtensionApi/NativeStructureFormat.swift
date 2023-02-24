@@ -70,7 +70,7 @@ extension NativeStructureFormat {
             return Int(numberString)
         }
         
-        func nameToSwift() -> String {
+        func nameCode() -> String {
             var name = NamingConvention.snake.convert(string: self.name, to: .camel)
             name = CodeLanguage.swift.protectNameIfKeyword(for: name)
             
@@ -81,8 +81,8 @@ extension NativeStructureFormat {
             return name
         }
         
-        func typeToSwift() -> String {
-            var typeString = type.toSwift()
+        func typeCode() -> String {
+            var typeString = type.code()
             if let arraySize = self.arraySize() {
                 // If the type is a fixed array, we make a tuple instead
                 var string = "("

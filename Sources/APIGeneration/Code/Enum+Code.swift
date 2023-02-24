@@ -22,7 +22,7 @@ extension ExtensionApi.Enum {
         definedInside insideType: InstanceType?
     ) -> (name: String, cases: [CaseData<T>]) {
         let translatedEnum = CodeLanguage.c.translateEnum(
-            name: name.toSwift(definedInside: insideType),
+            name: name.code(definedInside: insideType),
             cases: values.map { $0.name },
             to: .swift
         )

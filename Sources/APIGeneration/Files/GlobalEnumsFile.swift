@@ -20,7 +20,7 @@ struct GlobalEnumsFile: GeneratedFile {
                     // We do not generate the enums for the Variant type since
                     // they are already generated.
                     if scope != "Variant" {
-                        Extension(scope.toSwift()) {
+                        Extension(scope.code()) {
                             `enum`.code()
                         }
                     }

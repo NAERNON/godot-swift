@@ -28,14 +28,14 @@ struct GodotBindingFuncCall<Function>: Code where Function: GodotBindingFuncDefi
     
     private var returnTypeString: String? {
         returnType?.optional(returnType?.isGodotClassType == true)
-            .toSwift(definedInside: type)
+            .code(definedInside: type)
     }
     
     private var translatedNameAndParameters: (name: String, parameters: [FunctionParameter]) {
-        var (translatedName, translatedParameters) = godotFunction.bindingName.toSwift(withType: type, arguments: arguments)
+        var (translatedName, translatedParameters) = godotFunction.bindingName.code(withType: type, arguments: arguments)
         
         if godotFunction.isVararg {
-            translatedParameters.append(.named("rest", type: InstanceType.variant.toSwift(), isVararg: true))
+            translatedParameters.append(.named("rest", type: InstanceType.variant.code(), isVararg: true))
         }
         
         return (translatedName, translatedParameters)

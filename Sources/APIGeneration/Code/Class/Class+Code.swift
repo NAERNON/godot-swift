@@ -8,7 +8,7 @@ extension ExtensionApi.Class {
     
     @CodeBuilder
     func code() -> some Code {
-        Class(name.toSwift(), extensions: inherits == nil ? [] : [inherits!.toSwift()]) {
+        Class(name.code(), extensions: inherits == nil ? [] : [inherits!.code()]) {
             Stack {
                 initsCode()
                 if isRootClass {

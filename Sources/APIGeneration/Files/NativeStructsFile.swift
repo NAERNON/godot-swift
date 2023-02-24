@@ -17,7 +17,7 @@ struct NativeStructsFile: GeneratedFile {
         
         Struct(nativeStruct.name) {
             for variable in nativeStruct.format.variables {
-                let property = Let(variable.nameToSwift()).typed(variable.typeToSwift()).public()
+                let property = Let(variable.nameCode()).typed(variable.typeCode()).public()
                 
                 if let defaultValue = variable.defaultValue {
                     property.assign(variable.type.instantationCode(forValue: defaultValue))

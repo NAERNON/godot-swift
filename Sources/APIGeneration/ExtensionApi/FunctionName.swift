@@ -23,9 +23,9 @@ struct FunctionName {
         }
     }
     
-    func toSwift(withType type: InstanceType?,
-                 arguments: [ExtensionApi.Argument]?) -> (name: String,
-                                                          parameters: [CodeGenerator.FunctionParameter]) {
+    func code(withType type: InstanceType?,
+              arguments: [ExtensionApi.Argument]?) -> (name: String,
+                                                       parameters: [CodeGenerator.FunctionParameter]) {
         let (translatedName, translatedParameters) = CodeLanguage.c.translateFunction(
             name: correctUnderscoredName,
             parameters: arguments?.map({ .init(name: $0.name.replacingOccurrences(of: " ", with: ""),
@@ -78,7 +78,7 @@ struct FunctionName {
         }
         
         return .named(CodeLanguage.swift.protectNameIfKeyword(for: translatedParameter.name),
-                      type: argument.type.optional(argument.type.isGodotClassType).toSwift(definedInside: type),
+                      type: argument.type.optional(argument.type.isGodotClassType).code(definedInside: type),
                       defaultValue: defaultParameterValue,
                       label: translatedParameter.codeLabel)
     }

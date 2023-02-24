@@ -37,9 +37,9 @@ if isExtentionClass() {
     }
 } else {
     return GDNativeInstanceBindingCallbacks { token, instance in
-        return Unmanaged.passRetained(\(name.toSwift())(nativeObjectPtr: instance!)).toOpaque()
+        return Unmanaged.passRetained(\(name.code())(nativeObjectPtr: instance!)).toOpaque()
     } free_callback: { token, instance, bindings in
-        Unmanaged<\(name.toSwift())>.fromOpaque(instance!).takeRetainedValue().withUnsafeNativePointer { __ptr_self in
+        Unmanaged<\(name.code())>.fromOpaque(instance!).takeRetainedValue().withUnsafeNativePointer { __ptr_self in
             GodotInterface.native.mem_free(__ptr_self)
         }
     } reference_callback: { token, instance, reference in
@@ -52,7 +52,7 @@ if isExtentionClass() {
     
     @CodeBuilder
     func classNameFunctionCode() -> some Code {
-        Let("_className").static().private().assign("StringName(string: \"\(name.toSwift())\")")
+        Let("_className").static().private().assign("StringName(string: \"\(name.code())\")")
         Func(name: "lastDerivedGodotClassName", returnType: "StringName") {
             "_className"
         }

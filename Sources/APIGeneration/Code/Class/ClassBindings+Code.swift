@@ -39,7 +39,7 @@ extension ExtensionApi.Class {
                 }
                 
                 if !methodData.isEmpty {
-                    Let("_class_name").typed("StringName").assign("\"\(name.toSwift())\"")
+                    Let("_class_name").typed("StringName").assign("\"\(name.code())\"")
                     Var("_method_name").typed("StringName!")
                     
                     ObjectsPointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .const)]) { classPointerNames in
@@ -83,7 +83,7 @@ extension ExtensionApi.Class {
                             }
                             
                             Let("instance")
-                                .assign("Unmanaged<\(name.toSwift())>.fromOpaque(instancePtr).takeUnretainedValue()")
+                                .assign("Unmanaged<\(name.code())>.fromOpaque(instancePtr).takeUnretainedValue()")
                             
                             GodotBindingFuncCall(method, type: name)
                         }.indent()

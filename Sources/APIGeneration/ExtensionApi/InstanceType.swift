@@ -80,7 +80,7 @@ extension InstanceType {
     static let variantVarargs = InstanceType.varargs(InstanceType(swiftType: "Variant"))
     
     static func == (lhs: InstanceType, rhs: String) -> Bool {
-        lhs.toSwift(definedInside: nil) == rhs
+        lhs.code(definedInside: nil) == rhs
     }
     
     static func != (lhs: InstanceType, rhs: String) -> Bool {
@@ -252,8 +252,8 @@ extension InstanceType {
     }
     
     var godotVariantType: String {
-        guard let type = typeToGodotVariantType[toSwift(definedInside: nil)] else {
-            fatalError("No variant type provided for \"\(toSwift(definedInside: nil))\"")
+        guard let type = typeToGodotVariantType[code(definedInside: nil)] else {
+            fatalError("No variant type provided for \"\(code(definedInside: nil))\"")
         }
         
         return type
@@ -297,32 +297,32 @@ extension InstanceType {
     
     // MARK: Code
     
-    func toSwift(definedInside insideType: InstanceType? = nil) -> String {
-        _toSwift(isConst: false, definedInside: insideType)
+    func code(definedInside insideType: InstanceType? = nil) -> String {
+        _code(isConst: false, definedInside: insideType)
     }
     
-    private func _toSwift(isConst: Bool, definedInside insideType: InstanceType?) -> String {
+    private func _code(isConst: Bool, definedInside insideType: InstanceType?) -> String {
         switch self {
         case .type(let stringType):
-            return stringType.toSwift(definedInside: insideType)
+            return stringType.code(definedInside: insideType)
         case .enum(let stringType):
-            return stringType.toSwift(definedInside: insideType)
+            return stringType.code(definedInside: insideType)
         case .bitfield(let stringType):
-            return stringType.toSwift(definedInside: insideType)
+            return stringType.code(definedInside: insideType)
         case .scope(let scopeType, let type):
-            let scopeString = insideType == scopeType ? "" : scopeType._toSwift(isConst: false, definedInside: insideType) + "."
-            return scopeString + type._toSwift(isConst: isConst, definedInside: scopeType)
+            let scopeString = insideType == scopeType ? "" : scopeType._code(isConst: false, definedInside: insideType) + "."
+            return scopeString + type._code(isConst: isConst, definedInside: scopeType)
         case .generic(let type, let genericType):
-            return type._toSwift(isConst: isConst, definedInside: insideType)
-            + "<" + genericType._toSwift(isConst: false, definedInside: insideType) + ">"
+            return type._code(isConst: isConst, definedInside: insideType)
+            + "<" + genericType._code(isConst: false, definedInside: insideType) + ">"
         case .optional(let instanceType):
-            return instanceType._toSwift(isConst: isConst, definedInside: insideType) + "?"
+            return instanceType._code(isConst: isConst, definedInside: insideType) + "?"
         case .varargs(let instanceType):
-            return instanceType._toSwift(isConst: isConst, definedInside: insideType) + "..."
+            return instanceType._code(isConst: isConst, definedInside: insideType) + "..."
         case .const(let instanceType):
-            return instanceType._toSwift(isConst: true, definedInside: insideType)
+            return instanceType._code(isConst: true, definedInside: insideType)
         case .pointer(let instanceType):
-            let pointedType = instanceType._toSwift(isConst: false, definedInside: insideType)
+            let pointedType = instanceType._code(isConst: false, definedInside: insideType)
             if pointedType == "void" {
                 return isConst ? "UnsafeRawPointer" : "UnsafeMutableRawPointer"
             } else {
@@ -358,7 +358,7 @@ extension InstanceType {
                 .typed("GDNativeObjectPtr!")
         } else {
             Var(propertyName)
-                .assign(temporaryInstanceType.toSwift(definedInside: insideType) + "()")
+                .assign(temporaryInstanceType.code(definedInside: insideType) + "()")
         }
     }
     
@@ -369,11 +369,11 @@ extension InstanceType {
     func temporaryReturnCode(propertyName: String,
                              definedInside insideType: InstanceType?) -> some Code {
         if isEnumType {
-            Return(toSwift(definedInside: insideType) + "(rawValue: \(propertyName))!")
+            Return(code(definedInside: insideType) + "(rawValue: \(propertyName))!")
         } else if isBitfieldType {
-            Return(toSwift(definedInside: insideType) + "(rawValue: \(propertyName))")
+            Return(code(definedInside: insideType) + "(rawValue: \(propertyName))")
         } else if isGodotClassType {
-            Return("retreiveObject(ofType: \(toSwift(definedInside: insideType)).self, from: \(propertyName))")
+            Return("retreiveObject(ofType: \(code(definedInside: insideType)).self, from: \(propertyName))")
         } else {
             Return(propertyName)
         }
@@ -454,7 +454,7 @@ extension InstanceType {
         }
         
         if constantValue.string == "" {
-            return finalType.toSwift(definedInside: nil) + "()"
+            return finalType.code(definedInside: nil) + "()"
         }
         
         if constantValue.string == "null" {
@@ -462,11 +462,11 @@ extension InstanceType {
         }
         
         if isEnumType {
-            return toSwift(definedInside: nil) + "(rawValue: \(constantValue.string))!"
+            return code(definedInside: nil) + "(rawValue: \(constantValue.string))!"
         }
         
         if isBitfieldType {
-            return toSwift(definedInside: nil) + "(rawValue: \(constantValue.string))"
+            return code(definedInside: nil) + "(rawValue: \(constantValue.string))"
         }
         
         return constantValue.string
@@ -478,12 +478,12 @@ extension InstanceType {
             || isOptional {
             return "nil"
         } else if isEnumType {
-            return toSwift() + "(rawValue: 0)!"
+            return code() + "(rawValue: 0)!"
         } else if isPointer {
             return "fatalError(\"No default value provided for pointers.\")"
         }
         
-        return toSwift() + "()"
+        return code() + "()"
     }
     
     // MARK: Modifiers
@@ -523,7 +523,7 @@ extension InstanceType.StringType {
         }
     }
     
-    func toSwift(definedInside insideType: InstanceType?) -> String {
+    func code(definedInside insideType: InstanceType?) -> String {
         switch self {
         case .godot(let string):
             switch string {
@@ -558,7 +558,7 @@ extension InstanceType.StringType {
                 if insideType == "Variant" {
                     return "ValueType"
                 } else {
-                    return insideType.toSwift(definedInside: insideType) + "Type"
+                    return insideType.code(definedInside: insideType) + "Type"
                 }
             default: return string
             }
@@ -588,7 +588,7 @@ extension InstanceType.StringType {
     }
     
     static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.toSwift(definedInside: nil) == rhs.toSwift(definedInside: nil)
+        lhs.code(definedInside: nil) == rhs.code(definedInside: nil)
     }
     
     static func == (lhs: Self, rhs: String) -> Bool {
