@@ -29,6 +29,10 @@ let package = Package(
             name: "GodotExtension",
             dependencies: ["GodotExtensionHeaders", "Godot"]
         ),
+        .target(
+            name: "CodeGenerator",
+            dependencies: []
+        ),
         
         .executableTarget(
             name: "generate-api",
