@@ -12,6 +12,8 @@ struct VariantSizeFile: GeneratedFile {
     var code: some Code {
         Import.foundation
         
+        Space()
+        
         Extension("Variant") {
             Let("opaqueSize").static().internal().typed("Int").assign("\(size)")
         }

@@ -13,6 +13,8 @@ struct NativeStructsFile: GeneratedFile {
     var code: some Code {
         Import.foundation
         
+        Space()
+        
         Struct(nativeStruct.name) {
             for variable in nativeStruct.format.variables {
                 let property = Let(variable.nameToSwift()).typed(variable.typeToSwift()).public()

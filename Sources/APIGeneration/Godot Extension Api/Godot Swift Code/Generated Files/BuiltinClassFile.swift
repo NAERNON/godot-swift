@@ -18,6 +18,8 @@ struct BuiltinClassFile: GeneratedFile {
         Import.foundation
         Import.godotExtensionHeaders
         
+        Space()
+        
         builtinClass.code(classSize: classSize)
     }
 }

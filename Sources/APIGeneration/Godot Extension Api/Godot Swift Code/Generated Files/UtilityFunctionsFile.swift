@@ -13,15 +13,23 @@ struct UtilityFunctionsFile: GeneratedFile {
         Import.foundation
         Import.godotExtensionHeaders
         
-        for function in functions {
-            function.code()
+        Space()
+        
+        Stack {
+            for function in functions {
+                function.code()
+            }
+            
+            Mark("Bindings", isSeparator: true)
+            
+            bindingCode
         }
-        
-        Mark("Bindings", isSeparator: true)
-        
+    }
+    
+    private var bindingCode: some Code {
         Enum("UtilityFunctions") {
             Func(name: "setBindings") {
-                Var("_function_name").typed("StringName!")
+                Var("_function_name").typed("StringName!").padding(.bottom)
                 
                 for function in functions {
                     Property("_function_name").assign("\"\(function.name.godotName)\"")
@@ -30,10 +38,12 @@ struct UtilityFunctionsFile: GeneratedFile {
                             .assign("GodotInterface.native.variant_get_ptr_utility_function(\(functionNamePointer), \(function.hash))")
                     }
                 }
-            }.internal().static()
+            }.static().internal()
+            
+            Space()
             
             for function in functions {
-                Var(function.godotFunctionPtrName).fileprivate().static()
+                Var(function.godotFunctionPtrName).static().fileprivate()
                     .typed("GDNativePtrUtilityFunction!")
             }
         }.internal()

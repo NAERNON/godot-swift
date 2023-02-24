@@ -10,22 +10,24 @@ extension ExtensionApi.BuiltinClass.Operator {
         Func(name: translatedName,
              parameters: functionParameters(type: type),
              returnType: returnType.toSwift(definedInside: type)) {
-            returnType.temporaryInitializerCode(propertyName: "__returnValue", definedInside: type)
-
-            ObjectsPointersAccess(parameters: objectsPointerAccessParameters(type: type)) { pointerNames in
-                if rightType != nil {
-                    let lhsName = pointerNames[0]
-                    let rhsName = pointerNames[1]
-                    let returnName = pointerNames[2]
-                    "Self.\(godotOperatorPtrName)(\(lhsName), \(rhsName), \(returnName))"
-                } else {
-                    let selfName = pointerNames[0]
-                    let returnName = pointerNames[1]
-                    "Self.\(godotOperatorPtrName)(\(selfName), nil, \(returnName))"
+            Stack {
+                returnType.temporaryInitializerCode(propertyName: "__returnValue", definedInside: type)
+                
+                ObjectsPointersAccess(parameters: objectsPointerAccessParameters(type: type)) { pointerNames in
+                    if rightType != nil {
+                        let lhsName = pointerNames[0]
+                        let rhsName = pointerNames[1]
+                        let returnName = pointerNames[2]
+                        "Self.\(godotOperatorPtrName)(\(lhsName), \(rhsName), \(returnName))"
+                    } else {
+                        let selfName = pointerNames[0]
+                        let returnName = pointerNames[1]
+                        "Self.\(godotOperatorPtrName)(\(selfName), nil, \(returnName))"
+                    }
                 }
+                
+                Return("__returnValue")
             }
-            
-            Return("__returnValue")
         }.static().internal()
     }
     

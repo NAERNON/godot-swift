@@ -33,26 +33,28 @@ struct ObjectsPointersAccess<Content>: Code where Content: Code {
     }
     
     var body: some Code {
-        for (index, parameter) in parameters.enumerated() {
-            let name = CodeLanguage.swift.protectNameIfKeyword(for: parameter.name)
-            let pointerName = self.pointerName(for: parameter)
-            
-            if parameter.isVararg {
-                "withUnsafeGodotAccessVarargsPointer(to: \(name)) { \(pointerName) in".indent(index)
-            } else if parameter.mutability == .mutable {
-                "withUnsafeGodotMutableAccessPointer(to: &\(name)) { \(pointerName) in".indent(index)
-            } else if parameter.mutability == .constMutablePointer {
-                "withUnsafeGodotMutableConstAccessPointer(to: \(name)) { \(pointerName) in".indent(index)
-            } else {
-                "withUnsafeGodotAccessPointer(to: \(name)) { \(pointerName) in".indent(index)
+        Group {
+            for (index, parameter) in parameters.enumerated() {
+                let name = CodeLanguage.swift.protectNameIfKeyword(for: parameter.name)
+                let pointerName = self.pointerName(for: parameter)
+                
+                if parameter.isVararg {
+                    "withUnsafeGodotAccessVarargsPointer(to: \(name)) { \(pointerName) in".indent(index)
+                } else if parameter.mutability == .mutable {
+                    "withUnsafeGodotMutableAccessPointer(to: &\(name)) { \(pointerName) in".indent(index)
+                } else if parameter.mutability == .constMutablePointer {
+                    "withUnsafeGodotMutableConstAccessPointer(to: \(name)) { \(pointerName) in".indent(index)
+                } else {
+                    "withUnsafeGodotAccessPointer(to: \(name)) { \(pointerName) in".indent(index)
+                }
             }
-        }
-        
-        content(parametersPointerNames())
-            .indent(parameters.count)
-        
-        for index in 0..<parameters.count {
-            "}".indent(parameters.count - index - 1)
+            
+            content(parametersPointerNames())
+                .indent(parameters.count)
+            
+            for index in 0..<parameters.count {
+                "}".indent(parameters.count - index - 1)
+            }
         }
     }
     

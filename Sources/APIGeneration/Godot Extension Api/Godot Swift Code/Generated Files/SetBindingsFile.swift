@@ -15,16 +15,22 @@ struct SetBindingsFile: GeneratedFile {
     var code: some Code {
         Import.foundation
         
+        Space()
+        
         Extension("GodotInterface") {
             Func(name: "setAllBuiltinStructsBindings") {
                 for builtinClass in builtinClasses {
                     "Godot." + builtinClass.name.toSwift() + ".setInitBindings()"
                 }
                 
+                Space()
+                
                 for builtinClass in builtinClasses {
                     "Godot." + builtinClass.name.toSwift() + ".setFunctionBindings()"
                 }
             }.static()
+            
+            Space()
             
             Func(name: "setAllClassesBindings") {
                 for `class` in classes {

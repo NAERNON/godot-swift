@@ -13,6 +13,8 @@ struct RealRawValueFile: GeneratedFile {
     var code: some Code {
         Import.foundation
         
+        Space()
+        
         Extension("Real") {
             Typealias("RawValue", type: floatingTypeString).public()
                 .documentation {

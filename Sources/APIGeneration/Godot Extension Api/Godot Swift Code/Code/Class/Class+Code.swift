@@ -9,14 +9,16 @@ extension ExtensionApi.Class {
     @CodeBuilder
     func code() -> some Code {
         Class(name.toSwift(), extensions: inherits == nil ? [] : [inherits!.toSwift()]) {
-            initsCode()
-            if isRootClass {
-                isExtensionClassCode()
+            Stack {
+                initsCode()
+                if isRootClass {
+                    isExtensionClassCode()
+                }
+                bindingsCallbackCode()
+                enumCode()
+                methodsCode()
+                bindingsCode()
             }
-            bindingsCallbackCode()
-            enumCode()
-            methodsCode()
-            bindingsCode()
         }.open()
     }
     
@@ -73,10 +75,12 @@ and all others should be.
     @CodeBuilder
     private func bindingsPropertiesCode() -> some Code {
         if let methods {
-            for method in methods {
-                if let methodPtrName = method.godotMethodPtrName {
-                    Var(methodPtrName)
-                        .static().private().typed("GDNativeMethodBindPtr!")
+            Group {
+                for method in methods {
+                    if let methodPtrName = method.godotMethodPtrName {
+                        Var(methodPtrName)
+                            .static().private().typed("GDNativeMethodBindPtr!")
+                    }
                 }
             }
         }

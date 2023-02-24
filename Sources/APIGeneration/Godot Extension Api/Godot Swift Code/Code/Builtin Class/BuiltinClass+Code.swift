@@ -14,12 +14,14 @@ extension ExtensionApi.BuiltinClass {
             }.public()
         }
         
+        Space()
+        
         customDebugStringConvertibleExtensionCode()
     }
     
     @CodeBuilder
     private func insideStructOrExtensionCode(classSize: Int) -> some Code {
-        Group {
+        Stack {
             constantsCode()
             enumCode()
             constructorsCode(classSize: classSize)
@@ -27,13 +29,16 @@ extension ExtensionApi.BuiltinClass {
             getterSetterCode()
             keyedCode()
             methodsCode()
+            bindingsCode()
         }
         
-        bindingsCode()
-        
         if name.isBuiltinOpaqueValueType {
-            replaceOpaqueValueCode()
-            nativePtrCode()
+            Space()
+            
+            Stack {
+                replaceOpaqueValueCode()
+                nativePtrCode()
+            }
         }
     }
     
@@ -46,6 +51,8 @@ extension ExtensionApi.BuiltinClass {
             Guard(condition: "!isKnownUniquelyReferenced(&opaque)") {
                 Return()
             }
+            
+            Space()
             
             Property("tmp").letDefined().assign("Self(self)")
             Property("opaque").selfDefined().assign("tmp.opaque")
@@ -90,12 +97,14 @@ duplicate its value.
            !constants.isEmpty {
             Mark("Constants", isSeparator: true)
             
-            ForEach(constants.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
-                ForEach(sameTypeConstants) { constant in
-                    Let(constantName(constant.name))
-                        .public().static().typed(constant.type.toSwift())
-                        .assign(constant.type.instantationCode(forValue: constant.value))
-                }.align(offset: 1)
+            Group {
+                ForEach(constants.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
+                    ForEach(sameTypeConstants) { constant in
+                        Let(constantName(constant.name))
+                            .static().public().typed(constant.type.toSwift())
+                            .assign(constant.type.instantationCode(forValue: constant.value))
+                    }.align(offset: 1)
+                }
             }
         }
     }
@@ -131,34 +140,39 @@ duplicate its value.
     
     @CodeBuilder
     private func bindingsPropertiesCode() -> some Code {
-        for constructor in constructors {
-            Var(constructor.godotConstructorPtrName).static().private().typed("GDNativePtrConstructor!")
-        }
-        if hasDestructor {
-            Var(godotDestructorPtrName).static().private().typed("GDNativePtrDestructor!")
-        }
-        
-        if indexingReturnType != nil {
-            Var(godotIndexedSetterPtrName).static().private().typed("GDNativePtrIndexedSetter!")
-            Var(godotIndexedGetterPtrName).static().private().typed("GDNativePtrIndexedGetter!")
-        }
-        
-        if isKeyed {
-            Var(godotKeyedSetterPtrName).static().private().typed("GDNativePtrKeyedSetter!")
-            Var(godotKeyedGetterPtrName).static().private().typed("GDNativePtrKeyedGetter!")
-            Var(godotKeyedCheckerPtrName).static().private().typed("GDNativePtrKeyedChecker!")
-        }
-        
-        if let methods {
-            for method in methods {
-                Var(method.godotMethodPtrName)
-                    .static().private().typed("GDNativePtrBuiltInMethod!")
+        Group {
+            for constructor in constructors {
+                Var(constructor.godotConstructorPtrName).static().private().typed("GDNativePtrConstructor!")
+            }
+            
+            if hasDestructor {
+                Var(godotDestructorPtrName).static().private().typed("GDNativePtrDestructor!")
             }
         }
         
-        for op in operators {
-            Var(op.godotOperatorPtrName)
-                .static().private().typed("GDNativePtrOperatorEvaluator!")
+        Group {
+            if indexingReturnType != nil {
+                Var(godotIndexedSetterPtrName).static().private().typed("GDNativePtrIndexedSetter!")
+                Var(godotIndexedGetterPtrName).static().private().typed("GDNativePtrIndexedGetter!")
+            }
+            
+            if isKeyed {
+                Var(godotKeyedSetterPtrName).static().private().typed("GDNativePtrKeyedSetter!")
+                Var(godotKeyedGetterPtrName).static().private().typed("GDNativePtrKeyedGetter!")
+                Var(godotKeyedCheckerPtrName).static().private().typed("GDNativePtrKeyedChecker!")
+            }
+            
+            if let methods {
+                for method in methods {
+                    Var(method.godotMethodPtrName)
+                        .static().private().typed("GDNativePtrBuiltInMethod!")
+                }
+            }
+            
+            for op in operators {
+                Var(op.godotOperatorPtrName)
+                    .static().private().typed("GDNativePtrOperatorEvaluator!")
+            }
         }
     }
     
@@ -190,36 +204,46 @@ for any initialization.
     @CodeBuilder
     private func setFunctionBindingsFunctionCode() -> some Code {
         Func(name: "setFunctionBindings") {
-            if indexingReturnType != nil {
-                Property(godotIndexedSetterPtrName)
-                    .assign("GodotInterface.native.variant_get_ptr_indexed_setter(\(godotVariantType))")
-                Property(godotIndexedGetterPtrName)
-                    .assign("GodotInterface.native.variant_get_ptr_indexed_getter(\(godotVariantType))")
-            }
-            
-            if isKeyed {
-                Property(godotKeyedSetterPtrName)
-                    .assign("GodotInterface.native.variant_get_ptr_keyed_setter(\(godotVariantType))")
-                Property(godotKeyedGetterPtrName)
-                    .assign("GodotInterface.native.variant_get_ptr_keyed_getter(\(godotVariantType))")
-                Property(godotKeyedCheckerPtrName)
-                    .assign("GodotInterface.native.variant_get_ptr_keyed_checker(\(godotVariantType))")
-            }
-            
-            if let methods {
-                Var("_method_name").typed("StringName!")
-                for method in methods {
-                    Property("_method_name").assign("\"\(method.name.godotName)\"")
-                    Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
-                        Property(method.godotMethodPtrName)
-                            .assign("GodotInterface.native.variant_get_ptr_builtin_method(\(godotVariantType), \(methodPointerName), \(method.hash))")
+            Stack {
+                Group {
+                    if indexingReturnType != nil {
+                        Property(godotIndexedSetterPtrName)
+                            .assign("GodotInterface.native.variant_get_ptr_indexed_setter(\(godotVariantType))")
+                        Property(godotIndexedGetterPtrName)
+                            .assign("GodotInterface.native.variant_get_ptr_indexed_getter(\(godotVariantType))")
                     }
                 }
-            }
-            
-            for op in operators {
-                Property(op.godotOperatorPtrName)
-                    .assign("GodotInterface.native.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(op.rightType.godotVariantType))")
+                
+                Group {
+                    if isKeyed {
+                        Property(godotKeyedSetterPtrName)
+                            .assign("GodotInterface.native.variant_get_ptr_keyed_setter(\(godotVariantType))")
+                        Property(godotKeyedGetterPtrName)
+                            .assign("GodotInterface.native.variant_get_ptr_keyed_getter(\(godotVariantType))")
+                        Property(godotKeyedCheckerPtrName)
+                            .assign("GodotInterface.native.variant_get_ptr_keyed_checker(\(godotVariantType))")
+                    }
+                }
+                
+                if let methods {
+                    Group {
+                        Var("_method_name").typed("StringName!")
+                        for method in methods {
+                            Property("_method_name").assign("\"\(method.name.godotName)\"")
+                            Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
+                                Property(method.godotMethodPtrName)
+                                    .assign("GodotInterface.native.variant_get_ptr_builtin_method(\(godotVariantType), \(methodPointerName), \(method.hash))")
+                            }
+                        }
+                    }
+                }
+                
+                Group {
+                    for op in operators {
+                        Property(op.godotOperatorPtrName)
+                            .assign("GodotInterface.native.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(op.rightType.godotVariantType))")
+                    }
+                }
             }
         }
         .static()
@@ -291,32 +315,36 @@ Sets all the function bindings and operators used to communicate with Godot.
             Func(name: "_getValue",
                  parameters: .named("index", type: "GDNativeInt", label: "at"),
                  returnType: indexingType) {
-                indexingReturnType.temporaryInitializerCode(propertyName: "__returnValue", definedInside: name)
-                
-                ObjectsPointersAccess(parameters:
-                                        [.named("__returnValue", type: indexingReturnType, mutability: .mutable),
-                                         .named("self", type: self.name, mutability: .const)]
-                ) { pointerNames in
-                    "Self.__indexed_getter(\(pointerNames[1]), index, \(pointerNames[0]))"
+                Stack {
+                    indexingReturnType.temporaryInitializerCode(propertyName: "__returnValue", definedInside: name)
+                    
+                    ObjectsPointersAccess(parameters:
+                                            [.named("__returnValue", type: indexingReturnType, mutability: .mutable),
+                                             .named("self", type: self.name, mutability: .const)]
+                    ) { pointerNames in
+                        "Self.__indexed_getter(\(pointerNames[1]), index, \(pointerNames[0]))"
+                    }
+                    
+                    indexingReturnType.temporaryReturnCode(propertyName: "__returnValue", definedInside: name)
                 }
-                
-                indexingReturnType.temporaryReturnCode(propertyName: "__returnValue", definedInside: name)
             }.internal()
             
             Func(name: "_setValue",
                  parameters: [.named("value", type: indexingType, label: .hidden),
                               .named("index", type: "GDNativeInt", label: "at")])
             {
-                if self.name.isBuiltinOpaqueValueType {
-                    "replaceOpaqueValueIfNecessary()"
+                Stack {
+                    if self.name.isBuiltinOpaqueValueType {
+                        "replaceOpaqueValueIfNecessary()"
+                    }
+                    
+                    ObjectsPointersAccess(parameters: [.named("value", type: indexingReturnType, mutability: .const),
+                                                       .named("self", type: self.name, mutability: .mutable)])
+                    { pointerNames in
+                        "Self.__indexed_setter(\(pointerNames[1]), index, \(pointerNames[0]))"
+                    }
                 }
-                
-                ObjectsPointersAccess(parameters: [.named("value", type: indexingReturnType, mutability: .const),
-                                                   .named("self", type: self.name, mutability: .mutable)])
-                { pointerNames in
-                    "Self.__indexed_setter(\(pointerNames[1]), index, \(pointerNames[0]))"
-                }
-            }.internal().mutating()
+            }.mutating().internal()
         }
     }
     
@@ -332,46 +360,53 @@ Sets all the function bindings and operators used to communicate with Godot.
             Func(name: "_getValue",
                  parameters: .named("key", type: "Variant", label: "forKey"),
                  returnType: "Variant") {
-                Var("__returnValue").assign("Variant()")
-                
-                ObjectsPointersAccess(parameters:
-                                        [.named("__returnValue", type: .variant, mutability: .mutable),
-                                         .named("key", type: .variant, mutability: .const),
-                                         .named("self", type: self.name, mutability: .const)]
-                ) { pointerNames in
-                    "Self.__keyed_getter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
+                Stack {
+                    Var("__returnValue").assign("Variant()")
+                    
+                    ObjectsPointersAccess(parameters:
+                                            [.named("__returnValue", type: .variant, mutability: .mutable),
+                                             .named("key", type: .variant, mutability: .const),
+                                             .named("self", type: self.name, mutability: .const)]
+                    ) { pointerNames in
+                        "Self.__keyed_getter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
+                    }
+                    
+                    Return("__returnValue")
                 }
-                
-                Return("__returnValue")
             }.internal()
             
             Func(name: "_set",
                  parameters: [.named("value", type: "Variant"),
-                              .named("key", type: "Variant", label: "forKey")]) {
-                "replaceOpaqueValueIfNecessary()"
-                
-                ObjectsPointersAccess(parameters:
-                                        [.named("value", type: .variant, mutability: .const),
-                                         .named("key", type: .variant, mutability: .const),
-                                         .named("self", type: self.name, mutability: .mutable)]
-                ) { pointerNames in
-                    "Self.__keyed_setter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
+                              .named("key", type: "Variant", label: "forKey")])
+            {
+                Stack {
+                    "replaceOpaqueValueIfNecessary()"
+                    
+                    ObjectsPointersAccess(parameters:
+                                            [.named("value", type: .variant, mutability: .const),
+                                             .named("key", type: .variant, mutability: .const),
+                                             .named("self", type: self.name, mutability: .mutable)]
+                    ) { pointerNames in
+                        "Self.__keyed_setter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
+                    }
                 }
-            }.internal().mutating()
+            }.mutating().internal()
             
             Func(name: "_check",
                  parameters: [.named("key", type: "Variant")],
                  returnType: "Bool") {
-                Var("keyCheck").assign("UInt32()")
-                
-                ObjectsPointersAccess(parameters:
-                                        [.named("key", type: .variant, mutability: .const),
-                                         .named("self", type: self.name, mutability: .const)]
-                ) { pointerNames in
-                    "keyCheck = Self.__keyed_checker(\(pointerNames[1]), \(pointerNames[0]))"
+                Stack {
+                    Var("keyCheck").assign("UInt32()")
+                    
+                    ObjectsPointersAccess(parameters:
+                                            [.named("key", type: .variant, mutability: .const),
+                                             .named("self", type: self.name, mutability: .const)]
+                    ) { pointerNames in
+                        "keyCheck = Self.__keyed_checker(\(pointerNames[1]), \(pointerNames[0]))"
+                    }
+                    
+                    Return("keyCheck != 0")
                 }
-                
-                Return("keyCheck != 0")
             }.internal()
         }
     }

@@ -14,6 +14,8 @@ struct ClassFile: GeneratedFile {
         Import.foundation
         Import.godotExtensionHeaders
         
+        Space()
+        
         `class`.code()
     }
 }

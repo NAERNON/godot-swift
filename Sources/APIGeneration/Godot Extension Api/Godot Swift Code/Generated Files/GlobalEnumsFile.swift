@@ -11,18 +11,22 @@ struct GlobalEnumsFile: GeneratedFile {
 
     var code: some Code {
         Import.foundation
+        
+        Space()
 
-        ForEach(enums) { `enum` in
-            if let scope = `enum`.name.firstScopeType() {
-                // We do not generate the enums for the Variant type since
-                // they are already generated.
-                if scope != "Variant" {
-                    Extension(scope.toSwift()) {
-                        `enum`.code()
+        Stack {
+            ForEach(enums) { `enum` in
+                if let scope = `enum`.name.firstScopeType() {
+                    // We do not generate the enums for the Variant type since
+                    // they are already generated.
+                    if scope != "Variant" {
+                        Extension(scope.toSwift()) {
+                            `enum`.code()
+                        }
                     }
+                } else {
+                    `enum`.code()
                 }
-            } else {
-                `enum`.code()
             }
         }
     }

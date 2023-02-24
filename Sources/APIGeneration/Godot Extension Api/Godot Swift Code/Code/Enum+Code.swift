@@ -65,7 +65,7 @@ extension ExtensionApi.Enum {
                         Let(property.name)
                             .typed("Self").static().public()
                             .assign(".\(property.caseName)")
-                    }.align(offset: 1)
+                    }.align(offset: 1).padding(.top)
                 }
             }
         }
