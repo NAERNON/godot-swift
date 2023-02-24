@@ -76,7 +76,7 @@ extension ExtensionApi.Enum {
                                                  definedInside insideType: InstanceType?) -> some Code {
         let nameAndCases = self.nameAndCases(forType: type, definedInside: insideType)
 
-        return OptionSet(nameAndCases.name, options: nameAndCases.cases)
+        return OptionSet(nameAndCases.name, options: nameAndCases.cases, propertiesAccessControl: .public)
             .public()
             .align(offset: 1)
     }

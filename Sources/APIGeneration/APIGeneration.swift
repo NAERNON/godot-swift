@@ -41,14 +41,21 @@ struct APIGeneration: ParsableCommand {
         
         let godotFiles = gododFiles(fromApi: extensionApi, buildConfiguration: buildConfiguration)
         
+        var printedText: String = ""
         for (index, file) in godotFiles.enumerated() {
-            print("[\(index+1)/\(godotFiles.count)] Generating \(file.name())")
+            print(String(repeating: " ", count: printedText.count), terminator: "\r")
+            printedText = "[\(index+1)/\(godotFiles.count)] Generating file \(file.name())"
+            print(printedText, terminator: "\r")
+            fflush(stdout)
             
             try save(file: file,
                      codeFormatter: codeFormatter,
                      fileManager: fileManager,
                      atURL: generatedFolderURL)
         }
+        
+        print(String(repeating: " ", count: printedText.count), terminator: "\r")
+        fflush(stdout)
         
         print("All \(godotFiles.count) files generated!")
     }
