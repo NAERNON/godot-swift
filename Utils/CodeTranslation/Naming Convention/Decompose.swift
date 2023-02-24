@@ -1,6 +1,6 @@
 import Foundation
 
-extension NamingConvention {
+public extension NamingConvention {
     typealias Decomposition = [String]
     
     func decompose(string: String) -> Decomposition {

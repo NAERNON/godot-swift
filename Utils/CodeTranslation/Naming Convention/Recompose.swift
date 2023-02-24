@@ -1,6 +1,6 @@
 import Foundation
 
-extension NamingConvention {
+public extension NamingConvention {
     func recompose(_ decomposition: Decomposition) -> String {
         switch self {
         case .camel:

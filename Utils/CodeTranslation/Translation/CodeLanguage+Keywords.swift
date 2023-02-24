@@ -20,7 +20,7 @@ private let protectedStrings: Set<String> = [
     "nil"
 ]
 
-extension CodeLanguage {
+public extension CodeLanguage {
     /// Returns a `String` value where the given `String` doesn't collide with the compiler.
     ///
     /// In Swift, the following string ``"continue"`` would return ``"`continue`"``,

@@ -1,13 +1,18 @@
 import Foundation
-import CodeGenerator
+
+public struct FunctionParameter {
+    public var name: String
+    public var label: String?
+    public var isLabelHidden: Bool
+    
+    public init(name: String, label: String? = nil, isLabelHidden: Bool) {
+        self.name = name
+        self.label = label
+        self.isLabelHidden = isLabelHidden
+    }
+}
 
 extension CodeLanguage {
-    public struct FunctionParameter {
-        var name: String
-        var label: String?
-        var isLabelHidden: Bool
-    }
-    
     public func translateFunction(name: String,
                                   parameters: [FunctionParameter],
                                   to language: CodeLanguage) -> (name: String, parameters: [FunctionParameter]) {
@@ -144,18 +149,6 @@ extension CodeLanguage {
         }
         
         return (translatedName, translatedParameters)
-    }
-}
-
-extension CodeLanguage.FunctionParameter {
-    var functionParameterLabel: FunctionParameter.Label {
-        if isLabelHidden {
-            return .hidden
-        }
-        if let label {
-            return .name(label)
-        }
-        return .none
     }
 }
 
