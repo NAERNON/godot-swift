@@ -1,6 +1,6 @@
 import Foundation
 import CodeGenerator
-import CodeTranslation
+import CodeTranslator
 
 extension ExtensionApi.Enum {
     private typealias CaseData<T> = (name: String, value: T)

@@ -39,9 +39,9 @@ let package = Package(
             path: "Utils/CodeGenerator"
         ),
         .target(
-            name: "CodeTranslation",
+            name: "CodeTranslator",
             dependencies: [],
-            path: "Utils/CodeTranslation"
+            path: "Utils/CodeTranslator"
         ),
         
         // MARK: Executable targets
@@ -50,7 +50,7 @@ let package = Package(
             name: "generate-api",
             dependencies: [
                 "CodeGenerator",
-                "CodeTranslation",
+                "CodeTranslator",
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ],
             path: "Sources/APIGeneration"),

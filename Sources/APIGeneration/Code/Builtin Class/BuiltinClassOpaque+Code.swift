@@ -1,6 +1,6 @@
 import Foundation
 import CodeGenerator
-import CodeTranslation
+import CodeTranslator
 
 extension ExtensionApi.BuiltinClass {
     func opaqueCode() -> some Code {

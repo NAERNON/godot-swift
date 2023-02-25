@@ -1,6 +1,6 @@
 import Foundation
 import CodeGenerator
-import CodeTranslation
+import CodeTranslator
 
 struct FunctionName {
     var godotName: String
@@ -47,7 +47,7 @@ struct FunctionName {
         return nil
     }
     
-    private func functionParameters(translatedParameters: [CodeTranslation.FunctionParameter],
+    private func functionParameters(translatedParameters: [CodeTranslator.FunctionParameter],
                                     type: InstanceType?,
                                     arguments: [ExtensionApi.Argument]?) -> [CodeGenerator.FunctionParameter] {
         guard let arguments else {
@@ -67,7 +67,7 @@ struct FunctionName {
         return parameters
     }
     
-    private func functionParameter(translatedParameter: CodeTranslation.FunctionParameter,
+    private func functionParameter(translatedParameter: CodeTranslator.FunctionParameter,
                                    type: InstanceType?,
                                    argument: ExtensionApi.Argument) -> CodeGenerator.FunctionParameter {
         let defaultParameterValue: CodeGenerator.FunctionParameter.DefaultValue
@@ -133,7 +133,7 @@ extension FunctionName: Decodable {
     }
 }
 
-private extension CodeTranslation.FunctionParameter {
+private extension CodeTranslator.FunctionParameter {
     var codeLabel: CodeGenerator.FunctionParameter.Label {
         if isLabelHidden {
             return .hidden

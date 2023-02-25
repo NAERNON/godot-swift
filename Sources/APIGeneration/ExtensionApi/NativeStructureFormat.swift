@@ -1,5 +1,5 @@
 import Foundation
-import CodeTranslation
+import CodeTranslator
 
 // MARK: - NativeStructureFormat
 
