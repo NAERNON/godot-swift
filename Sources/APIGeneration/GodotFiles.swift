@@ -19,7 +19,7 @@ func gododFiles(fromApi extensionApi: ExtensionApi, buildConfiguration: BuildCon
     
     let classesFiles: [any GeneratedFile] = classesToGenerate.map({ `class` in
         ClassFile(class: `class`)
-            .insideDirectory(NamingConvention.snake.convert(string: `class`.apiType, to: .pascal))
+            .insideDirectory(NamingConvention.snake.convert(`class`.apiType, to: .pascal))
             .insideDirectory("Classes")
     })
     

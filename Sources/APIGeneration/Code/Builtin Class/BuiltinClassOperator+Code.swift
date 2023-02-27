@@ -15,11 +15,11 @@ extension ExtensionApi.BuiltinClass.Operator {
     }
     
     var godotVariantOperation: String? {
-        "GDNATIVE_VARIANT_OP_" + NamingConvention.camel.convert(string: name.operationName!, to: .snake).uppercased()
+        "GDNATIVE_VARIANT_OP_" + NamingConvention.camel.convert(name.operationName!, to: .snake).uppercased()
     }
     
     var godotOperatorPtrName: String {
-        var name = "__operator_binding_" + NamingConvention.camel.convert(string: name.operationName!, to: .snake).lowercased()
+        var name = "__operator_binding_" + NamingConvention.camel.convert(name.operationName!, to: .snake).lowercased()
         if let rightType {
             name += "_" + rightType.code()
         }
@@ -51,7 +51,7 @@ extension ExtensionApi.BuiltinClass.Operator: Function {
     }
     
     var functionName: FunctionName {
-        .init(string: "operator_" + NamingConvention.camel.convert(string: name.operationName!, to: .snake).lowercased()).underscored()
+        .init(string: "operator_" + NamingConvention.camel.convert(name.operationName!, to: .snake).lowercased()).underscored()
     }
     
     var isVararg: Bool { false }

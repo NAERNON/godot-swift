@@ -10,13 +10,13 @@ public enum NamingConvention {
     
     // MARK: Convert
     
-    public func convert(string: String, to convention: NamingConvention) -> String {
+    public func convert(_ string: String, to convention: NamingConvention) -> String {
         guard self != convention else { return string }
         
         return convention.recompose(self.decompose(string: string))
     }
     
-    public func convert(string: String, from convention: NamingConvention) -> String {
+    public func convert(_ string: String, from convention: NamingConvention) -> String {
         guard self != convention else { return string }
         
         return self.recompose(convention.decompose(string: string))

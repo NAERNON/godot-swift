@@ -22,7 +22,7 @@ extension ExtensionApi.BuiltinClass {
     }
     
     private func constantName(_ name: String) -> String {
-        let newName = NamingConvention.snake.convert(string: name.lowercased(), to: .camel)
+        let newName = NamingConvention.snake.convert(name.lowercased(), to: .camel)
         return CodeLanguage.swift.protectNameIfKeyword(for: newName)
     }
 }

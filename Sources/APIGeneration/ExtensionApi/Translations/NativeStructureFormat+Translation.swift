@@ -4,7 +4,7 @@ import CodeTranslator
 
 extension NativeStructureFormat.Variable {
     func nameCode() -> String {
-        var name = NamingConvention.snake.convert(string: self.name, to: .camel)
+        var name = NamingConvention.snake.convert(self.name, to: .camel)
         name = CodeLanguage.swift.protectNameIfKeyword(for: name)
         
         name = name.components(separatedBy: "[").first ?? name
