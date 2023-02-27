@@ -141,12 +141,15 @@ public enum CodeBuilder {
     
     // MARK: Optional
     
-    @CodeBuilder
     public static func buildOptional<Content>(_ component: Content?) -> some Code where Content : Code {
         if let component {
-            component
+            return _ConditionalContent<Content, EmptyCode>(trueContent: {
+                component
+            })
         } else {
-            EmptyCode()
+            return _ConditionalContent<Content, EmptyCode>(falseContent: {
+                EmptyCode()
+            })
         }
     }
     

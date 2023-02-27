@@ -3,44 +3,44 @@ import CodeGenerator
 
 extension ExtensionApi.UtilityFunction {
     func code() -> some Code {
-        GodotBindingFunc(self, type: nil) { values in
+        defaultFunctionCode(definedIndise: nil) { values in
             "UtilityFunctions.\(godotFunctionPtrName)(\(values.temporaryPointerName), \(values.pointersArrayName), \(values.pointersCountValue))"
         }.public()
     }
     
-    private var realName: FunctionName {
-        var new = name
-        // We protect the name print for the Swift print function.
-        if name.godotName == "print" {
-            new.godotName = "print_variant"
-        }
-        return new
-    }
-    
     var godotFunctionPtrName: String {
-        "__function_binding_\(name.godotName)"
+        "__function_binding_\(name.baseName)"
     }
 }
 
-extension ExtensionApi.UtilityFunction: GodotBindingFuncDefinition {
-    var bindingName: FunctionName {
+// MARK: Function conformance
+
+extension ExtensionApi.UtilityFunction: Function {
+    func arguments(definedInside type: InstanceType?) -> [ExtensionApi.Argument] {
+        arguments ?? []
+    }
+    
+    func returnType(definedInside type: InstanceType?) -> InstanceType? {
+        returnType
+    }
+    
+    func temporaryType(definedInside type: InstanceType?) -> InstanceType? {
+        returnType
+    }
+    
+    var functionName: FunctionName {
         var new = name
         // We protect the name print for the Swift print function.
-        if name.godotName == "print" {
-            new.godotName = "print_variant"
+        if name.string == "print" {
+            new.string = "print_variant"
         }
         return new
-    }
-    
-    var bindingArguments: [ExtensionApi.Argument]? {
-        arguments
-    }
-    
-    var bindingReturnType: InstanceType? {
-        returnType
     }
     
     var isStatic: Bool { false }
     var isConst: Bool { true }
     var isMutating: Bool { false }
+    
+    var usesPointersArray: Bool { true }
+    var allParametersHaveHiddenLabels: Bool { false }
 }

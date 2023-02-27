@@ -15,11 +15,11 @@ extension ExtensionApi.BuiltinClass {
                 Stack {
                     Var("__returnValue").assign("Variant()")
                     
-                    ObjectsPointersAccess(parameters:
-                                            [.named("__returnValue", type: .variant, mutability: .mutable),
-                                             .named("key", type: .variant, mutability: .const),
-                                             .named("self", type: self.name, mutability: .const)]
-                    ) { pointerNames in
+                    PointersAccess(parameters: [
+                        .named("__returnValue", type: .variant, mutability: .mutable),
+                        .named("key", type: .variant, mutability: .const),
+                        .named("self", type: self.name, mutability: .const)
+                    ]) { pointerNames, _ in
                         "Self.__keyed_getter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
                     }
                     
@@ -34,11 +34,11 @@ extension ExtensionApi.BuiltinClass {
                 Stack {
                     "replaceOpaqueValueIfNecessary()"
                     
-                    ObjectsPointersAccess(parameters:
-                                            [.named("value", type: .variant, mutability: .const),
-                                             .named("key", type: .variant, mutability: .const),
-                                             .named("self", type: self.name, mutability: .mutable)]
-                    ) { pointerNames in
+                    PointersAccess(parameters: [
+                        .named("value", type: .variant, mutability: .const),
+                        .named("key", type: .variant, mutability: .const),
+                        .named("self", type: self.name, mutability: .mutable)
+                    ]) { pointerNames, _ in
                         "Self.__keyed_setter(\(pointerNames[2]), \(pointerNames[1]), \(pointerNames[0]))"
                     }
                 }
@@ -50,10 +50,10 @@ extension ExtensionApi.BuiltinClass {
                 Stack {
                     Var("keyCheck").assign("UInt32()")
                     
-                    ObjectsPointersAccess(parameters:
-                                            [.named("key", type: .variant, mutability: .const),
-                                             .named("self", type: self.name, mutability: .const)]
-                    ) { pointerNames in
+                    PointersAccess(parameters: [
+                        .named("key", type: .variant, mutability: .const),
+                        .named("self", type: self.name, mutability: .const)
+                    ]) { pointerNames, _ in
                         "keyCheck = Self.__keyed_checker(\(pointerNames[1]), \(pointerNames[0]))"
                     }
                     

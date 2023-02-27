@@ -35,14 +35,14 @@ extension ExtensionApi.Class {
                         return nil
                     }
                     
-                    return (name: method.name.godotName, hash: hash, ptrName: methodPtrName)
+                    return (name: method.name.baseName, hash: hash, ptrName: methodPtrName)
                 }
                 
                 if !methodData.isEmpty {
                     Let("_class_name").typed("StringName").assign("\"\(name.code())\"")
                     Var("_method_name").typed("StringName!")
                     
-                    ObjectsPointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .const)]) { classPointerNames in
+                    PointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .const)]) { classPointerNames, _ in
                         let classNamePointerName = classPointerNames[0]
                         
                         for method in methodData {
@@ -75,7 +75,7 @@ extension ExtensionApi.Class {
                 if !virtualMethods.isEmpty {
                     Var("_method_name").typed("StringName!")
                     for method in virtualMethods {
-                        Property("_method_name").assign("\"\(method.name.godotName)\"")
+                        Property("_method_name").assign("\"\(method.name.baseName)\"")
                         "appendCall(_method_name, { instancePtr, args, returnPtr in"
                         Group {
                             Guard(condition: "let instancePtr, let args") {

@@ -5,21 +5,15 @@ extension ExtensionApi.Class.Method {
     @CodeBuilder
     func code(type: InstanceType, accessControl: AccessControl) -> some Code {
         if let godotMethodPtrName {
-            GodotBindingFunc(self, type: type) { values in
+            defaultFunctionCode(definedIndise: type) { values in
                 "GodotInterface.native.object_method_bind_ptrcall(Self.\(godotMethodPtrName), \(values.selfPointerName), \(values.pointersArrayName), \(values.temporaryPointerName))"
-            }
-            .accessControl(accessControl)
+            }.accessControl(accessControl)
         } else if isVirtual {
-            GodotBindingFunc(self, type: type,
-                             overridesInit: true,
-                             overridesReturn: true,
-                             usePointerAccess: false) { _ in
-                if let bindingReturnType {
-                    bindingReturnType.defaultValue()
+            functionDefinitionCode(definedIndise: type) { _ in
+                if let returnType = returnType(definedInside: type) {
+                    returnType.defaultValueCode()
                 }
-            }
-            .accessControl(accessControl)
-            .documentation {
+            }.accessControl(accessControl).documentation {
 """
 This function should only be called by Godot.
 Override it to make custom behaviors.
@@ -29,28 +23,14 @@ Override it to make custom behaviors.
     }
     
     var godotMethodPtrName: String? {
-        hash != nil ? "__method_binding_\(name.godotName)" : nil
+        hash != nil ? "__method_binding_\(name.baseName)" : nil
     }
 }
 
-extension ExtensionApi.Class.Method: GodotBindingFuncDefinition {
-    var bindingName: FunctionName {
-        name
-    }
-    
-    var bindingReturnType: InstanceType? {
-        guard let type = returnValue?.type else {
-            return nil
-        }
-        
-        if type.isPointer {
-            return type.optional()
-        }
-        
-        return type
-    }
-    
-    var bindingArguments: [ExtensionApi.Argument]? {
+// MARK: Function conformance
+
+extension ExtensionApi.Class.Method: Function {
+    func arguments(definedInside type: InstanceType?) -> [ExtensionApi.Argument] {
         arguments?.map { argument in
             var bindingArgument = argument
             
@@ -59,8 +39,29 @@ extension ExtensionApi.Class.Method: GodotBindingFuncDefinition {
             }
             
             return bindingArgument
+        } ?? []
+    }
+    
+    func returnType(definedInside type: InstanceType?) -> InstanceType? {
+        guard let type = returnValue?.type else {
+            return nil
+        }
+        
+        if type.isPointer || type.isGodotClassType {
+            return type.optional()
+        } else {
+            return type
         }
     }
     
+    func temporaryType(definedInside type: InstanceType?) -> InstanceType? {
+        returnValue?.type
+    }
+    
+    var functionName: FunctionName { name }
+    
     var isMutating: Bool { false }
+    
+    var usesPointersArray: Bool { true }
+    var allParametersHaveHiddenLabels: Bool { false }
 }

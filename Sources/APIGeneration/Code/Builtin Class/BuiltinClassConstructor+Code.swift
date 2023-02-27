@@ -6,19 +6,24 @@ extension ExtensionApi.BuiltinClass.Constructor {
               classSize: Int,
               hasDestructor: Bool,
               godotDestructorPtrName: String) -> some Code {
-        GodotBindingFunc(self,
-                         type: type,
-                         overrideReturnType: type,
-                         overrideTemporaryType: type.isBuiltinOpaqueValueType ? .opaque : nil,
-                         overridesInit: type.isBuiltinOpaqueValueType,
-                         overridesReturn: type.isBuiltinOpaqueValueType) { temporaryValueName in
-            let destructorString = hasDestructor ? ", destructorPtr: Self.\(godotDestructorPtrName)" : ""
-            Var(temporaryValueName).typed("Opaque")
-                .assign(".init(size: \(classSize)\(destructorString))")
-        } content: { values in
-            "Self." + godotConstructorPtrName + "(\(values.temporaryPointerName), \(values.pointersArrayName))"
-        } overrideReturnContent: { temporaryValueName in
-            Return("Self.init(opaque: \(temporaryValueName))")
+        functionDefinitionCode(definedIndise: type) { parameters in
+            if type.isBuiltinOpaqueValueType {
+                let destructorString = hasDestructor ? ", destructorPtr: Self.\(godotDestructorPtrName)" : ""
+                Var(temporaryValueName).typed("Opaque")
+                    .assign(".init(size: \(classSize)\(destructorString))")
+            } else {
+                temporaryInitializerCode(definedIndise: type)
+            }
+            
+            parametersPointersCode(definedIndise: type) { values in
+                "Self." + godotConstructorPtrName + "(\(values.temporaryPointerName), \(values.pointersArrayName))"
+            }
+            
+            if type.isBuiltinOpaqueValueType {
+                Return("Self.init(opaque: \(temporaryValueName))")
+            } else {
+                temporaryReturnCode(definedIndise: type)
+            }
         }.internal()
     }
     
@@ -27,19 +32,32 @@ extension ExtensionApi.BuiltinClass.Constructor {
     }
 }
 
-extension ExtensionApi.BuiltinClass.Constructor: GodotBindingFuncDefinition {
-    var bindingName: FunctionName {
-        FunctionName(godotName: "constructor").underscored()
+// MARK: Function conformance
+
+extension ExtensionApi.BuiltinClass.Constructor: Function {
+    func arguments(definedInside type: InstanceType?) -> [ExtensionApi.Argument] {
+        arguments ?? []
     }
     
-    var bindingArguments: [ExtensionApi.Argument]? {
-        arguments
+    func returnType(definedInside type: InstanceType?) -> InstanceType? {
+        type
     }
     
-    var bindingReturnType: InstanceType? { nil }
+    func temporaryType(definedInside type: InstanceType?) -> InstanceType? {
+        if type?.isBuiltinOpaqueValueType == true {
+            return .opaque
+        } else {
+            return type
+        }
+    }
+    
+    var functionName: FunctionName { "_constructor" }
     
     var isVararg: Bool { false }
     var isStatic: Bool { true }
     var isConst: Bool { true }
     var isMutating: Bool { false }
+    
+    var usesPointersArray: Bool { true }
+    var allParametersHaveHiddenLabels: Bool { false }
 }

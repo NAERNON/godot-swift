@@ -1,74 +1,64 @@
 import Foundation
 import CodeGenerator
+import CodeTranslator
 
 extension ExtensionApi.BuiltinClass.Operator {
     @CodeBuilder
     func code(type: InstanceType) -> some Code {
-        let (translatedName, _) = FunctionName(godotName: "operator_" + name.operationName!.lowercased()).underscored()
-            .code(withType: type, arguments: nil)
-        
-        Func(name: translatedName,
-             parameters: functionParameters(type: type),
-             returnType: returnType.code(definedInside: type)) {
-            Stack {
-                returnType.temporaryInitializerCode(propertyName: "__returnValue", definedInside: type)
-                
-                ObjectsPointersAccess(parameters: objectsPointerAccessParameters(type: type)) { pointerNames in
-                    if rightType != nil {
-                        let lhsName = pointerNames[0]
-                        let rhsName = pointerNames[1]
-                        let returnName = pointerNames[2]
-                        "Self.\(godotOperatorPtrName)(\(lhsName), \(rhsName), \(returnName))"
-                    } else {
-                        let selfName = pointerNames[0]
-                        let returnName = pointerNames[1]
-                        "Self.\(godotOperatorPtrName)(\(selfName), nil, \(returnName))"
-                    }
-                }
-                
-                Return("__returnValue")
+        defaultFunctionCode(definedIndise: type) { values in
+            if rightType != nil {
+                "Self.\(godotOperatorPtrName)(\(values.pointerNames[0]), \(values.pointerNames[1]), \(values.temporaryPointerName))"
+            } else {
+                "Self.\(godotOperatorPtrName)(\(values.pointerNames[0]), nil, \(values.temporaryPointerName))"
             }
-        }.static().internal()
-    }
-    
-    private func functionParameters(type: InstanceType) -> [FunctionParameter] {
-        var parameters = [FunctionParameter]()
-        parameters.append(.named("lhs", type: type.code(definedInside: type), label: .hidden))
-        if let rightType {
-            parameters.append(.named("rhs", type: rightType.code(definedInside: type), label: .hidden))
-        }
-        return parameters
-    }
-    
-    private func objectsPointerAccessParameters(type: InstanceType) -> [ObjectsPointersAccessParameter] {
-        var parameters = [ObjectsPointersAccessParameter]()
-        
-        if let rightType {
-            parameters.append(.named("lhs", type: type, mutability: .const))
-            parameters.append(.named("rhs", type: rightType, mutability: .const))
-        } else {
-            parameters.append(.named("lhs", type: type, mutability: .const))
-        }
-        
-        parameters.append(.named("__returnValue", type: returnType, mutability: .mutable))
-        
-        return parameters
-    }
-    
-    private func emptyErrorCode() -> some Code {
-        EmptyCode()
+        }.internal()
     }
     
     var godotVariantOperation: String? {
-        "GDNATIVE_VARIANT_OP_" + name.operationName!
+        "GDNATIVE_VARIANT_OP_" + NamingConvention.camel.convert(string: name.operationName!, to: .snake).uppercased()
     }
     
     var godotOperatorPtrName: String {
-        var name = "__operator_binding_" + name.operationName!
+        var name = "__operator_binding_" + NamingConvention.camel.convert(string: name.operationName!, to: .snake).lowercased()
         if let rightType {
             name += "_" + rightType.code()
         }
         
         return name.lowercased()
     }
+}
+
+// MARK: Function conformance
+
+extension ExtensionApi.BuiltinClass.Operator: Function {
+    func arguments(definedInside type: InstanceType?) -> [ExtensionApi.Argument] {
+        var arguments = [ExtensionApi.Argument]()
+        if let type {
+            arguments.append(.init(name: "lhs", type: type))
+        }
+        if let rightType {
+            arguments.append(.init(name: "rhs", type: rightType))
+        }
+        return arguments
+    }
+    
+    func returnType(definedInside type: InstanceType?) -> InstanceType? {
+        returnType
+    }
+    
+    func temporaryType(definedInside type: InstanceType?) -> InstanceType? {
+        returnType
+    }
+    
+    var functionName: FunctionName {
+        .init(string: "operator_" + NamingConvention.camel.convert(string: name.operationName!, to: .snake).lowercased()).underscored()
+    }
+    
+    var isVararg: Bool { false }
+    var isStatic: Bool { true }
+    var isConst: Bool { false }
+    var isMutating: Bool { false }
+    
+    var usesPointersArray: Bool { false }
+    var allParametersHaveHiddenLabels: Bool { true }
 }

@@ -3,9 +3,15 @@ import CodeGenerator
 
 extension ExtensionApi.BuiltinClass.Method {
     func code(type: InstanceType) -> some Code {
-        GodotBindingFunc(self, type: type) { values in
+        underscored.defaultFunctionCode(definedIndise: type) { values in
             "Self.\(godotMethodPtrName)(\(values.selfPointerName), \(values.pointersArrayName), \(values.temporaryPointerName), \(values.pointersCountValue))"
         }.internal().attributes(isResultDiscardable ? [.discardableResult] : [])
+    }
+    
+    private var underscored: Self {
+        var method = self
+        method.name = name.underscored()
+        return method
     }
     
     private var isResultDiscardable: Bool {
@@ -13,22 +19,29 @@ extension ExtensionApi.BuiltinClass.Method {
     }
     
     var godotMethodPtrName: String {
-        "__method_binding_\(name.godotName)"
+        "__method_binding_\(name.baseName)"
     }
 }
 
-extension ExtensionApi.BuiltinClass.Method: GodotBindingFuncDefinition {
-    var bindingName: FunctionName {
-        name.underscored()
+// MARK: Function conformance
+
+extension ExtensionApi.BuiltinClass.Method: Function {
+    func arguments(definedInside type: InstanceType?) -> [ExtensionApi.Argument] {
+        arguments ?? []
     }
     
-    var bindingArguments: [ExtensionApi.Argument]? {
-        arguments
-    }
-    
-    var bindingReturnType: InstanceType? {
+    func returnType(definedInside type: InstanceType?) -> InstanceType? {
         returnType
     }
     
+    func temporaryType(definedInside type: InstanceType?) -> InstanceType? {
+        returnType
+    }
+    
+    var functionName: FunctionName { name }
+    
     var isMutating: Bool { !isConst && !isStatic }
+    
+    var usesPointersArray: Bool { true }
+    var allParametersHaveHiddenLabels: Bool { false }
 }

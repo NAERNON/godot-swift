@@ -17,10 +17,10 @@ extension ExtensionApi.BuiltinClass {
                 Stack {
                     indexingReturnType.temporaryInitializerCode(propertyName: "__returnValue", definedInside: name)
                     
-                    ObjectsPointersAccess(parameters:
-                                            [.named("__returnValue", type: indexingReturnType, mutability: .mutable),
-                                             .named("self", type: self.name, mutability: .const)]
-                    ) { pointerNames in
+                    PointersAccess(parameters: [
+                        .named("__returnValue", type: indexingReturnType, mutability: .mutable),
+                        .named("self", type: self.name, mutability: .const)
+                    ]) { pointerNames, _ in
                         "Self.__indexed_getter(\(pointerNames[1]), index, \(pointerNames[0]))"
                     }
                     
@@ -37,9 +37,10 @@ extension ExtensionApi.BuiltinClass {
                         "replaceOpaqueValueIfNecessary()"
                     }
                     
-                    ObjectsPointersAccess(parameters: [.named("value", type: indexingReturnType, mutability: .const),
-                                                       .named("self", type: self.name, mutability: .mutable)])
-                    { pointerNames in
+                    PointersAccess(parameters: [
+                        .named("value", type: indexingReturnType, mutability: .const),
+                        .named("self", type: self.name, mutability: .mutable)
+                    ]) { pointerNames, _ in
                         "Self.__indexed_setter(\(pointerNames[1]), index, \(pointerNames[0]))"
                     }
                 }

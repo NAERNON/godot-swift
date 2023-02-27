@@ -103,7 +103,7 @@ for any initialization.
                     Group {
                         Var("_method_name").typed("StringName!")
                         for method in methods {
-                            Property("_method_name").assign("\"\(method.name.godotName)\"")
+                            Property("_method_name").assign("\"\(method.name.baseName)\"")
                             Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
                                 Property(method.godotMethodPtrName)
                                     .assign("GodotInterface.native.variant_get_ptr_builtin_method(\(godotVariantType), \(methodPointerName), \(method.hash))")
