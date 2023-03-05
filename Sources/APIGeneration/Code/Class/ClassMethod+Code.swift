@@ -31,27 +31,11 @@ Override it to make custom behaviors.
 
 extension ExtensionApi.Class.Method: Function {
     func arguments(definedInside type: InstanceType?) -> [ExtensionApi.Argument] {
-        arguments?.map { argument in
-            var bindingArgument = argument
-            
-            if bindingArgument.type.isPointer {
-                bindingArgument.type = bindingArgument.type.optional()
-            }
-            
-            return bindingArgument
-        } ?? []
+        arguments ?? []
     }
     
     func returnType(definedInside type: InstanceType?) -> InstanceType? {
-        guard let type = returnValue?.type else {
-            return nil
-        }
-        
-        if type.isPointer || type.isGodotClassType {
-            return type.optional()
-        } else {
-            return type
-        }
+        returnValue?.type
     }
     
     func temporaryType(definedInside type: InstanceType?) -> InstanceType? {

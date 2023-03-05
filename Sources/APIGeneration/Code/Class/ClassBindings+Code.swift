@@ -45,11 +45,15 @@ extension ExtensionApi.Class {
                     PointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .const)]) { classPointerNames, _ in
                         let classNamePointerName = classPointerNames[0]
                         
-                        for method in methodData {
-                            Property("_method_name").assign("\"\(method.name)\"")
-                            Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
-                                Property(method.ptrName)
-                                    .assign("GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
+                        Stack {
+                            for method in methodData {
+                                Group {
+                                    Property("_method_name").assign("\"\(method.name)\"")
+                                    Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
+                                        Property(method.ptrName)
+                                            .assign("GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
+                                    }
+                                }
                             }
                         }
                     }

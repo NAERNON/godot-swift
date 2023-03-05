@@ -61,6 +61,14 @@ extension Function {
             isLabelHidden: false
         ) })
     }
+    
+    private func returnCode(definedIndise type: InstanceType?) -> String? {
+        guard let returnType = self.returnType(definedInside: type) else {
+            return nil
+        }
+        
+        return returnType.functionFormatted().code(definedInside: type)
+    }
 }
 
 private extension CodeTranslator.FunctionParameter {
@@ -73,8 +81,10 @@ private extension CodeTranslator.FunctionParameter {
             defaultParameterValue = .none
         }
         
+        let parameterType = argument.type.functionFormatted().code(definedInside: type)
+        
         return .named(CodeLanguage.swift.protectNameIfKeyword(for: self.name),
-                      type: argument.type.optional(argument.type.isGodotClassType).code(definedInside: type),
+                      type: parameterType,
                       defaultValue: defaultParameterValue,
                       label: codeLabel)
     }
@@ -96,11 +106,13 @@ extension Function {
     func functionDefinitionCode(definedIndise type: InstanceType?,
                                 @CodeBuilder content: @escaping ([CodeGenerator.FunctionParameter]) -> some Code)
     -> some Code {
-        Func(name: nameCode(definedIndise: type),
-             parameters: parameters(definedIndise: type),
-             returnType: returnType(definedInside: type)?.code(definedInside: type)) {
+        let name = nameCode(definedIndise: type)
+        let parameters = parameters(definedIndise: type)
+        let returnType = returnCode(definedIndise: type)
+        
+        return Func(name: name, parameters: parameters, returnType: returnType) {
             Stack {
-                content(parameters(definedIndise: type))
+                content(parameters)
             }
         }.static(isStatic).mutating(isMutating)
     }
@@ -215,4 +227,12 @@ struct FunctionPointerValues {
         selfPointerName: "",
         temporaryPointerName: ""
     )
+}
+
+// MARK: Instance Type extension
+
+private extension InstanceType {
+    func functionFormatted() -> InstanceType {
+        self.optional(isGodotClassType || isPointer)
+    }
 }
