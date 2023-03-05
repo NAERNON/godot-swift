@@ -7,11 +7,13 @@ func withUnsafeGodotAccessPointer<T>(to value: T, body: (GDNativeConstObjectPtr?
     withUnsafePointer(to: value) { body($0) }
 }
 
-func withUnsafeGodotAccessPointer<T: GodotPointerAccessible>(to value: T, body: (GDNativeConstObjectPtr?) -> Void) {
+func withUnsafeGodotAccessPointer<T>(to value: T, body: (GDNativeConstObjectPtr?) -> Void)
+where T : GodotPointerAccessible {
     value.withUnsafeNativePointer { body($0) }
 }
 
-func withUnsafeGodotAccessPointer<T: GodotPointerAccessible>(to value: T!, body: (GDNativeConstObjectPtr?) -> Void) {
+func withUnsafeGodotAccessPointer<T>(to value: T!, body: (GDNativeConstObjectPtr?) -> Void)
+where T : GodotPointerAccessible {
     value.withUnsafeNativePointer { body($0) }
 }
 
@@ -29,11 +31,13 @@ func withUnsafeGodotMutableAccessPointer<T>(to value: inout T, body: (GDNativeOb
     withUnsafeMutablePointer(to: &value) { body($0) }
 }
 
-func withUnsafeGodotMutableAccessPointer<T: GodotPointerAccessible>(to value: inout T, body: (GDNativeObjectPtr?) -> Void) {
+func withUnsafeGodotMutableAccessPointer<T>(to value: inout T, body: (GDNativeObjectPtr?) -> Void)
+where T : GodotPointerAccessible {
     value.withUnsafeNativePointer { body($0) }
 }
 
-func withUnsafeGodotMutableAccessPointer<T: GodotPointerAccessible>(to value: inout T!, body: (GDNativeObjectPtr?) -> Void) {
+func withUnsafeGodotMutableAccessPointer<T>(to value: inout T!, body: (GDNativeObjectPtr?) -> Void)
+where T : GodotPointerAccessible {
     value.withUnsafeNativePointer { body($0) }
 }
 
@@ -51,11 +55,13 @@ func withUnsafeGodotMutableConstAccessPointer<T>(to value: T, body: (GDNativeObj
     withUnsafePointer(to: value) { body(UnsafeMutableRawPointer(mutating: $0)) }
 }
 
-func withUnsafeGodotMutableConstAccessPointer<T: GodotPointerAccessible>(to value: T, body: (GDNativeObjectPtr?) -> Void) {
+func withUnsafeGodotMutableConstAccessPointer<T>(to value: T, body: (GDNativeObjectPtr?) -> Void)
+where T : GodotPointerAccessible {
     value.withUnsafeNativePointer { body($0) }
 }
 
-func withUnsafeGodotMutableConstAccessPointer<T: GodotPointerAccessible>(to value: T!, body: (GDNativeObjectPtr?) -> Void) {
+func withUnsafeGodotMutableConstAccessPointer<T>(to value: T!, body: (GDNativeObjectPtr?) -> Void)
+where T : GodotPointerAccessible {
     value.withUnsafeNativePointer { body($0) }
 }
 

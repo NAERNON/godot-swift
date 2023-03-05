@@ -1,7 +1,7 @@
 import Foundation
 import GodotExtensionHeaders
 
-func retreiveObject<T: Object>(ofType type: T.Type, from ptr: GDNativeObjectPtr?) -> T? {
+func retreiveObject<T>(ofType type: T.Type, from ptr: GDNativeObjectPtr?) -> T? where T : Object {
     guard let ptr else {
         return nil
     }
