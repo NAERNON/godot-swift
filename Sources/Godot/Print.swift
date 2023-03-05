@@ -16,47 +16,44 @@ public func printGodotWarning(_ message: Swift.String,
     GodotExtension.shared.interface.print_warning(message, function, file, Int32(line))
 }
 
-// MARK: Print output
+// MARK: Print
 
-/// The `GodotOutput` can print a given `String` to the Godot output debugging area.
+/// Writes the textual representations of the given items into the Godot
+/// output.
 ///
-/// Use the standard Swift `print(_:to:_)` function to print to Godot.
-/// ```
-/// print("Salut", 13.12, to: &godotOutput)
-/// // prints "Salut 13.12" to Godot
-/// ```
-public struct GodotOutput: TextOutputStream {
-    /// This value holds the `String` to print.
-    private(set) var stringToPrint = Swift.String()
-    
-    /// Each `write(_:)` call increments the `stringToPrint` value.
-    /// Only when the `write(_:)` function receives a string
-    /// ending by the `"\n"` character will it print the hole string.
-    ///
-    /// You can force the Godot printing by calling `print()`.
-    public mutating func write(_ string: Swift.String) {
-        if string.last?.isNewline == true {
-            stringToPrint += string.dropLast(1)
-            print()
-        } else {
-            stringToPrint += string
+/// You can pass zero or more items to the `gdPrint(_:separator:)`
+/// function. The textual representation for each item is the same as that
+/// obtained by calling `String(describing: item)`. The following example prints a string,
+/// a closed range of integers, and a group of floating-point values to
+/// standard output:
+///
+///     gdPrint("One two three four five")
+///     // Prints "One two three four five"
+///
+///     gdPrint(1...5)
+///     // Prints "1...5"
+///
+///     gdPrint(1.0, 2.0, 3.0, 4.0, 5.0)
+///     // Prints "1.0 2.0 3.0 4.0 5.0"
+///
+/// To print the items separated by something other than a space, pass a string
+/// as `separator`.
+///
+///     gdPrint(1.0, 2.0, 3.0, 4.0, 5.0, separator: " ... ")
+///     // Prints "1.0 ... 2.0 ... 3.0 ... 4.0 ... 5.0"
+///
+/// - Parameters:
+///   - items: Zero or more items to print.
+///   - separator: A string to print between each item. The default is a single
+///     space (`" "`).
+public func gdPrint(_ items: Any..., separator: Swift.String = " ") {
+    var string: Swift.String = ""
+    for (index, item) in items.enumerated() {
+        string += Swift.String(describing: item)
+        if index < items.count-1 {
+            string += separator
         }
     }
     
-    /// Prints the current string to print to Godot and erases it.
-    public mutating func print() {
-        printVariant(arg1: Variant(String(swiftString: stringToPrint)))
-        stringToPrint.removeAll()
-    }
-    
-    fileprivate init() {}
+    printVariant(arg1: Variant(string))
 }
-
-/// The main Godot output.
-///
-/// Use the standard Swift `print(_:to:_)` function to print to Godot.
-/// ```
-/// print("Salut", 13.12, to: &godotOutput)
-/// // prints "Salut 13.12" to Godot
-/// ```
-public var godotOutput = GodotOutput()
