@@ -21,13 +21,20 @@ public struct FunctionParameter {
     public var type: String
     public var defaultValue: DefaultValue
     public var label: Label
+    public var isEscaping: Bool
     public var isVararg: Bool
     
-    private init(name: String, type: String, defaultValue: DefaultValue, label: Label, isVararg: Bool) {
+    private init(name: String,
+                 type: String,
+                 defaultValue: DefaultValue,
+                 label: Label,
+                 isEscaping: Bool,
+                 isVararg: Bool) {
         self.name = name
         self.type = type
         self.defaultValue = defaultValue
         self.label = label
+        self.isEscaping = isEscaping
         self.isVararg = isVararg
     }
     
@@ -35,11 +42,13 @@ public struct FunctionParameter {
                              type: String,
                              defaultValue: DefaultValue = .none,
                              label: Label = .none,
+                             isEscaping: Bool = false,
                              isVararg: Bool = false) -> FunctionParameter {
         FunctionParameter(name: name,
                           type: type,
                           defaultValue: defaultValue,
                           label: label,
+                          isEscaping: isEscaping,
                           isVararg: isVararg)
     }
     
@@ -47,6 +56,7 @@ public struct FunctionParameter {
                                         type: Parameter.Type,
                                         defaultValue: DefaultValue = .none,
                                         label: Label = .none,
+                                        isEscaping: Bool = false,
                                         isVararg: Bool = false) -> FunctionParameter {
         if case .nil = defaultValue {
             fatalError("An unoptional parameter cannot have a nil default value.")
@@ -55,6 +65,7 @@ public struct FunctionParameter {
                                  type: String(describing: Parameter.self),
                                  defaultValue: defaultValue,
                                  label: label,
+                                 isEscaping: isEscaping,
                                  isVararg: isVararg)
     }
     
@@ -62,12 +73,14 @@ public struct FunctionParameter {
                                         type: Optional<Parameter>.Type,
                                         defaultValue: DefaultValue = .none,
                                         label: Label = .none,
+                                        isEscaping: Bool = false,
                                         isVararg: Bool = false) -> FunctionParameter {
         let typeString = String(describing: Parameter.self) + "?"
         return FunctionParameter(name: name,
                                  type: typeString,
                                  defaultValue: defaultValue,
                                  label: label,
+                                 isEscaping: isEscaping,
                                  isVararg: isVararg)
     }
     
@@ -84,6 +97,11 @@ public struct FunctionParameter {
         
         codeString += name
         codeString += ": "
+        
+        if isEscaping {
+            codeString += "@escaping "
+        }
+        
         codeString += type
         
         if isVararg {
