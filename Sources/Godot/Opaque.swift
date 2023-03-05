@@ -26,6 +26,13 @@ internal class BaseOpaque: CustomDebugStringConvertible {
         return true
     }
     
+    func copyRaw(from pointer: UnsafeRawPointer) {
+        let otherData = pointer.assumingMemoryBound(to: UInt8.self)
+        for index in 0..<size {
+            data[index] = otherData[index]
+        }
+    }
+    
     var debugDescription: Swift.String {
         var string = "["
         for index in 0..<size {

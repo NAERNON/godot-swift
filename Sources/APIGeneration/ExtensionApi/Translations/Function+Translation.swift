@@ -103,6 +103,45 @@ private extension CodeTranslator.FunctionParameter {
 // MARK: - Code
 
 extension Function {
+    func functionCallCode(definedIndise type: InstanceType?,
+                          breakLineOnArguments: Bool = false,
+                          withParameters parameterValues: [String]) -> some Code {
+        var stringParts = [nameCode(definedIndise: type) + "("]
+        let parameters = parameters(definedIndise: type)
+        for (index, parameter) in parameters.enumerated() {
+            var string = ""
+            switch parameter.label {
+            case .name(let parameterName): string += parameterName + ": "
+            case .none: string += parameter.name + ": "
+            case .hidden: break
+            }
+            
+            string += parameterValues[index]
+            
+            if index < parameters.count - 1 {
+                string += ", "
+            }
+            
+            stringParts.append(string)
+        }
+        
+        stringParts.append(")")
+        
+        return Group {
+            if breakLineOnArguments && !parameters.isEmpty {
+                stringParts.first!
+                Group {
+                    for i in 1..<stringParts.count - 1 {
+                        stringParts[i]
+                    }
+                }.indent()
+                stringParts.last!
+            } else {
+                stringParts.reduce("") { $0 + $1 }
+            }
+        }
+    }
+    
     func functionDefinitionCode(definedIndise type: InstanceType?,
                                 @CodeBuilder content: @escaping ([CodeGenerator.FunctionParameter]) -> some Code)
     -> some Code {

@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension StringName {
     public init() {
@@ -15,6 +16,14 @@ extension StringName {
     
     public init(string: String) {
         self = Self._constructor(from: string)
+    }
+    
+    public static func makeFromGodotExtension(_ unsafeStringNamePtr: GDNativeConstStringNamePtr) -> StringName {
+        let string = StringName()
+        string.opaque.copyRaw(from: unsafeStringNamePtr)
+        
+        // We create the new string by calling the constructor to ensure copy of the data.
+        return StringName(string)
     }
     
     // MARK: Operators

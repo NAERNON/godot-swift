@@ -1,5 +1,6 @@
 import Foundation
 import GodotExtensionHeaders
+import Godot
 
 #warning("METHOD_FLAGS_DEFAULT from the json file.")
 private let METHOD_FLAGS_DEFAULT: UInt32 = 24
@@ -8,11 +9,20 @@ public final class ClassDataBase {
     
     // MARK: Properties
     
-    public static let main = ClassDataBase()
+    internal static let main = ClassDataBase()
+    internal var interfacePtr: UnsafePointer<GDNativeInterface>?
+    internal var libraryPtr: GDNativeExtensionClassLibraryPtr!
     
-    var currentLevel = GDNATIVE_INITIALIZATION_CORE
+    private var interface: GDNativeInterface {
+        guard let interfacePtr else {
+            fatalError("No interface pointer provided for the class data base.")
+        }
+        
+        return interfacePtr.pointee
+    }
     
-    private var nameToUnmanagedClass = [String : Unmanaged<ClassBind>]()
+    private var currentLevel: GDNativeInitializationLevel?
+    private var classNameToClassBinding = [StringName : ClassBinding]()
     
     // MARK: Init
     
@@ -20,174 +30,163 @@ public final class ClassDataBase {
     
     // MARK: Initialize & deinitialize level
     
-    func initialize(level: GDNativeInitializationLevel) {}
+    func initialize(level: GDNativeInitializationLevel) {
+        currentLevel = level
+    }
     
     func deinitialize(level: GDNativeInitializationLevel) {
-        for (_, unmanagedClassBind) in nameToUnmanagedClass {
-            let classBind = unmanagedClassBind.takeUnretainedValue()
-            guard classBind.level == level else { continue }
+        let classesToUnregister = classNameToClassBinding.compactMap { (name, binding) in
+            if binding.level == level {
+                return name
+            } else {
+                return nil
+            }
+        }
+        
+        for className in classesToUnregister {
+            let classBinding = classNameToClassBinding.removeValue(forKey: className)!
             
-            GodotLibrary.main.interface?.classdb_unregister_extension_class(
-                GodotLibrary.main.libraryPtr,
-                classBind.name
-            )
-            
-            unmanagedClassBind.release()
+            classBinding.name.withUnsafeNativePointer { namePtr in
+                interface.classdb_unregister_extension_class(
+                    libraryPtr,
+                    namePtr
+                )
+            }
         }
     }
     
     // MARK: Class registration
     
+    public func instantiateClass<Class>(ofType type: Class.Type) -> GDNativeObjectPtr where Class : Object {
+        let instance = Class()
+        var objectPtr: GDNativeObjectPtr!
+        
+        instance.withUnsafeNativePointer { ptr in
+            objectPtr = ptr
+        }
+        
+        return objectPtr
+    }
+    
     @discardableResult
-    public func registerClass(withName name: String,
-                              parentName: String,
-                              toStringFunction: @escaping GDNativeExtensionClassToString,
-                              createInstanceFunction: @escaping GDNativeExtensionClassCreateInstance,
-                              freeInstanceFunction: @escaping GDNativeExtensionClassFreeInstance) -> Bool {
-        guard nameToUnmanagedClass[name] == nil else {
-            printGodotError("Cannot register class \(name) because it is already registered.")
+    public func registerClass<Class, Parent>(
+        ofType classType: Class.Type,
+        parentType: Parent.Type,
+        toStringFunction: GDNativeExtensionClassToString,
+        createInstanceFunction: GDNativeExtensionClassCreateInstance,
+        freeInstanceFunction: GDNativeExtensionClassFreeInstance
+    ) -> Bool
+    where Class : Object,
+          Parent : Object
+    {
+        guard let currentLevel else { return false }
+        
+        let className = StringName(swiftString: .init(describing: classType))
+        let parentClassName = StringName(swiftString: .init(describing: parentType))
+        
+        guard classNameToClassBinding[className] == nil else {
+            printGodotError("Cannot register class \(classType) because it is already registered.")
             return false
         }
         
         // Register this class within our extension.
-        let classBind = ClassBind(name: name,
-                                  parentName: parentName,
-                                  level: currentLevel,
-                                  signalNames: [],
-                                  propertyNames: [],
-                                  constantNames: [],
-                                  parentInfos: nameToUnmanagedClass[parentName]?.takeUnretainedValue())
-        let unmanagedClassBind = Unmanaged.passRetained(classBind)
-        nameToUnmanagedClass[name] = unmanagedClassBind
+        let classBinding = ClassBinding(
+            level: currentLevel,
+            name: className,
+            parentName: parentClassName
+        )
+        classNameToClassBinding[className] = classBinding
         
-        printGodotWarning("Registering class \(name).")
-        
-#warning("""
-T::set_bind, // GDNativeExtensionClassSet set_func;
-T::get_bind, // GDNativeExtensionClassGet get_func;
-T::get_property_list_bind, // GDNativeExtensionClassGetPropertyList get_property_list_func;
-T::free_property_list_bind, // GDNativeExtensionClassFreePropertyList free_property_list_func;
-T::property_can_revert_bind, // GDNativeExtensionClassPropertyCanRevert property_can_revert_func;
-T::property_get_revert_bind, // GDNativeExtensionClassPropertyGetRevert property_get_revert_func;
-T::notification_bind, // GDNativeExtensionClassNotification notification_func;
-""")
-        // Register this class with Godot.
+#warning("Fill all the blanks")
         var godotClassInfo = GDNativeExtensionClassCreationInfo(
-            set_func: nil,
-            get_func: nil,
-            get_property_list_func: nil,
-            free_property_list_func: nil,
-            notification_func: nil,
+            is_virtual: 0,
+            is_abstract: 0,
+            set_func: { _, _, _ in
+                return 1
+            },
+            get_func: { _, _, _ in
+                return 1
+            },
+            get_property_list_func: { a, b in
+                fatalError()
+            },
+            free_property_list_func: { _, _ in },
+            property_can_revert_func: { _, _ in while true {} },
+            property_get_revert_func: { _, _, _ in while true {} },
+            notification_func: { _, _ in },
             to_string_func: toStringFunction,
             reference_func: nil,
             unreference_func: nil,
             create_instance_func: createInstanceFunction, // This one is mandatory.
             free_instance_func: freeInstanceFunction, // This one is mandatory.
-            get_virtual_func: { ClassDataBase.virtualFunc(fromUserDataPointer: $0, namePointer: $1) },
+            get_virtual_func: { ClassDataBase.virtualFunc(fromUserDataPtr: $0, methodNamePtr: $1) },
             get_rid_func: nil,
-            class_userdata: unmanagedClassBind.toOpaque()
+            class_userdata: Unmanaged.passUnretained(classBinding).toOpaque()
         )
         
-        withUnsafePointer(to: &godotClassInfo) { godotClassInfoPtr in
-            GodotLibrary.main.interface?.classdb_register_extension_class(
-                GodotLibrary.main.libraryPtr,
-                name,
-                parentName,
-                godotClassInfoPtr
-            )
-        }
-        
-        return true
-    }
-    
-#warning("Necessary ?")
-    private static func virtualFunc(fromUserDataPointer userDataPointer: UnsafeMutableRawPointer?,
-                                    namePointer: UnsafePointer<CChar>?) -> GDNativeExtensionClassCallVirtual? {
-        return nil
-//        guard let classNamePointer = userDataPointer?.assumingMemoryBound(to: CChar.self) else {
-//            printGodotError("Cannot retrieve String from pointer.")
-//            return nil
-//        }
-//
-//        guard let namePointer = namePointer else {
-//            printGodotError("No virtual func name given.")
-//            return nil
-//        }
-//
-//        return virtualFunc(fromClassName: String(cString: classNamePointer),
-//                           functionName: String(cString: namePointer))
-    }
-
-#warning("Necessary ?")
-    private static func virtualFunc(fromClassName className: String,
-                                    functionName: String) -> GDNativeExtensionClassCallVirtual? {
-        return nil
-//        guard let classInfo = ClassDataBase.main.classes[className] else {
-//            printGodotError("Class doesn't exist.")
-//            return nil
-//        }
-//
-//        guard let function = classInfo.virtualMethods[functionName] else {
-//            printGodotError("Virtual func doesn't exist.")
-//            return nil
-//        }
-//
-//        return function
-    }
-    
-    // MARK: Function registration
-    
-    @discardableResult
-    public func registerFunction(withDefinition functionDefinition: FunctionDefinition,
-                                 callFunction: GDNativeExtensionClassMethodCall) -> Bool {
-        guard let classBind = nameToUnmanagedClass[functionDefinition.className]?.takeUnretainedValue() else {
-            printGodotError("Cannot register function \(functionDefinition.name) because the class doesn't exist.")
-            return false
-        }
-        
-        guard !classBind.functionExists(withSignature: functionDefinition.signature) else {
-            printGodotError("Cannot register function \(functionDefinition.name) because it is already registered.")
-            return false
-        }
-        
-        let functionBind = FunctionBind(definition: functionDefinition,
-                                        hintFlags: functionDefinition.isStatic ? 0 : METHOD_FLAGS_DEFAULT)
-        
-        let functionBindPtr = classBind.registerFunction(functionBind)
-        
-        printGodotWarning("Registering function \(functionDefinition.signature).")
-        
-        functionDefinition.name.withCString { cName in
-            functionBind.withUnsafeDefaultArguments { defaultArgumentsPtr in
-                var godotMethodInfo = GDNativeExtensionClassMethodInfo(
-                    name: cName,
-                    method_userdata: functionBindPtr,
-                    call_func: callFunction,
-                    ptrcall_func: nil,
-                    method_flags: functionBind.functionFlags,
-                    argument_count: functionBind.definition.numberOfArguments,
-                    has_return_value: functionBind.definition.hasReturnValue ? GDNativeTrue : GDNativeFalse,
-                    get_argument_type_func: { FunctionBind.argumentType(functionBindPtr: $0,
-                                                                        argumentIndex: $1) },
-                    get_argument_info_func: { FunctionBind.argumentInfo(functionBindPtr: $0,
-                                                                        argumentIndex: $1,
-                                                                        propertyInfoPtr: $2) }, // Name and hint information for the argument can be omitted in release builds. Class name should always be present if it applies.
-                    get_argument_metadata_func: { FunctionBind.argumentMetaData(functionBindPtr: $0,
-                                                                                argumentIndex: $1) },
-                    default_argument_count: UInt32(functionBind.defaultArgumentValues.count),
-                    default_arguments: defaultArgumentsPtr
-                )
-                
-                withUnsafePointer(to: &godotMethodInfo) { godotMethodInfoPtr in
-                    GodotLibrary.main.interface?.classdb_register_extension_class_method(
-                        GodotLibrary.main.libraryPtr,
-                        cName,
-                        godotMethodInfoPtr
-                    )
+        className.withUnsafeNativePointer { namePtr in
+            parentClassName.withUnsafeNativePointer { parentNamePtr in
+                withUnsafePointer(to: godotClassInfo) { classInfoPtr in
+                    interface.classdb_register_extension_class(libraryPtr, namePtr, parentNamePtr, classInfoPtr)
                 }
             }
         }
         
+        // Register all the virtual functions
+        classType.setVirtualFunctionCalls { methodName, call in
+            registerVirtualFunc(ofType: classType, name: methodName, call: call)
+        }
+        
         return true
+    }
+    
+    // MARK: Virtual functions
+    
+    private static func virtualFunc(fromUserDataPtr userDataPtr: UnsafeMutableRawPointer?,
+                                    methodNamePtr: GDNativeConstStringNamePtr?) -> GDNativeExtensionClassCallVirtual? {
+        guard let userDataPtr else {
+            printGodotError("No class data pointer provided.")
+            return nil
+        }
+        
+        guard let methodNamePtr else {
+            printGodotError("No virtual func name given.")
+            return nil
+        }
+        
+        let classBinding = Unmanaged<ClassBinding>.fromOpaque(userDataPtr).takeUnretainedValue()
+        let methodName = StringName.makeFromGodotExtension(methodNamePtr)
+        
+        return virtualFunc(fromClassBinding: classBinding, functionName: methodName)
+    }
+    
+    private static func virtualFunc(fromClassBinding classBinding: ClassBinding,
+                                    functionName: StringName) -> GDNativeExtensionClassCallVirtual? {
+        guard let classBinding = main.classNameToClassBinding[classBinding.name] else {
+            printGodotError("Class doesn't exist.")
+            return nil
+        }
+        
+        guard let functionCall = classBinding.virtualFuncCall(forName: functionName) else {
+            printGodotError("Virtual func doesn't exist.")
+            return nil
+        }
+        
+        return functionCall
+    }
+    
+    @discardableResult
+    private func registerVirtualFunc<Class>(ofType type: Class.Type,
+                                            name: StringName,
+                                            call: GDNativeExtensionClassCallVirtual) -> Bool
+    where Class : Object {
+        let className = StringName(swiftString: .init(describing: type))
+        
+        guard let classBinding = classNameToClassBinding[className] else {
+            printGodotError("Class doesn't exist.")
+            return false
+        }
+        
+        return classBinding.appendVirtualFunc(name: name, call: call)
     }
 }

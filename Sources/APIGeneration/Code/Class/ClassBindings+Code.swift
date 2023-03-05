@@ -8,7 +8,7 @@ extension ExtensionApi.Class {
         
         bindingsPropertiesCode()
         setFunctionBindingsFunctionCode()
-//        setVirtualFunctionBindingsFunctionCode()
+        setVirtualFunctionBindingsFunctionCode()
     }
     
     @CodeBuilder
@@ -39,24 +39,7 @@ extension ExtensionApi.Class {
                 }
                 
                 if !methodData.isEmpty {
-                    Let("_class_name").typed("StringName").assign("\"\(name.code())\"")
-                    Var("_method_name").typed("StringName!")
-                    
-                    PointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .const)]) { classPointerNames, _ in
-                        let classNamePointerName = classPointerNames[0]
-                        
-                        Stack {
-                            for method in methodData {
-                                Group {
-                                    Property("_method_name").assign("\"\(method.name)\"")
-                                    Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
-                                        Property(method.ptrName)
-                                            .assign("GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    bindingFunctionsCall(methodData)
                 }
             }
         }
@@ -69,38 +52,85 @@ extension ExtensionApi.Class {
     }
     
     @CodeBuilder
-    private func setVirtualFunctionBindingsFunctionCode() -> some Code {
-        Func(name: "setVirtualFunctionCalls", parameters: .named("appendCall",
-                                                                 type: "(StringName, GDNativeExtensionClassCallVirtual) -> Void",
-                                                                 label: .hidden))
-        {
-            if let methods {
-                let virtualMethods = methods.filter { $0.isVirtual }
-                if !virtualMethods.isEmpty {
-                    Var("_method_name").typed("StringName!")
-                    for method in virtualMethods {
-                        Property("_method_name").assign("\"\(method.name.baseName)\"")
-                        "appendCall(_method_name, { instancePtr, args, returnPtr in"
-                        Group {
-                            Guard(condition: "let instancePtr, let args") {
-                                Return()
-                            }
-                            
-                            Let("instance")
-                                .assign("Unmanaged<\(name.code())>.fromOpaque(instancePtr).takeUnretainedValue()")
-                            
-                            GodotBindingFuncCall(method, type: name)
-                        }.indent()
-                        "})"
+    private func bindingFunctionsCall(_ methodData: [(name: String, hash: Int, ptrName: String)]) -> some Code {
+        Let("_class_name").typed("StringName").assign("\"\(name.code())\"")
+        Var("_method_name").typed("StringName!")
+        
+        PointersAccess(parameters: [.named("_class_name", type: .stringName, mutability: .const)]) { classPointerNames, _ in
+            let classNamePointerName = classPointerNames[0]
+            
+            Stack {
+                for method in methodData {
+                    Group {
+                        Property("_method_name").assign("\"\(method.name)\"")
+                        Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
+                            Property(method.ptrName)
+                                .assign("GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
+                        }
                     }
                 }
             }
         }
-        .internal()
+    }
+    
+    @CodeBuilder
+    private func setVirtualFunctionBindingsFunctionCode() -> some Code {
+#warning("Set internal and move GodotExtension to Godot ?")
+        Func(name: "setVirtualFunctionCalls", parameters: .named(
+            "body",
+            type: "(StringName, GDNativeExtensionClassCallVirtual) -> Void",
+            label: .hidden
+        )) {
+            if !isRootClass {
+                "super.setVirtualFunctionCalls(body)"
+                Space()
+            }
+            
+            if let methods {
+                let virtualMethods = methods.filter { $0.isVirtual }
+                if !virtualMethods.isEmpty {
+                    Stack {
+                        Var("_method_name").typed("StringName!")
+                        
+                        for method in virtualMethods {
+                            virtualFunctionCall(method)
+                        }
+                    }
+                }
+            }
+        }
         .class()
+        .public()
         .override(!isRootClass)
         .documentation {
             "Sets all the virtual function bindings used to communicate with Godot."
+        }
+    }
+    
+    @CodeBuilder
+    private func virtualFunctionCall(_ method: Method) -> some Code {
+        Group {
+            Property("_method_name").assign("\"\(method.name.baseName)\"")
+            "body(_method_name, { instancePtr, args, returnPtr in"
+            Group {
+                Guard(condition: "let instancePtr" + (method.arguments == nil ? "" : ", let args")) {
+                    Return()
+                }
+                
+                Let("instance")
+                    .assign("Unmanaged<\(name.code())>.fromOpaque(instancePtr).takeUnretainedValue()")
+                
+                "instance.".suffix {
+                    method.functionCallCode(
+                        definedIndise: name,
+                        breakLineOnArguments: true,
+                        withParameters: method.arguments?.enumerated().map { (index, _) in
+                            "functionArgument(fromArgs: args, at: \(index))"
+                        } ?? []
+                    )
+                }
+            }.indent()
+            "})"
         }
     }
 }
