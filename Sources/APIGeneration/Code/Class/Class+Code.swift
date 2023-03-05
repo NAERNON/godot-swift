@@ -41,13 +41,13 @@ extension ExtensionApi.Class {
             Mark("Functions", isSeparator: true)
             
             for method in methods {
-                method.code(type: name, accessControl: methodsAccessControl)
+                method.code(type: name, accessControl: accessControl(for: method))
             }
         }
     }
     
-    private var methodsAccessControl: AccessControl {
-        isRefCountedRootClass ? .private : .public
+    private func accessControl(for method: Method) -> AccessControl {
+        isRefCountedRootClass ? .private : method.isStatic ? .public : .open
     }
     
     var isRefCountedRootClass: Bool {
