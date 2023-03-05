@@ -69,7 +69,7 @@ internal final class Opaque: BaseOpaque {
 internal final class VariantOpaque: BaseOpaque {
     deinit {
         withUnsafeMutableRawPointer { pointer in
-            GodotInterface.native.variant_destroy(pointer)
+            GodotExtension.shared.interface.variant_destroy(pointer)
         }
     }
 }

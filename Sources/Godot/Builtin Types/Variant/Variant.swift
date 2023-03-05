@@ -9,13 +9,13 @@ public struct Variant {
     /// Creates a new `Variant` as a `nil` variant.
     public init() {
         withUnsafeNativePointer { nativeTypePtr in
-            GodotInterface.native.variant_new_nil(nativeTypePtr)
+            GodotExtension.shared.interface.variant_new_nil(nativeTypePtr)
         }
     }
     
     internal init(nativeVariantPtr: GDNativeVariantPtr) {
         withUnsafeNativePointer { nativeTypePtr in
-            GodotInterface.native.variant_new_copy(nativeTypePtr, nativeVariantPtr)
+            GodotExtension.shared.interface.variant_new_copy(nativeTypePtr, nativeVariantPtr)
         }
     }
     
@@ -37,7 +37,7 @@ public struct Variant {
         var nativeVariantType: GDNativeVariantType!
         
         withUnsafeNativePointer { nativeTypePtr in
-            nativeVariantType = GodotInterface.native.variant_get_type(nativeTypePtr)
+            nativeVariantType = GodotExtension.shared.interface.variant_get_type(nativeTypePtr)
         }
         
         return ValueType(godotType: nativeVariantType)
@@ -51,7 +51,7 @@ public struct Variant {
             other.withUnsafeNativePointer { otherNativeTypePtr in
                 returnVariant.withUnsafeNativePointer { returnNativeTypePtr in
                     withUnsafeMutablePointer(to: &isValid) { validPtr in
-                        GodotInterface.native.variant_evaluate(
+                        GodotExtension.shared.interface.variant_evaluate(
                             `operator`.godotOperator,
                             nativeTypePtr,
                             otherNativeTypePtr,
@@ -74,7 +74,7 @@ public struct Variant {
         var result: GDNativeInt = 0
         
         withUnsafeNativePointer { nativeTypePtr in
-            result = GodotInterface.native.variant_hash(nativeTypePtr)
+            result = GodotExtension.shared.interface.variant_hash(nativeTypePtr)
         }
         
         return Int(result)
@@ -176,81 +176,83 @@ public struct Variant {
     /// This function must be called before the creation of any `Variant` instance since the bindings will be needed
     /// for any initialization.
     internal static func setInitBindings() {
-        fromTypeConstructor_bool = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_BOOL)
-        fromTypeConstructor_int = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_INT)
-        fromTypeConstructor_float = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_FLOAT)
-        fromTypeConstructor_string = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_STRING)
-        fromTypeConstructor_vector2 = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2)
-        fromTypeConstructor_vector2i = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2I)
-        fromTypeConstructor_rect2 = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2)
-        fromTypeConstructor_rect2i = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2I)
-        fromTypeConstructor_vector3 = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3)
-        fromTypeConstructor_vector3i = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3I)
-        fromTypeConstructor_transform2D = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM2D)
-        fromTypeConstructor_vector4 = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4)
-        fromTypeConstructor_vector4i = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4I)
-        fromTypeConstructor_plane = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PLANE)
-        fromTypeConstructor_quaternion = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_QUATERNION)
-        fromTypeConstructor_aabb = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_AABB)
-        fromTypeConstructor_basis = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_BASIS)
-        fromTypeConstructor_transform3D = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM3D)
-        fromTypeConstructor_projection = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PROJECTION)
-        fromTypeConstructor_color = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_COLOR)
-        fromTypeConstructor_stringName = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_STRING_NAME)
-        fromTypeConstructor_nodePath = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_NODE_PATH)
-        fromTypeConstructor_rid = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_RID)
-        fromTypeConstructor_object = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_OBJECT)
-        fromTypeConstructor_callable = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_CALLABLE)
-        fromTypeConstructor_signal = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_SIGNAL)
-        fromTypeConstructor_dictionary = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_DICTIONARY)
-        fromTypeConstructor_array = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_ARRAY)
-        fromTypeConstructor_packedByteArray = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_BYTE_ARRAY)
-        fromTypeConstructor_packedInt32Array = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT32_ARRAY)
-        fromTypeConstructor_packedInt64Array = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT64_ARRAY)
-        fromTypeConstructor_packedFloat32Array = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
-        fromTypeConstructor_packedFloat64Array = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
-        fromTypeConstructor_packedStringArray = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_STRING_ARRAY)
-        fromTypeConstructor_packedVector2Array = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
-        fromTypeConstructor_packedVector3Array = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
-        fromTypeConstructor_packedColorArray = GodotInterface.native.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_COLOR_ARRAY)
+        let interface = GodotExtension.shared.interface!
+        
+        fromTypeConstructor_bool = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_BOOL)
+        fromTypeConstructor_int = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_INT)
+        fromTypeConstructor_float = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_FLOAT)
+        fromTypeConstructor_string = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_STRING)
+        fromTypeConstructor_vector2 = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2)
+        fromTypeConstructor_vector2i = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2I)
+        fromTypeConstructor_rect2 = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2)
+        fromTypeConstructor_rect2i = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2I)
+        fromTypeConstructor_vector3 = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3)
+        fromTypeConstructor_vector3i = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3I)
+        fromTypeConstructor_transform2D = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM2D)
+        fromTypeConstructor_vector4 = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4)
+        fromTypeConstructor_vector4i = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4I)
+        fromTypeConstructor_plane = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PLANE)
+        fromTypeConstructor_quaternion = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_QUATERNION)
+        fromTypeConstructor_aabb = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_AABB)
+        fromTypeConstructor_basis = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_BASIS)
+        fromTypeConstructor_transform3D = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM3D)
+        fromTypeConstructor_projection = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PROJECTION)
+        fromTypeConstructor_color = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_COLOR)
+        fromTypeConstructor_stringName = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_STRING_NAME)
+        fromTypeConstructor_nodePath = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_NODE_PATH)
+        fromTypeConstructor_rid = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_RID)
+        fromTypeConstructor_object = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_OBJECT)
+        fromTypeConstructor_callable = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_CALLABLE)
+        fromTypeConstructor_signal = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_SIGNAL)
+        fromTypeConstructor_dictionary = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_DICTIONARY)
+        fromTypeConstructor_array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_ARRAY)
+        fromTypeConstructor_packedByteArray = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_BYTE_ARRAY)
+        fromTypeConstructor_packedInt32Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT32_ARRAY)
+        fromTypeConstructor_packedInt64Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT64_ARRAY)
+        fromTypeConstructor_packedFloat32Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
+        fromTypeConstructor_packedFloat64Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
+        fromTypeConstructor_packedStringArray = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_STRING_ARRAY)
+        fromTypeConstructor_packedVector2Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
+        fromTypeConstructor_packedVector3Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
+        fromTypeConstructor_packedColorArray = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_COLOR_ARRAY)
 
-        toTypeConstructor_bool = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_BOOL)
-        toTypeConstructor_int = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_INT)
-        toTypeConstructor_float = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_FLOAT)
-        toTypeConstructor_string = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_STRING)
-        toTypeConstructor_vector2 = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2)
-        toTypeConstructor_vector2i = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2I)
-        toTypeConstructor_rect2 = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2)
-        toTypeConstructor_rect2i = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2I)
-        toTypeConstructor_vector3 = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3)
-        toTypeConstructor_vector3i = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3I)
-        toTypeConstructor_transform2D = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM2D)
-        toTypeConstructor_vector4 = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4)
-        toTypeConstructor_vector4i = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4I)
-        toTypeConstructor_plane = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PLANE)
-        toTypeConstructor_quaternion = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_QUATERNION)
-        toTypeConstructor_aabb = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_AABB)
-        toTypeConstructor_basis = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_BASIS)
-        toTypeConstructor_transform3D = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM3D)
-        toTypeConstructor_projection = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PROJECTION)
-        toTypeConstructor_color = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_COLOR)
-        toTypeConstructor_stringName = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_STRING_NAME)
-        toTypeConstructor_nodePath = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_NODE_PATH)
-        toTypeConstructor_rid = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_RID)
-        toTypeConstructor_object = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_OBJECT)
-        toTypeConstructor_callable = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_CALLABLE)
-        toTypeConstructor_signal = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_SIGNAL)
-        toTypeConstructor_dictionary = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_DICTIONARY)
-        toTypeConstructor_array = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_ARRAY)
-        toTypeConstructor_packedByteArray = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_BYTE_ARRAY)
-        toTypeConstructor_packedInt32Array = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT32_ARRAY)
-        toTypeConstructor_packedInt64Array = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT64_ARRAY)
-        toTypeConstructor_packedFloat32Array = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
-        toTypeConstructor_packedFloat64Array = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
-        toTypeConstructor_packedStringArray = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_STRING_ARRAY)
-        toTypeConstructor_packedVector2Array = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
-        toTypeConstructor_packedVector3Array = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
-        toTypeConstructor_packedColorArray = GodotInterface.native.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_COLOR_ARRAY)
+        toTypeConstructor_bool = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_BOOL)
+        toTypeConstructor_int = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_INT)
+        toTypeConstructor_float = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_FLOAT)
+        toTypeConstructor_string = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_STRING)
+        toTypeConstructor_vector2 = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2)
+        toTypeConstructor_vector2i = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2I)
+        toTypeConstructor_rect2 = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2)
+        toTypeConstructor_rect2i = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2I)
+        toTypeConstructor_vector3 = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3)
+        toTypeConstructor_vector3i = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3I)
+        toTypeConstructor_transform2D = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM2D)
+        toTypeConstructor_vector4 = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4)
+        toTypeConstructor_vector4i = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4I)
+        toTypeConstructor_plane = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PLANE)
+        toTypeConstructor_quaternion = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_QUATERNION)
+        toTypeConstructor_aabb = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_AABB)
+        toTypeConstructor_basis = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_BASIS)
+        toTypeConstructor_transform3D = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM3D)
+        toTypeConstructor_projection = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PROJECTION)
+        toTypeConstructor_color = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_COLOR)
+        toTypeConstructor_stringName = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_STRING_NAME)
+        toTypeConstructor_nodePath = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_NODE_PATH)
+        toTypeConstructor_rid = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_RID)
+        toTypeConstructor_object = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_OBJECT)
+        toTypeConstructor_callable = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_CALLABLE)
+        toTypeConstructor_signal = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_SIGNAL)
+        toTypeConstructor_dictionary = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_DICTIONARY)
+        toTypeConstructor_array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_ARRAY)
+        toTypeConstructor_packedByteArray = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_BYTE_ARRAY)
+        toTypeConstructor_packedInt32Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT32_ARRAY)
+        toTypeConstructor_packedInt64Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT64_ARRAY)
+        toTypeConstructor_packedFloat32Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
+        toTypeConstructor_packedFloat64Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
+        toTypeConstructor_packedStringArray = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_STRING_ARRAY)
+        toTypeConstructor_packedVector2Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
+        toTypeConstructor_packedVector3Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
+        toTypeConstructor_packedColorArray = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_COLOR_ARRAY)
     }
 }
 
@@ -262,7 +264,7 @@ extension Variant: CustomDebugStringConvertible {
         
         self.withUnsafeNativePointer { nativeTypePtr in
             string.withUnsafeNativePointer { stringNativeTypePtr in
-                GodotInterface.native.variant_stringify(nativeTypePtr, stringNativeTypePtr)
+                GodotExtension.shared.interface.variant_stringify(nativeTypePtr, stringNativeTypePtr)
             }
         }
         
@@ -334,7 +336,9 @@ extension Variant {
             Variant.toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), nativeTypePtr)
             
             let finalPtr = withUnsafePointer(to: ObjectType.instanceBindingsCallbacks()) { bindingsPtr in
-                GodotInterface.native.object_get_instance_binding(instanceOwner.pointee, GodotInterface.token, bindingsPtr)
+                GodotExtension.shared.interface.object_get_instance_binding(
+                    instanceOwner.pointee, GodotExtension.shared.token, bindingsPtr
+                )
             }
             
             newValue = Unmanaged<ObjectType>.fromOpaque(finalPtr!).takeUnretainedValue()

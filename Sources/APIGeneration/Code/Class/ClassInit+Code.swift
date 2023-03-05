@@ -21,7 +21,7 @@ extension ExtensionApi.Class {
 """
 var nativeObjectPtr: GDNativeObjectPtr!
 Self.lastDerivedGodotClassName().withUnsafeNativePointer { namePtr in
-    nativeObjectPtr = GodotInterface.native.classdb_construct_object(namePtr)!
+    nativeObjectPtr = GodotExtension.shared.interface.classdb_construct_object(namePtr)!
 }
 
 self.nativeObjectPtr = nativeObjectPtr
@@ -30,7 +30,7 @@ let className = StringName(swiftString: .init(describing: Self.self))
 if className != Self.lastDerivedGodotClassName() {
     self.withUnsafeNativePointer { ptr in
         className.withUnsafeNativePointer { classNamePtr in
-            GodotInterface.native.object_set_instance(ptr, classNamePtr, Unmanaged.passRetained(self).toOpaque())
+            GodotExtension.shared.interface.object_set_instance(ptr, classNamePtr, Unmanaged.passRetained(self).toOpaque())
         }
     }
 }
@@ -53,7 +53,7 @@ if className != Self.lastDerivedGodotClassName() {
                 
                 If("unreference()") {
                     Property("self").pointerAccess(type: name, mutability: .constMutablePointer) { pointerName in
-                        "GodotInterface.native.mem_free(\(pointerName))"
+                        "GodotExtension.shared.interface.mem_free(\(pointerName))"
                     }
                 }
             }

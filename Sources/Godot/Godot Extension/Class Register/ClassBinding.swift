@@ -1,6 +1,5 @@
 import Foundation
 import GodotExtensionHeaders
-import Godot
 
 final class ClassBinding {
     

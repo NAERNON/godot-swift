@@ -7,9 +7,9 @@ func retreiveObject<T>(ofType type: T.Type, from ptr: GDNativeObjectPtr?) -> T? 
     }
     
     return withUnsafePointer(to: T.instanceBindingsCallbacks()) { callbacksPointer in
-        let opaque = GodotInterface.native.object_get_instance_binding(
+        let opaque = GodotExtension.shared.interface.object_get_instance_binding(
             ptr,
-            GodotInterface.token,
+            GodotExtension.shared.token,
             callbacksPointer)
         
         return Unmanaged<T>.fromOpaque(opaque!).takeUnretainedValue()

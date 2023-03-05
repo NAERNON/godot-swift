@@ -40,7 +40,7 @@ if isExtentionClass() {
         return Unmanaged.passRetained(\(name.code())(nativeObjectPtr: instance!)).toOpaque()
     } free_callback: { token, instance, bindings in
         Unmanaged<\(name.code())>.fromOpaque(instance!).takeRetainedValue().withUnsafeNativePointer { __ptr_self in
-            GodotInterface.native.mem_free(__ptr_self)
+            GodotExtension.shared.interface.mem_free(__ptr_self)
         }
     } reference_callback: { token, instance, reference in
         return 1

@@ -40,11 +40,7 @@ duplicate its value.
         
         Func(name: "withUnsafeNativePointer", parameters: .named("body", type: "(GDNativeTypePtr) -> ()", label: .hidden)) {
             "opaque.withUnsafeMutableRawPointer(body)"
-        }
-        .public()
-        .documentation {
-            "Calls a closure with a native type pointer of the underlying object. Should only be called by the `GodotLibrary`."
-        }
+        }.internal()
         
         Func(name: "opaqueIsZero", returnType: "Bool") {
             "opaque.isZero()"

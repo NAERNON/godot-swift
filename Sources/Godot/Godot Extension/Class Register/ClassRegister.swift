@@ -1,25 +1,14 @@
 import Foundation
 import GodotExtensionHeaders
-import Godot
 
 #warning("METHOD_FLAGS_DEFAULT from the json file.")
 private let METHOD_FLAGS_DEFAULT: UInt32 = 24
 
-public final class ClassDataBase {
+public final class ClassRegister {
     
     // MARK: Properties
     
-    internal static let main = ClassDataBase()
-    internal var interfacePtr: UnsafePointer<GDNativeInterface>?
-    internal var libraryPtr: GDNativeExtensionClassLibraryPtr!
-    
-    private var interface: GDNativeInterface {
-        guard let interfacePtr else {
-            fatalError("No interface pointer provided for the class data base.")
-        }
-        
-        return interfacePtr.pointee
-    }
+    internal static let shared = ClassRegister()
     
     private var currentLevel: GDNativeInitializationLevel?
     private var classNameToClassBinding = [StringName : ClassBinding]()
@@ -47,8 +36,8 @@ public final class ClassDataBase {
             let classBinding = classNameToClassBinding.removeValue(forKey: className)!
             
             classBinding.name.withUnsafeNativePointer { namePtr in
-                interface.classdb_unregister_extension_class(
-                    libraryPtr,
+                GodotExtension.shared.interface.classdb_unregister_extension_class(
+                    GodotExtension.shared.libraryPtr,
                     namePtr
                 )
             }
@@ -108,7 +97,7 @@ public final class ClassDataBase {
                 return 1
             },
             get_property_list_func: { a, b in
-                fatalError()
+                return nil
             },
             free_property_list_func: { _, _ in },
             property_can_revert_func: { _, _ in while true {} },
@@ -119,7 +108,7 @@ public final class ClassDataBase {
             unreference_func: nil,
             create_instance_func: createInstanceFunction, // This one is mandatory.
             free_instance_func: freeInstanceFunction, // This one is mandatory.
-            get_virtual_func: { ClassDataBase.virtualFunc(fromUserDataPtr: $0, methodNamePtr: $1) },
+            get_virtual_func: { ClassRegister.virtualFunc(fromUserDataPtr: $0, methodNamePtr: $1) },
             get_rid_func: nil,
             class_userdata: Unmanaged.passUnretained(classBinding).toOpaque()
         )
@@ -127,7 +116,9 @@ public final class ClassDataBase {
         className.withUnsafeNativePointer { namePtr in
             parentClassName.withUnsafeNativePointer { parentNamePtr in
                 withUnsafePointer(to: godotClassInfo) { classInfoPtr in
-                    interface.classdb_register_extension_class(libraryPtr, namePtr, parentNamePtr, classInfoPtr)
+                    GodotExtension.shared.interface.classdb_register_extension_class(
+                        GodotExtension.shared.libraryPtr, namePtr, parentNamePtr, classInfoPtr
+                    )
                 }
             }
         }
@@ -155,14 +146,14 @@ public final class ClassDataBase {
         }
         
         let classBinding = Unmanaged<ClassBinding>.fromOpaque(userDataPtr).takeUnretainedValue()
-        let methodName = StringName.makeFromGodotExtension(methodNamePtr)
+        let methodName = StringName.makeFromPtr(methodNamePtr)
         
         return virtualFunc(fromClassBinding: classBinding, functionName: methodName)
     }
     
     private static func virtualFunc(fromClassBinding classBinding: ClassBinding,
                                     functionName: StringName) -> GDNativeExtensionClassCallVirtual? {
-        guard let classBinding = main.classNameToClassBinding[classBinding.name] else {
+        guard let classBinding = shared.classNameToClassBinding[classBinding.name] else {
             printGodotError("Class doesn't exist.")
             return nil
         }
@@ -188,5 +179,17 @@ public final class ClassDataBase {
         }
         
         return classBinding.appendVirtualFunc(name: name, call: call)
+    }
+}
+
+// MARK: - StringName extensions
+
+private extension StringName {
+    static func makeFromPtr(_ unsafeStringNamePtr: GDNativeConstStringNamePtr) -> StringName {
+        let string = StringName()
+        string.opaque.copyRaw(from: unsafeStringNamePtr)
+        
+        // We create the new string by calling the constructor to ensure copy of the data.
+        return StringName(string)
     }
 }

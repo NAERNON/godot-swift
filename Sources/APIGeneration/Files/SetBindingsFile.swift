@@ -17,7 +17,7 @@ struct SetBindingsFile: GeneratedFile {
         
         Space()
         
-        Extension("GodotInterface") {
+        Extension("GodotExtension") {
             Func(name: "setAllBuiltinStructsBindings") {
                 for builtinClass in builtinClasses {
                     "Godot." + builtinClass.name.code() + ".setInitBindings()"
@@ -28,7 +28,7 @@ struct SetBindingsFile: GeneratedFile {
                 for builtinClass in builtinClasses {
                     "Godot." + builtinClass.name.code() + ".setFunctionBindings()"
                 }
-            }.static()
+            }
             
             Space()
             
@@ -36,7 +36,7 @@ struct SetBindingsFile: GeneratedFile {
                 for `class` in classes {
                     "Godot." + `class`.name.code() + ".setFunctionBindings()"
                 }
-            }.static()
+            }
         }.internal()
     }
 }

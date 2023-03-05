@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "Godot",
-            targets: ["Godot", "GodotExtension", "GodotExtensionHeaders"]),
+            targets: ["Godot", "GodotExtensionHeaders"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "1.0.0")),
@@ -25,10 +25,6 @@ let package = Package(
         .target(
             name: "Godot",
             dependencies: ["GodotExtensionHeaders"]
-        ),
-        .target(
-            name: "GodotExtension",
-            dependencies: ["GodotExtensionHeaders", "Godot"]
         ),
         
         // MARK: Utils targets

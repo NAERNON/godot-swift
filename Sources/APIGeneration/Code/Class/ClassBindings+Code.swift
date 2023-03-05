@@ -65,7 +65,7 @@ extension ExtensionApi.Class {
                         Property("_method_name").assign("\"\(method.name)\"")
                         Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
                             Property(method.ptrName)
-                                .assign("GodotInterface.native.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
+                                .assign("GodotExtension.shared.interface.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
                         }
                     }
                 }
@@ -75,7 +75,6 @@ extension ExtensionApi.Class {
     
     @CodeBuilder
     private func setVirtualFunctionBindingsFunctionCode() -> some Code {
-#warning("Set internal and move GodotExtension to Godot ?")
         Func(name: "setVirtualFunctionCalls", parameters: .named(
             "body",
             type: "(StringName, GDNativeExtensionClassCallVirtual) -> Void",
@@ -100,8 +99,8 @@ extension ExtensionApi.Class {
             }
         }
         .class()
-        .public()
         .override(!isRootClass)
+        .internal()
         .documentation {
             "Sets all the virtual function bindings used to communicate with Godot."
         }
