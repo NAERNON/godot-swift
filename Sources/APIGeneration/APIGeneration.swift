@@ -41,12 +41,17 @@ struct APIGeneration: ParsableCommand {
         
         let godotFiles = gododFiles(fromApi: extensionApi, buildConfiguration: buildConfiguration)
         
-        var printedText: String = ""
+        print("Generating files...")
+        let generationStart = Date()
+        
         for (index, file) in godotFiles.enumerated() {
-            print(String(repeating: " ", count: printedText.count), terminator: "\r")
-            printedText = "[\(index+1)/\(godotFiles.count)] Generating file \(file.name())"
-            print(printedText, terminator: "\r")
-            fflush(stdout)
+            let printedText = "[\(index+1)/\(godotFiles.count)] Generating \(file.name())"
+            print("\u{1B}[K" + printedText, terminator: "\r")
+            if index < godotFiles.count-1 {
+                fflush(stdout)
+            } else {
+                print("")
+            }
             
             try save(file: file,
                      codeFormatter: codeFormatter,
@@ -54,10 +59,9 @@ struct APIGeneration: ParsableCommand {
                      atURL: generatedFolderURL)
         }
         
-        print(String(repeating: " ", count: printedText.count), terminator: "\r")
-        fflush(stdout)
+        let generationDuration = Date.now.timeIntervalSince(generationStart)
         
-        print("All \(godotFiles.count) files generated!")
+        print("Files generated! (\(String(format: "%.2f", generationDuration))s)")
     }
     
     // MARK: Save file
