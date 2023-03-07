@@ -6,7 +6,7 @@ extension ExtensionApi.BuiltinClass {
     func opaqueCode() -> some Code {
         Stack {
             replaceOpaqueValueCode()
-            nativePtrCode()
+            extensionPtrCode()
         }
     }
     
@@ -35,10 +35,10 @@ duplicate its value.
     }
     
     @CodeBuilder
-    private func nativePtrCode() -> some Code {
+    private func extensionPtrCode() -> some Code {
         Var("opaque").typed("Opaque").privateSet()
         
-        Func(name: "withUnsafeNativePointer", parameters: .named("body", type: "(GDExtensionTypePtr) -> ()", label: .hidden)) {
+        Func(name: "withUnsafeExtensionPointer", parameters: .named("body", type: "(GDExtensionTypePtr) -> ()", label: .hidden)) {
             "opaque.withUnsafeMutableRawPointer(body)"
         }.internal()
         

@@ -22,8 +22,8 @@ public struct TypedArray<Element> where Element: TypedVariantTransformable {
         self.underlyingArray = array
     }
     
-    internal func withUnsafeNativePointer(_ body: (GDExtensionTypePtr) -> ()) {
-        underlyingArray.withUnsafeNativePointer(body)
+    internal func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> ()) {
+        underlyingArray.withUnsafeExtensionPointer(body)
     }
 }
 

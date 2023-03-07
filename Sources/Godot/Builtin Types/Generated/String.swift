@@ -8,9 +8,9 @@ extension String {
     public init(swiftString: Swift.String) {
         self.init()
         
-        withUnsafeNativePointer { nativePtr in
+        withUnsafeExtensionPointer { extensionPtr in
             swiftString.withCString { cString in
-                GodotExtension.shared.interface.string_new_with_utf8_chars(nativePtr, cString)
+                GodotExtension.shared.interface.string_new_with_utf8_chars(extensionPtr, cString)
             }
         }
     }

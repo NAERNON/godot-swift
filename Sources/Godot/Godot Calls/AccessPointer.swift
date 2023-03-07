@@ -9,17 +9,17 @@ func withUnsafeGodotAccessPointer<T>(to value: T, body: (GDExtensionConstObjectP
 
 func withUnsafeGodotAccessPointer<T>(to value: T, body: (GDExtensionConstObjectPtr?) -> Void)
 where T : GodotPointerAccessible {
-    value.withUnsafeNativePointer { body($0) }
+    value.withUnsafeExtensionPointer { body($0) }
 }
 
 func withUnsafeGodotAccessPointer<T>(to value: T!, body: (GDExtensionConstObjectPtr?) -> Void)
 where T : GodotPointerAccessible {
-    value.withUnsafeNativePointer { body($0) }
+    value.withUnsafeExtensionPointer { body($0) }
 }
 
 func withUnsafeGodotAccessPointer(to value: Object?, body: (GDExtensionConstObjectPtr?) -> Void) {
     if let value {
-        value.withUnsafeNativePointer { body($0) }
+        value.withUnsafeExtensionPointer { body($0) }
     } else {
         body(nil)
     }
@@ -33,17 +33,17 @@ func withUnsafeGodotMutableAccessPointer<T>(to value: inout T, body: (GDExtensio
 
 func withUnsafeGodotMutableAccessPointer<T>(to value: inout T, body: (GDExtensionObjectPtr?) -> Void)
 where T : GodotPointerAccessible {
-    value.withUnsafeNativePointer { body($0) }
+    value.withUnsafeExtensionPointer { body($0) }
 }
 
 func withUnsafeGodotMutableAccessPointer<T>(to value: inout T!, body: (GDExtensionObjectPtr?) -> Void)
 where T : GodotPointerAccessible {
-    value.withUnsafeNativePointer { body($0) }
+    value.withUnsafeExtensionPointer { body($0) }
 }
 
 func withUnsafeGodotMutableAccessPointer(to value: inout Object?, body: (GDExtensionObjectPtr?) -> Void) {
     if let value {
-        value.withUnsafeNativePointer { body($0) }
+        value.withUnsafeExtensionPointer { body($0) }
     } else {
         body(nil)
     }
@@ -57,17 +57,17 @@ func withUnsafeGodotMutableConstAccessPointer<T>(to value: T, body: (GDExtension
 
 func withUnsafeGodotMutableConstAccessPointer<T>(to value: T, body: (GDExtensionObjectPtr?) -> Void)
 where T : GodotPointerAccessible {
-    value.withUnsafeNativePointer { body($0) }
+    value.withUnsafeExtensionPointer { body($0) }
 }
 
 func withUnsafeGodotMutableConstAccessPointer<T>(to value: T!, body: (GDExtensionObjectPtr?) -> Void)
 where T : GodotPointerAccessible {
-    value.withUnsafeNativePointer { body($0) }
+    value.withUnsafeExtensionPointer { body($0) }
 }
 
 func withUnsafeGodotMutableConstAccessPointer(to value: Object?, body: (GDExtensionObjectPtr?) -> Void) {
     if let value {
-        value.withUnsafeNativePointer { body($0) }
+        value.withUnsafeExtensionPointer { body($0) }
     } else {
         body(nil)
     }
@@ -91,7 +91,7 @@ func withUnsafeGodotAccessVarargsPointer(to value: some Collection<Variant>, bod
 // MARK: - GodotPointerAccessible
 
 protocol GodotPointerAccessible {
-    func withUnsafeNativePointer(_ body: (GDExtensionTypePtr) -> Void)
+    func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> Void)
 }
 
 extension Array: GodotPointerAccessible {}
@@ -117,7 +117,7 @@ extension TypedArray: GodotPointerAccessible {}
 extension Variant: GodotPointerAccessible {}
 
 extension Opaque: GodotPointerAccessible {
-    func withUnsafeNativePointer(_ body: (GDExtensionTypePtr) -> Void) {
+    func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> Void) {
         withUnsafeMutableRawPointer { body($0) }
     }
 }

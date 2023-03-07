@@ -12,7 +12,7 @@ public final class GodotExtension {
     
     public private(set) var isSetUp = false
     
-    /// The pointer to the Godot native interface.
+    /// The pointer to the Godot extension interface.
     private(set) var interfacePtr: UnsafePointer<GDExtensionInterface>!
     private(set) var libraryPtr: GDExtensionClassLibraryPtr?
     private(set) var interface: GDExtensionInterface!

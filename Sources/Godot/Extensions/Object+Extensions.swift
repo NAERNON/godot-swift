@@ -2,8 +2,8 @@ import Foundation
 import GodotExtensionHeaders
 
 extension Object {
-    public func withUnsafeNativePointer(_ body: (UnsafeMutableRawPointer) -> ()) {
-        body(nativeObjectPtr)
+    public func withUnsafeExtensionPointer(_ body: (UnsafeMutableRawPointer) -> ()) {
+        body(extensionObjectPtr)
     }
 }
 

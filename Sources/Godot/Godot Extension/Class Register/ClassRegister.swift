@@ -35,7 +35,7 @@ public final class ClassRegister {
         for className in classesToUnregister {
             let classBinding = classNameToClassBinding.removeValue(forKey: className)!
             
-            classBinding.name.withUnsafeNativePointer { namePtr in
+            classBinding.name.withUnsafeExtensionPointer { namePtr in
                 GodotExtension.shared.interface.classdb_unregister_extension_class(
                     GodotExtension.shared.libraryPtr,
                     namePtr
@@ -50,7 +50,7 @@ public final class ClassRegister {
         let instance = Class()
         var objectPtr: GDExtensionObjectPtr!
         
-        instance.withUnsafeNativePointer { ptr in
+        instance.withUnsafeExtensionPointer { ptr in
             objectPtr = ptr
         }
         
@@ -113,8 +113,8 @@ public final class ClassRegister {
             class_userdata: Unmanaged.passUnretained(classBinding).toOpaque()
         )
         
-        className.withUnsafeNativePointer { namePtr in
-            parentClassName.withUnsafeNativePointer { parentNamePtr in
+        className.withUnsafeExtensionPointer { namePtr in
+            parentClassName.withUnsafeExtensionPointer { parentNamePtr in
                 withUnsafePointer(to: godotClassInfo) { classInfoPtr in
                     GodotExtension.shared.interface.classdb_register_extension_class(
                         GodotExtension.shared.libraryPtr, namePtr, parentNamePtr, classInfoPtr

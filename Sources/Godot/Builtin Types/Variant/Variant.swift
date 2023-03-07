@@ -8,14 +8,14 @@ public struct Variant {
     
     /// Creates a new `Variant` as a `nil` variant.
     public init() {
-        withUnsafeNativePointer { nativeTypePtr in
-            GodotExtension.shared.interface.variant_new_nil(nativeTypePtr)
+        withUnsafeExtensionPointer { extensionTypePtr in
+            GodotExtension.shared.interface.variant_new_nil(extensionTypePtr)
         }
     }
     
-    internal init(nativeVariantPtr: GDExtensionVariantPtr) {
-        withUnsafeNativePointer { nativeTypePtr in
-            GodotExtension.shared.interface.variant_new_copy(nativeTypePtr, nativeVariantPtr)
+    internal init(extensionVariantPtr: GDExtensionVariantPtr) {
+        withUnsafeExtensionPointer { extensionTypePtr in
+            GodotExtension.shared.interface.variant_new_copy(extensionTypePtr, extensionVariantPtr)
         }
     }
     
@@ -34,26 +34,26 @@ public struct Variant {
     // MARK: - Functions
     
     public var type: ValueType {
-        var nativeVariantType: GDExtensionVariantType!
+        var extensionVariantType: GDExtensionVariantType!
         
-        withUnsafeNativePointer { nativeTypePtr in
-            nativeVariantType = GodotExtension.shared.interface.variant_get_type(nativeTypePtr)
+        withUnsafeExtensionPointer { extensionTypePtr in
+            extensionVariantType = GodotExtension.shared.interface.variant_get_type(extensionTypePtr)
         }
         
-        return ValueType(godotType: nativeVariantType)
+        return ValueType(godotType: extensionVariantType)
     }
     
     fileprivate func evaluate(other: Variant, `operator`: Operator) -> Variant? {
         var isValid: GDExtensionBool = 0
         let returnVariant = Variant()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            other.withUnsafeNativePointer { otherNativeTypePtr in
-                returnVariant.withUnsafeNativePointer { returnNativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            other.withUnsafeExtensionPointer { otherNativeTypePtr in
+                returnVariant.withUnsafeExtensionPointer { returnNativeTypePtr in
                     withUnsafeMutablePointer(to: &isValid) { validPtr in
                         GodotExtension.shared.interface.variant_evaluate(
                             `operator`.godotOperator,
-                            nativeTypePtr,
+                            extensionTypePtr,
                             otherNativeTypePtr,
                             returnNativeTypePtr,
                             validPtr
@@ -73,8 +73,8 @@ public struct Variant {
     public var hashValue: Int {
         var result: GDExtensionInt = 0
         
-        withUnsafeNativePointer { nativeTypePtr in
-            result = GodotExtension.shared.interface.variant_hash(nativeTypePtr)
+        withUnsafeExtensionPointer { extensionTypePtr in
+            result = GodotExtension.shared.interface.variant_hash(extensionTypePtr)
         }
         
         return Int(result)
@@ -162,8 +162,8 @@ public struct Variant {
         .init(size: Variant.opaqueSize)
     }()
     
-    /// Calls a closure with a native type pointer of the underlying object. Should only be called by the `GodotLibrary`.
-    internal func withUnsafeNativePointer(_ body: (GDExtensionTypePtr) -> ()) {
+    /// Calls a closure with an extension type pointer of the underlying object. Should only be called by the `GodotLibrary`.
+    internal func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> ()) {
         opaque.withUnsafeMutableRawPointer(body)
     }
     
@@ -262,9 +262,9 @@ extension Variant: CustomDebugStringConvertible {
     public var debugDescription: Swift.String {
         let string = String()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            string.withUnsafeNativePointer { stringNativeTypePtr in
-                GodotExtension.shared.interface.variant_stringify(nativeTypePtr, stringNativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            string.withUnsafeExtensionPointer { stringNativeTypePtr in
+                GodotExtension.shared.interface.variant_stringify(extensionTypePtr, stringNativeTypePtr)
             }
         }
         
@@ -332,8 +332,8 @@ extension Variant {
         var newValue: ObjectType!
         let instanceOwner = UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity: 1)
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            Variant.toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            Variant.toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), extensionTypePtr)
             
             let finalPtr = withUnsafePointer(to: ObjectType.instanceBindingsCallbacks()) { bindingsPtr in
                 GodotExtension.shared.interface.object_get_instance_binding(
@@ -357,9 +357,9 @@ extension Variant {
     public var uncheckedBoolValue: Bool {
         var newValue = UInt8()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_bool(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_bool(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -373,9 +373,9 @@ extension Variant {
     public var uncheckedIntValue: Int {
         var newValue = Int()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -389,9 +389,9 @@ extension Variant {
     public var uncheckedDoubleValue: Double {
         var newValue = Double()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -405,9 +405,9 @@ extension Variant {
     public var uncheckedStringValue: String {
         let newValue = String()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_string(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_string(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -421,9 +421,9 @@ extension Variant {
     public var uncheckedVector2Value: Vector2 {
         var newValue = Vector2()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector2(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_vector2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -437,9 +437,9 @@ extension Variant {
     public var uncheckedVector2iValue: Vector2i {
         var newValue = Vector2i()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector2i(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_vector2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -453,9 +453,9 @@ extension Variant {
     public var uncheckedRect2Value: Rect2 {
         var newValue = Rect2()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_rect2(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_rect2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -469,9 +469,9 @@ extension Variant {
     public var uncheckedRect2iValue: Rect2i {
         var newValue = Rect2i()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_rect2i(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_rect2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -485,9 +485,9 @@ extension Variant {
     public var uncheckedVector3Value: Vector3 {
         var newValue = Vector3()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector3(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_vector3(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -501,9 +501,9 @@ extension Variant {
     public var uncheckedVector3iValue: Vector3i {
         var newValue = Vector3i()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector3i(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_vector3i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -517,9 +517,9 @@ extension Variant {
     public var uncheckedTransform2DValue: Transform2D {
         var newValue = Transform2D()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_transform2D(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_transform2D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -533,9 +533,9 @@ extension Variant {
     public var uncheckedVector4Value: Vector4 {
         var newValue = Vector4()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector4(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_vector4(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -549,9 +549,9 @@ extension Variant {
     public var uncheckedVector4iValue: Vector4i {
         var newValue = Vector4i()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector4i(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_vector4i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -565,9 +565,9 @@ extension Variant {
     public var uncheckedPlaneValue: Plane {
         var newValue = Plane()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_plane(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_plane(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -581,9 +581,9 @@ extension Variant {
     public var uncheckedQuaternionValue: Quaternion {
         var newValue = Quaternion()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_quaternion(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_quaternion(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -597,9 +597,9 @@ extension Variant {
     public var uncheckedAABBValue: AABB {
         var newValue = AABB()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_aabb(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_aabb(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -613,9 +613,9 @@ extension Variant {
     public var uncheckedBasisValue: Basis {
         var newValue = Basis()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_basis(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_basis(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -629,9 +629,9 @@ extension Variant {
     public var uncheckedTransform3DValue: Transform3D {
         var newValue = Transform3D()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_transform3D(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_transform3D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -645,9 +645,9 @@ extension Variant {
     public var uncheckedProjectionValue: Projection {
         var newValue = Projection()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_projection(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_projection(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -661,9 +661,9 @@ extension Variant {
     public var uncheckedColorValue: Color {
         var newValue = Color()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
+        self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_color(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+                Variant.toTypeConstructor_color(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -677,9 +677,9 @@ extension Variant {
     public var uncheckedStringNameValue: StringName {
         let newValue = StringName()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_stringName(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_stringName(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -693,9 +693,9 @@ extension Variant {
     public var uncheckedNodePathValue: NodePath {
         let newValue = NodePath()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_nodePath(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_nodePath(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -709,9 +709,9 @@ extension Variant {
     public var uncheckedRIDValue: RID {
         let newValue = RID()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_rid(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_rid(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -725,9 +725,9 @@ extension Variant {
     public var uncheckedCallableValue: Callable {
         let newValue = Callable()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_callable(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_callable(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -741,9 +741,9 @@ extension Variant {
     public var uncheckedSignalValue: Signal {
         let newValue = Signal()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_signal(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_signal(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -757,9 +757,9 @@ extension Variant {
     public var uncheckedDictionaryValue: Dictionary {
         let newValue = Dictionary()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_dictionary(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_dictionary(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -773,9 +773,9 @@ extension Variant {
     public var uncheckedArrayValue: Array {
         let newValue = Array()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_array(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -789,9 +789,9 @@ extension Variant {
     public var uncheckedPackedByteArrayValue: PackedByteArray {
         let newValue = PackedByteArray()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedByteArray(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_packedByteArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -805,9 +805,9 @@ extension Variant {
     public var uncheckedPackedInt32ArrayValue: PackedInt32Array {
         let newValue = PackedInt32Array()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedInt32Array(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_packedInt32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -821,9 +821,9 @@ extension Variant {
     public var uncheckedPackedInt64ArrayValue: PackedInt64Array {
         let newValue = PackedInt64Array()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedInt64Array(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_packedInt64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -837,9 +837,9 @@ extension Variant {
     public var uncheckedPackedFloat32ArrayValue: PackedFloat32Array {
         let newValue = PackedFloat32Array()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedFloat32Array(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_packedFloat32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -853,9 +853,9 @@ extension Variant {
     public var uncheckedPackedFloat64ArrayValue: PackedFloat64Array {
         let newValue = PackedFloat64Array()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedFloat64Array(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_packedFloat64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -869,9 +869,9 @@ extension Variant {
     public var uncheckedPackedStringArrayValue: PackedStringArray {
         let newValue = PackedStringArray()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedStringArray(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_packedStringArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -885,9 +885,9 @@ extension Variant {
     public var uncheckedPackedVector2ArrayValue: PackedVector2Array {
         let newValue = PackedVector2Array()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedVector2Array(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_packedVector2Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -901,9 +901,9 @@ extension Variant {
     public var uncheckedPackedVector3ArrayValue: PackedVector3Array {
         let newValue = PackedVector3Array()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedVector3Array(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_packedVector3Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -917,9 +917,9 @@ extension Variant {
     public var uncheckedPackedColorArrayValue: PackedColorArray {
         let newValue = PackedColorArray()
         
-        self.withUnsafeNativePointer { nativeTypePtr in
-            newValue.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedColorArray(UnsafeMutableRawPointer(otherNativeTypePtr), nativeTypePtr)
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.toTypeConstructor_packedColorArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -934,9 +934,9 @@ extension Bool: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_bool(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_bool(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -952,9 +952,9 @@ extension Int: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_int(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -970,9 +970,9 @@ extension Double: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_float(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1012,9 +1012,9 @@ extension String: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_string(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_string(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1030,9 +1030,9 @@ extension Vector2: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector2(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_vector2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1048,9 +1048,9 @@ extension Vector2i: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector2i(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_vector2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1066,9 +1066,9 @@ extension Rect2: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_rect2(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_rect2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1084,9 +1084,9 @@ extension Rect2i: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_rect2i(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_rect2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1102,9 +1102,9 @@ extension Vector3: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector3(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_vector3(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1120,9 +1120,9 @@ extension Vector3i: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector3i(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_vector3i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1138,9 +1138,9 @@ extension Transform2D: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_transform2D(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_transform2D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1156,9 +1156,9 @@ extension Vector4: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector4(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_vector4(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1174,9 +1174,9 @@ extension Vector4i: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector4i(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_vector4i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1192,9 +1192,9 @@ extension Plane: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_plane(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_plane(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1210,9 +1210,9 @@ extension Quaternion: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_quaternion(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_quaternion(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1228,9 +1228,9 @@ extension AABB: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_aabb(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_aabb(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1246,9 +1246,9 @@ extension Basis: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_basis(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_basis(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1264,9 +1264,9 @@ extension Transform3D: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_transform3D(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_transform3D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1282,9 +1282,9 @@ extension Projection: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_projection(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_projection(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1300,9 +1300,9 @@ extension Color: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_color(nativeTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                Variant.fromTypeConstructor_color(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -1318,9 +1318,9 @@ extension StringName: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_stringName(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_stringName(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1336,9 +1336,9 @@ extension NodePath: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_nodePath(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_nodePath(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1354,9 +1354,9 @@ extension RID: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_rid(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_rid(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1372,10 +1372,10 @@ extension Object: TypedVariantTransformable {
 
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
                 withUnsafePointer(to: otherNativeTypePtr) { pointer in
-                    Variant.fromTypeConstructor_object(nativeTypePtr, UnsafeMutableRawPointer(mutating: pointer))
+                    Variant.fromTypeConstructor_object(extensionTypePtr, UnsafeMutableRawPointer(mutating: pointer))
                 }
             }
         }
@@ -1388,9 +1388,9 @@ extension Callable: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_callable(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_callable(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1406,9 +1406,9 @@ extension Signal: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_signal(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_signal(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1424,9 +1424,9 @@ extension Dictionary: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_dictionary(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_dictionary(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1442,9 +1442,9 @@ extension Array: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_array(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1460,9 +1460,9 @@ extension PackedByteArray: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedByteArray(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_packedByteArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1478,9 +1478,9 @@ extension PackedInt32Array: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedInt32Array(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_packedInt32Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1496,9 +1496,9 @@ extension PackedInt64Array: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedInt64Array(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_packedInt64Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1514,9 +1514,9 @@ extension PackedFloat32Array: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedFloat32Array(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_packedFloat32Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1532,9 +1532,9 @@ extension PackedFloat64Array: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedFloat64Array(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_packedFloat64Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1550,9 +1550,9 @@ extension PackedStringArray: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedStringArray(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_packedStringArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1568,9 +1568,9 @@ extension PackedVector2Array: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedVector2Array(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_packedVector2Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1586,9 +1586,9 @@ extension PackedVector3Array: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedVector3Array(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_packedVector3Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1604,9 +1604,9 @@ extension PackedColorArray: TypedVariantTransformable {
     
     public var variant: Variant {
         let variant = Variant()
-        variant.withUnsafeNativePointer { nativeTypePtr in
-            self.withUnsafeNativePointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedColorArray(nativeTypePtr, otherNativeTypePtr)
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+                Variant.fromTypeConstructor_packedColorArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant

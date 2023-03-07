@@ -7,7 +7,7 @@ extension ExtensionApi.Class {
         Mark("Inits", isSeparator: true)
         
         baseInitCode()
-        nativeObjectInitCode()
+        extensionObjectInitCode()
         variantInitCode()
         classNameFunctionCode()
     }
@@ -15,21 +15,21 @@ extension ExtensionApi.Class {
     @CodeBuilder
     private func baseInitCode() -> some Code {
         if isRootClass {
-            Let("nativeObjectPtr").typed("GDExtensionObjectPtr").internal()
+            Let("extensionObjectPtr").typed("GDExtensionObjectPtr").internal()
             
             Init() { #warning("Check another way to know if the class is an extension class.")
 """
-var nativeObjectPtr: GDExtensionObjectPtr!
-Self.lastDerivedGodotClassName().withUnsafeNativePointer { namePtr in
-    nativeObjectPtr = GodotExtension.shared.interface.classdb_construct_object(namePtr)!
+var extensionObjectPtr: GDExtensionObjectPtr!
+Self.lastDerivedGodotClassName().withUnsafeExtensionPointer { namePtr in
+    extensionObjectPtr = GodotExtension.shared.interface.classdb_construct_object(namePtr)!
 }
 
-self.nativeObjectPtr = nativeObjectPtr
+self.extensionObjectPtr = extensionObjectPtr
 
 let className = StringName(swiftString: .init(describing: Self.self))
 if className != Self.lastDerivedGodotClassName() {
-    self.withUnsafeNativePointer { ptr in
-        className.withUnsafeNativePointer { classNamePtr in
+    self.withUnsafeExtensionPointer { ptr in
+        className.withUnsafeExtensionPointer { classNamePtr in
             GodotExtension.shared.interface.object_set_instance(ptr, classNamePtr, Unmanaged.passRetained(self).toOpaque())
         }
     }
@@ -65,18 +65,18 @@ if className != Self.lastDerivedGodotClassName() {
     }
     
     @CodeBuilder
-    private func nativeObjectInitCode() -> some Code {
+    private func extensionObjectInitCode() -> some Code {
         if isRootClass {
-            Init(parameters: .named("nativeObjectPtr", type: "GDExtensionObjectPtr")) {
-                Property("nativeObjectPtr").selfDefined().assign("nativeObjectPtr")
+            Init(parameters: .named("extensionObjectPtr", type: "GDExtensionObjectPtr")) {
+                Property("extensionObjectPtr").selfDefined().assign("extensionObjectPtr")
             }.internal()
         } else {
-            Init(parameters: .named("nativeObjectPtr", type: "GDExtensionObjectPtr")) {
+            Init(parameters: .named("extensionObjectPtr", type: "GDExtensionObjectPtr")) {
                 if isRefCountedRootClass {
                     Property("_isReferenced").assign("false")
                 }
                 
-                "super.init(nativeObjectPtr: nativeObjectPtr)"
+                "super.init(extensionObjectPtr: extensionObjectPtr)"
             }.override().internal()
         }
     }
@@ -85,7 +85,7 @@ if className != Self.lastDerivedGodotClassName() {
     private func variantInitCode() -> some Code {
         Init(parameters: .named("typedVariant", type: "Variant")) {
             if isRootClass {
-                Property("nativeObjectPtr").assign("typedVariant.uncheckedObjectValue(ofType: Self.self).nativeObjectPtr")
+                Property("extensionObjectPtr").assign("typedVariant.uncheckedObjectValue(ofType: Self.self).extensionObjectPtr")
             } else {
                 if isRefCountedRootClass {
                     Property("_isReferenced").assign("false")

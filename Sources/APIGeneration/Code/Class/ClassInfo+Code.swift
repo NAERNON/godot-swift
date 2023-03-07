@@ -5,7 +5,7 @@ extension ExtensionApi.Class {
     @CodeBuilder
     func isExtensionClassCode() -> some Code {
 #warning("Return true for all necessary classes")
-        Func(name: "isExtentionClass", returnType: "Bool") {
+        Func(name: "isExtensionClass", returnType: "Bool") {
             "false"
         }
         .class()
@@ -25,7 +25,7 @@ and all others should be.
     func bindingsCallbackCode() -> some Code {
         Func(name: "instanceBindingsCallbacks", returnType: "GDExtensionInstanceBindingCallbacks") {
 """
-if isExtentionClass() {
+if isExtensionClass() {
     // When the class is an extension class, we should not generate any binding.
     
     return GDExtensionInstanceBindingCallbacks { token, instance in
@@ -37,9 +37,9 @@ if isExtentionClass() {
     }
 } else {
     return GDExtensionInstanceBindingCallbacks { token, instance in
-        return Unmanaged.passRetained(\(name.code())(nativeObjectPtr: instance!)).toOpaque()
+        return Unmanaged.passRetained(\(name.code())(extensionObjectPtr: instance!)).toOpaque()
     } free_callback: { token, instance, bindings in
-        Unmanaged<\(name.code())>.fromOpaque(instance!).takeRetainedValue().withUnsafeNativePointer { __ptr_self in
+        Unmanaged<\(name.code())>.fromOpaque(instance!).takeRetainedValue().withUnsafeExtensionPointer { __ptr_self in
             GodotExtension.shared.interface.mem_free(__ptr_self)
         }
     } reference_callback: { token, instance, reference in
