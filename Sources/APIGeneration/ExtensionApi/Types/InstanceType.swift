@@ -319,6 +319,12 @@ extension InstanceType: Decodable {
     }
 }
 
+extension InstanceType: CustomDebugStringConvertible {
+    var debugDescription: String {
+        code(definedInside: nil)
+    }
+}
+
 // MARK: - StringType Extensions
 
 extension InstanceType.StringType {
