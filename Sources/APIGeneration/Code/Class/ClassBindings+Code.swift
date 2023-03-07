@@ -123,13 +123,21 @@ extension ExtensionApi.Class {
                     method.functionCallCode(
                         definedIndise: name,
                         breakLineOnArguments: true,
-                        withParameters: method.arguments?.enumerated().map { (index, _) in
-                            "functionArgument(fromArgs: args, at: \(index))"
+                        withParameters: method.arguments?.enumerated().map { (index, argument) in
+                            functionArgument(for: argument, at: index)
                         } ?? []
                     )
                 }
             }.indent()
             "})"
+        }
+    }
+    
+    private func functionArgument(for argument: ExtensionApi.Argument, at index: Int) -> String {
+        if argument.type.isGodotClassType {
+            return "functionObjectArgument(fromPointer: args[\(index)])"
+        } else {
+            return "functionArgument(fromPointer: args[\(index)])"
         }
     }
 }
