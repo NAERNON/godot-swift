@@ -16,36 +16,36 @@ extension ExtensionApi.BuiltinClass {
     private func bindingsPropertiesCode() -> some Code {
         Group {
             for constructor in constructors {
-                Var(constructor.godotConstructorPtrName).static().private().typed("GDNativePtrConstructor!")
+                Var(constructor.godotConstructorPtrName).static().private().typed("GDExtensionPtrConstructor!")
             }
             
             if hasDestructor {
-                Var(godotDestructorPtrName).static().private().typed("GDNativePtrDestructor!")
+                Var(godotDestructorPtrName).static().private().typed("GDExtensionPtrDestructor!")
             }
         }
         
         Group {
             if indexingReturnType != nil {
-                Var(godotIndexedSetterPtrName).static().private().typed("GDNativePtrIndexedSetter!")
-                Var(godotIndexedGetterPtrName).static().private().typed("GDNativePtrIndexedGetter!")
+                Var(godotIndexedSetterPtrName).static().private().typed("GDExtensionPtrIndexedSetter!")
+                Var(godotIndexedGetterPtrName).static().private().typed("GDExtensionPtrIndexedGetter!")
             }
             
             if isKeyed {
-                Var(godotKeyedSetterPtrName).static().private().typed("GDNativePtrKeyedSetter!")
-                Var(godotKeyedGetterPtrName).static().private().typed("GDNativePtrKeyedGetter!")
-                Var(godotKeyedCheckerPtrName).static().private().typed("GDNativePtrKeyedChecker!")
+                Var(godotKeyedSetterPtrName).static().private().typed("GDExtensionPtrKeyedSetter!")
+                Var(godotKeyedGetterPtrName).static().private().typed("GDExtensionPtrKeyedGetter!")
+                Var(godotKeyedCheckerPtrName).static().private().typed("GDExtensionPtrKeyedChecker!")
             }
             
             if let methods {
                 for method in methods {
                     Var(method.godotMethodPtrName)
-                        .static().private().typed("GDNativePtrBuiltInMethod!")
+                        .static().private().typed("GDExtensionPtrBuiltInMethod!")
                 }
             }
             
             for op in operators {
                 Var(op.godotOperatorPtrName)
-                    .static().private().typed("GDNativePtrOperatorEvaluator!")
+                    .static().private().typed("GDExtensionPtrOperatorEvaluator!")
             }
         }
     }

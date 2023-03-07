@@ -34,64 +34,64 @@ extension Variant {
 // MARK: - Godot operator
 
 extension Variant.Operator {
-    init(godotOperator: GDNativeVariantOperator) {
+    init(godotOperator: GDExtensionVariantOperator) {
         switch godotOperator {
-        case GDNATIVE_VARIANT_OP_EQUAL: self = .equal
-        case GDNATIVE_VARIANT_OP_NOT_EQUAL: self = .notEqual
-        case GDNATIVE_VARIANT_OP_LESS: self = .less
-        case GDNATIVE_VARIANT_OP_LESS_EQUAL: self = .lessEqual
-        case GDNATIVE_VARIANT_OP_GREATER: self = .greater
-        case GDNATIVE_VARIANT_OP_GREATER_EQUAL: self = .greaterEqual
-        case GDNATIVE_VARIANT_OP_ADD: self = .add
-        case GDNATIVE_VARIANT_OP_SUBTRACT: self = .subtract
-        case GDNATIVE_VARIANT_OP_MULTIPLY: self = .multiply
-        case GDNATIVE_VARIANT_OP_DIVIDE: self = .divide
-        case GDNATIVE_VARIANT_OP_NEGATE: self = .negate
-        case GDNATIVE_VARIANT_OP_POSITIVE: self = .positive
-        case GDNATIVE_VARIANT_OP_MODULE: self = .module
-        case GDNATIVE_VARIANT_OP_POWER: self = .power
-        case GDNATIVE_VARIANT_OP_SHIFT_LEFT: self = .shiftLeft
-        case GDNATIVE_VARIANT_OP_SHIFT_RIGHT: self = .shiftRight
-        case GDNATIVE_VARIANT_OP_BIT_AND: self = .bitAnd
-        case GDNATIVE_VARIANT_OP_BIT_OR: self = .bitOr
-        case GDNATIVE_VARIANT_OP_BIT_XOR: self = .bitXor
-        case GDNATIVE_VARIANT_OP_BIT_NEGATE: self = .bitNegate
-        case GDNATIVE_VARIANT_OP_AND: self = .and
-        case GDNATIVE_VARIANT_OP_OR: self = .or
-        case GDNATIVE_VARIANT_OP_XOR: self = .xor
-        case GDNATIVE_VARIANT_OP_NOT: self = .not
-        case GDNATIVE_VARIANT_OP_IN: self = .in
-        default: fatalError("Cannot retreive Variant operator from GDNativeVariantOperator")
+        case GDEXTENSION_VARIANT_OP_EQUAL: self = .equal
+        case GDEXTENSION_VARIANT_OP_NOT_EQUAL: self = .notEqual
+        case GDEXTENSION_VARIANT_OP_LESS: self = .less
+        case GDEXTENSION_VARIANT_OP_LESS_EQUAL: self = .lessEqual
+        case GDEXTENSION_VARIANT_OP_GREATER: self = .greater
+        case GDEXTENSION_VARIANT_OP_GREATER_EQUAL: self = .greaterEqual
+        case GDEXTENSION_VARIANT_OP_ADD: self = .add
+        case GDEXTENSION_VARIANT_OP_SUBTRACT: self = .subtract
+        case GDEXTENSION_VARIANT_OP_MULTIPLY: self = .multiply
+        case GDEXTENSION_VARIANT_OP_DIVIDE: self = .divide
+        case GDEXTENSION_VARIANT_OP_NEGATE: self = .negate
+        case GDEXTENSION_VARIANT_OP_POSITIVE: self = .positive
+        case GDEXTENSION_VARIANT_OP_MODULE: self = .module
+        case GDEXTENSION_VARIANT_OP_POWER: self = .power
+        case GDEXTENSION_VARIANT_OP_SHIFT_LEFT: self = .shiftLeft
+        case GDEXTENSION_VARIANT_OP_SHIFT_RIGHT: self = .shiftRight
+        case GDEXTENSION_VARIANT_OP_BIT_AND: self = .bitAnd
+        case GDEXTENSION_VARIANT_OP_BIT_OR: self = .bitOr
+        case GDEXTENSION_VARIANT_OP_BIT_XOR: self = .bitXor
+        case GDEXTENSION_VARIANT_OP_BIT_NEGATE: self = .bitNegate
+        case GDEXTENSION_VARIANT_OP_AND: self = .and
+        case GDEXTENSION_VARIANT_OP_OR: self = .or
+        case GDEXTENSION_VARIANT_OP_XOR: self = .xor
+        case GDEXTENSION_VARIANT_OP_NOT: self = .not
+        case GDEXTENSION_VARIANT_OP_IN: self = .in
+        default: fatalError("Cannot retreive Variant operator from GDExtensionVariantOperator")
         }
     }
     
-    var godotOperator: GDNativeVariantOperator {
+    var godotOperator: GDExtensionVariantOperator {
         switch self {
-        case .equal: return GDNATIVE_VARIANT_OP_EQUAL
-        case .notEqual: return GDNATIVE_VARIANT_OP_NOT_EQUAL
-        case .less: return GDNATIVE_VARIANT_OP_LESS
-        case .lessEqual: return GDNATIVE_VARIANT_OP_LESS_EQUAL
-        case .greater: return GDNATIVE_VARIANT_OP_GREATER
-        case .greaterEqual: return GDNATIVE_VARIANT_OP_GREATER_EQUAL
-        case .add: return GDNATIVE_VARIANT_OP_ADD
-        case .subtract: return GDNATIVE_VARIANT_OP_SUBTRACT
-        case .multiply: return GDNATIVE_VARIANT_OP_MULTIPLY
-        case .divide: return GDNATIVE_VARIANT_OP_DIVIDE
-        case .negate: return GDNATIVE_VARIANT_OP_NEGATE
-        case .positive: return GDNATIVE_VARIANT_OP_POSITIVE
-        case .module: return GDNATIVE_VARIANT_OP_MODULE
-        case .power: return GDNATIVE_VARIANT_OP_POWER
-        case .shiftLeft: return GDNATIVE_VARIANT_OP_SHIFT_LEFT
-        case .shiftRight: return GDNATIVE_VARIANT_OP_SHIFT_RIGHT
-        case .bitAnd: return GDNATIVE_VARIANT_OP_BIT_AND
-        case .bitOr: return GDNATIVE_VARIANT_OP_BIT_OR
-        case .bitXor: return GDNATIVE_VARIANT_OP_BIT_XOR
-        case .bitNegate: return GDNATIVE_VARIANT_OP_BIT_NEGATE
-        case .and: return GDNATIVE_VARIANT_OP_AND
-        case .or: return GDNATIVE_VARIANT_OP_OR
-        case .xor: return GDNATIVE_VARIANT_OP_XOR
-        case .not: return GDNATIVE_VARIANT_OP_NOT
-        case .in: return GDNATIVE_VARIANT_OP_IN
+        case .equal: return GDEXTENSION_VARIANT_OP_EQUAL
+        case .notEqual: return GDEXTENSION_VARIANT_OP_NOT_EQUAL
+        case .less: return GDEXTENSION_VARIANT_OP_LESS
+        case .lessEqual: return GDEXTENSION_VARIANT_OP_LESS_EQUAL
+        case .greater: return GDEXTENSION_VARIANT_OP_GREATER
+        case .greaterEqual: return GDEXTENSION_VARIANT_OP_GREATER_EQUAL
+        case .add: return GDEXTENSION_VARIANT_OP_ADD
+        case .subtract: return GDEXTENSION_VARIANT_OP_SUBTRACT
+        case .multiply: return GDEXTENSION_VARIANT_OP_MULTIPLY
+        case .divide: return GDEXTENSION_VARIANT_OP_DIVIDE
+        case .negate: return GDEXTENSION_VARIANT_OP_NEGATE
+        case .positive: return GDEXTENSION_VARIANT_OP_POSITIVE
+        case .module: return GDEXTENSION_VARIANT_OP_MODULE
+        case .power: return GDEXTENSION_VARIANT_OP_POWER
+        case .shiftLeft: return GDEXTENSION_VARIANT_OP_SHIFT_LEFT
+        case .shiftRight: return GDEXTENSION_VARIANT_OP_SHIFT_RIGHT
+        case .bitAnd: return GDEXTENSION_VARIANT_OP_BIT_AND
+        case .bitOr: return GDEXTENSION_VARIANT_OP_BIT_OR
+        case .bitXor: return GDEXTENSION_VARIANT_OP_BIT_XOR
+        case .bitNegate: return GDEXTENSION_VARIANT_OP_BIT_NEGATE
+        case .and: return GDEXTENSION_VARIANT_OP_AND
+        case .or: return GDEXTENSION_VARIANT_OP_OR
+        case .xor: return GDEXTENSION_VARIANT_OP_XOR
+        case .not: return GDEXTENSION_VARIANT_OP_NOT
+        case .in: return GDEXTENSION_VARIANT_OP_IN
         }
     }
 }

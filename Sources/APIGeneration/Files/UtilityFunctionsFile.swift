@@ -44,7 +44,7 @@ struct UtilityFunctionsFile: GeneratedFile {
             
             for function in functions {
                 Var(function.godotFunctionPtrName).static().fileprivate()
-                    .typed("GDNativePtrUtilityFunction!")
+                    .typed("GDExtensionPtrUtilityFunction!")
             }
         }.internal()
     }

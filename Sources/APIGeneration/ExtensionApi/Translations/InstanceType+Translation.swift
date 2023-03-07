@@ -44,7 +44,7 @@ extension InstanceType {
         if isEnumType || isBitfieldType {
             return InstanceType(swiftType: "Int")
         } else if isGodotClassType {
-            return InstanceType(swiftType: "GDNativeObjectPtr")
+            return InstanceType(swiftType: "GDExtensionObjectPtr")
         } else {
             return self
         }
@@ -60,7 +60,7 @@ extension InstanceType {
                 .assign("Int(0)")
         } else if isGodotClassType {
             Var(propertyName)
-                .typed("GDNativeObjectPtr!")
+                .typed("GDExtensionObjectPtr!")
         } else {
             Var(propertyName)
                 .assign(temporaryInitializerType.code(definedInside: insideType) + "()")

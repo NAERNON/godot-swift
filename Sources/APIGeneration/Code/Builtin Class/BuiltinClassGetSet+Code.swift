@@ -12,7 +12,7 @@ extension ExtensionApi.BuiltinClass {
             let indexingType = indexingReturnType.code(definedInside: name)
             
             Func(name: "_getValue",
-                 parameters: .named("index", type: "GDNativeInt", label: "at"),
+                 parameters: .named("index", type: "GDExtensionInt", label: "at"),
                  returnType: indexingType) {
                 Stack {
                     indexingReturnType.temporaryInitializerCode(propertyName: "__returnValue", definedInside: name)
@@ -30,7 +30,7 @@ extension ExtensionApi.BuiltinClass {
             
             Func(name: "_setValue",
                  parameters: [.named("value", type: indexingType, label: .hidden),
-                              .named("index", type: "GDNativeInt", label: "at")])
+                              .named("index", type: "GDExtensionInt", label: "at")])
             {
                 Stack {
                     if self.name.isBuiltinOpaqueValueType {

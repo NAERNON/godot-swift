@@ -4,7 +4,7 @@ import GodotExtensionHeaders
 ///
 /// Do not use `GodotExtension`, it should only be manipulated by Godot.
 public final class GodotExtension {
-    public typealias LevelCallback = (GDNativeInitializationLevel) -> Void
+    public typealias LevelCallback = (GDExtensionInitializationLevel) -> Void
     
     // MARK: Properties
     
@@ -13,15 +13,15 @@ public final class GodotExtension {
     public private(set) var isSetUp = false
     
     /// The pointer to the Godot native interface.
-    private(set) var interfacePtr: UnsafePointer<GDNativeInterface>!
-    private(set) var libraryPtr: GDNativeExtensionClassLibraryPtr?
-    private(set) var interface: GDNativeInterface!
+    private(set) var interfacePtr: UnsafePointer<GDExtensionInterface>!
+    private(set) var libraryPtr: GDExtensionClassLibraryPtr?
+    private(set) var interface: GDExtensionInterface!
     private(set) var token: UnsafeMutableRawPointer!
     
     fileprivate var initializerCallback: LevelCallback!
     fileprivate var terminatorCallback: LevelCallback!
     
-    private var minimumInitializationLevel = GDNATIVE_INITIALIZATION_CORE
+    private var minimumInitializationLevel = GDEXTENSION_INITIALIZATION_CORE
     
     /// The shared class register used to register extension classes.
     public let classRegister = ClassRegister.shared
@@ -32,12 +32,12 @@ public final class GodotExtension {
     
     // MARK: Configure
     
-    public func setUp(withInterfacePtr interfacePtr: UnsafePointer<GDNativeInterface>,
-                      libraryPtr: GDNativeExtensionClassLibraryPtr,
-                      initializationPtr: UnsafeMutablePointer<GDNativeInitialization>,
+    public func setUp(withInterfacePtr interfacePtr: UnsafePointer<GDExtensionInterface>,
+                      libraryPtr: GDExtensionClassLibraryPtr,
+                      initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>,
                       initializerCallback: @escaping LevelCallback,
                       terminatorCallback: @escaping LevelCallback,
-                      minimumInitializationLevel: GDNativeInitializationLevel) -> GDNativeBool {
+                      minimumInitializationLevel: GDExtensionInitializationLevel) -> GDExtensionBool {
         guard !isSetUp else {
             return 0
         }
@@ -68,8 +68,8 @@ public final class GodotExtension {
 
 // MARK: - Levels
 
-private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDNativeInitializationLevel) {
-    if level == GDNATIVE_INITIALIZATION_SCENE {
+private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtensionInitializationLevel) {
+    if level == GDEXTENSION_INITIALIZATION_SCENE {
         GodotExtension.shared.registerGodotTypes()
     }
     
@@ -77,7 +77,7 @@ private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDNative
     GodotExtension.shared.classRegister.initialize(level: level)
 }
 
-private func deinitializeLevel(userData: UnsafeMutableRawPointer?, level: GDNativeInitializationLevel) {
+private func deinitializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtensionInitializationLevel) {
     GodotExtension.shared.classRegister.deinitialize(level: level)
     
     GodotExtension.shared.terminatorCallback(level)

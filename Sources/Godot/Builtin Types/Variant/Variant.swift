@@ -13,7 +13,7 @@ public struct Variant {
         }
     }
     
-    internal init(nativeVariantPtr: GDNativeVariantPtr) {
+    internal init(nativeVariantPtr: GDExtensionVariantPtr) {
         withUnsafeNativePointer { nativeTypePtr in
             GodotExtension.shared.interface.variant_new_copy(nativeTypePtr, nativeVariantPtr)
         }
@@ -34,7 +34,7 @@ public struct Variant {
     // MARK: - Functions
     
     public var type: ValueType {
-        var nativeVariantType: GDNativeVariantType!
+        var nativeVariantType: GDExtensionVariantType!
         
         withUnsafeNativePointer { nativeTypePtr in
             nativeVariantType = GodotExtension.shared.interface.variant_get_type(nativeTypePtr)
@@ -44,7 +44,7 @@ public struct Variant {
     }
     
     fileprivate func evaluate(other: Variant, `operator`: Operator) -> Variant? {
-        var isValid: GDNativeBool = 0
+        var isValid: GDExtensionBool = 0
         let returnVariant = Variant()
         
         self.withUnsafeNativePointer { nativeTypePtr in
@@ -71,7 +71,7 @@ public struct Variant {
     }
     
     public var hashValue: Int {
-        var result: GDNativeInt = 0
+        var result: GDExtensionInt = 0
         
         withUnsafeNativePointer { nativeTypePtr in
             result = GodotExtension.shared.interface.variant_hash(nativeTypePtr)
@@ -82,88 +82,88 @@ public struct Variant {
     
     // MARK: - Bindings
     
-    fileprivate static var fromTypeConstructor_bool: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_int: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_float: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_string: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_vector2: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_vector2i: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_rect2: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_rect2i: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_vector3: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_vector3i: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_transform2D: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_vector4: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_vector4i: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_plane: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_quaternion: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_aabb: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_basis: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_transform3D: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_projection: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_color: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_stringName: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_nodePath: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_rid: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_object: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_callable: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_signal: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_dictionary: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_array: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_packedByteArray: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_packedInt32Array: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_packedInt64Array: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_packedFloat32Array: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_packedFloat64Array: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_packedStringArray: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_packedVector2Array: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_packedVector3Array: GDNativeVariantFromTypeConstructorFunc!
-    fileprivate static var fromTypeConstructor_packedColorArray: GDNativeVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_bool: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_int: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_float: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_string: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_vector2: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_vector2i: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_rect2: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_rect2i: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_vector3: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_vector3i: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_transform2D: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_vector4: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_vector4i: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_plane: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_quaternion: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_aabb: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_basis: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_transform3D: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_projection: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_color: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_stringName: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_nodePath: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_rid: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_object: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_callable: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_signal: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_dictionary: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_array: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_packedByteArray: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_packedInt32Array: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_packedInt64Array: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_packedFloat32Array: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_packedFloat64Array: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_packedStringArray: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_packedVector2Array: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_packedVector3Array: GDExtensionVariantFromTypeConstructorFunc!
+    fileprivate static var fromTypeConstructor_packedColorArray: GDExtensionVariantFromTypeConstructorFunc!
     
-    fileprivate static var toTypeConstructor_bool: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_int: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_float: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_string: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_vector2: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_vector2i: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_rect2: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_rect2i: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_vector3: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_vector3i: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_transform2D: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_vector4: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_vector4i: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_plane: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_quaternion: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_aabb: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_basis: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_transform3D: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_projection: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_color: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_stringName: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_nodePath: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_rid: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_object: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_callable: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_signal: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_dictionary: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_array: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_packedByteArray: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_packedInt32Array: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_packedInt64Array: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_packedFloat32Array: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_packedFloat64Array: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_packedStringArray: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_packedVector2Array: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_packedVector3Array: GDNativeTypeFromVariantConstructorFunc!
-    fileprivate static var toTypeConstructor_packedColorArray: GDNativeTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_bool: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_int: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_float: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_string: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_vector2: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_vector2i: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_rect2: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_rect2i: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_vector3: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_vector3i: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_transform2D: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_vector4: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_vector4i: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_plane: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_quaternion: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_aabb: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_basis: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_transform3D: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_projection: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_color: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_stringName: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_nodePath: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_rid: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_object: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_callable: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_signal: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_dictionary: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_array: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_packedByteArray: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_packedInt32Array: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_packedInt64Array: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_packedFloat32Array: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_packedFloat64Array: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_packedStringArray: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_packedVector2Array: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_packedVector3Array: GDExtensionTypeFromVariantConstructorFunc!
+    fileprivate static var toTypeConstructor_packedColorArray: GDExtensionTypeFromVariantConstructorFunc!
     
     private var opaque: VariantOpaque = {
         .init(size: Variant.opaqueSize)
     }()
     
     /// Calls a closure with a native type pointer of the underlying object. Should only be called by the `GodotLibrary`.
-    internal func withUnsafeNativePointer(_ body: (GDNativeTypePtr) -> ()) {
+    internal func withUnsafeNativePointer(_ body: (GDExtensionTypePtr) -> ()) {
         opaque.withUnsafeMutableRawPointer(body)
     }
     
@@ -178,81 +178,81 @@ public struct Variant {
     internal static func setInitBindings() {
         let interface = GodotExtension.shared.interface!
         
-        fromTypeConstructor_bool = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_BOOL)
-        fromTypeConstructor_int = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_INT)
-        fromTypeConstructor_float = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_FLOAT)
-        fromTypeConstructor_string = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_STRING)
-        fromTypeConstructor_vector2 = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2)
-        fromTypeConstructor_vector2i = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2I)
-        fromTypeConstructor_rect2 = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2)
-        fromTypeConstructor_rect2i = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2I)
-        fromTypeConstructor_vector3 = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3)
-        fromTypeConstructor_vector3i = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3I)
-        fromTypeConstructor_transform2D = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM2D)
-        fromTypeConstructor_vector4 = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4)
-        fromTypeConstructor_vector4i = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4I)
-        fromTypeConstructor_plane = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PLANE)
-        fromTypeConstructor_quaternion = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_QUATERNION)
-        fromTypeConstructor_aabb = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_AABB)
-        fromTypeConstructor_basis = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_BASIS)
-        fromTypeConstructor_transform3D = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM3D)
-        fromTypeConstructor_projection = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PROJECTION)
-        fromTypeConstructor_color = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_COLOR)
-        fromTypeConstructor_stringName = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_STRING_NAME)
-        fromTypeConstructor_nodePath = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_NODE_PATH)
-        fromTypeConstructor_rid = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_RID)
-        fromTypeConstructor_object = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_OBJECT)
-        fromTypeConstructor_callable = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_CALLABLE)
-        fromTypeConstructor_signal = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_SIGNAL)
-        fromTypeConstructor_dictionary = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_DICTIONARY)
-        fromTypeConstructor_array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_ARRAY)
-        fromTypeConstructor_packedByteArray = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_BYTE_ARRAY)
-        fromTypeConstructor_packedInt32Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT32_ARRAY)
-        fromTypeConstructor_packedInt64Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT64_ARRAY)
-        fromTypeConstructor_packedFloat32Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
-        fromTypeConstructor_packedFloat64Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
-        fromTypeConstructor_packedStringArray = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_STRING_ARRAY)
-        fromTypeConstructor_packedVector2Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
-        fromTypeConstructor_packedVector3Array = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
-        fromTypeConstructor_packedColorArray = interface.get_variant_from_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_COLOR_ARRAY)
+        fromTypeConstructor_bool = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)
+        fromTypeConstructor_int = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)
+        fromTypeConstructor_float = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)
+        fromTypeConstructor_string = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)
+        fromTypeConstructor_vector2 = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)
+        fromTypeConstructor_vector2i = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)
+        fromTypeConstructor_rect2 = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)
+        fromTypeConstructor_rect2i = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)
+        fromTypeConstructor_vector3 = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)
+        fromTypeConstructor_vector3i = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)
+        fromTypeConstructor_transform2D = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)
+        fromTypeConstructor_vector4 = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)
+        fromTypeConstructor_vector4i = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)
+        fromTypeConstructor_plane = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)
+        fromTypeConstructor_quaternion = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)
+        fromTypeConstructor_aabb = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)
+        fromTypeConstructor_basis = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)
+        fromTypeConstructor_transform3D = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)
+        fromTypeConstructor_projection = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)
+        fromTypeConstructor_color = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)
+        fromTypeConstructor_stringName = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)
+        fromTypeConstructor_nodePath = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)
+        fromTypeConstructor_rid = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)
+        fromTypeConstructor_object = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)
+        fromTypeConstructor_callable = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)
+        fromTypeConstructor_signal = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)
+        fromTypeConstructor_dictionary = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)
+        fromTypeConstructor_array = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)
+        fromTypeConstructor_packedByteArray = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)
+        fromTypeConstructor_packedInt32Array = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)
+        fromTypeConstructor_packedInt64Array = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)
+        fromTypeConstructor_packedFloat32Array = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
+        fromTypeConstructor_packedFloat64Array = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
+        fromTypeConstructor_packedStringArray = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)
+        fromTypeConstructor_packedVector2Array = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
+        fromTypeConstructor_packedVector3Array = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
+        fromTypeConstructor_packedColorArray = interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)
 
-        toTypeConstructor_bool = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_BOOL)
-        toTypeConstructor_int = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_INT)
-        toTypeConstructor_float = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_FLOAT)
-        toTypeConstructor_string = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_STRING)
-        toTypeConstructor_vector2 = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2)
-        toTypeConstructor_vector2i = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR2I)
-        toTypeConstructor_rect2 = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2)
-        toTypeConstructor_rect2i = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_RECT2I)
-        toTypeConstructor_vector3 = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3)
-        toTypeConstructor_vector3i = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR3I)
-        toTypeConstructor_transform2D = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM2D)
-        toTypeConstructor_vector4 = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4)
-        toTypeConstructor_vector4i = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_VECTOR4I)
-        toTypeConstructor_plane = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PLANE)
-        toTypeConstructor_quaternion = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_QUATERNION)
-        toTypeConstructor_aabb = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_AABB)
-        toTypeConstructor_basis = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_BASIS)
-        toTypeConstructor_transform3D = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_TRANSFORM3D)
-        toTypeConstructor_projection = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PROJECTION)
-        toTypeConstructor_color = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_COLOR)
-        toTypeConstructor_stringName = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_STRING_NAME)
-        toTypeConstructor_nodePath = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_NODE_PATH)
-        toTypeConstructor_rid = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_RID)
-        toTypeConstructor_object = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_OBJECT)
-        toTypeConstructor_callable = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_CALLABLE)
-        toTypeConstructor_signal = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_SIGNAL)
-        toTypeConstructor_dictionary = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_DICTIONARY)
-        toTypeConstructor_array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_ARRAY)
-        toTypeConstructor_packedByteArray = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_BYTE_ARRAY)
-        toTypeConstructor_packedInt32Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT32_ARRAY)
-        toTypeConstructor_packedInt64Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_INT64_ARRAY)
-        toTypeConstructor_packedFloat32Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
-        toTypeConstructor_packedFloat64Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
-        toTypeConstructor_packedStringArray = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_STRING_ARRAY)
-        toTypeConstructor_packedVector2Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
-        toTypeConstructor_packedVector3Array = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
-        toTypeConstructor_packedColorArray = interface.get_variant_to_type_constructor(GDNATIVE_VARIANT_TYPE_PACKED_COLOR_ARRAY)
+        toTypeConstructor_bool = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)
+        toTypeConstructor_int = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)
+        toTypeConstructor_float = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)
+        toTypeConstructor_string = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)
+        toTypeConstructor_vector2 = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)
+        toTypeConstructor_vector2i = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)
+        toTypeConstructor_rect2 = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)
+        toTypeConstructor_rect2i = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)
+        toTypeConstructor_vector3 = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)
+        toTypeConstructor_vector3i = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)
+        toTypeConstructor_transform2D = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)
+        toTypeConstructor_vector4 = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)
+        toTypeConstructor_vector4i = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)
+        toTypeConstructor_plane = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)
+        toTypeConstructor_quaternion = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)
+        toTypeConstructor_aabb = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)
+        toTypeConstructor_basis = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)
+        toTypeConstructor_transform3D = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)
+        toTypeConstructor_projection = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)
+        toTypeConstructor_color = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)
+        toTypeConstructor_stringName = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)
+        toTypeConstructor_nodePath = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)
+        toTypeConstructor_rid = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)
+        toTypeConstructor_object = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)
+        toTypeConstructor_callable = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)
+        toTypeConstructor_signal = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)
+        toTypeConstructor_dictionary = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)
+        toTypeConstructor_array = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)
+        toTypeConstructor_packedByteArray = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)
+        toTypeConstructor_packedInt32Array = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)
+        toTypeConstructor_packedInt64Array = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)
+        toTypeConstructor_packedFloat32Array = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
+        toTypeConstructor_packedFloat64Array = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
+        toTypeConstructor_packedStringArray = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)
+        toTypeConstructor_packedVector2Array = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
+        toTypeConstructor_packedVector3Array = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
+        toTypeConstructor_packedColorArray = interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)
     }
 }
 

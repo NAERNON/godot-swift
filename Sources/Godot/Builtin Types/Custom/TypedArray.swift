@@ -22,7 +22,7 @@ public struct TypedArray<Element> where Element: TypedVariantTransformable {
         self.underlyingArray = array
     }
     
-    internal func withUnsafeNativePointer(_ body: (GDNativeTypePtr) -> ()) {
+    internal func withUnsafeNativePointer(_ body: (GDExtensionTypePtr) -> ()) {
         underlyingArray.withUnsafeNativePointer(body)
     }
 }

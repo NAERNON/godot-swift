@@ -15,11 +15,11 @@ extension ExtensionApi.Class {
     @CodeBuilder
     private func baseInitCode() -> some Code {
         if isRootClass {
-            Let("nativeObjectPtr").typed("GDNativeObjectPtr").internal()
+            Let("nativeObjectPtr").typed("GDExtensionObjectPtr").internal()
             
             Init() { #warning("Check another way to know if the class is an extension class.")
 """
-var nativeObjectPtr: GDNativeObjectPtr!
+var nativeObjectPtr: GDExtensionObjectPtr!
 Self.lastDerivedGodotClassName().withUnsafeNativePointer { namePtr in
     nativeObjectPtr = GodotExtension.shared.interface.classdb_construct_object(namePtr)!
 }
@@ -67,11 +67,11 @@ if className != Self.lastDerivedGodotClassName() {
     @CodeBuilder
     private func nativeObjectInitCode() -> some Code {
         if isRootClass {
-            Init(parameters: .named("nativeObjectPtr", type: "GDNativeObjectPtr")) {
+            Init(parameters: .named("nativeObjectPtr", type: "GDExtensionObjectPtr")) {
                 Property("nativeObjectPtr").selfDefined().assign("nativeObjectPtr")
             }.internal()
         } else {
-            Init(parameters: .named("nativeObjectPtr", type: "GDNativeObjectPtr")) {
+            Init(parameters: .named("nativeObjectPtr", type: "GDExtensionObjectPtr")) {
                 if isRefCountedRootClass {
                     Property("_isReferenced").assign("false")
                 }

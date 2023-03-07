@@ -23,12 +23,12 @@ and all others should be.
     
     @CodeBuilder
     func bindingsCallbackCode() -> some Code {
-        Func(name: "instanceBindingsCallbacks", returnType: "GDNativeInstanceBindingCallbacks") {
+        Func(name: "instanceBindingsCallbacks", returnType: "GDExtensionInstanceBindingCallbacks") {
 """
 if isExtentionClass() {
     // When the class is an extension class, we should not generate any binding.
     
-    return GDNativeInstanceBindingCallbacks { token, instance in
+    return GDExtensionInstanceBindingCallbacks { token, instance in
         return nil
     } free_callback: { token, instance, bindings in
         // Nothing to do
@@ -36,7 +36,7 @@ if isExtentionClass() {
         return 1
     }
 } else {
-    return GDNativeInstanceBindingCallbacks { token, instance in
+    return GDExtensionInstanceBindingCallbacks { token, instance in
         return Unmanaged.passRetained(\(name.code())(nativeObjectPtr: instance!)).toOpaque()
     } free_callback: { token, instance, bindings in
         Unmanaged<\(name.code())>.fromOpaque(instance!).takeRetainedValue().withUnsafeNativePointer { __ptr_self in

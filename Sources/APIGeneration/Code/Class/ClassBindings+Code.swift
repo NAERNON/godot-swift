@@ -18,7 +18,7 @@ extension ExtensionApi.Class {
                 for method in methods {
                     if let methodPtrName = method.godotMethodPtrName {
                         Var(methodPtrName)
-                            .static().private().typed("GDNativeMethodBindPtr!")
+                            .static().private().typed("GDExtensionMethodBindPtr!")
                     }
                 }
             }
@@ -77,7 +77,7 @@ extension ExtensionApi.Class {
     private func setVirtualFunctionBindingsFunctionCode() -> some Code {
         Func(name: "setVirtualFunctionCalls", parameters: .named(
             "body",
-            type: "(StringName, GDNativeExtensionClassCallVirtual) -> Void",
+            type: "(StringName, GDExtensionClassCallVirtual) -> Void",
             label: .hidden
         )) {
             if !isRootClass {

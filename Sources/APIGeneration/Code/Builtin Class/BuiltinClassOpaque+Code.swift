@@ -38,7 +38,7 @@ duplicate its value.
     private func nativePtrCode() -> some Code {
         Var("opaque").typed("Opaque").privateSet()
         
-        Func(name: "withUnsafeNativePointer", parameters: .named("body", type: "(GDNativeTypePtr) -> ()", label: .hidden)) {
+        Func(name: "withUnsafeNativePointer", parameters: .named("body", type: "(GDExtensionTypePtr) -> ()", label: .hidden)) {
             "opaque.withUnsafeMutableRawPointer(body)"
         }.internal()
         

@@ -10,7 +10,7 @@ public final class ClassRegister {
     
     internal static let shared = ClassRegister()
     
-    private var currentLevel: GDNativeInitializationLevel?
+    private var currentLevel: GDExtensionInitializationLevel?
     private var classNameToClassBinding = [StringName : ClassBinding]()
     
     // MARK: Init
@@ -19,11 +19,11 @@ public final class ClassRegister {
     
     // MARK: Initialize & deinitialize level
     
-    func initialize(level: GDNativeInitializationLevel) {
+    func initialize(level: GDExtensionInitializationLevel) {
         currentLevel = level
     }
     
-    func deinitialize(level: GDNativeInitializationLevel) {
+    func deinitialize(level: GDExtensionInitializationLevel) {
         let classesToUnregister = classNameToClassBinding.compactMap { (name, binding) in
             if binding.level == level {
                 return name
@@ -46,9 +46,9 @@ public final class ClassRegister {
     
     // MARK: Class registration
     
-    public func instantiateClass<Class>(ofType type: Class.Type) -> GDNativeObjectPtr where Class : Object {
+    public func instantiateClass<Class>(ofType type: Class.Type) -> GDExtensionObjectPtr where Class : Object {
         let instance = Class()
-        var objectPtr: GDNativeObjectPtr!
+        var objectPtr: GDExtensionObjectPtr!
         
         instance.withUnsafeNativePointer { ptr in
             objectPtr = ptr
@@ -61,9 +61,9 @@ public final class ClassRegister {
     public func registerClass<Class, Parent>(
         ofType classType: Class.Type,
         parentType: Parent.Type,
-        toStringFunction: GDNativeExtensionClassToString,
-        createInstanceFunction: GDNativeExtensionClassCreateInstance,
-        freeInstanceFunction: GDNativeExtensionClassFreeInstance
+        toStringFunction: GDExtensionClassToString,
+        createInstanceFunction: GDExtensionClassCreateInstance,
+        freeInstanceFunction: GDExtensionClassFreeInstance
     ) -> Bool
     where Class : Object,
           Parent : Object
@@ -87,7 +87,7 @@ public final class ClassRegister {
         classNameToClassBinding[className] = classBinding
         
 #warning("Fill all the blanks")
-        var godotClassInfo = GDNativeExtensionClassCreationInfo(
+        var godotClassInfo = GDExtensionClassCreationInfo(
             is_virtual: 0,
             is_abstract: 0,
             set_func: { _, _, _ in
@@ -134,7 +134,7 @@ public final class ClassRegister {
     // MARK: Virtual functions
     
     private static func virtualFunc(fromUserDataPtr userDataPtr: UnsafeMutableRawPointer?,
-                                    methodNamePtr: GDNativeConstStringNamePtr?) -> GDNativeExtensionClassCallVirtual? {
+                                    methodNamePtr: GDExtensionConstStringNamePtr?) -> GDExtensionClassCallVirtual? {
         guard let userDataPtr else {
             printGodotError("No class data pointer provided.")
             return nil
@@ -152,7 +152,7 @@ public final class ClassRegister {
     }
     
     private static func virtualFunc(fromClassBinding classBinding: ClassBinding,
-                                    functionName: StringName) -> GDNativeExtensionClassCallVirtual? {
+                                    functionName: StringName) -> GDExtensionClassCallVirtual? {
         guard let classBinding = shared.classNameToClassBinding[classBinding.name] else {
             printGodotError("Class doesn't exist.")
             return nil
@@ -169,7 +169,7 @@ public final class ClassRegister {
     @discardableResult
     private func registerVirtualFunc<Class>(ofType type: Class.Type,
                                             name: StringName,
-                                            call: GDNativeExtensionClassCallVirtual) -> Bool
+                                            call: GDExtensionClassCallVirtual) -> Bool
     where Class : Object {
         let className = StringName(swiftString: .init(describing: type))
         
@@ -185,7 +185,7 @@ public final class ClassRegister {
 // MARK: - StringName extensions
 
 private extension StringName {
-    static func makeFromPtr(_ unsafeStringNamePtr: GDNativeConstStringNamePtr) -> StringName {
+    static func makeFromPtr(_ unsafeStringNamePtr: GDExtensionConstStringNamePtr) -> StringName {
         let string = StringName()
         string.opaque.copyRaw(from: unsafeStringNamePtr)
         

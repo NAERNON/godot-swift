@@ -15,7 +15,7 @@ extension ExtensionApi.BuiltinClass.Operator {
     }
     
     var godotVariantOperation: String? {
-        "GDNATIVE_VARIANT_OP_" + NamingConvention.camel.convert(name.operationName!, to: .snake).uppercased()
+        "GDEXTENSION_VARIANT_OP_" + NamingConvention.camel.convert(name.operationName!, to: .snake).uppercased()
     }
     
     var godotOperatorPtrName: String {
