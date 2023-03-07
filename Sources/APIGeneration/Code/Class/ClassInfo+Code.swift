@@ -58,7 +58,7 @@ if isExtentionClass() {
         }
         .class()
         .override(!isRootClass)
-        .public()
+        .internal()
         .documentation {
             "Returns the last derived Godot class name."
         }
