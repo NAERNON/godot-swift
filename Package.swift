@@ -20,7 +20,8 @@ let package = Package(
         
         .target(
             name: "GodotExtensionHeaders",
-            dependencies: []
+            dependencies: [],
+            publicHeadersPath: ""
         ),
         .target(
             name: "Godot",

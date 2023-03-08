@@ -18,7 +18,6 @@ struct APIGeneration: ParsableCommand {
         let apiJsonFileURL = currentURL
             .appendingPathComponent("Sources")
             .appendingPathComponent("GodotExtensionHeaders")
-            .appendingPathComponent("include")
             .appendingPathComponent("extension_api.json")
         let generatedFolderURL = currentURL
             .appendingPathComponent("Sources")
