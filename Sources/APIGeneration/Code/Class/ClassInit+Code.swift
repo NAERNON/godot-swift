@@ -37,20 +37,12 @@ if className != Self.lastDerivedGodotClassName() {
 """
             }.required().public()
         } else if isRefCountedRootClass {
-            Var("_isReferenced").private().typed("Bool")
-            
-            
             Init() {
-                Property("_isReferenced").assign("true")
                 "super.init()"
                 "_ = initRef()"
             }.required().public()
             
             Deinit {
-                Guard(condition: "_isReferenced") {
-                    Return()
-                }
-                
                 If("unreference()") {
                     Property("self").pointerAccess(type: name, mutability: .constMutablePointer) { pointerName in
                         "GodotExtension.shared.interface.mem_free(\(pointerName))"
@@ -72,11 +64,10 @@ if className != Self.lastDerivedGodotClassName() {
             }.internal()
         } else {
             Init(parameters: .named("extensionObjectPtr", type: "GDExtensionObjectPtr")) {
-                if isRefCountedRootClass {
-                    Property("_isReferenced").assign("false")
-                }
-                
                 "super.init(extensionObjectPtr: extensionObjectPtr)"
+                if isRefCountedRootClass {
+                    "_ = initRef()"
+                }
             }.override().internal()
         }
     }
@@ -87,10 +78,10 @@ if className != Self.lastDerivedGodotClassName() {
             if isRootClass {
                 Property("extensionObjectPtr").assign("typedVariant.uncheckedObjectValue(ofType: Self.self).extensionObjectPtr")
             } else {
-                if isRefCountedRootClass {
-                    Property("_isReferenced").assign("false")
-                }
                 "super.init(typedVariant: typedVariant)"
+                if isRefCountedRootClass {
+                    "_ = initRef()"
+                }
             }
         }.required().public()
     }
