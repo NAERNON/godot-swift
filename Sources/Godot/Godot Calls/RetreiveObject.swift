@@ -10,7 +10,8 @@ func retreiveObject<T>(ofType type: T.Type, from ptr: GDExtensionObjectPtr?) -> 
         let opaque = GodotExtension.shared.interface.object_get_instance_binding(
             ptr,
             GodotExtension.shared.token,
-            callbacksPointer)
+            callbacksPointer
+        )
         
         return Unmanaged<T>.fromOpaque(opaque!).takeUnretainedValue()
     }
