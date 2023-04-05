@@ -158,7 +158,7 @@ public struct Variant {
     fileprivate static var toTypeConstructor_packedVector3Array: GDExtensionTypeFromVariantConstructorFunc!
     fileprivate static var toTypeConstructor_packedColorArray: GDExtensionTypeFromVariantConstructorFunc!
     
-    private var opaque: VariantOpaque = {
+    private(set) var opaque: VariantOpaque = {
         .init(size: Variant.opaqueSize)
     }()
     

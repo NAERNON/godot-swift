@@ -2,26 +2,26 @@ import Foundation
 import GodotExtensionHeaders
 
 internal class BaseOpaque: CustomDebugStringConvertible {
-    private let data: UnsafeMutablePointer<UInt8>
+    let rawData: UnsafeMutablePointer<UInt8>
     let size: Int
     
     init(size: Int) {
-        self.data = .allocate(capacity: size)
+        self.rawData = .allocate(capacity: size)
         self.size = size
     }
     
     deinit {
-        data.deinitialize(count: size)
-        data.deallocate()
+        rawData.deinitialize(count: size)
+        rawData.deallocate()
     }
     
     func withUnsafeMutableRawPointer(_ body: (UnsafeMutableRawPointer) -> ()) {
-        body(UnsafeMutableRawPointer(data))
+        body(UnsafeMutableRawPointer(rawData))
     }
     
     func isZero() -> Bool {
         for index in 0..<size {
-            if data[index] != 0 { return false }
+            if rawData[index] != 0 { return false }
         }
         return true
     }
@@ -29,14 +29,14 @@ internal class BaseOpaque: CustomDebugStringConvertible {
     func copyRaw(from pointer: UnsafeRawPointer) {
         let otherData = pointer.assumingMemoryBound(to: UInt8.self)
         for index in 0..<size {
-            data[index] = otherData[index]
+            rawData[index] = otherData[index]
         }
     }
     
     var debugDescription: Swift.String {
         var string = "["
         for index in 0..<size {
-            string += Swift.String(format: "%02X", data[index])
+            string += Swift.String(format: "%02X", rawData[index])
             if index < size-1 {
                 string += "|"
             }

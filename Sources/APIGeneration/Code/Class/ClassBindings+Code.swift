@@ -119,7 +119,7 @@ extension ExtensionApi.Class {
                 Let("instance")
                     .assign("Unmanaged<\(name.code())>.fromOpaque(instancePtr).takeUnretainedValue()")
                 
-                "instance.".suffix {
+                "let \(method.returnValue == nil ? "_" : "returnValue") = instance.".suffix {
                     method.functionCallCode(
                         definedIndise: name,
                         breakLineOnArguments: true,
@@ -127,6 +127,10 @@ extension ExtensionApi.Class {
                             functionArgument(for: argument, at: index)
                         } ?? []
                     )
+                }
+                
+                if method.returnValue != nil {
+                    "setReturnValue(returnValue, toPointer: returnPtr)"
                 }
             }.indent()
             "})"

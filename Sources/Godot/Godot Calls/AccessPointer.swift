@@ -8,12 +8,12 @@ func withUnsafeGodotAccessPointer<T>(to value: T, body: (GDExtensionConstObjectP
 }
 
 func withUnsafeGodotAccessPointer<T>(to value: T, body: (GDExtensionConstObjectPtr?) -> Void)
-where T : GodotPointerAccessible {
+where T : ExtensionPointerAccessible {
     value.withUnsafeExtensionPointer { body($0) }
 }
 
 func withUnsafeGodotAccessPointer<T>(to value: T!, body: (GDExtensionConstObjectPtr?) -> Void)
-where T : GodotPointerAccessible {
+where T : ExtensionPointerAccessible {
     value.withUnsafeExtensionPointer { body($0) }
 }
 
@@ -32,12 +32,12 @@ func withUnsafeGodotMutableAccessPointer<T>(to value: inout T, body: (GDExtensio
 }
 
 func withUnsafeGodotMutableAccessPointer<T>(to value: inout T, body: (GDExtensionObjectPtr?) -> Void)
-where T : GodotPointerAccessible {
+where T : ExtensionPointerAccessible {
     value.withUnsafeExtensionPointer { body($0) }
 }
 
 func withUnsafeGodotMutableAccessPointer<T>(to value: inout T!, body: (GDExtensionObjectPtr?) -> Void)
-where T : GodotPointerAccessible {
+where T : ExtensionPointerAccessible {
     value.withUnsafeExtensionPointer { body($0) }
 }
 
@@ -56,12 +56,12 @@ func withUnsafeGodotMutableConstAccessPointer<T>(to value: T, body: (GDExtension
 }
 
 func withUnsafeGodotMutableConstAccessPointer<T>(to value: T, body: (GDExtensionObjectPtr?) -> Void)
-where T : GodotPointerAccessible {
+where T : ExtensionPointerAccessible {
     value.withUnsafeExtensionPointer { body($0) }
 }
 
 func withUnsafeGodotMutableConstAccessPointer<T>(to value: T!, body: (GDExtensionObjectPtr?) -> Void)
-where T : GodotPointerAccessible {
+where T : ExtensionPointerAccessible {
     value.withUnsafeExtensionPointer { body($0) }
 }
 
@@ -87,39 +87,3 @@ func withUnsafeGodotAccessVarargsPointer(to value: some Collection<Variant>, bod
         }
     }
 }
-
-// MARK: - GodotPointerAccessible
-
-protocol GodotPointerAccessible {
-    func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> Void)
-}
-
-extension Array: GodotPointerAccessible {}
-extension Callable: GodotPointerAccessible {}
-extension Dictionary: GodotPointerAccessible {}
-extension NodePath: GodotPointerAccessible {}
-extension PackedByteArray: GodotPointerAccessible {}
-extension PackedColorArray: GodotPointerAccessible {}
-extension PackedFloat32Array: GodotPointerAccessible {}
-extension PackedFloat64Array: GodotPointerAccessible {}
-extension PackedInt32Array: GodotPointerAccessible {}
-extension PackedInt64Array: GodotPointerAccessible {}
-extension PackedStringArray: GodotPointerAccessible {}
-extension PackedVector2Array: GodotPointerAccessible {}
-extension PackedVector3Array: GodotPointerAccessible {}
-extension RID: GodotPointerAccessible {}
-extension Signal: GodotPointerAccessible {}
-extension String: GodotPointerAccessible {}
-extension StringName: GodotPointerAccessible {}
-
-extension TypedArray: GodotPointerAccessible {}
-
-extension Variant: GodotPointerAccessible {}
-
-extension Opaque: GodotPointerAccessible {
-    func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> Void) {
-        withUnsafeMutableRawPointer { body($0) }
-    }
-}
-
-extension Object: GodotPointerAccessible {}

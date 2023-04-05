@@ -25,6 +25,10 @@ public struct TypedArray<Element> where Element: TypedVariantTransformable {
     internal func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> ()) {
         underlyingArray.withUnsafeExtensionPointer(body)
     }
+    
+    internal var opaque: Opaque {
+        underlyingArray.opaque
+    }
 }
 
 // MARK: - Public initializers
