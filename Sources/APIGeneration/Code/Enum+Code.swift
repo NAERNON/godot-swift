@@ -10,7 +10,11 @@ extension ExtensionApi.Enum {
         if isBitfield == true {
             optionSetCode(forType: Int.self, definedInside: insideType)
         } else {
-            enumCode(forType: Int.self, definedInside: insideType)
+            if values.contains(where: { $0.value < 0 }) {
+                enumCode(forType: Int32.self, definedInside: insideType)
+            } else {
+                enumCode(forType: UInt32.self, definedInside: insideType)
+            }
         }
     }
     
