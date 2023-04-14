@@ -28,7 +28,7 @@ extension ExtensionApi.Class {
            !enums.isEmpty {
             Mark("Enums", isSeparator: true)
             
-            for `enum` in enums {
+            ForEach(enums) { `enum` in
                 `enum`.code(definedInside: name)
             }
         }
@@ -40,7 +40,7 @@ extension ExtensionApi.Class {
            !methods.isEmpty {
             Mark("Functions", isSeparator: true)
             
-            for method in methods {
+            ForEach(methods) { method in
                 method.code(type: name, accessControl: accessControl(for: method))
             }
         }

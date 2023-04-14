@@ -16,7 +16,7 @@ struct UtilityFunctionsFile: GeneratedFile {
         Space()
         
         Stack {
-            for function in functions {
+            ForEach(functions) { function in
                 function.code()
             }
             
@@ -31,7 +31,7 @@ struct UtilityFunctionsFile: GeneratedFile {
             Func(name: "setBindings") {
                 Var("_function_name").typed("StringName!").padding(.bottom)
                 
-                for function in functions {
+                ForEach(functions) { function in
                     Property("_function_name").assign("\"\(function.name.baseName)\"")
                     Property("_function_name").pointerAccess(type: .stringName, mutability: .mutable) { functionNamePointer in
                         Property(function.godotFunctionPtrName)
@@ -42,7 +42,7 @@ struct UtilityFunctionsFile: GeneratedFile {
             
             Space()
             
-            for function in functions {
+            ForEach(functions) { function in
                 Var(function.godotFunctionPtrName).static().fileprivate()
                     .typed("GDExtensionPtrUtilityFunction!")
             }

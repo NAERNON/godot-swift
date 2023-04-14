@@ -15,7 +15,7 @@ extension ExtensionApi.Class {
     private func bindingsPropertiesCode() -> some Code {
         if let methods {
             Group {
-                for method in methods {
+                ForEach(methods) { method in
                     if let methodPtrName = method.godotMethodPtrName {
                         Var(methodPtrName)
                             .static().private().typed("GDExtensionMethodBindPtr!")
@@ -60,7 +60,7 @@ extension ExtensionApi.Class {
             let classNamePointerName = classPointerNames[0]
             
             Stack {
-                for method in methodData {
+                ForEach(methodData) { method in
                     Group {
                         Property("_method_name").assign("\"\(method.name)\"")
                         Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
@@ -91,7 +91,7 @@ extension ExtensionApi.Class {
                     Stack {
                         Var("_method_name").typed("StringName!")
                         
-                        for method in virtualMethods {
+                        ForEach(virtualMethods) { method in
                             virtualFunctionCall(method)
                         }
                     }

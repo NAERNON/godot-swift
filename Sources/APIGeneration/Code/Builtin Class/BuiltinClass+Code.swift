@@ -42,7 +42,7 @@ extension ExtensionApi.BuiltinClass {
         if let enums,
            !enums.isEmpty {
             Mark("Enums", isSeparator: true)
-            for `enum` in enums {
+            ForEach(enums) { `enum` in
                 `enum`.code(definedInside: name)
             }
         }
@@ -58,7 +58,7 @@ extension ExtensionApi.BuiltinClass {
             }.private()
         }
         
-        for constructor in constructors {
+        ForEach(constructors) { constructor in
             constructor.code(type: name,
                              classSize: classSize,
                              hasDestructor: hasDestructor,
@@ -72,7 +72,7 @@ extension ExtensionApi.BuiltinClass {
            !methods.isEmpty {
             Mark("Functions", isSeparator: true)
             
-            for method in methods {
+            ForEach(methods) { method in
                 method.code(type: name)
             }
         }
@@ -82,7 +82,7 @@ extension ExtensionApi.BuiltinClass {
     private func operatorsCode() -> some Code {
         if !operators.isEmpty {
             Mark("Operators", isSeparator: true)
-            for op in operators {
+            ForEach(operators) { op in
                 op.code(type: name)
             }
         }

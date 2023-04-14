@@ -77,7 +77,7 @@ private struct PointersAccessWithoutArray<Content>: Code where Content: Code {
     
     var body: some Code {
         Group {
-            for (index, parameter) in parameters.enumerated() {
+            ForEach(Array(parameters.enumerated())) { index, parameter in
                 let name = CodeLanguage.swift.protectNameIfKeyword(for: parameter.name)
                 let pointerName = self.pointerName(for: parameter)
                 
@@ -95,7 +95,7 @@ private struct PointersAccessWithoutArray<Content>: Code where Content: Code {
             content(parametersPointerNames())
                 .indent(parameters.count)
             
-            for index in 0..<parameters.count {
+            ForEach(0..<parameters.count) { index in
                 "}".indent(parameters.count - index - 1)
             }
         }

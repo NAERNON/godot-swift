@@ -16,7 +16,7 @@ struct NativeStructsFile: GeneratedFile {
         Space()
         
         Struct(nativeStruct.name) {
-            for variable in nativeStruct.format.variables {
+            ForEach(nativeStruct.format.variables) { variable in
                 let property = Let(variable.nameCode()).typed(variable.typeCode()).public()
                 
                 if let defaultValue = variable.defaultValue {

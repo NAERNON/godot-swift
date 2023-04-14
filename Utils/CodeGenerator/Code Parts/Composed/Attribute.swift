@@ -16,7 +16,6 @@ public struct Attribute: Code {
 }
 
 public extension Code {
-    @CodeBuilder
     func attributes(_ attributes: [Attribute]) -> some Code {
         Group {
             for attribute in attributes {
