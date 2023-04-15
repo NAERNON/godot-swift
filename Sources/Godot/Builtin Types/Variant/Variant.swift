@@ -386,8 +386,152 @@ extension Variant {
     /// matches the requested type.
     ///
     /// Godot might stop running when requesting a non matching type.
+    public var uncheckedInt8Value: Int8 {
+        var newValue = Int8()
+        
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
+    }
+    
+    /// Returns the underlying value, without checking that the underlying type
+    /// matches the requested type.
+    ///
+    /// Godot might stop running when requesting a non matching type.
+    public var uncheckedInt16Value: Int16 {
+        var newValue = Int16()
+        
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
+    }
+    
+    /// Returns the underlying value, without checking that the underlying type
+    /// matches the requested type.
+    ///
+    /// Godot might stop running when requesting a non matching type.
+    public var uncheckedInt32Value: Int32 {
+        var newValue = Int32()
+        
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
+    }
+    
+    /// Returns the underlying value, without checking that the underlying type
+    /// matches the requested type.
+    ///
+    /// Godot might stop running when requesting a non matching type.
+    public var uncheckedInt64Value: Int64 {
+        var newValue = Int64()
+        
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
+    }
+    
+    /// Returns the underlying value, without checking that the underlying type
+    /// matches the requested type.
+    ///
+    /// Godot might stop running when requesting a non matching type.
+    public var uncheckedUInt8Value: UInt8 {
+        var newValue = UInt8()
+        
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
+    }
+    
+    /// Returns the underlying value, without checking that the underlying type
+    /// matches the requested type.
+    ///
+    /// Godot might stop running when requesting a non matching type.
+    public var uncheckedUInt16Value: UInt16 {
+        var newValue = UInt16()
+        
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
+    }
+    
+    /// Returns the underlying value, without checking that the underlying type
+    /// matches the requested type.
+    ///
+    /// Godot might stop running when requesting a non matching type.
+    public var uncheckedUInt32Value: UInt32 {
+        var newValue = UInt32()
+        
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
+    }
+    
+    /// Returns the underlying value, without checking that the underlying type
+    /// matches the requested type.
+    ///
+    /// Godot might stop running when requesting a non matching type.
+    public var uncheckedUInt64Value: UInt64 {
+        var newValue = UInt64()
+        
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
+    }
+    
+    /// Returns the underlying value, without checking that the underlying type
+    /// matches the requested type.
+    ///
+    /// Godot might stop running when requesting a non matching type.
     public var uncheckedDoubleValue: Double {
         var newValue = Double()
+        
+        self.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
+    }
+    
+    /// Returns the underlying value, without checking that the underlying type
+    /// matches the requested type.
+    ///
+    /// Godot might stop running when requesting a non matching type.
+    public var uncheckedFloatValue: Float {
+        var newValue = Float()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
@@ -965,6 +1109,150 @@ extension Int: TypedVariantTransformable {
     }
 }
 
+extension Int8: TypedVariantTransformable {
+    public static let variantStorageType: Variant.ValueType = .int
+    
+    public var variant: Variant {
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
+    }
+    
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedInt8Value
+    }
+}
+
+extension Int16: TypedVariantTransformable {
+    public static let variantStorageType: Variant.ValueType = .int
+    
+    public var variant: Variant {
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
+    }
+    
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedInt16Value
+    }
+}
+
+extension Int32: TypedVariantTransformable {
+    public static let variantStorageType: Variant.ValueType = .int
+    
+    public var variant: Variant {
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
+    }
+    
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedInt32Value
+    }
+}
+
+extension Int64: TypedVariantTransformable {
+    public static let variantStorageType: Variant.ValueType = .int
+    
+    public var variant: Variant {
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
+    }
+    
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedInt64Value
+    }
+}
+
+extension UInt8: TypedVariantTransformable {
+    public static let variantStorageType: Variant.ValueType = .int
+    
+    public var variant: Variant {
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
+    }
+    
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedUInt8Value
+    }
+}
+
+extension UInt16: TypedVariantTransformable {
+    public static let variantStorageType: Variant.ValueType = .int
+    
+    public var variant: Variant {
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
+    }
+    
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedUInt16Value
+    }
+}
+
+extension UInt32: TypedVariantTransformable {
+    public static let variantStorageType: Variant.ValueType = .int
+    
+    public var variant: Variant {
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
+    }
+    
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedUInt32Value
+    }
+}
+
+extension UInt64: TypedVariantTransformable {
+    public static let variantStorageType: Variant.ValueType = .int
+    
+    public var variant: Variant {
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
+    }
+    
+    public init(typedVariant: Variant) {
+        self = typedVariant.uncheckedUInt64Value
+    }
+}
+
 extension Double: TypedVariantTransformable {
     public static let variantStorageType: Variant.ValueType = .float
     
@@ -984,14 +1272,20 @@ extension Double: TypedVariantTransformable {
 }
 
 extension Float: TypedVariantTransformable {
-    public static let variantStorageType: Variant.ValueType = Double.variantStorageType
-
+    public static let variantStorageType: Variant.ValueType = .float
+    
     public var variant: Variant {
-        Double(self).variant
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
     }
-
+    
     public init(typedVariant: Variant) {
-        self = Float(Double(typedVariant: typedVariant))
+        self = typedVariant.uncheckedFloatValue
     }
 }
 
