@@ -57,7 +57,7 @@ extension InstanceType {
     func temporaryInitializerCode(propertyName: String, definedInside insideType: InstanceType?) -> some Code {
         if isEnumType || isBitfieldType {
             Var(propertyName)
-                .assign("Int(0)")
+                .assign(self.code(definedInside: insideType) + ".RawValue(0)")
         } else if isGodotClassType {
             Var(propertyName)
                 .typed("GDExtensionObjectPtr!")
