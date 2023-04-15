@@ -62,5 +62,17 @@ if isExtensionClass() {
         .documentation {
             "Returns the last derived Godot class name."
         }
+        
+        if isRootClass {
+            Func(name: "godotClassName", returnType: "StringName") {
+                "StringName(swiftString: .init(describing: self))"
+            }
+            .class()
+            .final()
+            .internal()
+            .documentation {
+                "Returns the Godot class name."
+            }
+        }
     }
 }

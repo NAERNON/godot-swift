@@ -70,8 +70,8 @@ public final class ClassRegister {
     {
         guard let currentLevel else { return false }
         
-        let className = StringName(swiftString: .init(describing: classType))
-        let parentClassName = StringName(swiftString: .init(describing: parentType))
+        let className = classType.godotClassName()
+        let parentClassName = parentType.godotClassName()
         
         guard classNameToClassBinding[className] == nil else {
             printGodotError("Cannot register class \(classType) because it is already registered.")
@@ -171,7 +171,7 @@ public final class ClassRegister {
                                             name: StringName,
                                             call: GDExtensionClassCallVirtual) -> Bool
     where Class : Object {
-        let className = StringName(swiftString: .init(describing: type))
+        let className = type.godotClassName()
         
         guard let classBinding = classNameToClassBinding[className] else {
             printGodotError("Class doesn't exist.")
