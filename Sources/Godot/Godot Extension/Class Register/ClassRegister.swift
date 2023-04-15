@@ -180,6 +180,67 @@ public final class ClassRegister {
         
         return classBinding.appendVirtualFunc(name: name, call: call)
     }
+    
+    // MARK: Function registration
+    
+    @discardableResult
+    public func registerFunction<Class>(
+        withName functionName: Swift.String,
+        insideType classType: Class.Type,
+        arguments: PropertyInfo...,
+        returnType: PropertyInfo?,
+        call: GDExtensionClassMethodCall
+    ) -> Bool where Class : Object {
+        let className = classType.godotClassName()
+        let functionName = StringName(swiftString: functionName)
+        
+        guard let classBinding = classNameToClassBinding[className] else {
+            printGodotError("Class doesn't exist.")
+            return false
+        }
+        
+        // Register this function within our extension.
+        let functionBinding = FunctionBinding(name: functionName,
+                                              className: className,
+                                              arguments: arguments,
+                                              returnType: returnType,
+                                              isVararg: false,
+                                              isStatic: false)
+        classBinding.appendFunctionBinding(functionBinding)
+        
+        functionName.withUnsafeExtensionPointer { functionNamePtr in
+            functionBinding.withGodotExtensionPropertiesInfo { propertiesInfo in
+                functionBinding.withGodotExtensionArgumentsMetadata { argumentsMetadata in
+                    let godotMethodInfo = GDExtensionClassMethodInfo(
+                        name: functionNamePtr,
+                        method_userdata: Unmanaged.passUnretained(functionBinding).toOpaque(),
+                        call_func: call,
+                        ptrcall_func: { _, _, _, _ in
+                            #warning("DO THIS")
+                        },
+                        method_flags: functionBinding.flag,
+                        has_return_value: GDExtensionBool(functionBinding.hasReturnValue),
+                        return_value_info: propertiesInfo.returnValue,
+                        return_value_metadata: argumentsMetadata.returnValue.pointee,
+                        argument_count: UInt32(functionBinding.argumentsCount),
+                        arguments_info: propertiesInfo.argumentsValue,
+                        arguments_metadata: argumentsMetadata.argumentsValue,
+                        default_argument_count: 0,
+                        default_arguments: nil)
+                    
+                    className.withUnsafeExtensionPointer { namePtr in
+                        withUnsafePointer(to: godotMethodInfo) { methodInfoPtr in
+                            GodotExtension.shared.interface.classdb_register_extension_class_method(
+                                GodotExtension.shared.libraryPtr, namePtr, methodInfoPtr
+                            )
+                        }
+                    }
+                }
+            }
+        }
+        
+        return true
+    }
 }
 
 // MARK: - StringName extensions
