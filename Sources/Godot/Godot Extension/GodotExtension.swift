@@ -39,7 +39,7 @@ public final class GodotExtension {
                       terminatorCallback: @escaping LevelCallback,
                       minimumInitializationLevel: GDExtensionInitializationLevel) -> GDExtensionBool {
         guard !isSetUp else {
-            return 0
+            return GDExtensionBool(false)
         }
         
         self.interfacePtr = interfacePtr
@@ -55,7 +55,7 @@ public final class GodotExtension {
         initializationPtr.pointee.minimum_initialization_level = minimumInitializationLevel
         
         isSetUp = true
-        return 1
+        return GDExtensionBool(true)
     }
     
     fileprivate func registerGodotTypes() {
