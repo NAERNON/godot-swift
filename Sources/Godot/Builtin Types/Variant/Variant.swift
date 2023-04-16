@@ -13,7 +13,13 @@ public struct Variant {
         }
     }
     
-    internal init(extensionVariantPtr: GDExtensionVariantPtr) {
+    public init(extensionVariantPtr: GDExtensionVariantPtr) {
+        withUnsafeExtensionPointer { extensionTypePtr in
+            GodotExtension.shared.interface.variant_new_copy(extensionTypePtr, extensionVariantPtr)
+        }
+    }
+    
+    public init(extensionVariantPtr: GDExtensionConstVariantPtr) {
         withUnsafeExtensionPointer { extensionTypePtr in
             GodotExtension.shared.interface.variant_new_copy(extensionTypePtr, extensionVariantPtr)
         }

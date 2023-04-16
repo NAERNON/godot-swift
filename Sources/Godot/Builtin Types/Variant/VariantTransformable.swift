@@ -44,8 +44,8 @@ private extension Variant {
     }
 }
 
-extension ExpressibleByTypedVariant {
-    public init(variant: Variant) throws {
+public extension ExpressibleByTypedVariant {
+    init(variant: Variant) throws {
         guard variant.type == Self.variantStorageType else {
             throw Variant.ConversionError.unmatchingTypes(variant.type, Self.variantStorageType)
         }
