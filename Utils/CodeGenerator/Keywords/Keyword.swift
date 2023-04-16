@@ -14,6 +14,7 @@ public enum Keyword {
     case `override`
     case `mutating`
     case `required`
+    case convenience
     case privateSet
     case filePrivateSet
     
@@ -30,6 +31,7 @@ public enum Keyword {
         case .override: return "override"
         case .mutating: return "mutating"
         case .required: return "required"
+        case .convenience: return "convenience"
         case .privateSet: return "private(set)"
         case .filePrivateSet: return "fileprivate(set)"
         }
@@ -90,6 +92,15 @@ public extension Code {
     func `required`(_ state: Bool = true) -> some Code {
         if state {
             keyword(.required)
+        } else {
+            self
+        }
+    }
+    
+    @CodeBuilder
+    func convenience(_ state: Bool = true) -> some Code {
+        if state {
+            keyword(.convenience)
         } else {
             self
         }
