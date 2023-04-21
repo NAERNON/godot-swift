@@ -62,6 +62,27 @@ extension ClassRegister {
             argumentsTypeInfo.count
         }
         
+        var lastDefaultArgumentsCount: Int {
+            var count = 0
+            let argumentsCount = argumentsTypeInfoWithoutVararg.count
+            while count < argumentsCount {
+                if argumentsTypeInfoWithoutVararg[argumentsCount - count - 1].defaultValue != nil {
+                    count += 1
+                } else {
+                    break
+                }
+            }
+            return count
+        }
+        
+        /// Only the consecutive last default arguments are used in Godot.
+        var lastDefaultArguments: [Variant] {
+            let argumentsCount = argumentsTypeInfoWithoutVararg.count
+            return (0..<lastDefaultArgumentsCount).map { argumentsTypeInfoWithoutVararg[argumentsCount - $0 - 1].defaultValue! }
+        }
+        
+        // MARK: Pointers
+        
         func withGodotExtensionPropertiesInfo(_ body: (PropertiesDataPointer<GDExtensionPropertyInfo>) -> Void) {
             let properties = [returnTypeInfo] + argumentsTypeInfo
             withGodotExtensionPropertiesInfo(properties: properties) { propertiesInfo in
@@ -104,6 +125,36 @@ extension ClassRegister {
             
             finalPointer.deinitialize(count: properties.count)
             finalPointer.deallocate()
+        }
+        
+        func withLastDefaultArguments(_ body: (UnsafeMutablePointer<GDExtensionVariantPtr?>) -> ()) {
+            let arguments = lastDefaultArguments
+            withLastDefaultArguments(arguments) { variantPtrs in
+                let finalPointer = UnsafeMutablePointer<GDExtensionVariantPtr?>.allocate(capacity: arguments.count)
+                for (index, variantPtr) in variantPtrs.enumerated() {
+                    finalPointer[index] = variantPtr
+                }
+                
+                body(finalPointer)
+                
+                finalPointer.deinitialize(count: arguments.count)
+                finalPointer.deallocate()
+            }
+        }
+        
+        private func withLastDefaultArguments(_ arguments: [Variant],
+                                              index: Int = 0,
+                                              _ body: ([GDExtensionVariantPtr]) -> Void) {
+            guard index < arguments.count else {
+                body([])
+                return
+            }
+            
+            arguments[index].withUnsafeExtensionPointer { variantPtr in
+                withLastDefaultArguments(arguments, index: index + 1) { variantPtrs in
+                    body([variantPtr] + variantPtrs)
+                }
+            }
         }
     }
 }

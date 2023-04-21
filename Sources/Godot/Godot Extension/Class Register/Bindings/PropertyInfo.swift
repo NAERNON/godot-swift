@@ -2,46 +2,50 @@ import Foundation
 import GodotExtensionHeaders
 
 extension ClassRegister {
-    public struct PropertyInfo {
-        public enum Metadata {
-            case intIsInt8
-            case intIsInt16
-            case intIsInt32
-            case intIsInt64
-            case intIsUInt8
-            case intIsUInt16
-            case intIsUInt32
-            case intIsUInt64
-            case realIsFloat
-            case realIsDouble
-        }
-        
-        public let type: Variant.ValueType
-        public let metadata: Metadata?
-        public let name: StringName
-        public let className: StringName
-        public let hint: PropertyHint
-        public let hintString: String
+    public enum PropertyMetadata {
+        case intIsInt8
+        case intIsInt16
+        case intIsInt32
+        case intIsInt64
+        case intIsUInt8
+        case intIsUInt16
+        case intIsUInt32
+        case intIsUInt64
+        case realIsFloat
+        case realIsDouble
+    }
+    
+    struct PropertyInfo {
+        let type: Variant.ValueType
+        let metadata: PropertyMetadata?
+        let name: StringName
+        let className: StringName
+        let hint: PropertyHint
+        let hintString: String
+        let defaultValue: Variant?
         private let usage: UInt32
         
         static let none = PropertyInfo(type: .nil,
                                        metadata: nil,
-                                       name: "",
+                                       name: .init(),
+                                       defaultValue: .none,
                                        hint: .none,
-                                       hintString: "",
+                                       hintString: .init(),
                                        usageFlags: .default, .nilIsVariant,
-                                       className: "")
+                                       className: .init())
         static let vararg = PropertyInfo(type: .nil,
                                          metadata: nil,
                                          name: "vararg",
+                                         defaultValue: .none,
                                          hint: .none,
-                                         hintString: "",
+                                         hintString: .init(),
                                          usageFlags: .default, .nilIsVariant,
-                                         className: "")
+                                         className: .init())
         
         init(type: Variant.ValueType,
-             metadata: Metadata?,
+             metadata: PropertyMetadata?,
              name: StringName,
+             defaultValue: Variant?,
              hint: PropertyHint,
              hintString: String,
              usageFlags: PropertyUsageFlags...,
@@ -49,6 +53,7 @@ extension ClassRegister {
             self.type = type
             self.metadata = metadata
             self.name = name
+            self.defaultValue = defaultValue
             self.hint = hint
             self.hintString = ""
             
@@ -97,41 +102,6 @@ extension ClassRegister {
             case .realIsFloat: return GDEXTENSION_METHOD_ARGUMENT_METADATA_REAL_IS_FLOAT
             case .realIsDouble: return GDEXTENSION_METHOD_ARGUMENT_METADATA_REAL_IS_DOUBLE
             }
-        }
-        
-        // MARK: Public initalizers
-        
-        public static func classFunctionParameter<Value, Class>(
-            type: Value.Type,
-            metadata: Metadata? = nil,
-            name: StringName,
-            classType: Class.Type
-        ) -> PropertyInfo
-        where Value : ExpressibleByTypedVariant,
-              Class : Object
-        {
-            .init(type: type.variantStorageType,
-                  metadata: metadata,
-                  name: name,
-                  hint: .none,
-                  hintString: String(),
-                  className: classType.godotClassName())
-        }
-        
-        #warning("Do all the metadata types.")
-        public static func classFunctionParameter<Class>(
-            type: Int8.Type,
-            name: StringName,
-            classType: Class.Type
-        ) -> PropertyInfo
-        where Class : Object
-        {
-            .init(type: type.variantStorageType,
-                  metadata: .intIsInt8,
-                  name: name,
-                  hint: .none,
-                  hintString: String(),
-                  className: classType.godotClassName())
         }
     }
 }

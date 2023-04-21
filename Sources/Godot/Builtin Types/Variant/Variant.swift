@@ -86,6 +86,12 @@ public struct Variant {
         return Int(result)
     }
     
+    public func copyTo(variantPtr: GDExtensionVariantPtr) {
+        withUnsafeExtensionPointer { selfPtr in
+            GodotExtension.shared.interface.variant_new_copy(variantPtr, selfPtr)
+        }
+    }
+    
     // MARK: - Bindings
     
     fileprivate static var fromTypeConstructor_bool: GDExtensionVariantFromTypeConstructorFunc!
@@ -169,7 +175,7 @@ public struct Variant {
     }()
     
     /// Calls a closure with an extension type pointer of the underlying object. Should only be called by the `GodotLibrary`.
-    internal func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> ()) {
+    internal func withUnsafeExtensionPointer(_ body: (GDExtensionVariantPtr) -> ()) {
         opaque.withUnsafeMutableRawPointer(body)
     }
     
