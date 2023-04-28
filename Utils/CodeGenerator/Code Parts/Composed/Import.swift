@@ -1,14 +1,14 @@
 import Foundation
 
 public struct Import: Code {
-    let framework: String
+    let module: String
     
-    public init(_ framework: String) {
-        self.framework = framework
+    public init(_ module: String) {
+        self.module = module
     }
     
     public var body: some Code {
-        "import \(framework)"
+        "import \(module)"
     }
     
     public static let foundation = Import("Foundation")

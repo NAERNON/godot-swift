@@ -10,7 +10,7 @@ public struct Comment<Content>: Code where Content : Code {
     let style: CommentStyle
     let content: () -> Content
     
-    public init(_ style: CommentStyle, @CodeBuilder content: @escaping () -> Content) {
+    public init(_ style: CommentStyle = .line, @CodeBuilder content: @escaping () -> Content) {
         self.style = style
         self.content = content
     }
