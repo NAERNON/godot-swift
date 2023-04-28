@@ -1,7 +1,7 @@
 import Foundation
 import CodeGenerator
 
-struct BuiltinClassFile: GeneratedFile {
+struct BuiltinClassFile: File {
     let path: String
     let builtinClass: ExtensionApi.BuiltinClass
     let classSize: Int

@@ -1,7 +1,7 @@
 import Foundation
 import CodeGenerator
 
-struct NativeStructsFile: GeneratedFile {
+struct NativeStructsFile: File {
     let path: String
     let nativeStruct: ExtensionApi.NativeStructure
     

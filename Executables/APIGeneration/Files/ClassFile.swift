@@ -1,7 +1,7 @@
 import Foundation
 import CodeGenerator
 
-struct ClassFile: GeneratedFile {
+struct ClassFile: File {
     let path: String
     let `class`: ExtensionApi.Class
     

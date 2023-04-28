@@ -1,7 +1,7 @@
 import Foundation
 import CodeGenerator
 
-struct RealRawValueFile: GeneratedFile {
+struct RealRawValueFile: File {
     let path: String
     let floatingPointType: BuildConfiguration.FloatingPointType
     

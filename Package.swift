@@ -50,6 +50,6 @@ let package = Package(
                 "CodeTranslator",
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ],
-            path: "Sources/APIGeneration"),
+            path: "Executables/APIGeneration"),
     ]
 )

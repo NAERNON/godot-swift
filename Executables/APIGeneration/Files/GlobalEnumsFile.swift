@@ -1,7 +1,7 @@
 import Foundation
 import CodeGenerator
 
-struct GlobalEnumsFile: GeneratedFile {
+struct GlobalEnumsFile: File {
     let path = "GlobalEnums.swift"
     let enums: [ExtensionApi.Enum]
 

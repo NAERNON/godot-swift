@@ -1,7 +1,7 @@
 import Foundation
 import CodeGenerator
 
-struct SetBindingsFile: GeneratedFile {
+struct SetBindingsFile: File {
     let path = "SetBindings.swift"
     let builtinClasses: [ExtensionApi.BuiltinClass]
     let classes: [ExtensionApi.Class]
