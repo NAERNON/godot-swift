@@ -3,17 +3,23 @@
 
 import PackageDescription
 
-#warning("v12 really ?")
+#warning("v13 really ?")
 let package = Package(
     name: "Godot Swift",
-    platforms: [.macOS(.v12)],
+    platforms: [.macOS(.v13)],
     products: [
         .library(
             name: "Godot",
-            targets: ["Godot", "GodotExtensionHeaders"]),
+            targets: ["Godot", "GodotExtensionHeaders"]
+        ),
+        .plugin(
+            name: "GodotBridgePlugin",
+            targets: ["GodotBridgePlugin"]
+        )
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/jpsim/SourceKitten", .upToNextMinor(from: "0.34.0")),
     ],
     targets: [
         // MARK: Main targets
@@ -50,6 +56,24 @@ let package = Package(
                 "CodeTranslator",
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ],
-            path: "Executables/APIGeneration"),
+            path: "Executables/APIGeneration"
+        ),
+        .executableTarget(
+            name: "generate-bridge",
+            dependencies: [
+                "CodeGenerator",
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "SourceKittenFramework", package: "SourceKitten"),
+            ],
+            path: "Executables/BridgeGeneration"
+        ),
+        
+        // MARK: Plugins
+        
+        .plugin(
+            name: "GodotBridgePlugin",
+            capability: .buildTool(),
+            dependencies: ["generate-bridge"]
+        )
     ]
 )
