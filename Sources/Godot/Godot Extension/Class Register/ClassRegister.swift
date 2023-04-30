@@ -81,6 +81,7 @@ public final class ClassRegister {
         // Register this class within our extension.
         let classBinding = ClassBinding(
             level: currentLevel,
+            type: classType,
             name: className,
             parentName: parentClassName
         )
@@ -199,6 +200,7 @@ public final class ClassRegister {
             return false
         }
         
+#warning("Translate functions")
 #warning("Do the static and vararg")
         // Register this function within our extension.
         let functionBinding = FunctionBinding(name: functionName,

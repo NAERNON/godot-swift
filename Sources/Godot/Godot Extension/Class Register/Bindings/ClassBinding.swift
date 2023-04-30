@@ -4,6 +4,7 @@ import GodotExtensionHeaders
 extension ClassRegister {
     final class ClassBinding {
         let level: GDExtensionInitializationLevel
+        let type: Object.Type
         let name: StringName
         let parentName: StringName
         
@@ -14,9 +15,11 @@ extension ClassRegister {
         // MARK: Init
         
         init(level: GDExtensionInitializationLevel,
+             type: Object.Type,
              name: StringName,
              parentName: StringName) {
             self.level = level
+            self.type = type
             self.name = name
             self.parentName = parentName
         }

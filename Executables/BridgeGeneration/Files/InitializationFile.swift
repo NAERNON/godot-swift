@@ -3,8 +3,15 @@ import CodeGenerator
 
 struct InitializationFile: File {
     let moduleEntryCFunction: String
+    let classDefinitions: [ClassDefinition]
     
     let path: String = "Initialization.swift"
+    
+    init(moduleEntryCFunction: String,
+         classDefinitions: [ClassDefinition]) {
+        self.moduleEntryCFunction = moduleEntryCFunction
+        self.classDefinitions = classDefinitions
+    }
     
     var code: some Code {
         Import("GodotExtensionHeaders")
@@ -14,6 +21,10 @@ struct InitializationFile: File {
         
         Stack {
             initializationModuleCode()
+            
+            Mark("Class registration", isSeparator: true)
+            
+            classRegistrationCode()
         }
     }
     
@@ -45,13 +56,39 @@ return GodotExtension.shared.setUp(
                     Return()
                 }
                 
-                // Register functions here
+                "registerClasses(using: GodotExtension.shared.classRegister)"
             }
         }.private()
         
         Func(name: "unitializeModule", parameters: .named("level", type: "GDExtensionInitializationLevel")) {
 #warning("Fill this")
             EmptyCode()
+        }.private()
+    }
+    
+    @CodeBuilder
+    private func classRegistrationCode() -> some Code {
+        Func(name: "registerClasses",
+             parameters: .named("classRegister", type: "ClassRegister", label: "using")) {
+            Stack {
+                ForEach(classDefinitions) { classDefinition in
+                    Group {
+                        if let filePath = classDefinition.filePath {
+                            ("Defined inside file: " + filePath).comment()
+                        }
+                        "classRegister.registerClass(ofType: \(classDefinition.name).self, parentType: \(classDefinition.superclassName).self) { _, _, _ in"
+                        "} createInstanceFunction: { _ in"
+                        
+                        Return("classRegister.instantiateClass(ofType: \(classDefinition.name).self)").indent()
+                        
+                        "} freeInstanceFunction: { _, instancePtr in"
+                        
+                        "Unmanaged<\(classDefinition.name)>.fromOpaque(instancePtr!).release()".indent()
+                        
+                        "}"
+                    }
+                }
+            }
         }.private()
     }
 }

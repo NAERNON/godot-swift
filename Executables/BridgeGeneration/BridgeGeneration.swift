@@ -23,7 +23,13 @@ struct BridgeGeneration: ParsableCommand {
         let codeFormatter = CodeFormatter()
         let moduleEntryCFunction = moduleName.lowercased() + "_library_init"
         
-        try save(file: InitializationFile(moduleEntryCFunction: moduleEntryCFunction),
+        let fileURLs = try swiftFilePaths(inside: inputURL)
+        
+        let initializationFile = InitializationFile(
+            moduleEntryCFunction: moduleEntryCFunction,
+            classDefinitions: try fileURLs.flatMap { try ClassDefinition.definitionsForFile(at: $0) })
+        
+        try save(file: initializationFile,
                  codeFormatter: codeFormatter,
                  atURL: outputURL)
     }
