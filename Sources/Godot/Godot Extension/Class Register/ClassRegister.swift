@@ -10,9 +10,13 @@ public final class ClassRegister {
     
     internal static let shared = ClassRegister()
     
+    public private(set) var isRegistrationOpen = true
     private var currentLevel: GDExtensionInitializationLevel?
+    
     private var classNameToClassBinding = [StringName : ClassBinding]()
     private var godotClassesNames = Set<StringName>()
+    
+    private var classNameToSubclassPassports = [StringName : [ClassPassport]]()
     
     // MARK: Init
     
@@ -45,6 +49,19 @@ public final class ClassRegister {
         }
     }
     
+    // MARK: Close registration
+    
+    public func closeRegistration() {
+        for subclassPassports in classNameToSubclassPassports.values {
+            for passport in subclassPassports {
+                printGodotError("Class register couldn't register \(passport.className) because no valid superclass was provided.")
+            }
+        }
+        
+        classNameToSubclassPassports.removeAll()
+        isRegistrationOpen = false
+    }
+    
     // MARK: Class registration
     
     private func classIsAlreadyRegistered(withName className: StringName) -> Bool {
@@ -72,34 +89,56 @@ public final class ClassRegister {
         return objectPtr
     }
     
-    @discardableResult
-    public func registerClass<Class>(
-        ofType classType: Class.Type,
-        parentClassName: StringName,
-        toStringFunction: GDExtensionClassToString,
-        createInstanceFunction: GDExtensionClassCreateInstance,
-        freeInstanceFunction: GDExtensionClassFreeInstance
-    ) -> Bool {
-        // If the type is not an Object, then nothing should be done.
-        return false
+    private func insertPassport(_ passport: ClassPassport,
+                                toParentClassName parentClassName: StringName) {
+        var passports = classNameToSubclassPassports[parentClassName] ?? []
+        passports.append(passport)
+        classNameToSubclassPassports[parentClassName] = passports
     }
     
-    @discardableResult
     public func registerClass<Class>(
         ofType classType: Class.Type,
         parentClassName: StringName,
         toStringFunction: GDExtensionClassToString,
         createInstanceFunction: GDExtensionClassCreateInstance,
-        freeInstanceFunction: GDExtensionClassFreeInstance
-    ) -> Bool
+        freeInstanceFunction: GDExtensionClassFreeInstance) {
+        // If the type is not an Object, then nothing should be done.
+        return
+    }
+    
+    public func registerClass<Class>(
+        ofType classType: Class.Type,
+        parentClassName: StringName,
+        toStringFunction: GDExtensionClassToString,
+        createInstanceFunction: GDExtensionClassCreateInstance,
+        freeInstanceFunction: GDExtensionClassFreeInstance)
     where Class : Object {
-        guard let currentLevel else { return false }
+        guard isRegistrationOpen else {
+            printGodotError("Cannot register class \(classType) because the registration is closed.")
+            return
+        }
+        
+        guard let currentLevel else {
+            printGodotError("Cannot register class \(classType) because no initialization level was provided.")
+            return
+        }
         
         let className = classType.godotClassName()
         
         guard !classIsAlreadyRegistered(withName: className) else {
             printGodotError("Cannot register class \(classType) because it is already registered.")
-            return false
+            return
+        }
+        
+        guard classIsAlreadyRegistered(withName: parentClassName) else {
+            let passport = ClassPassport(classType: classType,
+                                         className: className,
+                                         parentClassName: parentClassName,
+                                         toStringFunction: toStringFunction,
+                                         createInstanceFunction: createInstanceFunction,
+                                         freeInstanceFunction: freeInstanceFunction)
+            insertPassport(passport, toParentClassName: parentClassName)
+            return
         }
         
         // Register this class within our extension.
@@ -153,7 +192,17 @@ public final class ClassRegister {
             registerVirtualFunc(ofType: classType, name: methodName, call: call)
         }
         
-        return true
+        if let subclassPassports = classNameToSubclassPassports.removeValue(forKey: className) {
+            for passport in subclassPassports {
+                registerClass(ofType: passport.classType,
+                              parentClassName: passport.parentClassName,
+                              toStringFunction: passport.toStringFunction,
+                              createInstanceFunction: passport.createInstanceFunction,
+                              freeInstanceFunction: passport.freeInstanceFunction)
+            }
+        }
+        
+        return
     }
     
     // MARK: Virtual functions
@@ -208,20 +257,24 @@ public final class ClassRegister {
     
     // MARK: Function registration
     
-    @discardableResult
     public func registerFunction<Class>(
         withName functionName: Swift.String,
         insideType classType: Class.Type,
         arguments: FunctionParameter...,
         returnType: FunctionParameter?,
         call: GDExtensionClassMethodCall
-    ) -> Bool where Class : Object {
+    ) where Class : Object {
+        guard isRegistrationOpen else {
+            printGodotError("Cannot register function \(functionName) because the registration is closed.")
+            return
+        }
+        
         let className = classType.godotClassName()
         let functionName = StringName(swiftString: functionName)
         
         guard let classBinding = classNameToClassBinding[className] else {
             printGodotError("Class doesn't exist.")
-            return false
+            return
         }
         
 #warning("Translate functions")
@@ -268,7 +321,7 @@ public final class ClassRegister {
             }
         }
         
-        return true
+        return
     }
 }
 
@@ -282,4 +335,18 @@ private extension StringName {
         // We create the new string by calling the constructor to ensure copy of the data.
         return StringName(string)
     }
+}
+
+// MARK: - ClassPassport
+
+/// When a class couldn't be registered because its superclass is still not registered,
+/// a passport is created instead.
+/// This passport is used to register the class when possible.
+private struct ClassPassport {
+    let classType: Object.Type
+    let className: StringName
+    let parentClassName: StringName
+    let toStringFunction: GDExtensionClassToString
+    let createInstanceFunction: GDExtensionClassCreateInstance
+    let freeInstanceFunction: GDExtensionClassFreeInstance
 }

@@ -73,6 +73,8 @@ return GodotExtension.shared.setUp(
                 ForEach(classDefinitions) { classDefinition in
                     classRegistrationCode(for: classDefinition)
                 }
+                
+                "GodotExtension.shared.classRegister.closeRegistration()"
             }
         }.private()
     }
