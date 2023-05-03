@@ -12,6 +12,7 @@ public final class ClassRegister {
     
     private var currentLevel: GDExtensionInitializationLevel?
     private var classNameToClassBinding = [StringName : ClassBinding]()
+    private var godotClassesNames = Set<StringName>()
     
     // MARK: Init
     
@@ -46,6 +47,20 @@ public final class ClassRegister {
     
     // MARK: Class registration
     
+    private func classIsAlreadyRegistered(withName className: StringName) -> Bool {
+        classNameToClassBinding[className] != nil ||
+        godotClassesNames.contains(className)
+    }
+    
+    internal func registerGodotClass<Class>(ofType classType: Class.Type) where Class : Object {
+        classType.setFunctionBindings()
+        godotClassesNames.insert(classType.godotClassName())
+    }
+    
+    public func instantiateClass<Class>(ofType type: Class.Type) -> GDExtensionObjectPtr {
+        fatalError("Cannot instantiate class that is not a subclass of Object.")
+    }
+    
     public func instantiateClass<Class>(ofType type: Class.Type) -> GDExtensionObjectPtr where Class : Object {
         let instance = Class()
         var objectPtr: GDExtensionObjectPtr!
@@ -58,22 +73,31 @@ public final class ClassRegister {
     }
     
     @discardableResult
-    public func registerClass<Class, Parent>(
+    public func registerClass<Class>(
         ofType classType: Class.Type,
-        parentType: Parent.Type,
+        parentClassName: StringName,
+        toStringFunction: GDExtensionClassToString,
+        createInstanceFunction: GDExtensionClassCreateInstance,
+        freeInstanceFunction: GDExtensionClassFreeInstance
+    ) -> Bool {
+        // If the type is not an Object, then nothing should be done.
+        return false
+    }
+    
+    @discardableResult
+    public func registerClass<Class>(
+        ofType classType: Class.Type,
+        parentClassName: StringName,
         toStringFunction: GDExtensionClassToString,
         createInstanceFunction: GDExtensionClassCreateInstance,
         freeInstanceFunction: GDExtensionClassFreeInstance
     ) -> Bool
-    where Class : Object,
-          Parent : Object
-    {
+    where Class : Object {
         guard let currentLevel else { return false }
         
         let className = classType.godotClassName()
-        let parentClassName = parentType.godotClassName()
         
-        guard classNameToClassBinding[className] == nil else {
+        guard !classIsAlreadyRegistered(withName: className) else {
             printGodotError("Cannot register class \(classType) because it is already registered.")
             return false
         }

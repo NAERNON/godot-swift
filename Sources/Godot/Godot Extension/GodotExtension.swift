@@ -59,8 +59,8 @@ public final class GodotExtension {
     }
     
     fileprivate func registerGodotTypes() {
-        setAllBuiltinStructsBindings()
-        setAllClassesBindings()
+        setBuiltinStructsBindings()
+        registerGodotClasses()
         Variant.setInitBindings()
         UtilityFunctions.setBindings()
     }

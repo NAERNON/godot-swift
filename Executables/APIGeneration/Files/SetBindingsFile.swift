@@ -18,7 +18,7 @@ struct SetBindingsFile: File {
         Space()
         
         Extension("GodotExtension") {
-            Func(name: "setAllBuiltinStructsBindings") {
+            Func(name: "setBuiltinStructsBindings") {
                 for builtinClass in builtinClasses {
                     "Godot." + builtinClass.name.code() + ".setInitBindings()"
                 }
@@ -32,9 +32,9 @@ struct SetBindingsFile: File {
             
             Space()
             
-            Func(name: "setAllClassesBindings") {
+            Func(name: "registerGodotClasses") {
                 for `class` in classes {
-                    "Godot." + `class`.name.code() + ".setFunctionBindings()"
+                    "GodotExtension.shared.classRegister.registerGodotClass(ofType: \(`class`.name.code()).self)"
                 }
             }
         }.internal()

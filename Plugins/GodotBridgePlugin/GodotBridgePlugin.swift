@@ -8,7 +8,7 @@ struct GodotBridgePlugin: BuildToolPlugin {
         
         return [
             .buildCommand(
-                displayName: "Godot Bridge generation",
+                displayName: "Godot bridge generation",
                 executable: try context.tool(named: "generate-bridge").path,
                 arguments: [
                     target.name,

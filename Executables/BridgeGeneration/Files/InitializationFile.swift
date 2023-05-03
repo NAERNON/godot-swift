@@ -56,7 +56,7 @@ return GodotExtension.shared.setUp(
                     Return()
                 }
                 
-                "registerClasses(using: GodotExtension.shared.classRegister)"
+                "registerClasses()"
             }
         }.private()
         
@@ -68,27 +68,35 @@ return GodotExtension.shared.setUp(
     
     @CodeBuilder
     private func classRegistrationCode() -> some Code {
-        Func(name: "registerClasses",
-             parameters: .named("classRegister", type: "ClassRegister", label: "using")) {
+        Func(name: "registerClasses") {
             Stack {
                 ForEach(classDefinitions) { classDefinition in
-                    Group {
-                        if let filePath = classDefinition.filePath {
-                            ("Defined inside file: " + filePath).comment()
-                        }
-                        "classRegister.registerClass(ofType: \(classDefinition.name).self, parentType: \(classDefinition.superclassName).self) { _, _, _ in"
-                        "} createInstanceFunction: { _ in"
-                        
-                        Return("classRegister.instantiateClass(ofType: \(classDefinition.name).self)").indent()
-                        
-                        "} freeInstanceFunction: { _, instancePtr in"
-                        
-                        "Unmanaged<\(classDefinition.name)>.fromOpaque(instancePtr!).release()".indent()
-                        
-                        "}"
-                    }
+                    classRegistrationCode(for: classDefinition)
                 }
             }
         }.private()
+    }
+    
+    private func classRegistrationCode(for classDefinition: ClassDefinition) -> some Code {
+        Group {
+            Mark(classDefinition.name)
+            
+            if let filePath = classDefinition.filePath {
+                Comment {
+                    "Defined inside file: " + filePath
+                }
+            }
+            
+            "GodotExtension.shared.classRegister.registerClass(ofType: \(classDefinition.name).self, parentClassName: \"\(classDefinition.superclassName)\") { _, _, _ in"
+            "} createInstanceFunction: { _ in"
+            
+            Return("GodotExtension.shared.classRegister.instantiateClass(ofType: \(classDefinition.name).self)").indent()
+            
+            "} freeInstanceFunction: { _, instancePtr in"
+            
+            "Unmanaged<\(classDefinition.name)>.fromOpaque(instancePtr!).release()".indent()
+            
+            "}"
+        }
     }
 }

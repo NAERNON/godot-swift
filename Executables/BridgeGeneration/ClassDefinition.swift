@@ -3,6 +3,7 @@ import SourceKittenFramework
 
 struct ClassDefinition {
     let name: String
+    let superclassDefinition: String
     let superclassName: String
     let filePath: String?
     
@@ -11,12 +12,13 @@ struct ClassDefinition {
               dictionary["key.accessibility"] as? String == "source.lang.swift.accessibility.public",
               let name = dictionary["key.name"] as? String,
               let inheritedTypes = dictionary["key.inheritedtypes"] as? [[String : SourceKitRepresentable]],
-              let superclassName = inheritedTypes.first?["key.name"] as? String else {
+              let superclassDefinition = inheritedTypes.first?["key.name"] as? String else {
             return nil
         }
         
         self.name = name
-        self.superclassName = superclassName
+        self.superclassDefinition = superclassDefinition
+        self.superclassName = superclassDefinition.components(separatedBy: .punctuationCharacters).last ?? ""
         self.filePath = filePath
     }
     
