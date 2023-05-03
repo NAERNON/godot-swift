@@ -6,7 +6,7 @@ extension ClassRegister {
         let level: GDExtensionInitializationLevel
         let type: Object.Type
         let name: StringName
-        let parentName: StringName
+        let superclassName: StringName
         
         private var virtualFuncNameToCall = [StringName : GDExtensionClassCallVirtual]()
         
@@ -17,11 +17,11 @@ extension ClassRegister {
         init(level: GDExtensionInitializationLevel,
              type: Object.Type,
              name: StringName,
-             parentName: StringName) {
+             superclassName: StringName) {
             self.level = level
             self.type = type
             self.name = name
-            self.parentName = parentName
+            self.superclassName = superclassName
         }
         
         // MARK: Virtual Functions

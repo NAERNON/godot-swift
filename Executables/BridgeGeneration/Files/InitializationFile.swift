@@ -89,7 +89,7 @@ return GodotExtension.shared.setUp(
                 }
             }
             
-            "GodotExtension.shared.classRegister.registerClass(ofType: \(classDefinition.name).self, parentClassName: \"\(classDefinition.superclassName)\") { _, _, _ in"
+            "GodotExtension.shared.classRegister.registerClass(ofType: \(classDefinition.name).self, superclassName: \"\(classDefinition.superclassName)\") { _, _, _ in"
             "} createInstanceFunction: { _ in"
             
             Return("GodotExtension.shared.classRegister.instantiateClass(ofType: \(classDefinition.name).self)").indent()

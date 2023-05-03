@@ -90,15 +90,15 @@ public final class ClassRegister {
     }
     
     private func insertPassport(_ passport: ClassPassport,
-                                toParentClassName parentClassName: StringName) {
-        var passports = classNameToSubclassPassports[parentClassName] ?? []
+                                forSuperclassName superclassName: StringName) {
+        var passports = classNameToSubclassPassports[superclassName] ?? []
         passports.append(passport)
-        classNameToSubclassPassports[parentClassName] = passports
+        classNameToSubclassPassports[superclassName] = passports
     }
     
     public func registerClass<Class>(
         ofType classType: Class.Type,
-        parentClassName: StringName,
+        superclassName: StringName,
         toStringFunction: GDExtensionClassToString,
         createInstanceFunction: GDExtensionClassCreateInstance,
         freeInstanceFunction: GDExtensionClassFreeInstance) {
@@ -106,9 +106,10 @@ public final class ClassRegister {
         return
     }
     
+#warning("Do the to string function")
     public func registerClass<Class>(
         ofType classType: Class.Type,
-        parentClassName: StringName,
+        superclassName: StringName,
         toStringFunction: GDExtensionClassToString,
         createInstanceFunction: GDExtensionClassCreateInstance,
         freeInstanceFunction: GDExtensionClassFreeInstance)
@@ -130,14 +131,14 @@ public final class ClassRegister {
             return
         }
         
-        guard classIsAlreadyRegistered(withName: parentClassName) else {
+        guard classIsAlreadyRegistered(withName: superclassName) else {
             let passport = ClassPassport(classType: classType,
                                          className: className,
-                                         parentClassName: parentClassName,
+                                         superclassName: superclassName,
                                          toStringFunction: toStringFunction,
                                          createInstanceFunction: createInstanceFunction,
                                          freeInstanceFunction: freeInstanceFunction)
-            insertPassport(passport, toParentClassName: parentClassName)
+            insertPassport(passport, forSuperclassName: superclassName)
             return
         }
         
@@ -146,7 +147,7 @@ public final class ClassRegister {
             level: currentLevel,
             type: classType,
             name: className,
-            parentName: parentClassName
+            superclassName: superclassName
         )
         classNameToClassBinding[className] = classBinding
         
@@ -178,10 +179,10 @@ public final class ClassRegister {
         )
         
         className.withUnsafeExtensionPointer { namePtr in
-            parentClassName.withUnsafeExtensionPointer { parentNamePtr in
+            superclassName.withUnsafeExtensionPointer { superclassNamePtr in
                 withUnsafePointer(to: godotClassInfo) { classInfoPtr in
                     GodotExtension.shared.interface.classdb_register_extension_class(
-                        GodotExtension.shared.libraryPtr, namePtr, parentNamePtr, classInfoPtr
+                        GodotExtension.shared.libraryPtr, namePtr, superclassNamePtr, classInfoPtr
                     )
                 }
             }
@@ -195,7 +196,7 @@ public final class ClassRegister {
         if let subclassPassports = classNameToSubclassPassports.removeValue(forKey: className) {
             for passport in subclassPassports {
                 registerClass(ofType: passport.classType,
-                              parentClassName: passport.parentClassName,
+                              superclassName: passport.superclassName,
                               toStringFunction: passport.toStringFunction,
                               createInstanceFunction: passport.createInstanceFunction,
                               freeInstanceFunction: passport.freeInstanceFunction)
@@ -345,7 +346,7 @@ private extension StringName {
 private struct ClassPassport {
     let classType: Object.Type
     let className: StringName
-    let parentClassName: StringName
+    let superclassName: StringName
     let toStringFunction: GDExtensionClassToString
     let createInstanceFunction: GDExtensionClassCreateInstance
     let freeInstanceFunction: GDExtensionClassFreeInstance
