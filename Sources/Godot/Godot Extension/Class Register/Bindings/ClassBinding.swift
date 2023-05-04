@@ -8,6 +8,10 @@ extension ClassRegister {
         let name: StringName
         let superclassName: StringName
         
+        let toStringFunction: GDExtensionClassToString
+        let createInstanceFunction: GDExtensionClassCreateInstance
+        let freeInstanceFunction: GDExtensionClassFreeInstance
+        
         private var virtualFuncNameToCall = [StringName : GDExtensionClassCallVirtual]()
         
         private(set) var functions = [FunctionBinding]()
@@ -17,11 +21,18 @@ extension ClassRegister {
         init(level: GDExtensionInitializationLevel,
              type: Object.Type,
              name: StringName,
-             superclassName: StringName) {
+             superclassName: StringName,
+             toStringFunction: GDExtensionClassToString,
+             createInstanceFunction: GDExtensionClassCreateInstance,
+             freeInstanceFunction: GDExtensionClassFreeInstance) {
             self.level = level
             self.type = type
             self.name = name
             self.superclassName = superclassName
+            
+            self.toStringFunction = toStringFunction
+            self.createInstanceFunction = createInstanceFunction
+            self.freeInstanceFunction = freeInstanceFunction
         }
         
         // MARK: Virtual Functions

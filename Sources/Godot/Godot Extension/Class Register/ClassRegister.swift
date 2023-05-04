@@ -5,6 +5,9 @@ import GodotExtensionHeaders
 private let METHOD_FLAGS_DEFAULT: UInt32 = 24
 
 public final class ClassRegister {
+    public enum RegistrationResult {
+        case success, failure, waiting, none
+    }
     
     // MARK: Properties
     
@@ -16,7 +19,7 @@ public final class ClassRegister {
     private var classNameToClassBinding = [StringName : ClassBinding]()
     private var godotClassesNames = Set<StringName>()
     
-    private var classNameToSubclassPassports = [StringName : [ClassPassport]]()
+    private var classNameToWaitingSubclassBindings = [StringName : [ClassBinding]]()
     
     // MARK: Init
     
@@ -52,13 +55,13 @@ public final class ClassRegister {
     // MARK: Close registration
     
     public func closeRegistration() {
-        for subclassPassports in classNameToSubclassPassports.values {
-            for passport in subclassPassports {
-                printGodotError("Class register couldn't register \(passport.className) because no valid superclass was provided.")
+        for subclassBindings in classNameToWaitingSubclassBindings.values {
+            for binding in subclassBindings {
+                printGodotError("Class register couldn't register \(binding.name) because no valid superclass was provided.")
             }
         }
         
-        classNameToSubclassPassports.removeAll()
+        classNameToWaitingSubclassBindings.removeAll()
         isRegistrationOpen = false
     }
     
@@ -89,66 +92,73 @@ public final class ClassRegister {
         return objectPtr
     }
     
-    private func insertPassport(_ passport: ClassPassport,
-                                forSuperclassName superclassName: StringName) {
-        var passports = classNameToSubclassPassports[superclassName] ?? []
-        passports.append(passport)
-        classNameToSubclassPassports[superclassName] = passports
+    private func insertWaitingClassBinding(_ binding: ClassBinding) {
+        var bindings = classNameToWaitingSubclassBindings[binding.superclassName] ?? []
+        bindings.append(binding)
+        classNameToWaitingSubclassBindings[binding.superclassName] = bindings
     }
     
-    public func registerClass<Class>(
-        ofType classType: Class.Type,
-        superclassName: StringName,
-        toStringFunction: GDExtensionClassToString,
-        createInstanceFunction: GDExtensionClassCreateInstance,
-        freeInstanceFunction: GDExtensionClassFreeInstance) {
-        // If the type is not an Object, then nothing should be done.
-        return
-    }
-    
-#warning("Do the to string function")
+    @discardableResult
     public func registerClass<Class>(
         ofType classType: Class.Type,
         superclassName: StringName,
         toStringFunction: GDExtensionClassToString,
         createInstanceFunction: GDExtensionClassCreateInstance,
         freeInstanceFunction: GDExtensionClassFreeInstance)
-    where Class : Object {
-        guard isRegistrationOpen else {
-            printGodotError("Cannot register class \(classType) because the registration is closed.")
-            return
-        }
-        
+    -> RegistrationResult {
+        // If the type is not an Object, then nothing should be done.
+        return .none
+    }
+    
+#warning("Do the to string function")
+    @discardableResult
+    public func registerClass<Class>(
+        ofType classType: Class.Type,
+        superclassName: StringName,
+        toStringFunction: GDExtensionClassToString,
+        createInstanceFunction: GDExtensionClassCreateInstance,
+        freeInstanceFunction: GDExtensionClassFreeInstance)
+    -> RegistrationResult where Class : Object {
         guard let currentLevel else {
             printGodotError("Cannot register class \(classType) because no initialization level was provided.")
-            return
+            return .failure
         }
         
-        let className = classType.godotClassName()
-        
-        guard !classIsAlreadyRegistered(withName: className) else {
-            printGodotError("Cannot register class \(classType) because it is already registered.")
-            return
-        }
-        
-        guard classIsAlreadyRegistered(withName: superclassName) else {
-            let passport = ClassPassport(classType: classType,
-                                         className: className,
-                                         superclassName: superclassName,
-                                         toStringFunction: toStringFunction,
-                                         createInstanceFunction: createInstanceFunction,
-                                         freeInstanceFunction: freeInstanceFunction)
-            insertPassport(passport, forSuperclassName: superclassName)
-            return
-        }
-        
-        // Register this class within our extension.
         let classBinding = ClassBinding(
             level: currentLevel,
             type: classType,
-            name: className,
-            superclassName: superclassName
+            name: classType.godotClassName(),
+            superclassName: superclassName,
+            toStringFunction: toStringFunction,
+            createInstanceFunction: createInstanceFunction,
+            freeInstanceFunction: freeInstanceFunction
         )
+        
+        return registerClassBinding(classBinding)
+    }
+    
+    @discardableResult
+    private func registerClassBinding(_ classBinding: ClassBinding) -> RegistrationResult {
+        let classType = classBinding.type
+        
+        guard isRegistrationOpen else {
+            printGodotError("Cannot register class \(classType) because the registration is closed.")
+            return .failure
+        }
+        
+        let className = classBinding.name
+        let superclassName = classBinding.superclassName
+        
+        guard !classIsAlreadyRegistered(withName: className) else {
+            printGodotError("Cannot register class \(classType) because it is already registered.")
+            return .failure
+        }
+        
+        guard classIsAlreadyRegistered(withName: superclassName) else {
+            insertWaitingClassBinding(classBinding)
+            return .waiting
+        }
+        
         classNameToClassBinding[className] = classBinding
         
 #warning("Fill all the blanks")
@@ -168,11 +178,11 @@ public final class ClassRegister {
             property_can_revert_func: { _, _ in while true {} },
             property_get_revert_func: { _, _, _ in while true {} },
             notification_func: { _, _ in },
-            to_string_func: toStringFunction,
+            to_string_func: classBinding.toStringFunction,
             reference_func: nil,
             unreference_func: nil,
-            create_instance_func: createInstanceFunction, // This one is mandatory.
-            free_instance_func: freeInstanceFunction, // This one is mandatory.
+            create_instance_func: classBinding.createInstanceFunction, // This one is mandatory.
+            free_instance_func: classBinding.freeInstanceFunction, // This one is mandatory.
             get_virtual_func: { ClassRegister.virtualFunc(fromUserDataPtr: $0, methodNamePtr: $1) },
             get_rid_func: nil,
             class_userdata: Unmanaged.passUnretained(classBinding).toOpaque()
@@ -193,17 +203,13 @@ public final class ClassRegister {
             registerVirtualFunc(ofType: classType, name: methodName, call: call)
         }
         
-        if let subclassPassports = classNameToSubclassPassports.removeValue(forKey: className) {
-            for passport in subclassPassports {
-                registerClass(ofType: passport.classType,
-                              superclassName: passport.superclassName,
-                              toStringFunction: passport.toStringFunction,
-                              createInstanceFunction: passport.createInstanceFunction,
-                              freeInstanceFunction: passport.freeInstanceFunction)
+        if let subclassBindings = classNameToWaitingSubclassBindings.removeValue(forKey: className) {
+            for binding in subclassBindings {
+                registerClassBinding(binding)
             }
         }
         
-        return
+        return .success
     }
     
     // MARK: Virtual functions
@@ -258,16 +264,17 @@ public final class ClassRegister {
     
     // MARK: Function registration
     
+    @discardableResult
     public func registerFunction<Class>(
         withName functionName: Swift.String,
         insideType classType: Class.Type,
         arguments: FunctionParameter...,
         returnType: FunctionParameter?,
-        call: GDExtensionClassMethodCall
-    ) where Class : Object {
+        call: GDExtensionClassMethodCall)
+    -> RegistrationResult where Class : Object {
         guard isRegistrationOpen else {
             printGodotError("Cannot register function \(functionName) because the registration is closed.")
-            return
+            return .failure
         }
         
         let className = classType.godotClassName()
@@ -275,7 +282,7 @@ public final class ClassRegister {
         
         guard let classBinding = classNameToClassBinding[className] else {
             printGodotError("Class doesn't exist.")
-            return
+            return .failure
         }
         
 #warning("Translate functions")
@@ -322,7 +329,7 @@ public final class ClassRegister {
             }
         }
         
-        return
+        return .success
     }
 }
 
@@ -336,18 +343,4 @@ private extension StringName {
         // We create the new string by calling the constructor to ensure copy of the data.
         return StringName(string)
     }
-}
-
-// MARK: - ClassPassport
-
-/// When a class couldn't be registered because its superclass is still not registered,
-/// a passport is created instead.
-/// This passport is used to register the class when possible.
-private struct ClassPassport {
-    let classType: Object.Type
-    let className: StringName
-    let superclassName: StringName
-    let toStringFunction: GDExtensionClassToString
-    let createInstanceFunction: GDExtensionClassCreateInstance
-    let freeInstanceFunction: GDExtensionClassFreeInstance
 }
