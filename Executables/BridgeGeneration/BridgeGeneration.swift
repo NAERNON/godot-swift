@@ -1,6 +1,7 @@
 import Foundation
 import ArgumentParser
 import CodeGenerator
+import SourceKittenFramework
 
 @main
 struct BridgeGeneration: ParsableCommand {
@@ -24,10 +25,24 @@ struct BridgeGeneration: ParsableCommand {
         let moduleEntryCFunction = moduleName.lowercased() + "_library_init"
         
         let fileURLs = try swiftFilePaths(inside: inputURL)
+        let files = fileURLs.compactMap { SourceKittenFramework.File(path: $0.path()) }
+        let filesAndStructures = try files.map { ($0, try Structure(file: $0)) }
+        
+        let classDefinitions = filesAndStructures.flatMap { (file, structure) in
+            ClassDefinition.definitions(insideStructure: structure, filePath: file.path)
+        }
+        let classNames = Set(classDefinitions.map { $0.name })
+        let functionDefinitions = filesAndStructures.flatMap { (file, structure) in
+            FunctionDefinition.definitions(insideStructure: structure,
+                                           filePath: file.path,
+                                           classesNames: classNames,
+                                           moduleName: moduleName)
+        }
         
         let initializationFile = InitializationFile(
             moduleEntryCFunction: moduleEntryCFunction,
-            classDefinitions: try fileURLs.flatMap { try ClassDefinition.definitionsForFile(at: $0) })
+            classDefinitions: classDefinitions,
+            functionDefinitions: functionDefinitions)
         
         try save(file: initializationFile,
                  codeFormatter: codeFormatter,
@@ -56,7 +71,7 @@ struct BridgeGeneration: ParsableCommand {
         code
     }
     
-    private func save(file: some File,
+    private func save(file: some CodeGenerator.File,
                       codeFormatter: CodeFormatter,
                       atURL url: URL) throws {
         let inURLFile = file

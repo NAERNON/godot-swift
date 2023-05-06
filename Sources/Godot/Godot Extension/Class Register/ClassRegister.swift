@@ -77,10 +77,6 @@ public final class ClassRegister {
         godotClassesNames.insert(classType.godotClassName())
     }
     
-    public func instantiateClass<Class>(ofType type: Class.Type) -> GDExtensionObjectPtr {
-        fatalError("Cannot instantiate class that is not a subclass of Object.")
-    }
-    
     public func instantiateClass<Class>(ofType type: Class.Type) -> GDExtensionObjectPtr where Class : Object {
         let instance = Class()
         var objectPtr: GDExtensionObjectPtr!
@@ -96,18 +92,6 @@ public final class ClassRegister {
         var bindings = classNameToWaitingSubclassBindings[binding.superclassName] ?? []
         bindings.append(binding)
         classNameToWaitingSubclassBindings[binding.superclassName] = bindings
-    }
-    
-    @discardableResult
-    public func registerClass<Class>(
-        ofType classType: Class.Type,
-        superclassName: StringName,
-        toStringFunction: GDExtensionClassToString,
-        createInstanceFunction: GDExtensionClassCreateInstance,
-        freeInstanceFunction: GDExtensionClassFreeInstance)
-    -> RegistrationResult {
-        // If the type is not an Object, then nothing should be done.
-        return .none
     }
     
 #warning("Do the to string function")
@@ -268,8 +252,7 @@ public final class ClassRegister {
     public func registerFunction<Class>(
         withName functionName: Swift.String,
         insideType classType: Class.Type,
-        arguments: FunctionParameter...,
-        returnType: FunctionParameter?,
+        types: FunctionRegistrationTypes,
         call: GDExtensionClassMethodCall)
     -> RegistrationResult where Class : Object {
         guard isRegistrationOpen else {
@@ -280,18 +263,22 @@ public final class ClassRegister {
         let className = classType.godotClassName()
         let functionName = StringName(swiftString: functionName)
         
-        guard let classBinding = classNameToClassBinding[className] else {
-            printGodotError("Class doesn't exist.")
+        guard let classBinding = classNameToClassBinding[className],
+              classBinding.type == classType else {
+            printGodotError("Cannot register function \(functionName) because the class is not registered.")
             return .failure
         }
+        
+        let arguments = types.arguments.map { $0.propertyInfo(withClassName: className) }
+        let returnType = types.returnType?.propertyInfo(withClassName: className)
         
 #warning("Translate functions")
 #warning("Do the static and vararg")
         // Register this function within our extension.
         let functionBinding = FunctionBinding(name: functionName,
                                               className: className,
-                                              arguments: arguments.map { $0.propertyInfo(withClassName: className) },
-                                              returnType: returnType?.propertyInfo(withClassName: className),
+                                              arguments: arguments,
+                                              returnType: returnType,
                                               isVararg: false,
                                               isStatic: false)
         classBinding.appendFunctionBinding(functionBinding)

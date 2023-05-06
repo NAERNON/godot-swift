@@ -4,13 +4,16 @@ import CodeGenerator
 struct InitializationFile: File {
     let moduleEntryCFunction: String
     let classDefinitions: [ClassDefinition]
+    let functionDefinitions: [FunctionDefinition]
     
     let path: String = "Initialization.swift"
     
     init(moduleEntryCFunction: String,
-         classDefinitions: [ClassDefinition]) {
+         classDefinitions: [ClassDefinition],
+         functionDefinitions: [FunctionDefinition]) {
         self.moduleEntryCFunction = moduleEntryCFunction
         self.classDefinitions = classDefinitions
+        self.functionDefinitions = functionDefinitions
     }
     
     var code: some Code {
@@ -25,6 +28,12 @@ struct InitializationFile: File {
             Mark("Class registration", isSeparator: true)
             
             classRegistrationCode()
+            
+            Mark("Function registration", isSeparator: true)
+            
+            functionParameterFromPointerCode()
+            
+            functionRegistrationCode()
         }
     }
     
@@ -51,13 +60,18 @@ return GodotExtension.shared.setUp(
         }
         
         Func(name: "initializeModule", parameters: .named("level", type: "GDExtensionInitializationLevel")) {
-            Stack {
-                Guard(condition: "level == GDEXTENSION_INITIALIZATION_SCENE") {
-                    Return()
-                }
-                
-                "registerClasses()"
+            Guard(condition: "level == GDEXTENSION_INITIALIZATION_SCENE") {
+                Return()
             }
+            
+            Space()
+            
+            "registerClasses()"
+            "registerFunctions()"
+            
+            Space()
+            
+            "GodotExtension.shared.classRegister.closeRegistration()"
         }.private()
         
         Func(name: "unitializeModule", parameters: .named("level", type: "GDExtensionInitializationLevel")) {
@@ -66,38 +80,83 @@ return GodotExtension.shared.setUp(
         }.private()
     }
     
-    @CodeBuilder
+    // MARK: Class registration
+    
     private func classRegistrationCode() -> some Code {
         Func(name: "registerClasses") {
             Stack {
                 ForEach(classDefinitions) { classDefinition in
                     classRegistrationCode(for: classDefinition)
                 }
-                
-                "GodotExtension.shared.classRegister.closeRegistration()"
             }
         }.private()
     }
     
-    private func classRegistrationCode(for classDefinition: ClassDefinition) -> some Code {
+    private func classRegistrationCode(for definition: ClassDefinition) -> some Code {
         Group {
-            Mark(classDefinition.name)
+            Mark(definition.name)
             
-            if let filePath = classDefinition.filePath {
+            if let filePath = definition.filePath {
                 Comment {
                     "Defined inside file: " + filePath
                 }
             }
             
-            "GodotExtension.shared.classRegister.registerClass(ofType: \(classDefinition.name).self, superclassName: \"\(classDefinition.superclassName)\") { _, _, _ in"
+            "GodotExtension.shared.classRegister.registerClass(ofType: \(definition.name).self, superclassName: \"\(definition.superclassName)\") { _, _, _ in"
+            
             "} createInstanceFunction: { _ in"
             
-            Return("GodotExtension.shared.classRegister.instantiateClass(ofType: \(classDefinition.name).self)").indent()
+            Return("GodotExtension.shared.classRegister.instantiateClass(ofType: \(definition.name).self)").indent()
             
             "} freeInstanceFunction: { _, instancePtr in"
             
-            "Unmanaged<\(classDefinition.name)>.fromOpaque(instancePtr!).release()".indent()
+            "Unmanaged<\(definition.name)>.fromOpaque(instancePtr!).release()".indent()
             
+            "}"
+        }
+    }
+    
+    // MARK: Function registration
+    
+    private func functionParameterFromPointerCode() -> some Code {
+        Extension("GDExtensionConstVariantPtr") {
+            "func functionParameter<T>() -> T {"
+            "fatalError()".indent()
+            "}"
+            
+            Space()
+            
+            "func functionParameter<T>() -> T where T : ExpressibleByVariant {"
+            "try! T(variant: Variant(extensionVariantPtr: self))".indent()
+            "}"
+        }.private()
+    }
+    
+    private func functionRegistrationCode() -> some Code {
+        Func(name: "registerFunctions") {
+            Stack {
+                ForEach(functionDefinitions) { functionDefinition in
+                    functionRegistrationCode(for: functionDefinition)
+                }
+            }
+        }.private()
+    }
+    
+    private func functionRegistrationCode(for definition: FunctionDefinition) -> some Code {
+        Group {
+            Mark(definition.className + "." + definition.nameSignature)
+            
+            let nameParameter = "\"\(definition.name)\""
+            let insideTypeParameter = "\(definition.className).self"
+            let typesParameter = "GodotExtension.shared.classRegister.functionParameters(from: \(definition.className).\(definition.name), parameterNames: \(definition.parameters.map { $0.name }))"
+            
+            "GodotExtension.shared.classRegister.registerFunction(withName: \(nameParameter), insideType: \(insideTypeParameter), types: \(typesParameter)) { _, instancePtr, args, argsCount, returnPtr, error in"
+            Group {
+                "Unmanaged<\(definition.className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+                "." + definition.functionCallCode(withParameters: (0..<definition.parameters.count).map {
+                    "args!.advanced(by: \($0)).pointee!.functionParameter()"
+                })
+            }.indent()
             "}"
         }
     }

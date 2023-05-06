@@ -3,9 +3,12 @@ import SourceKittenFramework
 
 struct ClassDefinition {
     let name: String
-    let superclassDefinition: String
-    let superclassName: String
+    let superclassTypeDefinition: TypeDefinition
     let filePath: String?
+    
+    var superclassName: String {
+        superclassTypeDefinition.lastComponent
+    }
     
     init?(dictionary: [String : SourceKitRepresentable], filePath: String?) {
         guard dictionary["key.kind"] as? String == "source.lang.swift.decl.class",
@@ -17,26 +20,15 @@ struct ClassDefinition {
         }
         
         self.name = name
-        self.superclassDefinition = superclassDefinition
-        self.superclassName = superclassDefinition.components(separatedBy: .punctuationCharacters).last ?? ""
+        self.superclassTypeDefinition = TypeDefinition(superclassDefinition)
         self.filePath = filePath
     }
     
-    static func definitions(insideFile file: File) throws -> [ClassDefinition] {
-        let structure = try Structure(file: file)
-        
+    static func definitions(insideStructure structure: Structure, filePath: String?) -> [ClassDefinition] {
         guard let substructure = structure.dictionary["key.substructure"] as? [[String : SourceKitRepresentable]] else {
             return []
         }
         
-        return substructure.compactMap { ClassDefinition(dictionary: $0, filePath: file.path) }
-    }
-    
-    static func definitionsForFile(at url: URL) throws -> [ClassDefinition] {
-        guard let file = File(path: url.path()) else {
-            return []
-        }
-        
-        return try definitions(insideFile: file)
+        return substructure.compactMap { ClassDefinition(dictionary: $0, filePath: filePath) }
     }
 }
