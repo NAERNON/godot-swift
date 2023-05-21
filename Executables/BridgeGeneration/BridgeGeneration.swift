@@ -14,6 +14,12 @@ struct BridgeGeneration: ParsableCommand {
     @Option(help: "The path where the generated files will be created.")
     var output: String
     
+    @Flag(name: .shortAndLong, help: "The generated files are not written to disk.")
+    private var noWrite: Bool = false
+    
+    @Flag(name: .shortAndLong, help: "The generated files will be printed.")
+    private var printOutput: Bool = false
+    
     func run() throws {
         let inputURL = URL(filePath: input, directoryHint: .isDirectory)
         let outputURL = URL(filePath: output, directoryHint: .isDirectory)
@@ -26,27 +32,23 @@ struct BridgeGeneration: ParsableCommand {
         
         let fileURLs = try swiftFilePaths(inside: inputURL)
         let files = fileURLs.compactMap { SourceKittenFramework.File(path: $0.path()) }
-        let filesAndStructures = try files.map { ($0, try Structure(file: $0)) }
+        let structures = try files.map { try Structure(file: $0) }
         
-        let classDefinitions = filesAndStructures.flatMap { (file, structure) in
-            ClassDefinition.definitions(insideStructure: structure, filePath: file.path)
-        }
-        let classNames = Set(classDefinitions.map { $0.name })
-        let functionDefinitions = filesAndStructures.flatMap { (file, structure) in
-            FunctionDefinition.definitions(insideStructure: structure,
-                                           filePath: file.path,
-                                           classesNames: classNames,
-                                           moduleName: moduleName)
+        let classDefinitions = structures.flatMap { structure in
+            ClassDefinition.definitions(insideStructure: structure)
         }
         
-        let initializationFile = InitializationFile(
+        let godotBridgeFile = GodotBridgeFile(
             moduleEntryCFunction: moduleEntryCFunction,
-            classDefinitions: classDefinitions,
-            functionDefinitions: functionDefinitions)
+            classDefinitions: classDefinitions)
         
-        try save(file: initializationFile,
-                 codeFormatter: codeFormatter,
-                 atURL: outputURL)
+        let godotFiles: [any CodeGenerator.File] = [godotBridgeFile]
+        
+        for file in godotFiles {
+            try process(file: file,
+                        codeFormatter: codeFormatter,
+                        atURL: outputURL)
+        }
     }
     
     private func swiftFilePaths(inside directory: URL) throws -> [URL] {
@@ -63,24 +65,27 @@ struct BridgeGeneration: ParsableCommand {
             .filter { $0.pathExtension == "swift" }
     }
     
-    // MARK: Save file
+    // MARK: Process file
     
-    @CodeBuilder
-    private func prefixedCode(_ code: some Code) -> some Code {
-        "THIS FILE IS GENERATED. EDITS WILL BE LOST.".comment().padding(.bottom)
-        code
-    }
-    
-    private func save(file: some CodeGenerator.File,
-                      codeFormatter: CodeFormatter,
-                      atURL url: URL) throws {
-        let inURLFile = file
-            .prefixPath(with: "_GodotBridge")
+    private func process(file: some CodeGenerator.File,
+                         codeFormatter: CodeFormatter,
+                         atURL url: URL) throws {
+        let finalFile = file
             .prefixPath(withURL: url)
             .markGenerated()
         
-        let fileURL = inURLFile.url
+        let fileURL = finalFile.url
         
-        try inURLFile.write(using: codeFormatter)
+        if printOutput {
+            print("Printing file \(finalFile.path)")
+            print(codeFormatter.string(from: finalFile.code))
+        }
+        
+        guard !noWrite else {
+            _ = try finalFile.data(using: codeFormatter)
+            return
+        }
+        
+        try finalFile.write(using: codeFormatter)
     }
 }

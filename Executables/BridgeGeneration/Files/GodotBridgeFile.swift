@@ -1,22 +1,43 @@
 import Foundation
 import CodeGenerator
 
-struct InitializationFile: File {
+struct GodotBridgeFile: File {
     let moduleEntryCFunction: String
     let classDefinitions: [ClassDefinition]
-    let functionDefinitions: [FunctionDefinition]
     
-    let path: String = "Initialization.swift"
+    let path: String = "_GodotBridge.swift"
     
     init(moduleEntryCFunction: String,
-         classDefinitions: [ClassDefinition],
-         functionDefinitions: [FunctionDefinition]) {
+         classDefinitions: [ClassDefinition]) {
         self.moduleEntryCFunction = moduleEntryCFunction
         self.classDefinitions = classDefinitions
-        self.functionDefinitions = functionDefinitions
     }
     
+    private func isClassExportable(_ classDefinition: ClassDefinition) -> Bool {
+        if let accessControl = classDefinition.accessControl,
+           accessControl >= .public,
+           classDefinition.name.hasSuffix("_godot") {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    private func isFunctionExportable(_ functionDefinition: FunctionDefinition) -> Bool {
+        if let accessControl = functionDefinition.accessControl,
+           accessControl >= .public,
+           functionDefinition.name.hasSuffix("_godot") {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    // MARK: Code
+    
     var code: some Code {
+        let filteredClassDefinitions = classDefinitions.filter(isClassExportable)
+        
         Import("GodotExtensionHeaders")
         Import("Godot")
         
@@ -24,16 +45,8 @@ struct InitializationFile: File {
         
         Stack {
             initializationModuleCode()
-            
-            Mark("Class registration", isSeparator: true)
-            
-            classRegistrationCode()
-            
-            Mark("Function registration", isSeparator: true)
-            
-            functionParameterFromPointerCode()
-            
-            functionRegistrationCode()
+            classRegistrationCode(for: filteredClassDefinitions)
+            functionRegistrationCode(for: filteredClassDefinitions)
         }
     }
     
@@ -80,7 +93,10 @@ return GodotExtension.shared.setUp(
         }.private()
     }
     
-    private func classRegistrationCode() -> some Code {
+    @CodeBuilder
+    private func classRegistrationCode(for classDefinitions: [ClassDefinition]) -> some Code {
+        Mark("Class registration", isSeparator: true)
+        
         Func(name: "registerClasses") {
             Stack {
                 ForEach(classDefinitions) { classDefinition in
@@ -90,25 +106,39 @@ return GodotExtension.shared.setUp(
         }.private()
     }
     
-    private func functionParameterFromPointerCode() -> some Code {
+    @CodeBuilder
+    private func functionRegistrationCode(for classDefinitions: [ClassDefinition]) -> some Code {
+        let filteredFunctionDefinitions = classDefinitions
+            .map { $0.functionDefinitions().filter(isFunctionExportable)
+            }
+        let functionParametersCounts = filteredFunctionDefinitions
+            .reduce(into: Set<Int>()) { partialResult, functionDefinitions in
+                for functionDefinition in functionDefinitions {
+                    partialResult.insert(functionDefinition.parameters.count)
+                }
+            }
+        
+        Mark("Function registration", isSeparator: true)
+        
+        ForEach(functionParametersCounts.sorted()) { count in
+            FunctionParameters(parametersCount: count)
+        }
+        
         Extension("GDExtensionConstVariantPtr") {
-            "func functionParameter<T>() -> T {"
-            "fatalError()".indent()
-            "}"
-            
-            Space()
-            
             "func functionParameter<T>() -> T where T : ExpressibleByVariant {"
             "try! T(variant: Variant(extensionVariantPtr: self))".indent()
             "}"
         }.private()
-    }
-    
-    private func functionRegistrationCode() -> some Code {
+        
         Func(name: "registerFunctions") {
             Stack {
-                ForEach(functionDefinitions) { functionDefinition in
-                    FunctionRegistration(definition: functionDefinition)
+                ForEach(0..<classDefinitions.count) { index in
+                    let classDefinition = classDefinitions[index]
+                    let functionDefinitions = filteredFunctionDefinitions[index]
+                    
+                    ForEach(functionDefinitions) { functionDefinition in
+                        FunctionRegistration(definition: functionDefinition, className: classDefinition.name)
+                    }
                 }
             }
         }.private()

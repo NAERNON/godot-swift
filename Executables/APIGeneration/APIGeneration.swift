@@ -14,15 +14,15 @@ struct APIGeneration: ParsableCommand {
         let jsonDecoder = JSONDecoder()
         let fileManager = FileManager.default
         
-        let currentURL = URL(fileURLWithPath: fileManager.currentDirectoryPath)
+        let currentURL = URL(filePath: fileManager.currentDirectoryPath, directoryHint: .isDirectory)
         let apiJsonFileURL = currentURL
             .appendingPathComponent("Sources")
             .appendingPathComponent("GodotExtensionHeaders")
-            .appendingPathComponent("extension_api.json")
+            .appendingPathComponent("extension_api.json", isDirectory: true)
         let generatedFolderURL = currentURL
             .appendingPathComponent("Sources")
             .appendingPathComponent("Godot")
-            .appendingPathComponent("_Generated")
+            .appendingPathComponent("_Generated", isDirectory: true)
         
         let data = try Data(contentsOf: apiJsonFileURL)
         
@@ -52,10 +52,10 @@ struct APIGeneration: ParsableCommand {
                 print("")
             }
             
-            try save(file: file,
-                     codeFormatter: codeFormatter,
-                     fileManager: fileManager,
-                     atURL: generatedFolderURL)
+            try process(file: file,
+                        codeFormatter: codeFormatter,
+                        fileManager: fileManager,
+                        atURL: generatedFolderURL)
         }
         
         let generationDuration = Date.now.timeIntervalSince(generationStart)
@@ -63,26 +63,26 @@ struct APIGeneration: ParsableCommand {
         print("Files generated! (\(String(format: "%.2f", generationDuration))s)")
     }
     
-    // MARK: Save file
+    // MARK: Process file
 
-    private func save(file: some File,
-                      codeFormatter: CodeFormatter,
-                      fileManager: FileManager,
-                      atURL url: URL) throws {
+    private func process(file: some File,
+                         codeFormatter: CodeFormatter,
+                         fileManager: FileManager,
+                         atURL url: URL) throws {
+        let finalFile = file.prefixPath(withURL: url).markGenerated()
+        let fileURL = finalFile.url
+        
         guard !noWrite else {
-            _ = try file.data(using: codeFormatter)
+            _ = try finalFile.data(using: codeFormatter)
             return
         }
-        
-        let inURLFile = file.prefixPath(withURL: url).markGenerated()
-        let fileURL = inURLFile.url
         
         let filePathWithoutFileName = fileURL.deletingLastPathComponent()
         if !fileManager.fileExists(atPath: filePathWithoutFileName.path) {
             try fileManager.createDirectory(atPath: filePathWithoutFileName.path, withIntermediateDirectories: true)
         }
         
-        try inURLFile.write(using: codeFormatter)
+        try finalFile.write(using: codeFormatter)
     }
 }
 

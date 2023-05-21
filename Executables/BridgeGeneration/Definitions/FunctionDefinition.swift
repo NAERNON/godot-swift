@@ -2,74 +2,23 @@ import Foundation
 import SourceKittenFramework
 
 struct FunctionDefinition {
-    let nameSignature: String
+    let signature: String
     let name: String
     let parameters: [Parameter]
-    let className: String
-    let filePath: String?
+    let accessControl: AccessControl?
     
-    init?(dictionary: [String : SourceKitRepresentable],
-          className: String,
-          filePath: String?) {
+    init?(dictionary: [String : SourceKitRepresentable]) {
         guard dictionary["key.kind"] as? String == "source.lang.swift.decl.function.method.instance",
-              dictionary["key.accessibility"] as? String == "source.lang.swift.accessibility.public",
-              let nameSignature = dictionary["key.name"] as? String,
-              let substructure = dictionary["key.substructure"] as? [[String : SourceKitRepresentable]] else {
+              let signature = dictionary["key.name"] as? String else {
             return nil
         }
         
-        self.nameSignature = nameSignature
-        self.name = nameSignature.components(separatedBy: "(").first ?? ""
-        self.parameters = substructure.compactMap { Parameter(dictionary: $0) }
-        self.className = className
-        self.filePath = filePath
+        let substructure = dictionary["key.substructure"] as? [[String : SourceKitRepresentable]]
         
-        if parameters.contains(where: { !$0.modifiers.isEmpty }) {
-            return nil
-        }
-    }
-    
-    static func definitions(insideDictionary dictionary: [String : SourceKitRepresentable],
-                            className: String,
-                            filePath: String?) -> [FunctionDefinition] {
-        guard let substructure = dictionary["key.substructure"] as? [[String : SourceKitRepresentable]] else {
-            return []
-        }
-        
-        return substructure.compactMap {
-            FunctionDefinition(dictionary: $0, className: className, filePath: filePath)
-        }
-    }
-    
-    static func definitions(insideStructure structure: Structure,
-                            filePath: String?,
-                            classesNames: Set<String>,
-                            moduleName: String) -> [FunctionDefinition] {
-        guard let substructure = structure.dictionary["key.substructure"] as? [[String : SourceKitRepresentable]] else {
-            return []
-        }
-        
-        return substructure.flatMap { dictionary -> [FunctionDefinition] in
-            guard let className = dictionary["key.name"] as? String,
-                  let kind = dictionary["key.kind"] as? String,
-                  kind == "source.lang.swift.decl.class" || kind == "source.lang.swift.decl.extension" else {
-                return []
-            }
-            
-            let nameTypeDefinition = TypeDefinition(className)
-            
-            let classIsValid = classesNames.contains(nameTypeDefinition.lastComponent)
-            let moduleIsValid = nameTypeDefinition.components.count == 1
-                || (nameTypeDefinition.components.count == 2 && nameTypeDefinition.components[0] == moduleName)
-            
-            guard classIsValid && moduleIsValid else {
-                return []
-            }
-            
-            return FunctionDefinition.definitions(insideDictionary: dictionary,
-                                                  className: nameTypeDefinition.lastComponent,
-                                                  filePath: filePath)
-        }
+        self.signature = signature
+        self.name = signature.components(separatedBy: "(").first ?? ""
+        self.parameters = substructure?.compactMap { Parameter(dictionary: $0) } ?? []
+        self.accessControl = AccessControl(accessibility: dictionary["key.accessibility"] as? String)
     }
     
     // MARK: Tools
@@ -78,7 +27,7 @@ struct FunctionDefinition {
         var string = String()
         var parameterIndex = 0
         
-        for char in nameSignature {
+        for char in signature {
             string.append(char)
             if char == ":" {
                 string.append(parameters[parameterIndex])

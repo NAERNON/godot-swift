@@ -6,7 +6,7 @@ struct TypeDefinition {
     
     init(_ code: String) {
         self.code = code
-        self.components = code.components(separatedBy: .punctuationCharacters)
+        self.components = code.components(separatedBy: ".")
     }
     
     var lastComponent: String {

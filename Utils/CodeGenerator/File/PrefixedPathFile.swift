@@ -20,7 +20,7 @@ public extension File {
     }
     
     func prefixPath(withURL url: URL) -> some File {
-        PrefixedPathFile(file: self, prefix: url.path() + "/")
+        PrefixedPathFile(file: self, prefix: url.path())
     }
     
     func insideFolder(_ folderName: String) -> some File {

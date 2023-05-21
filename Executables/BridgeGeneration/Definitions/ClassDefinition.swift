@@ -3,32 +3,46 @@ import SourceKittenFramework
 
 struct ClassDefinition {
     let name: String
-    let superclassTypeDefinition: TypeDefinition
-    let filePath: String?
+    let superclassTypeDefinition: TypeDefinition?
+    let accessControl: AccessControl?
     
-    var superclassName: String {
-        superclassTypeDefinition.lastComponent
+    private let substructure: [[String : SourceKitRepresentable]]?
+    
+    var superclassName: String? {
+        superclassTypeDefinition?.lastComponent
     }
     
-    init?(dictionary: [String : SourceKitRepresentable], filePath: String?) {
+    init?(dictionary: [String : SourceKitRepresentable]) {
         guard dictionary["key.kind"] as? String == "source.lang.swift.decl.class",
-              dictionary["key.accessibility"] as? String == "source.lang.swift.accessibility.public",
-              let name = dictionary["key.name"] as? String,
-              let inheritedTypes = dictionary["key.inheritedtypes"] as? [[String : SourceKitRepresentable]],
-              let superclassDefinition = inheritedTypes.first?["key.name"] as? String else {
+              let name = dictionary["key.name"] as? String else {
             return nil
         }
         
         self.name = name
-        self.superclassTypeDefinition = TypeDefinition(superclassDefinition)
-        self.filePath = filePath
+        if let inheritedTypes = dictionary["key.inheritedtypes"] as? [[String : SourceKitRepresentable]],
+           let superclassDefinition = inheritedTypes.first?["key.name"] as? String {
+            self.superclassTypeDefinition = TypeDefinition(superclassDefinition)
+        } else {
+            self.superclassTypeDefinition = nil
+        }
+        self.accessControl = AccessControl(accessibility: dictionary["key.accessibility"] as? String)
+        
+        self.substructure = dictionary["key.substructure"] as? [[String : SourceKitRepresentable]]
     }
     
-    static func definitions(insideStructure structure: Structure, filePath: String?) -> [ClassDefinition] {
+    static func definitions(insideStructure structure: Structure) -> [ClassDefinition] {
         guard let substructure = structure.dictionary["key.substructure"] as? [[String : SourceKitRepresentable]] else {
             return []
         }
         
-        return substructure.compactMap { ClassDefinition(dictionary: $0, filePath: filePath) }
+        return substructure.compactMap { ClassDefinition(dictionary: $0) }
+    }
+    
+    // MARK: Functions
+    
+    func functionDefinitions() -> [FunctionDefinition] {
+        guard let substructure else { return [] }
+        
+        return substructure.compactMap { FunctionDefinition(dictionary: $0) }
     }
 }

@@ -1,7 +1,7 @@
 import Foundation
 
 public struct ForEach<Data, Content>: Code, RootCode
-where Data : RandomAccessCollection,
+where Data : Collection,
       Content : Code {
     let data: Data
     let content: (Data.Element) -> Content

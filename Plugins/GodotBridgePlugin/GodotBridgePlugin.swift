@@ -3,8 +3,8 @@ import PackagePlugin
 @main
 struct GodotBridgePlugin: BuildToolPlugin {
     func createBuildCommands(context: PluginContext, target: Target) async throws -> [Command] {
-        let generatedFiles = ["Initialization.swift"]
-        let outputFiles = generatedFiles.map { context.pluginWorkDirectory.appending(subpath: "_GodotBridge" + $0) }
+        let generatedFiles = ["_GodotBridge.swift"]
+        let outputFiles = generatedFiles.map { context.pluginWorkDirectory.appending(subpath: $0) }
         
         return [
             .buildCommand(
