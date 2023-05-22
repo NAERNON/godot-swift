@@ -9,7 +9,7 @@ extension ExtensionApi.BuiltinClass {
            !constants.isEmpty {
             Mark("Constants", isSeparator: true)
             
-            Group {
+            Container {
                 ForEach(constants.consecutiveSplit { $0.type != $1.type }) { sameTypeConstants in
                     ForEach(sameTypeConstants) { constant in
                         Let(constantName(constant.name))

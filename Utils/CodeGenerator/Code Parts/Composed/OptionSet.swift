@@ -22,7 +22,7 @@ public struct OptionSet<RawType>: Code where RawType : BinaryInteger {
                     Property("rawValue").selfDefined().assign("rawValue").unalign()
                 }.accessControl(propertiesAccessControl)
                 
-                Group {
+                Container {
                     ForEach(options) { option in
                         Let(option.name)
                             .typed("Self")

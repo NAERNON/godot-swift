@@ -5,7 +5,7 @@ struct FunctionRegistration: Code {
     let className: String
     
     var body: some Code {
-        Group {
+        Container {
             Mark(className + "." + definition.signature)
             
             let nameParameter = "\"\(definition.name)\""
@@ -13,7 +13,7 @@ struct FunctionRegistration: Code {
             let typesParameter = "functionParameters(from: \(className).\(definition.name), parameterNames: \(definition.parameters.map { $0.name }))"
             
             "GodotExtension.shared.classRegister.registerFunction(withName: \(nameParameter), insideType: \(insideTypeParameter), types: \(typesParameter)) { _, instancePtr, args, argsCount, returnPtr, error in"
-            Group {
+            Container {
                 "Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
                 "." + definition.functionCallCode(withParameters: (0..<definition.parameters.count).map {
                     "args!.advanced(by: \($0)).pointee!.functionParameter()"

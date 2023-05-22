@@ -60,7 +60,7 @@ extension ExtensionApi.Enum {
         }
 
         return Enum(nameAndCases.name, type: T.self) {
-            Group {
+            Container {
                 ForEach(cases) { `case` in
                     Case(`case`.name, typedValue: `case`.value)
                 }.align(offset: 1)

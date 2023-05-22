@@ -5,7 +5,7 @@ struct ClassRegistration: Code {
     
     var body: some Code {
         if let superclassName = definition.superclassName {
-            Group {
+            Container {
                 Mark(definition.name)
                 
                 "GodotExtension.shared.classRegister.registerClass(ofType: \(definition.name).self, superclassName: \"\(superclassName)\") { _, _, _ in"

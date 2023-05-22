@@ -33,7 +33,7 @@ ElseContent : Code
     }
     
     public var body: some Code {
-        Group {
+        Container {
             "if \(condition1) {"
             
             conditionContent1().indent()

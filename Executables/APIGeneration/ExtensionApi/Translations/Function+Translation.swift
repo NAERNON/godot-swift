@@ -127,10 +127,10 @@ extension Function {
         
         stringParts.append(")")
         
-        return Group {
+        return Container {
             if breakLineOnArguments && !parameters.isEmpty {
                 stringParts.first!
-                Group {
+                Container {
                     for i in 1..<stringParts.count - 1 {
                         stringParts[i]
                     }

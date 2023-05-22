@@ -14,7 +14,7 @@ extension ExtensionApi.BuiltinClass {
     
     @CodeBuilder
     private func bindingsPropertiesCode() -> some Code {
-        Group {
+        Container {
             ForEach(constructors) { constructor in
                 Var(constructor.godotConstructorPtrName).static().private().typed("GDExtensionPtrConstructor!")
             }
@@ -24,7 +24,7 @@ extension ExtensionApi.BuiltinClass {
             }
         }
         
-        Group {
+        Container {
             if indexingReturnType != nil {
                 Var(godotIndexedSetterPtrName).static().private().typed("GDExtensionPtrIndexedSetter!")
                 Var(godotIndexedGetterPtrName).static().private().typed("GDExtensionPtrIndexedGetter!")
@@ -79,7 +79,7 @@ for any initialization.
     private func setFunctionBindingsFunctionCode() -> some Code {
         Func(name: "setFunctionBindings") {
             Stack {
-                Group {
+                Container {
                     if indexingReturnType != nil {
                         Property(godotIndexedSetterPtrName)
                             .assign("GodotExtension.shared.interface.variant_get_ptr_indexed_setter(\(godotVariantType))")
@@ -88,7 +88,7 @@ for any initialization.
                     }
                 }
                 
-                Group {
+                Container {
                     if isKeyed {
                         Property(godotKeyedSetterPtrName)
                             .assign("GodotExtension.shared.interface.variant_get_ptr_keyed_setter(\(godotVariantType))")
@@ -100,7 +100,7 @@ for any initialization.
                 }
                 
                 if let methods {
-                    Group {
+                    Container {
                         Var("_method_name").typed("StringName!")
                         ForEach(methods) { method in
                             Property("_method_name").assign("\"\(method.name.baseName)\"")
@@ -112,7 +112,7 @@ for any initialization.
                     }
                 }
                 
-                Group {
+                Container {
                     ForEach(operators) { op in
                         Property(op.godotOperatorPtrName)
                             .assign("GodotExtension.shared.interface.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(op.rightType.godotVariantType))")

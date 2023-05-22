@@ -4,7 +4,7 @@ struct FunctionParameters: Code {
     let parametersCount: Int
     
     var body: some Code {
-        Group {
+        Container {
             "private func functionParameters<\(genericString(withTParameter: true))>(from closure: (T) -> ((\(genericString(withTParameter: false))) -> Void), parameterNames: [StringName]) -> ClassRegister.FunctionRegistrationTypes"
             if parametersCount > 0 {
                 "where".indent()
@@ -13,7 +13,7 @@ struct FunctionParameters: Code {
                 "C\(index) : TypedVariantTransformable" + (index < parametersCount - 1 ? "," : "")
             }.indent()
             "{"
-            Group {
+            Container {
                 ".init(arguments: ["
                 ForEach(0..<parametersCount) { index in
                     ".init(type: C\(index).self, name: parameterNames[\(index)], defaultValue: nil),"

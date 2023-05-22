@@ -52,7 +52,7 @@ struct GodotBridgeFile: File {
     
     @CodeBuilder
     private func initializationModuleCode() -> some Code {
-        Group {
+        Container {
             "@_cdecl(\"\(moduleEntryCFunction)\")"
             Func(name: "libraryInit",
                  parameters: [.named("interfacePtr", type: "UnsafePointer<GDExtensionInterface>"),

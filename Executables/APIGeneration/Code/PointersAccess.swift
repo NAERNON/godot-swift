@@ -76,7 +76,7 @@ private struct PointersAccessWithoutArray<Content>: Code where Content: Code {
     }
     
     var body: some Code {
-        Group {
+        Container {
             ForEach(Array(parameters.enumerated())) { index, parameter in
                 let name = CodeLanguage.swift.protectNameIfKeyword(for: parameter.name)
                 let pointerName = self.pointerName(for: parameter)

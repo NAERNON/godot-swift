@@ -37,7 +37,7 @@ public extension Code {
     }
     
     func documentation(@CodeBuilder _ content: @escaping () -> some Code) -> some Code {
-        Group {
+        Container {
             Comment(.doc) {
                 content()
             }

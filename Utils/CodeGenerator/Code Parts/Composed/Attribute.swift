@@ -17,7 +17,7 @@ public struct Attribute: Code {
 
 public extension Code {
     func attributes(_ attributes: [Attribute]) -> some Code {
-        Group {
+        Container {
             for attribute in attributes {
                 attribute
             }

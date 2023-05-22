@@ -14,7 +14,7 @@ extension ExtensionApi.Class {
     @CodeBuilder
     private func bindingsPropertiesCode() -> some Code {
         if let methods {
-            Group {
+            Container {
                 ForEach(methods) { method in
                     if let methodPtrName = method.godotMethodPtrName {
                         Var(methodPtrName)
@@ -61,7 +61,7 @@ extension ExtensionApi.Class {
             
             Stack {
                 ForEach(methodData) { method in
-                    Group {
+                    Container {
                         Property("_method_name").assign("\"\(method.name)\"")
                         Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
                             Property(method.ptrName)
@@ -108,10 +108,10 @@ extension ExtensionApi.Class {
     
     @CodeBuilder
     private func virtualFunctionCall(_ method: Method) -> some Code {
-        Group {
+        Container {
             Property("_method_name").assign("\"\(method.name.baseName)\"")
             "body(_method_name, { instancePtr, args, returnPtr in"
-            Group {
+            Container {
                 Guard(condition: "let instancePtr" + (method.arguments == nil ? "" : ", let args")) {
                     Return()
                 }
