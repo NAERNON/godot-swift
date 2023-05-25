@@ -10,13 +10,13 @@ struct FunctionParameters: Code {
                 "where".indent()
             }
             ForEach(0..<parametersCount) { index in
-                "C\(index) : TypedVariantTransformable" + (index < parametersCount - 1 ? "," : "")
+                "C\(index) : ExpressibleByTypedVariant" + (index < parametersCount - 1 ? "," : "")
             }.indent()
             "{"
             Container {
                 ".init(arguments: ["
                 ForEach(0..<parametersCount) { index in
-                    ".init(type: C\(index).self, name: parameterNames[\(index)], defaultValue: nil),"
+                    ".init(type: C\(index).self, name: parameterNames[\(index)]),"
                 }.indent()
                 "], returnType: nil)"
             }.indent()

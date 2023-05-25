@@ -22,11 +22,10 @@ extension ClassRegister.FunctionRegistrationTypes {
         // MARK: Init
         
         public init<Value>(type: Value.Type,
-                           name: StringName,
-                           defaultValue: Value?) where Value : TypedVariantTransformable {
+                           name: StringName) where Value : ExpressibleByTypedVariant {
             self.type = type.variantStorageType
             self.name = name
-            self.defaultValue = defaultValue?.variant
+            self.defaultValue = nil
             
 #warning("Do all the metadata types.")
             if type == Int8.self {
