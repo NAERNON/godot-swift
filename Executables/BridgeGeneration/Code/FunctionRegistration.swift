@@ -14,10 +14,12 @@ struct FunctionRegistration: Code {
             
             "GodotExtension.shared.classRegister.registerFunction(withName: \(nameParameter), insideType: \(insideTypeParameter), types: \(typesParameter)) { _, instancePtr, args, argsCount, returnPtr, error in"
             Container {
-                "Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
-                "." + definition.functionCallCode(withParameters: (0..<definition.parameters.count).map {
+                let parameters = (0..<definition.parameters.count).map {
                     "args!.advanced(by: \($0)).pointee!.functionParameter()"
-                })
+                }
+                
+                "Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+                "." + definition.functionCallCode(withParameters: parameters)
             }.indent()
             "}"
         }

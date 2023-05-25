@@ -30,7 +30,11 @@ struct FunctionDefinition {
         for char in signature {
             string.append(char)
             if char == ":" {
+                string.append(" ")
                 string.append(parameters[parameterIndex])
+                if parameterIndex == 0 && parameters.count > 1 {
+                    string.append(", ")
+                }
                 parameterIndex += 1
             }
         }
