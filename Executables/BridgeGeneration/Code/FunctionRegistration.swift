@@ -18,10 +18,18 @@ struct FunctionRegistration: Code {
                     "args!.advanced(by: \($0)).pointee!.functionParameter()"
                 }
                 
-                "Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+                "let \(returnValueName) = Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
                 "." + definition.functionCallCode(withParameters: parameters)
+                
+                if definition.returnType != nil {
+                    "returnValue.variant.copyTo(variantPtr: returnPtr!)"
+                }
             }.indent()
             "}"
         }
+    }
+    
+    private var returnValueName: String {
+        definition.returnType == nil ? "_" : "returnValue"
     }
 }

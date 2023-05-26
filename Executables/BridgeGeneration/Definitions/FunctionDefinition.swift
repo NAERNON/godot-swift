@@ -5,6 +5,7 @@ struct FunctionDefinition {
     let signature: String
     let name: String
     let parameters: [Parameter]
+    let returnType: String?
     let accessControl: AccessControl?
     
     init?(dictionary: [String : SourceKitRepresentable]) {
@@ -18,6 +19,7 @@ struct FunctionDefinition {
         self.signature = signature
         self.name = signature.components(separatedBy: "(").first ?? ""
         self.parameters = substructure?.compactMap { Parameter(dictionary: $0) } ?? []
+        self.returnType = dictionary["key.typename"] as? String
         self.accessControl = AccessControl(accessibility: dictionary["key.accessibility"] as? String)
     }
     

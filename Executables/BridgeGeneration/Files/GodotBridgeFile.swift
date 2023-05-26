@@ -111,17 +111,18 @@ return GodotExtension.shared.setUp(
         let filteredFunctionDefinitions = classDefinitions
             .map { $0.functionDefinitions().filter(isFunctionExportable)
             }
-        let functionParametersCounts = filteredFunctionDefinitions
-            .reduce(into: Set<Int>()) { partialResult, functionDefinitions in
+        let functionParametersCodes = filteredFunctionDefinitions
+            .reduce(into: Set<FunctionParameters>()) { partialResult, functionDefinitions in
                 for functionDefinition in functionDefinitions {
-                    partialResult.insert(functionDefinition.parameters.count)
+                    partialResult.insert(.init(parametersCount: functionDefinition.parameters.count,
+                                               functionReturns: functionDefinition.returnType != nil))
                 }
             }
         
         Mark("Function registration", isSeparator: true)
         
-        ForEach(functionParametersCounts.sorted()) { count in
-            FunctionParameters(parametersCount: count)
+        ForEach(functionParametersCodes.sorted()) { code in
+            code
         }
         
         Extension("GDExtensionConstVariantPtr") {

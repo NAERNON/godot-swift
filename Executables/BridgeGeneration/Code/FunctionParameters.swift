@@ -1,46 +1,97 @@
 import CodeGenerator
 
-struct FunctionParameters: Code {
+struct FunctionParameters: Code, Hashable, Comparable {
     let parametersCount: Int
+    let functionReturns: Bool
     
     var body: some Code {
         Container {
-            "private func functionParameters<\(genericString(withTParameter: true))>(from closure: (T) -> ((\(genericString(withTParameter: false))) -> Void), parameterNames: [StringName]) -> ClassRegister.FunctionRegistrationTypes"
-            if parametersCount > 0 {
+            "private func functionParameters<\(parametersTypeList(instanceType: true, returnType: functionReturns))>("
+            Container {
+                "from closure: (T) -> ((\(parametersTypeList(instanceType: false, returnType: false))) -> \(returnTypeName)),"
+                "parameterNames: [StringName]"
+            }.indent()
+            ") -> ClassRegister.FunctionRegistrationTypes"
+            
+            let typeConstraints = genericTypeConstraints()
+            if !typeConstraints.isEmpty {
                 "where".indent()
             }
-            ForEach(0..<parametersCount) { index in
-                "C\(index) : ExpressibleByTypedVariant" + (index < parametersCount - 1 ? "," : "")
+            ForEach(typeConstraints.enumerated()) { (index, typeConstraint) in
+                typeConstraint + (index < typeConstraints.count - 1 ? "," : "")
             }.indent()
+            
             "{"
             Container {
                 ".init(arguments: ["
                 ForEach(0..<parametersCount) { index in
-                    ".init(type: C\(index).self, name: parameterNames[\(index)]),"
+                    ".init(type: \(parameterTypeName(index: index)).self, name: parameterNames[\(index)]),"
                 }.indent()
-                "], returnType: nil)"
+                "], returnType: \(returnParameter))"
             }.indent()
             "}"
         }
     }
     
-    private func genericString(withTParameter: Bool) -> String {
-        var string = ""
+    private func genericTypeConstraints() -> [String] {
+        var constraints = [String]()
         
-        if withTParameter {
-            string += "T"
-            if parametersCount > 0 {
-                string += ", "
-            }
+        for index in 0..<parametersCount {
+            constraints.append(parameterTypeName(index: index) + " : ExpressibleByTypedVariant")
+        }
+        if functionReturns {
+            constraints.append(returnTypeName + " : ExpressibleByTypedVariant")
         }
         
-        for i in 0..<parametersCount {
-            string += "C\(i)"
-            if i < parametersCount - 1 {
-                string += ", "
-            }
+        return constraints
+    }
+    
+    private func parametersTypeList(instanceType: Bool, returnType: Bool) -> String {
+        var typeNames = (0..<parametersCount).map { parameterTypeName(index: $0) }
+        
+        if instanceType {
+            typeNames.insert(instanceTypeName, at: 0)
+        }
+        if returnType {
+            typeNames.append(returnTypeName)
         }
         
-        return string
+        return typeNames.joined(separator: ", ")
+    }
+    
+    private var returnParameter: String {
+        if functionReturns {
+            return ".init(type: \(returnTypeName).self, name: StringName())"
+        } else {
+            return "nil"
+        }
+    }
+    
+    // MARK: Type names
+    
+    private var instanceTypeName: String {
+        "T"
+    }
+    
+    private func parameterTypeName(index: Int) -> String {
+        "C\(index)"
+    }
+    
+    private var returnTypeName: String {
+        if functionReturns {
+            return "R"
+        } else {
+            return "Void"
+        }
+    }
+    
+    // MARK: Comparison
+    
+    static func < (lhs: FunctionParameters, rhs: FunctionParameters) -> Bool {
+        if lhs.functionReturns != rhs.functionReturns {
+            return !lhs.functionReturns
+        } else {
+            return lhs.parametersCount < rhs.parametersCount
+        }
     }
 }

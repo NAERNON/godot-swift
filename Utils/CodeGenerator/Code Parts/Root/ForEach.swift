@@ -1,7 +1,7 @@
 import Foundation
 
 public struct ForEach<Data, Content>: Code, RootCode
-where Data : Collection,
+where Data : Sequence,
       Content : Code {
     let data: Data
     let content: (Data.Element) -> Content
