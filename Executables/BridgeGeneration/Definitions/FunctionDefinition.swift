@@ -7,9 +7,11 @@ struct FunctionDefinition {
     let parameters: [Parameter]
     let returnType: String?
     let accessControl: AccessControl?
+    let isStatic: Bool
     
     init?(dictionary: [String : SourceKitRepresentable]) {
-        guard dictionary["key.kind"] as? String == "source.lang.swift.decl.function.method.instance",
+        guard let kind = dictionary["key.kind"] as? String,
+              kind.starts(with: "source.lang.swift.decl.function.method."),
               let signature = dictionary["key.name"] as? String else {
             return nil
         }
@@ -21,6 +23,7 @@ struct FunctionDefinition {
         self.parameters = substructure?.compactMap { Parameter(dictionary: $0) } ?? []
         self.returnType = dictionary["key.typename"] as? String
         self.accessControl = AccessControl(accessibility: dictionary["key.accessibility"] as? String)
+        self.isStatic = kind == "source.lang.swift.decl.function.method.static"
     }
     
     // MARK: Tools

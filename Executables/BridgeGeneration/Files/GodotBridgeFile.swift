@@ -114,8 +114,7 @@ return GodotExtension.shared.setUp(
         let functionParametersCodes = filteredFunctionDefinitions
             .reduce(into: Set<FunctionParameters>()) { partialResult, functionDefinitions in
                 for functionDefinition in functionDefinitions {
-                    partialResult.insert(.init(parametersCount: functionDefinition.parameters.count,
-                                               functionReturns: functionDefinition.returnType != nil))
+                    partialResult.insert(.init(functionDefinition: functionDefinition))
                 }
             }
         

@@ -253,6 +253,7 @@ public final class ClassRegister {
         withName functionName: Swift.String,
         insideType classType: Class.Type,
         types: FunctionRegistrationTypes,
+        isStatic: Bool,
         call: GDExtensionClassMethodCall)
     -> RegistrationResult where Class : Object {
         guard isRegistrationOpen else {
@@ -273,14 +274,14 @@ public final class ClassRegister {
         let returnType = types.returnType?.propertyInfo(withClassName: className)
         
 #warning("Translate functions")
-#warning("Do the static and vararg")
+#warning("Do the vararg")
         // Register this function within our extension.
         let functionBinding = FunctionBinding(name: functionName,
                                               className: className,
                                               arguments: arguments,
                                               returnType: returnType,
                                               isVararg: false,
-                                              isStatic: false)
+                                              isStatic: isStatic)
         classBinding.appendFunctionBinding(functionBinding)
         
         functionName.withUnsafeExtensionPointer { functionNamePtr in

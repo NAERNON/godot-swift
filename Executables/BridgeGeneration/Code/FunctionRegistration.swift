@@ -12,19 +12,32 @@ struct FunctionRegistration: Code {
             let insideTypeParameter = "\(className).self"
             let typesParameter = "functionParameters(from: \(className).\(definition.name), parameterNames: \(definition.parameters.map { $0.name }))"
             
-            "GodotExtension.shared.classRegister.registerFunction(withName: \(nameParameter), insideType: \(insideTypeParameter), types: \(typesParameter)) { _, instancePtr, args, argsCount, returnPtr, error in"
+            "GodotExtension.shared.classRegister.registerFunction("
+            Container {
+                "withName: \(nameParameter),"
+                "insideType: \(insideTypeParameter),"
+                "types: \(typesParameter),"
+                "isStatic: \(definition.isStatic)"
+            }.indent()
+            ") { _, instancePtr, args, argsCount, returnPtr, error in"
+            
             Container {
                 let parameters = (0..<definition.parameters.count).map {
                     "args!.advanced(by: \($0)).pointee!.functionParameter()"
                 }
                 
-                "let \(returnValueName) = Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+                if definition.isStatic {
+                    "let \(returnValueName) = \(className)"
+                } else {
+                    "let \(returnValueName) = Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+                }
                 "." + definition.functionCallCode(withParameters: parameters)
                 
                 if definition.returnType != nil {
                     "returnValue.variant.copyTo(variantPtr: returnPtr!)"
                 }
             }.indent()
+            
             "}"
         }
     }

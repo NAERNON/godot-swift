@@ -3,12 +3,31 @@ import CodeGenerator
 struct FunctionParameters: Code, Hashable, Comparable {
     let parametersCount: Int
     let functionReturns: Bool
+    let isStatic: Bool
+    
+    init(parametersCount: Int,
+         functionReturns: Bool,
+         isStatic: Bool) {
+        self.parametersCount = parametersCount
+        self.functionReturns = functionReturns
+        self.isStatic = isStatic
+    }
+    
+    init(functionDefinition: FunctionDefinition) {
+        self.init(parametersCount: functionDefinition.parameters.count,
+                  functionReturns: functionDefinition.returnType != nil,
+                  isStatic: functionDefinition.isStatic)
+    }
     
     var body: some Code {
         Container {
-            "private func functionParameters<\(parametersTypeList(instanceType: true, returnType: functionReturns))>("
+            "private func functionParameters<\(parametersTypeList(instanceType: !isStatic, returnType: functionReturns))>("
             Container {
-                "from closure: (T) -> ((\(parametersTypeList(instanceType: false, returnType: false))) -> \(returnTypeName)),"
+                if isStatic {
+                    "from closure: (\(parametersTypeList(instanceType: false, returnType: false))) -> \(returnTypeName),"
+                } else {
+                    "from closure: (T) -> ((\(parametersTypeList(instanceType: false, returnType: false))) -> \(returnTypeName)),"
+                }
                 "parameterNames: [StringName]"
             }.indent()
             ") -> ClassRegister.FunctionRegistrationTypes"
@@ -88,7 +107,9 @@ struct FunctionParameters: Code, Hashable, Comparable {
     // MARK: Comparison
     
     static func < (lhs: FunctionParameters, rhs: FunctionParameters) -> Bool {
-        if lhs.functionReturns != rhs.functionReturns {
+        if lhs.isStatic != rhs.isStatic {
+            return !lhs.isStatic
+        } else if lhs.functionReturns != rhs.functionReturns {
             return !lhs.functionReturns
         } else {
             return lhs.parametersCount < rhs.parametersCount
