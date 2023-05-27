@@ -1086,7 +1086,7 @@ extension Variant {
 // MARK: - Variant Transformable
 
 extension Bool: TypedVariantTransformable {
-    public static let variantStorageType: Variant.ValueType = .int
+    public static let variantStorageType: Variant.ValueType = .bool
     
     public var variant: Variant {
         let variant = Variant()
