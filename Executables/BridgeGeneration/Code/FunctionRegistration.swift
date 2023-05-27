@@ -1,4 +1,5 @@
 import CodeGenerator
+import CodeTranslator
 
 struct FunctionRegistration: Code {
     let definition: FunctionDefinition
@@ -7,31 +8,23 @@ struct FunctionRegistration: Code {
     var body: some Code {
         Container {
             Mark(className + "." + definition.signature)
-            
-            let nameParameter = "\"\(definition.name)\""
-            let insideTypeParameter = "\(className).self"
-            let typesParameter = "functionParameters(from: \(className).\(definition.name), parameterNames: \(definition.parameters.map { $0.name }))"
-            
+                        
             "GodotExtension.shared.classRegister.registerFunction("
             Container {
-                "withName: \(nameParameter),"
-                "insideType: \(insideTypeParameter),"
-                "types: \(typesParameter),"
+                "withName: \"\(translatedFunctionName)\","
+                "insideType: \(className).self,"
+                "types: functionParameters(from: \(className).\(definition.name), parameterNames: \(translatedFunctionParameterNames())),"
                 "isStatic: \(definition.isStatic)"
             }.indent()
             ") { _, instancePtr, args, argsCount, returnPtr, error in"
             
             Container {
-                let parameters = (0..<definition.parameters.count).map {
-                    "args!.advanced(by: \($0)).pointee!.functionParameter()"
-                }
-                
                 if definition.isStatic {
                     "let \(returnValueName) = \(className)"
                 } else {
                     "let \(returnValueName) = Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
                 }
-                "." + definition.functionCallCode(withParameters: parameters)
+                "." + definition.functionCallCode(withParameters: parameters())
                 
                 if definition.returnType != nil {
                     "returnValue.variant.copyTo(variantPtr: returnPtr!)"
@@ -39,6 +32,22 @@ struct FunctionRegistration: Code {
             }.indent()
             
             "}"
+        }
+    }
+    
+    private var translatedFunctionName: String {
+        NamingConvention.camel.convert(definition.name, to: .snake)
+    }
+    
+    private func translatedFunctionParameterNames() -> [String] {
+        definition.parameters.map {
+            NamingConvention.camel.convert($0.name, to: .snake)
+        }
+    }
+    
+    private func parameters() -> [String] {
+        (0..<definition.parameters.count).map {
+            "args!.advanced(by: \($0)).pointee!.functionParameter()"
         }
     }
     

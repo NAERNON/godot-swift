@@ -273,7 +273,6 @@ public final class ClassRegister {
         let arguments = types.arguments.map { $0.propertyInfo(withClassName: className) }
         let returnType = types.returnType?.propertyInfo(withClassName: className)
         
-#warning("Translate functions")
 #warning("Do the vararg")
         // Register this function within our extension.
         let functionBinding = FunctionBinding(name: functionName,

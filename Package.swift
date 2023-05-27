@@ -62,6 +62,7 @@ let package = Package(
             name: "generate-bridge",
             dependencies: [
                 "CodeGenerator",
+                "CodeTranslator",
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
                 .product(name: "SourceKittenFramework", package: "SourceKitten"),
             ],
