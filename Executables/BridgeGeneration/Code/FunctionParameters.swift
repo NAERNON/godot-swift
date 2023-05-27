@@ -5,18 +5,10 @@ struct FunctionParameters: Code, Hashable, Comparable {
     let functionReturns: Bool
     let isStatic: Bool
     
-    init(parametersCount: Int,
-         functionReturns: Bool,
-         isStatic: Bool) {
-        self.parametersCount = parametersCount
-        self.functionReturns = functionReturns
-        self.isStatic = isStatic
-    }
-    
     init(functionDefinition: FunctionDefinition) {
-        self.init(parametersCount: functionDefinition.parameters.count,
-                  functionReturns: functionDefinition.returnType != nil,
-                  isStatic: functionDefinition.isStatic)
+        self.parametersCount = functionDefinition.parameters.count
+        self.functionReturns = functionDefinition.returnType != nil
+        self.isStatic = functionDefinition.isStatic
     }
     
     var body: some Code {
@@ -24,9 +16,9 @@ struct FunctionParameters: Code, Hashable, Comparable {
             "private func functionParameters<\(parametersTypeList(instanceType: !isStatic, returnType: functionReturns))>("
             Container {
                 if isStatic {
-                    "from closure: (\(parametersTypeList(instanceType: false, returnType: false))) -> \(returnTypeName),"
+                    "fromClosure closure: (\(parametersTypeList(instanceType: false, returnType: false))) -> \(returnTypeName),"
                 } else {
-                    "from closure: (T) -> ((\(parametersTypeList(instanceType: false, returnType: false))) -> \(returnTypeName)),"
+                    "fromClosure closure: (T) -> ((\(parametersTypeList(instanceType: false, returnType: false))) -> \(returnTypeName)),"
                 }
                 "parameterNames: [StringName]"
             }.indent()

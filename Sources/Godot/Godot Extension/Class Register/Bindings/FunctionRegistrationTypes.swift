@@ -15,9 +15,10 @@ extension ClassRegister {
 extension ClassRegister.FunctionRegistrationTypes {
     public struct Parameter {
         public let type: Variant.ValueType
-        public let metadata: ClassRegister.PropertyMetadata?
         public let name: StringName
         public let defaultValue: Variant?
+        
+        private let metadata: ClassRegister.PropertyMetadata?
         
         // MARK: Init
         
@@ -26,13 +27,7 @@ extension ClassRegister.FunctionRegistrationTypes {
             self.type = type.variantStorageType
             self.name = name
             self.defaultValue = nil
-            
-#warning("Do all the metadata types.")
-            if type == Int8.self {
-                self.metadata = .intIsInt8
-            } else {
-                self.metadata = nil
-            }
+            self.metadata = .init(type)
         }
         
         // MARK: Tools

@@ -38,11 +38,17 @@ struct ClassDefinition {
         return substructure.compactMap { ClassDefinition(dictionary: $0) }
     }
     
-    // MARK: Functions
+    // MARK: Functions & properties
     
     func functionDefinitions() -> [FunctionDefinition] {
         guard let substructure else { return [] }
         
-        return substructure.compactMap { FunctionDefinition(dictionary: $0) }
+        return substructure.compactMap { FunctionDefinition(dictionary: $0, className: name) }
+    }
+    
+    func propertyDefinitions() -> [PropertyDefinition] {
+        guard let substructure else { return [] }
+        
+        return substructure.compactMap { PropertyDefinition(dictionary: $0, className: name) }
     }
 }

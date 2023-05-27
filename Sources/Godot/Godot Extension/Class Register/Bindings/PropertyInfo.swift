@@ -2,19 +2,6 @@ import Foundation
 import GodotExtensionHeaders
 
 extension ClassRegister {
-    public enum PropertyMetadata {
-        case intIsInt8
-        case intIsInt16
-        case intIsInt32
-        case intIsInt64
-        case intIsUInt8
-        case intIsUInt16
-        case intIsUInt32
-        case intIsUInt64
-        case realIsFloat
-        case realIsDouble
-    }
-    
     struct PropertyInfo {
         let type: Variant.ValueType
         let metadata: PropertyMetadata?
@@ -45,9 +32,9 @@ extension ClassRegister {
         init(type: Variant.ValueType,
              metadata: PropertyMetadata?,
              name: StringName,
-             defaultValue: Variant?,
-             hint: PropertyHint,
-             hintString: String,
+             defaultValue: Variant? = nil,
+             hint: PropertyHint = .none,
+             hintString: String = .init(),
              usageFlags: PropertyUsageFlags...,
              className: StringName) {
             self.type = type

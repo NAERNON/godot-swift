@@ -8,8 +8,9 @@ struct FunctionDefinition {
     let returnType: String?
     let accessControl: AccessControl?
     let isStatic: Bool
+    let className: String
     
-    init?(dictionary: [String : SourceKitRepresentable]) {
+    init?(dictionary: [String : SourceKitRepresentable], className: String) {
         guard let kind = dictionary["key.kind"] as? String,
               kind.starts(with: "source.lang.swift.decl.function.method."),
               let signature = dictionary["key.name"] as? String else {
@@ -24,6 +25,7 @@ struct FunctionDefinition {
         self.returnType = dictionary["key.typename"] as? String
         self.accessControl = AccessControl(accessibility: dictionary["key.accessibility"] as? String)
         self.isStatic = kind == "source.lang.swift.decl.function.method.static"
+        self.className = className
     }
     
     // MARK: Tools

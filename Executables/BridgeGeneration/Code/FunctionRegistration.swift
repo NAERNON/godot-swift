@@ -3,7 +3,6 @@ import CodeTranslator
 
 struct FunctionRegistration: Code {
     let definition: FunctionDefinition
-    let className: String
     
     var body: some Code {
         Container {
@@ -13,7 +12,7 @@ struct FunctionRegistration: Code {
             Container {
                 "withName: \"\(translatedFunctionName)\","
                 "insideType: \(className).self,"
-                "types: functionParameters(from: \(className).\(definition.name), parameterNames: \(translatedFunctionParameterNames())),"
+                "types: functionParameters(fromClosure: \(className).\(definition.name), parameterNames: \(translatedFunctionParameterNames())),"
                 "isStatic: \(definition.isStatic)"
             }.indent()
             ") { _, instancePtr, args, argsCount, returnPtr, error in"
@@ -34,6 +33,8 @@ struct FunctionRegistration: Code {
             "}"
         }
     }
+    
+    private var className: String { definition.className }
     
     private var translatedFunctionName: String {
         NamingConvention.camel.convert(definition.name, to: .snake)

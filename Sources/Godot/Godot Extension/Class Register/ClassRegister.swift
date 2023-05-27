@@ -250,7 +250,7 @@ public final class ClassRegister {
     
     @discardableResult
     public func registerFunction<Class>(
-        withName functionName: Swift.String,
+        withName functionName: StringName,
         insideType classType: Class.Type,
         types: FunctionRegistrationTypes,
         isStatic: Bool,
@@ -262,7 +262,6 @@ public final class ClassRegister {
         }
         
         let className = classType.godotClassName()
-        let functionName = StringName(swiftString: functionName)
         
         guard let classBinding = classNameToClassBinding[className],
               classBinding.type == classType else {
@@ -310,6 +309,63 @@ public final class ClassRegister {
                                     GodotExtension.shared.libraryPtr, namePtr, methodInfoPtr
                                 )
                             }
+                        }
+                    }
+                }
+            }
+        }
+        
+        return .success
+    }
+    
+    // MARK: Property registration
+    
+    @discardableResult
+    public func registerWritableProperty<Class, Value>(
+        keyPath: WritableKeyPath<Class, Value>,
+        name propertyName: StringName,
+        getterFunctionName: StringName,
+        setterFunctionName: StringName)
+    -> RegistrationResult where
+    Class : Object,
+    Value : TypedVariantTransformable
+    {
+        guard isRegistrationOpen else {
+            printGodotError("Cannot register property \(propertyName) because the registration is closed.")
+            return .failure
+        }
+        
+        let className = Class.godotClassName()
+        
+        guard let classBinding = classNameToClassBinding[className],
+              classBinding.type == Class.self else {
+            printGodotError("Cannot register property \(propertyName) because the class is not registered.")
+            return .failure
+        }
+
+#warning("Check that getter and setters are set")
+        
+        let propertyInfo = PropertyInfo(
+            type: Value.variantStorageType,
+            metadata: PropertyMetadata(Value.self),
+            name: propertyName,
+            usageFlags: .default,
+            className: className)
+        
+#warning("Register within the extension")
+#warning("Properties not calling getter and setters in Godot (kind of bad right ?)")
+        
+        className.withUnsafeExtensionPointer { classNamePtr in
+            getterFunctionName.withUnsafeExtensionPointer { getterFunctionNamePtr in
+                setterFunctionName.withUnsafeExtensionPointer { setterFunctionNamePtr in
+                    propertyInfo.withGodotExtensionPropertyInfo { extensionPropertyInfo in
+                        withUnsafePointer(to: extensionPropertyInfo) { extentionPropertyInfoPtr in
+                            GodotExtension.shared.interface.classdb_register_extension_class_property(
+                                GodotExtension.shared.libraryPtr,
+                                classNamePtr,
+                                extentionPropertyInfoPtr,
+                                setterFunctionNamePtr,
+                                getterFunctionNamePtr)
                         }
                     }
                 }
