@@ -5,10 +5,6 @@ import GodotExtensionHeaders
 private let METHOD_FLAGS_DEFAULT: UInt32 = 24
 
 public final class ClassRegister {
-    public enum RegistrationResult {
-        case success, failure, waiting, none
-    }
-    
     // MARK: Properties
     
     internal static let shared = ClassRegister()
@@ -67,12 +63,16 @@ public final class ClassRegister {
     
     // MARK: Class registration
     
+    public enum ClassRegistrationResult {
+        case success, failure, waiting
+    }
+    
     private func classIsAlreadyRegistered(withName className: StringName) -> Bool {
         classNameToClassBinding[className] != nil ||
         godotClassesNames.contains(className)
     }
     
-    internal func registerGodotClass<Class>(ofType classType: Class.Type) where Class : Object {
+    internal func registerGeneratedGodotClass<Class>(ofType classType: Class.Type) where Class : Object {
         classType.setFunctionBindings()
         godotClassesNames.insert(classType.godotClassName())
     }
@@ -102,7 +102,7 @@ public final class ClassRegister {
         toStringFunction: GDExtensionClassToString,
         createInstanceFunction: GDExtensionClassCreateInstance,
         freeInstanceFunction: GDExtensionClassFreeInstance)
-    -> RegistrationResult where Class : Object {
+    -> ClassRegistrationResult where Class : Object {
         guard let currentLevel else {
             printGodotError("Cannot register class \(classType) because no initialization level was provided.")
             return .failure
@@ -118,11 +118,11 @@ public final class ClassRegister {
             freeInstanceFunction: freeInstanceFunction
         )
         
-        return registerClassBinding(classBinding)
+        return registerClass(withBinding: classBinding)
     }
     
     @discardableResult
-    private func registerClassBinding(_ classBinding: ClassBinding) -> RegistrationResult {
+    private func registerClass(withBinding classBinding: ClassBinding) -> ClassRegistrationResult {
         let classType = classBinding.type
         
         guard isRegistrationOpen else {
@@ -134,7 +134,7 @@ public final class ClassRegister {
         let superclassName = classBinding.superclassName
         
         guard !classIsAlreadyRegistered(withName: className) else {
-            printGodotError("Cannot register class \(classType) because it is already registered.")
+            printGodotError("Cannot register class \(classType) because a class with the same name is already registered.")
             return .failure
         }
         
@@ -189,7 +189,7 @@ public final class ClassRegister {
         
         if let subclassBindings = classNameToWaitingSubclassBindings.removeValue(forKey: className) {
             for binding in subclassBindings {
-                registerClassBinding(binding)
+                registerClass(withBinding: binding)
             }
         }
         
@@ -248,6 +248,10 @@ public final class ClassRegister {
     
     // MARK: Function registration
     
+    public enum FunctionRegistrationResult {
+        case success, failure
+    }
+    
     @discardableResult
     public func registerFunction<Class>(
         withName functionName: StringName,
@@ -255,7 +259,7 @@ public final class ClassRegister {
         types: FunctionRegistrationTypes,
         isStatic: Bool,
         call: GDExtensionClassMethodCall)
-    -> RegistrationResult where Class : Object {
+    -> FunctionRegistrationResult where Class : Object {
         guard isRegistrationOpen else {
             printGodotError("Cannot register function \(functionName) because the registration is closed.")
             return .failure
@@ -265,7 +269,7 @@ public final class ClassRegister {
         
         guard let classBinding = classNameToClassBinding[className],
               classBinding.type == classType else {
-            printGodotError("Cannot register function \(functionName) because the class is not registered.")
+            printGodotError("Cannot register function \(functionName) because the class \(className) is not registered.")
             return .failure
         }
         
@@ -320,13 +324,17 @@ public final class ClassRegister {
     
     // MARK: Property registration
     
+    public enum PropertyRegistrationResult {
+        case success, failure
+    }
+    
     @discardableResult
     public func registerWritableProperty<Class, Value>(
         keyPath: WritableKeyPath<Class, Value>,
         name propertyName: StringName,
         getterFunctionName: StringName,
         setterFunctionName: StringName)
-    -> RegistrationResult where
+    -> PropertyRegistrationResult where
     Class : Object,
     Value : TypedVariantTransformable
     {
@@ -339,7 +347,7 @@ public final class ClassRegister {
         
         guard let classBinding = classNameToClassBinding[className],
               classBinding.type == Class.self else {
-            printGodotError("Cannot register property \(propertyName) because the class is not registered.")
+            printGodotError("Cannot register property \(propertyName) because the class \(className) is not registered.")
             return .failure
         }
 

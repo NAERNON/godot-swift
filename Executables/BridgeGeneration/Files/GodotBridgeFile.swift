@@ -59,12 +59,11 @@ struct GodotBridgeFile: File {
         Stack {
             initializationModuleCode()
             
-            classRegistrationCode(for: filteredClassDefinitions)
-            
             functionParametersCode(for: filteredFunctionDefinitions)
-            functionRegistrationCode(for: filteredFunctionDefinitions)
-            
             propertyParameterCode()
+            
+            classRegistrationCode(for: filteredClassDefinitions)
+            functionRegistrationCode(for: filteredFunctionDefinitions)
             propertyRegistrationCode(for: filteredPropertyDefinitions)
         }
     }
@@ -128,7 +127,7 @@ return GodotExtension.shared.setUp(
     
     @CodeBuilder
     private func functionParametersCode(for functionDefinitions: [FunctionDefinition]) -> some Code {
-        Mark("Function parameters", isSeparator: true)
+        Mark("Function registration types", isSeparator: true)
         
         Extension("GDExtensionConstVariantPtr") {
             "func functionParameter<T>() -> T where T : ExpressibleByVariant {"
@@ -157,7 +156,7 @@ return GodotExtension.shared.setUp(
     
     @CodeBuilder
     private func propertyParameterCode() -> some Code {
-        Mark("Property parameter", isSeparator: true)
+        Mark("Property registration types", isSeparator: true)
         
         Container {
             "private func getterPropertyParameters<T, R>(keyPath: KeyPath<T, R>) -> ClassRegister.FunctionRegistrationTypes"

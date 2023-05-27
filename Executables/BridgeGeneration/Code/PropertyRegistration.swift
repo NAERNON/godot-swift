@@ -6,7 +6,7 @@ struct PropertyRegistration: Code {
     
     var body: some Code {
         Container {
-            Mark(className + "." + definition.name + " setter")
+            Mark(className + "." + definition.name)
             
             "GodotExtension.shared.classRegister.registerWritableProperty("
             Container {
