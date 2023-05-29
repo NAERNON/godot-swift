@@ -13,42 +13,13 @@ struct GodotBridgeFile: File {
         self.classDefinitions = classDefinitions
     }
     
-    private func isClassExportable(_ classDefinition: ClassDefinition) -> Bool {
-        if let accessControl = classDefinition.accessControl,
-           accessControl >= .public,
-           classDefinition.name.hasSuffix("_godot") {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    private func isFunctionExportable(_ functionDefinition: FunctionDefinition) -> Bool {
-        if let accessControl = functionDefinition.accessControl,
-           accessControl >= .public,
-           functionDefinition.name.hasSuffix("_godot") {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    private func isPropertySetterExportable(_ propertyDefinition: PropertyDefinition) -> Bool {
-        if let accessControl = propertyDefinition.setterAccessControl,
-           accessControl >= .public {
-            return true
-        } else {
-            return false
-        }
-    }
-    
     // MARK: Code
     
     var code: some Code {
-        let filteredClassDefinitions = classDefinitions.filter(isClassExportable)
-        let filteredFunctionDefinitions = filteredClassDefinitions
-            .flatMap { $0.functionDefinitions().filter(isFunctionExportable) }
-        let filteredPropertyDefinitions = filteredClassDefinitions
+        let exposedClassDefinitions = classDefinitions.filter(\.isExposedToGodot)
+        let exposedFunctionDefinitions = exposedClassDefinitions
+            .flatMap { $0.functionDefinitions().filter(\.isExposedToGodot) }
+        let exposedPropertyDefinitions = exposedClassDefinitions
             .flatMap { $0.propertyDefinitions() }
         
         Import("GodotExtensionHeaders")
@@ -59,12 +30,20 @@ struct GodotBridgeFile: File {
         Stack {
             initializationModuleCode()
             
-            functionParametersCode(for: filteredFunctionDefinitions)
+            Mark("Function registration types", isSeparator: true)
+            functionParametersCode(for: exposedFunctionDefinitions)
+            
+            Mark("Property registration types", isSeparator: true)
             propertyParameterCode()
             
-            classRegistrationCode(for: filteredClassDefinitions)
-            functionRegistrationCode(for: filteredFunctionDefinitions)
-            propertyRegistrationCode(for: filteredPropertyDefinitions)
+            Mark("Class registration", isSeparator: true)
+            classRegistrationCode(for: exposedClassDefinitions)
+            
+            Mark("Function registration", isSeparator: true)
+            functionRegistrationCode(for: exposedFunctionDefinitions)
+            
+            Mark("Property registration", isSeparator: true)
+            propertyRegistrationCode(for: exposedPropertyDefinitions)
         }
     }
     
@@ -114,8 +93,6 @@ return GodotExtension.shared.setUp(
     
     @CodeBuilder
     private func classRegistrationCode(for classDefinitions: [ClassDefinition]) -> some Code {
-        Mark("Class registration", isSeparator: true)
-        
         Func(name: "registerClasses") {
             Stack {
                 ForEach(classDefinitions) { classDefinition in
@@ -127,8 +104,6 @@ return GodotExtension.shared.setUp(
     
     @CodeBuilder
     private func functionParametersCode(for functionDefinitions: [FunctionDefinition]) -> some Code {
-        Mark("Function registration types", isSeparator: true)
-        
         Extension("GDExtensionConstVariantPtr") {
             "func functionParameter<T>() -> T where T : ExpressibleByVariant {"
             "try! T(variant: Variant(extensionVariantPtr: self))".indent()
@@ -143,8 +118,6 @@ return GodotExtension.shared.setUp(
     
     @CodeBuilder
     private func functionRegistrationCode(for functionDefinitions: [FunctionDefinition]) -> some Code {
-        Mark("Function registration", isSeparator: true)
-        
         Func(name: "registerFunctions") {
             Stack {
                 ForEach(functionDefinitions) { functionDefinition in
@@ -156,8 +129,6 @@ return GodotExtension.shared.setUp(
     
     @CodeBuilder
     private func propertyParameterCode() -> some Code {
-        Mark("Property registration types", isSeparator: true)
-        
         Container {
             "private func getterPropertyParameters<T, R>(keyPath: KeyPath<T, R>) -> ClassRegister.FunctionRegistrationTypes"
             "where R : TypedVariantTransformable".indent()
@@ -183,18 +154,10 @@ return GodotExtension.shared.setUp(
     
     @CodeBuilder
     private func propertyRegistrationCode(for propertyDefinitions: [PropertyDefinition]) -> some Code {
-        Mark("Property registration", isSeparator: true)
-        
         Func(name: "registerProperties") {
             Stack {
                 ForEach(propertyDefinitions) { propertyDefinition in
-                    PropertyGetterRegistration(definition: propertyDefinition)
-                    
-                    if isPropertySetterExportable(propertyDefinition) {
-                        PropertySetterRegistration(definition: propertyDefinition)
-                        
-                        PropertyRegistration(definition: propertyDefinition)
-                    }
+                    PropertyRegistration(definition: propertyDefinition)
                 }
             }
         }.private()

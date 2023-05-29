@@ -1,5 +1,6 @@
 import Foundation
 import SourceKittenFramework
+import CodeTranslator
 
 struct PropertyDefinition {
     let name: String
@@ -20,5 +21,23 @@ struct PropertyDefinition {
         self.accessControl = AccessControl(accessibility: dictionary["key.accessibility"] as? String)
         self.setterAccessControl = AccessControl(accessibility: dictionary["key.setter_accessibility"] as? String)
         self.className = className
+    }
+    
+    // MARK: Godot
+    
+    var isExposedToGodot: Bool {
+        name.hasSuffix("_godot")
+    }
+    
+    var translatedName: String {
+        NamingConvention.camel.convert(name, to: .snake)
+    }
+    
+    var translatedGetterName: String {
+        "get_" + translatedName
+    }
+    
+    var translatedSetterName: String {
+        "set_" + translatedName
     }
 }

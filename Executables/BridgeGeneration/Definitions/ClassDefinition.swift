@@ -51,4 +51,10 @@ struct ClassDefinition {
         
         return substructure.compactMap { PropertyDefinition(dictionary: $0, className: name) }
     }
+    
+    // MARK: Godot
+    
+    var isExposedToGodot: Bool {
+        name.hasSuffix("_godot")
+    }
 }

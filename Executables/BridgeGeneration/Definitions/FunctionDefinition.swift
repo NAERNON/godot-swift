@@ -1,5 +1,6 @@
 import Foundation
 import SourceKittenFramework
+import CodeTranslator
 
 struct FunctionDefinition {
     let signature: String
@@ -47,6 +48,22 @@ struct FunctionDefinition {
         }
         
         return string
+    }
+    
+    // MARK: Godot
+    
+    var isExposedToGodot: Bool {
+        name.hasSuffix("_godot")
+    }
+    
+    var translatedName: String {
+        NamingConvention.camel.convert(name, to: .snake)
+    }
+    
+    func translatedParameters() -> [String] {
+        parameters.map {
+            NamingConvention.camel.convert($0.name, to: .snake)
+        }
     }
 }
 
