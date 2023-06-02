@@ -26,11 +26,11 @@ extension ExtensionApi.BuiltinClass {
         .mutating()
         .private()
         .documentation {
-"""
-When a function modifies the opaque array or any value associated,
-we should check that the `Opaque` value is uniquely referenced and if not,
-duplicate its value.
-"""
+            """
+            When a function modifies the opaque array or any value associated,
+            we should check that the `Opaque` value is uniquely referenced and if not,
+            duplicate its value.
+            """
         }
     }
     

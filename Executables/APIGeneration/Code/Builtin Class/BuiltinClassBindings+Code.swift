@@ -66,12 +66,12 @@ extension ExtensionApi.BuiltinClass {
         .static()
         .internal()
         .documentation {
-"""
-Sets all the init bindings and the deinit (if applicable) used to communicate with Godot.
+            """
+            Sets all the init bindings and the deinit (if applicable) used to communicate with Godot.
 
-This function must be called before the creation of any `\(name.code())` instance since the bindings will be needed
-for any initialization.
-"""
+            This function must be called before the creation of any `\(name.code())` instance since the bindings will be needed
+            for any initialization.
+            """
         }
     }
     
@@ -123,9 +123,9 @@ for any initialization.
         .static()
         .internal()
         .documentation {
-"""
-Sets all the function bindings and operators used to communicate with Godot.
-"""
+            """
+            Sets all the function bindings and operators used to communicate with Godot.
+            """
         }
     }
 }

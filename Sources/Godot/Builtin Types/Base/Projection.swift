@@ -16,7 +16,7 @@ public struct Projection {
     public init<T>(xAxisX: T, xAxisY: T, xAxisZ: T, xAxisW: T,
                    yAxisX: T, yAxisY: T, yAxisZ: T, yAxisW: T,
                    zAxisX: T, zAxisY: T, zAxisZ: T, zAxisW: T,
-                   wAxisX: T, wAxisY: T, wAxisZ: T, wAxisW: T) where T: BinaryFloatingPoint {
+                   wAxisX: T, wAxisY: T, wAxisZ: T, wAxisW: T) where T : BinaryFloatingPoint {
         self.init(xAxis: Vector4(x: xAxisX, y: xAxisY, z: xAxisZ, w: xAxisW),
                   yAxis: Vector4(x: yAxisX, y: yAxisY, z: yAxisZ, w: yAxisW),
                   zAxis: Vector4(x: zAxisX, y: zAxisY, z: zAxisZ, w: zAxisW),
@@ -26,7 +26,7 @@ public struct Projection {
     public init<T>(xAxisX: T, xAxisY: T, xAxisZ: T, xAxisW: T,
                    yAxisX: T, yAxisY: T, yAxisZ: T, yAxisW: T,
                    zAxisX: T, zAxisY: T, zAxisZ: T, zAxisW: T,
-                   wAxisX: T, wAxisY: T, wAxisZ: T, wAxisW: T) where T: BinaryInteger {
+                   wAxisX: T, wAxisY: T, wAxisZ: T, wAxisW: T) where T : BinaryInteger {
         self.init(xAxis: Vector4(x: xAxisX, y: xAxisY, z: xAxisZ, w: xAxisW),
                   yAxis: Vector4(x: yAxisX, y: yAxisY, z: yAxisZ, w: yAxisW),
                   zAxis: Vector4(x: zAxisX, y: zAxisY, z: zAxisZ, w: zAxisW),

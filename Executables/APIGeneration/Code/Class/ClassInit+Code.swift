@@ -18,23 +18,23 @@ extension ExtensionApi.Class {
             Let("extensionObjectPtr").typed("GDExtensionObjectPtr").internal()
             
             Init() { #warning("Check another way to know if the class is an extension class.")
-"""
-var extensionObjectPtr: GDExtensionObjectPtr!
-Self.lastDerivedGodotClassName().withUnsafeExtensionPointer { namePtr in
-    extensionObjectPtr = GodotExtension.shared.interface.classdb_construct_object(namePtr)!
-}
+                """
+                var extensionObjectPtr: GDExtensionObjectPtr!
+                Self.lastDerivedGodotClassName().withUnsafeExtensionPointer { namePtr in
+                    extensionObjectPtr = GodotExtension.shared.interface.classdb_construct_object(namePtr)!
+                }
 
-self.extensionObjectPtr = extensionObjectPtr
+                self.extensionObjectPtr = extensionObjectPtr
 
-let className = StringName(swiftString: .init(describing: Self.self))
-if className != Self.lastDerivedGodotClassName() {
-    self.withUnsafeExtensionPointer { ptr in
-        className.withUnsafeExtensionPointer { classNamePtr in
-            GodotExtension.shared.interface.object_set_instance(ptr, classNamePtr, Unmanaged.passRetained(self).toOpaque())
-        }
-    }
-}
-"""
+                let className = StringName(swiftString: .init(describing: Self.self))
+                if className != Self.lastDerivedGodotClassName() {
+                    self.withUnsafeExtensionPointer { ptr in
+                        className.withUnsafeExtensionPointer { classNamePtr in
+                            GodotExtension.shared.interface.object_set_instance(ptr, classNamePtr, Unmanaged.passRetained(self).toOpaque())
+                        }
+                    }
+                }
+                """
             }.required().public()
         } else if isRefCountedRootClass {
             Init() {

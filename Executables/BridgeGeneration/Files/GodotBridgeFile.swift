@@ -56,16 +56,16 @@ struct GodotBridgeFile: File {
                               .named("libraryPtr", type: "GDExtensionClassLibraryPtr"),
                               .named("initializationPtr", type: "UnsafeMutablePointer<GDExtensionInitialization>")],
                  returnType: "GDExtensionBool") {
-"""
-return GodotExtension.shared.setUp(
-    withInterfacePtr: interfacePtr,
-    libraryPtr: libraryPtr,
-    initializationPtr: initializationPtr,
-    initializerCallback: initializeModule,
-    terminatorCallback: unitializeModule,
-    minimumInitializationLevel: GDEXTENSION_INITIALIZATION_SCENE
-)
-"""
+                """
+                return GodotExtension.shared.setUp(
+                    withInterfacePtr: interfacePtr,
+                    libraryPtr: libraryPtr,
+                    initializationPtr: initializationPtr,
+                    initializerCallback: initializeModule,
+                    terminatorCallback: unitializeModule,
+                    minimumInitializationLevel: GDEXTENSION_INITIALIZATION_SCENE
+                )
+                """
             }
         }
         

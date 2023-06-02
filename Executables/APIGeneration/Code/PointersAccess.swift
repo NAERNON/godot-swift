@@ -5,7 +5,7 @@ import CodeTranslator
 // MARK: PointerArray
 
 /// This code creates an array with the given pointers, and makes its address usable during the given closure.
-private struct PointersArray<Content>: Code where Content: Code {
+private struct PointersArray<Content>: Code where Content : Code {
     let pointersNames: [String]
     let pointersVararg: [Bool]
     let arrayPointerName: String
@@ -60,7 +60,7 @@ private struct PointersArray<Content>: Code where Content: Code {
 ///     }
 /// }
 /// ```
-private struct PointersAccessWithoutArray<Content>: Code where Content: Code {
+private struct PointersAccessWithoutArray<Content>: Code where Content : Code {
     let parameters: [PointersAccessParameter]
     let content: ([String]) -> Content
     
@@ -136,7 +136,7 @@ private struct PointersAccessWithoutArray<Content>: Code where Content: Code {
 ///     }
 /// }
 /// ```
-struct PointersAccess<Content>: Code where Content: Code {
+struct PointersAccess<Content>: Code where Content : Code {
     let parameters: [PointersAccessParameter]
     let createPointersArray: Bool
     let content: ([String], String?) -> Content

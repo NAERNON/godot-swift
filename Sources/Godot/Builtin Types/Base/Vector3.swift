@@ -11,11 +11,11 @@ public struct Vector3 {
         self.z = z
     }
     
-    public init<T>(x: T, y: T, z: T) where T: BinaryFloatingPoint {
+    public init<T>(x: T, y: T, z: T) where T : BinaryFloatingPoint {
         self.init(x: Real(x), y: Real(y), z: Real(z))
     }
     
-    public init<T>(x: T, y: T, z: T) where T: BinaryInteger {
+    public init<T>(x: T, y: T, z: T) where T : BinaryInteger {
         self.init(x: Real(x), y: Real(y), z: Real(z))
     }
     

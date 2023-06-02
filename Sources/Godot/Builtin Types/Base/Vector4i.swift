@@ -13,11 +13,11 @@ public struct Vector4i {
         self.w = w
     }
     
-    public init<T>(x: T, y: T, z: T, w: T) where T: BinaryFloatingPoint {
+    public init<T>(x: T, y: T, z: T, w: T) where T : BinaryFloatingPoint {
         self.init(x: Int(x), y: Int(y), z: Int(z), w: Int(w))
     }
     
-    public init<T>(x: T, y: T, z: T, w: T) where T: BinaryInteger {
+    public init<T>(x: T, y: T, z: T, w: T) where T : BinaryInteger {
         self.init(x: Int(x), y: Int(y), z: Int(z), w: Int(w))
     }
     

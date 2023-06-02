@@ -9,12 +9,12 @@ public struct Rect2 {
         self.size = size
     }
     
-    public init<T>(x: T, y: T, width: T, height: T) where T: BinaryFloatingPoint {
+    public init<T>(x: T, y: T, width: T, height: T) where T : BinaryFloatingPoint {
         self.init(position: Vector2(x: x, y: y),
                   size: Vector2(x: width, y: height))
     }
     
-    public init<T>(x: T, y: T, width: T, height: T) where T: BinaryInteger {
+    public init<T>(x: T, y: T, width: T, height: T) where T : BinaryInteger {
         self.init(position: Vector2(x: x, y: y),
                   size: Vector2(x: width, y: height))
     }

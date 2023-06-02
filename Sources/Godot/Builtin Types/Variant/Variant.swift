@@ -25,7 +25,7 @@ public struct Variant {
         }
     }
     
-    public init<T>(_ variantConvertible: T) where T: VariantConvertible {
+    public init<T>(_ variantConvertible: T) where T : VariantConvertible {
         self = variantConvertible.variant
     }
 
@@ -33,7 +33,7 @@ public struct Variant {
     
     /// Returns the value contained inside the `Variant`.
     /// - Parameter type: The type inside the `Variant`.
-    public func value<T>(ofType type: T.Type) throws -> T where T: ExpressibleByVariant {
+    public func value<T>(ofType type: T.Type) throws -> T where T : ExpressibleByVariant {
         try type.init(variant: self)
     }
     

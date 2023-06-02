@@ -9,11 +9,11 @@ public struct Plane {
         self.d = d
     }
     
-    public init<T>(normal: Vector3, d: T) where T: BinaryFloatingPoint {
+    public init<T>(normal: Vector3, d: T) where T : BinaryFloatingPoint {
         self.init(normal: normal, d: Real(d))
     }
     
-    public init<T>(normal: Vector3, d: T) where T: BinaryInteger {
+    public init<T>(normal: Vector3, d: T) where T : BinaryInteger {
         self.init(normal: normal, d: Real(d))
     }
     
@@ -21,11 +21,11 @@ public struct Plane {
         self.init(normal: Vector3(x: x, y: y, z: z), d: d)
     }
     
-    public init<T>(x: T, y: T, z: T, d: T) where T: BinaryFloatingPoint {
+    public init<T>(x: T, y: T, z: T, d: T) where T : BinaryFloatingPoint {
         self.init(x: Real(x), y: Real(y), z: Real(z), d: Real(d))
     }
     
-    public init<T>(x: T, y: T, z: T, d: T) where T: BinaryInteger {
+    public init<T>(x: T, y: T, z: T, d: T) where T : BinaryInteger {
         self.init(x: Real(x), y: Real(y), z: Real(z), d: Real(d))
     }
     

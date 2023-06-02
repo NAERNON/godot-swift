@@ -18,10 +18,10 @@ struct RealRawValueFile: File {
         Extension("Real") {
             Typealias("RawValue", type: floatingTypeString).public()
                 .documentation {
-"""
-The underlying type of a `Real` value.
-It can either be a `Float` or a `Double` depending on the build configuration.
-"""
+                    """
+                    The underlying type of a `Real` value.
+                    It can either be a `Float` or a `Double` depending on the build configuration.
+                    """
                 }
         }
     }

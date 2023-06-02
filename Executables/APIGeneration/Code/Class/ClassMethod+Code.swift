@@ -14,10 +14,10 @@ extension ExtensionApi.Class.Method {
                     returnType.defaultValueCode()
                 }
             }.accessControl(accessControl).documentation {
-"""
-This function should only be called by Godot.
-Override it to make custom behaviors.
-"""
+                """
+                This function should only be called by Godot.
+                Override it to make custom behaviors.
+                """
             }
         }
     }

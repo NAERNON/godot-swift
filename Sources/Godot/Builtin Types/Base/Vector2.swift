@@ -9,11 +9,11 @@ public struct Vector2 {
         self.y = y
     }
     
-    public init<T>(x: T, y: T) where T: BinaryFloatingPoint {
+    public init<T>(x: T, y: T) where T : BinaryFloatingPoint {
         self.init(x: Real(x), y: Real(y))
     }
     
-    public init<T>(x: T, y: T) where T: BinaryInteger {
+    public init<T>(x: T, y: T) where T : BinaryInteger {
         self.init(x: Real(x), y: Real(y))
     }
     

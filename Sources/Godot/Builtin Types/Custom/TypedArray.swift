@@ -8,7 +8,7 @@ import GodotExtensionHeaders
 /// Under the hood, this collection uses the Godot `Array` type.
 ///
 /// Only `TypedVariantTransformable` elements can be contained inside a `TypedArray`.
-public struct TypedArray<Element> where Element: TypedVariantTransformable {
+public struct TypedArray<Element> where Element : TypedVariantTransformable {
     private var underlyingArray: Array
     
     public init(_ value: TypedArray<Element>) {
@@ -44,7 +44,7 @@ extension TypedArray {
     }
 }
 
-extension TypedArray where Element: Object {
+extension TypedArray where Element : Object {
     public init() {
         self.init(className: Element.lastDerivedGodotClassName())
     }
