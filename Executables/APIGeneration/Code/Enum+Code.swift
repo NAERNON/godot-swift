@@ -8,7 +8,11 @@ extension ExtensionApi.Enum {
     @CodeBuilder
     func code(definedInside insideType: InstanceType? = nil) -> some Code {
         if isBitfield == true {
-            optionSetCode(forType: Int.self, definedInside: insideType)
+            if values.contains(where: { $0.value < 0 }) {
+                optionSetCode(forType: Int32.self, definedInside: insideType)
+            } else {
+                optionSetCode(forType: UInt32.self, definedInside: insideType)
+            }
         } else {
             if values.contains(where: { $0.value < 0 }) {
                 enumCode(forType: Int32.self, definedInside: insideType)
@@ -21,10 +25,9 @@ extension ExtensionApi.Enum {
     /// Returns the name and cases of the enum.
     /// - Parameters:
     ///   - type: The type of the values.
-    private func nameAndCases<T: BinaryInteger>(
-        forType type: T.Type,
-        definedInside insideType: InstanceType?
-    ) -> (name: String, cases: [CaseData<T>]) {
+    private func nameAndCases<T>(forType type: T.Type,
+                                 definedInside insideType: InstanceType?) -> (name: String, cases: [CaseData<T>])
+    where T : FixedWidthInteger {
         let translatedEnum = CodeLanguage.c.translateEnum(
             name: name.code(definedInside: insideType),
             cases: values.map { $0.name },
@@ -39,9 +42,10 @@ extension ExtensionApi.Enum {
 
         return (translatedEnum.name, cases)
     }
-
-    private func enumCode<T: BinaryInteger>(forType type: T.Type,
-                                            definedInside insideType: InstanceType?) -> some Code {
+    
+    private func enumCode<T>(forType type: T.Type,
+                             definedInside insideType: InstanceType?) -> some Code
+    where T : FixedWidthInteger {
         let nameAndCases = self.nameAndCases(forType: type, definedInside: insideType)
         
         // Sometimes, given enums don't have unique values, and two cases can have the same value.
@@ -76,11 +80,12 @@ extension ExtensionApi.Enum {
         }
         .public()
     }
-
-    private func optionSetCode<T: BinaryInteger>(forType type: T.Type,
-                                                 definedInside insideType: InstanceType?) -> some Code {
+    
+    private func optionSetCode<T>(forType type: T.Type,
+                                  definedInside insideType: InstanceType?) -> some Code
+    where T : FixedWidthInteger {
         let nameAndCases = self.nameAndCases(forType: type, definedInside: insideType)
-
+        
         return OptionSet(nameAndCases.name, options: nameAndCases.cases, propertiesAccessControl: .public)
             .public()
             .align(offset: 1)

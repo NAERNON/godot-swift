@@ -1,6 +1,6 @@
 import Foundation
 
-public struct OptionSet<RawType>: Code where RawType : BinaryInteger {
+public struct OptionSet<RawType>: Code where RawType : FixedWidthInteger {
     let name: String
     let options: [(name: String, value: RawType)]
     let propertiesAccessControl: AccessControl?

@@ -1,19 +1,22 @@
 import Foundation
+import GodotExtensionHeaders
 
 // MARK: Warning and errors
 
 public func printGodotError(_ message: Swift.String,
+                            notifyEditor: Bool = true,
                             function: Swift.String = #function,
                             file: Swift.String = #file,
-                            line: Int = #line) {
-    GodotExtension.shared.interface.print_error(message, function, file, Int32(line))
+                            line: Int32 = #line) {
+    GodotExtension.shared.interface.print_error(message, function, file, line, GDExtensionBool(notifyEditor))
 }
 
 public func printGodotWarning(_ message: Swift.String,
+                              notifyEditor: Bool = true,
                               function: Swift.String = #function,
                               file: Swift.String = #file,
-                              line: Int = #line) {
-    GodotExtension.shared.interface.print_warning(message, function, file, Int32(line))
+                              line: Int32 = #line) {
+    GodotExtension.shared.interface.print_warning(message, function, file, line, GDExtensionBool(notifyEditor))
 }
 
 // MARK: Print

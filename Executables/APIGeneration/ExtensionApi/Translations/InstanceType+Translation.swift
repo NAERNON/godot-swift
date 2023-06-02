@@ -152,6 +152,10 @@ extension InstanceType {
             return "[:]"
         }
         
+        if finalType == "Array" || finalType == "TypedArray" {
+            return "[]"
+        }
+        
         if finalType == "String" || finalType == "StringName",
            constantValue.string.first == "&" {
             let string = constantValue.string
