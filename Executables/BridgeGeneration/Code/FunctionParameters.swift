@@ -32,15 +32,15 @@ struct FunctionParameters: Code, Hashable, Comparable {
                 typeConstraint + (index < typeConstraints.count - 1 ? "," : "")
             }.indent()
             
-            "{"
-            Container {
-                ".init(arguments: ["
-                ForEach(0..<parametersCount) { index in
-                    ".init(type: \(parameterTypeName(index: index)).self, name: parameterNames[\(index)]),"
-                }.indent()
-                "], returnType: \(returnParameter))"
-            }.indent()
-            "}"
+            CurlyBracesBlock {
+                Container {
+                    ".init(arguments: ["
+                    ForEach(0..<parametersCount) { index in
+                        ".init(type: \(parameterTypeName(index: index)).self, name: parameterNames[\(index)]),"
+                    }.indent()
+                    "], returnType: \(returnParameter))"
+                }
+            }
         }
     }
     

@@ -26,9 +26,9 @@ private struct PointersArray<Content>: Code where Content : Code {
     }
     
     var body: some Code {
-        "withUnsafeArgumentPointer(\(argumentArrayCodeString)) { \(arrayPointerName) in"
-        content().indent()
-        "}"
+        "withUnsafeArgumentPointer(\(argumentArrayCodeString))".curlyBraces("\(arrayPointerName) in") {
+            content()
+        }
     }
     
     private var argumentArrayCodeString: String {

@@ -105,9 +105,9 @@ struct GodotBridgeFile: File {
     @CodeBuilder
     private func functionParametersCode(for functionDefinitions: [FunctionDefinition]) -> some Code {
         Extension("GDExtensionConstVariantPtr") {
-            "func functionParameter<T>() -> T where T : ExpressibleByVariant {"
-            "try! T(variant: Variant(extensionVariantPtr: self))".indent()
-            "}"
+            "func functionParameter<T>() -> T where T : ExpressibleByVariant".curlyBraces {
+                "try! T(variant: Variant(extensionVariantPtr: self))"
+            }
         }.private()
         
         ForEach(Set(functionDefinitions.map { FunctionParameters(functionDefinition: $0) }).sorted())
@@ -133,22 +133,22 @@ struct GodotBridgeFile: File {
             "private func getterPropertyParameters<T, R>(keyPath: KeyPath<T, R>) -> ClassRegister.FunctionRegistrationTypes"
             "where R : TypedVariantTransformable".indent()
             
-            "{"
-            Container {
-                ".init(arguments: [], returnType: .init(type: R.self, name: StringName()))"
-            }.indent()
-            "}"
+            CurlyBracesBlock {
+                Container {
+                    ".init(arguments: [], returnType: .init(type: R.self, name: StringName()))"
+                }
+            }
         }
         
         Container {
             "private func setterPropertyParameters<T, R>(keyPath: WritableKeyPath<T, R>, name: StringName) -> ClassRegister.FunctionRegistrationTypes"
             "where R : TypedVariantTransformable".indent()
             
-            "{"
-            Container {
-                ".init(arguments: [.init(type: R.self, name: name)], returnType: nil)"
-            }.indent()
-            "}"
+            CurlyBracesBlock {
+                Container {
+                    ".init(arguments: [.init(type: R.self, name: name)], returnType: nil)"
+                }
+            }
         }
     }
     

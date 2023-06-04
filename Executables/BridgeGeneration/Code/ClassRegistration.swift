@@ -18,17 +18,18 @@ struct ClassRegistration: Code {
     @CodeBuilder
     private var registrationCode: some Code {
         if let superclassName = definition.superclassName {
-            "GodotExtension.shared.classRegister.registerClass(ofType: \(definition.name).self, superclassName: \"\(superclassName)\") { _, _, _ in"
-            
-            "} createInstanceFunction: { _ in"
-            
-            Return("GodotExtension.shared.classRegister.instantiateClass(ofType: \(definition.name).self)").indent()
-            
-            "} freeInstanceFunction: { _, instancePtr in"
-            
-            "Unmanaged<\(definition.name)>.fromOpaque(instancePtr!).release()".indent()
-            
-            "}"
+            "GodotExtension.shared.classRegister.registerClass(ofType: \(definition.name).self, superclassName: \"\(superclassName)\")"
+                .curlyBraces("_, _, _ in") {
+                    EmptyCode()
+                }
+            "createInstanceFunction:"
+                .curlyBraces("_ in") {
+                    Return("GodotExtension.shared.classRegister.instantiateClass(ofType: \(definition.name).self)")
+                }
+            "freeInstanceFunction:"
+                .curlyBraces("_, instancePtr in") {
+                    "Unmanaged<\(definition.name)>.fromOpaque(instancePtr!).release()"
+                }
         }
     }
     

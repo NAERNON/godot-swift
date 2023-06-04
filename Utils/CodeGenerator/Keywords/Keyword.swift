@@ -116,7 +116,7 @@ public extension Code {
     }
     
     @CodeBuilder
-    func filePrivateSet(_ state: Bool = true) -> some Code {
+    func fileprivateSet(_ state: Bool = true) -> some Code {
         if state {
             keyword(.filePrivateSet)
         } else {

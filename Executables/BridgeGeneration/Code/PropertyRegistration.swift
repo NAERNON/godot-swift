@@ -66,16 +66,15 @@ private struct PropertyGetterRegistration: Code {
                 "types: getterPropertyParameters(keyPath: \\\(definition.className).\(definition.name)),"
                 "isStatic: false"
             }.indent()
-            ") { _, instancePtr, args, argsCount, returnPtr, error in"
             
-            Container {
-                "let returnValue = Unmanaged<\(definition.className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
-                "." + definition.name
-                
-                "returnValue.variant.copyTo(variantPtr: returnPtr!)"
-            }.indent()
-            
-            "}"
+            ")".curlyBraces("_, instancePtr, args, argsCount, returnPtr, error in") {
+                Container {
+                    "let returnValue = Unmanaged<\(definition.className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+                    "." + definition.name
+                    
+                    "returnValue.variant.copyTo(variantPtr: returnPtr!)"
+                }
+            }
         }
     }
 }
@@ -94,15 +93,14 @@ private struct PropertySetterRegistration: Code {
                 "types: setterPropertyParameters(keyPath: \\\(definition.className).\(definition.name), name: \"\(definition.translatedName)\"),"
                 "isStatic: false"
             }.indent()
-            ") { _, instancePtr, args, argsCount, returnPtr, error in"
             
-            Container {
-                "var object = Unmanaged<\(definition.className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
-                
-                "object[keyPath: \\\(definition.className).\(definition.name)] = args!.pointee!.functionParameter()"
-            }.indent()
-            
-            "}"
+            ")".curlyBraces("_, instancePtr, args, argsCount, returnPtr, error in") {
+                Container {
+                    "var object = Unmanaged<\(definition.className)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+                    
+                    "object[keyPath: \\\(definition.className).\(definition.name)] = args!.pointee!.functionParameter()"
+                }
+            }
         }
     }
 }
