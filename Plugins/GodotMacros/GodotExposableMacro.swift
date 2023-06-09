@@ -3,7 +3,7 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
-public enum GodotExposedMacro: MemberMacro {
+public enum GodotExposableMacro: MemberMacro {
     public static func expansion(
         of attribute: AttributeSyntax,
         providingMembersOf declaration: some DeclGroupSyntax,
@@ -28,6 +28,7 @@ public enum GodotExposedMacro: MemberMacro {
             return []
         }
         
+#warning("Check the create instance function, something's fishy...")
         let functionDecl = DeclSyntax(
             """
             internal static func exposeToGodot() {
@@ -36,7 +37,14 @@ public enum GodotExposedMacro: MemberMacro {
                     
                 }
                 createInstanceFunction: { _ in
-                    return GodotExtension.shared.classRegister.instantiateClass(ofType: \(classDecl.identifier).self)
+                    let instance = \(classDecl.identifier)()
+                    var objectPtr: GDExtensionObjectPtr!
+                    
+                    instance.withUnsafeExtensionPointer { ptr in
+                        objectPtr = ptr
+                    }
+                    
+                    return objectPtr
                 }
                 freeInstanceFunction: { _, instancePtr in
                     Unmanaged<\(classDecl.identifier)>.fromOpaque(instancePtr!).release()
@@ -51,7 +59,7 @@ public enum GodotExposedMacro: MemberMacro {
 
 // MARK: - Diagnostic
 
-private enum GodotExposedDiagnostic: String, DiagnosticMessage {
+private enum GodotExposableDiagnostic: String, DiagnosticMessage {
     case notAClass
     case noSuperclassProvided
     case notPublic
@@ -61,11 +69,11 @@ private enum GodotExposedDiagnostic: String, DiagnosticMessage {
     var message: String {
         switch self {
         case .notAClass:
-            "'@GodotExposed' can only be applied to a 'class'"
+            "Only classes can be exposed to Godot"
         case .noSuperclassProvided:
-            "'@GodotExposed' can only be applied to a 'class' that inherits another 'class'"
+            "Only classes that inherit the Godot 'Object' class can be exposed to Godot"
         case .notPublic:
-            "'@GodotExposed' can only be applied to a public 'class'"
+            "Only public classes can be exposed to Godot"
         }
     }
     
@@ -75,7 +83,7 @@ private enum GodotExposedDiagnostic: String, DiagnosticMessage {
 }
 
 fileprivate extension MacroExpansionContext {
-    func diagnose(_ godotDiagnostic: GodotExposedDiagnostic, on attribute: AttributeSyntax) {
+    func diagnose(_ godotDiagnostic: GodotExposableDiagnostic, on attribute: AttributeSyntax) {
         let diagnostic = Diagnostic(
             node: Syntax(attribute), message: godotDiagnostic
         )

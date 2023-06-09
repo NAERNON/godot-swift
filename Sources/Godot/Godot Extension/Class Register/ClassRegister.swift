@@ -77,17 +77,6 @@ public final class ClassRegister {
         godotClassesNames.insert(classType.godotClassName())
     }
     
-    public func instantiateClass<Class>(ofType type: Class.Type) -> GDExtensionObjectPtr where Class : Object {
-        let instance = Class()
-        var objectPtr: GDExtensionObjectPtr!
-        
-        instance.withUnsafeExtensionPointer { ptr in
-            objectPtr = ptr
-        }
-        
-        return objectPtr
-    }
-    
     private func insertWaitingClassBinding(_ binding: ClassBinding) {
         var bindings = classNameToWaitingSubclassBindings[binding.superclassName] ?? []
         bindings.append(binding)

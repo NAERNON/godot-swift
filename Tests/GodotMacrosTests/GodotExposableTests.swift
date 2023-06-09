@@ -4,15 +4,15 @@ import XCTest
 import GodotMacros
 
 let testMacros: [String: Macro.Type] = [
-    "GodotExposed": GodotExposedMacro.self,
+    "GodotExposable": GodotExposableMacro.self,
 ]
 
 #warning("Do the tests")
-final class GodotExposedTests: XCTestCase {
+final class GodotExposableTests: XCTestCase {
     func testMacro() {
         assertMacroExpansion(
             """
-            @GodotExposed
+            @GodotExposable
             public class A: B {}
             """,
             expandedSource: """
