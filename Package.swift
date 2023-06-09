@@ -1,7 +1,8 @@
-// swift-tools-version: 5.7
+// swift-tools-version: 5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
+import CompilerPluginSupport
 
 #warning("v13 really ?")
 let package = Package(
@@ -20,6 +21,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "1.0.0")),
         .package(url: "https://github.com/jpsim/SourceKitten", .upToNextMinor(from: "0.34.0")),
+        .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0-swift-5.9-DEVELOPMENT-SNAPSHOT-2023-04-25-b"),
     ],
     targets: [
         // MARK: Main targets
@@ -31,7 +33,10 @@ let package = Package(
         ),
         .target(
             name: "Godot",
-            dependencies: ["GodotExtensionHeaders"]
+            dependencies: [
+                "GodotExtensionHeaders",
+                "GodotMacros"
+            ]
         ),
         
         // MARK: Utils targets
@@ -75,6 +80,24 @@ let package = Package(
             name: "GodotBridgePlugin",
             capability: .buildTool(),
             dependencies: ["generate-bridge"]
-        )
+        ),
+        .macro(
+            name: "GodotMacros",
+            dependencies: [
+                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
+                .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
+            ],
+            path: "Plugins/GodotMacros"
+        ),
+        
+        // MARK: Tests
+        
+        .testTarget(
+            name: "GodotMacrosTests",
+            dependencies: [
+                "GodotMacros",
+                .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
+            ]
+        ),
     ]
 )
