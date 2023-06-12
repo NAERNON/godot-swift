@@ -3,20 +3,32 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
-public enum GodotExposableMacro: MemberMacro {
+public enum GodotExposableMacro: ConformanceMacro, MemberMacro {
+    // MARK: Conformance
+    
+    public static func expansion(
+        of node: AttributeSyntax,
+        providingConformancesOf declaration: some DeclGroupSyntax,
+        in context: some MacroExpansionContext
+    ) throws -> [(TypeSyntax, GenericWhereClauseSyntax?)] {
+        [("GodotExposableObject", nil)]
+    }
+    
+    // MARK: Member
+    
     public static func expansion(
         of attribute: AttributeSyntax,
         providingMembersOf declaration: some DeclGroupSyntax,
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
         guard let classDecl = declaration.as(ClassDeclSyntax.self) else {
-            context.diagnose(.notAClass, on: attribute)
+            context.diagnose(GodotExposableDiagnostic.notAClass, on: attribute)
             return []
         }
         
         guard let superclassName = classDecl.inheritanceClause?
-            .inheritedTypeCollection.first?.typeName.as(SimpleTypeIdentifierSyntax.self)?.name else {
-            context.diagnose(.noSuperclassProvided, on: attribute)
+            .inheritedTypeCollection.first?.description else {
+            context.diagnose(GodotExposableDiagnostic.noSuperclassProvided, on: attribute)
             return []
         }
         
@@ -24,21 +36,23 @@ public enum GodotExposableMacro: MemberMacro {
             $0 == .keyword(.public) ||
             $0 == .keyword(.open)
         }) == true else {
-            context.diagnose(.notPublic, on: attribute)
+            context.diagnose(GodotExposableDiagnostic.notPublic, on: attribute)
             return []
         }
         
+        let memberFunctionDecls = classDecl.memberBlock.members.compactMap({ $0.decl.as(FunctionDeclSyntax.self) })
+        
 #warning("Check the create instance function, something's fishy...")
-        let functionDecl = DeclSyntax(
-            """
-            internal static func exposeToGodot() {
-                GodotExtension.shared.classRegister.registerClass(ofType: \(classDecl.identifier).self, superclassName: "\(raw: superclassName.text)")
+        let functionDecl = try FunctionDeclSyntax("public static func exposeToGodot()") {
+            DeclSyntax(
+                """
+                GodotExtension.shared.classRegister.registerClass(ofType: \(classDecl.identifier).self, superclassName: "\(raw: superclassName)")
                 { _, _, _ in
                     
                 }
                 createInstanceFunction: { _ in
                     let instance = \(classDecl.identifier)()
-                    var objectPtr: GDExtensionObjectPtr!
+                    var objectPtr: UnsafeMutableRawPointer!
                     
                     instance.withUnsafeExtensionPointer { ptr in
                         objectPtr = ptr
@@ -49,11 +63,17 @@ public enum GodotExposableMacro: MemberMacro {
                 freeInstanceFunction: { _, instancePtr in
                     Unmanaged<\(classDecl.identifier)>.fromOpaque(instancePtr!).release()
                 }
+                """
+            )
+            
+            for memberFunctionDecl in memberFunctionDecls {
+                if memberFunctionDecl.attributes?.contains(where: { $0.as(AttributeSyntax.self)?.attributeName.as(SimpleTypeIdentifierSyntax.self)?.name == .identifier("GodotExposable") }) == true {
+                    DeclSyntax("blb")
+                }
             }
-            """
-        )
+        }
         
-        return [functionDecl]
+        return [DeclSyntax(functionDecl)]
     }
 }
 
@@ -79,14 +99,5 @@ private enum GodotExposableDiagnostic: String, DiagnosticMessage {
     
     var diagnosticID: MessageID {
         MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
-fileprivate extension MacroExpansionContext {
-    func diagnose(_ godotDiagnostic: GodotExposableDiagnostic, on attribute: AttributeSyntax) {
-        let diagnostic = Diagnostic(
-            node: Syntax(attribute), message: godotDiagnostic
-        )
-        self.diagnose(diagnostic)
     }
 }
