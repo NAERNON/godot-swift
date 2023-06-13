@@ -4,8 +4,10 @@ import GodotExtensionHeaders
 extension ClassRegister {
     final class ClassBinding {
         let level: GDExtensionInitializationLevel
+        
         let type: Object.Type
         let name: StringName
+        let superclassType: Object.Type
         let superclassName: StringName
         
         let toStringFunction: GDExtensionClassToString
@@ -21,13 +23,16 @@ extension ClassRegister {
         init(level: GDExtensionInitializationLevel,
              type: Object.Type,
              name: StringName,
+             superclassType: Object.Type,
              superclassName: StringName,
              toStringFunction: GDExtensionClassToString,
              createInstanceFunction: GDExtensionClassCreateInstance,
              freeInstanceFunction: GDExtensionClassFreeInstance) {
             self.level = level
+            
             self.type = type
             self.name = name
+            self.superclassType = superclassType
             self.superclassName = superclassName
             
             self.toStringFunction = toStringFunction

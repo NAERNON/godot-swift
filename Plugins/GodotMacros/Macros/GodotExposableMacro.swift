@@ -26,8 +26,8 @@ public enum GodotExposableMacro: ConformanceMacro, MemberMacro {
             return []
         }
         
-        guard let superclassName = classDecl.inheritanceClause?
-            .inheritedTypeCollection.first?.description else {
+        guard let inheritenceDecl = classDecl.inheritanceClause?
+            .inheritedTypeCollection.first else {
             context.diagnose(GodotExposableDiagnostic.noSuperclassProvided, on: attribute)
             return []
         }
@@ -46,7 +46,7 @@ public enum GodotExposableMacro: ConformanceMacro, MemberMacro {
         let functionDecl = try FunctionDeclSyntax("public static func exposeToGodot()") {
             DeclSyntax(
                 """
-                GodotExtension.shared.classRegister.registerClass(ofType: \(classDecl.identifier).self, superclassName: "\(raw: superclassName)")
+                GodotExtension.shared.classRegister.registerClass(ofType: \(classDecl.identifier).self, superclassType: \(inheritenceDecl).self)
                 { _, _, _ in
                     
                 }
