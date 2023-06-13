@@ -4,5 +4,5 @@ import Foundation
 public macro GodotExposable() = #externalMacro(module: "GodotMacros", type: "GodotExposableMacro")
 
 @attached(conformance)
-@attached(peer, names: named(libraryInit))
+@attached(peer, names: arbitrary)
 public macro GodotBridge() = #externalMacro(module: "GodotMacros", type: "GodotBridgeMacro")
