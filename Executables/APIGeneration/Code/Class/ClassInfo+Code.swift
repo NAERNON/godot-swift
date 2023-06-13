@@ -75,4 +75,18 @@ extension ExtensionApi.Class {
             }
         }
     }
+    
+    @CodeBuilder
+    func exposeToGodotCode() -> some Code {
+        """
+        open \(isRootClass ? "" : "override ")class func exposeToGodot() {
+            guard StringName(swiftString: .init(describing: self)) == "\(name.code())" else {
+                return
+            }
+            
+            setFunctionBindings()
+            GodotExtension.shared.classRegister.registerGeneratedGodotClass(ofType: self)
+        }
+        """
+    }
 }

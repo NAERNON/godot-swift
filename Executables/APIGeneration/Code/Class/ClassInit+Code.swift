@@ -10,6 +10,7 @@ extension ExtensionApi.Class {
         extensionObjectInitCode()
         variantInitCode()
         classNameFunctionCode()
+        exposeToGodotCode()
     }
     
     @CodeBuilder

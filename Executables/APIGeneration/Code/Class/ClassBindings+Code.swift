@@ -43,9 +43,8 @@ extension ExtensionApi.Class {
                 }
             }
         }
-        .class()
-        .override(!isRootClass)
-        .internal()
+        .static()
+        .private()
         .documentation {
             "Sets all the function bindings used to communicate with Godot."
         }

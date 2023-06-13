@@ -69,7 +69,6 @@ public final class ClassRegister {
     }
     
     internal func registerGeneratedGodotClass<Class>(ofType classType: Class.Type) where Class : Object {
-        classType.setFunctionBindings()
         godotClassNameToClassType[classType.godotClassName()] = classType
     }
     
