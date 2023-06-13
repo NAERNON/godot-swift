@@ -86,7 +86,7 @@ public final class ClassRegister {
     }
     
 #warning("Do the to string function")
-    public func registerClass<Class, Superclass>(
+    public func registerCustomClass<Class, Superclass>(
         ofType classType: Class.Type,
         superclassType: Superclass.Type,
         toStringFunction: GDExtensionClassToString,

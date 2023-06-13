@@ -65,7 +65,7 @@ public enum GodotExposableMacro: MemberMacro {
         try FunctionDeclSyntax("open override class func _gd_exposeToGodot()") {
             ExprSyntax(
                 """
-                GodotExtension.shared.classRegister.registerClass(
+                GodotExtension.shared.classRegister.registerCustomClass(
                     ofType: self,
                     superclassType: \(inheritenceDecl).self
                 ) { _, _, _ in

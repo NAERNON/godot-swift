@@ -1,6 +1,6 @@
 import GodotExtensionHeaders
 
-public enum GodotInitializationLevel {
+public enum GodotInitializationLevel: Comparable {
     case core
     case servers
     case scene
