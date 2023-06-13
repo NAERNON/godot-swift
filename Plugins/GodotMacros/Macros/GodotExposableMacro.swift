@@ -12,21 +12,32 @@ public enum GodotExposableMacro: MemberMacro {
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
         guard let classDecl = declaration.as(ClassDeclSyntax.self) else {
-            context.diagnose(GodotExposableDiagnostic.notAClass, on: attribute)
+            let diagnostic = Diagnostic(
+                node: Syntax(attribute),
+                message: GodotExposableDiagnostic.notAClass
+            )
+            context.diagnose(diagnostic)
             return []
         }
         
         guard let inheritenceDecl = classDecl.inheritanceClause?
             .inheritedTypeCollection.first else {
-            context.diagnose(GodotExposableDiagnostic.noSuperclassProvided, on: attribute)
+            let diagnostic = Diagnostic(
+                node: Syntax(classDecl.classKeyword),
+                message: GodotExposableDiagnostic.noSuperclassProvided
+            )
+            context.diagnose(diagnostic)
             return []
         }
         
         guard classDecl.modifiers?.map(\.name.tokenKind).contains(where: {
-            $0 == .keyword(.public) ||
-            $0 == .keyword(.open)
+            $0 == .keyword(.public) || $0 == .keyword(.open)
         }) == true else {
-            context.diagnose(GodotExposableDiagnostic.notPublic, on: attribute)
+            let diagnostic = Diagnostic(
+                node: Syntax(classDecl.classKeyword),
+                message: GodotExposableDiagnostic.notPublic
+            )
+            context.diagnose(diagnostic)
             return []
         }
         
@@ -63,7 +74,7 @@ public enum GodotExposableMacro: MemberMacro {
         classDecl: ClassDeclSyntax,
         inheritenceDecl: InheritedTypeListSyntax.Element) throws -> FunctionDeclSyntax {
         try FunctionDeclSyntax("open override class func _gd_exposeToGodot()") {
-            ExprSyntax(
+            DeclSyntax(
                 """
                 GodotExtension.shared.classRegister.registerCustomClass(
                     ofType: self,

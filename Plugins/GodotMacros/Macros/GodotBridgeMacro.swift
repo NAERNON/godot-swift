@@ -29,7 +29,12 @@ public enum GodotBridgeMacro: ConformanceMacro, PeerMacro {
             return [libInitDecl(identifier: classDecl.identifier)]
         }
         
-        context.diagnose(GodotBridgeDiagnostic.wrongType, on: node)
+        let diagnostic = Diagnostic(
+            node: Syntax(node),
+            message: GodotBridgeDiagnostic.wrongType
+        )
+        context.diagnose(diagnostic)
+        
         return []
     }
     
