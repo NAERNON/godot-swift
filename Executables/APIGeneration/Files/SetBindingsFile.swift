@@ -34,7 +34,7 @@ struct SetBindingsFile: File {
             
             Func(name: "registerGodotClasses") {
                 for `class` in classes {
-                    "\(`class`.name.code()).exposeToGodot()"
+                    "\(`class`.name.code())._gd_exposeToGodot()"
                 }
             }
         }.internal()

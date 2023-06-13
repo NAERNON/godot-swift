@@ -45,8 +45,9 @@ extension TypedArray {
 }
 
 extension TypedArray where Element : Object {
+#warning("Check that it is not the lastDerivedClassName")
     public init() {
-        self.init(className: Element.lastDerivedGodotClassName())
+        self.init(className: Element._gd_className)
     }
 }
 

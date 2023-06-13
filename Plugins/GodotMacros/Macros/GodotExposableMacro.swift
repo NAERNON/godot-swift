@@ -30,12 +30,42 @@ public enum GodotExposableMacro: MemberMacro {
             return []
         }
         
+        let classNamesDecls = self.classNamesDecls(classDecl: classDecl, in: context)
 #warning("Check the create instance function, something's fishy...")
-        let functionDecl = try FunctionDeclSyntax("open override class func exposeToGodot()") {
+        let functionDecl = try exposeToGodotFunctionDecl(classDecl: classDecl, inheritenceDecl: inheritenceDecl)
+        
+        return [DeclSyntax(functionDecl)] + classNamesDecls
+    }
+    
+    private static func classNamesDecls(
+        classDecl: ClassDeclSyntax,
+        in context: some MacroExpansionContext
+    ) -> [DeclSyntax] {
+        let classNameVar = context.makeUniqueName("className")
+        
+        return [
+            DeclSyntax(
+                """
+                private static let \(classNameVar): StringName = \(literal: classDecl.identifier.description)
+                """),
+            DeclSyntax(
+                """
+                open override class var _gd_className: StringName { \(classNameVar) }
+                """),
+            DeclSyntax(
+                """
+                open override class var _gd_isCustomClass: Bool { true }
+                """),
+        ]
+    }
+    
+    private static func exposeToGodotFunctionDecl(
+        classDecl: ClassDeclSyntax,
+        inheritenceDecl: InheritedTypeListSyntax.Element) throws -> FunctionDeclSyntax {
+        try FunctionDeclSyntax("open override class func _gd_exposeToGodot()") {
             ExprSyntax(
                 """
                 GodotExtension.shared.classRegister.registerClass(
-                    withName: \(literal: classDecl.identifier.description),
                     ofType: self,
                     superclassType: \(inheritenceDecl).self
                 ) { _, _, _ in
@@ -65,8 +95,6 @@ public enum GodotExposableMacro: MemberMacro {
                 }
             }
         }
-        
-        return [DeclSyntax(functionDecl)]
     }
 }
 

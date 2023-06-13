@@ -22,7 +22,7 @@ public extension GodotBridgeProtocol {
     static func initializerCallback(level: GDExtensionInitializationLevel) {
         if level == GDEXTENSION_INITIALIZATION_SCENE {
             for object in Self.classesToRegister {
-                object.self.exposeToGodot()
+                object.self._gd_exposeToGodot()
             }
             
             GodotExtension.shared.classRegister.closeRegistration()

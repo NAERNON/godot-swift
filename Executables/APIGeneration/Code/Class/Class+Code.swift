@@ -11,9 +11,6 @@ extension ExtensionApi.Class {
         Class(name.code(), extensions: inherits == nil ? [] : [inherits!.code()]) {
             Stack {
                 initsCode()
-                if isRootClass {
-                    isExtensionClassCode()
-                }
                 bindingsCallbackCode()
                 enumCode()
                 methodsCode()

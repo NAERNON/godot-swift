@@ -1,6 +1,6 @@
 import Foundation
 
-@attached(member, names: named(exposeToGodot))
+@attached(member, names: named(_gd_exposeToGodot), named(_gd_className), named(_gd_isCustomClass))
 public macro GodotExposable() = #externalMacro(module: "GodotMacros", type: "GodotExposableMacro")
 
 @attached(conformance)

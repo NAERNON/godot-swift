@@ -66,27 +66,27 @@ public final class ClassRegister {
         classType(forClassName: className) != nil
     }
     
-    internal func registerBaseGodotClass<Class>(
-        withName className: StringName,
-        ofType classType: Class.Type
-    ) -> Bool where Class : Object {
+    private func classNameIsEquivalentToType<Class>(classType: Class.Type) -> Bool where Class : Object {
+        StringName(swiftString: .init(describing: classType)) == classType._gd_className
+    }
+    
+    internal func registerBaseGodotClass<Class>(ofType classType: Class.Type) -> Bool where Class : Object {
         guard isRegistrationOpen else {
             printGodotError("Cannot register class \(classType) because the registration is closed.")
             return false
         }
         
-        guard StringName(swiftString: .init(describing: classType)) == className else {
-            printGodotError("Cannot register class \(classType) because the type and the name don't match. The @GodotExposable macro should be applied to the class.")
+        guard classNameIsEquivalentToType(classType: classType) else {
+            printGodotError("Cannot register class \(classType) because the type and name don't match. The @GodotExposable macro should be applied to the class.")
             return false
         }
         
-        godotClassNameToClassType[classType.godotClassName()] = classType
+        godotClassNameToClassType[classType._gd_className] = classType
         return true
     }
     
 #warning("Do the to string function")
     public func registerClass<Class, Superclass>(
-        withName className: StringName,
         ofType classType: Class.Type,
         superclassType: Superclass.Type,
         toStringFunction: GDExtensionClassToString,
@@ -100,7 +100,7 @@ public final class ClassRegister {
             return false
         }
         
-        guard StringName(swiftString: .init(describing: classType)) == className else {
+        guard classNameIsEquivalentToType(classType: classType) else {
             printGodotError("Cannot register class \(classType) because the type and name don't match. Make sure the @GodotExposable macro is applied to the class.")
             return false
         }
@@ -108,9 +108,9 @@ public final class ClassRegister {
         let classBinding = ClassBinding(
             level: currentLevel,
             type: classType,
-            name: classType.godotClassName(),
+            name: classType._gd_className,
             superclassType: superclassType,
-            superclassName: superclassType.godotClassName(),
+            superclassName: superclassType._gd_className,
             toStringFunction: toStringFunction,
             createInstanceFunction: createInstanceFunction,
             freeInstanceFunction: freeInstanceFunction
@@ -221,9 +221,7 @@ public final class ClassRegister {
                                             name: StringName,
                                             call: GDExtensionClassCallVirtual) -> Bool
     where Class : Object {
-        let className = type.godotClassName()
-        
-        guard let classBinding = customClassNameToClassBinding[className] else {
+        guard let classBinding = customClassNameToClassBinding[type._gd_className] else {
             printGodotError("Class doesn't exist.")
             return false
         }
@@ -250,7 +248,7 @@ public final class ClassRegister {
             return .failure
         }
         
-        let className = classType.godotClassName()
+        let className = classType._gd_className
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
@@ -328,7 +326,7 @@ public final class ClassRegister {
             return .failure
         }
         
-        let className = Class.godotClassName()
+        let className = Class._gd_className
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == Class.self else {
