@@ -12,15 +12,10 @@ let package = Package(
         .library(
             name: "Godot",
             targets: ["Godot", "GodotExtensionHeaders"]
-        ),
-        .plugin(
-            name: "GodotBridgePlugin",
-            targets: ["GodotBridgePlugin"]
         )
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "1.0.0")),
-        .package(url: "https://github.com/jpsim/SourceKitten", .upToNextMinor(from: "0.34.0")),
         .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0-swift-5.9-DEVELOPMENT-SNAPSHOT-2023-04-25-b"),
     ],
     targets: [
@@ -63,24 +58,9 @@ let package = Package(
             ],
             path: "Executables/APIGeneration"
         ),
-        .executableTarget(
-            name: "generate-bridge",
-            dependencies: [
-                "CodeGenerator",
-                "CodeTranslator",
-                .product(name: "ArgumentParser", package: "swift-argument-parser"),
-                .product(name: "SourceKittenFramework", package: "SourceKitten"),
-            ],
-            path: "Executables/BridgeGeneration"
-        ),
         
         // MARK: Plugins
         
-        .plugin(
-            name: "GodotBridgePlugin",
-            capability: .buildTool(),
-            dependencies: ["generate-bridge"]
-        ),
         .macro(
             name: "GodotMacros",
             dependencies: [
