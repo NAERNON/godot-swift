@@ -3,17 +3,7 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
-public enum GodotExposableMacro: ConformanceMacro, MemberMacro {
-    // MARK: Conformance
-    
-    public static func expansion(
-        of node: AttributeSyntax,
-        providingConformancesOf declaration: some DeclGroupSyntax,
-        in context: some MacroExpansionContext
-    ) throws -> [(TypeSyntax, GenericWhereClauseSyntax?)] {
-        [("GodotExposableObject", nil)]
-    }
-    
+public enum GodotExposableMacro: MemberMacro {
     // MARK: Member
     
     public static func expansion(
@@ -40,14 +30,15 @@ public enum GodotExposableMacro: ConformanceMacro, MemberMacro {
             return []
         }
         
-        let memberFunctionDecls = classDecl.memberBlock.members.compactMap({ $0.decl.as(FunctionDeclSyntax.self) })
-        
 #warning("Check the create instance function, something's fishy...")
-        let functionDecl = try FunctionDeclSyntax("public static func exposeToGodot()") {
-            DeclSyntax(
+        let functionDecl = try FunctionDeclSyntax("open override class func exposeToGodot()") {
+            ExprSyntax(
                 """
-                GodotExtension.shared.classRegister.registerClass(ofType: \(classDecl.identifier).self, superclassType: \(inheritenceDecl).self)
-                { _, _, _ in
+                GodotExtension.shared.classRegister.registerClass(
+                    withName: \(literal: classDecl.identifier.description),
+                    ofType: self,
+                    superclassType: \(inheritenceDecl).self
+                ) { _, _, _ in
                     
                 }
                 createInstanceFunction: { _ in
@@ -65,6 +56,8 @@ public enum GodotExposableMacro: ConformanceMacro, MemberMacro {
                 }
                 """
             )
+            
+            let memberFunctionDecls = classDecl.memberBlock.members.compactMap({ $0.decl.as(FunctionDeclSyntax.self) })
             
             for memberFunctionDecl in memberFunctionDecls {
                 if memberFunctionDecl.attributes?.contains(where: { $0.as(AttributeSyntax.self)?.attributeName.as(SimpleTypeIdentifierSyntax.self)?.name == .identifier("GodotExposable") }) == true {

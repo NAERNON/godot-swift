@@ -46,8 +46,6 @@ public final class ClassRegister {
         }
     }
     
-    // MARK: Close registration
-    
     public func closeRegistration() {
         isRegistrationOpen = false
     }
@@ -68,13 +66,27 @@ public final class ClassRegister {
         classType(forClassName: className) != nil
     }
     
-    internal func registerGeneratedGodotClass<Class>(ofType classType: Class.Type) where Class : Object {
+    internal func registerBaseGodotClass<Class>(
+        withName className: StringName,
+        ofType classType: Class.Type
+    ) -> Bool where Class : Object {
+        guard isRegistrationOpen else {
+            printGodotError("Cannot register class \(classType) because the registration is closed.")
+            return false
+        }
+        
+        guard StringName(swiftString: .init(describing: classType)) == className else {
+            printGodotError("Cannot register class \(classType) because the type and the name don't match. The @GodotExposable macro should be applied to the class.")
+            return false
+        }
+        
         godotClassNameToClassType[classType.godotClassName()] = classType
+        return true
     }
     
 #warning("Do the to string function")
-    @discardableResult
     public func registerClass<Class, Superclass>(
+        withName className: StringName,
         ofType classType: Class.Type,
         superclassType: Superclass.Type,
         toStringFunction: GDExtensionClassToString,
@@ -85,6 +97,11 @@ public final class ClassRegister {
     {
         guard let currentLevel else {
             printGodotError("Cannot register class \(classType) because no initialization level was provided.")
+            return false
+        }
+        
+        guard StringName(swiftString: .init(describing: classType)) == className else {
+            printGodotError("Cannot register class \(classType) because the type and name don't match. Make sure the @GodotExposable macro is applied to the class.")
             return false
         }
         

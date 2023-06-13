@@ -34,7 +34,7 @@ struct SetBindingsFile: File {
             
             Func(name: "registerGodotClasses") {
                 for `class` in classes {
-                    "GodotExtension.shared.classRegister.registerGeneratedGodotClass(ofType: \(`class`.name.code()).self)"
+                    "\(`class`.name.code()).exposeToGodot()"
                 }
             }
         }.internal()

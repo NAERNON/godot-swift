@@ -1,7 +1,7 @@
 import GodotExtensionHeaders
 
 public protocol GodotBridgeProtocol {
-    static var classesToRegister: [GodotExposableObject.Type] { get }
+    static var classesToRegister: [Object.Type] { get }
     
     static func initialize(level: GodotInitializationLevel)
     static func deinitialize(level: GodotInitializationLevel)
@@ -10,7 +10,7 @@ public protocol GodotBridgeProtocol {
 // MARK: - Default implementation
 
 public extension GodotBridgeProtocol {
-    static var classesToRegister: [GodotExposableObject.Type] { [] }
+    static var classesToRegister: [Object.Type] { [] }
     
     static func initialize(level: GodotInitializationLevel) {}
     static func deinitialize(level: GodotInitializationLevel) {}
