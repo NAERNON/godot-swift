@@ -39,7 +39,7 @@ public enum GodotBridgeMacro: ConformanceMacro, PeerMacro {
     }
     
     private static func libInitDecl(identifier: TokenSyntax) -> DeclSyntax {
-        let functionName = identifier.text.lowercased() + "_library_init"
+        let functionName = identifier.text.lowercased() + "_godot_init"
         
         return DeclSyntax(
             """
