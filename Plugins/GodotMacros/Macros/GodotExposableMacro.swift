@@ -3,6 +3,7 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
+#warning("Check the create instance function, something's fishy...")
 public enum GodotExposableMacro: MemberMacro {
     // MARK: Member
     
@@ -11,6 +12,15 @@ public enum GodotExposableMacro: MemberMacro {
         providingMembersOf declaration: some DeclGroupSyntax,
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
+        try classExpansion(of: attribute, providingMembersOf: declaration, in: context)
+    }
+    
+    private static func classExpansion(
+        of attribute: AttributeSyntax,
+        providingMembersOf declaration: some DeclGroupSyntax,
+        in context: some MacroExpansionContext
+    ) throws -> [DeclSyntax] {
+        // Check is class
         guard let classDecl = declaration.as(ClassDeclSyntax.self) else {
             let diagnostic = Diagnostic(
                 node: Syntax(attribute),
@@ -20,7 +30,8 @@ public enum GodotExposableMacro: MemberMacro {
             return []
         }
         
-        guard let inheritenceDecl = classDecl.inheritanceClause?
+        // Check has inheritance
+        guard let inheritedElement = classDecl.inheritanceClause?
             .inheritedTypeCollection.first else {
             let diagnostic = Diagnostic(
                 node: Syntax(classDecl.classKeyword),
@@ -30,6 +41,7 @@ public enum GodotExposableMacro: MemberMacro {
             return []
         }
         
+        // Check is public
         guard classDecl.modifiers?.map(\.name.tokenKind).contains(where: {
             $0 == .keyword(.public) || $0 == .keyword(.open)
         }) == true else {
@@ -41,44 +53,86 @@ public enum GodotExposableMacro: MemberMacro {
             return []
         }
         
-        let classNamesDecls = self.classNamesDecls(classDecl: classDecl, in: context)
-#warning("Check the create instance function, something's fishy...")
-        let functionDecl = try exposeToGodotFunctionDecl(classDecl: classDecl, inheritenceDecl: inheritenceDecl)
+        // MARK: Expose functions
         
-        return [DeclSyntax(functionDecl)] + classNamesDecls
-    }
-    
-    private static func classNamesDecls(
-        classDecl: ClassDeclSyntax,
-        in context: some MacroExpansionContext
-    ) -> [DeclSyntax] {
-        let classNameVar = context.makeUniqueName("className")
+        let functionsToExpose = classDecl.memberBlock.members
+            .compactMap { $0.decl.as(FunctionDeclSyntax.self) }
+            .filter { $0.modifiers?.map(\.name.tokenKind).contains(where: {
+                $0 == .keyword(.public) || $0 == .keyword(.open)
+            }) == true }
         
-        return [
-            DeclSyntax(
+        var functionExpositions = [ExprSyntax]()
+        for functionToExpose in functionsToExpose {
+            let isStatic = false
+            let parameters = functionToExpose.signature.input.parameterList.map {
                 """
-                private static let \(classNameVar): StringName = \(literal: classDecl.identifier.description)
-                """),
-            DeclSyntax(
+                .argument(\($0.type.description).self, name: "\($0.secondName ?? $0.firstName)"),
                 """
-                open override class var _gd_className: StringName { \(classNameVar) }
-                """),
-            DeclSyntax(
+            }
+            
+            let returnParameter: String
+            let returnValueName: String
+            let returnDecl: ExprSyntax
+            
+            if let returnType = functionToExpose.signature.output?.returnType.description {
+                returnParameter =
+                    """
+                    .returnParameter(\(returnType.description).self)
+                    """
+                
+                returnValueName = "returnValue"
+                returnDecl =
+                    """
+                    returnValue.variant.copyTo(variantPtr: returnPtr!)
+                    """
+            } else {
+                returnParameter = "nil"
+                returnValueName = "_"
+                returnDecl = ""
+            }
+            
+            var functionCall = functionToExpose.identifier.text + "("
+            for (index, parameter) in functionToExpose.signature.input.parameterList.enumerated() {
+                functionCall += "\n    "
+                functionCall += (parameter.secondName?.description ?? parameter.firstName.description)
+                functionCall += ": try! \(parameter.type.description)(variant: Variant(extensionVariantPtr: args!.advanced(by: \(index)).pointee!))"
+            }
+            functionCall += "\n)"
+            
+            let preFunctionCall = isStatic ? "" : "Unmanaged<\(classDecl.identifier.description)>.fromOpaque(instancePtr!).takeUnretainedValue()."
+            let functionCallAssignment: ExprSyntax =
                 """
-                open override class var _gd_isCustomClass: Bool { true }
-                """),
-        ]
-    }
-    
-    private static func exposeToGodotFunctionDecl(
-        classDecl: ClassDeclSyntax,
-        inheritenceDecl: InheritedTypeListSyntax.Element) throws -> FunctionDeclSyntax {
-        try FunctionDeclSyntax("open override class func _gd_exposeToGodot()") {
-            DeclSyntax(
+                let \(raw: returnValueName) = \(raw: preFunctionCall)\(raw: functionCall)
                 """
-                GodotExtension.shared.classRegister.registerCustomClass(
+            
+            functionExpositions.append(
+                """
+                \(raw: Trivia.newline)
+                // Register function `\(raw: functionToExpose.identifier.description)`
+                GodotExtension.shared.classRegister.registerFunction(
+                    withName: \(literal: functionToExpose.identifier.description),
+                    insideType: self,
+                    arguments: [
+                        \(raw: parameters.joined(separator: "\n"))
+                    ],
+                    returnParameter: \(raw: returnParameter),
+                    isStatic: false
+                ) { _, instancePtr, args, argsCount, returnPtr, error in
+                    \(functionCallAssignment)
+                    \(returnDecl)
+                }
+                """
+            )
+        }
+        
+        // MARK: Expose class
+        
+        let exposeToGodotDecl = try FunctionDeclSyntax("open override class func _gd_exposeToGodot()") {
+            ExprSyntax(
+                """
+                let isClassRegistered = GodotExtension.shared.classRegister.registerCustomClass(
                     ofType: self,
-                    superclassType: \(inheritenceDecl).self
+                    superclassType: \(raw: inheritedElement.description).self
                 ) { _, _, _ in
                     
                 }
@@ -95,23 +149,40 @@ public enum GodotExposableMacro: MemberMacro {
                 freeInstanceFunction: { _, instancePtr in
                     Unmanaged<\(classDecl.identifier)>.fromOpaque(instancePtr!).release()
                 }
+                
+                guard isClassRegistered else { return }
                 """
             )
             
-            let memberFunctionDecls = classDecl.memberBlock.members.compactMap({ $0.decl.as(FunctionDeclSyntax.self) })
-            
-            for memberFunctionDecl in memberFunctionDecls {
-                if memberFunctionDecl.attributes?.contains(where: { $0.as(AttributeSyntax.self)?.attributeName.as(SimpleTypeIdentifierSyntax.self)?.name == .identifier("GodotExposable") }) == true {
-                    DeclSyntax("blb")
-                }
+            // Expose each function
+            for function in functionExpositions {
+                function
             }
         }
+        
+        // MARK: Override class properties
+        
+        let classNameVar = context.makeUniqueName("className")
+        let staticClassNameDecl: DeclSyntax =
+            """
+            private static let \(classNameVar): StringName = \(literal: classDecl.identifier.description)
+            """
+        let classNameDecl: DeclSyntax =
+            """
+            open override class var _gd_className: StringName { \(classNameVar) }
+            """
+        let isCustomClassDecl: DeclSyntax =
+            """
+            open override class var _gd_isCustomClass: Bool { true }
+            """
+        
+        return [DeclSyntax(exposeToGodotDecl), staticClassNameDecl, classNameDecl, isCustomClassDecl]
     }
 }
 
 // MARK: - Diagnostic
 
-private enum GodotExposableDiagnostic: String, DiagnosticMessage {
+private enum GodotExposableDiagnostic: String, Error, DiagnosticMessage {
     case notAClass
     case noSuperclassProvided
     case notPublic

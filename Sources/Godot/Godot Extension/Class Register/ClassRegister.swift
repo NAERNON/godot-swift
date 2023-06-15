@@ -239,7 +239,8 @@ public final class ClassRegister {
     public func registerFunction<Class>(
         withName functionName: StringName,
         insideType classType: Class.Type,
-        types: FunctionRegistrationTypes,
+        arguments: [Parameter],
+        returnParameter: Parameter?,
         isStatic: Bool,
         call: GDExtensionClassMethodCall)
     -> FunctionRegistrationResult where Class : Object {
@@ -256,8 +257,8 @@ public final class ClassRegister {
             return .failure
         }
         
-        let arguments = types.arguments.map { $0.propertyInfo(withClassName: className) }
-        let returnType = types.returnType?.propertyInfo(withClassName: className)
+        let arguments = arguments.map { $0.propertyInfo(withClassName: className) }
+        let returnType = returnParameter?.propertyInfo(withClassName: className)
         
 #warning("Do the vararg")
         // Register this function within our extension.

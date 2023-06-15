@@ -1,18 +1,6 @@
 import Foundation
 
 extension ClassRegister {
-    public struct FunctionRegistrationTypes {
-        let arguments: [Parameter]
-        let returnType: Parameter?
-        
-        public init(arguments: [Parameter], returnType: Parameter?) {
-            self.arguments = arguments
-            self.returnType = returnType
-        }
-    }
-}
-
-extension ClassRegister.FunctionRegistrationTypes {
     public struct Parameter {
         public let type: Variant.ValueType
         public let name: StringName
@@ -22,12 +10,22 @@ extension ClassRegister.FunctionRegistrationTypes {
         
         // MARK: Init
         
-        public init<Value>(type: Value.Type,
-                           name: StringName) where Value : ExpressibleByTypedVariant {
+        private init<Value>(type: Value.Type,
+                            name: StringName) where Value : ExpressibleByTypedVariant {
             self.type = type.variantStorageType
             self.name = name
             self.defaultValue = nil
             self.metadata = .init(type)
+        }
+        
+        public static func argument<Value>(_ type: Value.Type, name: StringName) -> Parameter
+        where Value : ExpressibleByTypedVariant {
+            .init(type: type, name: name)
+        }
+        
+        public static func returnParameter<Value>(_ type: Value.Type) -> Parameter
+        where Value : ExpressibleByTypedVariant {
+            .init(type: type, name: .init())
         }
         
         // MARK: Tools
