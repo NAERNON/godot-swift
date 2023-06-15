@@ -63,7 +63,10 @@ public enum GodotExposableMacro: MemberMacro {
         
         var functionExpositions = [ExprSyntax]()
         for functionToExpose in functionsToExpose {
-            let isStatic = false
+            let isStatic = functionToExpose.modifiers?.map(\.name.tokenKind).contains(where: {
+                $0 == .keyword(.static)
+            }) == true
+            
             let parameters = functionToExpose.signature.input.parameterList.map {
                 """
                 .argument(\($0.type.description).self, name: "\($0.secondName ?? $0.firstName)"),
@@ -91,6 +94,12 @@ public enum GodotExposableMacro: MemberMacro {
                 returnDecl = ""
             }
             
+            let preFunctionCall = if isStatic {
+                classDecl.identifier.description
+            } else {
+                "Unmanaged<\(classDecl.identifier.description)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+            }
+            
             var functionCall = functionToExpose.identifier.text + "("
             for (index, parameter) in functionToExpose.signature.input.parameterList.enumerated() {
                 functionCall += "\n    "
@@ -99,10 +108,9 @@ public enum GodotExposableMacro: MemberMacro {
             }
             functionCall += "\n)"
             
-            let preFunctionCall = isStatic ? "" : "Unmanaged<\(classDecl.identifier.description)>.fromOpaque(instancePtr!).takeUnretainedValue()."
             let functionCallAssignment: ExprSyntax =
                 """
-                let \(raw: returnValueName) = \(raw: preFunctionCall)\(raw: functionCall)
+                let \(raw: returnValueName) = \(raw: preFunctionCall).\(raw: functionCall)
                 """
             
             functionExpositions.append(
@@ -116,7 +124,7 @@ public enum GodotExposableMacro: MemberMacro {
                         \(raw: parameters.joined(separator: "\n"))
                     ],
                     returnParameter: \(raw: returnParameter),
-                    isStatic: false
+                    isStatic: \(literal: isStatic)
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     \(functionCallAssignment)
                     \(returnDecl)
