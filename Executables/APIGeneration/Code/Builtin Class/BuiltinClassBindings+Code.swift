@@ -55,12 +55,12 @@ extension ExtensionApi.BuiltinClass {
         Func(name: "setInitBindings") {
             ForEach(constructors) { constructor in
                 Property(constructor.godotConstructorPtrName)
-                    .assign("GodotExtension.shared.interface.variant_get_ptr_constructor(\(godotVariantType), \(constructor.index))")
+                    .assign("GodotExtension.interface.variant_get_ptr_constructor(\(godotVariantType), \(constructor.index))")
             }
             
             if hasDestructor {
                 Property(godotDestructorPtrName)
-                    .assign("GodotExtension.shared.interface.variant_get_ptr_destructor(\(godotVariantType))")
+                    .assign("GodotExtension.interface.variant_get_ptr_destructor(\(godotVariantType))")
             }
         }
         .static()
@@ -82,20 +82,20 @@ extension ExtensionApi.BuiltinClass {
                 Container {
                     if indexingReturnType != nil {
                         Property(godotIndexedSetterPtrName)
-                            .assign("GodotExtension.shared.interface.variant_get_ptr_indexed_setter(\(godotVariantType))")
+                            .assign("GodotExtension.interface.variant_get_ptr_indexed_setter(\(godotVariantType))")
                         Property(godotIndexedGetterPtrName)
-                            .assign("GodotExtension.shared.interface.variant_get_ptr_indexed_getter(\(godotVariantType))")
+                            .assign("GodotExtension.interface.variant_get_ptr_indexed_getter(\(godotVariantType))")
                     }
                 }
                 
                 Container {
                     if isKeyed {
                         Property(godotKeyedSetterPtrName)
-                            .assign("GodotExtension.shared.interface.variant_get_ptr_keyed_setter(\(godotVariantType))")
+                            .assign("GodotExtension.interface.variant_get_ptr_keyed_setter(\(godotVariantType))")
                         Property(godotKeyedGetterPtrName)
-                            .assign("GodotExtension.shared.interface.variant_get_ptr_keyed_getter(\(godotVariantType))")
+                            .assign("GodotExtension.interface.variant_get_ptr_keyed_getter(\(godotVariantType))")
                         Property(godotKeyedCheckerPtrName)
-                            .assign("GodotExtension.shared.interface.variant_get_ptr_keyed_checker(\(godotVariantType))")
+                            .assign("GodotExtension.interface.variant_get_ptr_keyed_checker(\(godotVariantType))")
                     }
                 }
                 
@@ -106,7 +106,7 @@ extension ExtensionApi.BuiltinClass {
                             Property("_method_name").assign("\"\(method.name.baseName)\"")
                             Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
                                 Property(method.godotMethodPtrName)
-                                    .assign("GodotExtension.shared.interface.variant_get_ptr_builtin_method(\(godotVariantType), \(methodPointerName), \(method.hash))")
+                                    .assign("GodotExtension.interface.variant_get_ptr_builtin_method(\(godotVariantType), \(methodPointerName), \(method.hash))")
                             }
                         }
                     }
@@ -115,7 +115,7 @@ extension ExtensionApi.BuiltinClass {
                 Container {
                     ForEach(operators) { op in
                         Property(op.godotOperatorPtrName)
-                            .assign("GodotExtension.shared.interface.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(op.rightType.godotVariantType))")
+                            .assign("GodotExtension.interface.variant_get_ptr_operator_evaluator(\(op.godotVariantOperation!), \(godotVariantType), \(op.rightType.godotVariantType))")
                     }
                 }
             }

@@ -35,7 +35,7 @@ struct UtilityFunctionsFile: File {
                     Property("_function_name").assign("\"\(function.name.baseName)\"")
                     Property("_function_name").pointerAccess(type: .stringName, mutability: .mutable) { functionNamePointer in
                         Property(function.godotFunctionPtrName)
-                            .assign("GodotExtension.shared.interface.variant_get_ptr_utility_function(\(functionNamePointer), \(function.hash))")
+                            .assign("GodotExtension.interface.variant_get_ptr_utility_function(\(functionNamePointer), \(function.hash))")
                     }
                 }
             }.static().internal()

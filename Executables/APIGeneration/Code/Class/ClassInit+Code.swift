@@ -23,14 +23,14 @@ extension ExtensionApi.Class {
                 var extensionObjectPtr: GDExtensionObjectPtr!
                 
                 Self._gd_lastDerivedClassName.withUnsafeExtensionPointer { namePtr in
-                    extensionObjectPtr = GodotExtension.shared.interface.classdb_construct_object(namePtr)!
+                    extensionObjectPtr = GodotExtension.interface.classdb_construct_object(namePtr)!
                 }
                 
                 self.extensionObjectPtr = extensionObjectPtr
                 
                 if Self._gd_isCustomClass {
                     Self._gd_className.withUnsafeExtensionPointer { classNamePtr in
-                        GodotExtension.shared.interface.object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passRetained(self).toOpaque())
+                        GodotExtension.interface.object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passRetained(self).toOpaque())
                     }
                 }
                 """
@@ -44,7 +44,7 @@ extension ExtensionApi.Class {
             Deinit {
                 If("unreference()") {
                     Property("self").pointerAccess(type: name, mutability: .constMutablePointer) { pointerName in
-                        "GodotExtension.shared.interface.mem_free(\(pointerName))"
+                        "GodotExtension.interface.mem_free(\(pointerName))"
                     }
                 }
             }

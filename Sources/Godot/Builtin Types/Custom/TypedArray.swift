@@ -21,7 +21,7 @@ public struct TypedArray<Element> where Element : TypedVariantTransformable {
         array.withUnsafeExtensionPointer { ptr in
             className.withUnsafeExtensionPointer { classNamePtr in
 #warning("Check script (last parameter)")
-                GodotExtension.shared.interface.array_set_typed(ptr, Element.variantStorageType.godotType, classNamePtr, nil)
+                GodotExtension.interface.array_set_typed(ptr, Element.variantStorageType.godotType, classNamePtr, nil)
             }
         }
         self.underlyingArray = array

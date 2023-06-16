@@ -10,7 +10,7 @@ public final class ClassRegister {
     internal static let shared = ClassRegister()
     
     public private(set) var isRegistrationOpen = true
-    private var currentLevel: GDExtensionInitializationLevel?
+    private var currentLevel: GodotInitializationLevel?
     
     private var customClassNameToClassBinding = [StringName : ClassBinding]()
     private var godotClassNameToClassType = [StringName : Object.Type]()
@@ -21,11 +21,11 @@ public final class ClassRegister {
     
     // MARK: Initialize & deinitialize level
     
-    func initialize(level: GDExtensionInitializationLevel) {
+    func initialize(level: GodotInitializationLevel) {
         currentLevel = level
     }
     
-    func deinitialize(level: GDExtensionInitializationLevel) {
+    func deinitialize(level: GodotInitializationLevel) {
         let classesToUnregister = customClassNameToClassBinding.compactMap { (name, binding) in
             if binding.level == level {
                 return name
@@ -38,8 +38,8 @@ public final class ClassRegister {
             let classBinding = customClassNameToClassBinding.removeValue(forKey: className)!
             
             classBinding.name.withUnsafeExtensionPointer { namePtr in
-                GodotExtension.shared.interface.classdb_unregister_extension_class(
-                    GodotExtension.shared.libraryPtr,
+                GodotExtension.interface.classdb_unregister_extension_class(
+                    GodotExtension.libraryPtr,
                     namePtr
                 )
             }
@@ -166,8 +166,8 @@ public final class ClassRegister {
         className.withUnsafeExtensionPointer { namePtr in
             superclassName.withUnsafeExtensionPointer { superclassNamePtr in
                 withUnsafePointer(to: godotClassInfo) { classInfoPtr in
-                    GodotExtension.shared.interface.classdb_register_extension_class(
-                        GodotExtension.shared.libraryPtr, namePtr, superclassNamePtr, classInfoPtr
+                    GodotExtension.interface.classdb_register_extension_class(
+                        GodotExtension.libraryPtr, namePtr, superclassNamePtr, classInfoPtr
                     )
                 }
             }
@@ -282,7 +282,7 @@ public final class ClassRegister {
 #warning("DO THIS")
                             },
                             method_flags: functionBinding.flag,
-                            has_return_value: GDExtensionBool(functionBinding.hasReturnValue),
+                            has_return_value: gdExtentionBool(functionBinding.hasReturnValue),
                             return_value_info: propertiesInfo.returnValue,
                             return_value_metadata: argumentsMetadata.returnValue.pointee,
                             argument_count: UInt32(functionBinding.argumentsCount),
@@ -293,8 +293,8 @@ public final class ClassRegister {
                         
                         className.withUnsafeExtensionPointer { namePtr in
                             withUnsafePointer(to: godotMethodInfo) { methodInfoPtr in
-                                GodotExtension.shared.interface.classdb_register_extension_class_method(
-                                    GodotExtension.shared.libraryPtr, namePtr, methodInfoPtr
+                                GodotExtension.interface.classdb_register_extension_class_method(
+                                    GodotExtension.libraryPtr, namePtr, methodInfoPtr
                                 )
                             }
                         }
@@ -352,8 +352,8 @@ public final class ClassRegister {
                 setterFunctionName.withUnsafeExtensionPointer { setterFunctionNamePtr in
                     propertyInfo.withGodotExtensionPropertyInfo { extensionPropertyInfo in
                         withUnsafePointer(to: extensionPropertyInfo) { extentionPropertyInfoPtr in
-                            GodotExtension.shared.interface.classdb_register_extension_class_property(
-                                GodotExtension.shared.libraryPtr,
+                            GodotExtension.interface.classdb_register_extension_class_property(
+                                GodotExtension.libraryPtr,
                                 classNamePtr,
                                 extentionPropertyInfoPtr,
                                 setterFunctionNamePtr,

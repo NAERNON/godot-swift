@@ -10,7 +10,7 @@ extension ExtensionApi.Class {
                 return Unmanaged.passRetained(\(name.code())(extensionObjectPtr: instance!)).toOpaque()
             } free_callback: { token, instance, bindings in
                 Unmanaged<\(name.code())>.fromOpaque(instance!).takeRetainedValue().withUnsafeExtensionPointer { __ptr_self in
-                    GodotExtension.shared.interface.mem_free(__ptr_self)
+                    GodotExtension.interface.mem_free(__ptr_self)
                 }
             } reference_callback: { token, instance, reference in
                 return 1
@@ -34,7 +34,7 @@ extension ExtensionApi.Class {
     func exposeToGodotCode() -> some Code {
         """
         open \(isRootClass ? "" : "override ")class func _gd_exposeToGodot() {
-            guard GodotExtension.shared.classRegister.registerBaseGodotClass(ofType: self) else {
+            guard GodotExtension.classRegister.registerBaseGodotClass(ofType: self) else {
                 return
             }
             

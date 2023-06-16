@@ -28,7 +28,7 @@ struct SetBindingsFile: File {
                 for builtinClass in builtinClasses {
                     "Godot." + builtinClass.name.code() + ".setFunctionBindings()"
                 }
-            }
+            }.static()
             
             Space()
             
@@ -36,7 +36,7 @@ struct SetBindingsFile: File {
                 for `class` in classes {
                     "\(`class`.name.code())._gd_exposeToGodot()"
                 }
-            }
+            }.static()
         }.internal()
     }
 }

@@ -15,7 +15,7 @@ extension PackedByteArray {
     
     public func withUnsafeBytesArray(_ body: (UnsafeMutablePointer<UInt8>?) -> Void) {
         self.withUnsafeExtensionPointer { extensionTypePtr in
-            body(GodotExtension.shared.interface.packed_byte_array_operator_index(extensionTypePtr, 0))
+            body(GodotExtension.interface.packed_byte_array_operator_index(extensionTypePtr, 0))
         }
     }
     

@@ -2,83 +2,96 @@ import GodotExtensionHeaders
 
 /// The centralized point of control of a Godot extension.
 ///
-/// Do not use `GodotExtension`, it should only be manipulated by Godot.
-public final class GodotExtension {
-    public typealias LevelCallback = (GDExtensionInitializationLevel) -> Void
-    
+/// > Warning: Do not use ``GodotExtension``, or any of its members, directly.
+///
+/// Use the ``GodotBridge`` macro to setup a bridge that will
+/// initialize the GodotExtension.
+public enum GodotExtension {
     // MARK: Properties
     
-    public static let shared = GodotExtension()
+    /// A Boolean value indicating whether the extension is initialized.
+    ///
+    /// Once initialized, the extension cannot change its interface values.
+    public private(set) static var isInitialized = false
     
-    public private(set) var isSetUp = false
+    private(set) static var bridge: GodotBridgeProtocol.Type!
     
-    /// The pointer to the Godot extension interface.
-    private(set) var interfacePtr: UnsafePointer<GDExtensionInterface>!
-    private(set) var libraryPtr: GDExtensionClassLibraryPtr?
-    private(set) var interface: GDExtensionInterface!
-    private(set) var token: UnsafeMutableRawPointer!
+    private(set) static var interfacePtr: UnsafePointer<GDExtensionInterface>!
+    private(set) static var libraryPtr: GDExtensionClassLibraryPtr?
+    private(set) static var token: UnsafeMutableRawPointer!
     
-    fileprivate var initializerCallback: LevelCallback!
-    fileprivate var terminatorCallback: LevelCallback!
-    
-    private var minimumInitializationLevel = GDEXTENSION_INITIALIZATION_CORE
+    static var interface: GDExtensionInterface { interfacePtr.pointee }
     
     /// The shared class register used to register extension classes.
-    public let classRegister = ClassRegister.shared
+    public static let classRegister = ClassRegister.shared
     
-    // MARK: Init
+    // MARK: Initialize
     
-    private init() {}
-    
-    // MARK: Configure
-    
-    public func setUp(withInterfacePtr interfacePtr: UnsafePointer<GDExtensionInterface>,
-                      libraryPtr: GDExtensionClassLibraryPtr,
-                      initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>,
-                      initializerCallback: @escaping LevelCallback,
-                      terminatorCallback: @escaping LevelCallback,
-                      minimumInitializationLevel: GDExtensionInitializationLevel) -> GDExtensionBool {
-        guard !isSetUp else {
-            return GDExtensionBool(false)
+    /// Initializes the extension and all the bindings necessary for Godot to work.
+    ///
+    /// The extension should be initialized before any call to any type related to Godot.
+    ///
+    /// Do not initialize the extension directly,
+    /// but instead use the ``GodotBridge`` macro to setup a bridge.
+    public static func initialize<T>(
+        using bridge: T.Type,
+        withInterfacePtr interfacePtr: UnsafePointer<GDExtensionInterface>,
+        libraryPtr: GDExtensionClassLibraryPtr,
+        initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>,
+        minimumInitializationLevel: GDExtensionInitializationLevel
+    ) -> GDExtensionBool where T : GodotBridgeProtocol {
+        guard !isInitialized else {
+            return gdExtentionBool(false)
         }
+        
+        self.bridge = bridge
         
         self.interfacePtr = interfacePtr
         self.libraryPtr = libraryPtr
-        self.interface = interfacePtr.pointee
         self.token = UnsafeMutableRawPointer(mutating: interfacePtr)
-        
-        self.initializerCallback = initializerCallback
-        self.terminatorCallback = terminatorCallback
         
         initializationPtr.pointee.initialize = initializeLevel
         initializationPtr.pointee.deinitialize = deinitializeLevel
         initializationPtr.pointee.minimum_initialization_level = minimumInitializationLevel
         
-        isSetUp = true
-        return GDExtensionBool(true)
-    }
-    
-    fileprivate func registerGodotTypes() {
-        setBuiltinStructsBindings()
-        registerGodotClasses()
-        Variant.setInitBindings()
-        UtilityFunctions.setBindings()
+        isInitialized = true
+        return gdExtentionBool(true)
     }
 }
 
 // MARK: - Levels
 
 private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtensionInitializationLevel) {
-    if level == GDEXTENSION_INITIALIZATION_SCENE {
-        GodotExtension.shared.registerGodotTypes()
+    let level = GodotInitializationLevel(level)
+    
+    if level == .scene {
+        GodotExtension.setBuiltinStructsBindings()
+        GodotExtension.registerGodotClasses()
+        Variant.setInitBindings()
+        UtilityFunctions.setBindings()
     }
     
-    GodotExtension.shared.initializerCallback(level)
-    GodotExtension.shared.classRegister.initialize(level: level)
+    GodotExtension.classRegister.initialize(level: level)
+    
+    if level == .scene {
+        for object in GodotExtension.bridge.classesToRegister {
+            object.self._gd_exposeToGodot()
+        }
+        GodotExtension.classRegister.closeRegistration()
+    }
+    
+    GodotExtension.bridge.initialize(level: level)
 }
 
 private func deinitializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtensionInitializationLevel) {
-    GodotExtension.shared.classRegister.deinitialize(level: level)
+    let level = GodotInitializationLevel(level)
     
-    GodotExtension.shared.terminatorCallback(level)
+    GodotExtension.classRegister.deinitialize(level: level)
+    GodotExtension.bridge.deinitialize(level: level)
+}
+
+// MARK: GDExtensionBool
+
+func gdExtentionBool(_ value: Bool) -> GDExtensionBool {
+    value ? 1 : 0
 }

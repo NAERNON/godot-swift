@@ -64,7 +64,7 @@ extension ExtensionApi.Class {
                         Property("_method_name").assign("\"\(method.name)\"")
                         Property("_method_name").pointerAccess(type: .stringName, mutability: .mutable) { methodPointerName in
                             Property(method.ptrName)
-                                .assign("GodotExtension.shared.interface.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
+                                .assign("GodotExtension.interface.classdb_get_method_bind(\(classNamePointerName), \(methodPointerName), \(method.hash))")
                         }
                     }
                 }

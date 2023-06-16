@@ -117,7 +117,7 @@ public enum GodotExposableMacro: MemberMacro {
                 """
                 \(raw: Trivia.newline)
                 // Register function `\(raw: functionToExpose.identifier.description)`
-                GodotExtension.shared.classRegister.registerFunction(
+                GodotExtension.classRegister.registerFunction(
                     withName: \(literal: functionToExpose.identifier.description),
                     insideType: self,
                     arguments: [
@@ -138,7 +138,7 @@ public enum GodotExposableMacro: MemberMacro {
         let exposeToGodotDecl = try FunctionDeclSyntax("open override class func _gd_exposeToGodot()") {
             ExprSyntax(
                 """
-                let isClassRegistered = GodotExtension.shared.classRegister.registerCustomClass(
+                let isClassRegistered = GodotExtension.classRegister.registerCustomClass(
                     ofType: self,
                     superclassType: \(raw: inheritedElement.description).self
                 ) { _, _, _ in

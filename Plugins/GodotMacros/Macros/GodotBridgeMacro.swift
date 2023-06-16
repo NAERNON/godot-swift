@@ -45,12 +45,11 @@ public enum GodotBridgeMacro: ConformanceMacro, PeerMacro {
             """
             @_cdecl("\(raw: functionName)")
             func \(raw: functionName)(interfacePtr: UnsafePointer<GDExtensionInterface>, libraryPtr: GDExtensionClassLibraryPtr, initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>) -> GDExtensionBool {
-                return GodotExtension.shared.setUp(
+                return GodotExtension.initialize(
+                    using: \(identifier).self,
                     withInterfacePtr: interfacePtr,
                     libraryPtr: libraryPtr,
                     initializationPtr: initializationPtr,
-                    initializerCallback: \(identifier).initializerCallback,
-                    terminatorCallback: \(identifier).terminatorCallback,
                     minimumInitializationLevel: GDEXTENSION_INITIALIZATION_SCENE
                 )
             }

@@ -8,5 +8,5 @@ func functionArgument<T>(fromPointer argPointer: GDExtensionConstTypePtr?) -> T 
 
 func functionObjectArgument<T>(fromPointer argPointer: GDExtensionConstTypePtr?) -> T? where T : Object {
     let pointer = UnsafeMutableRawPointer(mutating: argPointer!)
-    return retreiveObject(ofType: T.self, from: GodotExtension.shared.interface.ref_get_object(pointer))
+    return retreiveObject(ofType: T.self, from: GodotExtension.interface.ref_get_object(pointer))
 }

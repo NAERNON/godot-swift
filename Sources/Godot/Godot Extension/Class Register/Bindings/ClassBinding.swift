@@ -3,7 +3,7 @@ import GodotExtensionHeaders
 
 extension ClassRegister {
     final class ClassBinding {
-        let level: GDExtensionInitializationLevel
+        let level: GodotInitializationLevel
         
         let type: Object.Type
         let name: StringName
@@ -20,7 +20,7 @@ extension ClassRegister {
         
         // MARK: Init
         
-        init(level: GDExtensionInitializationLevel,
+        init(level: GodotInitializationLevel,
              type: Object.Type,
              name: StringName,
              superclassType: Object.Type,

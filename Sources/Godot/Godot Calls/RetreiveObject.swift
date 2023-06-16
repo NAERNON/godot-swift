@@ -7,9 +7,9 @@ func retreiveObject<T>(ofType type: T.Type, from ptr: GDExtensionObjectPtr?) -> 
     }
     
     return withUnsafePointer(to: T.instanceBindingsCallbacks()) { callbacksPointer in
-        let opaque = GodotExtension.shared.interface.object_get_instance_binding(
+        let opaque = GodotExtension.interface.object_get_instance_binding(
             ptr,
-            GodotExtension.shared.token,
+            GodotExtension.token,
             callbacksPointer
         )
         

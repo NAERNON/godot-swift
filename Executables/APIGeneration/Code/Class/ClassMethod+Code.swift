@@ -6,7 +6,7 @@ extension ExtensionApi.Class.Method {
     func code(type: InstanceType, accessControl: AccessControl) -> some Code {
         if let godotMethodPtrName {
             defaultFunctionCode(definedIndise: type) { values in
-                "GodotExtension.shared.interface.object_method_bind_ptrcall(Self.\(godotMethodPtrName), \(values.selfPointerName), \(values.pointersArrayName), \(values.temporaryPointerName))"
+                "GodotExtension.interface.object_method_bind_ptrcall(Self.\(godotMethodPtrName), \(values.selfPointerName), \(values.pointersArrayName), \(values.temporaryPointerName))"
             }.accessControl(accessControl)
         } else if isVirtual {
             functionDefinitionCode(definedIndise: type) { _ in

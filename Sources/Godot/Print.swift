@@ -8,7 +8,7 @@ public func printGodotError(_ message: Swift.String,
                             function: Swift.String = #function,
                             file: Swift.String = #file,
                             line: Int32 = #line) {
-    GodotExtension.shared.interface.print_error(message, function, file, line, GDExtensionBool(notifyEditor))
+    GodotExtension.interface.print_error(message, function, file, line, gdExtentionBool(notifyEditor))
 }
 
 public func printGodotWarning(_ message: Swift.String,
@@ -16,7 +16,7 @@ public func printGodotWarning(_ message: Swift.String,
                               function: Swift.String = #function,
                               file: Swift.String = #file,
                               line: Int32 = #line) {
-    GodotExtension.shared.interface.print_warning(message, function, file, line, GDExtensionBool(notifyEditor))
+    GodotExtension.interface.print_warning(message, function, file, line, gdExtentionBool(notifyEditor))
 }
 
 // MARK: Print
