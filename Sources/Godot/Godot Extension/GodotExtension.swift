@@ -22,7 +22,7 @@ public enum GodotExtension {
     
     static var interface: GDExtensionInterface { interfacePtr.pointee }
     
-    /// The shared class register used to register extension classes.
+    /// The class register used to register custom classes and expose them to the Godot editor.
     public static let classRegister = ClassRegister.shared
     
     // MARK: Initialize

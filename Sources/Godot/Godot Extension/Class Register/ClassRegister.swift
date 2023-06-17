@@ -4,15 +4,42 @@ import GodotExtensionHeaders
 #warning("METHOD_FLAGS_DEFAULT from the json file.")
 private let METHOD_FLAGS_DEFAULT: UInt32 = 24
 
+/// The registration is open at start. Once all the custom classes are registered,
+/// you should call `closeRegistration()`.
+/// This locks the register and prevents any modification.
+/// Once locked, the register cannot be openned back.
+///
+/// Before registering any type, the `ClassRegister` should be initialized with a level
+/// using the `initialize(level:)` function.
+///
+/// Use the `shared` singleton since it is the only `ClassRegister` available.
+
+
+/// An object that enables the registration of custom Godot classes.
+///
+/// Do not use `ClassRegister` directly.
+/// See <doc:CreateGodotBridge> to learn how to expose custom classes to Godot.
 public final class ClassRegister {
     // MARK: Properties
     
+    /// The shared `ClassRegister`.
+    ///
+    /// This is the only `ClassRegister` available.
     internal static let shared = ClassRegister()
     
+    /// A Boolean value indicating whether the registration is open.
+    ///
+    /// If the registration is not open, any modification on the `ClassRegister`
+    /// is prevented.
     public private(set) var isRegistrationOpen = true
-    private var currentLevel: GodotInitializationLevel?
     
+    /// The current Godot initialization level.
+    public private(set) var currentLevel: GodotInitializationLevel?
+    
+    /// A dictionary keeping track of all the custom registered classes.
     private var customClassNameToClassBinding = [StringName : ClassBinding]()
+    
+    /// A dictionary keeping track of all the base Godot classes.
     private var godotClassNameToClassType = [StringName : Object.Type]()
     
     // MARK: Init
@@ -46,13 +73,16 @@ public final class ClassRegister {
         }
     }
     
-    public func closeRegistration() {
+    func closeRegistration() {
         isRegistrationOpen = false
     }
     
     // MARK: Class registration
     
-    private func classType(forClassName className: StringName) -> Object.Type? {
+    /// Returns the ``Object`` type named as the given class name.
+    ///
+    /// This function searches for base Godot classes as well as registered custom classes.
+    private func classType(named className: StringName) -> Object.Type? {
         if let type = godotClassNameToClassType[className] {
             return type
         } else if let binding = customClassNameToClassBinding[className] {
@@ -62,14 +92,26 @@ public final class ClassRegister {
         }
     }
     
+    /// Returns a Boolean value indicating whether a class with the given name is already registered.
+    ///
+    /// This function searches for base Godot classes as well as registered custom classes.
     private func classIsAlreadyRegistered(withName className: StringName) -> Bool {
-        classType(forClassName: className) != nil
+        classType(named: className) != nil
     }
     
+    /// Returns a Boolean value indicating whether the given class type
+    /// has the correct associated ``Object/_gd_className``.
+    ///
+    /// If the class name is not correct, it indicates that the custom registered class
+    /// is not configured correctly. This might be a sign that the ``GodotExposable()``
+    /// macro is not used.
     private func classNameIsEquivalentToType<Class>(classType: Class.Type) -> Bool where Class : Object {
         StringName(swiftString: .init(describing: classType)) == classType._gd_className
     }
     
+    /// Registers the given base Godot class.
+    ///
+    /// This function should only be used to register base classes, and not custom ones.
     internal func registerBaseGodotClass<Class>(ofType classType: Class.Type) -> Bool where Class : Object {
         guard isRegistrationOpen else {
             printGodotError("Cannot register class \(classType) because the registration is closed.")
@@ -86,6 +128,16 @@ public final class ClassRegister {
     }
     
 #warning("Do the to string function")
+    /// Registers a given custom class to expose it to the Godot editor.
+    ///
+    /// - Parameters:
+    ///   - classType: The type of the class.
+    ///   - superclassType: The type of the parent class.
+    ///   - toStringFunction: A C closure returning the description of an instance.
+    ///   - createInstanceFunction: A C closure used by Godot to create an instance of the class.
+    ///   - freeInstanceFunction: A C closure used by Godot to free an instance of the class.
+    /// - Returns: A Boolean value indicating whether the class was registered.
+    @discardableResult
     public func registerCustomClass<Class, Superclass>(
         ofType classType: Class.Type,
         superclassType: Superclass.Type,
@@ -129,7 +181,7 @@ public final class ClassRegister {
             return false
         }
         
-        guard self.classType(forClassName: superclassName) == superclassType else {
+        guard self.classType(named: superclassName) == superclassType else {
             printGodotError("Cannot register class \(classType) because its superclass \(superclassName) is not registered.")
             return false
         }
@@ -198,17 +250,12 @@ public final class ClassRegister {
         let classBinding = Unmanaged<ClassBinding>.fromOpaque(userDataPtr).takeUnretainedValue()
         let methodName = StringName.makeFromPtr(methodNamePtr)
         
-        return virtualFunc(fromClassBinding: classBinding, functionName: methodName)
-    }
-    
-    private static func virtualFunc(fromClassBinding classBinding: ClassBinding,
-                                    functionName: StringName) -> GDExtensionClassCallVirtual? {
         guard let classBinding = shared.customClassNameToClassBinding[classBinding.name] else {
             printGodotError("Class doesn't exist.")
             return nil
         }
         
-        guard let functionCall = classBinding.virtualFuncCall(forName: functionName) else {
+        guard let functionCall = classBinding.virtualFuncCall(forName: methodName) else {
             printGodotError("Virtual func doesn't exist.")
             return nil
         }
@@ -231,10 +278,17 @@ public final class ClassRegister {
     
     // MARK: Function registration
     
-    public enum FunctionRegistrationResult {
-        case success, failure
-    }
-    
+    /// Registers a given function from an already registered
+    /// custom class to expose it to the Godot editor.
+    ///
+    /// - Parameters:
+    ///   - functionName: The function name.
+    ///   - classType: The type of the class the function is part of.
+    ///   - arguments: The arguments of the function.
+    ///   - returnParameter: The return parameter of the function, if any.
+    ///   - isStatic: A Boolean value indicating whether the function is static.
+    ///   - call: A C closure used by Godot to call the function.
+    /// - Returns: A Boolean value indicating whether the function was registered.
     @discardableResult
     public func registerFunction<Class>(
         withName functionName: StringName,
@@ -243,10 +297,10 @@ public final class ClassRegister {
         returnParameter: Parameter?,
         isStatic: Bool,
         call: GDExtensionClassMethodCall)
-    -> FunctionRegistrationResult where Class : Object {
+    -> Bool where Class : Object {
         guard isRegistrationOpen else {
             printGodotError("Cannot register function \(functionName) because the registration is closed.")
-            return .failure
+            return false
         }
         
         let className = classType._gd_className
@@ -254,7 +308,7 @@ public final class ClassRegister {
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
             printGodotError("Cannot register function \(functionName) because the class \(className) is not registered.")
-            return .failure
+            return false
         }
         
         let arguments = arguments.map { $0.propertyInfo(withClassName: className) }
@@ -303,68 +357,7 @@ public final class ClassRegister {
             }
         }
         
-        return .success
-    }
-    
-    // MARK: Property registration
-    
-    public enum PropertyRegistrationResult {
-        case success, failure
-    }
-    
-    @discardableResult
-    public func registerWritableProperty<Class, Value>(
-        keyPath: WritableKeyPath<Class, Value>,
-        name propertyName: StringName,
-        getterFunctionName: StringName,
-        setterFunctionName: StringName)
-    -> PropertyRegistrationResult where
-    Class : Object,
-    Value : TypedVariantTransformable
-    {
-        guard isRegistrationOpen else {
-            printGodotError("Cannot register property \(propertyName) because the registration is closed.")
-            return .failure
-        }
-        
-        let className = Class._gd_className
-        
-        guard let classBinding = customClassNameToClassBinding[className],
-              classBinding.type == Class.self else {
-            printGodotError("Cannot register property \(propertyName) because the class \(className) is not registered.")
-            return .failure
-        }
-
-#warning("Check that getter and setters are set")
-        
-        let propertyInfo = PropertyInfo(
-            type: Value.variantStorageType,
-            metadata: PropertyMetadata(Value.self),
-            name: propertyName,
-            usageFlags: .default,
-            className: className)
-        
-#warning("Register within the extension")
-#warning("Properties not calling getter and setters in Godot (kind of bad right ?)")
-        
-        className.withUnsafeExtensionPointer { classNamePtr in
-            getterFunctionName.withUnsafeExtensionPointer { getterFunctionNamePtr in
-                setterFunctionName.withUnsafeExtensionPointer { setterFunctionNamePtr in
-                    propertyInfo.withGodotExtensionPropertyInfo { extensionPropertyInfo in
-                        withUnsafePointer(to: extensionPropertyInfo) { extentionPropertyInfoPtr in
-                            GodotExtension.interface.classdb_register_extension_class_property(
-                                GodotExtension.libraryPtr,
-                                classNamePtr,
-                                extentionPropertyInfoPtr,
-                                setterFunctionNamePtr,
-                                getterFunctionNamePtr)
-                        }
-                    }
-                }
-            }
-        }
-        
-        return .success
+        return true
     }
 }
 
