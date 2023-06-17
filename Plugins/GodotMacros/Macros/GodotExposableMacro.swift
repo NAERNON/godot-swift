@@ -3,7 +3,7 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
-#warning("Check the create instance function, something's fishy...")
+// TODO: Check the create instance function, something's fishy...
 public enum GodotExposableMacro: MemberMacro {
     // MARK: Member
     

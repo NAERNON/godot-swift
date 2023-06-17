@@ -1,7 +1,7 @@
 import Foundation
 import GodotExtensionHeaders
 
-#warning("Check @inlinable & @usableFromInline")
+// TODO: Check @inlinable & @usableFromInline
 
 public struct Variant {
     // MARK: Inits

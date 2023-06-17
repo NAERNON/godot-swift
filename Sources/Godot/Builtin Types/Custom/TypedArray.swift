@@ -20,7 +20,7 @@ public struct TypedArray<Element> where Element : TypedVariantTransformable {
         var array = Array()
         array.withUnsafeExtensionPointer { ptr in
             className.withUnsafeExtensionPointer { classNamePtr in
-#warning("Check script (last parameter)")
+                // TODO: Check script (last parameter)
                 GodotExtension.interface.array_set_typed(ptr, Element.variantStorageType.godotType, classNamePtr, nil)
             }
         }
@@ -45,9 +45,8 @@ extension TypedArray {
 }
 
 extension TypedArray where Element : Object {
-#warning("Check that it is not the lastDerivedClassName")
     public init() {
-        self.init(className: Element._gd_className)
+        self.init(className: Element._gd_className) // TODO: Check that it is not the lastDerivedClassName
     }
 }
 

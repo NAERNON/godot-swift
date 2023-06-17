@@ -1,7 +1,7 @@
 import Foundation
 import GodotExtensionHeaders
 
-#warning("METHOD_FLAGS_DEFAULT from the json file.")
+// TODO: METHOD_FLAGS_DEFAULT from the json file
 private let METHOD_FLAGS_DEFAULT: UInt32 = 24
 
 /// The registration is open at start. Once all the custom classes are registered,
@@ -127,7 +127,6 @@ public final class ClassRegister {
         return true
     }
     
-#warning("Do the to string function")
     /// Registers a given custom class to expose it to the Godot editor.
     ///
     /// - Parameters:
@@ -141,7 +140,7 @@ public final class ClassRegister {
     public func registerCustomClass<Class, Superclass>(
         ofType classType: Class.Type,
         superclassType: Superclass.Type,
-        toStringFunction: GDExtensionClassToString,
+        toStringFunction: GDExtensionClassToString, // TODO: Do the to string function
         createInstanceFunction: GDExtensionClassCreateInstance,
         freeInstanceFunction: GDExtensionClassFreeInstance) -> Bool
     where Class : Object,
@@ -188,7 +187,7 @@ public final class ClassRegister {
         
         customClassNameToClassBinding[className] = classBinding
         
-#warning("Fill all the blanks")
+        // TODO: Fill all the blanks
         var godotClassInfo = GDExtensionClassCreationInfo(
             is_virtual: 0,
             is_abstract: 0,
@@ -314,7 +313,7 @@ public final class ClassRegister {
         let arguments = arguments.map { $0.propertyInfo(withClassName: className) }
         let returnType = returnParameter?.propertyInfo(withClassName: className)
         
-#warning("Do the vararg")
+        // TODO: Do the vararg
         // Register this function within our extension.
         let functionBinding = FunctionBinding(name: functionName,
                                               className: className,
@@ -333,7 +332,7 @@ public final class ClassRegister {
                             method_userdata: Unmanaged.passUnretained(functionBinding).toOpaque(),
                             call_func: call,
                             ptrcall_func: { _, _, _, _ in
-#warning("DO THIS")
+// TODO: DO THIS
                             },
                             method_flags: functionBinding.flag,
                             has_return_value: gdExtentionBool(functionBinding.hasReturnValue),

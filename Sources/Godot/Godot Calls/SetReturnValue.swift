@@ -6,7 +6,7 @@ func setReturnValue<T>(_ value: T, toPointer pointer: GDExtensionTypePtr?) {
     boundedPtr?.pointee = value
 }
 
-#warning("Check if the object is still in memory. The Opaque should call deinit before this returns.")
+// TODO: Check if the object is still in memory. The Opaque should call deinit before this returns
 func setReturnValue<T>(_ value: T, toPointer pointer: GDExtensionTypePtr?) where T : OpaqueAccessibleObject {
     let boundedPtr = pointer?.assumingMemoryBound(to: UnsafeRawPointer.self)
     boundedPtr?.pointee = UnsafeRawPointer(value.opaque.rawData)

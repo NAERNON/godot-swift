@@ -1,7 +1,7 @@
 import Foundation
 import CodeGenerator
 
-#warning("isRefcounted and isInstantiable, isVararg, isVirtual not used from ExtensionApi.Class. Is it ok or am I dumb ?")
+// TODO: isRefcounted and isInstantiable, isVararg, isVirtual not used from ExtensionApi.Class. Is it ok or am I dumb ?
 
 extension ExtensionApi.Class {
     var isRootClass: Bool { name == "Object" }

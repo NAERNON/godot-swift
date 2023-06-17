@@ -17,7 +17,7 @@ extension ClassRegister {
             return nil
         }
         
-#warning("Do all the metadata types.")
+// TODO: Do all the metadata types.
         init?(_ type: Int8) {
             self = .intIsInt8
         }
