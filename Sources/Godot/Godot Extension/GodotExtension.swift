@@ -4,7 +4,7 @@ import GodotExtensionHeaders
 ///
 /// > Warning: Do not use ``GodotExtension``, or any of its members, directly.
 ///
-/// Use the ``GodotBridge`` macro to setup a bridge that will
+/// Use the ``GodotBridge()`` macro to setup a bridge that will
 /// initialize the GodotExtension.
 public enum GodotExtension {
     // MARK: Properties
@@ -32,7 +32,7 @@ public enum GodotExtension {
     /// The extension should be initialized before any call to any type related to Godot.
     ///
     /// Do not initialize the extension directly,
-    /// but instead use the ``GodotBridge`` macro to setup a bridge.
+    /// but instead use the ``GodotBridge()`` macro to setup a bridge.
     public static func initialize<T>(
         using bridge: T.Type,
         withInterfacePtr interfacePtr: UnsafePointer<GDExtensionInterface>,
