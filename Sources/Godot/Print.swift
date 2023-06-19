@@ -4,7 +4,7 @@ import GodotExtensionHeaders
 // MARK: Warning and errors
 
 public func printGodotError(_ message: Swift.String,
-                            notifyEditor: Bool = true,
+                            notifyEditor: Bool = false,
                             function: Swift.String = #function,
                             file: Swift.String = #file,
                             line: Int32 = #line) {
@@ -12,7 +12,7 @@ public func printGodotError(_ message: Swift.String,
 }
 
 public func printGodotWarning(_ message: Swift.String,
-                              notifyEditor: Bool = true,
+                              notifyEditor: Bool = false,
                               function: Swift.String = #function,
                               file: Swift.String = #file,
                               line: Int32 = #line) {
@@ -28,22 +28,26 @@ public func printGodotWarning(_ message: Swift.String,
 /// function. The textual representation for each item is the same as that
 /// obtained by calling `String(describing: item)`. The following example prints a string,
 /// a closed range of integers, and a group of floating-point values to
-/// standard output:
+/// Godot output:
 ///
-///     gdPrint("One two three four five")
-///     // Prints "One two three four five"
+/// ```swift
+/// gdPrint("One two three four five")
+/// // Prints "One two three four five"
 ///
-///     gdPrint(1...5)
-///     // Prints "1...5"
+/// gdPrint(1...5)
+/// // Prints "1...5"
 ///
-///     gdPrint(1.0, 2.0, 3.0, 4.0, 5.0)
-///     // Prints "1.0 2.0 3.0 4.0 5.0"
+/// gdPrint(1.0, 2.0, 3.0, 4.0, 5.0)
+/// // Prints "1.0 2.0 3.0 4.0 5.0"
+/// ```
 ///
 /// To print the items separated by something other than a space, pass a string
 /// as `separator`.
 ///
-///     gdPrint(1.0, 2.0, 3.0, 4.0, 5.0, separator: " ... ")
-///     // Prints "1.0 ... 2.0 ... 3.0 ... 4.0 ... 5.0"
+/// ```swift
+/// gdPrint(1.0, 2.0, 3.0, 4.0, 5.0, separator: " ... ")
+/// // Prints "1.0 ... 2.0 ... 3.0 ... 4.0 ... 5.0"
+/// ```
 ///
 /// - Parameters:
 ///   - items: Zero or more items to print.

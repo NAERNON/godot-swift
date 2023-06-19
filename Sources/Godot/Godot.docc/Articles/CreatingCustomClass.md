@@ -1,6 +1,6 @@
 # CreateCustomClass
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+// TODO: Do this
 
 ## Overview
 

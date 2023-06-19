@@ -5,9 +5,9 @@ extension ClassRegister {
     ///
     /// This structure is used to register functions.
     ///
-    /// Use ``argument(_:name:)`` to create an argument `Parameter`,
-    /// or use ``returnParameter(_:)`` to create a return `Parameter`.
-    public struct Parameter {
+    /// Use ``argument(_:name:)`` to create an argument `FunctionParameter`,
+    /// or use ``returnParameter(_:)`` to create a return `FunctionParameter`.
+    public struct FunctionParameter {
         /// The ``Variant`` type of the parameter.
         public let type: Variant.ValueType
         
@@ -30,20 +30,20 @@ extension ClassRegister {
             self.metadata = .init(type)
         }
         
-        /// Creates a new `Parameter` used as a function argument.
+        /// Creates a new `FunctionParameter` used as a function argument.
         ///
         /// - Parameters:
         ///   - type: The type of the parameter.
         ///   - name: The name of the parameter.
-        public static func argument<Value>(_ type: Value.Type, name: StringName) -> Parameter
+        public static func argument<Value>(_ type: Value.Type, name: StringName) -> FunctionParameter
         where Value : ExpressibleByTypedVariant {
             .init(type: type, name: name)
         }
         
-        /// Creates a new `Parameter` used as a function return type.
+        /// Creates a new `FunctionParameter` used as a function return type.
         ///
         /// - Parameter type: The type of the parameter.
-        public static func returnParameter<Value>(_ type: Value.Type) -> Parameter
+        public static func returnParameter<Value>(_ type: Value.Type) -> FunctionParameter
         where Value : ExpressibleByTypedVariant {
             .init(type: type, name: .init())
         }

@@ -5,7 +5,7 @@ import GodotExtensionHeaders
 /// You should not declare conformances to `GodotBridgeProtocol` directly.
 /// Use the ``GodotBridge()`` macro to automatically conform to this protocol.
 ///
-/// Learn how to create a bridge: <doc:CreateGodotBridge>.
+/// Learn how to create a bridge: <doc:CreatingGodotBridge>.
 public protocol GodotBridgeProtocol {
     /// All the custom classes to expose to Godot.
     ///

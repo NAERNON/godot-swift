@@ -1,12 +1,10 @@
-# Create a Godot bridge
+# Creating a Godot bridge
 
-Make a Godot bridge that will be the entry point for Godot.
+Make an entry point for your module and initialize it with custom parameters.
 
 ## Overview
 
-Godot is the one responsible for calling your Swift code, not the other way around. In order for Godot to call your code, it needs an entry point.
-
-Before Godot calls your entry point, all the types defined inside Godot Swift are useless, and none of your custom classes are acessible to the Godot editor.
+The code you write using Godot Swift is an extension of Godot. Before using any type defined by Godot, or exposing any custom class to the Godot editor, your module needs to be initialized. Godot will therefore call an entry point you defined and make all the necessary preparation.
 
 A Godot bridge acts as the entry point.
 
@@ -58,7 +56,7 @@ enum MyGame {
 }
 ```
 
-> Important: Only expose ``Object`` classes that are defined using the ``GodotExposable()`` macro. See <doc:CreateCustomClass>.
+> Important: Only expose ``Object`` classes that are defined using the ``GodotExposable()`` macro. See <doc:CreatingCustomClass>.
 
 ### Provide custom initialization and deinitialization
 
@@ -77,4 +75,4 @@ enum MyGame {
 
 ### Configure Godot to work with your module
 
-See <doc:CreateGDExtensionModule> to learn how to setup Godot.
+See <doc:CreatingGDExtensionModule> to learn how to setup Godot.

@@ -18,7 +18,7 @@ private let METHOD_FLAGS_DEFAULT: UInt32 = 24
 /// An object that enables the registration of custom Godot classes.
 ///
 /// Do not use `ClassRegister` directly.
-/// See <doc:CreateGodotBridge> to learn how to expose custom classes to Godot.
+/// See <doc:CreatingGodotBridge> to learn how to expose custom classes to Godot.
 public final class ClassRegister {
     // MARK: Properties
     
@@ -283,7 +283,7 @@ public final class ClassRegister {
     /// - Parameters:
     ///   - functionName: The function name.
     ///   - classType: The type of the class the function is part of.
-    ///   - arguments: The arguments of the function.
+    ///   - argumentParameters: The arguments of the function.
     ///   - returnParameter: The return parameter of the function, if any.
     ///   - isStatic: A Boolean value indicating whether the function is static.
     ///   - call: A C closure used by Godot to call the function.
@@ -292,8 +292,8 @@ public final class ClassRegister {
     public func registerFunction<Class>(
         withName functionName: StringName,
         insideType classType: Class.Type,
-        arguments: [Parameter],
-        returnParameter: Parameter?,
+        argumentParameters: [FunctionParameter],
+        returnParameter: FunctionParameter?,
         isStatic: Bool,
         call: GDExtensionClassMethodCall)
     -> Bool where Class : Object {
@@ -310,7 +310,7 @@ public final class ClassRegister {
             return false
         }
         
-        let arguments = arguments.map { $0.propertyInfo(withClassName: className) }
+        let arguments = argumentParameters.map { $0.propertyInfo(withClassName: className) }
         let returnType = returnParameter?.propertyInfo(withClassName: className)
         
         // TODO: Do the vararg

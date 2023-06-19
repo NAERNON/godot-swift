@@ -120,7 +120,7 @@ public enum GodotExposableMacro: MemberMacro {
                 GodotExtension.classRegister.registerFunction(
                     withName: \(literal: functionToExpose.identifier.description),
                     insideType: self,
-                    arguments: [
+                    argumentParameters: [
                         \(raw: parameters.joined(separator: "\n"))
                     ],
                     returnParameter: \(raw: returnParameter),

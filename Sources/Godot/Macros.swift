@@ -8,7 +8,7 @@ public macro GodotExposable() = #externalMacro(module: "GodotMacros", type: "God
 /// The macro automatically conforms the attached type to the ``GodotBridgeProtocol`` protocol,
 /// and creates a C function that will serve as the entry point for Godot.
 ///
-/// Learn how to create a bridge: <doc:CreateGodotBridge>.
+/// Learn how to create a bridge: <doc:CreatingGodotBridge>.
 @attached(conformance)
 @attached(peer, names: arbitrary)
 public macro GodotBridge() = #externalMacro(module: "GodotMacros", type: "GodotBridgeMacro")
