@@ -1,9 +1,9 @@
 import SwiftSyntax
 
-extension GodotExtensionApi {
-    func realRawValueFile(floatingPointType: BuildConfiguration.FloatingPointType) throws -> GeneratedFile {
+extension GeneratedFile {
+    static func realRawValue(type: BuildConfiguration.FloatingPointType) throws -> GeneratedFile {
         let floatingPointTypeString =
-        switch floatingPointType {
+        switch type {
         case .float:
             "Float"
         case .double:

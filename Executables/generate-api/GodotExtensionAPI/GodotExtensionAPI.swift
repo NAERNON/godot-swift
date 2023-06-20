@@ -1,6 +1,6 @@
 import Foundation
 
 /// A representing of the file `extension_api.json`.
-struct GodotExtensionApi: Decodable {
+struct GodotExtensionAPI: Decodable {
     var globalEnums: [GodotEnum]
 }

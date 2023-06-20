@@ -1,6 +1,5 @@
 import Foundation
 import ArgumentParser
-import CodeGenerator
 
 @main
 struct APIGeneration: ParsableCommand {
@@ -27,11 +26,9 @@ struct APIGeneration: ParsableCommand {
         
         let data = try Data(contentsOf: apiJsonFileURL)
         
-        let extensionApi = try jsonDecoder.decode(GodotExtensionApi.self, from: data)
+        let extensionAPI = try jsonDecoder.decode(GodotExtensionAPI.self, from: data)
         
         // MARK: Generate files
-        
-        let codeFormatter = CodeFormatter()
         
         // Delete _Generated directories if needed before making new ones.
         if !noWrite, fileManager.fileExists(atPath: generatedFolderURL.path) {
@@ -39,8 +36,8 @@ struct APIGeneration: ParsableCommand {
         }
         
         let godotFiles = [
-            try extensionApi.globalEnumFile(),
-            try extensionApi.realRawValueFile(floatingPointType: buildConfiguration.floatingPointType),
+            try GeneratedFile.globalEnum(extensionAPI),
+            try GeneratedFile.realRawValue(type: buildConfiguration.floatingPointType),
         ]
         
         print("Generating files...")
