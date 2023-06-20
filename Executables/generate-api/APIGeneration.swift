@@ -12,6 +12,7 @@ struct APIGeneration: ParsableCommand {
     
     func run() throws {
         let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         let fileManager = FileManager.default
         
         let currentURL = URL(filePath: fileManager.currentDirectoryPath, directoryHint: .isDirectory)
@@ -26,8 +27,7 @@ struct APIGeneration: ParsableCommand {
         
         let data = try Data(contentsOf: apiJsonFileURL)
         
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        let extensionApi = try jsonDecoder.decode(ExtensionApi.self, from: data)
+        let extensionApi = try jsonDecoder.decode(GodotExtensionApi.self, from: data)
         
         // MARK: Generate files
         
@@ -38,7 +38,9 @@ struct APIGeneration: ParsableCommand {
             try fileManager.removeItem(atPath: generatedFolderURL.path)
         }
         
-        let godotFiles = gododFiles(fromApi: extensionApi, buildConfiguration: buildConfiguration)
+        let godotFiles = [
+            try extensionApi.globalEnumFile()
+        ]
         
         print("Generating files...")
         let generationStart = Date()
@@ -53,7 +55,6 @@ struct APIGeneration: ParsableCommand {
             }
             
             try process(file: file,
-                        codeFormatter: codeFormatter,
                         fileManager: fileManager,
                         atURL: generatedFolderURL)
         }
@@ -64,16 +65,20 @@ struct APIGeneration: ParsableCommand {
     }
     
     // MARK: Process file
+    
+    private enum ProcessError: Error {
+        case cannotGenerateDataFromCode
+    }
 
-    private func process(file: some File,
-                         codeFormatter: CodeFormatter,
-                         fileManager: FileManager,
-                         atURL url: URL) throws {
-        let finalFile = file.prefixPath(withURL: url).markGenerated()
-        let fileURL = finalFile.url
+    private func process(
+        file: GeneratedFile,
+        fileManager: FileManager,
+        atURL url: URL
+    ) throws {
+        let fileURL = url.appending(path: file.path)
         
         guard !noWrite else {
-            _ = try finalFile.data(using: codeFormatter)
+            _ = file.code()
             return
         }
         
@@ -82,20 +87,10 @@ struct APIGeneration: ParsableCommand {
             try fileManager.createDirectory(atPath: filePathWithoutFileName.path, withIntermediateDirectories: true)
         }
         
-        try finalFile.write(using: codeFormatter)
-    }
-}
-
-// MARK: - Build Configuration
-
-extension BuildConfiguration: ExpressibleByArgument {
-    init?(argument: String) {
-        switch argument {
-        case "float-32": self = .float32
-        case "float-64": self = .float64
-        case "double-32": self = .double32
-        case "double-64": self = .double64
-        default: return nil
+        guard let data = file.code().data(using: .utf8) else {
+            throw ProcessError.cannotGenerateDataFromCode
         }
+        
+        try data.write(to: fileURL)
     }
 }

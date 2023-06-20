@@ -54,8 +54,9 @@ let package = Package(
                 "CodeGenerator",
                 "CodeTranslator",
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
             ],
-            path: "Executables/APIGeneration"
+            path: "Executables/generate-api"
         ),
         
         // MARK: Plugins
