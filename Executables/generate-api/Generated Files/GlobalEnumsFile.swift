@@ -1,9 +1,9 @@
 import SwiftSyntax
 
 extension GeneratedFile {
-    static func globalEnum(_ extensionAPI: GodotExtensionAPI) throws -> GeneratedFile {
+    static func globalEnum(_ enums: [GodotEnum]) throws -> GeneratedFile {
         try .init(path: "GlobalEnums.swift") {
-            for enumValue in extensionAPI.globalEnums {
+            for enumValue in enums {
                 if let scope = enumValue.name.scope() {
                     // We do not generate the enums for the Variant type since
                     // they are already generated.

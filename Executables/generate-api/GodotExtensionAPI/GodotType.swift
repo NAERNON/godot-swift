@@ -5,7 +5,7 @@ import SwiftSyntax
 ///
 /// This model is used to represent a type definition,
 /// in both Swift and C. Use it to translate a type from one language to the other.
-indirect enum GodotType: Equatable, Decodable {
+indirect enum GodotType: Equatable, Decodable, Hashable {
     // MARK: Cases
     
     /// The base of a `GodotType`, written using Swift conventions.

@@ -36,8 +36,9 @@ struct APIGeneration: ParsableCommand {
         }
         
         let godotFiles = [
-            try GeneratedFile.globalEnum(extensionAPI),
+            try GeneratedFile.globalEnum(extensionAPI.globalEnums),
             try GeneratedFile.realRawValue(type: buildConfiguration.floatingPointType),
+            try GeneratedFile.variantSize(builtinClassSizes: extensionAPI.builtinClassSizes, for: buildConfiguration),
         ]
         
         print("Generating files...")
