@@ -3,26 +3,17 @@ import SwiftSyntax
 
 /// A representation of a Godot type.
 ///
-/// This model is used to represent a type definition,
-/// in both Swift and C. Use it to translate a type from one language to the other.
-indirect enum GodotType: Equatable, Decodable, Hashable {
+/// This model is used to represent a type definition.
+indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLiteral {
     // MARK: Cases
-    
-    /// The base of a `GodotType`, written using Swift conventions.
-    ///
-    /// In order to define a type named "`SomeClass`", use:
-    /// ```swift
-    /// GodotType.swift("SomeClass")
-    /// ```
-    case swift(String)
     
     /// The base of a `GodotType`, written using C conventions.
     ///
     /// In order to define a type named "`some_class`", use:
     /// ```swift
-    /// GodotType.c("some_class")
+    /// GodotType.base("some_class")
     /// ```
-    case c(String)
+    case base(String)
     
     /// A type known to be an enum.
     case `enum`(GodotType)
@@ -58,6 +49,21 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
     /// ```
     case generic(type: GodotType, genericType: GodotType)
     
+    /// An generic array.
+    ///
+    /// In Godot, a generic array is a `TypedArray<Element>`.
+    ///
+    /// If `A` is a type:
+    /// ```swift
+    /// let a: GodotType = ... // A
+    ///
+    /// GodotType.typedArray(a)
+    ///
+    /// // Represents the type:
+    /// TypedArray<A>
+    /// ```
+    case typedArray(GodotType)
+    
     /// An optional type.
     case optional(GodotType)
     
@@ -87,51 +93,48 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
     
     // MARK: Init
     
-    enum InitError: Error {
-        case cannotRetreiveGeneric
-    }
-    
     /// Creates a new `GodotType` with the given C type syntax.
-    init(cTypeSyntax: some StringProtocol) throws {
+    init(cTypeSyntax: some StringProtocol) {
         let string = cTypeSyntax.trimmingCharacters(in: .whitespacesAndNewlines)
         if string.starts(with: "const ") {
-            self = .immutable(try GodotType(cTypeSyntax: cTypeSyntax.dropFirst(6)))
+            self = .immutable(GodotType(cTypeSyntax: cTypeSyntax.dropFirst(6)))
         } else if string.last == "*" {
-            self = .pointer(try GodotType(cTypeSyntax: cTypeSyntax.dropLast(1)))
-        } else if string.last == ">" {
-            guard let index = string.firstIndex(of: "<") else {
-                throw InitError.cannotRetreiveGeneric
-            }
-            
+            self = .pointer(GodotType(cTypeSyntax: cTypeSyntax.dropLast(1)))
+        } else if string.last == ">",
+                  let index = string.firstIndex(of: "<")
+        {
             self = .generic(
-                type: try GodotType(cTypeSyntax: string[..<index]),
-                genericType: try GodotType(cTypeSyntax: string[string.index(after: index)...])
+                type: GodotType(cTypeSyntax: string[..<index]),
+                genericType: GodotType(cTypeSyntax: string[string.index(after: index)...])
             )
         } else if string.starts(with: "enum::") {
-            self = .enum(try GodotType(cTypeSyntax: cTypeSyntax.dropFirst(6)))
+            self = .enum(GodotType(cTypeSyntax: cTypeSyntax.dropFirst(6)))
         } else if string.starts(with: "bitfield::") {
-            self = .bitfield(try GodotType(cTypeSyntax: cTypeSyntax.dropFirst(10)))
+            self = .bitfield(GodotType(cTypeSyntax: cTypeSyntax.dropFirst(10)))
         } else if string.starts(with: "typedarray::") {
-            self = .generic(
-                type: .swift("TypedArray"),
-                genericType: try GodotType(cTypeSyntax: cTypeSyntax.dropFirst(12))
-            )
+            self = .typedArray(GodotType(cTypeSyntax: cTypeSyntax.dropFirst(12)))
         } else if let index = string.lastIndex(of: ".") {
             self = .scope(
-                scopeType: try GodotType(cTypeSyntax: string[..<index]),
-                type: try GodotType(cTypeSyntax: string[string.index(after: index)...])
+                scopeType: GodotType(cTypeSyntax: string[..<index]),
+                type: GodotType(cTypeSyntax: string[string.index(after: index)...])
             )
         } else {
-            self = .c(string)
+            self = .base(string)
         }
     }
     
     init(from decoder: Decoder) throws {
         let string = try String(from: decoder)
-        try self.init(cTypeSyntax: string)
+        self.init(cTypeSyntax: string)
+    }
+    
+    init(stringLiteral value: String) {
+        self.init(cTypeSyntax: value)
     }
     
     // MARK: Tools
+    
+    static let variant: GodotType = "Variant"
     
     /// Returns the scope type at a given index.
     ///
@@ -171,7 +174,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
     /// - parameter options: The options to define how to translate the type.
     func syntax(options: GodotSyntaxOptions = []) -> String {
         switch self {
-        case .c(let string):
+        case .base(let string):
             switch string {
             case "float":
                 if options.contains(.floatAsReal) {
@@ -196,8 +199,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
             case "Type": return "Type"
             default: return string
             }
-        case .swift(let string):
-            return string
         case .enum(let type):
             return type.syntax(options: options)
         case .bitfield(let type):
@@ -206,6 +207,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
             return scopeType.syntax(options: options) + "." + type.syntax(options: options)
         case .generic(let type, let genericType):
             return type.syntax(options: options) + "<" + genericType.syntax(options: options) + ">"
+        case .typedArray(let type):
+            return "TypedArray<\(type.syntax(options: options))>"
         case .optional(let instanceType):
             return instanceType.syntax(options: options) + "?"
         case .varargs(let type):

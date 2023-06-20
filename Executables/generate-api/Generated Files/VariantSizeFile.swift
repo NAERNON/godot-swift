@@ -10,7 +10,7 @@ extension GeneratedFile {
         for configuration: BuildConfiguration
     ) throws -> GeneratedFile {
         guard let classSize = builtinClassSizes.size(
-            ofClass: try .init(cTypeSyntax: "Variant"),
+            ofClass: .variant,
             for: configuration
         ) else {
             throw VariantSizeFileError.cannotRetreiveVariantClassSize
