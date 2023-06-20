@@ -10,13 +10,6 @@ struct GodotBuiltinClassSizes: Decodable {
     
     // MARK: Init
     
-    private enum CodingKeys: String, CodingKey {
-        case buildConfiguration
-        case sizes
-        case name
-        case size
-    }
-    
     init(from decoder: Decoder) throws {
         let builtinClassSizes = try Array<_BuiltinClassSizes>(from: decoder)
         
@@ -33,7 +26,7 @@ struct GodotBuiltinClassSizes: Decodable {
         self.sizes = sizes
     }
     
-    // MARK: Get results
+    // MARK: Access
     
     func size(ofClass classType: GodotType, for configuration: BuildConfiguration) -> Int? {
         sizes[configuration]?[classType]
@@ -42,13 +35,13 @@ struct GodotBuiltinClassSizes: Decodable {
 
 /// A private type used to decode a ``GodotBuiltinClassSizes``.
 private struct _BuiltinClassSizes: Decodable {
-    var buildConfiguration: BuildConfiguration
-    var sizes: [Size]
+    let buildConfiguration: BuildConfiguration
+    let sizes: [Size]
     
     // MARK: Size
     
     struct Size: Decodable {
-        var name: GodotType
-        var size: Int
+        let name: GodotType
+        let size: Int
     }
 }

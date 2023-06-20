@@ -4,7 +4,7 @@ import Foundation
 struct GodotExtensionAPI: Decodable {
     var header: GodotExtensionHeader
     var builtinClassSizes: GodotBuiltinClassSizes
-//    var builtinClassMemberOffsets: [MemberOffsets]
+    var builtinClassMemberOffsets: GodotBuiltinClassMemberOffsets
     //-- not used but defined in the json file --//    var globalConstants
     var globalEnums: [GodotEnum]
 //    var utilityFunctions: [UtilityFunction]
