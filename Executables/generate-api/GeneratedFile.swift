@@ -46,6 +46,7 @@ struct GeneratedFile {
         // THIS FILE IS GENERATED. EDITS WILL BE LOST.
         //
         
+        
         """ +
         syntax.formatted().description
     }

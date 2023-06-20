@@ -39,7 +39,8 @@ struct APIGeneration: ParsableCommand {
         }
         
         let godotFiles = [
-            try extensionApi.globalEnumFile()
+            try extensionApi.globalEnumFile(),
+            try extensionApi.realRawValueFile(floatingPointType: buildConfiguration.floatingPointType),
         ]
         
         print("Generating files...")

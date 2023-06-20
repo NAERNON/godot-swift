@@ -82,8 +82,6 @@ struct GodotEnum: Decodable {
         }
         
         return DeclSyntax("""
-        
-        
         public enum \(raw: name): \(raw: T.self) {
             \(raw: caseStrings.joined(separator: "\n"))
         }
@@ -100,8 +98,6 @@ struct GodotEnum: Decodable {
         }
         
         return DeclSyntax("""
-        
-        
         public struct \(raw: name): OptionSet {
             public let rawValue: \(raw: T.self)
         

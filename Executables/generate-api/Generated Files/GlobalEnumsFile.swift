@@ -9,11 +9,11 @@ extension GodotExtensionApi {
                     // they are already generated.
                     if try scope != .init(cTypeSyntax: "Variant") {
                         try ExtensionDeclSyntax("extension \(raw: scope.syntax())") {
-                            enumValue.syntax()
+                            enumValue.syntax().with(\.trailingTrivia, .newlines(2))
                         }
                     }
                 } else {
-                    enumValue.syntax()
+                    enumValue.syntax().with(\.trailingTrivia, .newlines(2))
                 }
             }
         }
