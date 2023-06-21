@@ -19,4 +19,10 @@ struct GodotConstant: Decodable, Equatable {
     init(from decoder: Decoder) throws {
         string = try String(from: decoder)
     }
+    
+    // MARK: Syntax
+    
+    func syntax() -> String {
+        string
+    }
 }

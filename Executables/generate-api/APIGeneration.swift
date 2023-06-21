@@ -39,6 +39,7 @@ struct APIGeneration: ParsableCommand {
             try GeneratedFile.globalEnum(extensionAPI.globalEnums),
             try GeneratedFile.realRawValue(type: buildConfiguration.floatingPointType),
             try GeneratedFile.variantSize(builtinClassSizes: extensionAPI.builtinClassSizes, for: buildConfiguration),
+            try GeneratedFile.utilityFunctions(extensionAPI.utilityFunctions),
         ]
         
         print("Generating files...")
