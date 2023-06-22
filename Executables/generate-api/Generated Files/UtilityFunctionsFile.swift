@@ -1,17 +1,17 @@
 import SwiftSyntax
 
 extension GeneratedFile {
-    static func utilityFunctions(_ functions: [GodotUtilityFunction]) throws -> GeneratedFile {
+    static func utilityFunctions(_ extensionAPI: GodotExtensionAPI) throws -> GeneratedFile {
         return try .init(path: "UtilityFunctions.swift") {
-            for function in functions {
-                try functionSyntax(function)
+            for function in extensionAPI.utilityFunctions {
+                try functionSyntax(function, extensionAPI: extensionAPI)
                     .with(\.trailingTrivia, .newlines(2))
             }
             
             try EnumDeclSyntax("enum UtilityFunctions") {
                 try FunctionDeclSyntax("static func setBindings()") {
                     DeclSyntax("var _function_name: StringName!")
-                    for function in functions {
+                    for function in extensionAPI.utilityFunctions {
                         ExprSyntax("""
                         _function_name = "\(raw: function.baseName)"
                         withUnsafeGodotMutableAccessPointer(to: &_function_name) { __ptr__function_name in
@@ -21,19 +21,24 @@ extension GeneratedFile {
                     }
                 }.with(\.trailingTrivia, .newlines(2))
                 
-                for function in functions {
+                for function in extensionAPI.utilityFunctions {
                     DeclSyntax("fileprivate static var \(raw: function.functionPtrSyntax): GDExtensionPtrUtilityFunction!")
                 }
             }
         }
     }
     
-    private static func functionSyntax(_ function: GodotUtilityFunction) throws -> FunctionDeclSyntax {
+    private static func functionSyntax(
+        _ function: GodotUtilityFunction,
+        extensionAPI: GodotExtensionAPI) throws -> FunctionDeclSyntax {
         let options: GodotSyntaxOptions = .floatAsDouble
         
         return try function.declSyntax(options: options) {
             if let returnType = function.returnType {
-                try returnType.instantiationSyntax(isGodotObject: false, options: options) { instanceName in
+                try returnType.instantiationSyntax(
+                    isGodotObject: extensionAPI.typeIsGodotClass(returnType),
+                    options: options
+                ) { instanceName in
                     if function.arguments?.count ?? 0 > 0 {
                         try function.argumentsPackPointerAccessSyntax { packName in
                             try returnType.pointerAccessSyntax(

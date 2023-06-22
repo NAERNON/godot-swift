@@ -233,7 +233,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// Use the `bodyBuilder` parameter to use the instantiated variable name.
     /// For example:
     /// ```swift
-    /// let type: GodotType = ...
+    /// let type: GodotType = //...
     ///
     /// type.instantiationSyntax { name in
     ///     DeclSyntax("print(\(raw: name))")
@@ -251,16 +251,25 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// ```
     @CodeBlockItemListBuilder
     func instantiationSyntax(
+        isGodotObject: Bool,
         options: GodotSyntaxOptions = [],
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let variableName = "__temporary"
         
-        DeclSyntax("var \(raw: variableName) = \(raw: syntax(options: options))()")
+        if isGodotObject {
+            DeclSyntax("var \(raw: variableName): GDExtensionObjectPtr!")
+        } else {
+            DeclSyntax("var \(raw: variableName) = \(raw: syntax(options: options))()")
+        }
         
         try bodyBuilder(variableName)
         
-        DeclSyntax("return \(raw: variableName)")
+        if isGodotObject {
+            DeclSyntax("return retreiveObject(ofType: \(raw: syntax(options: options)).self, from: \(raw: variableName))")
+        } else {
+            DeclSyntax("return \(raw: variableName)")
+        }
     }
     
     /// The mutability of a type.
