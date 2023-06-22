@@ -39,6 +39,10 @@ extension GodotFunction {
         )
     }
     
+    private var varargArgumentIdentifier: String {
+        "rest"
+    }
+    
     /// Returns the translated function identifier.
     ///
     /// A function with the signature "`do_something(a:b:)`"
@@ -50,6 +54,19 @@ extension GodotFunction {
     /// Returns the argument identifier at a given index.
     func argumentSyntaxIndentifier(at index: Int) -> String {
         translatedFunction.parameters[index].name
+    }
+    
+    /// Returns the syntax for the number of arguments.
+    ///
+    /// For a function with 3 arguments, it will return "`3`".
+    /// 
+    /// For a vararg function with 3 arguments, it will return "`3 + Int32(rest.count)`".
+    var argumentsCountSyntax: String {
+        var syntax = String(arguments?.count ?? 0)
+        if isVararg {
+            syntax.append(" + Int32(\(varargArgumentIdentifier).count)")
+        }
+        return syntax
     }
     
     /// Returns the declaration syntax of the function.
@@ -84,6 +101,13 @@ extension GodotFunction {
             
             return parameterString
         }.joined(separator: ", "))
+        
+        if isVararg {
+            functionHeader.append(", ")
+            functionHeader.append(varargArgumentIdentifier)
+            functionHeader.append(": Variant...")
+        }
+        
         functionHeader.append(")")
         
         if let returnType {
@@ -135,13 +159,24 @@ extension GodotFunction {
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let pointerName = "__accessPtr"
+        let varargPointerName = "__ptr_" + varargArgumentIdentifier
         
         return try argumentsPointerAccessSyntax { pointerNames in
-            DeclSyntax("withUnsafeArgumentPointer(\(raw: pointerNames.joined(separator: ", "))) { \(raw: pointerName) in")
-            
-            try bodyBuilder(pointerName)
-            
-            DeclSyntax("}")
+            if isVararg {
+                DeclSyntax("withUnsafeGodotAccessVarargsPointer(to: \(raw: varargArgumentIdentifier)) { \(raw: varargPointerName) in")
+                DeclSyntax("withUnsafeArgumentPointer(\(raw: (pointerNames + [varargPointerName]).joined(separator: ", "))) { \(raw: pointerName) in")
+                
+                try bodyBuilder(pointerName)
+                
+                DeclSyntax("}")
+                DeclSyntax("}")
+            } else {
+                DeclSyntax("withUnsafeArgumentPointer(\(raw: pointerNames.joined(separator: ", "))) { \(raw: pointerName) in")
+                
+                try bodyBuilder(pointerName)
+                
+                DeclSyntax("}")
+            }
         }
     }
     

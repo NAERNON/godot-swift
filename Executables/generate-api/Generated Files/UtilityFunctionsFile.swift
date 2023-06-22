@@ -13,7 +13,7 @@ extension GeneratedFile {
                     DeclSyntax("var _function_name: StringName!")
                     for function in functions {
                         ExprSyntax("""
-                        _function_name = "\(raw: function.name)"
+                        _function_name = "\(raw: function.baseName)"
                         withUnsafeGodotMutableAccessPointer(to: &_function_name) { __ptr__function_name in
                             \(raw: function.functionPtrSyntax) = GodotExtension.interface.variant_get_ptr_utility_function(__ptr__function_name, \(raw: function.hash))
                         }
@@ -31,21 +31,42 @@ extension GeneratedFile {
     private static func functionSyntax(_ function: GodotUtilityFunction) throws -> FunctionDeclSyntax {
         let options: GodotSyntaxOptions = .floatAsDouble
         
-        let countString = String(function.arguments?.count ?? 0)
-        
         return try function.declSyntax(options: options) {
             if let returnType = function.returnType {
-                try returnType.instantiationSyntax(options: options) { instanceName in
-                    try function.argumentsPackPointerAccessSyntax { packName in
+                try returnType.instantiationSyntax(isGodotObject: false, options: options) { instanceName in
+                    if function.arguments?.count ?? 0 > 0 {
+                        try function.argumentsPackPointerAccessSyntax { packName in
+                            try returnType.pointerAccessSyntax(
+                                instanceName: instanceName,
+                                mutability: .mutable
+                            ) { instancePointerName in
+                                DeclSyntax("""
+                            UtilityFunctions.\(raw: function.functionPtrSyntax)(\(raw: instancePointerName), \(raw: packName), \(raw: function.argumentsCountSyntax))
+                            """)
+                            }
+                        }
+                    } else {
                         try returnType.pointerAccessSyntax(
                             instanceName: instanceName,
                             mutability: .mutable
                         ) { instancePointerName in
                             DeclSyntax("""
-                            UtilityFunctions.\(raw: function.functionPtrSyntax)(\(raw: instancePointerName), \(raw: packName), \(raw: countString))
+                            UtilityFunctions.\(raw: function.functionPtrSyntax)(\(raw: instancePointerName), nil, \(raw: function.argumentsCountSyntax))
                             """)
                         }
                     }
+                }
+            } else {
+                if function.arguments?.count ?? 0 > 0 {
+                    try function.argumentsPackPointerAccessSyntax { packName in
+                        DeclSyntax("""
+                        UtilityFunctions.\(raw: function.functionPtrSyntax)(nil, \(raw: packName), \(raw: function.argumentsCountSyntax))
+                        """)
+                    }
+                } else {
+                    DeclSyntax("""
+                    UtilityFunctions.\(raw: function.functionPtrSyntax)(nil, nil, \(raw: function.argumentsCountSyntax))
+                    """)
                 }
             }
         }
