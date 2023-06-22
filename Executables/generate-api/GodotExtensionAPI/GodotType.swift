@@ -1,5 +1,6 @@
 import Foundation
 import SwiftSyntax
+import SwiftSyntaxBuilder
 
 /// A representation of a Godot type.
 ///
@@ -132,7 +133,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         self.init(cTypeSyntax: value)
     }
     
-    // MARK: Tools
+    // MARK: Access
     
     static let variant: GodotType = "Variant"
     
@@ -225,5 +226,79 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
                 return pointerString + "<" + pointedType + ">"
             }
         }
+    }
+    
+    /// Returns the syntax for instantiating the type and returning it.
+    ///
+    /// Use the `bodyBuilder` parameter to use the instantiated variable name.
+    /// For example:
+    /// ```swift
+    /// let type: GodotType = ...
+    ///
+    /// type.instantiationSyntax { name in
+    ///     DeclSyntax("print(\(raw: name))")
+    /// }
+    /// ```
+    ///
+    /// Returns for an `Int` type:
+    ///
+    /// ```swift
+    /// var __temporary = Int()
+    ///
+    /// print(__temporary)
+    ///
+    /// return __temporary
+    /// ```
+    @CodeBlockItemListBuilder
+    func instantiationSyntax(
+        options: GodotSyntaxOptions = [],
+        @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
+    ) throws -> CodeBlockItemListSyntax {
+        let variableName = "__temporary"
+        
+        DeclSyntax("var \(raw: variableName) = \(raw: syntax(options: options))()")
+        
+        try bodyBuilder(variableName)
+        
+        DeclSyntax("return \(raw: variableName)")
+    }
+    
+    /// The mutability of a type.
+    enum Mutability {
+        /// The parameter is not mutable.
+        case const
+        /// The parameter is mutable.
+        case mutable
+        /// The parameter is not mutable, but its pointer is mutable.
+        case constMutablePointer
+    }
+    
+    /// Returns a syntax for accessing the pointer of an instance of the type.
+    ///
+    /// - Parameters:
+    ///   - instanceName: The name of the instance.
+    ///   - mutability: The mutability of the instance.
+    ///   - bodyBuilder: The content syntax to access the pointer.
+    ///   Use the value provided inside the closure to retreive the pointer name.
+    @CodeBlockItemListBuilder
+    func pointerAccessSyntax(
+        instanceName: String,
+        mutability: Mutability = .const,
+        @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
+    ) throws -> CodeBlockItemListSyntax {
+        let pointerName = "__ptr_" + instanceName
+        
+        switch mutability {
+        case .const:
+            DeclSyntax("withUnsafeGodotAccessPointer(to: \(raw: instanceName)) { \(raw: pointerName) in")
+        case .mutable:
+            DeclSyntax("withUnsafeGodotMutableAccessPointer(to: &\(raw: instanceName)) { \(raw: pointerName) in")
+        case .constMutablePointer:
+            DeclSyntax("withUnsafeGodotMutableConstAccessPointer(to: \(raw: instanceName)) { \(raw: pointerName) in")
+        }
+        
+        try bodyBuilder(pointerName)
+        
+        DeclSyntax("}")
     }
 }
