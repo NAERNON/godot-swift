@@ -40,6 +40,7 @@ struct APIGeneration: ParsableCommand {
             try GeneratedFile.realRawValue(type: buildConfiguration.floatingPointType),
             try GeneratedFile.variantSize(extensionAPI, for: buildConfiguration),
             try GeneratedFile.utilityFunctions(extensionAPI),
+            try GeneratedFile.setBindings(extensionAPI),
         ]
         
         print("Generating files...")

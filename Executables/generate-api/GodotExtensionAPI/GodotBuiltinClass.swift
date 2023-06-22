@@ -48,4 +48,10 @@ struct GodotBuiltinClass: Decodable {
         var index: Int
         var arguments: [GodotArgument]?
     }
+    
+    // MARK: Access
+    
+    var identifier: String {
+        name.syntax()
+    }
 }
