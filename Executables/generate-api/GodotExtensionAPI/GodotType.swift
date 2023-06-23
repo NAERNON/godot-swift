@@ -173,7 +173,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// This function translates the type to Swift.
     ///
     /// - parameter options: The options to define how to translate the type.
-    func syntax(options: GodotSyntaxOptions = []) -> String {
+    func syntax(options: GodotTypeSyntaxOptions = []) -> String {
         switch self {
         case .base(let string):
             switch string {
@@ -252,7 +252,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     @CodeBlockItemListBuilder
     func instantiationSyntax(
         isGodotObject: Bool,
-        options: GodotSyntaxOptions = [],
+        options: GodotTypeSyntaxOptions = [],
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let variableName = "__temporary"

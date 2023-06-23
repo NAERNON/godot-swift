@@ -7,8 +7,11 @@ import CodeTranslator
 /// Conform your type to the protocol to gain access
 /// to usefull syntax declarations.
 protocol GodotFunction {
+    /// The name of the function, using C naming conventions.
     var name: String { get }
+    
     var arguments: [GodotArgument]? { get }
+    
     var returnType: GodotType? { get }
     
     var isVararg: Bool { get }
@@ -71,7 +74,8 @@ extension GodotFunction {
     
     /// Returns the declaration syntax of the function.
     func declSyntax(
-        options: GodotSyntaxOptions = [],
+        hideAllLabels: Bool = false,
+        options: GodotTypeSyntaxOptions = [],
         @CodeBlockItemListBuilder bodyBuilder: () throws -> CodeBlockItemListSyntax
     ) throws -> FunctionDeclSyntax {
         let arguments = self.arguments ?? []
@@ -90,7 +94,7 @@ extension GodotFunction {
             let argument = arguments[index]
             var parameterString = ""
             
-            if parameter.isLabelHidden {
+            if parameter.isLabelHidden || hideAllLabels {
                 parameterString.append("_ ")
             } else if let label = parameter.label {
                 parameterString.append(label)

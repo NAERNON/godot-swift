@@ -31,7 +31,7 @@ extension GeneratedFile {
     private static func functionSyntax(
         _ function: GodotUtilityFunction,
         extensionAPI: GodotExtensionAPI) throws -> FunctionDeclSyntax {
-        let options: GodotSyntaxOptions = .floatAsDouble
+        let options: GodotTypeSyntaxOptions = .floatAsDouble
         
         return try function.declSyntax(options: options) {
             if let returnType = function.returnType {
