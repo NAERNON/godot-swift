@@ -24,7 +24,7 @@ struct GodotEnum: Decodable {
         var value: T
     }
     
-    // MARK: Syntax
+    // MARK: - Syntax
     
     func syntax() -> DeclSyntax {
         if isBitfield == true {

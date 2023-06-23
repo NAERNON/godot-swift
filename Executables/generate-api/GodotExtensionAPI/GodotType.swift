@@ -8,7 +8,7 @@ import SwiftSyntaxBuilder
 indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLiteral {
     // MARK: Cases
     
-    /// The base of a `GodotType`, written using C conventions.
+    /// The base of a `GodotType`.
     ///
     /// In order to define a type named "`some_class`", use:
     /// ```swift
@@ -166,7 +166,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         }
     }
     
-    // MARK: Syntax
+    // MARK: - Syntax
     
     /// Returns the syntax of the type.
     ///

@@ -38,7 +38,7 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
         self.arguments = try container.decodeIfPresent([GodotArgument].self, forKey: .arguments)
     }
     
-    // MARK: Syntax
+    // MARK: - Syntax
     
     var functionPtrSyntax: String {
         "__function_binding_\(baseName)"

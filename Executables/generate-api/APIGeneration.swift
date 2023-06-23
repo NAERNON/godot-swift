@@ -35,13 +35,15 @@ struct APIGeneration: ParsableCommand {
             try fileManager.removeItem(atPath: generatedFolderURL.path)
         }
         
-        let godotFiles = [
+        let godotFiles = try [
             try GeneratedFile.globalEnum(extensionAPI),
             try GeneratedFile.realRawValue(type: buildConfiguration.floatingPointType),
-            try GeneratedFile.variantSize(extensionAPI, for: buildConfiguration),
+            try GeneratedFile.variantSize(extensionAPI, with: buildConfiguration),
             try GeneratedFile.utilityFunctions(extensionAPI),
             try GeneratedFile.setBindings(extensionAPI),
-        ]
+        ] + extensionAPI.builtinClasses.map {
+            try GeneratedFile.builtinClass(extensionAPI, for: $0, with: buildConfiguration)
+        }
         
         print("Generating files...")
         let generationStart = Date()

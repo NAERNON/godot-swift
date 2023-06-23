@@ -7,7 +7,7 @@ extension GeneratedFile {
     
     static func variantSize(
         _ extensionAPI: GodotExtensionAPI,
-        for configuration: BuildConfiguration
+        with configuration: BuildConfiguration
     ) throws -> GeneratedFile {
         guard let classSize = extensionAPI.builtinClassSizes.size(
             ofClass: .variant,

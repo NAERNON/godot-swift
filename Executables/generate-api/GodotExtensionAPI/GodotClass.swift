@@ -33,7 +33,7 @@ struct GodotClass: Decodable {
         }
     }
     
-    // MARK: Access
+    // MARK: - Syntax
     
     var identifier: String {
         name.syntax()

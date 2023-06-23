@@ -29,7 +29,7 @@ extension GodotFunction {
 // MARK: - Extensions
 
 extension GodotFunction {
-    // MARK: Syntax
+    // MARK: - Syntax
     
     private var translatedFunction: (name: String, parameters: [FunctionParameter]) {
         CodeLanguage.c.translateFunction(
@@ -59,7 +59,7 @@ extension GodotFunction {
     /// Returns the syntax for the number of arguments.
     ///
     /// For a function with 3 arguments, it will return "`3`".
-    /// 
+    ///
     /// For a vararg function with 3 arguments, it will return "`3 + Int32(rest.count)`".
     var argumentsCountSyntax: String {
         var syntax = String(arguments?.count ?? 0)
@@ -77,7 +77,13 @@ extension GodotFunction {
         let arguments = self.arguments ?? []
         let functionParameters = translatedFunction.parameters
         
-        var functionHeader = "func "
+        var functionHeader = String()
+        
+        if isStatic {
+            functionHeader.append("static ")
+        }
+        
+        functionHeader.append("func ")
         functionHeader.append(syntaxIdentifier())
         functionHeader.append("(")
         functionHeader.append(functionParameters.enumerated().map { (index, parameter) in
@@ -140,6 +146,12 @@ extension GodotFunction {
     
     /// Returns a pack of all the arguments pointers of the function.
     ///
+    /// - Parameters:
+    ///   - forcePackCreation: A Boolean value indicating whether the
+    ///   pack sould be created,
+    ///   even if no argument is inside the pack.
+    ///   - bodyBuilder: The content syntax.
+    ///
     /// Use this to access all the arguments pointers in the function
     /// grouped in a pack.
     /// The `bodyBuilder` provides an argument giving the
@@ -155,25 +167,34 @@ extension GodotFunction {
     ///     }
     /// }
     /// ```
+    ///
+    /// If no argument is available in the pack, and if `forcePackCreation` is at `false`,
+    /// no pack is created, and a "`nil`" String will be given in the closure.
     func argumentsPackPointerAccessSyntax(
+        forcePackCreation: Bool = false,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
-        let pointerName = "__accessPtr"
+        let packName = "__accessPtr"
         let varargPointerName = "__ptr_" + varargArgumentIdentifier
+        
+        // No argument and vararg. Return no pack is created.
+        if !forcePackCreation && (arguments == nil || arguments?.isEmpty == true) && !isVararg {
+            return try bodyBuilder("nil")
+        }
         
         return try argumentsPointerAccessSyntax { pointerNames in
             if isVararg {
                 DeclSyntax("withUnsafeGodotAccessVarargsPointer(to: \(raw: varargArgumentIdentifier)) { \(raw: varargPointerName) in")
-                DeclSyntax("withUnsafeArgumentPointer(\(raw: (pointerNames + [varargPointerName]).joined(separator: ", "))) { \(raw: pointerName) in")
+                DeclSyntax("withUnsafeArgumentPointer(\(raw: (pointerNames + [varargPointerName]).joined(separator: ", "))) { \(raw: packName) in")
                 
-                try bodyBuilder(pointerName)
+                try bodyBuilder(packName)
                 
                 DeclSyntax("}")
                 DeclSyntax("}")
             } else {
-                DeclSyntax("withUnsafeArgumentPointer(\(raw: pointerNames.joined(separator: ", "))) { \(raw: pointerName) in")
+                DeclSyntax("withUnsafeArgumentPointer(\(raw: pointerNames.joined(separator: ", "))) { \(raw: packName) in")
                 
-                try bodyBuilder(pointerName)
+                try bodyBuilder(packName)
                 
                 DeclSyntax("}")
             }

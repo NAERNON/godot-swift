@@ -39,38 +39,21 @@ extension GeneratedFile {
                     isGodotObject: extensionAPI.typeIsGodotClass(returnType),
                     options: options
                 ) { instanceName in
-                    if function.arguments?.count ?? 0 > 0 {
-                        try function.argumentsPackPointerAccessSyntax { packName in
-                            try returnType.pointerAccessSyntax(
-                                instanceName: instanceName,
-                                mutability: .mutable
-                            ) { instancePointerName in
-                                DeclSyntax("""
-                            UtilityFunctions.\(raw: function.functionPtrSyntax)(\(raw: instancePointerName), \(raw: packName), \(raw: function.argumentsCountSyntax))
-                            """)
-                            }
-                        }
-                    } else {
+                    try function.argumentsPackPointerAccessSyntax { packName in
                         try returnType.pointerAccessSyntax(
                             instanceName: instanceName,
                             mutability: .mutable
                         ) { instancePointerName in
                             DeclSyntax("""
-                            UtilityFunctions.\(raw: function.functionPtrSyntax)(\(raw: instancePointerName), nil, \(raw: function.argumentsCountSyntax))
+                            UtilityFunctions.\(raw: function.functionPtrSyntax)(\(raw: instancePointerName), \(raw: packName), \(raw: function.argumentsCountSyntax))
                             """)
                         }
                     }
                 }
             } else {
-                if function.arguments?.count ?? 0 > 0 {
-                    try function.argumentsPackPointerAccessSyntax { packName in
-                        DeclSyntax("""
-                        UtilityFunctions.\(raw: function.functionPtrSyntax)(nil, \(raw: packName), \(raw: function.argumentsCountSyntax))
-                        """)
-                    }
-                } else {
+                try function.argumentsPackPointerAccessSyntax { packName in
                     DeclSyntax("""
-                    UtilityFunctions.\(raw: function.functionPtrSyntax)(nil, nil, \(raw: function.argumentsCountSyntax))
+                    UtilityFunctions.\(raw: function.functionPtrSyntax)(nil, \(raw: packName), \(raw: function.argumentsCountSyntax))
                     """)
                 }
             }
