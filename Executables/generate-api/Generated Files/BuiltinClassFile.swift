@@ -48,6 +48,14 @@ extension GeneratedFile {
         classSize: Int,
         extensionAPI: GodotExtensionAPI
     ) throws -> MemberDeclListSyntax {
+        let options: GodotTypeSyntaxOptions = if builtinClass.name == "Color" {
+            []
+        } else if useOpaque {
+            [.floatAsDouble]
+        } else {
+            [.floatAsReal]
+        }
+        
         builtinClass.constantsSyntax()
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
@@ -56,19 +64,19 @@ extension GeneratedFile {
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         
-        try builtinClass.constructorsSyntax(useOpaque: useOpaque, classSize: classSize)
+        try builtinClass.constructorsSyntax(useOpaque: useOpaque, classSize: classSize, options: options)
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         
-        try builtinClass.operatorsSyntax()
+        try builtinClass.operatorsSyntax(options: options)
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         
-        try builtinClass.getterSetterSyntax()
+        try builtinClass.getterSetterSyntax(useOpaque: useOpaque, options: options)
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         
-        try builtinClass.methodsSyntax(extensionAPI: extensionAPI)
+        try builtinClass.methodsSyntax(extensionAPI: extensionAPI, options: options)
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         

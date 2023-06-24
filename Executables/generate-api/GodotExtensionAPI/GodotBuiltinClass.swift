@@ -72,7 +72,7 @@ struct GodotBuiltinClass: Decodable {
         var ptrSyntax: String {
             var name = "__operator_binding_" + identifier
             if let rightType {
-                name += "_" + rightType.syntax()
+                name += "_" + rightType.syntax(options: [.floatAsDouble])
             }
             
             return name.lowercased()
@@ -95,7 +95,11 @@ struct GodotBuiltinClass: Decodable {
         }
         
         var isMutating: Bool {
-            !isConst
+            !isConst && !isStatic
+        }
+        
+        var isResultDiscardable: Bool {
+            isMutating && returnType != nil
         }
     }
     
@@ -150,7 +154,8 @@ struct GodotBuiltinClass: Decodable {
     @MemberDeclListBuilder
     func constructorsSyntax(
         useOpaque: Bool,
-        classSize: Int
+        classSize: Int,
+        options: GodotTypeSyntaxOptions
     ) throws -> MemberDeclListSyntax {
         if useOpaque {
             try InitializerDeclSyntax("private init(opaque: Opaque)") {
@@ -159,7 +164,7 @@ struct GodotBuiltinClass: Decodable {
         }
         
         for constructor in constructors {
-            try constructorSyntax(constructor, useOpaque: useOpaque, classSize: classSize)
+            try constructorSyntax(constructor, useOpaque: useOpaque, classSize: classSize, options: options)
                 .with(\.trailingTrivia, .newlines(2))
         }
     }
@@ -167,9 +172,10 @@ struct GodotBuiltinClass: Decodable {
     private func constructorSyntax(
         _ constructor: Constructor,
         useOpaque: Bool,
-        classSize: Int
+        classSize: Int,
+        options: GodotTypeSyntaxOptions
     ) throws -> FunctionDeclSyntax {
-        try constructor.declSyntax {
+        try constructor.declSyntax(options: options) {
             let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
             
             if useOpaque {
@@ -193,19 +199,20 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    func operatorsSyntax() throws -> MemberDeclListSyntax {
+    func operatorsSyntax(options: GodotTypeSyntaxOptions) throws -> MemberDeclListSyntax {
         for `operator` in operators {
-            try operatorSyntax(`operator`)
+            try operatorSyntax(`operator`, options: options)
                 .with(\.trailingTrivia, .newlines(2))
         }
     }
     
     private func operatorSyntax(
-        _ `operator`: Operator
+        _ `operator`: Operator,
+        options: GodotTypeSyntaxOptions
     ) throws -> FunctionDeclSyntax {
         let operatorFunction = OperatorFunction(operator: `operator`, type: name)
         
-        return try operatorFunction.declSyntax(hideAllLabels: true) {
+        return try operatorFunction.declSyntax(hideAllLabels: true, options: options) {
             try `operator`.returnType.instantiationSyntax(isGodotObject: false) { instanceName in
                 try operatorFunction.argumentsPointerAccessSyntax { pointerNames in
                     try name.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtrName in
@@ -222,7 +229,10 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    func getterSetterSyntax() throws -> MemberDeclListSyntax {
+    func getterSetterSyntax(
+        useOpaque: Bool,
+        options: GodotTypeSyntaxOptions
+    ) throws -> MemberDeclListSyntax {
         if let indexingReturnType, !isKeyed {
             try FunctionDeclSyntax("func _getValue(at index: GDExtensionInt) -> \(raw: indexingReturnType.syntax())") {
                 try indexingReturnType.instantiationSyntax(isGodotObject: false) { instanceName in
@@ -234,8 +244,10 @@ struct GodotBuiltinClass: Decodable {
                 }
             }.addModifier(.init(name: .keyword(.internal)))
             
-            try FunctionDeclSyntax("mutating func _setValue(_ value: \(raw: indexingReturnType.syntax()), at index: GDExtensionInt)") {
-                DeclSyntax("replaceOpaqueValueIfNecessary()")
+            try FunctionDeclSyntax("mutating func _setValue(_ value: \(raw: indexingReturnType.syntax(options: options)), at index: GDExtensionInt)") {
+                if useOpaque {
+                    DeclSyntax("replaceOpaqueValueIfNecessary()")
+                }
                 
                 try indexingReturnType.pointerAccessSyntax(instanceName: "value") { valuePtr in
                     try name.pointerAccessSyntax(instanceName: "self", mutability: .mutable) { selfPtr in
@@ -247,10 +259,13 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    func methodsSyntax(extensionAPI: GodotExtensionAPI) throws -> MemberDeclListSyntax {
+    func methodsSyntax(
+        extensionAPI: GodotExtensionAPI,
+        options: GodotTypeSyntaxOptions = []
+    ) throws -> MemberDeclListSyntax {
         if let methods {
             for method in methods {
-                try methodSyntax(method, extensionAPI: extensionAPI)
+                try methodSyntax(method, options: options, extensionAPI: extensionAPI)
                     .with(\.trailingTrivia, .newlines(2))
             }
         }
@@ -258,29 +273,48 @@ struct GodotBuiltinClass: Decodable {
     
     private func methodSyntax(
         _ method: Method,
+        options: GodotTypeSyntaxOptions,
         extensionAPI: GodotExtensionAPI
     ) throws -> FunctionDeclSyntax {
         let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
         
-        return try method.declSyntax(underscoreName: true) {
+        let functionDecl = try method.declSyntax(underscoreName: true, options: options) {
             if let returnType = method.returnType {
-                try returnType.instantiationSyntax(isGodotObject: extensionAPI.typeIsGodotClass(returnType)) { instanceName in
+                try returnType.instantiationSyntax(
+                    isGodotObject: extensionAPI.typeIsGodotClass(returnType),
+                    options: options
+                ) { instanceName in
                     try method.argumentsPackPointerAccessSyntax { packName in
-                        try name.pointerAccessSyntax(instanceName: "self", mutability: mutability) { selfPtr in
-                            try returnType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
-                                DeclSyntax("Self.\(raw: method.ptrSyntax)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax))")
+                        try returnType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
+                            if method.isStatic {
+                                DeclSyntax("Self.\(raw: method.ptrSyntax)(nil, \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax))")
+                            } else {
+                                try name.pointerAccessSyntax(instanceName: "self", mutability: mutability) { selfPtr in
+                                    DeclSyntax("Self.\(raw: method.ptrSyntax)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax))")
+                                }
                             }
                         }
                     }
                 }
             } else {
                 try method.argumentsPackPointerAccessSyntax { packName in
-                    try name.pointerAccessSyntax(instanceName: "self", mutability: mutability) { selfPtr in
-                        DeclSyntax("Self.\(raw: method.ptrSyntax)(\(raw: selfPtr), \(raw: packName), nil, \(raw: method.argumentsCountSyntax))")
+                    if method.isStatic {
+                        DeclSyntax("Self.\(raw: method.ptrSyntax)(nil, \(raw: packName), nil, \(raw: method.argumentsCountSyntax))")
+                    } else {
+                        try name.pointerAccessSyntax(instanceName: "self", mutability: mutability) { selfPtr in
+                            DeclSyntax("Self.\(raw: method.ptrSyntax)(\(raw: selfPtr), \(raw: packName), nil, \(raw: method.argumentsCountSyntax))")
+                        }
                     }
                 }
             }
-        }.addModifier(.init(name: .keyword(.internal)))
+        }
+        .addModifier(.init(name: .keyword(.internal)))
+        
+        if method.isResultDiscardable {
+            return functionDecl.addAttribute(.init(AttributeSyntax(atSignToken: .atSignToken(), attributeName: SimpleTypeIdentifierSyntax(name: .identifier("discardableResult")))))
+        } else {
+            return functionDecl
+        }
     }
     
     @MemberDeclListBuilder
@@ -364,15 +398,15 @@ struct GodotBuiltinClass: Decodable {
         
         private(set) var opaque: Opaque
         
-        func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> ()) {
+        internal func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> ()) {
             opaque.withUnsafeMutableRawPointer(body)
         }
         
-        func opaqueIsZero() -> Bool {
+        internal func opaqueIsZero() -> Bool {
             opaque.isZero()
         }
         
-        var opaqueDescription: Swift.String {
+        internal var opaqueDescription: Swift.String {
             opaque.debugDescription
         }
         """)

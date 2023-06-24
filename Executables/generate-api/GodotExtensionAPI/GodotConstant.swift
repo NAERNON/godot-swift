@@ -24,6 +24,10 @@ struct GodotConstant: Decodable, Equatable {
     // MARK: - Syntax
     
     func syntax() -> String {
+        if string == "null" {
+            return "nil"
+        }
+        
         let (type, parameters) = decomposeInitParameters()
         
         switch type {

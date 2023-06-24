@@ -122,7 +122,9 @@ extension GodotFunction {
         }.joined(separator: ", "))
         
         if isVararg {
-            functionHeader.append(", ")
+            if !arguments.isEmpty {
+                functionHeader.append(", ")
+            }
             functionHeader.append(varargArgumentIdentifier)
             functionHeader.append(": Variant...")
         }
