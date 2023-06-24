@@ -30,6 +30,14 @@ extension GeneratedFile {
                     )
                 }
             }
+            
+            DeclSyntax("""
+            extension \(raw: builtinClass.name.syntax()): CustomDebugStringConvertible {
+                public var debugDescription: Swift.String {
+                    Variant(self).debugDescription
+                }
+            }
+            """).with(\.leadingTrivia, .newlines(2))
         }
     }
     
@@ -75,5 +83,9 @@ extension GeneratedFile {
         try builtinClass.setFunctionBindingsSyntax()
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
+        
+        if extensionAPI.typeIsBuiltinGodotClassWithOpaque(builtinClass.name) {
+            builtinClass.opaqueValueSyntax()
+        }
     }
 }

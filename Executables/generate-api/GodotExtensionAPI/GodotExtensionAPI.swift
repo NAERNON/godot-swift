@@ -96,4 +96,16 @@ struct GodotExtensionAPI: Decodable {
     func typeIsBuiltinGodotClassWithOpaque(_ type: GodotType) -> Bool {
         typeIsBuiltinGodotClass(type) && !typeIsBuiltinGodotClassWithoutOpaque(type)
     }
+    
+    func builtinClassesToGenerate() -> [GodotBuiltinClass] {
+        builtinClasses.filter { builtinClass in
+            switch builtinClass.name {
+            case "bool",
+                "float",
+                "int",
+                "Nil": false
+            default: true
+            }
+        }
+    }
 }

@@ -347,6 +347,36 @@ struct GodotBuiltinClass: Decodable {
             }
         }
     }
+    
+    func opaqueValueSyntax() -> DeclSyntax {
+        DeclSyntax("""
+        /// When a function modifies the opaque array or any value associated,
+        /// we should check that the `Opaque` value is uniquely referenced and if not,
+        /// duplicate its value.
+        private mutating func replaceOpaqueValueIfNecessary() {
+            guard !isKnownUniquelyReferenced(&opaque) else {
+                return
+            }
+            
+            let tmp = Self(self)
+            self.opaque = tmp.opaque
+        }
+        
+        private(set) var opaque: Opaque
+        
+        func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> ()) {
+            opaque.withUnsafeMutableRawPointer(body)
+        }
+        
+        func opaqueIsZero() -> Bool {
+            opaque.isZero()
+        }
+        
+        var opaqueDescription: Swift.String {
+            opaque.debugDescription
+        }
+        """)
+    }
 }
 
 // MARK: - OperatorFunction

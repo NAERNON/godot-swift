@@ -41,7 +41,7 @@ struct APIGeneration: ParsableCommand {
             GeneratedFile.variantSize(extensionAPI, with: buildConfiguration),
             GeneratedFile.utilityFunctions(extensionAPI),
             GeneratedFile.setBindings(extensionAPI),
-        ] + extensionAPI.builtinClasses.map {
+        ] + extensionAPI.builtinClassesToGenerate().map {
             GeneratedFile.builtinClass(extensionAPI, for: $0, with: buildConfiguration)
         }
         
