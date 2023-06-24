@@ -259,6 +259,51 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
+    func keyGetterSetterSyntax() -> MemberDeclListSyntax {
+        if isKeyed {
+            DeclSyntax("""
+            internal func _getValue(forKey key: Variant) -> Variant {
+                var __returnValue = Variant()
+                
+                withUnsafeGodotMutableAccessPointer(to: &__returnValue) { __ptr___returnValue in
+                    withUnsafeGodotAccessPointer(to: key) { __ptr_key in
+                        withUnsafeGodotAccessPointer(to: `self`) { __ptr_self in
+                            Self.__keyed_getter(__ptr_self, __ptr_key, __ptr___returnValue)
+                        }
+                    }
+                }
+                
+                return __returnValue
+            }
+            
+            internal mutating func _set(value: Variant, forKey key: Variant) {
+                replaceOpaqueValueIfNecessary()
+                
+                withUnsafeGodotAccessPointer(to: value) { __ptr_value in
+                    withUnsafeGodotAccessPointer(to: key) { __ptr_key in
+                        withUnsafeGodotMutableAccessPointer(to: &`self`) { __ptr_self in
+                            Self.__keyed_setter(__ptr_self, __ptr_key, __ptr_value)
+                        }
+                    }
+                }
+            }
+            
+            internal func _check(key: Variant) -> Bool {
+                var keyCheck = UInt32()
+                
+                withUnsafeGodotAccessPointer(to: key) { __ptr_key in
+                    withUnsafeGodotAccessPointer(to: `self`) { __ptr_self in
+                        keyCheck = Self.__keyed_checker(__ptr_self, __ptr_key)
+                    }
+                }
+                
+                return keyCheck != 0
+            }
+            """)
+        }
+    }
+    
+    @MemberDeclListBuilder
     func methodsSyntax(
         extensionAPI: GodotExtensionAPI,
         options: GodotTypeSyntaxOptions = []
@@ -332,6 +377,12 @@ struct GodotBuiltinClass: Decodable {
             DeclSyntax("private static var __indexed_getter: GDExtensionPtrIndexedGetter!")
         }
         
+        if isKeyed {
+            DeclSyntax("private static var __keyed_setter: GDExtensionPtrKeyedSetter!")
+            DeclSyntax("private static var __keyed_getter: GDExtensionPtrKeyedGetter!")
+            DeclSyntax("private static var __keyed_checker: GDExtensionPtrKeyedChecker!")
+        }
+        
         if let methods {
             for method in methods {
                 DeclSyntax("private static var \(raw: method.ptrSyntax): GDExtensionPtrBuiltInMethod!")
@@ -361,6 +412,14 @@ struct GodotBuiltinClass: Decodable {
                 DeclSyntax("""
                 __indexed_setter = GodotExtension.interface.variant_get_ptr_indexed_setter(\(raw: name.variantType!))
                 __indexed_getter = GodotExtension.interface.variant_get_ptr_indexed_getter(\(raw: name.variantType!))
+                """)
+            }
+            
+            if isKeyed {
+                DeclSyntax("""
+                __keyed_setter = GodotExtension.interface.variant_get_ptr_keyed_setter(\(raw: name.variantType!))
+                __keyed_getter = GodotExtension.interface.variant_get_ptr_keyed_getter(\(raw: name.variantType!))
+                __keyed_checker = GodotExtension.interface.variant_get_ptr_keyed_checker(\(raw: name.variantType!))
                 """)
             }
             
