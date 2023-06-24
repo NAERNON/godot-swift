@@ -5,8 +5,8 @@ extension GeneratedFile {
         _ extensionAPI: GodotExtensionAPI,
         for builtinClass: GodotBuiltinClass,
         with configuration: BuildConfiguration
-    ) throws -> GeneratedFile {
-        try .init(path: "Builtin Structs/" + builtinClass.identifier + "+Bindings.swift") {
+    ) -> GeneratedFile {
+        .init(path: "Builtin Structs/" + builtinClass.identifier + "+Bindings.swift") {
             let usesOpaque = extensionAPI.typeIsBuiltinGodotClassWithOpaque(builtinClass.name)
             
             try builtinClass.syntax(

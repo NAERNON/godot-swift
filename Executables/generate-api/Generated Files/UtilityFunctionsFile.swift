@@ -1,8 +1,8 @@
 import SwiftSyntax
 
 extension GeneratedFile {
-    static func utilityFunctions(_ extensionAPI: GodotExtensionAPI) throws -> GeneratedFile {
-        return try .init(path: "UtilityFunctions.swift") {
+    static func utilityFunctions(_ extensionAPI: GodotExtensionAPI) -> GeneratedFile {
+        return .init(path: "UtilityFunctions.swift") {
             for function in extensionAPI.utilityFunctions {
                 try functionSyntax(function, extensionAPI: extensionAPI)
                     .with(\.trailingTrivia, .newlines(2))

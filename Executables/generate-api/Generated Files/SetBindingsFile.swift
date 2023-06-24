@@ -8,8 +8,8 @@ private let baseTypes: Set<GodotType> = [
 ]
 
 extension GeneratedFile {
-    static func setBindings(_ extensionAPI: GodotExtensionAPI) throws -> GeneratedFile {
-        try .init(path: "SetBindings.swift") {
+    static func setBindings(_ extensionAPI: GodotExtensionAPI) -> GeneratedFile {
+        .init(path: "SetBindings.swift") {
             try ExtensionDeclSyntax("internal extension GodotExtension") {
                 try FunctionDeclSyntax("static func setBuiltinStructsBindings()") {
                     for builtinClass in extensionAPI.builtinClasses {

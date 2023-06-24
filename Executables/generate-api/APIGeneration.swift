@@ -35,14 +35,14 @@ struct APIGeneration: ParsableCommand {
             try fileManager.removeItem(atPath: generatedFolderURL.path)
         }
         
-        let godotFiles = try [
-            try GeneratedFile.globalEnum(extensionAPI),
-            try GeneratedFile.realRawValue(type: buildConfiguration.floatingPointType),
-            try GeneratedFile.variantSize(extensionAPI, with: buildConfiguration),
-            try GeneratedFile.utilityFunctions(extensionAPI),
-            try GeneratedFile.setBindings(extensionAPI),
+        let godotFiles = [
+            GeneratedFile.globalEnum(extensionAPI),
+            GeneratedFile.realRawValue(type: buildConfiguration.floatingPointType),
+            GeneratedFile.variantSize(extensionAPI, with: buildConfiguration),
+            GeneratedFile.utilityFunctions(extensionAPI),
+            GeneratedFile.setBindings(extensionAPI),
         ] + extensionAPI.builtinClasses.map {
-            try GeneratedFile.builtinClass(extensionAPI, for: $0, with: buildConfiguration)
+            GeneratedFile.builtinClass(extensionAPI, for: $0, with: buildConfiguration)
         }
         
         print("Generating files...")
@@ -81,7 +81,7 @@ struct APIGeneration: ParsableCommand {
         let fileURL = url.appending(path: file.path)
         
         guard !noWrite else {
-            _ = file.code()
+            _ = try file.code()
             return
         }
         
@@ -90,7 +90,7 @@ struct APIGeneration: ParsableCommand {
             try fileManager.createDirectory(atPath: filePathWithoutFileName.path, withIntermediateDirectories: true)
         }
         
-        guard let data = file.code().data(using: .utf8) else {
+        guard let data = try file.code().data(using: .utf8) else {
             throw ProcessError.cannotGenerateDataFromCode
         }
         

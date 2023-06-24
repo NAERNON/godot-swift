@@ -1,7 +1,7 @@
 import SwiftSyntax
 
 extension GeneratedFile {
-    static func realRawValue(type: BuildConfiguration.FloatingPointType) throws -> GeneratedFile {
+    static func realRawValue(type: BuildConfiguration.FloatingPointType) -> GeneratedFile {
         let floatingPointTypeString =
         switch type {
         case .float:
@@ -10,7 +10,7 @@ extension GeneratedFile {
             "Double"
         }
         
-        return try .init(path: "RealRawValue.swift") {
+        return .init(path: "RealRawValue.swift") {
             DeclSyntax("""
             extension Real {
                 /// The underlying type of a `Real` value.

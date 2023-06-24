@@ -1,22 +1,18 @@
 import SwiftSyntax
 
 extension GeneratedFile {
-    private enum VariantSizeFileError: Error {
-        case cannotRetreiveVariantClassSize
-    }
-    
     static func variantSize(
         _ extensionAPI: GodotExtensionAPI,
         with configuration: BuildConfiguration
-    ) throws -> GeneratedFile {
+    ) -> GeneratedFile {
         guard let classSize = extensionAPI.builtinClassSizes.size(
             ofClass: .variant,
             for: configuration
         ) else {
-            throw VariantSizeFileError.cannotRetreiveVariantClassSize
+            fatalError("Cannot rtreive variant class size.")
         }
         
-        return try .init(path: "VariantSize.swift") {
+        return .init(path: "VariantSize.swift") {
             DeclSyntax("""
             extension Variant {
                 internal static let opaqueSize: Int = \(raw: classSize)

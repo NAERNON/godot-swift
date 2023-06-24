@@ -10,14 +10,14 @@ struct GeneratedFile {
     let path: String
     
     /// The code statements in the file.
-    let statements: CodeBlockItemListSyntax
+    let statementsBuilder: () throws -> CodeBlockItemListSyntax
     
     init(
         path: String,
-        @CodeBlockItemListBuilder statementsBuilder: () throws -> CodeBlockItemListSyntax
-    ) throws {
+        @CodeBlockItemListBuilder statementsBuilder: @escaping () throws -> CodeBlockItemListSyntax
+    ) {
         self.path = path
-        statements = try statementsBuilder()
+        self.statementsBuilder = statementsBuilder
     }
     
     /// The file URL.
@@ -31,23 +31,23 @@ struct GeneratedFile {
     }
     
     /// The source file syntax.
-    var syntax: SourceFileSyntax {
-        SourceFileSyntax {
-            statements
+    func syntax() throws -> SourceFileSyntax {
+        try SourceFileSyntax {
+            try statementsBuilder()
         }
     }
     
     /// The formatted code of the file.
     ///
     /// A header is generated to warn the user that this file is generated.
-    func code() -> String {
-        """
+    func code() throws -> String {
+        try """
         //
         // THIS FILE IS GENERATED. EDITS WILL BE LOST.
         //
         
         
         """ +
-        syntax.formatted().description
+        syntax().formatted().description
     }
 }
