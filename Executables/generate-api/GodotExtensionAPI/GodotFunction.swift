@@ -74,6 +74,7 @@ extension GodotFunction {
     
     /// Returns the declaration syntax of the function.
     func declSyntax(
+        underscoreName: Bool = false,
         hideAllLabels: Bool = false,
         options: GodotTypeSyntaxOptions = [],
         @CodeBlockItemListBuilder bodyBuilder: () throws -> CodeBlockItemListSyntax
@@ -86,8 +87,16 @@ extension GodotFunction {
         if isStatic {
             functionHeader.append("static ")
         }
+        if isMutating {
+            functionHeader.append("mutating ")
+        }
         
         functionHeader.append("func ")
+        
+        if underscoreName {
+            functionHeader.append("_")
+        }
+        
         functionHeader.append(syntaxIdentifier())
         functionHeader.append("(")
         functionHeader.append(functionParameters.enumerated().map { (index, parameter) in
@@ -100,7 +109,7 @@ extension GodotFunction {
                 parameterString.append(label)
                 parameterString.append(" ")
             }
-            parameterString.append(parameter.name)
+            parameterString.append(CodeLanguage.swift.protectNameIfKeyword(for: parameter.name))
             parameterString.append(": ")
             parameterString.append(argument.type.syntax(options: options))
             

@@ -12,7 +12,8 @@ extension GeneratedFile {
             try builtinClass.syntax(
                 extensionInsteadOfStructDecl: !usesOpaque,
                 useOpaque: usesOpaque,
-                classSize: extensionAPI.builtinClassSizes.size(ofClass: builtinClass.name, for: configuration)!
+                classSize: extensionAPI.builtinClassSizes.size(ofClass: builtinClass.name, for: configuration)!,
+                extensionAPI: extensionAPI
             )
         }
     }

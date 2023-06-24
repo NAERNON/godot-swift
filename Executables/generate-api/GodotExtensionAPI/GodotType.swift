@@ -1,6 +1,7 @@
 import Foundation
 import SwiftSyntax
 import SwiftSyntaxBuilder
+import CodeTranslator
 
 /// A representation of a Godot type.
 ///
@@ -296,6 +297,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let pointerName = "__ptr_" + instanceName
+        let instanceName = CodeLanguage.swift.protectNameIfKeyword(for: instanceName)
         
         switch mutability {
         case .const:
