@@ -128,74 +128,7 @@ struct GodotBuiltinClass: Decodable {
         name.syntax()
     }
     
-    @CodeBlockItemListBuilder
-    func syntax(
-        extensionInsteadOfStructDecl: Bool,
-        useOpaque: Bool,
-        classSize: Int,
-        extensionAPI: GodotExtensionAPI
-    ) throws -> CodeBlockItemListSyntax {
-        let body = try bodySyntax(
-            useOpaque: useOpaque,
-            classSize: classSize,
-            extensionAPI: extensionAPI
-        )
-        
-        if extensionInsteadOfStructDecl {
-            try ExtensionDeclSyntax("public extension \(raw: identifier)") {
-                body
-            }
-        } else {
-            try StructDeclSyntax("public struct \(raw: identifier)") {
-                body
-            }
-        }
-    }
-    
-    @MemberDeclListBuilder
-    private func bodySyntax(
-        useOpaque: Bool,
-        classSize: Int,
-        extensionAPI: GodotExtensionAPI
-    ) throws -> MemberDeclListSyntax {
-        constantsSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        enumSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try constructorsSyntax(useOpaque: useOpaque, classSize: classSize)
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try operatorsSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try getterSetterSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try methodsSyntax(extensionAPI: extensionAPI)
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        propertiesBindingsSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try setInitializersBindingsSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try setFunctionBindingsSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-    }
-    
-    private func constantsSyntax() -> DeclSyntax {
+    func constantsSyntax() -> DeclSyntax {
         let constantsSyntaxes: [String] = constants?.map { constant in
             let name = NamingConvention.snake.convert(constant.name.lowercased(), to: .camel)
             
@@ -206,7 +139,7 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    private func enumSyntax() -> MemberDeclListSyntax {
+    func enumSyntax() -> MemberDeclListSyntax {
         if let enums {
             for `enum` in enums {
                 `enum`.syntax()
@@ -215,7 +148,7 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    private func constructorsSyntax(
+    func constructorsSyntax(
         useOpaque: Bool,
         classSize: Int
     ) throws -> MemberDeclListSyntax {
@@ -260,7 +193,7 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    private func operatorsSyntax() throws -> MemberDeclListSyntax {
+    func operatorsSyntax() throws -> MemberDeclListSyntax {
         for `operator` in operators {
             try operatorSyntax(`operator`)
                 .with(\.trailingTrivia, .newlines(2))
@@ -289,7 +222,7 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    private func getterSetterSyntax() throws -> MemberDeclListSyntax {
+    func getterSetterSyntax() throws -> MemberDeclListSyntax {
         if let indexingReturnType, !isKeyed {
             try FunctionDeclSyntax("func _getValue(at index: GDExtensionInt) -> \(raw: indexingReturnType.syntax())") {
                 try indexingReturnType.instantiationSyntax(isGodotObject: false) { instanceName in
@@ -314,7 +247,7 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    private func methodsSyntax(extensionAPI: GodotExtensionAPI) throws -> MemberDeclListSyntax {
+    func methodsSyntax(extensionAPI: GodotExtensionAPI) throws -> MemberDeclListSyntax {
         if let methods {
             for method in methods {
                 try methodSyntax(method, extensionAPI: extensionAPI)
@@ -351,7 +284,7 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    private func propertiesBindingsSyntax() -> MemberDeclListSyntax {
+    func propertiesBindingsSyntax() -> MemberDeclListSyntax {
         for constructor in constructors {
             DeclSyntax("private static var \(raw: constructor.ptrSyntax): GDExtensionPtrConstructor!")
         }
@@ -376,7 +309,7 @@ struct GodotBuiltinClass: Decodable {
         }
     }
     
-    private func setInitializersBindingsSyntax() throws -> FunctionDeclSyntax {
+    func setInitializersBindingsSyntax() throws -> FunctionDeclSyntax {
         try FunctionDeclSyntax("internal static func setInitBindings()") {
             for constructor in constructors {
                 DeclSyntax("\(raw: constructor.ptrSyntax) = GodotExtension.interface.variant_get_ptr_constructor(\(raw: name.variantType!), \(literal: constructor.index))")
@@ -388,7 +321,7 @@ struct GodotBuiltinClass: Decodable {
         }
     }
     
-    private func setFunctionBindingsSyntax() throws -> FunctionDeclSyntax {
+    func setFunctionBindingsSyntax() throws -> FunctionDeclSyntax {
         try FunctionDeclSyntax("internal static func setFunctionBindings()") {
             if indexingReturnType != nil {
                 DeclSyntax("""
