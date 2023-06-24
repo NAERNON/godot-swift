@@ -169,6 +169,10 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     
     // MARK: - Syntax
     
+    var variantType: String? {
+        typeToGodotVariantType[syntax()]
+    }
+    
     /// Returns the syntax of the type.
     ///
     /// This function translates the type to Swift.
@@ -313,3 +317,50 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         DeclSyntax("}")
     }
 }
+
+/// The godot native variant enum value: `GDEXTENSION_VARIANT_TYPE_<type>`.
+private let typeToGodotVariantType: [String : String] = [
+    "Nil": "GDEXTENSION_VARIANT_TYPE_NIL",
+    "Variant": "GDEXTENSION_VARIANT_TYPE_NIL",
+    "bool": "GDEXTENSION_VARIANT_TYPE_BOOL",
+    "Bool": "GDEXTENSION_VARIANT_TYPE_BOOL",
+    "int": "GDEXTENSION_VARIANT_TYPE_INT",
+    "Int": "GDEXTENSION_VARIANT_TYPE_INT",
+    "float": "GDEXTENSION_VARIANT_TYPE_FLOAT",
+    "Float": "GDEXTENSION_VARIANT_TYPE_FLOAT",
+    "Double": "GDEXTENSION_VARIANT_TYPE_FLOAT",
+    "String": "GDEXTENSION_VARIANT_TYPE_STRING",
+    "Vector2": "GDEXTENSION_VARIANT_TYPE_VECTOR2",
+    "Vector2i": "GDEXTENSION_VARIANT_TYPE_VECTOR2I",
+    "Rect2": "GDEXTENSION_VARIANT_TYPE_RECT2",
+    "Rect2i": "GDEXTENSION_VARIANT_TYPE_RECT2I",
+    "Vector3": "GDEXTENSION_VARIANT_TYPE_VECTOR3",
+    "Vector3i": "GDEXTENSION_VARIANT_TYPE_VECTOR3I",
+    "Transform2D": "GDEXTENSION_VARIANT_TYPE_TRANSFORM2D",
+    "Vector4": "GDEXTENSION_VARIANT_TYPE_VECTOR4",
+    "Vector4i": "GDEXTENSION_VARIANT_TYPE_VECTOR4I",
+    "Plane": "GDEXTENSION_VARIANT_TYPE_PLANE",
+    "Quaternion": "GDEXTENSION_VARIANT_TYPE_QUATERNION",
+    "AABB": "GDEXTENSION_VARIANT_TYPE_AABB",
+    "Basis": "GDEXTENSION_VARIANT_TYPE_BASIS",
+    "Transform3D": "GDEXTENSION_VARIANT_TYPE_TRANSFORM3D",
+    "Projection": "GDEXTENSION_VARIANT_TYPE_PROJECTION",
+    "Color": "GDEXTENSION_VARIANT_TYPE_COLOR",
+    "StringName": "GDEXTENSION_VARIANT_TYPE_STRING_NAME",
+    "NodePath": "GDEXTENSION_VARIANT_TYPE_NODE_PATH",
+    "RID": "GDEXTENSION_VARIANT_TYPE_RID",
+    "Object": "GDEXTENSION_VARIANT_TYPE_OBJECT",
+    "Callable": "GDEXTENSION_VARIANT_TYPE_CALLABLE",
+    "Signal": "GDEXTENSION_VARIANT_TYPE_SIGNAL",
+    "Dictionary": "GDEXTENSION_VARIANT_TYPE_DICTIONARY",
+    "Array": "GDEXTENSION_VARIANT_TYPE_ARRAY",
+    "PackedByteArray": "GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY",
+    "PackedInt32Array": "GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY",
+    "PackedInt64Array": "GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY",
+    "PackedFloat32Array": "GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY",
+    "PackedFloat64Array": "GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY",
+    "PackedStringArray": "GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY",
+    "PackedVector2Array": "GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY",
+    "PackedVector3Array": "GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY",
+    "PackedColorArray": "GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY",
+]
