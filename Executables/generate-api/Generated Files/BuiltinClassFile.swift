@@ -76,7 +76,7 @@ extension GeneratedFile {
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         
-        try builtinClass.keyGetterSetterSyntax()
+        builtinClass.keyGetterSetterSyntax()
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         

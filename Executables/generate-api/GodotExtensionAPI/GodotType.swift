@@ -167,6 +167,13 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         }
     }
     
+    var isEnum: Bool {
+        switch self {
+        case .enum(_): true
+        default: false
+        }
+    }
+    
     // MARK: - Syntax
     
     var variantType: String? {
@@ -264,6 +271,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         
         if isGodotObject {
             DeclSyntax("var \(raw: variableName): GDExtensionObjectPtr!")
+        } else if isEnum {
+            DeclSyntax("var \(raw: variableName) = \(raw: syntax(options: options)).RawValue(0)")
         } else {
             DeclSyntax("var \(raw: variableName) = \(raw: syntax(options: options))()")
         }
@@ -272,6 +281,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         
         if isGodotObject {
             DeclSyntax("return retreiveObject(ofType: \(raw: syntax(options: options)).self, from: \(raw: variableName))")
+        } else if isEnum {
+            DeclSyntax("return \(raw: syntax(options: options))(rawValue: \(raw: variableName))!")
         } else {
             DeclSyntax("return \(raw: variableName)")
         }
