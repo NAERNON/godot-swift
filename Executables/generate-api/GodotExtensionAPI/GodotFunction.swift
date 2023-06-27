@@ -113,6 +113,10 @@ extension GodotFunction {
             parameterString.append(": ")
             parameterString.append(argument.type.syntax(options: options))
             
+            if argument.type.isGodotClass {
+                parameterString.append("?")
+            }
+            
             if let defaultValue = argument.defaultValue {
                 parameterString.append(" = ")
                 parameterString.append(defaultValue.syntax())
@@ -134,6 +138,10 @@ extension GodotFunction {
         if let returnType {
             functionHeader.append(" -> ")
             functionHeader.append(returnType.syntax(options: options))
+            
+            if returnType.isGodotClass {
+                functionHeader.append("?")
+            }
         }
         
         return try FunctionDeclSyntax("\(raw: functionHeader)", bodyBuilder: bodyBuilder)
