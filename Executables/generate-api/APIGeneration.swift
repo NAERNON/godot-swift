@@ -28,6 +28,8 @@ struct APIGeneration: ParsableCommand {
         
         let extensionAPI = try jsonDecoder.decode(GodotExtensionAPI.self, from: data)
         
+        GodotType.setGodotTypes(with: extensionAPI)
+        
         // MARK: Generate files
         
         // Delete _Generated directories if needed before making new ones.
@@ -43,6 +45,8 @@ struct APIGeneration: ParsableCommand {
             GeneratedFile.setBindings(extensionAPI),
         ] + extensionAPI.builtinClassesToGenerate().map {
             GeneratedFile.builtinClass(extensionAPI, for: $0, with: buildConfiguration)
+        } + extensionAPI.classes.map {
+            GeneratedFile.class(extensionAPI, for: $0)
         }
         
         print("Generating files...")

@@ -4,7 +4,7 @@ extension GeneratedFile {
     static func utilityFunctions(_ extensionAPI: GodotExtensionAPI) -> GeneratedFile {
         return .init(path: "UtilityFunctions.swift") {
             for function in extensionAPI.utilityFunctions {
-                try functionSyntax(function, extensionAPI: extensionAPI)
+                try functionSyntax(function)
                     .with(\.trailingTrivia, .newlines(2))
             }
             
@@ -28,15 +28,12 @@ extension GeneratedFile {
         }
     }
     
-    private static func functionSyntax(
-        _ function: GodotUtilityFunction,
-        extensionAPI: GodotExtensionAPI) throws -> FunctionDeclSyntax {
+    private static func functionSyntax(_ function: GodotUtilityFunction) throws -> FunctionDeclSyntax {
         let options: GodotTypeSyntaxOptions = .floatAsDouble
         
         return try function.declSyntax(options: options) {
             if let returnType = function.returnType {
                 try returnType.instantiationSyntax(
-                    isGodotObject: extensionAPI.typeIsGodotClass(returnType),
                     options: options
                 ) { instanceName in
                     try function.argumentsPackPointerAccessSyntax { packName in

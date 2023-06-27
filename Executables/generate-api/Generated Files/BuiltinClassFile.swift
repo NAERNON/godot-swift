@@ -8,7 +8,7 @@ extension GeneratedFile {
         with configuration: BuildConfiguration
     ) -> GeneratedFile {
         .init(path: "Builtin Structs/" + builtinClass.identifier + "+Bindings.swift") {
-            let useOpaque = extensionAPI.typeIsBuiltinGodotClassWithOpaque(builtinClass.name)
+            let useOpaque = builtinClass.name.isBuiltinGodotClassWithOpaque
             let classSize = extensionAPI.builtinClassSizes.size(ofClass: builtinClass.name, for: configuration)!
             
             if useOpaque {
@@ -80,7 +80,7 @@ extension GeneratedFile {
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         
-        try builtinClass.methodsSyntax(extensionAPI: extensionAPI, options: options)
+        try builtinClass.methodsSyntax(options: options)
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         
@@ -96,7 +96,7 @@ extension GeneratedFile {
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         
-        if extensionAPI.typeIsBuiltinGodotClassWithOpaque(builtinClass.name) {
+        if builtinClass.name.isBuiltinGodotClassWithOpaque {
             builtinClass.opaqueValueSyntax()
         }
     }

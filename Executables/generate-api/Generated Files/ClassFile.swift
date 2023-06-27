@@ -21,7 +21,7 @@ extension GeneratedFile {
                     .with(\.leadingTrivia, .newline)
                     .with(\.trailingTrivia, .newlines(2))
                 
-                try `class`.methodsSyntax(extensionAPI: extensionAPI)
+                try `class`.methodsSyntax()
                     .with(\.leadingTrivia, .newline)
                     .with(\.trailingTrivia, .newlines(2))
             }

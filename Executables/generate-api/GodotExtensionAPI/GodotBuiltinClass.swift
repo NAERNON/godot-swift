@@ -213,7 +213,7 @@ struct GodotBuiltinClass: Decodable {
         let operatorFunction = OperatorFunction(operator: `operator`, type: name)
         
         return try operatorFunction.declSyntax(hideAllLabels: true, options: options) {
-            try `operator`.returnType.instantiationSyntax(isGodotObject: false) { instanceName in
+            try `operator`.returnType.instantiationSyntax { instanceName in
                 try operatorFunction.argumentsPointerAccessSyntax { pointerNames in
                     try name.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtrName in
                         let lhsPointer = pointerNames[0]
@@ -235,7 +235,7 @@ struct GodotBuiltinClass: Decodable {
     ) throws -> MemberDeclListSyntax {
         if let indexingReturnType, !isKeyed {
             try FunctionDeclSyntax("func _getValue(at index: GDExtensionInt) -> \(raw: indexingReturnType.syntax())") {
-                try indexingReturnType.instantiationSyntax(isGodotObject: false) { instanceName in
+                try indexingReturnType.instantiationSyntax { instanceName in
                     try indexingReturnType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                         try name.pointerAccessSyntax(instanceName: "self") { selfPtr in
                             DeclSyntax("Self.__indexed_getter(\(raw: selfPtr), index, \(raw: instancePtr))")
@@ -305,12 +305,11 @@ struct GodotBuiltinClass: Decodable {
     
     @MemberDeclListBuilder
     func methodsSyntax(
-        extensionAPI: GodotExtensionAPI,
         options: GodotTypeSyntaxOptions = []
     ) throws -> MemberDeclListSyntax {
         if let methods {
             for method in methods {
-                try methodSyntax(method, options: options, extensionAPI: extensionAPI)
+                try methodSyntax(method, options: options)
                     .with(\.trailingTrivia, .newlines(2))
             }
         }
@@ -318,15 +317,13 @@ struct GodotBuiltinClass: Decodable {
     
     private func methodSyntax(
         _ method: Method,
-        options: GodotTypeSyntaxOptions,
-        extensionAPI: GodotExtensionAPI
+        options: GodotTypeSyntaxOptions
     ) throws -> FunctionDeclSyntax {
         let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
         
         let functionDecl = try method.declSyntax(underscoreName: true, options: options) {
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(
-                    isGodotObject: extensionAPI.typeIsGodotClass(returnType),
                     options: options
                 ) { instanceName in
                     try method.argumentsPackPointerAccessSyntax { packName in

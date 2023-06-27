@@ -174,26 +174,19 @@ struct GodotClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    func methodsSyntax(
-        extensionAPI: GodotExtensionAPI
-    ) throws -> MemberDeclListSyntax {
+    func methodsSyntax() throws -> MemberDeclListSyntax {
         if let methods {
             for method in methods {
-                try methodSyntax(method, extensionAPI: extensionAPI)
+                try methodSyntax(method)
                     .with(\.trailingTrivia, .newlines(2))
             }
         }
     }
     
-    private func methodSyntax(
-        _ method: Method,
-        extensionAPI: GodotExtensionAPI
-    ) throws -> FunctionDeclSyntax {
+    private func methodSyntax(_ method: Method) throws -> FunctionDeclSyntax {
         let functionDecl = try method.declSyntax {
             if let returnType = method.returnType {
-                try returnType.instantiationSyntax(
-                    isGodotObject: extensionAPI.typeIsGodotClass(returnType)
-                ) { instanceName in
+                try returnType.instantiationSyntax { instanceName in
                     try method.argumentsPackPointerAccessSyntax { packName in
                         try returnType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {

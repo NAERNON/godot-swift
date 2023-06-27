@@ -93,6 +93,20 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// A pointer type.
     case pointer(GodotType)
     
+    // MARK: Godot types
+    
+    /// Sets all the base Godot types.
+    static func setGodotTypes(with extensionAPI: GodotExtensionAPI) {
+        godotClassTypes = Set(extensionAPI.classes.map { $0.name })
+        godotBuiltinClassTypes = Set(extensionAPI.builtinClasses.map { $0.name })
+    }
+    
+    /// The Godot classes types.
+    private static var godotClassTypes: Set<GodotType> = []
+    
+    /// The Godot builtin classes types.
+    private static var godotBuiltinClassTypes: Set<GodotType> = []
+    
     // MARK: Init
     
     /// Creates a new `GodotType` with the given C type syntax.
@@ -172,6 +186,64 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         case .enum(_): true
         default: false
         }
+    }
+    
+    /// A Boolean value indicating whether the type
+    /// is a Godot class.
+    ///
+    /// - Returns: `true` if the type is a Godot class (not a builtin Godot class).
+    ///
+    /// > important: Godot types info should be set before retreiving this value.
+    /// See the ``setGodotTypes(with:)`` function.
+    var isGodotClass: Bool {
+        GodotType.godotClassTypes.contains(self)
+    }
+    
+    /// A Boolean value indicating whether the type
+    /// is a Godot builtin class.
+    ///
+    /// - Returns: `true` if the type is a Godot builtin class (not a Godot class).
+    ///
+    /// > important: Godot types info should be set before retreiving this value.
+    /// See the ``setGodotTypes(with:)`` function.
+    var isBuiltinGodotClass: Bool {
+        GodotType.godotBuiltinClassTypes.contains(self)
+    }
+    
+    /// A Boolean value indicating whether the type
+    /// is a Godot builtin class,
+    /// and that doesn't use an opaque underlying value.
+    ///
+    /// - Parameter type: The type to check.
+    /// - Returns: `true` if the type is a Godot builtin class (not a Godot class)
+    /// without an opaque underlying value.
+    ///
+    /// > important: Godot types info should be set before retreiving this value.
+    /// See the ``setGodotTypes(with:)`` function.
+    var isBuiltinGodotClassWithoutOpaque: Bool {
+        guard GodotType.godotBuiltinClassTypes.contains(self) else {
+            return false
+        }
+        
+        switch self.syntax() {
+        case "AABB", "Basis", "Color", "Plane", "Projection", "Quaternion", "Rect2", "Rect2i", "Transform2D", "Transform3D", "Vector2", "Vector2i", "Vector3", "Vector3i", "Vector4", "Vector4i":
+            return true
+        default:
+            return false
+        }
+    }
+    
+    /// A Boolean value indicating whether the type
+    /// is a Godot builtin class,
+    /// and that does use an opaque underlying value.
+    ///
+    /// - Returns: `true` if the type is a Godot builtin class (not a Godot class)
+    /// with an opaque underlying value.
+    ///
+    /// > important: Godot types info should be set before retreiving this value.
+    /// See the ``setGodotTypes(with:)`` function.
+    var isBuiltinGodotClassWithOpaque: Bool {
+        isBuiltinGodotClass && !isBuiltinGodotClassWithoutOpaque
     }
     
     // MARK: - Syntax
@@ -261,15 +333,17 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ///
     /// return __temporary
     /// ```
+    ///
+    /// > important: Godot types info should be set before calling this function.
+    /// See the ``setGodotTypes(with:)`` function.
     @CodeBlockItemListBuilder
     func instantiationSyntax(
-        isGodotObject: Bool,
         options: GodotTypeSyntaxOptions = [],
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let variableName = "__temporary"
         
-        if isGodotObject {
+        if isGodotClass {
             DeclSyntax("var \(raw: variableName): GDExtensionObjectPtr!")
         } else if isEnum {
             DeclSyntax("var \(raw: variableName) = \(raw: syntax(options: options)).RawValue(0)")
@@ -279,7 +353,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         
         try bodyBuilder(variableName)
         
-        if isGodotObject {
+        if isGodotClass {
             DeclSyntax("return retreiveObject(ofType: \(raw: syntax(options: options)).self, from: \(raw: variableName))")
         } else if isEnum {
             DeclSyntax("return \(raw: syntax(options: options))(rawValue: \(raw: variableName))!")
