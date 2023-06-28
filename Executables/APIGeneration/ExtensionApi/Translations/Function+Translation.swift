@@ -13,7 +13,7 @@ extension Function {
         nameAndParameters(definedIndise: type).parameters
     }
     
-    var temporaryValueName: String { "__temporary" }
+    private var temporaryValueName: String { "__temporary" }
     
     private func nameAndParameters(definedIndise type: InstanceType?)
     -> (name: String, parameters: [CodeGenerator.FunctionParameter]) {

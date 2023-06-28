@@ -188,6 +188,21 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         }
     }
     
+    var isOptional: Bool {
+        switch self {
+        case .optional(_): true
+        default: false
+        }
+    }
+    
+    var isPointer: Bool {
+        switch self {
+        case .immutable(let instanceType): instanceType.isPointer
+        case .pointer(_): true
+        default: false
+        }
+    }
+    
     /// A Boolean value indicating whether the type
     /// is a Godot class.
     ///

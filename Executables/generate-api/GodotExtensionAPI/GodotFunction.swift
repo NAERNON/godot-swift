@@ -246,4 +246,26 @@ extension GodotFunction {
             }
         }
     }
+    
+    func callSyntax(
+        withParameters parameterValues: [String]
+    ) -> DeclSyntax {
+        let (translatedName, translatedParameters) = translatedFunction
+        
+        let parameterStrings = translatedParameters.enumerated().map { (index, parameter) in
+            if parameter.isLabelHidden {
+                parameterValues[index]
+            } else if let label = parameter.label {
+                label + ": " + parameterValues[index]
+            } else {
+                parameter.name + ": " + parameterValues[index]
+            }
+        }
+        
+        return DeclSyntax("""
+        \(raw: translatedName)(
+            \(raw: parameterStrings.joined(separator: ",\n    "))
+        )
+        """)
+    }
 }

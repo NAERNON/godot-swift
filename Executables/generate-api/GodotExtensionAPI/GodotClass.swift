@@ -152,9 +152,9 @@ struct GodotClass: Decodable {
         DeclSyntax("""
         internal override class func instanceBindingsCallbacks() -> GDExtensionInstanceBindingCallbacks {
             return GDExtensionInstanceBindingCallbacks { token, instance in
-                return Unmanaged.passRetained(AESContext(extensionObjectPtr: instance!)).toOpaque()
+                return Unmanaged.passRetained(\(raw: identifier)(extensionObjectPtr: instance!)).toOpaque()
             } free_callback: { token, instance, bindings in
-                Unmanaged<AESContext>.fromOpaque(instance!).takeRetainedValue().withUnsafeExtensionPointer { __ptr_self in
+                Unmanaged<\(raw: identifier)>.fromOpaque(instance!).takeRetainedValue().withUnsafeExtensionPointer { __ptr_self in
                     GodotExtension.interface.mem_free(__ptr_self)
                 }
             } reference_callback: { token, instance, reference in
@@ -184,9 +184,17 @@ struct GodotClass: Decodable {
     }
     
     private func methodSyntax(_ method: Method) throws -> FunctionDeclSyntax {
-        let functionDecl = try method.declSyntax {
+        if method.isVirtual {
+            return try virtualMethodSyntax(method)
+        } else {
+            return try standardMethodSyntax(method)
+        }
+    }
+    
+    private func standardMethodSyntax(_ method: Method) throws -> FunctionDeclSyntax {
+        try method.declSyntax(options: .floatAsDouble) {
             if let returnType = method.returnType {
-                try returnType.instantiationSyntax { instanceName in
+                try returnType.instantiationSyntax(options: .floatAsDouble) { instanceName in
                     try method.argumentsPackPointerAccessSyntax { packName in
                         try returnType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
@@ -212,7 +220,90 @@ struct GodotClass: Decodable {
             }
         }
         .addModifier(.init(name: .keyword(.open)))
-        
-        return functionDecl
+    }
+    
+    private func virtualMethodSyntax(_ method: Method) throws -> FunctionDeclSyntax {
+        try method.declSyntax(options: .floatAsDouble) {
+            if let returnType = method.returnType {
+                if returnType.isGodotClass
+                    || returnType == .variant
+                    || returnType.isOptional {
+                    DeclSyntax("nil")
+                } else if returnType.isEnum {
+                    DeclSyntax("\(raw: returnType.syntax(options: .floatAsDouble))(rawValue: 0)!")
+                } else if returnType.isPointer {
+                    DeclSyntax("fatalError(\"No default value provided for pointers.\")")
+                } else {
+                    DeclSyntax("\(raw: returnType.syntax(options: .floatAsDouble))()")
+                }
+            }
+        }
+        .addModifier(.init(name: .keyword(.open)))
+    }
+    
+    @MemberDeclListBuilder
+    func propertiesBindingsSyntax() -> MemberDeclListSyntax {
+        if let methods {
+            for method in methods {
+                DeclSyntax("private static var \(raw: method.ptrSyntax): GDExtensionMethodBindPtr!")
+            }
+        }
+    }
+    
+    func setFunctionBindingsSyntax() throws -> FunctionDeclSyntax {
+        try FunctionDeclSyntax("private static func setFunctionBindings()") {
+            if let methods {
+                DeclSyntax("var _method_name: StringName!")
+                DeclSyntax("withUnsafeGodotAccessPointer(to: _gd_className) { __ptr__class_name in")
+                for method in methods {
+                    if let hash = method.hash {
+                        ExprSyntax("""
+                        _method_name = \(literal: method.name)
+                        withUnsafeGodotMutableAccessPointer(to: &_method_name) { __ptr__method_name in
+                            \(raw: method.ptrSyntax) = GodotExtension.interface.classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: hash))
+                        }
+                        """)
+                    }
+                }
+                DeclSyntax("}")
+            }
+        }
+    }
+    
+    func setVirtualFunctionBindingsSyntax() throws -> FunctionDeclSyntax {
+        try FunctionDeclSyntax("internal \(isRootClass ? "" : "override ")class func setVirtualFunctionCalls(_ body: (StringName, GDExtensionClassCallVirtual) -> Void)") {
+            if !isRootClass {
+                DeclSyntax("super.setVirtualFunctionCalls(body)")
+            }
+            
+            if let methods {
+                let virtualMethods = methods.filter(\.isVirtual)
+                if !virtualMethods.isEmpty {
+                    ExprSyntax("var _method_name: StringName!")
+                    
+                    for method in virtualMethods {
+                        ExprSyntax("_method_name = \(literal: method.name)")
+                        DeclSyntax("""
+                        body(_method_name, { instancePtr, args, returnPtr in
+                        guard let instancePtr, let args else { return }
+                        let instance = Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
+                        let \(raw: method.returnValue == nil ? "_" : "returnValue") = instance.
+                        """)
+                        
+                        method.callSyntax(withParameters: method.arguments?.enumerated().map { (index, argument) in
+                            if argument.type.isGodotClass {
+                                return "functionObjectArgument(fromPointer: args[\(index)])"
+                            } else {
+                                return "functionArgument(fromPointer: args[\(index)])"
+                            }
+                        } ?? [])
+                        
+                        if method.returnValue != nil {
+                            DeclSyntax("setReturnValue(returnValue, toPointer: returnPtr)")
+                        }
+                    }
+                }
+            }
+        }
     }
 }
