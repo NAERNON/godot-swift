@@ -23,86 +23,111 @@ struct GodotConstant: Decodable, Equatable {
     
     // MARK: - Syntax
     
-    func syntax() -> String {
+    func syntax(forType type: GodotType) -> String {
+        if string.isEmpty {
+            return type.syntax() + "()"
+        }
+        
         if string == "null" {
             return "nil"
         }
         
-        let (type, parameters) = decomposeInitParameters()
+        if type.isEnum {
+            return type.syntax() + "(rawValue: \(string))!"
+        }
         
-        switch type {
+        if type.isBitfield {
+            return type.syntax() + "(rawValue: \(string))"
+        }
+        
+        if type == "StringName" {
+            return "\"\(string.components(separatedBy: "\"")[1])\""
+        }
+        
+        // Decompose initializers types.
+        let (decomposedType, parameters) = decomposeInitParameters()
+        switch decomposedType {
         case "Basis":
             return recomposeInitParameters(
-                forType: type,
+                forType: decomposedType,
                 parameters: parameters,
-                labels: ["xAxisX", "xAxisY", "xAxisZ", "yAxisX", "yAxisY", "yAxisZ", "zAxisX", "zAxisY", "zAxisZ"]
+                labels: "xAxisX", "xAxisY", "xAxisZ", "yAxisX", "yAxisY", "yAxisZ", "zAxisX", "zAxisY", "zAxisZ"
             )
             
             case "Projection":
             return recomposeInitParameters(
-                forType: type,
+                forType: decomposedType,
                 parameters: parameters,
-                labels: ["xAxisX", "xAxisY", "xAxisZ", "xAxisW", "yAxisX", "yAxisY", "yAxisZ", "yAxisW", "zAxisX", "zAxisY", "zAxisZ", "zAxisW", "wAxisX", "wAxisY", "wAxisZ", "wAxisW"]
+                labels: "xAxisX", "xAxisY", "xAxisZ", "xAxisW", "yAxisX", "yAxisY", "yAxisZ", "yAxisW", "zAxisX", "zAxisY", "zAxisZ", "zAxisW", "wAxisX", "wAxisY", "wAxisZ", "wAxisW"
             )
             
             case "Transform2D":
             return recomposeInitParameters(
-                forType: type,
+                forType: decomposedType,
                 parameters: parameters,
-                labels: ["xAxisX", "xAxisY", "yAxisX", "yAxisY", "originX", "originY"]
+                labels: "xAxisX", "xAxisY", "yAxisX", "yAxisY", "originX", "originY"
             )
             
             case "Transform3D":
             return recomposeInitParameters(
-                forType: type,
+                forType: decomposedType,
                 parameters: parameters,
-                labels: ["xAxisX", "xAxisY", "xAxisZ", "yAxisX", "yAxisY", "yAxisZ", "zAxisX", "zAxisY", "zAxisZ", "originX", "originY", "originZ"]
+                labels: "xAxisX", "xAxisY", "xAxisZ", "yAxisX", "yAxisY", "yAxisZ", "zAxisX", "zAxisY", "zAxisZ", "originX", "originY", "originZ"
             )
             
             case "Color":
             return recomposeInitParameters(
-                forType: type,
+                forType: decomposedType,
                 parameters: parameters,
-                labels: ["r", "g", "b", "a"]
+                labels: "r", "g", "b", "a"
             )
             
             case "Plane":
             return recomposeInitParameters(
-                forType: type,
+                forType: decomposedType,
                 parameters: parameters,
-                labels: ["x", "y", "z", "d"]
+                labels: "x", "y", "z", "d"
             )
             
             case "Vector2", "Vector2i":
             return recomposeInitParameters(
-                forType: type,
+                forType: decomposedType,
                 parameters: parameters,
-                labels: ["x", "y"]
+                labels: "x", "y"
             )
             
             case "Vector3", "Vector3i":
             return recomposeInitParameters(
-                forType: type,
+                forType: decomposedType,
                 parameters: parameters,
-                labels: ["x", "y", "z"]
+                labels: "x", "y", "z"
             )
             
             case "Vector4", "Vector4i", "Quaternion":
             return recomposeInitParameters(
-                forType: type,
+                forType: decomposedType,
                 parameters: parameters,
-                labels: ["x", "y", "z", "w"]
+                labels: "x", "y", "z", "w"
             )
             
             case "Rect2", "Rect2i":
             return recomposeInitParameters(
-                forType: type,
+                forType: decomposedType,
                 parameters: parameters,
-                labels: ["x", "y", "width", "height"]
+                labels: "x", "y", "width", "height"
+            )
+            
+            case "NodePath":
+            return recomposeInitParameters(
+                forType: decomposedType,
+                parameters: parameters,
+                labels: "string"
             )
         default:
-            return type
+            break
         }
+        
+        return string
     }
     
     /// Decomposes the parameters of an init. For instance, the String "`Rect(1, 3, 2, 0)`"
@@ -132,7 +157,7 @@ struct GodotConstant: Decodable, Equatable {
         return (type, parameters)
     }
     
-    private func recomposeInitParameters(forType type: String, parameters: [String], labels: [String]) -> String {
+    private func recomposeInitParameters(forType type: String, parameters: [String], labels: String...) -> String {
         var string = type + "("
         for index in 0..<parameters.count {
             let parameter = parameters[index].replacingOccurrences(of: "inf", with: ".infinity")

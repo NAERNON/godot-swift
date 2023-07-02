@@ -219,7 +219,7 @@ struct GodotClass: Decodable {
                 }
             }
         }
-        .addModifier(.init(name: .keyword(.open)))
+        .addModifier(.init(name: .keyword(isRefCountedRootClass ? .private : method.isStatic ? .public : .open)))
     }
     
     private func virtualMethodSyntax(_ method: Method) throws -> FunctionDeclSyntax {
@@ -287,20 +287,24 @@ struct GodotClass: Decodable {
                         body(_method_name, { instancePtr, args, returnPtr in
                         guard let instancePtr, let args else { return }
                         let instance = Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
-                        let \(raw: method.returnValue == nil ? "_" : "returnValue") = instance.
+                        let \(raw: method.returnValue == nil ? "_" : "returnValue") = instance
                         """)
                         
-                        method.callSyntax(withParameters: method.arguments?.enumerated().map { (index, argument) in
+                        let parameters: [String] = method.arguments?.enumerated().map { (index, argument) in
                             if argument.type.isGodotClass {
                                 return "functionObjectArgument(fromPointer: args[\(index)])"
                             } else {
                                 return "functionArgument(fromPointer: args[\(index)])"
                             }
-                        } ?? [])
+                        } ?? []
+                        
+                        DeclSyntax(".\(raw: method.callSyntax(withParameters: parameters))")
                         
                         if method.returnValue != nil {
                             DeclSyntax("setReturnValue(returnValue, toPointer: returnPtr)")
                         }
+                        
+                        DeclSyntax("})")
                     }
                 }
             }

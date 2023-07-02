@@ -136,7 +136,7 @@ struct GodotBuiltinClass: Decodable {
         let constantsSyntaxes: [String] = constants?.map { constant in
             let name = NamingConvention.snake.convert(constant.name.lowercased(), to: .camel)
             
-            return "public static let \(name): \(constant.type.syntax()) = \(constant.value.syntax())"
+            return "public static let \(name): \(constant.type.syntax()) = \(constant.value.syntax(forType: constant.type))"
         } ?? []
         
         return DeclSyntax("\(raw: constantsSyntaxes.joined(separator: "\n"))")

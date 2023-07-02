@@ -188,6 +188,25 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         }
     }
     
+    var isBitfield: Bool {
+        switch self {
+        case .bitfield(_):
+            true
+        case .scope(_, let type):
+            type.isBitfield
+        case .generic(let type, _):
+            type.isBitfield
+        case .optional(let instanceType):
+            instanceType.isBitfield
+        case .immutable(let instanceType):
+            instanceType.isBitfield
+        case .pointer(let instanceType):
+            instanceType.isBitfield
+        default:
+            false
+        }
+    }
+    
     var isOptional: Bool {
         switch self {
         case .optional(_): true

@@ -119,7 +119,7 @@ extension GodotFunction {
             
             if let defaultValue = argument.defaultValue {
                 parameterString.append(" = ")
-                parameterString.append(defaultValue.syntax())
+                parameterString.append(defaultValue.syntax(forType: argument.type))
             }
             
             return parameterString
@@ -249,7 +249,7 @@ extension GodotFunction {
     
     func callSyntax(
         withParameters parameterValues: [String]
-    ) -> DeclSyntax {
+    ) -> String {
         let (translatedName, translatedParameters) = translatedFunction
         
         let parameterStrings = translatedParameters.enumerated().map { (index, parameter) in
@@ -262,10 +262,10 @@ extension GodotFunction {
             }
         }
         
-        return DeclSyntax("""
-        \(raw: translatedName)(
-            \(raw: parameterStrings.joined(separator: ",\n    "))
+        return """
+        \(translatedName)(
+            \(parameterStrings.joined(separator: ",\n    "))
         )
-        """)
+        """
     }
 }

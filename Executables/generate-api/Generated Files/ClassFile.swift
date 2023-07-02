@@ -8,6 +8,8 @@ extension GeneratedFile {
         for `class`: GodotClass
     ) -> GeneratedFile {
         .init(path: "Classes/" + `class`.identifier + ".swift") {
+            DeclSyntax("import GodotExtensionHeaders")
+            
             try ClassDeclSyntax("\(raw: classHeader(for: `class`))") {
                 try `class`.initializerSyntax()
                     .with(\.leadingTrivia, .newline)

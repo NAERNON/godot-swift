@@ -11,6 +11,8 @@ extension GeneratedFile {
             let useOpaque = builtinClass.name.isBuiltinGodotClassWithOpaque
             let classSize = extensionAPI.builtinClassSizes.size(ofClass: builtinClass.name, for: configuration)!
             
+            DeclSyntax("import GodotExtensionHeaders")
+            
             if useOpaque {
                 try StructDeclSyntax("public struct \(raw: builtinClass.identifier)") {
                     try bodySyntax(
