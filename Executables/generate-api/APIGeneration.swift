@@ -47,6 +47,8 @@ struct APIGeneration: ParsableCommand {
             GeneratedFile.builtinClass(extensionAPI, for: $0, with: buildConfiguration)
         } + extensionAPI.classes.map {
             GeneratedFile.class(extensionAPI, for: $0)
+        } + extensionAPI.nativeStructures.map {
+            GeneratedFile.nativeStructure(extensionAPI, for: $0)
         }
         
         print("Generating files...")

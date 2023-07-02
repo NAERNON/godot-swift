@@ -82,6 +82,21 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// ```
     case varargs(GodotType)
     
+    /// A tuple type.
+    ///
+    /// If `A`, `B`, and `C` are types:
+    /// ```swift
+    /// let a: GodotType = ... // A
+    /// let b: GodotType = ... // B
+    /// let c: GodotType = ... // C
+    ///
+    /// GodotType.tuple([a, b, c])
+    ///
+    /// // Represents the type:
+    /// (A, B, C)
+    /// ```
+    case tuple([GodotType])
+    
     /// An immutable type.
     ///
     /// This is usefull for defining pointers.
@@ -135,7 +150,15 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
                 type: GodotType(cTypeSyntax: string[string.index(after: index)...])
             )
         } else {
-            self = .base(string)
+            let components = string.split(separator: "::", maxSplits: 2)
+            if components.count == 2 {
+                self = .scope(
+                    scopeType: GodotType(cTypeSyntax: components[0]),
+                    type: GodotType(cTypeSyntax: components[1])
+                )
+            } else {
+                self = .base(string)
+            }
         }
     }
     
@@ -178,6 +201,53 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             return type.scope(atIndex: index)
         default:
             return nil
+        }
+    }
+    
+    /// Returns a new type where all pointers to a Godot class
+    /// are removed.
+    ///
+    /// For example:
+    /// ```swift
+    /// let type: GodotType = "Object *someType"
+    /// print(type.syntax())
+    /// // Prints "UnsafePointer<Object>"
+    /// print(type.removePointerForGodotClass.syntax())
+    /// // Prints "Object"
+    /// ```
+    ///
+    /// > important: Godot types info should be set before retreiving this value.
+    /// See the ``setGodotTypes(with:)`` function.
+    var removeGodotClassPointers: GodotType {
+        switch self {
+        case .base(let string):
+            return .base(string)
+        case .enum(let godotType):
+            return .enum(godotType.removeGodotClassPointers)
+        case .bitfield(let godotType):
+            return .bitfield(godotType.removeGodotClassPointers)
+        case .scope(let scopeType, let type):
+            return .scope(scopeType: scopeType.removeGodotClassPointers,
+                          type: type.removeGodotClassPointers)
+        case .generic(let type, let genericType):
+            return .generic(type: type.removeGodotClassPointers,
+                            genericType: genericType.removeGodotClassPointers)
+        case .typedArray(let godotType):
+            return .typedArray(godotType.removeGodotClassPointers)
+        case .optional(let godotType):
+            return .optional(godotType.removeGodotClassPointers)
+        case .varargs(let godotType):
+            return .varargs(godotType.removeGodotClassPointers)
+        case .tuple(let types):
+            return .tuple(types.map { $0.removeGodotClassPointers })
+        case .immutable(let godotType):
+            return .immutable(godotType.removeGodotClassPointers)
+        case .pointer(let godotType):
+            if godotType.isGodotClass {
+                return godotType
+            } else {
+                return .pointer(godotType.removeGodotClassPointers)
+            }
         }
     }
     
@@ -332,6 +402,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             return instanceType.syntax(options: options) + "?"
         case .varargs(let type):
             return type.syntax(options: options) + "..."
+        case .tuple(let types):
+            return "(" + types.map { $0.syntax(options: options) }.joined(separator: ", ") + ")"
         case .immutable(let type):
             return type.syntax(options: options.union(.immutable))
         case .pointer(let type):
