@@ -57,9 +57,17 @@ public enum GodotExposableMacro: MemberMacro {
         
         let functionsToExpose = classDecl.memberBlock.members
             .compactMap { $0.decl.as(FunctionDeclSyntax.self) }
-            .filter { $0.modifiers?.map(\.name.tokenKind).contains(where: {
-                $0 == .keyword(.public) || $0 == .keyword(.open)
-            }) == true }
+            .filter {
+                let tokens = $0.modifiers?.map(\.name.tokenKind) ?? []
+                
+                guard !tokens.contains(where: { $0 == .keyword(.override) }) else {
+                    return false
+                }
+                
+                return tokens.contains(where: {
+                    $0 == .keyword(.public) || $0 == .keyword(.open)
+                })
+            }
         
         var functionExpositions = [ExprSyntax]()
         for functionToExpose in functionsToExpose {
@@ -116,7 +124,8 @@ public enum GodotExposableMacro: MemberMacro {
             functionExpositions.append(
                 """
                 \(raw: Trivia.newline)
-                // Register function `\(raw: functionToExpose.identifier.description)`
+                // --- \(raw: functionToExpose.identifier.description) --- //
+                
                 GodotExtension.classRegister.registerFunction(
                     withName: \(literal: functionToExpose.identifier.description),
                     insideType: self,
