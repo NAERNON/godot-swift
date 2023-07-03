@@ -150,7 +150,7 @@ struct GodotClass: Decodable {
     @MemberDeclListBuilder
     func instanceBindingsSyntax() throws -> MemberDeclListSyntax {
         DeclSyntax("""
-        internal override class func instanceBindingsCallbacks() -> GDExtensionInstanceBindingCallbacks {
+        internal \(isRootClass ? "" : "override ")class func instanceBindingsCallbacks() -> GDExtensionInstanceBindingCallbacks {
             return GDExtensionInstanceBindingCallbacks { token, instance in
                 return Unmanaged.passRetained(\(raw: identifier)(extensionObjectPtr: instance!)).toOpaque()
             } free_callback: { token, instance, bindings in
@@ -244,7 +244,7 @@ struct GodotClass: Decodable {
     @MemberDeclListBuilder
     func propertiesBindingsSyntax() -> MemberDeclListSyntax {
         if let methods {
-            for method in methods {
+            for method in methods where !method.isVirtual {
                 DeclSyntax("private static var \(raw: method.ptrSyntax): GDExtensionMethodBindPtr!")
             }
         }
@@ -253,19 +253,20 @@ struct GodotClass: Decodable {
     func setFunctionBindingsSyntax() throws -> FunctionDeclSyntax {
         try FunctionDeclSyntax("private static func setFunctionBindings()") {
             if let methods {
-                DeclSyntax("var _method_name: StringName!")
-                DeclSyntax("withUnsafeGodotAccessPointer(to: _gd_className) { __ptr__class_name in")
-                for method in methods {
-                    if let hash = method.hash {
+                let methodsToSetBindings = methods.filter { !$0.isVirtual }
+                if !methodsToSetBindings.isEmpty {
+                    DeclSyntax("var _method_name: StringName!")
+                    DeclSyntax("withUnsafeGodotAccessPointer(to: _gd_className) { __ptr__class_name in")
+                    for method in methodsToSetBindings {
                         ExprSyntax("""
                         _method_name = \(literal: method.name)
                         withUnsafeGodotMutableAccessPointer(to: &_method_name) { __ptr__method_name in
-                            \(raw: method.ptrSyntax) = GodotExtension.interface.classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: hash))
+                            \(raw: method.ptrSyntax) = GodotExtension.interface.classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))
                         }
                         """)
                     }
+                    DeclSyntax("}")
                 }
-                DeclSyntax("}")
             }
         }
     }

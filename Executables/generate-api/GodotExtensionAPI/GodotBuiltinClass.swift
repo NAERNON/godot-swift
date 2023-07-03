@@ -234,8 +234,8 @@ struct GodotBuiltinClass: Decodable {
         options: GodotTypeSyntaxOptions
     ) throws -> MemberDeclListSyntax {
         if let indexingReturnType, !isKeyed {
-            try FunctionDeclSyntax("func _getValue(at index: GDExtensionInt) -> \(raw: indexingReturnType.syntax())") {
-                try indexingReturnType.instantiationSyntax { instanceName in
+            try FunctionDeclSyntax("func _getValue(at index: GDExtensionInt) -> \(raw: indexingReturnType.syntax(options: options))") {
+                try indexingReturnType.instantiationSyntax(options: options) { instanceName in
                     try indexingReturnType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                         try name.pointerAccessSyntax(instanceName: "self") { selfPtr in
                             DeclSyntax("Self.__indexed_getter(\(raw: selfPtr), index, \(raw: instancePtr))")

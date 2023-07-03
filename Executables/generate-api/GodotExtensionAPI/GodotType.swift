@@ -254,26 +254,30 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     var isEnum: Bool {
         switch self {
         case .enum(_): true
+        case .generic(let type, _): type.isEnum
+        case .scope(_, let type): type.isEnum
+        case .immutable(let type): type.isEnum
         default: false
         }
     }
     
     var isBitfield: Bool {
         switch self {
-        case .bitfield(_):
-            true
-        case .scope(_, let type):
-            type.isBitfield
-        case .generic(let type, _):
-            type.isBitfield
-        case .optional(let instanceType):
-            instanceType.isBitfield
-        case .immutable(let instanceType):
-            instanceType.isBitfield
-        case .pointer(let instanceType):
-            instanceType.isBitfield
-        default:
-            false
+        case .bitfield(_): true
+        case .generic(let type, _): type.isBitfield
+        case .scope(_, let type): type.isBitfield
+        case .immutable(let type): type.isBitfield
+        default: false
+        }
+    }
+    
+    var isTypedArray: Bool {
+        switch self {
+        case .typedArray(_): true
+        case .generic(let type, _): type.isTypedArray
+        case .scope(_, let type): type.isTypedArray
+        case .immutable(let type): type.isTypedArray
+        default: false
         }
     }
     
@@ -385,7 +389,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             case "uint64_t": return "UInt64"
             case "bool": return "Bool"
             case "Error": return "ErrorType"
-            case "Type": return "Type"
+            case "Type": return "GodotType"
             default: return string
             }
         case .enum(let type):

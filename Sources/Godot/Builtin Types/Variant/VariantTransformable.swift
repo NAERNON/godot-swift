@@ -22,7 +22,7 @@ public protocol ExpressibleByVariant {
 /// `init(variant:)`.
 public protocol ExpressibleByTypedVariant: ExpressibleByVariant {
     /// The underlying variant storage type.
-    static var variantStorageType: Variant.ValueType { get }
+    static var variantStorageType: Variant.GodotType { get }
     
     /// Creates an instance initialized with the given `Variant`.
     ///
@@ -40,7 +40,7 @@ public typealias TypedVariantTransformable = VariantConvertible & ExpressibleByT
 
 private extension Variant {
     enum ConversionError: Error {
-        case unmatchingTypes(ValueType, ValueType)
+        case unmatchingTypes(GodotType, GodotType)
     }
 }
 

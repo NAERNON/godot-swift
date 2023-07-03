@@ -44,6 +44,18 @@ struct GodotConstant: Decodable, Equatable {
             return "\"\(string.components(separatedBy: "\"")[1])\""
         }
         
+        if type == "Dictionary" && string == "{}" {
+            return "[:]"
+        }
+        
+        if (type.isTypedArray || type == "Array") && string.contains("([])") {
+            return "[]"
+        }
+        
+        if type == "float" && string.last == "f" {
+            return string.dropLast() + "0"
+        }
+        
         // Decompose initializers types.
         let (decomposedType, parameters) = decomposeInitParameters()
         switch decomposedType {

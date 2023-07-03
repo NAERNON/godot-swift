@@ -2,7 +2,7 @@ import Foundation
 import GodotExtensionHeaders
 
 extension Variant {
-    public enum ValueType: Int {
+    public enum GodotType: Int {
         case `nil`               = 0
         case bool                = 1
         case int                 = 2
@@ -46,9 +46,9 @@ extension Variant {
 
 // MARK: - Godot type
 
-extension Variant.ValueType {
-    init(godotType: GDExtensionVariantType) {
-        switch godotType {
+extension Variant.GodotType {
+    init(godotExtensionType: GDExtensionVariantType) {
+        switch godotExtensionType {
         case GDEXTENSION_VARIANT_TYPE_NIL: self = .nil
         case GDEXTENSION_VARIANT_TYPE_BOOL: self = .bool
         case GDEXTENSION_VARIANT_TYPE_INT: self = .int
@@ -91,7 +91,7 @@ extension Variant.ValueType {
         }
     }
     
-    var godotType: GDExtensionVariantType {
+    var godotExtensionType: GDExtensionVariantType {
         switch self {
         case .nil: return GDEXTENSION_VARIANT_TYPE_NIL
         case .bool: return GDEXTENSION_VARIANT_TYPE_BOOL

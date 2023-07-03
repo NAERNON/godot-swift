@@ -113,7 +113,7 @@ extension GodotFunction {
             parameterString.append(": ")
             parameterString.append(argument.type.syntax(options: options))
             
-            if argument.type.isGodotClass {
+            if argument.type.isGodotClass || argument.type.isPointer {
                 parameterString.append("?")
             }
             

@@ -17,7 +17,7 @@ extension Swift.String {
 }
 
 extension Swift.String: TypedVariantTransformable {
-    public static let variantStorageType: Variant.ValueType = String.variantStorageType
+    public static let variantStorageType: Variant.GodotType = String.variantStorageType
     
     public var variant: Variant {
         String(swiftString: self).variant

@@ -3,7 +3,7 @@ import GodotExtensionHeaders
 
 extension ClassRegister {
     struct PropertyInfo {
-        let type: Variant.ValueType
+        let type: Variant.GodotType
         let metadata: PropertyMetadata?
         let name: StringName
         let className: StringName
@@ -29,7 +29,7 @@ extension ClassRegister {
                                          usageFlags: .default, .nilIsVariant,
                                          className: .init())
         
-        init(type: Variant.ValueType,
+        init(type: Variant.GodotType,
              metadata: PropertyMetadata?,
              name: StringName,
              defaultValue: Variant? = nil,
@@ -58,7 +58,7 @@ extension ClassRegister {
                 className.withUnsafeExtensionPointer { classeNamePtr in
                     hintString.withUnsafeExtensionPointer { hintStringPtr in
                         let info = GDExtensionPropertyInfo(
-                            type: type.godotType,
+                            type: type.godotExtensionType,
                             name: namePtr,
                             class_name: classeNamePtr,
                             hint: hint.rawValue,

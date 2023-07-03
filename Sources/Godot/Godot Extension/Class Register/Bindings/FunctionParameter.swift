@@ -9,7 +9,7 @@ extension ClassRegister {
     /// or use ``returnParameter(_:)`` to create a return `FunctionParameter`.
     public struct FunctionParameter {
         /// The ``Variant`` type of the parameter.
-        public let type: Variant.ValueType
+        public let type: Variant.GodotType
         
         /// The name of the parameter.
         public let name: StringName
