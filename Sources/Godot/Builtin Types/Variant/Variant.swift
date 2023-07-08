@@ -1157,7 +1157,7 @@ extension Variant {
 // MARK: - Variant Transformable
 
 extension Bool: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .bool
+    public static let variantType: Variant.GodotType = .bool
     
     public var variant: Variant {
         let variant = Variant()
@@ -1175,7 +1175,7 @@ extension Bool: TypedVariantTransformable {
 }
 
 extension Int: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .int
+    public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
         let variant = Variant()
@@ -1193,7 +1193,7 @@ extension Int: TypedVariantTransformable {
 }
 
 extension Int8: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .int
+    public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
         let variant = Variant()
@@ -1211,7 +1211,7 @@ extension Int8: TypedVariantTransformable {
 }
 
 extension Int16: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .int
+    public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
         let variant = Variant()
@@ -1229,7 +1229,7 @@ extension Int16: TypedVariantTransformable {
 }
 
 extension Int32: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .int
+    public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
         let variant = Variant()
@@ -1247,7 +1247,7 @@ extension Int32: TypedVariantTransformable {
 }
 
 extension Int64: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .int
+    public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
         let variant = Variant()
@@ -1265,7 +1265,7 @@ extension Int64: TypedVariantTransformable {
 }
 
 extension UInt8: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .int
+    public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
         let variant = Variant()
@@ -1283,7 +1283,7 @@ extension UInt8: TypedVariantTransformable {
 }
 
 extension UInt16: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .int
+    public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
         let variant = Variant()
@@ -1301,7 +1301,7 @@ extension UInt16: TypedVariantTransformable {
 }
 
 extension UInt32: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .int
+    public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
         let variant = Variant()
@@ -1319,7 +1319,7 @@ extension UInt32: TypedVariantTransformable {
 }
 
 extension UInt64: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .int
+    public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
         let variant = Variant()
@@ -1337,7 +1337,7 @@ extension UInt64: TypedVariantTransformable {
 }
 
 extension Double: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .float
+    public static let variantType: Variant.GodotType = .float
     
     public var variant: Variant {
         let variant = Variant()
@@ -1355,7 +1355,7 @@ extension Double: TypedVariantTransformable {
 }
 
 extension Float: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .float
+    public static let variantType: Variant.GodotType = .float
     
     public var variant: Variant {
         let variant = Variant()
@@ -1373,7 +1373,7 @@ extension Float: TypedVariantTransformable {
 }
 
 extension Real: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = Double.variantStorageType
+    public static let variantType: Variant.GodotType = Double.variantType
 
     public var variant: Variant {
         Double(self).variant
@@ -1385,7 +1385,7 @@ extension Real: TypedVariantTransformable {
 }
 
 extension String: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .string
+    public static let variantType: Variant.GodotType = .string
     
     public var variant: Variant {
         let variant = Variant()
@@ -1403,7 +1403,7 @@ extension String: TypedVariantTransformable {
 }
 
 extension Vector2: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .vector2
+    public static let variantType: Variant.GodotType = .vector2
     
     public var variant: Variant {
         let variant = Variant()
@@ -1421,7 +1421,7 @@ extension Vector2: TypedVariantTransformable {
 }
 
 extension Vector2i: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .vector2i
+    public static let variantType: Variant.GodotType = .vector2i
     
     public var variant: Variant {
         let variant = Variant()
@@ -1439,7 +1439,7 @@ extension Vector2i: TypedVariantTransformable {
 }
 
 extension Rect2: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .rect2
+    public static let variantType: Variant.GodotType = .rect2
     
     public var variant: Variant {
         let variant = Variant()
@@ -1457,7 +1457,7 @@ extension Rect2: TypedVariantTransformable {
 }
 
 extension Rect2i: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .rect2i
+    public static let variantType: Variant.GodotType = .rect2i
     
     public var variant: Variant {
         let variant = Variant()
@@ -1475,7 +1475,7 @@ extension Rect2i: TypedVariantTransformable {
 }
 
 extension Vector3: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .vector3
+    public static let variantType: Variant.GodotType = .vector3
     
     public var variant: Variant {
         let variant = Variant()
@@ -1493,7 +1493,7 @@ extension Vector3: TypedVariantTransformable {
 }
 
 extension Vector3i: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .vector3i
+    public static let variantType: Variant.GodotType = .vector3i
     
     public var variant: Variant {
         let variant = Variant()
@@ -1511,7 +1511,7 @@ extension Vector3i: TypedVariantTransformable {
 }
 
 extension Transform2D: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .transform2D
+    public static let variantType: Variant.GodotType = .transform2D
     
     public var variant: Variant {
         let variant = Variant()
@@ -1529,7 +1529,7 @@ extension Transform2D: TypedVariantTransformable {
 }
 
 extension Vector4: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .vector4
+    public static let variantType: Variant.GodotType = .vector4
     
     public var variant: Variant {
         let variant = Variant()
@@ -1547,7 +1547,7 @@ extension Vector4: TypedVariantTransformable {
 }
 
 extension Vector4i: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .vector4i
+    public static let variantType: Variant.GodotType = .vector4i
     
     public var variant: Variant {
         let variant = Variant()
@@ -1565,7 +1565,7 @@ extension Vector4i: TypedVariantTransformable {
 }
 
 extension Plane: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .plane
+    public static let variantType: Variant.GodotType = .plane
     
     public var variant: Variant {
         let variant = Variant()
@@ -1583,7 +1583,7 @@ extension Plane: TypedVariantTransformable {
 }
 
 extension Quaternion: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .quaternion
+    public static let variantType: Variant.GodotType = .quaternion
     
     public var variant: Variant {
         let variant = Variant()
@@ -1601,7 +1601,7 @@ extension Quaternion: TypedVariantTransformable {
 }
 
 extension AABB: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .aabb
+    public static let variantType: Variant.GodotType = .aabb
     
     public var variant: Variant {
         let variant = Variant()
@@ -1619,7 +1619,7 @@ extension AABB: TypedVariantTransformable {
 }
 
 extension Basis: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .basis
+    public static let variantType: Variant.GodotType = .basis
     
     public var variant: Variant {
         let variant = Variant()
@@ -1637,7 +1637,7 @@ extension Basis: TypedVariantTransformable {
 }
 
 extension Transform3D: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .transform3D
+    public static let variantType: Variant.GodotType = .transform3D
     
     public var variant: Variant {
         let variant = Variant()
@@ -1655,7 +1655,7 @@ extension Transform3D: TypedVariantTransformable {
 }
 
 extension Projection: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .projection
+    public static let variantType: Variant.GodotType = .projection
     
     public var variant: Variant {
         let variant = Variant()
@@ -1673,7 +1673,7 @@ extension Projection: TypedVariantTransformable {
 }
 
 extension Color: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .color
+    public static let variantType: Variant.GodotType = .color
     
     public var variant: Variant {
         let variant = Variant()
@@ -1691,7 +1691,7 @@ extension Color: TypedVariantTransformable {
 }
 
 extension StringName: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .stringName
+    public static let variantType: Variant.GodotType = .stringName
     
     public var variant: Variant {
         let variant = Variant()
@@ -1709,7 +1709,7 @@ extension StringName: TypedVariantTransformable {
 }
 
 extension NodePath: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .nodePath
+    public static let variantType: Variant.GodotType = .nodePath
     
     public var variant: Variant {
         let variant = Variant()
@@ -1727,7 +1727,7 @@ extension NodePath: TypedVariantTransformable {
 }
 
 extension RID: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .rid
+    public static let variantType: Variant.GodotType = .rid
     
     public var variant: Variant {
         let variant = Variant()
@@ -1745,7 +1745,7 @@ extension RID: TypedVariantTransformable {
 }
 
 extension Object: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .object
+    public static let variantType: Variant.GodotType = .object
 
     public var variant: Variant {
         let variant = Variant()
@@ -1761,7 +1761,7 @@ extension Object: TypedVariantTransformable {
 }
 
 extension Callable: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .callable
+    public static let variantType: Variant.GodotType = .callable
     
     public var variant: Variant {
         let variant = Variant()
@@ -1779,7 +1779,7 @@ extension Callable: TypedVariantTransformable {
 }
 
 extension Signal: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .signal
+    public static let variantType: Variant.GodotType = .signal
     
     public var variant: Variant {
         let variant = Variant()
@@ -1797,7 +1797,7 @@ extension Signal: TypedVariantTransformable {
 }
 
 extension Dictionary: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .dictionary
+    public static let variantType: Variant.GodotType = .dictionary
     
     public var variant: Variant {
         let variant = Variant()
@@ -1815,7 +1815,7 @@ extension Dictionary: TypedVariantTransformable {
 }
 
 extension Array: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .array
+    public static let variantType: Variant.GodotType = .array
     
     public var variant: Variant {
         let variant = Variant()
@@ -1833,7 +1833,7 @@ extension Array: TypedVariantTransformable {
 }
 
 extension PackedByteArray: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .packedByteArray
+    public static let variantType: Variant.GodotType = .packedByteArray
     
     public var variant: Variant {
         let variant = Variant()
@@ -1851,7 +1851,7 @@ extension PackedByteArray: TypedVariantTransformable {
 }
 
 extension PackedInt32Array: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .packedInt32Array
+    public static let variantType: Variant.GodotType = .packedInt32Array
     
     public var variant: Variant {
         let variant = Variant()
@@ -1869,7 +1869,7 @@ extension PackedInt32Array: TypedVariantTransformable {
 }
 
 extension PackedInt64Array: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .packedInt64Array
+    public static let variantType: Variant.GodotType = .packedInt64Array
     
     public var variant: Variant {
         let variant = Variant()
@@ -1887,7 +1887,7 @@ extension PackedInt64Array: TypedVariantTransformable {
 }
 
 extension PackedFloat32Array: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .packedFloat32Array
+    public static let variantType: Variant.GodotType = .packedFloat32Array
     
     public var variant: Variant {
         let variant = Variant()
@@ -1905,7 +1905,7 @@ extension PackedFloat32Array: TypedVariantTransformable {
 }
 
 extension PackedFloat64Array: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .packedFloat64Array
+    public static let variantType: Variant.GodotType = .packedFloat64Array
     
     public var variant: Variant {
         let variant = Variant()
@@ -1923,7 +1923,7 @@ extension PackedFloat64Array: TypedVariantTransformable {
 }
 
 extension PackedStringArray: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .packedStringArray
+    public static let variantType: Variant.GodotType = .packedStringArray
     
     public var variant: Variant {
         let variant = Variant()
@@ -1941,7 +1941,7 @@ extension PackedStringArray: TypedVariantTransformable {
 }
 
 extension PackedVector2Array: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .packedVector2Array
+    public static let variantType: Variant.GodotType = .packedVector2Array
     
     public var variant: Variant {
         let variant = Variant()
@@ -1959,7 +1959,7 @@ extension PackedVector2Array: TypedVariantTransformable {
 }
 
 extension PackedVector3Array: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .packedVector3Array
+    public static let variantType: Variant.GodotType = .packedVector3Array
     
     public var variant: Variant {
         let variant = Variant()
@@ -1977,7 +1977,7 @@ extension PackedVector3Array: TypedVariantTransformable {
 }
 
 extension PackedColorArray: TypedVariantTransformable {
-    public static let variantStorageType: Variant.GodotType = .packedColorArray
+    public static let variantType: Variant.GodotType = .packedColorArray
     
     public var variant: Variant {
         let variant = Variant()

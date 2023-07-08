@@ -4,9 +4,9 @@ Make an entry point for your module and initialize it with custom parameters.
 
 ## Overview
 
-The code you write using Godot Swift is an extension of Godot. Before using any type defined by Godot, or exposing any custom class to the Godot editor, your module needs to be initialized. Godot will therefore call an entry point you defined and make all the necessary preparation.
+The code you write using Godot Swift is an extension of Godot. Before using any type defined by Godot in your own code, or exposing any custom class you wrote to the Godot editor, your module needs to be initialized. Godot will call an entry point you defined in your module to initialize it.
 
-A Godot bridge acts as the entry point.
+A Godot bridge *is* the entry point.
 
 ### Create a bridge
 
@@ -23,7 +23,7 @@ enum MyGame {
 
 By using this macro, a C function is automatically generated. This is the function Godot will call to initialize your module.
 
-The generated C function is named "`*attached-type*_godot_init`" where `*attached-type*` is the name of the type the macro is attached to, in lowercase. For example:
+The generated C function is named "*type*`_godot_init`" where "*type*" is the name of the type the macro is attached to, in lowercase. For example:
 
 ```swift
 @GodotBridge
@@ -70,9 +70,13 @@ enum MyGame {
     static func initialize(level: GodotInitializationLevel) {
         // Custom initialization
     }
+
+    static func deinitialize(level: GodotInitializationLevel) {
+        // Custom deinitialization
+    }
 }
 ```
 
-### Configure Godot to work with your module
+### Configure your Godot project to work with your module
 
-See <doc:CreatingGDExtensionModule> to learn how to setup Godot.
+See <doc:CreatingGDExtensionModule> to learn how to setup your Godot project.

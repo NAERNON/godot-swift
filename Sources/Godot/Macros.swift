@@ -1,5 +1,9 @@
 import Foundation
 
+/// A macro that enables a custom Godot class
+/// to be exposed to the Godot editor.
+///
+/// Learn how to expose a custom class: <doc:CreatingCustomClass>.
 @attached(member, names: named(_gd_exposeToGodot), named(_gd_className), named(_gd_isCustomClass))
 public macro GodotExposable() = #externalMacro(module: "GodotMacros", type: "GodotExposableMacro")
 

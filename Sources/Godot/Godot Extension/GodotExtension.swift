@@ -2,7 +2,7 @@ import GodotExtensionHeaders
 
 /// The centralized point of control of a Godot extension.
 ///
-/// > Warning: Do not use ``GodotExtension``, or any of its members, directly.
+/// > Warning: Do not use `GodotExtension`, or any of its members, directly.
 ///
 /// Use the ``GodotBridge()`` macro to setup a bridge that will
 /// initialize the GodotExtension.

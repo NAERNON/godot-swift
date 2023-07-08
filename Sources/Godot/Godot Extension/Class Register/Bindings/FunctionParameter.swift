@@ -24,7 +24,7 @@ extension ClassRegister {
         
         private init<Value>(type: Value.Type,
                             name: StringName) where Value : ExpressibleByTypedVariant {
-            self.type = type.variantStorageType
+            self.type = type.variantType
             self.name = name
             self.defaultValue = nil
             self.metadata = .init(type)
