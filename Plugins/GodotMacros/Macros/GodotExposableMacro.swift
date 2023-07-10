@@ -112,7 +112,7 @@ public enum GodotExposableMacro: MemberMacro {
             for (index, parameter) in functionToExpose.signature.input.parameterList.enumerated() {
                 functionCall += "\n    "
                 functionCall += (parameter.secondName?.description ?? parameter.firstName.description)
-                functionCall += ": try! \(parameter.type.description)(variant: Variant(extensionVariantPtr: args!.advanced(by: \(index)).pointee!))"
+                functionCall += ": try! \(parameter.type.description).fromVariant(Variant(extensionVariantPtr: args!.advanced(by: \(index)).pointee!))"
             }
             functionCall += "\n)"
             

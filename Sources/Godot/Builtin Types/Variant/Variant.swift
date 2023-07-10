@@ -25,16 +25,16 @@ public struct Variant {
         }
     }
     
-    public init<T>(_ variantConvertible: T) where T : VariantConvertible {
-        self = variantConvertible.variant
+    public init<T>(_ value: T) where T : ConvertibleToVariant {
+        self = value.variant
     }
 
     // MARK: Getters
     
     /// Returns the value contained inside the `Variant`.
     /// - Parameter type: The type inside the `Variant`.
-    public func value<T>(ofType type: T.Type) throws -> T where T : ExpressibleByVariant {
-        try type.init(variant: self)
+    public func value<T>(ofType type: T.Type) throws -> T where T : ConvertibleFromVariant {
+        try type.fromVariant(self)
     }
     
     // MARK: - Functions
@@ -1156,7 +1156,7 @@ extension Variant {
 
 // MARK: - Variant Transformable
 
-extension Bool: TypedVariantTransformable {
+extension Bool: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .bool
     
     public var variant: Variant {
@@ -1169,12 +1169,12 @@ extension Bool: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedBoolValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedBoolValue
     }
 }
 
-extension Int: TypedVariantTransformable {
+extension Int: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
@@ -1187,12 +1187,12 @@ extension Int: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedIntValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedIntValue
     }
 }
 
-extension Int8: TypedVariantTransformable {
+extension Int8: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
@@ -1205,12 +1205,12 @@ extension Int8: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedInt8Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedInt8Value
     }
 }
 
-extension Int16: TypedVariantTransformable {
+extension Int16: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
@@ -1223,12 +1223,12 @@ extension Int16: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedInt16Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedInt16Value
     }
 }
 
-extension Int32: TypedVariantTransformable {
+extension Int32: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
@@ -1241,12 +1241,12 @@ extension Int32: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedInt32Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedInt32Value
     }
 }
 
-extension Int64: TypedVariantTransformable {
+extension Int64: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
@@ -1259,12 +1259,12 @@ extension Int64: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedInt64Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedInt64Value
     }
 }
 
-extension UInt8: TypedVariantTransformable {
+extension UInt8: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
@@ -1277,12 +1277,12 @@ extension UInt8: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedUInt8Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedUInt8Value
     }
 }
 
-extension UInt16: TypedVariantTransformable {
+extension UInt16: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
@@ -1295,12 +1295,12 @@ extension UInt16: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedUInt16Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedUInt16Value
     }
 }
 
-extension UInt32: TypedVariantTransformable {
+extension UInt32: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
@@ -1313,12 +1313,12 @@ extension UInt32: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedUInt32Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedUInt32Value
     }
 }
 
-extension UInt64: TypedVariantTransformable {
+extension UInt64: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .int
     
     public var variant: Variant {
@@ -1331,12 +1331,12 @@ extension UInt64: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedUInt64Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedUInt64Value
     }
 }
 
-extension Double: TypedVariantTransformable {
+extension Double: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .float
     
     public var variant: Variant {
@@ -1349,12 +1349,12 @@ extension Double: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedDoubleValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedDoubleValue
     }
 }
 
-extension Float: TypedVariantTransformable {
+extension Float: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .float
     
     public var variant: Variant {
@@ -1367,24 +1367,24 @@ extension Float: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedFloatValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedFloatValue
     }
 }
 
-extension Real: TypedVariantTransformable {
+extension Real: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = Double.variantType
 
     public var variant: Variant {
         Double(self).variant
     }
 
-    public init(typedVariant: Variant) {
-        self = Real(Double(typedVariant: typedVariant))
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        Real(Double.fromTypedVariant(variant))
     }
 }
 
-extension String: TypedVariantTransformable {
+extension String: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .string
     
     public var variant: Variant {
@@ -1397,12 +1397,12 @@ extension String: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedStringValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedStringValue
     }
 }
 
-extension Vector2: TypedVariantTransformable {
+extension Vector2: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .vector2
     
     public var variant: Variant {
@@ -1415,12 +1415,12 @@ extension Vector2: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedVector2Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedVector2Value
     }
 }
 
-extension Vector2i: TypedVariantTransformable {
+extension Vector2i: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .vector2i
     
     public var variant: Variant {
@@ -1433,12 +1433,12 @@ extension Vector2i: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedVector2iValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedVector2iValue
     }
 }
 
-extension Rect2: TypedVariantTransformable {
+extension Rect2: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .rect2
     
     public var variant: Variant {
@@ -1451,12 +1451,12 @@ extension Rect2: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedRect2Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedRect2Value
     }
 }
 
-extension Rect2i: TypedVariantTransformable {
+extension Rect2i: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .rect2i
     
     public var variant: Variant {
@@ -1469,12 +1469,12 @@ extension Rect2i: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedRect2iValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedRect2iValue
     }
 }
 
-extension Vector3: TypedVariantTransformable {
+extension Vector3: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .vector3
     
     public var variant: Variant {
@@ -1487,12 +1487,12 @@ extension Vector3: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedVector3Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedVector3Value
     }
 }
 
-extension Vector3i: TypedVariantTransformable {
+extension Vector3i: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .vector3i
     
     public var variant: Variant {
@@ -1505,12 +1505,12 @@ extension Vector3i: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedVector3iValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedVector3iValue
     }
 }
 
-extension Transform2D: TypedVariantTransformable {
+extension Transform2D: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .transform2D
     
     public var variant: Variant {
@@ -1523,12 +1523,12 @@ extension Transform2D: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedTransform2DValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedTransform2DValue
     }
 }
 
-extension Vector4: TypedVariantTransformable {
+extension Vector4: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .vector4
     
     public var variant: Variant {
@@ -1541,12 +1541,12 @@ extension Vector4: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedVector4Value
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedVector4Value
     }
 }
 
-extension Vector4i: TypedVariantTransformable {
+extension Vector4i: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .vector4i
     
     public var variant: Variant {
@@ -1559,12 +1559,12 @@ extension Vector4i: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedVector4iValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedVector4iValue
     }
 }
 
-extension Plane: TypedVariantTransformable {
+extension Plane: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .plane
     
     public var variant: Variant {
@@ -1577,12 +1577,12 @@ extension Plane: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedPlaneValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedPlaneValue
     }
 }
 
-extension Quaternion: TypedVariantTransformable {
+extension Quaternion: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .quaternion
     
     public var variant: Variant {
@@ -1595,12 +1595,12 @@ extension Quaternion: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedQuaternionValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedQuaternionValue
     }
 }
 
-extension AABB: TypedVariantTransformable {
+extension AABB: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .aabb
     
     public var variant: Variant {
@@ -1613,12 +1613,12 @@ extension AABB: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedAABBValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedAABBValue
     }
 }
 
-extension Basis: TypedVariantTransformable {
+extension Basis: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .basis
     
     public var variant: Variant {
@@ -1631,12 +1631,12 @@ extension Basis: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedBasisValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedBasisValue
     }
 }
 
-extension Transform3D: TypedVariantTransformable {
+extension Transform3D: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .transform3D
     
     public var variant: Variant {
@@ -1649,12 +1649,12 @@ extension Transform3D: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedTransform3DValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedTransform3DValue
     }
 }
 
-extension Projection: TypedVariantTransformable {
+extension Projection: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .projection
     
     public var variant: Variant {
@@ -1667,12 +1667,12 @@ extension Projection: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedProjectionValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedProjectionValue
     }
 }
 
-extension Color: TypedVariantTransformable {
+extension Color: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .color
     
     public var variant: Variant {
@@ -1685,12 +1685,12 @@ extension Color: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedColorValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedColorValue
     }
 }
 
-extension StringName: TypedVariantTransformable {
+extension StringName: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .stringName
     
     public var variant: Variant {
@@ -1703,12 +1703,12 @@ extension StringName: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedStringNameValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedStringNameValue
     }
 }
 
-extension NodePath: TypedVariantTransformable {
+extension NodePath: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .nodePath
     
     public var variant: Variant {
@@ -1721,12 +1721,12 @@ extension NodePath: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedNodePathValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedNodePathValue
     }
 }
 
-extension RID: TypedVariantTransformable {
+extension RID: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .rid
     
     public var variant: Variant {
@@ -1739,12 +1739,12 @@ extension RID: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedRIDValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedRIDValue
     }
 }
 
-extension Object: TypedVariantTransformable {
+extension Object: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .object
 
     public var variant: Variant {
@@ -1760,7 +1760,7 @@ extension Object: TypedVariantTransformable {
     }
 }
 
-extension Callable: TypedVariantTransformable {
+extension Callable: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .callable
     
     public var variant: Variant {
@@ -1773,12 +1773,12 @@ extension Callable: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedCallableValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedCallableValue
     }
 }
 
-extension Signal: TypedVariantTransformable {
+extension Signal: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .signal
     
     public var variant: Variant {
@@ -1791,12 +1791,12 @@ extension Signal: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedSignalValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedSignalValue
     }
 }
 
-extension Dictionary: TypedVariantTransformable {
+extension Dictionary: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .dictionary
     
     public var variant: Variant {
@@ -1809,12 +1809,12 @@ extension Dictionary: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedDictionaryValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedDictionaryValue
     }
 }
 
-extension Array: TypedVariantTransformable {
+extension Array: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .array
     
     public var variant: Variant {
@@ -1827,12 +1827,12 @@ extension Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedArrayValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedArrayValue
     }
 }
 
-extension PackedByteArray: TypedVariantTransformable {
+extension PackedByteArray: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .packedByteArray
     
     public var variant: Variant {
@@ -1845,12 +1845,12 @@ extension PackedByteArray: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedPackedByteArrayValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedPackedByteArrayValue
     }
 }
 
-extension PackedInt32Array: TypedVariantTransformable {
+extension PackedInt32Array: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .packedInt32Array
     
     public var variant: Variant {
@@ -1863,12 +1863,12 @@ extension PackedInt32Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedPackedInt32ArrayValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedPackedInt32ArrayValue
     }
 }
 
-extension PackedInt64Array: TypedVariantTransformable {
+extension PackedInt64Array: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .packedInt64Array
     
     public var variant: Variant {
@@ -1881,12 +1881,12 @@ extension PackedInt64Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedPackedInt64ArrayValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedPackedInt64ArrayValue
     }
 }
 
-extension PackedFloat32Array: TypedVariantTransformable {
+extension PackedFloat32Array: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .packedFloat32Array
     
     public var variant: Variant {
@@ -1899,12 +1899,12 @@ extension PackedFloat32Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedPackedFloat32ArrayValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedPackedFloat32ArrayValue
     }
 }
 
-extension PackedFloat64Array: TypedVariantTransformable {
+extension PackedFloat64Array: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .packedFloat64Array
     
     public var variant: Variant {
@@ -1917,12 +1917,12 @@ extension PackedFloat64Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedPackedFloat64ArrayValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedPackedFloat64ArrayValue
     }
 }
 
-extension PackedStringArray: TypedVariantTransformable {
+extension PackedStringArray: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .packedStringArray
     
     public var variant: Variant {
@@ -1935,12 +1935,12 @@ extension PackedStringArray: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedPackedStringArrayValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedPackedStringArrayValue
     }
 }
 
-extension PackedVector2Array: TypedVariantTransformable {
+extension PackedVector2Array: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .packedVector2Array
     
     public var variant: Variant {
@@ -1953,12 +1953,12 @@ extension PackedVector2Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedPackedVector2ArrayValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedPackedVector2ArrayValue
     }
 }
 
-extension PackedVector3Array: TypedVariantTransformable {
+extension PackedVector3Array: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .packedVector3Array
     
     public var variant: Variant {
@@ -1971,12 +1971,12 @@ extension PackedVector3Array: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedPackedVector3ArrayValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedPackedVector3ArrayValue
     }
 }
 
-extension PackedColorArray: TypedVariantTransformable {
+extension PackedColorArray: TypedVariantConvertible {
     public static let variantType: Variant.GodotType = .packedColorArray
     
     public var variant: Variant {
@@ -1989,7 +1989,7 @@ extension PackedColorArray: TypedVariantTransformable {
         return variant
     }
     
-    public init(typedVariant: Variant) {
-        self = typedVariant.uncheckedPackedColorArrayValue
+    public static func fromTypedVariant(_ variant: Variant) -> Self {
+        variant.uncheckedPackedColorArrayValue
     }
 }

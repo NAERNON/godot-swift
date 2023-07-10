@@ -5,10 +5,10 @@ import GodotExtensionHeaders
 
 /// A `TypedArray` is a Godot array that is constrained by a type.
 ///
-/// Under the hood, this collection uses the Godot `Array` type.
+/// Under the hood, this collection uses the Godot ``Array`` type.
 ///
-/// Only `TypedVariantTransformable` elements can be contained inside a `TypedArray`.
-public struct TypedArray<Element> where Element : TypedVariantTransformable {
+/// Only ``TypedVariantConvertible`` elements can be contained inside a `TypedArray`.
+public struct TypedArray<Element> where Element : TypedVariantConvertible {
     private var underlyingArray: Array
     
     public init(_ value: TypedArray<Element>) {
@@ -85,7 +85,7 @@ extension TypedArray: RandomAccessCollection {}
 extension TypedArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Element {
         get {
-            Element(typedVariant: underlyingArray[index])
+            Element.fromTypedVariant(underlyingArray[index])
         }
         set(newValue) {
             underlyingArray[index] = newValue.variant

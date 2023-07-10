@@ -87,8 +87,8 @@ struct GodotClass: Decodable {
                 self.extensionObjectPtr = extensionObjectPtr
             }
             
-            public required init(typedVariant: Variant) {
-                extensionObjectPtr = typedVariant.uncheckedObjectValue(ofType: Self.self).extensionObjectPtr
+            public class func fromTypedVariant(_ variant: Variant) -> Self {
+                variant.uncheckedObjectValue(ofType: Self.self)
             }
             """)
         } else {
@@ -99,10 +99,6 @@ struct GodotClass: Decodable {
             
             internal override init(extensionObjectPtr: GDExtensionObjectPtr) {
                 super.init(extensionObjectPtr: extensionObjectPtr)
-            }
-            
-            public required init(typedVariant: Variant) {
-                super.init(typedVariant: typedVariant)
             }
             """)
             
