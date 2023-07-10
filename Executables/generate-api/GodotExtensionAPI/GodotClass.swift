@@ -72,9 +72,13 @@ struct GodotClass: Decodable {
                 
                 self.extensionObjectPtr = extensionObjectPtr
                 
+                withUnsafePointer(to: Self.instanceBindingsCallbacks()) { selfPtr in
+                    GodotExtension.interface.object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passUnretained(self).toOpaque(), selfPtr)
+                }
+                
                 if Self._gd_isCustomClass {
                     Self._gd_className.withUnsafeExtensionPointer { classNamePtr in
-                        GodotExtension.interface.object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passRetained(self).toOpaque())
+                        GodotExtension.interface.object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
                     }
                 }
             }
@@ -85,31 +89,6 @@ struct GodotClass: Decodable {
             
             public required init(typedVariant: Variant) {
                 extensionObjectPtr = typedVariant.uncheckedObjectValue(ofType: Self.self).extensionObjectPtr
-            }
-            """)
-        } else if isRefCountedRootClass {
-            DeclSyntax("""
-            public required init() {
-                super.init()
-                _ = initRef()
-            }
-            
-            deinit {
-                if unreference() {
-                    withUnsafeGodotMutableConstAccessPointer(to: `self`) { __ptr_self in
-                        GodotExtension.interface.mem_free(__ptr_self)
-                    }
-                }
-            }
-            
-            internal override init(extensionObjectPtr: GDExtensionObjectPtr) {
-                super.init(extensionObjectPtr: extensionObjectPtr)
-                _ = initRef()
-            }
-            
-            public required init(typedVariant: Variant) {
-                super.init(typedVariant: typedVariant)
-                _ = initRef()
             }
             """)
         } else {
@@ -126,6 +105,16 @@ struct GodotClass: Decodable {
                 super.init(typedVariant: typedVariant)
             }
             """)
+            
+            if isRefCountedRootClass {
+                DeclSyntax("""
+                deinit {
+                    withUnsafeGodotMutableConstAccessPointer(to: `self`) { __ptr_self in
+                        GodotExtension.interface.mem_free(__ptr_self)
+                    }
+                }
+                """)
+            }
         }
         
         DeclSyntax("""
@@ -149,6 +138,10 @@ struct GodotClass: Decodable {
     
     @MemberDeclListBuilder
     func instanceBindingsSyntax() throws -> MemberDeclListSyntax {
+        if isRootClass {
+            DeclSyntax("internal var preventNextReference = false")
+        }
+        
         DeclSyntax("""
         internal \(isRootClass ? "" : "override ")class func instanceBindingsCallbacks() -> GDExtensionInstanceBindingCallbacks {
             return GDExtensionInstanceBindingCallbacks { token, instance in
@@ -158,10 +151,39 @@ struct GodotClass: Decodable {
                     GodotExtension.interface.mem_free(__ptr_self)
                 }
             } reference_callback: { token, instance, reference in
+                if reference != 0 {
+                    let objectInstance = Unmanaged<\(raw: identifier)>.fromOpaque(instance!).takeUnretainedValue()
+                    if objectInstance.preventNextReference {
+                        objectInstance.preventNextReference = false
+                    } else {
+                        _ = Unmanaged<\(raw: identifier)>.fromOpaque(instance!).retain()
+                    }
+                } else {
+                    Unmanaged<\(raw: identifier)>.fromOpaque(instance!).release()
+                }
                 return 1
             }
         }
         """)
+    }
+    
+    @MemberDeclListBuilder
+    func makeInstanceSyntax() -> MemberDeclListSyntax {
+        if isRootClass {
+            DeclSyntax("""
+            public class func _makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
+                let instance = Self()
+                
+                if let instance = instance as? RefCounted {
+                    _ = instance.initRef()
+                    _ = Unmanaged.passRetained(instance)
+                    instance.preventNextReference = true
+                }
+                
+                return instance.extensionObjectPtr
+            }
+            """)
+        }
     }
     
     @MemberDeclListBuilder
@@ -219,7 +241,7 @@ struct GodotClass: Decodable {
                 }
             }
         }
-        .addModifier(.init(name: .keyword(isRefCountedRootClass ? .private : method.isStatic ? .public : .open)))
+        .addModifier(.init(name: .keyword(isRefCountedRootClass ? .internal : method.isStatic ? .public : .open)))
     }
     
     private func virtualMethodSyntax(_ method: Method) throws -> FunctionDeclSyntax {

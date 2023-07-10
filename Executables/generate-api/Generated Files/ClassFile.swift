@@ -19,6 +19,10 @@ extension GeneratedFile {
                     .with(\.leadingTrivia, .newline)
                     .with(\.trailingTrivia, .newlines(2))
                 
+                `class`.makeInstanceSyntax()
+                    .with(\.leadingTrivia, .newline)
+                    .with(\.trailingTrivia, .newlines(2))
+                
                 `class`.enumSyntax()
                     .with(\.leadingTrivia, .newline)
                     .with(\.trailingTrivia, .newlines(2))

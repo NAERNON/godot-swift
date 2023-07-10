@@ -153,15 +153,8 @@ public enum GodotExposableMacro: MemberMacro {
                 ) { _, _, _ in
                     
                 }
-                createInstanceFunction: { _ in
-                    let instance = \(classDecl.identifier)()
-                    var objectPtr: UnsafeMutableRawPointer!
-                    
-                    instance.withUnsafeExtensionPointer { ptr in
-                        objectPtr = ptr
-                    }
-                    
-                    return objectPtr
+                createInstanceFunction: { a in
+                    \(classDecl.identifier)._makeNewInstanceManagedByGodot()
                 }
                 freeInstanceFunction: { _, instancePtr in
                     Unmanaged<\(classDecl.identifier)>.fromOpaque(instancePtr!).release()
