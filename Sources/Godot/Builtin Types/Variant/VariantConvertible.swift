@@ -51,6 +51,8 @@ public protocol ConvertibleToVariant {
 ///
 /// Types that conform to the `ConvertibleFromVariant` protocol
 /// can be converted from a variant.
+/// Use the `Variant` ``Variant/value(ofType:)`` method to
+/// retreive an instance from a pointer.
 ///
 /// For example, this custom `Level` struct can be converted
 /// from a variant:
@@ -61,10 +63,13 @@ public protocol ConvertibleToVariant {
 ///
 ///     static let variantType: Variant.GodotType = Int.variantType
 ///
-///     static func fromVariant(_ variant: Variant) throws -> Level {
-///         Level(index: try Int.fromVariant(variant))
+///     static func fromMatchingTypeVariant(_ variant: Variant) -> Level {
+///         Level(index: Int.fromMatchingTypeVariant(variant))
 ///     }
 /// }
+///
+/// let variant: Variant = //...
+/// let level = try Variant.value(ofType: Level.self)
 /// ```
 ///
 /// ## Conforming to the ConvertibleFromVariant Protocol
