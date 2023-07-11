@@ -88,7 +88,7 @@ struct GodotClass: Decodable {
             }
             
             public class func fromTypedVariant(_ variant: Variant) -> Self {
-                variant.uncheckedObjectValue(ofType: Self.self)
+                variant.forcedObjectValue(ofType: Self.self)
             }
             """)
         } else {

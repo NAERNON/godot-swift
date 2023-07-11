@@ -357,11 +357,11 @@ extension Variant: CustomDebugStringConvertible {
 
 extension Variant: Equatable {
     static public func == (lhs: Variant, rhs: Variant) -> Bool {
-        lhs.evaluate(other: rhs, operator: .equal)?.uncheckedBoolValue == true
+        lhs.evaluate(other: rhs, operator: .equal)?.forcedBoolValue == true
     }
     
     static public func != (lhs: Variant, rhs: Variant) -> Bool {
-        lhs.evaluate(other: rhs, operator: .notEqual)?.uncheckedBoolValue == true
+        lhs.evaluate(other: rhs, operator: .notEqual)?.forcedBoolValue == true
     }
 }
 
@@ -403,15 +403,13 @@ extension Variant: ExpressibleByNilLiteral {
     }
 }
 
-// MARK: - Unchecked getters
+// MARK: - Forced getters
 
 extension Variant {
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
-    /// - Parameter type: The type of the `Object`.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public func uncheckedObjectValue<ObjectType>(ofType type: ObjectType.Type) -> ObjectType where ObjectType: Object {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal func forcedObjectValue<ObjectType>(ofType type: ObjectType.Type) -> ObjectType where ObjectType: Object {
         var newValue: ObjectType!
         let instanceOwner = UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity: 1)
         
@@ -433,11 +431,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedBoolValue: Bool {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedBoolValue: Bool {
         var newValue = UInt8()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -449,11 +446,10 @@ extension Variant {
         return newValue != 0
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedIntValue: Int {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedIntValue: Int {
         var newValue = Int()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -465,11 +461,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedInt8Value: Int8 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedInt8Value: Int8 {
         var newValue = Int8()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -481,11 +476,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedInt16Value: Int16 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedInt16Value: Int16 {
         var newValue = Int16()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -497,11 +491,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedInt32Value: Int32 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedInt32Value: Int32 {
         var newValue = Int32()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -513,11 +506,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedInt64Value: Int64 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedInt64Value: Int64 {
         var newValue = Int64()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -529,11 +521,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedUInt8Value: UInt8 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedUInt8Value: UInt8 {
         var newValue = UInt8()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -545,11 +536,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedUInt16Value: UInt16 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedUInt16Value: UInt16 {
         var newValue = UInt16()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -561,11 +551,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedUInt32Value: UInt32 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedUInt32Value: UInt32 {
         var newValue = UInt32()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -577,11 +566,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedUInt64Value: UInt64 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedUInt64Value: UInt64 {
         var newValue = UInt64()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -593,11 +581,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedDoubleValue: Double {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedDoubleValue: Double {
         var newValue = Double()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -609,11 +596,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedFloatValue: Float {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedFloatValue: Float {
         var newValue = Float()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -625,11 +611,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedStringValue: String {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedStringValue: String {
         let newValue = String()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -641,11 +626,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedVector2Value: Vector2 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedVector2Value: Vector2 {
         var newValue = Vector2()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -657,11 +641,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedVector2iValue: Vector2i {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedVector2iValue: Vector2i {
         var newValue = Vector2i()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -673,11 +656,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedRect2Value: Rect2 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedRect2Value: Rect2 {
         var newValue = Rect2()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -689,11 +671,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedRect2iValue: Rect2i {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedRect2iValue: Rect2i {
         var newValue = Rect2i()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -705,11 +686,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedVector3Value: Vector3 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedVector3Value: Vector3 {
         var newValue = Vector3()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -721,11 +701,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedVector3iValue: Vector3i {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedVector3iValue: Vector3i {
         var newValue = Vector3i()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -737,11 +716,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedTransform2DValue: Transform2D {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedTransform2DValue: Transform2D {
         var newValue = Transform2D()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -753,11 +731,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedVector4Value: Vector4 {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedVector4Value: Vector4 {
         var newValue = Vector4()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -769,11 +746,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedVector4iValue: Vector4i {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedVector4iValue: Vector4i {
         var newValue = Vector4i()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -785,11 +761,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedPlaneValue: Plane {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedPlaneValue: Plane {
         var newValue = Plane()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -801,11 +776,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedQuaternionValue: Quaternion {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedQuaternionValue: Quaternion {
         var newValue = Quaternion()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -817,11 +791,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedAABBValue: AABB {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedAABBValue: AABB {
         var newValue = AABB()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -833,11 +806,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedBasisValue: Basis {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedBasisValue: Basis {
         var newValue = Basis()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -849,11 +821,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedTransform3DValue: Transform3D {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedTransform3DValue: Transform3D {
         var newValue = Transform3D()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -865,11 +836,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedProjectionValue: Projection {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedProjectionValue: Projection {
         var newValue = Projection()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -881,11 +851,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedColorValue: Color {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedColorValue: Color {
         var newValue = Color()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -897,11 +866,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedStringNameValue: StringName {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedStringNameValue: StringName {
         let newValue = StringName()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -913,11 +881,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedNodePathValue: NodePath {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedNodePathValue: NodePath {
         let newValue = NodePath()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -929,11 +896,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedRIDValue: RID {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedRIDValue: RID {
         let newValue = RID()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -945,11 +911,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedCallableValue: Callable {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedCallableValue: Callable {
         let newValue = Callable()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -961,11 +926,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedSignalValue: Signal {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedSignalValue: Signal {
         let newValue = Signal()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -977,11 +941,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedDictionaryValue: Dictionary {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedDictionaryValue: Dictionary {
         let newValue = Dictionary()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -993,11 +956,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedArrayValue: Array {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedArrayValue: Array {
         let newValue = Array()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -1009,11 +971,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedPackedByteArrayValue: PackedByteArray {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedPackedByteArrayValue: PackedByteArray {
         let newValue = PackedByteArray()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -1025,11 +986,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedPackedInt32ArrayValue: PackedInt32Array {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedPackedInt32ArrayValue: PackedInt32Array {
         let newValue = PackedInt32Array()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -1041,11 +1001,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedPackedInt64ArrayValue: PackedInt64Array {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedPackedInt64ArrayValue: PackedInt64Array {
         let newValue = PackedInt64Array()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -1057,11 +1016,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedPackedFloat32ArrayValue: PackedFloat32Array {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedPackedFloat32ArrayValue: PackedFloat32Array {
         let newValue = PackedFloat32Array()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -1073,11 +1031,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedPackedFloat64ArrayValue: PackedFloat64Array {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedPackedFloat64ArrayValue: PackedFloat64Array {
         let newValue = PackedFloat64Array()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -1089,11 +1046,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedPackedStringArrayValue: PackedStringArray {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedPackedStringArrayValue: PackedStringArray {
         let newValue = PackedStringArray()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -1105,11 +1061,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedPackedVector2ArrayValue: PackedVector2Array {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedPackedVector2ArrayValue: PackedVector2Array {
         let newValue = PackedVector2Array()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -1121,11 +1076,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedPackedVector3ArrayValue: PackedVector3Array {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedPackedVector3ArrayValue: PackedVector3Array {
         let newValue = PackedVector3Array()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -1137,11 +1091,10 @@ extension Variant {
         return newValue
     }
     
-    /// Returns the underlying value, without checking that the underlying type
-    /// matches the requested type.
+    /// Returns the value inside the variant.
     ///
-    /// Godot might stop running when requesting a non matching type.
-    public var uncheckedPackedColorArrayValue: PackedColorArray {
+    /// > warning: The type of variant should be correct before retreiving the value.
+    internal var forcedPackedColorArrayValue: PackedColorArray {
         let newValue = PackedColorArray()
         
         self.withUnsafeExtensionPointer { extensionTypePtr in
@@ -1170,7 +1123,7 @@ extension Bool: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedBoolValue
+        variant.forcedBoolValue
     }
 }
 
@@ -1188,7 +1141,7 @@ extension Int: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedIntValue
+        variant.forcedIntValue
     }
 }
 
@@ -1206,7 +1159,7 @@ extension Int8: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedInt8Value
+        variant.forcedInt8Value
     }
 }
 
@@ -1224,7 +1177,7 @@ extension Int16: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedInt16Value
+        variant.forcedInt16Value
     }
 }
 
@@ -1242,7 +1195,7 @@ extension Int32: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedInt32Value
+        variant.forcedInt32Value
     }
 }
 
@@ -1260,7 +1213,7 @@ extension Int64: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedInt64Value
+        variant.forcedInt64Value
     }
 }
 
@@ -1278,7 +1231,7 @@ extension UInt8: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedUInt8Value
+        variant.forcedUInt8Value
     }
 }
 
@@ -1296,7 +1249,7 @@ extension UInt16: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedUInt16Value
+        variant.forcedUInt16Value
     }
 }
 
@@ -1314,7 +1267,7 @@ extension UInt32: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedUInt32Value
+        variant.forcedUInt32Value
     }
 }
 
@@ -1332,7 +1285,7 @@ extension UInt64: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedUInt64Value
+        variant.forcedUInt64Value
     }
 }
 
@@ -1350,7 +1303,7 @@ extension Double: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedDoubleValue
+        variant.forcedDoubleValue
     }
 }
 
@@ -1368,7 +1321,7 @@ extension Float: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedFloatValue
+        variant.forcedFloatValue
     }
 }
 
@@ -1398,7 +1351,7 @@ extension String: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedStringValue
+        variant.forcedStringValue
     }
 }
 
@@ -1416,7 +1369,7 @@ extension Vector2: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedVector2Value
+        variant.forcedVector2Value
     }
 }
 
@@ -1434,7 +1387,7 @@ extension Vector2i: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedVector2iValue
+        variant.forcedVector2iValue
     }
 }
 
@@ -1452,7 +1405,7 @@ extension Rect2: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedRect2Value
+        variant.forcedRect2Value
     }
 }
 
@@ -1470,7 +1423,7 @@ extension Rect2i: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedRect2iValue
+        variant.forcedRect2iValue
     }
 }
 
@@ -1488,7 +1441,7 @@ extension Vector3: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedVector3Value
+        variant.forcedVector3Value
     }
 }
 
@@ -1506,7 +1459,7 @@ extension Vector3i: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedVector3iValue
+        variant.forcedVector3iValue
     }
 }
 
@@ -1524,7 +1477,7 @@ extension Transform2D: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedTransform2DValue
+        variant.forcedTransform2DValue
     }
 }
 
@@ -1542,7 +1495,7 @@ extension Vector4: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedVector4Value
+        variant.forcedVector4Value
     }
 }
 
@@ -1560,7 +1513,7 @@ extension Vector4i: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedVector4iValue
+        variant.forcedVector4iValue
     }
 }
 
@@ -1578,7 +1531,7 @@ extension Plane: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedPlaneValue
+        variant.forcedPlaneValue
     }
 }
 
@@ -1596,7 +1549,7 @@ extension Quaternion: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedQuaternionValue
+        variant.forcedQuaternionValue
     }
 }
 
@@ -1614,7 +1567,7 @@ extension AABB: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedAABBValue
+        variant.forcedAABBValue
     }
 }
 
@@ -1632,7 +1585,7 @@ extension Basis: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedBasisValue
+        variant.forcedBasisValue
     }
 }
 
@@ -1650,7 +1603,7 @@ extension Transform3D: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedTransform3DValue
+        variant.forcedTransform3DValue
     }
 }
 
@@ -1668,7 +1621,7 @@ extension Projection: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedProjectionValue
+        variant.forcedProjectionValue
     }
 }
 
@@ -1686,7 +1639,7 @@ extension Color: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedColorValue
+        variant.forcedColorValue
     }
 }
 
@@ -1704,7 +1657,7 @@ extension StringName: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedStringNameValue
+        variant.forcedStringNameValue
     }
 }
 
@@ -1722,7 +1675,7 @@ extension NodePath: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedNodePathValue
+        variant.forcedNodePathValue
     }
 }
 
@@ -1740,7 +1693,7 @@ extension RID: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedRIDValue
+        variant.forcedRIDValue
     }
 }
 
@@ -1774,7 +1727,7 @@ extension Callable: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedCallableValue
+        variant.forcedCallableValue
     }
 }
 
@@ -1792,7 +1745,7 @@ extension Signal: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedSignalValue
+        variant.forcedSignalValue
     }
 }
 
@@ -1810,7 +1763,7 @@ extension Dictionary: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedDictionaryValue
+        variant.forcedDictionaryValue
     }
 }
 
@@ -1828,7 +1781,7 @@ extension Array: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedArrayValue
+        variant.forcedArrayValue
     }
 }
 
@@ -1846,7 +1799,7 @@ extension PackedByteArray: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedPackedByteArrayValue
+        variant.forcedPackedByteArrayValue
     }
 }
 
@@ -1864,7 +1817,7 @@ extension PackedInt32Array: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedPackedInt32ArrayValue
+        variant.forcedPackedInt32ArrayValue
     }
 }
 
@@ -1882,7 +1835,7 @@ extension PackedInt64Array: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedPackedInt64ArrayValue
+        variant.forcedPackedInt64ArrayValue
     }
 }
 
@@ -1900,7 +1853,7 @@ extension PackedFloat32Array: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedPackedFloat32ArrayValue
+        variant.forcedPackedFloat32ArrayValue
     }
 }
 
@@ -1918,7 +1871,7 @@ extension PackedFloat64Array: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedPackedFloat64ArrayValue
+        variant.forcedPackedFloat64ArrayValue
     }
 }
 
@@ -1936,7 +1889,7 @@ extension PackedStringArray: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedPackedStringArrayValue
+        variant.forcedPackedStringArrayValue
     }
 }
 
@@ -1954,7 +1907,7 @@ extension PackedVector2Array: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedPackedVector2ArrayValue
+        variant.forcedPackedVector2ArrayValue
     }
 }
 
@@ -1972,7 +1925,7 @@ extension PackedVector3Array: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedPackedVector3ArrayValue
+        variant.forcedPackedVector3ArrayValue
     }
 }
 
@@ -1990,6 +1943,6 @@ extension PackedColorArray: TypedVariantConvertible {
     }
     
     public static func fromTypedVariant(_ variant: Variant) -> Self {
-        variant.uncheckedPackedColorArrayValue
+        variant.forcedPackedColorArrayValue
     }
 }
