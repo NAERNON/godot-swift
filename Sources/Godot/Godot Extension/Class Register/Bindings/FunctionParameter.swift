@@ -23,7 +23,7 @@ extension ClassRegister {
         // MARK: Init
         
         private init<Value>(type: Value.Type,
-                            name: StringName) where Value : ConvertibleFromTypedVariant {
+                            name: StringName) where Value : ConvertibleToVariant {
             self.type = type.variantType
             self.name = name
             self.defaultValue = nil
@@ -36,7 +36,7 @@ extension ClassRegister {
         ///   - type: The type of the parameter.
         ///   - name: The name of the parameter.
         public static func argument<Value>(_ type: Value.Type, name: StringName) -> FunctionParameter
-        where Value : ConvertibleFromTypedVariant {
+        where Value : ConvertibleToVariant {
             .init(type: type, name: name)
         }
         
@@ -44,7 +44,7 @@ extension ClassRegister {
         ///
         /// - Parameter type: The type of the parameter.
         public static func returnParameter<Value>(_ type: Value.Type) -> FunctionParameter
-        where Value : ConvertibleFromTypedVariant {
+        where Value : ConvertibleToVariant {
             .init(type: type, name: .init())
         }
         

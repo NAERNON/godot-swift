@@ -87,8 +87,26 @@ struct GodotClass: Decodable {
                 self.extensionObjectPtr = extensionObjectPtr
             }
             
-            public class func fromTypedVariant(_ variant: Variant) -> Self {
-                variant.forcedObjectValue(ofType: Self.self)
+            public class func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+                var newValue: Self!
+                let instanceOwner = UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity: 1)
+                
+                variant.withUnsafeExtensionPointer { extensionTypePtr in
+                Variant.toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), extensionTypePtr)
+                
+                let finalPtr = withUnsafePointer(to: Self.instanceBindingsCallbacks()) { bindingsPtr in
+                    GodotExtension.interface.object_get_instance_binding(
+                        instanceOwner.pointee, GodotExtension.token, bindingsPtr
+                    )
+                }
+                
+                newValue = Unmanaged<Self>.fromOpaque(finalPtr!).takeUnretainedValue()
+                }
+                
+                instanceOwner.deinitialize(count: 1)
+                instanceOwner.deallocate()
+                
+                return newValue
             }
             """)
         } else {

@@ -16,14 +16,14 @@ extension Swift.String {
     }
 }
 
-extension Swift.String: TypedVariantConvertible {
+extension Swift.String: VariantConvertible {
     public static let variantType: Variant.GodotType = String.variantType
     
-    public var variant: Variant {
-        String(swiftString: self).variant
+    public func makeVariant() -> Variant {
+        String(swiftString: self).makeVariant()
     }
     
-    public static func fromTypedVariant(_ variant: Variant) -> Self {
-        Swift.String(godotString: String.fromTypedVariant(variant))
+    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+        Swift.String(godotString: String.fromMatchingTypeVariant(variant))
     }
 }

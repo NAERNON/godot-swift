@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 ///
 /// Under the hood, this collection uses the Godot ``Array`` type.
 ///
-/// Only ``TypedVariantConvertible`` elements can be contained inside a `TypedArray`.
-public struct TypedArray<Element> where Element : TypedVariantConvertible {
+/// Only ``VariantConvertible`` elements can be contained inside a `TypedArray`.
+public struct TypedArray<Element> where Element : VariantConvertible {
     private var underlyingArray: Array
     
     public init(_ value: TypedArray<Element>) {
@@ -85,10 +85,10 @@ extension TypedArray: RandomAccessCollection {}
 extension TypedArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Element {
         get {
-            Element.fromTypedVariant(underlyingArray[index])
+            Element.fromMatchingTypeVariant(underlyingArray[index])
         }
         set(newValue) {
-            underlyingArray[index] = newValue.variant
+            underlyingArray[index] = newValue.makeVariant()
         }
     }
     
@@ -99,7 +99,7 @@ extension TypedArray: RangeReplaceableCollection {
             if collectionIndex + subrange.lowerBound < subrange.upperBound {
                 self[rangeIndex] = element
             } else {
-                underlyingArray.insert(element.variant, at: rangeIndex)
+                underlyingArray.insert(element.makeVariant(), at: rangeIndex)
             }
             rangeIndex += 1
         }
