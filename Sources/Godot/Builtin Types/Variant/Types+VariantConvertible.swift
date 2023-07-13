@@ -38,7 +38,7 @@ extension Int: VariantConvertible {
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        var newValue = Int()
+        var newValue = Self()
         
         variant.withUnsafeExtensionPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
@@ -51,102 +51,240 @@ extension Int: VariantConvertible {
 }
 
 extension Int8: VariantConvertible {
-    public static let variantType: Variant.GodotType = Int.variantType
+    public static let variantType: Variant.GodotType = .int8
     
     public func makeVariant() -> Variant {
-        Variant(Int(self))
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        Self(Int.fromMatchingTypeVariant(variant))
+        var newValue = Self()
+        
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
     }
 }
 
 extension Int16: VariantConvertible {
-    public static let variantType: Variant.GodotType = Int.variantType
+    public static let variantType: Variant.GodotType = .int16
     
     public func makeVariant() -> Variant {
-        Variant(Int(self))
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        Self(Int.fromMatchingTypeVariant(variant))
+        var newValue = Self()
+        
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
     }
 }
 
 extension Int32: VariantConvertible {
-    public static let variantType: Variant.GodotType = Int.variantType
+    public static let variantType: Variant.GodotType = .int32
     
     public func makeVariant() -> Variant {
-        Variant(Int(self))
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        Self(Int.fromMatchingTypeVariant(variant))
+        var newValue = Self()
+        
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
     }
 }
 
 extension Int64: VariantConvertible {
-    public static let variantType: Variant.GodotType = Int.variantType
+    public static let variantType: Variant.GodotType = .int64
     
     public func makeVariant() -> Variant {
-        Variant(Int(self))
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        Self(Int.fromMatchingTypeVariant(variant))
+        var newValue = Self()
+        
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
     }
 }
 
 extension UInt8: VariantConvertible {
-    public static let variantType: Variant.GodotType = Int.variantType
+    public static let variantType: Variant.GodotType = .uint8
     
     public func makeVariant() -> Variant {
-        Variant(Int(self))
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        Self(Int.fromMatchingTypeVariant(variant))
+        var newValue = Self()
+        
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
     }
 }
 
 extension UInt16: VariantConvertible {
-    public static let variantType: Variant.GodotType = Int.variantType
+    public static let variantType: Variant.GodotType = .uint16
     
     public func makeVariant() -> Variant {
-        Variant(Int(self))
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        Self(Int.fromMatchingTypeVariant(variant))
+        var newValue = Self()
+        
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
     }
 }
 
 extension UInt32: VariantConvertible {
-    public static let variantType: Variant.GodotType = Int.variantType
+    public static let variantType: Variant.GodotType = .uint32
     
     public func makeVariant() -> Variant {
-        Variant(Int(self))
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        Self(Int.fromMatchingTypeVariant(variant))
+        var newValue = Self()
+        
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
     }
 }
 
 extension UInt64: VariantConvertible {
-    public static let variantType: Variant.GodotType = Int.variantType
+    public static let variantType: Variant.GodotType = .uint64
     
     public func makeVariant() -> Variant {
-        Variant(Int(self))
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        Self(Int.fromMatchingTypeVariant(variant))
+        var newValue = Self()
+        
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
     }
 }
 
 extension Double: VariantConvertible {
+    public static let variantType: Variant.GodotType = .double
+    
+    public func makeVariant() -> Variant {
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
+    }
+    
+    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+        var newValue = Self()
+        
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return newValue
+    }
+}
+
+extension Float: VariantConvertible {
     public static let variantType: Variant.GodotType = .float
     
     public func makeVariant() -> Variant {
@@ -168,31 +306,33 @@ extension Double: VariantConvertible {
             }
         }
         
-        return newValue
-    }
-}
-
-extension Float: VariantConvertible {
-    public static let variantType: Variant.GodotType = Double.variantType
-    
-    public func makeVariant() -> Variant {
-        Variant(Double(self))
-    }
-    
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        Float(Double.fromMatchingTypeVariant(variant))
+        return Float(newValue)
     }
 }
 
 extension Real: VariantConvertible {
-    public static let variantType: Variant.GodotType = Double.variantType
+    public static let variantType: Variant.GodotType = RawValue.variantType
     
     public func makeVariant() -> Variant {
-        Double(self).makeVariant()
+        let variant = Variant()
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafePointer(to: self) { otherNativeTypePtr in
+                Variant.fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+            }
+        }
+        return variant
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        Real(Double.fromMatchingTypeVariant(variant))
+        var newValue = RawValue()
+        
+        variant.withUnsafeExtensionPointer { extensionTypePtr in
+            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
+                Variant.toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+            }
+        }
+        
+        return Real(newValue)
     }
 }
 

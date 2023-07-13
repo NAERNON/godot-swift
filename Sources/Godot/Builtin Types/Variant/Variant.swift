@@ -46,14 +46,15 @@ public struct Variant {
     
     // MARK: - Functions
     
-    public var type: GodotType {
+    /// Returns the type of value this variant stores.
+    public var type: GDExtensionVariantType {
         var extensionVariantType: GDExtensionVariantType!
         
         withUnsafeExtensionPointer { extensionTypePtr in
             extensionVariantType = GodotExtension.interface.variant_get_type(extensionTypePtr)
         }
         
-        return GodotType(godotExtensionType: extensionVariantType)
+        return extensionVariantType
     }
     
     fileprivate func evaluate(other: Variant, `operator`: Operator) -> Variant? {

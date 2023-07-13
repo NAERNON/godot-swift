@@ -1,4 +1,4 @@
-import Foundation
+import GodotExtensionHeaders
 
 // MARK: - ConvertibleToVariant
 
@@ -16,7 +16,7 @@ import Foundation
 /// struct Level: ConvertibleToVariant {
 ///     let index: Int
 ///
-///     static let variantType: Variant.GodotType = Int.variantType
+///     static let variantType: Variant.Representation = Int.variantType
 ///
 ///     func makeVariant() -> Variant {
 ///         Variant(index)
@@ -31,7 +31,7 @@ import Foundation
 ///
 /// To add `ConvertibleToVariant` conformance to your type, you must declare
 /// the following requirements:
-/// - The `variantType` static property that defines the variant type
+/// - The `variantType` static property that defines the variant representation
 /// your type can be converted to
 /// - The `makeVariant()` method for converting an instance to a variant
 public protocol ConvertibleToVariant {
@@ -39,7 +39,7 @@ public protocol ConvertibleToVariant {
     ///
     /// When converting an instance to a variant using the ``makeVariant()``
     /// method, the generated variant type *must* match `variantType`.
-    static var variantType: Variant.GodotType { get }
+    static var variantType: Variant.Representation { get }
     
     /// A variant representation of this instance.
     func makeVariant() -> Variant
@@ -61,7 +61,7 @@ public protocol ConvertibleToVariant {
 /// struct Level: ConvertibleFromTypedVariant {
 ///     let index: Int
 ///
-///     static let variantType: Variant.GodotType = Int.variantType
+///     static let variantType: Variant.Representation = Int.variantType
 ///
 ///     static func fromMatchingTypeVariant(_ variant: Variant) -> Level {
 ///         Level(index: Int.fromMatchingTypeVariant(variant))
@@ -76,12 +76,12 @@ public protocol ConvertibleToVariant {
 ///
 /// To add `ConvertibleFromVariant` conformance to your type, you must declare
 /// at least the following requirements:
-/// - The `variantType` static property that defines the variant type
+/// - The `variantType` static property that defines the variant representation
 /// your type can be converted from
 /// - The `fromMatchingTypeVariant(_:)` static method for converting a variant to an instance
 ///
 /// By default, the `fromVariant(_:)` static method implementation only checks
-/// that the provided variant type matches `variantType` and throws
+/// that the provided variant representation matches `variantType` and throws
 /// an error if not.
 public protocol ConvertibleFromVariant {
     /// The type of variant this type can be converted from.
@@ -89,18 +89,18 @@ public protocol ConvertibleFromVariant {
     /// When converting a variant to an instance using the ``fromTypedVariant(_:)``
     /// static method, the method should *not* throw an error
     /// if the provided variant type matches `variantType`.
-    static var variantType: Variant.GodotType { get }
+    static var variantType: Variant.Representation { get }
     
     /// Turns a variant into an instance.
     static func fromVariant(_ variant: Variant) throws -> Self
     
     /// Turns a variant into an instance.
     ///
-    /// This method might not check the provided variant type
+    /// This method might not check the provided variant representation
     /// and may stop the execution of your program if a wrong variant is provided.
     ///
-    /// > warning: Only call this method with a variant
-    /// of the type of ``variantType``.
+    /// > warning: Only call this method using a variant
+    /// with the same representation as ``variantType``.
     ///
     /// See the ``fromVariant(_:)`` method to get a throwing version
     /// of this method.
@@ -108,13 +108,13 @@ public protocol ConvertibleFromVariant {
 }
 
 private enum ConversionError: Error {
-    case unmatchingTypes(Variant.GodotType, Variant.GodotType)
+    case unmatchingTypes(GDExtensionVariantType, GDExtensionVariantType)
 }
 
 public extension ConvertibleFromVariant {
     static func fromVariant(_ variant: Variant) throws -> Self {
-        guard variant.type == Self.variantType else {
-            throw ConversionError.unmatchingTypes(variant.type, Self.variantType)
+        guard variant.type == Self.variantType.storageType else {
+            throw ConversionError.unmatchingTypes(variant.type, Self.variantType.storageType)
         }
         
         return fromMatchingTypeVariant(variant)

@@ -8,8 +8,8 @@ extension ClassRegister {
     /// Use ``argument(_:name:)`` to create an argument `FunctionParameter`,
     /// or use ``returnParameter(_:)`` to create a return `FunctionParameter`.
     public struct FunctionParameter {
-        /// The ``Variant`` type of the parameter.
-        public let type: Variant.GodotType
+        /// The variant representation of the parameter.
+        public let variantRepresentation: Variant.Representation
         
         /// The name of the parameter.
         public let name: StringName
@@ -17,17 +17,13 @@ extension ClassRegister {
         /// The default value of the parameter.
         public let defaultValue: Variant?
         
-        /// The metadata of the parameter.
-        private let metadata: ClassRegister.PropertyMetadata?
-        
         // MARK: Init
         
         private init<Value>(type: Value.Type,
                             name: StringName) where Value : ConvertibleToVariant {
-            self.type = type.variantType
+            self.variantRepresentation = type.variantType
             self.name = name
             self.defaultValue = nil
-            self.metadata = .init(type)
         }
         
         /// Creates a new `FunctionParameter` used as a function argument.
@@ -54,13 +50,12 @@ extension ClassRegister {
         ///
         /// - Parameter className: The name of the class.
         func propertyInfo(withClassName className: StringName) -> ClassRegister.PropertyInfo {
-            .init(type: type,
-                  metadata: metadata,
+            .init(variantRepresentation: variantRepresentation,
                   name: name,
                   defaultValue: defaultValue,
                   hint: .none,
                   hintString: .init(),
-                  className: className)
+                  className: className) // TODO: Class name should be set at the init of FunctionParameter.
         }
     }
 }

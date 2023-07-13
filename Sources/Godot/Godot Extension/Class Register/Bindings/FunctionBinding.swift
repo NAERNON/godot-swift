@@ -118,7 +118,7 @@ extension ClassRegister {
             
             let finalPointer = UnsafeMutablePointer<GDExtensionClassMethodArgumentMetadata>.allocate(capacity: properties.count)
             for (index, property) in properties.enumerated() {
-                finalPointer[index] = property.godotExtensionArgumentMetadata
+                finalPointer[index] = property.variantRepresentation.argumentMetadata
             }
             
             body(.init(returnValue: finalPointer, argumentsValue: finalPointer+1))

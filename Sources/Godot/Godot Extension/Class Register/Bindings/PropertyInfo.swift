@@ -3,8 +3,7 @@ import GodotExtensionHeaders
 
 extension ClassRegister {
     struct PropertyInfo {
-        let type: Variant.GodotType
-        let metadata: PropertyMetadata?
+        let variantRepresentation: Variant.Representation
         let name: StringName
         let className: StringName
         let hint: PropertyHint
@@ -12,33 +11,34 @@ extension ClassRegister {
         let defaultValue: Variant?
         private let usage: UInt32
         
-        static let none = PropertyInfo(type: .nil,
-                                       metadata: nil,
-                                       name: .init(),
-                                       defaultValue: .none,
-                                       hint: .none,
-                                       hintString: .init(),
-                                       usageFlags: .default, .nilIsVariant,
-                                       className: .init())
-        static let vararg = PropertyInfo(type: .nil,
-                                         metadata: nil,
-                                         name: "vararg",
-                                         defaultValue: .none,
-                                         hint: .none,
-                                         hintString: .init(),
-                                         usageFlags: .default, .nilIsVariant,
-                                         className: .init())
+        static let none = PropertyInfo(
+            variantRepresentation: .nil,
+            name: .init(),
+            defaultValue: .none,
+            hint: .none,
+            hintString: .init(),
+            usageFlags: .default, .nilIsVariant,
+            className: .init()
+        )
         
-        init(type: Variant.GodotType,
-             metadata: PropertyMetadata?,
+        static let vararg = PropertyInfo(
+            variantRepresentation: .nil,
+            name: "vararg",
+            defaultValue: .none,
+            hint: .none,
+            hintString: .init(),
+            usageFlags: .default, .nilIsVariant,
+            className: .init()
+        )
+        
+        init(variantRepresentation: Variant.Representation,
              name: StringName,
              defaultValue: Variant? = nil,
              hint: PropertyHint = .none,
              hintString: String = .init(),
              usageFlags: PropertyUsageFlags...,
              className: StringName) {
-            self.type = type
-            self.metadata = metadata
+            self.variantRepresentation = variantRepresentation
             self.name = name
             self.defaultValue = defaultValue
             self.hint = hint
@@ -58,7 +58,7 @@ extension ClassRegister {
                 className.withUnsafeExtensionPointer { classeNamePtr in
                     hintString.withUnsafeExtensionPointer { hintStringPtr in
                         let info = GDExtensionPropertyInfo(
-                            type: type.godotExtensionType,
+                            type: variantRepresentation.storageType,
                             name: namePtr,
                             class_name: classeNamePtr,
                             hint: hint.rawValue,
@@ -69,25 +69,6 @@ extension ClassRegister {
                         body(info)
                     }
                 }
-            }
-        }
-        
-        var godotExtensionArgumentMetadata: GDExtensionClassMethodArgumentMetadata {
-            guard let metadata else {
-                return GDEXTENSION_METHOD_ARGUMENT_METADATA_NONE
-            }
-            
-            switch metadata {
-            case .intIsInt8: return GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_INT8
-            case .intIsInt16: return GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_INT16
-            case .intIsInt32: return GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_INT32
-            case .intIsInt64: return GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_INT64
-            case .intIsUInt8: return GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_UINT8
-            case .intIsUInt16: return GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_UINT16
-            case .intIsUInt32: return GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_UINT32
-            case .intIsUInt64: return GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_UINT64
-            case .realIsFloat: return GDEXTENSION_METHOD_ARGUMENT_METADATA_REAL_IS_FLOAT
-            case .realIsDouble: return GDEXTENSION_METHOD_ARGUMENT_METADATA_REAL_IS_DOUBLE
             }
         }
     }
