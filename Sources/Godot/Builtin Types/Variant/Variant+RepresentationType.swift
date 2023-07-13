@@ -2,10 +2,10 @@ import Foundation
 import GodotExtensionHeaders
 
 extension Variant {
-    public typealias GodotType = Representation
+    public typealias GodotType = RepresentationType
     
-    /// The representation of a variant.
-    public enum Representation: Int {
+    /// The representation type of a variant.
+    public enum RepresentationType: Int {
         case `nil`
         case bool
         case int

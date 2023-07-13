@@ -17,7 +17,7 @@ extension Swift.String {
 }
 
 extension Swift.String: VariantConvertible {
-    public static let variantType: Variant.GodotType = String.variantType
+    public static let variantType: Variant.RepresentationType = String.variantType
     
     public func makeVariant() -> Variant {
         String(swiftString: self).makeVariant()

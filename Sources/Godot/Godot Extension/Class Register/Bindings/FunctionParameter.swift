@@ -8,8 +8,8 @@ extension ClassRegister {
     /// Use ``argument(_:name:)`` to create an argument `FunctionParameter`,
     /// or use ``returnParameter(_:)`` to create a return `FunctionParameter`.
     public struct FunctionParameter {
-        /// The variant representation of the parameter.
-        public let variantRepresentation: Variant.Representation
+        /// The variant representation type of the parameter.
+        public let variantType: Variant.RepresentationType
         
         /// The name of the parameter.
         public let name: StringName
@@ -19,9 +19,11 @@ extension ClassRegister {
         
         // MARK: Init
         
-        private init<Value>(type: Value.Type,
-                            name: StringName) where Value : ConvertibleToVariant {
-            self.variantRepresentation = type.variantType
+        private init<Value>(
+            type: Value.Type,
+            name: StringName
+        ) where Value : ConvertibleToVariant {
+            self.variantType = type.variantType
             self.name = name
             self.defaultValue = nil
         }
@@ -31,7 +33,10 @@ extension ClassRegister {
         /// - Parameters:
         ///   - type: The type of the parameter.
         ///   - name: The name of the parameter.
-        public static func argument<Value>(_ type: Value.Type, name: StringName) -> FunctionParameter
+        public static func argument<Value>(
+            _ type: Value.Type,
+            name: StringName
+        ) -> FunctionParameter
         where Value : ConvertibleToVariant {
             .init(type: type, name: name)
         }
@@ -50,7 +55,7 @@ extension ClassRegister {
         ///
         /// - Parameter className: The name of the class.
         func propertyInfo(withClassName className: StringName) -> ClassRegister.PropertyInfo {
-            .init(variantRepresentation: variantRepresentation,
+            .init(variantType: variantType,
                   name: name,
                   defaultValue: defaultValue,
                   hint: .none,

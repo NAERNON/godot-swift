@@ -16,7 +16,7 @@ import GodotExtensionHeaders
 /// struct Level: ConvertibleToVariant {
 ///     let index: Int
 ///
-///     static let variantType: Variant.Representation = Int.variantType
+///     static let variantType: Variant.RepresentationType = Int.variantType
 ///
 ///     func makeVariant() -> Variant {
 ///         Variant(index)
@@ -31,15 +31,16 @@ import GodotExtensionHeaders
 ///
 /// To add `ConvertibleToVariant` conformance to your type, you must declare
 /// the following requirements:
-/// - The `variantType` static property that defines the variant representation
+/// - The `variantType` static property that defines the variant representation type
 /// your type can be converted to
 /// - The `makeVariant()` method for converting an instance to a variant
 public protocol ConvertibleToVariant {
-    /// The type of variant this type can be converted to.
+    /// The type of variant representation this type can be converted to.
     ///
     /// When converting an instance to a variant using the ``makeVariant()``
-    /// method, the generated variant type *must* match `variantType`.
-    static var variantType: Variant.Representation { get }
+    /// method, the generated variant representation type
+    /// *must* match `variantType`.
+    static var variantType: Variant.RepresentationType { get }
     
     /// A variant representation of this instance.
     func makeVariant() -> Variant
@@ -61,7 +62,7 @@ public protocol ConvertibleToVariant {
 /// struct Level: ConvertibleFromTypedVariant {
 ///     let index: Int
 ///
-///     static let variantType: Variant.Representation = Int.variantType
+///     static let variantType: Variant.RepresentationType = Int.variantType
 ///
 ///     static func fromMatchingTypeVariant(_ variant: Variant) -> Level {
 ///         Level(index: Int.fromMatchingTypeVariant(variant))
@@ -76,7 +77,7 @@ public protocol ConvertibleToVariant {
 ///
 /// To add `ConvertibleFromVariant` conformance to your type, you must declare
 /// at least the following requirements:
-/// - The `variantType` static property that defines the variant representation
+/// - The `variantType` static property that defines the variant representation type
 /// your type can be converted from
 /// - The `fromMatchingTypeVariant(_:)` static method for converting a variant to an instance
 ///
@@ -84,23 +85,23 @@ public protocol ConvertibleToVariant {
 /// that the provided variant representation matches `variantType` and throws
 /// an error if not.
 public protocol ConvertibleFromVariant {
-    /// The type of variant this type can be converted from.
+    /// The type of variant representation this type can be converted from.
     ///
     /// When converting a variant to an instance using the ``fromTypedVariant(_:)``
     /// static method, the method should *not* throw an error
-    /// if the provided variant type matches `variantType`.
-    static var variantType: Variant.Representation { get }
+    /// if the provided variant representation type matches `variantType`.
+    static var variantType: Variant.RepresentationType { get }
     
     /// Turns a variant into an instance.
     static func fromVariant(_ variant: Variant) throws -> Self
     
     /// Turns a variant into an instance.
     ///
-    /// This method might not check the provided variant representation
+    /// This method might not check the provided variant representation type
     /// and may stop the execution of your program if a wrong variant is provided.
     ///
     /// > warning: Only call this method using a variant
-    /// with the same representation as ``variantType``.
+    /// with the same representation type as ``variantType``.
     ///
     /// See the ``fromVariant(_:)`` method to get a throwing version
     /// of this method.

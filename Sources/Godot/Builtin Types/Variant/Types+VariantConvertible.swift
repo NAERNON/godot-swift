@@ -1,5 +1,5 @@
 extension Bool: VariantConvertible {
-    public static let variantType: Variant.GodotType = .bool
+    public static let variantType: Variant.RepresentationType = .bool
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -25,7 +25,7 @@ extension Bool: VariantConvertible {
 }
 
 extension Int: VariantConvertible {
-    public static let variantType: Variant.GodotType = .int
+    public static let variantType: Variant.RepresentationType = .int
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -51,7 +51,7 @@ extension Int: VariantConvertible {
 }
 
 extension Int8: VariantConvertible {
-    public static let variantType: Variant.GodotType = .int8
+    public static let variantType: Variant.RepresentationType = .int8
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -77,7 +77,7 @@ extension Int8: VariantConvertible {
 }
 
 extension Int16: VariantConvertible {
-    public static let variantType: Variant.GodotType = .int16
+    public static let variantType: Variant.RepresentationType = .int16
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -103,7 +103,7 @@ extension Int16: VariantConvertible {
 }
 
 extension Int32: VariantConvertible {
-    public static let variantType: Variant.GodotType = .int32
+    public static let variantType: Variant.RepresentationType = .int32
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -129,7 +129,7 @@ extension Int32: VariantConvertible {
 }
 
 extension Int64: VariantConvertible {
-    public static let variantType: Variant.GodotType = .int64
+    public static let variantType: Variant.RepresentationType = .int64
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -155,7 +155,7 @@ extension Int64: VariantConvertible {
 }
 
 extension UInt8: VariantConvertible {
-    public static let variantType: Variant.GodotType = .uint8
+    public static let variantType: Variant.RepresentationType = .uint8
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -181,7 +181,7 @@ extension UInt8: VariantConvertible {
 }
 
 extension UInt16: VariantConvertible {
-    public static let variantType: Variant.GodotType = .uint16
+    public static let variantType: Variant.RepresentationType = .uint16
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -207,7 +207,7 @@ extension UInt16: VariantConvertible {
 }
 
 extension UInt32: VariantConvertible {
-    public static let variantType: Variant.GodotType = .uint32
+    public static let variantType: Variant.RepresentationType = .uint32
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -233,7 +233,7 @@ extension UInt32: VariantConvertible {
 }
 
 extension UInt64: VariantConvertible {
-    public static let variantType: Variant.GodotType = .uint64
+    public static let variantType: Variant.RepresentationType = .uint64
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -259,7 +259,7 @@ extension UInt64: VariantConvertible {
 }
 
 extension Double: VariantConvertible {
-    public static let variantType: Variant.GodotType = .double
+    public static let variantType: Variant.RepresentationType = .double
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -285,7 +285,7 @@ extension Double: VariantConvertible {
 }
 
 extension Float: VariantConvertible {
-    public static let variantType: Variant.GodotType = .float
+    public static let variantType: Variant.RepresentationType = .float
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -311,7 +311,7 @@ extension Float: VariantConvertible {
 }
 
 extension Real: VariantConvertible {
-    public static let variantType: Variant.GodotType = RawValue.variantType
+    public static let variantType: Variant.RepresentationType = RawValue.variantType
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -337,7 +337,7 @@ extension Real: VariantConvertible {
 }
 
 extension String: VariantConvertible {
-    public static let variantType: Variant.GodotType = .string
+    public static let variantType: Variant.RepresentationType = .string
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -363,7 +363,7 @@ extension String: VariantConvertible {
 }
 
 extension Vector2: VariantConvertible {
-    public static let variantType: Variant.GodotType = .vector2
+    public static let variantType: Variant.RepresentationType = .vector2
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -389,7 +389,7 @@ extension Vector2: VariantConvertible {
 }
 
 extension Vector2i: VariantConvertible {
-    public static let variantType: Variant.GodotType = .vector2i
+    public static let variantType: Variant.RepresentationType = .vector2i
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -415,7 +415,7 @@ extension Vector2i: VariantConvertible {
 }
 
 extension Rect2: VariantConvertible {
-    public static let variantType: Variant.GodotType = .rect2
+    public static let variantType: Variant.RepresentationType = .rect2
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -441,7 +441,7 @@ extension Rect2: VariantConvertible {
 }
 
 extension Rect2i: VariantConvertible {
-    public static let variantType: Variant.GodotType = .rect2i
+    public static let variantType: Variant.RepresentationType = .rect2i
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -467,7 +467,7 @@ extension Rect2i: VariantConvertible {
 }
 
 extension Vector3: VariantConvertible {
-    public static let variantType: Variant.GodotType = .vector3
+    public static let variantType: Variant.RepresentationType = .vector3
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -493,7 +493,7 @@ extension Vector3: VariantConvertible {
 }
 
 extension Vector3i: VariantConvertible {
-    public static let variantType: Variant.GodotType = .vector3i
+    public static let variantType: Variant.RepresentationType = .vector3i
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -519,7 +519,7 @@ extension Vector3i: VariantConvertible {
 }
 
 extension Transform2D: VariantConvertible {
-    public static let variantType: Variant.GodotType = .transform2D
+    public static let variantType: Variant.RepresentationType = .transform2D
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -545,7 +545,7 @@ extension Transform2D: VariantConvertible {
 }
 
 extension Vector4: VariantConvertible {
-    public static let variantType: Variant.GodotType = .vector4
+    public static let variantType: Variant.RepresentationType = .vector4
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -571,7 +571,7 @@ extension Vector4: VariantConvertible {
 }
 
 extension Vector4i: VariantConvertible {
-    public static let variantType: Variant.GodotType = .vector4i
+    public static let variantType: Variant.RepresentationType = .vector4i
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -597,7 +597,7 @@ extension Vector4i: VariantConvertible {
 }
 
 extension Plane: VariantConvertible {
-    public static let variantType: Variant.GodotType = .plane
+    public static let variantType: Variant.RepresentationType = .plane
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -623,7 +623,7 @@ extension Plane: VariantConvertible {
 }
 
 extension Quaternion: VariantConvertible {
-    public static let variantType: Variant.GodotType = .quaternion
+    public static let variantType: Variant.RepresentationType = .quaternion
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -649,7 +649,7 @@ extension Quaternion: VariantConvertible {
 }
 
 extension AABB: VariantConvertible {
-    public static let variantType: Variant.GodotType = .aabb
+    public static let variantType: Variant.RepresentationType = .aabb
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -675,7 +675,7 @@ extension AABB: VariantConvertible {
 }
 
 extension Basis: VariantConvertible {
-    public static let variantType: Variant.GodotType = .basis
+    public static let variantType: Variant.RepresentationType = .basis
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -701,7 +701,7 @@ extension Basis: VariantConvertible {
 }
 
 extension Transform3D: VariantConvertible {
-    public static let variantType: Variant.GodotType = .transform3D
+    public static let variantType: Variant.RepresentationType = .transform3D
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -727,7 +727,7 @@ extension Transform3D: VariantConvertible {
 }
 
 extension Projection: VariantConvertible {
-    public static let variantType: Variant.GodotType = .projection
+    public static let variantType: Variant.RepresentationType = .projection
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -753,7 +753,7 @@ extension Projection: VariantConvertible {
 }
 
 extension Color: VariantConvertible {
-    public static let variantType: Variant.GodotType = .color
+    public static let variantType: Variant.RepresentationType = .color
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -779,7 +779,7 @@ extension Color: VariantConvertible {
 }
 
 extension StringName: VariantConvertible {
-    public static let variantType: Variant.GodotType = .stringName
+    public static let variantType: Variant.RepresentationType = .stringName
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -805,7 +805,7 @@ extension StringName: VariantConvertible {
 }
 
 extension NodePath: VariantConvertible {
-    public static let variantType: Variant.GodotType = .nodePath
+    public static let variantType: Variant.RepresentationType = .nodePath
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -831,7 +831,7 @@ extension NodePath: VariantConvertible {
 }
 
 extension RID: VariantConvertible {
-    public static let variantType: Variant.GodotType = .rid
+    public static let variantType: Variant.RepresentationType = .rid
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -857,7 +857,7 @@ extension RID: VariantConvertible {
 }
 
 extension Object: VariantConvertible {
-    public static let variantType: Variant.GodotType = .object
+    public static let variantType: Variant.RepresentationType = .object
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -873,7 +873,7 @@ extension Object: VariantConvertible {
 }
 
 extension Callable: VariantConvertible {
-    public static let variantType: Variant.GodotType = .callable
+    public static let variantType: Variant.RepresentationType = .callable
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -899,7 +899,7 @@ extension Callable: VariantConvertible {
 }
 
 extension Signal: VariantConvertible {
-    public static let variantType: Variant.GodotType = .signal
+    public static let variantType: Variant.RepresentationType = .signal
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -925,7 +925,7 @@ extension Signal: VariantConvertible {
 }
 
 extension Dictionary: VariantConvertible {
-    public static let variantType: Variant.GodotType = .dictionary
+    public static let variantType: Variant.RepresentationType = .dictionary
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -951,7 +951,7 @@ extension Dictionary: VariantConvertible {
 }
 
 extension Array: VariantConvertible {
-    public static let variantType: Variant.GodotType = .array
+    public static let variantType: Variant.RepresentationType = .array
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -977,7 +977,7 @@ extension Array: VariantConvertible {
 }
 
 extension PackedByteArray: VariantConvertible {
-    public static let variantType: Variant.GodotType = .packedByteArray
+    public static let variantType: Variant.RepresentationType = .packedByteArray
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -1003,7 +1003,7 @@ extension PackedByteArray: VariantConvertible {
 }
 
 extension PackedInt32Array: VariantConvertible {
-    public static let variantType: Variant.GodotType = .packedInt32Array
+    public static let variantType: Variant.RepresentationType = .packedInt32Array
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -1029,7 +1029,7 @@ extension PackedInt32Array: VariantConvertible {
 }
 
 extension PackedInt64Array: VariantConvertible {
-    public static let variantType: Variant.GodotType = .packedInt64Array
+    public static let variantType: Variant.RepresentationType = .packedInt64Array
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -1055,7 +1055,7 @@ extension PackedInt64Array: VariantConvertible {
 }
 
 extension PackedFloat32Array: VariantConvertible {
-    public static let variantType: Variant.GodotType = .packedFloat32Array
+    public static let variantType: Variant.RepresentationType = .packedFloat32Array
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -1081,7 +1081,7 @@ extension PackedFloat32Array: VariantConvertible {
 }
 
 extension PackedFloat64Array: VariantConvertible {
-    public static let variantType: Variant.GodotType = .packedFloat64Array
+    public static let variantType: Variant.RepresentationType = .packedFloat64Array
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -1107,7 +1107,7 @@ extension PackedFloat64Array: VariantConvertible {
 }
 
 extension PackedStringArray: VariantConvertible {
-    public static let variantType: Variant.GodotType = .packedStringArray
+    public static let variantType: Variant.RepresentationType = .packedStringArray
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -1133,7 +1133,7 @@ extension PackedStringArray: VariantConvertible {
 }
 
 extension PackedVector2Array: VariantConvertible {
-    public static let variantType: Variant.GodotType = .packedVector2Array
+    public static let variantType: Variant.RepresentationType = .packedVector2Array
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -1159,7 +1159,7 @@ extension PackedVector2Array: VariantConvertible {
 }
 
 extension PackedVector3Array: VariantConvertible {
-    public static let variantType: Variant.GodotType = .packedVector3Array
+    public static let variantType: Variant.RepresentationType = .packedVector3Array
     
     public func makeVariant() -> Variant {
         let variant = Variant()
@@ -1185,7 +1185,7 @@ extension PackedVector3Array: VariantConvertible {
 }
 
 extension PackedColorArray: VariantConvertible {
-    public static let variantType: Variant.GodotType = .packedColorArray
+    public static let variantType: Variant.RepresentationType = .packedColorArray
     
     public func makeVariant() -> Variant {
         let variant = Variant()

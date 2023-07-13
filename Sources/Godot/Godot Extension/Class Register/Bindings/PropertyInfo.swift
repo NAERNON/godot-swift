@@ -3,7 +3,7 @@ import GodotExtensionHeaders
 
 extension ClassRegister {
     struct PropertyInfo {
-        let variantRepresentation: Variant.Representation
+        let variantType: Variant.RepresentationType
         let name: StringName
         let className: StringName
         let hint: PropertyHint
@@ -12,7 +12,7 @@ extension ClassRegister {
         private let usage: UInt32
         
         static let none = PropertyInfo(
-            variantRepresentation: .nil,
+            variantType: .nil,
             name: .init(),
             defaultValue: .none,
             hint: .none,
@@ -22,7 +22,7 @@ extension ClassRegister {
         )
         
         static let vararg = PropertyInfo(
-            variantRepresentation: .nil,
+            variantType: .nil,
             name: "vararg",
             defaultValue: .none,
             hint: .none,
@@ -31,14 +31,14 @@ extension ClassRegister {
             className: .init()
         )
         
-        init(variantRepresentation: Variant.Representation,
+        init(variantType: Variant.RepresentationType,
              name: StringName,
              defaultValue: Variant? = nil,
              hint: PropertyHint = .none,
              hintString: String = .init(),
              usageFlags: PropertyUsageFlags...,
              className: StringName) {
-            self.variantRepresentation = variantRepresentation
+            self.variantType = variantType
             self.name = name
             self.defaultValue = defaultValue
             self.hint = hint
@@ -58,7 +58,7 @@ extension ClassRegister {
                 className.withUnsafeExtensionPointer { classeNamePtr in
                     hintString.withUnsafeExtensionPointer { hintStringPtr in
                         let info = GDExtensionPropertyInfo(
-                            type: variantRepresentation.storageType,
+                            type: variantType.storageType,
                             name: namePtr,
                             class_name: classeNamePtr,
                             hint: hint.rawValue,
