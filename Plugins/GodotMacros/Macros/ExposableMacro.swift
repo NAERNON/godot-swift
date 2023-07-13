@@ -3,8 +3,7 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
-// TODO: Check the create instance function, something's fishy...
-public enum GodotExposableMacro: MemberMacro {
+public enum ExposableMacro: MemberMacro {
     // MARK: Member
     
     public static func expansion(

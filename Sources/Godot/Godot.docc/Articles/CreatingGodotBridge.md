@@ -12,10 +12,10 @@ A Godot bridge *is* the entry point.
 
 Your module needs at least one bridge that Godot will call.
 
-To define a bridge, simply make a struct, class or enum with an attached ``GodotBridge()`` macro.
+To define a bridge, simply make a struct, class or enum with an attached ``Bridge()`` macro.
 
 ```swift
-@GodotBridge
+@Bridge
 enum MyGame {
     // Custom parameters
 }
@@ -26,7 +26,7 @@ By using this macro, a C function is automatically generated. This is the functi
 The generated C function is named "*type*`_godot_init`" where "*type*" is the name of the type the macro is attached to, in lowercase. For example:
 
 ```swift
-@GodotBridge
+@Bridge
 enum MyGame {
     // Custom parameters
 }
@@ -42,12 +42,12 @@ func mygame_godot_init(...) {
 
 ### Expose custom Godot classes
 
-Because the macro automatically conforms the attached type to the ``GodotBridgeProtocol`` protocol, the information provided by the protocol is used to specify custom parameters for Godot, like what classes are exposed to the Godot editor.
+Because the macro automatically conforms the attached type to the ``GodotBridge`` protocol, the information provided by the protocol is used to specify custom parameters for Godot, like what classes are exposed to the Godot editor.
 
-To expose custom classes to Godot that you will be able to use within the Godot editor, define the ``GodotBridgeProtocol/classesToRegister`` static variable. For example:
+To expose custom classes to Godot that you will be able to use within the Godot editor, define the ``GodotBridge/classesToRegister`` static variable. For example:
 
 ```swift
-@GodotBridge
+@Bridge
 enum MyGame {
     static let classesToRegister: [Object.Type] = [
         CharacterNode.self,
@@ -56,14 +56,14 @@ enum MyGame {
 }
 ```
 
-> Important: Only expose ``Object`` classes that are defined using the ``GodotExposable()`` macro. See <doc:CreatingCustomClass>.
+> Important: Only expose ``Object`` classes that are defined using the ``Exposable()`` macro. See <doc:CreatingCustomClass>.
 
 ### Provide custom initialization and deinitialization
 
-If you want to perform some custom operations during either the initialization or deinitialization of Godot, implement the ``GodotBridgeProtocol/initialize(level:)`` function or ``GodotBridgeProtocol/deinitialize(level:)`` function. For example:
+If you want to perform some custom operations during either the initialization or deinitialization of Godot, implement the ``GodotBridge/initialize(level:)`` function or ``GodotBridge/deinitialize(level:)`` function. For example:
 
 ```swift
-@GodotBridge
+@Bridge
 enum MyGame {
     static let classesToRegister: [Object.Type] = [...]
 

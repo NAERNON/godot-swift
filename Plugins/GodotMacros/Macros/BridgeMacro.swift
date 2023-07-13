@@ -3,7 +3,7 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
-public enum GodotBridgeMacro: ConformanceMacro, PeerMacro {
+public enum BridgeMacro: ConformanceMacro, PeerMacro {
     // MARK: Conformance
     
     public static func expansion(
@@ -11,7 +11,7 @@ public enum GodotBridgeMacro: ConformanceMacro, PeerMacro {
         providingConformancesOf declaration: some DeclGroupSyntax,
         in context: some MacroExpansionContext
     ) throws -> [(TypeSyntax, GenericWhereClauseSyntax?)] {
-        [("GodotBridgeProtocol", nil)]
+        [("GodotBridge", nil)]
     }
     
     // MARK: Peer
@@ -68,7 +68,7 @@ private enum GodotBridgeDiagnostic: String, DiagnosticMessage {
     var message: String {
         switch self {
         case .wrongType:
-            "`@GodotBridge` can only be applied to `class`, `struct` and `enum`"
+            "`@Bridge` can only be applied to `class`, `struct` and `enum`"
         }
     }
     

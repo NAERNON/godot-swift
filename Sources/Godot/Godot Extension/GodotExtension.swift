@@ -4,8 +4,8 @@ import GodotExtensionHeaders
 ///
 /// > Warning: Do not use `GodotExtension`, or any of its members, directly.
 ///
-/// Use the ``GodotBridge()`` macro to setup a bridge that will
-/// initialize the GodotExtension.
+/// Use the ``Bridge()`` macro to setup a bridge that will
+/// initialize the `GodotExtension`.
 public enum GodotExtension {
     // MARK: Properties
     
@@ -14,7 +14,7 @@ public enum GodotExtension {
     /// Once initialized, the extension cannot change its interface values.
     public private(set) static var isInitialized = false
     
-    private(set) static var bridge: GodotBridgeProtocol.Type!
+    private(set) static var bridge: GodotBridge.Type!
     
     private(set) static var interfacePtr: UnsafePointer<GDExtensionInterface>!
     private(set) static var libraryPtr: GDExtensionClassLibraryPtr?
@@ -32,14 +32,14 @@ public enum GodotExtension {
     /// The extension should be initialized before any call to any type related to Godot.
     ///
     /// Do not initialize the extension directly,
-    /// but instead use the ``GodotBridge()`` macro to setup a bridge.
+    /// but instead use the ``Bridge()`` macro to setup a bridge.
     public static func initialize<T>(
         using bridge: T.Type,
         withInterfacePtr interfacePtr: UnsafePointer<GDExtensionInterface>,
         libraryPtr: GDExtensionClassLibraryPtr,
         initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>,
         minimumInitializationLevel: GDExtensionInitializationLevel
-    ) -> GDExtensionBool where T : GodotBridgeProtocol {
+    ) -> GDExtensionBool where T : GodotBridge {
         guard !isInitialized else {
             return gdExtentionBool(false)
         }
