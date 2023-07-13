@@ -310,8 +310,8 @@ public final class ClassRegister {
             return false
         }
         
-        let arguments = argumentParameters.map { $0.propertyInfo(withClassName: className) }
-        let returnType = returnParameter?.propertyInfo(withClassName: className)
+        let arguments = argumentParameters.map { $0.propertyInfo() }
+        let returnType = returnParameter?.propertyInfo()
         
         // TODO: Do the vararg
         // Register this function within our extension.
