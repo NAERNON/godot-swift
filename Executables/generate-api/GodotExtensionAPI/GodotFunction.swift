@@ -184,7 +184,7 @@ extension GodotFunction {
     /// ```swift
     /// withUnsafeGodotAccessPointer(to: arg1) { __ptr_arg1 in
     ///     withUnsafeGodotAccessPointer(to: arg2) { __ptr_arg2 in
-    ///         withUnsafeArgumentPointer(__ptr_arg1, __ptr_arg2) { __accessPtr in
+    ///         withUnsafeArgumentPackPointer(__ptr_arg1, __ptr_arg2) { __accessPtr in
     ///             // Body with "__accessPtr"
     ///         }
     ///     }
@@ -208,14 +208,18 @@ extension GodotFunction {
         return try argumentsPointerAccessSyntax { pointerNames in
             if isVararg {
                 DeclSyntax("withUnsafeGodotAccessVarargsPointer(to: \(raw: varargArgumentIdentifier)) { \(raw: varargPointerName) in")
-                DeclSyntax("withUnsafeArgumentPointer(\(raw: (pointerNames + [varargPointerName]).joined(separator: ", "))) { \(raw: packName) in")
+                if pointerNames.isEmpty {
+                    DeclSyntax("withUnsafeArgumentPackPointer(varargs: \(raw: varargPointerName)) { \(raw: packName) in")
+                } else {
+                    DeclSyntax("withUnsafeArgumentPackPointer(\(raw: pointerNames.joined(separator: ", ")), varargs: \(raw: varargPointerName)) { \(raw: packName) in")
+                }
                 
                 try bodyBuilder(packName)
                 
                 DeclSyntax("}")
                 DeclSyntax("}")
             } else {
-                DeclSyntax("withUnsafeArgumentPointer(\(raw: pointerNames.joined(separator: ", "))) { \(raw: packName) in")
+                DeclSyntax("withUnsafeArgumentPackPointer(\(raw: pointerNames.joined(separator: ", "))) { \(raw: packName) in")
                 
                 try bodyBuilder(packName)
                 
