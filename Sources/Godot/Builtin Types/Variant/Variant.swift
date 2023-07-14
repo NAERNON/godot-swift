@@ -15,19 +15,19 @@ public struct Variant {
     
     /// Creates a new `Variant` as a `nil` variant.
     public init() {
-        withUnsafeExtensionPointer { extensionTypePtr in
+        withUnsafeRawPointer { extensionTypePtr in
             GodotExtension.interface.variant_new_nil(extensionTypePtr)
         }
     }
     
     public init(extensionVariantPtr: GDExtensionVariantPtr) {
-        withUnsafeExtensionPointer { extensionTypePtr in
+        withUnsafeRawPointer { extensionTypePtr in
             GodotExtension.interface.variant_new_copy(extensionTypePtr, extensionVariantPtr)
         }
     }
     
     public init(extensionVariantPtr: GDExtensionConstVariantPtr) {
-        withUnsafeExtensionPointer { extensionTypePtr in
+        withUnsafeRawPointer { extensionTypePtr in
             GodotExtension.interface.variant_new_copy(extensionTypePtr, extensionVariantPtr)
         }
     }
@@ -50,7 +50,7 @@ public struct Variant {
     public var type: GDExtensionVariantType {
         var extensionVariantType: GDExtensionVariantType!
         
-        withUnsafeExtensionPointer { extensionTypePtr in
+        withUnsafeRawPointer { extensionTypePtr in
             extensionVariantType = GodotExtension.interface.variant_get_type(extensionTypePtr)
         }
         
@@ -61,9 +61,9 @@ public struct Variant {
         var isValid: GDExtensionBool = 0
         let returnVariant = Variant()
         
-        self.withUnsafeExtensionPointer { extensionTypePtr in
-            other.withUnsafeExtensionPointer { otherNativeTypePtr in
-                returnVariant.withUnsafeExtensionPointer { returnNativeTypePtr in
+        self.withUnsafeRawPointer { extensionTypePtr in
+            other.withUnsafeRawPointer { otherNativeTypePtr in
+                returnVariant.withUnsafeRawPointer { returnNativeTypePtr in
                     withUnsafeMutablePointer(to: &isValid) { validPtr in
                         GodotExtension.interface.variant_evaluate(
                             `operator`.godotOperator,
@@ -87,7 +87,7 @@ public struct Variant {
     public var hashValue: Int {
         var result: GDExtensionInt = 0
         
-        withUnsafeExtensionPointer { extensionTypePtr in
+        withUnsafeRawPointer { extensionTypePtr in
             result = GodotExtension.interface.variant_hash(extensionTypePtr)
         }
         
@@ -95,7 +95,7 @@ public struct Variant {
     }
     
     public func copyTo(variantPtr: GDExtensionVariantPtr) {
-        withUnsafeExtensionPointer { selfPtr in
+        withUnsafeRawPointer { selfPtr in
             GodotExtension.interface.variant_new_copy(variantPtr, selfPtr)
         }
     }
@@ -183,7 +183,7 @@ public struct Variant {
     }()
     
     /// Calls a closure with an extension type pointer of the underlying object. Should only be called by the `GodotLibrary`.
-    internal func withUnsafeExtensionPointer(_ body: (GDExtensionVariantPtr) -> ()) {
+    internal func withUnsafeRawPointer(_ body: (GDExtensionVariantPtr) -> ()) {
         opaque.withUnsafeMutableRawPointer(body)
     }
     
@@ -353,8 +353,8 @@ extension Variant: CustomDebugStringConvertible {
     public var debugDescription: Swift.String {
         let string = String()
         
-        self.withUnsafeExtensionPointer { extensionTypePtr in
-            string.withUnsafeExtensionPointer { stringNativeTypePtr in
+        self.withUnsafeRawPointer { extensionTypePtr in
+            string.withUnsafeRawPointer { stringNativeTypePtr in
                 GodotExtension.interface.variant_stringify(extensionTypePtr, stringNativeTypePtr)
             }
         }

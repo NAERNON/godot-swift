@@ -53,7 +53,7 @@ func withUnsafeVarargArgumentPointers(to arguments: some Collection<Variant>, bo
         return
     }
     
-    first.withUnsafeExtensionPointer { ptr in
+    first.withUnsafeRawPointer { ptr in
         withUnsafeVarargArgumentPointers(to: arguments.dropFirst()) { pointers in
             body([ptr] + pointers)
         }

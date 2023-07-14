@@ -18,8 +18,8 @@ public struct TypedArray<Element> where Element : VariantConvertible {
     /// This init is private to this file because public initializers are provided in extensions.
     fileprivate init(className: StringName) {
         var array = Array()
-        array.withUnsafeExtensionPointer { ptr in
-            className.withUnsafeExtensionPointer { classNamePtr in
+        array.withUnsafeRawPointer { ptr in
+            className.withUnsafeRawPointer { classNamePtr in
                 // TODO: Check script (last parameter)
                 GodotExtension.interface.array_set_typed(ptr, Element.variantType.storageType, classNamePtr, nil)
             }
@@ -27,8 +27,8 @@ public struct TypedArray<Element> where Element : VariantConvertible {
         self.underlyingArray = array
     }
     
-    internal func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> ()) {
-        underlyingArray.withUnsafeExtensionPointer(body)
+    internal func withUnsafeRawPointer(_ body: (GDExtensionTypePtr) -> ()) {
+        underlyingArray.withUnsafeRawPointer(body)
     }
     
     internal var opaque: Opaque {

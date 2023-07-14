@@ -3,7 +3,7 @@ extension Bool: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_bool(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -14,7 +14,7 @@ extension Bool: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = UInt8()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_bool(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -29,7 +29,7 @@ extension Int: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -40,7 +40,7 @@ extension Int: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -55,7 +55,7 @@ extension Int8: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -66,7 +66,7 @@ extension Int8: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -81,7 +81,7 @@ extension Int16: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -92,7 +92,7 @@ extension Int16: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -107,7 +107,7 @@ extension Int32: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -118,7 +118,7 @@ extension Int32: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -133,7 +133,7 @@ extension Int64: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -144,7 +144,7 @@ extension Int64: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -159,7 +159,7 @@ extension UInt8: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -170,7 +170,7 @@ extension UInt8: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -185,7 +185,7 @@ extension UInt16: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -196,7 +196,7 @@ extension UInt16: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -211,7 +211,7 @@ extension UInt32: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -222,7 +222,7 @@ extension UInt32: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -237,7 +237,7 @@ extension UInt64: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -248,7 +248,7 @@ extension UInt64: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -263,7 +263,7 @@ extension Double: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -274,7 +274,7 @@ extension Double: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -289,7 +289,7 @@ extension Float: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -300,7 +300,7 @@ extension Float: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Double()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -315,7 +315,7 @@ extension Real: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -326,7 +326,7 @@ extension Real: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = RawValue()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -341,8 +341,8 @@ extension String: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_string(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -352,8 +352,8 @@ extension String: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = String()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_string(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -367,7 +367,7 @@ extension Vector2: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -378,7 +378,7 @@ extension Vector2: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Vector2()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_vector2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -393,7 +393,7 @@ extension Vector2i: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -404,7 +404,7 @@ extension Vector2i: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Vector2i()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_vector2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -419,7 +419,7 @@ extension Rect2: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_rect2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -430,7 +430,7 @@ extension Rect2: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Rect2()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_rect2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -445,7 +445,7 @@ extension Rect2i: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_rect2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -456,7 +456,7 @@ extension Rect2i: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Rect2i()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_rect2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -471,7 +471,7 @@ extension Vector3: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector3(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -482,7 +482,7 @@ extension Vector3: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Vector3()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_vector3(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -497,7 +497,7 @@ extension Vector3i: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector3i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -508,7 +508,7 @@ extension Vector3i: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Vector3i()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_vector3i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -523,7 +523,7 @@ extension Transform2D: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_transform2D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -534,7 +534,7 @@ extension Transform2D: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Transform2D()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_transform2D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -549,7 +549,7 @@ extension Vector4: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector4(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -560,7 +560,7 @@ extension Vector4: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Vector4()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_vector4(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -575,7 +575,7 @@ extension Vector4i: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_vector4i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -586,7 +586,7 @@ extension Vector4i: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Vector4i()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_vector4i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -601,7 +601,7 @@ extension Plane: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_plane(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -612,7 +612,7 @@ extension Plane: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Plane()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_plane(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -627,7 +627,7 @@ extension Quaternion: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_quaternion(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -638,7 +638,7 @@ extension Quaternion: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Quaternion()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_quaternion(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -653,7 +653,7 @@ extension AABB: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_aabb(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -664,7 +664,7 @@ extension AABB: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = AABB()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_aabb(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -679,7 +679,7 @@ extension Basis: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_basis(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -690,7 +690,7 @@ extension Basis: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Basis()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_basis(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -705,7 +705,7 @@ extension Transform3D: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_transform3D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -716,7 +716,7 @@ extension Transform3D: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Transform3D()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_transform3D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -731,7 +731,7 @@ extension Projection: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_projection(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -742,7 +742,7 @@ extension Projection: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Projection()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_projection(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -757,7 +757,7 @@ extension Color: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
                 Variant.fromTypeConstructor_color(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -768,7 +768,7 @@ extension Color: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         var newValue = Color()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 Variant.toTypeConstructor_color(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -783,8 +783,8 @@ extension StringName: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_stringName(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -794,8 +794,8 @@ extension StringName: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = StringName()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_stringName(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -809,8 +809,8 @@ extension NodePath: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_nodePath(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -820,8 +820,8 @@ extension NodePath: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = NodePath()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_nodePath(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -835,8 +835,8 @@ extension RID: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_rid(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -846,8 +846,8 @@ extension RID: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = RID()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_rid(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -861,8 +861,8 @@ extension Object: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 withUnsafePointer(to: otherNativeTypePtr) { pointer in
                     Variant.fromTypeConstructor_object(extensionTypePtr, UnsafeMutableRawPointer(mutating: pointer))
                 }
@@ -877,8 +877,8 @@ extension Callable: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_callable(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -888,8 +888,8 @@ extension Callable: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = Callable()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_callable(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -903,8 +903,8 @@ extension Signal: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_signal(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -914,8 +914,8 @@ extension Signal: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = Signal()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_signal(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -929,8 +929,8 @@ extension Dictionary: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_dictionary(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -940,8 +940,8 @@ extension Dictionary: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = Dictionary()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_dictionary(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -955,8 +955,8 @@ extension Array: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -966,8 +966,8 @@ extension Array: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = Array()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -981,8 +981,8 @@ extension PackedByteArray: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedByteArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -992,8 +992,8 @@ extension PackedByteArray: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = PackedByteArray()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_packedByteArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -1007,8 +1007,8 @@ extension PackedInt32Array: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedInt32Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1018,8 +1018,8 @@ extension PackedInt32Array: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = PackedInt32Array()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_packedInt32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -1033,8 +1033,8 @@ extension PackedInt64Array: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedInt64Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1044,8 +1044,8 @@ extension PackedInt64Array: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = PackedInt64Array()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_packedInt64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -1059,8 +1059,8 @@ extension PackedFloat32Array: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedFloat32Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1070,8 +1070,8 @@ extension PackedFloat32Array: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = PackedFloat32Array()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_packedFloat32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -1085,8 +1085,8 @@ extension PackedFloat64Array: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedFloat64Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1096,8 +1096,8 @@ extension PackedFloat64Array: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = PackedFloat64Array()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_packedFloat64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -1111,8 +1111,8 @@ extension PackedStringArray: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedStringArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1122,8 +1122,8 @@ extension PackedStringArray: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = PackedStringArray()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_packedStringArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -1137,8 +1137,8 @@ extension PackedVector2Array: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedVector2Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1148,8 +1148,8 @@ extension PackedVector2Array: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = PackedVector2Array()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_packedVector2Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -1163,8 +1163,8 @@ extension PackedVector3Array: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedVector3Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1174,8 +1174,8 @@ extension PackedVector3Array: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = PackedVector3Array()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_packedVector3Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -1189,8 +1189,8 @@ extension PackedColorArray: VariantConvertible {
     
     public func makeVariant() -> Variant {
         let variant = Variant()
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            self.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            self.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.fromTypeConstructor_packedColorArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1200,8 +1200,8 @@ extension PackedColorArray: VariantConvertible {
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
         let newValue = PackedColorArray()
         
-        variant.withUnsafeExtensionPointer { extensionTypePtr in
-            newValue.withUnsafeExtensionPointer { otherNativeTypePtr in
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 Variant.toTypeConstructor_packedColorArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }

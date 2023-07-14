@@ -54,9 +54,9 @@ extension ClassRegister {
         }
         
         func withGodotExtensionPropertyInfo(_ body: (GDExtensionPropertyInfo) -> Void) {
-            name.withUnsafeExtensionPointer { namePtr in
-                className.withUnsafeExtensionPointer { classeNamePtr in
-                    hintString.withUnsafeExtensionPointer { hintStringPtr in
+            name.withUnsafeRawPointer { namePtr in
+                className.withUnsafeRawPointer { classeNamePtr in
+                    hintString.withUnsafeRawPointer { hintStringPtr in
                         let info = GDExtensionPropertyInfo(
                             type: variantType.storageType,
                             name: namePtr,

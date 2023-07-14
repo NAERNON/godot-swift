@@ -275,9 +275,9 @@ struct GodotBuiltinClass: Decodable {
             internal func _getValue(forKey key: Variant) -> Variant {
                 var __returnValue = Variant()
                 
-                __returnValue.withUnsafeExtensionPointer { __ptr___returnValue in
-                    key.withUnsafeExtensionPointer { __ptr_key in
-                        self.withUnsafeExtensionPointer { __ptr_self in
+                __returnValue.withUnsafeRawPointer { __ptr___returnValue in
+                    key.withUnsafeRawPointer { __ptr_key in
+                        self.withUnsafeRawPointer { __ptr_self in
                             Self.__keyed_getter(__ptr_self, __ptr_key, __ptr___returnValue)
                         }
                     }
@@ -289,9 +289,9 @@ struct GodotBuiltinClass: Decodable {
             internal mutating func _set(value: Variant, forKey key: Variant) {
                 replaceOpaqueValueIfNecessary()
                 
-                value.withUnsafeExtensionPointer { __ptr_value in
-                    key.withUnsafeExtensionPointer { __ptr_key in
-                        self.withUnsafeExtensionPointer { __ptr_self in
+                value.withUnsafeRawPointer { __ptr_value in
+                    key.withUnsafeRawPointer { __ptr_key in
+                        self.withUnsafeRawPointer { __ptr_self in
                             Self.__keyed_setter(__ptr_self, __ptr_key, __ptr_value)
                         }
                     }
@@ -301,8 +301,8 @@ struct GodotBuiltinClass: Decodable {
             internal func _check(key: Variant) -> Bool {
                 var keyCheck = UInt32()
                 
-                key.withUnsafeExtensionPointer { __ptr_key in
-                    self.withUnsafeExtensionPointer { __ptr_self in
+                key.withUnsafeRawPointer { __ptr_key in
+                    self.withUnsafeRawPointer { __ptr_self in
                         keyCheck = Self.__keyed_checker(__ptr_self, __ptr_key)
                     }
                 }
@@ -433,7 +433,7 @@ struct GodotBuiltinClass: Decodable {
                 for method in methods {
                     ExprSyntax("""
                     _method_name = \(literal: method.name)
-                    _method_name.withUnsafeExtensionPointer { __ptr__method_name in
+                    _method_name.withUnsafeRawPointer { __ptr__method_name in
                     \(raw: method.ptrSyntax) = GodotExtension.interface.variant_get_ptr_builtin_method(\(raw: name.variantType!), __ptr__method_name, \(literal: method.hash))
                     }
                     """)
@@ -462,7 +462,7 @@ struct GodotBuiltinClass: Decodable {
         
         private(set) var opaque: Opaque
         
-        internal func withUnsafeExtensionPointer(_ body: (GDExtensionTypePtr) -> ()) {
+        internal func withUnsafeRawPointer(_ body: (GDExtensionTypePtr) -> ()) {
             opaque.withUnsafeMutableRawPointer(body)
         }
         

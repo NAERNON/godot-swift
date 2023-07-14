@@ -64,7 +64,7 @@ public final class ClassRegister {
         for className in classesToUnregister {
             let classBinding = customClassNameToClassBinding.removeValue(forKey: className)!
             
-            classBinding.name.withUnsafeExtensionPointer { namePtr in
+            classBinding.name.withUnsafeRawPointer { namePtr in
                 GodotExtension.interface.classdb_unregister_extension_class(
                     GodotExtension.libraryPtr,
                     namePtr
@@ -214,8 +214,8 @@ public final class ClassRegister {
             class_userdata: Unmanaged.passUnretained(classBinding).toOpaque()
         )
         
-        className.withUnsafeExtensionPointer { namePtr in
-            superclassName.withUnsafeExtensionPointer { superclassNamePtr in
+        className.withUnsafeRawPointer { namePtr in
+            superclassName.withUnsafeRawPointer { superclassNamePtr in
                 withUnsafePointer(to: godotClassInfo) { classInfoPtr in
                     GodotExtension.interface.classdb_register_extension_class(
                         GodotExtension.libraryPtr, namePtr, superclassNamePtr, classInfoPtr
@@ -323,7 +323,7 @@ public final class ClassRegister {
                                               isStatic: isStatic)
         classBinding.appendFunctionBinding(functionBinding)
         
-        functionName.withUnsafeExtensionPointer { functionNamePtr in
+        functionName.withUnsafeRawPointer { functionNamePtr in
             functionBinding.withGodotExtensionPropertiesInfo { propertiesInfo in
                 functionBinding.withGodotExtensionArgumentsMetadata { argumentsMetadata in
                     functionBinding.withLastDefaultArguments { defaultArguments in
@@ -344,7 +344,7 @@ public final class ClassRegister {
                             default_argument_count: UInt32(functionBinding.lastDefaultArgumentsCount),
                             default_arguments: defaultArguments)
                         
-                        className.withUnsafeExtensionPointer { namePtr in
+                        className.withUnsafeRawPointer { namePtr in
                             withUnsafePointer(to: godotMethodInfo) { methodInfoPtr in
                                 GodotExtension.interface.classdb_register_extension_class_method(
                                     GodotExtension.libraryPtr, namePtr, methodInfoPtr

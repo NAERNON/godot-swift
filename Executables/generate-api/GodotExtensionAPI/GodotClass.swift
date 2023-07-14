@@ -66,7 +66,7 @@ struct GodotClass: Decodable {
             public required init() {
                 var extensionObjectPtr: GDExtensionObjectPtr!
                 
-                Self._gd_lastDerivedClassName.withUnsafeExtensionPointer { namePtr in
+                Self._gd_lastDerivedClassName.withUnsafeRawPointer { namePtr in
                     extensionObjectPtr = GodotExtension.interface.classdb_construct_object(namePtr)!
                 }
                 
@@ -77,7 +77,7 @@ struct GodotClass: Decodable {
                 }
                 
                 if Self._gd_isCustomClass {
-                    Self._gd_className.withUnsafeExtensionPointer { classNamePtr in
+                    Self._gd_className.withUnsafeRawPointer { classNamePtr in
                         GodotExtension.interface.object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
                     }
                 }
@@ -91,7 +91,7 @@ struct GodotClass: Decodable {
                 var newValue: Self!
                 let instanceOwner = UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity: 1)
                 
-                variant.withUnsafeExtensionPointer { extensionTypePtr in
+                variant.withUnsafeRawPointer { extensionTypePtr in
                 Variant.toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), extensionTypePtr)
                 
                 let finalPtr = withUnsafePointer(to: Self.instanceBindingsCallbacks()) { bindingsPtr in
@@ -123,7 +123,7 @@ struct GodotClass: Decodable {
             if isRefCountedRootClass {
                 DeclSyntax("""
                 deinit {
-                    self.withUnsafeExtensionPointer { __ptr_self in
+                    self.withUnsafeRawPointer { __ptr_self in
                         GodotExtension.interface.mem_free(__ptr_self)
                     }
                 }
@@ -161,7 +161,7 @@ struct GodotClass: Decodable {
             return GDExtensionInstanceBindingCallbacks { token, instance in
                 return Unmanaged.passRetained(\(raw: identifier)(extensionObjectPtr: instance!)).toOpaque()
             } free_callback: { token, instance, bindings in
-                Unmanaged<\(raw: identifier)>.fromOpaque(instance!).takeRetainedValue().withUnsafeExtensionPointer { __ptr_self in
+                Unmanaged<\(raw: identifier)>.fromOpaque(instance!).takeRetainedValue().withUnsafeRawPointer { __ptr_self in
                     GodotExtension.interface.mem_free(__ptr_self)
                 }
             } reference_callback: { token, instance, reference in
@@ -292,11 +292,11 @@ struct GodotClass: Decodable {
                 let methodsToSetBindings = methods.filter { !$0.isVirtual }
                 if !methodsToSetBindings.isEmpty {
                     DeclSyntax("var _method_name: StringName!")
-                    DeclSyntax("_gd_className.withUnsafeExtensionPointer { __ptr__class_name in")
+                    DeclSyntax("_gd_className.withUnsafeRawPointer { __ptr__class_name in")
                     for method in methodsToSetBindings {
                         ExprSyntax("""
                         _method_name = \(literal: method.name)
-                        _method_name.withUnsafeExtensionPointer { __ptr__method_name in
+                        _method_name.withUnsafeRawPointer { __ptr__method_name in
                             \(raw: method.ptrSyntax) = GodotExtension.interface.classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))
                         }
                         """)

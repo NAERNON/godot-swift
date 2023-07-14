@@ -515,7 +515,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         let instanceName = CodeLanguage.swift.protectNameIfKeyword(for: instanceName)
         
         if isGodotClass || isBuiltinGodotClassWithOpaque || self == .variant {
-            DeclSyntax("\(raw: instanceName).withUnsafeExtensionPointer { \(raw: pointerName) in")
+            DeclSyntax("\(raw: instanceName).withUnsafeRawPointer { \(raw: pointerName) in")
         } else {
             switch mutability {
             case .const:

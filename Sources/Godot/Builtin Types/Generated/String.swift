@@ -8,7 +8,7 @@ extension String {
     public init(swiftString: Swift.String) {
         self.init()
         
-        withUnsafeExtensionPointer { extensionPtr in
+        withUnsafeRawPointer { extensionPtr in
             swiftString.withCString { cString in
                 GodotExtension.interface.string_new_with_utf8_chars(extensionPtr, cString)
             }

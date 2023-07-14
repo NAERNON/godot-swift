@@ -150,7 +150,7 @@ extension ClassRegister {
                 return
             }
             
-            arguments[index].withUnsafeExtensionPointer { variantPtr in
+            arguments[index].withUnsafeRawPointer { variantPtr in
                 withLastDefaultArguments(arguments, index: index + 1) { variantPtrs in
                     body([variantPtr] + variantPtrs)
                 }
