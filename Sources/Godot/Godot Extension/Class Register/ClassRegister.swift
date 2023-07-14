@@ -1,9 +1,6 @@
 import Foundation
 import GodotExtensionHeaders
 
-// TODO: METHOD_FLAGS_DEFAULT from the json file
-private let METHOD_FLAGS_DEFAULT: UInt32 = 24
-
 /// The registration is open at start. Once all the custom classes are registered,
 /// you should call `closeRegistration()`.
 /// This locks the register and prevents any modification.
