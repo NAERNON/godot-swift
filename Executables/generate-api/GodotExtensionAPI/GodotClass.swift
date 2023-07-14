@@ -72,8 +72,10 @@ struct GodotClass: Decodable {
                 
                 self.extensionObjectPtr = extensionObjectPtr
                 
-                withUnsafePointer(to: Self.instanceBindingsCallbacks()) { selfPtr in
-                    GodotExtension.interface.object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passUnretained(self).toOpaque(), selfPtr)
+                if self is RefCounted {
+                    withUnsafePointer(to: Self.instanceBindingsCallbacks()) { selfPtr in
+                        GodotExtension.interface.object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passUnretained(self).toOpaque(), selfPtr)
+                    }
                 }
                 
                 if Self._gd_isCustomClass {
@@ -186,15 +188,19 @@ struct GodotClass: Decodable {
         if isRootClass {
             DeclSyntax("""
             public class func _makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
-                let instance = Self()
+                let instance = Self ()
+                _ = Unmanaged.passRetained(instance)
                 
                 if let instance = instance as? RefCounted {
                     _ = instance.initRef()
-                    _ = Unmanaged.passRetained(instance)
                     instance.preventNextReference = true
                 }
                 
                 return instance.extensionObjectPtr
+            }
+            
+            public class func _freeInstanceManagedByGodot(_ instancePtr: UnsafeMutableRawPointer) {
+                Unmanaged<Self>.fromOpaque(instancePtr).release()
             }
             """)
         }

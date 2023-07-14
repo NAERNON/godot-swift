@@ -152,11 +152,11 @@ public enum ExposableMacro: MemberMacro {
                 ) { _, _, _ in
                     
                 }
-                createInstanceFunction: { a in
+                createInstanceFunction: { _ in
                     \(classDecl.identifier)._makeNewInstanceManagedByGodot()
                 }
                 freeInstanceFunction: { _, instancePtr in
-                    Unmanaged<\(classDecl.identifier)>.fromOpaque(instancePtr!).release()
+                    \(classDecl.identifier)._freeInstanceManagedByGodot(instancePtr!)
                 }
                 
                 guard isClassRegistered else { return }
