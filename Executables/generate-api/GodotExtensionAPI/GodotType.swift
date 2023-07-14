@@ -329,16 +329,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// > important: Godot types info should be set before retreiving this value.
     /// See the ``setGodotTypes(with:)`` function.
     var isBuiltinGodotClassWithoutOpaque: Bool {
-        guard GodotType.godotBuiltinClassTypes.contains(self) else {
-            return false
-        }
-        
-        switch self.syntax() {
-        case "AABB", "Basis", "Color", "Plane", "Projection", "Quaternion", "Rect2", "Rect2i", "Transform2D", "Transform3D", "Vector2", "Vector2i", "Vector3", "Vector3i", "Vector4", "Vector4i":
-            return true
-        default:
-            return false
-        }
+        isBuiltinGodotClass && !isBuiltinGodotClassWithOpaque
     }
     
     /// A Boolean value indicating whether the type
@@ -351,7 +342,30 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// > important: Godot types info should be set before retreiving this value.
     /// See the ``setGodotTypes(with:)`` function.
     var isBuiltinGodotClassWithOpaque: Bool {
-        isBuiltinGodotClass && !isBuiltinGodotClassWithoutOpaque
+        guard GodotType.godotBuiltinClassTypes.contains(self) else {
+            return false
+        }
+        
+        switch self.syntax() {
+        case "Array": return true
+        case "Callable": return true
+        case "Dictionary": return true
+        case "NodePath": return true
+        case "PackedByteArray": return true
+        case "PackedColorArray": return true
+        case "PackedFloat32Array": return true
+        case "PackedFloat64Array": return true
+        case "PackedInt32Array": return true
+        case "PackedInt64Array": return true
+        case "PackedStringArray": return true
+        case "PackedVector2Array": return true
+        case "PackedVector3Array": return true
+        case "RID": return true
+        case "Signal": return true
+        case "String": return true
+        case "StringName": return true
+        default: return false
+        }
     }
     
     // MARK: - Syntax
@@ -424,13 +438,13 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     
     /// Returns the syntax for instantiating the type and returning it.
     ///
-    /// Use the `bodyBuilder` parameter to use the instantiated variable name.
+    /// Use the `bodyBuilder` parameter to use the instantiated variable type and name.
     /// For example:
     /// ```swift
     /// let type: GodotType = //...
     ///
-    /// type.instantiationSyntax { name in
-    ///     DeclSyntax("print(\(raw: name))")
+    /// type.instantiationSyntax { instanceType, name in
+    ///     DeclSyntax("print(\(raw: name), \(raw: instanceType.self))")
     /// }
     /// ```
     ///
@@ -439,7 +453,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// ```swift
     /// var __temporary = Int()
     ///
-    /// print(__temporary)
+    /// print(__temporary, Int.self)
     ///
     /// return __temporary
     /// ```
@@ -449,7 +463,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     @CodeBlockItemListBuilder
     func instantiationSyntax(
         options: GodotTypeSyntaxOptions = [],
-        @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
+        @CodeBlockItemListBuilder bodyBuilder: (GodotType, String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let variableName = "__temporary"
         
@@ -461,7 +475,9 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             DeclSyntax("var \(raw: variableName) = \(raw: syntax(options: options))()")
         }
         
-        try bodyBuilder(variableName)
+        let type: GodotType = isGodotClass ? "GDExtensionObjectPtr" : self
+        
+        try bodyBuilder(type, variableName)
         
         if isGodotClass {
             DeclSyntax("return retreiveObject(ofType: \(raw: syntax(options: options)).self, from: \(raw: variableName))")
@@ -498,13 +514,20 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         let pointerName = "__ptr_" + instanceName
         let instanceName = CodeLanguage.swift.protectNameIfKeyword(for: instanceName)
         
-        switch mutability {
-        case .const:
-            DeclSyntax("withUnsafeGodotAccessPointer(to: \(raw: instanceName)) { \(raw: pointerName) in")
-        case .mutable:
-            DeclSyntax("withUnsafeGodotMutableAccessPointer(to: &\(raw: instanceName)) { \(raw: pointerName) in")
-        case .constMutablePointer:
-            DeclSyntax("withUnsafeGodotMutableConstAccessPointer(to: \(raw: instanceName)) { \(raw: pointerName) in")
+        if isGodotClass || isBuiltinGodotClassWithOpaque || self == .variant {
+            DeclSyntax("\(raw: instanceName).withUnsafeExtensionPointer { \(raw: pointerName) in")
+        } else {
+            switch mutability {
+            case .const:
+                DeclSyntax("withUnsafePointer(to: \(raw: instanceName)) { \(raw: pointerName) in")
+            case .mutable:
+                DeclSyntax("withUnsafeMutablePointer(to: &\(raw: instanceName)) { \(raw: pointerName) in")
+            case .constMutablePointer:
+                DeclSyntax("""
+                withUnsafePointer(to: \(raw: instanceName)) {
+                    let \(raw: pointerName) = UnsafeMutableRawPointer(mutating: $0)
+                """)
+            }
         }
         
         try bodyBuilder(pointerName)

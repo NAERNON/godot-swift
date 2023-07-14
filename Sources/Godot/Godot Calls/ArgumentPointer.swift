@@ -23,7 +23,7 @@ func withUnsafeArgumentPackPointer(
 /// Calls the given closure with a pointer to the contiguous given pointers.
 func withUnsafeArgumentPackPointer(
     _ pointers: GDExtensionConstObjectPtr?...,
-    varargs: [GDExtensionConstObjectPtr?],
+    varargs: [GDExtensionVariantPtr],
     body: (UnsafeMutablePointer<GDExtensionConstObjectPtr?>) -> Void
 ) {
     let pointersCount = pointers.count
@@ -36,7 +36,7 @@ func withUnsafeArgumentPackPointer(
         index += 1
     }
     while index < count {
-        accessPointer[index] = varargs[index - pointersCount]
+        accessPointer[index] = GDExtensionConstObjectPtr(varargs[index - pointersCount])
         index += 1
     }
     
@@ -44,4 +44,18 @@ func withUnsafeArgumentPackPointer(
     
     accessPointer.deinitialize(count: count)
     accessPointer.deallocate()
+}
+
+/// Calls the given closure with an array of pointers to the given variants.
+func withUnsafeVarargArgumentPointers(to arguments: some Collection<Variant>, body: ([GDExtensionVariantPtr]) -> Void) {
+    guard let first = arguments.first else {
+        body([])
+        return
+    }
+    
+    first.withUnsafeExtensionPointer { ptr in
+        withUnsafeVarargArgumentPointers(to: arguments.dropFirst()) { pointers in
+            body([ptr] + pointers)
+        }
+    }
 }

@@ -155,8 +155,8 @@ extension GodotFunction {
     ///
     /// For a function with 2 parameters, the following syntax would be generated:
     /// ```swift
-    /// withUnsafeGodotAccessPointer(to: arg1) { __ptr_arg1 in
-    ///     withUnsafeGodotAccessPointer(to: arg2) { __ptr_arg2 in
+    /// withUnsafePointer(to: arg1) { __ptr_arg1 in
+    ///     withUnsafePointer(to: arg2) { __ptr_arg2 in
     ///         // Body with ["__ptr_arg1", "__ptr_arg2"]
     ///     }
     /// }
@@ -182,8 +182,8 @@ extension GodotFunction {
     ///
     /// For a function with 2 parameters, the following syntax would be generated:
     /// ```swift
-    /// withUnsafeGodotAccessPointer(to: arg1) { __ptr_arg1 in
-    ///     withUnsafeGodotAccessPointer(to: arg2) { __ptr_arg2 in
+    /// withUnsafePointer(to: arg1) { __ptr_arg1 in
+    ///     withUnsafePointer(to: arg2) { __ptr_arg2 in
     ///         withUnsafeArgumentPackPointer(__ptr_arg1, __ptr_arg2) { __accessPtr in
     ///             // Body with "__accessPtr"
     ///         }
@@ -198,7 +198,7 @@ extension GodotFunction {
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let packName = "__accessPtr"
-        let varargPointerName = "__ptr_" + varargArgumentIdentifier
+        let varargPointerName = "__ptrs_" + varargArgumentIdentifier
         
         // No argument and vararg. Return no pack is created.
         if !forcePackCreation && (arguments == nil || arguments?.isEmpty == true) && !isVararg {
@@ -207,7 +207,7 @@ extension GodotFunction {
         
         return try argumentsPointerAccessSyntax { pointerNames in
             if isVararg {
-                DeclSyntax("withUnsafeGodotAccessVarargsPointer(to: \(raw: varargArgumentIdentifier)) { \(raw: varargPointerName) in")
+                DeclSyntax("withUnsafeVarargArgumentPointers(to: \(raw: varargArgumentIdentifier)) { \(raw: varargPointerName) in")
                 if pointerNames.isEmpty {
                     DeclSyntax("withUnsafeArgumentPackPointer(varargs: \(raw: varargPointerName)) { \(raw: packName) in")
                 } else {

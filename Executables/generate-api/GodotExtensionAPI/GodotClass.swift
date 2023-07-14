@@ -123,7 +123,7 @@ struct GodotClass: Decodable {
             if isRefCountedRootClass {
                 DeclSyntax("""
                 deinit {
-                    withUnsafeGodotMutableConstAccessPointer(to: `self`) { __ptr_self in
+                    self.withUnsafeExtensionPointer { __ptr_self in
                         GodotExtension.interface.mem_free(__ptr_self)
                     }
                 }
@@ -230,9 +230,9 @@ struct GodotClass: Decodable {
     private func standardMethodSyntax(_ method: Method) throws -> FunctionDeclSyntax {
         try method.declSyntax(options: .floatAsDouble) {
             if let returnType = method.returnType {
-                try returnType.instantiationSyntax(options: .floatAsDouble) { instanceName in
+                try returnType.instantiationSyntax(options: .floatAsDouble) { instanceType, instanceName in
                     try method.argumentsPackPointerAccessSyntax { packName in
-                        try returnType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
+                        try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
                                 DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrSyntax), nil, \(raw: packName), \(raw: instancePtr))")
                             } else {
@@ -292,11 +292,11 @@ struct GodotClass: Decodable {
                 let methodsToSetBindings = methods.filter { !$0.isVirtual }
                 if !methodsToSetBindings.isEmpty {
                     DeclSyntax("var _method_name: StringName!")
-                    DeclSyntax("withUnsafeGodotAccessPointer(to: _gd_className) { __ptr__class_name in")
+                    DeclSyntax("_gd_className.withUnsafeExtensionPointer { __ptr__class_name in")
                     for method in methodsToSetBindings {
                         ExprSyntax("""
                         _method_name = \(literal: method.name)
-                        withUnsafeGodotMutableAccessPointer(to: &_method_name) { __ptr__method_name in
+                        _method_name.withUnsafeExtensionPointer { __ptr__method_name in
                             \(raw: method.ptrSyntax) = GodotExtension.interface.classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))
                         }
                         """)

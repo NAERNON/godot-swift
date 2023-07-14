@@ -16,7 +16,7 @@ extension GeneratedFile {
                     for function in extensionAPI.utilityFunctions {
                         ExprSyntax("""
                         _function_name = "\(raw: function.baseName)"
-                        withUnsafeGodotMutableAccessPointer(to: &_function_name) { __ptr__function_name in
+                        _function_name.withUnsafeExtensionPointer { __ptr__function_name in
                             \(raw: function.functionPtrSyntax) = GodotExtension.interface.variant_get_ptr_utility_function(__ptr__function_name, \(raw: function.hash))
                         }
                         """)
@@ -35,11 +35,9 @@ extension GeneratedFile {
         
         return try function.declSyntax(options: options) {
             if let returnType = function.returnType {
-                try returnType.instantiationSyntax(
-                    options: options
-                ) { instanceName in
+                try returnType.instantiationSyntax(options: options) { instanceType, instanceName in
                     try function.argumentsPackPointerAccessSyntax { packName in
-                        try returnType.pointerAccessSyntax(
+                        try instanceType.pointerAccessSyntax(
                             instanceName: instanceName,
                             mutability: .mutable
                         ) { instancePointerName in

@@ -185,8 +185,18 @@ struct GodotBuiltinClass: Decodable {
             }
             
             try constructor.argumentsPackPointerAccessSyntax { packName in
-                try name.pointerAccessSyntax(instanceName: "__temporary", mutability: .mutable) { instancePtrName in
-                    DeclSyntax("Self.\(raw: constructor.ptrSyntax)(\(raw: instancePtrName), \(raw: packName))")
+                if name.isBuiltinGodotClassWithOpaque {
+                    DeclSyntax("""
+                    __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
+                        Self.\(raw: constructor.ptrSyntax)(__ptr___temporary, \(raw: packName))
+                    }
+                    """)
+                } else {
+                    DeclSyntax("""
+                    withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+                        Self.\(raw: constructor.ptrSyntax)(__ptr___temporary, \(raw: packName))
+                    }
+                    """)
                 }
             }
             
@@ -213,9 +223,9 @@ struct GodotBuiltinClass: Decodable {
         let operatorFunction = OperatorFunction(operator: `operator`, type: name)
         
         return try operatorFunction.declSyntax(hideAllLabels: true, options: options) {
-            try `operator`.returnType.instantiationSyntax { instanceName in
+            try `operator`.returnType.instantiationSyntax { instanceType, instanceName in
                 try operatorFunction.argumentsPointerAccessSyntax { pointerNames in
-                    try name.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtrName in
+                    try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtrName in
                         let lhsPointer = pointerNames[0]
                         let rhsPointer = `operator`.rightType == nil ? "nil" : pointerNames[1]
                         
@@ -235,8 +245,8 @@ struct GodotBuiltinClass: Decodable {
     ) throws -> MemberDeclListSyntax {
         if let indexingReturnType, !isKeyed {
             try FunctionDeclSyntax("func _getValue(at index: GDExtensionInt) -> \(raw: indexingReturnType.syntax(options: options))") {
-                try indexingReturnType.instantiationSyntax(options: options) { instanceName in
-                    try indexingReturnType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
+                try indexingReturnType.instantiationSyntax(options: options) { instanceType, instanceName in
+                    try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                         try name.pointerAccessSyntax(instanceName: "self") { selfPtr in
                             DeclSyntax("Self.__indexed_getter(\(raw: selfPtr), index, \(raw: instancePtr))")
                         }
@@ -265,9 +275,9 @@ struct GodotBuiltinClass: Decodable {
             internal func _getValue(forKey key: Variant) -> Variant {
                 var __returnValue = Variant()
                 
-                withUnsafeGodotMutableAccessPointer(to: &__returnValue) { __ptr___returnValue in
-                    withUnsafeGodotAccessPointer(to: key) { __ptr_key in
-                        withUnsafeGodotAccessPointer(to: `self`) { __ptr_self in
+                __returnValue.withUnsafeExtensionPointer { __ptr___returnValue in
+                    key.withUnsafeExtensionPointer { __ptr_key in
+                        self.withUnsafeExtensionPointer { __ptr_self in
                             Self.__keyed_getter(__ptr_self, __ptr_key, __ptr___returnValue)
                         }
                     }
@@ -279,9 +289,9 @@ struct GodotBuiltinClass: Decodable {
             internal mutating func _set(value: Variant, forKey key: Variant) {
                 replaceOpaqueValueIfNecessary()
                 
-                withUnsafeGodotAccessPointer(to: value) { __ptr_value in
-                    withUnsafeGodotAccessPointer(to: key) { __ptr_key in
-                        withUnsafeGodotMutableAccessPointer(to: &`self`) { __ptr_self in
+                value.withUnsafeExtensionPointer { __ptr_value in
+                    key.withUnsafeExtensionPointer { __ptr_key in
+                        self.withUnsafeExtensionPointer { __ptr_self in
                             Self.__keyed_setter(__ptr_self, __ptr_key, __ptr_value)
                         }
                     }
@@ -291,8 +301,8 @@ struct GodotBuiltinClass: Decodable {
             internal func _check(key: Variant) -> Bool {
                 var keyCheck = UInt32()
                 
-                withUnsafeGodotAccessPointer(to: key) { __ptr_key in
-                    withUnsafeGodotAccessPointer(to: `self`) { __ptr_self in
+                key.withUnsafeExtensionPointer { __ptr_key in
+                    self.withUnsafeExtensionPointer { __ptr_self in
                         keyCheck = Self.__keyed_checker(__ptr_self, __ptr_key)
                     }
                 }
@@ -323,11 +333,9 @@ struct GodotBuiltinClass: Decodable {
         
         let functionDecl = try method.declSyntax(underscoreName: true, options: options) {
             if let returnType = method.returnType {
-                try returnType.instantiationSyntax(
-                    options: options
-                ) { instanceName in
+                try returnType.instantiationSyntax(options: options) { instanceType, instanceName in
                     try method.argumentsPackPointerAccessSyntax { packName in
-                        try returnType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
+                        try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
                                 DeclSyntax("Self.\(raw: method.ptrSyntax)(nil, \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax))")
                             } else {
@@ -425,7 +433,7 @@ struct GodotBuiltinClass: Decodable {
                 for method in methods {
                     ExprSyntax("""
                     _method_name = \(literal: method.name)
-                    withUnsafeGodotMutableAccessPointer(to: &_method_name) { __ptr__method_name in
+                    _method_name.withUnsafeExtensionPointer { __ptr__method_name in
                     \(raw: method.ptrSyntax) = GodotExtension.interface.variant_get_ptr_builtin_method(\(raw: name.variantType!), __ptr__method_name, \(literal: method.hash))
                     }
                     """)

@@ -7,6 +7,24 @@ extension Object {
     }
 }
 
+extension Optional where Wrapped : Object {
+    public func withUnsafeExtensionPointer(_ body: (GDExtensionConstObjectPtr?) -> Void) {
+        if let self {
+            self.withUnsafeExtensionPointer { body($0) }
+        } else {
+            body(nil)
+        }
+    }
+    
+    public func withUnsafeExtensionPointer(_ body: (GDExtensionObjectPtr?) -> Void) {
+        if let self {
+            self.withUnsafeExtensionPointer { body($0) }
+        } else {
+            body(nil)
+        }
+    }
+}
+
 extension Object: CustomDebugStringConvertible {
     public var debugDescription: Swift.String {
         Variant(self).debugDescription
