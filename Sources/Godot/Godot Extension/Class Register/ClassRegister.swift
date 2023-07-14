@@ -114,12 +114,12 @@ public final class ClassRegister {
     /// This function should only be used to register base classes, and not custom ones.
     internal func registerBaseGodotClass<Class>(ofType classType: Class.Type) -> Bool where Class : Object {
         guard isRegistrationOpen else {
-            printGodotError("Cannot register class \(classType) because the registration is closed.")
+            gdDebugPrintError("Cannot register class \(classType) because the registration is closed.")
             return false
         }
         
         guard classNameIsEquivalentToType(classType: classType) else {
-            printGodotError("Cannot register class \(classType) because the type and name don't match. The @GodotExposable macro should be applied to the class.")
+            gdDebugPrintError("Cannot register class \(classType) because the type and name don't match. The @GodotExposable macro should be applied to the class.")
             return false
         }
         
@@ -147,12 +147,12 @@ public final class ClassRegister {
           Superclass : Object
     {
         guard let currentLevel else {
-            printGodotError("Cannot register class \(classType) because no initialization level was provided.")
+            gdDebugPrintError("Cannot register class \(classType) because no initialization level was provided.")
             return false
         }
         
         guard classNameIsEquivalentToType(classType: classType) else {
-            printGodotError("Cannot register class \(classType) because the type and name don't match. Make sure the @GodotExposable macro is applied to the class.")
+            gdDebugPrintError("Cannot register class \(classType) because the type and name don't match. Make sure the @GodotExposable macro is applied to the class.")
             return false
         }
         
@@ -168,7 +168,7 @@ public final class ClassRegister {
         )
         
         guard isRegistrationOpen else {
-            printGodotError("Cannot register class \(classType) because the registration is closed.")
+            gdDebugPrintError("Cannot register class \(classType) because the registration is closed.")
             return false
         }
         
@@ -176,12 +176,12 @@ public final class ClassRegister {
         let superclassName = classBinding.superclassName
         
         guard !classIsAlreadyRegistered(withName: className) else {
-            printGodotError("Cannot register class \(classType) because a class with the same name is already registered.")
+            gdDebugPrintError("Cannot register class \(classType) because a class with the same name is already registered.")
             return false
         }
         
         guard self.classType(named: superclassName) == superclassType else {
-            printGodotError("Cannot register class \(classType) because its superclass \(superclassName) is not registered.")
+            gdDebugPrintError("Cannot register class \(classType) because its superclass \(superclassName) is not registered.")
             return false
         }
         
@@ -237,12 +237,12 @@ public final class ClassRegister {
     private static func virtualFunc(fromUserDataPtr userDataPtr: UnsafeMutableRawPointer?,
                                     methodNamePtr: GDExtensionConstStringNamePtr?) -> GDExtensionClassCallVirtual? {
         guard let userDataPtr else {
-            printGodotError("No class data pointer provided.")
+            gdDebugPrintError("No class data pointer provided.")
             return nil
         }
         
         guard let methodNamePtr else {
-            printGodotError("No virtual func name given.")
+            gdDebugPrintError("No virtual func name given.")
             return nil
         }
         
@@ -250,12 +250,12 @@ public final class ClassRegister {
         let methodName = StringName.makeFromPtr(methodNamePtr)
         
         guard let classBinding = shared.customClassNameToClassBinding[classBinding.name] else {
-            printGodotError("Class doesn't exist.")
+            gdDebugPrintError("Class doesn't exist.")
             return nil
         }
         
         guard let functionCall = classBinding.virtualFuncCall(forName: methodName) else {
-            printGodotError("Virtual func doesn't exist.")
+            gdDebugPrintError("Virtual func doesn't exist.")
             return nil
         }
         
@@ -268,7 +268,7 @@ public final class ClassRegister {
                                             call: GDExtensionClassCallVirtual) -> Bool
     where Class : Object {
         guard let classBinding = customClassNameToClassBinding[type._gd_className] else {
-            printGodotError("Class doesn't exist.")
+            gdDebugPrintError("Class doesn't exist.")
             return false
         }
         
@@ -298,7 +298,7 @@ public final class ClassRegister {
         call: GDExtensionClassMethodCall)
     -> Bool where Class : Object {
         guard isRegistrationOpen else {
-            printGodotError("Cannot register function \(functionName) because the registration is closed.")
+            gdDebugPrintError("Cannot register function \(functionName) because the registration is closed.")
             return false
         }
         
@@ -306,7 +306,7 @@ public final class ClassRegister {
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
-            printGodotError("Cannot register function \(functionName) because the class \(className) is not registered.")
+            gdDebugPrintError("Cannot register function \(functionName) because the class \(className) is not registered.")
             return false
         }
         
