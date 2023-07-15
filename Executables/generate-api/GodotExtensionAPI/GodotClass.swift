@@ -31,7 +31,28 @@ struct GodotClass: Decodable {
         
         struct ReturnValue: Decodable {
             var type: GodotType
-            var meta: String?
+            
+            enum CodingKeys: CodingKey {
+                case type
+                case meta
+            }
+            
+            init(type: GodotType, meta: GodotTypeMetadata? = nil) {
+                if let meta {
+                    self.type = type.withMetadata(meta)
+                } else {
+                    self.type = type
+                }
+            }
+            
+            init(from decoder: Decoder) throws {
+                let container = try decoder.container(keyedBy: CodingKeys.self)
+                
+                self.init(
+                    type: try container.decode(GodotType.self, forKey: .type),
+                    meta: try container.decodeIfPresent(GodotTypeMetadata.self, forKey: .meta)
+                )
+            }
         }
         
         var ptrIdentifier: String {

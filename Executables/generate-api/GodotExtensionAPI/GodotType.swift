@@ -175,6 +175,30 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     
     static let variant: GodotType = "Variant"
     
+    func withMetadata(_ metadata: GodotTypeMetadata) -> GodotType {
+        if self == "int" {
+            switch metadata {
+            case .int8: "int8_t"
+            case .int16: "int16_t"
+            case .int32: "int32_t"
+            case .int64: "int64_t"
+            case .uint8: "uint8_t"
+            case .uint16: "uint16_t"
+            case .uint32: "uint32_t"
+            case .uint64: "uint64_t"
+            default: self
+            }
+        } else if self == "float" {
+            switch metadata {
+            case .float: "float"
+            case .double: "double"
+            default: self
+            }
+        } else {
+            self
+        }
+    }
+    
     /// Returns the scope type at a given index.
     ///
     /// - Parameter index: The index of the scope to retreive.
@@ -391,6 +415,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
                 } else {
                     return "Float"
                 }
+            case "double": return "Double"
             case "real_t": return "Real"
             case "int": return "Int"
             case "int8_t": return "Int8"
