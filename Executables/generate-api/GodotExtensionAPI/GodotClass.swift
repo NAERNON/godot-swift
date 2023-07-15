@@ -34,7 +34,7 @@ struct GodotClass: Decodable {
             var meta: String?
         }
         
-        var ptrSyntax: String {
+        var ptrIdentifier: String {
             "__method_binding_\(name)"
         }
     }
@@ -240,10 +240,10 @@ struct GodotClass: Decodable {
                     try method.argumentsPackPointerAccessSyntax { packName in
                         try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
-                                DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrSyntax), nil, \(raw: packName), \(raw: instancePtr))")
+                                DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), \(raw: instancePtr))")
                             } else {
                                 try name.pointerAccessSyntax(instanceName: "self", mutability: .constMutablePointer) { selfPtr in
-                                    DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrSyntax), \(raw: selfPtr), \(raw: packName), \(raw: instancePtr))")
+                                    DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), \(raw: instancePtr))")
                                 }
                             }
                         }
@@ -252,10 +252,10 @@ struct GodotClass: Decodable {
             } else {
                 try method.argumentsPackPointerAccessSyntax { packName in
                     if method.isStatic {
-                        DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrSyntax), nil, \(raw: packName), nil)")
+                        DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), nil)")
                     } else {
                         try name.pointerAccessSyntax(instanceName: "self", mutability: .constMutablePointer) { selfPtr in
-                            DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrSyntax), \(raw: selfPtr), \(raw: packName), nil)")
+                            DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), nil)")
                         }
                     }
                 }
@@ -287,7 +287,7 @@ struct GodotClass: Decodable {
     func propertiesBindingsSyntax() -> MemberDeclListSyntax {
         if let methods {
             for method in methods where !method.isVirtual {
-                DeclSyntax("private static var \(raw: method.ptrSyntax): GDExtensionMethodBindPtr!")
+                DeclSyntax("private static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr!")
             }
         }
     }
@@ -303,7 +303,7 @@ struct GodotClass: Decodable {
                         ExprSyntax("""
                         _method_name = \(literal: method.name)
                         _method_name.withUnsafeRawPointer { __ptr__method_name in
-                            \(raw: method.ptrSyntax) = GodotExtension.interface.classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))
+                            \(raw: method.ptrIdentifier) = GodotExtension.interface.classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))
                         }
                         """)
                     }

@@ -69,7 +69,7 @@ struct GodotBuiltinClass: Decodable {
             "GDEXTENSION_VARIANT_OP_" + identifier.uppercased()
         }
         
-        var ptrSyntax: String {
+        var ptrIdentifier: String {
             var name = "__operator_binding_" + identifier
             if let rightType {
                 name += "_" + rightType.syntax(options: [.floatAsDouble])
@@ -90,7 +90,7 @@ struct GodotBuiltinClass: Decodable {
         var hash: Int
         var arguments: [GodotArgument]?
         
-        var ptrSyntax: String {
+        var ptrIdentifier: String {
             "__method_binding_\(name)"
         }
         
@@ -121,7 +121,7 @@ struct GodotBuiltinClass: Decodable {
             true
         }
         
-        var ptrSyntax: String {
+        var ptrIdentifier: String {
             "__constructor_\(index)"
         }
     }
@@ -188,13 +188,13 @@ struct GodotBuiltinClass: Decodable {
                 if name.isBuiltinGodotClassWithOpaque {
                     DeclSyntax("""
                     __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                        Self.\(raw: constructor.ptrSyntax)(__ptr___temporary, \(raw: packName))
+                        Self.\(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
                     }
                     """)
                 } else {
                     DeclSyntax("""
                     withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                        Self.\(raw: constructor.ptrSyntax)(__ptr___temporary, \(raw: packName))
+                        Self.\(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
                     }
                     """)
                 }
@@ -230,7 +230,7 @@ struct GodotBuiltinClass: Decodable {
                         let rhsPointer = `operator`.rightType == nil ? "nil" : pointerNames[1]
                         
                         DeclSyntax("""
-                        Self.\(raw: `operator`.ptrSyntax)(\(raw: lhsPointer), \(raw: rhsPointer), \(raw: instancePtrName))
+                        Self.\(raw: `operator`.ptrIdentifier)(\(raw: lhsPointer), \(raw: rhsPointer), \(raw: instancePtrName))
                         """)
                     }
                 }
@@ -337,10 +337,10 @@ struct GodotBuiltinClass: Decodable {
                     try method.argumentsPackPointerAccessSyntax { packName in
                         try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
-                                DeclSyntax("Self.\(raw: method.ptrSyntax)(nil, \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax))")
+                                DeclSyntax("Self.\(raw: method.ptrIdentifier)(nil, \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax))")
                             } else {
                                 try name.pointerAccessSyntax(instanceName: "self", mutability: mutability) { selfPtr in
-                                    DeclSyntax("Self.\(raw: method.ptrSyntax)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax))")
+                                    DeclSyntax("Self.\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax))")
                                 }
                             }
                         }
@@ -349,10 +349,10 @@ struct GodotBuiltinClass: Decodable {
             } else {
                 try method.argumentsPackPointerAccessSyntax { packName in
                     if method.isStatic {
-                        DeclSyntax("Self.\(raw: method.ptrSyntax)(nil, \(raw: packName), nil, \(raw: method.argumentsCountSyntax))")
+                        DeclSyntax("Self.\(raw: method.ptrIdentifier)(nil, \(raw: packName), nil, \(raw: method.argumentsCountSyntax))")
                     } else {
                         try name.pointerAccessSyntax(instanceName: "self", mutability: mutability) { selfPtr in
-                            DeclSyntax("Self.\(raw: method.ptrSyntax)(\(raw: selfPtr), \(raw: packName), nil, \(raw: method.argumentsCountSyntax))")
+                            DeclSyntax("Self.\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), nil, \(raw: method.argumentsCountSyntax))")
                         }
                     }
                 }
@@ -370,7 +370,7 @@ struct GodotBuiltinClass: Decodable {
     @MemberDeclListBuilder
     func propertiesBindingsSyntax() -> MemberDeclListSyntax {
         for constructor in constructors {
-            DeclSyntax("private static var \(raw: constructor.ptrSyntax): GDExtensionPtrConstructor!")
+            DeclSyntax("private static var \(raw: constructor.ptrIdentifier): GDExtensionPtrConstructor!")
         }
         
         if hasDestructor {
@@ -390,19 +390,19 @@ struct GodotBuiltinClass: Decodable {
         
         if let methods {
             for method in methods {
-                DeclSyntax("private static var \(raw: method.ptrSyntax): GDExtensionPtrBuiltInMethod!")
+                DeclSyntax("private static var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod!")
             }
         }
         
         for `operator` in operators {
-            DeclSyntax("private static var \(raw: `operator`.ptrSyntax): GDExtensionPtrOperatorEvaluator!")
+            DeclSyntax("private static var \(raw: `operator`.ptrIdentifier): GDExtensionPtrOperatorEvaluator!")
         }
     }
     
     func setInitializersBindingsSyntax() throws -> FunctionDeclSyntax {
         try FunctionDeclSyntax("internal static func setInitBindings()") {
             for constructor in constructors {
-                DeclSyntax("\(raw: constructor.ptrSyntax) = GodotExtension.interface.variant_get_ptr_constructor(\(raw: name.variantType!), \(literal: constructor.index))")
+                DeclSyntax("\(raw: constructor.ptrIdentifier) = GodotExtension.interface.variant_get_ptr_constructor(\(raw: name.variantType!), \(literal: constructor.index))")
             }
             
             if hasDestructor {
@@ -434,14 +434,14 @@ struct GodotBuiltinClass: Decodable {
                     ExprSyntax("""
                     _method_name = \(literal: method.name)
                     _method_name.withUnsafeRawPointer { __ptr__method_name in
-                    \(raw: method.ptrSyntax) = GodotExtension.interface.variant_get_ptr_builtin_method(\(raw: name.variantType!), __ptr__method_name, \(literal: method.hash))
+                    \(raw: method.ptrIdentifier) = GodotExtension.interface.variant_get_ptr_builtin_method(\(raw: name.variantType!), __ptr__method_name, \(literal: method.hash))
                     }
                     """)
                 }
             }
             
             for `operator` in operators {
-                DeclSyntax("\(raw: `operator`.ptrSyntax) = GodotExtension.interface.variant_get_ptr_operator_evaluator(\(raw: `operator`.extensionSyntax), \(raw: name.variantType!), \(raw: `operator`.rightType?.variantType ?? "GDEXTENSION_VARIANT_TYPE_NIL"))")
+                DeclSyntax("\(raw: `operator`.ptrIdentifier) = GodotExtension.interface.variant_get_ptr_operator_evaluator(\(raw: `operator`.extensionSyntax), \(raw: name.variantType!), \(raw: `operator`.rightType?.variantType ?? "GDEXTENSION_VARIANT_TYPE_NIL"))")
             }
         }
     }
