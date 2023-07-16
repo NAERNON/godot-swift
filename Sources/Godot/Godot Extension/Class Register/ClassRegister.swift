@@ -188,18 +188,12 @@ public final class ClassRegister {
         var godotClassInfo = GDExtensionClassCreationInfo(
             is_virtual: 0,
             is_abstract: 0,
-            set_func: { _, _, _ in
-                return 1
-            },
-            get_func: { _, _, _ in
-                return 1
-            },
-            get_property_list_func: { a, b in
-                return nil
-            },
+            set_func: { _, _, _ in return 1 },
+            get_func: { _, _, _ in return 1 },
+            get_property_list_func: { _, _ in return nil },
             free_property_list_func: { _, _ in },
-            property_can_revert_func: { _, _ in while true {} },
-            property_get_revert_func: { _, _, _ in while true {} },
+            property_can_revert_func: { _, _ in return 0 },
+            property_get_revert_func: { _, _, _ in return 0 },
             notification_func: { _, _ in },
             to_string_func: classBinding.toStringFunction,
             reference_func: nil,
