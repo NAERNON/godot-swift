@@ -16,19 +16,19 @@ public struct Variant {
     /// Creates a new `Variant` as a `nil` variant.
     public init() {
         withUnsafeRawPointer { extensionTypePtr in
-            GodotExtension.interface.variant_new_nil(extensionTypePtr)
+            gdextension_interface_variant_new_nil(extensionTypePtr)
         }
     }
     
     public init(extensionVariantPtr: GDExtensionVariantPtr) {
         withUnsafeRawPointer { extensionTypePtr in
-            GodotExtension.interface.variant_new_copy(extensionTypePtr, extensionVariantPtr)
+            gdextension_interface_variant_new_copy(extensionTypePtr, extensionVariantPtr)
         }
     }
     
     public init(extensionVariantPtr: GDExtensionConstVariantPtr) {
         withUnsafeRawPointer { extensionTypePtr in
-            GodotExtension.interface.variant_new_copy(extensionTypePtr, extensionVariantPtr)
+            gdextension_interface_variant_new_copy(extensionTypePtr, extensionVariantPtr)
         }
     }
     
@@ -51,7 +51,7 @@ public struct Variant {
         var extensionVariantType: GDExtensionVariantType!
         
         withUnsafeRawPointer { extensionTypePtr in
-            extensionVariantType = GodotExtension.interface.variant_get_type(extensionTypePtr)
+            extensionVariantType = gdextension_interface_variant_get_type(extensionTypePtr)
         }
         
         return extensionVariantType
@@ -65,7 +65,7 @@ public struct Variant {
             other.withUnsafeRawPointer { otherNativeTypePtr in
                 returnVariant.withUnsafeRawPointer { returnNativeTypePtr in
                     withUnsafeMutablePointer(to: &isValid) { validPtr in
-                        GodotExtension.interface.variant_evaluate(
+                        gdextension_interface_variant_evaluate(
                             `operator`.godotOperator,
                             extensionTypePtr,
                             otherNativeTypePtr,
@@ -88,7 +88,7 @@ public struct Variant {
         var result: GDExtensionInt = 0
         
         withUnsafeRawPointer { extensionTypePtr in
-            result = GodotExtension.interface.variant_hash(extensionTypePtr)
+            result = gdextension_interface_variant_hash(extensionTypePtr)
         }
         
         return Int(result)
@@ -96,7 +96,7 @@ public struct Variant {
     
     public func copyTo(variantPtr: GDExtensionVariantPtr) {
         withUnsafeRawPointer { selfPtr in
-            GodotExtension.interface.variant_new_copy(variantPtr, selfPtr)
+            gdextension_interface_variant_new_copy(variantPtr, selfPtr)
         }
     }
     
@@ -196,154 +196,81 @@ public struct Variant {
     /// This function must be called before the creation of any `Variant` instance since the bindings will be needed
     /// for any initialization.
     internal static func setInitBindings() {
-        fromTypeConstructor_bool =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)
-        fromTypeConstructor_int =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)
-        fromTypeConstructor_float =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)
-        fromTypeConstructor_string =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)
-        fromTypeConstructor_vector2 =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)
-        fromTypeConstructor_vector2i =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)
-        fromTypeConstructor_rect2 =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)
-        fromTypeConstructor_rect2i =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)
-        fromTypeConstructor_vector3 =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)
-        fromTypeConstructor_vector3i =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)
-        fromTypeConstructor_transform2D =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)
-        fromTypeConstructor_vector4 =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)
-        fromTypeConstructor_vector4i =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)
-        fromTypeConstructor_plane =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)
-        fromTypeConstructor_quaternion =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)
-        fromTypeConstructor_aabb =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)
-        fromTypeConstructor_basis =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)
-        fromTypeConstructor_transform3D =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)
-        fromTypeConstructor_projection =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)
-        fromTypeConstructor_color =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)
-        fromTypeConstructor_stringName =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)
-        fromTypeConstructor_nodePath =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)
-        fromTypeConstructor_rid =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)
-        fromTypeConstructor_object =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)
-        fromTypeConstructor_callable =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)
-        fromTypeConstructor_signal =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)
-        fromTypeConstructor_dictionary =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)
-        fromTypeConstructor_array =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)
-        fromTypeConstructor_packedByteArray = GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)
-        fromTypeConstructor_packedInt32Array =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)
-        fromTypeConstructor_packedInt64Array =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)
-        fromTypeConstructor_packedFloat32Array =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
-        fromTypeConstructor_packedFloat64Array =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
-        fromTypeConstructor_packedStringArray =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)
-        fromTypeConstructor_packedVector2Array =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
-        fromTypeConstructor_packedVector3Array =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
-        fromTypeConstructor_packedColorArray =
-            GodotExtension.interface.get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)
+        fromTypeConstructor_bool = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)
+        fromTypeConstructor_int = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)
+        fromTypeConstructor_float = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)
+        fromTypeConstructor_string = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)
+        fromTypeConstructor_vector2 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)
+        fromTypeConstructor_vector2i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)
+        fromTypeConstructor_rect2 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)
+        fromTypeConstructor_rect2i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)
+        fromTypeConstructor_vector3 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)
+        fromTypeConstructor_vector3i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)
+        fromTypeConstructor_transform2D = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)
+        fromTypeConstructor_vector4 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)
+        fromTypeConstructor_vector4i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)
+        fromTypeConstructor_plane = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)
+        fromTypeConstructor_quaternion = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)
+        fromTypeConstructor_aabb = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)
+        fromTypeConstructor_basis = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)
+        fromTypeConstructor_transform3D = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)
+        fromTypeConstructor_projection = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)
+        fromTypeConstructor_color = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)
+        fromTypeConstructor_stringName = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)
+        fromTypeConstructor_nodePath = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)
+        fromTypeConstructor_rid = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)
+        fromTypeConstructor_object = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)
+        fromTypeConstructor_callable = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)
+        fromTypeConstructor_signal = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)
+        fromTypeConstructor_dictionary = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)
+        fromTypeConstructor_array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)
+        fromTypeConstructor_packedByteArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)
+        fromTypeConstructor_packedInt32Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)
+        fromTypeConstructor_packedInt64Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)
+        fromTypeConstructor_packedFloat32Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
+        fromTypeConstructor_packedFloat64Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
+        fromTypeConstructor_packedStringArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)
+        fromTypeConstructor_packedVector2Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
+        fromTypeConstructor_packedVector3Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
+        fromTypeConstructor_packedColorArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)
 
-        toTypeConstructor_bool =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)
-        toTypeConstructor_int =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)
-        toTypeConstructor_float =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)
-        toTypeConstructor_string =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)
-        toTypeConstructor_vector2 =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)
-        toTypeConstructor_vector2i =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)
-        toTypeConstructor_rect2 =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)
-        toTypeConstructor_rect2i =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)
-        toTypeConstructor_vector3 =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)
-        toTypeConstructor_vector3i =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)
-        toTypeConstructor_transform2D =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)
-        toTypeConstructor_vector4 =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)
-        toTypeConstructor_vector4i =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)
-        toTypeConstructor_plane =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)
-        toTypeConstructor_quaternion =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)
-        toTypeConstructor_aabb =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)
-        toTypeConstructor_basis =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)
-        toTypeConstructor_transform3D =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)
-        toTypeConstructor_projection =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)
-        toTypeConstructor_color =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)
-        toTypeConstructor_stringName =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)
-        toTypeConstructor_nodePath =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)
-        toTypeConstructor_rid =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)
-        toTypeConstructor_object =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)
-        toTypeConstructor_callable =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)
-        toTypeConstructor_signal =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)
-        toTypeConstructor_dictionary =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)
-        toTypeConstructor_array =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)
-        toTypeConstructor_packedByteArray =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)
-        toTypeConstructor_packedInt32Array =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)
-        toTypeConstructor_packedInt64Array =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)
-        toTypeConstructor_packedFloat32Array =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
-        toTypeConstructor_packedFloat64Array =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
-        toTypeConstructor_packedStringArray =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)
-        toTypeConstructor_packedVector2Array =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
-        toTypeConstructor_packedVector3Array =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
-        toTypeConstructor_packedColorArray =
-            GodotExtension.interface.get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)
+        toTypeConstructor_bool = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)
+        toTypeConstructor_int = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)
+        toTypeConstructor_float = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)
+        toTypeConstructor_string = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)
+        toTypeConstructor_vector2 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)
+        toTypeConstructor_vector2i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)
+        toTypeConstructor_rect2 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)
+        toTypeConstructor_rect2i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)
+        toTypeConstructor_vector3 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)
+        toTypeConstructor_vector3i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)
+        toTypeConstructor_transform2D = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)
+        toTypeConstructor_vector4 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)
+        toTypeConstructor_vector4i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)
+        toTypeConstructor_plane = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)
+        toTypeConstructor_quaternion = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)
+        toTypeConstructor_aabb = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)
+        toTypeConstructor_basis = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)
+        toTypeConstructor_transform3D = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)
+        toTypeConstructor_projection = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)
+        toTypeConstructor_color = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)
+        toTypeConstructor_stringName = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)
+        toTypeConstructor_nodePath = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)
+        toTypeConstructor_rid = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)
+        toTypeConstructor_object = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)
+        toTypeConstructor_callable = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)
+        toTypeConstructor_signal = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)
+        toTypeConstructor_dictionary = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)
+        toTypeConstructor_array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)
+        toTypeConstructor_packedByteArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)
+        toTypeConstructor_packedInt32Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)
+        toTypeConstructor_packedInt64Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)
+        toTypeConstructor_packedFloat32Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)
+        toTypeConstructor_packedFloat64Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)
+        toTypeConstructor_packedStringArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)
+        toTypeConstructor_packedVector2Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)
+        toTypeConstructor_packedVector3Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)
+        toTypeConstructor_packedColorArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)
     }
 }
 
@@ -355,7 +282,7 @@ extension Variant: CustomDebugStringConvertible {
         
         self.withUnsafeRawPointer { extensionTypePtr in
             string.withUnsafeRawPointer { stringNativeTypePtr in
-                GodotExtension.interface.variant_stringify(extensionTypePtr, stringNativeTypePtr)
+                gdextension_interface_variant_stringify(extensionTypePtr, stringNativeTypePtr)
             }
         }
         

@@ -44,14 +44,18 @@ public enum BridgeMacro: ConformanceMacro, PeerMacro {
         return DeclSyntax(
             """
             @_cdecl("\(raw: functionName)")
-            func \(raw: functionName)(interfacePtr: UnsafePointer<GDExtensionInterface>, libraryPtr: GDExtensionClassLibraryPtr, initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>) -> GDExtensionBool {
-                return GodotExtension.initialize(
+            func \(raw: functionName)(getProcAddress: GDExtensionInterfaceGetProcAddress, libraryPtr: GDExtensionClassLibraryPtr, initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>) -> GDExtensionBool {
+                do {
+                    try GodotExtension.initialize(
                     using: \(identifier).self,
-                    withInterfacePtr: interfacePtr,
+                        getProcAddress: getProcAddress,
                     libraryPtr: libraryPtr,
-                    initializationPtr: initializationPtr,
-                    minimumInitializationLevel: GDEXTENSION_INITIALIZATION_SCENE
+                        initializationPtr: initializationPtr
                 )
+                    return 1
+                } catch {
+                    return 0
+                }
             }
             """
         )

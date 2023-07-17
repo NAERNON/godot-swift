@@ -21,7 +21,7 @@ public struct TypedArray<Element> where Element : VariantConvertible {
         array.withUnsafeRawPointer { ptr in
             className.withUnsafeRawPointer { classNamePtr in
                 // TODO: Check script (last parameter)
-                GodotExtension.interface.array_set_typed(ptr, Element.variantType.storageType, classNamePtr, nil)
+                gdextension_interface_array_set_typed(ptr, Element.variantType.storageType, classNamePtr, nil)
             }
         }
         self.underlyingArray = array

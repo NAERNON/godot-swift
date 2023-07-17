@@ -23,4 +23,14 @@ public enum GodotInitializationLevel: Comparable {
             fatalError("The initialization level could not be retreived.")
         }
     }
+    
+    var extensionLevel: GDExtensionInitializationLevel {
+        switch self {
+        case .core: GDEXTENSION_INITIALIZATION_CORE
+        case .servers: GDEXTENSION_INITIALIZATION_SERVERS
+        case .scene: GDEXTENSION_INITIALIZATION_SCENE
+        case .editor: GDEXTENSION_INITIALIZATION_EDITOR
+        case .level: GDEXTENSION_MAX_INITIALIZATION_LEVEL
+        }
+    }
 }

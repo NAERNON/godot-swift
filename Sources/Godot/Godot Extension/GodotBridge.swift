@@ -13,6 +13,11 @@ public protocol GodotBridge {
     /// the ``Exposable()`` macro.
     static var classesToRegister: [Object.Type] { get }
     
+    /// Minimum initialization level required.
+    ///
+    /// If `core` or `servers`, the extension needs editor or game restart to take effect.
+    static var minimumInitializationLevel: GodotInitializationLevel { get }
+    
     /// A custom point of initialization.
     ///
     /// Use this function to perform some custom initialization
@@ -34,6 +39,7 @@ public protocol GodotBridge {
 
 public extension GodotBridge {
     static var classesToRegister: [Object.Type] { [] }
+    static var minimumInitializationLevel: GodotInitializationLevel { .core }
     
     static func initialize(level: GodotInitializationLevel) {}
     static func deinitialize(level: GodotInitializationLevel) {}

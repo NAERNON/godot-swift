@@ -88,20 +88,20 @@ struct GodotClass: Decodable {
                 var extensionObjectPtr: GDExtensionObjectPtr!
                 
                 Self._gd_lastDerivedClassName.withUnsafeRawPointer { namePtr in
-                    extensionObjectPtr = GodotExtension.interface.classdb_construct_object(namePtr)!
+                    extensionObjectPtr = gdextension_interface_classdb_construct_object(namePtr)!
                 }
                 
                 self.extensionObjectPtr = extensionObjectPtr
                 
                 if self is RefCounted {
                     withUnsafePointer(to: Self.instanceBindingsCallbacks()) { selfPtr in
-                        GodotExtension.interface.object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passUnretained(self).toOpaque(), selfPtr)
+                        gdextension_interface_object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passUnretained(self).toOpaque(), selfPtr)
                     }
                 }
                 
                 if Self._gd_isCustomClass {
                     Self._gd_className.withUnsafeRawPointer { classNamePtr in
-                        GodotExtension.interface.object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
+                        gdextension_interface_object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
                     }
                 }
             }
@@ -118,7 +118,7 @@ struct GodotClass: Decodable {
                 Variant.toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), extensionTypePtr)
                 
                 let finalPtr = withUnsafePointer(to: Self.instanceBindingsCallbacks()) { bindingsPtr in
-                    GodotExtension.interface.object_get_instance_binding(
+                    gdextension_interface_object_get_instance_binding(
                         instanceOwner.pointee, GodotExtension.token, bindingsPtr
                     )
                 }
@@ -147,7 +147,7 @@ struct GodotClass: Decodable {
                 DeclSyntax("""
                 deinit {
                     self.withUnsafeRawPointer { __ptr_self in
-                        GodotExtension.interface.mem_free(__ptr_self)
+                        gdextension_interface_mem_free(__ptr_self)
                     }
                 }
                 """)
@@ -185,7 +185,7 @@ struct GodotClass: Decodable {
                 return Unmanaged.passRetained(\(raw: identifier)(extensionObjectPtr: instance!)).toOpaque()
             } free_callback: { token, instance, bindings in
                 Unmanaged<\(raw: identifier)>.fromOpaque(instance!).takeRetainedValue().withUnsafeRawPointer { __ptr_self in
-                    GodotExtension.interface.mem_free(__ptr_self)
+                    gdextension_interface_mem_free(__ptr_self)
                 }
             } reference_callback: { token, instance, reference in
                 if reference != 0 {
@@ -261,10 +261,10 @@ struct GodotClass: Decodable {
                     try method.argumentsPackPointerAccessSyntax { packName in
                         try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
-                                DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), \(raw: instancePtr))")
+                                DeclSyntax("gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), \(raw: instancePtr))")
                             } else {
                                 try name.pointerAccessSyntax(instanceName: "self", mutability: .constMutablePointer) { selfPtr in
-                                    DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), \(raw: instancePtr))")
+                                    DeclSyntax("gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), \(raw: instancePtr))")
                                 }
                             }
                         }
@@ -273,10 +273,10 @@ struct GodotClass: Decodable {
             } else {
                 try method.argumentsPackPointerAccessSyntax { packName in
                     if method.isStatic {
-                        DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), nil)")
+                        DeclSyntax("gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), nil)")
                     } else {
                         try name.pointerAccessSyntax(instanceName: "self", mutability: .constMutablePointer) { selfPtr in
-                            DeclSyntax("GodotExtension.interface.object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), nil)")
+                            DeclSyntax("gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), nil)")
                         }
                     }
                 }
@@ -324,7 +324,7 @@ struct GodotClass: Decodable {
                         ExprSyntax("""
                         _method_name = \(literal: method.name)
                         _method_name.withUnsafeRawPointer { __ptr__method_name in
-                            \(raw: method.ptrIdentifier) = GodotExtension.interface.classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))
+                            \(raw: method.ptrIdentifier) = gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))
                         }
                         """)
                     }

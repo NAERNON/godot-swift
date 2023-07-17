@@ -3,20 +3,36 @@ import GodotExtensionHeaders
 
 // MARK: Warning and errors
 
+/// Logs an error to Godot's built-in debugger and to the OS terminal.
+///
+/// - Parameters:
+///   - message: The code trigging the error.
+///   - notifyEditor: Whether or not to notify the editor.
+///   - function: The function name where the error occurred.
+///   - file: The file where the error occurred.
+///   - line: The line where the error occurred.
 public func gdDebugPrintError(_ message: Swift.String,
                               notifyEditor: Bool = false,
                               function: Swift.String = #function,
                               file: Swift.String = #file,
                               line: Int32 = #line) {
-    GodotExtension.interface.print_error(message, function, file, line, gdExtentionBool(notifyEditor))
+    gdextension_interface_print_error(message, function, file, line, notifyEditor ? 1 : 0)
 }
 
+/// Logs a warning to Godot's built-in debugger and to the OS terminal.
+///
+/// - Parameters:
+///   - message: The code trigging the warning.
+///   - notifyEditor: Whether or not to notify the editor.
+///   - function: The function name where the warning occurred.
+///   - file: The file where the warning occurred.
+///   - line: The line where the warning occurred.
 public func gdDebugPrintWarning(_ message: Swift.String,
                                 notifyEditor: Bool = false,
                                 function: Swift.String = #function,
                                 file: Swift.String = #file,
                                 line: Int32 = #line) {
-    GodotExtension.interface.print_warning(message, function, file, line, gdExtentionBool(notifyEditor))
+    gdextension_interface_print_warning(message, function, file, line, notifyEditor ? 1 : 0)
 }
 
 // MARK: Print

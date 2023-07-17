@@ -17,7 +17,7 @@ extension GeneratedFile {
                         ExprSyntax("""
                         _function_name = "\(raw: function.baseName)"
                         _function_name.withUnsafeRawPointer { __ptr__function_name in
-                            \(raw: function.functionPtrSyntax) = GodotExtension.interface.variant_get_ptr_utility_function(__ptr__function_name, \(raw: function.hash))
+                            \(raw: function.functionPtrSyntax) = gdextension_interface_variant_get_ptr_utility_function(__ptr__function_name, \(raw: function.hash))
                         }
                         """)
                     }

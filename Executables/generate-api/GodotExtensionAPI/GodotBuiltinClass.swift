@@ -402,11 +402,11 @@ struct GodotBuiltinClass: Decodable {
     func setInitializersBindingsSyntax() throws -> FunctionDeclSyntax {
         try FunctionDeclSyntax("internal static func setInitBindings()") {
             for constructor in constructors {
-                DeclSyntax("\(raw: constructor.ptrIdentifier) = GodotExtension.interface.variant_get_ptr_constructor(\(raw: name.variantType!), \(literal: constructor.index))")
+                DeclSyntax("\(raw: constructor.ptrIdentifier) = gdextension_interface_variant_get_ptr_constructor(\(raw: name.variantType!), \(literal: constructor.index))")
             }
             
             if hasDestructor {
-                DeclSyntax("__destructor = GodotExtension.interface.variant_get_ptr_destructor(\(raw: name.variantType!))")
+                DeclSyntax("__destructor = gdextension_interface_variant_get_ptr_destructor(\(raw: name.variantType!))")
             }
         }
     }
@@ -415,16 +415,16 @@ struct GodotBuiltinClass: Decodable {
         try FunctionDeclSyntax("internal static func setFunctionBindings()") {
             if indexingReturnType != nil {
                 DeclSyntax("""
-                __indexed_setter = GodotExtension.interface.variant_get_ptr_indexed_setter(\(raw: name.variantType!))
-                __indexed_getter = GodotExtension.interface.variant_get_ptr_indexed_getter(\(raw: name.variantType!))
+                __indexed_setter = gdextension_interface_variant_get_ptr_indexed_setter(\(raw: name.variantType!))
+                __indexed_getter = gdextension_interface_variant_get_ptr_indexed_getter(\(raw: name.variantType!))
                 """)
             }
             
             if isKeyed {
                 DeclSyntax("""
-                __keyed_setter = GodotExtension.interface.variant_get_ptr_keyed_setter(\(raw: name.variantType!))
-                __keyed_getter = GodotExtension.interface.variant_get_ptr_keyed_getter(\(raw: name.variantType!))
-                __keyed_checker = GodotExtension.interface.variant_get_ptr_keyed_checker(\(raw: name.variantType!))
+                __keyed_setter = gdextension_interface_variant_get_ptr_keyed_setter(\(raw: name.variantType!))
+                __keyed_getter = gdextension_interface_variant_get_ptr_keyed_getter(\(raw: name.variantType!))
+                __keyed_checker = gdextension_interface_variant_get_ptr_keyed_checker(\(raw: name.variantType!))
                 """)
             }
             
@@ -434,14 +434,14 @@ struct GodotBuiltinClass: Decodable {
                     ExprSyntax("""
                     _method_name = \(literal: method.name)
                     _method_name.withUnsafeRawPointer { __ptr__method_name in
-                    \(raw: method.ptrIdentifier) = GodotExtension.interface.variant_get_ptr_builtin_method(\(raw: name.variantType!), __ptr__method_name, \(literal: method.hash))
+                    \(raw: method.ptrIdentifier) = gdextension_interface_variant_get_ptr_builtin_method(\(raw: name.variantType!), __ptr__method_name, \(literal: method.hash))
                     }
                     """)
                 }
             }
             
             for `operator` in operators {
-                DeclSyntax("\(raw: `operator`.ptrIdentifier) = GodotExtension.interface.variant_get_ptr_operator_evaluator(\(raw: `operator`.extensionSyntax), \(raw: name.variantType!), \(raw: `operator`.rightType?.variantType ?? "GDEXTENSION_VARIANT_TYPE_NIL"))")
+                DeclSyntax("\(raw: `operator`.ptrIdentifier) = gdextension_interface_variant_get_ptr_operator_evaluator(\(raw: `operator`.extensionSyntax), \(raw: name.variantType!), \(raw: `operator`.rightType?.variantType ?? "GDEXTENSION_VARIANT_TYPE_NIL"))")
             }
         }
     }

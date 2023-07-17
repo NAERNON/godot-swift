@@ -62,7 +62,7 @@ public final class ClassRegister {
             let classBinding = customClassNameToClassBinding.removeValue(forKey: className)!
             
             classBinding.name.withUnsafeRawPointer { namePtr in
-                GodotExtension.interface.classdb_unregister_extension_class(
+                gdextension_interface_classdb_unregister_extension_class(
                     GodotExtension.libraryPtr,
                     namePtr
                 )
@@ -208,7 +208,7 @@ public final class ClassRegister {
         className.withUnsafeRawPointer { namePtr in
             superclassName.withUnsafeRawPointer { superclassNamePtr in
                 withUnsafePointer(to: godotClassInfo) { classInfoPtr in
-                    GodotExtension.interface.classdb_register_extension_class(
+                    gdextension_interface_classdb_register_extension_class(
                         GodotExtension.libraryPtr, namePtr, superclassNamePtr, classInfoPtr
                     )
                 }
@@ -326,7 +326,7 @@ public final class ClassRegister {
 // TODO: DO THIS
                             },
                             method_flags: functionBinding.flag,
-                            has_return_value: gdExtentionBool(functionBinding.hasReturnValue),
+                            has_return_value: functionBinding.hasReturnValue ? 1 : 0,
                             return_value_info: propertiesInfo.returnValue,
                             return_value_metadata: argumentsMetadata.returnValue.pointee,
                             argument_count: UInt32(functionBinding.argumentsCount),
@@ -337,7 +337,7 @@ public final class ClassRegister {
                         
                         className.withUnsafeRawPointer { namePtr in
                             withUnsafePointer(to: godotMethodInfo) { methodInfoPtr in
-                                GodotExtension.interface.classdb_register_extension_class_method(
+                                gdextension_interface_classdb_register_extension_class_method(
                                     GodotExtension.libraryPtr, namePtr, methodInfoPtr
                                 )
                             }

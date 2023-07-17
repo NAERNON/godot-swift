@@ -10,7 +10,7 @@ extension String {
         
         withUnsafeRawPointer { extensionPtr in
             swiftString.withCString { cString in
-                GodotExtension.interface.string_new_with_utf8_chars(extensionPtr, cString)
+                gdextension_interface_string_new_with_utf8_chars(extensionPtr, cString)
             }
         }
     }
