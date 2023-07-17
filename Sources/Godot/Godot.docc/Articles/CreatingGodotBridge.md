@@ -56,6 +56,8 @@ enum MyGame {
 }
 ```
 
+Subclasses you expose should be registered right after their superclasses. In the previous example, if `CharacterDarkSideNode` is a direct subclass of `CharacterNode`, the two classes are correctly registered.
+
 > Important: Only expose ``Object`` classes that are defined using the ``Exposable()`` macro. See <doc:CreatingCustomClass>.
 
 ### Provide custom initialization and deinitialization
