@@ -20,15 +20,20 @@ public protocol GodotBridge {
     
     /// A custom point of initialization.
     ///
-    /// Use this function to perform some custom initialization
+    /// Use this method to perform some custom initialization
     /// of your module alongside Godot initialization.
+    ///
+    /// This method is called for each level of initialization.
+    ///
+    /// > warning: Godot is not fully initialized during this method call,
+    /// so call any Godot related type thoroughly.
     ///
     /// - parameter level: The Godot initialization level.
     static func initialize(level: GodotInitializationLevel)
     
     /// A custom point of deinitialization.
     ///
-    /// Use this function to perform some custom deinitialization
+    /// Use this method to perform some custom deinitialization
     /// of your module alongside Godot deinitialization.
     ///
     /// - parameter level: The Godot deinitialization level.

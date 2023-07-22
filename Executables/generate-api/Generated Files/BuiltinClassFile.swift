@@ -86,18 +86,6 @@ extension GeneratedFile {
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         
-        builtinClass.propertiesBindingsSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try builtinClass.setInitializersBindingsSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try builtinClass.setFunctionBindingsSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
         if builtinClass.name.isBuiltinGodotClassWithOpaque {
             builtinClass.opaqueValueSyntax()
         }

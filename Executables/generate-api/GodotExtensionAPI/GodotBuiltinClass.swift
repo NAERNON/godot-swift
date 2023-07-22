@@ -163,18 +163,33 @@ struct GodotBuiltinClass: Decodable {
             }
         }
         
+        if hasDestructor {
+            DeclSyntax("""
+            private static var __destructor: GDExtensionPtrDestructor = {
+                return gdextension_interface_variant_get_ptr_destructor(\(raw: name.variantType!))!
+            }()
+            """)
+        }
+        
         for constructor in constructors {
             try constructorSyntax(constructor, useOpaque: useOpaque, classSize: classSize, options: options)
                 .with(\.trailingTrivia, .newlines(2))
         }
     }
     
+    @MemberDeclListBuilder
     private func constructorSyntax(
         _ constructor: Constructor,
         useOpaque: Bool,
         classSize: Int,
         options: GodotTypeSyntaxOptions
-    ) throws -> FunctionDeclSyntax {
+    ) throws -> MemberDeclListSyntax {
+        DeclSyntax("""
+        private static var \(raw: constructor.ptrIdentifier): GDExtensionPtrConstructor = {
+            return gdextension_interface_variant_get_ptr_constructor(\(raw: name.variantType!), \(literal: constructor.index))!
+        }()
+        """)
+        
         try constructor.declSyntax(options: options) {
             let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
             
@@ -216,13 +231,20 @@ struct GodotBuiltinClass: Decodable {
         }
     }
     
+    @MemberDeclListBuilder
     private func operatorSyntax(
         _ `operator`: Operator,
         options: GodotTypeSyntaxOptions
-    ) throws -> FunctionDeclSyntax {
+    ) throws -> MemberDeclListSyntax {
         let operatorFunction = OperatorFunction(operator: `operator`, type: name)
         
-        return try operatorFunction.declSyntax(hideAllLabels: true, options: options) {
+        DeclSyntax("""
+        private static var \(raw: `operator`.ptrIdentifier): GDExtensionPtrOperatorEvaluator = {
+            return gdextension_interface_variant_get_ptr_operator_evaluator(\(raw: `operator`.extensionSyntax), \(raw: name.variantType!), \(raw: `operator`.rightType?.variantType ?? "GDEXTENSION_VARIANT_TYPE_NIL"))!
+        }()
+        """)
+        
+        try operatorFunction.declSyntax(hideAllLabels: true, options: options) {
             try `operator`.returnType.instantiationSyntax { instanceType, instanceName in
                 try operatorFunction.argumentsPointerAccessSyntax { pointerNames in
                     try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtrName in
@@ -244,6 +266,15 @@ struct GodotBuiltinClass: Decodable {
         options: GodotTypeSyntaxOptions
     ) throws -> MemberDeclListSyntax {
         if let indexingReturnType, !isKeyed {
+            DeclSyntax("""
+            private static var __indexed_setter: GDExtensionPtrIndexedSetter = {
+                return gdextension_interface_variant_get_ptr_indexed_setter(\(raw: name.variantType!))!
+            }()
+            private static var __indexed_getter: GDExtensionPtrIndexedGetter = {
+                return gdextension_interface_variant_get_ptr_indexed_getter(\(raw: name.variantType!))!
+            }()
+            """)
+            
             try FunctionDeclSyntax("func _getValue(at index: GDExtensionInt) -> \(raw: indexingReturnType.syntax(options: options))") {
                 try indexingReturnType.instantiationSyntax(options: options) { instanceType, instanceName in
                     try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
@@ -272,6 +303,9 @@ struct GodotBuiltinClass: Decodable {
     func keyGetterSetterSyntax() -> MemberDeclListSyntax {
         if isKeyed {
             DeclSyntax("""
+            private static var __keyed_setter: GDExtensionPtrKeyedSetter = {
+                return gdextension_interface_variant_get_ptr_keyed_setter(\(raw: name.variantType!))!
+            }()
             internal func _getValue(forKey key: Variant) -> Variant {
                 var __returnValue = Variant()
                 
@@ -286,6 +320,9 @@ struct GodotBuiltinClass: Decodable {
                 return __returnValue
             }
             
+            private static var __keyed_getter: GDExtensionPtrKeyedGetter = {
+                return gdextension_interface_variant_get_ptr_keyed_getter(\(raw: name.variantType!))!
+            }()
             internal mutating func _set(value: Variant, forKey key: Variant) {
                 replaceOpaqueValueIfNecessary()
                 
@@ -298,6 +335,9 @@ struct GodotBuiltinClass: Decodable {
                 }
             }
             
+            private static var __keyed_checker: GDExtensionPtrKeyedChecker = {
+                return gdextension_interface_variant_get_ptr_keyed_checker(\(raw: name.variantType!))!
+            }()
             internal func _check(key: Variant) -> Bool {
                 var keyCheck = UInt32()
                 
@@ -325,12 +365,20 @@ struct GodotBuiltinClass: Decodable {
         }
     }
     
+    @MemberDeclListBuilder
     private func methodSyntax(
         _ method: Method,
         options: GodotTypeSyntaxOptions
-    ) throws -> FunctionDeclSyntax {
-        let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
+    ) throws -> MemberDeclListSyntax {
+        DeclSyntax("""
+        private static var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod = {
+            StringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
+            return gdextension_interface_variant_get_ptr_builtin_method(\(raw: name.variantType!), __ptr__method_name, \(literal: method.hash))!
+            }
+        }()
+        """)
         
+        let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
         let functionDecl = try method.declSyntax(underscoreName: true, options: options) {
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(options: options) { instanceType, instanceName in
@@ -361,88 +409,9 @@ struct GodotBuiltinClass: Decodable {
         .addModifier(.init(name: .keyword(.internal)))
         
         if method.isResultDiscardable {
-            return functionDecl.addAttribute(.init(AttributeSyntax(atSignToken: .atSignToken(), attributeName: SimpleTypeIdentifierSyntax(name: .identifier("discardableResult")))))
+            functionDecl.addAttribute(.init(AttributeSyntax(atSignToken: .atSignToken(), attributeName: SimpleTypeIdentifierSyntax(name: .identifier("discardableResult")))))
         } else {
-            return functionDecl
-        }
-    }
-    
-    @MemberDeclListBuilder
-    func propertiesBindingsSyntax() -> MemberDeclListSyntax {
-        for constructor in constructors {
-            DeclSyntax("private static var \(raw: constructor.ptrIdentifier): GDExtensionPtrConstructor!")
-        }
-        
-        if hasDestructor {
-            DeclSyntax("private static var __destructor: GDExtensionPtrDestructor!")
-        }
-        
-        if indexingReturnType != nil {
-            DeclSyntax("private static var __indexed_setter: GDExtensionPtrIndexedSetter!")
-            DeclSyntax("private static var __indexed_getter: GDExtensionPtrIndexedGetter!")
-        }
-        
-        if isKeyed {
-            DeclSyntax("private static var __keyed_setter: GDExtensionPtrKeyedSetter!")
-            DeclSyntax("private static var __keyed_getter: GDExtensionPtrKeyedGetter!")
-            DeclSyntax("private static var __keyed_checker: GDExtensionPtrKeyedChecker!")
-        }
-        
-        if let methods {
-            for method in methods {
-                DeclSyntax("private static var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod!")
-            }
-        }
-        
-        for `operator` in operators {
-            DeclSyntax("private static var \(raw: `operator`.ptrIdentifier): GDExtensionPtrOperatorEvaluator!")
-        }
-    }
-    
-    func setInitializersBindingsSyntax() throws -> FunctionDeclSyntax {
-        try FunctionDeclSyntax("internal static func setInitBindings()") {
-            for constructor in constructors {
-                DeclSyntax("\(raw: constructor.ptrIdentifier) = gdextension_interface_variant_get_ptr_constructor(\(raw: name.variantType!), \(literal: constructor.index))")
-            }
-            
-            if hasDestructor {
-                DeclSyntax("__destructor = gdextension_interface_variant_get_ptr_destructor(\(raw: name.variantType!))")
-            }
-        }
-    }
-    
-    func setFunctionBindingsSyntax() throws -> FunctionDeclSyntax {
-        try FunctionDeclSyntax("internal static func setFunctionBindings()") {
-            if indexingReturnType != nil {
-                DeclSyntax("""
-                __indexed_setter = gdextension_interface_variant_get_ptr_indexed_setter(\(raw: name.variantType!))
-                __indexed_getter = gdextension_interface_variant_get_ptr_indexed_getter(\(raw: name.variantType!))
-                """)
-            }
-            
-            if isKeyed {
-                DeclSyntax("""
-                __keyed_setter = gdextension_interface_variant_get_ptr_keyed_setter(\(raw: name.variantType!))
-                __keyed_getter = gdextension_interface_variant_get_ptr_keyed_getter(\(raw: name.variantType!))
-                __keyed_checker = gdextension_interface_variant_get_ptr_keyed_checker(\(raw: name.variantType!))
-                """)
-            }
-            
-            if let methods {
-                DeclSyntax("var _method_name: StringName!")
-                for method in methods {
-                    ExprSyntax("""
-                    _method_name = \(literal: method.name)
-                    _method_name.withUnsafeRawPointer { __ptr__method_name in
-                    \(raw: method.ptrIdentifier) = gdextension_interface_variant_get_ptr_builtin_method(\(raw: name.variantType!), __ptr__method_name, \(literal: method.hash))
-                    }
-                    """)
-                }
-            }
-            
-            for `operator` in operators {
-                DeclSyntax("\(raw: `operator`.ptrIdentifier) = gdextension_interface_variant_get_ptr_operator_evaluator(\(raw: `operator`.extensionSyntax), \(raw: name.variantType!), \(raw: `operator`.rightType?.variantType ?? "GDEXTENSION_VARIANT_TYPE_NIL"))")
-            }
+            functionDecl
         }
     }
     

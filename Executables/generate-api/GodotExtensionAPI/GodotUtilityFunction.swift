@@ -1,3 +1,5 @@
+import SwiftSyntax
+import SwiftSyntaxBuilder
 
 /// A representation of a Godot utility function.
 ///
@@ -40,7 +42,45 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
     
     // MARK: - Syntax
     
-    var functionPtrSyntax: String {
+    private var ptrIdentifier: String {
         "__function_binding_\(baseName)"
+    }
+    
+    func extensionFunctionPointerSyntax() -> DeclSyntax {
+        DeclSyntax("""
+        private var \(raw: ptrIdentifier): GDExtensionPtrUtilityFunction = {
+            StringName(swiftString: \(literal: baseName)).withUnsafeRawPointer { __ptr__method_name in
+            return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, \(literal: hash))!
+            }
+        }()
+        """)
+    }
+    
+    func syntax() throws -> FunctionDeclSyntax {
+        let options: GodotTypeSyntaxOptions = .floatAsDouble
+        
+        return try declSyntax(options: options) {
+            if let returnType = returnType {
+                try returnType.instantiationSyntax(options: options) { instanceType, instanceName in
+                    try argumentsPackPointerAccessSyntax { packName in
+                        try instanceType.pointerAccessSyntax(
+                            instanceName: instanceName,
+                            mutability: .mutable
+                        ) { instancePointerName in
+                            DeclSyntax("""
+                            \(raw: ptrIdentifier)(\(raw: instancePointerName), \(raw: packName), \(raw: argumentsCountSyntax))
+                            """)
+                        }
+                    }
+                }
+            } else {
+                try argumentsPackPointerAccessSyntax { packName in
+                    DeclSyntax("""
+                    \(raw: ptrIdentifier)(nil, \(raw: packName), \(raw: argumentsCountSyntax))
+                    """)
+                }
+            }
+        }
+        .addModifier(.init(name: .keyword(.public)))
     }
 }

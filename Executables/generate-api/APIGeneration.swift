@@ -42,7 +42,7 @@ struct APIGeneration: ParsableCommand {
             GeneratedFile.realRawValue(type: buildConfiguration.floatingPointType),
             GeneratedFile.variantSize(extensionAPI, with: buildConfiguration),
             GeneratedFile.utilityFunctions(extensionAPI),
-            GeneratedFile.setBindings(extensionAPI),
+            GeneratedFile.registerGodotClasses(extensionAPI),
         ] + extensionAPI.builtinClassesToGenerate().map {
             GeneratedFile.builtinClass(extensionAPI, for: $0, with: buildConfiguration)
         } + extensionAPI.classes.map {

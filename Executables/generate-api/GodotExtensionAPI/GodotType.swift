@@ -6,7 +6,7 @@ import CodeTranslator
 /// A representation of a Godot type.
 ///
 /// This model is used to represent a type definition.
-indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLiteral {
+indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLiteral, CustomStringConvertible {
     // MARK: Cases
     
     /// The base of a `GodotType`.
@@ -172,6 +172,10 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     }
     
     // MARK: Access
+    
+    var description: String {
+        syntax()
+    }
     
     static let variant: GodotType = "Variant"
     

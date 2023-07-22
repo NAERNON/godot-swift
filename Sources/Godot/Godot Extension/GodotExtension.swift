@@ -204,8 +204,6 @@ public enum GodotExtension {
         initializationPtr.pointee.deinitialize = deinitializeLevel
         initializationPtr.pointee.minimum_initialization_level = bridge.minimumInitializationLevel.extensionLevel
         
-        GodotExtension.setBuiltinStructsBindings()
-        
         isInitialized = true
     }
     
@@ -384,23 +382,18 @@ public enum GodotExtension {
 private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtensionInitializationLevel) {
     let level = GodotInitializationLevel(level)
     
-    if level == .scene {
-        GodotExtension.registerGodotClasses()
-        Variant.setInitBindings()
-        UtilityFunctions.setBindings()
-    }
-    
     GodotExtension.classRegister.initialize(level: level)
+    GodotExtension.bridge.initialize(level: level)
     
-    if level == .scene {
-        for object in GodotExtension.bridge.classesToRegister {
-            object.self._gd_exposeToGodot()
-        }
-        GodotExtension.classRegister.closeRegistration()
-        gdPrint(GodotExtension.version)
+    GodotExtension.classRegister.registerGodotClasses(forLevel: level)
+    
+    guard level == .scene else {
+        return
     }
     
-    GodotExtension.bridge.initialize(level: level)
+    for object in GodotExtension.bridge.classesToRegister {
+        object.self._gd_exposeToGodot()
+    }
 }
 
 private func deinitializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtensionInitializationLevel) {

@@ -1,21 +1,15 @@
 import Foundation
 import GodotExtensionHeaders
 
-/// The registration is open at start. Once all the custom classes are registered,
-/// you should call `closeRegistration()`.
-/// This locks the register and prevents any modification.
-/// Once locked, the register cannot be openned back.
+/// An object that enables the registration of custom Godot classes.
+///
+/// Do not use `ClassRegister` directly.
+/// See <doc:CreatingGodotBridge> to learn how to expose custom classes to Godot.
 ///
 /// Before registering any type, the `ClassRegister` should be initialized with a level
 /// using the `initialize(level:)` function.
 ///
 /// Use the `shared` singleton since it is the only `ClassRegister` available.
-
-
-/// An object that enables the registration of custom Godot classes.
-///
-/// Do not use `ClassRegister` directly.
-/// See <doc:CreatingGodotBridge> to learn how to expose custom classes to Godot.
 public final class ClassRegister {
     // MARK: Properties
     
@@ -23,12 +17,6 @@ public final class ClassRegister {
     ///
     /// This is the only `ClassRegister` available.
     internal static let shared = ClassRegister()
-    
-    /// A Boolean value indicating whether the registration is open.
-    ///
-    /// If the registration is not open, any modification on the `ClassRegister`
-    /// is prevented.
-    public private(set) var isRegistrationOpen = true
     
     /// The current Godot initialization level.
     public private(set) var currentLevel: GodotInitializationLevel?
@@ -70,10 +58,6 @@ public final class ClassRegister {
         }
     }
     
-    func closeRegistration() {
-        isRegistrationOpen = false
-    }
-    
     // MARK: Class registration
     
     /// Returns the ``Object`` type named as the given class name.
@@ -100,7 +84,7 @@ public final class ClassRegister {
     /// has the correct associated ``Object/_gd_className``.
     ///
     /// If the class name is not correct, it indicates that the custom registered class
-    /// is not configured correctly. This might be a sign that the ``GodotExposable()``
+    /// is not configured correctly. This might be a sign that the ``Exposable()``
     /// macro is not used.
     private func classNameIsEquivalentToType<Class>(classType: Class.Type) -> Bool where Class : Object {
         StringName(swiftString: .init(describing: classType)) == classType._gd_className
@@ -109,14 +93,10 @@ public final class ClassRegister {
     /// Registers the given base Godot class.
     ///
     /// This function should only be used to register base classes, and not custom ones.
+    @discardableResult
     internal func registerBaseGodotClass<Class>(ofType classType: Class.Type) -> Bool where Class : Object {
-        guard isRegistrationOpen else {
-            gdDebugPrintError("Cannot register class \(classType) because the registration is closed.")
-            return false
-        }
-        
         guard classNameIsEquivalentToType(classType: classType) else {
-            gdDebugPrintError("Cannot register class \(classType) because the type and name don't match. The @GodotExposable macro should be applied to the class.")
+            gdDebugPrintError("Cannot register class \(classType) because the type and name don't match. The @Exposable macro should be applied to the class.")
             return false
         }
         
@@ -149,7 +129,7 @@ public final class ClassRegister {
         }
         
         guard classNameIsEquivalentToType(classType: classType) else {
-            gdDebugPrintError("Cannot register class \(classType) because the type and name don't match. Make sure the @GodotExposable macro is applied to the class.")
+            gdDebugPrintError("Cannot register class \(classType) because the type and name don't match. Make sure the @Exposable macro is applied to the class.")
             return false
         }
         
@@ -163,11 +143,6 @@ public final class ClassRegister {
             createInstanceFunction: createInstanceFunction,
             freeInstanceFunction: freeInstanceFunction
         )
-        
-        guard isRegistrationOpen else {
-            gdDebugPrintError("Cannot register class \(classType) because the registration is closed.")
-            return false
-        }
         
         let className = classBinding.name
         let superclassName = classBinding.superclassName
@@ -288,11 +263,6 @@ public final class ClassRegister {
         isStatic: Bool,
         call: GDExtensionClassMethodCall)
     -> Bool where Class : Object {
-        guard isRegistrationOpen else {
-            gdDebugPrintError("Cannot register function \(functionName) because the registration is closed.")
-            return false
-        }
-        
         let className = classType._gd_className
         
         guard let classBinding = customClassNameToClassBinding[className],

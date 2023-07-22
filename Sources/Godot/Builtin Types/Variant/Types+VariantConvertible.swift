@@ -1,3 +1,10 @@
+import GodotExtensionHeaders
+
+// MARK: - Bool
+
+private var fromTypeConstructor_bool = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
+private var toTypeConstructor_bool = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
+
 extension Bool: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .bool
     
@@ -5,7 +12,7 @@ extension Bool: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_bool(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_bool(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -16,13 +23,18 @@ extension Bool: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_bool(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_bool(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue != 0
     }
 }
+
+// MARK: - Int
+
+private var fromTypeConstructor_int = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)!
+private var toTypeConstructor_int = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)!
 
 extension Int: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .int
@@ -31,7 +43,7 @@ extension Int: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -42,7 +54,7 @@ extension Int: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -57,7 +69,7 @@ extension Int8: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -68,7 +80,7 @@ extension Int8: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -83,7 +95,7 @@ extension Int16: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -94,7 +106,7 @@ extension Int16: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -109,7 +121,7 @@ extension Int32: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -120,7 +132,7 @@ extension Int32: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -135,7 +147,7 @@ extension Int64: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -146,7 +158,7 @@ extension Int64: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -161,7 +173,7 @@ extension UInt8: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -172,7 +184,7 @@ extension UInt8: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -187,7 +199,7 @@ extension UInt16: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -198,7 +210,7 @@ extension UInt16: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -213,7 +225,7 @@ extension UInt32: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -224,7 +236,7 @@ extension UInt32: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -239,7 +251,7 @@ extension UInt64: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -250,13 +262,18 @@ extension UInt64: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Floating point
+
+private var fromTypeConstructor_float = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
+private var toTypeConstructor_float = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
 
 extension Double: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .double
@@ -265,7 +282,7 @@ extension Double: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -276,7 +293,7 @@ extension Double: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -291,7 +308,7 @@ extension Float: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -302,7 +319,7 @@ extension Float: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
@@ -317,7 +334,7 @@ extension Real: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -328,13 +345,18 @@ extension Real: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return Real(newValue)
     }
 }
+
+// MARK: - String
+
+private var fromTypeConstructor_string = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)!
+private var toTypeConstructor_string = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)!
 
 extension String: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .string
@@ -343,7 +365,7 @@ extension String: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_string(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_string(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -354,13 +376,18 @@ extension String: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_string(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_string(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Vector2
+
+private var fromTypeConstructor_vector2 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
+private var toTypeConstructor_vector2 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
 
 extension Vector2: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .vector2
@@ -369,7 +396,7 @@ extension Vector2: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_vector2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -380,13 +407,18 @@ extension Vector2: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_vector2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Vector2i
+
+private var fromTypeConstructor_vector2i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
+private var toTypeConstructor_vector2i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
 
 extension Vector2i: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .vector2i
@@ -395,7 +427,7 @@ extension Vector2i: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_vector2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -406,13 +438,18 @@ extension Vector2i: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_vector2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Rect2
+
+private var fromTypeConstructor_rect2 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)!
+private var toTypeConstructor_rect2 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)!
 
 extension Rect2: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .rect2
@@ -421,7 +458,7 @@ extension Rect2: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_rect2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_rect2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -432,13 +469,18 @@ extension Rect2: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_rect2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_rect2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Rect2i
+
+private var fromTypeConstructor_rect2i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
+private var toTypeConstructor_rect2i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
 
 extension Rect2i: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .rect2i
@@ -447,7 +489,7 @@ extension Rect2i: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_rect2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_rect2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -458,13 +500,18 @@ extension Rect2i: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_rect2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_rect2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Vector3
+
+private var fromTypeConstructor_vector3 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)!
+private var toTypeConstructor_vector3 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)!
 
 extension Vector3: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .vector3
@@ -473,7 +520,7 @@ extension Vector3: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector3(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_vector3(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -484,13 +531,18 @@ extension Vector3: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector3(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_vector3(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Vector3i
+
+private var fromTypeConstructor_vector3i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
+private var toTypeConstructor_vector3i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
 
 extension Vector3i: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .vector3i
@@ -499,7 +551,7 @@ extension Vector3i: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector3i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_vector3i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -510,13 +562,18 @@ extension Vector3i: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector3i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_vector3i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Transform2D
+
+private var fromTypeConstructor_transform2D = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)!
+private var toTypeConstructor_transform2D = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)!
 
 extension Transform2D: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .transform2D
@@ -525,7 +582,7 @@ extension Transform2D: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_transform2D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_transform2D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -536,13 +593,18 @@ extension Transform2D: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_transform2D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_transform2D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Vector4
+
+private var fromTypeConstructor_vector4 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)!
+private var toTypeConstructor_vector4 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)!
 
 extension Vector4: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .vector4
@@ -551,7 +613,7 @@ extension Vector4: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector4(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_vector4(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -562,13 +624,18 @@ extension Vector4: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector4(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_vector4(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Vector4i
+
+private var fromTypeConstructor_vector4i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
+private var toTypeConstructor_vector4i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
 
 extension Vector4i: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .vector4i
@@ -577,7 +644,7 @@ extension Vector4i: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_vector4i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_vector4i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -588,13 +655,18 @@ extension Vector4i: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_vector4i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_vector4i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Plane
+
+private var fromTypeConstructor_plane = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)!
+private var toTypeConstructor_plane = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)!
 
 extension Plane: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .plane
@@ -603,7 +675,7 @@ extension Plane: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_plane(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_plane(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -614,13 +686,18 @@ extension Plane: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_plane(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_plane(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Quaternion
+
+private var fromTypeConstructor_quaternion = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)!
+private var toTypeConstructor_quaternion = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)!
 
 extension Quaternion: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .quaternion
@@ -629,7 +706,7 @@ extension Quaternion: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_quaternion(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_quaternion(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -640,13 +717,18 @@ extension Quaternion: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_quaternion(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_quaternion(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - AABB
+
+private var fromTypeConstructor_aabb = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)!
+private var toTypeConstructor_aabb = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)!
 
 extension AABB: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .aabb
@@ -655,7 +737,7 @@ extension AABB: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_aabb(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_aabb(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -666,13 +748,18 @@ extension AABB: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_aabb(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_aabb(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Basis
+
+private var fromTypeConstructor_basis = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)!
+private var toTypeConstructor_basis = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)!
 
 extension Basis: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .basis
@@ -681,7 +768,7 @@ extension Basis: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_basis(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_basis(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -692,13 +779,18 @@ extension Basis: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_basis(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_basis(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Transform3D
+
+private var fromTypeConstructor_transform3D = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)!
+private var toTypeConstructor_transform3D = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)!
 
 extension Transform3D: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .transform3D
@@ -707,7 +799,7 @@ extension Transform3D: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_transform3D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_transform3D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -718,13 +810,18 @@ extension Transform3D: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_transform3D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_transform3D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Projection
+
+private var fromTypeConstructor_projection = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)!
+private var toTypeConstructor_projection = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)!
 
 extension Projection: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .projection
@@ -733,7 +830,7 @@ extension Projection: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_projection(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_projection(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -744,13 +841,18 @@ extension Projection: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_projection(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_projection(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Color
+
+private var fromTypeConstructor_color = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)!
+private var toTypeConstructor_color = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)!
 
 extension Color: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .color
@@ -759,7 +861,7 @@ extension Color: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafePointer(to: self) { otherNativeTypePtr in
-                Variant.fromTypeConstructor_color(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
+                fromTypeConstructor_color(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
@@ -770,13 +872,18 @@ extension Color: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                Variant.toTypeConstructor_color(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_color(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - StringName
+
+private var fromTypeConstructor_stringName = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
+private var toTypeConstructor_stringName = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
 
 extension StringName: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .stringName
@@ -785,7 +892,7 @@ extension StringName: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_stringName(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_stringName(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -796,13 +903,18 @@ extension StringName: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_stringName(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_stringName(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - NodePath
+
+private var fromTypeConstructor_nodePath = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
+private var toTypeConstructor_nodePath = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
 
 extension NodePath: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .nodePath
@@ -811,7 +923,7 @@ extension NodePath: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_nodePath(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_nodePath(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -822,13 +934,18 @@ extension NodePath: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_nodePath(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_nodePath(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - RID
+
+private var fromTypeConstructor_rid = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)!
+private var toTypeConstructor_rid = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)!
 
 extension RID: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .rid
@@ -837,7 +954,7 @@ extension RID: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_rid(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_rid(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -848,13 +965,18 @@ extension RID: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_rid(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_rid(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Object
+
+private var fromTypeConstructor_object = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
+private var toTypeConstructor_object = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
 
 extension Object: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .object
@@ -864,13 +986,40 @@ extension Object: VariantConvertible {
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
                 withUnsafePointer(to: otherNativeTypePtr) { pointer in
-                    Variant.fromTypeConstructor_object(extensionTypePtr, UnsafeMutableRawPointer(mutating: pointer))
+                    fromTypeConstructor_object(extensionTypePtr, UnsafeMutableRawPointer(mutating: pointer))
                 }
             }
         }
         return variant
     }
+    
+    public final class func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+        var newValue: Self!
+        let instanceOwner = UnsafeMutablePointer < UnsafeMutableRawPointer> .allocate(capacity: 1)
+        
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), extensionTypePtr)
+            
+            let finalPtr = withUnsafePointer(to: Self.instanceBindingsCallbacks()) { bindingsPtr in
+                gdextension_interface_object_get_instance_binding(
+                    instanceOwner.pointee, GodotExtension.token, bindingsPtr
+                )
+            }
+            
+            newValue = Unmanaged < Self> .fromOpaque(finalPtr!).takeUnretainedValue()
+        }
+        
+        instanceOwner.deinitialize(count: 1)
+        instanceOwner.deallocate()
+        
+        return newValue
+    }
 }
+
+// MARK: - Callable
+
+private var fromTypeConstructor_callable = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
+private var toTypeConstructor_callable = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
 
 extension Callable: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .callable
@@ -879,7 +1028,7 @@ extension Callable: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_callable(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_callable(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -890,13 +1039,18 @@ extension Callable: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_callable(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_callable(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Signal
+
+private var fromTypeConstructor_signal = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
+private var toTypeConstructor_signal = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
 
 extension Signal: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .signal
@@ -905,7 +1059,7 @@ extension Signal: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_signal(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_signal(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -916,13 +1070,18 @@ extension Signal: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_signal(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_signal(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Dictionary
+
+private var fromTypeConstructor_dictionary = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
+private var toTypeConstructor_dictionary = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 
 extension Dictionary: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .dictionary
@@ -931,7 +1090,7 @@ extension Dictionary: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_dictionary(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_dictionary(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -942,13 +1101,18 @@ extension Dictionary: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_dictionary(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_dictionary(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - Array
+
+private var fromTypeConstructor_array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
+private var toTypeConstructor_array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 
 extension Array: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .array
@@ -957,7 +1121,7 @@ extension Array: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_array(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -968,13 +1132,18 @@ extension Array: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - PackedByteArray
+
+private var fromTypeConstructor_packedByteArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
+private var toTypeConstructor_packedByteArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
 
 extension PackedByteArray: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .packedByteArray
@@ -983,7 +1152,7 @@ extension PackedByteArray: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedByteArray(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_packedByteArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -994,13 +1163,18 @@ extension PackedByteArray: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedByteArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_packedByteArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - PackedInt32Array
+
+private var fromTypeConstructor_packedInt32Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
+private var toTypeConstructor_packedInt32Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
 
 extension PackedInt32Array: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .packedInt32Array
@@ -1009,7 +1183,7 @@ extension PackedInt32Array: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedInt32Array(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_packedInt32Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1020,13 +1194,18 @@ extension PackedInt32Array: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedInt32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_packedInt32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - PackedInt64Array
+
+private var fromTypeConstructor_packedInt64Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
+private var toTypeConstructor_packedInt64Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
 
 extension PackedInt64Array: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .packedInt64Array
@@ -1035,7 +1214,7 @@ extension PackedInt64Array: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedInt64Array(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_packedInt64Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1046,13 +1225,18 @@ extension PackedInt64Array: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedInt64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_packedInt64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - PackedFloat32Array
+
+private var fromTypeConstructor_packedFloat32Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
+private var toTypeConstructor_packedFloat32Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
 
 extension PackedFloat32Array: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .packedFloat32Array
@@ -1061,7 +1245,7 @@ extension PackedFloat32Array: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedFloat32Array(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_packedFloat32Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1072,13 +1256,18 @@ extension PackedFloat32Array: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedFloat32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_packedFloat32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - PackedFloat64Array
+
+private var fromTypeConstructor_packedFloat64Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
+private var toTypeConstructor_packedFloat64Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
 
 extension PackedFloat64Array: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .packedFloat64Array
@@ -1087,7 +1276,7 @@ extension PackedFloat64Array: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedFloat64Array(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_packedFloat64Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1098,13 +1287,18 @@ extension PackedFloat64Array: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedFloat64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_packedFloat64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - PackedStringArray
+
+private var fromTypeConstructor_packedStringArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
+private var toTypeConstructor_packedStringArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
 
 extension PackedStringArray: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .packedStringArray
@@ -1113,7 +1307,7 @@ extension PackedStringArray: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedStringArray(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_packedStringArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1124,13 +1318,18 @@ extension PackedStringArray: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedStringArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_packedStringArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - PackedVector2Array
+
+private var fromTypeConstructor_packedVector2Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
+private var toTypeConstructor_packedVector2Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
 
 extension PackedVector2Array: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .packedVector2Array
@@ -1139,7 +1338,7 @@ extension PackedVector2Array: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedVector2Array(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_packedVector2Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1150,13 +1349,18 @@ extension PackedVector2Array: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedVector2Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_packedVector2Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - PackedVector3Array
+
+private var fromTypeConstructor_packedVector3Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
+private var toTypeConstructor_packedVector3Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
 
 extension PackedVector3Array: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .packedVector3Array
@@ -1165,7 +1369,7 @@ extension PackedVector3Array: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedVector3Array(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_packedVector3Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1176,13 +1380,18 @@ extension PackedVector3Array: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedVector3Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_packedVector3Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
     }
 }
+
+// MARK: - PackedColorArray
+
+private var fromTypeConstructor_packedColorArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
+private var toTypeConstructor_packedColorArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
 
 extension PackedColorArray: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .packedColorArray
@@ -1191,7 +1400,7 @@ extension PackedColorArray: VariantConvertible {
         let variant = Variant()
         variant.withUnsafeRawPointer { extensionTypePtr in
             self.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.fromTypeConstructor_packedColorArray(extensionTypePtr, otherNativeTypePtr)
+                fromTypeConstructor_packedColorArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
@@ -1202,7 +1411,7 @@ extension PackedColorArray: VariantConvertible {
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
-                Variant.toTypeConstructor_packedColorArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
+                toTypeConstructor_packedColorArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         

@@ -9,9 +9,19 @@ struct GodotClass: Decodable {
     var isRefcounted: Bool
     var isInstantiable: Bool
     var inherits: GodotType?
-    var apiType: String
+    var apiType: APIType
     var enums: [GodotEnum]?
     var methods: [Method]?
+    
+    // MARK: APIType
+    
+    enum APIType: String, Decodable, Equatable {
+        case core
+        case servers
+        case scene
+        case editor
+        case level
+    }
     
     // MARK: Method
     
@@ -109,28 +119,6 @@ struct GodotClass: Decodable {
             internal init(extensionObjectPtr: GDExtensionObjectPtr) {
                 self.extensionObjectPtr = extensionObjectPtr
             }
-            
-            public class func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-                var newValue: Self!
-                let instanceOwner = UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity: 1)
-                
-                variant.withUnsafeRawPointer { extensionTypePtr in
-                Variant.toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), extensionTypePtr)
-                
-                let finalPtr = withUnsafePointer(to: Self.instanceBindingsCallbacks()) { bindingsPtr in
-                    gdextension_interface_object_get_instance_binding(
-                        instanceOwner.pointee, GodotExtension.token, bindingsPtr
-                    )
-                }
-                
-                newValue = Unmanaged<Self>.fromOpaque(finalPtr!).takeUnretainedValue()
-                }
-                
-                instanceOwner.deinitialize(count: 1)
-                instanceOwner.deallocate()
-                
-                return newValue
-            }
             """)
         } else {
             DeclSyntax("""
@@ -164,11 +152,7 @@ struct GodotClass: Decodable {
         
         DeclSyntax("""
         open \(isRootClass ? "" : "override ")class func _gd_exposeToGodot() {
-            guard GodotExtension.classRegister.registerBaseGodotClass(ofType: self) else {
-                return
-            }
-            
-            setFunctionBindings()
+            GodotExtension.classRegister.registerBaseGodotClass(ofType: self)
         }
         """)
     }
@@ -246,7 +230,7 @@ struct GodotClass: Decodable {
         }
     }
     
-    private func methodSyntax(_ method: Method) throws -> FunctionDeclSyntax {
+    private func methodSyntax(_ method: Method) throws -> MemberDeclListSyntax {
         if method.isVirtual {
             return try virtualMethodSyntax(method)
         } else {
@@ -254,7 +238,18 @@ struct GodotClass: Decodable {
         }
     }
     
-    private func standardMethodSyntax(_ method: Method) throws -> FunctionDeclSyntax {
+    @MemberDeclListBuilder
+    private func standardMethodSyntax(_ method: Method) throws -> MemberDeclListSyntax {
+        DeclSyntax("""
+        private static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
+            _gd_className.withUnsafeRawPointer { __ptr__class_name in
+            StringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
+            return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))!
+            }
+            }
+        }()
+        """)
+        
         try method.declSyntax(options: .floatAsDouble) {
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(options: .floatAsDouble) { instanceType, instanceName in
@@ -285,7 +280,8 @@ struct GodotClass: Decodable {
         .addModifier(.init(name: .keyword(isRefCountedRootClass ? .internal : method.isStatic ? .public : .open)))
     }
     
-    private func virtualMethodSyntax(_ method: Method) throws -> FunctionDeclSyntax {
+    @MemberDeclListBuilder
+    private func virtualMethodSyntax(_ method: Method) throws -> MemberDeclListSyntax {
         try method.declSyntax(options: .floatAsDouble) {
             if let returnType = method.returnType {
                 if returnType.isGodotClass
@@ -303,37 +299,7 @@ struct GodotClass: Decodable {
         }
         .addModifier(.init(name: .keyword(.open)))
     }
-    
-    @MemberDeclListBuilder
-    func propertiesBindingsSyntax() -> MemberDeclListSyntax {
-        if let methods {
-            for method in methods where !method.isVirtual {
-                DeclSyntax("private static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr!")
-            }
-        }
-    }
-    
-    func setFunctionBindingsSyntax() throws -> FunctionDeclSyntax {
-        try FunctionDeclSyntax("private static func setFunctionBindings()") {
-            if let methods {
-                let methodsToSetBindings = methods.filter { !$0.isVirtual }
-                if !methodsToSetBindings.isEmpty {
-                    DeclSyntax("var _method_name: StringName!")
-                    DeclSyntax("_gd_className.withUnsafeRawPointer { __ptr__class_name in")
-                    for method in methodsToSetBindings {
-                        ExprSyntax("""
-                        _method_name = \(literal: method.name)
-                        _method_name.withUnsafeRawPointer { __ptr__method_name in
-                            \(raw: method.ptrIdentifier) = gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))
-                        }
-                        """)
-                    }
-                    DeclSyntax("}")
-                }
-            }
-        }
-    }
-    
+        
     func setVirtualFunctionBindingsSyntax() throws -> FunctionDeclSyntax {
         try FunctionDeclSyntax("internal \(isRootClass ? "" : "override ")class func setVirtualFunctionCalls(_ body: (StringName, GDExtensionClassCallVirtual) -> Void)") {
             if !isRootClass {
