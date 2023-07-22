@@ -33,7 +33,7 @@ enum MyGame {
 
 // Automatically generates:
 @_cdecl("mygame_godot_init")
-func mygame_godot_init(...) {
+func MyGame_godot_init(...) {
     // Automatically generated Godot initialization
 }
 ```

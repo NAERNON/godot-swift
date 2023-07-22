@@ -39,12 +39,16 @@ public enum BridgeMacro: ConformanceMacro, PeerMacro {
     }
     
     private static func libInitDecl(identifier: TokenSyntax) -> DeclSyntax {
-        let functionName = identifier.text.lowercased() + "_godot_init"
+        let functionName = identifier.text + "_godot_init"
         
         return DeclSyntax(
             """
-            @_cdecl("\(raw: functionName)")
-            func \(raw: functionName)(getProcAddress: GDExtensionInterfaceGetProcAddress, libraryPtr: GDExtensionClassLibraryPtr, initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>) -> GDExtensionBool {
+            @_cdecl("\(raw: functionName.lowercased())")
+            internal func \(raw: functionName)(
+                getProcAddress: GDExtensionInterfaceGetProcAddress,
+                libraryPtr: GDExtensionClassLibraryPtr,
+                initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>
+            ) -> GDExtensionBool {
                 do {
                     try GodotExtension.initialize(
                     using: \(identifier).self,

@@ -14,5 +14,5 @@ public macro Exposable() = #externalMacro(module: "GodotMacros", type: "Exposabl
 ///
 /// Learn how to create a bridge: <doc:CreatingGodotBridge>.
 @attached(conformance)
-@attached(peer, names: arbitrary)
+@attached(peer, names: suffixed(_godot_init))
 public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro")
