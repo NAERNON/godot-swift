@@ -462,12 +462,10 @@ struct GodotBuiltinClass: Decodable {
         
         private(set) var opaque: Opaque
         
-        internal func withUnsafeRawPointer(_ body: (GDExtensionTypePtr) -> ()) {
-            opaque.withUnsafeMutableRawPointer(body)
-        }
-        
-        internal func opaqueIsZero() -> Bool {
-            opaque.isZero()
+        internal func withUnsafeRawPointer<Result>(
+            _ body: (GDExtensionTypePtr) throws -> Result
+        ) rethrows -> Result {
+            try opaque.withUnsafeMutableRawPointer(body)
         }
         
         internal var opaqueDescription: Swift.String {

@@ -15,8 +15,10 @@ internal class BaseOpaque: CustomDebugStringConvertible {
         rawData.deallocate()
     }
     
-    func withUnsafeMutableRawPointer(_ body: (UnsafeMutableRawPointer) -> ()) {
-        body(UnsafeMutableRawPointer(rawData))
+    func withUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try body(UnsafeMutableRawPointer(rawData))
     }
     
     func isZero() -> Bool {

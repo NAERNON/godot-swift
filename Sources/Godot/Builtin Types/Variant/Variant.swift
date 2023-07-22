@@ -182,9 +182,11 @@ public struct Variant {
         .init(size: Variant.opaqueSize)
     }()
     
-    /// Calls a closure with an extension type pointer of the underlying object. Should only be called by the `GodotLibrary`.
-    internal func withUnsafeRawPointer(_ body: (GDExtensionVariantPtr) -> ()) {
-        opaque.withUnsafeMutableRawPointer(body)
+    /// Calls a closure with an extension type pointer of the underlying object.
+    internal func withUnsafeRawPointer<Result>(
+        _ body: (GDExtensionVariantPtr) throws -> Result
+    ) rethrows -> Result {
+        try opaque.withUnsafeMutableRawPointer(body)
     }
     
     internal var opaqueDescription: Swift.String {

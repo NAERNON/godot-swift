@@ -2,25 +2,31 @@ import Foundation
 import GodotExtensionHeaders
 
 extension Object {
-    public func withUnsafeRawPointer(_ body: (UnsafeMutableRawPointer) -> ()) {
-        body(extensionObjectPtr)
+    public func withUnsafeRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try body(extensionObjectPtr)
     }
 }
 
 extension Optional where Wrapped : Object {
-    public func withUnsafeRawPointer(_ body: (GDExtensionConstObjectPtr?) -> Void) {
+    public func withUnsafeRawPointer<Result>(
+        _ body: (GDExtensionConstObjectPtr?) throws -> Result
+    ) rethrows -> Result {
         if let self {
-            self.withUnsafeRawPointer { body($0) }
+            try self.withUnsafeRawPointer { try body($0) }
         } else {
-            body(nil)
+            try body(nil)
         }
     }
     
-    public func withUnsafeRawPointer(_ body: (GDExtensionObjectPtr?) -> Void) {
+    public func withUnsafeRawPointer<Result>(
+        _ body: (GDExtensionObjectPtr?) throws -> Result
+    ) rethrows -> Result {
         if let self {
-            self.withUnsafeRawPointer { body($0) }
+            try self.withUnsafeRawPointer { try body($0) }
         } else {
-            body(nil)
+            try body(nil)
         }
     }
 }
