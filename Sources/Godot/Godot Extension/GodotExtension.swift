@@ -148,6 +148,11 @@ internal var gdextension_interface_editor_remove_plugin: GDExtensionInterfaceEdi
 /// Use the ``Bridge()`` macro to setup a bridge that will
 /// initialize the `GodotExtension`.
 public enum GodotExtension {
+    public typealias GetProcAddress = GDExtensionInterfaceGetProcAddress
+    public typealias ClassLibraryPointer = GDExtensionClassLibraryPtr
+    public typealias InitializationPointer = UnsafeMutablePointer<GDExtensionInitialization>
+    public typealias InitializationResult = GDExtensionBool
+    
     // MARK: Properties
     
     /// A Boolean value indicating whether the extension is initialized.
@@ -182,9 +187,9 @@ public enum GodotExtension {
     /// but instead use the ``Bridge()`` macro to setup a bridge.
     public static func initialize<T>(
         using bridge: T.Type,
-        getProcAddress: GDExtensionInterfaceGetProcAddress,
-        libraryPtr: GDExtensionClassLibraryPtr,
-        initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>
+        getProcAddress: GetProcAddress,
+        libraryPtr: ClassLibraryPointer,
+        initializationPtr: InitializationPointer
     ) throws where T : GodotBridge {
         guard !isInitialized else {
             throw InitializationError.alreadyInitialized
@@ -391,7 +396,7 @@ private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtens
         return
     }
     
-    for object in GodotExtension.bridge.classesToRegister {
+    for object in GodotExtension.bridge.exposedClasses {
         object.self._gd_exposeToGodot()
     }
 }

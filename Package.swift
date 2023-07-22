@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "Godot",
-            targets: ["Godot", "GodotExtensionHeaders"]
+            targets: ["Godot"]
         )
     ],
     dependencies: [

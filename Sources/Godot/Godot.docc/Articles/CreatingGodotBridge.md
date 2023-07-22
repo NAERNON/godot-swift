@@ -44,12 +44,12 @@ func MyGame_godot_init(...) {
 
 Because the macro automatically conforms the attached type to the ``GodotBridge`` protocol, the information provided by the protocol is used to specify custom parameters for Godot, like what classes are exposed to the Godot editor.
 
-To expose custom classes to Godot that you will be able to use within the Godot editor, define the ``GodotBridge/classesToRegister`` static variable. For example:
+To expose custom classes to Godot that you will be able to use within the Godot editor, define the ``GodotBridge/exposedClasses`` static variable. For example:
 
 ```swift
 @Bridge
 enum MyGame {
-    static let classesToRegister: [Object.Type] = [
+    static let exposedClasses: [Object.Type] = [
         CharacterNode.self,
         CharacterDarkSideNode.self
     ]
@@ -67,7 +67,7 @@ If you want to perform some custom operations during either the initialization o
 ```swift
 @Bridge
 enum MyGame {
-    static let classesToRegister: [Object.Type] = [...]
+    static let exposedClasses: [Object.Type] = [...]
 
     static func initialize(level: GodotInitializationLevel) {
         // Custom initialization

@@ -11,7 +11,7 @@ public protocol GodotBridge {
     ///
     /// Only expose ``Object`` classes that are defined using
     /// the ``Exposable()`` macro.
-    static var classesToRegister: [Object.Type] { get }
+    static var exposedClasses: [Object.Type] { get }
     
     /// Minimum initialization level required.
     ///
@@ -43,7 +43,7 @@ public protocol GodotBridge {
 // MARK: - Default implementation
 
 public extension GodotBridge {
-    static var classesToRegister: [Object.Type] { [] }
+    static var exposedClasses: [Object.Type] { [] }
     static var minimumInitializationLevel: GodotInitializationLevel { .core }
     
     static func initialize(level: GodotInitializationLevel) {}

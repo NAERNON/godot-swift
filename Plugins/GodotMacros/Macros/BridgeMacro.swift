@@ -45,17 +45,17 @@ public enum BridgeMacro: ConformanceMacro, PeerMacro {
             """
             @_cdecl("\(raw: functionName.lowercased())")
             internal func \(raw: functionName)(
-                getProcAddress: GDExtensionInterfaceGetProcAddress,
-                libraryPtr: GDExtensionClassLibraryPtr,
-                initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>
-            ) -> GDExtensionBool {
+                getProcAddress: GodotExtension.GetProcAddress,
+                libraryPtr: GodotExtension.ClassLibraryPointer,
+                initializationPtr: GodotExtension.InitializationPointer
+            ) -> GodotExtension.InitializationResult {
                 do {
                     try GodotExtension.initialize(
-                    using: \(identifier).self,
+                        using: \(identifier).self,
                         getProcAddress: getProcAddress,
-                    libraryPtr: libraryPtr,
+                        libraryPtr: libraryPtr,
                         initializationPtr: initializationPtr
-                )
+                    )
                     return 1
                 } catch {
                     return 0
