@@ -79,6 +79,6 @@ enum MyGame {
 }
 ```
 
-### Configure your Godot project to work with your module
+### Configure your Godot project to work with your Swift module
 
 See <doc:CreatingGDExtensionModule> to learn how to setup your Godot project.
