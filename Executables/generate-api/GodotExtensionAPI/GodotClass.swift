@@ -205,9 +205,8 @@ struct GodotClass: Decodable {
             ) {
                 guard let instancePtr else { return }
                 
-                let instance = Unmanaged<Self>.fromOpaque(instancePtr).takeUnretainedValue()
-                let description = "<" + Swift.String(godotStringName: Self._gd_className) + "#" + Swift.String(instance.getInstanceId()) + ">"
-                let godotStringDescription = Godot.String(swiftString: description)
+                let instance = Unmanaged<Self> .fromOpaque(instancePtr).takeUnretainedValue()
+                let godotStringDescription = Godot.String(describing: instance)
                 
                 isValid?.pointee = 1
                 godotStringDescription.consumeByGodot(ontoUnsafePointer: out!)
