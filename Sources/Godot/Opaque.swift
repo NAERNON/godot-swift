@@ -51,7 +51,7 @@ internal class BaseOpaque: CustomDebugStringConvertible {
 internal final class Opaque: BaseOpaque {
     /// The destructor pointer for the opaque type.
     /// If `nil`, no destructor will be called at the `deinit` call.
-    let destructorPtr: GDExtensionPtrDestructor?
+    var destructorPtr: GDExtensionPtrDestructor?
     
     init(size: Int, destructorPtr: GDExtensionPtrDestructor? = nil) {
         self.destructorPtr = destructorPtr

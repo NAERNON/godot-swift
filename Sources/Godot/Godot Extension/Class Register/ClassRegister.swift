@@ -117,7 +117,7 @@ public final class ClassRegister {
     public func registerCustomClass<Class, Superclass>(
         ofType classType: Class.Type,
         superclassType: Superclass.Type,
-        toStringFunction: GDExtensionClassToString, // TODO: Do the to string function
+        toStringFunction: GDExtensionClassToString,
         createInstanceFunction: GDExtensionClassCreateInstance,
         freeInstanceFunction: GDExtensionClassFreeInstance) -> Bool
     where Class : Object,

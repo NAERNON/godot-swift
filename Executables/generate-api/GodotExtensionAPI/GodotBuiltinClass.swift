@@ -510,10 +510,20 @@ struct GodotBuiltinClass: Decodable {
         
         private var opaque: Opaque
         
-        internal func withUnsafeRawPointer<Result>(
+        public func withUnsafeRawPointer<Result>(
             _ body: (GDExtensionTypePtr) throws -> Result
         ) rethrows -> Result {
             try opaque.withUnsafeMutableRawPointer(body)
+        }
+        
+        /// Passes the memory management of this instance onto Godot.
+        ///
+        /// There is a risk of memory leaking if not correctly used.
+        internal func consumeByGodot(ontoUnsafePointer destination: UnsafeMutableRawPointer) {
+            opaque.withUnsafeMutableRawPointer { ptr in
+                destination.copyMemory(from: ptr, byteCount: opaque.size)
+            }
+            opaque.destructorPtr = nil
         }
         
         internal var opaqueDescription: Swift.String {

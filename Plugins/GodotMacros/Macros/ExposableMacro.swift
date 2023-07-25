@@ -149,8 +149,8 @@ public enum ExposableMacro: MemberMacro {
                 let isClassRegistered = GodotExtension.classRegister.registerCustomClass(
                     ofType: self,
                     superclassType: \(raw: inheritedElement.description).self
-                ) { _, _, _ in
-                    
+                ) { instancePtr, isValid, out in
+                    \(classDecl.identifier)._instanceDescriptionForGodot(instancePtr, isValid, out)
                 }
                 createInstanceFunction: { _ in
                     \(classDecl.identifier)._makeNewInstanceManagedByGodot()

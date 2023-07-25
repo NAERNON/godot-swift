@@ -119,6 +119,12 @@ struct GodotClass: Decodable {
             internal init(extensionObjectPtr: GDExtensionObjectPtr) {
                 self.extensionObjectPtr = extensionObjectPtr
             }
+            
+            public func withUnsafeRawPointer<Result>(
+                _ body: (UnsafeMutableRawPointer) throws -> Result
+            ) rethrows -> Result {
+                try body(extensionObjectPtr)
+            }
             """)
         } else {
             DeclSyntax("""
@@ -189,9 +195,24 @@ struct GodotClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    func makeInstanceSyntax() -> MemberDeclListSyntax {
+    func godotExpositionSyntax() -> MemberDeclListSyntax {
         if isRootClass {
             DeclSyntax("""
+            public class func _instanceDescriptionForGodot(
+                _ instancePtr: GDExtensionClassInstancePtr?,
+                _ isValid: UnsafeMutablePointer<GDExtensionBool>?,
+                _ out: GDExtensionStringPtr?
+            ) {
+                guard let instancePtr else { return }
+                
+                let instance = Unmanaged<Self>.fromOpaque(instancePtr).takeUnretainedValue()
+                let description = "<" + Swift.String(godotStringName: Self._gd_className) + "#" + Swift.String(instance.getInstanceId()) + ">"
+                let godotStringDescription = Godot.String(swiftString: description)
+                
+                isValid?.pointee = 1
+                godotStringDescription.consumeByGodot(ontoUnsafePointer: out!)
+            }
+            
             public class func _makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
                 let instance = Self ()
                 _ = Unmanaged.passRetained(instance)

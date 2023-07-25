@@ -19,7 +19,7 @@ extension GeneratedFile {
                     .with(\.leadingTrivia, .newline)
                     .with(\.trailingTrivia, .newlines(2))
                 
-                `class`.makeInstanceSyntax()
+                `class`.godotExpositionSyntax()
                     .with(\.leadingTrivia, .newline)
                     .with(\.trailingTrivia, .newlines(2))
                 

@@ -35,6 +35,10 @@ extension String {
         self = String(swiftString: .init(c))
     }
     
+    public init(godotStringPtr: GDExtensionConstStringPtr) {
+        self = Self._ptr_constructor_string(from: godotStringPtr)
+    }
+    
     // MARK: Operators
     
     public static func == (lhs: String, rhs: Variant) -> Bool {
