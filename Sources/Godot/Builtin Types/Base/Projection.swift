@@ -34,7 +34,7 @@ public struct Projection {
     }
     
     public init(transform3D: Transform3D) {
-        self = Self._constructor(from: transform3D)
+        self = Self._constructor_transform3d(from: transform3D)
     }
     
     public init() {

@@ -213,7 +213,7 @@ public final class ClassRegister {
         }
         
         let classBinding = Unmanaged<ClassBinding>.fromOpaque(userDataPtr).takeUnretainedValue()
-        let methodName = StringName.makeFromPtr(methodNamePtr)
+        let methodName = StringName(godotStringNamePtr: methodNamePtr)
         
         guard let classBinding = shared.customClassNameToClassBinding[classBinding.name] else {
             gdDebugPrintError("Class doesn't exist.")
@@ -318,17 +318,5 @@ public final class ClassRegister {
         }
         
         return true
-    }
-}
-
-// MARK: - StringName extensions
-
-private extension StringName {
-    static func makeFromPtr(_ unsafeStringNamePtr: GDExtensionConstStringNamePtr) -> StringName {
-        let string = StringName()
-        string.opaque.copyRaw(from: unsafeStringNamePtr)
-        
-        // We create the new string by calling the constructor to ensure copy of the data.
-        return StringName(string)
     }
 }

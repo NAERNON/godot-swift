@@ -24,15 +24,15 @@ public struct Basis {
     }
     
     public init(quaternion: Quaternion) {
-        self = Self._constructor(from: quaternion)
+        self = Self._constructor_quaternion(from: quaternion)
     }
     
     public init<T>(axis: Vector3, angle: T) where T : BinaryFloatingPoint {
-        self = Self._constructor(axis: axis, angle: Real(angle))
+        self = Self._constructor_vector3_float(axis: axis, angle: Real(angle))
     }
     
     public init<T>(axis: Vector3, angle: T) where T : BinaryInteger {
-        self = Self._constructor(axis: axis, angle: Real(angle))
+        self = Self._constructor_vector3_float(axis: axis, angle: Real(angle))
     }
     
     // MARK: Operators

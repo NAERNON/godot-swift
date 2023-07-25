@@ -46,12 +46,16 @@ extension GodotFunction {
         "rest"
     }
     
-    /// Returns the translated function identifier.
+    /// Returns the function identifier, translated if requested.
     ///
     /// A function with the signature "`do_something(a:b:)`"
-    /// would return the indentifier "doSomething".
-    func syntaxIdentifier() -> String {
-        translatedFunction.name
+    /// would return the indentifier "doSomething" when translated.
+    func syntaxIdentifier(translateFunctionName: Bool) -> String {
+        if translateFunctionName {
+            translatedFunction.name
+        } else {
+            name
+        }
     }
     
     /// Returns the argument identifier at a given index.
@@ -77,6 +81,7 @@ extension GodotFunction {
         underscoreName: Bool = false,
         hideAllLabels: Bool = false,
         options: GodotTypeSyntaxOptions = [],
+        translateFunctionName: Bool = true,
         @CodeBlockItemListBuilder bodyBuilder: () throws -> CodeBlockItemListSyntax
     ) throws -> FunctionDeclSyntax {
         let arguments = self.arguments ?? []
@@ -97,7 +102,7 @@ extension GodotFunction {
             functionHeader.append("_")
         }
         
-        functionHeader.append(syntaxIdentifier())
+        functionHeader.append(syntaxIdentifier(translateFunctionName: translateFunctionName))
         functionHeader.append("(")
         functionHeader.append(functionParameters.enumerated().map { (index, parameter) in
             let argument = arguments[index]
@@ -113,7 +118,7 @@ extension GodotFunction {
             parameterString.append(": ")
             parameterString.append(argument.type.syntax(options: options))
             
-            if argument.type.isGodotClass || argument.type.isPointer {
+            if argument.type.isGodotClass {
                 parameterString.append("?")
             }
             

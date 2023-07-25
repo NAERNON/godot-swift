@@ -6,11 +6,11 @@ extension PackedColorArray {
     }
     
     public init(_ value: PackedColorArray) {
-        self = Self._constructor(from: value)
+        self = Self._constructor_packedcolorarray(from: value)
     }
     
     public init(array: Array) {
-        self = Self._constructor(from: array)
+        self = Self._constructor_array(from: array)
     }
     
     // MARK: Operators

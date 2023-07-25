@@ -6,11 +6,11 @@ extension PackedByteArray {
     }
     
     public init(_ value: PackedByteArray) {
-        self = Self._constructor(from: value)
+        self = Self._constructor_packedbytearray(from: value)
     }
     
     public init(array: Array) {
-        self = Self._constructor(from: array)
+        self = Self._constructor_array(from: array)
     }
     
     public func withUnsafeBytesArray(_ body: (UnsafeMutablePointer<UInt8>?) -> Void) {

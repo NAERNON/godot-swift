@@ -22,19 +22,19 @@ public struct Quaternion {
     }
     
     public init(basis: Basis) {
-        self = Self._constructor(from: basis)
+        self = Self._constructor_basis(from: basis)
     }
     
     public init<T>(axis: Vector3, angle: T) where T : BinaryFloatingPoint {
-        self = Self._constructor(axis: axis, angle: Real(angle))
+        self = Self._constructor_vector3_float(axis: axis, angle: Real(angle))
     }
     
     public init<T>(axis: Vector3, angle: T) where T : BinaryInteger {
-        self = Self._constructor(axis: axis, angle: Real(angle))
+        self = Self._constructor_vector3_float(axis: axis, angle: Real(angle))
     }
     
     public init(fromArc: Vector3, toArc: Vector3) {
-        self = Self._constructor(arcFrom: fromArc, arcTo: toArc)
+        self = Self._constructor_vector3_vector3(arcFrom: fromArc, arcTo: toArc)
     }
     
     public init() {

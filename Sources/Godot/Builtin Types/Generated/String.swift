@@ -16,7 +16,7 @@ extension String {
     }
     
     public init(_ value: String) {
-        self = Self._constructor(from: value)
+        self = Self._constructor_string(from: value)
     }
     
     public init<Subject>(describing instance: Subject) {
@@ -24,11 +24,11 @@ extension String {
     }
     
     public init(stringName: StringName) {
-        self = Self._constructor(from: stringName)
+        self = Self._constructor_stringname(from: stringName)
     }
     
     public init(nodePath: NodePath) {
-        self = Self._constructor(from: nodePath)
+        self = Self._constructor_nodepath(from: nodePath)
     }
     
     public init(_ c: Character) {

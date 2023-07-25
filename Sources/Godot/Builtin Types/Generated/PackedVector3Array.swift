@@ -6,11 +6,11 @@ extension PackedVector3Array {
     }
     
     public init(_ value: PackedVector3Array) {
-        self = Self._constructor(from: value)
+        self = Self._constructor_packedvector3array(from: value)
     }
     
     public init(array: Array) {
-        self = Self._constructor(from: array)
+        self = Self._constructor_array(from: array)
     }
     
     // MARK: Operators

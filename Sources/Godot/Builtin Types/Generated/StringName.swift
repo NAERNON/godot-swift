@@ -7,15 +7,19 @@ extension StringName {
     }
     
     public init(swiftString: Swift.String) {
-        self = Self._constructor(from: String(swiftString: swiftString))
+        self = Self._constructor_string(from: String(swiftString: swiftString))
     }
     
     public init(_ value: StringName) {
-        self = Self._constructor(from: value)
+        self = Self._constructor_stringname(from: value)
     }
     
     public init(string: String) {
-        self = Self._constructor(from: string)
+        self = Self._constructor_string(from: string)
+    }
+    
+    public init(godotStringNamePtr: GDExtensionConstStringNamePtr) {
+        self = Self._ptr_constructor_stringname(from: godotStringNamePtr)
     }
     
     // MARK: Operators

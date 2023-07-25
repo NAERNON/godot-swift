@@ -10,39 +10,39 @@ extension Array {
     }
     
     public init(packedByteArray: PackedByteArray) {
-        self = Self._constructor(from: packedByteArray)
+        self = Self._constructor_packedbytearray(from: packedByteArray)
     }
     
     public init(packedInt32Array: PackedInt32Array) {
-        self = Self._constructor(from: packedInt32Array)
+        self = Self._constructor_packedint32array(from: packedInt32Array)
     }
     
     public init(packedInt64Array: PackedInt64Array) {
-        self = Self._constructor(from: packedInt64Array)
+        self = Self._constructor_packedint64array(from: packedInt64Array)
     }
     
     public init(packedFloat32Array: PackedFloat32Array) {
-        self = Self._constructor(from: packedFloat32Array)
+        self = Self._constructor_packedfloat32array(from: packedFloat32Array)
     }
     
     public init(packedFloat64Array: PackedFloat64Array) {
-        self = Self._constructor(from: packedFloat64Array)
+        self = Self._constructor_packedfloat64array(from: packedFloat64Array)
     }
     
     public init(packedStringArray: PackedStringArray) {
-        self = Self._constructor(from: packedStringArray)
+        self = Self._constructor_packedstringarray(from: packedStringArray)
     }
     
     public init(packedVector2Array: PackedVector2Array) {
-        self = Self._constructor(from: packedVector2Array)
+        self = Self._constructor_packedvector2array(from: packedVector2Array)
     }
     
     public init(packedVector3Array: PackedVector3Array) {
-        self = Self._constructor(from: packedVector3Array)
+        self = Self._constructor_packedvector3array(from: packedVector3Array)
     }
     
     public init(packedColorArray: PackedColorArray) {
-        self = Self._constructor(from: packedColorArray)
+        self = Self._constructor_packedcolorarray(from: packedColorArray)
     }
     
     // MARK: Operators

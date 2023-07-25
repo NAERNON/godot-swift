@@ -6,11 +6,11 @@ extension Callable {
     }
     
     public init(_ value: Callable) {
-        self = Self._constructor(from: value)
+        self = Self._constructor_callable(from: value)
     }
     
     public init(object: Object, method: StringName) {
-        self = Self._constructor(object: object, method: method)
+        self = Self._constructor_object_stringname(object: object, method: method)
     }
     
     // MARK: Operators

@@ -105,8 +105,11 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// will be a `UnsafeMutablePointer`.
     case immutable(GodotType)
     
-    /// A pointer type.
-    case pointer(GodotType)
+    /// A raw pointer type.
+    case rawPointer
+    
+    /// A typed pointer type.
+    case typedPointer(GodotType)
     
     // MARK: Godot types
     
@@ -130,7 +133,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         if string.starts(with: "const ") {
             self = .immutable(GodotType(cTypeSyntax: cTypeSyntax.dropFirst(6)))
         } else if string.last == "*" {
-            self = .pointer(GodotType(cTypeSyntax: cTypeSyntax.dropLast(1)))
+            self = .typedPointer(GodotType(cTypeSyntax: cTypeSyntax.dropLast(1)))
         } else if string.last == ">",
                   let index = string.firstIndex(of: "<")
         {
@@ -270,11 +273,13 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             return .tuple(types.map { $0.removeGodotClassPointers })
         case .immutable(let godotType):
             return .immutable(godotType.removeGodotClassPointers)
-        case .pointer(let godotType):
+        case .rawPointer:
+            return .rawPointer
+        case .typedPointer(let godotType):
             if godotType.isGodotClass {
                 return godotType
             } else {
-                return .pointer(godotType.removeGodotClassPointers)
+                return .typedPointer(godotType.removeGodotClassPointers)
             }
         }
     }
@@ -319,7 +324,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     var isPointer: Bool {
         switch self {
         case .immutable(let instanceType): instanceType.isPointer
-        case .pointer(_): true
+        case .rawPointer, .typedPointer(_): true
         default: false
         }
     }
@@ -453,7 +458,9 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             return "(" + types.map { $0.syntax(options: options) }.joined(separator: ", ") + ")"
         case .immutable(let type):
             return type.syntax(options: options.union(.immutable))
-        case .pointer(let type):
+        case .rawPointer:
+            return "UnsafeRawPointer"
+        case .typedPointer(let type):
             let pointedType = type.syntax(options: options)
             let isImmutable = options.contains(.immutable)
             if pointedType == "void" {
@@ -509,7 +516,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         try bodyBuilder(type, variableName)
         
         if isGodotClass {
-            DeclSyntax("return retreiveObject(ofType: \(raw: syntax(options: options)).self, from: \(raw: variableName))")
+            DeclSyntax("return \(raw: syntax(options: options)).retreivedInstanceManagedByGodot(\(raw: variableName))")
         } else if isEnum {
             DeclSyntax("return \(raw: syntax(options: options))(rawValue: \(raw: variableName))!")
         } else {
@@ -545,6 +552,12 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         
         if isGodotClass || isBuiltinGodotClassWithOpaque || self == .variant {
             DeclSyntax("\(raw: instanceName).withUnsafeRawPointer { \(raw: pointerName) in")
+            
+            try bodyBuilder(pointerName)
+            
+            DeclSyntax("}")
+        } else if isPointer {
+            try bodyBuilder(instanceName)
         } else {
             switch mutability {
             case .const:
@@ -557,11 +570,11 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
                     let \(raw: pointerName) = UnsafeMutableRawPointer(mutating: $0)
                 """)
             }
+            
+            try bodyBuilder(pointerName)
+            
+            DeclSyntax("}")
         }
-        
-        try bodyBuilder(pointerName)
-        
-        DeclSyntax("}")
     }
 }
 

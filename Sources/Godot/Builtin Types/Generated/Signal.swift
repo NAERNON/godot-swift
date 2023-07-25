@@ -6,11 +6,11 @@ extension Signal {
     }
     
     public init(_ value: Signal) {
-        self = Self._constructor(from: value)
+        self = Self._constructor_signal(from: value)
     }
     
     public init(object: Object, signal: StringName) {
-        self = Self._constructor(object: object, signal: signal)
+        self = Self._constructor_object_stringname(object: object, signal: signal)
     }
     
     // MARK: Operators

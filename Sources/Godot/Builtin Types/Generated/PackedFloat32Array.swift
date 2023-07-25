@@ -6,11 +6,11 @@ extension PackedFloat32Array {
     }
     
     public init(_ value: PackedFloat32Array) {
-        self = Self._constructor(from: value)
+        self = Self._constructor_packedfloat32array(from: value)
     }
     
     public init(array: Array) {
-        self = Self._constructor(from: array)
+        self = Self._constructor_array(from: array)
     }
     
     // MARK: Operators

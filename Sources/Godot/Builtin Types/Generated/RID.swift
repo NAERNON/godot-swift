@@ -6,7 +6,7 @@ extension RID {
     }
     
     public init(_ value: RID) {
-        self = Self._constructor(from: value)
+        self = Self._constructor_rid(from: value)
     }
     
     // MARK: Operators

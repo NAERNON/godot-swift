@@ -6,11 +6,11 @@ extension PackedStringArray {
     }
     
     public init(_ value: PackedStringArray) {
-        self = Self._constructor(from: value)
+        self = Self._constructor_packedstringarray(from: value)
     }
     
     public init(array: Array) {
-        self = Self._constructor(from: array)
+        self = Self._constructor_array(from: array)
     }
     
     // MARK: Operators

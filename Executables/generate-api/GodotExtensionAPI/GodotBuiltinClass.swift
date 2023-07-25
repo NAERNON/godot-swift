@@ -110,7 +110,14 @@ struct GodotBuiltinClass: Decodable {
         var arguments: [GodotArgument]?
         
         var name: String {
-            "_constructor"
+            var string = "_constructor"
+            
+            for argument in arguments ?? [] {
+                string += "_"
+                string += argument.type.syntax().lowercased()
+            }
+            
+            return string
         }
         
         var returnType: GodotType? {
@@ -122,7 +129,45 @@ struct GodotBuiltinClass: Decodable {
         }
         
         var ptrIdentifier: String {
-            "__constructor_\(index)"
+            "_" + name
+        }
+    }
+    
+    /// A constructor that takes raw pointers as input.
+    struct PointerConstructor: GodotFunction {
+        let baseConstructor: Constructor
+        
+        init(_ constructor: Constructor) {
+            self.baseConstructor = constructor
+        }
+        
+        var arguments: [GodotArgument]? {
+            guard var arguments = baseConstructor.arguments else {
+                return nil
+            }
+            
+            for index in 0..<arguments.count {
+                arguments[index].type = .rawPointer
+                arguments[index].defaultValue = nil
+            }
+            
+            return arguments
+        }
+        
+        var name: String {
+            "_ptr" + baseConstructor.name
+        }
+        
+        var returnType: GodotType? {
+            "Self"
+        }
+        
+        var isStatic: Bool {
+            true
+        }
+        
+        var ptrIdentifier: String {
+            baseConstructor.ptrIdentifier
         }
     }
     
@@ -190,7 +235,41 @@ struct GodotBuiltinClass: Decodable {
         }()
         """)
         
-        try constructor.declSyntax(options: options) {
+        try constructor.declSyntax(options: options, translateFunctionName: false) {
+            let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
+            
+            if useOpaque {
+                DeclSyntax("var __temporary: Opaque = .init(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))")
+            } else {
+                DeclSyntax("var __temporary = \(raw: name.syntax())()")
+            }
+            
+            try constructor.argumentsPackPointerAccessSyntax { packName in
+                if name.isBuiltinGodotClassWithOpaque {
+                    DeclSyntax("""
+                    __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
+                        Self.\(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
+                    }
+                    """)
+                } else {
+                    DeclSyntax("""
+                    withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+                        Self.\(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
+                    }
+                    """)
+                }
+            }
+            
+            if useOpaque {
+                DeclSyntax("return Self.init(opaque: __temporary)")
+            } else {
+                DeclSyntax("return __temporary")
+            }
+        }.addModifier(.init(name: .keyword(.internal)))
+        
+        let constructor = PointerConstructor(constructor)
+        
+        try constructor.declSyntax(options: options, translateFunctionName: false) {
             let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
             
             if useOpaque {
@@ -429,7 +508,7 @@ struct GodotBuiltinClass: Decodable {
             self.opaque = tmp.opaque
         }
         
-        private(set) var opaque: Opaque
+        private var opaque: Opaque
         
         internal func withUnsafeRawPointer<Result>(
             _ body: (GDExtensionTypePtr) throws -> Result

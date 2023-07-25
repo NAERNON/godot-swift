@@ -32,19 +32,29 @@ public struct Transform2D {
     }
     
     public init<T>(rotation: T, position: Vector2) where T : BinaryFloatingPoint {
-        self = Self._constructor(rotation: Real(rotation), position: position)
+        self = Self._constructor_float_vector2(rotation: Real(rotation), position: position)
     }
     
     public init<T>(rotation: T, position: Vector2) where T : BinaryInteger {
-        self = Self._constructor(rotation: Real(rotation), position: position)
+        self = Self._constructor_float_vector2(rotation: Real(rotation), position: position)
     }
     
     public init<T>(rotation: T, scale: Vector2, skew: T, position: Vector2) where T : BinaryFloatingPoint {
-        self = Self._constructor(rotation: Real(rotation), scale: scale, skew: Real(skew), position: position)
+        self = Self._constructor_float_vector2_float_vector2(
+            rotation: Real(rotation),
+            scale: scale,
+            skew: Real(skew),
+            position: position
+        )
     }
     
     public init<T>(rotation: T, scale: Vector2, skew: T, position: Vector2) where T : BinaryInteger {
-        self = Self._constructor(rotation: Real(rotation), scale: scale, skew: Real(skew), position: position)
+        self = Self._constructor_float_vector2_float_vector2(
+            rotation: Real(rotation),
+            scale: scale,
+            skew: Real(skew),
+            position: position
+        )
     }
     
     // MARK: Operators

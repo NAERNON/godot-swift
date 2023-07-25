@@ -14,11 +14,11 @@ public struct Transform3D {
     }
     
     public init(xAxis: Vector3, yAxis: Vector3, zAxis: Vector3, origin: Vector3) {
-        self = Self._constructor(xAxis: yAxis, yAxis: yAxis, zAxis: zAxis, origin: origin)
+        self = Self._constructor_vector3_vector3_vector3_vector3(xAxis: yAxis, yAxis: yAxis, zAxis: zAxis, origin: origin)
     }
     
     public init(projection: Projection) {
-        self = Self._constructor(from: projection)
+        self = Self._constructor_projection(from: projection)
     }
     
     public init<T>(xAxisX: T, xAxisY: T, xAxisZ: T,

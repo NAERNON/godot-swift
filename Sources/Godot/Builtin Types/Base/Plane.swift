@@ -30,15 +30,15 @@ public struct Plane {
     }
     
     public init(normal: Vector3) {
-        self = Self._constructor(normal: normal)
+        self = Self._constructor_vector3(normal: normal)
     }
     
     public init(normal: Vector3, point: Vector3) {
-        self = Self._constructor(normal: normal, point: point)
+        self = Self._constructor_vector3_vector3(normal: normal, point: point)
     }
     
     public init(point1: Vector3, point2: Vector3, point3: Vector3) {
-        self = Self._constructor(point1: point1, point2: point2, point3: point3)
+        self = Self._constructor_vector3_vector3_vector3(point1: point1, point2: point2, point3: point3)
     }
     
     public init() {
