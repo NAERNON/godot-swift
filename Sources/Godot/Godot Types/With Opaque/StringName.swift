@@ -18,8 +18,8 @@ extension StringName {
         self = Self._constructor_string(from: string)
     }
     
-    public init(godotStringNamePtr: GDExtensionConstStringNamePtr) {
-        self = Self._ptr_constructor_stringname(from: godotStringNamePtr)
+    public init(godotExtensionPointer: GDExtensionConstStringNamePtr) {
+        self = Self._ptr_constructor_stringname(from: godotExtensionPointer)
     }
     
     // MARK: Operators

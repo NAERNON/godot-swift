@@ -30,10 +30,6 @@ public struct TypedArray<Element> where Element : VariantConvertible {
     internal func withUnsafeRawPointer(_ body: (GDExtensionTypePtr) -> ()) {
         underlyingArray.withUnsafeRawPointer(body)
     }
-    
-    internal var opaque: Opaque {
-        underlyingArray.opaque
-    }
 }
 
 // MARK: - Public initializers

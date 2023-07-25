@@ -35,8 +35,8 @@ extension String {
         self = String(swiftString: .init(c))
     }
     
-    public init(godotStringPtr: GDExtensionConstStringPtr) {
-        self = Self._ptr_constructor_string(from: godotStringPtr)
+    public init(godotExtensionPointer: GDExtensionConstStringPtr) {
+        self = Self._ptr_constructor_string(from: godotExtensionPointer)
     }
     
     // MARK: Operators

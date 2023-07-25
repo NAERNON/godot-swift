@@ -100,7 +100,7 @@ public struct Variant {
         }
     }
     
-    private(set) var opaque: VariantOpaque = {
+    private var opaque: VariantOpaque = {
         .init(size: Variant.opaqueSize)
     }()
     
