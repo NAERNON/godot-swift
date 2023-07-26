@@ -148,7 +148,7 @@ public enum ExposableMacro: MemberMacro {
                 """
                 let isClassRegistered = GodotExtension.classRegister.registerCustomClass(
                     ofType: self,
-                    superclassType: \(raw: inheritedElement.description).self
+                    superclassType: \(raw: inheritedElement.typeName.description).self
                 ) { instancePtr, isValid, out in
                     \(classDecl.identifier)._instanceDescriptionForGodot(instancePtr, isValid, out)
                 }
