@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension PackedVector2Array {
     public init() {
@@ -6,11 +7,21 @@ extension PackedVector2Array {
     }
     
     public init(_ value: PackedVector2Array) {
-        self = Self._constructor_packedvector2array(from: value)
+        self = value
     }
     
     public init(array: Array) {
         self = Self._constructor_array(from: array)
+    }
+    
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self = Self._ptr_constructor_packedvector2array(from: godotExtensionPointer)
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        self._duplicate()
     }
     
     // MARK: Operators

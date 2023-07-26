@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension PackedStringArray {
     public init() {
@@ -6,11 +7,21 @@ extension PackedStringArray {
     }
     
     public init(_ value: PackedStringArray) {
-        self = Self._constructor_packedstringarray(from: value)
+        self = value
     }
     
     public init(array: Array) {
         self = Self._constructor_array(from: array)
+    }
+    
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self = Self._ptr_constructor_packedstringarray(from: godotExtensionPointer)
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        self._duplicate()
     }
     
     // MARK: Operators

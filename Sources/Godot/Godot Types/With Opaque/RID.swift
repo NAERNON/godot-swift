@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension RID {
     public init() {
@@ -6,7 +7,17 @@ extension RID {
     }
     
     public init(_ value: RID) {
-        self = Self._constructor_rid(from: value)
+        self = value
+    }
+    
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self = Self._ptr_constructor_rid(from: godotExtensionPointer)
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        Self._constructor_rid(from: self)
     }
     
     // MARK: Operators

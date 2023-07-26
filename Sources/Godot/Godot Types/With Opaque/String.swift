@@ -16,7 +16,7 @@ extension String {
     }
     
     public init(_ value: String) {
-        self = Self._constructor_string(from: value)
+        self = value
     }
     
     public init<Subject>(describing instance: Subject) {
@@ -37,6 +37,12 @@ extension String {
     
     public init(godotExtensionPointer: GDExtensionConstStringPtr) {
         self = Self._ptr_constructor_string(from: godotExtensionPointer)
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        Self._constructor_string(from: self)
     }
     
     // MARK: Operators

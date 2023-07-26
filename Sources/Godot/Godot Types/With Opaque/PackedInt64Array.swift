@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension PackedInt64Array {
     public init() {
@@ -6,11 +7,21 @@ extension PackedInt64Array {
     }
     
     public init(_ value: PackedInt64Array) {
-        self = Self._constructor_packedint64array(from: value)
+        self = value
     }
     
     public init(array: Array) {
         self = Self._constructor_array(from: array)
+    }
+    
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self = Self._ptr_constructor_packedint64array(from: godotExtensionPointer)
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        self._duplicate()
     }
     
     // MARK: Operators

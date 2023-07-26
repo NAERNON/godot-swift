@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension NodePath {
     public init() {
@@ -6,11 +7,21 @@ extension NodePath {
     }
     
     public init(_ value: NodePath) {
-        self = Self._constructor_nodepath(from: value)
+        self = value
     }
     
     public init(string: String) {
         self = Self._constructor_string(from: string)
+    }
+    
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self = Self._ptr_constructor_nodepath(from: godotExtensionPointer)
+    }
+        
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        Self._constructor_nodepath(from: self)
     }
         
     // MARK: Operators

@@ -93,7 +93,7 @@ public enum ExposableMacro: MemberMacro {
                 returnValueName = "returnValue"
                 returnDecl =
                     """
-                    returnValue.makeVariant().copyTo(variantPtr: returnPtr!)
+                    returnValue.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
                     """
             } else {
                 returnParameter = "nil"
@@ -111,7 +111,7 @@ public enum ExposableMacro: MemberMacro {
             for (index, parameter) in functionToExpose.signature.input.parameterList.enumerated() {
                 functionCall += "\n    "
                 functionCall += (parameter.secondName?.description ?? parameter.firstName.description)
-                functionCall += ": \(parameter.type.description).fromMatchingTypeVariant(Variant(extensionVariantPtr: args!.advanced(by: \(index)).pointee!))"
+                functionCall += ": \(parameter.type.description).fromMatchingTypeVariant(Variant(godotExtensionPointer: args!.advanced(by: \(index)).pointee!))"
             }
             functionCall += "\n)"
             

@@ -101,6 +101,10 @@ struct GodotBuiltinClass: Decodable {
         var isResultDiscardable: Bool {
             isMutating && returnType != nil
         }
+        
+        var shouldReplaceOpaqueIfNecessary: Bool {
+            isMutating && name != "duplicate"
+        }
     }
     
     // MARK: Constructor
@@ -434,11 +438,12 @@ struct GodotBuiltinClass: Decodable {
     
     @MemberDeclListBuilder
     func methodsSyntax(
+        useOpaque: Bool,
         options: GodotTypeSyntaxOptions = []
     ) throws -> MemberDeclListSyntax {
         if let methods {
             for method in methods {
-                try methodSyntax(method, options: options)
+                try methodSyntax(method, useOpaque: useOpaque, options: options)
                     .with(\.trailingTrivia, .newlines(2))
             }
         }
@@ -447,6 +452,7 @@ struct GodotBuiltinClass: Decodable {
     @MemberDeclListBuilder
     private func methodSyntax(
         _ method: Method,
+        useOpaque: Bool,
         options: GodotTypeSyntaxOptions
     ) throws -> MemberDeclListSyntax {
         DeclSyntax("""
@@ -459,6 +465,10 @@ struct GodotBuiltinClass: Decodable {
         
         let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
         let functionDecl = try method.declSyntax(underscoreName: true, options: options) {
+            if method.shouldReplaceOpaqueIfNecessary && useOpaque {
+                DeclSyntax("replaceOpaqueValueIfNecessary()")
+            }
+            
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(options: options) { instanceType, instanceName in
                     try method.argumentsPackPointerAccessSyntax { packName in
@@ -504,8 +514,7 @@ struct GodotBuiltinClass: Decodable {
                 return
             }
             
-            let tmp = Self(self)
-            self.opaque = tmp.opaque
+            self.opaque = self._copiedOpaque().opaque
         }
         
         private var opaque: Opaque
@@ -519,7 +528,8 @@ struct GodotBuiltinClass: Decodable {
         /// Passes the memory management of this instance onto Godot.
         ///
         /// There is a risk of memory leaking if not correctly used.
-        internal func consumeByGodot(ontoUnsafePointer destination: UnsafeMutableRawPointer) {
+        internal mutating func consumeByGodot(ontoUnsafePointer destination: UnsafeMutableRawPointer) {
+            replaceOpaqueValueIfNecessary()
             opaque.withUnsafeMutableRawPointer { ptr in
                 destination.copyMemory(from: ptr, byteCount: opaque.size)
             }

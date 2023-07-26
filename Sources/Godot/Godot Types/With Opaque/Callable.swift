@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension Callable {
     public init() {
@@ -6,11 +7,21 @@ extension Callable {
     }
     
     public init(_ value: Callable) {
-        self = Self._constructor_callable(from: value)
+        self = value
     }
     
     public init(object: Object, method: StringName) {
         self = Self._constructor_object_stringname(object: object, method: method)
+    }
+    
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self = Self._ptr_constructor_callable(from: godotExtensionPointer)
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        Self._constructor_callable(from: self)
     }
     
     // MARK: Operators

@@ -20,15 +20,15 @@ public struct Variant {
         }
     }
     
-    public init(extensionVariantPtr: GDExtensionVariantPtr) {
+    public init(godotExtensionPointer: GDExtensionVariantPtr) {
         withUnsafeRawPointer { extensionTypePtr in
-            gdextension_interface_variant_new_copy(extensionTypePtr, extensionVariantPtr)
+            gdextension_interface_variant_new_copy(extensionTypePtr, godotExtensionPointer)
         }
     }
     
-    public init(extensionVariantPtr: GDExtensionConstVariantPtr) {
+    public init(godotExtensionPointer: GDExtensionConstVariantPtr) {
         withUnsafeRawPointer { extensionTypePtr in
-            gdextension_interface_variant_new_copy(extensionTypePtr, extensionVariantPtr)
+            gdextension_interface_variant_new_copy(extensionTypePtr, godotExtensionPointer)
         }
     }
     
@@ -94,9 +94,12 @@ public struct Variant {
         return Int(result)
     }
     
-    public func copyTo(variantPtr: GDExtensionVariantPtr) {
+    /// Passes the memory management of this instance onto Godot.
+    ///
+    /// There is a risk of memory leaking if not correctly used.
+    public func consumeByGodot(ontoUnsafePointer destination: GDExtensionVariantPtr) {
         withUnsafeRawPointer { selfPtr in
-            gdextension_interface_variant_new_copy(variantPtr, selfPtr)
+            gdextension_interface_variant_new_copy(destination, selfPtr)
         }
     }
     

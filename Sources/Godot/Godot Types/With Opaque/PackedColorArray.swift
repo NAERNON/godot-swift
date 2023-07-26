@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension PackedColorArray {
     public init() {
@@ -6,11 +7,21 @@ extension PackedColorArray {
     }
     
     public init(_ value: PackedColorArray) {
-        self = Self._constructor_packedcolorarray(from: value)
+        self = value
     }
     
     public init(array: Array) {
         self = Self._constructor_array(from: array)
+    }
+    
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self = Self._ptr_constructor_packedcolorarray(from: godotExtensionPointer)
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        self._duplicate()
     }
     
     // MARK: Operators

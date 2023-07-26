@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension PackedByteArray {
     public init() {
@@ -6,17 +7,27 @@ extension PackedByteArray {
     }
     
     public init(_ value: PackedByteArray) {
-        self = Self._constructor_packedbytearray(from: value)
+        self = value
     }
     
     public init(array: Array) {
         self = Self._constructor_array(from: array)
     }
     
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self = Self._ptr_constructor_packedbytearray(from: godotExtensionPointer)
+    }
+    
     public func withUnsafeBytesArray(_ body: (UnsafeMutablePointer<UInt8>?) -> Void) {
         self.withUnsafeRawPointer { extensionTypePtr in
             body(gdextension_interface_packed_byte_array_operator_index(extensionTypePtr, 0))
         }
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        self._duplicate()
     }
     
     // MARK: Operators

@@ -82,7 +82,7 @@ extension GeneratedFile {
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         
-        try builtinClass.methodsSyntax(options: options)
+        try builtinClass.methodsSyntax(useOpaque: useOpaque, options: options)
             .with(\.leadingTrivia, .newline)
             .with(\.trailingTrivia, .newlines(2))
         

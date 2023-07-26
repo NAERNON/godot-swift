@@ -11,7 +11,7 @@ extension StringName {
     }
     
     public init(_ value: StringName) {
-        self = Self._constructor_stringname(from: value)
+        self = value
     }
     
     public init(string: String) {
@@ -20,6 +20,12 @@ extension StringName {
     
     public init(godotExtensionPointer: GDExtensionConstStringNamePtr) {
         self = Self._ptr_constructor_stringname(from: godotExtensionPointer)
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        Self._constructor_stringname(from: self)
     }
     
     // MARK: Operators

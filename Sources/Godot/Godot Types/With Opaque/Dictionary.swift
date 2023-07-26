@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension Dictionary {
     public init() {
@@ -6,7 +7,17 @@ extension Dictionary {
     }
     
     public init(_ value: Dictionary) {
-        self = value._duplicate()
+        self = value
+    }
+    
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self = Self._ptr_constructor_dictionary(from: godotExtensionPointer)
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        self._duplicate(deep: true)
     }
     
     // MARK: Operators

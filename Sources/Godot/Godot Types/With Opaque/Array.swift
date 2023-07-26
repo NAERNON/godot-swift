@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension Array {
     public init() {
@@ -6,7 +7,7 @@ extension Array {
     }
     
     public init(_ value: Array) {
-        self = value._duplicate()
+        self = value
     }
     
     public init(packedByteArray: PackedByteArray) {
@@ -43,6 +44,16 @@ extension Array {
     
     public init(packedColorArray: PackedColorArray) {
         self = Self._constructor_packedcolorarray(from: packedColorArray)
+    }
+    
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self = Self._ptr_constructor_array(from: godotExtensionPointer)
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        self._duplicate(deep: true)
     }
     
     // MARK: Operators

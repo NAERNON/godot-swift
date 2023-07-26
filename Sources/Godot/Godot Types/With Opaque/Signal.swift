@@ -1,4 +1,5 @@
 import Foundation
+import GodotExtensionHeaders
 
 extension Signal {
     public init() {
@@ -6,11 +7,21 @@ extension Signal {
     }
     
     public init(_ value: Signal) {
-        self = Self._constructor_signal(from: value)
+        self = value
     }
     
     public init(object: Object, signal: StringName) {
         self = Self._constructor_object_stringname(object: object, signal: signal)
+    }
+    
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self = Self._ptr_constructor_signal(from: godotExtensionPointer)
+    }
+    
+    // MARK: Copy
+    
+    internal mutating func _copiedOpaque() -> Self {
+        Self._constructor_signal(from: self)
     }
     
     // MARK: Operators
