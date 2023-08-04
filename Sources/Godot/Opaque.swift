@@ -2,7 +2,7 @@ import Foundation
 import GodotExtensionHeaders
 
 internal class BaseOpaque: CustomDebugStringConvertible {
-    let rawData: UnsafeMutablePointer<UInt8>
+    private let rawData: UnsafeMutablePointer<UInt8>
     let size: Int
     
     init(size: Int) {
