@@ -2,6 +2,7 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
+import Foundation
 
 public enum ExposableMacro: MemberMacro {
     // MARK: Member
@@ -141,51 +142,18 @@ public enum ExposableMacro: MemberMacro {
             )
         }
         
-        // MARK: Expose class
+        // MARK: Provide decls
         
-        let exposeToGodotDecl = try FunctionDeclSyntax("open override class func _gd_exposeToGodot()") {
-            ExprSyntax(
-                """
-                let isClassRegistered = GodotExtension.classRegister.registerCustomClass(
-                    ofType: self,
-                    superclassType: \(raw: inheritedElement.typeName.description).self
-                ) { instancePtr, isValid, out in
-                    \(classDecl.identifier)._instanceDescriptionForGodot(instancePtr, isValid, out)
-                }
-                createInstanceFunction: { _ in
-                    \(classDecl.identifier)._makeNewInstanceManagedByGodot()
-                }
-                freeInstanceFunction: { _, instancePtr in
-                    \(classDecl.identifier)._freeInstanceManagedByGodot(instancePtr!)
-                }
-                
-                guard isClassRegistered else { return }
-                """
-            )
-            
-            // Expose each function
+        let provider = ClassMacroDeclProvider(
+            customClassDecl: classDecl,
+            superclassName: inheritedElement.typeName.description
+        ) {
             for function in functionExpositions {
                 function
             }
         }
         
-        // MARK: Override class properties
-        
-        let classNameVar = context.makeUniqueName("className")
-        let staticClassNameDecl: DeclSyntax =
-            """
-            private static let \(classNameVar): StringName = \(literal: classDecl.identifier.description)
-            """
-        let classNameDecl: DeclSyntax =
-            """
-            open override class var _gd_className: StringName { \(classNameVar) }
-            """
-        let isCustomClassDecl: DeclSyntax =
-            """
-            open override class var _gd_isCustomClass: Bool { true }
-            """
-        
-        return [DeclSyntax(exposeToGodotDecl), staticClassNameDecl, classNameDecl, isCustomClassDecl]
+        return try provider.decls()
     }
 }
 

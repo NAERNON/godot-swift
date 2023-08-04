@@ -88,147 +88,8 @@ struct GodotClass: Decodable {
         name.syntax()
     }
     
-    @MemberDeclListBuilder
-    func initializerSyntax() throws -> MemberDeclListSyntax {
-        if isRootClass {
-            DeclSyntax("""
-            internal let extensionObjectPtr: GDExtensionObjectPtr
-            
-            public required init() {
-                var extensionObjectPtr: GDExtensionObjectPtr!
-                
-                Self._gd_lastDerivedClassName.withUnsafeRawPointer { namePtr in
-                    extensionObjectPtr = gdextension_interface_classdb_construct_object(namePtr)!
-                }
-                
-                self.extensionObjectPtr = extensionObjectPtr
-                
-                if self is RefCounted {
-                    withUnsafePointer(to: Self.instanceBindingsCallbacks()) { selfPtr in
-                        gdextension_interface_object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passUnretained(self).toOpaque(), selfPtr)
-                    }
-                }
-                
-                if Self._gd_isCustomClass {
-                    Self._gd_className.withUnsafeRawPointer { classNamePtr in
-                        gdextension_interface_object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
-                    }
-                }
-            }
-            
-            internal init(extensionObjectPtr: GDExtensionObjectPtr) {
-                self.extensionObjectPtr = extensionObjectPtr
-            }
-            
-            public func withUnsafeRawPointer<Result>(
-                _ body: (UnsafeMutableRawPointer) throws -> Result
-            ) rethrows -> Result {
-                try body(extensionObjectPtr)
-            }
-            """)
-        } else {
-            DeclSyntax("""
-            public required init() {
-                super.init()
-            }
-            
-            internal override init(extensionObjectPtr: GDExtensionObjectPtr) {
-                super.init(extensionObjectPtr: extensionObjectPtr)
-            }
-            """)
-            
-            if isRefCountedRootClass {
-                DeclSyntax("""
-                deinit {
-                    self.withUnsafeRawPointer { __ptr_self in
-                        gdextension_interface_mem_free(__ptr_self)
-                    }
-                }
-                """)
-            }
-        }
-        
-        DeclSyntax("""
-        private static let __gd_className: StringName = "\(raw: name.syntax())"
-            
-        open \(isRootClass ? "" : "override ")class var _gd_className: StringName { __gd_className }
-        open \(isRootClass ? "" : "override ")class var _gd_isCustomClass: Bool { false }
-        internal \(isRootClass ? "" : "override ")class var _gd_lastDerivedClassName: StringName { __gd_className }
-        """).with(\.leadingTrivia, .newlines(2))
-        
-        DeclSyntax("""
-        open \(isRootClass ? "" : "override ")class func _gd_exposeToGodot() {
-            GodotExtension.classRegister.registerBaseGodotClass(ofType: self)
-        }
-        """)
-    }
-    
-    @MemberDeclListBuilder
-    func instanceBindingsSyntax() throws -> MemberDeclListSyntax {
-        if isRootClass {
-            DeclSyntax("internal var preventNextReference = false")
-        }
-        
-        DeclSyntax("""
-        internal \(isRootClass ? "" : "override ")class func instanceBindingsCallbacks() -> GDExtensionInstanceBindingCallbacks {
-            return GDExtensionInstanceBindingCallbacks { token, instance in
-                return Unmanaged.passRetained(\(raw: identifier)(extensionObjectPtr: instance!)).toOpaque()
-            } free_callback: { token, instance, bindings in
-                Unmanaged<\(raw: identifier)>.fromOpaque(instance!).takeRetainedValue().withUnsafeRawPointer { __ptr_self in
-                    gdextension_interface_mem_free(__ptr_self)
-                }
-            } reference_callback: { token, instance, reference in
-                if reference != 0 {
-                    let objectInstance = Unmanaged<\(raw: identifier)>.fromOpaque(instance!).takeUnretainedValue()
-                    if objectInstance.preventNextReference {
-                        objectInstance.preventNextReference = false
-                    } else {
-                        _ = Unmanaged<\(raw: identifier)>.fromOpaque(instance!).retain()
-                    }
-                } else {
-                    Unmanaged<\(raw: identifier)>.fromOpaque(instance!).release()
-                }
-                return 1
-            }
-        }
-        """)
-    }
-    
-    @MemberDeclListBuilder
-    func godotExpositionSyntax() -> MemberDeclListSyntax {
-        if isRootClass {
-            DeclSyntax("""
-            public class func _instanceDescriptionForGodot(
-                _ instancePtr: GDExtensionClassInstancePtr?,
-                _ isValid: UnsafeMutablePointer<GDExtensionBool>?,
-                _ out: GDExtensionStringPtr?
-            ) {
-                guard let instancePtr else { return }
-                
-                let instance = Unmanaged<Self> .fromOpaque(instancePtr).takeUnretainedValue()
-                let godotStringDescription = Godot.String(describing: instance)
-                
-                isValid?.pointee = 1
-                godotStringDescription.consumeByGodot(ontoUnsafePointer: out!)
-            }
-            
-            public class func _makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
-                let instance = Self ()
-                _ = Unmanaged.passRetained(instance)
-                
-                if let instance = instance as? RefCounted {
-                    _ = instance.initRef()
-                    instance.preventNextReference = true
-                }
-                
-                return instance.extensionObjectPtr
-            }
-            
-            public class func _freeInstanceManagedByGodot(_ instancePtr: UnsafeMutableRawPointer) {
-                Unmanaged<Self>.fromOpaque(instancePtr).release()
-            }
-            """)
-        }
+    var syntaxOptions: GodotTypeSyntaxOptions {
+        .floatAsDouble
     }
     
     @MemberDeclListBuilder
@@ -262,7 +123,7 @@ struct GodotClass: Decodable {
     private func standardMethodSyntax(_ method: Method) throws -> MemberDeclListSyntax {
         DeclSyntax("""
         private static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
-            _gd_className.withUnsafeRawPointer { __ptr__class_name in
+            _gd_staticClassName.withUnsafeRawPointer { __ptr__class_name in
             StringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
             return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))!
             }
@@ -270,9 +131,9 @@ struct GodotClass: Decodable {
         }()
         """)
         
-        try method.declSyntax(options: .floatAsDouble) {
+        try method.declSyntax(options: syntaxOptions) {
             if let returnType = method.returnType {
-                try returnType.instantiationSyntax(options: .floatAsDouble) { instanceType, instanceName in
+                try returnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
                     try method.argumentsPackPointerAccessSyntax { packName in
                         try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
@@ -302,18 +163,18 @@ struct GodotClass: Decodable {
     
     @MemberDeclListBuilder
     private func virtualMethodSyntax(_ method: Method) throws -> MemberDeclListSyntax {
-        try method.declSyntax(options: .floatAsDouble) {
+        try method.declSyntax(options: syntaxOptions) {
             if let returnType = method.returnType {
                 if returnType.isGodotClass
                     || returnType == .variant
                     || returnType.isOptional {
                     DeclSyntax("nil")
                 } else if returnType.isEnum {
-                    DeclSyntax("\(raw: returnType.syntax(options: .floatAsDouble))(rawValue: 0)!")
+                    DeclSyntax("\(raw: returnType.syntax(options: syntaxOptions))(rawValue: 0)!")
                 } else if returnType.isPointer {
                     DeclSyntax("fatalError(\"No default value provided for pointers.\")")
                 } else {
-                    DeclSyntax("\(raw: returnType.syntax(options: .floatAsDouble))()")
+                    DeclSyntax("\(raw: returnType.syntax(options: syntaxOptions))()")
                 }
             }
         }
