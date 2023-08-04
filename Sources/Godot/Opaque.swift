@@ -22,26 +22,25 @@ internal class BaseOpaque: CustomDebugStringConvertible {
     }
     
     func isZero() -> Bool {
-        for index in 0..<size {
+        var index = 0
+        while index < size {
             if rawData[index] != 0 { return false }
+            
+            index += 1
         }
         return true
     }
     
-    func copyRaw(from pointer: UnsafeRawPointer) {
-        let otherData = pointer.assumingMemoryBound(to: UInt8.self)
-        for index in 0..<size {
-            rawData[index] = otherData[index]
-        }
-    }
-    
     var debugDescription: Swift.String {
         var string = "["
-        for index in 0..<size {
+        var index = 0
+        while index < size {
             string += Swift.String(format: "%02X", rawData[index])
             if index < size-1 {
                 string += "|"
             }
+            
+            index += 1
         }
         string += "]"
         return string

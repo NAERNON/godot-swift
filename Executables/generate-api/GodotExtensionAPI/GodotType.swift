@@ -477,7 +477,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// Use the `bodyBuilder` parameter to use the instantiated variable type and name.
     /// For example:
     /// ```swift
-    /// let type: GodotType = //...
+    /// let type: GodotType = ...
     ///
     /// type.instantiationSyntax { instanceType, name in
     ///     DeclSyntax("print(\(raw: name), \(raw: instanceType.self))")
@@ -521,6 +521,57 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             DeclSyntax("return \(raw: syntax(options: options))(rawValue: \(raw: variableName))!")
         } else {
             DeclSyntax("return \(raw: variableName)")
+        }
+    }
+    
+    /// Returns the syntax for instantiating the type from a pointer.
+    ///
+    /// For example:
+    ///
+    /// ```swift
+    /// let intType: GodotType = ...
+    /// let syntax = intType.instantiationFromPointerSyntax(pointerName: "aPointer")
+    /// print(syntax)
+    /// // Prints "aPointer.load(as: Int.self)".
+    /// ```
+    ///
+    /// > important: Godot types info should be set before calling this function.
+    /// See the ``setGodotTypes(with:)`` function.
+    func instantiationFromPointerSyntax(
+        pointerName: String,
+        options: GodotTypeSyntaxOptions = []
+    ) -> String {
+        if isBuiltinGodotClassWithOpaque || self == .variant {
+            return "\(syntax(options: options))(godotExtensionPointer: \(pointerName))"
+        } else if isGodotClass {
+            return "\(syntax(options: options)).retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(\(pointerName)))"
+        } else {
+            return "\(pointerName).load(as: \(syntax(options: options)).self)"
+        }
+    }
+    
+    /// Returns the syntax for setting a value onto a pointer.
+    ///
+    /// For example:
+    ///
+    /// ```swift
+    /// let intType: GodotType = ...
+    /// let syntax = intType.sendToPointerSyntax(instanceName: "anInstance", pointerName: "aPointer")
+    /// print(syntax)
+    /// // Prints "aPointer.assumingMemoryBound(to: Int.self).pointee = anInstance".
+    /// ```
+    ///
+    /// > important: Godot types info should be set before calling this function.
+    /// See the ``setGodotTypes(with:)`` function.
+    func sendToPointerSyntax(
+        instanceName: String,
+        pointerName: String,
+        options: GodotTypeSyntaxOptions = []
+    ) -> String {
+        if isBuiltinGodotClassWithOpaque || isGodotClass || self == .variant {
+            return "\(instanceName).consumeByGodot(ontoUnsafePointer: \(pointerName))"
+        } else {
+            return "\(pointerName).assumingMemoryBound(to: \(syntax(options: options)).self).pointee = \(instanceName)"
         }
     }
     

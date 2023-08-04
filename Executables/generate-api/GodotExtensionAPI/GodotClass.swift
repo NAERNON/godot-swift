@@ -193,26 +193,24 @@ struct GodotClass: Decodable {
                     ExprSyntax("var _method_name: StringName!")
                     
                     for method in virtualMethods {
+                        let arguments = method.arguments ?? []
+                        
                         ExprSyntax("_method_name = \(literal: method.name)")
                         DeclSyntax("""
                         body(_method_name, { instancePtr, args, returnPtr in
-                        guard let instancePtr, let args else { return }
+                        guard let instancePtr\(raw: arguments.isEmpty ? "" : ", let args") else { return }
                         let instance = Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
-                        let \(raw: method.returnValue == nil ? "_" : "returnValue") = instance
+                        var \(raw: method.returnValue == nil ? "_" : "returnValue") = instance
                         """)
                         
-                        let parameters: [String] = method.arguments?.enumerated().map { (index, argument) in
-                            if argument.type.isGodotClass {
-                                return "functionObjectArgument(fromPointer: args[\(index)])"
-                            } else {
-                                return "functionArgument(fromPointer: args[\(index)])"
-                            }
-                        } ?? []
+                        let parameters: [String] = arguments.enumerated().map { (index, argument) in
+                            argument.type.instantiationFromPointerSyntax(pointerName: "args[\(index)]!", options: syntaxOptions)
+                        }
                         
                         DeclSyntax(".\(raw: method.callSyntax(withParameters: parameters))")
                         
-                        if method.returnValue != nil {
-                            DeclSyntax("setReturnValue(returnValue, toPointer: returnPtr)")
+                        if let returnType = method.returnValue?.type {
+                            DeclSyntax("\(raw: returnType.sendToPointerSyntax(instanceName: "returnValue", pointerName: "returnPtr!", options: syntaxOptions))")
                         }
                         
                         DeclSyntax("})")

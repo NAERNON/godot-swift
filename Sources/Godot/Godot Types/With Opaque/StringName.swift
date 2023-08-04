@@ -22,6 +22,19 @@ extension StringName {
         self = Self._ptr_constructor_stringname(from: godotExtensionPointer)
     }
     
+    public static func className(forObjectPointer instancePtr: GDExtensionObjectPtr) -> StringName? {
+        let className = Self._constructor()
+        let classNameRetreived = className.withUnsafeRawPointer { ptr in
+            gdextension_interface_object_get_class_name(instancePtr, GodotExtension.libraryPtr, ptr) != 0
+        }
+        
+        guard classNameRetreived else {
+            return nil
+        }
+        
+        return className
+    }
+    
     // MARK: Copy
     
     internal mutating func _copiedOpaque() -> Self {

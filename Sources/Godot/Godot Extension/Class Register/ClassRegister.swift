@@ -11,6 +11,8 @@ import GodotExtensionHeaders
 ///
 /// Use the `shared` singleton since it is the only `ClassRegister` available.
 public final class ClassRegister {
+    public typealias InstanceBindingCallbacks = GDExtensionInstanceBindingCallbacks
+    
     // MARK: Properties
     
     /// The shared `ClassRegister`.
@@ -22,10 +24,10 @@ public final class ClassRegister {
     public private(set) var currentLevel: GodotInitializationLevel?
     
     /// A dictionary keeping track of all the custom registered classes.
-    private var customClassNameToClassBinding = [StringName : ClassBinding]()
+    private var customClassNameToClassBinding = [StringName : CustomClassBinding]()
     
     /// A dictionary keeping track of all the base Godot classes.
-    private var godotClassNameToClassType = [StringName : Object.Type]()
+    private var godotClassNameToClassBinding = [StringName : ClassBinding]()
     
     // MARK: Init
     
@@ -60,12 +62,22 @@ public final class ClassRegister {
     
     // MARK: Class registration
     
+    internal func bindingCallbacks(forClassNamed className: StringName) -> GDExtensionInstanceBindingCallbacks? {
+        if let binding = godotClassNameToClassBinding[className] {
+            return binding.bindingCallbacks
+        } else if let binding = customClassNameToClassBinding[className] {
+            return binding.bindingCallbacks
+        } else {
+            return nil
+        }
+    }
+    
     /// Returns the ``Object`` type named as the given class name.
     ///
     /// This function searches for base Godot classes as well as registered custom classes.
     private func classType(named className: StringName) -> Object.Type? {
-        if let type = godotClassNameToClassType[className] {
-            return type
+        if let binding = godotClassNameToClassBinding[className] {
+            return binding.type
         } else if let binding = customClassNameToClassBinding[className] {
             return binding.type
         } else {
@@ -95,12 +107,22 @@ public final class ClassRegister {
     /// This function should only be used to register base classes, and not custom ones.
     @discardableResult
     internal func registerBaseGodotClass<Class>(ofType classType: Class.Type) -> Bool where Class : Object {
+        guard let currentLevel else {
+            gdDebugPrintError("Cannot register class \(classType) because no initialization level was provided.")
+            return false
+        }
+        
         guard classNameIsEquivalentToType(classType: classType) else {
             gdDebugPrintError("Cannot register class \(classType) because the type and name don't match. The @Exposable macro should be applied to the class.")
             return false
         }
         
-        godotClassNameToClassType[classType._gd_className] = classType
+        let classBinding = ClassBinding(
+            level: currentLevel,
+            type: classType
+        )
+        
+        godotClassNameToClassBinding[classType._gd_className] = classBinding
         return true
     }
     
@@ -133,12 +155,10 @@ public final class ClassRegister {
             return false
         }
         
-        let classBinding = ClassBinding(
+        let classBinding = CustomClassBinding(
             level: currentLevel,
             type: classType,
-            name: classType._gd_className,
             superclassType: superclassType,
-            superclassName: superclassType._gd_className,
             toStringFunction: toStringFunction,
             createInstanceFunction: createInstanceFunction,
             freeInstanceFunction: freeInstanceFunction
@@ -163,13 +183,13 @@ public final class ClassRegister {
         var godotClassInfo = GDExtensionClassCreationInfo(
             is_virtual: 0,
             is_abstract: 0,
-            set_func: { _, _, _ in return 1 },
-            get_func: { _, _, _ in return 1 },
-            get_property_list_func: { _, _ in return nil },
-            free_property_list_func: { _, _ in },
-            property_can_revert_func: { _, _ in return 0 },
-            property_get_revert_func: { _, _, _ in return 0 },
-            notification_func: { _, _ in },
+            set_func: nil,
+            get_func: nil,
+            get_property_list_func: nil,
+            free_property_list_func: nil,
+            property_can_revert_func: nil,
+            property_get_revert_func: nil,
+            notification_func: nil,
             to_string_func: classBinding.toStringFunction,
             reference_func: nil,
             unreference_func: nil,
@@ -212,16 +232,16 @@ public final class ClassRegister {
             return nil
         }
         
-        let classBinding = Unmanaged<ClassBinding>.fromOpaque(userDataPtr).takeUnretainedValue()
-        let methodName = StringName(godotStringNamePtr: methodNamePtr)
+        let classBinding = Unmanaged<CustomClassBinding>.fromOpaque(userDataPtr).takeUnretainedValue()
+        let methodName = StringName(godotExtensionPointer: methodNamePtr)
         
         guard let classBinding = shared.customClassNameToClassBinding[classBinding.name] else {
-            gdDebugPrintError("Class doesn't exist.")
+            gdDebugPrintError("Class \(classBinding.name) doesn't exist.")
             return nil
         }
         
         guard let functionCall = classBinding.virtualFuncCall(forName: methodName) else {
-            gdDebugPrintError("Virtual func doesn't exist.")
+            gdDebugPrintError("Virtual func \(methodName) doesn't exist.")
             return nil
         }
         

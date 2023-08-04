@@ -11,18 +11,6 @@ extension GeneratedFile {
             DeclSyntax("import GodotExtensionHeaders")
             
             try ClassDeclSyntax("\(raw: classHeader(for: `class`))") {
-                try `class`.initializerSyntax()
-                    .with(\.leadingTrivia, .newline)
-                    .with(\.trailingTrivia, .newlines(2))
-                
-                try `class`.instanceBindingsSyntax()
-                    .with(\.leadingTrivia, .newline)
-                    .with(\.trailingTrivia, .newlines(2))
-                
-                `class`.godotExpositionSyntax()
-                    .with(\.leadingTrivia, .newline)
-                    .with(\.trailingTrivia, .newlines(2))
-                
                 `class`.enumSyntax()
                     .with(\.leadingTrivia, .newline)
                     .with(\.trailingTrivia, .newlines(2))
@@ -39,7 +27,18 @@ extension GeneratedFile {
     }
     
     private static func classHeader(for `class`: GodotClass) -> String {
-        var header = "open class \(`class`.identifier)"
+        var header = String()
+        if `class`.isRootClass {
+            header += "@GodotRootClass\n"
+        } else if `class`.isRefCountedRootClass {
+            header += "@GodotRefCountedRootClass\n"
+        } else if `class`.isRefcounted {
+            header += "@GodotRefCountedClass\n"
+        } else {
+            header += "@GodotClass\n"
+        }
+        
+        header += "open class \(`class`.identifier)"
         if let superclass = `class`.inherits {
             header += ": \(superclass.syntax())"
         }
