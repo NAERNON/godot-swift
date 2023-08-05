@@ -348,7 +348,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// > important: Godot types info should be set before retreiving this value.
     /// See the ``setGodotTypes(with:)`` function.
     var isBuiltinGodotClass: Bool {
-        GodotType.godotBuiltinClassTypes.contains(self)
+        GodotType.godotBuiltinClassTypes.contains(self) || isTypedArray
     }
     
     /// A Boolean value indicating whether the type
@@ -375,9 +375,11 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// > important: Godot types info should be set before retreiving this value.
     /// See the ``setGodotTypes(with:)`` function.
     var isBuiltinGodotClassWithOpaque: Bool {
-        guard GodotType.godotBuiltinClassTypes.contains(self) else {
+        guard isBuiltinGodotClass else {
             return false
         }
+        
+        if isTypedArray { return true }
         
         switch self.syntax() {
         case "Array": return true

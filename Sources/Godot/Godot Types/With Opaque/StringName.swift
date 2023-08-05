@@ -14,6 +14,10 @@ extension StringName {
         self = value
     }
     
+    public init<Subject>(describing instance: Subject) {
+        self.init(swiftString: .init(describing: instance))
+    }
+    
     public init(string: String) {
         self = Self._constructor_string(from: string)
     }

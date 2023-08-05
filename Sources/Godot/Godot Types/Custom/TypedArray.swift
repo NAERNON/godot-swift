@@ -27,8 +27,21 @@ public struct TypedArray<Element> where Element : VariantConvertible {
         self.underlyingArray = array
     }
     
-    internal func withUnsafeRawPointer(_ body: (GDExtensionTypePtr) -> ()) {
-        underlyingArray.withUnsafeRawPointer(body)
+    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
+        self.underlyingArray = Array(godotExtensionPointer: godotExtensionPointer)
+    }
+    
+    public func withUnsafeRawPointer<Result>(
+        _ body: (GDExtensionTypePtr) throws -> Result
+    ) rethrows -> Result {
+        try underlyingArray.withUnsafeRawPointer(body)
+    }
+    
+    /// Passes the memory management of this instance onto Godot.
+    ///
+    /// There is a risk of memory leaking if not correctly used.
+    internal mutating func consumeByGodot(ontoUnsafePointer destination: UnsafeMutableRawPointer) {
+        underlyingArray.consumeByGodot(ontoUnsafePointer: destination)
     }
 }
 
