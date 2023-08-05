@@ -42,20 +42,22 @@ extension Optional where Wrapped : Object {
     public func withUnsafeRawPointer<Result>(
         _ body: (GDExtensionConstObjectPtr?) throws -> Result
     ) rethrows -> Result {
-        if let self {
-            try self.withUnsafeRawPointer { try body($0) }
-        } else {
+        switch self {
+        case .none:
             try body(nil)
+        case .some(let wrapped):
+            try wrapped.withUnsafeRawPointer { try body($0) }
         }
     }
     
     public func withUnsafeRawPointer<Result>(
         _ body: (GDExtensionObjectPtr?) throws -> Result
     ) rethrows -> Result {
-        if let self {
-            try self.withUnsafeRawPointer { try body($0) }
-        } else {
+        switch self {
+        case .none:
             try body(nil)
+        case .some(let wrapped):
+            try wrapped.withUnsafeRawPointer { try body($0) }
         }
     }
     
@@ -63,7 +65,12 @@ extension Optional where Wrapped : Object {
     ///
     /// There is a risk of memory leaking if not correctly used.
     internal func consumeByGodot(ontoUnsafePointer destination: UnsafeMutableRawPointer) {
-        self?.consumeByGodot(ontoUnsafePointer: destination)
+        switch self {
+        case .none:
+            gdextension_interface_ref_set_object(destination, nil)
+        case .some(let wrapped):
+            wrapped.consumeByGodot(ontoUnsafePointer: destination)
+        }
     }
 }
 
