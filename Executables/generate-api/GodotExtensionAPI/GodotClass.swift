@@ -123,7 +123,7 @@ struct GodotClass: Decodable {
     private func standardMethodSyntax(_ method: Method) throws -> MemberDeclListSyntax {
         DeclSyntax("""
         private static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
-            _gd_staticClassName.withUnsafeRawPointer { __ptr__class_name in
+            __staticClassName.withUnsafeRawPointer { __ptr__class_name in
             StringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
             return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))!
             }

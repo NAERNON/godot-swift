@@ -81,16 +81,16 @@ struct ClassMacroDeclProvider {
         switch classType {
         case .root, .refCountedRoot, .refCounted, .standard:
             return """
-            private static let _gd_staticClassName: StringName = \(literal: className)
-            open \(raw: overrideKeyword) class var _gd_className: StringName { _gd_staticClassName }
-            internal \(raw: overrideKeyword) class var _gd_lastDerivedClassName: StringName { _gd_staticClassName }
-            open \(raw: overrideKeyword) class var _gd_isCustomClass: Bool { false }
+            private static let __staticClassName: StringName = \(literal: className)
+            open \(raw: overrideKeyword) class var __className: StringName { __staticClassName }
+            internal \(raw: overrideKeyword) class var __lastDerivedClassName: StringName { __staticClassName }
+            open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { false }
             """
         case .custom:
             return """
-            private static let _gd_staticClassName: StringName = \(literal: className)
-            open \(raw: overrideKeyword) class var _gd_className: StringName { _gd_staticClassName }
-            open \(raw: overrideKeyword) class var _gd_isCustomClass: Bool { true }
+            private static let __staticClassName: StringName = \(literal: className)
+            open \(raw: overrideKeyword) class var __className: StringName { __staticClassName }
+            open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { true }
             """
         }
     }
@@ -102,28 +102,28 @@ struct ClassMacroDeclProvider {
             public required init() {
                 var extensionObjectPtr: GDExtensionObjectPtr!
             
-                Self._gd_lastDerivedClassName.withUnsafeRawPointer { namePtr in
+                Self.__lastDerivedClassName.withUnsafeRawPointer { namePtr in
                     extensionObjectPtr = gdextension_interface_classdb_construct_object(namePtr)!
                 }
                 
                 self.extensionObjectPtr = extensionObjectPtr
                 
-                if Self._gd_isCustomClass {
-                    Self._gd_className.withUnsafeRawPointer { classNamePtr in
+                if Self.__isCustomGodotClass {
+                    Self.__className.withUnsafeRawPointer { classNamePtr in
                         gdextension_interface_object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
                     }
                 }
             
                 if let refCounted = self as? RefCounted {
-                    withUnsafePointer(to: Self.instanceBindingsCallbacks()) { callbacksPtr in
+                    withUnsafePointer(to: Self.__instanceBindingCallbacks()) { callbacksPtr in
                         gdextension_interface_object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passUnretained(self).toOpaque(), callbacksPtr)
                     }
             
-                    if !Self._gd_isCustomClass {
+                    if !Self.__isCustomGodotClass {
                         refCounted.initRef()
                     }
                 } else {
-                    withUnsafePointer(to: Self.instanceBindingsCallbacks()) { callbacksPtr in
+                    withUnsafePointer(to: Self.__instanceBindingCallbacks()) { callbacksPtr in
                         gdextension_interface_object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passRetained(self).toOpaque(), callbacksPtr)
                     }
                 }
@@ -172,7 +172,7 @@ struct ClassMacroDeclProvider {
         
         return """
         deinit {
-            if Self._gd_isCustomClass && isInstantiatedByGodot {
+            if Self.__isCustomGodotClass && isInstantiatedByGodot {
                 self.withUnsafeRawPointer { __ptr_self in
                     gdextension_interface_mem_free(__ptr_self)
                 }
@@ -188,7 +188,7 @@ struct ClassMacroDeclProvider {
     }
     
     private func instanceBindingCallbacks() throws -> DeclSyntax {
-        let signature = "open \(overrideKeyword) class func instanceBindingsCallbacks() -> ClassRegister.InstanceBindingCallbacks"
+        let signature = "open \(overrideKeyword) class func __instanceBindingCallbacks() -> ClassRegister.InstanceBindingCallbacks"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
@@ -213,7 +213,7 @@ struct ClassMacroDeclProvider {
                 } free_callback: { token, instancePtr, bindingsPtr in
                     
                 } reference_callback: { token, instancePtr, reference in
-                    \(classIdentifier)._referenceCallback(instancePtr, reference)
+                    \(classIdentifier).__referenceCallback(instancePtr, reference)
                 }
                 """
                 )
@@ -224,7 +224,7 @@ struct ClassMacroDeclProvider {
     }
     
     private func exposeToGodot() throws -> DeclSyntax {
-        let signature = "open \(overrideKeyword) class func _gd_exposeToGodot()"
+        let signature = "open \(overrideKeyword) class func __exposeToGodot()"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
@@ -240,13 +240,13 @@ struct ClassMacroDeclProvider {
                     ofType: self,
                     superclassType: \(raw: superclassName ?? "").self
                 ) { instancePtr, isValid, out in
-                    \(classDecl.identifier)._instanceDescriptionForGodot(instancePtr, isValid, out)
+                    \(classDecl.identifier).__instanceGodotDescription(instancePtr, isValid, out)
                 }
                 createInstanceFunction: { _ in
-                    \(classDecl.identifier)._makeNewInstanceManagedByGodot()
+                    \(classDecl.identifier).__makeNewInstanceManagedByGodot()
                 }
                 freeInstanceFunction: { _, instancePtr in
-                    \(classDecl.identifier)._freeInstanceManagedByGodot(instancePtr)
+                    \(classDecl.identifier).__freeInstanceManagedByGodot(instancePtr)
                 }
                 
                 guard isClassRegistered else { return }
@@ -266,7 +266,7 @@ struct ClassMacroDeclProvider {
         switch classType {
         case .root:
             return """
-            public class func _instanceDescriptionForGodot(
+            public class func __instanceGodotDescription(
                 _ instancePtr: GDExtensionClassInstancePtr?,
                 _ isValid: UnsafeMutablePointer<GDExtensionBool>?,
                 _ out: GDExtensionStringPtr?
@@ -280,7 +280,7 @@ struct ClassMacroDeclProvider {
                 godotStringDescription.consumeByGodot(ontoUnsafePointer: out!)
             }
             
-            public class func _makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
+            public class func __makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
                 let instance = Self()
                 instance.isInstantiatedByGodot = true
                 _ = Unmanaged.passRetained(instance)
@@ -288,13 +288,13 @@ struct ClassMacroDeclProvider {
                 return instance.extensionObjectPtr
             }
             
-            public class func _freeInstanceManagedByGodot(_ instancePtr: UnsafeMutableRawPointer?) {
+            public class func __freeInstanceManagedByGodot(_ instancePtr: UnsafeMutableRawPointer?) {
                 guard let instancePtr else { return }
             
                 Unmanaged<Self>.fromOpaque(instancePtr).release()
             }
             
-            public class func _referenceCallback(
+            public class func __referenceCallback(
                 _ instancePtr: UnsafeMutableRawPointer?,
                 _ reference: UInt8
             ) -> UInt8 {
@@ -303,7 +303,7 @@ struct ClassMacroDeclProvider {
             """
         case .refCountedRoot:
             return """
-            public override class func _referenceCallback(
+            public override class func __referenceCallback(
                 _ instancePtr: UnsafeMutableRawPointer?,
                 _ reference: UInt8
             ) -> UInt8 {

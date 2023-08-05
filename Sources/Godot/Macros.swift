@@ -6,7 +6,13 @@ import Foundation
 /// to be exposed to the Godot editor.
 ///
 /// Learn how to expose a custom class: <doc:CreatingCustomClass>.
-@attached(member, names: named(_gd_exposeToGodot), named(_gd_className), named(_gd_staticClassName), named(_gd_isCustomClass), named(instanceBindingsCallbacks))
+@attached(member, names:
+    named(__exposeToGodot),
+    named(__className),
+    named(__staticClassName),
+    named(__isCustomGodotClass),
+    named(__instanceBindingCallbacks)
+)
 public macro Exposable() = #externalMacro(module: "GodotMacros", type: "ExposableMacro")
 
 /// A macro that sets an entry point for Godot.

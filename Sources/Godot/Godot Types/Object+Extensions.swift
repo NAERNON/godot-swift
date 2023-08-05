@@ -20,7 +20,7 @@ extension Object {
                 callbacksPointer
             )
             
-            if Self._gd_isCustomClass {
+            if Self.__isCustomGodotClass {
                 return Unmanaged<Self>.fromOpaque(opaque!).takeUnretainedValue()
             } else {
                 return Unmanaged<Self>.fromOpaque(opaque!).takeRetainedValue()

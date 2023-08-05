@@ -42,7 +42,7 @@ extension TypedArray {
 
 extension TypedArray where Element : Object {
     public init() {
-        self.init(className: Element._gd_className) // TODO: Check that it is not the lastDerivedClassName
+        self.init(className: Element.__className) // TODO: Check that it is not the lastDerivedClassName
     }
 }
 

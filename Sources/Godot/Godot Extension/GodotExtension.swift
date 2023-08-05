@@ -397,7 +397,7 @@ private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtens
     }
     
     for object in GodotExtension.bridge.exposedClasses {
-        object.self._gd_exposeToGodot()
+        object.self.__exposeToGodot()
     }
 }
 

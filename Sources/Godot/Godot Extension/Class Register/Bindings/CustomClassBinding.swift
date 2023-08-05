@@ -33,11 +33,11 @@ extension ClassRegister {
             self.level = level
             
             self.type = type
-            self.name = type._gd_className
+            self.name = type.__className
             self.superclassType = superclassType
-            self.superclassName = superclassType._gd_className
+            self.superclassName = superclassType.__className
             
-            self.bindingCallbacks = type.instanceBindingsCallbacks()
+            self.bindingCallbacks = type.__instanceBindingCallbacks()
             
             self.toStringFunction = toStringFunction
             self.createInstanceFunction = createInstanceFunction

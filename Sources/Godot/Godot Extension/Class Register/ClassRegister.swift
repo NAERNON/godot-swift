@@ -93,13 +93,13 @@ public final class ClassRegister {
     }
     
     /// Returns a Boolean value indicating whether the given class type
-    /// has the correct associated ``Object/_gd_className``.
+    /// has the correct associated ``Object/__className``.
     ///
     /// If the class name is not correct, it indicates that the custom registered class
     /// is not configured correctly. This might be a sign that the ``Exposable()``
     /// macro is not used.
     private func classNameIsEquivalentToType<Class>(classType: Class.Type) -> Bool where Class : Object {
-        StringName(swiftString: .init(describing: classType)) == classType._gd_className
+        StringName(swiftString: .init(describing: classType)) == classType.__className
     }
     
     /// Registers the given base Godot class.
@@ -122,7 +122,7 @@ public final class ClassRegister {
             type: classType
         )
         
-        godotClassNameToClassBinding[classType._gd_className] = classBinding
+        godotClassNameToClassBinding[classType.__className] = classBinding
         return true
     }
     
@@ -253,7 +253,7 @@ public final class ClassRegister {
                                             name: StringName,
                                             call: GDExtensionClassCallVirtual) -> Bool
     where Class : Object {
-        guard let classBinding = customClassNameToClassBinding[type._gd_className] else {
+        guard let classBinding = customClassNameToClassBinding[type.__className] else {
             gdDebugPrintError("Class doesn't exist.")
             return false
         }
@@ -283,7 +283,7 @@ public final class ClassRegister {
         isStatic: Bool,
         call: GDExtensionClassMethodCall)
     -> Bool where Class : Object {
-        let className = classType._gd_className
+        let className = classType.__className
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {

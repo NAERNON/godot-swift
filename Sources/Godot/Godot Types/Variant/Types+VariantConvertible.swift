@@ -1000,7 +1000,7 @@ extension Object: VariantConvertible {
         variant.withUnsafeRawPointer { extensionTypePtr in
             toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), extensionTypePtr)
             
-            let finalPtr = withUnsafePointer(to: Self.instanceBindingsCallbacks()) { bindingsPtr in
+            let finalPtr = withUnsafePointer(to: Self.__instanceBindingCallbacks()) { bindingsPtr in
                 gdextension_interface_object_get_instance_binding(
                     instanceOwner.pointee, GodotExtension.token, bindingsPtr
                 )

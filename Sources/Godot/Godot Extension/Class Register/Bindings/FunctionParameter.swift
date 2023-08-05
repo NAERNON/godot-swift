@@ -58,7 +58,7 @@ extension ClassRegister {
             name: StringName
         ) -> FunctionParameter
         where Value : Object {
-            .init(type: type, name: name, className: type._gd_className)
+            .init(type: type, name: name, className: type.__className)
         }
         
         /// Creates a new `FunctionParameter` used as a function return type.
@@ -74,7 +74,7 @@ extension ClassRegister {
         /// - Parameter type: The type of the parameter.
         public static func returnParameter<Value>(_ type: Value.Type) -> FunctionParameter
         where Value : Object {
-            .init(type: type, name: .init(), className: type._gd_className)
+            .init(type: type, name: .init(), className: type.__className)
         }
         
         // MARK: PropertyInfo
