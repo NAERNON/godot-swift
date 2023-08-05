@@ -1,17 +1,17 @@
 import Foundation
 import GodotExtensionHeaders
 
-extension Dictionary {
+extension GodotDictionary {
     public init() {
         self = Self._constructor()
     }
     
-    public init(_ value: Dictionary) {
+    public init(_ value: GodotDictionary) {
         self = value
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_dictionary(from: godotExtensionPointer)
+        self = Self._ptr_constructor_godotdictionary(from: godotExtensionPointer)
     }
     
     // MARK: Copy
@@ -22,11 +22,11 @@ extension Dictionary {
     
     // MARK: Operators
     
-    public static func == (lhs: Dictionary, rhs: Variant) -> Bool {
+    public static func == (lhs: GodotDictionary, rhs: Variant) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
     
-    public static func == (lhs: Variant, rhs: Dictionary) -> Bool {
+    public static func == (lhs: Variant, rhs: GodotDictionary) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
     
@@ -39,30 +39,30 @@ extension Dictionary {
         }
     }
     
-    public func keys() -> Array {
+    public func keys() -> GodotArray {
         self._keys()
     }
     
-    public func values() -> Array {
+    public func values() -> GodotArray {
         self._values()
     }
 }
 
 // MARK: - Extensions
 
-extension Dictionary: Equatable {
-    public static func == (lhs: Dictionary, rhs: Dictionary) -> Bool {
+extension GodotDictionary: Equatable {
+    public static func == (lhs: GodotDictionary, rhs: GodotDictionary) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
 }
 
-extension Dictionary: Sequence {
+extension GodotDictionary: Sequence {
     public struct Iterator: IteratorProtocol {
-        private let dictionary: Dictionary
-        private let keys: Array
+        private let dictionary: GodotDictionary
+        private let keys: GodotArray
         private var index = 0
         
-        fileprivate init(dictionary: Dictionary) {
+        fileprivate init(dictionary: GodotDictionary) {
             self.dictionary = dictionary
             self.keys = dictionary._keys()
         }
@@ -86,9 +86,9 @@ extension Dictionary: Sequence {
     }
 }
 
-extension Dictionary: ExpressibleByDictionaryLiteral {
+extension GodotDictionary: ExpressibleByDictionaryLiteral {
     public init(dictionaryLiteral elements: (Variant, Variant)...) {
-        var newDictionary = Dictionary()
+        var newDictionary = GodotDictionary()
         for (key, value) in elements {
             newDictionary[key] = value
         }
@@ -96,7 +96,7 @@ extension Dictionary: ExpressibleByDictionaryLiteral {
     }
 }
 
-extension Dictionary: Hashable {
+extension GodotDictionary: Hashable {
     public var hashValue: Int { _hash() }
     
     public func hash(into hasher: inout Hasher) {

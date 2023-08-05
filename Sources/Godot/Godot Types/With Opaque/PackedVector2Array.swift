@@ -10,8 +10,8 @@ extension PackedVector2Array {
         self = value
     }
     
-    public init(array: Array) {
-        self = Self._constructor_array(from: array)
+    public init(array: GodotArray) {
+        self = Self._constructor_godotarray(from: array)
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {

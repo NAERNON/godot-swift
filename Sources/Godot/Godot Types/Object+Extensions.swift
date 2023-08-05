@@ -7,7 +7,7 @@ extension Object {
             return nil
         }
         
-        guard let className = StringName.className(forObjectPointer: instancePtr),
+        guard let className = GodotStringName.className(forObjectPointer: instancePtr),
               let bindingCallbacks = GodotExtension.classRegister.bindingCallbacks(forClassNamed: className)
         else {
             return nil

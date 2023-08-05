@@ -382,9 +382,9 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         if isTypedArray { return true }
         
         switch self.syntax() {
-        case "Array": return true
+        case "GodotArray": return true
         case "Callable": return true
-        case "Dictionary": return true
+        case "GodotDictionary": return true
         case "NodePath": return true
         case "PackedByteArray": return true
         case "PackedColorArray": return true
@@ -397,8 +397,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         case "PackedVector3Array": return true
         case "RID": return true
         case "Signal": return true
-        case "String": return true
-        case "StringName": return true
+        case "GodotString": return true
+        case "GodotStringName": return true
         default: return false
         }
     }
@@ -438,6 +438,10 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             case "uint32_t": return "UInt32"
             case "uint64_t": return "UInt64"
             case "bool": return "Bool"
+            case "Array": return "GodotArray"
+            case "Dictionary": return "GodotDictionary"
+            case "String": return "GodotString"
+            case "StringName": return "GodotStringName"
             case "Error": return "ErrorType"
             case "Type": return "GodotType"
             default: return string
@@ -451,7 +455,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         case .generic(let type, let genericType):
             return type.syntax(options: options) + "<" + genericType.syntax(options: options) + ">"
         case .typedArray(let type):
-            return "TypedArray<\(type.syntax(options: options))>"
+            return "GodotTypedArray<\(type.syntax(options: options))>"
         case .optional(let instanceType):
             return instanceType.syntax(options: options) + "?"
         case .varargs(let type):
@@ -642,7 +646,7 @@ private let typeToGodotVariantType: [String : String] = [
     "float": "GDEXTENSION_VARIANT_TYPE_FLOAT",
     "Float": "GDEXTENSION_VARIANT_TYPE_FLOAT",
     "Double": "GDEXTENSION_VARIANT_TYPE_FLOAT",
-    "String": "GDEXTENSION_VARIANT_TYPE_STRING",
+    "GodotString": "GDEXTENSION_VARIANT_TYPE_STRING",
     "Vector2": "GDEXTENSION_VARIANT_TYPE_VECTOR2",
     "Vector2i": "GDEXTENSION_VARIANT_TYPE_VECTOR2I",
     "Rect2": "GDEXTENSION_VARIANT_TYPE_RECT2",
@@ -659,14 +663,14 @@ private let typeToGodotVariantType: [String : String] = [
     "Transform3D": "GDEXTENSION_VARIANT_TYPE_TRANSFORM3D",
     "Projection": "GDEXTENSION_VARIANT_TYPE_PROJECTION",
     "Color": "GDEXTENSION_VARIANT_TYPE_COLOR",
-    "StringName": "GDEXTENSION_VARIANT_TYPE_STRING_NAME",
+    "GodotStringName": "GDEXTENSION_VARIANT_TYPE_STRING_NAME",
     "NodePath": "GDEXTENSION_VARIANT_TYPE_NODE_PATH",
     "RID": "GDEXTENSION_VARIANT_TYPE_RID",
     "Object": "GDEXTENSION_VARIANT_TYPE_OBJECT",
     "Callable": "GDEXTENSION_VARIANT_TYPE_CALLABLE",
     "Signal": "GDEXTENSION_VARIANT_TYPE_SIGNAL",
-    "Dictionary": "GDEXTENSION_VARIANT_TYPE_DICTIONARY",
-    "Array": "GDEXTENSION_VARIANT_TYPE_ARRAY",
+    "GodotDictionary": "GDEXTENSION_VARIANT_TYPE_DICTIONARY",
+    "GodotArray": "GDEXTENSION_VARIANT_TYPE_ARRAY",
     "PackedByteArray": "GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY",
     "PackedInt32Array": "GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY",
     "PackedInt64Array": "GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY",

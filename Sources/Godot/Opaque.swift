@@ -31,11 +31,11 @@ internal class BaseOpaque: CustomDebugStringConvertible {
         return true
     }
     
-    var debugDescription: Swift.String {
+    var debugDescription: String {
         var string = "["
         var index = 0
         while index < size {
-            string += Swift.String(format: "%02X", rawData[index])
+            string += String(format: "%02X", rawData[index])
             if index < size-1 {
                 string += "|"
             }

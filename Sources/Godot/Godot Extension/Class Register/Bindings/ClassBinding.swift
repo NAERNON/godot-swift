@@ -6,7 +6,7 @@ extension ClassRegister {
         let level: GodotInitializationLevel
         
         let type: Object.Type
-        let name: StringName
+        let name: GodotStringName
         
         let bindingCallbacks: GDExtensionInstanceBindingCallbacks
         

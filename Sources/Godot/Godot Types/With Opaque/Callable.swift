@@ -10,8 +10,8 @@ extension Callable {
         self = value
     }
     
-    public init(object: Object, method: StringName) {
-        self = Self._constructor_object_stringname(object: object, method: method)
+    public init(object: Object, method: GodotStringName) {
+        self = Self._constructor_object_godotstringname(object: object, method: method)
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {

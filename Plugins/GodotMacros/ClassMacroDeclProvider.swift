@@ -81,15 +81,15 @@ struct ClassMacroDeclProvider {
         switch classType {
         case .root, .refCountedRoot, .refCounted, .standard:
             return """
-            private static let __staticClassName: StringName = \(literal: className)
-            open \(raw: overrideKeyword) class var __className: StringName { __staticClassName }
-            internal \(raw: overrideKeyword) class var __lastDerivedClassName: StringName { __staticClassName }
+            private static let __staticClassName: GodotStringName = \(literal: className)
+            open \(raw: overrideKeyword) class var __className: GodotStringName { __staticClassName }
+            internal \(raw: overrideKeyword) class var __lastDerivedClassName: GodotStringName { __staticClassName }
             open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { false }
             """
         case .custom:
             return """
-            private static let __staticClassName: StringName = \(literal: className)
-            open \(raw: overrideKeyword) class var __className: StringName { __staticClassName }
+            private static let __staticClassName: GodotStringName = \(literal: className)
+            open \(raw: overrideKeyword) class var __className: GodotStringName { __staticClassName }
             open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { true }
             """
         }
@@ -274,7 +274,7 @@ struct ClassMacroDeclProvider {
                 guard let instancePtr else { return }
                 
                 let instance = Unmanaged<Self>.fromOpaque(instancePtr).takeUnretainedValue()
-                var godotStringDescription = Godot.String(describing: instance)
+                var godotStringDescription = GodotString(describing: instance)
                 
                 isValid?.pointee = 1
                 godotStringDescription.consumeByGodot(ontoUnsafePointer: out!)

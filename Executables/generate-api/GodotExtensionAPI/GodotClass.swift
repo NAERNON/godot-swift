@@ -124,7 +124,7 @@ struct GodotClass: Decodable {
         DeclSyntax("""
         private static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
             __staticClassName.withUnsafeRawPointer { __ptr__class_name in
-            StringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
+            GodotStringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
             return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))!
             }
             }
@@ -182,7 +182,7 @@ struct GodotClass: Decodable {
     }
         
     func setVirtualFunctionBindingsSyntax() throws -> FunctionDeclSyntax {
-        try FunctionDeclSyntax("internal \(isRootClass ? "" : "override ")class func setVirtualFunctionCalls(_ body: (StringName, GDExtensionClassCallVirtual) -> Void)") {
+        try FunctionDeclSyntax("internal \(isRootClass ? "" : "override ")class func setVirtualFunctionCalls(_ body: (GodotStringName, GDExtensionClassCallVirtual) -> Void)") {
             if !isRootClass {
                 DeclSyntax("super.setVirtualFunctionCalls(body)")
             }
@@ -190,7 +190,7 @@ struct GodotClass: Decodable {
             if let methods {
                 let virtualMethods = methods.filter(\.isVirtual)
                 if !virtualMethods.isEmpty {
-                    ExprSyntax("var _method_name: StringName!")
+                    ExprSyntax("var _method_name: GodotStringName!")
                     
                     for method in virtualMethods {
                         let arguments = method.arguments ?? []

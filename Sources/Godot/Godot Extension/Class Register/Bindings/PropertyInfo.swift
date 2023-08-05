@@ -4,10 +4,10 @@ import GodotExtensionHeaders
 extension ClassRegister {
     struct PropertyInfo {
         let variantType: Variant.RepresentationType
-        let name: StringName
-        let className: StringName
+        let name: GodotStringName
+        let className: GodotStringName
         let hint: PropertyHint
-        let hintString: String
+        let hintString: GodotString
         let defaultValue: Variant?
         private let usage: UInt32
         
@@ -32,12 +32,12 @@ extension ClassRegister {
         )
         
         init(variantType: Variant.RepresentationType,
-             name: StringName,
+             name: GodotStringName,
              defaultValue: Variant? = nil,
              hint: PropertyHint = .none,
-             hintString: String = .init(),
+             hintString: GodotString = .init(),
              usageFlags: PropertyUsageFlags...,
-             className: StringName) {
+             className: GodotStringName) {
             self.variantType = variantType
             self.name = name
             self.defaultValue = defaultValue
@@ -45,7 +45,7 @@ extension ClassRegister {
             self.hintString = ""
             
             if hint == .resourceType {
-                self.className = StringName(string: hintString)
+                self.className = GodotStringName(string: hintString)
             } else {
                 self.className = className
             }

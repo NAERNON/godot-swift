@@ -8,8 +8,8 @@ extension ClassRegister {
             let argumentsValue: UnsafeMutablePointer<T>
         }
         
-        let name: StringName
-        let className: StringName
+        let name: GodotStringName
+        let className: GodotStringName
         
         let hasReturnValue: Bool
         
@@ -27,8 +27,8 @@ extension ClassRegister {
         
         // MARK: Init
         
-        init(name: StringName,
-             className: StringName,
+        init(name: GodotStringName,
+             className: GodotStringName,
              arguments: [PropertyInfo],
              returnType: PropertyInfo?,
              isVararg: Bool,

@@ -6,9 +6,9 @@ extension ClassRegister {
         let level: GodotInitializationLevel
         
         let type: Object.Type
-        let name: StringName
+        let name: GodotStringName
         let superclassType: Object.Type
-        let superclassName: StringName
+        let superclassName: GodotStringName
         
         let bindingCallbacks: GDExtensionInstanceBindingCallbacks
         
@@ -16,7 +16,7 @@ extension ClassRegister {
         let createInstanceFunction: GDExtensionClassCreateInstance
         let freeInstanceFunction: GDExtensionClassFreeInstance
         
-        private var virtualFuncNameToCall = [StringName : GDExtensionClassCallVirtual]()
+        private var virtualFuncNameToCall = [GodotStringName : GDExtensionClassCallVirtual]()
         
         private(set) var functions = [FunctionBinding]()
         
@@ -47,7 +47,7 @@ extension ClassRegister {
         // MARK: Virtual Functions
         
         @discardableResult
-        func appendVirtualFunc(name: StringName, call: GDExtensionClassCallVirtual) -> Bool {
+        func appendVirtualFunc(name: GodotStringName, call: GDExtensionClassCallVirtual) -> Bool {
             guard virtualFuncNameToCall[name] == nil else {
                 return false
             }
@@ -57,7 +57,7 @@ extension ClassRegister {
             return true
         }
         
-        func virtualFuncCall(forName name: StringName) -> GDExtensionClassCallVirtual? {
+        func virtualFuncCall(forName name: GodotStringName) -> GDExtensionClassCallVirtual? {
             virtualFuncNameToCall[name]
         }
         

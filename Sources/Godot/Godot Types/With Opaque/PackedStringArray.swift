@@ -10,8 +10,8 @@ extension PackedStringArray {
         self = value
     }
     
-    public init(array: Array) {
-        self = Self._constructor_array(from: array)
+    public init(array: GodotArray) {
+        self = Self._constructor_godotarray(from: array)
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {
@@ -62,7 +62,7 @@ extension PackedStringArray: BidirectionalCollection {
 extension PackedStringArray: RandomAccessCollection {}
 
 extension PackedStringArray: RangeReplaceableCollection {
-    public subscript(index: Int) -> String {
+    public subscript(index: Int) -> GodotString {
         get {
             self._getValue(at: Int64(index))
         }
@@ -72,7 +72,7 @@ extension PackedStringArray: RangeReplaceableCollection {
     }
     
     public mutating func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
-    where C : Collection, String == C.Element {
+    where C : Collection, GodotString == C.Element {
         var rangeIndex = subrange.lowerBound
         for (collectionIndex, element) in newElements.enumerated() {
             if collectionIndex + subrange.lowerBound < subrange.upperBound {
@@ -94,7 +94,7 @@ extension PackedStringArray: RangeReplaceableCollection {
 extension PackedStringArray: MutableCollection {}
 
 extension PackedStringArray: ExpressibleByArrayLiteral {
-    public init(arrayLiteral elements: String...) {
+    public init(arrayLiteral elements: GodotString...) {
         self.init(elements)
     }
 }

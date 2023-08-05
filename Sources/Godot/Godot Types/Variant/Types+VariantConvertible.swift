@@ -353,12 +353,12 @@ extension Real: VariantConvertible {
     }
 }
 
-// MARK: - String
+// MARK: - GodotString
 
 private var fromTypeConstructor_string = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)!
 private var toTypeConstructor_string = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)!
 
-extension String: VariantConvertible {
+extension GodotString: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .string
     
     public func makeVariant() -> Variant {
@@ -372,7 +372,7 @@ extension String: VariantConvertible {
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        let newValue = String()
+        let newValue = GodotString()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
@@ -880,12 +880,12 @@ extension Color: VariantConvertible {
     }
 }
 
-// MARK: - StringName
+// MARK: - GodotStringName
 
 private var fromTypeConstructor_stringName = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
 private var toTypeConstructor_stringName = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
 
-extension StringName: VariantConvertible {
+extension GodotStringName: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .stringName
     
     public func makeVariant() -> Variant {
@@ -899,7 +899,7 @@ extension StringName: VariantConvertible {
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        let newValue = StringName()
+        let newValue = GodotStringName()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
@@ -1078,12 +1078,12 @@ extension Signal: VariantConvertible {
     }
 }
 
-// MARK: - Dictionary
+// MARK: - GodotDictionary
 
 private var fromTypeConstructor_dictionary = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 private var toTypeConstructor_dictionary = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 
-extension Dictionary: VariantConvertible {
+extension GodotDictionary: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .dictionary
     
     public func makeVariant() -> Variant {
@@ -1097,7 +1097,7 @@ extension Dictionary: VariantConvertible {
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        let newValue = Dictionary()
+        let newValue = GodotDictionary()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
@@ -1109,12 +1109,12 @@ extension Dictionary: VariantConvertible {
     }
 }
 
-// MARK: - Array
+// MARK: - GodotArray
 
 private var fromTypeConstructor_array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 private var toTypeConstructor_array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 
-extension Array: VariantConvertible {
+extension GodotArray: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .array
     
     public func makeVariant() -> Variant {
@@ -1128,7 +1128,7 @@ extension Array: VariantConvertible {
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        let newValue = Array()
+        let newValue = GodotArray()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in

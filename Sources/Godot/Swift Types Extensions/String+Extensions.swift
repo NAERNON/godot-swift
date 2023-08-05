@@ -1,7 +1,7 @@
 import GodotExtensionHeaders
 
-extension Swift.String {
-    public init(godotString: Godot.String) {
+extension String {
+    public init(godotString: GodotString) {
         var string = ""
         godotString._toUtf8Buffer().withUnsafeBytesArray { bytesPtr in
             if let bytesPtr {
@@ -11,19 +11,19 @@ extension Swift.String {
         self = string
     }
     
-    public init(godotStringName: Godot.StringName) {
-        self.init(godotString: Godot.String(stringName: godotStringName))
+    public init(godotStringName: GodotStringName) {
+        self.init(godotString: GodotString(stringName: godotStringName))
     }
 }
 
-extension Swift.String: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = String.variantType
+extension String: VariantConvertible {
+    public static let variantType: Variant.RepresentationType = GodotString.variantType
     
     public func makeVariant() -> Variant {
-        String(swiftString: self).makeVariant()
+        GodotString(swiftString: self).makeVariant()
     }
     
     public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        Swift.String(godotString: String.fromMatchingTypeVariant(variant))
+        String(godotString: GodotString.fromMatchingTypeVariant(variant))
     }
 }

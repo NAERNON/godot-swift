@@ -1,11 +1,11 @@
 import GodotExtensionHeaders
 
-extension String {
+extension GodotString {
     public init() {
         self = Self._constructor()
     }
     
-    public init(swiftString: Swift.String) {
+    public init(swiftString: String) {
         self.init()
         
         withUnsafeRawPointer { extensionPtr in
@@ -15,7 +15,7 @@ extension String {
         }
     }
     
-    public init(_ value: String) {
+    public init(_ value: GodotString) {
         self = value
     }
     
@@ -23,8 +23,8 @@ extension String {
         self.init(swiftString: .init(describing: instance))
     }
     
-    public init(stringName: StringName) {
-        self = Self._constructor_stringname(from: stringName)
+    public init(stringName: GodotStringName) {
+        self = Self._constructor_godotstringname(from: stringName)
     }
     
     public init(nodePath: NodePath) {
@@ -32,49 +32,49 @@ extension String {
     }
     
     public init(_ c: Character) {
-        self = String(swiftString: .init(c))
+        self = GodotString(swiftString: .init(c))
     }
     
     public init(godotExtensionPointer: GDExtensionConstStringPtr) {
-        self = Self._ptr_constructor_string(from: godotExtensionPointer)
+        self = Self._ptr_constructor_godotstring(from: godotExtensionPointer)
     }
     
     // MARK: Copy
     
     internal mutating func _copiedOpaque() -> Self {
-        Self._constructor_string(from: self)
+        Self._constructor_godotstring(from: self)
     }
     
     // MARK: Operators
     
-    public static func == (lhs: String, rhs: Variant) -> Bool {
+    public static func == (lhs: GodotString, rhs: Variant) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
     
-    public static func == (lhs: Variant, rhs: String) -> Bool {
+    public static func == (lhs: Variant, rhs: GodotString) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
     
-    public static func + (lhs: String, rhs: String) -> String {
+    public static func + (lhs: GodotString, rhs: GodotString) -> GodotString {
         Self._operatorAdd(lhs, rhs)
     }
     
-    public static func == (lhs: String, rhs: StringName) -> Bool {
+    public static func == (lhs: GodotString, rhs: GodotStringName) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
 }
 
 // MARK: - Extensions
 
-extension String: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
-    public init(stringLiteral value: Swift.String) {
+extension GodotString: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
+    public init(stringLiteral value: String) {
         self.init(swiftString: value)
     }
 }
 
-extension String: Sequence {}
+extension GodotString: Sequence {}
 
-extension String: Collection {
+extension GodotString: Collection {
     public var startIndex: Int {
         0
     }
@@ -88,21 +88,21 @@ extension String: Collection {
     }
 }
 
-extension String: BidirectionalCollection {
+extension GodotString: BidirectionalCollection {
     public func index(before i: Int) -> Int {
         i-1
     }
 }
 
-extension String: RandomAccessCollection {}
+extension GodotString: RandomAccessCollection {}
 
-extension String: RangeReplaceableCollection {
+extension GodotString: RangeReplaceableCollection {
     public subscript(index: Int) -> Character {
         get {
             Character(self._getValue(at: Int64(index)))
         }
         set(newValue) {
-            self._setValue(String(newValue), at: Int64(index))
+            self._setValue(GodotString(newValue), at: Int64(index))
         }
     }
     
@@ -124,33 +124,33 @@ extension String: RangeReplaceableCollection {
     }
 }
 
-extension String: MutableCollection {}
+extension GodotString: MutableCollection {}
 
-extension String: Equatable {
-    public static func == (lhs: String, rhs: String) -> Bool {
+extension GodotString: Equatable {
+    public static func == (lhs: GodotString, rhs: GodotString) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
 }
 
-extension String: Comparable {
-    public static func > (lhs: String, rhs: String) -> Bool {
+extension GodotString: Comparable {
+    public static func > (lhs: GodotString, rhs: GodotString) -> Bool {
         Self._operatorGreater(lhs, rhs)
     }
     
-    public static func < (lhs: String, rhs: String) -> Bool {
+    public static func < (lhs: GodotString, rhs: GodotString) -> Bool {
         Self._operatorLess(lhs, rhs)
     }
     
-    public static func >= (lhs: String, rhs: String) -> Bool {
+    public static func >= (lhs: GodotString, rhs: GodotString) -> Bool {
         Self._operatorGreaterEqual(lhs, rhs)
     }
     
-    public static func <= (lhs: String, rhs: String) -> Bool {
+    public static func <= (lhs: GodotString, rhs: GodotString) -> Bool {
         Self._operatorLessEqual(lhs, rhs)
     }
 }
 
-extension String: Hashable {
+extension GodotString: Hashable {
     public var hashValue: Int { _hash() }
     
     public func hash(into hasher: inout Hasher) {
@@ -158,30 +158,30 @@ extension String: Hashable {
     }
 }
 
-extension String: TextOutputStreamable {
+extension GodotString: TextOutputStreamable {
     public func write<Target>(to target: inout Target) where Target : TextOutputStream {
         target.write(.init(godotString: self))
     }
 }
 
-extension String: TextOutputStream {
-    public mutating func write(_ string: Swift.String) {
-        self += String(swiftString: string)
+extension GodotString: TextOutputStream {
+    public mutating func write(_ string: String) {
+        self += GodotString(swiftString: string)
     }
 }
 
-extension String: LosslessStringConvertible {
-    public var description: Swift.String {
+extension GodotString: LosslessStringConvertible {
+    public var description: String {
         .init(godotString: self)
     }
 }
 
-extension String: Codable {
+extension GodotString: Codable {
     public func encode(to encoder: Encoder) throws {
-        try Swift.String(godotString: self).encode(to: encoder)
+        try String(godotString: self).encode(to: encoder)
     }
     
     public init(from decoder: Decoder) throws {
-        self.init(swiftString: try Swift.String(from: decoder))
+        self.init(swiftString: try String(from: decoder))
     }
 }

@@ -10,8 +10,8 @@ extension NodePath {
         self = value
     }
     
-    public init(string: String) {
-        self = Self._constructor_string(from: string)
+    public init(string: GodotString) {
+        self = Self._constructor_godotstring(from: string)
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {

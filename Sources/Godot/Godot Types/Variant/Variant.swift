@@ -114,7 +114,7 @@ public struct Variant {
         try opaque.withUnsafeMutableRawPointer(body)
     }
     
-    internal var opaqueDescription: Swift.String {
+    internal var opaqueDescription: String {
         opaque.debugDescription
     }
 }
@@ -122,8 +122,8 @@ public struct Variant {
 // MARK: - Extensions
 
 extension Variant: CustomDebugStringConvertible {
-    public var debugDescription: Swift.String {
-        let string = String()
+    public var debugDescription: String {
+        let string = GodotString()
         
         self.withUnsafeRawPointer { extensionTypePtr in
             string.withUnsafeRawPointer { stringNativeTypePtr in
@@ -131,7 +131,7 @@ extension Variant: CustomDebugStringConvertible {
             }
         }
         
-        return Swift.String(godotString: string)
+        return String(godotString: string)
     }
 }
 
@@ -166,8 +166,8 @@ extension Variant: ExpressibleByFloatLiteral {
 }
 
 extension Variant: ExpressibleByStringLiteral {
-    public init(stringLiteral value: Swift.String) {
-        self.init(String(swiftString: value))
+    public init(stringLiteral value: String) {
+        self.init(GodotString(swiftString: value))
     }
 }
 

@@ -11,11 +11,13 @@ import GodotExtensionHeaders
 ///   - function: The function name where the error occurred.
 ///   - file: The file where the error occurred.
 ///   - line: The line where the error occurred.
-public func gdDebugPrintError(_ message: Swift.String,
-                              notifyEditor: Bool = false,
-                              function: Swift.String = #function,
-                              file: Swift.String = #file,
-                              line: Int32 = #line) {
+public func gdDebugPrintError(
+    _ message: String,
+    notifyEditor: Bool = false,
+    function: String = #function,
+    file: String = #file,
+    line: Int32 = #line
+) {
     gdextension_interface_print_error(message, function, file, line, notifyEditor ? 1 : 0)
 }
 
@@ -27,20 +29,22 @@ public func gdDebugPrintError(_ message: Swift.String,
 ///   - function: The function name where the warning occurred.
 ///   - file: The file where the warning occurred.
 ///   - line: The line where the warning occurred.
-public func gdDebugPrintWarning(_ message: Swift.String,
-                                notifyEditor: Bool = false,
-                                function: Swift.String = #function,
-                                file: Swift.String = #file,
-                                line: Int32 = #line) {
+public func gdDebugPrintWarning(
+    _ message: String,
+    notifyEditor: Bool = false,
+    function: String = #function,
+    file: String = #file,
+    line: Int32 = #line
+) {
     gdextension_interface_print_warning(message, function, file, line, notifyEditor ? 1 : 0)
 }
 
 // MARK: Print
 
-private func printDescription(_ items: [Any], separator: Swift.String) -> Swift.String {
-    var string: Swift.String = ""
+private func printDescription(_ items: [Any], separator: String) -> String {
+    var string: String = ""
     for (index, item) in items.enumerated() {
-        string += Swift.String(describing: item)
+        string += String(describing: item)
         if index < items.count-1 {
             string += separator
         }
@@ -80,7 +84,7 @@ private func printDescription(_ items: [Any], separator: Swift.String) -> Swift.
 ///   - items: Zero or more items to print.
 ///   - separator: A string to print between each item. The default is a single
 ///     space (`" "`).
-public func gdPrint(_ items: Any..., separator: Swift.String = " ") {
+public func gdPrint(_ items: Any..., separator: String = " ") {
     printVariant(arg1: Variant(printDescription(items, separator: separator)))
 }
 
@@ -116,6 +120,6 @@ public func gdPrint(_ items: Any..., separator: Swift.String = " ") {
 ///   - items: Zero or more items to print.
 ///   - separator: A string to print between each item. The default is a single
 ///     space (`" "`).
-public func gdPrintError(_ items: Any..., separator: Swift.String = " ") {
+public func gdPrintError(_ items: Any..., separator: String = " ") {
     printerr(arg1: Variant(printDescription(items, separator: separator)))
 }

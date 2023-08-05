@@ -363,7 +363,7 @@ public enum GodotExtension {
     
     private static func loadInterfaceFunction<FunctionType>(
         _ function: inout FunctionType?,
-        name: Swift.String
+        name: String
     ) throws {
         name.withCString { cString in
             function = unsafeBitCast(getProcAddress(cString), to: FunctionType.self)

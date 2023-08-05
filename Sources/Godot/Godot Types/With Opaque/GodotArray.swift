@@ -1,12 +1,12 @@
 import Foundation
 import GodotExtensionHeaders
 
-extension Array {
+extension GodotArray {
     public init() {
         self = Self._constructor()
     }
     
-    public init(_ value: Array) {
+    public init(_ value: GodotArray) {
         self = value
     }
     
@@ -47,7 +47,7 @@ extension Array {
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_array(from: godotExtensionPointer)
+        self = Self._ptr_constructor_godotarray(from: godotExtensionPointer)
     }
     
     // MARK: Copy
@@ -58,20 +58,20 @@ extension Array {
     
     // MARK: Operators
     
-    public static func == (lhs: Array, rhs: Variant) -> Bool {
+    public static func == (lhs: GodotArray, rhs: Variant) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
     
-    public static func == (lhs: Variant, rhs: Array) -> Bool {
+    public static func == (lhs: Variant, rhs: GodotArray) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
 }
 
 // MARK: - Extensions
 
-extension Array: Sequence {}
+extension GodotArray: Sequence {}
 
-extension Array: Collection {
+extension GodotArray: Collection {
     public var startIndex: Int {
         0
     }
@@ -85,15 +85,15 @@ extension Array: Collection {
     }
 }
 
-extension Array: BidirectionalCollection {
+extension GodotArray: BidirectionalCollection {
     public func index(before i: Int) -> Int {
         i-1
     }
 }
 
-extension Array: RandomAccessCollection {}
+extension GodotArray: RandomAccessCollection {}
 
-extension Array: RangeReplaceableCollection {
+extension GodotArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Variant {
         get {
             self._getValue(at: Int64(index))
@@ -123,21 +123,21 @@ extension Array: RangeReplaceableCollection {
     }
 }
 
-extension Array: MutableCollection {}
+extension GodotArray: MutableCollection {}
 
-extension Array: ExpressibleByArrayLiteral {
+extension GodotArray: ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: Variant...) {
         self.init(elements)
     }
 }
 
-extension Array: Equatable {
-    public static func == (lhs: Array, rhs: Array) -> Bool {
+extension GodotArray: Equatable {
+    public static func == (lhs: GodotArray, rhs: GodotArray) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
 }
 
-extension Array: Hashable {
+extension GodotArray: Hashable {
     public var hashValue: Int { _hash() }
     
     public func hash(into hasher: inout Hasher) {

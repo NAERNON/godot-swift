@@ -1,7 +1,7 @@
 import Foundation
 
 extension Character {
-    public init(_ godotString: Godot.String) {
-        self.init(Swift.String(godotString: godotString))
+    public init(_ godotString: GodotString) {
+        self.init(String(godotString: godotString))
     }
 }

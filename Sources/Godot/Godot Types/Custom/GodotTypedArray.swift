@@ -3,21 +3,21 @@ import GodotExtensionHeaders
 
 // MARK: - Definition
 
-/// A `TypedArray` is a Godot array that is constrained by a type.
+/// A `GodotTypedArray` is a Godot array that is constrained by a type.
 ///
-/// Under the hood, this collection uses the Godot ``Array`` type.
+/// Under the hood, this collection uses the Godot ``GodotArray`` type.
 ///
 /// Only ``VariantConvertible`` elements can be contained inside a `TypedArray`.
-public struct TypedArray<Element> where Element : VariantConvertible {
-    private var underlyingArray: Array
+public struct GodotTypedArray<Element> where Element : VariantConvertible {
+    private var underlyingArray: GodotArray
     
-    public init(_ value: TypedArray<Element>) {
+    public init(_ value: GodotTypedArray<Element>) {
         self.underlyingArray = value.underlyingArray
     }
     
     /// This init is private to this file because public initializers are provided in extensions.
-    fileprivate init(className: StringName) {
-        var array = Array()
+    fileprivate init(className: GodotStringName) {
+        var array = GodotArray()
         array.withUnsafeRawPointer { ptr in
             className.withUnsafeRawPointer { classNamePtr in
                 // TODO: Check script (last parameter)
@@ -28,7 +28,7 @@ public struct TypedArray<Element> where Element : VariantConvertible {
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self.underlyingArray = Array(godotExtensionPointer: godotExtensionPointer)
+        self.underlyingArray = GodotArray(godotExtensionPointer: godotExtensionPointer)
     }
     
     public func withUnsafeRawPointer<Result>(
@@ -47,13 +47,13 @@ public struct TypedArray<Element> where Element : VariantConvertible {
 
 // MARK: - Public initializers
 
-extension TypedArray {
+extension GodotTypedArray {
     public init() {
-        self.init(className: StringName())
+        self.init(className: GodotStringName())
     }
 }
 
-extension TypedArray where Element : Object {
+extension GodotTypedArray where Element : Object {
     public init() {
         self.init(className: Element.__className) // TODO: Check that it is not the lastDerivedClassName
     }
@@ -61,15 +61,15 @@ extension TypedArray where Element : Object {
 
 // MARK: - Extensions
 
-extension TypedArray: CustomDebugStringConvertible {
+extension GodotTypedArray: CustomDebugStringConvertible {
     public var debugDescription: Swift.String {
         underlyingArray.debugDescription
     }
 }
 
-extension TypedArray: Sequence {}
+extension GodotTypedArray: Sequence {}
 
-extension TypedArray: Collection {
+extension GodotTypedArray: Collection {
     public var startIndex: Int {
         underlyingArray.startIndex
     }
@@ -83,15 +83,15 @@ extension TypedArray: Collection {
     }
 }
 
-extension TypedArray: BidirectionalCollection {
+extension GodotTypedArray: BidirectionalCollection {
     public func index(before i: Int) -> Int {
         underlyingArray.index(before: i)
     }
 }
 
-extension TypedArray: RandomAccessCollection {}
+extension GodotTypedArray: RandomAccessCollection {}
 
-extension TypedArray: RangeReplaceableCollection {
+extension GodotTypedArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Element {
         get {
             Element.fromMatchingTypeVariant(underlyingArray[index])
@@ -121,20 +121,20 @@ extension TypedArray: RangeReplaceableCollection {
     }
 }
 
-extension TypedArray: MutableCollection {}
+extension GodotTypedArray: MutableCollection {}
 
-extension TypedArray: ExpressibleByArrayLiteral {
+extension GodotTypedArray: ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: Element...) {
         self.init(elements)
     }
 }
 
-extension TypedArray: Codable where Element : Codable {
+extension GodotTypedArray: Codable where Element : Codable {
     public func encode(to encoder: Encoder) throws {
-        try Swift.Array(self).encode(to: encoder)
+        try Array(self).encode(to: encoder)
     }
 
     public init(from decoder: Decoder) throws {
-        self.init(try Swift.Array<Element>(from: decoder))
+        self.init(try Array<Element>(from: decoder))
     }
 }

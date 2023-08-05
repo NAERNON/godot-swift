@@ -21,12 +21,12 @@ public struct Color {
         self.init(r: Float(r), g: Float(g), b: Float(b), a: 1)
     }
     
-    public init(code: String) {
-        self = Self._constructor_string(code: code)
+    public init(code: GodotString) {
+        self = Self._constructor_godotstring(code: code)
     }
     
-    public init<T>(code: String, a: T) where T: BinaryFloatingPoint {
-        self = Self._constructor_string_float(code: code, alpha: Float(a))
+    public init<T>(code: GodotString, a: T) where T: BinaryFloatingPoint {
+        self = Self._constructor_godotstring_float(code: code, alpha: Float(a))
     }
     
     public init() {

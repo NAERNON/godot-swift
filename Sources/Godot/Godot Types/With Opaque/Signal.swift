@@ -10,8 +10,8 @@ extension Signal {
         self = value
     }
     
-    public init(object: Object, signal: StringName) {
-        self = Self._constructor_object_stringname(object: object, signal: signal)
+    public init(object: Object, signal: GodotStringName) {
+        self = Self._constructor_object_godotstringname(object: object, signal: signal)
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {

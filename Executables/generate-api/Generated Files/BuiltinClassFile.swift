@@ -35,7 +35,7 @@ extension GeneratedFile {
             
             DeclSyntax("""
             extension \(raw: builtinClass.name.syntax()): CustomDebugStringConvertible {
-                public var debugDescription: Swift.String {
+                public var debugDescription: String {
                     Variant(self).debugDescription
                 }
             }

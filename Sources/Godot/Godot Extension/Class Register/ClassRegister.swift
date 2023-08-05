@@ -24,10 +24,10 @@ public final class ClassRegister {
     public private(set) var currentLevel: GodotInitializationLevel?
     
     /// A dictionary keeping track of all the custom registered classes.
-    private var customClassNameToClassBinding = [StringName : CustomClassBinding]()
+    private var customClassNameToClassBinding = [GodotStringName : CustomClassBinding]()
     
     /// A dictionary keeping track of all the base Godot classes.
-    private var godotClassNameToClassBinding = [StringName : ClassBinding]()
+    private var godotClassNameToClassBinding = [GodotStringName : ClassBinding]()
     
     // MARK: Init
     
@@ -62,7 +62,7 @@ public final class ClassRegister {
     
     // MARK: Class registration
     
-    internal func bindingCallbacks(forClassNamed className: StringName) -> GDExtensionInstanceBindingCallbacks? {
+    internal func bindingCallbacks(forClassNamed className: GodotStringName) -> GDExtensionInstanceBindingCallbacks? {
         if let binding = godotClassNameToClassBinding[className] {
             return binding.bindingCallbacks
         } else if let binding = customClassNameToClassBinding[className] {
@@ -75,7 +75,7 @@ public final class ClassRegister {
     /// Returns the ``Object`` type named as the given class name.
     ///
     /// This function searches for base Godot classes as well as registered custom classes.
-    private func classType(named className: StringName) -> Object.Type? {
+    private func classType(named className: GodotStringName) -> Object.Type? {
         if let binding = godotClassNameToClassBinding[className] {
             return binding.type
         } else if let binding = customClassNameToClassBinding[className] {
@@ -88,7 +88,7 @@ public final class ClassRegister {
     /// Returns a Boolean value indicating whether a class with the given name is already registered.
     ///
     /// This function searches for base Godot classes as well as registered custom classes.
-    private func classIsAlreadyRegistered(withName className: StringName) -> Bool {
+    private func classIsAlreadyRegistered(withName className: GodotStringName) -> Bool {
         classType(named: className) != nil
     }
     
@@ -99,7 +99,7 @@ public final class ClassRegister {
     /// is not configured correctly. This might be a sign that the ``Exposable()``
     /// macro is not used.
     private func classNameIsEquivalentToType<Class>(classType: Class.Type) -> Bool where Class : Object {
-        StringName(swiftString: .init(describing: classType)) == classType.__className
+        GodotStringName(swiftString: .init(describing: classType)) == classType.__className
     }
     
     /// Registers the given base Godot class.
@@ -233,7 +233,7 @@ public final class ClassRegister {
         }
         
         let classBinding = Unmanaged<CustomClassBinding>.fromOpaque(userDataPtr).takeUnretainedValue()
-        let methodName = StringName(godotExtensionPointer: methodNamePtr)
+        let methodName = GodotStringName(godotExtensionPointer: methodNamePtr)
         
         guard let classBinding = shared.customClassNameToClassBinding[classBinding.name] else {
             gdDebugPrintError("Class \(classBinding.name) doesn't exist.")
@@ -250,7 +250,7 @@ public final class ClassRegister {
     
     @discardableResult
     private func registerVirtualFunc<Class>(ofType type: Class.Type,
-                                            name: StringName,
+                                            name: GodotStringName,
                                             call: GDExtensionClassCallVirtual) -> Bool
     where Class : Object {
         guard let classBinding = customClassNameToClassBinding[type.__className] else {
@@ -276,7 +276,7 @@ public final class ClassRegister {
     /// - Returns: A Boolean value indicating whether the function was registered.
     @discardableResult
     public func registerFunction<Class>(
-        withName functionName: StringName,
+        withName functionName: GodotStringName,
         insideType classType: Class.Type,
         argumentParameters: [FunctionParameter],
         returnParameter: FunctionParameter?,

@@ -457,7 +457,7 @@ struct GodotBuiltinClass: Decodable {
     ) throws -> MemberDeclListSyntax {
         DeclSyntax("""
         private static var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod = {
-            StringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
+            GodotStringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
             return gdextension_interface_variant_get_ptr_builtin_method(\(raw: name.variantType!), __ptr__method_name, \(literal: method.hash))!
             }
         }()
@@ -536,7 +536,7 @@ struct GodotBuiltinClass: Decodable {
             opaque.destructorPtr = nil
         }
         
-        internal var opaqueDescription: Swift.String {
+        internal var opaqueDescription: String {
             opaque.debugDescription
         }
         """)

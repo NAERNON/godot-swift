@@ -12,7 +12,7 @@ extension ClassRegister {
         public let variantType: Variant.RepresentationType
         
         /// The name of the parameter.
-        public let name: StringName
+        public let name: GodotStringName
         
         /// The default value of the parameter.
         public let defaultValue: Variant?
@@ -20,14 +20,14 @@ extension ClassRegister {
         /// The name of the class.
         ///
         /// If the parameter is *not* a class, the string is empty.
-        public let className: StringName
+        public let className: GodotStringName
         
         // MARK: Init
         
         private init<Value>(
             type: Value.Type,
-            name: StringName,
-            className: StringName
+            name: GodotStringName,
+            className: GodotStringName
         ) where Value : ConvertibleToVariant {
             self.variantType = type.variantType
             self.name = name
@@ -42,7 +42,7 @@ extension ClassRegister {
         ///   - name: The name of the parameter.
         public static func argument<Value>(
             _ type: Value.Type,
-            name: StringName
+            name: GodotStringName
         ) -> FunctionParameter
         where Value : ConvertibleToVariant {
             .init(type: type, name: name, className: .init())
@@ -55,7 +55,7 @@ extension ClassRegister {
         ///   - name: The name of the parameter.
         public static func argument<Value>(
             _ type: Value.Type,
-            name: StringName
+            name: GodotStringName
         ) -> FunctionParameter
         where Value : Object {
             .init(type: type, name: name, className: type.__className)
