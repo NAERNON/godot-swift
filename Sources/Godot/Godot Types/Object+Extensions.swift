@@ -8,22 +8,22 @@ extension Object {
         }
         
         guard let className = GodotStringName.className(forObjectPointer: instancePtr),
-              let bindingCallbacks = GodotExtension.classRegister.bindingCallbacks(forClassNamed: className)
+              let binding = GodotExtension.classRegister.binding(forClassNamed: className)
         else {
             return nil
         }
         
-        return withUnsafePointer(to: bindingCallbacks) { callbacksPointer in
+        return withUnsafePointer(to: binding.callbacks) { callbacksPointer in
             let opaque = gdextension_interface_object_get_instance_binding(
                 instancePtr,
                 GodotExtension.token,
                 callbacksPointer
             )
             
-            if Self.__isCustomGodotClass {
+            if binding.isCustomClass {
                 return Unmanaged<Self>.fromOpaque(opaque!).takeUnretainedValue()
             } else {
-                return Unmanaged<Self>.fromOpaque(opaque!).takeRetainedValue()
+                return binding.type.makeWrapper(forPointer: opaque!) as? Self
             }
         }
     }

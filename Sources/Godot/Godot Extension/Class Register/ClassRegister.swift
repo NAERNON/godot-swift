@@ -11,8 +11,6 @@ import GodotExtensionHeaders
 ///
 /// Use the `shared` singleton since it is the only `ClassRegister` available.
 public final class ClassRegister {
-    public typealias InstanceBindingCallbacks = GDExtensionInstanceBindingCallbacks
-    
     // MARK: Properties
     
     /// The shared `ClassRegister`.
@@ -62,11 +60,11 @@ public final class ClassRegister {
     
     // MARK: Class registration
     
-    internal func bindingCallbacks(forClassNamed className: GodotStringName) -> GDExtensionInstanceBindingCallbacks? {
+    internal func binding(forClassNamed className: GodotStringName) -> ClassBinding? {
         if let binding = godotClassNameToClassBinding[className] {
-            return binding.bindingCallbacks
+            return binding
         } else if let binding = customClassNameToClassBinding[className] {
-            return binding.bindingCallbacks
+            return binding
         } else {
             return nil
         }

@@ -158,7 +158,7 @@ struct GodotClass: Decodable {
                 }
             }
         }
-        .addModifier(.init(name: .keyword(isRefCountedRootClass ? .internal : method.isStatic ? .public : .open)))
+        .addModifier(.init(name: .keyword(isRefCountedRootClass ? .private : method.isStatic ? .public : .open)))
     }
     
     @MemberDeclListBuilder
@@ -190,7 +190,7 @@ struct GodotClass: Decodable {
             if let methods {
                 let virtualMethods = methods.filter(\.isVirtual)
                 if !virtualMethods.isEmpty {
-                    ExprSyntax("var _method_name: GodotStringName!")
+                    ExprSyntax("var _method_name: GodotStringName!") // TODO: Don't declare the method name here but directly in the body
                     
                     for method in virtualMethods {
                         let arguments = method.arguments ?? []

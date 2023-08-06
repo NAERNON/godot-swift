@@ -2,13 +2,17 @@ import Foundation
 import GodotExtensionHeaders
 
 extension ClassRegister {
-    final class ClassBinding {
+    class ClassBinding {
         let level: GodotInitializationLevel
         
         let type: Object.Type
         let name: GodotStringName
         
-        let bindingCallbacks: GDExtensionInstanceBindingCallbacks
+        let callbacks: GodotInstanceBindingCallbacks
+        
+        var isCustomClass: Bool {
+            type.__isCustomGodotClass
+        }
         
         // MARK: Init
         
@@ -21,7 +25,7 @@ extension ClassRegister {
             self.type = type
             self.name = type.__className
             
-            self.bindingCallbacks = type.__instanceBindingCallbacks()
+            self.callbacks = type.__instanceBindingCallbacks()
         }
     }
 }

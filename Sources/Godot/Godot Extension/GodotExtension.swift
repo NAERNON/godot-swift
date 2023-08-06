@@ -139,6 +139,8 @@ internal var gdextension_interface_get_library_path: GDExtensionInterfaceGetLibr
 internal var gdextension_interface_editor_add_plugin: GDExtensionInterfaceEditorAddPlugin!
 internal var gdextension_interface_editor_remove_plugin: GDExtensionInterfaceEditorRemovePlugin!
 
+public typealias GodotInstanceBindingCallbacks = GDExtensionInstanceBindingCallbacks
+
 // MARK: - GodotExtension
 
 /// The centralized point of control of a Godot extension.

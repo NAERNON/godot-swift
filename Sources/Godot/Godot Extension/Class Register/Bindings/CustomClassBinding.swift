@@ -2,15 +2,9 @@ import Foundation
 import GodotExtensionHeaders
 
 extension ClassRegister {
-    final class CustomClassBinding {
-        let level: GodotInitializationLevel
-        
-        let type: Object.Type
-        let name: GodotStringName
+    class CustomClassBinding: ClassBinding {
         let superclassType: Object.Type
         let superclassName: GodotStringName
-        
-        let bindingCallbacks: GDExtensionInstanceBindingCallbacks
         
         let toStringFunction: GDExtensionClassToString
         let createInstanceFunction: GDExtensionClassCreateInstance
@@ -30,18 +24,14 @@ extension ClassRegister {
             createInstanceFunction: GDExtensionClassCreateInstance,
             freeInstanceFunction: GDExtensionClassFreeInstance
         ) {
-            self.level = level
-            
-            self.type = type
-            self.name = type.__className
             self.superclassType = superclassType
             self.superclassName = superclassType.__className
-            
-            self.bindingCallbacks = type.__instanceBindingCallbacks()
             
             self.toStringFunction = toStringFunction
             self.createInstanceFunction = createInstanceFunction
             self.freeInstanceFunction = freeInstanceFunction
+            
+            super.init(level: level, type: type)
         }
         
         // MARK: Virtual Functions
