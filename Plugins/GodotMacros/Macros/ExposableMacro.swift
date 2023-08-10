@@ -146,7 +146,8 @@ public enum ExposableMacro: MemberMacro {
         
         let provider = ClassMacroDeclProvider(
             customClassDecl: classDecl,
-            superclassName: inheritedElement.typeName.description
+            superclassName: inheritedElement.typeName.description,
+            in: context
         ) {
             for function in functionExpositions {
                 function

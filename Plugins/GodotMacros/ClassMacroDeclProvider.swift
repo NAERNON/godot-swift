@@ -5,7 +5,7 @@ import SwiftDiagnostics
 import Foundation
 
 /// A type used to retreive class decls.
-struct ClassMacroDeclProvider {
+struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     enum ClassType {
         case root
         case refCountedRoot
@@ -18,26 +18,31 @@ struct ClassMacroDeclProvider {
     let classType: ClassType
     let superclassName: String?
     let exposeToGodotCustomDecl: (() throws -> CodeBlockItemListSyntax)?
+    let context: Context
     
     init(
         classDecl: ClassDeclSyntax,
-        classType: ClassType
+        classType: ClassType,
+        in context: Context
     ) {
         self.classDecl = classDecl
         self.classType = classType
         self.superclassName = nil
         self.exposeToGodotCustomDecl = nil
+        self.context = context
     }
     
     init(
         customClassDecl: ClassDeclSyntax,
         superclassName: String,
+        in context: Context,
         @CodeBlockItemListBuilder exposeToGodotCustomDecl: @escaping () -> CodeBlockItemListSyntax
     ) {
         self.classDecl = customClassDecl
         self.classType = .custom
         self.superclassName = superclassName
         self.exposeToGodotCustomDecl = exposeToGodotCustomDecl
+        self.context = context
     }
     
     var classIdentifier: TokenSyntax {
@@ -54,8 +59,8 @@ struct ClassMacroDeclProvider {
             staticProperties(),
             initAndDeinit(),
             instanceBindingCallbacks(),
-            exposeToGodot(),
-            helpers()
+            classFuncs(),
+            exposeToGodot()
         ]
         
         return decls.compactMap { $0 }
@@ -77,12 +82,23 @@ struct ClassMacroDeclProvider {
         let className = classIdentifier.description.trimmingCharacters(in: .whitespacesAndNewlines)
         
         switch classType {
-        case .root, .refCountedRoot, .refCounted, .standard:
+        case .root, .refCounted, .standard:
             return """
             private static let __staticClassName: GodotStringName = \(literal: className)
             open \(raw: overrideKeyword) class var __className: GodotStringName { __staticClassName }
             internal \(raw: overrideKeyword) class var __lastDerivedClassName: GodotStringName { __staticClassName }
             open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { false }
+            """
+        case .refCountedRoot:
+            return """
+            private static let __staticClassName: GodotStringName = \(literal: className)
+            open \(raw: overrideKeyword) class var __className: GodotStringName { __staticClassName }
+            internal \(raw: overrideKeyword) class var __lastDerivedClassName: GodotStringName { __staticClassName }
+            open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { false }
+            
+            private static var preventCustomClassInitRef = false
+            private static var instancesWaitingForInitRef: [RefCounted] = []
+            private static var customInstanceToBeDeleted: UnsafeMutableRawPointer? = nil
             """
         case .custom:
             return """
@@ -142,17 +158,17 @@ struct ClassMacroDeclProvider {
             public required init() {
                 super.init()
             
-                if !Self.__isCustomGodotClass {
-                    initRef()
+                if Self.__isCustomGodotClass && RefCounted.preventCustomClassInitRef {
+                    RefCounted.instancesWaitingForInitRef.append(self)
+                } else {
+                    initializeGodotRef()
                 }
             }
             
             internal override init(extensionObjectPtr: GDExtensionObjectPtr) {
                 super.init(extensionObjectPtr: extensionObjectPtr)
                 
-                if !Self.__isCustomGodotClass {
-                    initRef()
-                }
+                initializeGodotRef()
             }
             
             internal override class func makeWrapper(forPointer pointer: GDExtensionObjectPtr) -> Object {
@@ -160,17 +176,24 @@ struct ClassMacroDeclProvider {
             }
             
             deinit {
-                if Self.__isCustomGodotClass {
+                if Self.__isCustomGodotClass && isRefInitialized {
+                    precondition(RefCounted.customInstanceToBeDeleted == nil, "An instance will be deleted before the unreference callback was called.")
+                    RefCounted.customInstanceToBeDeleted = Unmanaged.passUnretained(self).toOpaque()
+                }
+            
+                if unreference() {
                     self.withUnsafeRawPointer { __ptr_self in
                         gdextension_interface_mem_free(__ptr_self)
                     }
-                } else {
-                    if unreference() {
-                        self.withUnsafeRawPointer { __ptr_self in
-                            gdextension_interface_mem_free(__ptr_self)
-                        }
-                    }
                 }
+            }
+            
+            private var isRefInitialized = false
+            
+            func initializeGodotRef() {
+                isRefInitialized = true
+            
+                initRef()
             }
             """
         case .standard, .refCounted:
@@ -256,7 +279,7 @@ struct ClassMacroDeclProvider {
         return DeclSyntax(functionDecl)
     }
     
-    private func helpers() -> DeclSyntax? {
+    private func classFuncs() -> DeclSyntax? {
         switch classType {
         case .root:
             return """
@@ -275,18 +298,24 @@ struct ClassMacroDeclProvider {
             }
             
             public class func __makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
-                let instance = Self()
+                let (instance, instancesToRef) = RefCounted.__preventCustomClassesInitRefs {
+                    Self()
+                }
             
-                if instance is RefCounted {
+                for instanceToRed in instancesToRef where instance !== instanceToRed {
+                    instanceToRed.initializeGodotRef()
+                }
+                
+                if let instance = instance as? RefCounted {
                     _ = Unmanaged.passRetained(instance)
                 }
                 
-                return instance.extensionObjectPtr
+                return instance.withUnsafeRawPointer { $0 }
             }
             
             public class func __freeInstanceManagedByGodot(_ instancePtr: UnsafeMutableRawPointer?) {
                 guard let instancePtr else { return }
-            
+                
                 Unmanaged<Self>.fromOpaque(instancePtr).release()
             }
             
@@ -299,21 +328,45 @@ struct ClassMacroDeclProvider {
             """
         case .refCountedRoot:
             return """
+            /// Prevents the initialization of any reference during the execution of the body closure.
+            ///
+            /// - Parameter body: The code to execute.
+            /// - Returns: A tuple with the result of the closure, as well as all the instances
+            /// that did not initialize their reference.
+            static func __preventCustomClassesInitRefs<Result>(_ body: () -> Result) -> (Result, [RefCounted]) {
+                precondition(!preventCustomClassInitRef, "Attempting to create a context of reference initialization prevention when one is alreay active.")
+                
+                preventCustomClassInitRef = true
+                
+                let result = body()
+                
+                preventCustomClassInitRef = false
+                
+                let instances = instancesWaitingForInitRef
+                instancesWaitingForInitRef.removeAll()
+                
+                return (result, instances)
+            }
+            
             public override class func __referenceCallback(
                 _ instancePtr: UnsafeMutableRawPointer?,
                 _ reference: UInt8
             ) -> UInt8 {
                 guard let instancePtr else { return 0 }
+            
+                if RefCounted.customInstanceToBeDeleted == instancePtr {
+                    RefCounted.customInstanceToBeDeleted = nil
+                    return 0
+                }
                 
                 let unmanaged = Unmanaged<Self>.fromOpaque(instancePtr)
-                let instance = unmanaged.takeUnretainedValue()
-            
+                
                 if reference == 0 {
                     unmanaged.release()
                 } else {
                     _ = unmanaged.retain()
                 }
-            
+                
                 return 0
             }
             """
