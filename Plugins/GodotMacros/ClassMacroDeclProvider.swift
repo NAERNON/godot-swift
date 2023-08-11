@@ -96,8 +96,6 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             internal \(raw: overrideKeyword) class var __lastDerivedClassName: GodotStringName { __staticClassName }
             open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { false }
             
-            private static var preventCustomClassInitRef = false
-            private static var instancesWaitingForInitRef: [RefCounted] = []
             private static var customInstanceToBeDeleted: UnsafeMutableRawPointer? = nil
             """
         case .custom:
@@ -114,14 +112,18 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
         case .root:
             """
             public required init() {
-                var extensionObjectPtr: GDExtensionObjectPtr!
-            
-                Self.__lastDerivedClassName.withUnsafeRawPointer { namePtr in
-                    extensionObjectPtr = gdextension_interface_classdb_construct_object(namePtr)!
+                self.extensionObjectPtr = Self.__lastDerivedClassName.withUnsafeRawPointer { namePtr in
+                    gdextension_interface_classdb_construct_object(namePtr)!
                 }
                 
+                postInit()
+            }
+            
+            public required init(extensionObjectPtr: GodotObjectPointer) {
                 self.extensionObjectPtr = extensionObjectPtr
-                
+            }
+            
+            private func postInit() {
                 if Self.__isCustomGodotClass {
                     Self.__className.withUnsafeRawPointer { classNamePtr in
                         gdextension_interface_object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
@@ -139,14 +141,6 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 }
             }
             
-            internal init(extensionObjectPtr: GDExtensionObjectPtr) {
-                self.extensionObjectPtr = extensionObjectPtr
-            }
-            
-            internal class func makeWrapper(forPointer pointer: GDExtensionObjectPtr) -> Object {
-                \(raw: classIdentifier)(extensionObjectPtr: pointer)
-            }
-            
             public func withUnsafeRawPointer<Result>(
                 _ body: (UnsafeMutableRawPointer) throws -> Result
             ) rethrows -> Result {
@@ -158,21 +152,11 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             public required init() {
                 super.init()
             
-                if Self.__isCustomGodotClass && RefCounted.preventCustomClassInitRef {
-                    RefCounted.instancesWaitingForInitRef.append(self)
-                } else {
-                    initializeGodotRef()
-                }
+                initGodotRef()
             }
             
-            internal override init(extensionObjectPtr: GDExtensionObjectPtr) {
+            public required init(extensionObjectPtr: GodotObjectPointer) {
                 super.init(extensionObjectPtr: extensionObjectPtr)
-                
-                initializeGodotRef()
-            }
-            
-            internal override class func makeWrapper(forPointer pointer: GDExtensionObjectPtr) -> Object {
-                \(raw: classIdentifier)(extensionObjectPtr: pointer)
             }
             
             deinit {
@@ -190,19 +174,16 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             
             private var isRefInitialized = false
             
-            func initializeGodotRef() {
+            func initGodotRef() {
+                guard !isRefInitialized else {
+                    return
+                }
+                
                 isRefInitialized = true
-            
                 initRef()
             }
             """
-        case .standard, .refCounted:
-            """
-            internal override class func makeWrapper(forPointer pointer: GDExtensionObjectPtr) -> Object {
-                \(raw: classIdentifier)(extensionObjectPtr: pointer)
-            }
-            """
-        case .custom: nil
+        default: nil
         }
     }
     
@@ -298,13 +279,12 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             }
             
             public class func __makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
-                let (instance, instancesToRef) = RefCounted.__preventCustomClassesInitRefs {
-                    Self()
+                let extensionObjectPtr = Self.__lastDerivedClassName.withUnsafeRawPointer { namePtr in
+                    gdextension_interface_classdb_construct_object(namePtr)!
                 }
-            
-                for instanceToRed in instancesToRef where instance !== instanceToRed {
-                    instanceToRed.initializeGodotRef()
-                }
+                
+                let instance = Self.init(extensionObjectPtr: extensionObjectPtr)
+                instance.postInit()
                 
                 if let instance = instance as? RefCounted {
                     _ = Unmanaged.passRetained(instance)
@@ -328,26 +308,6 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             """
         case .refCountedRoot:
             return """
-            /// Prevents the initialization of any reference during the execution of the body closure.
-            ///
-            /// - Parameter body: The code to execute.
-            /// - Returns: A tuple with the result of the closure, as well as all the instances
-            /// that did not initialize their reference.
-            static func __preventCustomClassesInitRefs<Result>(_ body: () -> Result) -> (Result, [RefCounted]) {
-                precondition(!preventCustomClassInitRef, "Attempting to create a context of reference initialization prevention when one is alreay active.")
-                
-                preventCustomClassInitRef = true
-                
-                let result = body()
-                
-                preventCustomClassInitRef = false
-                
-                let instances = instancesWaitingForInitRef
-                instancesWaitingForInitRef.removeAll()
-                
-                return (result, instances)
-            }
-            
             public override class func __referenceCallback(
                 _ instancePtr: UnsafeMutableRawPointer?,
                 _ reference: UInt8

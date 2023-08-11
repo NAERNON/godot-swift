@@ -140,6 +140,7 @@ internal var gdextension_interface_editor_add_plugin: GDExtensionInterfaceEditor
 internal var gdextension_interface_editor_remove_plugin: GDExtensionInterfaceEditorRemovePlugin!
 
 public typealias GodotInstanceBindingCallbacks = GDExtensionInstanceBindingCallbacks
+public typealias GodotObjectPointer = GDExtensionObjectPtr
 
 // MARK: - GodotExtension
 
