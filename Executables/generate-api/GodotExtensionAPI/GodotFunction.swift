@@ -116,11 +116,7 @@ extension GodotFunction {
             }
             parameterString.append(CodeLanguage.swift.protectNameIfKeyword(for: parameter.name))
             parameterString.append(": ")
-            parameterString.append(argument.type.syntax(options: options))
-            
-            if argument.type.isGodotClass {
-                parameterString.append("?")
-            }
+            parameterString.append(argument.type.optional(argument.type.isGodotClass).syntax(options: options))
             
             if let defaultValue = argument.defaultValue {
                 parameterString.append(" = ")
@@ -142,11 +138,7 @@ extension GodotFunction {
         
         if let returnType {
             functionHeader.append(" -> ")
-            functionHeader.append(returnType.syntax(options: options))
-            
-            if returnType.isGodotClass {
-                functionHeader.append("?")
-            }
+            functionHeader.append(returnType.optional(returnType.isGodotClass).syntax(options: options))
         }
         
         return try FunctionDeclSyntax("\(raw: functionHeader)", bodyBuilder: bodyBuilder)
@@ -271,10 +263,14 @@ extension GodotFunction {
             }
         }
         
-        return """
-        \(translatedName)(
-            \(parameterStrings.joined(separator: ",\n    "))
-        )
-        """
+        if parameterStrings.isEmpty {
+            return "\(translatedName)()"
+        } else {
+            return """
+            \(translatedName)(
+                \(parameterStrings.joined(separator: ",\n    "))
+            )
+            """
+        }
     }
 }

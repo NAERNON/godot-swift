@@ -176,6 +176,14 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     
     // MARK: Access
     
+    func optional(_ `optional`: Bool = true) -> GodotType {
+        if `optional` {
+            .optional(self)
+        } else {
+            self
+        }
+    }
+    
     var description: String {
         syntax()
     }

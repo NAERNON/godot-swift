@@ -1,5 +1,6 @@
 import SwiftSyntax
 import SwiftSyntaxBuilder
+import CodeTranslator
 
 /// A representation of a Godot class.
 ///
@@ -12,6 +13,7 @@ struct GodotClass: Decodable {
     var apiType: APIType
     var enums: [GodotEnum]?
     var methods: [Method]?
+    var properties: [Property]?
     
     // MARK: APIType
     
@@ -70,6 +72,35 @@ struct GodotClass: Decodable {
         }
     }
     
+    // MARK: Property
+    
+    struct Property: Decodable {
+        var type: GodotType
+        var name: String
+        var getter: String
+        var setter: String?
+        var index: Int?
+        
+        func getterMethod(in methods: [Method]?) -> Method? {
+            methods?.first(where: methodIsAssociatedGetter)
+        }
+        
+        func methodIsAssociatedGetter(_ method: Method) -> Bool {
+            method.name == getter && method.returnType != nil
+        }
+        
+        func setterMethod(in methods: [Method]?, forGetter getter: Method) -> Method? {
+            methods?.first(where: { methodIsAssociatedSetter($0, forGetter: getter) })
+        }
+        
+        func methodIsAssociatedSetter(_ method: Method, forGetter getter: Method) -> Bool {
+            method.name == setter
+            && method.arguments?.count == 1
+            && method.arguments?.first?.type == getter.returnType
+            && method.returnType == nil
+        }
+    }
+    
     // MARK: - Syntax
     
     /// A Boolean value indicating whether the class
@@ -119,6 +150,30 @@ struct GodotClass: Decodable {
         }
     }
     
+    private func methodControlAccessKeyword(_ method: Method) -> Keyword {
+        if isRefCountedRootClass {
+            return .private
+        } else if method.isStatic {
+            return .public
+        } else {
+            for property in properties ?? [] {
+                if let getter = property.getterMethod(in: methods) {
+                    if getter.name == method.name {
+                        return .private
+                    }
+                    
+                    if let setter = property.setterMethod(in: methods, forGetter: getter) {
+                        if setter.name == method.name {
+                            return .private
+                        }
+                    }
+                }
+            }
+            
+            return .open
+        }
+    }
+    
     @MemberDeclListBuilder
     private func standardMethodSyntax(_ method: Method) throws -> MemberDeclListSyntax {
         DeclSyntax("""
@@ -158,7 +213,7 @@ struct GodotClass: Decodable {
                 }
             }
         }
-        .addModifier(.init(name: .keyword(isRefCountedRootClass ? .private : method.isStatic ? .public : .open)))
+        .addModifier(.init(name: .keyword(methodControlAccessKeyword(method))))
     }
     
     @MemberDeclListBuilder
@@ -179,6 +234,63 @@ struct GodotClass: Decodable {
             }
         }
         .addModifier(.init(name: .keyword(.open)))
+    }
+    
+    @MemberDeclListBuilder
+    func propertiesSyntax() throws -> MemberDeclListSyntax {
+        if let properties {
+            for property in properties {
+                if let syntax = try propertySyntax(property) {
+                    syntax.with(\.trailingTrivia, .newlines(2))
+                }
+            }
+        }
+    }
+    
+    private func propertySyntax(_ property: Property) throws -> VariableDeclSyntax? {
+        let propertyName = CodeLanguage.swift.protectNameIfKeyword(
+            for: NamingConvention.snake.convert(property.name, to: .camel)
+        )
+        
+        guard let getter = property.getterMethod(in: methods),
+              let type = getter.returnType else {
+            return nil
+        }
+        
+        let typeSyntax = type.optional(type.isGodotClass).syntax(options: syntaxOptions)
+        let setter = property.setterMethod(in: methods, forGetter: getter)
+        
+        let getterParameter: String?
+        if let index = property.index,
+           let getterInput = getter.arguments?.first {
+            if getterInput.type.isEnum {
+                getterParameter = ".init(rawValue: \(index))!"
+            } else {
+                getterParameter = String(describing: index)
+            }
+        } else {
+            getterParameter = nil
+        }
+        
+        return try VariableDeclSyntax("open var \(raw: propertyName): \(raw: typeSyntax)") {
+            DeclSyntax(
+            """
+            get {
+                \(raw: getter.callSyntax(withParameters: [getterParameter].compactMap { $0 }))
+            }
+            """
+            )
+            
+            if let setter {
+                DeclSyntax(
+                """
+                set {
+                    \(raw: setter.callSyntax(withParameters: ["newValue"]))
+                }
+                """
+                )
+            }
+        }
     }
         
     func setVirtualFunctionBindingsSyntax() throws -> FunctionDeclSyntax {

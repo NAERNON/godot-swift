@@ -18,6 +18,10 @@ extension GeneratedFile {
                 try `class`.methodsSyntax()
                     .with(\.leadingTrivia, .newline)
                     .with(\.trailingTrivia, .newlines(2))
+                
+                try `class`.propertiesSyntax()
+                    .with(\.leadingTrivia, .newline)
+                    .with(\.trailingTrivia, .newlines(2))
                                 
                 try `class`.setVirtualFunctionBindingsSyntax()
                     .with(\.leadingTrivia, .newline)
