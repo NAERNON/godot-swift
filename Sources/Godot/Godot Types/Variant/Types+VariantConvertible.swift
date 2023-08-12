@@ -342,7 +342,7 @@ extension UInt64: VariantConvertible {
     }
 }
 
-// MARK: - Floating point
+// MARK: - Double
 
 private var fromTypeConstructor_float = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
 private var toTypeConstructor_float = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
@@ -381,6 +381,8 @@ extension Double: VariantConvertible {
     }
 }
 
+// MARK: - Float
+
 extension Float: VariantConvertible {
     public static let variantType: Variant.RepresentationType = .float
     
@@ -404,40 +406,6 @@ extension Float: VariantConvertible {
         }
         
         return Float(newValue)
-    }
-    
-    public static func fromVariant(_ variant: Variant) throws -> Self {
-        guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
-        }
-        
-        return fromMatchingTypeVariant(variant)
-    }
-}
-
-extension Real: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = RawValue.variantType
-    
-    public func makeVariant() -> Variant {
-        let variant = Variant()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
-                fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
-            }
-        }
-        return variant
-    }
-    
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        var newValue = RawValue()
-        
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
-                toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
-            }
-        }
-        
-        return Real(newValue)
     }
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
