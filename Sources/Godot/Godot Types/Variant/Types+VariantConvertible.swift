@@ -60,6 +60,14 @@ extension Int: VariantConvertible {
         
         return newValue
     }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
+    }
 }
 
 extension Int8: VariantConvertible {
@@ -85,6 +93,14 @@ extension Int8: VariantConvertible {
         }
         
         return newValue
+    }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
     }
 }
 
@@ -112,6 +128,14 @@ extension Int16: VariantConvertible {
         
         return newValue
     }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
+    }
 }
 
 extension Int32: VariantConvertible {
@@ -137,6 +161,14 @@ extension Int32: VariantConvertible {
         }
         
         return newValue
+    }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
     }
 }
 
@@ -164,6 +196,14 @@ extension Int64: VariantConvertible {
         
         return newValue
     }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
+    }
 }
 
 extension UInt8: VariantConvertible {
@@ -189,6 +229,14 @@ extension UInt8: VariantConvertible {
         }
         
         return newValue
+    }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
     }
 }
 
@@ -216,6 +264,14 @@ extension UInt16: VariantConvertible {
         
         return newValue
     }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
+    }
 }
 
 extension UInt32: VariantConvertible {
@@ -242,6 +298,14 @@ extension UInt32: VariantConvertible {
         
         return newValue
     }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
+    }
 }
 
 extension UInt64: VariantConvertible {
@@ -267,6 +331,14 @@ extension UInt64: VariantConvertible {
         }
         
         return newValue
+    }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
     }
 }
 
@@ -299,6 +371,14 @@ extension Double: VariantConvertible {
         
         return newValue
     }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
+    }
 }
 
 extension Float: VariantConvertible {
@@ -325,6 +405,14 @@ extension Float: VariantConvertible {
         
         return Float(newValue)
     }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
+    }
 }
 
 extension Real: VariantConvertible {
@@ -350,6 +438,14 @@ extension Real: VariantConvertible {
         }
         
         return Real(newValue)
+    }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.isNumeric else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        return fromMatchingTypeVariant(variant)
     }
 }
 

@@ -57,6 +57,12 @@ public struct Variant {
         return extensionVariantType
     }
     
+    /// A Boolean value indicating whether this variant is an `Int` or a `Float` value.
+    var isNumeric: Bool {
+        let type = self.type
+        return type == GDEXTENSION_VARIANT_TYPE_INT || type == GDEXTENSION_VARIANT_TYPE_FLOAT
+    }
+    
     fileprivate func evaluate(other: Variant, `operator`: Operator) -> Variant? {
         var isValid: GDExtensionBool = 0
         let returnVariant = Variant()

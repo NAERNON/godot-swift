@@ -108,14 +108,10 @@ public protocol ConvertibleFromVariant {
     static func fromMatchingTypeVariant(_ variant: Variant) -> Self
 }
 
-private enum ConversionError: Error {
-    case unmatchingTypes(GDExtensionVariantType, GDExtensionVariantType)
-}
-
 public extension ConvertibleFromVariant {
     static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.type == Self.variantType.storageType else {
-            throw ConversionError.unmatchingTypes(variant.type, Self.variantType.storageType)
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -126,3 +122,18 @@ public extension ConvertibleFromVariant {
 
 /// A type that can be converted from, and to, a variant.
 public typealias VariantConvertible = ConvertibleToVariant & ConvertibleFromVariant
+
+// MARK: - Variant ConversionError
+
+extension Variant {
+    internal enum ConversionError: Error {
+        case variantToValue(from: GDExtensionVariantType, to: GDExtensionVariantType)
+        
+        var localizedDescription: String {
+            switch self {
+            case .variantToValue(let from, let to):
+                "Cannot convert variant of type \(from) to value of type \(to)."
+            }
+        }
+    }
+}
