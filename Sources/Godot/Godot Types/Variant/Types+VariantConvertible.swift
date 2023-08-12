@@ -1098,6 +1098,8 @@ extension Object: VariantConvertible {
         
         let instance = Self.retreivedInstanceManagedByGodot(instancePtr)
         
+        assert(instance != nil, "Attempting to retrieve a non optional Object from a nil variant.")
+        
         return instance!
     }
     
