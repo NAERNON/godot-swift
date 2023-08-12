@@ -1120,6 +1120,37 @@ extension Object: VariantConvertible {
     }
 }
 
+// MARK: - Optional<Object>
+
+extension Optional: VariantConvertible where Wrapped : Object {
+    public static var variantType: Variant.RepresentationType { .object }
+    
+    public func makeVariant() -> Variant {
+        switch self {
+        case .none:
+            nil
+        case .some(let wrapped):
+            wrapped.makeVariant()
+        }
+    }
+    
+    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+        if variant == nil {
+            nil
+        } else {
+            Wrapped.fromMatchingTypeVariant(variant)
+        }
+    }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Self {
+        if variant == nil {
+            nil
+        } else {
+            try Wrapped.fromVariant(variant)
+        }
+    }
+}
+
 // MARK: - Callable
 
 private var fromTypeConstructor_callable = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
