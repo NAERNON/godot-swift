@@ -95,8 +95,6 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             open \(raw: overrideKeyword) class var __className: GodotStringName { __staticClassName }
             internal \(raw: overrideKeyword) class var __lastDerivedClassName: GodotStringName { __staticClassName }
             open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { false }
-            
-            private static var customInstanceToBeDeleted: UnsafeMutableRawPointer? = nil
             """
         case .custom:
             return """
@@ -165,11 +163,10 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             
             deinit {
                 if Self.__isCustomGodotClass && isRefInitialized {
-                    precondition(RefCounted.customInstanceToBeDeleted == nil, "An instance will be deleted before the unreference callback was called.")
-                    RefCounted.customInstanceToBeDeleted = Unmanaged.passUnretained(self).toOpaque()
-                }
-            
-                if unreference() {
+                    self.withUnsafeRawPointer { __ptr_self in
+                        gdextension_interface_mem_free(__ptr_self)
+                    }
+                } else if unreference() {
                     self.withUnsafeRawPointer { __ptr_self in
                         gdextension_interface_mem_free(__ptr_self)
                     }
@@ -305,7 +302,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 _ instancePtr: UnsafeMutableRawPointer?,
                 _ reference: UInt8
             ) -> UInt8 {
-                return 0
+                return 1
             }
             """
         case .refCountedRoot:
@@ -315,11 +312,6 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 _ reference: UInt8
             ) -> UInt8 {
                 guard let instancePtr else { return 0 }
-            
-                if RefCounted.customInstanceToBeDeleted == instancePtr {
-                    RefCounted.customInstanceToBeDeleted = nil
-                    return 0
-                }
                 
                 let unmanaged = Unmanaged<Self>.fromOpaque(instancePtr)
                 

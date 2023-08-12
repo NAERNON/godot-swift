@@ -13,7 +13,7 @@ extension Object {
             return nil
         }
         
-        let instance: Self? = withUnsafePointer(to: binding.callbacks) { callbacksPointer in
+        let instance: Object = withUnsafePointer(to: binding.callbacks) { callbacksPointer in
             let opaque = gdextension_interface_object_get_instance_binding(
                 instancePtr,
                 GodotExtension.token,
@@ -21,17 +21,15 @@ extension Object {
             )
             
             if binding.isCustomClass {
-                return Unmanaged<Self>.fromOpaque(opaque!).takeUnretainedValue()
+                return Unmanaged<Object>.fromOpaque(opaque!).takeUnretainedValue()
             } else {
-                return binding.type.init(extensionObjectPtr: opaque!) as? Self
+                return binding.type.init(extensionObjectPtr: opaque!)
             }
         }
         
-        if let instance = instance as? RefCounted {
-            _ = instance.initGodotRef()
-        }
+        (instance as? RefCounted)?.initGodotRef()
         
-        return instance
+        return instance as? Self
     }
     
     /// Passes the memory management of this instance onto Godot.
