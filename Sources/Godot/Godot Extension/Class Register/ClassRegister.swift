@@ -1,4 +1,3 @@
-import Foundation
 import GodotExtensionHeaders
 
 /// An object that enables the registration of custom Godot classes.

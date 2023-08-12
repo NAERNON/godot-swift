@@ -1,4 +1,3 @@
-import Foundation
 
 public struct Transform3D {
     public var basis: Basis

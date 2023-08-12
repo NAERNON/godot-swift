@@ -1,4 +1,3 @@
-import Foundation
 
 public struct Basis {
     public var xAxis: Vector3

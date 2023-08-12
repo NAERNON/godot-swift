@@ -1,4 +1,3 @@
-import Foundation
 
 public struct Rect2 {
     public var position: Vector2

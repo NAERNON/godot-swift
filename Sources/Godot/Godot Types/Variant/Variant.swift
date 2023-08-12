@@ -1,4 +1,3 @@
-import Foundation
 import GodotExtensionHeaders
 
 // TODO: Check @inlinable & @usableFromInline

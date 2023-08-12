@@ -1,4 +1,3 @@
-import Foundation
 
 public struct AABB {
     public var position: Vector3

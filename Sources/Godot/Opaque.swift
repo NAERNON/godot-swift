@@ -1,4 +1,3 @@
-import Foundation
 import GodotExtensionHeaders
 
 internal class BaseOpaque: CustomDebugStringConvertible {
@@ -35,7 +34,15 @@ internal class BaseOpaque: CustomDebugStringConvertible {
         var string = "["
         var index = 0
         while index < size {
-            string += String(format: "%02X", rawData[index])
+            let data = rawData[index]
+            let dataString = String(data, radix: 16, uppercase: true)
+            
+            if data < 16 {
+                string += "0" + dataString
+            } else {
+                string += dataString
+            }
+            
             if index < size-1 {
                 string += "|"
             }

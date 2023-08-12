@@ -1,4 +1,3 @@
-import Foundation
 
 public struct Vector4 {
     public var x: Real

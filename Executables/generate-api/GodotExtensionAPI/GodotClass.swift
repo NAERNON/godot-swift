@@ -266,7 +266,7 @@ struct GodotClass: Decodable {
             if getterInput.type.isEnum {
                 getterParameter = ".init(rawValue: \(index))!"
             } else {
-                getterParameter = String(describing: index)
+                getterParameter = String(index)
             }
         } else {
             getterParameter = nil

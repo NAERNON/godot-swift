@@ -1,4 +1,3 @@
-import Foundation
 
 extension ClassRegister {
     /// A representation of a function parameter.

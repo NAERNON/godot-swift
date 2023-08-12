@@ -1,4 +1,3 @@
-import Foundation
 
 public struct Transform2D {
     public var xAxis: Vector2

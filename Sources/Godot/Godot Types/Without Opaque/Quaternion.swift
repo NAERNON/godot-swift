@@ -1,4 +1,3 @@
-import Foundation
 
 public struct Quaternion {
     public var x: Real

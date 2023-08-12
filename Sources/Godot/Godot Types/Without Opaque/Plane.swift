@@ -1,4 +1,3 @@
-import Foundation
 
 public struct Plane {
     public var normal: Vector3

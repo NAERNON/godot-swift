@@ -1,4 +1,3 @@
-import Foundation
 
 public struct Vector2i {
     public var x: Int

@@ -1,4 +1,3 @@
-import Foundation
 
 extension Character {
     public init(_ godotString: GodotString) {

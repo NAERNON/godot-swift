@@ -1,4 +1,3 @@
-import Foundation
 import GodotExtensionHeaders
 
 extension PackedFloat32Array {

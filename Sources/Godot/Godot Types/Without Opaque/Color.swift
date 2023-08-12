@@ -1,4 +1,3 @@
-import Foundation
 
 public struct Color {
     public var r: Float
