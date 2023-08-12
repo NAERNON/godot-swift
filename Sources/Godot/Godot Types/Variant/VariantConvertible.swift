@@ -128,11 +128,14 @@ public typealias VariantConvertible = ConvertibleToVariant & ConvertibleFromVari
 extension Variant {
     internal enum ConversionError: Error {
         case variantToValue(from: GDExtensionVariantType, to: GDExtensionVariantType)
+        case objectType(type: Object.Type)
         
         var localizedDescription: String {
             switch self {
             case .variantToValue(let from, let to):
                 "Cannot convert variant of type \(from) to value of type \(to)."
+            case .objectType(let type):
+                "Cannot convert retreive object of type \(type) from variant."
             }
         }
     }

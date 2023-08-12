@@ -1090,25 +1090,33 @@ extension Object: VariantConvertible {
     }
     
     public final class func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        var newValue: Self!
-        let instanceOwner = UnsafeMutablePointer < UnsafeMutableRawPointer> .allocate(capacity: 1)
+        var instancePtr = UnsafeMutableRawPointer(bitPattern: 0)
         
         variant.withUnsafeRawPointer { extensionTypePtr in
-            toTypeConstructor_object(UnsafeMutableRawPointer(mutating: instanceOwner), extensionTypePtr)
-            
-            let finalPtr = withUnsafePointer(to: Self.__instanceBindingCallbacks()) { bindingsPtr in
-                gdextension_interface_object_get_instance_binding(
-                    instanceOwner.pointee, GodotExtension.token, bindingsPtr
-                )
-            }
-            
-            newValue = Unmanaged < Self> .fromOpaque(finalPtr!).takeUnretainedValue()
+            toTypeConstructor_object(&instancePtr, extensionTypePtr)
         }
         
-        instanceOwner.deinitialize(count: 1)
-        instanceOwner.deallocate()
+        let instance = Self.retreivedInstanceManagedByGodot(instancePtr)
         
-        return newValue
+        return instance!
+    }
+    
+    public final class func fromVariant(_ variant: Variant) throws -> Self {
+        guard variant.type == Self.variantType.storageType else {
+            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+        }
+        
+        var instancePtr = UnsafeMutableRawPointer(bitPattern: 0)
+        
+        variant.withUnsafeRawPointer { extensionTypePtr in
+            toTypeConstructor_object(&instancePtr, extensionTypePtr)
+        }
+        
+        guard let instance = Self.retreivedInstanceManagedByGodot(instancePtr) else {
+            throw Variant.ConversionError.objectType(type: Self.self)
+        }
+        
+        return instance
     }
 }
 
