@@ -112,15 +112,19 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
         case .root:
             """
             public required init() {
-                self.extensionObjectPtr = Self.__lastDerivedClassName.withUnsafeRawPointer { namePtr in
-                    gdextension_interface_classdb_construct_object(namePtr)!
-                }
+                extensionObjectPtr = Self.makeNewExtensionObjectPtr()
                 
                 postInit()
             }
             
             public required init(extensionObjectPtr: GodotObjectPointer) {
                 self.extensionObjectPtr = extensionObjectPtr
+            }
+            
+            private class func makeNewExtensionObjectPtr() -> GodotObjectPointer {
+                Self.__lastDerivedClassName.withUnsafeRawPointer { namePtr in
+                    gdextension_interface_classdb_construct_object(namePtr)!
+                }
             }
             
             private func postInit() {
@@ -279,9 +283,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             }
             
             public class func __makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
-                let extensionObjectPtr = Self.__lastDerivedClassName.withUnsafeRawPointer { namePtr in
-                    gdextension_interface_classdb_construct_object(namePtr)!
-                }
+                let extensionObjectPtr = Self.makeNewExtensionObjectPtr()
                 
                 let instance = Self.init(extensionObjectPtr: extensionObjectPtr)
                 instance.postInit()
