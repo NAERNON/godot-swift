@@ -223,7 +223,7 @@ public struct Vector3 {
         _bezierInterpolate(control1: control1, control2: control2, end: end, t: t)
     }
     
-    public func bezierDerivative(control1: Vector3, control2: Vector3, end: Vector3, t: Real) -> Vector3 {
+    public func bezierDerivatived(control1: Vector3, control2: Vector3, end: Vector3, t: Real) -> Vector3 {
         _bezierDerivative(control1: control1, control2: control2, end: end, t: t)
     }
     

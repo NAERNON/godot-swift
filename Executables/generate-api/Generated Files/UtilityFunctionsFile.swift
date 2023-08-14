@@ -2,7 +2,7 @@ import SwiftSyntax
 
 extension GeneratedFile {
     static func utilityFunctions(_ extensionAPI: GodotExtensionAPI) -> GeneratedFile {
-        return .init(path: "UtilityFunctions.swift") {
+        return .init(path: "UtilityFunctions+Bindings.swift") {
             DeclSyntax("import GodotExtensionHeaders")
             
             for function in extensionAPI.utilityFunctions {

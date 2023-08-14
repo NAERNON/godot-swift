@@ -59,7 +59,7 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
     func syntax() throws -> FunctionDeclSyntax {
         let options: GodotTypeSyntaxOptions = .floatAsDouble
         
-        return try declSyntax(options: options) {
+        return try declSyntax(underscoreName: true, options: options) {
             if let returnType = returnType {
                 try returnType.instantiationSyntax(options: options) { instanceType, instanceName in
                     try argumentsPackPointerAccessSyntax { packName in
@@ -81,6 +81,6 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
                 }
             }
         }
-        .addModifier(.init(name: .keyword(.public)))
+        .addModifier(.init(name: .keyword(.internal)))
     }
 }

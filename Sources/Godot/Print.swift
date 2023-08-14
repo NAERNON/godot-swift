@@ -84,7 +84,7 @@ private func printDescription(_ items: [Any], separator: String) -> String {
 ///   - separator: A string to print between each item. The default is a single
 ///     space (`" "`).
 public func gdPrint(_ items: Any..., separator: String = " ") {
-    printVariant(arg1: Variant(printDescription(items, separator: separator)))
+    _printVariant(arg1: Variant(printDescription(items, separator: separator)))
 }
 
 /// Writes the textual representations of the given items into the Godot
@@ -120,5 +120,5 @@ public func gdPrint(_ items: Any..., separator: String = " ") {
 ///   - separator: A string to print between each item. The default is a single
 ///     space (`" "`).
 public func gdPrintError(_ items: Any..., separator: String = " ") {
-    printerr(arg1: Variant(printDescription(items, separator: separator)))
+    _printerr(arg1: Variant(printDescription(items, separator: separator)))
 }
