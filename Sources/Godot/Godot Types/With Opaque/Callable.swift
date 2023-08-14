@@ -32,6 +32,76 @@ extension Callable {
     public static func == (lhs: Variant, rhs: Callable) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public func callv(arguments: GodotArray) -> Variant {
+        _callv(arguments: arguments)
+    }
+    
+    public var isNull: Bool {
+        _isNull()
+    }
+    
+    public var isCustom: Bool {
+        _isCustom()
+    }
+    
+    public var isStandard: Bool {
+        _isStandard()
+    }
+    
+    public var isValid: Bool {
+        _isValid()
+    }
+    
+    public var object: Object? {
+        _getObject()
+    }
+    
+    public var objectID: Int {
+        _getObjectId()
+    }
+    
+    public var method: GodotStringName {
+        _getMethod()
+    }
+    
+    public var boundArgumentsCount: Int {
+        _getBoundArgumentsCount()
+    }
+    
+    public func boundArguments() -> GodotArray {
+        _getBoundArguments()
+    }
+    
+    mutating public func bindv(arguments: GodotArray) -> Callable {
+        _bindv(arguments: arguments)
+    }
+    
+    public func unbind(argcount: Int) -> Callable {
+        _unbind(argcount: argcount)
+    }
+    
+    public func call(_ variants: Variant...) -> Variant {
+        _call(rest: variants)
+    }
+    
+    public func callDeferred(_ variants: Variant...) {
+        _callDeferred(rest: variants)
+    }
+    
+    public func rpc(_ variants: Variant...) {
+        _rpc(rest: variants)
+    }
+    
+    public func rpcId(peerId: Int, _ variants: Variant...) {
+        _rpcId(peerId: peerId, rest: variants)
+    }
+    
+    public func bind(_ variants: Variant...) -> Callable {
+        _bind(rest: variants)
+    }
 }
 
 // MARK: - Extensions

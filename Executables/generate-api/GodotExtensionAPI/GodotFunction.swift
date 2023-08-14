@@ -15,6 +15,7 @@ protocol GodotFunction {
     var returnType: GodotType? { get }
     
     var isVararg: Bool { get }
+    var isVarargArray: Bool { get }
     var isStatic: Bool { get }
     var isConst: Bool { get }
     var isMutating: Bool { get }
@@ -24,6 +25,7 @@ protocol GodotFunction {
 
 extension GodotFunction {
     var isVararg: Bool { false }
+    var isVarargArray: Bool { false }
     var isStatic: Bool { false }
     var isConst: Bool { false }
     var isMutating: Bool { false }
@@ -131,7 +133,11 @@ extension GodotFunction {
                 functionHeader.append(", ")
             }
             functionHeader.append(varargArgumentIdentifier)
-            functionHeader.append(": Variant...")
+            if isVarargArray {
+                functionHeader.append(": [Variant]")
+            } else {
+                functionHeader.append(": Variant...")
+            }
         }
         
         functionHeader.append(")")

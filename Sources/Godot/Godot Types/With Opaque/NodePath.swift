@@ -32,6 +32,44 @@ extension NodePath {
     public static func == (lhs: Variant, rhs: NodePath) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var isAbsolute: Bool {
+        _isAbsolute()
+    }
+    
+    public var nameCount: Int {
+        _getNameCount()
+    }
+    
+    public func name(at index: Int) -> GodotStringName {
+        _getName(idx: index)
+    }
+    
+    public var subnameCount: Int {
+        _getSubnameCount()
+    }
+    
+    public func subname(at index: Int) -> GodotStringName {
+        _getSubname(idx: index)
+    }
+    
+    public func concatenatedNames() -> GodotStringName {
+        _getConcatenatedNames()
+    }
+    
+    public func concatenatedSubnames() -> GodotStringName {
+        _getConcatenatedSubnames()
+    }
+    
+    public func propertyPath() -> NodePath {
+        _getAsPropertyPath()
+    }
+    
+    public var isEmpty: Bool {
+        _isEmpty()
+    }
 }
 
 // MARK: - Extensions

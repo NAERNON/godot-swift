@@ -84,8 +84,8 @@ public struct Transform3D {
     
     // MARK: Methods & variables
     
-    public func multiplied(withPackedVector3Array packedVector3Array: PackedVector3Array) -> PackedVector3Array {
-        Self._operatorMultiply(self, packedVector3Array)
+    public func multiplied(withVector3Array vector3Array: PackedVector3Array) -> PackedVector3Array {
+        Self._operatorMultiply(self, vector3Array)
     }
     
     public var inversed: Transform3D {

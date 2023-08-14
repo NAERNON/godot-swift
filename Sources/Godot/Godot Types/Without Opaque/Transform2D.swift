@@ -96,8 +96,8 @@ public struct Transform2D {
     
     // MARK: Methods & variables
     
-    public func multiplied(withPackedVector2Array packedVector2Array: PackedVector2Array) -> PackedVector2Array {
-        Self._operatorMultiply(self, packedVector2Array)
+    public func multiplied(withVector2Array vector2Array: PackedVector2Array) -> PackedVector2Array {
+        Self._operatorMultiply(self, vector2Array)
     }
     
     public var inversed: Transform2D {

@@ -28,6 +28,16 @@ extension RID {
     public static func == (lhs: Variant, rhs: RID) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var isValid: Bool {
+        _isValid()
+    }
+    
+    public var id: Int {
+        _getId()
+    }
 }
 
 // MARK: - Extensions

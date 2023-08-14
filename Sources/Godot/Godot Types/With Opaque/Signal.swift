@@ -32,6 +32,45 @@ extension Signal {
     public static func == (lhs: Variant, rhs: Signal) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var isNull: Bool {
+        _isNull()
+    }
+    
+    public var object: Object? {
+        _getObject()
+    }
+    
+    public var objectID: Int {
+        _getObjectId()
+    }
+    
+    public var name: GodotStringName {
+        _getName()
+    }
+    
+    @discardableResult
+    mutating public func connect(_ callable: Callable, flags: Int = 0) -> Int {
+        _connect(callable: callable, flags: flags)
+    }
+    
+    mutating public func disconnect(_ callable: Callable) {
+        _disconnect(callable: callable)
+    }
+    
+    public func isConnected(to callable: Callable) -> Bool {
+        _isConnected(callable: callable)
+    }
+    
+    public func connections() -> GodotArray {
+        _getConnections()
+    }
+    
+    public func emit(_ variants: Variant...) {
+        _emit(rest: variants)
+    }
 }
 
 // MARK: - Extensions

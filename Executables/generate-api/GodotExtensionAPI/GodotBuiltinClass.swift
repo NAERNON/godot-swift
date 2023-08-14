@@ -94,6 +94,10 @@ struct GodotBuiltinClass: Decodable {
             "__method_binding_\(name)"
         }
         
+        var isVarargArray: Bool {
+            true
+        }
+        
         var isMutating: Bool {
             !isConst && !isStatic
         }

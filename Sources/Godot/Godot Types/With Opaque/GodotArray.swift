@@ -9,40 +9,40 @@ extension GodotArray {
         self = value
     }
     
-    public init(packedByteArray: PackedByteArray) {
-        self = Self._constructor_packedbytearray(from: packedByteArray)
+    public init(byteArray: PackedByteArray) {
+        self = Self._constructor_packedbytearray(from: byteArray)
     }
     
-    public init(packedInt32Array: PackedInt32Array) {
-        self = Self._constructor_packedint32array(from: packedInt32Array)
+    public init(int32Array: PackedInt32Array) {
+        self = Self._constructor_packedint32array(from: int32Array)
     }
     
-    public init(packedInt64Array: PackedInt64Array) {
-        self = Self._constructor_packedint64array(from: packedInt64Array)
+    public init(int64Array: PackedInt64Array) {
+        self = Self._constructor_packedint64array(from: int64Array)
     }
     
-    public init(packedFloat32Array: PackedFloat32Array) {
-        self = Self._constructor_packedfloat32array(from: packedFloat32Array)
+    public init(float32Array: PackedFloat32Array) {
+        self = Self._constructor_packedfloat32array(from: float32Array)
     }
     
-    public init(packedFloat64Array: PackedFloat64Array) {
-        self = Self._constructor_packedfloat64array(from: packedFloat64Array)
+    public init(float64Array: PackedFloat64Array) {
+        self = Self._constructor_packedfloat64array(from: float64Array)
     }
     
-    public init(packedStringArray: PackedStringArray) {
-        self = Self._constructor_packedstringarray(from: packedStringArray)
+    public init(stringArray: PackedStringArray) {
+        self = Self._constructor_packedstringarray(from: stringArray)
     }
     
-    public init(packedVector2Array: PackedVector2Array) {
-        self = Self._constructor_packedvector2array(from: packedVector2Array)
+    public init(vector2Array: PackedVector2Array) {
+        self = Self._constructor_packedvector2array(from: vector2Array)
     }
     
-    public init(packedVector3Array: PackedVector3Array) {
-        self = Self._constructor_packedvector3array(from: packedVector3Array)
+    public init(vector3Array: PackedVector3Array) {
+        self = Self._constructor_packedvector3array(from: vector3Array)
     }
     
-    public init(packedColorArray: PackedColorArray) {
-        self = Self._constructor_packedcolorarray(from: packedColorArray)
+    public init(colorArray: PackedColorArray) {
+        self = Self._constructor_packedcolorarray(from: colorArray)
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {

@@ -38,6 +38,169 @@ extension PackedByteArray {
     public static func == (lhs: Variant, rhs: PackedByteArray) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public func stringFromASCII() -> GodotString {
+        _getStringFromAscii()
+    }
+    
+    public func stringFromUTF8() -> GodotString {
+        _getStringFromUtf8()
+    }
+    
+    public func stringFromUTF16() -> GodotString {
+        _getStringFromUtf16()
+    }
+    
+    public func stringFromUTF32() -> GodotString {
+        _getStringFromUtf32()
+    }
+    
+    public func stringFromWChar() -> GodotString {
+        _getStringFromWchar()
+    }
+    
+    public func hexEncoded() -> GodotString {
+        _hexEncode()
+    }
+    
+    public func compressed(mode: Int = 0) -> PackedByteArray {
+        _compress(compressionMode: mode)
+    }
+    
+    public func decompressed(bufferSize: Int, mode: Int = 0) -> PackedByteArray {
+        _decompress(bufferSize: bufferSize, compressionMode: mode)
+    }
+    
+    public func dymanicDecompressed(maxOutputSize: Int, mode: Int = 0) -> PackedByteArray {
+        _decompressDynamic(maxOutputSize: maxOutputSize, compressionMode: mode)
+    }
+    
+    public func decodeU8(at byteOffset: Int) -> Int {
+        _decodeU8(byteOffset: byteOffset)
+    }
+    
+    public func decodeS8(at byteOffset: Int) -> Int {
+        _decodeS8(byteOffset: byteOffset)
+    }
+    
+    public func decodeU16(at byteOffset: Int) -> Int {
+        _decodeU16(byteOffset: byteOffset)
+    }
+    
+    public func decodeS16(at byteOffset: Int) -> Int {
+        _decodeS16(byteOffset: byteOffset)
+    }
+    
+    public func decodeU32(at byteOffset: Int) -> Int {
+        _decodeU32(byteOffset: byteOffset)
+    }
+    
+    public func decodeS32(at byteOffset: Int) -> Int {
+        _decodeS32(byteOffset: byteOffset)
+    }
+    
+    public func decodeU64(at byteOffset: Int) -> Int {
+        _decodeU64(byteOffset: byteOffset)
+    }
+    
+    public func decodeS64(at byteOffset: Int) -> Int {
+        _decodeS64(byteOffset: byteOffset)
+    }
+    
+    public func decodeHalf(at byteOffset: Int) -> Double {
+        _decodeHalf(byteOffset: byteOffset)
+    }
+    
+    public func decodeFloat(at byteOffset: Int) -> Double {
+        _decodeFloat(byteOffset: byteOffset)
+    }
+    
+    public func decodeDouble(at byteOffset: Int) -> Double {
+        _decodeDouble(byteOffset: byteOffset)
+    }
+    
+    public func hasEncodedVar(at byteOffset: Int, allowObjects: Bool = false) -> Bool {
+        _hasEncodedVar(byteOffset: byteOffset, allowObjects: allowObjects)
+    }
+    
+    public func decodeVar(at byteOffset: Int, allowObjects: Bool = false) -> Variant {
+        _decodeVar(byteOffset: byteOffset, allowObjects: allowObjects)
+    }
+    
+    public func decodeVarSize(at byteOffset: Int, allowObjects: Bool = false) -> Int {
+        _decodeVarSize(byteOffset: byteOffset, allowObjects: allowObjects)
+    }
+    
+    public func int32Array() -> PackedInt32Array {
+        _toInt32Array()
+    }
+    
+    public func int64Array() -> PackedInt64Array {
+        _toInt64Array()
+    }
+    
+    public func float32Array() -> PackedFloat32Array {
+        _toFloat32Array()
+    }
+    
+    public func float64Array() -> PackedFloat64Array {
+        _toFloat64Array()
+    }
+    
+    public mutating func encodeU8(_ value: Int, at byteOffset: Int) {
+        _encodeU8(byteOffset: byteOffset, value: value)
+    }
+    
+    mutating public func encodeS8(_ value: Int, at byteOffset: Int) {
+        _encodeS8(byteOffset: byteOffset, value: value)
+    }
+    
+    mutating public func encodeU16(_ value: Int, at byteOffset: Int) {
+        _encodeU16(byteOffset: byteOffset, value: value)
+    }
+    
+    mutating public func encodeS16(_ value: Int, at byteOffset: Int) {
+        _encodeS16(byteOffset: byteOffset, value: value)
+    }
+    
+    mutating public func encodeU32(_ value: Int, at byteOffset: Int) {
+        _encodeU32(byteOffset: byteOffset, value: value)
+    }
+    
+    mutating public func encodeS32(_ value: Int, at byteOffset: Int) {
+        _encodeS32(byteOffset: byteOffset, value: value)
+    }
+    
+    mutating public func encodeU64(_ value: Int, at byteOffset: Int) {
+        _encodeU64(byteOffset: byteOffset, value: value)
+    }
+    
+    mutating public func encodeS64(_ value: Int, at byteOffset: Int) {
+        _encodeS64(byteOffset: byteOffset, value: value)
+    }
+    
+    mutating public func encodeHalf(_ value: Double, at byteOffset: Int) {
+        _encodeHalf(byteOffset: byteOffset, value: value)
+    }
+    
+    mutating public func encodeFloat(_ value: Double, at byteOffset: Int) {
+        _encodeFloat(byteOffset: byteOffset, value: value)
+    }
+    
+    mutating public func encodeDouble(_ value: Double, at byteOffset: Int) {
+        _encodeDouble(byteOffset: byteOffset, value: value)
+    }
+    
+    @discardableResult
+    mutating public func encodeVar(
+        _ value: Variant,
+        at byteOffset: Int,
+        allowObjects: Bool = false
+    ) -> Int {
+        _encodeVar(byteOffset: byteOffset, value: value, allowObjects: allowObjects)
+    }
 }
 
 // MARK: - Extensions

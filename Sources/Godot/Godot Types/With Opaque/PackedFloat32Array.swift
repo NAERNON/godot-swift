@@ -32,6 +32,12 @@ extension PackedFloat32Array {
     public static func == (lhs: Variant, rhs: PackedFloat32Array) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public func byteArray() -> PackedByteArray {
+        _toByteArray()
+    }
 }
 
 // MARK: - Extensions
