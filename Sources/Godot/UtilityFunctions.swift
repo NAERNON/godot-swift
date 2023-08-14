@@ -105,10 +105,6 @@ public func pinpong(_ value: Double, _ length: Double) -> Double {
     _pingpong(value: value, length: length)
 }
 
-// MARK: - Random
-
-// TODO: _randomize(), _seed(base: Int) etc.
-
 // MARK: - Other
 
 public func varToBytes(_ variable: Variant) -> PackedByteArray {
