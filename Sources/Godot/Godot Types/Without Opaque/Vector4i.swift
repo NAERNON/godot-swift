@@ -109,6 +109,40 @@ public struct Vector4i {
     public static func % (lhs: Vector4i, rhs: Vector4i) -> Vector4i {
         Self._operatorModule(lhs, rhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var minAxisIndex: Int {
+        _minAxisIndex()
+    }
+    
+    public var maxAxisIndex: Int {
+        _maxAxisIndex()
+    }
+    
+    public var length: Real {
+        _length()
+    }
+    
+    public var lengthSquared: Int {
+        _lengthSquared()
+    }
+    
+    public var sign: Vector4i {
+        _sign()
+    }
+    
+    public var abs: Vector4i {
+        _abs()
+    }
+    
+    public func clamped(min: Vector4i, max: Vector4i) -> Vector4i {
+        _clamp(min: min, max: max)
+    }
+    
+    public func snapped(step: Vector4i) -> Vector4i {
+        _snapped(step: step)
+    }
 }
 
 // MARK: - Extensions

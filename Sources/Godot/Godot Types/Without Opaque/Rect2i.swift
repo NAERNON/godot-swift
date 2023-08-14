@@ -35,6 +35,60 @@ public struct Rect2i {
     public static func == (lhs: Variant, rhs: Rect2i) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var center: Vector2i {
+        _getCenter()
+    }
+    
+    public var area: Int {
+        _getArea()
+    }
+    
+    public var hasArea: Bool {
+        _hasArea()
+    }
+    
+    public func hasPoint(_ point: Vector2i) -> Bool {
+        _hasPoint(point)
+    }
+    
+    public func intersects(_ other: Rect2i) -> Bool {
+        _intersects(other)
+    }
+    
+    public func encloses(_ other: Rect2i) -> Bool {
+        _encloses(other)
+    }
+    
+    public func intersection(with other: Rect2i) -> Rect2i {
+        _intersection(other)
+    }
+    
+    public func merged(with other: Rect2i) -> Rect2i {
+        _merge(other)
+    }
+    
+    public func expand(to point: Vector2i) -> Rect2i {
+        _expand(to: point)
+    }
+    
+    public func grow(by amount: Int) -> Rect2i {
+        _grow(amount: amount)
+    }
+    
+    public func grow(by amount: Int, side: Int) -> Rect2i {
+        _growSide(side, amount: amount)
+    }
+    
+    public func grow(left: Int, top: Int, right: Int, bottom: Int) -> Rect2i {
+        _growIndividual(left: left, top: top, right: right, bottom: bottom)
+    }
+    
+    public var abs: Rect2i {
+        _abs()
+    }
 }
 
 // MARK: - Extensions

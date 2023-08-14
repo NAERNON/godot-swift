@@ -57,6 +57,163 @@ public struct Projection {
     public static func * (lhs: Projection, rhs: Projection) -> Projection {
         Self._operatorMultiply(lhs, rhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public static func depthCorrection(flipY: Bool) -> Projection {
+        _createDepthCorrection(flipY: flipY)
+    }
+    
+    public static func lightAtlasRect(_ rect: Rect2) -> Projection {
+        _createLightAtlasRect(rect)
+    }
+    
+    public static func perspective(
+        fovy: Real,
+        aspect: Real,
+        zNear: Real,
+        zFar: Real,
+        flipFov: Bool = false
+    ) -> Projection {
+        _createPerspective(fovy: fovy, aspect: aspect, zNear: zNear, zFar: zFar, flipFov: flipFov)
+    }
+    
+    public static func perspectiveHMD(
+        fovy: Real,
+        aspect: Real,
+        zNear: Real,
+        zFar: Real,
+        flipFov: Bool,
+        eye: Int,
+        intraocularDist: Real,
+        convergenceDist: Real
+    ) -> Projection {
+        _createPerspectiveHmd(fovy: fovy, aspect: aspect, zNear: zNear, zFar: zFar, flipFov: flipFov, eye: eye, intraocularDist: intraocularDist, convergenceDist: convergenceDist)
+    }
+    
+    public static func forHMD(
+        eye: Int,
+        aspect: Real,
+        intraocularDist: Real,
+        displayWidth: Real,
+        displayToLens: Real,
+        oversample: Real,
+        zNear: Real,
+        zFar: Real
+    ) -> Projection {
+        _createForHmd(eye: eye, aspect: aspect, intraocularDist: intraocularDist, displayWidth: displayWidth, displayToLens: displayToLens, oversample: oversample, zNear: zNear, zFar: zFar)
+    }
+    
+    public static func orthogonal(
+        left: Real,
+        right: Real,
+        bottom: Real,
+        top: Real,
+        zNear: Real,
+        zFar: Real
+    ) -> Projection {
+        _createOrthogonal(left: left, right: right, bottom: bottom, top: top, zNear: zNear, zFar: zFar)
+    }
+    
+    public static func orthogonalAspect(
+        size: Real,
+        aspect: Real,
+        zNear: Real,
+        zFar: Real,
+        flipFov: Bool = false
+    ) -> Projection {
+        _createOrthogonalAspect(size: size, aspect: aspect, zNear: zNear, zFar: zFar, flipFov: flipFov)
+    }
+    
+    public static func frustum(
+        left: Real,
+        right: Real,
+        bottom: Real,
+        top: Real,
+        zNear: Real,
+        zFar: Real
+    ) -> Projection {
+        _createFrustum(left: left, right: right, bottom: bottom, top: top, zNear: zNear, zFar: zFar)
+    }
+    
+    public static func frustumAspect(
+        size: Real,
+        aspect: Real,
+        offset: Vector2,
+        zNear: Real,
+        zFar: Real,
+        flipFov: Bool = false
+    ) -> Projection {
+        _createFrustumAspect(size: size, aspect: aspect, offset: offset, zNear: zNear, zFar: zFar, flipFov: flipFov)
+    }
+    
+    public static func fitAABB(_ aabb: AABB) -> Projection {
+        _createFitAabb(aabb)
+    }
+    
+    public var determinant: Real {
+        _determinant()
+    }
+    
+    public func perspectiveZNearAdjusted(_ zNear: Real) -> Projection {
+        _perspectiveZnearAdjusted(newZnear: zNear)
+    }
+    
+    public func projectionPlane(_ plane: Int) -> Plane {
+        _getProjectionPlane(plane)
+    }
+    
+    public var flippedY: Projection {
+        _flippedY()
+    }
+    
+    public func jitterOffseted(_ offset: Vector2) -> Projection {
+        _jitterOffseted(offset: offset)
+    }
+    
+    public static func fovY(fovX: Real, aspect: Real) -> Real {
+        _getFovy(fovx: fovX, aspect: aspect)
+    }
+    
+    public var zFar: Real {
+        _getZFar()
+    }
+    
+    public var zNear: Real {
+        _getZNear()
+    }
+    
+    public var aspect: Real {
+        _getAspect()
+    }
+    
+    public var fov: Real {
+        _getFov()
+    }
+    
+    public var isOrthogonal: Bool {
+        _isOrthogonal()
+    }
+    
+    public var viewportHalfExtents: Vector2 {
+        _getViewportHalfExtents()
+    }
+    
+    public var farPlaneHalfExtents: Vector2 {
+        _getFarPlaneHalfExtents()
+    }
+    
+    public var inversed: Projection {
+        _inverse()
+    }
+    
+    public func pixelsPerMetter(forPixelWidth pixelWidth: Int) -> Int {
+        _getPixelsPerMeter(forPixelWidth: pixelWidth)
+    }
+    
+    public var lodMultiplier: Real {
+        _getLodMultiplier()
+    }
 }
 
 // MARK: - Extensions

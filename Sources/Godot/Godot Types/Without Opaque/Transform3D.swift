@@ -82,10 +82,66 @@ public struct Transform3D {
         Self._operatorMultiply(lhs, rhs)
     }
     
-    // MARK: Functions
+    // MARK: Methods & variables
     
-    public func multipliedWith(packedVector3Array: PackedVector3Array) -> PackedVector3Array {
+    public func multiplied(withPackedVector3Array packedVector3Array: PackedVector3Array) -> PackedVector3Array {
         Self._operatorMultiply(self, packedVector3Array)
+    }
+    
+    public var inversed: Transform3D {
+        _inverse()
+    }
+    
+    public var affineInversed: Transform3D {
+        _affineInverse()
+    }
+    
+    public var orthonormalized: Transform3D {
+        _orthonormalized()
+    }
+    
+    public func rotated(by angle: Real, around axis: Vector3) -> Transform3D {
+        _rotated(axis: axis, angle: angle)
+    }
+    
+    public func rotatedLocal(by angle: Real, around axis: Vector3) -> Transform3D {
+        _rotatedLocal(axis: axis, angle: angle)
+    }
+    
+    public func scaled(by scale: Vector3) -> Transform3D {
+        _scaled(scale: scale)
+    }
+    
+    public func scaledLocal(by scale: Vector3) -> Transform3D {
+        _scaledLocal(scale: scale)
+    }
+    
+    public func translated(by offset: Vector3) -> Transform3D {
+        _translated(offset: offset)
+    }
+    
+    public func translatedLocal(by offset: Vector3) -> Transform3D {
+        _translatedLocal(offset: offset)
+    }
+    
+    public func looking(
+        at target: Vector3,
+        up: Vector3 = Vector3(x: 0, y: 1, z: 0),
+        useModelFront: Bool = false
+    ) -> Transform3D {
+        _lookingAt(target: target, up: up, useModelFront: useModelFront)
+    }
+    
+    public func interpolated(with other: Transform3D, weight: Real) -> Transform3D {
+        _interpolateWith(xform: other, weight: weight)
+    }
+    
+    public func isApproximatelyEqual(to other: Transform3D) -> Bool {
+        _isEqualApprox(xform: other)
+    }
+    
+    public var isFinite: Bool {
+        _isFinite()
     }
 }
 

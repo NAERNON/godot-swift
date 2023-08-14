@@ -25,6 +25,108 @@ public struct AABB {
     public static func * (lhs: AABB, rhs: Transform3D) -> AABB {
         Self._operatorMultiply(lhs, rhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var abs: AABB {
+        _abs()
+    }
+    
+    public var center: Vector3 {
+        _getCenter()
+    }
+    
+    public var volume: Real {
+        _getVolume()
+    }
+    
+    public var hasVolume: Bool {
+        _hasVolume()
+    }
+    
+    public var hasSurface: Bool {
+        _hasSurface()
+    }
+    
+    public func hasPoint(_ point: Vector3) -> Bool {
+        _hasPoint(point)
+    }
+    
+    public func isApproximatelyEqual(to other: AABB) -> Bool {
+        _isEqualApprox(aabb: other)
+    }
+    
+    public var isFinite: Bool {
+        _isFinite()
+    }
+    
+    public func intersects(_ other: AABB) -> Bool {
+        _intersects(with: other)
+    }
+    
+    public func encloses(_ other: AABB) -> Bool {
+        _encloses(with: other)
+    }
+    
+    public func intersects(_ plane: Plane) -> Bool {
+        _intersectsPlane(plane)
+    }
+    
+    public func intersection(with other: AABB) -> AABB {
+        _intersection(with: other)
+    }
+    
+    public func merged(with other: AABB) -> AABB {
+        _merge(with: other)
+    }
+    
+    public func expand(to point: Vector3) -> AABB {
+        _expand(toPoint: point)
+    }
+    
+    public func grow(by amount: Real) -> AABB {
+        _grow(by: amount)
+    }
+    
+    public func support(dir: Vector3) -> Vector3 {
+        _getSupport(dir: dir)
+    }
+    
+    public var longestAxis: Vector3 {
+        _getLongestAxis()
+    }
+    
+    public var longestAxisIndex: Int {
+        _getLongestAxisIndex()
+    }
+    
+    public var longestAxisSize: Real {
+        _getLongestAxisSize()
+    }
+    
+    public var shortestAxis: Vector3 {
+        _getShortestAxis()
+    }
+    
+    public var shortestAxisIndex: Int {
+        _getShortestAxisIndex()
+    }
+    
+    public var shortestAxisSize: Real {
+        _getShortestAxisSize()
+    }
+    
+    public func endpoint(index: Int) -> Vector3 {
+        _getEndpoint(idx: index)
+    }
+    
+    public func intersectsSegment(from fromPoint: Vector3, to toPoint: Vector3) -> Variant {
+        _intersectsSegment(from: fromPoint, to: toPoint)
+    }
+    
+    public func intersectsRay(from fromPoint: Vector3, dir: Vector3) -> Variant {
+        _intersectsRay(from: fromPoint, dir: dir)
+    }
 }
 
 // MARK: - Extensions

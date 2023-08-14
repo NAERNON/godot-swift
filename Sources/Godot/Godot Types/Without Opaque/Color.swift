@@ -73,6 +73,111 @@ public struct Color {
     public static func / (lhs: Color, rhs: Color) -> Color {
         Self._operatorDivide(lhs, rhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var argb32: Int {
+        _toArgb32()
+    }
+    
+    public var abgr32: Int {
+        _toAbgr32()
+    }
+    
+    public var rgba32: Int {
+        _toRgba32()
+    }
+    
+    public var argb64: Int {
+        _toArgb64()
+    }
+    
+    public var abgr64: Int {
+        _toAbgr64()
+    }
+    
+    public var rgba64: Int {
+        _toRgba64()
+    }
+    
+    public func html(withAlpha alpha: Bool = true) -> GodotString {
+        _toHtml(withAlpha: alpha)
+    }
+    
+    public func clamped(
+        min: Color = Color(r: 0, g: 0, b: 0, a: 0),
+        max: Color = Color(r: 1, g: 1, b: 1, a: 1)
+    ) -> Color {
+        _clamp(min: min, max: max)
+    }
+    
+    public var inverted: Color {
+        _inverted()
+    }
+    
+    public func lerp(to other: Color, weight: Float) -> Color {
+        _lerp(to: other, weight: weight)
+    }
+    
+    public func lightened(by amount: Float) -> Color {
+        _lightened(amount: amount)
+    }
+    
+    public func darkened(by amount: Float) -> Color {
+        _darkened(amount: amount)
+    }
+    
+    public func blend(over other: Color) -> Color {
+        _blend(over: other)
+    }
+    
+    public var luminance: Float {
+        _getLuminance()
+    }
+    
+    public var srgbToLinear: Color {
+        _srgbToLinear()
+    }
+    
+    public var linearToSRGB: Color {
+        _linearToSrgb()
+    }
+    
+    public func isApproximatelyEqual(to other: Color) -> Bool {
+        _isEqualApprox(to: other)
+    }
+    
+    public static func hex(_ hex: Int) -> Color {
+        _hex(hex)
+    }
+    
+    public static func hex64(_ hex: Int) -> Color {
+        _hex64(hex: hex)
+    }
+    
+    public static func html(rgba: GodotString) -> Color {
+        _html(rgba: rgba)
+    }
+    
+    public static func htmlIsValid(color: GodotString) -> Bool {
+        _htmlIsValid(color: color)
+    }
+    
+    public static func fromString(_ string: GodotString, `default`: Color) -> Color {
+        _fromString(str: string, default: `default`)
+    }
+    
+    public static func fromHSV(h: Float, s: Float, v: Float, alpha: Float = 1.0) -> Color {
+        _fromHsv(h: h, s: s, v: v, alpha: alpha)
+    }
+    
+    public static func fromOkHSL(h: Float, s: Float, l: Float, alpha: Float = 1.0) -> Color {
+        _fromOkHsl(h: h, s: s, l: l, alpha: alpha)
+    }
+    
+    public static func fromRGBE9995(rgbe: Int) -> Color {
+        _fromRgbe9995(rgbe: rgbe)
+    }
 }
 
 // MARK: - Extensions

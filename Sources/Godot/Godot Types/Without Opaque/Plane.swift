@@ -65,6 +65,52 @@ public struct Plane {
     public static func * (lhs: Plane, rhs: Transform3D) -> Plane {
         Self._operatorMultiply(lhs, rhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var normalized: Plane {
+        _normalized()
+    }
+    
+    public var center: Vector3 {
+        _getCenter()
+    }
+    
+    public func isApproximatelyEqual(to other: Plane) -> Bool {
+        _isEqualApprox(toPlane: other)
+    }
+    
+    public var isFinite: Bool {
+        _isFinite()
+    }
+    
+    public func isPointOver(_ point: Vector3) -> Bool {
+        _isPointOver(point: point)
+    }
+    
+    public func distance(to point: Vector3) -> Real {
+        _distanceTo(point: point)
+    }
+    
+    public func hasPoint(_ point: Vector3, tolerance: Real = 1e-05) -> Bool {
+        _hasPoint(point, tolerance: tolerance)
+    }
+    
+    public func project(_ point: Vector3) -> Vector3 {
+        _project(point: point)
+    }
+    
+    public func intersect3(b: Plane, c: Plane) -> Variant {
+        _intersect3(b: b, c: c)
+    }
+    
+    public func intersectsRay(from fromPoint: Vector3, dir: Vector3) -> Variant {
+        _intersectsRay(from: fromPoint, dir: dir)
+    }
+    
+    public func intersectsSegment(from fromPoint: Vector3, to toPoint: Vector3) -> Variant {
+        _intersectsSegment(from: fromPoint, to: toPoint)
+    }
 }
 
 // MARK: - Extensions

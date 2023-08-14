@@ -105,6 +105,44 @@ public struct Vector2i {
     public static func % (lhs: Vector2i, rhs: Vector2i) -> Vector2i {
         Self._operatorModule(lhs, rhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var aspect: Real {
+        _aspect()
+    }
+    
+    public var maxAxisIndex: Int {
+        _maxAxisIndex()
+    }
+    
+    public var minAxisIndex: Int {
+        _minAxisIndex()
+    }
+    
+    public var length: Real {
+        _length()
+    }
+    
+    public var lengthSquared: Int {
+        _lengthSquared()
+    }
+    
+    public var sign: Vector2i {
+        _sign()
+    }
+    
+    public var abs: Vector2i {
+        _abs()
+    }
+    
+    public func clamped(min: Vector2i, max: Vector2i) -> Vector2i {
+        _clamp(min: min, max: max)
+    }
+    
+    public func snapped(step: Vector2i) -> Vector2i {
+        _snapped(step: step)
+    }
 }
 
 // MARK: - Extensions

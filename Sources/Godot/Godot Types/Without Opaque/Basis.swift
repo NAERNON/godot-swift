@@ -59,6 +59,84 @@ public struct Basis {
     public static func * (lhs: Basis, rhs: Basis) -> Basis {
         Self._operatorMultiply(lhs, rhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var inverted: Basis {
+        _inverse()
+    }
+    
+    public var transposed: Basis {
+        _transposed()
+    }
+    
+    public var orthonormalized: Basis {
+        _orthonormalized()
+    }
+    
+    public var determinant: Real {
+        _determinant()
+    }
+    
+    public func rotated(axis: Vector3, angle: Real) -> Basis {
+        _rotated(axis: axis, angle: angle)
+    }
+    
+    public func scaled(_ scale: Vector3) -> Basis {
+        _scaled(scale: scale)
+    }
+    
+    public var scale: Vector3 {
+        _getScale()
+    }
+    
+    public func euler(order: Int = 2) -> Vector3 {
+        _getEuler(order: order)
+    }
+    
+    public func tdotx(_ vector: Vector3) -> Real {
+        _tdotx(with: vector)
+    }
+    
+    public func tdoty(_ vector: Vector3) -> Real {
+        _tdoty(with: vector)
+    }
+    
+    public func tdotz(_ vector: Vector3) -> Real {
+        _tdotz(with: vector)
+    }
+    
+    public func slerp(to other: Basis, weight: Real) -> Basis {
+        _slerp(to: other, weight: weight)
+    }
+    
+    public func isApproximatelyEqual(to other: Basis) -> Bool {
+        _isEqualApprox(other)
+    }
+    
+    public var isFinite: Bool {
+        _isFinite()
+    }
+    
+    public var rotation: Quaternion {
+        _getRotationQuaternion()
+    }
+    
+    public static func looking(
+        at target: Vector3,
+        up: Vector3 = Vector3(x: 0, y: 1, z: 0),
+        useModelFront: Bool = false
+    ) -> Basis {
+        _lookingAt(target: target, up: up, useModelFront: useModelFront)
+    }
+    
+    public static func fromScale(_ scale: Vector3) -> Basis {
+        _fromScale(scale)
+    }
+    
+    public static func fromEuler(_ euler: Vector3, order: Int = 2) -> Basis {
+        _fromEuler(euler, order: order)
+    }
 }
 
 // MARK: - Extensions

@@ -39,6 +39,68 @@ public struct Rect2 {
     public static func * (lhs: Rect2, rhs: Transform2D) -> Rect2 {
         Self._operatorMultiply(lhs, rhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var center: Vector2 {
+        _getCenter()
+    }
+    
+    public var area: Real {
+        _getArea()
+    }
+    
+    public var hasArea: Bool {
+        _hasArea()
+    }
+    
+    public func hasPoint(_ point: Vector2) -> Bool {
+        _hasPoint(point)
+    }
+    
+    public func isApproximatelyEqual(to other: Rect2) -> Bool {
+        _isEqualApprox(rect: other)
+    }
+    
+    public var isFinite: Bool {
+        _isFinite()
+    }
+    
+    public func intersects(_ other: Rect2, includeBorders: Bool = false) -> Bool {
+        _intersects(b: other, includeBorders: includeBorders)
+    }
+    
+    public func encloses(_ other: Rect2) -> Bool {
+        _encloses(other)
+    }
+    
+    public func intersection(with other: Rect2) -> Rect2 {
+        _intersection(other)
+    }
+    
+    public func merged(with other: Rect2) -> Rect2 {
+        _merge(other)
+    }
+    
+    public func expand(to point: Vector2) -> Rect2 {
+        _expand(to: point)
+    }
+    
+    public func grow(by amount: Real) -> Rect2 {
+        _grow(amount: amount)
+    }
+    
+    public func grow(by amount: Real, side: Int) -> Rect2 {
+        _growSide(side, amount: amount)
+    }
+    
+    public func grow(left: Real, top: Real, right: Real, bottom: Real) -> Rect2 {
+        _growIndividual(left: left, top: top, right: right, bottom: bottom)
+    }
+    
+    public var abs: Rect2 {
+        _abs()
+    }
 }
 
 // MARK: - Extensions

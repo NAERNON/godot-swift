@@ -97,6 +97,97 @@ public struct Quaternion {
     public static func * (lhs: Quaternion, rhs: Quaternion) -> Quaternion {
         Self._operatorMultiply(lhs, rhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var length: Real {
+        _length()
+    }
+    
+    public var lengthSquared: Real {
+        _lengthSquared()
+    }
+    
+    public var normalized: Quaternion {
+        _normalized()
+    }
+    
+    public var isNormalized: Bool {
+        _isNormalized()
+    }
+    
+    public func isApproximatelyEqual(to other: Quaternion) -> Bool {
+        _isEqualApprox(to: other)
+    }
+    
+    public var isFinite: Bool {
+        _isFinite()
+    }
+    
+    public var inversed: Quaternion {
+        _inverse()
+    }
+    
+    public var log: Quaternion {
+        _log()
+    }
+    
+    public var exp: Quaternion {
+        _exp()
+    }
+    
+    public func angle(to other: Quaternion) -> Real {
+        _angleTo(other)
+    }
+    
+    public func dot(_ other: Quaternion) -> Real {
+        _dot(with: other)
+    }
+    
+    public func slerp(to other: Quaternion, weight: Real) -> Quaternion {
+        _slerp(to: other, weight: weight)
+    }
+    
+    public func slerpni(to other: Quaternion, weight: Real) -> Quaternion {
+        _slerpni(to: other, weight: weight)
+    }
+    
+    public func sphericalCubicInterpolated(
+        b: Quaternion,
+        preA: Quaternion,
+        postB: Quaternion,
+        weight: Real
+    ) -> Quaternion {
+        _sphericalCubicInterpolate(b: b, preA: preA, postB: postB, weight: weight)
+    }
+    
+    public func sphericalCubicInterpolatedInTime(
+        b: Quaternion,
+        preA: Quaternion,
+        postB: Quaternion,
+        weight: Real,
+        bT: Real,
+        preAT: Real,
+        postBT: Real
+    ) -> Quaternion {
+        _sphericalCubicInterpolateInTime(b: b, preA: preA, postB: postB, weight: weight, bT: bT, preAT: preAT, postBT: postBT)
+    }
+    
+    public func euler(order: Int = 2) -> Vector3 {
+        _getEuler(order: order)
+    }
+    
+    public static func fromEuler(_ euler: Vector3) -> Quaternion {
+        _fromEuler(euler)
+    }
+    
+    public var axis: Vector3 {
+        _getAxis()
+    }
+    
+    public var angle: Real {
+        _getAngle()
+    }
 }
 
 // MARK: - Extensions

@@ -105,6 +105,125 @@ public struct Vector4 {
     public static func * (lhs: Vector4, rhs: Projection) -> Vector4 {
         Self._operatorMultiply(lhs, rhs)
     }
+    
+    // MARK: Methods & variables
+    
+    public var minAxisIndex: Int {
+        _minAxisIndex()
+    }
+    
+    public var maxAxisIndex: Int {
+        _maxAxisIndex()
+    }
+    
+    public var length: Real {
+        _length()
+    }
+    
+    public var lengthSquared: Real {
+        _lengthSquared()
+    }
+    
+    public var abs: Vector4 {
+        _abs()
+    }
+    
+    public var sign: Vector4 {
+        _sign()
+    }
+    
+    public var floor: Vector4 {
+        _floor()
+    }
+    
+    public var ceil: Vector4 {
+        _ceil()
+    }
+    
+    public var rounded: Vector4 {
+        _round()
+    }
+    
+    public func lerp(to other: Vector4, weight: Real) -> Vector4 {
+        _lerp(to: other, weight: weight)
+    }
+    
+    public func cubicInterpolated(
+        b: Vector4,
+        preA: Vector4,
+        postB: Vector4,
+        weight: Real
+    ) -> Vector4 {
+        _cubicInterpolate(b: b, preA: preA, postB: postB, weight: weight)
+    }
+    
+    public func cubicInterpolatedInTime(
+        b: Vector4,
+        preA: Vector4,
+        postB: Vector4,
+        weight: Real,
+        bT: Real,
+        preAT: Real,
+        postBT: Real
+    ) -> Vector4 {
+        _cubicInterpolateInTime(b: b, preA: preA, postB: postB, weight: weight, bT: bT, preAT: preAT, postBT: postBT)
+    }
+    
+    public func posmod(_ mod: Real) -> Vector4 {
+        _posmod(mod: mod)
+    }
+    
+    public func posmodv(_ modv: Vector4) -> Vector4 {
+        _posmodv(modv: modv)
+    }
+    
+    public func snapped(step: Vector4) -> Vector4 {
+        _snapped(step: step)
+    }
+    
+    public func clamped(min: Vector4, max: Vector4) -> Vector4 {
+        _clamp(min: min, max: max)
+    }
+    
+    public var normalized: Vector4 {
+        _normalized()
+    }
+    
+    public var isNormalized: Bool {
+        _isNormalized()
+    }
+    
+    public func direction(to other: Vector4) -> Vector4 {
+        _directionTo(other)
+    }
+    
+    public func distance(to other: Vector4) -> Real {
+        _distanceTo(other)
+    }
+    
+    public func distanceSquared(to other: Vector4) -> Real {
+        _distanceSquaredTo(other)
+    }
+    
+    public func dot(_ other: Vector4) -> Real {
+        _dot(with: other)
+    }
+    
+    public var inversed: Vector4 {
+        _inverse()
+    }
+    
+    public func isApproximatelyEqual(to other: Vector4) -> Bool {
+        _isEqualApprox(to: other)
+    }
+    
+    public var isApproximatelyZero: Bool {
+        _isZeroApprox()
+    }
+    
+    public var isFinite: Bool {
+        _isFinite()
+    }
 }
 
 // MARK: - Extensions

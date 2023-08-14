@@ -94,10 +94,86 @@ public struct Transform2D {
         Self._operatorMultiply(lhs, rhs)
     }
     
-    // MARK: Functions
+    // MARK: Methods & variables
     
-    public func multipliedWith(packedVector2Array: PackedVector2Array) -> PackedVector2Array {
+    public func multiplied(withPackedVector2Array packedVector2Array: PackedVector2Array) -> PackedVector2Array {
         Self._operatorMultiply(self, packedVector2Array)
+    }
+    
+    public var inversed: Transform2D {
+        _inverse()
+    }
+    
+    public var affineInversed: Transform2D {
+        _affineInverse()
+    }
+    
+    public var rotation: Real {
+        _getRotation()
+    }
+    
+    public var scale: Vector2 {
+        _getScale()
+    }
+    
+    public var skew: Real {
+        _getSkew()
+    }
+    
+    public var orthonormalized: Transform2D {
+        _orthonormalized()
+    }
+    
+    public func rotated(by angle: Real) -> Transform2D {
+        _rotated(angle: angle)
+    }
+    
+    public func rotatedLocal(by angle: Real) -> Transform2D {
+        _rotatedLocal(angle: angle)
+    }
+    
+    public func scaled(by scale: Vector2) -> Transform2D {
+        _scaled(scale: scale)
+    }
+    
+    public func scaledLocal(by scale: Vector2) -> Transform2D {
+        _scaledLocal(scale: scale)
+    }
+    
+    public func translated(by offset: Vector2) -> Transform2D {
+        _translated(offset: offset)
+    }
+    
+    public func translatedLocal(by offset: Vector2) -> Transform2D {
+        _translatedLocal(offset: offset)
+    }
+    
+    public var determinant: Real {
+        _determinant()
+    }
+    
+    public func basisMultiplied(with v: Vector2) -> Vector2 {
+        _basisXform(v)
+    }
+    
+    public func basisMultipliedInv(with v: Vector2) -> Vector2 {
+        _basisXformInv(v)
+    }
+    
+    public func interpolated(with other: Transform2D, weight: Real) -> Transform2D {
+        _interpolateWith(xform: other, weight: weight)
+    }
+    
+    public func isApproximatelyEqual(to other: Transform2D) -> Bool {
+        _isEqualApprox(xform: other)
+    }
+    
+    public var isFinite: Bool {
+        _isFinite()
+    }
+    
+    public func looking(at target: Vector2 = Vector2(x: 0, y: 0)) -> Transform2D {
+        _lookingAt(target: target)
     }
 }
 
