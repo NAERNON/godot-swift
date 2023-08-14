@@ -181,8 +181,22 @@ struct GodotBuiltinClass: Decodable {
     
     // MARK: - Syntax
     
+    var useOpaque: Bool {
+        name.isBuiltinGodotClassWithOpaque
+    }
+    
     var identifier: String {
         name.syntax()
+    }
+    
+    var syntaxOptions: GodotTypeSyntaxOptions {
+        if name == "Color" {
+            []
+        } else if useOpaque {
+            [.floatAsDouble]
+        } else {
+            [.floatAsReal]
+        }
     }
     
     func constantsSyntax() -> DeclSyntax {
@@ -205,17 +219,7 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    func constructorsSyntax(
-        useOpaque: Bool,
-        classSize: Int,
-        options: GodotTypeSyntaxOptions
-    ) throws -> MemberDeclListSyntax {
-        if useOpaque {
-            try InitializerDeclSyntax("private init(opaque: Opaque)") {
-                DeclSyntax("self.opaque = opaque")
-            }
-        }
-        
+    func constructorsSyntax(classSize: Int) throws -> MemberDeclListSyntax {
         if hasDestructor {
             DeclSyntax("""
             private static var __destructor: GDExtensionPtrDestructor = {
@@ -225,7 +229,7 @@ struct GodotBuiltinClass: Decodable {
         }
         
         for constructor in constructors {
-            try constructorSyntax(constructor, useOpaque: useOpaque, classSize: classSize, options: options)
+            try constructorSyntax(constructor, classSize: classSize)
                 .with(\.trailingTrivia, .newlines(2))
         }
     }
@@ -233,9 +237,7 @@ struct GodotBuiltinClass: Decodable {
     @MemberDeclListBuilder
     private func constructorSyntax(
         _ constructor: Constructor,
-        useOpaque: Bool,
-        classSize: Int,
-        options: GodotTypeSyntaxOptions
+        classSize: Int
     ) throws -> MemberDeclListSyntax {
         DeclSyntax("""
         private static var \(raw: constructor.ptrIdentifier): GDExtensionPtrConstructor = {
@@ -243,7 +245,7 @@ struct GodotBuiltinClass: Decodable {
         }()
         """)
         
-        try constructor.declSyntax(options: options, translateFunctionName: false) {
+        try constructor.declSyntax(options: syntaxOptions, translateFunctionName: false) {
             let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
             
             if useOpaque {
@@ -277,7 +279,7 @@ struct GodotBuiltinClass: Decodable {
         
         let constructor = PointerConstructor(constructor)
         
-        try constructor.declSyntax(options: options, translateFunctionName: false) {
+        try constructor.declSyntax(options: syntaxOptions, translateFunctionName: false) {
             let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
             
             if useOpaque {
@@ -311,18 +313,15 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    func operatorsSyntax(options: GodotTypeSyntaxOptions) throws -> MemberDeclListSyntax {
+    func operatorsSyntax() throws -> MemberDeclListSyntax {
         for `operator` in operators {
-            try operatorSyntax(`operator`, options: options)
+            try operatorSyntax(`operator`)
                 .with(\.trailingTrivia, .newlines(2))
         }
     }
     
     @MemberDeclListBuilder
-    private func operatorSyntax(
-        _ `operator`: Operator,
-        options: GodotTypeSyntaxOptions
-    ) throws -> MemberDeclListSyntax {
+    private func operatorSyntax(_ `operator`: Operator) throws -> MemberDeclListSyntax {
         let operatorFunction = OperatorFunction(operator: `operator`, type: name)
         
         DeclSyntax("""
@@ -331,7 +330,7 @@ struct GodotBuiltinClass: Decodable {
         }()
         """)
         
-        try operatorFunction.declSyntax(hideAllLabels: true, options: options) {
+        try operatorFunction.declSyntax(hideAllLabels: true, options: syntaxOptions) {
             try `operator`.returnType.instantiationSyntax { instanceType, instanceName in
                 try operatorFunction.argumentsPointerAccessSyntax { pointerNames in
                     try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtrName in
@@ -348,10 +347,7 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    func getterSetterSyntax(
-        useOpaque: Bool,
-        options: GodotTypeSyntaxOptions
-    ) throws -> MemberDeclListSyntax {
+    func getterSetterSyntax() throws -> MemberDeclListSyntax {
         if let indexingReturnType, !isKeyed {
             DeclSyntax("""
             private static var __indexed_setter: GDExtensionPtrIndexedSetter = {
@@ -362,8 +358,8 @@ struct GodotBuiltinClass: Decodable {
             }()
             """)
             
-            try FunctionDeclSyntax("func _getValue(at index: GDExtensionInt) -> \(raw: indexingReturnType.syntax(options: options))") {
-                try indexingReturnType.instantiationSyntax(options: options) { instanceType, instanceName in
+            try FunctionDeclSyntax("func _getValue(at index: GDExtensionInt) -> \(raw: indexingReturnType.syntax(options: syntaxOptions))") {
+                try indexingReturnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
                     try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                         try name.pointerAccessSyntax(instanceName: "self") { selfPtr in
                             DeclSyntax("Self.__indexed_getter(\(raw: selfPtr), index, \(raw: instancePtr))")
@@ -372,7 +368,7 @@ struct GodotBuiltinClass: Decodable {
                 }
             }.addModifier(.init(name: .keyword(.internal)))
             
-            try FunctionDeclSyntax("mutating func _setValue(_ value: \(raw: indexingReturnType.syntax(options: options)), at index: GDExtensionInt)") {
+            try FunctionDeclSyntax("mutating func _setValue(_ value: \(raw: indexingReturnType.syntax(options: syntaxOptions)), at index: GDExtensionInt)") {
                 if useOpaque {
                     DeclSyntax("replaceOpaqueValueIfNecessary()")
                 }
@@ -441,24 +437,17 @@ struct GodotBuiltinClass: Decodable {
     }
     
     @MemberDeclListBuilder
-    func methodsSyntax(
-        useOpaque: Bool,
-        options: GodotTypeSyntaxOptions = []
-    ) throws -> MemberDeclListSyntax {
+    func methodsSyntax() throws -> MemberDeclListSyntax {
         if let methods {
             for method in methods {
-                try methodSyntax(method, useOpaque: useOpaque, options: options)
+                try methodSyntax(method)
                     .with(\.trailingTrivia, .newlines(2))
             }
         }
     }
     
     @MemberDeclListBuilder
-    private func methodSyntax(
-        _ method: Method,
-        useOpaque: Bool,
-        options: GodotTypeSyntaxOptions
-    ) throws -> MemberDeclListSyntax {
+    private func methodSyntax(_ method: Method) throws -> MemberDeclListSyntax {
         DeclSyntax("""
         private static var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod = {
             GodotStringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
@@ -468,13 +457,13 @@ struct GodotBuiltinClass: Decodable {
         """)
         
         let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
-        let functionDecl = try method.declSyntax(underscoreName: true, options: options) {
+        let functionDecl = try method.declSyntax(underscoreName: true, options: syntaxOptions) {
             if method.shouldReplaceOpaqueIfNecessary && useOpaque {
                 DeclSyntax("replaceOpaqueValueIfNecessary()")
             }
             
             if let returnType = method.returnType {
-                try returnType.instantiationSyntax(options: options) { instanceType, instanceName in
+                try returnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
                     try method.argumentsPackPointerAccessSyntax { packName in
                         try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
@@ -506,44 +495,6 @@ struct GodotBuiltinClass: Decodable {
         } else {
             functionDecl
         }
-    }
-    
-    func opaqueValueSyntax() -> DeclSyntax {
-        DeclSyntax("""
-        /// When a function modifies the opaque array or any value associated,
-        /// we should check that the `Opaque` value is uniquely referenced and if not,
-        /// duplicate its value.
-        private mutating func replaceOpaqueValueIfNecessary() {
-            guard !isKnownUniquelyReferenced(&opaque) else {
-                return
-            }
-            
-            self.opaque = self._copiedOpaque().opaque
-        }
-        
-        private var opaque: Opaque
-        
-        public func withUnsafeRawPointer<Result>(
-            _ body: (GDExtensionTypePtr) throws -> Result
-        ) rethrows -> Result {
-            try opaque.withUnsafeMutableRawPointer(body)
-        }
-        
-        /// Passes the memory management of this instance onto Godot.
-        ///
-        /// There is a risk of memory leaking if not correctly used.
-        internal mutating func consumeByGodot(ontoUnsafePointer destination: UnsafeMutableRawPointer) {
-            replaceOpaqueValueIfNecessary()
-            opaque.withUnsafeMutableRawPointer { ptr in
-                destination.copyMemory(from: ptr, byteCount: opaque.size)
-            }
-            opaque.destructorPtr = nil
-        }
-        
-        internal var opaqueDescription: String {
-            opaque.debugDescription
-        }
-        """)
     }
 }
 

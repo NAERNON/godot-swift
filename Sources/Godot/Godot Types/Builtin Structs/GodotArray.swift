@@ -1,6 +1,7 @@
 import GodotExtensionHeaders
 
-extension GodotArray {
+@GodotOpaqueBuiltinClass
+public struct GodotArray {
     public init() {
         self = Self._constructor()
     }
@@ -51,7 +52,7 @@ extension GodotArray {
     
     // MARK: Copy
     
-    internal mutating func _copiedOpaque() -> Self {
+    internal mutating func withCopiedOpaque() -> Self {
         self._duplicate(deep: true)
     }
     

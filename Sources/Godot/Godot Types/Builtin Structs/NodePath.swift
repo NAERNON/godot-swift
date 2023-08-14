@@ -1,6 +1,7 @@
 import GodotExtensionHeaders
 
-extension NodePath {
+@GodotOpaqueBuiltinClass
+public struct NodePath {
     public init() {
         self = Self._constructor()
     }
@@ -19,7 +20,7 @@ extension NodePath {
         
     // MARK: Copy
     
-    internal mutating func _copiedOpaque() -> Self {
+    internal mutating func withCopiedOpaque() -> Self {
         Self._constructor_nodepath(from: self)
     }
         

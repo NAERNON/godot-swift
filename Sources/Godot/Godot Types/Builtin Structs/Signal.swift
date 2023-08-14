@@ -1,6 +1,7 @@
 import GodotExtensionHeaders
 
-extension Signal {
+@GodotOpaqueBuiltinClass
+public struct Signal {
     public init() {
         self = Self._constructor()
     }
@@ -19,7 +20,7 @@ extension Signal {
     
     // MARK: Copy
     
-    internal mutating func _copiedOpaque() -> Self {
+    internal mutating func withCopiedOpaque() -> Self {
         Self._constructor_signal(from: self)
     }
     

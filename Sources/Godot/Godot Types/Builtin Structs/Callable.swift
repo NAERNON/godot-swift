@@ -1,6 +1,7 @@
 import GodotExtensionHeaders
 
-extension Callable {
+@GodotOpaqueBuiltinClass
+public struct Callable {
     public init() {
         self = Self._constructor()
     }
@@ -19,7 +20,7 @@ extension Callable {
     
     // MARK: Copy
     
-    internal mutating func _copiedOpaque() -> Self {
+    internal mutating func withCopiedOpaque() -> Self {
         Self._constructor_callable(from: self)
     }
     

@@ -1,6 +1,7 @@
 import GodotExtensionHeaders
 
-extension GodotDictionary {
+@GodotOpaqueBuiltinClass
+public struct GodotDictionary {
     public init() {
         self = Self._constructor()
     }
@@ -15,7 +16,7 @@ extension GodotDictionary {
     
     // MARK: Copy
     
-    internal mutating func _copiedOpaque() -> Self {
+    internal mutating func withCopiedOpaque() -> Self {
         self._duplicate(deep: true)
     }
     

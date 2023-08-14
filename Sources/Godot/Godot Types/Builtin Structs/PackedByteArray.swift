@@ -1,6 +1,7 @@
 import GodotExtensionHeaders
 
-extension PackedByteArray {
+@GodotOpaqueBuiltinClass
+public struct PackedByteArray {
     public init() {
         self = Self._constructor()
     }
@@ -25,7 +26,7 @@ extension PackedByteArray {
     
     // MARK: Copy
     
-    internal mutating func _copiedOpaque() -> Self {
+    internal mutating func withCopiedOpaque() -> Self {
         self._duplicate()
     }
     

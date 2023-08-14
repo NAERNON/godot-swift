@@ -1,11 +1,12 @@
 import GodotExtensionHeaders
 
-extension PackedVector2Array {
+@GodotOpaqueBuiltinClass
+public struct PackedInt64Array {
     public init() {
         self = Self._constructor()
     }
     
-    public init(_ value: PackedVector2Array) {
+    public init(_ value: PackedInt64Array) {
         self = value
     }
     
@@ -14,22 +15,22 @@ extension PackedVector2Array {
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_packedvector2array(from: godotExtensionPointer)
+        self = Self._ptr_constructor_packedint64array(from: godotExtensionPointer)
     }
     
     // MARK: Copy
     
-    internal mutating func _copiedOpaque() -> Self {
+    internal mutating func withCopiedOpaque() -> Self {
         self._duplicate()
     }
     
     // MARK: Operators
     
-    public static func == (lhs: PackedVector2Array, rhs: Variant) -> Bool {
+    public static func == (lhs: PackedInt64Array, rhs: Variant) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
     
-    public static func == (lhs: Variant, rhs: PackedVector2Array) -> Bool {
+    public static func == (lhs: Variant, rhs: PackedInt64Array) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
     
@@ -42,9 +43,9 @@ extension PackedVector2Array {
 
 // MARK: - Extensions
 
-extension PackedVector2Array: Sequence {}
+extension PackedInt64Array: Sequence {}
 
-extension PackedVector2Array: Collection {
+extension PackedInt64Array: Collection {
     public var startIndex: Int {
         0
     }
@@ -58,32 +59,32 @@ extension PackedVector2Array: Collection {
     }
 }
 
-extension PackedVector2Array: BidirectionalCollection {
+extension PackedInt64Array: BidirectionalCollection {
     public func index(before i: Int) -> Int {
         i-1
     }
 }
 
-extension PackedVector2Array: RandomAccessCollection {}
+extension PackedInt64Array: RandomAccessCollection {}
 
-extension PackedVector2Array: RangeReplaceableCollection {
-    public subscript(index: Int) -> Vector2 {
+extension PackedInt64Array: RangeReplaceableCollection {
+    public subscript(index: Int) -> Int64 {
         get {
-            self._getValue(at: Int64(index))
+            Int64(self._getValue(at: Int64(index)))
         }
         set(newValue) {
-            self._setValue(newValue, at: Int64(index))
+            self._setValue(Int(newValue), at: Int64(index))
         }
     }
     
     public mutating func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
-    where C : Collection, Vector2 == C.Element {
+    where C : Collection, Int64 == C.Element {
         var rangeIndex = subrange.lowerBound
         for (collectionIndex, element) in newElements.enumerated() {
             if collectionIndex + subrange.lowerBound < subrange.upperBound {
                 self[rangeIndex] = element
             } else {
-                self._insert(atIndex: rangeIndex, value: element)
+                self._insert(atIndex: rangeIndex, value: Int(element))
             }
             rangeIndex += 1
         }
@@ -96,21 +97,21 @@ extension PackedVector2Array: RangeReplaceableCollection {
     }
 }
 
-extension PackedVector2Array: MutableCollection {}
+extension PackedInt64Array: MutableCollection {}
 
-extension PackedVector2Array: ExpressibleByArrayLiteral {
-    public init(arrayLiteral elements: Vector2...) {
+extension PackedInt64Array: ExpressibleByArrayLiteral {
+    public init(arrayLiteral elements: Int64...) {
         self.init(elements)
     }
 }
 
-extension PackedVector2Array: Equatable {
-    public static func == (lhs: PackedVector2Array, rhs: PackedVector2Array) -> Bool {
+extension PackedInt64Array: Equatable {
+    public static func == (lhs: PackedInt64Array, rhs: PackedInt64Array) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
 }
 
-extension PackedVector2Array: Codable {
+extension PackedInt64Array: Codable {
     public func encode(to encoder: Encoder) throws {
         try self.map { $0 }.encode(to: encoder)
     }

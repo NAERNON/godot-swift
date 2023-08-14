@@ -1,6 +1,7 @@
 import GodotExtensionHeaders
 
-extension GodotStringName {
+@GodotOpaqueBuiltinClass
+public struct GodotStringName {
     public init() {
         self = Self._constructor()
     }
@@ -40,7 +41,7 @@ extension GodotStringName {
     
     // MARK: Copy
     
-    internal mutating func _copiedOpaque() -> Self {
+    internal mutating func withCopiedOpaque() -> Self {
         Self._constructor_godotstringname(from: self)
     }
     

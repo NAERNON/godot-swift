@@ -10,5 +10,6 @@ struct GodotMacrosPlugin: CompilerPlugin {
         GodotRefCountedClassMacro.self,
         GodotRootClassMacro.self,
         GodotRefCountedRootClassMacro.self,
+        GodotOpaqueBuiltinClassMacro.self,
     ]
 }

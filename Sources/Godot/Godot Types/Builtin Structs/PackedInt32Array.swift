@@ -1,11 +1,12 @@
 import GodotExtensionHeaders
 
-extension PackedStringArray {
+@GodotOpaqueBuiltinClass
+public struct PackedInt32Array {
     public init() {
         self = Self._constructor()
     }
     
-    public init(_ value: PackedStringArray) {
+    public init(_ value: PackedInt32Array) {
         self = value
     }
     
@@ -14,22 +15,22 @@ extension PackedStringArray {
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_packedstringarray(from: godotExtensionPointer)
+        self = Self._ptr_constructor_packedint32array(from: godotExtensionPointer)
     }
     
     // MARK: Copy
     
-    internal mutating func _copiedOpaque() -> Self {
+    internal mutating func withCopiedOpaque() -> Self {
         self._duplicate()
     }
     
     // MARK: Operators
     
-    public static func == (lhs: PackedStringArray, rhs: Variant) -> Bool {
+    public static func == (lhs: PackedInt32Array, rhs: Variant) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
     
-    public static func == (lhs: Variant, rhs: PackedStringArray) -> Bool {
+    public static func == (lhs: Variant, rhs: PackedInt32Array) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
     
@@ -42,9 +43,9 @@ extension PackedStringArray {
 
 // MARK: - Extensions
 
-extension PackedStringArray: Sequence {}
+extension PackedInt32Array: Sequence {}
 
-extension PackedStringArray: Collection {
+extension PackedInt32Array: Collection {
     public var startIndex: Int {
         0
     }
@@ -58,32 +59,32 @@ extension PackedStringArray: Collection {
     }
 }
 
-extension PackedStringArray: BidirectionalCollection {
+extension PackedInt32Array: BidirectionalCollection {
     public func index(before i: Int) -> Int {
         i-1
     }
 }
 
-extension PackedStringArray: RandomAccessCollection {}
+extension PackedInt32Array: RandomAccessCollection {}
 
-extension PackedStringArray: RangeReplaceableCollection {
-    public subscript(index: Int) -> GodotString {
+extension PackedInt32Array: RangeReplaceableCollection {
+    public subscript(index: Int) -> Int32 {
         get {
-            self._getValue(at: Int64(index))
+            Int32(self._getValue(at: Int64(index)))
         }
         set(newValue) {
-            self._setValue(newValue, at: Int64(index))
+            self._setValue(Int(newValue), at: Int64(index))
         }
     }
     
     public mutating func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
-    where C : Collection, GodotString == C.Element {
+    where C : Collection, Int32 == C.Element {
         var rangeIndex = subrange.lowerBound
         for (collectionIndex, element) in newElements.enumerated() {
             if collectionIndex + subrange.lowerBound < subrange.upperBound {
                 self[rangeIndex] = element
             } else {
-                self._insert(atIndex: rangeIndex, value: element)
+                self._insert(atIndex: rangeIndex, value: Int(element))
             }
             rangeIndex += 1
         }
@@ -96,21 +97,21 @@ extension PackedStringArray: RangeReplaceableCollection {
     }
 }
 
-extension PackedStringArray: MutableCollection {}
+extension PackedInt32Array: MutableCollection {}
 
-extension PackedStringArray: ExpressibleByArrayLiteral {
-    public init(arrayLiteral elements: GodotString...) {
+extension PackedInt32Array: ExpressibleByArrayLiteral {
+    public init(arrayLiteral elements: Int32...) {
         self.init(elements)
     }
 }
 
-extension PackedStringArray: Equatable {
-    public static func == (lhs: PackedStringArray, rhs: PackedStringArray) -> Bool {
+extension PackedInt32Array: Equatable {
+    public static func == (lhs: PackedInt32Array, rhs: PackedInt32Array) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
 }
 
-extension PackedStringArray: Codable {
+extension PackedInt32Array: Codable {
     public func encode(to encoder: Encoder) throws {
         try self.map { $0 }.encode(to: encoder)
     }

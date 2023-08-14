@@ -1,11 +1,12 @@
 import GodotExtensionHeaders
 
-extension PackedColorArray {
+@GodotOpaqueBuiltinClass
+public struct PackedVector3Array {
     public init() {
         self = Self._constructor()
     }
     
-    public init(_ value: PackedColorArray) {
+    public init(_ value: PackedVector3Array) {
         self = value
     }
     
@@ -14,22 +15,22 @@ extension PackedColorArray {
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_packedcolorarray(from: godotExtensionPointer)
+        self = Self._ptr_constructor_packedvector3array(from: godotExtensionPointer)
     }
     
     // MARK: Copy
     
-    internal mutating func _copiedOpaque() -> Self {
+    internal mutating func withCopiedOpaque() -> Self {
         self._duplicate()
     }
     
     // MARK: Operators
     
-    public static func == (lhs: PackedColorArray, rhs: Variant) -> Bool {
+    public static func == (lhs: PackedVector3Array, rhs: Variant) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
     
-    public static func == (lhs: Variant, rhs: PackedColorArray) -> Bool {
+    public static func == (lhs: Variant, rhs: PackedVector3Array) -> Bool {
         Self._operatorEqual(rhs, lhs)
     }
     
@@ -42,9 +43,9 @@ extension PackedColorArray {
 
 // MARK: - Extensions
 
-extension PackedColorArray: Sequence {}
+extension PackedVector3Array: Sequence {}
 
-extension PackedColorArray: Collection {
+extension PackedVector3Array: Collection {
     public var startIndex: Int {
         0
     }
@@ -58,16 +59,16 @@ extension PackedColorArray: Collection {
     }
 }
 
-extension PackedColorArray: BidirectionalCollection {
+extension PackedVector3Array: BidirectionalCollection {
     public func index(before i: Int) -> Int {
         i-1
     }
 }
 
-extension PackedColorArray: RandomAccessCollection {}
+extension PackedVector3Array: RandomAccessCollection {}
 
-extension PackedColorArray: RangeReplaceableCollection {
-    public subscript(index: Int) -> Color {
+extension PackedVector3Array: RangeReplaceableCollection {
+    public subscript(index: Int) -> Vector3 {
         get {
             self._getValue(at: Int64(index))
         }
@@ -77,7 +78,7 @@ extension PackedColorArray: RangeReplaceableCollection {
     }
     
     public mutating func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
-    where C : Collection, Color == C.Element {
+    where C : Collection, Vector3 == C.Element {
         var rangeIndex = subrange.lowerBound
         for (collectionIndex, element) in newElements.enumerated() {
             if collectionIndex + subrange.lowerBound < subrange.upperBound {
@@ -96,21 +97,21 @@ extension PackedColorArray: RangeReplaceableCollection {
     }
 }
 
-extension PackedColorArray: MutableCollection {}
+extension PackedVector3Array: MutableCollection {}
 
-extension PackedColorArray: ExpressibleByArrayLiteral {
-    public init(arrayLiteral elements: Color...) {
+extension PackedVector3Array: ExpressibleByArrayLiteral {
+    public init(arrayLiteral elements: Vector3...) {
         self.init(elements)
     }
 }
 
-extension PackedColorArray: Equatable {
-    public static func == (lhs: PackedColorArray, rhs: PackedColorArray) -> Bool {
+extension PackedVector3Array: Equatable {
+    public static func == (lhs: PackedVector3Array, rhs: PackedVector3Array) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
 }
 
-extension PackedColorArray: Codable {
+extension PackedVector3Array: Codable {
     public func encode(to encoder: Encoder) throws {
         try self.map { $0 }.encode(to: encoder)
     }

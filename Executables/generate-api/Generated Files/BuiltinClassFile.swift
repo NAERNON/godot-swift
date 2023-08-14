@@ -8,29 +8,38 @@ extension GeneratedFile {
         with configuration: BuildConfiguration
     ) -> GeneratedFile {
         .init(path: "Builtin Structs/" + builtinClass.identifier + "+Bindings.swift") {
-            let useOpaque = builtinClass.name.isBuiltinGodotClassWithOpaque
             let classSize = extensionAPI.builtinClassSizes.size(ofClass: builtinClass.name, for: configuration)!
             
             DeclSyntax("import GodotExtensionHeaders")
             
-            if useOpaque {
-                try StructDeclSyntax("public struct \(raw: builtinClass.identifier)") {
-                    try bodySyntax(
-                        builtinClass: builtinClass,
-                        useOpaque: useOpaque,
-                        classSize: classSize,
-                        extensionAPI: extensionAPI
-                    )
-                }
-            } else {
-                try ExtensionDeclSyntax("public extension \(raw: builtinClass.identifier)") {
-                    try bodySyntax(
-                        builtinClass: builtinClass,
-                        useOpaque: useOpaque,
-                        classSize: classSize,
-                        extensionAPI: extensionAPI
-                    )
-                }
+            try ExtensionDeclSyntax("public extension \(raw: builtinClass.identifier)") {
+                builtinClass.constantsSyntax()
+                    .with(\.leadingTrivia, .newline)
+                    .with(\.trailingTrivia, .newlines(2))
+                
+                builtinClass.enumSyntax()
+                    .with(\.leadingTrivia, .newline)
+                    .with(\.trailingTrivia, .newlines(2))
+                
+                try builtinClass.constructorsSyntax(classSize: classSize)
+                    .with(\.leadingTrivia, .newline)
+                    .with(\.trailingTrivia, .newlines(2))
+                
+                try builtinClass.operatorsSyntax()
+                    .with(\.leadingTrivia, .newline)
+                    .with(\.trailingTrivia, .newlines(2))
+                
+                try builtinClass.getterSetterSyntax()
+                    .with(\.leadingTrivia, .newline)
+                    .with(\.trailingTrivia, .newlines(2))
+                
+                builtinClass.keyGetterSetterSyntax()
+                    .with(\.leadingTrivia, .newline)
+                    .with(\.trailingTrivia, .newlines(2))
+                
+                try builtinClass.methodsSyntax()
+                    .with(\.leadingTrivia, .newline)
+                    .with(\.trailingTrivia, .newlines(2))
             }
             
             DeclSyntax("""
@@ -40,54 +49,6 @@ extension GeneratedFile {
                 }
             }
             """).with(\.leadingTrivia, .newlines(2))
-        }
-    }
-    
-    @MemberDeclListBuilder
-    private static func bodySyntax(
-        builtinClass: GodotBuiltinClass,
-        useOpaque: Bool,
-        classSize: Int,
-        extensionAPI: GodotExtensionAPI
-    ) throws -> MemberDeclListSyntax {
-        let options: GodotTypeSyntaxOptions = if builtinClass.name == "Color" {
-            []
-        } else if useOpaque {
-            [.floatAsDouble]
-        } else {
-            [.floatAsReal]
-        }
-        
-        builtinClass.constantsSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        builtinClass.enumSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try builtinClass.constructorsSyntax(useOpaque: useOpaque, classSize: classSize, options: options)
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try builtinClass.operatorsSyntax(options: options)
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try builtinClass.getterSetterSyntax(useOpaque: useOpaque, options: options)
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        builtinClass.keyGetterSetterSyntax()
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        try builtinClass.methodsSyntax(useOpaque: useOpaque, options: options)
-            .with(\.leadingTrivia, .newline)
-            .with(\.trailingTrivia, .newlines(2))
-        
-        if builtinClass.name.isBuiltinGodotClassWithOpaque {
-            builtinClass.opaqueValueSyntax()
         }
     }
 }
