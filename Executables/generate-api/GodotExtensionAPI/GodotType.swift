@@ -519,6 +519,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             "var \(raw: variableName): GDExtensionObjectPtr!"
         } else if isEnum {
             "var \(raw: variableName) = \(raw: syntax(options: options)).RawValue(0)"
+        } else if isBuiltinGodotClassWithOpaque || self == .variant {
+            "let \(raw: variableName) = \(raw: syntax(options: options))()"
         } else {
             "var \(raw: variableName) = \(raw: syntax(options: options))()"
         }
