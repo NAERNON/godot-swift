@@ -21,12 +21,12 @@ public enum BridgeMacro: ConformanceMacro, PeerMacro {
         providingPeersOf declaration: some DeclSyntaxProtocol,
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
-        if let classDecl = declaration.as(ClassDeclSyntax.self) {
-            return [libInitDecl(identifier: classDecl.identifier)]
-        } else if let classDecl = declaration.as(StructDeclSyntax.self) {
-            return [libInitDecl(identifier: classDecl.identifier)]
-        } else if let classDecl = declaration.as(EnumDeclSyntax.self) {
-            return [libInitDecl(identifier: classDecl.identifier)]
+        if let decl = declaration.as(ClassDeclSyntax.self) {
+            return [libInitDecl(identifier: decl.identifier)]
+        } else if let decl = declaration.as(StructDeclSyntax.self) {
+            return [libInitDecl(identifier: decl.identifier)]
+        } else if let decl = declaration.as(EnumDeclSyntax.self) {
+            return [libInitDecl(identifier: decl.identifier)]
         }
         
         let diagnostic = Diagnostic(
