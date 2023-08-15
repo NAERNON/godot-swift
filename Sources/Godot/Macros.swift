@@ -20,7 +20,7 @@ public macro Exposable() = #externalMacro(module: "GodotMacros", type: "Exposabl
 /// and creates a C function that will serve as the entry point for Godot.
 ///
 /// Learn how to create a bridge: <doc:CreatingGodotBridge>.
-@attached(conformance)
+@attached(extension, conformances: GodotBridge)
 @attached(peer, names: suffixed(_godot_init))
 public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro")
 

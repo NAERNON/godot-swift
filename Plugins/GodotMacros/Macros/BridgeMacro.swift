@@ -3,15 +3,26 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
-public enum BridgeMacro: ConformanceMacro, PeerMacro {
+public enum BridgeMacro: ExtensionMacro, PeerMacro {
     // MARK: Conformance
     
     public static func expansion(
         of node: AttributeSyntax,
-        providingConformancesOf declaration: some DeclGroupSyntax,
+        attachedTo declaration: some DeclGroupSyntax,
+        providingExtensionsOf type: some TypeSyntaxProtocol,
+        conformingTo protocols: [TypeSyntax],
         in context: some MacroExpansionContext
-    ) throws -> [(TypeSyntax, GenericWhereClauseSyntax?)] {
-        [("GodotBridge", nil)]
+    ) throws -> [ExtensionDeclSyntax] {
+        let sendableExtension: DeclSyntax =
+        """
+        extension \(type.trimmed): GodotBridge {}
+        """
+        
+        guard let extensionDecl = sendableExtension.as(ExtensionDeclSyntax.self) else {
+            return []
+        }
+        
+        return [extensionDecl]
     }
     
     // MARK: Peer
