@@ -494,7 +494,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// let type: GodotType = ...
     ///
     /// type.instantiationSyntax { instanceType, name in
-    ///     DeclSyntax("print(\(raw: name), \(raw: instanceType.self))")
+    ///     "print(\(raw: name), \(raw: instanceType.self))"
     /// }
     /// ```
     ///
@@ -502,9 +502,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ///
     /// ```swift
     /// var __temporary = Int()
-    ///
     /// print(__temporary, Int.self)
-    ///
     /// return __temporary
     /// ```
     ///
@@ -518,11 +516,11 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         let variableName = "__temporary"
         
         if isGodotClass {
-            DeclSyntax("var \(raw: variableName): GDExtensionObjectPtr!")
+            "var \(raw: variableName): GDExtensionObjectPtr!"
         } else if isEnum {
-            DeclSyntax("var \(raw: variableName) = \(raw: syntax(options: options)).RawValue(0)")
+            "var \(raw: variableName) = \(raw: syntax(options: options)).RawValue(0)"
         } else {
-            DeclSyntax("var \(raw: variableName) = \(raw: syntax(options: options))()")
+            "var \(raw: variableName) = \(raw: syntax(options: options))()"
         }
         
         let type: GodotType = isGodotClass ? "GDExtensionObjectPtr" : self
@@ -530,11 +528,11 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         try bodyBuilder(type, variableName)
         
         if isGodotClass {
-            DeclSyntax("return \(raw: syntax(options: options)).retreivedInstanceManagedByGodot(\(raw: variableName))")
+            "return \(raw: syntax(options: options)).retreivedInstanceManagedByGodot(\(raw: variableName))"
         } else if isEnum {
-            DeclSyntax("return \(raw: syntax(options: options))(rawValue: \(raw: variableName))!")
+            "return \(raw: syntax(options: options))(rawValue: \(raw: variableName))!"
         } else {
-            DeclSyntax("return \(raw: variableName)")
+            "return \(raw: variableName)"
         }
     }
     
@@ -616,29 +614,74 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         let instanceName = CodeLanguage.swift.protectNameIfKeyword(for: instanceName)
         
         if isGodotClass || isBuiltinGodotClassWithOpaque || self == .variant {
-            DeclSyntax("\(raw: instanceName).withUnsafeRawPointer { \(raw: pointerName) in")
+            let closure = try ClosureExprSyntax(
+                signature: .init(parameterClause: .parameterClause(.init(parameters: [
+                    "\(raw: pointerName)"
+                ])))
+            ) {
+                try bodyBuilder(pointerName)
+            }
             
-            try bodyBuilder(pointerName)
-            
-            DeclSyntax("}")
+            FunctionCallExprSyntax(
+                calledExpression: DeclReferenceExprSyntax(baseName: "\(raw: instanceName).withUnsafeRawPointer"),
+                arguments: [],
+                trailingClosure: closure
+            )
         } else if isPointer {
             try bodyBuilder(instanceName)
         } else {
             switch mutability {
             case .const:
-                DeclSyntax("withUnsafePointer(to: \(raw: instanceName)) { \(raw: pointerName) in")
+                let closure = try ClosureExprSyntax(
+                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
+                        "\(raw: pointerName)"
+                    ])))
+                ) {
+                    try bodyBuilder(pointerName)
+                }
+                
+                FunctionCallExprSyntax(
+                    calledExpression: DeclReferenceExprSyntax(
+                        baseName: "withUnsafePointer(to: \(raw: instanceName))"
+                    ),
+                    arguments: [],
+                    trailingClosure: closure
+                )
             case .mutable:
-                DeclSyntax("withUnsafeMutablePointer(to: &\(raw: instanceName)) { \(raw: pointerName) in")
+                let closure = try ClosureExprSyntax(
+                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
+                        "\(raw: pointerName)"
+                    ])))
+                ) {
+                    try bodyBuilder(pointerName)
+                }
+                
+                FunctionCallExprSyntax(
+                    calledExpression: DeclReferenceExprSyntax(
+                        baseName: "withUnsafeMutablePointer(to: &\(raw: instanceName))"
+                    ),
+                    arguments: [],
+                    trailingClosure: closure
+                )
             case .constMutablePointer:
-                DeclSyntax("""
-                withUnsafePointer(to: \(raw: instanceName)) {
-                    let \(raw: pointerName) = UnsafeMutableRawPointer(mutating: $0)
-                """)
+                let closure = try ClosureExprSyntax(
+                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
+                        "_\(raw: pointerName)"
+                    ])))
+                ) {
+                    "let \(raw: pointerName) = UnsafeMutableRawPointer(mutating: _\(raw: pointerName))"
+                    
+                    try bodyBuilder(pointerName)
+                }
+                
+                FunctionCallExprSyntax(
+                    calledExpression: DeclReferenceExprSyntax(
+                        baseName: "withUnsafePointer(to: \(raw: instanceName))"
+                    ),
+                    arguments: [],
+                    trailingClosure: closure
+                )
             }
-            
-            try bodyBuilder(pointerName)
-            
-            DeclSyntax("}")
         }
     }
 }

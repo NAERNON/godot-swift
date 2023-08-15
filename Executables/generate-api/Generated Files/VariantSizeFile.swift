@@ -13,11 +13,9 @@ extension GeneratedFile {
         }
         
         return .init(path: "VariantSize.swift") {
-            DeclSyntax("""
-            extension Variant {
-                internal static let opaqueSize: Int = \(raw: classSize)
+            try ExtensionDeclSyntax("extension Variant") {
+                "internal static let opaqueSize: Int = \(raw: classSize)"
             }
-            """)
         }
     }
 }

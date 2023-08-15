@@ -123,17 +123,17 @@ struct GodotClass: Decodable {
         .floatAsDouble
     }
     
-    @MemberDeclListBuilder
-    func enumSyntax() -> MemberDeclListSyntax {
+    @MemberBlockItemListBuilder
+    func enumSyntax() throws -> MemberBlockItemListSyntax {
         if let enums {
             for `enum` in enums {
-                `enum`.syntax()
+                try `enum`.syntax()
             }
         }
     }
     
-    @MemberDeclListBuilder
-    func methodsSyntax() throws -> MemberDeclListSyntax {
+    @MemberBlockItemListBuilder
+    func methodsSyntax() throws -> MemberBlockItemListSyntax {
         if let methods {
             for method in methods {
                 try methodSyntax(method)
@@ -142,7 +142,7 @@ struct GodotClass: Decodable {
         }
     }
     
-    private func methodSyntax(_ method: Method) throws -> MemberDeclListSyntax {
+    private func methodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
         if method.isVirtual {
             return try virtualMethodSyntax(method)
         } else {
@@ -174,9 +174,9 @@ struct GodotClass: Decodable {
         }
     }
     
-    @MemberDeclListBuilder
-    private func standardMethodSyntax(_ method: Method) throws -> MemberDeclListSyntax {
-        DeclSyntax("""
+    @MemberBlockItemListBuilder
+    private func standardMethodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
+        """
         private static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
             __staticClassName.withUnsafeRawPointer { __ptr__class_name in
             GodotStringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
@@ -184,18 +184,18 @@ struct GodotClass: Decodable {
             }
             }
         }()
-        """)
+        """
         
-        try method.declSyntax(options: syntaxOptions) {
+        try method.declSyntax(options: syntaxOptions, keywords: methodControlAccessKeyword(method)) {
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
                     try method.argumentsPackPointerAccessSyntax { packName in
                         try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
-                                DeclSyntax("gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), \(raw: instancePtr))")
+                                "gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), \(raw: instancePtr))"
                             } else {
                                 try name.pointerAccessSyntax(instanceName: "self", mutability: .constMutablePointer) { selfPtr in
-                                    DeclSyntax("gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), \(raw: instancePtr))")
+                                    "gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), \(raw: instancePtr))"
                                 }
                             }
                         }
@@ -204,40 +204,38 @@ struct GodotClass: Decodable {
             } else {
                 try method.argumentsPackPointerAccessSyntax { packName in
                     if method.isStatic {
-                        DeclSyntax("gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), nil)")
+                        "gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), nil)"
                     } else {
                         try name.pointerAccessSyntax(instanceName: "self", mutability: .constMutablePointer) { selfPtr in
-                            DeclSyntax("gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), nil)")
+                            "gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), nil)"
                         }
                     }
                 }
             }
         }
-        .addModifier(.init(name: .keyword(methodControlAccessKeyword(method))))
     }
     
-    @MemberDeclListBuilder
-    private func virtualMethodSyntax(_ method: Method) throws -> MemberDeclListSyntax {
-        try method.declSyntax(options: syntaxOptions) {
+    @MemberBlockItemListBuilder
+    private func virtualMethodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
+        try method.declSyntax(options: syntaxOptions, keywords: .open) {
             if let returnType = method.returnType {
                 if returnType.isGodotClass
                     || returnType == .variant
                     || returnType.isOptional {
-                    DeclSyntax("nil")
+                    "nil"
                 } else if returnType.isEnum {
-                    DeclSyntax("\(raw: returnType.syntax(options: syntaxOptions))(rawValue: 0)!")
+                    "\(raw: returnType.syntax(options: syntaxOptions))(rawValue: 0)!"
                 } else if returnType.isPointer {
-                    DeclSyntax("fatalError(\"No default value provided for pointers.\")")
+                    "fatalError(\"No default value provided for pointers.\")"
                 } else {
-                    DeclSyntax("\(raw: returnType.syntax(options: syntaxOptions))()")
+                    "\(raw: returnType.syntax(options: syntaxOptions))()"
                 }
             }
         }
-        .addModifier(.init(name: .keyword(.open)))
     }
     
-    @MemberDeclListBuilder
-    func propertiesSyntax() throws -> MemberDeclListSyntax {
+    @MemberBlockItemListBuilder
+    func propertiesSyntax() throws -> MemberBlockItemListSyntax {
         if let properties {
             for property in properties {
                 if let syntax = try propertySyntax(property) {
@@ -273,59 +271,54 @@ struct GodotClass: Decodable {
         }
         
         return try VariableDeclSyntax("open var \(raw: propertyName): \(raw: typeSyntax)") {
-            DeclSyntax(
             """
             get {
                 \(raw: getter.callSyntax(withParameters: [getterParameter].compactMap { $0 }))
             }
             """
-            )
             
             if let setter {
-                DeclSyntax(
                 """
                 set {
                     \(raw: setter.callSyntax(withParameters: ["newValue"]))
                 }
                 """
-                )
             }
         }
     }
         
     func setVirtualFunctionBindingsSyntax() throws -> FunctionDeclSyntax {
-        try FunctionDeclSyntax("internal \(isRootClass ? "" : "override ")class func setVirtualFunctionCalls(_ body: (GodotStringName, GDExtensionClassCallVirtual) -> Void)") {
+        try FunctionDeclSyntax("internal \(raw: isRootClass ? "" : "override ")class func setVirtualFunctionCalls(_ body: (GodotStringName, GDExtensionClassCallVirtual) -> Void)")
+        {
             if !isRootClass {
-                DeclSyntax("super.setVirtualFunctionCalls(body)")
+                "super.setVirtualFunctionCalls(body)"
             }
             
             if let methods {
                 let virtualMethods = methods.filter(\.isVirtual)
                 if !virtualMethods.isEmpty {
-                    ExprSyntax("var _method_name: GodotStringName!") // TODO: Don't declare the method name here but directly in the body
                     
                     for method in virtualMethods {
                         let arguments = method.arguments ?? []
                         
-                        ExprSyntax("_method_name = \(literal: method.name)")
-                        DeclSyntax("""
-                        body(_method_name, { instancePtr, args, returnPtr in
+                        """
+                        body(\(literal: method.name), { instancePtr, args, returnPtr in
                         guard let instancePtr\(raw: arguments.isEmpty ? "" : ", let args") else { return }
                         let instance = Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
                         var \(raw: method.returnValue == nil ? "_" : "returnValue") = instance
-                        """)
+                        """
                         
                         let parameters: [String] = arguments.enumerated().map { (index, argument) in
                             argument.type.instantiationFromPointerSyntax(pointerName: "args[\(index)]!", options: syntaxOptions)
                         }
                         
-                        DeclSyntax(".\(raw: method.callSyntax(withParameters: parameters))")
+                        ".\(raw: method.callSyntax(withParameters: parameters))"
                         
                         if let returnType = method.returnValue?.type {
-                            DeclSyntax("\(raw: returnType.sendToPointerSyntax(instanceName: "returnValue", pointerName: "returnPtr!", options: syntaxOptions))")
+                            "\(raw: returnType.sendToPointerSyntax(instanceName: "returnValue", pointerName: "returnPtr!", options: syntaxOptions))"
                         }
                         
-                        DeclSyntax("})")
+                        "})"
                     }
                 }
             }

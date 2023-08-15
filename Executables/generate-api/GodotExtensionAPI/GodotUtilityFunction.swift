@@ -47,19 +47,19 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
     }
     
     func extensionFunctionPointerSyntax() -> DeclSyntax {
-        DeclSyntax("""
+        """
         private var \(raw: ptrIdentifier): GDExtensionPtrUtilityFunction = {
             GodotStringName(swiftString: \(literal: baseName)).withUnsafeRawPointer { __ptr__method_name in
             return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, \(literal: hash))!
             }
         }()
-        """)
+        """
     }
     
     func syntax() throws -> FunctionDeclSyntax {
         let options: GodotTypeSyntaxOptions = .floatAsDouble
         
-        return try declSyntax(underscoreName: true, options: options) {
+        return try declSyntax(underscoreName: true, options: options, keywords: .internal) {
             if let returnType = returnType {
                 try returnType.instantiationSyntax(options: options) { instanceType, instanceName in
                     try argumentsPackPointerAccessSyntax { packName in
@@ -67,20 +67,15 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
                             instanceName: instanceName,
                             mutability: .mutable
                         ) { instancePointerName in
-                            DeclSyntax("""
-                            \(raw: ptrIdentifier)(\(raw: instancePointerName), \(raw: packName), \(raw: argumentsCountSyntax))
-                            """)
+                            "\(raw: ptrIdentifier)(\(raw: instancePointerName), \(raw: packName), \(raw: argumentsCountSyntax))"
                         }
                     }
                 }
             } else {
                 try argumentsPackPointerAccessSyntax { packName in
-                    DeclSyntax("""
-                    \(raw: ptrIdentifier)(nil, \(raw: packName), \(raw: argumentsCountSyntax))
-                    """)
+                    "\(raw: ptrIdentifier)(nil, \(raw: packName), \(raw: argumentsCountSyntax))"
                 }
             }
         }
-        .addModifier(.init(name: .keyword(.internal)))
     }
 }

@@ -5,7 +5,7 @@ extension GeneratedFile {
         .init(path: "RegisterGodotClasses.swift") {
             try ExtensionDeclSyntax("internal extension ClassRegister") {
                 try FunctionDeclSyntax("func registerGodotClasses(forLevel level: GodotInitializationLevel)") {
-                    DeclSyntax("""
+                    """
                     switch level {
                     case .core:
                     \(raw: classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .core))
@@ -18,7 +18,7 @@ extension GeneratedFile {
                     case .level:
                     \(raw: classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .level))
                     }
-                    """)
+                    """
                 }
             }
         }

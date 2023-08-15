@@ -9,8 +9,8 @@ struct GodotNativeStructure: Decodable {
     var name: String
     var format: StructureFormat
     
-    @MemberDeclListBuilder
-    func propertiesSyntax() -> MemberDeclListSyntax {
+    @MemberBlockItemListBuilder
+    func propertiesSyntax() -> MemberBlockItemListSyntax {
         for element in format.elements {
             element.propertyDecl
         }
@@ -65,7 +65,7 @@ extension GodotNativeStructure {
                     varString += " = " + defaultValue.syntax(forType: type)
                 }
                 
-                return DeclSyntax("\(raw: varString)")
+                return "\(raw: varString)"
             }
         }
         

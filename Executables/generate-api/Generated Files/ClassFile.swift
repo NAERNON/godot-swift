@@ -8,23 +8,19 @@ extension GeneratedFile {
         for `class`: GodotClass
     ) -> GeneratedFile {
         .init(path: "Classes/" + `class`.identifier + ".swift") {
-            DeclSyntax("import GodotExtensionHeaders")
+            "import GodotExtensionHeaders"
             
             try ClassDeclSyntax("\(raw: classHeader(for: `class`))") {
-                `class`.enumSyntax()
-                    .with(\.leadingTrivia, .newline)
+                try `class`.enumSyntax()
                     .with(\.trailingTrivia, .newlines(2))
                 
                 try `class`.methodsSyntax()
-                    .with(\.leadingTrivia, .newline)
                     .with(\.trailingTrivia, .newlines(2))
                 
                 try `class`.propertiesSyntax()
-                    .with(\.leadingTrivia, .newline)
                     .with(\.trailingTrivia, .newlines(2))
                                 
                 try `class`.setVirtualFunctionBindingsSyntax()
-                    .with(\.leadingTrivia, .newline)
                     .with(\.trailingTrivia, .newlines(2))
             }
         }

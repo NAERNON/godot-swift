@@ -1,6 +1,7 @@
 import Foundation
 import CodeTranslator
 import SwiftSyntax
+import SwiftSyntaxBuilder
 
 /// A representation of a Godot enum.
 ///
@@ -26,18 +27,18 @@ struct GodotEnum: Decodable {
     
     // MARK: - Syntax
     
-    func syntax() -> DeclSyntax {
+    func syntax() throws -> DeclSyntax {
         if isBitfield == true {
             if values.contains(where: { $0.value < 0 }) {
-                optionSetSyntax(forType: Int32.self)
+                try DeclSyntax(optionSetSyntax(forType: Int32.self))
             } else {
-                optionSetSyntax(forType: UInt32.self)
+                try DeclSyntax(optionSetSyntax(forType: UInt32.self))
             }
         } else {
             if values.contains(where: { $0.value < 0 }) {
-                enumSyntax(forType: Int32.self)
+                try DeclSyntax(enumSyntax(forType: Int32.self))
             } else {
-                enumSyntax(forType: UInt32.self)
+                try DeclSyntax(enumSyntax(forType: UInt32.self))
             }
         }
     }
@@ -61,7 +62,7 @@ struct GodotEnum: Decodable {
         return (translatedEnum.name, cases)
     }
     
-    private func enumSyntax<T>(forType type: T.Type) -> DeclSyntax
+    private func enumSyntax<T>(forType type: T.Type) throws -> EnumDeclSyntax
     where T : FixedWidthInteger {
         let (name, temporaryCases) = self.nameAndCases(forType: type)
         
@@ -81,32 +82,30 @@ struct GodotEnum: Decodable {
             }
         }
         
-        return DeclSyntax("""
-        public enum \(raw: name): \(raw: T.self) {
-            \(raw: caseStrings.joined(separator: "\n"))
+        return try EnumDeclSyntax("public enum \(raw: name): \(raw: T.self)") {
+            "\(raw: caseStrings.joined(separator: "\n"))"
         }
-        """)
     }
     
     private func optionSetSyntax<T>(
         forType type: T.Type
-    ) -> DeclSyntax where T : FixedWidthInteger {
+    ) throws -> StructDeclSyntax where T : FixedWidthInteger {
         let (name, cases) = self.nameAndCases(forType: type)
         
         let caseStrings = cases.map {
             "public static let \($0.name): Self = .init(rawValue: \($0.value))"
         }
         
-        return DeclSyntax("""
-        public struct \(raw: name): OptionSet {
+        return try StructDeclSyntax("public struct \(raw: name): OptionSet") {
+            """
             public let rawValue: \(raw: T.self)
-        
+            
             public init(rawValue: \(raw: T.self)) {
                 self.rawValue = rawValue
             }
-        
+            
             \(raw: caseStrings.joined(separator: "\n"))
+            """
         }
-        """)
     }
 }

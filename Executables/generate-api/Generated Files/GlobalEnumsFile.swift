@@ -9,11 +9,11 @@ extension GeneratedFile {
                     // they are already generated.
                     if scope != .variant {
                         try ExtensionDeclSyntax("extension \(raw: scope.syntax())") {
-                            enumValue.syntax().with(\.trailingTrivia, .newlines(2))
+                            try enumValue.syntax().with(\.trailingTrivia, .newlines(2))
                         }
                     }
                 } else {
-                    enumValue.syntax().with(\.trailingTrivia, .newlines(2))
+                    try enumValue.syntax().with(\.trailingTrivia, .newlines(2))
                 }
             }
         }

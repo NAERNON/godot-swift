@@ -84,19 +84,13 @@ extension GodotFunction {
         hideAllLabels: Bool = false,
         options: GodotTypeSyntaxOptions = [],
         translateFunctionName: Bool = true,
+        keywords: Keyword...,
         @CodeBlockItemListBuilder bodyBuilder: () throws -> CodeBlockItemListSyntax
     ) throws -> FunctionDeclSyntax {
         let arguments = self.arguments ?? []
         let functionParameters = translatedFunction.parameters
         
         var functionHeader = String()
-        
-        if isStatic {
-            functionHeader.append("static ")
-        }
-        if isMutating {
-            functionHeader.append("mutating ")
-        }
         
         functionHeader.append("func ")
         
@@ -147,7 +141,22 @@ extension GodotFunction {
             functionHeader.append(returnType.optional(returnType.isGodotClass).syntax(options: options))
         }
         
+        let modifiers = DeclModifierListSyntax {
+            if isStatic {
+                DeclModifierSyntax(name: .keyword(.static))
+            }
+            
+            if isMutating {
+                DeclModifierSyntax(name: .keyword(.mutating))
+            }
+            
+            for keyword in keywords {
+                DeclModifierSyntax(name: .keyword(keyword))
+            }
+        }
+        
         return try FunctionDeclSyntax("\(raw: functionHeader)", bodyBuilder: bodyBuilder)
+            .with(\.modifiers, modifiers)
     }
     
     /// Returns the arguments pointer access of the function.
@@ -210,23 +219,55 @@ extension GodotFunction {
         
         return try argumentsPointerAccessSyntax { pointerNames in
             if isVararg {
-                DeclSyntax("withUnsafeVarargArgumentPointers(to: \(raw: varargArgumentIdentifier)) { \(raw: varargPointerName) in")
-                if pointerNames.isEmpty {
-                    DeclSyntax("withUnsafeArgumentPackPointer(varargs: \(raw: varargPointerName)) { \(raw: packName) in")
-                } else {
-                    DeclSyntax("withUnsafeArgumentPackPointer(\(raw: pointerNames.joined(separator: ", ")), varargs: \(raw: varargPointerName)) { \(raw: packName) in")
+                let closure = try ClosureExprSyntax(
+                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
+                        "\(raw: varargPointerName)"
+                    ])))
+                ) {
+                    let closure = try ClosureExprSyntax(
+                        signature: .init(parameterClause: .parameterClause(.init(parameters: [
+                            "\(raw: packName)"
+                        ])))
+                    ) {
+                        try bodyBuilder(packName)
+                    }
+                    
+                    let functionName = if pointerNames.isEmpty {
+                        "withUnsafeArgumentPackPointer(varargs: \(varargPointerName))"
+                    } else {
+                        "withUnsafeArgumentPackPointer(\(pointerNames.joined(separator: ", ")), varargs: \(varargPointerName))"
+                    }
+                    
+                    FunctionCallExprSyntax(
+                        calledExpression: DeclReferenceExprSyntax(baseName: "\(raw: functionName)"),
+                        arguments: [],
+                        trailingClosure: closure
+                    )
                 }
                 
-                try bodyBuilder(packName)
+                let functionName = "withUnsafeVarargArgumentPointers(to: \(varargArgumentIdentifier))"
                 
-                DeclSyntax("}")
-                DeclSyntax("}")
+                FunctionCallExprSyntax(
+                    calledExpression: DeclReferenceExprSyntax(baseName: "\(raw: functionName)"),
+                    arguments: [],
+                    trailingClosure: closure
+                )
             } else {
-                DeclSyntax("withUnsafeArgumentPackPointer(\(raw: pointerNames.joined(separator: ", "))) { \(raw: packName) in")
+                let closure = try ClosureExprSyntax(
+                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
+                        "\(raw: packName)"
+                    ])))
+                ) {
+                    try bodyBuilder(packName)
+                }
                 
-                try bodyBuilder(packName)
+                let functionName = "withUnsafeArgumentPackPointer(\(pointerNames.joined(separator: ", ")))"
                 
-                DeclSyntax("}")
+                FunctionCallExprSyntax(
+                    calledExpression: DeclReferenceExprSyntax(baseName: "\(raw: functionName)"),
+                    arguments: [],
+                    trailingClosure: closure
+                )
             }
         }
     }
@@ -256,7 +297,7 @@ extension GodotFunction {
     
     func callSyntax(
         withParameters parameterValues: [String]
-    ) -> String {
+    ) -> FunctionCallExprSyntax {
         let (translatedName, translatedParameters) = translatedFunction
         
         let parameterStrings = translatedParameters.enumerated().map { (index, parameter) in
@@ -269,14 +310,16 @@ extension GodotFunction {
             }
         }
         
-        if parameterStrings.isEmpty {
-            return "\(translatedName)()"
+        let exprSyntax = if parameterStrings.isEmpty {
+            ExprSyntax("\(raw: translatedName)()")
         } else {
-            return """
-            \(translatedName)(
-                \(parameterStrings.joined(separator: ",\n    "))
+            ExprSyntax("""
+            \(raw: translatedName)(
+                \(raw: parameterStrings.joined(separator: ",\n    "))
             )
-            """
+            """)
         }
+        
+        return exprSyntax.as(FunctionCallExprSyntax.self)!
     }
 }
