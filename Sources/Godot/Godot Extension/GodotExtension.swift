@@ -391,17 +391,15 @@ private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtens
     let level = GodotInitializationLevel(level)
     
     GodotExtension.classRegister.initialize(level: level)
-    GodotExtension.bridge.initialize(level: level)
-    
     GodotExtension.classRegister.registerGodotClasses(forLevel: level)
     
-    guard level == .scene else {
-        return
+    if level == .scene {
+        for object in GodotExtension.bridge.exposedClasses {
+            object.self.__exposeToGodot()
+        }
     }
     
-    for object in GodotExtension.bridge.exposedClasses {
-        object.self.__exposeToGodot()
-    }
+    GodotExtension.bridge.initialize(level: level)
 }
 
 private func deinitializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtensionInitializationLevel) {
