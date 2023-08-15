@@ -32,7 +32,7 @@ public enum ExposableMacro: MemberMacro {
         
         // Check has inheritance
         guard let inheritedElement = classDecl.inheritanceClause?
-            .inheritedTypeCollection.first else {
+            .inheritedTypes.first else {
             let diagnostic = Diagnostic(
                 node: Syntax(classDecl.classKeyword),
                 message: GodotExposableDiagnostic.noSuperclassProvided
@@ -73,7 +73,7 @@ public enum ExposableMacro: MemberMacro {
         
         let provider = ClassMacroDeclProvider(
             customClassDecl: classDecl,
-            superclassName: inheritedElement.typeName.description,
+            superclassName: inheritedElement.type.trimmedDescription,
             in: context
         ) {
             for function in functionsToExpose {
@@ -92,9 +92,9 @@ public enum ExposableMacro: MemberMacro {
             $0 == .keyword(.static)
         }) == true
         
-        let parameters = functionDeclSyntax.signature.input.parameterList.map {
+        let parameters = functionDeclSyntax.signature.parameterClause.parameters.map {
             """
-            .argument(\($0.type.description).self, name: "\($0.secondName ?? $0.firstName)"),
+            .argument(\($0.type.trimmedDescription).self, name: "\($0.secondName ?? $0.firstName)"),
             """
         }
         
@@ -102,10 +102,10 @@ public enum ExposableMacro: MemberMacro {
         let returnValueName: String
         let returnDecl: ExprSyntax
         
-        if let returnType = functionDeclSyntax.signature.output?.returnType.description {
+        if let returnType = functionDeclSyntax.signature.returnClause?.type.trimmed {
             returnParameter =
             """
-            .returnParameter(\(returnType.description).self)
+            .returnParameter(\(returnType).self)
             """
             
             returnValueName = "returnValue"
@@ -120,19 +120,19 @@ public enum ExposableMacro: MemberMacro {
         }
         
         let preFunctionCall = if isStatic {
-            classDecl.identifier.description
+            classDecl.name.trimmedDescription
         } else {
-            "Unmanaged<\(classDecl.identifier.description)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+            "Unmanaged<\(classDecl.name.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue()"
         }
         
-        var functionCall = functionDeclSyntax.identifier.text + "("
-        let parameterList = functionDeclSyntax.signature.input.parameterList
+        var functionCall = functionDeclSyntax.name.trimmedDescription + "("
+        let parameterList = functionDeclSyntax.signature.parameterClause.parameters
         for (index, parameter) in parameterList.enumerated() {
             functionCall += "\n    "
             if parameter.firstName.tokenKind != .wildcard {
-                functionCall += parameter.firstName.description + ": "
+                functionCall += parameter.firstName.trimmedDescription + ": "
             }
-            functionCall += "\(parameter.type.description).fromMatchingTypeVariant(Variant(godotExtensionPointer: args!.advanced(by: \(index)).pointee!))"
+            functionCall += "\(parameter.type.trimmedDescription).fromMatchingTypeVariant(Variant(godotExtensionPointer: args!.advanced(by: \(index)).pointee!))"
             
             if index < parameterList.count - 1 {
                 functionCall += ","
@@ -147,10 +147,10 @@ public enum ExposableMacro: MemberMacro {
         
         return """
         \(raw: Trivia.newline)
-        // --- \(raw: functionDeclSyntax.identifier.description) --- //
+        // --- \(functionDeclSyntax.name.trimmed) --- //
         
         GodotExtension.classRegister.registerFunction(
-            withName: \(literal: functionDeclSyntax.identifier.description),
+            withName: \(literal: functionDeclSyntax.name.trimmedDescription),
             insideType: self,
             argumentParameters: [
                 \(raw: parameters.joined(separator: "\n"))

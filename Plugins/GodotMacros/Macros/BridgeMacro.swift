@@ -33,11 +33,11 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
         if let decl = declaration.as(ClassDeclSyntax.self) {
-            return [libInitDecl(identifier: decl.identifier)]
+            return [libInitDecl(identifier: decl.name)]
         } else if let decl = declaration.as(StructDeclSyntax.self) {
-            return [libInitDecl(identifier: decl.identifier)]
+            return [libInitDecl(identifier: decl.name)]
         } else if let decl = declaration.as(EnumDeclSyntax.self) {
-            return [libInitDecl(identifier: decl.identifier)]
+            return [libInitDecl(identifier: decl.name)]
         }
         
         let diagnostic = Diagnostic(
@@ -50,7 +50,7 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
     }
     
     private static func libInitDecl(identifier: TokenSyntax) -> DeclSyntax {
-        let functionName = identifier.text + "_godot_init"
+        let functionName = identifier.trimmedDescription + "_godot_init"
         
         return DeclSyntax(
             """

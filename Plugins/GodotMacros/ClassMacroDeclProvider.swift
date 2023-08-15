@@ -45,8 +45,8 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
         self.context = context
     }
     
-    var classIdentifier: TokenSyntax {
-        classDecl.identifier
+    var className: TokenSyntax {
+        classDecl.name
     }
     
     private var overrideKeyword: String {
@@ -79,7 +79,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     }
     
     private func staticProperties() -> DeclSyntax {
-        let className = classIdentifier.description.trimmingCharacters(in: .whitespacesAndNewlines)
+        let className = className.trimmedDescription
         
         switch classType {
         case .root, .refCounted, .standard:
@@ -212,7 +212,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 } free_callback: { token, instancePtr, bindingsPtr in
                     
                 } reference_callback: { token, instancePtr, reference in
-                    \(classIdentifier).__referenceCallback(instancePtr, reference)
+                    \(className).__referenceCallback(instancePtr, reference)
                 }
                 """
                 )
@@ -239,13 +239,13 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                     ofType: self,
                     superclassType: \(raw: superclassName ?? "").self
                 ) { instancePtr, isValid, out in
-                    \(classDecl.identifier).__instanceGodotDescription(instancePtr, isValid, out)
+                    \(classDecl.name).__instanceGodotDescription(instancePtr, isValid, out)
                 }
                 createInstanceFunction: { _ in
-                    \(classDecl.identifier).__makeNewInstanceManagedByGodot()
+                    \(classDecl.name).__makeNewInstanceManagedByGodot()
                 }
                 freeInstanceFunction: { _, instancePtr in
-                    \(classDecl.identifier).__freeInstanceManagedByGodot(instancePtr)
+                    \(classDecl.name).__freeInstanceManagedByGodot(instancePtr)
                 }
                 
                 guard isClassRegistered else { return }
