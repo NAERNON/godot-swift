@@ -69,79 +69,6 @@ public enum ExposableMacro: MemberMacro {
                 })
             }
         
-        var functionExpositions = [ExprSyntax]()
-        for functionToExpose in functionsToExpose {
-            let isStatic = functionToExpose.modifiers?.map(\.name.tokenKind).contains(where: {
-                $0 == .keyword(.static)
-            }) == true
-            
-            let parameters = functionToExpose.signature.input.parameterList.map {
-                """
-                .argument(\($0.type.description).self, name: "\($0.secondName ?? $0.firstName)"),
-                """
-            }
-            
-            let returnParameter: String
-            let returnValueName: String
-            let returnDecl: ExprSyntax
-            
-            if let returnType = functionToExpose.signature.output?.returnType.description {
-                returnParameter =
-                    """
-                    .returnParameter(\(returnType.description).self)
-                    """
-                
-                returnValueName = "returnValue"
-                returnDecl =
-                    """
-                    returnValue.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
-                    """
-            } else {
-                returnParameter = "nil"
-                returnValueName = "_"
-                returnDecl = ""
-            }
-            
-            let preFunctionCall = if isStatic {
-                classDecl.identifier.description
-            } else {
-                "Unmanaged<\(classDecl.identifier.description)>.fromOpaque(instancePtr!).takeUnretainedValue()"
-            }
-            
-            var functionCall = functionToExpose.identifier.text + "("
-            for (index, parameter) in functionToExpose.signature.input.parameterList.enumerated() {
-                functionCall += "\n    "
-                functionCall += (parameter.secondName?.description ?? parameter.firstName.description)
-                functionCall += ": \(parameter.type.description).fromMatchingTypeVariant(Variant(godotExtensionPointer: args!.advanced(by: \(index)).pointee!))"
-            }
-            functionCall += "\n)"
-            
-            let functionCallAssignment: ExprSyntax =
-                """
-                let \(raw: returnValueName) = \(raw: preFunctionCall).\(raw: functionCall)
-                """
-            
-            functionExpositions.append(
-                """
-                \(raw: Trivia.newline)
-                // --- \(raw: functionToExpose.identifier.description) --- //
-                
-                GodotExtension.classRegister.registerFunction(
-                    withName: \(literal: functionToExpose.identifier.description),
-                    insideType: self,
-                    argumentParameters: [
-                        \(raw: parameters.joined(separator: "\n"))
-                    ],
-                    returnParameter: \(raw: returnParameter),
-                    isStatic: \(literal: isStatic)
-                ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    \(functionCallAssignment)
-                    \(returnDecl)
-                }
-                """
-            )
-        }
-        
         // MARK: Provide decls
         
         let provider = ClassMacroDeclProvider(
@@ -149,12 +76,92 @@ public enum ExposableMacro: MemberMacro {
             superclassName: inheritedElement.typeName.description,
             in: context
         ) {
-            for function in functionExpositions {
-                function
+            for function in functionsToExpose {
+                functionExpositionSyntax(function, classDecl: classDecl)
             }
         }
         
         return try provider.decls()
+    }
+    
+    private static func functionExpositionSyntax(
+        _ functionDeclSyntax: FunctionDeclSyntax,
+        classDecl: ClassDeclSyntax
+    ) -> ExprSyntax {
+        let isStatic = functionDeclSyntax.modifiers?.map(\.name.tokenKind).contains(where: {
+            $0 == .keyword(.static)
+        }) == true
+        
+        let parameters = functionDeclSyntax.signature.input.parameterList.map {
+            """
+            .argument(\($0.type.description).self, name: "\($0.secondName ?? $0.firstName)"),
+            """
+        }
+        
+        let returnParameter: String
+        let returnValueName: String
+        let returnDecl: ExprSyntax
+        
+        if let returnType = functionDeclSyntax.signature.output?.returnType.description {
+            returnParameter =
+            """
+            .returnParameter(\(returnType.description).self)
+            """
+            
+            returnValueName = "returnValue"
+            returnDecl =
+            """
+            returnValue.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+            """
+        } else {
+            returnParameter = "nil"
+            returnValueName = "_"
+            returnDecl = ""
+        }
+        
+        let preFunctionCall = if isStatic {
+            classDecl.identifier.description
+        } else {
+            "Unmanaged<\(classDecl.identifier.description)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+        }
+        
+        var functionCall = functionDeclSyntax.identifier.text + "("
+        let parameterList = functionDeclSyntax.signature.input.parameterList
+        for (index, parameter) in parameterList.enumerated() {
+            functionCall += "\n    "
+            if parameter.firstName.tokenKind != .wildcard {
+                functionCall += parameter.firstName.description + ": "
+            }
+            functionCall += "\(parameter.type.description).fromMatchingTypeVariant(Variant(godotExtensionPointer: args!.advanced(by: \(index)).pointee!))"
+            
+            if index < parameterList.count - 1 {
+                functionCall += ","
+            }
+        }
+        functionCall += "\n)"
+        
+        let functionCallAssignment: ExprSyntax =
+        """
+        let \(raw: returnValueName) = \(raw: preFunctionCall).\(raw: functionCall)
+        """
+        
+        return """
+        \(raw: Trivia.newline)
+        // --- \(raw: functionDeclSyntax.identifier.description) --- //
+        
+        GodotExtension.classRegister.registerFunction(
+            withName: \(literal: functionDeclSyntax.identifier.description),
+            insideType: self,
+            argumentParameters: [
+                \(raw: parameters.joined(separator: "\n"))
+            ],
+            returnParameter: \(raw: returnParameter),
+            isStatic: \(literal: isStatic)
+        ) { _, instancePtr, args, argsCount, returnPtr, error in
+            \(functionCallAssignment)
+            \(returnDecl)
+        }
+        """
     }
 }
 
