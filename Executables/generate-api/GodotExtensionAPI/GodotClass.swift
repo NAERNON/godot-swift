@@ -301,11 +301,13 @@ struct GodotClass: Decodable {
                     for method in virtualMethods {
                         let arguments = method.arguments ?? []
                         
+                        let isVar = method.returnValue?.type.isBuiltinGodotClassWithOpaque ?? false
+                        
                         """
                         body(\(literal: method.name), { instancePtr, args, returnPtr in
                         guard let instancePtr\(raw: arguments.isEmpty ? "" : ", let args") else { return }
                         let instance = Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
-                        var \(raw: method.returnValue == nil ? "_" : "returnValue") = instance
+                        \(raw: isVar ? "var" : "let") \(raw: method.returnValue == nil ? "_" : "returnValue") = instance
                         """
                         
                         let parameters: [String] = arguments.enumerated().map { (index, argument) in
