@@ -2,6 +2,7 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
+import CodeTranslator
 import Foundation
 
 public enum ExposableMacro: MemberMacro {
@@ -68,8 +69,6 @@ public enum ExposableMacro: MemberMacro {
                     $0 == .keyword(.public) || $0 == .keyword(.open)
                 })
             }
-        
-        // MARK: Provide decls
         
         let provider = ClassMacroDeclProvider(
             customClassDecl: classDecl,
@@ -145,12 +144,14 @@ public enum ExposableMacro: MemberMacro {
         let \(raw: returnValueName) = \(raw: preFunctionCall).\(raw: functionCall)
         """
         
+        let functionName = NamingConvention.camel.convert(functionDeclSyntax.name.trimmedDescription, to: .snake)
+        
         return """
         \(raw: Trivia.newline)
         // --- \(functionDeclSyntax.name.trimmed) --- //
         
         GodotExtension.classRegister.registerFunction(
-            withName: \(literal: functionDeclSyntax.name.trimmedDescription),
+            withName: \(literal: functionName),
             insideType: self,
             argumentParameters: [
                 \(raw: parameters.joined(separator: "\n"))

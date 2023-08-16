@@ -24,7 +24,7 @@ public extension NamingConvention {
                 stringComponents.append(component)
                 component = ""
             } else if !char.isUppercase && previousCharacterIsUppercase {
-                if component.count > 2 {
+                if component.count > 1 {
                     let startIndex = component.startIndex
                     let endFirstPart = component.index(startIndex, offsetBy: component.count-2)
                     let startSecondPart = component.index(startIndex, offsetBy: component.count-1)
