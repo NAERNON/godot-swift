@@ -1,5 +1,19 @@
 import GodotExtensionHeaders
 
+private enum ConversionError: Error {
+    case objectType(type: Object.Type)
+    case nonNumeric(type: GDExtensionVariantType)
+    
+    var localizedDescription: String {
+        switch self {
+        case .objectType(let type):
+            "Cannot retreive object of type \(type) from variant."
+        case .nonNumeric(let type):
+            "Variant of type \(type) isn't a numeric value."
+        }
+    }
+}
+
 // MARK: - Bool
 
 private var fromTypeConstructor_bool = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
@@ -63,7 +77,7 @@ extension Int: VariantConvertible {
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+            throw ConversionError.nonNumeric(type: variant.type)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -97,7 +111,7 @@ extension Int8: VariantConvertible {
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+            throw ConversionError.nonNumeric(type: variant.type)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -131,7 +145,7 @@ extension Int16: VariantConvertible {
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+            throw ConversionError.nonNumeric(type: variant.type)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -165,7 +179,7 @@ extension Int32: VariantConvertible {
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+            throw ConversionError.nonNumeric(type: variant.type)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -199,7 +213,7 @@ extension Int64: VariantConvertible {
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+            throw ConversionError.nonNumeric(type: variant.type)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -233,7 +247,7 @@ extension UInt8: VariantConvertible {
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+            throw ConversionError.nonNumeric(type: variant.type)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -267,7 +281,7 @@ extension UInt16: VariantConvertible {
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+            throw ConversionError.nonNumeric(type: variant.type)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -301,7 +315,7 @@ extension UInt32: VariantConvertible {
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+            throw ConversionError.nonNumeric(type: variant.type)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -335,7 +349,7 @@ extension UInt64: VariantConvertible {
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+            throw ConversionError.nonNumeric(type: variant.type)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -374,7 +388,7 @@ extension Double: VariantConvertible {
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+            throw ConversionError.nonNumeric(type: variant.type)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -410,7 +424,7 @@ extension Float: VariantConvertible {
     
     public static func fromVariant(_ variant: Variant) throws -> Self {
         guard variant.isNumeric else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
+            throw ConversionError.nonNumeric(type: variant.type)
         }
         
         return fromMatchingTypeVariant(variant)
@@ -1072,9 +1086,7 @@ extension Object: VariantConvertible {
     }
     
     public final class func fromVariant(_ variant: Variant) throws -> Self {
-        guard variant.type == Self.variantType.storageType else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
-        }
+        try variant.checkType(Self.variantType)
         
         var instancePtr = UnsafeMutableRawPointer(bitPattern: 0)
         
@@ -1083,7 +1095,7 @@ extension Object: VariantConvertible {
         }
         
         guard let instance = Self.retreivedInstanceManagedByGodot(instancePtr) else {
-            throw Variant.ConversionError.objectType(type: Self.self)
+            throw ConversionError.objectType(type: Self.self)
         }
         
         return instance

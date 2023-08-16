@@ -70,6 +70,7 @@ let package = Package(
             name: "GodotMacrosTests",
             dependencies: [
                 "GodotMacros",
+                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
             ]
         ),

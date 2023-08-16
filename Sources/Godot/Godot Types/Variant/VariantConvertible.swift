@@ -59,7 +59,7 @@ public protocol ConvertibleToVariant {
 /// from a variant:
 ///
 /// ```swift
-/// struct Level: ConvertibleFromTypedVariant {
+/// struct Level: ConvertibleFromVariant {
 ///     let index: Int
 ///
 ///     static let variantType: Variant.RepresentationType = Int.variantType
@@ -84,6 +84,25 @@ public protocol ConvertibleToVariant {
 /// By default, the `fromVariant(_:)` static method implementation only checks
 /// that the provided variant representation matches `variantType` and throws
 /// an error if not.
+///
+/// If you prefer to write a custom `fromVariant(_:)` method,
+/// use ``Variant/checkType(_:)`` to check the type of the given variant:
+///
+/// ```swift
+/// struct Level: ConvertibleFromVariant {
+///     let index: Int
+///
+///     static let variantType: Variant.RepresentationType = Int.variantType
+///
+///     // fromMatchingTypeVariant implementation
+///
+///     static func fromVariant(_ variant: Variant) throws -> Level {
+///         try variant.checkType(Self.variantType)
+///
+///         // Do some other checks and return a Level instance
+///     }
+/// }
+/// ```
 public protocol ConvertibleFromVariant {
     /// The type of variant representation this type can be converted from.
     ///
@@ -110,9 +129,7 @@ public protocol ConvertibleFromVariant {
 
 public extension ConvertibleFromVariant {
     static func fromVariant(_ variant: Variant) throws -> Self {
-        guard variant.type == Self.variantType.storageType else {
-            throw Variant.ConversionError.variantToValue(from: variant.type, to: Self.variantType.storageType)
-        }
+        try variant.checkType(Self.variantType)
         
         return fromMatchingTypeVariant(variant)
     }
@@ -122,21 +139,3 @@ public extension ConvertibleFromVariant {
 
 /// A type that can be converted from, and to, a variant.
 public typealias VariantConvertible = ConvertibleToVariant & ConvertibleFromVariant
-
-// MARK: - Variant ConversionError
-
-extension Variant {
-    internal enum ConversionError: Error {
-        case variantToValue(from: GDExtensionVariantType, to: GDExtensionVariantType)
-        case objectType(type: Object.Type)
-        
-        var localizedDescription: String {
-            switch self {
-            case .variantToValue(let from, let to):
-                "Cannot convert variant of type \(from) to value of type \(to)."
-            case .objectType(let type):
-                "Cannot convert retreive object of type \(type) from variant."
-            }
-        }
-    }
-}

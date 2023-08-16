@@ -10,6 +10,17 @@ import GodotExtensionHeaders
 /// See the ``ConvertibleToVariant`` and ``ConvertibleFromVariant``
 /// protocols for enabling your own types to convert to and from a variant.
 public struct Variant {
+    internal enum Error: Swift.Error {
+        case unmatchingTypes(variantType: GDExtensionVariantType, checkedType: GDExtensionVariantType)
+        
+        var localizedDescription: String {
+            switch self {
+            case .unmatchingTypes(let variantType, let checkedType):
+                "The variant types don't match (\(variantType) and \(checkedType))."
+            }
+        }
+    }
+    
     // MARK: Inits
     
     /// Creates a new `Variant` as a `nil` variant.
@@ -38,6 +49,7 @@ public struct Variant {
     // MARK: Getters
     
     /// Returns the value contained inside the `Variant`.
+    /// 
     /// - Parameter type: The type inside the `Variant`.
     public func value<T>(ofType type: T.Type) throws -> T where T : ConvertibleFromVariant {
         try type.fromVariant(self)
@@ -60,6 +72,13 @@ public struct Variant {
     var isNumeric: Bool {
         let type = self.type
         return type == GDEXTENSION_VARIANT_TYPE_INT || type == GDEXTENSION_VARIANT_TYPE_FLOAT
+    }
+    
+    /// Checks that the variant type matches the given type.
+    public func checkType(_ type: RepresentationType) throws {
+        if self.type != type.storageType {
+            throw Error.unmatchingTypes(variantType: self.type, checkedType: type.storageType)
+        }
     }
     
     fileprivate func evaluate(other: Variant, `operator`: Operator) -> Variant? {
