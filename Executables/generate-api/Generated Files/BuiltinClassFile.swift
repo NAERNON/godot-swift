@@ -12,7 +12,7 @@ extension GeneratedFile {
             
             "import GodotExtensionHeaders"
             
-            try ExtensionDeclSyntax("public extension \(raw: builtinClass.identifier)") {
+            try ExtensionDeclSyntax("extension \(raw: builtinClass.identifier)") {
                 builtinClass.constantsSyntax()
                     .with(\.trailingTrivia, .newlines(2))
                 

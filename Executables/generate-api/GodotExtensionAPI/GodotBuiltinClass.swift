@@ -254,7 +254,7 @@ struct GodotBuiltinClass: Decodable {
             let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
             
             if useOpaque {
-                "var __temporary: Opaque = .init(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))"
+                "let __temporary: Opaque = .init(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))"
             } else {
                 "var __temporary = \(raw: name.syntax())()"
             }
@@ -292,7 +292,7 @@ struct GodotBuiltinClass: Decodable {
             let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
             
             if useOpaque {
-                "var __temporary: Opaque = .init(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))"
+                "let __temporary: Opaque = .init(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))"
             } else {
                 "var __temporary = \(raw: name.syntax())()"
             }
