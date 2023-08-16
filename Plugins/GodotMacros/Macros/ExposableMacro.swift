@@ -5,8 +5,29 @@ import SwiftDiagnostics
 import CodeTranslator
 import Foundation
 
+// MARK: - ExposableMacro
+
 public enum ExposableMacro: MemberMacro {
-    // MARK: Member
+    // MARK: Diagnostic
+    
+    private enum ExposableDiagnostic: String, Error, DiagnosticMessage {
+        case notAClass
+        
+        var severity: DiagnosticSeverity { .error }
+        
+        var message: String {
+            switch self {
+            case .notAClass:
+                "Only classes can be exposed to Godot"
+            }
+        }
+        
+        var diagnosticID: MessageID {
+            MessageID(domain: "GodotMacros", id: rawValue)
+        }
+    }
+    
+    // MARK: Syntax
     
     public static func expansion(
         of attribute: AttributeSyntax,
@@ -23,40 +44,90 @@ public enum ExposableMacro: MemberMacro {
     ) throws -> [DeclSyntax] {
         // Check is class
         guard let classDecl = declaration.as(ClassDeclSyntax.self) else {
-            let diagnostic = Diagnostic(
+            context.diagnose(Diagnostic(
                 node: Syntax(attribute),
-                message: GodotExposableDiagnostic.notAClass
-            )
-            context.diagnose(diagnostic)
+                message: ExposableDiagnostic.notAClass
+            ))
             return []
         }
         
+        return try ClassSyntaxProvider(classDecl: classDecl, context: context).expositionSyntax()
+    }
+}
+
+// MARK: - ClassSyntaxProvider
+
+private struct ClassSyntaxProvider<Context> where Context : MacroExpansionContext {
+    let classDecl: ClassDeclSyntax
+    let context: Context
+    
+    // MARK: Diagnostic
+    
+    private enum ClassDiagnostic: String, Error, DiagnosticMessage {
+        case noSuperclassProvided
+        case notPublic
+        
+        var severity: DiagnosticSeverity { .error }
+        
+        var message: String {
+            switch self {
+            case .noSuperclassProvided:
+                "Only classes that inherit the Godot 'Object' class can be exposed to Godot"
+            case .notPublic:
+                "Only public classes can be exposed to Godot"
+            }
+        }
+        
+        var diagnosticID: MessageID {
+            MessageID(domain: "GodotMacros", id: rawValue)
+        }
+    }
+    
+    // MARK: Syntax
+    
+    func expositionSyntax() throws -> [DeclSyntax]{
         // Check has inheritance
         guard let inheritedElement = classDecl.inheritanceClause?
             .inheritedTypes.first else {
-            let diagnostic = Diagnostic(
+            context.diagnose(Diagnostic(
                 node: Syntax(classDecl.classKeyword),
-                message: GodotExposableDiagnostic.noSuperclassProvided
-            )
-            context.diagnose(diagnostic)
+                message: ClassDiagnostic.noSuperclassProvided
+            ))
             return []
         }
         
-        // Check is public
+        // Check is public or open
         guard classDecl.modifiers?.map(\.name.tokenKind).contains(where: {
             $0 == .keyword(.public) || $0 == .keyword(.open)
         }) == true else {
-            let diagnostic = Diagnostic(
+            context.diagnose(Diagnostic(
                 node: Syntax(classDecl.classKeyword),
-                message: GodotExposableDiagnostic.notPublic
-            )
-            context.diagnose(diagnostic)
+                message: ClassDiagnostic.notPublic
+            ))
             return []
         }
         
-        // MARK: Expose functions
+        // Syntax
+        let provider = ClassMacroDeclProvider(
+            customClassDecl: classDecl,
+            superclassName: inheritedElement.type.trimmedDescription,
+            in: context
+        ) {
+            FunctionSyntaxProvider(classDecl: classDecl, context: context).expositionSyntax()
+        }
         
-        let functionsToExpose = classDecl.memberBlock.members
+        return try provider.decls()
+    }
+}
+
+// MARK: - FunctionSyntaxProvider
+
+private struct FunctionSyntaxProvider<Context> where Context : MacroExpansionContext {
+    let classDecl: ClassDeclSyntax
+    let context: Context
+    
+    private func functionsToExpose() -> [FunctionDeclSyntax] {
+        classDecl.memberBlock.members
             .compactMap { $0.decl.as(FunctionDeclSyntax.self) }
             .filter {
                 let tokens = $0.modifiers?.map(\.name.tokenKind) ?? []
@@ -69,24 +140,103 @@ public enum ExposableMacro: MemberMacro {
                     $0 == .keyword(.public) || $0 == .keyword(.open)
                 })
             }
+    }
+    
+    // MARK: Diagnostic
+    
+    private enum FunctionDiagnostic: String, Error, DiagnosticMessage {
+        case `throws`
+        case isAsync
+        case isGeneric
+        case someOrAnyParameter
+        case variadicParameter
+        case someOrAnyReturnType
         
-        let provider = ClassMacroDeclProvider(
-            customClassDecl: classDecl,
-            superclassName: inheritedElement.type.trimmedDescription,
-            in: context
-        ) {
-            for function in functionsToExpose {
-                functionExpositionSyntax(function, classDecl: classDecl)
+        var severity: DiagnosticSeverity { .error }
+        
+        var message: String {
+            switch self {
+            case .throws:
+                "Godot exposed functions cannot be marked 'throws'"
+            case .isAsync:
+                "Godot exposed functions cannot be marked 'async'"
+            case .isGeneric:
+                "Godot exposed functions cannot be generic"
+            case .someOrAnyParameter:
+                "Godot exposed functions cannot have parameters marked 'some' or 'any'"
+            case .variadicParameter:
+                "Godot exposed functions cannot have variadic parameters"
+            case .someOrAnyReturnType:
+                "Godot exposed functions cannot return a type marked 'some' or 'any'"
             }
         }
         
-        return try provider.decls()
+        var diagnosticID: MessageID {
+            MessageID(domain: "GodotMacros", id: rawValue)
+        }
     }
     
-    private static func functionExpositionSyntax(
-        _ functionDeclSyntax: FunctionDeclSyntax,
-        classDecl: ClassDeclSyntax
-    ) -> ExprSyntax {
+    // MARK: Syntax
+    
+    @CodeBlockItemListBuilder
+    func expositionSyntax() -> CodeBlockItemListSyntax {
+        for function in functionsToExpose() {
+            expositionSyntax(forFunction: function)
+        }
+    }
+    
+    private func expositionSyntax(forFunction functionDeclSyntax: FunctionDeclSyntax) -> ExprSyntax {
+        // Check not throw or async
+        if let specifiers = functionDeclSyntax.signature.effectSpecifiers {
+            if let throwsSpecifier = specifiers.throwsSpecifier {
+                context.diagnose(Diagnostic(
+                    node: Syntax(throwsSpecifier),
+                    message: FunctionDiagnostic.throws
+                ))
+            }
+            
+            if let asyncSpecifier = specifiers.asyncSpecifier {
+                context.diagnose(Diagnostic(
+                    node: Syntax(asyncSpecifier),
+                    message: FunctionDiagnostic.isAsync
+                ))
+            }
+        }
+        
+        // Check not generic
+        if let generic = functionDeclSyntax.genericParameterClause {
+            context.diagnose(Diagnostic(
+                node: Syntax(generic),
+                message: FunctionDiagnostic.isGeneric
+            ))
+        }
+        
+        // Check no parameter is some, any or variadic
+        for parameter in functionDeclSyntax.signature.parameterClause.parameters {
+            if let someOrAnyTypeSyntax = parameter.type.as(SomeOrAnyTypeSyntax.self) {
+                context.diagnose(Diagnostic(
+                    node: Syntax(someOrAnyTypeSyntax),
+                    message: FunctionDiagnostic.someOrAnyParameter
+                ))
+            }
+            
+            if let ellipsis = parameter.ellipsis {
+                context.diagnose(Diagnostic(
+                    node: Syntax(ellipsis),
+                    message: FunctionDiagnostic.variadicParameter
+                ))
+            }
+        }
+        
+        // Check return type is not some or any
+        if let someOrAnyTypeSyntax = functionDeclSyntax.signature.returnClause?.type.as(SomeOrAnyTypeSyntax.self) {
+            context.diagnose(Diagnostic(
+                node: Syntax(someOrAnyTypeSyntax),
+                message: FunctionDiagnostic.someOrAnyReturnType
+            ))
+        }
+        
+        // Syntax
         let isStatic = functionDeclSyntax.modifiers?.map(\.name.tokenKind).contains(where: {
             $0 == .keyword(.static)
         }) == true
@@ -163,30 +313,5 @@ public enum ExposableMacro: MemberMacro {
             \(returnDecl)
         }
         """
-    }
-}
-
-// MARK: - Diagnostic
-
-private enum GodotExposableDiagnostic: String, Error, DiagnosticMessage {
-    case notAClass
-    case noSuperclassProvided
-    case notPublic
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .notAClass:
-            "Only classes can be exposed to Godot"
-        case .noSuperclassProvided:
-            "Only classes that inherit the Godot 'Object' class can be exposed to Godot"
-        case .notPublic:
-            "Only public classes can be exposed to Godot"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
     }
 }
