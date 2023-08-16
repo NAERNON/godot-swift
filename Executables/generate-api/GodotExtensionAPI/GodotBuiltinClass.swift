@@ -403,7 +403,7 @@ struct GodotBuiltinClass: Decodable {
                 return gdextension_interface_variant_get_ptr_keyed_setter(\(raw: name.variantType!))!
             }()
             internal func _getValue(forKey key: Variant) -> Variant {
-                var __returnValue = Variant()
+                let __returnValue = Variant()
                 
                 __returnValue.withUnsafeRawPointer { __ptr___returnValue in
                     key.withUnsafeRawPointer { __ptr_key in

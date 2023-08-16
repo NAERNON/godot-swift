@@ -177,7 +177,7 @@ public final class ClassRegister {
         customClassNameToClassBinding[className] = classBinding
         
         // TODO: Fill all the blanks
-        var godotClassInfo = GDExtensionClassCreationInfo(
+        let godotClassInfo = GDExtensionClassCreationInfo(
             is_virtual: 0,
             is_abstract: 0,
             set_func: nil,

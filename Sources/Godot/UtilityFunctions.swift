@@ -42,11 +42,11 @@ public func atan2(y: Double, x: Double) -> Double {
 }
 
 public func fmod(x: Double, y: Double) -> Double {
-    fmod(x: x, y: y)
+    _fmod(x: x, y: y)
 }
 
 public func fposmod(x: Double, y: Double) -> Double {
-    fposmod(x: x, y: y)
+    _fposmod(x: x, y: y)
 }
 
 public func snapped(_ x: Double, step: Double) -> Double {

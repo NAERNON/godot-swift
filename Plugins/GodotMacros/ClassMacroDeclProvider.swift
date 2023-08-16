@@ -181,7 +181,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 }
                 
                 isRefInitialized = true
-                initRef()
+                _ = initRef()
             }
             """
         default: nil

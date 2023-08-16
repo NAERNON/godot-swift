@@ -16,7 +16,7 @@ public struct GodotTypedArray<Element> where Element : VariantConvertible {
     
     /// This init is private to this file because public initializers are provided in extensions.
     fileprivate init(className: GodotStringName) {
-        var array = GodotArray()
+        let array = GodotArray()
         array.withUnsafeRawPointer { ptr in
             className.withUnsafeRawPointer { classNamePtr in
                 // TODO: Check script (last parameter)
