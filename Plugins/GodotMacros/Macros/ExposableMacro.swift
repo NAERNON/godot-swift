@@ -186,6 +186,8 @@ private struct FunctionSyntaxProvider<Context> where Context : MacroExpansionCon
     }
     
     private func expositionSyntax(forFunction functionDeclSyntax: FunctionDeclSyntax) -> ExprSyntax {
+        var isFunctionExposable = true
+        
         // Check not throw or async
         if let specifiers = functionDeclSyntax.signature.effectSpecifiers {
             if let throwsSpecifier = specifiers.throwsSpecifier {
@@ -193,6 +195,7 @@ private struct FunctionSyntaxProvider<Context> where Context : MacroExpansionCon
                     node: Syntax(throwsSpecifier),
                     message: FunctionDiagnostic.throws
                 ))
+                isFunctionExposable = false
             }
             
             if let asyncSpecifier = specifiers.asyncSpecifier {
@@ -200,6 +203,7 @@ private struct FunctionSyntaxProvider<Context> where Context : MacroExpansionCon
                     node: Syntax(asyncSpecifier),
                     message: FunctionDiagnostic.isAsync
                 ))
+                isFunctionExposable = false
             }
         }
         
@@ -209,6 +213,7 @@ private struct FunctionSyntaxProvider<Context> where Context : MacroExpansionCon
                 node: Syntax(generic),
                 message: FunctionDiagnostic.isGeneric
             ))
+            isFunctionExposable = false
         }
         
         // Check no parameter is some, any or variadic
@@ -218,6 +223,7 @@ private struct FunctionSyntaxProvider<Context> where Context : MacroExpansionCon
                     node: Syntax(someOrAnyTypeSyntax),
                     message: FunctionDiagnostic.someOrAnyParameter
                 ))
+                isFunctionExposable = false
             }
             
             if let ellipsis = parameter.ellipsis {
@@ -225,6 +231,7 @@ private struct FunctionSyntaxProvider<Context> where Context : MacroExpansionCon
                     node: Syntax(ellipsis),
                     message: FunctionDiagnostic.variadicParameter
                 ))
+                isFunctionExposable = false
             }
         }
         
@@ -234,7 +241,10 @@ private struct FunctionSyntaxProvider<Context> where Context : MacroExpansionCon
                 node: Syntax(someOrAnyTypeSyntax),
                 message: FunctionDiagnostic.someOrAnyReturnType
             ))
+            isFunctionExposable = false
         }
+        
+        guard isFunctionExposable else { return "" }
         
         // Syntax
         let isStatic = functionDeclSyntax.modifiers?.map(\.name.tokenKind).contains(where: {
