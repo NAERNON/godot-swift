@@ -293,8 +293,8 @@ public final class ClassRegister {
             return nil
         }
         
-        let arguments = argumentParameters.map { $0.propertyInfo() }
-        let returnType = returnParameter?.propertyInfo()
+        let arguments = argumentParameters.map(\.propertyInfo)
+        let returnType = returnParameter?.propertyInfo
         
         // TODO: Do the vararg
         let functionBinding = FunctionBinding(
@@ -305,7 +305,7 @@ public final class ClassRegister {
             isVararg: false,
             isStatic: isStatic
         )
-        classBinding.appendFunctionBinding(functionBinding)
+        classBinding.appendFunction(functionBinding)
         
         functionName.withUnsafeRawPointer { functionNamePtr in
             functionBinding.withGodotExtensionPropertiesInfo { propertiesInfo in
@@ -341,5 +341,93 @@ public final class ClassRegister {
         }
         
         return functionBinding
+    }
+    
+    // MARK: Variable registration
+    
+    /// Registers a given variable from an already registered
+    /// custom class to expose it to the Godot editor.
+    ///
+    /// - Parameters:
+    ///   - variableName: The variable name.
+    ///   - type: The variable type.
+    ///   - classType: The type of the class the function is part of.
+    ///   - getterName: The name of the getter function.
+    ///   - setterName: The name of the setter function, if a setter is available.
+    ///   - getterCall: A C closure used by Godot to call the getter function.
+    ///   - setterCall: A C closure used by Godot to call the setter function, if a setter is available.
+    /// - Returns: The newly created variable binding, or `nil` if the variable wasn't registered.
+    @discardableResult
+    public func registerVariable<Class, Variable>(
+        withName variableName: GodotStringName,
+        type: Variable.Type,
+        insideType classType: Class.Type,
+        getterName: GodotStringName,
+        setterName: GodotStringName? = nil,
+        getterCall: GDExtensionClassMethodCall,
+        setterCall: GDExtensionClassMethodCall? = nil
+    ) -> VariableBinding?
+    where Class : Object,
+          Variable : ConvertibleToVariant
+    {
+        let className = classType.__className
+        
+        guard let classBinding = customClassNameToClassBinding[className],
+              classBinding.type == classType else {
+            gdDebugPrintError("Cannot register variable \(variableName) because the class \(className) is not registered.")
+            return nil
+        }
+        
+        let parameter = FunctionParameter.argument(Variable.self, name: variableName)
+        
+        guard let getterBinding = registerFunction(
+            withName: getterName,
+            insideType: classType,
+            argumentParameters: [], 
+            returnParameter: parameter,
+            isStatic: false,
+            call: getterCall
+        ) else {
+            return nil
+        }
+        
+        var setterBinding: FunctionBinding?
+        if let setterName, let setterCall {
+            guard let binding = registerFunction(
+                withName: setterName,
+                insideType: classType,
+                argumentParameters: [parameter],
+                returnParameter: .returnParameter(Variable.self),
+                isStatic: false,
+                call: setterCall
+            ) else {
+                return nil
+            }
+            
+            setterBinding = binding
+        }
+        
+        let variableBinding = VariableBinding(
+            name: variableName,
+            getter: getterBinding,
+            setter: setterBinding
+        )
+        classBinding.appendVariable(variableBinding)
+        
+        getterName.withUnsafeRawPointer { getterPtr in
+            (setterName ?? GodotStringName()).withUnsafeRawPointer { setterPtr in
+                parameter.propertyInfo.withGodotExtensionPropertyInfo { propertyInfo in
+                    withUnsafePointer(to: propertyInfo) { propertyInfoPtr in
+                        className.withUnsafeRawPointer { namePtr in
+                            gdextension_interface_classdb_register_extension_class_property(
+                                GodotExtension.libraryPtr, namePtr, propertyInfoPtr, setterPtr, getterPtr
+                            )
+                        }
+                    }
+                }
+            }
+        }
+        
+        return variableBinding
     }
 }

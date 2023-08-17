@@ -79,7 +79,7 @@ extension ClassRegister {
         // MARK: PropertyInfo
         
         /// Creates a `PropertyInfo` using the information of the parameter.
-        func propertyInfo() -> ClassRegister.PropertyInfo {
+        var propertyInfo: ClassRegister.PropertyInfo {
             .init(variantType: variantType,
                   name: name,
                   defaultValue: defaultValue,
