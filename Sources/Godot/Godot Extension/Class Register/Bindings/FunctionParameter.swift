@@ -85,6 +85,7 @@ extension ClassRegister {
                   defaultValue: defaultValue,
                   hint: .none,
                   hintString: .init(),
+                  usageFlags: .default,
                   className: className)
         }
     }
