@@ -30,6 +30,10 @@ private enum ExpositionDiagnostic: String, Error, DiagnosticMessage {
 }
 
 extension VariableDeclSyntax: ClassExposableMember {
+    var classExpositionIdentifier: String {
+        bindings.first?.pattern.trimmedDescription ?? ""
+    }
+    
     var isExcludedFromClassExposition: Bool {
         guard let tokens = modifiers?.map(\.name.tokenKind) else {
             return true
@@ -148,15 +152,8 @@ extension VariableDeclSyntax: ClassExposableMember {
         let getterName = "get_" + variableName
         let setterName = "set_" + variableName
         
-        let headerSyntax: ExprSyntax = """
-        \(raw: Trivia.newline)
-        // --- \(variableBinding.pattern.trimmed) --- //
-        \(raw: Trivia.newline)
-        """
-        
         if hasSetter {
             return """
-            \(headerSyntax)
             GodotExtension.classRegister.registerVariable(
                 withName: \(literal: variableName),
                 type: Int.self,
@@ -171,7 +168,6 @@ extension VariableDeclSyntax: ClassExposableMember {
             """
         } else {
             return """
-            \(headerSyntax)
             GodotExtension.classRegister.registerVariable(
                 withName: \(literal: variableName),
                 type: Int.self,

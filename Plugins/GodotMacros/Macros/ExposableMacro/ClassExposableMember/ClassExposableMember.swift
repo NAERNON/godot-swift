@@ -3,6 +3,9 @@ import SwiftSyntaxMacros
 
 /// A type that can be exposed if inside an exposable class.
 protocol ClassExposableMember {
+    /// An identifier used to identify the member exposition.
+    var classExpositionIdentifier: String { get }
+    
     /// A Boolean value indicating whether this member is exluded
     /// from the exposition inside a class.
     var isExcludedFromClassExposition: Bool { get }
@@ -37,6 +40,12 @@ extension ClassExposableMember {
             return nil
         }
         
-        return expositionSyntax(fromClass: classDecl, in: context)
+        return """
+        \(Trivia.newline)
+        // ------------------------------------------
+        // \(raw: classExpositionIdentifier)
+        //
+        \(expositionSyntax(fromClass: classDecl, in: context))
+        """
     }
 }

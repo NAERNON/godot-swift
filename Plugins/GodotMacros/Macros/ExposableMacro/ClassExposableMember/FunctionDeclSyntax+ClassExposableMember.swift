@@ -36,6 +36,10 @@ private enum ExpositionDiagnostic: String, Error, DiagnosticMessage {
 }
 
 extension FunctionDeclSyntax: ClassExposableMember {
+    var classExpositionIdentifier: String {
+        name.trimmedDescription
+    }
+    
     var isExcludedFromClassExposition: Bool {
         guard let tokens = modifiers?.map(\.name.tokenKind) else {
             return true
@@ -182,9 +186,6 @@ extension FunctionDeclSyntax: ClassExposableMember {
         let functionName = NamingConvention.camel.convert(name.trimmedDescription, to: .snake)
         
         return """
-        \(raw: Trivia.newline)
-        // --- \(name.trimmed) --- //
-        
         GodotExtension.classRegister.registerFunction(
             withName: \(literal: functionName),
             insideType: self,
