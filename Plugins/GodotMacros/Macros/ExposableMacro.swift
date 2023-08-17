@@ -355,6 +355,7 @@ private struct VariableSyntaxProvider<Context> where Context : MacroExpansionCon
         case noExplicitType
         case `throws`
         case isAsync
+        case isStaticOrClass
         
         var severity: DiagnosticSeverity { .error }
         
@@ -366,6 +367,8 @@ private struct VariableSyntaxProvider<Context> where Context : MacroExpansionCon
                 "Godot exposed variables cannot be marked 'throws'"
             case .isAsync:
                 "Godot exposed variables cannot be marked 'async'"
+            case .isStaticOrClass:
+                "Godot exposed variables cannot be marked 'static' or 'class'"
             }
         }
         
@@ -400,6 +403,7 @@ private struct VariableSyntaxProvider<Context> where Context : MacroExpansionCon
             return ""
         }
         
+        // Check async or throws
         if let accessors = variableBinding.accessorBlock?.accessors.as(AccessorDeclListSyntax.self) {
             for accessor in accessors {
                 if let specifiers = accessor.effectSpecifiers?.as(AccessorEffectSpecifiersSyntax.self) {
@@ -419,6 +423,24 @@ private struct VariableSyntaxProvider<Context> where Context : MacroExpansionCon
                         isVariableExposable = false
                     }
                 }
+            }
+        }
+        
+        // Check static or class
+        if let modifiers = variableDeclSyntax.modifiers {
+            if let modifier = modifiers.first(where: { $0.name.tokenKind == .keyword(.static) }) {
+                context.diagnose(Diagnostic(
+                    node: Syntax(modifier),
+                    message: VariableDiagnostic.isStaticOrClass
+                ))
+                isVariableExposable = false
+            }
+            if let modifier = modifiers.first(where: { $0.name.tokenKind == .keyword(.class) }) {
+                context.diagnose(Diagnostic(
+                    node: Syntax(modifier),
+                    message: VariableDiagnostic.isStaticOrClass
+                ))
+                isVariableExposable = false
             }
         }
         
