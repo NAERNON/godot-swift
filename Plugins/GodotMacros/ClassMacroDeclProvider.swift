@@ -162,11 +162,15 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             }
             
             deinit {
+                guard !isGodotMemoryFreed else { return }
+                
                 if Self.__isCustomGodotClass && isRefInitialized {
+                    isGodotMemoryFreed = true
                     self.withUnsafeRawPointer { __ptr_self in
                         gdextension_interface_mem_free(__ptr_self)
                     }
                 } else if unreference() {
+                    isGodotMemoryFreed = true
                     self.withUnsafeRawPointer { __ptr_self in
                         gdextension_interface_mem_free(__ptr_self)
                     }
@@ -174,6 +178,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             }
             
             private var isRefInitialized = false
+            private var isGodotMemoryFreed = false
             
             func initGodotRef() {
                 guard !isRefInitialized else {
@@ -307,6 +312,13 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             """
         case .refCountedRoot:
             return """
+            public override class func __freeInstanceManagedByGodot(_ instancePtr: UnsafeMutableRawPointer?) {
+                guard let instancePtr else { return }
+                
+                let instance = Unmanaged<Self>.fromOpaque(instancePtr).takeRetainedValue()
+                instance.isGodotMemoryFreed = true
+            }
+            
             public override class func __referenceCallback(
                 _ instancePtr: UnsafeMutableRawPointer?,
                 _ reference: UInt8
