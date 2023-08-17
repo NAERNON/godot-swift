@@ -113,6 +113,7 @@ private struct ClassSyntaxProvider<Context> where Context : MacroExpansionContex
             superclassName: inheritedElement.type.trimmedDescription,
             in: context
         ) {
+            VariableSyntaxProvider(classDecl: classDecl, context: context).expositionSyntax()
             FunctionSyntaxProvider(classDecl: classDecl, context: context).expositionSyntax()
         }
         
@@ -323,5 +324,164 @@ private struct FunctionSyntaxProvider<Context> where Context : MacroExpansionCon
             \(returnDecl)
         }
         """
+    }
+}
+
+// MARK: - VariableSyntaxProvider
+
+private struct VariableSyntaxProvider<Context> where Context : MacroExpansionContext {
+    let classDecl: ClassDeclSyntax
+    let context: Context
+    
+    private func variablesToExpose() -> [VariableDeclSyntax] {
+        classDecl.memberBlock.members
+            .compactMap { $0.decl.as(VariableDeclSyntax.self) }
+            .filter {
+                let tokens = $0.modifiers?.map(\.name.tokenKind) ?? []
+                
+                guard !tokens.contains(where: { $0 == .keyword(.override) }) else {
+                    return false
+                }
+                
+                return tokens.contains(where: {
+                    $0 == .keyword(.public) || $0 == .keyword(.open)
+                })
+            }
+    }
+    
+    // MARK: Diagnostic
+    
+    private enum VariableDiagnostic: String, Error, DiagnosticMessage {
+        case noExplicitType
+        case `throws`
+        case isAsync
+        
+        var severity: DiagnosticSeverity { .error }
+        
+        var message: String {
+            switch self {
+            case .noExplicitType:
+                "Godot exposed variables must explicitly define their type"
+            case .throws:
+                "Godot exposed variables cannot be marked 'throws'"
+            case .isAsync:
+                "Godot exposed variables cannot be marked 'async'"
+            }
+        }
+        
+        var diagnosticID: MessageID {
+            MessageID(domain: "GodotMacros", id: rawValue)
+        }
+    }
+    
+    // MARK: Syntax
+    
+    @CodeBlockItemListBuilder
+    func expositionSyntax() -> CodeBlockItemListSyntax {
+        for variable in variablesToExpose() {
+            expositionSyntax(forVariable: variable)
+        }
+    }
+    
+    private func expositionSyntax(forVariable variableDeclSyntax: VariableDeclSyntax) -> ExprSyntax {
+        guard let variableBinding = variableDeclSyntax.bindings.first else {
+            return ""
+        }
+        
+        var isVariableExposable = true
+        
+        // Check type is explicitly written
+        guard let variableType = variableBinding.typeAnnotation?.type else {
+            context.diagnose(Diagnostic(
+                node: Syntax(variableBinding),
+                message: VariableDiagnostic.noExplicitType
+            ))
+            isVariableExposable = false
+            return ""
+        }
+        
+        if let accessors = variableBinding.accessorBlock?.accessors.as(AccessorDeclListSyntax.self) {
+            for accessor in accessors {
+                if let specifiers = accessor.effectSpecifiers?.as(AccessorEffectSpecifiersSyntax.self) {
+                    if let throwsSpecifier = specifiers.throwsSpecifier {
+                        context.diagnose(Diagnostic(
+                            node: Syntax(throwsSpecifier),
+                            message: VariableDiagnostic.throws
+                        ))
+                        isVariableExposable = false
+                    }
+                    
+                    if let asyncSpecifier = specifiers.asyncSpecifier {
+                        context.diagnose(Diagnostic(
+                            node: Syntax(asyncSpecifier),
+                            message: VariableDiagnostic.isAsync
+                        ))
+                        isVariableExposable = false
+                    }
+                }
+            }
+        }
+        
+        guard isVariableExposable else { return "" }
+        
+        let hasSetter: Bool
+        if variableDeclSyntax.bindingSpecifier.tokenKind == .keyword(.let) {
+            hasSetter = false
+        } else if variableBinding.initializer != nil {
+            hasSetter = true
+        } else if let accessors = variableBinding.accessorBlock?.accessors.as(AccessorDeclListSyntax.self) {
+            hasSetter = accessors.contains(where: { $0.accessorSpecifier == .keyword(.set) })
+        } else {
+            hasSetter = false
+        }
+        
+        // Syntax
+        
+        let getterExprSyntax: ExprSyntax = """
+        Unmanaged<\(raw: classDecl.name.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue().\(raw: variableBinding.pattern.trimmedDescription).makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+        """
+        
+        let setterExprSyntax: ExprSyntax = """
+        Unmanaged<\(raw: classDecl.name.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue().\(raw: variableBinding.pattern.trimmedDescription) = \(variableType.trimmed).fromMatchingTypeVariant(Variant(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+        """
+        
+        let variableName = NamingConvention.camel.convert(variableBinding.pattern.trimmedDescription, to: .snake)
+        let getterName = "get_" + variableName
+        let setterName = "set_" + variableName
+        
+        let headerSyntax: ExprSyntax = """
+        \(raw: Trivia.newline)
+        // --- \(variableBinding.pattern.trimmed) --- //
+        \(raw: Trivia.newline)
+        """
+        
+        if hasSetter {
+            return """
+            \(headerSyntax)
+            GodotExtension.classRegister.registerVariable(
+                withName: \(literal: variableName),
+                type: Int.self,
+                insideType: CustomRef.self,
+                getterName: \(literal: getterName),
+                setterName: \(literal: setterName)
+            ) { _, instancePtr, args, argsCount, returnPtr, error in
+                \(getterExprSyntax)
+            } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
+                \(setterExprSyntax)
+            }
+            """
+        } else {
+            return """
+            \(headerSyntax)
+            GodotExtension.classRegister.registerVariable(
+                withName: \(literal: variableName),
+                type: Int.self,
+                insideType: CustomRef.self,
+                getterName: \(literal: getterName)
+            ) { _, instancePtr, args, argsCount, returnPtr, error in
+                \(getterExprSyntax)
+            }
+            """
+        }
     }
 }

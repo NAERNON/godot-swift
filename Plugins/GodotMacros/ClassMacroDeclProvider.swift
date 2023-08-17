@@ -198,7 +198,6 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
-                ExprSyntax(
                 """
                 return GodotInstanceBindingCallbacks { token, instancePtr in
                     instancePtr
@@ -208,9 +207,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                     return 0
                 }
                 """
-                )
             case .custom:
-                ExprSyntax(
                 """
                 return GodotInstanceBindingCallbacks { token, instancePtr in
                     return nil
@@ -220,7 +217,6 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                     \(className).__referenceCallback(instancePtr, reference)
                 }
                 """
-                )
             }
         }
         
@@ -232,13 +228,10 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
-                ExprSyntax(
                 """
                 GodotExtension.classRegister.registerBaseGodotClass(ofType: self)
                 """
-                )
             case .custom:
-                ExprSyntax(
                 """
                 let classBinding = GodotExtension.classRegister.registerCustomClass(
                     ofType: self,
@@ -255,7 +248,6 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 
                 guard classBinding != nil else { return }
                 """
-                )
                 
                 if let exposeToGodotCustomDecl {
                     try exposeToGodotCustomDecl()
