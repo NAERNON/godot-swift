@@ -1,40 +1,42 @@
 import GodotExtensionHeaders
 
 extension ClassRegister {
-    final class FunctionBinding {
+    public final class FunctionBinding {
         struct PropertiesDataPointer<T> {
             let returnValue: UnsafeMutablePointer<T>
             let argumentsValue: UnsafeMutablePointer<T>
         }
         
-        let name: GodotStringName
-        let className: GodotStringName
+        public let name: GodotStringName
+        public let className: GodotStringName
         
-        let hasReturnValue: Bool
-        
-        let isStatic: Bool
+        public let hasReturnValue: Bool
+
+        public let isStatic: Bool
         
         /// A Boolean value indicating whether the function has varargs at the end.
         /// In Godot, only the last parameter can be a vararg.
-        let isVararg: Bool
+        public let isVararg: Bool
         
         let returnTypeInfo: PropertyInfo
         
         /// Contains all the arguments `PropertyInfo` values.
         /// The last vararg argument, if exists, is not inside this array.
-        private let argumentsTypeInfoWithoutVararg: [PropertyInfo]
+        private let argumentsTypeInfoExceptVararg: [PropertyInfo]
         
         // MARK: Init
         
-        init(name: GodotStringName,
-             className: GodotStringName,
-             arguments: [PropertyInfo],
-             returnType: PropertyInfo?,
-             isVararg: Bool,
-             isStatic: Bool) {
+        init(
+            name: GodotStringName,
+            className: GodotStringName,
+            arguments: [PropertyInfo],
+            returnType: PropertyInfo?,
+            isVararg: Bool,
+            isStatic: Bool
+        ) {
             self.name = name
             self.className = className
-            self.argumentsTypeInfoWithoutVararg = arguments
+            self.argumentsTypeInfoExceptVararg = arguments
             self.returnTypeInfo = returnType ?? .none
             self.hasReturnValue = returnType != nil
             self.isVararg = isVararg
@@ -51,9 +53,9 @@ extension ClassRegister {
         
         var argumentsTypeInfo: [PropertyInfo] {
             if isVararg {
-                return argumentsTypeInfoWithoutVararg + [.vararg]
+                return argumentsTypeInfoExceptVararg + [.vararg]
             } else {
-                return argumentsTypeInfoWithoutVararg
+                return argumentsTypeInfoExceptVararg
             }
         }
         
@@ -63,9 +65,9 @@ extension ClassRegister {
         
         var lastDefaultArgumentsCount: Int {
             var count = 0
-            let argumentsCount = argumentsTypeInfoWithoutVararg.count
+            let argumentsCount = argumentsTypeInfoExceptVararg.count
             while count < argumentsCount {
-                if argumentsTypeInfoWithoutVararg[argumentsCount - count - 1].defaultValue != nil {
+                if argumentsTypeInfoExceptVararg[argumentsCount - count - 1].defaultValue != nil {
                     count += 1
                 } else {
                     break
@@ -76,8 +78,8 @@ extension ClassRegister {
         
         /// Only the consecutive last default arguments are used in Godot.
         var lastDefaultArguments: [Variant] {
-            let argumentsCount = argumentsTypeInfoWithoutVararg.count
-            return (0..<lastDefaultArgumentsCount).map { argumentsTypeInfoWithoutVararg[argumentsCount - $0 - 1].defaultValue! }
+            let argumentsCount = argumentsTypeInfoExceptVararg.count
+            return (0..<lastDefaultArgumentsCount).map { argumentsTypeInfoExceptVararg[argumentsCount - $0 - 1].defaultValue! }
         }
         
         // MARK: Pointers

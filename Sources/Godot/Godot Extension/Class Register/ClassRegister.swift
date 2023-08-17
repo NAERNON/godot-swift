@@ -103,15 +103,15 @@ public final class ClassRegister {
     ///
     /// This function should only be used to register base classes, and not custom ones.
     @discardableResult
-    internal func registerBaseGodotClass<Class>(ofType classType: Class.Type) -> Bool where Class : Object {
+    internal func registerBaseGodotClass<Class>(ofType classType: Class.Type) -> ClassBinding? where Class : Object {
         guard let currentLevel else {
             gdDebugPrintError("Cannot register class \(classType) because no initialization level was provided.")
-            return false
+            return nil
         }
         
         guard classNameIsEquivalentToType(classType: classType) else {
             gdDebugPrintError("Cannot register class \(classType) because the type and name don't match. The @Exposable macro should be applied to the class.")
-            return false
+            return nil
         }
         
         let classBinding = ClassBinding(
@@ -120,7 +120,7 @@ public final class ClassRegister {
         )
         
         godotClassNameToClassBinding[classType.__className] = classBinding
-        return true
+        return classBinding
     }
     
     /// Registers a given custom class to expose it to the Godot editor.
@@ -131,25 +131,26 @@ public final class ClassRegister {
     ///   - toStringFunction: A C closure returning the description of an instance.
     ///   - createInstanceFunction: A C closure used by Godot to create an instance of the class.
     ///   - freeInstanceFunction: A C closure used by Godot to free an instance of the class.
-    /// - Returns: A Boolean value indicating whether the class was registered.
+    /// - Returns: The newly created class binding, or `nil` if the class wasn't registered.
     @discardableResult
     public func registerCustomClass<Class, Superclass>(
         ofType classType: Class.Type,
         superclassType: Superclass.Type,
         toStringFunction: GDExtensionClassToString,
         createInstanceFunction: GDExtensionClassCreateInstance,
-        freeInstanceFunction: GDExtensionClassFreeInstance) -> Bool
+        freeInstanceFunction: GDExtensionClassFreeInstance
+    ) -> CustomClassBinding?
     where Class : Object,
           Superclass : Object
     {
         guard let currentLevel else {
             gdDebugPrintError("Cannot register class \(classType) because no initialization level was provided.")
-            return false
+            return nil
         }
         
         guard classNameIsEquivalentToType(classType: classType) else {
             gdDebugPrintError("Cannot register class \(classType) because the type and name don't match. Make sure the @Exposable macro is applied to the class.")
-            return false
+            return nil
         }
         
         let classBinding = CustomClassBinding(
@@ -166,12 +167,12 @@ public final class ClassRegister {
         
         guard !classIsAlreadyRegistered(withName: className) else {
             gdDebugPrintError("Cannot register class \(classType) because a class with the same name is already registered.")
-            return false
+            return nil
         }
         
         guard self.classType(named: superclassName) == superclassType else {
             gdDebugPrintError("Cannot register class \(classType) because its superclass \(superclassName) is not registered.")
-            return false
+            return nil
         }
         
         customClassNameToClassBinding[className] = classBinding
@@ -212,13 +213,15 @@ public final class ClassRegister {
             registerVirtualFunc(ofType: classType, name: methodName, call: call)
         }
         
-        return true
+        return classBinding
     }
     
     // MARK: Virtual functions
     
-    private static func virtualFunc(fromUserDataPtr userDataPtr: UnsafeMutableRawPointer?,
-                                    methodNamePtr: GDExtensionConstStringNamePtr?) -> GDExtensionClassCallVirtual? {
+    private static func virtualFunc(
+        fromUserDataPtr userDataPtr: UnsafeMutableRawPointer?,
+        methodNamePtr: GDExtensionConstStringNamePtr?
+    ) -> GDExtensionClassCallVirtual? {
         guard let userDataPtr else {
             gdDebugPrintError("No class data pointer provided.")
             return nil
@@ -246,9 +249,11 @@ public final class ClassRegister {
     }
     
     @discardableResult
-    private func registerVirtualFunc<Class>(ofType type: Class.Type,
-                                            name: GodotStringName,
-                                            call: GDExtensionClassCallVirtual) -> Bool
+    private func registerVirtualFunc<Class>(
+        ofType type: Class.Type,
+        name: GodotStringName,
+        call: GDExtensionClassCallVirtual
+    ) -> Bool
     where Class : Object {
         guard let classBinding = customClassNameToClassBinding[type.__className] else {
             gdDebugPrintError("Class doesn't exist.")
@@ -270,7 +275,7 @@ public final class ClassRegister {
     ///   - returnParameter: The return parameter of the function, if any.
     ///   - isStatic: A Boolean value indicating whether the function is static.
     ///   - call: A C closure used by Godot to call the function.
-    /// - Returns: A Boolean value indicating whether the function was registered.
+    /// - Returns: The newly created function binding, or `nil` if the function wasn't registered.
     @discardableResult
     public func registerFunction<Class>(
         withName functionName: GodotStringName,
@@ -278,27 +283,28 @@ public final class ClassRegister {
         argumentParameters: [FunctionParameter],
         returnParameter: FunctionParameter?,
         isStatic: Bool,
-        call: GDExtensionClassMethodCall)
-    -> Bool where Class : Object {
+        call: GDExtensionClassMethodCall
+    ) -> FunctionBinding? where Class : Object {
         let className = classType.__className
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
             gdDebugPrintError("Cannot register function \(functionName) because the class \(className) is not registered.")
-            return false
+            return nil
         }
         
         let arguments = argumentParameters.map { $0.propertyInfo() }
         let returnType = returnParameter?.propertyInfo()
         
         // TODO: Do the vararg
-        // Register this function within our extension.
-        let functionBinding = FunctionBinding(name: functionName,
-                                              className: className,
-                                              arguments: arguments,
-                                              returnType: returnType,
-                                              isVararg: false,
-                                              isStatic: isStatic)
+        let functionBinding = FunctionBinding(
+            name: functionName,
+            className: className,
+            arguments: arguments,
+            returnType: returnType,
+            isVararg: false,
+            isStatic: isStatic
+        )
         classBinding.appendFunctionBinding(functionBinding)
         
         functionName.withUnsafeRawPointer { functionNamePtr in
@@ -334,6 +340,6 @@ public final class ClassRegister {
             }
         }
         
-        return true
+        return functionBinding
     }
 }

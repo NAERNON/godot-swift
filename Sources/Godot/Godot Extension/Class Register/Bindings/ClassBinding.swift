@@ -1,11 +1,11 @@
 import GodotExtensionHeaders
 
 extension ClassRegister {
-    class ClassBinding {
+    public class ClassBinding {
         let level: GodotInitializationLevel
         
-        let type: Object.Type
-        let name: GodotStringName
+        public let type: Object.Type
+        public let name: GodotStringName
         
         let callbacks: GodotInstanceBindingCallbacks
         

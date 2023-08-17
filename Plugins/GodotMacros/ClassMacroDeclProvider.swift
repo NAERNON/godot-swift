@@ -235,7 +235,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             case .custom:
                 ExprSyntax(
                 """
-                let isClassRegistered = GodotExtension.classRegister.registerCustomClass(
+                let classBinding = GodotExtension.classRegister.registerCustomClass(
                     ofType: self,
                     superclassType: \(raw: superclassName ?? "").self
                 ) { instancePtr, isValid, out in
@@ -248,7 +248,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                     \(classDecl.name).__freeInstanceManagedByGodot(instancePtr)
                 }
                 
-                guard isClassRegistered else { return }
+                guard classBinding != nil else { return }
                 """
                 )
                 
