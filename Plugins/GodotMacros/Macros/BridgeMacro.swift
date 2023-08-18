@@ -3,6 +3,23 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
+private enum BridgeMacroDiagnostic: String, DiagnosticMessage {
+    case wrongType
+    
+    var severity: DiagnosticSeverity { .error }
+    
+    var message: String {
+        switch self {
+        case .wrongType:
+            "'@Bridge' can only be applied to 'class', 'struct' and 'enum'"
+        }
+    }
+    
+    var diagnosticID: MessageID {
+        MessageID(domain: "GodotMacros", id: rawValue)
+    }
+}
+
 public enum BridgeMacro: ExtensionMacro, PeerMacro {
     public static func expansion(
         of node: AttributeSyntax,
@@ -38,7 +55,7 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
         
         let diagnostic = Diagnostic(
             node: Syntax(node),
-            message: GodotBridgeDiagnostic.wrongType
+            message: BridgeMacroDiagnostic.wrongType
         )
         context.diagnose(diagnostic)
         
@@ -70,24 +87,5 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
             }
             """
         )
-    }
-}
-
-// MARK: - Diagnostic
-
-private enum GodotBridgeDiagnostic: String, DiagnosticMessage {
-    case wrongType
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .wrongType:
-            "'@Bridge' can only be applied to 'class', 'struct' and 'enum'"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
     }
 }

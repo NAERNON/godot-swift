@@ -3,6 +3,23 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
+private enum GodotOptionSetMacroDiagnostic: String, DiagnosticMessage {
+    case notAStruct
+    
+    var severity: DiagnosticSeverity { .error }
+    
+    var message: String {
+        switch self {
+        case .notAStruct:
+            "'@GodotOptionSet' can only be applied to a 'struct'"
+        }
+    }
+    
+    var diagnosticID: MessageID {
+        MessageID(domain: "GodotMacros", id: rawValue)
+    }
+}
+
 public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
     public static func expansion(
         of node: AttributeSyntax,
@@ -14,7 +31,7 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         guard declaration.is(StructDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotOptionSetDiagnostic.notAStruct
+                message: GodotOptionSetMacroDiagnostic.notAStruct
             ))
             return []
         }
@@ -67,24 +84,5 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         }
         """
         ]
-    }
-}
-
-// MARK: - Diagnostic
-
-private enum GodotOptionSetDiagnostic: String, DiagnosticMessage {
-    case notAStruct
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .notAStruct:
-            "'@GodotOptionSet' can only be applied to a 'struct'"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
     }
 }

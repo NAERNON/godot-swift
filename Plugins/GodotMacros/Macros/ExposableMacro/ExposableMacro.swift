@@ -4,7 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
 
-private enum ExpositionDiagnostic: String, Error, DiagnosticMessage {
+private enum ExposableMacroDiagnostic: String, Error, DiagnosticMessage {
     case notAClass
     
     var severity: DiagnosticSeverity { .error }
@@ -39,7 +39,7 @@ public enum ExposableMacro: MemberMacro {
         guard let classDecl = declaration.as(ClassDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(attribute),
-                message: ExpositionDiagnostic.notAClass
+                message: ExposableMacroDiagnostic.notAClass
             ))
             return []
         }
