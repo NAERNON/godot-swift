@@ -59,7 +59,8 @@ public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro
     named(variantType),
     named(makeVariant),
     named(fromMatchingTypeVariant),
-    named(fromVariant)
+    named(fromVariant),
+    named(godotExposableValues)
 )
 public macro ExposableEnum() = #externalMacro(module: "GodotMacros", type: "ExposableEnumMacro")
 

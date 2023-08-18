@@ -2,6 +2,7 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
+import CodeTranslator
 
 private enum ExposableEnumMacroDiagnostic: String, DiagnosticMessage {
     case notAnEnum
@@ -85,11 +86,10 @@ public enum ExposableEnumMacro: ExtensionMacro {
             return []
         }
         
-        let variantConvertibleExtension: DeclSyntax =
-        """
-        extension \(type.trimmed): VariantConvertible {
+        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): VariantConvertible") {
+            """
             public static let variantType: Variant.RepresentationType = RawValue.variantType
-        
+            
             public func makeVariant() -> Variant {
                 rawValue.makeVariant()
             }
@@ -97,7 +97,7 @@ public enum ExposableEnumMacro: ExtensionMacro {
             public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
                 Self(rawValue: RawValue.fromMatchingTypeVariant(variant))!
             }
-        
+            
             public static func fromVariant(_ variant: Variant) throws -> Self {
                 try variant.checkType(Self.variantType)
                 
@@ -115,13 +115,45 @@ public enum ExposableEnumMacro: ExtensionMacro {
                 
                 return value
             }
+            """
+            
+            try FunctionDeclSyntax("public static func godotExposableValues() -> [(GodotStringName, Int64)]") {
+                "["
+                for caseName in enumCases(for: enumDecl) {
+                    let snakeEnumName = NamingConvention.pascal.convert(
+                        enumDecl.name.trimmedDescription, to: .snake
+                    )
+                    
+                    let snakeCaseName = NamingConvention.pascal.convert(
+                        caseName, to: .snake
+                    )
+                    
+                    let translatedCaseName = (snakeEnumName + "_" + snakeCaseName).uppercased()
+                    
+                    "(\(literal: translatedCaseName), Self.\(raw: caseName).rawValue),"
+                }
+                "]"
+            }
         }
-        """
         
-        guard let extensionDecl = variantConvertibleExtension.as(ExtensionDeclSyntax.self) else {
+        return [extensionDeclSyntax]
+    }
+    
+    private static func enumCases(for enumDecl: EnumDeclSyntax) -> [String] {
+        guard let memberBlockList = enumDecl.memberBlock.members.as(MemberBlockItemListSyntax.self) else {
             return []
         }
         
-        return [extensionDecl]
+        var cases = [String]()
+        
+        for block in memberBlockList {
+            if let caseElements = block.decl.as(EnumCaseDeclSyntax.self)?.elements {
+                for element in caseElements {
+                    cases.append(element.name.trimmedDescription)
+                }
+            }
+        }
+        
+        return cases
     }
 }

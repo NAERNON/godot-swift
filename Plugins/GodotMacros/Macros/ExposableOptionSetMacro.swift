@@ -36,11 +36,10 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
             return []
         }
         
-        let variantConvertibleExtension: DeclSyntax =
-        """
-        extension \(type.trimmed): OptionSet, VariantConvertible {
+        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): OptionSet, VariantConvertible") {
+            """
             public static let variantType: Variant.RepresentationType = RawValue.variantType
-        
+            
             public func makeVariant() -> Variant {
                 rawValue.makeVariant()
             }
@@ -48,20 +47,16 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
             public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
                 Self(rawValue: RawValue.fromMatchingTypeVariant(variant))
             }
-        
+            
             public static func fromVariant(_ variant: Variant) throws -> Self {
                 try variant.checkType(Self.variantType)
                 
                 return Self(rawValue: RawValue.fromMatchingTypeVariant(variant))
             }
-        }
-        """
-        
-        guard let extensionDecl = variantConvertibleExtension.as(ExtensionDeclSyntax.self) else {
-            return []
+            """
         }
         
-        return [extensionDecl]
+        return [extensionDeclSyntax]
     }
     
     public static func expansion(
