@@ -11,8 +11,8 @@ extension ClassRegister {
         
         private var virtualFuncNameToCall = [GodotStringName : GDExtensionClassCallVirtual]()
         
-        private(set) var functions = [FunctionBinding]()
-        private(set) var variables = [VariableBinding]()
+        private(set) var functions = [GodotStringName : FunctionBinding]()
+        private(set) var variables = [GodotStringName : VariableBinding]()
         
         // MARK: Init
         
@@ -50,11 +50,11 @@ extension ClassRegister {
         }
         
         func appendFunction(_ functionBinding: FunctionBinding) {
-            functions.append(functionBinding)
+            functions[functionBinding.name] = functionBinding
         }
         
         func appendVariable(_ variableBinding: VariableBinding) {
-            variables.append(variableBinding)
+            variables[variableBinding.name] = variableBinding
         }
     }
 }

@@ -293,6 +293,11 @@ public final class ClassRegister {
             return nil
         }
         
+        guard classBinding.functions[functionName] == nil else {
+            gdDebugPrintError("Cannot register function \(functionName) because the class \(className) already registered a function with the same name.")
+            return nil
+        }
+        
         let arguments = argumentParameters.map(\.propertyInfo)
         let returnType = returnParameter?.propertyInfo
         
@@ -375,6 +380,11 @@ public final class ClassRegister {
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
             gdDebugPrintError("Cannot register variable \(variableName) because the class \(className) is not registered.")
+            return nil
+        }
+        
+        guard classBinding.variables[variableName] == nil else {
+            gdDebugPrintError("Cannot register variable \(variableName) because the class \(className) already registered a variableName with the same name.")
             return nil
         }
         
