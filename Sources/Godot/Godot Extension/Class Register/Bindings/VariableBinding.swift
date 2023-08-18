@@ -1,7 +1,7 @@
 import GodotExtensionHeaders
 
 extension ClassRegister {
-    public final class VariableBinding {
+    public struct VariableBinding {
         public let name: GodotStringName
         
         public let getter: FunctionBinding
