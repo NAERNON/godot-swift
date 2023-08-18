@@ -33,7 +33,7 @@ public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro
 /// A Godot enum must have an `Int64` `RawType`. Here is how the macro is used:
 ///
 /// ```swift
-/// @GodotEnum
+/// @ExposableEnum
 /// public enum CharacterEmotion: Int64 {
 ///     case happy
 ///     case notSoHappy
@@ -46,7 +46,7 @@ public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro
 /// ```swift
 /// @Exposable
 /// public class Character: Node {
-///     @GodotEnum
+///     @ExposableEnum
 ///     public enum CharacterEmotion: Int64 {
 ///         // ...
 ///     }
@@ -61,7 +61,7 @@ public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro
     named(fromMatchingTypeVariant),
     named(fromVariant)
 )
-public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnumMacro")
+public macro ExposableEnum() = #externalMacro(module: "GodotMacros", type: "ExposableEnumMacro")
 
 /// A macro that enables an `OptionSet` to be used with Godot.
 ///
@@ -75,7 +75,7 @@ public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnu
 /// A Godot option set must be a `struct`. Here is how the macro is used:
 ///
 /// ```swift
-/// @GodotOptionSet
+/// @ExposableOptionSet
 /// public struct CharacterAction {
 ///     public static let thinking = CharacterAction(rawValue: 1 << 0)
 ///     public static let drawing  = CharacterAction(rawValue: 1 << 1)
@@ -91,7 +91,7 @@ public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnu
 /// ```swift
 /// @Exposable
 /// public class Character: Node {
-///     @GodotOptionSet
+///     @ExposableOptionSet
 ///     public struct CharacterAction {
 ///         // ...
 ///     }
@@ -111,7 +111,7 @@ public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnu
     named(rawValue),
     named(init)
 )
-public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "GodotOptionSetMacro")
+public macro ExposableOptionSet() = #externalMacro(module: "GodotMacros", type: "ExposableOptionSetMacro")
 
 // MARK: - Internal macros
 

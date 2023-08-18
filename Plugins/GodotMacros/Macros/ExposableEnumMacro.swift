@@ -3,7 +3,7 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
-private enum GodotEnumMacroDiagnostic: String, DiagnosticMessage {
+private enum ExposableEnumMacroDiagnostic: String, DiagnosticMessage {
     case notAnEnum
     case notInt64
     
@@ -12,9 +12,9 @@ private enum GodotEnumMacroDiagnostic: String, DiagnosticMessage {
     var message: String {
         switch self {
         case .notAnEnum:
-            "'@GodotEnum' can only be applied to an 'enum'"
+            "'@ExposableEnum' can only be applied to an 'enum'"
         case .notInt64:
-            "'@GodotEnum' can only be applied to an enum with an explicit 'Int64' raw type"
+            "'@ExposableEnum' can only be applied to an enum with an explicit 'Int64' raw type"
         }
     }
     
@@ -23,7 +23,7 @@ private enum GodotEnumMacroDiagnostic: String, DiagnosticMessage {
     }
 }
 
-private enum GodotEnumMacroFixItMessage: String, FixItMessage {
+private enum ExposableEnumMacroFixItMessage: String, FixItMessage {
     case addInt64Type
     
     var message: String {
@@ -38,7 +38,7 @@ private enum GodotEnumMacroFixItMessage: String, FixItMessage {
     }
 }
 
-public enum GodotEnumMacro: ExtensionMacro {
+public enum ExposableEnumMacro: ExtensionMacro {
     public static func expansion(
         of node: AttributeSyntax,
         attachedTo declaration: some DeclGroupSyntax,
@@ -49,7 +49,7 @@ public enum GodotEnumMacro: ExtensionMacro {
         guard let enumDecl = declaration.as(EnumDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotEnumMacroDiagnostic.notAnEnum
+                message: ExposableEnumMacroDiagnostic.notAnEnum
             ))
             return []
         }
@@ -63,7 +63,7 @@ public enum GodotEnumMacro: ExtensionMacro {
                     .with(\.trailingTrivia, .space)
                     .with(\.leadingTrivia, [])
             )
-            let fixIt = FixIt(message: GodotEnumMacroFixItMessage.addInt64Type, changes: [
+            let fixIt = FixIt(message: ExposableEnumMacroFixItMessage.addInt64Type, changes: [
                 .replace(
                     oldNode: Syntax(enumDecl),
                     newNode: Syntax(fixedEnumDecl))
@@ -71,7 +71,7 @@ public enum GodotEnumMacro: ExtensionMacro {
             
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotEnumMacroDiagnostic.notInt64,
+                message: ExposableEnumMacroDiagnostic.notInt64,
                 fixIt: fixIt
             ))
             return []
@@ -80,7 +80,7 @@ public enum GodotEnumMacro: ExtensionMacro {
         guard inheritedType.type.as(IdentifierTypeSyntax.self)?.name.tokenKind == .identifier("Int64") else {
             context.diagnose(Diagnostic(
                 node: Syntax(inheritedType),
-                message: GodotEnumMacroDiagnostic.notInt64
+                message: ExposableEnumMacroDiagnostic.notInt64
             ))
             return []
         }

@@ -6,8 +6,8 @@ struct GodotMacrosPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
         ExposableMacro.self,
         BridgeMacro.self,
-        GodotEnumMacro.self,
-        GodotOptionSetMacro.self,
+        ExposableEnumMacro.self,
+        ExposableOptionSetMacro.self,
         
         GodotClassMacro.self,
         GodotRefCountedClassMacro.self,

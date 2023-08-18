@@ -3,7 +3,7 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
-private enum GodotOptionSetMacroDiagnostic: String, DiagnosticMessage {
+private enum ExposableOptionSetMacroDiagnostic: String, DiagnosticMessage {
     case notAStruct
     
     var severity: DiagnosticSeverity { .error }
@@ -11,7 +11,7 @@ private enum GodotOptionSetMacroDiagnostic: String, DiagnosticMessage {
     var message: String {
         switch self {
         case .notAStruct:
-            "'@GodotOptionSet' can only be applied to a 'struct'"
+            "'@ExposableOptionSet' can only be applied to a 'struct'"
         }
     }
     
@@ -20,7 +20,7 @@ private enum GodotOptionSetMacroDiagnostic: String, DiagnosticMessage {
     }
 }
 
-public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
+public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
     public static func expansion(
         of node: AttributeSyntax,
         attachedTo declaration: some DeclGroupSyntax,
@@ -31,7 +31,7 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         guard declaration.is(StructDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotOptionSetMacroDiagnostic.notAStruct
+                message: ExposableOptionSetMacroDiagnostic.notAStruct
             ))
             return []
         }
