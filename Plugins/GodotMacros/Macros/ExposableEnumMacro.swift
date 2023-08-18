@@ -140,9 +140,7 @@ public enum ExposableEnumMacro: ExtensionMacro {
     }
     
     private static func enumCases(for enumDecl: EnumDeclSyntax) -> [String] {
-        guard let memberBlockList = enumDecl.memberBlock.members.as(MemberBlockItemListSyntax.self) else {
-            return []
-        }
+        let memberBlockList = enumDecl.memberBlock.members
         
         var cases = [String]()
         

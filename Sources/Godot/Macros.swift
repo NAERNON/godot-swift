@@ -30,6 +30,8 @@ public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro
 /// ``VariantConvertible`` protocol, enabling the enum
 /// to be used as a type for function parameters and variables for Godot.
 ///
+/// ## Use the macro
+///
 /// A Godot enum must have an `Int64` `RawType`. Here is how the macro is used:
 ///
 /// ```swift
@@ -73,14 +75,27 @@ public macro ExposableEnum() = #externalMacro(module: "GodotMacros", type: "Expo
 /// - a public `rawValue` constant of type `Int64`
 /// - a public `init(rawValue:_)` initializer that sets the `rawValue` constant
 ///
-/// A Godot option set must be a `struct`. Here is how the macro is used:
+/// ## Use the macro
+///
+/// A Godot option set must be a `struct`.
+/// Every public static variable must be `let` constants,
+/// and their type must:
+/// - be of the same type as the option set
+/// - be explicitly written before the `=` statement
+///
+/// Use either `Self` or the name of the struct to write the type.
+///
+/// > note: When used inside a custom Godot exposed class,
+/// only **public** static constants are exposed to the Godot editor.
+///
+/// Here is how the macro is used:
 ///
 /// ```swift
 /// @ExposableOptionSet
 /// public struct CharacterAction {
-///     public static let thinking = CharacterAction(rawValue: 1 << 0)
-///     public static let drawing  = CharacterAction(rawValue: 1 << 1)
-///     public static let sleeping = CharacterAction(rawValue: 1 << 2)
+///     public static let thinking: CharacterAction = .init(rawValue: 1 << 0)
+///     public static let drawing: CharacterAction  = .init(rawValue: 1 << 1)
+///     public static let sleeping: Self            = .init(rawValue: 1 << 2)
 ///
 ///     public static let none: CharacterAction = []
 ///     public static let dreaming: CharacterAction = [.thinking, .sleeping]
@@ -105,7 +120,8 @@ public macro ExposableEnum() = #externalMacro(module: "GodotMacros", type: "Expo
     named(variantType),
     named(makeVariant),
     named(fromMatchingTypeVariant),
-    named(fromVariant)
+    named(fromVariant),
+    named(godotExposableValues)
 )
 @attached(member, names:
     named(RawValue),
