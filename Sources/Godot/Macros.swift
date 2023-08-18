@@ -24,6 +24,19 @@ public macro Exposable() = #externalMacro(module: "GodotMacros", type: "Exposabl
 @attached(peer, names: suffixed(_godot_init))
 public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro")
 
+/// A macro that enables an enum to be used with Godot.
+///
+/// The macro automatically conforms the attached enum to the
+/// ``VariantConvertible`` protocol,
+/// enabling the enum to be used as a type for function parameters and variables.
+@attached(extension, conformances: VariantConvertible, names:
+    named(variantType),
+    named(makeVariant),
+    named(fromMatchingTypeVariant),
+    named(fromVariant)
+)
+public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnumMacro")
+
 // MARK: - Internal macros
 
 @attached(member, names: arbitrary)

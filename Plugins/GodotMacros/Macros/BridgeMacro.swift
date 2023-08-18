@@ -87,7 +87,7 @@ private enum GodotBridgeDiagnostic: String, DiagnosticMessage {
     var message: String {
         switch self {
         case .wrongType:
-            "`@Bridge` can only be applied to `class`, `struct` and `enum`"
+            "'@Bridge' can only be applied to 'class', 'struct' and 'enum'"
         }
     }
     
