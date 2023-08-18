@@ -15,7 +15,7 @@ private enum ExposableOptionSetMacroDiagnostic: String, DiagnosticMessage {
         case .notAStruct:
             "'@ExposableOptionSet' can only be applied to a 'struct'"
         case .caseNotLetAndExplicitType:
-            "'@ExposableOptionSet' constrain every public static variables to be 'let', and to define an explicit Self type"
+            "Static variables in a Godot exposable option set must be constants with an explicitly Self defined type before the '='"
         }
     }
     
@@ -140,10 +140,11 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
                         continue
                     }
                     
-                    guard let typeSyntax = binding.typeAnnotation?.type.as(IdentifierTypeSyntax.self)?.name.tokenKind
+                    guard let typeAnnotation = binding.typeAnnotation,
+                          let typeSyntax = typeAnnotation.type.as(IdentifierTypeSyntax.self)?.name.tokenKind
                     else {
                         context.diagnose(Diagnostic(
-                            node: Syntax(variableDecl.bindingSpecifier),
+                            node: Syntax(variableDecl.bindings),
                             message: ExposableOptionSetMacroDiagnostic.caseNotLetAndExplicitType
                         ))
                         casesAreCorrect = false
@@ -156,7 +157,7 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
                         cases.append(binding.pattern.trimmedDescription)
                     default:
                         context.diagnose(Diagnostic(
-                            node: Syntax(variableDecl.bindingSpecifier),
+                            node: Syntax(typeAnnotation),
                             message: ExposableOptionSetMacroDiagnostic.caseNotLetAndExplicitType
                         ))
                         casesAreCorrect = false

@@ -14,13 +14,13 @@ private enum ExpositionDiagnostic: String, Error, DiagnosticMessage {
     var message: String {
         switch self {
         case .noExplicitType:
-            "Godot exposed variables must explicitly define their type"
+            "Godot exposable variables must explicitly define their type"
         case .throws:
-            "Godot exposed variables cannot be marked 'throws'"
+            "Godot exposable variables cannot be marked 'throws'"
         case .isAsync:
-            "Godot exposed variables cannot be marked 'async'"
+            "Godot exposable variables cannot be marked 'async'"
         case .isStaticOrClass:
-            "Godot exposed variables cannot be marked 'static' or 'class'"
+            "Godot exposable variables cannot be marked 'static' or 'class'"
         }
     }
     

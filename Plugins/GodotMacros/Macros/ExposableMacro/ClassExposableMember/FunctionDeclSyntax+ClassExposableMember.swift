@@ -16,17 +16,17 @@ private enum ExpositionDiagnostic: String, Error, DiagnosticMessage {
     var message: String {
         switch self {
         case .throws:
-            "Godot exposed functions cannot be marked 'throws'"
+            "Godot exposable functions cannot be marked 'throws'"
         case .isAsync:
-            "Godot exposed functions cannot be marked 'async'"
+            "Godot exposable functions cannot be marked 'async'"
         case .isGeneric:
-            "Godot exposed functions cannot be generic"
+            "Godot exposable functions cannot be generic"
         case .someOrAnyParameter:
-            "Godot exposed functions cannot have parameters marked 'some' or 'any'"
+            "Godot exposable functions cannot have parameters marked 'some' or 'any'"
         case .variadicParameter:
-            "Godot exposed functions cannot have variadic parameters"
+            "Godot exposable functions cannot have variadic parameters"
         case .someOrAnyReturnType:
-            "Godot exposed functions cannot return a type marked 'some' or 'any'"
+            "Godot exposable functions cannot return a type marked 'some' or 'any'"
         }
     }
     
