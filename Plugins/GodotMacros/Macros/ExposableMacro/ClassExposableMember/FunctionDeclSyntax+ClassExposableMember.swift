@@ -187,7 +187,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
         
         return """
         GodotExtension.classRegister.registerFunction(
-            withName: \(literal: functionName),
+            named: \(literal: functionName),
             insideType: self,
             argumentParameters: [
                 \(raw: parameters.joined(separator: "\n"))

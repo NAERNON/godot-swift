@@ -155,7 +155,7 @@ extension VariableDeclSyntax: ClassExposableMember {
         if hasSetter {
             return """
             GodotExtension.classRegister.registerVariable(
-                withName: \(literal: variableName),
+                named: \(literal: variableName),
                 type: Int.self,
                 insideType: CustomRef.self,
                 getterName: \(literal: getterName),
@@ -169,7 +169,7 @@ extension VariableDeclSyntax: ClassExposableMember {
         } else {
             return """
             GodotExtension.classRegister.registerVariable(
-                withName: \(literal: variableName),
+                named: \(literal: variableName),
                 type: Int.self,
                 insideType: CustomRef.self,
                 getterName: \(literal: getterName)

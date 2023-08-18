@@ -278,7 +278,7 @@ public final class ClassRegister {
     /// - Returns: The newly created function binding, or `nil` if the function wasn't registered.
     @discardableResult
     public func registerFunction<Class>(
-        withName functionName: GodotStringName,
+        named functionName: GodotStringName,
         insideType classType: Class.Type,
         argumentParameters: [FunctionParameter],
         returnParameter: FunctionParameter?,
@@ -364,7 +364,7 @@ public final class ClassRegister {
     /// - Returns: The newly created variable binding, or `nil` if the variable wasn't registered.
     @discardableResult
     public func registerVariable<Class, Variable>(
-        withName variableName: GodotStringName,
+        named variableName: GodotStringName,
         type: Variable.Type,
         insideType classType: Class.Type,
         getterName: GodotStringName,
@@ -391,7 +391,7 @@ public final class ClassRegister {
         let parameter = FunctionParameter.argument(Variable.self, name: variableName)
         
         guard let getterBinding = registerFunction(
-            withName: getterName,
+            named: getterName,
             insideType: classType,
             argumentParameters: [], 
             returnParameter: parameter,
@@ -404,7 +404,7 @@ public final class ClassRegister {
         var setterBinding: FunctionBinding?
         if let setterName, let setterCall {
             guard let binding = registerFunction(
-                withName: setterName,
+                named: setterName,
                 insideType: classType,
                 argumentParameters: [parameter],
                 returnParameter: .returnParameter(Variable.self),
@@ -454,7 +454,7 @@ public final class ClassRegister {
     /// - Returns: The newly created enum binding, or `nil` if the enum wasn't registered.
     @discardableResult
     public func registerEnumOrOptionSet<Class>(
-        withName enumName: GodotStringName,
+        named enumName: GodotStringName,
         values: [(GodotStringName, Int64)],
         isOptionSet: Bool,
         insideType classType: Class.Type
