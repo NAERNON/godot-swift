@@ -85,7 +85,7 @@ public enum GodotEnumMacro: ExtensionMacro {
             return []
         }
         
-        let sendableExtension: DeclSyntax =
+        let variantConvertibleExtension: DeclSyntax =
         """
         extension \(type.trimmed): VariantConvertible {
             public static let variantType: Variant.RepresentationType = RawValue.variantType
@@ -118,7 +118,7 @@ public enum GodotEnumMacro: ExtensionMacro {
         }
         """
         
-        guard let extensionDecl = sendableExtension.as(ExtensionDeclSyntax.self) else {
+        guard let extensionDecl = variantConvertibleExtension.as(ExtensionDeclSyntax.self) else {
             return []
         }
         

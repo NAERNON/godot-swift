@@ -36,7 +36,7 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
             return []
         }
         
-        let sendableExtension: DeclSyntax =
+        let variantConvertibleExtension: DeclSyntax =
         """
         extension \(type.trimmed): OptionSet, VariantConvertible {
             public static let variantType: Variant.RepresentationType = RawValue.variantType
@@ -57,7 +57,7 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         }
         """
         
-        guard let extensionDecl = sendableExtension.as(ExtensionDeclSyntax.self) else {
+        guard let extensionDecl = variantConvertibleExtension.as(ExtensionDeclSyntax.self) else {
             return []
         }
         

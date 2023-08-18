@@ -28,12 +28,12 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
         conformingTo protocols: [TypeSyntax],
         in context: some MacroExpansionContext
     ) throws -> [ExtensionDeclSyntax] {
-        let sendableExtension: DeclSyntax =
+        let godotBridgeExtension: DeclSyntax =
         """
         extension \(type.trimmed): GodotBridge {}
         """
         
-        guard let extensionDecl = sendableExtension.as(ExtensionDeclSyntax.self) else {
+        guard let extensionDecl = godotBridgeExtension.as(ExtensionDeclSyntax.self) else {
             return []
         }
         
