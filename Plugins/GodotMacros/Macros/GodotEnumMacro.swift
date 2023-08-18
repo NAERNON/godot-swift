@@ -4,8 +4,6 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 
 public enum GodotEnumMacro: ExtensionMacro {
-    // MARK: Conformance
-    
     public static func expansion(
         of node: AttributeSyntax,
         attachedTo declaration: some DeclGroupSyntax,

@@ -4,8 +4,6 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 
 public enum BridgeMacro: ExtensionMacro, PeerMacro {
-    // MARK: Conformance
-    
     public static func expansion(
         of node: AttributeSyntax,
         attachedTo declaration: some DeclGroupSyntax,
@@ -24,8 +22,6 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
         
         return [extensionDecl]
     }
-    
-    // MARK: Peer
     
     public static func expansion(
         of node: AttributeSyntax,

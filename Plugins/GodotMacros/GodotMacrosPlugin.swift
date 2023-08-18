@@ -7,6 +7,7 @@ struct GodotMacrosPlugin: CompilerPlugin {
         ExposableMacro.self,
         BridgeMacro.self,
         GodotEnumMacro.self,
+        GodotOptionSetMacro.self,
         
         GodotClassMacro.self,
         GodotRefCountedClassMacro.self,
