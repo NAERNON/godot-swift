@@ -356,7 +356,7 @@ public final class ClassRegister {
     /// - Parameters:
     ///   - variableName: The variable name.
     ///   - type: The variable type.
-    ///   - classType: The type of the class the function is part of.
+    ///   - classType: The type of the class the variable is part of.
     ///   - getterName: The name of the getter function.
     ///   - setterName: The name of the setter function, if a setter is available.
     ///   - getterCall: A C closure used by Godot to call the getter function.
@@ -439,5 +439,58 @@ public final class ClassRegister {
         }
         
         return variableBinding
+    }
+    
+    // MARK: Enum & OptionSet registration
+    
+    /// Registers a given enum or option set from an already registered
+    /// custom class to expose it to the Godot editor.
+    ///
+    /// - Parameters:
+    ///   - enumName: The enum name.
+    ///   - values: All the values of the enum and their associated name.
+    ///   - isOptionSet: A Boolean value indicating whether this enum is an option set.
+    ///   - classType: The type of the class the enum is part of.
+    /// - Returns: The newly created enum binding, or `nil` if the enum wasn't registered.
+    @discardableResult
+    public func registerEnumOrOptionSet<Class>(
+        withName enumName: GodotStringName,
+        values: [(GodotStringName, Int64)],
+        isOptionSet: Bool,
+        insideType classType: Class.Type
+    ) -> EnumBinding? where Class : Object {
+        let className = classType.__className
+        
+        guard let classBinding = customClassNameToClassBinding[className],
+              classBinding.type == classType else {
+            gdDebugPrintError("Cannot register enum or option set \(enumName) because the class \(className) is not registered.")
+            return nil
+        }
+        
+        guard classBinding.enums[enumName] == nil else {
+            gdDebugPrintError("Cannot register enum or option set \(enumName) because the class \(className) already registered an enum or option set with the same name.")
+            return nil
+        }
+        
+        let enumBinding = EnumBinding(
+            name: enumName,
+            values: values,
+            isOptionSet: isOptionSet
+        )
+        classBinding.appendEnum(enumBinding)
+        
+        enumName.withUnsafeRawPointer { namePtr in
+            className.withUnsafeRawPointer { classNamePtr in
+                for (caseName, value) in values {
+                    caseName.withUnsafeRawPointer { caseNamePtr in
+                        gdextension_interface_classdb_register_extension_class_integer_constant(
+                            GodotExtension.libraryPtr, classNamePtr, namePtr, caseNamePtr, value, isOptionSet ? 1 : 0
+                        )
+                    }
+                }
+            }
+        }
+        
+        return enumBinding
     }
 }

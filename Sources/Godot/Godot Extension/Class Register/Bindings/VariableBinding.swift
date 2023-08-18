@@ -1,4 +1,3 @@
-import GodotExtensionHeaders
 
 extension ClassRegister {
     public struct VariableBinding {
