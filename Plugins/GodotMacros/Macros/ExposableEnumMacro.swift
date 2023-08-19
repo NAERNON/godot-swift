@@ -56,14 +56,17 @@ public enum ExposableEnumMacro: ExtensionMacro {
         }
         
         guard let inheritedType = enumDecl.inheritanceClause?.inheritedTypes.first else {
-            let fixedEnumDecl = enumDecl.with(
-                \.inheritanceClause,
-                 InheritanceClauseSyntax(
-                    colon: .colonToken(leadingTrivia: [], trailingTrivia: .space),
-                    inheritedTypes: [InheritedTypeSyntax(type: IdentifierTypeSyntax(name: "Int64"))])
-                    .with(\.trailingTrivia, .space)
-                    .with(\.leadingTrivia, [])
-            )
+            let fixedEnumDecl = enumDecl
+                .with(
+                    \.inheritanceClause,
+                     InheritanceClauseSyntax(
+                        colon: .colonToken(leadingTrivia: [], trailingTrivia: .space),
+                        inheritedTypes: [InheritedTypeSyntax(type: IdentifierTypeSyntax(name: "Int64"))]
+                     )
+                     .with(\.trailingTrivia, .space)
+                     .with(\.leadingTrivia, [])
+                )
+                .with(\.name.trailingTrivia, [])
             let fixIt = FixIt(message: ExposableEnumMacroFixItMessage.addInt64Type, changes: [
                 .replace(
                     oldNode: Syntax(enumDecl),

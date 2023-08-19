@@ -15,7 +15,7 @@ private enum ExposableOptionSetMacroDiagnostic: String, DiagnosticMessage {
         case .notAStruct:
             "'@ExposableOptionSet' can only be applied to a 'struct'"
         case .caseNotLetAndExplicitType:
-            "Static variables in a Godot exposable option set must be constants with an explicitly Self defined type before the '='"
+            "Static variables in an exposable option set must be constants with an explicitly Self defined type before the '='"
         }
     }
     
@@ -24,6 +24,20 @@ private enum ExposableOptionSetMacroDiagnostic: String, DiagnosticMessage {
     }
 }
 
+private enum ExposableOptionSetMacroFixItMessage: String, FixItMessage {
+    case addSelfType
+    
+    var message: String {
+        switch self {
+        case .addSelfType:
+            "Add explicit 'Self' type to the constant"
+        }
+    }
+    
+    var fixItID: MessageID {
+        MessageID(domain: "GodotMacros", id: rawValue)
+    }
+}
 public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
     public static func expansion(
         of node: AttributeSyntax,
@@ -127,42 +141,63 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
                     $0 == .keyword(.public)
                 }) == true
                 
-                if isStatic && isPublic {
-                    // Any public static value inside an ExposableOptionSet should
-                    // be a let, with an explicit type to Self, or the name of the struct
-                    guard variableDecl.bindingSpecifier.tokenKind == .keyword(.let),
-                          let binding = variableDecl.bindings.first else {
-                        context.diagnose(Diagnostic(
-                            node: Syntax(variableDecl.bindingSpecifier),
-                            message: ExposableOptionSetMacroDiagnostic.caseNotLetAndExplicitType
-                        ))
-                        casesAreCorrect = false
-                        continue
-                    }
+                guard isStatic && isPublic else {
+                    continue
+                }
+                
+                // Any public static value inside an ExposableOptionSet should
+                // be a let, with an explicit type to Self, or the name of the struct
+                guard variableDecl.bindingSpecifier.tokenKind == .keyword(.let),
+                      let binding = variableDecl.bindings.first else {
+                    context.diagnose(Diagnostic(
+                        node: Syntax(variableDecl.bindingSpecifier),
+                        message: ExposableOptionSetMacroDiagnostic.caseNotLetAndExplicitType
+                    ))
+                    casesAreCorrect = false
+                    continue
+                }
+                
+                // Check that a type is explicitly defined
+                guard let typeAnnotation = binding.typeAnnotation,
+                      let typeSyntax = typeAnnotation.type.as(IdentifierTypeSyntax.self)?.name.tokenKind
+                else {
+                    let fixedBindingDecl = binding
+                        .with(
+                            \.typeAnnotation,
+                             TypeAnnotationSyntax(
+                                colon: .colonToken(leadingTrivia: [], trailingTrivia: .space),
+                                type: IdentifierTypeSyntax(name: .keyword(.Self))
+                             )
+                             .with(\.trailingTrivia, .space)
+                             .with(\.leadingTrivia, [])
+                        )
+                        .with(\.pattern.trailingTrivia, [])
+                    let fixIt = FixIt(message: ExposableOptionSetMacroFixItMessage.addSelfType, changes: [
+                        .replace(
+                            oldNode: Syntax(binding),
+                            newNode: Syntax(fixedBindingDecl))
+                    ])
                     
-                    guard let typeAnnotation = binding.typeAnnotation,
-                          let typeSyntax = typeAnnotation.type.as(IdentifierTypeSyntax.self)?.name.tokenKind
-                    else {
-                        context.diagnose(Diagnostic(
-                            node: Syntax(variableDecl.bindings),
-                            message: ExposableOptionSetMacroDiagnostic.caseNotLetAndExplicitType
-                        ))
-                        casesAreCorrect = false
-                        continue
-                    }
-                    
-                    // Check that the given type is either Self or the name of the struct
-                    switch typeSyntax {
-                    case .keyword(.Self), .identifier(structName):
-                        cases.append(binding.pattern.trimmedDescription)
-                    default:
-                        context.diagnose(Diagnostic(
-                            node: Syntax(typeAnnotation),
-                            message: ExposableOptionSetMacroDiagnostic.caseNotLetAndExplicitType
-                        ))
-                        casesAreCorrect = false
-                        continue
-                    }
+                    context.diagnose(Diagnostic(
+                        node: Syntax(variableDecl.bindings),
+                        message: ExposableOptionSetMacroDiagnostic.caseNotLetAndExplicitType,
+                        fixIt: fixIt
+                    ))
+                    casesAreCorrect = false
+                    continue
+                }
+                
+                // Check that the given type is either Self or the name of the struct
+                switch typeSyntax {
+                case .keyword(.Self), .identifier(structName):
+                    cases.append(binding.pattern.trimmedDescription)
+                default:
+                    context.diagnose(Diagnostic(
+                        node: Syntax(typeAnnotation),
+                        message: ExposableOptionSetMacroDiagnostic.caseNotLetAndExplicitType
+                    ))
+                    casesAreCorrect = false
+                    continue
                 }
             }
         }
