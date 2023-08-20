@@ -56,6 +56,7 @@ public enum ExposableEnumMacro: ExtensionMacro {
         }
         
         guard let inheritedType = enumDecl.inheritanceClause?.inheritedTypes.first else {
+            // Provide a fixit with the type Int64 explicitly added to the enum
             let fixedEnumDecl = enumDecl
                 .with(
                     \.inheritanceClause,

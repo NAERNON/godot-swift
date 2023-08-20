@@ -161,6 +161,8 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
                 guard let typeAnnotation = binding.typeAnnotation,
                       let typeSyntax = typeAnnotation.type.as(IdentifierTypeSyntax.self)?.name.tokenKind
                 else {
+                    // Provide fixit with the type Self added before the = of
+                    // the static variable
                     let fixedBindingDecl = binding
                         .with(
                             \.typeAnnotation,

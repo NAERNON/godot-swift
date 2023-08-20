@@ -40,6 +40,8 @@ extension StructDeclSyntax: ClassExposableMember {
         name.trimmedDescription
     }
     
+    /// A struct is excluded from exposition if it:
+    /// - is not public
     var isExcludedFromClassExposition: Bool {
         guard let tokens = modifiers?.map(\.name.tokenKind) else {
             return true
@@ -50,6 +52,8 @@ extension StructDeclSyntax: ClassExposableMember {
         })
     }
     
+    /// A struct is exposable if it:
+    /// - is marked `@ExposableOptionSet`
     func isExposable(
         fromClass classDecl: ClassDeclSyntax,
         in context: some MacroExpansionContext
@@ -58,6 +62,7 @@ extension StructDeclSyntax: ClassExposableMember {
         
         // Check @ExposableOptionSet
         guard var attributes else {
+            // No attributes at all, so provide fixit that adds @ExposableOptionSet
             let fixedDecl = self
                 .with(\.leadingTrivia, .newline)
                 .with(
@@ -78,9 +83,11 @@ extension StructDeclSyntax: ClassExposableMember {
             return false
         }
         
+        // Check @ExposableOptionSet
         guard attributes
             .contains(where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "ExposableOptionSet" })
         else {
+            // No @ExposableOptionSet, so provide fixit that inserts @ExposableOptionSet
             attributes.append(.attribute(attributeSyntax).with(\.leadingTrivia, .newline))
             let fixedDecl = self
                 .with(

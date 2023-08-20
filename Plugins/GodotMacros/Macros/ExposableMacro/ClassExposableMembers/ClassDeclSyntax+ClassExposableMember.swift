@@ -25,6 +25,8 @@ extension ClassDeclSyntax: ClassExposableMember {
         name.trimmedDescription
     }
     
+    /// A class is excluded from exposition if it:
+    /// - is not public
     var isExcludedFromClassExposition: Bool {
         guard let tokens = modifiers?.map(\.name.tokenKind) else {
             return true
@@ -35,6 +37,7 @@ extension ClassDeclSyntax: ClassExposableMember {
         })
     }
     
+    /// A class is *never* exposable.
     func isExposable(
         fromClass classDecl: ClassDeclSyntax,
         in context: some MacroExpansionContext

@@ -40,6 +40,9 @@ extension FunctionDeclSyntax: ClassExposableMember {
         name.trimmedDescription
     }
     
+    /// A function is excluded from exposition if it:
+    /// - is not public or open
+    /// - is an override
     var isExcludedFromClassExposition: Bool {
         guard let tokens = modifiers?.map(\.name.tokenKind) else {
             return true
@@ -56,6 +59,12 @@ extension FunctionDeclSyntax: ClassExposableMember {
         })
     }
     
+    /// A function is exposable if it:
+    /// - is not `async` or `throws`
+    /// - is not generic
+    /// - does not have any parameter with `some` or `any`
+    /// - does not have any variadic parameter
+    /// - does not have a return type with `some` or `any`
     func isExposable(
         fromClass classDecl: ClassDeclSyntax,
         in context: some MacroExpansionContext

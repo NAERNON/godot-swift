@@ -40,6 +40,8 @@ extension EnumDeclSyntax: ClassExposableMember {
         name.trimmedDescription
     }
     
+    /// An enum is excluded from exposition if it:
+    /// - is not public
     var isExcludedFromClassExposition: Bool {
         guard let tokens = modifiers?.map(\.name.tokenKind) else {
             return true
@@ -50,6 +52,8 @@ extension EnumDeclSyntax: ClassExposableMember {
         })
     }
     
+    /// An enum is exposable if it:
+    /// - has the `@ExposableEnum` attribute
     func isExposable(
         fromClass classDecl: ClassDeclSyntax,
         in context: some MacroExpansionContext
@@ -58,6 +62,7 @@ extension EnumDeclSyntax: ClassExposableMember {
         
         // Check @ExposableEnum
         guard var attributes else {
+            // No attributes at all, so provide fixit that adds @ExposableEnum
             let fixedDecl = self
                 .with(\.leadingTrivia, .newline)
                 .with(
@@ -78,9 +83,11 @@ extension EnumDeclSyntax: ClassExposableMember {
             return false
         }
         
+        // Check @ExposableEnum
         guard attributes
             .contains(where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "ExposableEnum" })
         else {
+            // No @ExposableEnum, so provide fixit that inserts @ExposableEnum
             attributes.append(.attribute(attributeSyntax).with(\.leadingTrivia, .newline))
             let fixedDecl = self
                 .with(

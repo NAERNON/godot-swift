@@ -34,6 +34,9 @@ extension VariableDeclSyntax: ClassExposableMember {
         bindings.first?.pattern.trimmedDescription ?? ""
     }
     
+    /// A variable is excluded from exposition if it:
+    /// - is not public or open
+    /// - is an override
     var isExcludedFromClassExposition: Bool {
         guard let tokens = modifiers?.map(\.name.tokenKind) else {
             return true
@@ -54,6 +57,10 @@ extension VariableDeclSyntax: ClassExposableMember {
         bindings.first?.typeAnnotation?.type
     }
     
+    /// A variable is exposable if it:
+    /// - has an explicitly written type
+    /// - does not have an `async` or `throws` getter
+    /// - is not static or open
     func isExposable(
         fromClass classDecl: ClassDeclSyntax,
         in context: some MacroExpansionContext
