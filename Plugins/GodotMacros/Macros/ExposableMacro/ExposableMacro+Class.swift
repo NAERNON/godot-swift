@@ -52,13 +52,28 @@ extension ClassDeclSyntax {
             in: context
         ) {
             for member in memberBlock.members {
-                if let function = member.decl.as(FunctionDeclSyntax.self),
-                   let syntax = function.expositionSyntaxIfExposable(fromClass: self, in: context) {
+                if let exposableMember = member.decl.as(EnumDeclSyntax.self),
+                   let syntax = exposableMember.expositionSyntaxIfExposable(fromClass: self, in: context) {
                     syntax
                 }
                 
-                if let variable = member.decl.as(VariableDeclSyntax.self),
-                   let syntax = variable.expositionSyntaxIfExposable(fromClass: self, in: context) {
+                if let exposableMember = member.decl.as(StructDeclSyntax.self),
+                   let syntax = exposableMember.expositionSyntaxIfExposable(fromClass: self, in: context) {
+                    syntax
+                }
+                
+                if let exposableMember = member.decl.as(ClassDeclSyntax.self),
+                   let syntax = exposableMember.expositionSyntaxIfExposable(fromClass: self, in: context) {
+                    syntax
+                }
+                
+                if let exposableMember = member.decl.as(FunctionDeclSyntax.self),
+                   let syntax = exposableMember.expositionSyntaxIfExposable(fromClass: self, in: context) {
+                    syntax
+                }
+                
+                if let exposableMember = member.decl.as(VariableDeclSyntax.self),
+                   let syntax = exposableMember.expositionSyntaxIfExposable(fromClass: self, in: context) {
                     syntax
                 }
             }
