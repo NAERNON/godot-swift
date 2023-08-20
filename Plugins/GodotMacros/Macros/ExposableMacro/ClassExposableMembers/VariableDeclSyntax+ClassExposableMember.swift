@@ -157,7 +157,7 @@ extension VariableDeclSyntax: ClassExposableMember {
             GodotExtension.classRegister.registerVariable(
                 named: \(literal: variableName),
                 type: Int.self,
-                insideType: CustomRef.self,
+                insideType: self,
                 getterName: \(literal: getterName),
                 setterName: \(literal: setterName)
             ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -171,7 +171,7 @@ extension VariableDeclSyntax: ClassExposableMember {
             GodotExtension.classRegister.registerVariable(
                 named: \(literal: variableName),
                 type: Int.self,
-                insideType: CustomRef.self,
+                insideType: self,
                 getterName: \(literal: getterName)
             ) { _, instancePtr, args, argsCount, returnPtr, error in
                 \(getterExprSyntax)

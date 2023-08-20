@@ -15,7 +15,7 @@ private enum ExposableEnumMacroDiagnostic: String, DiagnosticMessage {
         case .notAnEnum:
             "'@ExposableEnum' can only be applied to an 'enum'"
         case .notInt64:
-            "'@ExposableEnum' can only be applied to an enum with an explicit 'Int64' raw type"
+            "Exposable enums can have an explicit 'Int64' raw type"
         }
     }
     
