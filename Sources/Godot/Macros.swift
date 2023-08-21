@@ -35,8 +35,7 @@ public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro
 /// A Godot enum must have an `Int64` `RawType`. Here is how the macro is used:
 ///
 /// ```swift
-/// @ExposableEnum
-/// public enum CharacterEmotion: Int64 {
+/// @ExposableEnum public enum CharacterEmotion: Int64 {
 ///     case happy
 ///     case notSoHappy
 ///     case sad
@@ -46,17 +45,16 @@ public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro
 /// The enum can then be used as a type for Godot:
 ///
 /// ```swift
-/// @Exposable
-/// public class Character: Node {
-///     @ExposableEnum
-///     public enum CharacterEmotion: Int64 {
-///         // ...
-///     }
-///
+/// @Exposable public class Character: Node {
 ///     // This variable is exposed to Godot
-///     public var emotion = CharacterEmotion.happy
+///     public var emotion: CharacterEmotion = .happy
 /// }
 /// ```
+///
+/// ## Definition inside an exposable class
+///
+/// If the enum is defined inside an exposable class, the enum cases
+/// will automatically be accessible from the Godot editor.
 @attached(extension, conformances: VariantConvertible, names:
     named(variantType),
     named(makeVariant),
@@ -85,14 +83,10 @@ public macro ExposableEnum() = #externalMacro(module: "GodotMacros", type: "Expo
 ///
 /// Use either `Self` or the name of the struct to write the type.
 ///
-/// > note: When used inside a custom Godot exposed class,
-/// only **public** static constants are exposed to the Godot editor.
-///
 /// Here is how the macro is used:
 ///
 /// ```swift
-/// @ExposableOptionSet
-/// public struct CharacterAction {
+/// @ExposableOptionSet public struct CharacterAction {
 ///     public static let thinking: CharacterAction = .init(rawValue: 1 << 0)
 ///     public static let drawing: CharacterAction  = .init(rawValue: 1 << 1)
 ///     public static let sleeping: Self            = .init(rawValue: 1 << 2)
@@ -105,17 +99,17 @@ public macro ExposableEnum() = #externalMacro(module: "GodotMacros", type: "Expo
 /// The option set can then be used as a type for Godot:
 ///
 /// ```swift
-/// @Exposable
-/// public class Character: Node {
-///     @ExposableOptionSet
-///     public struct CharacterAction {
-///         // ...
-///     }
-///
+/// @Exposable public class Character: Node {
 ///     // This variable is exposed to Godot
-///     public var action = CharacterAction.drawing
+///     public var action: CharacterAction = .drawing
 /// }
 /// ```
+///
+/// ## Definition inside an exposable class
+///
+/// If the option set is defined inside an exposable class, the option set values
+/// will automatically be accessible from the Godot editor.
+/// Note that only **public** static constants are exposed.
 @attached(extension, conformances: OptionSet, VariantConvertible, names:
     named(variantType),
     named(makeVariant),
