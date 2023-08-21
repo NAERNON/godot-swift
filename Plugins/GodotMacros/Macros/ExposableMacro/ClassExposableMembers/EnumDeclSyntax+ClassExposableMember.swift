@@ -3,38 +3,6 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 import CodeTranslator
 
-private enum ExpositionDiagnostic: String, Error, DiagnosticMessage {
-    case notExposableEnum
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .notExposableEnum:
-            "Exposable enums must be marked '@ExposableEnum'"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
-private enum ExpositionFixItMessage: String, FixItMessage {
-    case addExposableEnum
-    
-    var message: String {
-        switch self {
-        case .addExposableEnum:
-            "Add '@ExposableEnum'"
-        }
-    }
-    
-    var fixItID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
 extension EnumDeclSyntax: ClassExposableMember {
     var classExpositionIdentifier: String {
         name.trimmedDescription
@@ -59,6 +27,8 @@ extension EnumDeclSyntax: ClassExposableMember {
         in context: some MacroExpansionContext
     ) -> Bool {
         let attributeSyntax = AttributeSyntax(attributeName: IdentifierTypeSyntax(name: "ExposableEnum"))
+        let fixItMessage = GodotDiagnostic("Add '@ExposableEnum'")
+        let diagnostic = GodotDiagnostic("Exposable enums must be marked '@ExposableEnum'")
         
         // Check @ExposableEnum
         guard var attributes else {
@@ -69,7 +39,7 @@ extension EnumDeclSyntax: ClassExposableMember {
                     \.attributes,
                      AttributeListSyntax([.attribute(attributeSyntax)])
                 )
-            let fixIt = FixIt(message: ExpositionFixItMessage.addExposableEnum, changes: [
+            let fixIt = FixIt(message: fixItMessage, changes: [
                 .replace(
                     oldNode: Syntax(self),
                     newNode: Syntax(fixedDecl))
@@ -77,7 +47,7 @@ extension EnumDeclSyntax: ClassExposableMember {
             
             context.diagnose(Diagnostic(
                 node: Syntax(name),
-                message: ExpositionDiagnostic.notExposableEnum,
+                message: diagnostic,
                 fixIt: fixIt
             ))
             return false
@@ -94,7 +64,7 @@ extension EnumDeclSyntax: ClassExposableMember {
                     \.attributes,
                      attributes
                 )
-            let fixIt = FixIt(message: ExpositionFixItMessage.addExposableEnum, changes: [
+            let fixIt = FixIt(message: fixItMessage, changes: [
                 .replace(
                     oldNode: Syntax(self),
                     newNode: Syntax(fixedDecl))
@@ -102,7 +72,7 @@ extension EnumDeclSyntax: ClassExposableMember {
             
             context.diagnose(Diagnostic(
                 node: Syntax(name),
-                message: ExpositionDiagnostic.notExposableEnum,
+                message: diagnostic,
                 fixIt: fixIt
             ))
             return false

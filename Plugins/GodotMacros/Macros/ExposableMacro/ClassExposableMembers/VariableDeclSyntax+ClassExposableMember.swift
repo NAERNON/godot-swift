@@ -3,32 +3,6 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 import CodeTranslator
 
-private enum ExpositionDiagnostic: String, Error, DiagnosticMessage {
-    case noExplicitType
-    case `throws`
-    case isAsync
-    case isStaticOrClass
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .noExplicitType:
-            "Exposable variables must explicitly define their type"
-        case .throws:
-            "Exposable variables cannot be marked 'throws'"
-        case .isAsync:
-            "Exposable variables cannot be marked 'async'"
-        case .isStaticOrClass:
-            "Exposable variables cannot be marked 'static' or 'class'"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
 extension VariableDeclSyntax: ClassExposableMember {
     var classExpositionIdentifier: String {
         bindings.first?.pattern.trimmedDescription ?? ""
@@ -73,7 +47,7 @@ extension VariableDeclSyntax: ClassExposableMember {
         guard let variableType else {
             context.diagnose(Diagnostic(
                 node: Syntax(variableBinding),
-                message: ExpositionDiagnostic.noExplicitType
+                message: GodotDiagnostic("Exposable variables must explicitly define their type")
             ))
             return false
         }
@@ -87,7 +61,7 @@ extension VariableDeclSyntax: ClassExposableMember {
                     if let throwsSpecifier = specifiers.throwsSpecifier {
                         context.diagnose(Diagnostic(
                             node: Syntax(throwsSpecifier),
-                            message: ExpositionDiagnostic.throws
+                            message: GodotDiagnostic("Exposable variables cannot be marked 'throws'")
                         ))
                         isExposable = false
                     }
@@ -95,7 +69,7 @@ extension VariableDeclSyntax: ClassExposableMember {
                     if let asyncSpecifier = specifiers.asyncSpecifier {
                         context.diagnose(Diagnostic(
                             node: Syntax(asyncSpecifier),
-                            message: ExpositionDiagnostic.isAsync
+                            message: GodotDiagnostic("Exposable variables cannot be marked 'async'")
                         ))
                         isExposable = false
                     }
@@ -105,17 +79,18 @@ extension VariableDeclSyntax: ClassExposableMember {
         
         // Check static or class
         if let modifiers {
+            let diagnostic = GodotDiagnostic("Exposable variables cannot be marked 'static' or 'class'")
             if let modifier = modifiers.first(where: { $0.name.tokenKind == .keyword(.static) }) {
                 context.diagnose(Diagnostic(
                     node: Syntax(modifier),
-                    message: ExpositionDiagnostic.isStaticOrClass
+                    message: diagnostic
                 ))
                 isExposable = false
             }
             if let modifier = modifiers.first(where: { $0.name.tokenKind == .keyword(.class) }) {
                 context.diagnose(Diagnostic(
                     node: Syntax(modifier),
-                    message: ExpositionDiagnostic.isStaticOrClass
+                    message: diagnostic
                 ))
                 isExposable = false
             }

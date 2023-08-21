@@ -4,41 +4,6 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import CodeTranslator
 
-private enum ExposableEnumMacroDiagnostic: String, DiagnosticMessage {
-    case notAnEnum
-    case notInt64
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .notAnEnum:
-            "'@ExposableEnum' can only be applied to an 'enum'"
-        case .notInt64:
-            "Exposable enums can have an explicit 'Int64' raw type"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
-private enum ExposableEnumMacroFixItMessage: String, FixItMessage {
-    case addInt64Type
-    
-    var message: String {
-        switch self {
-        case .addInt64Type:
-            "Add 'Int64' type to the enum"
-        }
-    }
-    
-    var fixItID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
 public enum ExposableEnumMacro: ExtensionMacro {
     public static func expansion(
         of node: AttributeSyntax,
@@ -50,10 +15,12 @@ public enum ExposableEnumMacro: ExtensionMacro {
         guard let enumDecl = declaration.as(EnumDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: ExposableEnumMacroDiagnostic.notAnEnum
+                message: GodotDiagnostic("'@ExposableEnum' can only be applied to an 'enum'")
             ))
             return []
         }
+        
+        let notInt64Diagnostic = GodotDiagnostic("Exposable enums can have an explicit 'Int64' raw type")
         
         guard let inheritedType = enumDecl.inheritanceClause?.inheritedTypes.first else {
             // Provide a fixit with the type Int64 explicitly added to the enum
@@ -68,7 +35,7 @@ public enum ExposableEnumMacro: ExtensionMacro {
                      .with(\.leadingTrivia, [])
                 )
                 .with(\.name.trailingTrivia, [])
-            let fixIt = FixIt(message: ExposableEnumMacroFixItMessage.addInt64Type, changes: [
+            let fixIt = FixIt(message: GodotDiagnostic("Add 'Int64' type to the enum"), changes: [
                 .replace(
                     oldNode: Syntax(enumDecl),
                     newNode: Syntax(fixedEnumDecl))
@@ -76,7 +43,7 @@ public enum ExposableEnumMacro: ExtensionMacro {
             
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: ExposableEnumMacroDiagnostic.notInt64,
+                message: notInt64Diagnostic,
                 fixIt: fixIt
             ))
             return []
@@ -85,7 +52,7 @@ public enum ExposableEnumMacro: ExtensionMacro {
         guard inheritedType.type.as(IdentifierTypeSyntax.self)?.name.tokenKind == .identifier("Int64") else {
             context.diagnose(Diagnostic(
                 node: Syntax(inheritedType),
-                message: ExposableEnumMacroDiagnostic.notInt64
+                message: notInt64Diagnostic
             ))
             return []
         }

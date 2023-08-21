@@ -3,38 +3,6 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 import CodeTranslator
 
-private enum ExpositionDiagnostic: String, Error, DiagnosticMessage {
-    case notExposableOptionSet
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .notExposableOptionSet:
-            "Exposable structs must be option sets marked '@ExposableOptionSet'"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
-private enum ExpositionFixItMessage: String, FixItMessage {
-    case addExposableOptionSet
-    
-    var message: String {
-        switch self {
-        case .addExposableOptionSet:
-            "Add '@ExposableOptionSet'"
-        }
-    }
-    
-    var fixItID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
 extension StructDeclSyntax: ClassExposableMember {
     var classExpositionIdentifier: String {
         name.trimmedDescription
@@ -59,6 +27,8 @@ extension StructDeclSyntax: ClassExposableMember {
         in context: some MacroExpansionContext
     ) -> Bool {
         let attributeSyntax = AttributeSyntax(attributeName: IdentifierTypeSyntax(name: "ExposableOptionSet"))
+        let fixItMessage = GodotDiagnostic("Add '@ExposableOptionSet'")
+        let diagnostic = GodotDiagnostic("Exposable structs must be option sets marked '@ExposableOptionSet'")
         
         // Check @ExposableOptionSet
         guard var attributes else {
@@ -69,7 +39,7 @@ extension StructDeclSyntax: ClassExposableMember {
                     \.attributes,
                      AttributeListSyntax([.attribute(attributeSyntax)])
                 )
-            let fixIt = FixIt(message: ExpositionFixItMessage.addExposableOptionSet, changes: [
+            let fixIt = FixIt(message: fixItMessage, changes: [
                 .replace(
                     oldNode: Syntax(self),
                     newNode: Syntax(fixedDecl))
@@ -77,7 +47,7 @@ extension StructDeclSyntax: ClassExposableMember {
             
             context.diagnose(Diagnostic(
                 node: Syntax(name),
-                message: ExpositionDiagnostic.notExposableOptionSet,
+                message: diagnostic,
                 fixIt: fixIt
             ))
             return false
@@ -94,7 +64,7 @@ extension StructDeclSyntax: ClassExposableMember {
                     \.attributes,
                      attributes
                 )
-            let fixIt = FixIt(message: ExpositionFixItMessage.addExposableOptionSet, changes: [
+            let fixIt = FixIt(message: fixItMessage, changes: [
                 .replace(
                     oldNode: Syntax(self),
                     newNode: Syntax(fixedDecl))
@@ -102,7 +72,7 @@ extension StructDeclSyntax: ClassExposableMember {
             
             context.diagnose(Diagnostic(
                 node: Syntax(name),
-                message: ExpositionDiagnostic.notExposableOptionSet,
+                message: diagnostic,
                 fixIt: fixIt
             ))
             return false

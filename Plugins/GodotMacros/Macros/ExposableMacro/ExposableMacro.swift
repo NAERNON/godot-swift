@@ -4,23 +4,6 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
 
-private enum ExposableMacroDiagnostic: String, Error, DiagnosticMessage {
-    case notAClass
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .notAClass:
-            "Only classes can be exposed to Godot"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
 public enum ExposableMacro: MemberMacro {
     public static func expansion(
         of attribute: AttributeSyntax,
@@ -39,7 +22,7 @@ public enum ExposableMacro: MemberMacro {
         guard let classDecl = declaration.as(ClassDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(attribute),
-                message: ExposableMacroDiagnostic.notAClass
+                message: GodotDiagnostic("Only classes can be exposed to Godot")
             ))
             return []
         }

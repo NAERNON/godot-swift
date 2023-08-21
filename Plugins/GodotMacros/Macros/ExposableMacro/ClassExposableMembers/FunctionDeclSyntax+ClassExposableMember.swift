@@ -3,38 +3,6 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 import CodeTranslator
 
-private enum ExpositionDiagnostic: String, Error, DiagnosticMessage {
-    case `throws`
-    case isAsync
-    case isGeneric
-    case someOrAnyParameter
-    case variadicParameter
-    case someOrAnyReturnType
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .throws:
-            "Exposable functions cannot be marked 'throws'"
-        case .isAsync:
-            "Exposable functions cannot be marked 'async'"
-        case .isGeneric:
-            "Exposable functions cannot be generic"
-        case .someOrAnyParameter:
-            "Exposable functions cannot have parameters marked 'some' or 'any'"
-        case .variadicParameter:
-            "Exposable functions cannot have variadic parameters"
-        case .someOrAnyReturnType:
-            "Exposable functions cannot return a type marked 'some' or 'any'"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
 extension FunctionDeclSyntax: ClassExposableMember {
     var classExpositionIdentifier: String {
         name.trimmedDescription
@@ -76,7 +44,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
             if let throwsSpecifier = specifiers.throwsSpecifier {
                 context.diagnose(Diagnostic(
                     node: Syntax(throwsSpecifier),
-                    message: ExpositionDiagnostic.throws
+                    message: GodotDiagnostic("Exposable functions cannot be marked 'throws'")
                 ))
                 isExposable = false
             }
@@ -84,7 +52,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
             if let asyncSpecifier = specifiers.asyncSpecifier {
                 context.diagnose(Diagnostic(
                     node: Syntax(asyncSpecifier),
-                    message: ExpositionDiagnostic.isAsync
+                    message: GodotDiagnostic("Exposable functions cannot be marked 'async'")
                 ))
                 isExposable = false
             }
@@ -94,7 +62,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
         if let generic = genericParameterClause {
             context.diagnose(Diagnostic(
                 node: Syntax(generic),
-                message: ExpositionDiagnostic.isGeneric
+                message: GodotDiagnostic("Exposable functions cannot be generic")
             ))
             isExposable = false
         }
@@ -104,7 +72,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
             if let someOrAnyTypeSyntax = parameter.type.as(SomeOrAnyTypeSyntax.self) {
                 context.diagnose(Diagnostic(
                     node: Syntax(someOrAnyTypeSyntax),
-                    message: ExpositionDiagnostic.someOrAnyParameter
+                    message: GodotDiagnostic("Exposable functions cannot have parameters marked 'some' or 'any'")
                 ))
                 isExposable = false
             }
@@ -112,7 +80,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
             if let ellipsis = parameter.ellipsis {
                 context.diagnose(Diagnostic(
                     node: Syntax(ellipsis),
-                    message: ExpositionDiagnostic.variadicParameter
+                    message: GodotDiagnostic("Exposable functions cannot have variadic parameters")
                 ))
                 isExposable = false
             }
@@ -122,7 +90,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
         if let someOrAnyTypeSyntax = signature.returnClause?.type.as(SomeOrAnyTypeSyntax.self) {
             context.diagnose(Diagnostic(
                 node: Syntax(someOrAnyTypeSyntax),
-                message: ExpositionDiagnostic.someOrAnyReturnType
+                message: GodotDiagnostic("Exposable functions cannot return a type marked 'some' or 'any'")
             ))
             isExposable = false
         }

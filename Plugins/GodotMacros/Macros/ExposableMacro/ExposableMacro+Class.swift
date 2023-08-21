@@ -2,26 +2,6 @@ import SwiftSyntax
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 
-private enum ExpositionDiagnostic: String, Error, DiagnosticMessage {
-    case noSuperclassProvided
-    case notPublic
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .noSuperclassProvided:
-            "Only classes that inherit the Godot 'Object' class can be exposed to Godot"
-        case .notPublic:
-            "Only public classes can be exposed to Godot"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
 extension ClassDeclSyntax {
     func exposableMacroSyntax(in context: some MacroExpansionContext) throws -> [DeclSyntax] {
         // Check has inheritance
@@ -29,7 +9,7 @@ extension ClassDeclSyntax {
             .inheritedTypes.first else {
             context.diagnose(Diagnostic(
                 node: Syntax(classKeyword),
-                message: ExpositionDiagnostic.noSuperclassProvided
+                message: GodotDiagnostic("Only classes that inherit the Godot 'Object' class can be exposed to Godot")
             ))
             return []
         }
@@ -40,7 +20,7 @@ extension ClassDeclSyntax {
         }) == true else {
             context.diagnose(Diagnostic(
                 node: Syntax(classKeyword),
-                message: ExpositionDiagnostic.notPublic
+                message: GodotDiagnostic("Only public classes can be exposed to Godot")
             ))
             return []
         }

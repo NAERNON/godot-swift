@@ -4,40 +4,6 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import CodeTranslator
 
-private enum ExposableOptionSetMacroDiagnostic: String, DiagnosticMessage {
-    case notAStruct
-    case caseNotLetAndExplicitType
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .notAStruct:
-            "'@ExposableOptionSet' can only be applied to a 'struct'"
-        case .caseNotLetAndExplicitType:
-            "Static variables in an exposable option set must be constants with an explicitly Self defined type before the '='"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
-private enum ExposableOptionSetMacroFixItMessage: String, FixItMessage {
-    case addSelfType
-    
-    var message: String {
-        switch self {
-        case .addSelfType:
-            "Add explicit 'Self' type to the constant"
-        }
-    }
-    
-    var fixItID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
 public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
     public static func expansion(
         of node: AttributeSyntax,
@@ -49,7 +15,7 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
         guard let structDecl = declaration.as(StructDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: ExposableOptionSetMacroDiagnostic.notAStruct
+                message: GodotDiagnostic("'@ExposableOptionSet' can only be applied to a 'struct'")
             ))
             return []
         }
@@ -131,6 +97,8 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
         var cases = [String]()
         var casesAreCorrect = true
         
+        let caseNotLetAndExplicitTypeDiagnostic = GodotDiagnostic("Static variables in an exposable option set must be constants with an explicitly Self defined type before the '='")
+        
         for member in members {
             if let variableDecl = member.decl.as(VariableDeclSyntax.self) {
                 let isStatic = variableDecl.modifiers?.map(\.name.tokenKind).contains(where: {
@@ -151,7 +119,7 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
                       let binding = variableDecl.bindings.first else {
                     context.diagnose(Diagnostic(
                         node: Syntax(variableDecl.bindingSpecifier),
-                        message: ExposableOptionSetMacroDiagnostic.caseNotLetAndExplicitType
+                        message: caseNotLetAndExplicitTypeDiagnostic
                     ))
                     casesAreCorrect = false
                     continue
@@ -174,7 +142,7 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
                              .with(\.leadingTrivia, [])
                         )
                         .with(\.pattern.trailingTrivia, [])
-                    let fixIt = FixIt(message: ExposableOptionSetMacroFixItMessage.addSelfType, changes: [
+                    let fixIt = FixIt(message: GodotDiagnostic("Add explicit 'Self' type to the constant"), changes: [
                         .replace(
                             oldNode: Syntax(binding),
                             newNode: Syntax(fixedBindingDecl))
@@ -182,7 +150,7 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
                     
                     context.diagnose(Diagnostic(
                         node: Syntax(variableDecl.bindings),
-                        message: ExposableOptionSetMacroDiagnostic.caseNotLetAndExplicitType,
+                        message: caseNotLetAndExplicitTypeDiagnostic,
                         fixIt: fixIt
                     ))
                     casesAreCorrect = false
@@ -196,7 +164,7 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
                 default:
                     context.diagnose(Diagnostic(
                         node: Syntax(typeAnnotation),
-                        message: ExposableOptionSetMacroDiagnostic.caseNotLetAndExplicitType
+                        message: caseNotLetAndExplicitTypeDiagnostic
                     ))
                     casesAreCorrect = false
                     continue

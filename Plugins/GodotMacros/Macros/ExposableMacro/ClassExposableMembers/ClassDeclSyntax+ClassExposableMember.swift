@@ -3,23 +3,6 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 import CodeTranslator
 
-private enum ExpositionDiagnostic: String, Error, DiagnosticMessage {
-    case cannotExposeClass
-    
-    var severity: DiagnosticSeverity { .error }
-    
-    var message: String {
-        switch self {
-        case .cannotExposeClass:
-            "Classes defined inside exposable classes cannot be exposable themselves"
-        }
-    }
-    
-    var diagnosticID: MessageID {
-        MessageID(domain: "GodotMacros", id: rawValue)
-    }
-}
-
 extension ClassDeclSyntax: ClassExposableMember {
     var classExpositionIdentifier: String {
         name.trimmedDescription
@@ -44,7 +27,7 @@ extension ClassDeclSyntax: ClassExposableMember {
     ) -> Bool {
         context.diagnose(Diagnostic(
             node: Syntax(name),
-            message: ExpositionDiagnostic.cannotExposeClass
+            message: GodotDiagnostic("Classes defined inside exposable classes cannot be exposable themselves")
         ))
         return false
     }
