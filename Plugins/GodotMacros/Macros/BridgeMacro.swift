@@ -69,12 +69,12 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
             """
             @_cdecl("\(raw: functionName.lowercased())")
             internal func \(raw: functionName)(
-                getProcAddress: GodotExtension.GetProcAddress,
-                libraryPtr: GodotExtension.ClassLibraryPointer,
-                initializationPtr: GodotExtension.InitializationPointer
-            ) -> GodotExtension.InitializationResult {
+                getProcAddress: Godot.GodotExtension.GetProcAddress,
+                libraryPtr: Godot.GodotExtension.ClassLibraryPointer,
+                initializationPtr: Godot.GodotExtension.InitializationPointer
+            ) -> Godot.GodotExtension.InitializationResult {
                 do {
-                    try GodotExtension.initialize(
+                    try Godot.GodotExtension.initialize(
                         using: \(identifier).self,
                         getProcAddress: getProcAddress,
                         libraryPtr: libraryPtr,

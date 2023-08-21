@@ -195,7 +195,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
         let functionName = NamingConvention.camel.convert(name.trimmedDescription, to: .snake)
         
         return """
-        GodotExtension.classRegister.registerFunction(
+        Godot.GodotExtension.classRegister.registerFunction(
             named: \(literal: functionName),
             insideType: self,
             argumentParameters: [

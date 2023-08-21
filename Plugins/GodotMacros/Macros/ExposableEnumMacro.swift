@@ -90,19 +90,19 @@ public enum ExposableEnumMacro: ExtensionMacro {
             return []
         }
         
-        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): VariantConvertible") {
+        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.VariantConvertible") {
             """
-            public static let variantType: Variant.RepresentationType = RawValue.variantType
+            public static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
-            public func makeVariant() -> Variant {
+            public func makeVariant() -> Godot.Variant {
                 rawValue.makeVariant()
             }
             
-            public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+            public static func fromMatchingTypeVariant(_ variant: Godot.Variant) -> Self {
                 Self(rawValue: RawValue.fromMatchingTypeVariant(variant))!
             }
             
-            public static func fromVariant(_ variant: Variant) throws -> Self {
+            public static func fromVariant(_ variant: Godot.Variant) throws -> Self {
                 try variant.checkType(Self.variantType)
                 
                 enum Error: Swift.Error {
@@ -121,7 +121,7 @@ public enum ExposableEnumMacro: ExtensionMacro {
             }
             """
             
-            try FunctionDeclSyntax("public static func godotExposableValues() -> [(GodotStringName, Int64)]") {
+            try FunctionDeclSyntax("public static func godotExposableValues() -> [(Godot.GodotStringName, Int64)]") {
                 "["
                 for caseName in enumCases(for: enumDecl) {
                     let snakeEnumName = NamingConvention.pascal.convert(

@@ -98,8 +98,8 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             """
         case .custom:
             return """
-            private static let __staticClassName: GodotStringName = \(literal: className)
-            open \(raw: overrideKeyword) class var __className: GodotStringName { __staticClassName }
+            private static let __staticClassName: Godot.GodotStringName = \(literal: className)
+            open \(raw: overrideKeyword) class var __className: Godot.GodotStringName { __staticClassName }
             open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { true }
             """
         }
@@ -194,7 +194,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     }
     
     private func instanceBindingCallbacks() throws -> DeclSyntax {
-        let signature = "open \(overrideKeyword) class func __instanceBindingCallbacks() -> GodotInstanceBindingCallbacks"
+        let signature = "open \(overrideKeyword) class func __instanceBindingCallbacks() -> Godot.GodotInstanceBindingCallbacks"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
@@ -209,7 +209,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 """
             case .custom:
                 """
-                return GodotInstanceBindingCallbacks { token, instancePtr in
+                return Godot.GodotInstanceBindingCallbacks { token, instancePtr in
                     return nil
                 } free_callback: { token, instancePtr, bindingsPtr in
                     
@@ -233,7 +233,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 """
             case .custom:
                 """
-                let classBinding = GodotExtension.classRegister.registerCustomClass(
+                let classBinding = Godot.GodotExtension.classRegister.registerCustomClass(
                     ofType: self,
                     superclassType: \(raw: superclassName ?? "").self
                 ) { instancePtr, isValid, out in

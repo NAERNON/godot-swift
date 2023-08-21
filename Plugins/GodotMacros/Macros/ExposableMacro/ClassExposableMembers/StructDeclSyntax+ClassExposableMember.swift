@@ -116,7 +116,7 @@ extension StructDeclSyntax: ClassExposableMember {
         in context: some MacroExpansionContext
     ) -> ExprSyntax {
         """
-        GodotExtension.classRegister.registerEnumOrOptionSet(
+        Godot.GodotExtension.classRegister.registerEnumOrOptionSet(
             named: \(literal: name.trimmedDescription),
             values: \(raw: name.trimmedDescription).godotExposableValues(),
             isOptionSet: true,
