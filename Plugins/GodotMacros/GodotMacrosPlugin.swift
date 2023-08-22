@@ -8,6 +8,7 @@ struct GodotMacrosPlugin: CompilerPlugin {
         BridgeMacro.self,
         ExposableEnumMacro.self,
         ExposableOptionSetMacro.self,
+        EmitterMacro.self,
         
         GodotClassMacro.self,
         GodotRefCountedClassMacro.self,

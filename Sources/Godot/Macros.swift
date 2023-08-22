@@ -124,6 +124,15 @@ public macro ExposableEnum() = #externalMacro(module: "GodotMacros", type: "Expo
 )
 public macro ExposableOptionSet() = #externalMacro(module: "GodotMacros", type: "ExposableOptionSetMacro")
 
+// TODO: Doc
+@attached(extension, conformances: EmitterProtocol)
+@attached(member, names:
+    named(signal),
+    named(signalName),
+    named(init)
+)
+public macro Emitter(_: (StaticString, ConvertibleToVariant.Type)...) = #externalMacro(module: "GodotMacros", type: "EmitterMacro")
+
 // MARK: - Internal macros
 
 @attached(member, names: arbitrary)
