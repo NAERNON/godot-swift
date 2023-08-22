@@ -35,10 +35,7 @@ extension VariableDeclSyntax: ClassExposableMember {
     /// - has an explicitly written type
     /// - does not have an `async` or `throws` getter
     /// - is not static or open
-    func isExposable(
-        fromClass classDecl: ClassDeclSyntax,
-        in context: some MacroExpansionContext
-    ) -> Bool {
+    func isExposable(in context: some MacroExpansionContext) -> Bool {
         guard let variableBinding = bindings.first else {
             return false
         }
@@ -100,7 +97,7 @@ extension VariableDeclSyntax: ClassExposableMember {
     }
     
     func expositionSyntax(
-        fromClass classDecl: ClassDeclSyntax,
+        classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax {
         guard let variableBinding = bindings.first,
@@ -123,11 +120,11 @@ extension VariableDeclSyntax: ClassExposableMember {
         // Syntax
         
         let getterExprSyntax: ExprSyntax = """
-        Unmanaged<\(raw: classDecl.name.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue().\(raw: variableBinding.pattern.trimmedDescription).makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+        Unmanaged<\(raw: classContext.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue().\(raw: variableBinding.pattern.trimmedDescription).makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
         """
         
         let setterExprSyntax: ExprSyntax = """
-        Unmanaged<\(raw: classDecl.name.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue().\(raw: variableBinding.pattern.trimmedDescription) = \(variableType.trimmed).fromMatchingTypeVariant(Variant(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+        Unmanaged<\(raw: classContext.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue().\(raw: variableBinding.pattern.trimmedDescription) = \(variableType.trimmed).fromMatchingTypeVariant(Variant(godotExtensionPointer: args!.advanced(by: 0).pointee!))
         """
         
         let variableName = NamingConvention.camel.convert(variableBinding.pattern.trimmedDescription, to: .snake)

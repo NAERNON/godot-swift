@@ -20,6 +20,10 @@ struct EmitterClassExposableMember: ClassExposableMember {
         }
     }
     
+    var attributes: AttributeListSyntax? { 
+        structDeclSyntax.attributes
+    }
+    
     var classExpositionIdentifier: String {
         structDeclSyntax.name.trimmedDescription
     }
@@ -37,15 +41,12 @@ struct EmitterClassExposableMember: ClassExposableMember {
     }
     
     /// An emitter is *always* exposable.
-    func isExposable(
-        fromClass classDecl: ClassDeclSyntax,
-        in context: some MacroExpansionContext
-    ) -> Bool {
+    func isExposable(in context: some MacroExpansionContext) -> Bool {
         return true
     }
     
     func expositionSyntax(
-        fromClass classDecl: ClassDeclSyntax,
+        classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax {
         guard let emitterAttribute = structDeclSyntax.attributes?.first(

@@ -31,10 +31,7 @@ extension StructDeclSyntax: ClassExposableMember {
         return exposableMember.isExcludedFromClassExposition
     }
     
-    func isExposable(
-        fromClass classDecl: ClassDeclSyntax,
-        in context: some MacroExpansionContext
-    ) -> Bool {
+    func isExposable(in context: some MacroExpansionContext) -> Bool {
         guard let exposableMember else {
             context.diagnose(Diagnostic(
                 node: Syntax(name),
@@ -44,17 +41,17 @@ extension StructDeclSyntax: ClassExposableMember {
             return false
         }
         
-        return exposableMember.isExposable(fromClass: classDecl, in: context)
+        return exposableMember.isExposable(in: context)
     }
     
     func expositionSyntax(
-        fromClass classDecl: ClassDeclSyntax,
+        classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax {
         guard let exposableMember else {
             return ""
         }
         
-        return exposableMember.expositionSyntax(fromClass: classDecl, in: context)
+        return exposableMember.expositionSyntax(classContext: classContext, in: context)
     }
 }

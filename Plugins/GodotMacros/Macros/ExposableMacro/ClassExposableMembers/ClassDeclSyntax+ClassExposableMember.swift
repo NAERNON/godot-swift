@@ -21,10 +21,7 @@ extension ClassDeclSyntax: ClassExposableMember {
     }
     
     /// A class is *never* exposable.
-    func isExposable(
-        fromClass classDecl: ClassDeclSyntax,
-        in context: some MacroExpansionContext
-    ) -> Bool {
+    func isExposable(in context: some MacroExpansionContext) -> Bool {
         context.diagnose(Diagnostic(
             node: Syntax(name),
             message: GodotDiagnostic("Classes defined inside exposable classes cannot be exposable themselves")
@@ -33,7 +30,7 @@ extension ClassDeclSyntax: ClassExposableMember {
     }
     
     func expositionSyntax(
-        fromClass classDecl: ClassDeclSyntax,
+        classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax {
         ""

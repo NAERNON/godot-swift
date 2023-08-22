@@ -33,10 +33,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
     /// - does not have any parameter with `some` or `any`
     /// - does not have any variadic parameter
     /// - does not have a return type with `some` or `any`
-    func isExposable(
-        fromClass classDecl: ClassDeclSyntax,
-        in context: some MacroExpansionContext
-    ) -> Bool {
+    func isExposable(in context: some MacroExpansionContext) -> Bool {
         var isExposable = true
         
         // Check not throw or async
@@ -99,7 +96,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
     }
     
     func expositionSyntax(
-        fromClass classDecl: ClassDeclSyntax,
+        classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax {
         // Syntax
@@ -137,9 +134,9 @@ extension FunctionDeclSyntax: ClassExposableMember {
         }
         
         let preFunctionCall = if isStatic {
-            classDecl.name.trimmedDescription
+            "\(classContext.trimmedDescription)"
         } else {
-            "Unmanaged<\(classDecl.name.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+            "Unmanaged<\(classContext.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue()"
         }
         
         var functionCall = name.trimmedDescription + "("

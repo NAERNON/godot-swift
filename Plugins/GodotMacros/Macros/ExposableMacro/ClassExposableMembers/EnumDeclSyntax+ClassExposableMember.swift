@@ -22,10 +22,7 @@ extension EnumDeclSyntax: ClassExposableMember {
     
     /// An enum is exposable if it:
     /// - has the `@ExposableEnum` attribute
-    func isExposable(
-        fromClass classDecl: ClassDeclSyntax,
-        in context: some MacroExpansionContext
-    ) -> Bool {
+    func isExposable(in context: some MacroExpansionContext) -> Bool {
         let attributeSyntax = AttributeSyntax(attributeName: IdentifierTypeSyntax(name: "ExposableEnum"))
         let fixItMessage = GodotDiagnostic("Add '@ExposableEnum'")
         let diagnostic = GodotDiagnostic("Exposable enums must be marked '@ExposableEnum'")
@@ -82,7 +79,7 @@ extension EnumDeclSyntax: ClassExposableMember {
     }
     
     func expositionSyntax(
-        fromClass classDecl: ClassDeclSyntax,
+        classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax {
         """
