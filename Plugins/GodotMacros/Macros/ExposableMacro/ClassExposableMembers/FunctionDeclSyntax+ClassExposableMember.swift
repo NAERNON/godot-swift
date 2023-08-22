@@ -108,8 +108,10 @@ extension FunctionDeclSyntax: ClassExposableMember {
         }) == true
         
         let parameters = signature.parameterClause.parameters.map {
-            """
-            .argument(\($0.type.trimmedDescription).self, name: "\($0.secondName ?? $0.firstName)"),
+            let name = $0.secondName?.trimmedDescription ?? $0.firstName.trimmedDescription
+            let translatedName = NamingConvention.camel.convert(name, to: .snake)
+            return """
+            .argument(\($0.type.trimmedDescription).self, name: "\(translatedName)"),
             """
         }
         
