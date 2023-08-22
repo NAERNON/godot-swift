@@ -10,8 +10,12 @@ public enum ExposableMemberMacro: PeerMacro {
         providingPeersOf declaration: some DeclSyntaxProtocol,
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
-        guard let exposableMember = exposableMember(from: declaration, in: context),
-              exposableMember.isExposable(in: context) else {
+        guard let exposableMember = declaration.exposableMember() else {
+            context.diagnose(Diagnostic(
+                node: Syntax(declaration),
+                message: GodotDiagnostic("'@ExposableMember' cannot be applied to this declaration")
+            ))
+            
             return []
         }
         
@@ -22,25 +26,14 @@ public enum ExposableMemberMacro: PeerMacro {
         
         let functionDecl = try FunctionDeclSyntax("private static func \(raw: exposableMember.classExpositionFunctionIdentifier)()") {
             
-            exposableMember.expositionSyntax(classContext: argument.baseName, in: context)
+            if let exposableSyntax = exposableMember.expositionSyntax(
+                classContext: argument.baseName,
+                in: context
+            ) {
+                exposableSyntax
+            }
         }
         
         return [DeclSyntax(functionDecl)]
-    }
-    
-    private static func exposableMember(
-        from declaration: some DeclSyntaxProtocol,
-        in context: some MacroExpansionContext
-    ) -> ClassExposableMember? {
-        guard let member = declaration.exposableMember() else {
-            context.diagnose(Diagnostic(
-                node: Syntax(declaration),
-                message: GodotDiagnostic("'@ExposableMember' cannot be applied to this declaration")
-            ))
-            
-            return nil
-        }
-        
-        return member
     }
 }

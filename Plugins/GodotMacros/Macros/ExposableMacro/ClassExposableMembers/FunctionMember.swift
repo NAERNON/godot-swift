@@ -3,41 +3,35 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 import CodeTranslator
 
-extension FunctionDeclSyntax: ClassExposableMember {
-    var classExpositionIdentifier: String {
-        name.trimmedDescription
-    }
+struct FunctionMember: ExposableMember {
+    let functionDeclSyntax: FunctionDeclSyntax
     
-    /// A function is excluded from exposition if it:
-    /// - is not public or open
-    /// - is an override
-    var isExcludedFromClassExposition: Bool {
-        guard let tokens = modifiers?.map(\.name.tokenKind) else {
-            return true
+    init?(declSyntax: some DeclSyntaxProtocol) {
+        guard let functionDeclSyntax = declSyntax.as(FunctionDeclSyntax.self),
+              let tokens = functionDeclSyntax.modifiers?.map(\.name.tokenKind),
+              tokens.contains(where: {
+                  $0 == .keyword(.public) || $0 == .keyword(.open)
+              }),
+              !tokens.contains(where: { $0 == .keyword(.override) })
+        else {
+            return nil
         }
         
-        // Check override
-        if tokens.contains(where: { $0 == .keyword(.override) }) {
-            return true
-        }
-        
-        return !tokens.contains(where: {
-            $0 == .keyword(.public) ||
-            $0 == .keyword(.open)
-        })
+        self.functionDeclSyntax = functionDeclSyntax
     }
     
-    /// A function is exposable if it:
-    /// - is not `async` or `throws`
-    /// - is not generic
-    /// - does not have any parameter with `some` or `any`
-    /// - does not have any variadic parameter
-    /// - does not have a return type with `some` or `any`
-    func isExposable(in context: some MacroExpansionContext) -> Bool {
+    var exposableMemberIdentifier: String {
+        functionDeclSyntax.name.trimmedDescription
+    }
+    
+    func expositionSyntax(
+        classContext: TokenSyntax,
+        in context: some MacroExpansionContext
+    ) -> ExprSyntax? {
         var isExposable = true
         
         // Check not throw or async
-        if let specifiers = signature.effectSpecifiers {
+        if let specifiers = functionDeclSyntax.signature.effectSpecifiers {
             if let throwsSpecifier = specifiers.throwsSpecifier {
                 context.diagnose(Diagnostic(
                     node: Syntax(throwsSpecifier),
@@ -56,7 +50,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
         }
         
         // Check not generic
-        if let generic = genericParameterClause {
+        if let generic = functionDeclSyntax.genericParameterClause {
             context.diagnose(Diagnostic(
                 node: Syntax(generic),
                 message: GodotDiagnostic("Exposable functions cannot be generic")
@@ -65,7 +59,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
         }
         
         // Check no parameter is some, any or variadic
-        for parameter in signature.parameterClause.parameters {
+        for parameter in functionDeclSyntax.signature.parameterClause.parameters {
             if let someOrAnyTypeSyntax = parameter.type.as(SomeOrAnyTypeSyntax.self) {
                 context.diagnose(Diagnostic(
                     node: Syntax(someOrAnyTypeSyntax),
@@ -84,7 +78,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
         }
         
         // Check return type is not some or any
-        if let someOrAnyTypeSyntax = signature.returnClause?.type.as(SomeOrAnyTypeSyntax.self) {
+        if let someOrAnyTypeSyntax = functionDeclSyntax.signature.returnClause?.type.as(SomeOrAnyTypeSyntax.self) {
             context.diagnose(Diagnostic(
                 node: Syntax(someOrAnyTypeSyntax),
                 message: GodotDiagnostic("Exposable functions cannot return a type marked 'some' or 'any'")
@@ -92,19 +86,16 @@ extension FunctionDeclSyntax: ClassExposableMember {
             isExposable = false
         }
         
-        return isExposable
-    }
-    
-    func expositionSyntax(
-        classContext: TokenSyntax,
-        in context: some MacroExpansionContext
-    ) -> ExprSyntax {
+        guard isExposable else {
+            return nil
+        }
+        
         // Syntax
-        let isStatic = modifiers?.map(\.name.tokenKind).contains(where: {
+        let isStatic = functionDeclSyntax.modifiers?.map(\.name.tokenKind).contains(where: {
             $0 == .keyword(.static)
         }) == true
         
-        let parameters = signature.parameterClause.parameters.map {
+        let parameters = functionDeclSyntax.signature.parameterClause.parameters.map {
             let name = $0.secondName?.trimmedDescription ?? $0.firstName.trimmedDescription
             let translatedName = NamingConvention.camel.convert(name, to: .snake)
             return """
@@ -116,7 +107,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
         let returnValueName: String
         let returnDecl: ExprSyntax
         
-        if let returnType = signature.returnClause?.type.trimmed {
+        if let returnType = functionDeclSyntax.signature.returnClause?.type.trimmed {
             returnParameter =
             """
             .returnParameter(\(returnType).self)
@@ -139,8 +130,8 @@ extension FunctionDeclSyntax: ClassExposableMember {
             "Unmanaged<\(classContext.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue()"
         }
         
-        var functionCall = name.trimmedDescription + "("
-        let parameterList = signature.parameterClause.parameters
+        var functionCall = functionDeclSyntax.name.trimmedDescription + "("
+        let parameterList = functionDeclSyntax.signature.parameterClause.parameters
         for (index, parameter) in parameterList.enumerated() {
             functionCall += "\n    "
             if parameter.firstName.tokenKind != .wildcard {
@@ -159,7 +150,7 @@ extension FunctionDeclSyntax: ClassExposableMember {
         let \(raw: returnValueName) = \(raw: preFunctionCall).\(raw: functionCall)
         """
         
-        let functionName = NamingConvention.camel.convert(name.trimmedDescription, to: .snake)
+        let functionName = NamingConvention.camel.convert(functionDeclSyntax.name.trimmedDescription, to: .snake)
         
         return """
         Godot.GodotExtension.classRegister.registerFunction(

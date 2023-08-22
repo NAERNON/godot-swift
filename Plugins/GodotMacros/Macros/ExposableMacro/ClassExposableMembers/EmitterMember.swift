@@ -3,52 +3,34 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 import CodeTranslator
 
-struct EmitterClassExposableMember: ClassExposableMember {
+struct EmitterMember: ExposableMember {
     let structDeclSyntax: StructDeclSyntax
     
-    init?(_ structDeclSyntax: StructDeclSyntax) {
+    init?(declSyntax: some DeclSyntaxProtocol) {
+        guard let structDeclSyntax = declSyntax.as(StructDeclSyntax.self),
+              let attributes = structDeclSyntax.attributes,
+              let tokens = structDeclSyntax.modifiers?.map(\.name.tokenKind),
+              tokens.contains(where: {
+                  $0 == .keyword(.public)
+              }),
+              attributes.contains(
+                where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Emitter" }
+              )
+        else {
+            return nil
+        }
+        
         self.structDeclSyntax = structDeclSyntax
-        
-        guard let attributes = structDeclSyntax.attributes else {
-            return nil
-        }
-        
-        if !attributes.contains(
-            where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Emitter" }
-        ) {
-            return nil
-        }
     }
     
-    var attributes: AttributeListSyntax? { 
-        structDeclSyntax.attributes
-    }
-    
-    var classExpositionIdentifier: String {
+    var exposableMemberIdentifier: String {
         structDeclSyntax.name.trimmedDescription
-    }
-    
-    /// An emitter is excluded from exposition if it:
-    /// - is not public
-    var isExcludedFromClassExposition: Bool {
-        guard let tokens = structDeclSyntax.modifiers?.map(\.name.tokenKind) else {
-            return true
-        }
-        
-        return !tokens.contains(where: {
-            $0 == .keyword(.public)
-        })
-    }
-    
-    /// An emitter is *always* exposable.
-    func isExposable(in context: some MacroExpansionContext) -> Bool {
-        return true
     }
     
     func expositionSyntax(
         classContext: TokenSyntax,
         in context: some MacroExpansionContext
-    ) -> ExprSyntax {
+    ) -> ExprSyntax? {
         guard let emitterAttribute = structDeclSyntax.attributes?.first(
             where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Emitter" }
         )?.as(AttributeSyntax.self),
@@ -58,7 +40,7 @@ struct EmitterClassExposableMember: ClassExposableMember {
                 diagnoseErrors: false
               )
         else {
-            return ""
+            return nil
         }
         
         let parameters = emitterParameters.map {

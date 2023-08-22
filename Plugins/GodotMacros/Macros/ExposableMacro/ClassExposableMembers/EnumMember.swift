@@ -3,34 +3,38 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 import CodeTranslator
 
-extension EnumDeclSyntax: ClassExposableMember {
-    var classExpositionIdentifier: String {
-        name.trimmedDescription
-    }
+struct EnumMember: ExposableMember {
+    let enumDeclSyntax: EnumDeclSyntax
     
-    /// An enum is excluded from exposition if it:
-    /// - is not public
-    var isExcludedFromClassExposition: Bool {
-        guard let tokens = modifiers?.map(\.name.tokenKind) else {
-            return true
+    init?(declSyntax: some DeclSyntaxProtocol) {
+        guard let enumDeclSyntax = declSyntax.as(EnumDeclSyntax.self),
+              let tokens = enumDeclSyntax.modifiers?.map(\.name.tokenKind),
+              tokens.contains(where: {
+                  $0 == .keyword(.public)
+              })
+        else {
+            return nil
         }
         
-        return !tokens.contains(where: {
-            $0 == .keyword(.public)
-        })
+        self.enumDeclSyntax = enumDeclSyntax
     }
     
-    /// An enum is exposable if it:
-    /// - has the `@ExposableEnum` attribute
-    func isExposable(in context: some MacroExpansionContext) -> Bool {
+    var exposableMemberIdentifier: String {
+        enumDeclSyntax.name.trimmedDescription
+    }
+    
+    func expositionSyntax(
+        classContext: TokenSyntax,
+        in context: some MacroExpansionContext
+    ) -> ExprSyntax? {
         let attributeSyntax = AttributeSyntax(attributeName: IdentifierTypeSyntax(name: "ExposableEnum"))
         let fixItMessage = GodotDiagnostic("Add '@ExposableEnum'")
         let diagnostic = GodotDiagnostic("Exposable enums must be marked '@ExposableEnum'")
         
         // Check @ExposableEnum
-        guard var attributes else {
+        guard var attributes = enumDeclSyntax.attributes else {
             // No attributes at all, so provide fixit that adds @ExposableEnum
-            let fixedDecl = self
+            let fixedDecl = enumDeclSyntax
                 .with(\.leadingTrivia, .newline)
                 .with(
                     \.attributes,
@@ -38,16 +42,16 @@ extension EnumDeclSyntax: ClassExposableMember {
                 )
             let fixIt = FixIt(message: fixItMessage, changes: [
                 .replace(
-                    oldNode: Syntax(self),
+                    oldNode: Syntax(enumDeclSyntax),
                     newNode: Syntax(fixedDecl))
             ])
             
             context.diagnose(Diagnostic(
-                node: Syntax(name),
+                node: Syntax(enumDeclSyntax.name),
                 message: diagnostic,
                 fixIt: fixIt
             ))
-            return false
+            return nil
         }
         
         // Check @ExposableEnum
@@ -56,36 +60,29 @@ extension EnumDeclSyntax: ClassExposableMember {
         else {
             // No @ExposableEnum, so provide fixit that inserts @ExposableEnum
             attributes.append(.attribute(attributeSyntax).with(\.leadingTrivia, .newline))
-            let fixedDecl = self
+            let fixedDecl = enumDeclSyntax
                 .with(
                     \.attributes,
                      attributes
                 )
             let fixIt = FixIt(message: fixItMessage, changes: [
                 .replace(
-                    oldNode: Syntax(self),
+                    oldNode: Syntax(enumDeclSyntax),
                     newNode: Syntax(fixedDecl))
             ])
             
             context.diagnose(Diagnostic(
-                node: Syntax(name),
+                node: Syntax(enumDeclSyntax.name),
                 message: diagnostic,
                 fixIt: fixIt
             ))
-            return false
+            return nil
         }
         
-        return true
-    }
-    
-    func expositionSyntax(
-        classContext: TokenSyntax,
-        in context: some MacroExpansionContext
-    ) -> ExprSyntax {
-        """
+        return """
         Godot.GodotExtension.classRegister.registerEnumOrOptionSet(
-            named: \(literal: name.trimmedDescription),
-            values: \(raw: name.trimmedDescription).godotExposableValues(),
+            named: \(literal: enumDeclSyntax.name.trimmedDescription),
+            values: \(raw: enumDeclSyntax.name.trimmedDescription).godotExposableValues(),
             isOptionSet: false,
             insideType: self
         )

@@ -3,50 +3,42 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 import CodeTranslator
 
-extension VariableDeclSyntax: ClassExposableMember {
-    var classExpositionIdentifier: String {
-        bindings.first?.pattern.trimmedDescription ?? ""
-    }
+struct VariableMember: ExposableMember {
+    let variableDeclSyntax: VariableDeclSyntax
     
-    /// A variable is excluded from exposition if it:
-    /// - is not public or open
-    /// - is an override
-    var isExcludedFromClassExposition: Bool {
-        guard let tokens = modifiers?.map(\.name.tokenKind) else {
-            return true
+    init?(declSyntax: some DeclSyntaxProtocol) {
+        guard let variableDeclSyntax = declSyntax.as(VariableDeclSyntax.self),
+              let tokens = variableDeclSyntax.modifiers?.map(\.name.tokenKind),
+              tokens.contains(where: {
+                  $0 == .keyword(.public) || $0 == .keyword(.open)
+              }),
+              !tokens.contains(where: { $0 == .keyword(.override) })
+        else {
+            return nil
         }
         
-        // Check override
-        if tokens.contains(where: { $0 == .keyword(.override) }) {
-            return true
-        }
-        
-        return !tokens.contains(where: {
-            $0 == .keyword(.public) || 
-            $0 == .keyword(.open)
-        })
+        self.variableDeclSyntax = variableDeclSyntax
     }
     
-    private var variableType: TypeSyntax? {
-        bindings.first?.typeAnnotation?.type
+    var exposableMemberIdentifier: String {
+        variableDeclSyntax.bindings.first?.pattern.trimmedDescription ?? ""
     }
     
-    /// A variable is exposable if it:
-    /// - has an explicitly written type
-    /// - does not have an `async` or `throws` getter
-    /// - is not static or open
-    func isExposable(in context: some MacroExpansionContext) -> Bool {
-        guard let variableBinding = bindings.first else {
-            return false
+    func expositionSyntax(
+        classContext: TokenSyntax,
+        in context: some MacroExpansionContext
+    ) -> ExprSyntax? {
+        guard let variableBinding = variableDeclSyntax.bindings.first else {
+            return nil
         }
         
         // Check type is explicitly written
-        guard let variableType else {
+        guard let variableType = variableDeclSyntax.bindings.first?.typeAnnotation?.type else {
             context.diagnose(Diagnostic(
                 node: Syntax(variableBinding),
                 message: GodotDiagnostic("Exposable variables must explicitly define their type")
             ))
-            return false
+            return nil
         }
         
         var isExposable = true
@@ -75,7 +67,7 @@ extension VariableDeclSyntax: ClassExposableMember {
         }
         
         // Check static or class
-        if let modifiers {
+        if let modifiers = variableDeclSyntax.modifiers {
             let diagnostic = GodotDiagnostic("Exposable variables cannot be marked 'static' or 'class'")
             if let modifier = modifiers.first(where: { $0.name.tokenKind == .keyword(.static) }) {
                 context.diagnose(Diagnostic(
@@ -93,21 +85,16 @@ extension VariableDeclSyntax: ClassExposableMember {
             }
         }
         
-        return isExposable
-    }
-    
-    func expositionSyntax(
-        classContext: TokenSyntax,
-        in context: some MacroExpansionContext
-    ) -> ExprSyntax {
-        guard let variableBinding = bindings.first,
-              let variableType
-        else {
-            return ""
+        guard isExposable else {
+            return nil
+        }
+        
+        guard let variableBinding = variableDeclSyntax.bindings.first else {
+            return nil
         }
         
         let hasSetter: Bool
-        if bindingSpecifier.tokenKind == .keyword(.let) {
+        if variableDeclSyntax.bindingSpecifier.tokenKind == .keyword(.let) {
             hasSetter = false
         } else if variableBinding.initializer != nil {
             hasSetter = true
