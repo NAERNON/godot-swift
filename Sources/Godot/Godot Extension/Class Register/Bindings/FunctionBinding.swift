@@ -84,7 +84,9 @@ extension ClassRegister {
         
         // MARK: Pointers
         
-        func withGodotExtensionPropertiesInfo(_ body: (PropertiesDataPointer<GDExtensionPropertyInfo>) -> Void) {
+        func withGodotExtensionPropertiesInfo(
+            _ body: (PropertiesDataPointer<GDExtensionPropertyInfo>) -> Void
+        ) {
             let properties = [returnTypeInfo] + argumentsTypeInfo
             withGodotExtensionPropertiesInfo(properties: properties) { propertiesInfo in
                 let finalPointer = UnsafeMutablePointer<GDExtensionPropertyInfo>.allocate(capacity: properties.count)
@@ -99,9 +101,11 @@ extension ClassRegister {
             }
         }
         
-        private func withGodotExtensionPropertiesInfo(properties: [PropertyInfo],
-                                                      index: Int = 0,
-                                                      _ body: ([GDExtensionPropertyInfo]) -> Void) {
+        private func withGodotExtensionPropertiesInfo(
+            properties: [PropertyInfo],
+            index: Int = 0,
+            _ body: ([GDExtensionPropertyInfo]) -> Void
+        ) {
             guard index < properties.count else {
                 body([])
                 return
@@ -114,7 +118,9 @@ extension ClassRegister {
             }
         }
         
-        func withGodotExtensionArgumentsMetadata(_ body: (PropertiesDataPointer<GDExtensionClassMethodArgumentMetadata>) -> Void) {
+        func withGodotExtensionArgumentsMetadata(
+            _ body: (PropertiesDataPointer<GDExtensionClassMethodArgumentMetadata>) -> Void
+        ) {
             let properties = [returnTypeInfo] + argumentsTypeInfo
             
             let finalPointer = UnsafeMutablePointer<GDExtensionClassMethodArgumentMetadata>.allocate(capacity: properties.count)

@@ -14,6 +14,7 @@ extension ClassRegister {
         private(set) var functions = [GodotStringName : FunctionBinding]()
         private(set) var variables = [GodotStringName : VariableBinding]()
         private(set) var enums = [GodotStringName : EnumBinding]()
+        private(set) var signals = [GodotStringName : SignalBinding]()
         
         // MARK: Init
         
@@ -60,6 +61,10 @@ extension ClassRegister {
         
         func appendEnum(_ enumBinding: EnumBinding) {
             enums[enumBinding.name] = enumBinding
+        }
+
+        func appendSignal(_ signalBinding: SignalBinding) {
+            signals[signalBinding.name] = signalBinding
         }
     }
 }
