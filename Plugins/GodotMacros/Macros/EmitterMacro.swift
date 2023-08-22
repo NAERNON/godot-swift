@@ -73,7 +73,8 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
         
         guard let emitterParameters = self.emitterParameters(
             from: emitterAttribute,
-            in: context
+            in: context,
+            diagnoseErrors: true
         ) else {
             return []
         }
@@ -81,18 +82,18 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
         let signalName = NamingConvention.pascal.convert(structNameWithoutEmitter, to: .snake)
         
         let initDeclSyntax = try InitializerDeclSyntax("fileprivate init(object: Object)") {
-            "signal = .init(object: Object, name: Self.signalName)"
-            
-            let parametersString = emitterParameters
-                .map { $0.0 + ": " + $0.1 }
-                .joined(separator: ", ")
-            let parametersCallString = emitterParameters
-                .map { $0.0 + ".makeVariant()" }
-                .joined(separator: ", ")
-            
-            try FunctionDeclSyntax("public func emit(\(raw: parametersString))") {
-                "signal.emit(\(raw: parametersCallString))"
-            }
+            "signal = .init(object: object, signal: Self.signalName)"
+        }
+        
+        let parametersString = emitterParameters
+            .map { $0.name + ": " + $0.type }
+            .joined(separator: ", ")
+        let parametersCallString = emitterParameters
+            .map { $0.name + ".makeVariant()" }
+            .joined(separator: ", ")
+        
+        let emitFunctionDecl = try FunctionDeclSyntax("public func emit(\(raw: parametersString))") {
+            "signal.emit(\(raw: parametersCallString))"
         }
         
         return [
@@ -100,16 +101,18 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
         public let signal: Godot.Signal
         public static let signalName: Godot.GodotStringName = \(literal: signalName)
         """,
-        DeclSyntax(initDeclSyntax)
+        DeclSyntax(initDeclSyntax),
+        DeclSyntax(emitFunctionDecl)
         ]
     }
     
     /// Returns an Array of all the parameters of the emitter,
     /// with each tuple being ("parameterName", "parameterType").
-    private static func emitterParameters(
+    static func emitterParameters(
         from attributeSyntax: AttributeSyntax,
-        in context: some MacroExpansionContext
-    ) -> [(String, String)]? {
+        in context: some MacroExpansionContext,
+        diagnoseErrors: Bool
+    ) -> [(name: String, type: String)]? {
         guard let arguments = attributeSyntax.arguments?.as(LabeledExprListSyntax.self) else {
             return []
         }
@@ -133,20 +136,24 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
                   stringLiteral.segments.count == 1,
                   let segment = stringLiteral.segments.first?.as(StringSegmentSyntax.self),
                   case .stringSegment(let stringSegment) = segment.content.tokenKind else {
-                context.diagnose(Diagnostic(
-                    node: Syntax(nameLabelSyntax),
-                    message: GodotDiagnostic("'\(nameLabelSyntax.expression.trimmedDescription)' cannot be used as name for signal parameter")
-                ))
+                if diagnoseErrors {
+                    context.diagnose(Diagnostic(
+                        node: Syntax(nameLabelSyntax),
+                        message: GodotDiagnostic("'\(nameLabelSyntax.expression.trimmedDescription)' cannot be used as name for signal parameter")
+                    ))
+                }
                 areParametersCorrect = false
                 continue
             }
             
             // Check no unauthorized character in the string
             if let unauthorizedRange = stringSegment.rangeOfCharacter(from: authorizedCharacters.inverted) {
-                context.diagnose(Diagnostic(
-                    node: Syntax(nameLabelSyntax),
-                    message: GodotDiagnostic("Character '\(stringSegment[unauthorizedRange])' cannot be used in name for signal parameter")
-                ))
+                if diagnoseErrors {
+                    context.diagnose(Diagnostic(
+                        node: Syntax(nameLabelSyntax),
+                        message: GodotDiagnostic("Character '\(stringSegment[unauthorizedRange])' cannot be used in name for signal parameter")
+                    ))
+                }
                 areParametersCorrect = false
                 continue
             }
@@ -168,17 +175,19 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
                 
                 let message = GodotDiagnostic("'\(typeLabelSyntax.expression.trimmedDescription)' cannot be used as type for signal parameter")
                 
-                if let fixIt {
-                    context.diagnose(Diagnostic(
-                        node: Syntax(typeLabelSyntax),
-                        message: message,
-                        fixIt: fixIt
-                    ))
-                } else {
-                    context.diagnose(Diagnostic(
-                        node: Syntax(typeLabelSyntax),
-                        message: message
-                    ))
+                if diagnoseErrors {
+                    if let fixIt {
+                        context.diagnose(Diagnostic(
+                            node: Syntax(typeLabelSyntax),
+                            message: message,
+                            fixIt: fixIt
+                        ))
+                    } else {
+                        context.diagnose(Diagnostic(
+                            node: Syntax(typeLabelSyntax),
+                            message: message
+                        ))
+                    }
                 }
                 
                 areParametersCorrect = false
