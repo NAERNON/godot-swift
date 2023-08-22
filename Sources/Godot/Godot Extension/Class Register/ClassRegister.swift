@@ -493,4 +493,54 @@ public final class ClassRegister {
         
         return enumBinding
     }
+    
+    // MARK: Signal registration
+    
+    /// Registers a given signal from an already registered
+    /// custom class to expose it to the Godot editor.
+    ///
+    /// - Parameters:
+    ///   - signalName: The signal name.
+    ///   - classType: The type of the class the signal is part of.
+    ///   - argumentParameters: The arguments of the signal.
+    /// - Returns: The newly created signal binding, or `nil` if the signal wasn't registered.
+    @discardableResult
+    public func registerSignal<Class>(
+        named signalName: GodotStringName,
+        insideType classType: Class.Type,
+        argumentParameters: [FunctionParameter]
+    ) -> SignalBinding? where Class : Object {
+        let className = classType.__className
+        
+        guard let classBinding = customClassNameToClassBinding[className],
+              classBinding.type == classType else {
+            gdDebugPrintError("Cannot register signal \(signalName) because the class \(className) is not registered.")
+            return nil
+        }
+        
+        guard classBinding.signals[signalName] == nil else {
+            gdDebugPrintError("Cannot register signal \(signalName) because the class \(className) already registered a signal with the same name.")
+            return nil
+        }
+        
+        let arguments = argumentParameters.map(\.propertyInfo)
+        
+        let signalBinding = SignalBinding(
+            name: signalName,
+            arguments: arguments
+        )
+        classBinding.appendSignal(signalBinding)
+        
+        signalName.withUnsafeRawPointer { signalNamePtr in
+            signalBinding.withGodotExtensionPropertiesInfo { propertiesInfo in
+                className.withUnsafeRawPointer { namePtr in
+                    gdextension_interface_classdb_register_extension_class_signal(
+                        GodotExtension.libraryPtr, namePtr, signalNamePtr, propertiesInfo, Int64(signalBinding.arguments.count)
+                    )
+                }
+            }
+        }
+        
+        return signalBinding
+    }
 }
