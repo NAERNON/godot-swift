@@ -129,7 +129,8 @@ public macro ExposableOptionSet() = #externalMacro(module: "GodotMacros", type: 
 @attached(member, names:
     named(signal),
     named(signalName),
-    named(init)
+    named(init),
+    named(emit)
 )
 public macro Emitter(_: (StaticString, ConvertibleToVariant.Type)...) = #externalMacro(module: "GodotMacros", type: "EmitterMacro")
 
