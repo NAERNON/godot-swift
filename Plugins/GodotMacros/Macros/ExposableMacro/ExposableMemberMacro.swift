@@ -24,14 +24,18 @@ public enum ExposableMemberMacro: PeerMacro {
             return []
         }
         
-        let functionDecl = try FunctionDeclSyntax("private static func \(raw: exposableMember.classExpositionFunctionIdentifier)()") {
-            
-            if let exposableSyntax = exposableMember.expositionSyntax(
-                classContext: argument.baseName,
-                in: context
-            ) {
-                exposableSyntax
-            }
+        let className = argument.baseName
+        
+        guard let exposableSyntax = exposableMember.expositionSyntax(
+            classContext: className,
+            in: context
+        ) else {
+            return []
+        }
+        
+        let functionDecl = try FunctionDeclSyntax("private static func \(raw: exposableMember.classExpositionFunctionIdentifier)()") 
+        {
+            exposableSyntax
         }
         
         return [DeclSyntax(functionDecl)]

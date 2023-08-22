@@ -63,7 +63,8 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro {
         in context: some MacroExpansionContext
     ) throws -> [AttributeSyntax] {
         guard let classDecl = declaration.as(ClassDeclSyntax.self),
-              member.exposableMember() != nil else {
+              let exposableMember = member.exposableMember(),
+              !exposableMember.hasExposableMemberAttribute else {
             return []
         }
         

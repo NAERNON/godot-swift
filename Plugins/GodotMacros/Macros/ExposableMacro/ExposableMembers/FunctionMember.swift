@@ -24,6 +24,10 @@ struct FunctionMember: ExposableMember {
         functionDeclSyntax.name.trimmedDescription
     }
     
+    var attributes: AttributeListSyntax? {
+        functionDeclSyntax.attributes
+    }
+    
     func expositionSyntax(
         classContext: TokenSyntax,
         in context: some MacroExpansionContext

@@ -23,6 +23,10 @@ struct EnumMember: ExposableMember {
         enumDeclSyntax.name.trimmedDescription
     }
     
+    var attributes: AttributeListSyntax? {
+        enumDeclSyntax.attributes
+    }
+    
     func expositionSyntax(
         classContext: TokenSyntax,
         in context: some MacroExpansionContext

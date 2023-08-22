@@ -24,6 +24,10 @@ struct VariableMember: ExposableMember {
         variableDeclSyntax.bindings.first?.pattern.trimmedDescription ?? ""
     }
     
+    var attributes: AttributeListSyntax? {
+        variableDeclSyntax.attributes
+    }
+    
     func expositionSyntax(
         classContext: TokenSyntax,
         in context: some MacroExpansionContext

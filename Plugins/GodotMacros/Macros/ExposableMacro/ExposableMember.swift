@@ -9,10 +9,13 @@ protocol ExposableMember {
     /// An identifier used to identify the member exposition.
     var exposableMemberIdentifier: String { get }
     
+    /// A list of all the attached attributes.
+    var attributes: AttributeListSyntax? { get }
+    
     /// Returns the syntax for exposing the member to Godot.
     ///
     /// This function should diagnose any error that prevents the exposition
-    /// using the provided context.
+    /// using the provided context, and return `nil` in that case.
     func expositionSyntax(
         classContext: TokenSyntax,
         in context: some MacroExpansionContext
@@ -22,6 +25,16 @@ protocol ExposableMember {
 extension ExposableMember {
     var classExpositionFunctionIdentifier: String {
         "__godotRegister_" + exposableMemberIdentifier
+    }
+    
+    var hasExposableMemberAttribute: Bool {
+        guard let attributes else {
+            return false
+        }
+        
+        return attributes.contains(
+            where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "ExposableMember" }
+        )
     }
 }
 

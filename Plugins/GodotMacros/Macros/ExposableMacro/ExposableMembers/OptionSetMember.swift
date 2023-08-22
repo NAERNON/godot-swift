@@ -26,6 +26,10 @@ struct OptionSetMember: ExposableMember {
         structDeclSyntax.name.trimmedDescription
     }
     
+    var attributes: AttributeListSyntax? {
+        structDeclSyntax.attributes
+    }
+    
     func expositionSyntax(
         classContext: TokenSyntax,
         in context: some MacroExpansionContext
