@@ -40,7 +40,7 @@ public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro
 /// A Godot enum must have an `Int64` `RawType`. Here is how the macro is used:
 ///
 /// ```swift
-/// @ExposableEnum public enum CharacterEmotion: Int64 {
+/// @GodotEnum public enum CharacterEmotion: Int64 {
 ///     case happy
 ///     case notSoHappy
 ///     case sad
@@ -67,7 +67,7 @@ public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro
     named(fromVariant),
     named(godotExposableValues)
 )
-public macro ExposableEnum() = #externalMacro(module: "GodotMacros", type: "ExposableEnumMacro")
+public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnumMacro")
 
 /// A macro that enables an `OptionSet` to be used with Godot.
 ///
@@ -91,7 +91,7 @@ public macro ExposableEnum() = #externalMacro(module: "GodotMacros", type: "Expo
 /// Here is how the macro is used:
 ///
 /// ```swift
-/// @ExposableOptionSet public struct CharacterAction {
+/// @GodotOptionSet public struct CharacterAction {
 ///     public static let thinking: CharacterAction = .init(rawValue: 1 << 0)
 ///     public static let drawing: CharacterAction  = .init(rawValue: 1 << 1)
 ///     public static let sleeping: Self            = .init(rawValue: 1 << 2)
@@ -127,7 +127,7 @@ public macro ExposableEnum() = #externalMacro(module: "GodotMacros", type: "Expo
     named(rawValue),
     named(init)
 )
-public macro ExposableOptionSet() = #externalMacro(module: "GodotMacros", type: "ExposableOptionSetMacro")
+public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "GodotOptionSetMacro")
 
 // TODO: Doc
 @attached(extension, conformances: EmitterProtocol)

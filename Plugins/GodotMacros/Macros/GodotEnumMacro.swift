@@ -4,7 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import CodeTranslator
 
-public enum ExposableEnumMacro: ExtensionMacro {
+public enum GodotEnumMacro: ExtensionMacro {
     public static func expansion(
         of node: AttributeSyntax,
         attachedTo declaration: some DeclGroupSyntax,
@@ -15,12 +15,12 @@ public enum ExposableEnumMacro: ExtensionMacro {
         guard let enumDecl = declaration.as(EnumDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotDiagnostic("'@ExposableEnum' can only be applied to an 'enum'")
+                message: GodotDiagnostic("'@GodotEnum' can only be applied to an 'enum'")
             ))
             return []
         }
         
-        let notInt64Diagnostic = GodotDiagnostic("Exposable enums can have an explicit 'Int64' raw type")
+        let notInt64Diagnostic = GodotDiagnostic("Godot enums can have an explicit 'Int64' raw type")
         
         guard let inheritedType = enumDecl.inheritanceClause?.inheritedTypes.first else {
             // Provide a fixit with the type Int64 explicitly added to the enum

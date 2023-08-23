@@ -13,7 +13,7 @@ struct OptionSetMember: ExposableMember {
                   $0 == .keyword(.public)
               }),
               attributes.contains(
-                where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "ExposableOptionSet" }
+                where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "GodotOptionSet" }
               )
         else {
             return nil

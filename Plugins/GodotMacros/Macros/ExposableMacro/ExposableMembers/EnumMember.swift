@@ -31,13 +31,13 @@ struct EnumMember: ExposableMember {
         classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
-        let attributeSyntax = AttributeSyntax(attributeName: IdentifierTypeSyntax(name: "ExposableEnum"))
-        let fixItMessage = GodotDiagnostic("Add '@ExposableEnum'")
-        let diagnostic = GodotDiagnostic("Exposable enums must be marked '@ExposableEnum'")
+        let attributeSyntax = AttributeSyntax(attributeName: IdentifierTypeSyntax(name: "GodotEnum"))
+        let fixItMessage = GodotDiagnostic("Add '@GodotEnum'")
+        let diagnostic = GodotDiagnostic("Godot enums must be marked '@GodotEnum'")
         
-        // Check @ExposableEnum
+        // Check @GodotEnum
         guard var attributes = enumDeclSyntax.attributes else {
-            // No attributes at all, so provide fixit that adds @ExposableEnum
+            // No attributes at all, so provide fixit that adds @GodotEnum
             let fixedDecl = enumDeclSyntax
                 .with(\.leadingTrivia, .newline)
                 .with(
@@ -58,11 +58,11 @@ struct EnumMember: ExposableMember {
             return nil
         }
         
-        // Check @ExposableEnum
+        // Check @GodotEnum
         guard attributes
-            .contains(where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "ExposableEnum" })
+            .contains(where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "GodotEnum" })
         else {
-            // No @ExposableEnum, so provide fixit that inserts @ExposableEnum
+            // No @GodotEnum, so provide fixit that inserts @GodotEnum
             attributes.append(.attribute(attributeSyntax).with(\.leadingTrivia, .newline))
             let fixedDecl = enumDeclSyntax
                 .with(

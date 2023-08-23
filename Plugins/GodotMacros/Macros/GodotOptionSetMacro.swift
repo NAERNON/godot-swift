@@ -4,7 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import CodeTranslator
 
-public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
+public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
     public static func expansion(
         of node: AttributeSyntax,
         attachedTo declaration: some DeclGroupSyntax,
@@ -15,7 +15,7 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
         guard let structDecl = declaration.as(StructDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotDiagnostic("'@ExposableOptionSet' can only be applied to a 'struct'")
+                message: GodotDiagnostic("'@GodotOptionSet' can only be applied to a 'struct'")
             ))
             return []
         }
@@ -97,7 +97,7 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
         var cases = [String]()
         var casesAreCorrect = true
         
-        let caseNotLetAndExplicitTypeDiagnostic = GodotDiagnostic("Static variables in an exposable option set must be constants with an explicitly Self defined type before the '='")
+        let caseNotLetAndExplicitTypeDiagnostic = GodotDiagnostic("Static variables in a Godot option set must be constants with an explicitly Self defined type before the '='")
         
         for member in members {
             if let variableDecl = member.decl.as(VariableDeclSyntax.self) {
@@ -113,7 +113,7 @@ public enum ExposableOptionSetMacro: ExtensionMacro, MemberMacro {
                     continue
                 }
                 
-                // Any public static value inside an ExposableOptionSet should
+                // Any public static value inside an GodotOptionSet should
                 // be a let, with an explicit type to Self, or the name of the struct
                 guard variableDecl.bindingSpecifier.tokenKind == .keyword(.let),
                       let binding = variableDecl.bindings.first else {
