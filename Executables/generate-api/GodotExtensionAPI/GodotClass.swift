@@ -14,6 +14,7 @@ struct GodotClass: Decodable {
     var enums: [GodotEnum]?
     var methods: [Method]?
     var properties: [Property]?
+    var signals: [Signal]?
     
     // MARK: APIType
     
@@ -101,6 +102,13 @@ struct GodotClass: Decodable {
         }
     }
     
+    // MARK: Signal
+    
+    struct Signal: Decodable {
+        let name: String
+        let arguments: [GodotArgument]?
+    }
+    
     // MARK: - Syntax
     
     /// A Boolean value indicating whether the class
@@ -130,6 +138,59 @@ struct GodotClass: Decodable {
                 try `enum`.syntax()
             }
         }
+    }
+    
+    @MemberBlockItemListBuilder
+    func signalsSyntax() throws -> MemberBlockItemListSyntax {
+        if let signals {
+            for signal in signals {
+                try signalSyntax(signal)
+                    .with(\.trailingTrivia, .newlines(2))
+            }
+        }
+    }
+    
+    @MemberBlockItemListBuilder
+    func signalSyntax(_ signal: Signal) throws -> MemberBlockItemListSyntax {
+        let structName = NamingConvention.snake.convert(signal.name, to: .pascal) + "Emitter"
+        let propertyName = NamingConvention.snake.convert(signal.name, to: .camel)
+        
+        try StructDeclSyntax("public struct \(raw: structName): EmitterProtocol") {
+            let translatedParameters: [GodotArgument] = signal.arguments?.map { argument in
+                var new = argument
+                new.name = NamingConvention.snake.convert(argument.name, to: .camel)
+                return new
+            } ?? []
+            
+            let parametersSyntax = translatedParameters
+                .map { $0.name + ": " + $0.type.syntax(options: syntaxOptions) }.joined(separator: ", ")
+            let parametersCallSyntax = translatedParameters
+                .map {
+                    if $0.type == .variant {
+                        $0.name
+                    } else {
+                        $0.name + ".makeVariant()"
+                    }
+                }.joined(separator: ", ")
+            
+            
+            """
+            public let signal: Signal
+            public static let signalName: GodotStringName = \(literal: signal.name)
+            
+            fileprivate init(_ object: Object) {
+                signal = .init(object: object, signal: Self.signalName)
+            }
+            
+            public func emit(\(raw: parametersSyntax)) {
+                signal.emit(\(raw: parametersCallSyntax))
+            }
+            """
+        }
+        
+        """
+        public private(set) lazy var \(raw: propertyName): \(raw: structName) = { .init(self) }()
+        """
     }
     
     @MemberBlockItemListBuilder
