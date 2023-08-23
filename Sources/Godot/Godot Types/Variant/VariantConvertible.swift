@@ -42,8 +42,19 @@ public protocol ConvertibleToVariant {
     /// *must* match `variantType`.
     static var variantType: Variant.RepresentationType { get }
     
+    /// The class name of the variant representation if applicable.
+    ///
+    /// Do not define this variable in your own types.
+    /// Only `Object` and corresponding subclasses define
+    /// this variable.
+    static var __className: GodotStringName { get }
+    
     /// A variant representation of this instance.
     func makeVariant() -> Variant
+}
+
+public extension ConvertibleToVariant {
+    static var __className: GodotStringName { GodotStringName() }
 }
 
 // MARK: - ConvertibleFromVariant

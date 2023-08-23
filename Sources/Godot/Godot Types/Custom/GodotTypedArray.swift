@@ -11,16 +11,19 @@ public struct GodotTypedArray<Element> where Element : VariantConvertible {
     private var underlyingArray: GodotArray
     
     public init(_ value: GodotTypedArray<Element>) {
-        self.underlyingArray = value.underlyingArray
+        self = value
     }
     
-    /// This init is private to this file because public initializers are provided in extensions.
-    fileprivate init(className: GodotStringName) {
+    public init() {
         let array = GodotArray()
         array.withUnsafeRawPointer { ptr in
-            className.withUnsafeRawPointer { classNamePtr in
-                // TODO: Check script (last parameter)
-                gdextension_interface_array_set_typed(ptr, Element.variantType.storageType, classNamePtr, nil)
+            Element.__className.withUnsafeRawPointer { classNamePtr in
+                Variant().withUnsafeRawPointer { scriptPtr in
+                    // TODO: Check script (last parameter)
+                    gdextension_interface_array_set_typed(
+                        ptr, Element.variantType.storageType, classNamePtr, scriptPtr
+                    )
+                }
             }
         }
         self.underlyingArray = array
@@ -28,6 +31,14 @@ public struct GodotTypedArray<Element> where Element : VariantConvertible {
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {
         self.underlyingArray = GodotArray(godotExtensionPointer: godotExtensionPointer)
+    }
+    
+    /// When using this initializer, make sure that the underlying array
+    /// is typed with the correct storage type.
+    ///
+    /// Use the `_isTyped()` and similar functions on the underlying array to check.
+    private init(underlyingArray: GodotArray) {
+        self.underlyingArray = underlyingArray
     }
     
     public func withUnsafeRawPointer<Result>(
@@ -44,17 +55,60 @@ public struct GodotTypedArray<Element> where Element : VariantConvertible {
     }
 }
 
-// MARK: - Public initializers
+// MARK: - VariantConvertible
 
-extension GodotTypedArray {
-    public init() {
-        self.init(className: GodotStringName())
+public enum GodotTypedArrayVariantConversionError: Error {
+    case notTyped
+    case incorrectType(expected: GDExtensionVariantType, found: GDExtensionVariantType)
+    case incorrectClassName(expected: GodotStringName, found: GodotStringName)
+    
+    public var localizedDescription: String {
+        switch self {
+        case .notTyped:
+            "The underlying array is not typed."
+        case .incorrectType(let expected, let found):
+            "The underlying array is typed \(found) but the expected type is \(expected)."
+        case .incorrectClassName(let expected, let found):
+            "The underlying array is typed with class \(found) but the expected class is \(expected)."
+        }
     }
 }
 
-extension GodotTypedArray where Element : Object {
-    public init() {
-        self.init(className: Element.__className) // TODO: Check that it is not the lastDerivedClassName
+extension GodotTypedArray: VariantConvertible {
+    public static var variantType: Variant.RepresentationType { GodotArray.variantType }
+    
+    public func makeVariant() -> Variant {
+        underlyingArray.makeVariant()
+    }
+    
+    public static func fromVariant(_ variant: Variant) throws -> GodotTypedArray<Element> {
+        let underlyingArray = try GodotArray.fromVariant(variant)
+        
+        guard underlyingArray._isTyped() else {
+            throw GodotTypedArrayVariantConversionError.notTyped
+        }
+        
+        let type = GDExtensionVariantType(rawValue: UInt32(underlyingArray._getTypedBuiltin()))
+        guard type == Element.variantType.storageType else {
+            throw GodotTypedArrayVariantConversionError
+                .incorrectType(expected: Element.variantType.storageType, found: type)
+        }
+        
+        // If the class name is not empty, we must check against
+        // the underlying array.
+        if !Element.__className._isEmpty() {
+            let className = underlyingArray._getTypedClassName()
+            guard className == Element.__className else {
+                throw GodotTypedArrayVariantConversionError
+                    .incorrectClassName(expected: Element.__className, found: className)
+            }
+        }
+        
+        return GodotTypedArray(underlyingArray: underlyingArray)
+    }
+    
+    public static func fromMatchingTypeVariant(_ variant: Variant) -> GodotTypedArray<Element> {
+        GodotTypedArray(underlyingArray: GodotArray.fromMatchingTypeVariant(variant))
     }
 }
 
