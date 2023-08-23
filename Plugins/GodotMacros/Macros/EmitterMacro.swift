@@ -72,7 +72,11 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
         }
         
         let structName = structDecl.name.trimmedDescription
-        let signalName = NamingConvention.pascal.convert(structName, to: .snake)
+        var signalName = NamingConvention.pascal.convert(structName, to: .snake)
+        let suffixToDelete = "_emitter"
+        if signalName.hasSuffix(suffixToDelete) {
+            signalName = String(signalName.dropLast(suffixToDelete.count))
+        }
         
         let initDeclSyntax = try InitializerDeclSyntax("fileprivate init(_ object: Godot.Object)") {
             "signal = .init(object: object, signal: Self.signalName)"
