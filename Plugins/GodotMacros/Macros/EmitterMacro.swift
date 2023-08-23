@@ -59,14 +59,6 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
             return []
         }
         
-        let structName = structDecl.name.trimmedDescription
-        let suffixToDelete = "Emitter"
-        let structNameWithoutEmitter = if structName.hasSuffix(suffixToDelete) {
-            String(structName.dropLast(suffixToDelete.count))
-        } else {
-            structName
-        }
-        
         guard let emitterAttribute = structDecl.attributes?.first(where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Emitter" })?.as(AttributeSyntax.self) else {
             fatalError("No emitter macro found.")
         }
@@ -79,9 +71,10 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
             return []
         }
         
-        let signalName = NamingConvention.pascal.convert(structNameWithoutEmitter, to: .snake)
+        let structName = structDecl.name.trimmedDescription
+        let signalName = NamingConvention.pascal.convert(structName, to: .snake)
         
-        let initDeclSyntax = try InitializerDeclSyntax("fileprivate init(object: Object)") {
+        let initDeclSyntax = try InitializerDeclSyntax("fileprivate init(_ object: Godot.Object)") {
             "signal = .init(object: object, signal: Self.signalName)"
         }
         
@@ -158,43 +151,16 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
                 continue
             }
             
-            // Check the type is correct
-            guard let declReference = typeLabelSyntax.expression.as(DeclReferenceExprSyntax.self) else {
-                let fixIt: FixIt?
-                if let memberAccess = typeLabelSyntax.expression.as(MemberAccessExprSyntax.self),
-                   let declReference = memberAccess.base?.as(DeclReferenceExprSyntax.self),
-                   memberAccess.declName.baseName.tokenKind == .keyword(.self) {
-                    fixIt = FixIt(message: GodotDiagnostic("Remove '.self' from '\(memberAccess.trimmedDescription)'"), changes: [
-                        .replace(
-                            oldNode: Syntax(memberAccess),
-                            newNode: Syntax(declReference))
-                    ])
-                } else {
-                    fixIt = nil
-                }
-                
-                let message = GodotDiagnostic("'\(typeLabelSyntax.expression.trimmedDescription)' cannot be used as type for signal parameter")
-                
-                if diagnoseErrors {
-                    if let fixIt {
-                        context.diagnose(Diagnostic(
-                            node: Syntax(typeLabelSyntax),
-                            message: message,
-                            fixIt: fixIt
-                        ))
-                    } else {
-                        context.diagnose(Diagnostic(
-                            node: Syntax(typeLabelSyntax),
-                            message: message
-                        ))
-                    }
-                }
-                
-                areParametersCorrect = false
-                continue
+            let typeDescription: String
+            if let typeMember = typeLabelSyntax.expression.as(MemberAccessExprSyntax.self),
+               let base = typeMember.base,
+               typeMember.declName.baseName.tokenKind == .keyword(.self) {
+                typeDescription = base.trimmedDescription
+            } else {
+                typeDescription = typeLabelSyntax.expression.trimmedDescription
             }
             
-            parameters.append((stringSegment, declReference.baseName.trimmedDescription))
+            parameters.append((stringSegment, typeDescription))
         }
         
         guard areParametersCorrect else {
