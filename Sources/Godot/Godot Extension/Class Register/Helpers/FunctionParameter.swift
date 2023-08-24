@@ -26,11 +26,12 @@ extension ClassRegister {
         private init<Value>(
             type: Value.Type,
             name: GodotStringName,
-            className: GodotStringName
+            defaultValue: Value? = nil,
+            className: GodotStringName = .init()
         ) where Value : ConvertibleToVariant {
             self.variantType = type.variantType
             self.name = name
-            self.defaultValue = nil
+            self.defaultValue = defaultValue?.makeVariant()
             self.className = className
         }
         
@@ -39,12 +40,14 @@ extension ClassRegister {
         /// - Parameters:
         ///   - type: The type of the parameter.
         ///   - name: The name of the parameter.
+        ///   - defaultValue: The default value of the parameter.
         public static func argument<Value>(
             _ type: Value.Type,
-            name: GodotStringName
+            name: GodotStringName,
+            defaultValue: Value? = nil
         ) -> FunctionParameter
         where Value : ConvertibleToVariant {
-            .init(type: type, name: name, className: .init())
+            .init(type: type, name: name, defaultValue: defaultValue)
         }
         
         /// Creates a new `FunctionParameter` used as a function argument.
@@ -65,7 +68,7 @@ extension ClassRegister {
         /// - Parameter type: The type of the parameter.
         public static func returnParameter<Value>(_ type: Value.Type) -> FunctionParameter
         where Value : ConvertibleToVariant {
-            .init(type: type, name: .init(), className: .init())
+            .init(type: type, name: .init())
         }
         
         /// Creates a new `FunctionParameter` used as a function return type.

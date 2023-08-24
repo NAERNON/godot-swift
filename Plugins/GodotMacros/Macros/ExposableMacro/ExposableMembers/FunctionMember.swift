@@ -90,6 +90,37 @@ struct FunctionMember: ExposableMember {
             isExposable = false
         }
         
+        // Retreive the default values
+        var parametersDefaultValues: [String?] = functionDeclSyntax.signature.parameterClause.parameters.map
+        { parameter in
+            guard let defaultValue = parameter.defaultValue else {
+                return nil
+            }
+            
+            if let literalSyntax = defaultValue.value.as(IntegerLiteralExprSyntax.self) {
+                return literalSyntax.literal.trimmedDescription
+            } else if let literalSyntax = defaultValue.value.as(FloatLiteralExprSyntax.self) {
+                return literalSyntax.literal.trimmedDescription
+            }
+            
+            return nil
+        }
+        
+        // We only need the last default values for Godot
+        var lastDefaultValuesCount = 0
+        while lastDefaultValuesCount < parametersDefaultValues.count {
+            if parametersDefaultValues[parametersDefaultValues.count - lastDefaultValuesCount - 1] != nil {
+                lastDefaultValuesCount += 1
+            } else {
+                break
+            }
+        }
+        
+        // We clear all default values before the last default values group
+        for index in 0..<(parametersDefaultValues.count - lastDefaultValuesCount) {
+            parametersDefaultValues[index] = nil
+        }
+        
         guard isExposable else {
             return nil
         }
@@ -99,64 +130,35 @@ struct FunctionMember: ExposableMember {
             $0 == .keyword(.static)
         }) == true
         
-        let parameters = functionDeclSyntax.signature.parameterClause.parameters.map {
-            let name = $0.secondName?.trimmedDescription ?? $0.firstName.trimmedDescription
+        let parameters = functionDeclSyntax.signature.parameterClause.parameters.enumerated().map
+        { (index, parameter) in
+            let name = parameter.secondName?.trimmedDescription ?? parameter.firstName.trimmedDescription
             let translatedName = NamingConvention.camel.convert(name, to: .snake)
-            return """
-            .argument(\($0.type.trimmedDescription).self, name: "\(translatedName)"),
-            """
-        }
-        
-        let returnParameter: String
-        let returnValueName: String
-        let returnDecl: ExprSyntax
-        
-        if let returnType = functionDeclSyntax.signature.returnClause?.type.trimmed {
-            returnParameter =
-            """
-            .returnParameter(\(returnType).self)
-            """
-            
-            returnValueName = "returnValue"
-            returnDecl =
-            """
-            returnValue.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
-            """
-        } else {
-            returnParameter = "nil"
-            returnValueName = "_"
-            returnDecl = ""
-        }
-        
-        let preFunctionCall = if isStatic {
-            "\(classContext.trimmedDescription)"
-        } else {
-            "Unmanaged<\(classContext.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue()"
-        }
-        
-        var functionCall = functionDeclSyntax.name.trimmedDescription + "("
-        let parameterList = functionDeclSyntax.signature.parameterClause.parameters
-        for (index, parameter) in parameterList.enumerated() {
-            functionCall += "\n    "
-            if parameter.firstName.tokenKind != .wildcard {
-                functionCall += parameter.firstName.trimmedDescription + ": "
-            }
-            functionCall += "\(parameter.type.trimmedDescription).fromMatchingTypeVariant(Variant(godotExtensionPointer: args!.advanced(by: \(index)).pointee!))"
-            
-            if index < parameterList.count - 1 {
-                functionCall += ","
+            let defaultValue = parametersDefaultValues[index]
+            if let defaultValue {
+                return """
+                .argument(\(parameter.type.trimmedDescription).self, name: "\(translatedName)", defaultValue: \(defaultValue)),
+                """
+            } else {
+                return """
+                .argument(\(parameter.type.trimmedDescription).self, name: "\(translatedName)"),
+                """
             }
         }
-        functionCall += "\n)"
-        
-        let functionCallAssignment: ExprSyntax =
-        """
-        let \(raw: returnValueName) = \(raw: preFunctionCall).\(raw: functionCall)
-        """
         
         let functionName = NamingConvention.camel.convert(functionDeclSyntax.name.trimmedDescription, to: .snake)
+        let returnParameter: String
+        let hasReturnType: Bool
         
-        return """
+        if let returnType = functionDeclSyntax.signature.returnClause?.type.trimmed {
+            hasReturnType = true
+            returnParameter = ".returnParameter(\(returnType).self)"
+        } else {
+            hasReturnType = false
+            returnParameter = "nil"
+        }
+        
+        let functionCallSyntax = ExprSyntax("""
         Godot.GodotExtension.classRegister.registerFunction(
             named: \(literal: functionName),
             insideType: self,
@@ -165,10 +167,65 @@ struct FunctionMember: ExposableMember {
             ],
             returnParameter: \(raw: returnParameter),
             isStatic: \(literal: isStatic)
-        ) { _, instancePtr, args, argsCount, returnPtr, error in
-            \(functionCallAssignment)
-            \(returnDecl)
+        )
+        """).as(FunctionCallExprSyntax.self)!
+        
+        let functionCallClosureSyntax = try? ClosureExprSyntax {
+            "_, instancePtr, args, argsCount, returnPtr, error in"
+            
+            let parameters = functionDeclSyntax.signature.parameterClause.parameters
+            
+            // For every default value, we check the argCount
+            // to know if we need to call the function with less parameters
+            for count in (0..<lastDefaultValuesCount+1).reversed() {
+                let parameterList = parameters.dropLast(count)
+                
+                let call = CodeBlockItemListSyntax {
+                    if hasReturnType {
+                        "let returnValue ="
+                    }
+                    
+                    if isStatic {
+                        "\(classContext.trimmed)"
+                    } else {
+                        "Unmanaged<\(classContext.trimmed)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+                    }
+                    
+                    ".\(functionDeclSyntax.name)("
+                    
+                    for (index, parameter) in parameterList.enumerated() {
+                        if parameter.firstName.tokenKind != .wildcard {
+                            "\(parameter.firstName.trimmed):"
+                        }
+                        
+                        "\(parameter.type.trimmed).fromMatchingTypeVariant(Variant(godotExtensionPointer: args!.advanced(by: \(literal: index)).pointee!))"
+                        
+                        if index < parameterList.count - 1 {
+                            ","
+                        }
+                    }
+                    ")"
+                    
+                    if hasReturnType {
+                        "returnValue.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)"
+                    }
+                }
+                
+                if count > 0 {
+                    try IfExprSyntax("if argsCount == \(literal: parameters.count - count)") {
+                        call
+                        "return"
+                    }
+                } else {
+                    call
+                }
+            }
         }
-        """
+        
+        guard let functionCallClosureSyntax else {
+            return nil
+        }
+        
+        return ExprSyntax(functionCallSyntax.with(\.trailingClosure, functionCallClosureSyntax))
     }
 }

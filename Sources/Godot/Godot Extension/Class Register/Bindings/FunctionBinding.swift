@@ -79,7 +79,10 @@ extension ClassRegister {
         /// Only the consecutive last default arguments are used in Godot.
         var lastDefaultArguments: [Variant] {
             let argumentsCount = argumentsTypeInfoExceptVararg.count
-            return (0..<lastDefaultArgumentsCount).map { argumentsTypeInfoExceptVararg[argumentsCount - $0 - 1].defaultValue! }
+            
+            return (0..<lastDefaultArgumentsCount).map {
+                argumentsTypeInfoExceptVararg[argumentsCount - $0 - 1].defaultValue!
+            }
         }
         
         // MARK: Pointers
