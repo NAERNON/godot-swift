@@ -152,10 +152,10 @@ struct GodotClass: Decodable {
     
     @MemberBlockItemListBuilder
     func signalSyntax(_ signal: Signal) throws -> MemberBlockItemListSyntax {
-        let structName = NamingConvention.snake.convert(signal.name, to: .pascal) + "Emitter"
-        let propertyName = NamingConvention.snake.convert(signal.name, to: .camel)
+        let structName = NamingConvention.snake.convert(signal.name, to: .pascal)
+        let propertyName = "signal" + NamingConvention.snake.convert(signal.name, to: .pascal)
         
-        try StructDeclSyntax("public struct \(raw: structName): EmitterProtocol") {
+        try StructDeclSyntax("public struct \(raw: structName)") {
             let translatedParameters: [GodotArgument] = signal.arguments?.map { argument in
                 var new = argument
                 new.name = NamingConvention.snake.convert(argument.name, to: .camel)
@@ -175,21 +175,24 @@ struct GodotClass: Decodable {
             
             
             """
-            public let signal: Signal
             public static let signalName: GodotStringName = \(literal: signal.name)
+            private weak var object: Godot.Object?
             
             fileprivate init(_ object: Object) {
-                signal = .init(object: object, signal: Self.signalName)
-            }
-            
-            public func emit(\(raw: parametersSyntax)) {
-                signal.emit(\(raw: parametersCallSyntax))
+                self.object = object
             }
             """
+            try FunctionDeclSyntax("public func emit(\(raw: parametersSyntax))") {
+                if translatedParameters.isEmpty {
+                    "_ = object?.emitSignal(Self.signalName)"
+                } else {
+                    "_ = object?.emitSignal(Self.signalName, rest: \(raw: parametersCallSyntax))"
+                }
+            }
         }
         
         """
-        public private(set) lazy var \(raw: propertyName): \(raw: structName) = { .init(self) }()
+        public var \(raw: propertyName): \(raw: structName) { .init(self) }
         """
     }
     
