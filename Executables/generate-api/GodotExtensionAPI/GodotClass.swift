@@ -73,9 +73,27 @@ struct GodotClass: Decodable {
         }
         
         func bindCall(selfExpression: String, argsExpression: String, returnExpression: String) -> ExprSyntax {
-            """
-            gdextension_interface_object_method_bind_ptrcall(Self.\(raw: ptrIdentifier), \(raw: selfExpression), \(raw: argsExpression), \(raw: returnExpression))
-            """
+            if isVararg {
+                """
+                gdextension_interface_object_method_bind_call(
+                    Self.\(raw: ptrIdentifier),
+                    \(raw: selfExpression),
+                    \(raw: argsExpression),
+                    \(raw: argumentsCountSyntax(type: Int64.self)),
+                    \(raw: returnExpression),
+                    nil
+                )
+                """
+            } else {
+                """
+                gdextension_interface_object_method_bind_ptrcall(
+                    Self.\(raw: ptrIdentifier),
+                    \(raw: selfExpression),
+                    \(raw: argsExpression),
+                    \(raw: returnExpression)
+                )
+                """
+            }
         }
     }
     
@@ -257,9 +275,27 @@ struct GodotClass: Decodable {
         """
         
         try method.translated.declSyntax(options: syntaxOptions, keywords: methodControlAccessKeyword(method)) {
+            
+            // If the method is vararg, every parameter should be transformed to a variant.
+            var modifiedMethod = GodotModifiedFunction(method.translated)
+            if method.isVararg,
+               var arguments = modifiedMethod.arguments
+            {
+                for (index, argument) in arguments.enumerated() {
+                    let variantName = "variant_" + argument.name
+                    
+                    let _ = arguments[index].name = variantName
+                    let _ = arguments[index].type = .variant
+                    
+                    "let \(raw: variantName) = \(raw: argument.name).makeVariant()"
+                }
+                
+                let _ = modifiedMethod.modifiedElement = .arguments(arguments)
+            }
+            
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
-                    try method.translated.argumentsPackPointerAccessSyntax { packName in
+                    try modifiedMethod.argumentsPackPointerAccessSyntax { packName in
                         try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
                                 method.bindCall(
@@ -280,7 +316,7 @@ struct GodotClass: Decodable {
                     }
                 }
             } else {
-                try method.translated.argumentsPackPointerAccessSyntax { packName in
+                try modifiedMethod.argumentsPackPointerAccessSyntax { packName in
                     if method.isStatic {
                         method.bindCall(
                             selfExpression: "nil",
