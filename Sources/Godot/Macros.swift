@@ -130,10 +130,10 @@ public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnu
 public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "GodotOptionSetMacro")
 
 // TODO: Doc
-@attached(extension, conformances: EmitterProtocol)
+@attached(peer, names: prefixed(signal))
 @attached(member, names:
-    named(signal),
     named(signalName),
+    named(object),
     named(init),
     named(emit)
 )

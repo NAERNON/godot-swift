@@ -7,14 +7,12 @@ import Foundation
 
 private let authorizedCharacters = CharacterSet.alphanumerics.union(.init(charactersIn: "_"))
 
-public enum EmitterMacro: ExtensionMacro, MemberMacro {
+public enum EmitterMacro: MemberMacro, PeerMacro {
     public static func expansion(
-        of node: AttributeSyntax,
-        attachedTo declaration: some DeclGroupSyntax,
-        providingExtensionsOf type: some TypeSyntaxProtocol,
-        conformingTo protocols: [TypeSyntax],
+        of attribute: AttributeSyntax,
+        providingMembersOf declaration: some DeclGroupSyntax,
         in context: some MacroExpansionContext
-    ) throws -> [ExtensionDeclSyntax] {
+    ) throws -> [DeclSyntax] {
         guard let structDecl = declaration.as(StructDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
@@ -45,20 +43,7 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
             return []
         }
         
-        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.EmitterProtocol") {}
-        
-        return [extensionDeclSyntax]
-    }
-    
-    public static func expansion(
-        of attribute: AttributeSyntax,
-        providingMembersOf declaration: some DeclGroupSyntax,
-        in context: some MacroExpansionContext
-    ) throws -> [DeclSyntax] {
-        guard let structDecl = declaration.as(StructDeclSyntax.self) else {
-            return []
-        }
-        
+        // Find the emitter attribute to analyse parameters
         guard let emitterAttribute = structDecl.attributes?.first(where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Emitter" })?.as(AttributeSyntax.self) else {
             fatalError("No emitter macro found.")
         }
@@ -72,14 +57,15 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
         }
         
         let structName = structDecl.name.trimmedDescription
-        var signalName = NamingConvention.pascal.convert(structName, to: .snake)
-        let suffixToDelete = "_emitter"
-        if signalName.hasSuffix(suffixToDelete) {
-            signalName = String(signalName.dropLast(suffixToDelete.count))
-        }
+        let signalName = NamingConvention.pascal.convert(structName, to: .snake)
+        
+        let propertiesDecl: DeclSyntax = """
+        public static let signalName: Godot.GodotStringName = \(literal: signalName)
+        private weak var object: Godot.Object?
+        """
         
         let initDeclSyntax = try InitializerDeclSyntax("fileprivate init(_ object: Godot.Object)") {
-            "signal = .init(object: object, signal: Self.signalName)"
+            "self.object = object"
         }
         
         let parametersString = emitterParameters
@@ -90,16 +76,33 @@ public enum EmitterMacro: ExtensionMacro, MemberMacro {
             .joined(separator: ", ")
         
         let emitFunctionDecl = try FunctionDeclSyntax("public func emit(\(raw: parametersString))") {
-            "signal.emit(\(raw: parametersCallString))"
+            if parametersCallString.isEmpty {
+                "_ = object?.emitSignal(Self.signalName)"
+            } else {
+                "_ = object?.emitSignal(Self.signalName, rest: \(raw: parametersCallString))"
+            }
         }
         
         return [
-        """
-        public let signal: Godot.Signal
-        public static let signalName: Godot.GodotStringName = \(literal: signalName)
-        """,
-        DeclSyntax(initDeclSyntax),
-        DeclSyntax(emitFunctionDecl)
+            propertiesDecl,
+            DeclSyntax(initDeclSyntax),
+            DeclSyntax(emitFunctionDecl)
+        ]
+    }
+    
+    public static func expansion(
+        of node: AttributeSyntax,
+        providingPeersOf declaration: some DeclSyntaxProtocol,
+        in context: some MacroExpansionContext
+    ) throws -> [DeclSyntax] {
+        guard let structDecl = declaration.as(StructDeclSyntax.self) else {
+            return []
+        }
+        
+        let variableName = "signal" + structDecl.name.trimmedDescription
+        
+        return [
+            "public var \(raw: variableName): \(raw: structDecl.name.trimmed) { .init(self) }"
         ]
     }
     
