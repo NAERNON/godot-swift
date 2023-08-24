@@ -128,7 +128,7 @@ struct GodotClass: Decodable {
     }
     
     var syntaxOptions: GodotTypeSyntaxOptions {
-        .floatAsDouble
+        [.prefixByGodotIfClass, .floatAsDouble]
     }
     
     @MemberBlockItemListBuilder

@@ -113,17 +113,16 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     
     // MARK: Godot types
     
-    /// Sets all the base Godot types.
-    static func setGodotTypes(with extensionAPI: GodotExtensionAPI) {
-        godotClassTypes = Set(extensionAPI.classes.map { $0.name })
-        godotBuiltinClassTypes = Set(extensionAPI.builtinClasses.map { $0.name })
-    }
     
     /// The Godot classes types.
-    private static var godotClassTypes: Set<GodotType> = []
+    ///
+    /// This set is used to know if a type is a Godot class.
+    static var godotClassTypes: Set<GodotType> = []
     
     /// The Godot builtin classes types.
-    private static var godotBuiltinClassTypes: Set<GodotType> = []
+    ///
+    /// This set is used to know if a type is a Godot builtin class.
+    static var godotBuiltinClassTypes: Set<GodotType> = []
     
     // MARK: Init
     
@@ -254,9 +253,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// print(type.removePointerForGodotClass.syntax())
     /// // Prints "Object"
     /// ```
-    ///
-    /// > important: Godot types info should be set before retreiving this value.
-    /// See the ``setGodotTypes(with:)`` function.
     var removeGodotClassPointers: GodotType {
         switch self {
         case .base(let string):
@@ -341,9 +337,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// is a Godot class.
     ///
     /// - Returns: `true` if the type is a Godot class (not a builtin Godot class).
-    ///
-    /// > important: Godot types info should be set before retreiving this value.
-    /// See the ``setGodotTypes(with:)`` function.
     var isGodotClass: Bool {
         GodotType.godotClassTypes.contains(self)
     }
@@ -352,9 +345,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// is a Godot builtin class.
     ///
     /// - Returns: `true` if the type is a Godot builtin class (not a Godot class).
-    ///
-    /// > important: Godot types info should be set before retreiving this value.
-    /// See the ``setGodotTypes(with:)`` function.
     var isBuiltinGodotClass: Bool {
         GodotType.godotBuiltinClassTypes.contains(self) || isTypedArray
     }
@@ -366,9 +356,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// - Parameter type: The type to check.
     /// - Returns: `true` if the type is a Godot builtin class (not a Godot class)
     /// without an opaque underlying value.
-    ///
-    /// > important: Godot types info should be set before retreiving this value.
-    /// See the ``setGodotTypes(with:)`` function.
     var isBuiltinGodotClassWithoutOpaque: Bool {
         isBuiltinGodotClass && !isBuiltinGodotClassWithOpaque
     }
@@ -379,9 +366,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ///
     /// - Returns: `true` if the type is a Godot builtin class (not a Godot class)
     /// with an opaque underlying value.
-    ///
-    /// > important: Godot types info should be set before retreiving this value.
-    /// See the ``setGodotTypes(with:)`` function.
     var isBuiltinGodotClassWithOpaque: Bool {
         guard isBuiltinGodotClass else {
             return false
@@ -452,7 +436,13 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             case "StringName": return "GodotStringName"
             case "Error": return "ErrorType"
             case "Type": return "GodotType"
-            default: return string
+            default:
+                if options.contains(.prefixByGodotIfClass),
+                   isBuiltinGodotClass || isGodotClass {
+                    return "Godot." + string
+                } else {
+                    return string
+                }
             }
         case .enum(let type):
             return type.syntax(options: options)
@@ -505,9 +495,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// print(__temporary, Int.self)
     /// return __temporary
     /// ```
-    ///
-    /// > important: Godot types info should be set before calling this function.
-    /// See the ``setGodotTypes(with:)`` function.
     @CodeBlockItemListBuilder
     func instantiationSyntax(
         options: GodotTypeSyntaxOptions = [],
@@ -548,9 +535,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// print(syntax)
     /// // Prints "aPointer.load(as: Int.self)".
     /// ```
-    ///
-    /// > important: Godot types info should be set before calling this function.
-    /// See the ``setGodotTypes(with:)`` function.
     func instantiationFromPointerSyntax(
         pointerName: String,
         options: GodotTypeSyntaxOptions = []
@@ -574,9 +558,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// print(syntax)
     /// // Prints "aPointer.assumingMemoryBound(to: Int.self).pointee = anInstance".
     /// ```
-    ///
-    /// > important: Godot types info should be set before calling this function.
-    /// See the ``setGodotTypes(with:)`` function.
     func sendToPointerSyntax(
         instanceName: String,
         pointerName: String,

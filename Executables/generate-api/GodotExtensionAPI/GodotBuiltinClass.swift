@@ -191,11 +191,11 @@ struct GodotBuiltinClass: Decodable {
     
     var syntaxOptions: GodotTypeSyntaxOptions {
         if name == "Color" {
-            []
+            [.prefixByGodotIfClass]
         } else if useOpaque {
-            [.floatAsDouble]
+            [.prefixByGodotIfClass, .floatAsDouble]
         } else {
-            [.floatAsReal]
+            [.prefixByGodotIfClass, .floatAsReal]
         }
     }
     

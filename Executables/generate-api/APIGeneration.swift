@@ -28,11 +28,12 @@ struct APIGeneration: ParsableCommand {
         
         let extensionAPI = try jsonDecoder.decode(GodotExtensionAPI.self, from: data)
         
-        GodotType.setGodotTypes(with: extensionAPI)
+        GodotType.godotClassTypes = Set(extensionAPI.classes.map { $0.name })
+        GodotType.godotBuiltinClassTypes = Set(extensionAPI.builtinClasses.map { $0.name })
         
         // MARK: Generate files
         
-        // Delete _Generated directories if needed before making new ones.
+        // Delete _Generated directory if needed before making a new one.
         if !noWrite, fileManager.fileExists(atPath: generatedFolderURL.path) {
             try fileManager.removeItem(atPath: generatedFolderURL.path)
         }
