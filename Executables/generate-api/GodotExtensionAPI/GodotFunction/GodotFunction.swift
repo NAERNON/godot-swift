@@ -7,11 +7,8 @@ import CodeTranslator
 /// Conform your type to the protocol to gain access
 /// to usefull syntax declarations.
 protocol GodotFunction {
-    /// The name of the function, using C naming conventions.
     var name: String { get }
-    
     var arguments: [GodotArgument]? { get }
-    
     var returnType: GodotType? { get }
     
     var isVararg: Bool { get }
@@ -34,46 +31,22 @@ extension GodotFunction {
 // MARK: - Extensions
 
 extension GodotFunction {
-    // MARK: - Syntax
-    
-    private var translatedFunction: (name: String, parameters: [FunctionParameter]) {
-        CodeLanguage.c.translateFunction(
-            name: name,
-            parameters: (arguments ?? []).map { .init(name: $0.name, label: nil, isLabelHidden: false) },
-            to: .swift
-        )
-    }
-    
     private var varargArgumentIdentifier: String {
         "rest"
     }
     
-    /// Returns the function identifier, translated if requested.
-    ///
-    /// A function with the signature "`do_something(a:b:)`"
-    /// would return the indentifier "doSomething" when translated.
-    func syntaxIdentifier(translateFunctionName: Bool) -> String {
-        if translateFunctionName {
-            translatedFunction.name
-        } else {
-            name
-        }
-    }
-    
-    /// Returns the argument identifier at a given index.
-    func argumentSyntaxIndentifier(at index: Int) -> String {
-        translatedFunction.parameters[index].name
-    }
-    
     /// Returns the syntax for the number of arguments.
+    /// 
+    /// - Parameter type: The expected type of integer.
     ///
     /// For a function with 3 arguments, it will return "`3`".
-    ///
-    /// For a vararg function with 3 arguments, it will return "`3 + Int32(rest.count)`".
-    var argumentsCountSyntax: String {
+    /// 
+    /// For a vararg function with 3 arguments and a `Int32` type,
+    /// it will return "`3 + Int32(rest.count)`".
+    func argumentsCountSyntax<IntegerType: BinaryInteger>(type: IntegerType.Type) -> String {
         var syntax = String(arguments?.count ?? 0)
         if isVararg {
-            syntax.append(" + Int32(\(varargArgumentIdentifier).count)")
+            syntax.append(" + \(IntegerType.self)(\(varargArgumentIdentifier).count)")
         }
         return syntax
     }
@@ -83,12 +56,10 @@ extension GodotFunction {
         underscoreName: Bool = false,
         hideAllLabels: Bool = false,
         options: GodotTypeSyntaxOptions = [],
-        translateFunctionName: Bool = true,
         keywords: Keyword...,
         @CodeBlockItemListBuilder bodyBuilder: () throws -> CodeBlockItemListSyntax
     ) throws -> FunctionDeclSyntax {
         let arguments = self.arguments ?? []
-        let functionParameters = translatedFunction.parameters
         
         var functionHeader = String()
         
@@ -98,19 +69,18 @@ extension GodotFunction {
             functionHeader.append("_")
         }
         
-        functionHeader.append(syntaxIdentifier(translateFunctionName: translateFunctionName))
+        functionHeader.append(name)
         functionHeader.append("(")
-        functionHeader.append(functionParameters.enumerated().map { (index, parameter) in
-            let argument = arguments[index]
+        functionHeader.append(arguments.map { argument in
             var parameterString = ""
             
-            if parameter.isLabelHidden || hideAllLabels {
+            if argument.isLabelHidden || hideAllLabels {
                 parameterString.append("_ ")
-            } else if let label = parameter.label {
+            } else if let label = argument.label {
                 parameterString.append(label)
                 parameterString.append(" ")
             }
-            parameterString.append(CodeLanguage.swift.protectNameIfKeyword(for: parameter.name))
+            parameterString.append(CodeLanguage.swift.protectNameIfKeyword(for: argument.name))
             parameterString.append(": ")
             parameterString.append(argument.type.optional(argument.type.isGodotClass).syntax(options: options))
             
@@ -286,9 +256,8 @@ extension GodotFunction {
         }
         
         let argument = arguments![index]
-        let argumentIdentifier = argumentSyntaxIndentifier(at: index)
         
-        return try argument.type.pointerAccessSyntax(instanceName: argumentIdentifier) { pointerName in
+        return try argument.type.pointerAccessSyntax(instanceName: argument.name) { pointerName in
             try argumentsPointerAccessSyntax(indexes: indexes.dropFirst()) { pointerNames in
                 try bodyBuilder([pointerName] + pointerNames)
             }
@@ -298,23 +267,21 @@ extension GodotFunction {
     func callSyntax(
         withParameters parameterValues: [String]
     ) -> FunctionCallExprSyntax {
-        let (translatedName, translatedParameters) = translatedFunction
-        
-        let parameterStrings = translatedParameters.enumerated().map { (index, parameter) in
-            if parameter.isLabelHidden {
+        let parameterStrings = (arguments ?? []).enumerated().map { (index, argument) in
+            if argument.isLabelHidden {
                 parameterValues[index]
-            } else if let label = parameter.label {
+            } else if let label = argument.label {
                 label + ": " + parameterValues[index]
             } else {
-                parameter.name + ": " + parameterValues[index]
+                argument.name + ": " + parameterValues[index]
             }
         }
         
         let exprSyntax = if parameterStrings.isEmpty {
-            ExprSyntax("\(raw: translatedName)()")
+            ExprSyntax("\(raw: name)()")
         } else {
             ExprSyntax("""
-            \(raw: translatedName)(
+            \(raw: name)(
                 \(raw: parameterStrings.joined(separator: ",\n    "))
             )
             """)

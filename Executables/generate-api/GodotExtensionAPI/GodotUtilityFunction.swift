@@ -59,21 +59,21 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
     func syntax() throws -> FunctionDeclSyntax {
         let options: GodotTypeSyntaxOptions = .floatAsDouble
         
-        return try declSyntax(underscoreName: true, options: options, keywords: .internal) {
+        return try translated.declSyntax(underscoreName: true, options: options, keywords: .internal) {
             if let returnType = returnType {
                 try returnType.instantiationSyntax(options: options) { instanceType, instanceName in
-                    try argumentsPackPointerAccessSyntax { packName in
+                    try translated.argumentsPackPointerAccessSyntax { packName in
                         try instanceType.pointerAccessSyntax(
                             instanceName: instanceName,
                             mutability: .mutable
                         ) { instancePointerName in
-                            "\(raw: ptrIdentifier)(\(raw: instancePointerName), \(raw: packName), \(raw: argumentsCountSyntax))"
+                            "\(raw: ptrIdentifier)(\(raw: instancePointerName), \(raw: packName), \(raw: argumentsCountSyntax(type: Int32.self)))"
                         }
                     }
                 }
             } else {
                 try argumentsPackPointerAccessSyntax { packName in
-                    "\(raw: ptrIdentifier)(nil, \(raw: packName), \(raw: argumentsCountSyntax))"
+                    "\(raw: ptrIdentifier)(nil, \(raw: packName), \(raw: argumentsCountSyntax(type: Int32.self)))"
                 }
             }
         }

@@ -71,6 +71,12 @@ struct GodotClass: Decodable {
         var ptrIdentifier: String {
             "__method_binding_\(name)"
         }
+        
+        func bindCall(selfExpression: String, argsExpression: String, returnExpression: String) -> ExprSyntax {
+            """
+            gdextension_interface_object_method_bind_ptrcall(Self.\(raw: ptrIdentifier), \(raw: selfExpression), \(raw: argsExpression), \(raw: returnExpression))
+            """
+        }
     }
     
     // MARK: Property
@@ -250,28 +256,44 @@ struct GodotClass: Decodable {
         }()
         """
         
-        try method.declSyntax(options: syntaxOptions, keywords: methodControlAccessKeyword(method)) {
+        try method.translated.declSyntax(options: syntaxOptions, keywords: methodControlAccessKeyword(method)) {
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
-                    try method.argumentsPackPointerAccessSyntax { packName in
+                    try method.translated.argumentsPackPointerAccessSyntax { packName in
                         try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
-                                "gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), \(raw: instancePtr))"
+                                method.bindCall(
+                                    selfExpression: "nil",
+                                    argsExpression: packName,
+                                    returnExpression: instancePtr
+                                )
                             } else {
                                 try name.pointerAccessSyntax(instanceName: "self", mutability: .constMutablePointer) { selfPtr in
-                                    "gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), \(raw: instancePtr))"
+                                    method.bindCall(
+                                        selfExpression: selfPtr,
+                                        argsExpression: packName,
+                                        returnExpression: instancePtr
+                                    )
                                 }
                             }
                         }
                     }
                 }
             } else {
-                try method.argumentsPackPointerAccessSyntax { packName in
+                try method.translated.argumentsPackPointerAccessSyntax { packName in
                     if method.isStatic {
-                        "gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), nil, \(raw: packName), nil)"
+                        method.bindCall(
+                            selfExpression: "nil",
+                            argsExpression: packName,
+                            returnExpression: "nil"
+                        )
                     } else {
                         try name.pointerAccessSyntax(instanceName: "self", mutability: .constMutablePointer) { selfPtr in
-                            "gdextension_interface_object_method_bind_ptrcall(Self.\(raw: method.ptrIdentifier), \(raw: selfPtr), \(raw: packName), nil)"
+                            method.bindCall(
+                                selfExpression: selfPtr,
+                                argsExpression: packName,
+                                returnExpression: "nil"
+                            )
                         }
                     }
                 }
@@ -281,7 +303,7 @@ struct GodotClass: Decodable {
     
     @MemberBlockItemListBuilder
     private func virtualMethodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
-        try method.declSyntax(options: syntaxOptions, keywords: .open) {
+        try method.translated.declSyntax(options: syntaxOptions, keywords: .open) {
             if let returnType = method.returnType {
                 if returnType.isGodotClass
                     || returnType == .variant
@@ -337,14 +359,14 @@ struct GodotClass: Decodable {
         return try VariableDeclSyntax("open var \(raw: propertyName): \(raw: typeSyntax)") {
             """
             get {
-                \(raw: getter.callSyntax(withParameters: [getterParameter].compactMap { $0 }))
+                \(raw: getter.translated.callSyntax(withParameters: [getterParameter].compactMap { $0 }))
             }
             """
             
             if let setter {
                 """
                 set {
-                    \(raw: setter.callSyntax(withParameters: ["newValue"]))
+                    \(raw: setter.translated.callSyntax(withParameters: ["newValue"]))
                 }
                 """
             }
@@ -378,7 +400,7 @@ struct GodotClass: Decodable {
                             argument.type.instantiationFromPointerSyntax(pointerName: "args[\(index)]!", options: syntaxOptions)
                         }
                         
-                        ".\(raw: method.callSyntax(withParameters: parameters))"
+                        ".\(raw: method.translated.callSyntax(withParameters: parameters))"
                         
                         if let returnType = method.returnValue?.type {
                             "\(raw: returnType.sendToPointerSyntax(instanceName: "returnValue", pointerName: "returnPtr!", options: syntaxOptions))"

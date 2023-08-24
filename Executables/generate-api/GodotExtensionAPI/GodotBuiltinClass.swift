@@ -246,9 +246,8 @@ struct GodotBuiltinClass: Decodable {
         }()
         """
         
-        try constructor.declSyntax(
+        try constructor.translatedArguments.declSyntax(
             options: syntaxOptions,
-            translateFunctionName: false,
             keywords: .internal
         ) {
             let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
@@ -259,7 +258,7 @@ struct GodotBuiltinClass: Decodable {
                 "var __temporary = \(raw: name.syntax())()"
             }
             
-            try constructor.argumentsPackPointerAccessSyntax { packName in
+            try constructor.translatedArguments.argumentsPackPointerAccessSyntax { packName in
                 if name.isBuiltinGodotClassWithOpaque {
                     """
                     __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -284,9 +283,8 @@ struct GodotBuiltinClass: Decodable {
         
         let constructor = PointerConstructor(constructor)
         
-        try constructor.declSyntax(
+        try constructor.translatedArguments.declSyntax(
             options: syntaxOptions,
-            translateFunctionName: false,
             keywords: .internal
         ) {
             let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
@@ -297,7 +295,7 @@ struct GodotBuiltinClass: Decodable {
                 "var __temporary = \(raw: name.syntax())()"
             }
             
-            try constructor.argumentsPackPointerAccessSyntax { packName in
+            try constructor.translatedArguments.argumentsPackPointerAccessSyntax { packName in
                 if name.isBuiltinGodotClassWithOpaque {
                     """
                     __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -339,13 +337,13 @@ struct GodotBuiltinClass: Decodable {
         }()
         """
         
-        try operatorFunction.declSyntax(
+        try operatorFunction.translated.declSyntax(
             hideAllLabels: true,
             options: syntaxOptions,
             keywords: .internal
         ) {
             try `operator`.returnType.instantiationSyntax { instanceType, instanceName in
-                try operatorFunction.argumentsPointerAccessSyntax { pointerNames in
+                try operatorFunction.translated.argumentsPointerAccessSyntax { pointerNames in
                     try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtrName in
                         let lhsPointer = pointerNames[0]
                         let rhsPointer = `operator`.rightType == nil ? "nil" : pointerNames[1]
@@ -470,7 +468,7 @@ struct GodotBuiltinClass: Decodable {
         """
         
         let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
-        let functionDecl = try method.declSyntax(
+        let functionDecl = try method.translated.declSyntax(
             underscoreName: true,
             options: syntaxOptions,
             keywords: .internal
@@ -481,25 +479,25 @@ struct GodotBuiltinClass: Decodable {
             
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
-                    try method.argumentsPackPointerAccessSyntax { packName in
+                    try method.translated.argumentsPackPointerAccessSyntax { packName in
                         try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
                             if method.isStatic {
-                                "Self.\(raw: method.ptrIdentifier)(nil, \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax))"
+                                "Self.\(raw: method.ptrIdentifier)(nil, \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
                             } else {
                                 try name.pointerAccessSyntax(instanceName: "self", mutability: mutability) { selfPtr in
-                                    "Self.\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax))"
+                                    "Self.\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
                                 }
                             }
                         }
                     }
                 }
             } else {
-                try method.argumentsPackPointerAccessSyntax { packName in
+                try method.translated.argumentsPackPointerAccessSyntax { packName in
                     if method.isStatic {
-                        "Self.\(raw: method.ptrIdentifier)(nil, \(raw: packName), nil, \(raw: method.argumentsCountSyntax))"
+                        "Self.\(raw: method.ptrIdentifier)(nil, \(raw: packName), nil, \(raw: method.argumentsCountSyntax(type: Int32.self)))"
                     } else {
                         try name.pointerAccessSyntax(instanceName: "self", mutability: mutability) { selfPtr in
-                            "Self.\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), nil, \(raw: method.argumentsCountSyntax))"
+                            "Self.\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), nil, \(raw: method.argumentsCountSyntax(type: Int32.self)))"
                         }
                     }
                 }

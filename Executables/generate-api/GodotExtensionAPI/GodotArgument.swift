@@ -6,6 +6,8 @@ struct GodotArgument: Decodable {
     var name: String
     var type: GodotType
     var defaultValue: GodotConstant?
+    var label: String?
+    var isLabelHidden: Bool
     
     init(
         name: String,
@@ -15,6 +17,8 @@ struct GodotArgument: Decodable {
     ) {
         self.name = name
         self.defaultValue = defaultValue
+        self.label = nil
+        self.isLabelHidden = false
         
         if let meta {
             self.type = type.withMetadata(meta)
