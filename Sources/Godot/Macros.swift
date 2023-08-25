@@ -35,14 +35,22 @@ public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro
 /// ``VariantConvertible`` protocol, enabling the enum
 /// to be used as a type for function parameters and variables for Godot.
 ///
+/// ## Naming convention
+///
+/// Each case name takes the name of the enum,
+/// followed by the case itself, converted to snake case and uppercased.
+///
 /// ## Use the macro
 ///
 /// A Godot enum must have an `Int64` `RawType`. Here is how the macro is used:
 ///
 /// ```swift
 /// @GodotEnum public enum CharacterEmotion: Int64 {
+///     // CHARACTER_EMOTION_HAPPY
 ///     case happy
+///     // CHARACTER_EMOTION_NOT_SO_HAPPY
 ///     case notSoHappy
+///     // CHARACTER_EMOTION_SAD
 ///     case sad
 /// }
 /// ```
@@ -78,6 +86,11 @@ public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnu
 /// - a public `rawValue` constant of type `Int64`
 /// - a public `init(rawValue:_)` initializer that sets the `rawValue` constant
 ///
+/// ## Naming convention
+///
+/// Each case name takes the name of the option set,
+/// followed by the case itself, converted to snake case and uppercased.
+///
 /// ## Use the macro
 ///
 /// A Godot option set must be a `struct`.
@@ -92,11 +105,16 @@ public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnu
 ///
 /// ```swift
 /// @GodotOptionSet public struct CharacterAction {
+///     // CHARACTER_ACTION_THINKING
 ///     public static let thinking: CharacterAction = .init(rawValue: 1 << 0)
+///     // CHARACTER_ACTION_DRAWING
 ///     public static let drawing: CharacterAction  = .init(rawValue: 1 << 1)
+///     // CHARACTER_ACTION_SLEEPING
 ///     public static let sleeping: Self            = .init(rawValue: 1 << 2)
 ///
+///     // CHARACTER_ACTION_NONE
 ///     public static let none: CharacterAction = []
+///     // CHARACTER_ACTION_DREAMING
 ///     public static let dreaming: CharacterAction = [.thinking, .sleeping]
 /// }
 /// ```
@@ -129,7 +147,65 @@ public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnu
 )
 public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "GodotOptionSetMacro")
 
-// TODO: Doc
+// TODO: Add the doc on how to receive the signal
+/// A macro transforming a struct into a Godot signal.
+///
+/// The macro must be applied to an empty struct,
+/// inside an exposable Godot class definition.
+/// The signal will automatically be accessible from the Godot editor.
+///
+/// ## Naming convention
+///
+/// The signal name takes the name of the struct, converted to snake case.
+///
+/// ## Use the macro
+///
+/// By applying the macro to an empty struct, a signal will be created,
+/// as well as a variable used to emit the signal.
+///
+/// ```swift
+/// @Exposable public class Character: Node {
+///     @Emitter
+///     public struct LandedBeautifully {}
+///     // The signal name is "landed_beautifully"
+/// }
+/// ```
+///
+/// To emit the signal, use the generated signal value:
+///
+/// ```swift
+/// @Exposable public class Character: Node {
+///     private func land() {
+///         signalLandedBeautifully.emit()
+///     }
+/// }
+/// ```
+///
+/// ## Add parameters to the signal
+///
+/// A signal can also have parameters.
+/// Only ``ConvertibleToVariant`` types may be used as parameters.
+/// To add one or more parameters to a signal,
+/// define them in the `@Emitter` macro like so:
+///
+/// ```swift
+/// @Exposable public class Character: Node {
+///     @Emitter(("force", Double), ("direction", Vector3))
+///     public struct Jumped {}
+///     // The signal name is "jumped"
+///     // and it takes two parameters: force and direction
+/// }
+/// ```
+///
+/// Them, emitting the signal becomes:
+///
+/// ```swift
+/// @Exposable public class Character: Node {
+///     private func jump() {
+///         signalJumped.emit(force: 13.0, direction: .left)
+///     }
+/// }
+/// ```
 @attached(peer, names: prefixed(signal))
 @attached(member, names:
     named(signalName),
