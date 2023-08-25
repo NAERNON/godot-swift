@@ -301,7 +301,6 @@ public final class ClassRegister {
         let arguments = argumentParameters.map(\.propertyInfo)
         let returnType = returnParameter?.propertyInfo
         
-        // TODO: Do the vararg
         let functionBinding = FunctionBinding(
             name: functionName,
             className: className,

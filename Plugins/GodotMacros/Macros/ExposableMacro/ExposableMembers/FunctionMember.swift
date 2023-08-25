@@ -90,54 +90,26 @@ struct FunctionMember: ExposableMember {
             isExposable = false
         }
         
-        // Retreive the default values
-        var parametersDefaultValues: [String?] = functionDeclSyntax.signature.parameterClause.parameters.map
-        { parameter in
-            guard let defaultValue = parameter.defaultValue else {
-                return nil
-            }
-            
-            if let literalSyntax = defaultValue.value.as(IntegerLiteralExprSyntax.self) {
-                return literalSyntax.literal.trimmedDescription
-            } else if let literalSyntax = defaultValue.value.as(FloatLiteralExprSyntax.self) {
-                return literalSyntax.literal.trimmedDescription
-            }
-            
-            return nil
-        }
-        
-        // We only need the last default values for Godot
-        var lastDefaultValuesCount = 0
-        while lastDefaultValuesCount < parametersDefaultValues.count {
-            if parametersDefaultValues[parametersDefaultValues.count - lastDefaultValuesCount - 1] != nil {
-                lastDefaultValuesCount += 1
-            } else {
-                break
-            }
-        }
-        
-        // We clear all default values before the last default values group
-        for index in 0..<(parametersDefaultValues.count - lastDefaultValuesCount) {
-            parametersDefaultValues[index] = nil
-        }
-        
         guard isExposable else {
             return nil
         }
+        
+        let consecutiveLastDefaultValues = consecutiveLastDefaultValues(in: context)
         
         // Syntax
         let isStatic = functionDeclSyntax.modifiers?.map(\.name.tokenKind).contains(where: {
             $0 == .keyword(.static)
         }) == true
         
+        let parametersCount = functionDeclSyntax.signature.parameterClause.parameters.count
         let parameters = functionDeclSyntax.signature.parameterClause.parameters.enumerated().map
         { (index, parameter) in
             let name = parameter.secondName?.trimmedDescription ?? parameter.firstName.trimmedDescription
             let translatedName = NamingConvention.camel.convert(name, to: .snake)
-            let defaultValue = parametersDefaultValues[index]
-            if let defaultValue {
+            if index >= parametersCount - consecutiveLastDefaultValues.count {
+                let defaultValueIndex = index - parametersCount + consecutiveLastDefaultValues.count
                 return """
-                .argument(\(parameter.type.trimmedDescription).self, name: "\(translatedName)", defaultValue: \(defaultValue)),
+                .argument(\(parameter.type.trimmedDescription).self, name: "\(translatedName)", defaultValue: \(consecutiveLastDefaultValues[defaultValueIndex])),
                 """
             } else {
                 return """
@@ -177,7 +149,7 @@ struct FunctionMember: ExposableMember {
             
             // For every default value, we check the argCount
             // to know if we need to call the function with less parameters
-            for count in (0..<lastDefaultValuesCount+1).reversed() {
+            for count in (0..<consecutiveLastDefaultValues.count+1).reversed() {
                 let parameterList = parameters.dropLast(count)
                 
                 let call = CodeBlockItemListSyntax {
@@ -227,5 +199,62 @@ struct FunctionMember: ExposableMember {
         }
         
         return ExprSyntax(functionCallSyntax.with(\.trailingClosure, functionCallClosureSyntax))
+    }
+    
+    private func consecutiveLastDefaultValues(
+        in context: some MacroExpansionContext
+    ) -> [TokenSyntax] {
+        // Retreive all default values
+        let parametersDefaultValues = functionDeclSyntax.signature.parameterClause.parameters.map {
+            $0.defaultValue
+        }
+        
+        // Retreive all value literals
+        let valueLiterals = parametersDefaultValues.map { defaultValue -> TokenSyntax? in
+            guard let defaultValue else {
+                return nil
+            }
+            
+            if let literalSyntax = defaultValue.value.as(IntegerLiteralExprSyntax.self) {
+                return literalSyntax.literal
+            } else if let literalSyntax = defaultValue.value.as(FloatLiteralExprSyntax.self) {
+                return literalSyntax.literal
+            }
+            
+            return nil
+        }
+        
+        // Add the warnings and fill the consecutive array
+        var lastConsecutiveLiterals = [TokenSyntax]()
+        var index = parametersDefaultValues.count - 1
+        var isConsecutive = true
+        while index >= 0 {
+            if let defaultValue = parametersDefaultValues[index] {
+                if let literal = valueLiterals[index] {
+                    if isConsecutive {
+                        lastConsecutiveLiterals.insert(literal, at: 0)
+                    } else {
+                        context.diagnose(Diagnostic(
+                            node: Syntax(defaultValue),
+                            message: GodotDiagnostic("Only last consecutive default values are exposed to Godot",
+                                                     severity: .warning)
+                        ))
+                    }
+                } else if isConsecutive {
+                    context.diagnose(Diagnostic(
+                        node: Syntax(defaultValue),
+                        message: GodotDiagnostic("Godot cannot expose default value '\(defaultValue.value.trimmedDescription)'",
+                                                 severity: .warning)
+                    ))
+                    isConsecutive = false
+                }
+            } else {
+                isConsecutive = false
+            }
+            
+            index -= 1
+        }
+        
+        return lastConsecutiveLiterals
     }
 }
