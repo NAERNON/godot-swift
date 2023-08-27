@@ -79,6 +79,6 @@ extension Optional where Wrapped : Object {
 
 extension Object: Equatable {
     public static func == (lhs: Object, rhs: Object) -> Bool {
-        lhs.getInstanceId() == rhs.getInstanceId()
+        lhs.instanceId() == rhs.instanceId()
     }
 }

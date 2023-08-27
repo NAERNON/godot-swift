@@ -12,8 +12,17 @@ struct GodotTranslatedFunction<Source>: GodotFunction where Source : GodotFuncti
     }
     
     private func translatedFunction() -> (name: String, parameters: [FunctionParameter]) {
-        CodeLanguage.c.translateFunction(
-            name: source.name,
+        var functionName = source.name
+        
+        if functionName.hasPrefix("get_"),
+           functionName.count > 4,
+           !functionName[functionName.index(functionName.startIndex, offsetBy: 4)].isNumber
+        {
+            functionName = String(functionName.dropFirst(4))
+        }
+        
+        return CodeLanguage.c.translateFunction(
+            name: functionName,
             parameters: (source.arguments ?? []).map { .init(name: $0.name, label: nil, isLabelHidden: false) },
             to: .swift
         )

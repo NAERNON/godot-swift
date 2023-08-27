@@ -62,7 +62,7 @@ extension CodeLanguage {
                     let functionNameComponentIndex = decomposedFunctionName.count - 1 - index
                     guard functionNameComponentIndex >= 0 else { break }
                     
-                    let functionNameComponent = decomposedFunctionName[functionNameComponentIndex]
+                    let functionNameComponent = decomposedFunctionName[functionNameComponentIndex].drop { $0 == "_" }
                     if functionNameComponent.caseInsensitiveCompare(parameterNameComponent) != .orderedSame {
                         isParameterNameRedundant = false
                     }

@@ -53,7 +53,6 @@ extension GodotFunction {
     
     /// Returns the declaration syntax of the function.
     func declSyntax(
-        underscoreName: Bool = false,
         hideAllLabels: Bool = false,
         options: GodotTypeSyntaxOptions = [],
         keywords: Keyword...,
@@ -65,11 +64,7 @@ extension GodotFunction {
         
         functionHeader.append("func ")
         
-        if underscoreName {
-            functionHeader.append("_")
-        }
-        
-        functionHeader.append(name)
+        functionHeader.append(CodeLanguage.swift.protectNameIfKeyword(for: name))
         functionHeader.append("(")
         functionHeader.append(arguments.map { argument in
             var parameterString = ""
@@ -277,11 +272,13 @@ extension GodotFunction {
             }
         }
         
+        let functionName = CodeLanguage.swift.protectNameIfKeyword(for: name)
+        
         let exprSyntax = if parameterStrings.isEmpty {
-            ExprSyntax("\(raw: name)()")
+            ExprSyntax("\(raw: functionName)()")
         } else {
             ExprSyntax("""
-            \(raw: name)(
+            \(raw: functionName)(
                 \(raw: parameterStrings.joined(separator: ",\n    "))
             )
             """)

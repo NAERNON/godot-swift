@@ -155,6 +155,10 @@ struct GodotClass: Decodable {
         [.prefixByGodot, .floatAsDouble]
     }
     
+    var methodPrefixIfPrivate: String {
+        "__" // Not "_" because might clash with virtual funcs
+    }
+    
     @MemberBlockItemListBuilder
     func enumSyntax() throws -> MemberBlockItemListSyntax {
         if let enums {
@@ -238,27 +242,35 @@ struct GodotClass: Decodable {
         }
     }
     
-    private func methodControlAccessKeyword(_ method: Method) -> Keyword {
+    private func methodIsPrivate(_ method: Method) -> Bool {
         if isRefCountedRootClass {
-            return .private
+            return true
         } else if method.isStatic {
-            return .public
+            return false
         } else {
             for property in properties ?? [] {
                 if let getter = property.getterMethod(in: methods) {
                     if getter.name == method.name {
-                        return .private
+                        return true
                     }
                     
                     if let setter = property.setterMethod(in: methods, forGetter: getter) {
                         if setter.name == method.name {
-                            return .private
+                            return true
                         }
                     }
                 }
             }
             
-            return .public
+            return false
+        }
+    }
+    
+    private func methodPrefix(_ method: Method) -> String {
+        if methodIsPrivate(method) {
+            methodPrefixIfPrivate
+        } else {
+            ""
         }
     }
     
@@ -274,7 +286,10 @@ struct GodotClass: Decodable {
         }()
         """
         
-        try method.translated.declSyntax(options: syntaxOptions, keywords: methodControlAccessKeyword(method)) {
+        try method.withNamePrefixed(by: methodPrefix(method)).translated.declSyntax(
+            options: syntaxOptions,
+            keywords: methodIsPrivate(method) ? .private : .public
+        ) {
             
             // If the method is vararg, every parameter should be transformed to a variant.
             var modifiedMethod = GodotModifiedFunction(method.translated)
@@ -356,22 +371,41 @@ struct GodotClass: Decodable {
         }
     }
     
+    private func propertiesGetterCount(for properties: [Property]) -> [String : Int] {
+        // Counts the number of properties that have the same getter
+        var propertiesGetter = [String : Int]()
+        
+        for property in properties {
+            if let count = propertiesGetter[property.getter] {
+                propertiesGetter[property.getter] = count + 1
+            } else {
+                propertiesGetter[property.getter] = 1
+            }
+        }
+        
+        return propertiesGetter
+    }
+    
     @MemberBlockItemListBuilder
     func propertiesSyntax() throws -> MemberBlockItemListSyntax {
         if let properties {
+            let propertiesGetter = propertiesGetterCount(for: properties)
+            
             for property in properties {
-                if let syntax = try propertySyntax(property) {
+                if let syntax = try propertySyntax(
+                    property,
+                    hasSameGetterAsOtherProperty: propertiesGetter[property.getter]! > 1
+                ) {
                     syntax.with(\.trailingTrivia, .newlines(2))
                 }
             }
         }
     }
     
-    private func propertySyntax(_ property: Property) throws -> VariableDeclSyntax? {
-        let propertyName = CodeLanguage.swift.protectNameIfKeyword(
-            for: NamingConvention.snake.convert(property.name, to: .camel)
-        )
-        
+    private func propertySyntax(
+        _ property: Property,
+        hasSameGetterAsOtherProperty: Bool
+    ) throws -> VariableDeclSyntax? {
         guard let getter = property.getterMethod(in: methods),
               let type = getter.returnType else {
             return nil
@@ -379,6 +413,19 @@ struct GodotClass: Decodable {
         
         let typeSyntax = type.optional(type.isGodotClass).syntax(options: syntaxOptions)
         let setter = property.setterMethod(in: methods, forGetter: getter)
+        
+        var propertyName: String
+        if hasSameGetterAsOtherProperty {
+            propertyName = property.name
+        } else if property.getter.starts(with: "get_") {
+            propertyName = String(property.getter.dropFirst(4))
+        } else {
+            propertyName = property.getter
+        }
+        
+        propertyName = CodeLanguage.swift.protectNameIfKeyword(
+            for: NamingConvention.snake.convert(propertyName, to: .camel)
+        )
         
         let getterParameter: String?
         if let index = property.index,
@@ -393,16 +440,22 @@ struct GodotClass: Decodable {
         }
         
         return try VariableDeclSyntax("public var \(raw: propertyName): \(raw: typeSyntax)") {
+            let getterSyntax = getter.withNamePrefixed(by: methodPrefixIfPrivate)
+                .translated.callSyntax(withParameters: [getterParameter].compactMap { $0 })
+            
             """
             get {
-                \(raw: getter.translated.callSyntax(withParameters: [getterParameter].compactMap { $0 }))
+                \(getterSyntax)
             }
             """
             
             if let setter {
+                let setterSyntax = setter.withNamePrefixed(by: methodPrefixIfPrivate)
+                    .translated.callSyntax(withParameters: ["newValue"])
+                
                 """
                 set {
-                    \(raw: setter.translated.callSyntax(withParameters: ["newValue"]))
+                    \(setterSyntax)
                 }
                 """
             }
@@ -444,7 +497,7 @@ struct GodotClass: Decodable {
                         argument.type.instantiationFromPointerSyntax(pointerName: "args[\(index)]!", options: syntaxOptions)
                     }
                     
-                    ".\(raw: method.translated.callSyntax(withParameters: parameters))"
+                    ".\(method.translated.callSyntax(withParameters: parameters))"
                     
                     if let returnType = method.returnValue?.type {
                         "\(raw: returnType.sendToPointerSyntax(instanceName: "returnValue", pointerName: "returnPtr!", options: syntaxOptions))"

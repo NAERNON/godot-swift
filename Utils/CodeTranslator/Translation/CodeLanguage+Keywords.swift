@@ -2,6 +2,7 @@ import Foundation
 
 private let protectedStrings: Set<String> = [
     "continue",
+    "protocol",
     "enum",
     "internal",
     "default",

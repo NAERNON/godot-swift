@@ -468,8 +468,7 @@ struct GodotBuiltinClass: Decodable {
         """
         
         let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
-        let functionDecl = try method.translated.declSyntax(
-            underscoreName: true,
+        let functionDecl = try method.withNamePrefixed(by: "_").translated.declSyntax(
             options: syntaxOptions,
             keywords: .internal
         ) {

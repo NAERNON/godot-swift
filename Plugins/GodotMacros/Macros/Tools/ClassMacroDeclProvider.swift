@@ -169,7 +169,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                     self.withUnsafeRawPointer { __ptr_self in
                         gdextension_interface_mem_free(__ptr_self)
                     }
-                } else if unreference() {
+                } else if __unreference() {
                     isGodotMemoryFreed = true
                     self.withUnsafeRawPointer { __ptr_self in
                         gdextension_interface_mem_free(__ptr_self)
@@ -186,7 +186,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 }
                 
                 isRefInitialized = true
-                _ = initRef()
+                _ = __initRef()
             }
             """
         default: nil
