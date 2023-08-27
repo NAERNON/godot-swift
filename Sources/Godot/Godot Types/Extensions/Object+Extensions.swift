@@ -22,7 +22,7 @@ extension Object {
             if binding.isCustomClass {
                 return Unmanaged<Object>.fromOpaque(opaque!).takeUnretainedValue()
             } else {
-                return binding.type.init(extensionObjectPtr: opaque!)
+                return binding.type.init(objectPointer: opaque!)
             }
         }
         

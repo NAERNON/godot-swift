@@ -115,8 +115,8 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 postInit()
             }
             
-            public required init(extensionObjectPtr: GodotObjectPointer) {
-                self.extensionObjectPtr = extensionObjectPtr
+            public required init(objectPointer: GodotObjectPointer) {
+                self.extensionObjectPtr = objectPointer
             }
             
             private class func makeNewExtensionObjectPtr() -> GodotObjectPointer {
@@ -157,8 +157,8 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 initGodotRef()
             }
             
-            public required init(extensionObjectPtr: GodotObjectPointer) {
-                super.init(extensionObjectPtr: extensionObjectPtr)
+            public required init(objectPointer: GodotObjectPointer) {
+                super.init(objectPointer: objectPointer)
             }
             
             deinit {
@@ -279,7 +279,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             public class func __makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
                 let extensionObjectPtr = Self.makeNewExtensionObjectPtr()
                 
-                let instance = Self.init(extensionObjectPtr: extensionObjectPtr)
+                let instance = Self.init(objectPointer: extensionObjectPtr)
                 instance.postInit()
                 
                 if let instance = instance as? RefCounted {
