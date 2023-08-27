@@ -32,17 +32,11 @@ struct FunctionOverrideMember: ExposableMember {
         classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
-        let swiftFunctionName = functionDeclSyntax.name.trimmedDescription
-        let functionName = NamingConvention.camel.convert(swiftFunctionName, to: .snake)
-        
-        let functionCallSyntax = ExprSyntax("""
+        return ExprSyntax("""
         Godot.GodotExtension.classRegister.registerFunctionOverride(
-            named: \(literal: functionName),
-            swiftName: \(literal: swiftFunctionName),
+            swiftName: \(literal: functionDeclSyntax.name.trimmedDescription),
             insideType: self
         )
         """)
-        
-        return ExprSyntax(functionCallSyntax)
     }
 }

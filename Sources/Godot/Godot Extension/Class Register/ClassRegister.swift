@@ -299,7 +299,6 @@ public final class ClassRegister {
     
     @discardableResult
     public func registerFunctionOverride<Class>(
-        named functionName: GodotStringName,
         swiftName swiftFunctionName: GodotStringName,
         insideType classType: Class.Type
     ) -> FunctionOverrideBinding? where Class : Object {
@@ -307,16 +306,12 @@ public final class ClassRegister {
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
-            gdDebugPrintError("Cannot register function \(functionName) because the class \(className) is not registered.")
+            gdDebugPrintError("Cannot register function override \(swiftFunctionName) because the class \(className) is not registered.")
             return nil
         }
         
-        // We first need to check that the register override is not a virtual func
+        // We need to check that the register override is a virtual func
         if let (godotFunctionName, virtualCall) = Class.virtualFunctions()[swiftFunctionName] {
-            // This is a virtual func override
-            
-            // When the function is a virtual function,
-            // we use the name provided by Godot instead of the translated `functionName`.
             let functionOverrideBinding = FunctionOverrideBinding(
                 name: godotFunctionName,
                 className: className,
@@ -324,10 +319,9 @@ public final class ClassRegister {
             )
             classBinding.appendFunctionOverride(functionOverrideBinding)
             return functionOverrideBinding
-        } else {
-            // This is not a virtual func override
-            fatalError("WILL BE REPLACED") // TODO: this
         }
+        
+        return nil
     }
     
     private static func virtualFuncCall(

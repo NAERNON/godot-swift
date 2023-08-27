@@ -258,7 +258,7 @@ struct GodotClass: Decodable {
                 }
             }
             
-            return .open
+            return .public
         }
     }
     
@@ -392,7 +392,7 @@ struct GodotClass: Decodable {
             getterParameter = nil
         }
         
-        return try VariableDeclSyntax("open var \(raw: propertyName): \(raw: typeSyntax)") {
+        return try VariableDeclSyntax("public var \(raw: propertyName): \(raw: typeSyntax)") {
             """
             get {
                 \(raw: getter.translated.callSyntax(withParameters: [getterParameter].compactMap { $0 }))
