@@ -110,7 +110,7 @@ public enum EmitterMacro: MemberMacro, PeerMacro {
             return []
         }
         
-        let variableName = "signal" + structDecl.name.trimmedDescription
+        let variableName = "emitter" + structDecl.name.trimmedDescription
         
         return [
             "public var \(raw: variableName): \(raw: structDecl.name.trimmed) { .init(self) }"

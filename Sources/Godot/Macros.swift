@@ -186,7 +186,7 @@ public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "God
 /// ## Use the macro
 ///
 /// By applying the macro to an empty struct, a signal will be created,
-/// as well as a variable used to emit the signal.
+/// as well as an emitter variable used to emit the signal.
 ///
 /// ```swift
 /// @Exposable public class Character: Node {
@@ -196,12 +196,12 @@ public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "God
 /// }
 /// ```
 ///
-/// To emit the signal, use the generated signal value:
+/// To emit the signal, use the generated emitter value:
 ///
 /// ```swift
 /// @Exposable public class Character: Node {
 ///     private func land() {
-///         signalLandedBeautifully.emit()
+///         emitterLandedBeautifully.emit()
 ///     }
 /// }
 /// ```
@@ -227,11 +227,11 @@ public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "God
 /// ```swift
 /// @Exposable public class Character: Node {
 ///     private func jump() {
-///         signalJumped.emit(force: 13.0, direction: .left)
+///         emitterJumped.emit(force: 13.0, direction: .left)
 ///     }
 /// }
 /// ```
-@attached(peer, names: prefixed(signal))
+@attached(peer, names: prefixed(emitter))
 @attached(member, names:
     named(signalName),
     named(object),

@@ -177,7 +177,7 @@ struct GodotClass: Decodable {
     @MemberBlockItemListBuilder
     func signalSyntax(_ signal: Signal) throws -> MemberBlockItemListSyntax {
         let structName = NamingConvention.snake.convert(signal.name, to: .pascal)
-        let propertyName = "signal" + NamingConvention.snake.convert(signal.name, to: .pascal)
+        let propertyName = "emitter" + NamingConvention.snake.convert(signal.name, to: .pascal)
         
         try StructDeclSyntax("public struct \(raw: structName)") {
             let translatedParameters: [GodotArgument] = signal.arguments?.map { argument in
