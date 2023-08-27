@@ -407,6 +407,28 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ///
     /// - parameter options: The options to define how to translate the type.
     func syntax(options: GodotTypeSyntaxOptions = []) -> String {
+        _syntax(options: options, scopeIndex: 0)
+    }
+    
+    /// Returns the syntax of the type, using the scope index.
+    ///
+    /// The scope index is equal to:
+    /// - 0 for types defined at the root
+    /// - 1 for typed defined inside other types, or for types defined inside a namespace
+    /// ...
+    private func _syntax(options: GodotTypeSyntaxOptions, scopeIndex: Int) -> String {
+        if options.contains(.prefixByGodot),
+           scopeIndex == 0,
+            isGodotClass ||
+            isBuiltinGodotClass ||
+            isTypedArray ||
+            isEnum ||
+            isBitfield ||
+            self == .variant
+        {
+            return "Godot." + self._syntax(options: options, scopeIndex: scopeIndex+1)
+        }
+        
         switch self {
         case .base(let string):
             switch string {
@@ -436,36 +458,34 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             case "StringName": return "GodotStringName"
             case "Error": return "ErrorType"
             case "Type": return "GodotType"
-            default:
-                if options.contains(.prefixByGodotIfClass),
-                   isBuiltinGodotClass || isGodotClass {
-                    return "Godot." + string
-                } else {
-                    return string
-                }
+            default: return string
             }
         case .enum(let type):
-            return type.syntax(options: options)
+            return type._syntax(options: options, scopeIndex: scopeIndex)
         case .bitfield(let type):
-            return type.syntax(options: options)
+            return type._syntax(options: options, scopeIndex: scopeIndex)
         case .scope(let scopeType, let type):
-            return scopeType.syntax(options: options) + "." + type.syntax(options: options)
+            return scopeType._syntax(options: options, scopeIndex: scopeIndex)
+                + "." + type._syntax(options: options, scopeIndex: scopeIndex+1)
         case .generic(let type, let genericType):
-            return type.syntax(options: options) + "<" + genericType.syntax(options: options) + ">"
+            return type._syntax(options: options, scopeIndex: scopeIndex) + "<"
+                + genericType._syntax(options: options, scopeIndex: 0) + ">"
         case .typedArray(let type):
-            return "GodotTypedArray<\(type.syntax(options: options))>"
+            return "GodotTypedArray" + "<"
+            + type._syntax(options: options, scopeIndex: 0) + ">"
         case .optional(let instanceType):
-            return instanceType.syntax(options: options) + "?"
+            return instanceType._syntax(options: options, scopeIndex: scopeIndex) + "?"
         case .varargs(let type):
-            return type.syntax(options: options) + "..."
+            return type._syntax(options: options, scopeIndex: scopeIndex) + "..."
         case .tuple(let types):
-            return "(" + types.map { $0.syntax(options: options) }.joined(separator: ", ") + ")"
+            return "(" + types.map { $0._syntax(options: options, scopeIndex: scopeIndex) }
+                .joined(separator: ", ") + ")"
         case .immutable(let type):
-            return type.syntax(options: options.union(.immutable))
+            return type._syntax(options: options.union(.immutable), scopeIndex: scopeIndex)
         case .rawPointer:
             return "UnsafeRawPointer"
         case .typedPointer(let type):
-            let pointedType = type.syntax(options: options)
+            let pointedType = type._syntax(options: options, scopeIndex: scopeIndex)
             let isImmutable = options.contains(.immutable)
             if pointedType == "void" {
                 return isImmutable ? "UnsafeRawPointer" : "UnsafeMutableRawPointer"

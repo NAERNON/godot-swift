@@ -29,7 +29,7 @@ struct APIGeneration: ParsableCommand {
         let extensionAPI = try jsonDecoder.decode(GodotExtensionAPI.self, from: data)
         
         GodotType.godotClassTypes = Set(extensionAPI.classes.map { $0.name })
-        GodotType.godotBuiltinClassTypes = Set(extensionAPI.builtinClasses.map { $0.name })
+        GodotType.godotBuiltinClassTypes = Set(extensionAPI.builtinClassesToGenerate().map { $0.name })
         
         // MARK: Generate files
         
