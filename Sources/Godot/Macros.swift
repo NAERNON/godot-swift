@@ -15,7 +15,32 @@
 )
 public macro Exposable() = #externalMacro(module: "GodotMacros", type: "ExposableMacro")
 
-// TODO: Doc
+/// A macro that enables a member to be exposed
+/// to the Godot editor.
+///
+/// The ``Exposable`` macro attaches the `ExposableMember`
+/// macro to every compatible member so you don't have to
+/// mark every single member with this macro.
+///
+/// >important: Only use this node for debugging purposes and
+/// on classes marked `@Exposable`.
+///
+/// ## Use the macro
+///
+/// Using this macro on a member requires passing the type
+/// of class in which the macro is used:
+///
+/// ```swift
+/// @Exposable public class Character: Node {
+///     @ExposableMember(Character)
+///     public var isSleeping = true
+/// }
+/// ```
+///
+/// The macro will create a static method that, once called,
+/// registers the member whithin Godot.
+/// This function is automatically called inside classes
+/// marked `@Exposable`.
 @attached(peer, names: prefixed(__godotRegister_))
 public macro ExposableMember(_: Object.Type) = #externalMacro(module: "GodotMacros", type: "ExposableMemberMacro")
 
@@ -197,7 +222,7 @@ public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "God
 /// }
 /// ```
 ///
-/// Them, emitting the signal becomes:
+/// Emitting the signal becomes:
 ///
 /// ```swift
 /// @Exposable public class Character: Node {
