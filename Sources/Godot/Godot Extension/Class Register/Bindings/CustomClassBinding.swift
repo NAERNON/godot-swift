@@ -8,10 +8,9 @@ extension ClassRegister {
         let toStringFunction: GDExtensionClassToString
         let createInstanceFunction: GDExtensionClassCreateInstance
         let freeInstanceFunction: GDExtensionClassFreeInstance
-        
-        private var virtualFuncNameToCall = [GodotStringName : GDExtensionClassCallVirtual]()
-        
+                
         private(set) var functions = [GodotStringName : FunctionBinding]()
+        private(set) var functionOverrides = [GodotStringName : FunctionOverrideBinding]()
         private(set) var variables = [GodotStringName : VariableBinding]()
         private(set) var enums = [GodotStringName : EnumBinding]()
         private(set) var signals = [GodotStringName : SignalBinding]()
@@ -36,23 +35,12 @@ extension ClassRegister {
             super.init(level: level, type: type)
         }
         
-        @discardableResult
-        func appendVirtualFunc(name: GodotStringName, call: GDExtensionClassCallVirtual) -> Bool {
-            guard virtualFuncNameToCall[name] == nil else {
-                return false
-            }
-            
-            virtualFuncNameToCall[name] = call
-            
-            return true
-        }
-        
-        func virtualFuncCall(forName name: GodotStringName) -> GDExtensionClassCallVirtual? {
-            virtualFuncNameToCall[name]
-        }
-        
         func appendFunction(_ functionBinding: FunctionBinding) {
             functions[functionBinding.name] = functionBinding
+        }
+        
+        func appendFunctionOverride(_ functionOverrideBinding: FunctionOverrideBinding) {
+            functionOverrides[functionOverrideBinding.name] = functionOverrideBinding
         }
         
         func appendVariable(_ variableBinding: VariableBinding) {

@@ -193,7 +193,7 @@ public final class ClassRegister {
             unreference_func: nil,
             create_instance_func: classBinding.createInstanceFunction, // This one is mandatory.
             free_instance_func: classBinding.freeInstanceFunction, // This one is mandatory.
-            get_virtual_func: { ClassRegister.virtualFunc(fromUserDataPtr: $0, methodNamePtr: $1) },
+            get_virtual_func: { ClassRegister.virtualFuncCall(fromUserDataPtr: $0, methodNamePtr: $1) },
             get_rid_func: nil,
             class_userdata: Unmanaged.passUnretained(classBinding).toOpaque()
         )
@@ -208,59 +208,7 @@ public final class ClassRegister {
             }
         }
         
-        // Register all the virtual functions
-        classType.setVirtualFunctionCalls { methodName, call in
-            registerVirtualFunc(ofType: classType, name: methodName, call: call)
-        }
-        
         return classBinding
-    }
-    
-    // MARK: Virtual functions
-    
-    private static func virtualFunc(
-        fromUserDataPtr userDataPtr: UnsafeMutableRawPointer?,
-        methodNamePtr: GDExtensionConstStringNamePtr?
-    ) -> GDExtensionClassCallVirtual? {
-        guard let userDataPtr else {
-            gdDebugPrintError("No class data pointer provided.")
-            return nil
-        }
-        
-        guard let methodNamePtr else {
-            gdDebugPrintError("No virtual func name given.")
-            return nil
-        }
-        
-        let classBinding = Unmanaged<CustomClassBinding>.fromOpaque(userDataPtr).takeUnretainedValue()
-        let methodName = GodotStringName(godotExtensionPointer: methodNamePtr)
-        
-        guard let classBinding = shared.customClassNameToClassBinding[classBinding.name] else {
-            gdDebugPrintError("Class \(classBinding.name) doesn't exist.")
-            return nil
-        }
-        
-        guard let functionCall = classBinding.virtualFuncCall(forName: methodName) else {
-            gdDebugPrintError("Virtual func \(methodName) doesn't exist.")
-            return nil
-        }
-        
-        return functionCall
-    }
-    
-    @discardableResult
-    private func registerVirtualFunc<Class>(
-        ofType type: Class.Type,
-        name: GodotStringName,
-        call: GDExtensionClassCallVirtual
-    ) -> Bool
-    where Class : Object {
-        guard let classBinding = customClassNameToClassBinding[type.__className] else {
-            gdDebugPrintError("Class doesn't exist.")
-            return false
-        }
-        
-        return classBinding.appendVirtualFunc(name: name, call: call)
     }
     
     // MARK: Function registration
@@ -345,6 +293,71 @@ public final class ClassRegister {
         }
         
         return functionBinding
+    }
+    
+    // MARK: Function override registration
+    
+    @discardableResult
+    public func registerFunctionOverride<Class>(
+        named functionName: GodotStringName,
+        swiftName swiftFunctionName: GodotStringName,
+        insideType classType: Class.Type
+    ) -> FunctionOverrideBinding? where Class : Object {
+        let className = classType.__className
+        
+        guard let classBinding = customClassNameToClassBinding[className],
+              classBinding.type == classType else {
+            gdDebugPrintError("Cannot register function \(functionName) because the class \(className) is not registered.")
+            return nil
+        }
+        
+        // We first need to check that the register override is not a virtual func
+        if let (godotFunctionName, virtualCall) = Class.virtualFunctions()[swiftFunctionName] {
+            // This is a virtual func override
+            
+            // When the function is a virtual function,
+            // we use the name provided by Godot instead of the translated `functionName`.
+            let functionOverrideBinding = FunctionOverrideBinding(
+                name: godotFunctionName,
+                className: className,
+                call: .virtualFunc(virtualCall)
+            )
+            classBinding.appendFunctionOverride(functionOverrideBinding)
+            return functionOverrideBinding
+        } else {
+            // This is not a virtual func override
+            fatalError("WILL BE REPLACED") // TODO: this
+        }
+    }
+    
+    private static func virtualFuncCall(
+        fromUserDataPtr userDataPtr: UnsafeMutableRawPointer?,
+        methodNamePtr: GDExtensionConstStringNamePtr?
+    ) -> GDExtensionClassCallVirtual? {
+        guard let userDataPtr else {
+            gdDebugPrintError("No class data pointer provided.")
+            return nil
+        }
+        
+        guard let methodNamePtr else {
+            gdDebugPrintError("No virtual func name given.")
+            return nil
+        }
+        
+        let classBinding = Unmanaged<CustomClassBinding>.fromOpaque(userDataPtr).takeUnretainedValue()
+        let methodName = GodotStringName(godotExtensionPointer: methodNamePtr)
+        
+        guard let classBinding = shared.customClassNameToClassBinding[classBinding.name] else {
+            gdDebugPrintError("Class \(classBinding.name) doesn't exist.")
+            return nil
+        }
+        
+        if let overrideBinding = classBinding.functionOverrides[methodName],
+           case let .virtualFunc(call) = overrideBinding.call {
+            return call
+        }
+        
+        return nil
     }
     
     // MARK: Variable registration

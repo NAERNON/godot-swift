@@ -52,6 +52,10 @@ extension DeclSyntaxProtocol {
             return member
         }
         
+        if let member = FunctionOverrideMember(declSyntax: self) {
+            return member
+        }
+        
         if let member = OptionSetMember(declSyntax: self) {
             return member
         }

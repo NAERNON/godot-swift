@@ -408,44 +408,69 @@ struct GodotClass: Decodable {
             }
         }
     }
+    
+    @MemberBlockItemListBuilder
+    func setVirtualFunctionBindingsSyntax() throws -> MemberBlockItemListSyntax {
+        // The return type is a dictionary with the swift function name as key,
+        // and the godot name and call as value
+        let returnType = "[GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]"
         
-    func setVirtualFunctionBindingsSyntax() throws -> FunctionDeclSyntax {
-        try FunctionDeclSyntax("internal \(raw: isRootClass ? "" : "override ")class func setVirtualFunctionCalls(_ body: (GodotStringName, GDExtensionClassCallVirtual) -> Void)")
+        "private static var _virtualFunctions: \(raw: returnType)? = nil"
+        
+        try FunctionDeclSyntax("internal \(raw: isRootClass ? "" : "override ")class func virtualFunctions() -> \(raw: returnType)")
         {
-            if !isRootClass {
-                "super.setVirtualFunctionCalls(body)"
-            }
+            "if let _virtualFunctions { return _virtualFunctions }"
+            
+            var arrayElements = [String]()
             
             if let methods {
-                let virtualMethods = methods.filter(\.isVirtual)
-                if !virtualMethods.isEmpty {
+                let methodsToRegister = methods.filter(\.isVirtual)
+                
+                for method in methodsToRegister {
+                    let arguments = method.arguments ?? []
                     
-                    for method in virtualMethods {
-                        let arguments = method.arguments ?? []
-                        
-                        let isVar = method.returnValue?.type.isBuiltinGodotClassWithOpaque ?? false
-                        
-                        """
-                        body(\(literal: method.name), { instancePtr, args, returnPtr in
-                        guard let instancePtr\(raw: arguments.isEmpty ? "" : ", let args") else { return }
-                        let instance = Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
-                        \(raw: isVar ? "var" : "let") \(raw: method.returnValue == nil ? "_" : "returnValue") = instance
-                        """
-                        
-                        let parameters: [String] = arguments.enumerated().map { (index, argument) in
-                            argument.type.instantiationFromPointerSyntax(pointerName: "args[\(index)]!", options: syntaxOptions)
-                        }
-                        
-                        ".\(raw: method.translated.callSyntax(withParameters: parameters))"
-                        
-                        if let returnType = method.returnValue?.type {
-                            "\(raw: returnType.sendToPointerSyntax(instanceName: "returnValue", pointerName: "returnPtr!", options: syntaxOptions))"
-                        }
-                        
-                        "})"
+                    let isVar = method.returnValue?.type.isBuiltinGodotClassWithOpaque ?? false
+                    
+                    let virtualFuncVarName = "\(method.name)_call"
+                    
+                    """
+                    let \(raw: virtualFuncVarName): GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+                    guard let instancePtr\(raw: arguments.isEmpty ? "" : ", let args") else { return }
+                    let instance = Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
+                    \(raw: isVar ? "var" : "let") \(raw: method.returnValue == nil ? "_" : "returnValue") = instance
+                    """
+                    
+                    let parameters: [String] = arguments.enumerated().map { (index, argument) in
+                        argument.type.instantiationFromPointerSyntax(pointerName: "args[\(index)]!", options: syntaxOptions)
                     }
+                    
+                    ".\(raw: method.translated.callSyntax(withParameters: parameters))"
+                    
+                    if let returnType = method.returnValue?.type {
+                        "\(raw: returnType.sendToPointerSyntax(instanceName: "returnValue", pointerName: "returnPtr!", options: syntaxOptions))"
+                    }
+                    
+                    "}"
+                    
+                    let _ = arrayElements.append("\"\(method.translated.name)\" : (\"\(method.name)\", \(virtualFuncVarName))")
                 }
             }
+            
+            """
+            _virtualFunctions = [
+            \(raw: arrayElements.isEmpty ? ":" : arrayElements.joined(separator: ",\n"))
+            ]
+            """
+            
+            if !isRootClass {
+                """
+                for (key, value) in super.virtualFunctions() {
+                    _virtualFunctions![key] = value
+                }
+                """
+            }
+            
+            "return _virtualFunctions!"
         }
     }
 }
