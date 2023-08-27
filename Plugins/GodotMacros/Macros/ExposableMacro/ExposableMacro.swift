@@ -14,7 +14,7 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro {
         guard let classDecl = declaration.as(ClassDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(attribute),
-                message: GodotDiagnostic("Only classes can be exposed to Godot")
+                message: GodotDiagnostic("Only classes are exposable")
             ))
             return []
         }
@@ -24,7 +24,7 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro {
             .inheritedTypes.first else {
             context.diagnose(Diagnostic(
                 node: Syntax(classDecl.classKeyword),
-                message: GodotDiagnostic("Only classes that inherit the Godot 'Object' class can be exposed to Godot")
+                message: GodotDiagnostic("Exposable class must inherit Godot 'Object' type")
             ))
             return []
         }
@@ -35,7 +35,7 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro {
         }) == true else {
             context.diagnose(Diagnostic(
                 node: Syntax(classDecl.classKeyword),
-                message: GodotDiagnostic("Only public classes can be exposed to Godot")
+                message: GodotDiagnostic("Exposable class is not public")
             ))
             return []
         }

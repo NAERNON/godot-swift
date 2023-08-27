@@ -38,7 +38,7 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
         
         let diagnostic = Diagnostic(
             node: Syntax(node),
-            message: GodotDiagnostic("'@Bridge' can only be applied to 'class', 'struct' and 'enum'")
+            message: GodotDiagnostic("Bridge must either be a 'class', 'struct' or 'enum'")
         )
         context.diagnose(diagnostic)
         

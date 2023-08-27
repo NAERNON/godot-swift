@@ -15,12 +15,12 @@ public enum GodotEnumMacro: ExtensionMacro {
         guard let enumDecl = declaration.as(EnumDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotDiagnostic("'@GodotEnum' can only be applied to an 'enum'")
+                message: GodotDiagnostic("Godot enum must be an 'enum'")
             ))
             return []
         }
         
-        let notInt64Diagnostic = GodotDiagnostic("Godot enums can have an explicit 'Int64' raw type")
+        let notInt64Diagnostic = GodotDiagnostic("Godot enum does not have an 'Int64' raw type")
         
         guard let inheritedType = enumDecl.inheritanceClause?.inheritedTypes.first else {
             // Provide a fixit with the type Int64 explicitly added to the enum
@@ -35,7 +35,7 @@ public enum GodotEnumMacro: ExtensionMacro {
                      .with(\.leadingTrivia, [])
                 )
                 .with(\.name.trailingTrivia, [])
-            let fixIt = FixIt(message: GodotDiagnostic("Add 'Int64' type to the enum"), changes: [
+            let fixIt = FixIt(message: GodotDiagnostic("Insert 'Int64'"), changes: [
                 .replace(
                     oldNode: Syntax(enumDecl),
                     newNode: Syntax(fixedEnumDecl))

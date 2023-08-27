@@ -13,7 +13,7 @@ public enum ExposableMemberMacro: PeerMacro {
         guard let exposableMember = declaration.exposableMember() else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotDiagnostic("'@ExposableMember' cannot be applied to this declaration")
+                message: GodotDiagnostic("Declaration is not an exposable member")
             ))
             
             return []

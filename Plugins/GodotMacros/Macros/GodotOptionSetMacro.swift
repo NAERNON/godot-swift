@@ -15,7 +15,7 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         guard let structDecl = declaration.as(StructDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotDiagnostic("'@GodotOptionSet' can only be applied to a 'struct'")
+                message: GodotDiagnostic("Godot option set must be a 'struct'")
             ))
             return []
         }
@@ -97,7 +97,7 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         var cases = [String]()
         var casesAreCorrect = true
         
-        let caseNotLetAndExplicitTypeDiagnostic = GodotDiagnostic("Static variables in a Godot option set must be constants with an explicitly Self defined type before the '='")
+        let caseNotLetAndExplicitTypeDiagnostic = GodotDiagnostic("Expected 'Self' before '=' in Godot option set static variable")
         
         for member in members {
             if let variableDecl = member.decl.as(VariableDeclSyntax.self) {
@@ -142,7 +142,7 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
                              .with(\.leadingTrivia, [])
                         )
                         .with(\.pattern.trailingTrivia, [])
-                    let fixIt = FixIt(message: GodotDiagnostic("Add explicit 'Self' type to the constant"), changes: [
+                    let fixIt = FixIt(message: GodotDiagnostic("Insert 'Self'"), changes: [
                         .replace(
                             oldNode: Syntax(binding),
                             newNode: Syntax(fixedBindingDecl))

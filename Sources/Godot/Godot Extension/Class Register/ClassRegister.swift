@@ -297,9 +297,16 @@ public final class ClassRegister {
     
     // MARK: Function override registration
     
+    /// Registers a given function override from an already registered
+    /// custom class to expose it to the Godot editor.
+    ///
+    /// - Parameters:
+    ///   - swiftFunctionName: The Swift name of the function that is overriden.
+    ///   - classType: The type of the class the function is part of.
+    /// - Returns: The newly created function override binding, or `nil` if the function wasn't registered.
     @discardableResult
     public func registerFunctionOverride<Class>(
-        swiftName swiftFunctionName: GodotStringName,
+        named swiftFunctionName: GodotStringName,
         insideType classType: Class.Type
     ) -> FunctionOverrideBinding? where Class : Object {
         let className = classType.__className

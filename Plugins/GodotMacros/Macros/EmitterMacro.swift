@@ -16,7 +16,18 @@ public enum EmitterMacro: MemberMacro, PeerMacro {
         guard let structDecl = declaration.as(StructDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotDiagnostic("'@Emitter' can only be applied to a 'struct'")
+                message: GodotDiagnostic("Emitter must be a 'struct'")
+            ))
+            return []
+        }
+        
+        // Check is public
+        guard structDecl.modifiers?.map(\.name.tokenKind).contains(where: {
+            $0 == .keyword(.public)
+        }) == true else {
+            context.diagnose(Diagnostic(
+                node: Syntax(structDecl.structKeyword),
+                message: GodotDiagnostic("Emitter is not public")
             ))
             return []
         }
@@ -29,7 +40,7 @@ public enum EmitterMacro: MemberMacro, PeerMacro {
                     \.memberBlock,
                      MemberBlockSyntax(members: MemberBlockItemListSyntax())
                 )
-            let fixIt = FixIt(message: GodotDiagnostic("Remove all '\(structDecl.name.trimmedDescription)' content"), changes: [
+            let fixIt = FixIt(message: GodotDiagnostic("Remove '\(structDecl.name.trimmedDescription)' body"), changes: [
                 .replace(
                     oldNode: Syntax(structDecl),
                     newNode: Syntax(fixedStructDecl))
@@ -37,7 +48,7 @@ public enum EmitterMacro: MemberMacro, PeerMacro {
             
             context.diagnose(Diagnostic(
                 node: Syntax(structDecl.memberBlock),
-                message: GodotDiagnostic("'@Emitter' can only be applied to an empty 'struct'"),
+                message: GodotDiagnostic("Emitter must have an empty body"),
                 fixIt: fixIt
             ))
             return []
