@@ -45,13 +45,25 @@ public struct Variant {
     public init<T>(_ value: T) where T : ConvertibleToVariant {
         self = value.makeVariant()
     }
-
+    
     // MARK: Getters
     
     /// Returns the value contained inside the `Variant`.
-    /// 
-    /// - Parameter type: The type inside the `Variant`.
-    public func value<T>(ofType type: T.Type) throws -> T where T : ConvertibleFromVariant {
+    ///
+    /// - Parameter type: The type stored in the `Variant`.
+    public func typed<T>(_ type: T.Type) throws -> T where T : ConvertibleFromVariant {
+        try type.fromVariant(self)
+    }
+    
+    /// Returns the value contained inside the `Variant`.
+    ///
+    /// This function forces the retreival of the value stored in the variant.
+    /// Godot may crash if the value cannot be retreived.
+    ///
+    /// Use ``typed(_:)`` for a throwing version of this function.
+    ///
+    /// - Parameter type: The type stored in the `Variant`.
+    public func forceTyped<T>(_ type: T.Type) throws -> T where T : ConvertibleFromVariant {
         try type.fromVariant(self)
     }
     
