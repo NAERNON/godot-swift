@@ -5,15 +5,17 @@ extension ClassRegister {
         let superclassType: Object.Type
         let superclassName: GodotStringName
         
+        weak var superclassBinding: CustomClassBinding?
+        
         let toStringFunction: GDExtensionClassToString
         let createInstanceFunction: GDExtensionClassCreateInstance
         let freeInstanceFunction: GDExtensionClassFreeInstance
                 
-        private(set) var functions = [GodotStringName : FunctionBinding]()
-        private(set) var functionOverrides = [GodotStringName : FunctionOverrideBinding]()
-        private(set) var variables = [GodotStringName : VariableBinding]()
-        private(set) var enums = [GodotStringName : EnumBinding]()
-        private(set) var signals = [GodotStringName : SignalBinding]()
+        private var functions = [GodotStringName : FunctionBinding]()
+        private var functionOverrides = [GodotStringName : FunctionOverrideBinding]()
+        private var variables = [GodotStringName : VariableBinding]()
+        private var enums = [GodotStringName : EnumBinding]()
+        private var signals = [GodotStringName : SignalBinding]()
         
         // MARK: Init
         
@@ -35,6 +37,8 @@ extension ClassRegister {
             super.init(level: level, type: type)
         }
         
+        // MARK: Append
+        
         func appendFunction(_ functionBinding: FunctionBinding) {
             functions[functionBinding.name] = functionBinding
         }
@@ -53,6 +57,48 @@ extension ClassRegister {
 
         func appendSignal(_ signalBinding: SignalBinding) {
             signals[signalBinding.name] = signalBinding
+        }
+        
+        // MARK: Getters
+        
+        func function(named name: GodotStringName) -> FunctionBinding? {
+            if let binding = functions[name] {
+                return binding
+            }
+            
+            return superclassBinding?.function(named: name)
+        }
+        
+        func functionOverride(named name: GodotStringName) -> FunctionOverrideBinding? {
+            if let binding = functionOverrides[name] {
+                return binding
+            }
+            
+            return superclassBinding?.functionOverride(named: name)
+        }
+        
+        func variable(named name: GodotStringName) -> VariableBinding? {
+            if let binding = variables[name] {
+                return binding
+            }
+            
+            return superclassBinding?.variable(named: name)
+        }
+        
+        func `enum`(named name: GodotStringName) -> EnumBinding? {
+            if let binding = enums[name] {
+                return binding
+            }
+            
+            return superclassBinding?.enum(named: name)
+        }
+        
+        func signal(named name: GodotStringName) -> SignalBinding? {
+            if let binding = signals[name] {
+                return binding
+            }
+            
+            return superclassBinding?.signal(named: name)
         }
     }
 }

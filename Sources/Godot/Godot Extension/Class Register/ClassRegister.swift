@@ -170,9 +170,15 @@ public final class ClassRegister {
             return nil
         }
         
-        guard self.classType(named: superclassName) == superclassType else {
+        guard self.classType(named: superclassName) == superclassType,
+              let superclassBinding = binding(forClassNamed: superclassName)
+        else {
             gdDebugPrintError("Cannot register class \(classType) because its superclass \(superclassName) is not registered.")
             return nil
+        }
+        
+        if let customSuperclassBinding = superclassBinding as? CustomClassBinding {
+            classBinding.superclassBinding = customSuperclassBinding
         }
         
         customClassNameToClassBinding[className] = classBinding
@@ -241,7 +247,7 @@ public final class ClassRegister {
             return nil
         }
         
-        guard classBinding.functions[functionName] == nil else {
+        guard classBinding.function(named: functionName) == nil else {
             gdDebugPrintError("Cannot register function \(functionName) because the class \(className) already registered a function with the same name.")
             return nil
         }
@@ -353,7 +359,7 @@ public final class ClassRegister {
             return nil
         }
         
-        if let overrideBinding = classBinding.functionOverrides[methodName],
+        if let overrideBinding = classBinding.functionOverride(named: methodName),
            case let .virtualFunc(call) = overrideBinding.call {
             return call
         }
@@ -396,7 +402,7 @@ public final class ClassRegister {
             return nil
         }
         
-        guard classBinding.variables[variableName] == nil else {
+        guard classBinding.variable(named: variableName) == nil else {
             gdDebugPrintError("Cannot register variable \(variableName) because the class \(className) already registered a variableName with the same name.")
             return nil
         }
@@ -480,7 +486,7 @@ public final class ClassRegister {
             return nil
         }
         
-        guard classBinding.enums[enumName] == nil else {
+        guard classBinding.enum(named: enumName) == nil else {
             gdDebugPrintError("Cannot register enum or option set \(enumName) because the class \(className) already registered an enum or option set with the same name.")
             return nil
         }
@@ -531,7 +537,7 @@ public final class ClassRegister {
             return nil
         }
         
-        guard classBinding.signals[signalName] == nil else {
+        guard classBinding.signal(named: signalName) == nil else {
             gdDebugPrintError("Cannot register signal \(signalName) because the class \(className) already registered a signal with the same name.")
             return nil
         }
