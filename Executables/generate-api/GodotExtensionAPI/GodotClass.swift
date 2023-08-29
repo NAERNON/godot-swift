@@ -152,7 +152,7 @@ struct GodotClass: Decodable {
     }
     
     var syntaxOptions: GodotTypeSyntaxOptions {
-        [.prefixByGodot, .floatAsDouble]
+        [.optionalClasses, .prefixByGodot, .floatAsDouble]
     }
     
     var methodPrefixIfPrivate: String {
@@ -310,8 +310,12 @@ struct GodotClass: Decodable {
             
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
-                    try modifiedMethod.argumentsPackPointerAccessSyntax { packName in
-                        try instanceType.pointerAccessSyntax(instanceName: instanceName, mutability: .mutable) { instancePtr in
+                    try modifiedMethod.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                        try instanceType.pointerAccessSyntax(
+                            instanceName: instanceName,
+                            options: syntaxOptions,
+                            mutability: .mutable
+                        ) { instancePtr in
                             if method.isStatic {
                                 method.bindCall(
                                     selfExpression: "nil",
@@ -319,7 +323,11 @@ struct GodotClass: Decodable {
                                     returnExpression: instancePtr
                                 )
                             } else {
-                                try name.pointerAccessSyntax(instanceName: "self", mutability: .constMutablePointer) { selfPtr in
+                                try name.pointerAccessSyntax(
+                                    instanceName: "self",
+                                    options: syntaxOptions,
+                                    mutability: .constMutablePointer
+                                ) { selfPtr in
                                     method.bindCall(
                                         selfExpression: selfPtr,
                                         argsExpression: packName,
@@ -331,7 +339,7 @@ struct GodotClass: Decodable {
                     }
                 }
             } else {
-                try modifiedMethod.argumentsPackPointerAccessSyntax { packName in
+                try modifiedMethod.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
                     if method.isStatic {
                         method.bindCall(
                             selfExpression: "nil",
@@ -339,7 +347,11 @@ struct GodotClass: Decodable {
                             returnExpression: "nil"
                         )
                     } else {
-                        try name.pointerAccessSyntax(instanceName: "self", mutability: .constMutablePointer) { selfPtr in
+                        try name.pointerAccessSyntax(
+                            instanceName: "self",
+                            options: syntaxOptions,
+                            mutability: .constMutablePointer
+                        ) { selfPtr in
                             method.bindCall(
                                 selfExpression: selfPtr,
                                 argsExpression: packName,
@@ -411,7 +423,7 @@ struct GodotClass: Decodable {
             return nil
         }
         
-        let typeSyntax = type.optional(type.isGodotClass).syntax(options: syntaxOptions)
+        let typeSyntax = type.syntax(options: syntaxOptions)
         let setter = property.setterMethod(in: methods, forGetter: getter)
         
         var propertyName: String

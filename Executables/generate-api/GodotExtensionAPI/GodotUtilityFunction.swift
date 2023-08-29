@@ -57,14 +57,15 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
     }
     
     func syntax() throws -> FunctionDeclSyntax {
-        let options: GodotTypeSyntaxOptions = .floatAsDouble
+        let options: GodotTypeSyntaxOptions = [.optionalClasses, .floatAsDouble]
         
         return try withNamePrefixed(by: "_").translated.declSyntax(options: options, keywords: .internal) {
             if let returnType = returnType {
                 try returnType.instantiationSyntax(options: options) { instanceType, instanceName in
-                    try translated.argumentsPackPointerAccessSyntax { packName in
+                    try translated.argumentsPackPointerAccessSyntax(options: options) { packName in
                         try instanceType.pointerAccessSyntax(
                             instanceName: instanceName,
+                            options: options,
                             mutability: .mutable
                         ) { instancePointerName in
                             "\(raw: ptrIdentifier)(\(raw: instancePointerName), \(raw: packName), \(raw: argumentsCountSyntax(type: Int32.self)))"
@@ -72,7 +73,7 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
                     }
                 }
             } else {
-                try argumentsPackPointerAccessSyntax { packName in
+                try argumentsPackPointerAccessSyntax(options: options) { packName in
                     "\(raw: ptrIdentifier)(nil, \(raw: packName), \(raw: argumentsCountSyntax(type: Int32.self)))"
                 }
             }

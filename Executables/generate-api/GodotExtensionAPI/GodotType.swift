@@ -458,17 +458,22 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             case "StringName": return "GodotStringName"
             case "Error": return "ErrorType"
             case "Type": return "GodotType"
-            default: return string
+            default:
+                if options.contains(.optionalClasses) && isGodotClass {
+                    return string + "?"
+                } else {
+                    return string
+                }
             }
         case .enum(let type):
             return type._syntax(options: options, scopeIndex: scopeIndex)
         case .bitfield(let type):
             return type._syntax(options: options, scopeIndex: scopeIndex)
         case .scope(let scopeType, let type):
-            return scopeType._syntax(options: options, scopeIndex: scopeIndex)
+            return scopeType._syntax(options: options.subtracting(.optionalClasses), scopeIndex: scopeIndex)
                 + "." + type._syntax(options: options, scopeIndex: scopeIndex+1)
         case .generic(let type, let genericType):
-            return type._syntax(options: options, scopeIndex: scopeIndex) + "<"
+            return type._syntax(options: options.subtracting(.optionalClasses), scopeIndex: scopeIndex) + "<"
                 + genericType._syntax(options: options, scopeIndex: 0) + ">"
         case .typedArray(let type):
             return "GodotTypedArray" + "<"
@@ -493,6 +498,22 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
                 let pointerString = isImmutable ? "UnsafePointer" : "UnsafeMutablePointer"
                 return pointerString + "<" + pointedType + ">"
             }
+        }
+    }
+    
+    /// Returns the type used for instantiating this type.
+    ///
+    /// An enum, for instance, will have an instantiation type
+    /// different from the type itself.
+    /// Instead of using the enum type, the `RawValue`
+    /// type is used.
+    func instantiationType() -> GodotType {
+        if isGodotClass {
+            return "GDExtensionObjectPtr"
+        } else if isEnum {
+            return .scope(scopeType: self, type: "RawValue")
+        } else {
+            return self
         }
     }
     
@@ -532,12 +553,10 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             "var \(raw: variableName) = \(raw: syntax(options: options))()"
         }
         
-        let type: GodotType = isGodotClass ? "GDExtensionObjectPtr" : self
-        
-        try bodyBuilder(type, variableName)
+        try bodyBuilder(instantiationType(), variableName)
         
         if isGodotClass {
-            "return \(raw: syntax(options: options)).retreivedInstanceManagedByGodot(\(raw: variableName))"
+            "return \(raw: syntax(options: options.subtracting(.optionalClasses))).retreivedInstanceManagedByGodot(\(raw: variableName))"
         } else if isEnum {
             "return \(raw: syntax(options: options))(rawValue: \(raw: variableName))!"
         } else {
@@ -562,7 +581,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         if isBuiltinGodotClassWithOpaque || self == .variant {
             return "\(syntax(options: options))(godotExtensionPointer: \(pointerName))"
         } else if isGodotClass {
-            return "\(syntax(options: options)).retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(\(pointerName)))"
+            return "\(syntax(options: options.subtracting(.optionalClasses))).retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(\(pointerName)))"
         } else {
             return "\(pointerName).load(as: \(syntax(options: options)).self)"
         }
@@ -600,6 +619,29 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         case constMutablePointer
     }
     
+    /// Returns the pointer type used when accessing the pointer.
+    private func pointerAccessTypeSyntax(
+        options: GodotTypeSyntaxOptions,
+        mutability: Mutability
+    ) -> String {
+        if isGodotClass {
+            if options.contains(.optionalClasses) {
+                return "UnsafeMutableRawPointer?"
+            } else {
+                return "UnsafeMutableRawPointer"
+            }
+        } else if isBuiltinGodotClassWithOpaque || self == .variant {
+            return "UnsafeMutableRawPointer"
+        } else {
+            switch mutability {
+            case .const, .constMutablePointer:
+                return "UnsafePointer<\(syntax(options: options))>"
+            case .mutable:
+                return "UnsafeMutablePointer<\(syntax(options: options))>"
+            }
+        }
+    }
+    
     /// Returns a syntax for accessing the pointer of an instance of the type.
     ///
     /// - Parameters:
@@ -610,6 +652,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     @CodeBlockItemListBuilder
     func pointerAccessSyntax(
         instanceName: String,
+        options: GodotTypeSyntaxOptions,
         mutability: Mutability = .const,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
@@ -699,10 +742,15 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     @CodeBlockItemListBuilder
     func argumentPointerAccessSyntax(
         instanceName: String,
+        options: GodotTypeSyntaxOptions,
         mutability: Mutability = .const,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
-        try pointerAccessSyntax(instanceName: instanceName, mutability: mutability) { pointerName in
+        try pointerAccessSyntax(
+            instanceName: instanceName,
+            options: options,
+            mutability: mutability
+        ) { pointerName in
             if isGodotClass {
                 let newPointerName = "_ptr_" + pointerName
                 let closure = try ClosureExprSyntax(

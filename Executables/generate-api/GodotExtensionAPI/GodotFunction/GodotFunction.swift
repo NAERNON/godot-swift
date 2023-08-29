@@ -77,7 +77,7 @@ extension GodotFunction {
             }
             parameterString.append(CodeLanguage.swift.protectNameIfKeyword(for: argument.name))
             parameterString.append(": ")
-            parameterString.append(argument.type.optional(argument.type.isGodotClass).syntax(options: options))
+            parameterString.append(argument.type.syntax(options: options))
             
             if let defaultValue = argument.defaultValue {
                 parameterString.append(" = ")
@@ -103,7 +103,7 @@ extension GodotFunction {
         
         if let returnType {
             functionHeader.append(" -> ")
-            functionHeader.append(returnType.optional(returnType.isGodotClass).syntax(options: options))
+            functionHeader.append(returnType.syntax(options: options))
         }
         
         let modifiers = DeclModifierListSyntax {
@@ -139,14 +139,20 @@ extension GodotFunction {
     /// }
     /// ```
     func argumentsPointerAccessSyntax(
+        options: GodotTypeSyntaxOptions,
         @CodeBlockItemListBuilder bodyBuilder: ([String]) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
-        try argumentsPointerAccessSyntax(indexes: 0..<(arguments?.count ?? 0), bodyBuilder: bodyBuilder)
+        try argumentsPointerAccessSyntax(
+            options: options,
+            indexes: 0..<(arguments?.count ?? 0),
+            bodyBuilder: bodyBuilder
+        )
     }
     
     /// Returns a pack of all the arguments pointers of the function.
     ///
     /// - Parameters:
+    ///   - options: The options for type syntax.
     ///   - forcePackCreation: A Boolean value indicating whether the
     ///   pack sould be created,
     ///   even if no argument is inside the pack.
@@ -171,6 +177,7 @@ extension GodotFunction {
     /// If no argument is available in the pack, and if `forcePackCreation` is at `false`,
     /// no pack is created, and a "`nil`" String will be given in the closure.
     func argumentsPackPointerAccessSyntax(
+        options: GodotTypeSyntaxOptions,
         forcePackCreation: Bool = false,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
@@ -182,7 +189,7 @@ extension GodotFunction {
             return try bodyBuilder("nil")
         }
         
-        return try argumentsPointerAccessSyntax { pointerNames in
+        return try argumentsPointerAccessSyntax(options: options) { pointerNames in
             if isVararg {
                 let closure = try ClosureExprSyntax(
                     signature: .init(parameterClause: .parameterClause(.init(parameters: [
@@ -240,9 +247,11 @@ extension GodotFunction {
     /// Returns the arguments pointer access of the function.
     ///
     /// - Parameters:
+    ///   - options: The options for type syntax.
     ///   - indexes: The indexes of the arguments to retreive.
     ///   - bodyBuilder: The body content syntax.
     private func argumentsPointerAccessSyntax(
+        options: GodotTypeSyntaxOptions,
         indexes: some Collection<Int>,
         @CodeBlockItemListBuilder bodyBuilder: ([String]) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
@@ -252,8 +261,11 @@ extension GodotFunction {
         
         let argument = arguments![index]
         
-        return try argument.type.argumentPointerAccessSyntax(instanceName: argument.name) { pointerName in
-            try argumentsPointerAccessSyntax(indexes: indexes.dropFirst()) { pointerNames in
+        return try argument.type.argumentPointerAccessSyntax(
+            instanceName: argument.name,
+            options: options
+        ) { pointerName in
+            try argumentsPointerAccessSyntax(options: options, indexes: indexes.dropFirst()) { pointerNames in
                 try bodyBuilder([pointerName] + pointerNames)
             }
         }
