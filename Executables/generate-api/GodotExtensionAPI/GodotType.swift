@@ -687,6 +687,44 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             }
         }
     }
+    
+    /// Returns a syntax for accessing the pointer of an instance of the type,
+    /// used for a function argument.
+    ///
+    /// - Parameters:
+    ///   - instanceName: The name of the instance.
+    ///   - mutability: The mutability of the instance.
+    ///   - bodyBuilder: The content syntax to access the pointer.
+    ///   Use the value provided inside the closure to retreive the pointer name.
+    @CodeBlockItemListBuilder
+    func argumentPointerAccessSyntax(
+        instanceName: String,
+        mutability: Mutability = .const,
+        @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
+    ) throws -> CodeBlockItemListSyntax {
+        try pointerAccessSyntax(instanceName: instanceName, mutability: mutability) { pointerName in
+            if isGodotClass {
+                let newPointerName = "_ptr_" + pointerName
+                let closure = try ClosureExprSyntax(
+                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
+                        "\(raw: newPointerName)"
+                    ])))
+                ) {
+                    try bodyBuilder(newPointerName)
+                }
+                
+                FunctionCallExprSyntax(
+                    calledExpression: DeclReferenceExprSyntax(
+                        baseName: "withUnsafePointer(to: \(raw: pointerName))"
+                    ),
+                    arguments: [],
+                    trailingClosure: closure
+                )
+            } else {
+                try bodyBuilder(pointerName)
+            }
+        }
+    }
 }
 
 /// The godot native variant enum value: `GDEXTENSION_VARIANT_TYPE_<type>`.

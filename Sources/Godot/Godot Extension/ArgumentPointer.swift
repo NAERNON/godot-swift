@@ -2,11 +2,11 @@ import GodotExtensionHeaders
 
 /// Calls the given closure with a pointer to the contiguous given pointers.
 func withUnsafeArgumentPackPointer(
-    _ pointers: GDExtensionConstObjectPtr?...,
-    body: (UnsafeMutablePointer<GDExtensionConstObjectPtr?>) -> Void
+    _ pointers: GDExtensionConstTypePtr?...,
+    body: (UnsafeMutablePointer<GDExtensionConstTypePtr?>) -> Void
 ) {
     let count = pointers.count
-    let accessPointer = UnsafeMutablePointer<GDExtensionConstObjectPtr?>.allocate(capacity: count)
+    let accessPointer = UnsafeMutablePointer<GDExtensionConstTypePtr?>.allocate(capacity: count)
     
     var index = 0
     while index < count {
@@ -22,13 +22,13 @@ func withUnsafeArgumentPackPointer(
 
 /// Calls the given closure with a pointer to the contiguous given pointers.
 func withUnsafeArgumentPackPointer(
-    _ pointers: GDExtensionConstObjectPtr?...,
+    _ pointers: GDExtensionConstTypePtr?...,
     varargs: [GDExtensionVariantPtr],
-    body: (UnsafeMutablePointer<GDExtensionConstObjectPtr?>) -> Void
+    body: (UnsafeMutablePointer<GDExtensionConstTypePtr?>) -> Void
 ) {
     let pointersCount = pointers.count
     let count = pointersCount + varargs.count
-    let accessPointer = UnsafeMutablePointer<GDExtensionConstObjectPtr?>.allocate(capacity: count)
+    let accessPointer = UnsafeMutablePointer<GDExtensionConstTypePtr?>.allocate(capacity: count)
     
     var index = 0
     while index < pointersCount {
@@ -36,7 +36,7 @@ func withUnsafeArgumentPackPointer(
         index += 1
     }
     while index < count {
-        accessPointer[index] = GDExtensionConstObjectPtr(varargs[index - pointersCount])
+        accessPointer[index] = GDExtensionConstTypePtr(varargs[index - pointersCount])
         index += 1
     }
     

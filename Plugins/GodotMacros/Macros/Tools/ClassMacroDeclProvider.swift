@@ -144,7 +144,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             }
             
             public func withUnsafeRawPointer<Result>(
-                _ body: (UnsafeMutableRawPointer) throws -> Result
+                _ body: (GDExtensionObjectPtr) throws -> Result
             ) rethrows -> Result {
                 try body(extensionObjectPtr)
             }

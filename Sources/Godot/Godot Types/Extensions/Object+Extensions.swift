@@ -43,17 +43,6 @@ extension Object {
 
 extension Optional where Wrapped : Object {
     public func withUnsafeRawPointer<Result>(
-        _ body: (GDExtensionConstObjectPtr?) throws -> Result
-    ) rethrows -> Result {
-        switch self {
-        case .none:
-            try body(nil)
-        case .some(let wrapped):
-            try wrapped.withUnsafeRawPointer { try body($0) }
-        }
-    }
-    
-    public func withUnsafeRawPointer<Result>(
         _ body: (GDExtensionObjectPtr?) throws -> Result
     ) rethrows -> Result {
         switch self {

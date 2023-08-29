@@ -252,7 +252,7 @@ extension GodotFunction {
         
         let argument = arguments![index]
         
-        return try argument.type.pointerAccessSyntax(instanceName: argument.name) { pointerName in
+        return try argument.type.argumentPointerAccessSyntax(instanceName: argument.name) { pointerName in
             try argumentsPointerAccessSyntax(indexes: indexes.dropFirst()) { pointerNames in
                 try bodyBuilder([pointerName] + pointerNames)
             }
