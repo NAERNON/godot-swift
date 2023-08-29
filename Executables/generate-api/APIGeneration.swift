@@ -44,6 +44,7 @@ struct APIGeneration: ParsableCommand {
             GeneratedFile.variantSize(extensionAPI, with: buildConfiguration),
             GeneratedFile.utilityFunctions(extensionAPI),
             GeneratedFile.registerGodotClasses(extensionAPI),
+            GeneratedFile.singletons(extensionAPI),
         ] + extensionAPI.builtinClassesToGenerate().map {
             GeneratedFile.builtinClass(extensionAPI, for: $0, with: buildConfiguration)
         } + extensionAPI.classes.map {
