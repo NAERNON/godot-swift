@@ -38,7 +38,7 @@ struct EmitterMember: ExposableMember {
         guard let emitterAttribute = structDeclSyntax.attributes?.first(
             where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Emitter" }
         )?.as(AttributeSyntax.self),
-              let emitterParameters = EmitterMacro.emitterParameters(
+              let macroArguments = EmitterMacro.macroArguments(
                 from: emitterAttribute,
                 in: context,
                 diagnoseErrors: false
@@ -47,7 +47,7 @@ struct EmitterMember: ExposableMember {
             return nil
         }
         
-        let parameters = emitterParameters.map {
+        let parameters = macroArguments.params.map {
             """
             .argument(\($0.type).self, name: "\(NamingConvention.camel.convert($0.name, to: .snake))"),
             """

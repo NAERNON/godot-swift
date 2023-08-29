@@ -172,7 +172,6 @@ public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnu
 )
 public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "GodotOptionSetMacro")
 
-// TODO: Add the doc on how to receive the signal
 /// A macro transforming a struct into a Godot signal.
 ///
 /// The macro must be applied to an empty struct,
@@ -196,7 +195,8 @@ public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "God
 /// }
 /// ```
 ///
-/// To emit the signal, use the generated emitter value:
+/// To emit the signal, use the generated emitter value
+/// named "emitter + structure_name":
 ///
 /// ```swift
 /// @Exposable public class Character: Node {
@@ -209,13 +209,14 @@ public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "God
 /// ## Add parameters to the signal
 ///
 /// A signal can also have parameters.
-/// Only ``ConvertibleToVariant`` types may be used as parameters.
+/// Only ``ConvertibleToVariant`` types and ``Variant``
+/// may be used as parameters.
 /// To add one or more parameters to a signal,
 /// define them in the `@Emitter` macro like so:
 ///
 /// ```swift
 /// @Exposable public class Character: Node {
-///     @Emitter(("force", Double), ("direction", Vector3))
+///     @Emitter(args: ("force", Double), ("direction", Vector3))
 ///     public struct Jumped {}
 ///     // The signal name is "jumped"
 ///     // and it takes two parameters: force and direction
@@ -231,14 +232,97 @@ public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "God
 ///     }
 /// }
 /// ```
+///
+/// ## Connect to a receiver
+///
+/// Emitters are designed to work with types defined
+/// using the ``Receiver`` macro.
+/// See the corresponding doc to learn how to setup a receiver.
+///
+/// Connect any receiver that has the same input type
+/// by calling the ``EmitterProtocol.connect`` method.
+///
+/// Use the ``EmitterProtocol.disconnect`` method to
+/// disconnect a receiver.
+///
+/// And check that an emitter is connected to a receiver by
+/// calling the  ``EmitterProtocol.isConnected`` method.
+///
+/// ```swift
+/// @Exposable public class Character: Node {
+///     @Emitter
+///     public struct LandedBeautifully {}
+/// }
+///
+/// @Exposable public class Grass: Node {
+///     @Receiver
+///     public func characterLanded() {}
+/// }
+///
+/// let character = Character()
+/// let grass = Grass()
+///
+/// // The characterLanded receiver will receive any signal
+/// // emitted by the landedBeautifully emitter.
+/// character.emitterLandedBeautifully.connect(grass.characterLandedReceiver)
+/// ```
+///
+/// ## Set a custom signal name
+///
+/// It is possible to use a custom signal name.
+/// Fill the `signal` argument of the macro:
+///
+/// ```swift
+/// @Exposable public class Character: Node {
+///     @Emitter(signal: "landed_not_so_beautifully")
+///     public struct LandedBeautifully {}
+///     // The signal name is "landed_not_so_beautifully"
+/// }
+/// ```
+@attached(extension, conformances: Godot.EmitterProtocol)
 @attached(peer, names: prefixed(emitter))
 @attached(member, names:
+    named(SignalInput),
     named(signalName),
     named(object),
     named(init),
     named(emit)
 )
-public macro Emitter(_: (StaticString, ConvertibleToVariant.Type)...) = #externalMacro(module: "GodotMacros", type: "EmitterMacro")
+public macro Emitter(signal: StaticString? = nil, args: (StaticString, Any.Type)...) = #externalMacro(module: "GodotMacros", type: "EmitterMacro")
+
+/// A macro enabling a function to act as a signal receiver.
+///
+/// The macro must be applied to a public function,
+/// inside an exposable Godot class definition.
+///
+/// Receivers are designed to work with types defined
+/// using the ``Emitter`` macro.
+/// See the corresponding doc to learn how to setup an emitter.
+///
+/// ## Use the macro
+///
+/// By applying the macro to a function, a receiver type will be created,
+/// as well as a receiver variable used to receive the signal.
+///
+/// ```swift
+/// @Exposable public class Grass: Node {
+///     @Receiver
+///     public func characterLanded() {}
+/// }
+/// ```
+///
+/// To receive a signal, use the generated emitter value
+/// named "function_name + Receiver":
+///
+/// ```swift
+/// let grass = Grass()
+///
+/// // The characterLanded receiver will receive any signal
+/// // emitted by 'someEmitter'.
+/// someEmitter.connect(grass.characterLandedReceiver)
+/// ```
+@attached(peer, names: suffixed(Receiver), prefixed(Receiver_))
+public macro Receiver() = #externalMacro(module: "GodotMacros", type: "ReceiverMacro")
 
 // MARK: - Internal macros
 

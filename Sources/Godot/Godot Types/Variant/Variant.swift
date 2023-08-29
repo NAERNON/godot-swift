@@ -57,6 +57,10 @@ public struct Variant {
     
     // MARK: - Functions
     
+    public func makeVariant() -> Variant {
+        self
+    }
+    
     /// Returns the type of value this variant stores.
     public var type: GDExtensionVariantType {
         var extensionVariantType: GDExtensionVariantType!

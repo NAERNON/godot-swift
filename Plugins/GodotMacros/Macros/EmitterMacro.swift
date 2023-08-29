@@ -7,7 +7,12 @@ import Foundation
 
 private let authorizedCharacters = CharacterSet.alphanumerics.union(.init(charactersIn: "_"))
 
-public enum EmitterMacro: MemberMacro, PeerMacro {
+public enum EmitterMacro: MemberMacro, PeerMacro, ExtensionMacro {
+    struct MacroArguments {
+        let signal: String?
+        let params: [(name: String, type: String)]
+    }
+    
     public static func expansion(
         of attribute: AttributeSyntax,
         providingMembersOf declaration: some DeclGroupSyntax,
@@ -54,13 +59,8 @@ public enum EmitterMacro: MemberMacro, PeerMacro {
             return []
         }
         
-        // Find the emitter attribute to analyse parameters
-        guard let emitterAttribute = structDecl.attributes?.first(where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Emitter" })?.as(AttributeSyntax.self) else {
-            fatalError("No emitter macro found.")
-        }
-        
-        guard let emitterParameters = self.emitterParameters(
-            from: emitterAttribute,
+        guard let macroArguments = self.macroArguments(
+            from: attribute,
             in: context,
             diagnoseErrors: true
         ) else {
@@ -68,21 +68,24 @@ public enum EmitterMacro: MemberMacro, PeerMacro {
         }
         
         let structName = structDecl.name.trimmedDescription
-        let signalName = NamingConvention.pascal.convert(structName, to: .snake)
+        let signalName = macroArguments.signal ?? NamingConvention.pascal.convert(structName, to: .snake)
         
         let propertiesDecl: DeclSyntax = """
+        public typealias SignalInput = (\(raw: macroArguments.params.map { $0.type }.joined(separator: ", ")))
+        
         public static let signalName: Godot.GodotStringName = \(literal: signalName)
-        private weak var object: Godot.Object?
+        
+        public weak private(set) var object: Godot.Object?
         """
         
         let initDeclSyntax = try InitializerDeclSyntax("fileprivate init(_ object: Godot.Object)") {
             "self.object = object"
         }
         
-        let parametersString = emitterParameters
+        let parametersString = macroArguments.params
             .map { $0.name + ": " + $0.type }
             .joined(separator: ", ")
-        let parametersCallString = emitterParameters
+        let parametersCallString = macroArguments.params
             .map { $0.name + ".makeVariant()" }
             .joined(separator: ", ")
         
@@ -117,21 +120,41 @@ public enum EmitterMacro: MemberMacro, PeerMacro {
         ]
     }
     
-    /// Returns an Array of all the parameters of the emitter,
-    /// with each tuple being ("parameterName", "parameterType").
-    static func emitterParameters(
+    public static func expansion(
+        of node: AttributeSyntax,
+        attachedTo declaration: some DeclGroupSyntax,
+        providingExtensionsOf type: some TypeSyntaxProtocol,
+        conformingTo protocols: [TypeSyntax],
+        in context: some MacroExpansionContext
+    ) throws -> [ExtensionDeclSyntax] {
+        let decl = try ExtensionDeclSyntax("extension \(type): Godot.EmitterProtocol") {}
+        
+        return [decl]
+    }
+    
+    /// Returns the arguments of the emitter macro.
+    static func macroArguments(
         from attributeSyntax: AttributeSyntax,
         in context: some MacroExpansionContext,
         diagnoseErrors: Bool
-    ) -> [(name: String, type: String)]? {
+    ) -> MacroArguments? {
         guard let arguments = attributeSyntax.arguments?.as(LabeledExprListSyntax.self) else {
-            return []
+            return MacroArguments(signal: nil, params: [])
         }
         
+        var signalName: String?
         var parameters = [(String, String)]()
         var areParametersCorrect = true
         
         for argument in arguments {
+            if let label = argument.label,
+               label.text == "signal"
+            {
+                signalName = argument.expression.as(StringLiteralExprSyntax.self)?
+                    .segments.trimmedDescription
+                continue
+            }
+            
             guard let tupleElements = argument.expression.as(TupleExprSyntax.self)?.elements,
                   tupleElements.count == 2 else {
                 fatalError("The arguments should be tuples with two values.")
@@ -185,6 +208,6 @@ public enum EmitterMacro: MemberMacro, PeerMacro {
             return nil
         }
         
-        return parameters
+        return MacroArguments(signal: signalName, params: parameters)
     }
 }

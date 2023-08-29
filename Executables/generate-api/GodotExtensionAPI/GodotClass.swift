@@ -181,47 +181,26 @@ struct GodotClass: Decodable {
     @MemberBlockItemListBuilder
     func signalSyntax(_ signal: Signal) throws -> MemberBlockItemListSyntax {
         let structName = NamingConvention.snake.convert(signal.name, to: .pascal)
-        let propertyName = "emitter" + NamingConvention.snake.convert(signal.name, to: .pascal)
         
-        try StructDeclSyntax("public struct \(raw: structName)") {
-            let translatedParameters: [GodotArgument] = signal.arguments?.map { argument in
+        if let arguments = signal.arguments {
+            let translatedParameters: [GodotArgument] = arguments.map { argument in
                 var new = argument
                 new.name = NamingConvention.snake.convert(argument.name, to: .camel)
                 return new
-            } ?? []
-            
-            let parametersSyntax = translatedParameters
-                .map { $0.name + ": " + $0.type.syntax(options: syntaxOptions) }.joined(separator: ", ")
-            let parametersCallSyntax = translatedParameters
-                .map {
-                    if $0.type == .variant {
-                        $0.name
-                    } else {
-                        $0.name + ".makeVariant()"
-                    }
-                }.joined(separator: ", ")
-            
-            
-            """
-            public static let signalName: GodotStringName = \(literal: signal.name)
-            private weak var object: Godot.Object?
-            
-            fileprivate init(_ object: Object) {
-                self.object = object
             }
-            """
-            try FunctionDeclSyntax("public func emit(\(raw: parametersSyntax))") {
-                if translatedParameters.isEmpty {
-                    "_ = object?.emitSignal(Self.signalName)"
-                } else {
-                    "_ = object?.emitSignal(Self.signalName, rest: \(raw: parametersCallSyntax))"
+            
+            let argumentsString = translatedParameters
+                .map { argument -> String in
+                    "(\"\(argument.name)\", \(argument.type.syntax(options: syntaxOptions)))"
                 }
-            }
+                .joined(separator: ", ")
+            
+            "@Emitter(signal: \(literal: signal.name), args: \(raw: argumentsString))"
+        } else {
+            "@Emitter(signal: \(literal: signal.name))"
         }
         
-        """
-        public var \(raw: propertyName): \(raw: structName) { .init(self) }
-        """
+        try StructDeclSyntax("public struct \(raw: structName)") {}
     }
     
     @MemberBlockItemListBuilder
