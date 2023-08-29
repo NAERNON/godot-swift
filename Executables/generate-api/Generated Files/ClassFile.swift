@@ -1,7 +1,6 @@
 import SwiftSyntax
 import SwiftSyntaxBuilder
 
-// TODO: isRefcounted and isInstantiable, isVararg, isVirtual not used from ExtensionApi.Class. Is it ok or am I dumb ?
 extension GeneratedFile {
     static func `class`(
         _ extensionAPI: GodotExtensionAPI,

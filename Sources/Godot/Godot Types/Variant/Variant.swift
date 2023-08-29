@@ -1,7 +1,5 @@
 import GodotExtensionHeaders
 
-// TODO: Check @inlinable & @usableFromInline
-
 /// A type used to transform Swift types to and from Godot types.
 ///
 /// Many Swift and Godot base types can actually

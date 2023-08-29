@@ -183,7 +183,6 @@ public final class ClassRegister {
         
         customClassNameToClassBinding[className] = classBinding
         
-        // TODO: Fill all the blanks
         let godotClassInfo = GDExtensionClassCreationInfo(
             is_virtual: 0,
             is_abstract: 0,
@@ -273,9 +272,7 @@ public final class ClassRegister {
                             name: functionNamePtr,
                             method_userdata: Unmanaged.passUnretained(functionBinding).toOpaque(),
                             call_func: call,
-                            ptrcall_func: { _, _, _, _ in
-// TODO: DO THIS
-                            },
+                            ptrcall_func: { _, _, _, _ in },
                             method_flags: functionBinding.flag,
                             has_return_value: functionBinding.hasReturnValue ? 1 : 0,
                             return_value_info: propertiesInfo.returnValue,
