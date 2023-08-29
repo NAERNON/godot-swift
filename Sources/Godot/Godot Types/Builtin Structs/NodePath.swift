@@ -88,3 +88,9 @@ extension NodePath: Hashable {
         hasher.combine(_hash())
     }
 }
+
+extension NodePath: ExpressibleByStringLiteral {
+    public init(stringLiteral value: String) {
+        self.init(string: GodotString(swiftString: value))
+    }
+}
