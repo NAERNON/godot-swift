@@ -5,12 +5,10 @@ See the ``Emitter(signal:args:)`` macro to learn how to setup an emitter.
 
 ### Usage
 
-This macro must be applied to a public function,
-inside an exposable Godot class definition.
+This macro must be applied to a public function, inside an exposable Godot class definition.
 
 By applying the macro to a function, a receiver type is created.
-For example, the following code converts a function into a receiver
-capable of receiving a signal:
+For example, the following code converts a function into a receiver capable of receiving a signal:
 
 ```swift
 @Exposable public class Grass: Node {

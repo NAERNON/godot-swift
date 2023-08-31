@@ -4,8 +4,8 @@ extension ClassRegister {
     ///
     /// This structure is used to register functions.
     ///
-    /// Use ``argument(_:name:)`` to create an argument `FunctionParameter`,
-    /// or use ``returnParameter(_:)`` to create a return `FunctionParameter`.
+    /// Use `argument(_:name:)` to create an argument `FunctionParameter`,
+    /// or use `returnParameter(_:)` to create a return `FunctionParameter`.
     public struct FunctionParameter {
         /// The variant representation type of the parameter.
         public let variantType: Variant.RepresentationType

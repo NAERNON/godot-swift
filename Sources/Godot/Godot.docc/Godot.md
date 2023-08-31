@@ -13,18 +13,21 @@ Godot Swift is a set of tool enabling Swift code to be accessible from the Godot
 - <doc:CreatingGodotBridge>
 - <doc:CreatingGDExtensionModule>
 
-### Create custom classes
+### Creating custom classes
 
 - <doc:CreatingCustomClass>
 
-- ``Variant``
-- ``VariantConvertible``
 - ``Exposable()``
 - ``ExposableMember(_:)``
 - ``Emitter(signal:args:)``
 - ``Receiver()``
 - ``GodotEnum()``
 - ``GodotOptionSet()``
+
+### Working with variants
+
+- ``Variant``
+- ``VariantConvertible``
 
 ### Interacting with Godot
 
@@ -46,7 +49,7 @@ Godot Swift is a set of tool enabling Swift code to be accessible from the Godot
 - ``NodePath``
 - ``RID``
 
-### Builtin collection
+### Builtin collections
 
 - ``GodotArray``
 - ``GodotTypedArray``

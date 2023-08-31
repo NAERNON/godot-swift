@@ -37,7 +37,7 @@ Every public member defined inside the class are exposed to Godot and must meet 
 Every public or open function is exposed to Godot. All these functions must use parameters and return type conforming to the ``VariantConvertible`` protocol.
 They also must be *basic* functions, meaning they must:
 - not throw
-- not be marked await
+- not be marked async
 - not have generics
 - not use variadic parameters
 - basically, not use any special keyword other than `func`…
@@ -48,7 +48,7 @@ In Godot, two functions with the same name cannot be simultaneously exposed. Be 
 #### Expose variables
 
 Every public or open variable is exposed to Godot. All these variables must be of a type conforming to the ``VariantConvertible`` protocol.
-Just as the functions, only define *basic* variables (no await etc.).
+Just as the functions, only define *basic* variables (no async etc.).
 
 #### Expose enums
 

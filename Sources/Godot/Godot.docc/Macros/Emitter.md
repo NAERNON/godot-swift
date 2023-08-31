@@ -11,8 +11,7 @@ See the example below.
 
 ### Usage
 
-This macro must be applied to an empty struct,
-inside an exposable Godot class definition.
+This macro must be applied to an empty struct, inside an exposable Godot class definition.
 For example, the following code converts the struct into a signal:
 
 ```swift
@@ -23,8 +22,7 @@ For example, the following code converts the struct into a signal:
 }
 ```
 
-A variable named "emitter + structure_name" is also defined
-alongside the signal, in the Godot class.
+A variable named "emitter + structure_name" is also defined alongside the signal, in the Godot class.
 The following code uses this variable to emit a signal:
 
 ```swift
@@ -38,10 +36,7 @@ The following code uses this variable to emit a signal:
 ### Add arguments to the signal
 
 A signal can also have arguments.
-Only ``ConvertibleToVariant`` types and ``Variant``
-may be used as arguments.
-To add one or more arguments to a signal,
-define them in the `@Emitter` macro like so:
+To add one or more arguments to a signal, define them in the `@Emitter` macro like so:
 
 ```swift
 @Exposable public class Character: Node {
@@ -62,19 +57,18 @@ Emitting the signal becomes:
 }
 ```
 
+>important: Only ``VariantConvertible`` types may be used as arguments.
+
 ### Connect to a receiver
 
 Emitters are designed to work with receivers.
 See the ``Receiver()`` macro to learn how to setup a receiver.
 
-Connect any receiver that has the same input type
-by calling the ``EmitterProtocol/connect(_:flags:)`` method.
+Connect any receiver that has the same input type by calling the ``EmitterProtocol/connect(_:flags:)`` method.
 
-Use the ``EmitterProtocol/disconnect(_:)`` method to
-disconnect a receiver.
+Use the ``EmitterProtocol/disconnect(_:)`` method to disconnect a receiver.
 
-Check that an emitter is connected to a receiver by
-calling the  ``EmitterProtocol/isConnected(to:)`` method.
+Check that an emitter is connected to a receiver by calling the  ``EmitterProtocol/isConnected(to:)`` method.
 
 ```swift
 @Exposable public class Character: Node {

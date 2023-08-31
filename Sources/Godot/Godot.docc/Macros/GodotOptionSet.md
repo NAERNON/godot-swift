@@ -1,29 +1,24 @@
 # ``Godot/GodotOptionSet()``
 
 This macro conforms the attached option set to the
-``VariantConvertible`` protocol, enabling the option set
-to be used as a type for function parameters and variables for Godot.
+``VariantConvertible`` protocol, enabling the option set to be used as a type for function parameters and variables for Godot.
 It also conforms the option set to the `OptionSet` protocol and provides:
 - a public `rawValue` constant of type `Int64`
 - a public `init(rawValue:_)` initializer that sets the `rawValue` constant
 
 ### Naming convention
 
-Each case name takes the name of the option set,
-followed by the case itself, converted to snake case and uppercased.
+Each case name takes the name of the option set, followed by the case itself, converted to snake case and uppercased.
 See the example below.
 
 ### Usage
 
 A Godot option set must be a `struct`.
-Every public static variable must be `let` constants,
-and their type must:
+Every public static variable must be `let` constants, and their type must:
 - be of the same type as the option set
-- be explicitly written before the `=` statement (use either `Self` or
-the name of the struct to write the type)
+- be explicitly written before the `=` statement (use either `Self` or the name of the struct to write the type)
 
-The following code transforms the struct into an
-option set Godot is capable of manipulating:
+The following code transforms the struct into an option set Godot is capable of manipulating:
 
 ```swift
 @GodotOptionSet public struct CharacterAction {
@@ -52,6 +47,5 @@ The option set can then be used as a type for Godot:
 
 ### Definition inside an exposable class
 
-If the option set is defined inside an exposable class, the option set values
-will automatically be accessible from the Godot editor.
+If the option set is defined inside an exposable class, the option set values will automatically be accessible from the Godot editor.
 Note that only **public** static constants are exposed.
