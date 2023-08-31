@@ -389,7 +389,7 @@ public final class ClassRegister {
         setterCall: GDExtensionClassMethodCall? = nil
     ) -> VariableBinding?
     where Class : Object,
-          Variable : ConvertibleToVariant
+          Variable : VariantConvertible
     {
         let className = classType.__className
         

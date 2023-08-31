@@ -1,12 +1,6 @@
 import GodotExtensionHeaders
 
 /// A type used to transform Swift types to and from Godot types.
-///
-/// Many Swift and Godot base types can actually
-/// be converted to and from variants.
-///
-/// See the ``ConvertibleToVariant`` and ``ConvertibleFromVariant``
-/// protocols for enabling your own types to convert to and from a variant.
 public struct Variant {
     internal enum Error: Swift.Error {
         case unmatchingTypes(variantType: GDExtensionVariantType, checkedType: GDExtensionVariantType)
@@ -21,7 +15,7 @@ public struct Variant {
     
     // MARK: Inits
     
-    /// Creates a new `Variant` as a `nil` variant.
+    /// Creates a new `nil` variant.
     public init() {
         withUnsafeRawPointer { extensionTypePtr in
             gdextension_interface_variant_new_nil(extensionTypePtr)
@@ -55,21 +49,20 @@ public struct Variant {
     
     /// Returns the value contained inside the `Variant`.
     ///
-    /// This function forces the retreival of the value stored in the variant.
-    /// Godot may crash if the value cannot be retreived.
+    /// This method assumes this variant
+    /// can be converted to the given type.
+    ///
+    /// >important: Requesting a type non compatible with
+    /// this variant may stop execution.
     ///
     /// Use ``typed(_:)`` for a throwing version of this function.
     ///
     /// - Parameter type: The type stored in the `Variant`.
-    public func forceTyped<T>(_ type: T.Type) throws -> T where T : ConvertibleFromVariant {
-        try type.fromVariant(self)
+    public func typed<T>(compatibleWith type: T.Type) -> T where T : ConvertibleFromVariant {
+        type.fromCompatibleVariant(self)
     }
     
     // MARK: - Functions
-    
-    public func makeVariant() -> Variant {
-        self
-    }
     
     /// Returns the type of value this variant stores.
     public var type: GDExtensionVariantType {
@@ -179,7 +172,7 @@ extension Variant: Equatable {
             return false
         }
         
-        return Bool.fromMatchingTypeVariant(variant)
+        return Bool.fromCompatibleVariant(variant)
     }
     
     static public func != (lhs: Variant, rhs: Variant) -> Bool {
@@ -187,7 +180,55 @@ extension Variant: Equatable {
             return true
         }
         
-        return Bool.fromMatchingTypeVariant(variant)
+        return Bool.fromCompatibleVariant(variant)
+    }
+}
+
+extension Variant: ConvertibleToVariant, ConvertibleFromVariant {
+    public func makeVariant() -> Variant {
+        self
+    }
+    
+    public static func fromVariant(_ variant: Variant) throws -> Variant {
+        variant
+    }
+    
+    public static func fromCompatibleVariant(_ variant: Variant) -> Variant {
+        variant
+    }
+}
+
+extension Variant: Comparable {
+    static public func < (lhs: Variant, rhs: Variant) -> Bool {
+        guard let variant = lhs.evaluate(other: rhs, operator: .less) else {
+            return false
+        }
+        
+        return Bool.fromCompatibleVariant(variant)
+    }
+    
+    static public func <= (lhs: Variant, rhs: Variant) -> Bool {
+        guard let variant = lhs.evaluate(other: rhs, operator: .lessEqual) else {
+            return false
+        }
+        
+        return Bool.fromCompatibleVariant(variant)
+    }
+    
+    static public func > (lhs: Variant, rhs: Variant) -> Bool {
+        guard let variant = lhs.evaluate(other: rhs, operator: .greater) else {
+            return false
+        }
+        
+        return Bool.fromCompatibleVariant(variant)
+    }
+    
+    static public func >= (lhs: Variant, rhs: Variant) -> Bool {
+        guard let variant = lhs.evaluate(other: rhs, operator: .greaterEqual) else {
+            return false
+        }
+        
+        return Bool.fromCompatibleVariant(variant)
     }
 }
 
@@ -203,13 +244,11 @@ extension Variant: ExpressibleByFloatLiteral {
     }
 }
 
-extension Variant: ExpressibleByStringLiteral {
+extension Variant: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
     public init(stringLiteral value: String) {
         self.init(GodotString(swiftString: value))
     }
 }
-
-extension Variant: ExpressibleByStringInterpolation {}
 
 extension Variant: ExpressibleByIntegerLiteral {
     public init(integerLiteral value: Int) {

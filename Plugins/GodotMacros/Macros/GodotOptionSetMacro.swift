@@ -32,14 +32,12 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
                 rawValue.makeVariant()
             }
             
-            public static func fromMatchingTypeVariant(_ variant: Godot.Variant) -> Self {
-                Self(rawValue: RawValue.fromMatchingTypeVariant(variant))
+            public static func fromCompatibleVariant(_ variant: Godot.Variant) -> Self {
+                Self(rawValue: RawValue.fromCompatibleVariant(variant))
             }
             
             public static func fromVariant(_ variant: Godot.Variant) throws -> Self {
-                try variant.checkType(Self.variantType)
-                
-                return Self(rawValue: RawValue.fromMatchingTypeVariant(variant))
+                Self(rawValue: try RawValue.fromVariant(variant))
             }
             """
             

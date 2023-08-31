@@ -107,8 +107,8 @@ extension GodotTypedArray: VariantConvertible {
         return GodotTypedArray(underlyingArray: underlyingArray)
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> GodotTypedArray<Element> {
-        GodotTypedArray(underlyingArray: GodotArray.fromMatchingTypeVariant(variant))
+    public static func fromCompatibleVariant(_ variant: Variant) -> GodotTypedArray<Element> {
+        GodotTypedArray(underlyingArray: GodotArray.fromCompatibleVariant(variant))
     }
 }
 
@@ -147,7 +147,7 @@ extension GodotTypedArray: RandomAccessCollection {}
 extension GodotTypedArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Element {
         get {
-            Element.fromMatchingTypeVariant(underlyingArray[index])
+            Element.fromCompatibleVariant(underlyingArray[index])
         }
         set(newValue) {
             underlyingArray[index] = newValue.makeVariant()

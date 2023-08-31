@@ -86,7 +86,7 @@ public enum EmitterMacro: MemberMacro, PeerMacro, ExtensionMacro {
             .map { $0.name + ": " + $0.type }
             .joined(separator: ", ")
         let parametersCallString = macroArguments.params
-            .map { $0.name + ".makeVariant()" }
+            .map { "Godot.Variant(" + $0.name + ")" }
             .joined(separator: ", ")
         
         let emitFunctionDecl = try FunctionDeclSyntax("public func emit(\(raw: parametersString))") {

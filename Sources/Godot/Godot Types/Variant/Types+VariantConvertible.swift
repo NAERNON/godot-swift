@@ -32,7 +32,7 @@ extension Bool: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = UInt8()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -63,7 +63,7 @@ extension Int: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -80,7 +80,7 @@ extension Int: VariantConvertible {
             throw ConversionError.nonNumeric(type: variant.type)
         }
         
-        return fromMatchingTypeVariant(variant)
+        return fromCompatibleVariant(variant)
     }
 }
 
@@ -97,7 +97,7 @@ extension Int8: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -114,7 +114,7 @@ extension Int8: VariantConvertible {
             throw ConversionError.nonNumeric(type: variant.type)
         }
         
-        return fromMatchingTypeVariant(variant)
+        return fromCompatibleVariant(variant)
     }
 }
 
@@ -131,7 +131,7 @@ extension Int16: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -148,7 +148,7 @@ extension Int16: VariantConvertible {
             throw ConversionError.nonNumeric(type: variant.type)
         }
         
-        return fromMatchingTypeVariant(variant)
+        return fromCompatibleVariant(variant)
     }
 }
 
@@ -165,7 +165,7 @@ extension Int32: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -182,7 +182,7 @@ extension Int32: VariantConvertible {
             throw ConversionError.nonNumeric(type: variant.type)
         }
         
-        return fromMatchingTypeVariant(variant)
+        return fromCompatibleVariant(variant)
     }
 }
 
@@ -199,7 +199,7 @@ extension Int64: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -216,7 +216,7 @@ extension Int64: VariantConvertible {
             throw ConversionError.nonNumeric(type: variant.type)
         }
         
-        return fromMatchingTypeVariant(variant)
+        return fromCompatibleVariant(variant)
     }
 }
 
@@ -233,7 +233,7 @@ extension UInt8: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -250,7 +250,7 @@ extension UInt8: VariantConvertible {
             throw ConversionError.nonNumeric(type: variant.type)
         }
         
-        return fromMatchingTypeVariant(variant)
+        return fromCompatibleVariant(variant)
     }
 }
 
@@ -267,7 +267,7 @@ extension UInt16: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -284,7 +284,7 @@ extension UInt16: VariantConvertible {
             throw ConversionError.nonNumeric(type: variant.type)
         }
         
-        return fromMatchingTypeVariant(variant)
+        return fromCompatibleVariant(variant)
     }
 }
 
@@ -301,7 +301,7 @@ extension UInt32: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -318,7 +318,7 @@ extension UInt32: VariantConvertible {
             throw ConversionError.nonNumeric(type: variant.type)
         }
         
-        return fromMatchingTypeVariant(variant)
+        return fromCompatibleVariant(variant)
     }
 }
 
@@ -335,7 +335,7 @@ extension UInt64: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -352,7 +352,7 @@ extension UInt64: VariantConvertible {
             throw ConversionError.nonNumeric(type: variant.type)
         }
         
-        return fromMatchingTypeVariant(variant)
+        return fromCompatibleVariant(variant)
     }
 }
 
@@ -374,7 +374,7 @@ extension Double: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Self()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -391,7 +391,7 @@ extension Double: VariantConvertible {
             throw ConversionError.nonNumeric(type: variant.type)
         }
         
-        return fromMatchingTypeVariant(variant)
+        return fromCompatibleVariant(variant)
     }
 }
 
@@ -410,7 +410,7 @@ extension Float: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Double()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -427,7 +427,7 @@ extension Float: VariantConvertible {
             throw ConversionError.nonNumeric(type: variant.type)
         }
         
-        return fromMatchingTypeVariant(variant)
+        return fromCompatibleVariant(variant)
     }
 }
 
@@ -449,7 +449,7 @@ extension GodotString: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = GodotString()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -480,7 +480,7 @@ extension Vector2: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Vector2()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -511,7 +511,7 @@ extension Vector2i: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Vector2i()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -542,7 +542,7 @@ extension Rect2: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Rect2()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -573,7 +573,7 @@ extension Rect2i: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Rect2i()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -604,7 +604,7 @@ extension Vector3: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Vector3()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -635,7 +635,7 @@ extension Vector3i: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Vector3i()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -666,7 +666,7 @@ extension Transform2D: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Transform2D()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -697,7 +697,7 @@ extension Vector4: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Vector4()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -728,7 +728,7 @@ extension Vector4i: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Vector4i()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -759,7 +759,7 @@ extension Plane: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Plane()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -790,7 +790,7 @@ extension Quaternion: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Quaternion()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -821,7 +821,7 @@ extension AABB: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = AABB()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -852,7 +852,7 @@ extension Basis: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Basis()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -883,7 +883,7 @@ extension Transform3D: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Transform3D()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -914,7 +914,7 @@ extension Projection: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Projection()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -945,7 +945,7 @@ extension Color: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         var newValue = Color()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -976,7 +976,7 @@ extension GodotStringName: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = GodotStringName()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1007,7 +1007,7 @@ extension NodePath: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = NodePath()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1038,7 +1038,7 @@ extension RID: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = RID()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1071,7 +1071,7 @@ extension Object: VariantConvertible {
         return variant
     }
     
-    public final class func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public final class func fromCompatibleVariant(_ variant: Variant) -> Self {
         var instancePtr = UnsafeMutableRawPointer(bitPattern: 0)
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1104,9 +1104,7 @@ extension Object: VariantConvertible {
 
 // MARK: - Optional<Object>
 
-extension Optional: VariantConvertible where Wrapped : Object {
-    public static var variantType: Variant.RepresentationType { .object }
-    
+extension Optional: ConvertibleToVariant where Wrapped : Object {
     public func makeVariant() -> Variant {
         switch self {
         case .none:
@@ -1115,12 +1113,14 @@ extension Optional: VariantConvertible where Wrapped : Object {
             wrapped.makeVariant()
         }
     }
-    
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+}
+
+extension Optional: ConvertibleFromVariant where Wrapped : Object {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         if variant == nil {
             nil
         } else {
-            Wrapped.fromMatchingTypeVariant(variant)
+            Wrapped.fromCompatibleVariant(variant)
         }
     }
     
@@ -1131,6 +1131,10 @@ extension Optional: VariantConvertible where Wrapped : Object {
             try Wrapped.fromVariant(variant)
         }
     }
+}
+
+extension Optional: VariantConvertible where Wrapped : Object {
+    public static var variantType: Variant.RepresentationType { .object }
 }
 
 // MARK: - Callable
@@ -1151,7 +1155,7 @@ extension Callable: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = Callable()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1182,7 +1186,7 @@ extension Signal: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = Signal()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1213,7 +1217,7 @@ extension GodotDictionary: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = GodotDictionary()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1244,7 +1248,7 @@ extension GodotArray: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = GodotArray()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1275,7 +1279,7 @@ extension PackedByteArray: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = PackedByteArray()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1306,7 +1310,7 @@ extension PackedInt32Array: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = PackedInt32Array()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1337,7 +1341,7 @@ extension PackedInt64Array: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = PackedInt64Array()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1368,7 +1372,7 @@ extension PackedFloat32Array: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = PackedFloat32Array()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1399,7 +1403,7 @@ extension PackedFloat64Array: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = PackedFloat64Array()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1430,7 +1434,7 @@ extension PackedStringArray: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = PackedStringArray()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1461,7 +1465,7 @@ extension PackedVector2Array: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = PackedVector2Array()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1492,7 +1496,7 @@ extension PackedVector3Array: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = PackedVector3Array()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1523,7 +1527,7 @@ extension PackedColorArray: VariantConvertible {
         return variant
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
         let newValue = PackedColorArray()
         
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1535,4 +1539,3 @@ extension PackedColorArray: VariantConvertible {
         return newValue
     }
 }
-

@@ -30,7 +30,7 @@ public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro
 @attached(extension, conformances: VariantConvertible, names:
     named(variantType),
     named(makeVariant),
-    named(fromMatchingTypeVariant),
+    named(fromCompatibleVariant),
     named(fromVariant),
     named(godotExposableValues)
 )
@@ -40,7 +40,7 @@ public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnu
 @attached(extension, conformances: OptionSet, VariantConvertible, names:
     named(variantType),
     named(makeVariant),
-    named(fromMatchingTypeVariant),
+    named(fromCompatibleVariant),
     named(fromVariant),
     named(godotExposableValues)
 )

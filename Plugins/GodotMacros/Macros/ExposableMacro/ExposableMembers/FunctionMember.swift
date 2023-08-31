@@ -170,7 +170,7 @@ struct FunctionMember: ExposableMember {
                             "\(parameter.firstName.trimmed):"
                         }
                         
-                        "\(parameter.type.trimmed).fromMatchingTypeVariant(Variant(godotExtensionPointer: args!.advanced(by: \(literal: index)).pointee!))"
+                        "\(parameter.type.trimmed).fromCompatibleVariant(Variant(godotExtensionPointer: args!.advanced(by: \(literal: index)).pointee!))"
                         
                         if index < parameterList.count - 1 {
                             ","

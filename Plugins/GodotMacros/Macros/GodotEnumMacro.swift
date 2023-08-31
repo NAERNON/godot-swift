@@ -65,13 +65,11 @@ public enum GodotEnumMacro: ExtensionMacro {
                 rawValue.makeVariant()
             }
             
-            public static func fromMatchingTypeVariant(_ variant: Godot.Variant) -> Self {
-                Self(rawValue: RawValue.fromMatchingTypeVariant(variant))!
+            public static func fromCompatibleVariant(_ variant: Godot.Variant) -> Self {
+                Self(rawValue: RawValue.fromCompatibleVariant(variant))!
             }
             
             public static func fromVariant(_ variant: Godot.Variant) throws -> Self {
-                try variant.checkType(Self.variantType)
-                
                 enum Error: Swift.Error {
                     case incorrectRawValue
                     
@@ -80,7 +78,8 @@ public enum GodotEnumMacro: ExtensionMacro {
                     }
                 }
                 
-                guard let value = Self(rawValue: RawValue.fromMatchingTypeVariant(variant)) else {
+                let rawValue = try RawValue.fromVariant(variant)
+                guard let value = Self(rawValue: rawValue) else {
                     throw Error.incorrectRawValue
                 }
                 

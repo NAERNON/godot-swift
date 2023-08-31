@@ -23,7 +23,7 @@ extension String: VariantConvertible {
         GodotString(swiftString: self).makeVariant()
     }
     
-    public static func fromMatchingTypeVariant(_ variant: Variant) -> Self {
-        String(godotString: GodotString.fromMatchingTypeVariant(variant))
+    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
+        String(godotString: GodotString.fromCompatibleVariant(variant))
     }
 }
