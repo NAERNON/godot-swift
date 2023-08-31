@@ -23,7 +23,7 @@ struct GodotSingleton: Decodable {
         }()
         
         public extension \(typeSyntax) {
-            public static var shared: \(typeSyntax) { _shared\(raw: name) }
+            static var shared: \(typeSyntax) { _shared\(raw: name) }
         }
         """
     }
