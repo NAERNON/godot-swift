@@ -61,6 +61,7 @@ struct GodotTranslatedFunction<Source>: GodotFunction where Source : GodotFuncti
     
     var isVararg: Bool { source.isVararg }
     var isVarargArray: Bool { source.isVarargArray }
+    var useVariantGeneric: Bool { source.useVariantGeneric }
     var isStatic: Bool { source.isStatic }
     var isConst: Bool { source.isConst }
     var isMutating: Bool { source.isMutating }

@@ -13,6 +13,7 @@ protocol GodotFunction {
     
     var isVararg: Bool { get }
     var isVarargArray: Bool { get }
+    var useVariantGeneric: Bool { get }
     var isStatic: Bool { get }
     var isConst: Bool { get }
     var isMutating: Bool { get }
@@ -23,6 +24,7 @@ protocol GodotFunction {
 extension GodotFunction {
     var isVararg: Bool { false }
     var isVarargArray: Bool { false }
+    var useVariantGeneric: Bool { false }
     var isStatic: Bool { false }
     var isConst: Bool { false }
     var isMutating: Bool { false }
@@ -33,6 +35,26 @@ extension GodotFunction {
 extension GodotFunction {
     private var varargArgumentIdentifier: String {
         "rest"
+    }
+    
+    private func genericSyntax() -> String? {
+        var genericArguments = [String]()
+        
+        if let arguments {
+            var index = 1
+            for argument in arguments {
+                if argument.type == .variant {
+                    genericArguments.append("Variant\(index) : ConvertibleToVariant")
+                    index += 1
+                }
+            }
+        }
+        
+        if genericArguments.isEmpty {
+            return nil
+        } else {
+            return genericArguments.joined(separator: ", ")
+        }
     }
     
     /// Returns the syntax for the number of arguments.
@@ -65,6 +87,14 @@ extension GodotFunction {
         functionHeader.append("func ")
         
         functionHeader.append(CodeLanguage.swift.protectNameIfKeyword(for: name))
+        
+        if useVariantGeneric,
+           let genericSyntax = genericSyntax() 
+        {
+            functionHeader.append("<\(genericSyntax)>")
+        }
+        
+        var variantArgumentIndex = 1
         functionHeader.append("(")
         functionHeader.append(arguments.map { argument in
             var parameterString = ""
@@ -77,7 +107,15 @@ extension GodotFunction {
             }
             parameterString.append(CodeLanguage.swift.protectNameIfKeyword(for: argument.name))
             parameterString.append(": ")
-            parameterString.append(argument.type.syntax(options: options))
+            
+            if useVariantGeneric,
+               argument.type == .variant
+            {
+                parameterString.append("Variant\(variantArgumentIndex)")
+                variantArgumentIndex += 1
+            } else {
+                parameterString.append(argument.type.syntax(options: options))
+            }
             
             if let defaultValue = argument.defaultValue {
                 parameterString.append(" = ")

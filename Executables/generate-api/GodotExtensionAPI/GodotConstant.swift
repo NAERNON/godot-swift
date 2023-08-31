@@ -28,6 +28,10 @@ struct GodotConstant: Decodable, Equatable {
             return type.syntax() + "()"
         }
         
+        if string == "null" && type == .variant {
+            return "Variant()"
+        }
+        
         if string == "null" {
             return "nil"
         }

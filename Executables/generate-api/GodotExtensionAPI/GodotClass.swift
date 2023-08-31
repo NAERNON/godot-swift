@@ -40,6 +40,8 @@ struct GodotClass: Decodable {
         
         var returnType: GodotType? { returnValue?.type }
         
+        var useVariantGeneric: Bool { true }
+        
         // MARK: Return value
         
         struct ReturnValue: Decodable {
@@ -269,19 +271,22 @@ struct GodotClass: Decodable {
             options: syntaxOptions,
             keywords: methodIsPrivate(method) ? .private : .public
         ) {
-            
-            // If the method is vararg, every parameter should be transformed to a variant.
             var modifiedMethod = GodotModifiedFunction(method.translated)
-            if method.isVararg,
-               var arguments = modifiedMethod.arguments
-            {
+            
+            if var arguments = modifiedMethod.arguments {
                 for (index, argument) in arguments.enumerated() {
-                    let variantName = "variant_" + argument.name
-                    
-                    let _ = arguments[index].name = variantName
-                    let _ = arguments[index].type = .variant
-                    
-                    "let \(raw: variantName) = \(raw: argument.name).makeVariant()"
+                    // If the method is vararg, every parameter should be transformed to a variant.
+                    //
+                    // Every variant parameter is actually ConvertibleToVariant generic.
+                    // Se we need to make variants out of these generic types.
+                    if method.isVararg || argument.type == .variant {
+                        let variantName = "variant_" + argument.name
+                        
+                        let _ = arguments[index].name = variantName
+                        let _ = arguments[index].type = .variant
+                        
+                        "let \(raw: variantName) = \(raw: CodeLanguage.swift.protectNameIfKeyword(for: argument.name)).makeVariant()"
+                    }
                 }
                 
                 let _ = modifiedMethod.modifiedElement = .arguments(arguments)
