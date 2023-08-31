@@ -9,6 +9,9 @@ struct APIGeneration: ParsableCommand {
     @Flag(name: .shortAndLong, help: "The generated files are not written to disk.")
     private var noWrite: Bool = false
     
+    @Flag(name: .long, help: "Only a small subset of classes are generated.")
+    private var subset: Bool = false
+    
     func run() throws {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -26,10 +29,14 @@ struct APIGeneration: ParsableCommand {
         
         let data = try Data(contentsOf: apiJsonFileURL)
         
-        let extensionAPI = try jsonDecoder.decode(GodotExtensionAPI.self, from: data)
+        var extensionAPI = try jsonDecoder.decode(GodotExtensionAPI.self, from: data)
         
         GodotType.godotClassTypes = Set(extensionAPI.classes.map { $0.name })
         GodotType.godotBuiltinClassTypes = Set(extensionAPI.builtinClassesToGenerate().map { $0.name })
+        
+        if subset {
+            extensionAPI = extensionAPI.subset()
+        }
         
         // MARK: Generate files
         
