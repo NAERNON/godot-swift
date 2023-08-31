@@ -2,16 +2,20 @@
 /// A type that can connect to a receiver for handling signals.
 ///
 /// Do not conform to this protocol yourself.
-/// Instead, use the ``Emitter`` macro.
+/// Instead, use the ``Emitter(signal:args:)`` macro.
 public protocol EmitterProtocol {
+    /// The type of data the signal transmits.
     associatedtype SignalInput
     
+    /// The object sending the signal.
     var object: Object? { get }
     
+    /// The signal name.
     static var signalName: GodotStringName { get }
 }
 
 public extension EmitterProtocol {
+    /// Connects the given receiver to the receiver.
     @discardableResult
     func connect<Input>(_ receiver: Input, flags: Object.ConnectFlags? = nil) -> ErrorType
     where Input : ReceiverProtocol, Input.SignalInput == SignalInput
@@ -35,6 +39,7 @@ public extension EmitterProtocol {
         }
     }
     
+    /// Disconnects the given receiver to the receiver.
     func disconnect<Input>(_ receiver: Input)
     where Input : ReceiverProtocol, Input.SignalInput == SignalInput
     {
@@ -48,6 +53,8 @@ public extension EmitterProtocol {
         )
     }
     
+    /// Returns a Boolean value indicating whether the reveicer
+    /// is connected to the receiver.
     func isConnected<Input>(to receiver: Input) -> Bool
     where Input : ReceiverProtocol, Input.SignalInput == SignalInput
     {

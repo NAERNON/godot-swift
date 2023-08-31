@@ -22,10 +22,11 @@ private let protectedStrings: Set<String> = [
 ]
 
 public extension CodeLanguage {
-    /// Returns a `String` value where the given `String` doesn't collide with the compiler.
+    /// Returns a `String` value where the given
+    /// `String` doesn't collide with the compiler.
     ///
-    /// In Swift, the following string ``"continue"`` would return ``"`continue`"``,
-    /// because `continue` is already a keyword.
+    /// This method adds quote marks around the String
+    /// is necessary.
     func protectNameIfKeyword(for string: String) -> String {
         guard self == .swift else {
             return string

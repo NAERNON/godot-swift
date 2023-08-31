@@ -2,9 +2,6 @@
 /// A representation of Godot builtin class sizes.
 ///
 /// It can be decoded from the `extension_api.json` file.
-///
-/// Use the ``size(ofClass:for:)`` function to retreive the size
-/// of a specific class.
 struct GodotBuiltinClassMemberOffsets: Decodable {
     var members: [BuildConfiguration : [GodotType : [Member]]]
     
