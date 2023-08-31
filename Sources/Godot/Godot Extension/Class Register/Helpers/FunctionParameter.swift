@@ -26,8 +26,8 @@ extension ClassRegister {
         private init<Value>(
             type: Value.Type,
             name: GodotStringName,
-            defaultValue: Value? = nil,
-            className: GodotStringName = .init()
+            defaultValue: Value?,
+            className: GodotStringName
         ) where Value : VariantConvertible {
             self.variantType = type.variantType
             self.name = name
@@ -35,7 +35,7 @@ extension ClassRegister {
             self.className = className
         }
         
-        /// Creates a new `FunctionParameter` used as a function argument.
+        /// Creates a new FunctionParameter used as a function argument.
         ///
         /// - Parameters:
         ///   - type: The type of the parameter.
@@ -47,49 +47,40 @@ extension ClassRegister {
             defaultValue: Value? = nil
         ) -> FunctionParameter
         where Value : VariantConvertible {
-            .init(type: type, name: name, defaultValue: defaultValue)
+            FunctionParameter(
+                type: type,
+                name: name,
+                defaultValue: defaultValue,
+                className: Value.__className
+            )
         }
         
-        /// Creates a new `FunctionParameter` used as a function argument.
-        ///
-        /// - Parameters:
-        ///   - type: The type of the parameter.
-        ///   - name: The name of the parameter.
-        public static func argument<Value>(
-            _ type: Value.Type,
-            name: GodotStringName
-        ) -> FunctionParameter
-        where Value : Object {
-            .init(type: type, name: name, className: type.__className)
-        }
-        
-        /// Creates a new `FunctionParameter` used as a function return type.
+        /// Creates a new FunctionParameter used as a function return type.
         ///
         /// - Parameter type: The type of the parameter.
         public static func returnParameter<Value>(_ type: Value.Type) -> FunctionParameter
         where Value : VariantConvertible {
-            .init(type: type, name: .init())
-        }
-        
-        /// Creates a new `FunctionParameter` used as a function return type.
-        ///
-        /// - Parameter type: The type of the parameter.
-        public static func returnParameter<Value>(_ type: Value.Type) -> FunctionParameter
-        where Value : Object {
-            .init(type: type, name: .init(), className: type.__className)
+            FunctionParameter(
+                type: type,
+                name: .init(),
+                defaultValue: nil,
+                className: Value.__className
+            )
         }
         
         // MARK: PropertyInfo
         
         /// Creates a `PropertyInfo` using the information of the parameter.
         var propertyInfo: ClassRegister.PropertyInfo {
-            .init(variantType: variantType,
-                  name: name,
-                  defaultValue: defaultValue,
-                  hint: .none,
-                  hintString: .init(),
-                  usageFlags: .default,
-                  className: className)
+            ClassRegister.PropertyInfo(
+                variantType: variantType,
+                name: name,
+                defaultValue: defaultValue,
+                hint: .none,
+                hintString: .init(),
+                usageFlags: .default,
+                className: className
+            )
         }
     }
 }

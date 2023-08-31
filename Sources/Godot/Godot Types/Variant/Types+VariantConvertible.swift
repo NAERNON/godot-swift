@@ -1135,6 +1135,7 @@ extension Optional: ConvertibleFromVariant where Wrapped : Object {
 
 extension Optional: VariantConvertible where Wrapped : Object {
     public static var variantType: Variant.RepresentationType { .object }
+    public static var __className: GodotStringName { Wrapped.__className }
 }
 
 // MARK: - Callable
