@@ -43,7 +43,7 @@ struct GodotClass: Decodable {
         private var prefersStandardCall: Bool?
         private var usesStandardCall: Bool { isVararg == true || prefersStandardCall == true }
         
-        var usesVariantGeneric: Bool { true }
+        var usesVariantGeneric: Bool { !isVirtual }
         var convertsAllParameterToVariant: Bool { usesStandardCall }
         
         func nonVararg() -> Method {
