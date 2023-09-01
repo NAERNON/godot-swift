@@ -2,6 +2,15 @@
 
 A library for interacting with Godot using Swift code.
 
+@Metadata {
+    @PageImage(
+        purpose: icon,
+        source: "godot-swift_logo",
+        alt: "A technology icon representing Godot Swift"
+    )
+    @PageColor(blue)
+}
+
 ## Overview
 
 Godot Swift is a set of tool enabling Swift code to be accessible from the Godot editor.
