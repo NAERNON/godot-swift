@@ -34,12 +34,8 @@ public struct Color {
     
     // MARK: Operators
     
-    public static func == (lhs: Color, rhs: Variant) -> Bool {
+    public static func == (lhs: Color, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: Color) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static func * <T>(lhs: Color, rhs: T) -> Color where T : BinaryInteger {

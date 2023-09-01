@@ -26,12 +26,8 @@ public struct Signal {
     
     // MARK: Operators
     
-    public static func == (lhs: Signal, rhs: Variant) -> Bool {
+    public static func == (lhs: Signal, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: Signal) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     // MARK: Methods & variables

@@ -48,12 +48,8 @@ public struct GodotString {
     
     // MARK: Operators
     
-    public static func == (lhs: GodotString, rhs: Variant) -> Bool {
+    public static func == (lhs: GodotString, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: GodotString) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static func + (lhs: GodotString, rhs: GodotString) -> GodotString {

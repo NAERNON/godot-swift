@@ -42,12 +42,8 @@ public struct Projection {
     
     // MARK: Operators
     
-    public static func == (lhs: Projection, rhs: Variant) -> Bool {
+    public static func == (lhs: Projection, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: Projection) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static func * (lhs: Projection, rhs: Vector4) -> Vector4 {

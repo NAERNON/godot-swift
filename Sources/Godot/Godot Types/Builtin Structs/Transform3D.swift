@@ -42,12 +42,8 @@ public struct Transform3D {
     
     // MARK: Operators
     
-    public static func == (lhs: Transform3D, rhs: Variant) -> Bool {
+    public static func == (lhs: Transform3D, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: Transform3D) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static func * <T>(lhs: Transform3D, rhs: T) -> Transform3D where T : BinaryInteger {

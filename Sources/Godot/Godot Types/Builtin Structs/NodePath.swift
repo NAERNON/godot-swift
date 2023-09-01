@@ -26,12 +26,8 @@ public struct NodePath {
         
     // MARK: Operators
     
-    public static func == (lhs: NodePath, rhs: Variant) -> Bool {
+    public static func == (lhs: NodePath, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: NodePath) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     // MARK: Methods & variables

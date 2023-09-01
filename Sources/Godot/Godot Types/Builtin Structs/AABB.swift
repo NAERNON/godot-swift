@@ -14,12 +14,8 @@ public struct AABB {
     
     // MARK: Operators
     
-    public static func == (lhs: AABB, rhs: Variant) -> Bool {
+    public static func == (lhs: AABB, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: AABB) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static func * (lhs: AABB, rhs: Transform3D) -> AABB {

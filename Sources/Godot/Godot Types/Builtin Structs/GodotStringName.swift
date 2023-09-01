@@ -47,12 +47,8 @@ public struct GodotStringName {
     
     // MARK: Operators
     
-    public static func == (lhs: GodotStringName, rhs: Variant) -> Bool {
+    public static func == (lhs: GodotStringName, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: GodotStringName) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static func == (lhs: GodotStringName, rhs: GodotString) -> Bool {

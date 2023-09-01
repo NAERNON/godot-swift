@@ -32,12 +32,8 @@ public struct PackedByteArray {
     
     // MARK: Operators
     
-    public static func == (lhs: PackedByteArray, rhs: Variant) -> Bool {
+    public static func == (lhs: PackedByteArray, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: PackedByteArray) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     // MARK: Methods & variables

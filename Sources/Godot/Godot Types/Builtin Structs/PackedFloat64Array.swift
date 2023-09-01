@@ -26,12 +26,8 @@ public struct PackedFloat64Array {
     
     // MARK: Operators
     
-    public static func == (lhs: PackedFloat64Array, rhs: Variant) -> Bool {
+    public static func == (lhs: PackedFloat64Array, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: PackedFloat64Array) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     // MARK: Methods & variables

@@ -22,12 +22,8 @@ public struct RID {
     
     // MARK: Operators
     
-    public static func == (lhs: RID, rhs: Variant) -> Bool {
+    public static func == (lhs: RID, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: RID) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     // MARK: Methods & variables

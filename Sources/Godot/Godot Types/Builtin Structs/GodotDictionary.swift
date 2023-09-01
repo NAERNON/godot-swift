@@ -22,12 +22,8 @@ public struct GodotDictionary {
     
     // MARK: Operators
     
-    public static func == (lhs: GodotDictionary, rhs: Variant) -> Bool {
+    public static func == (lhs: GodotDictionary, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: GodotDictionary) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public subscript(key: Variant) -> Variant {

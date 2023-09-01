@@ -26,12 +26,8 @@ public struct Callable {
     
     // MARK: Operators
     
-    public static func == (lhs: Callable, rhs: Variant) -> Bool {
+    public static func == (lhs: Callable, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: Callable) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     // MARK: Methods & variables

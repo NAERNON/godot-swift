@@ -36,12 +36,8 @@ public struct Basis {
     
     // MARK: Operators
     
-    public static func == (lhs: Basis, rhs: Variant) -> Bool {
+    public static func == (lhs: Basis, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: Basis) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static func * <T>(lhs: Basis, rhs: T) -> Basis where T : BinaryInteger {

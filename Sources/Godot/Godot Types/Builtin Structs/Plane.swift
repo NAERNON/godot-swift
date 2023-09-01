@@ -46,12 +46,8 @@ public struct Plane {
     
     // MARK: Operators
     
-    public static func == (lhs: Plane, rhs: Variant) -> Bool {
+    public static func == (lhs: Plane, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: Plane) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static prefix func - (plane: Plane) -> Plane {

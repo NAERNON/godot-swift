@@ -330,6 +330,7 @@ struct GodotBuiltinClass: Decodable {
     @MemberBlockItemListBuilder
     private func operatorSyntax(_ `operator`: Operator) throws -> MemberBlockItemListSyntax {
         let operatorFunction = OperatorFunction(operator: `operator`, type: name)
+            .withVariantStorageReturnType
             .translated
         
         """
@@ -584,4 +585,6 @@ private struct OperatorFunction: GodotFunction {
             return [lhsArgument]
         }
     }
+    
+    var usesVariantGeneric: Bool { true }
 }

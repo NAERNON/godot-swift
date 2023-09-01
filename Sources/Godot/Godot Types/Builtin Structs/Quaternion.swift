@@ -42,12 +42,8 @@ public struct Quaternion {
     
     // MARK: Operators
     
-    public static func == (lhs: Quaternion, rhs: Variant) -> Bool {
+    public static func == (lhs: Quaternion, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: Quaternion) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static prefix func - (quaternion: Quaternion) -> Quaternion {

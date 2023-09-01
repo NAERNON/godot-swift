@@ -58,12 +58,8 @@ public struct Transform2D {
     
     // MARK: Operators
     
-    public static func == (lhs: Transform2D, rhs: Variant) -> Bool {
+    public static func == (lhs: Transform2D, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: Transform2D) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static func * <T>(lhs: Transform2D, rhs: T) -> Transform2D where T : BinaryInteger {

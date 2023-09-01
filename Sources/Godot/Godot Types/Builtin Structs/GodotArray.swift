@@ -58,12 +58,8 @@ public struct GodotArray {
     
     // MARK: Operators
     
-    public static func == (lhs: GodotArray, rhs: Variant) -> Bool {
+    public static func == (lhs: GodotArray, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: GodotArray) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
 }
 

@@ -28,12 +28,8 @@ public struct Rect2 {
     
     // MARK: Operators
     
-    public static func == (lhs: Rect2, rhs: Variant) -> Bool {
+    public static func == (lhs: Rect2, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: Rect2) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static func * (lhs: Rect2, rhs: Transform2D) -> Rect2 {

@@ -28,12 +28,8 @@ public struct Vector3i {
     
     // MARK: Operators
     
-    public static func == (lhs: Vector3i, rhs: Variant) -> Bool {
+    public static func == (lhs: Vector3i, rhs: some ConvertibleToVariant) -> Bool {
         Self._operatorEqual(lhs, rhs)
-    }
-    
-    public static func == (lhs: Variant, rhs: Vector3i) -> Bool {
-        Self._operatorEqual(rhs, lhs)
     }
     
     public static prefix func - (vector3i: Vector3i) -> Vector3i {
