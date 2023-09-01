@@ -1,0 +1,13 @@
+//
+// THIS FILE IS GENERATED. EDITS WILL BE LOST.
+//
+
+public struct PhysicsServer3DExtensionMotionResult {
+    public var travel: Vector3
+    public var remainder: Vector3
+    public var collisionDepth: Real
+    public var collisionSafeFraction: Real
+    public var collisionUnsafeFraction: Real
+    public var collisions: (PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision, PhysicsServer3DExtensionMotionCollision)
+    public var collisionCount: Int
+}
