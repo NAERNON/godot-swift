@@ -143,7 +143,7 @@ extension CodeLanguage {
         
         let translatedName = NamingConvention.snake.recompose(nameDecomposition)
         let translatedParameters = parameters.map { parameter in
-            FunctionParameter(name: NamingConvention.camel.convert(parameter.name, to: .snake),
+            FunctionParameter(name: parameter.name.translated(from: .camel, to: .snake),
                               label: nil,
                               isLabelHidden: false)
         }

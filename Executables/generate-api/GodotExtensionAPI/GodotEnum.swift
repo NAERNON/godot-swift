@@ -1,5 +1,5 @@
 import Foundation
-import CodeTranslator
+import Utils
 import SwiftSyntax
 import SwiftSyntaxBuilder
 
@@ -55,7 +55,7 @@ struct GodotEnum: Decodable {
         
         var cases = [Case<T>]()
         for i in 0..<values.count {
-            let translatedCase = CodeLanguage.swift.protectNameIfKeyword(for: translatedEnum.cases[i])
+            let translatedCase = backticksKeyword(translatedEnum.cases[i])
             cases.append(.init(name: translatedCase, value: T(values[i].value)))
         }
         

@@ -1,7 +1,7 @@
 import Foundation
 import SwiftSyntax
 import SwiftSyntaxBuilder
-import CodeTranslator
+import Utils
 
 /// A representation of a Godot type.
 ///
@@ -670,7 +670,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let pointerName = "__ptr_" + instanceName
-        let instanceName = caller ?? CodeLanguage.swift.protectNameIfKeyword(for: instanceName)
+        let instanceName = caller ?? backticksKeyword(instanceName)
         
         if isGodotClass || isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
             let closure = try ClosureExprSyntax(

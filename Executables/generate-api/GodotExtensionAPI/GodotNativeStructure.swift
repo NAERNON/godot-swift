@@ -1,6 +1,6 @@
 import SwiftSyntax
 import SwiftSyntaxBuilder
-import CodeTranslator
+import Utils
 
 /// A representation of a Godot native structure.
 ///
@@ -57,9 +57,7 @@ extension GodotNativeStructure {
             }
             
             var propertyDecl: DeclSyntax {
-                let translatedName = CodeLanguage.swift.protectNameIfKeyword(
-                    for: NamingConvention.snake.convert(name, to: .camel)
-                )
+                let translatedName = backticksKeyword(name.translated(from: .snake, to: .camel))
                 var varString = "public var \(translatedName): \(type.removeGodotClassPointers.syntax(options: .floatAsDouble))"
                 if let defaultValue {
                     varString += " = " + defaultValue.syntax(forType: type)

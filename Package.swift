@@ -36,9 +36,9 @@ let package = Package(
         // MARK: Utils targets
         
         .target(
-            name: "CodeTranslator",
+            name: "Utils",
             dependencies: [],
-            path: "Utils/CodeTranslator"
+            path: "Utils"
         ),
         
         // MARK: Executable targets
@@ -46,7 +46,7 @@ let package = Package(
         .executableTarget(
             name: "generate-api",
             dependencies: [
-                "CodeTranslator",
+                "Utils",
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
                 .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
             ],
@@ -58,7 +58,7 @@ let package = Package(
         .macro(
             name: "GodotMacros",
             dependencies: [
-                "CodeTranslator",
+                "Utils",
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
             ],

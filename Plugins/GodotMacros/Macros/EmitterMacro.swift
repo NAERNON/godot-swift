@@ -2,7 +2,7 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
-import CodeTranslator
+import Utils
 import Foundation
 
 private let authorizedCharacters = CharacterSet.alphanumerics.union(.init(charactersIn: "_"))
@@ -68,7 +68,7 @@ public enum EmitterMacro: MemberMacro, PeerMacro, ExtensionMacro {
         }
         
         let structName = structDecl.name.trimmedDescription
-        let signalName = macroArguments.signal ?? NamingConvention.pascal.convert(structName, to: .snake)
+        let signalName = macroArguments.signal ?? structName.translated(from: .pascal, to: .snake)
         
         let propertiesDecl: DeclSyntax = """
         public typealias SignalInput = (\(raw: macroArguments.params.map { $0.type }.joined(separator: ", ")))
@@ -86,7 +86,7 @@ public enum EmitterMacro: MemberMacro, PeerMacro, ExtensionMacro {
             .map { $0.name + ": " + $0.type }
             .joined(separator: ", ")
         let parametersCallString = macroArguments.params
-            .map { CodeLanguage.swift.protectNameIfKeyword(for: $0.name) }
+            .map { backticksKeyword($0.name) }
             .joined(separator: ", ")
         
         let emitFunctionDecl = try FunctionDeclSyntax("public func emit(\(raw: parametersString))") {

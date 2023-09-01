@@ -1,4 +1,3 @@
-import CodeTranslator
 
 enum GodotModifiedFunctionElement {
     case name(String)

@@ -1,7 +1,7 @@
 import SwiftSyntax
 import SwiftDiagnostics
 import SwiftSyntaxMacros
-import CodeTranslator
+import Utils
 
 struct FunctionOverrideMember: ExposableMember {
     let functionDeclSyntax: FunctionDeclSyntax

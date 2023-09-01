@@ -2,7 +2,7 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
-import CodeTranslator
+import Utils
 import Foundation
 
 public enum ReceiverMacro: PeerMacro {
@@ -73,6 +73,6 @@ public enum ReceiverMacro: PeerMacro {
     }
     
     static func translatedFunctionName(_ functionDecl: FunctionDeclSyntax) -> String {
-        NamingConvention.camel.convert(functionDecl.name.trimmedDescription, to: .snake)
+        functionDecl.name.trimmedDescription.translated(from: .camel, to: .snake)
     }
 }

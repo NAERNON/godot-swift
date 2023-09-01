@@ -1,7 +1,7 @@
 import SwiftSyntax
 import SwiftDiagnostics
 import SwiftSyntaxMacros
-import CodeTranslator
+import Utils
 
 struct FunctionMember: ExposableMember {
     let functionDeclSyntax: FunctionDeclSyntax
@@ -105,7 +105,7 @@ struct FunctionMember: ExposableMember {
         let parameters = functionDeclSyntax.signature.parameterClause.parameters.enumerated().map
         { (index, parameter) in
             let name = parameter.secondName?.trimmedDescription ?? parameter.firstName.trimmedDescription
-            let translatedName = NamingConvention.camel.convert(name, to: .snake)
+            let translatedName = name.translated(from: .camel, to: .snake)
             if index >= parametersCount - consecutiveLastDefaultValues.count {
                 let defaultValueIndex = index - parametersCount + consecutiveLastDefaultValues.count
                 return """

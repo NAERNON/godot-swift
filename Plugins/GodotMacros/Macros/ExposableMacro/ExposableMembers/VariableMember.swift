@@ -1,7 +1,7 @@
 import SwiftSyntax
 import SwiftDiagnostics
 import SwiftSyntaxMacros
-import CodeTranslator
+import Utils
 
 struct VariableMember: ExposableMember {
     let variableDeclSyntax: VariableDeclSyntax
@@ -118,7 +118,7 @@ struct VariableMember: ExposableMember {
         Unmanaged<\(raw: classContext.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue().\(raw: variableBinding.pattern.trimmedDescription) = \(variableType.trimmed).fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
         """
         
-        let variableName = NamingConvention.camel.convert(variableBinding.pattern.trimmedDescription, to: .snake)
+        let variableName = variableBinding.pattern.trimmedDescription.translated(from: .camel, to: .snake)
         let getterName = "get_" + variableName
         let setterName = "set_" + variableName
         

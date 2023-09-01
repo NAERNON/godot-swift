@@ -1,7 +1,7 @@
 import SwiftSyntax
 import SwiftDiagnostics
 import SwiftSyntaxMacros
-import CodeTranslator
+import Utils
 
 struct EmitterMember: ExposableMember {
     let structDeclSyntax: StructDeclSyntax
@@ -49,7 +49,7 @@ struct EmitterMember: ExposableMember {
         
         let parameters = macroArguments.params.map {
             """
-            .argument(\($0.type).self, name: "\(NamingConvention.camel.convert($0.name, to: .snake))"),
+            .argument(\($0.type).self, name: "\($0.name.translated(from: .camel, to: .snake))"),
             """
         }
         

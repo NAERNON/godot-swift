@@ -1,6 +1,6 @@
 import SwiftSyntax
 import SwiftSyntaxBuilder
-import CodeTranslator
+import Utils
 
 /// A protocol representing a Godot function.
 ///
@@ -99,7 +99,7 @@ extension GodotFunction {
         
         functionHeader.append("func ")
         
-        functionHeader.append(CodeLanguage.swift.protectNameIfKeyword(for: name))
+        functionHeader.append(backticksKeyword(name))
         
         if usesVariantGeneric,
            let genericSyntax = genericSyntax() 
@@ -118,7 +118,7 @@ extension GodotFunction {
                 parameterString.append(label)
                 parameterString.append(" ")
             }
-            parameterString.append(CodeLanguage.swift.protectNameIfKeyword(for: argument.name))
+            parameterString.append(backticksKeyword(argument.name))
             parameterString.append(": ")
             
             if usesVariantGeneric,
@@ -295,7 +295,7 @@ extension GodotFunction {
         if let index = indexes.first {
             let argument = arguments![index]
             var argumentType = argument.type
-            var caller = CodeLanguage.swift.protectNameIfKeyword(for: argument.name)
+            var caller = backticksKeyword(argument.name)
             
             if convertsAllParameterToVariant || (usesVariantGeneric && argument.type == .variant) {
                 let _ = caller = "\(caller).makeVariant()"
@@ -329,7 +329,7 @@ extension GodotFunction {
             }
         }
         
-        let functionName = CodeLanguage.swift.protectNameIfKeyword(for: name)
+        let functionName = backticksKeyword(name)
         
         let exprSyntax = if parameterStrings.isEmpty {
             ExprSyntax("\(raw: functionName)()")

@@ -1,4 +1,4 @@
-import CodeTranslator
+import Utils
 
 struct GodotTranslatedFunction<Source>: GodotFunction where Source : GodotFunction {
     let source: Source

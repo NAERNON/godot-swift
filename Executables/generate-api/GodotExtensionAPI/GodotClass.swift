@@ -1,6 +1,6 @@
 import SwiftSyntax
 import SwiftSyntaxBuilder
-import CodeTranslator
+import Utils
 
 /// A representation of a Godot class.
 ///
@@ -197,12 +197,12 @@ struct GodotClass: Decodable {
     
     @MemberBlockItemListBuilder
     func signalSyntax(_ signal: Signal) throws -> MemberBlockItemListSyntax {
-        let structName = NamingConvention.snake.convert(signal.name, to: .pascal)
+        let structName = signal.name.translated(from: .snake, to: .pascal)
         
         if let arguments = signal.arguments {
             let translatedParameters: [GodotArgument] = arguments.map { argument in
                 var new = argument
-                new.name = NamingConvention.snake.convert(argument.name, to: .camel)
+                new.name = argument.name.translated(from: .snake, to: .camel)
                 return new
             }
             
@@ -424,9 +424,7 @@ struct GodotClass: Decodable {
             propertyName = property.getter
         }
         
-        propertyName = CodeLanguage.swift.protectNameIfKeyword(
-            for: NamingConvention.snake.convert(propertyName, to: .camel)
-        )
+        propertyName = backticksKeyword(propertyName.translated(from: .snake, to: .camel))
         
         let getterParameter: String?
         if let index = property.index,

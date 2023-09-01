@@ -2,7 +2,7 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
-import CodeTranslator
+import Utils
 
 public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
     public static func expansion(
@@ -44,13 +44,11 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
             try FunctionDeclSyntax("public static func godotExposableValues() -> [(Godot.GodotStringName, Int64)]") {
                 "["
                 for caseName in cases {
-                    let snakeEnumName = NamingConvention.pascal.convert(
-                        structDecl.name.trimmedDescription, to: .snake
-                    )
+                    let snakeEnumName = structDecl.name.trimmedDescription
+                        .translated(from: .pascal, to: .snake)
                     
-                    let snakeCaseName = NamingConvention.pascal.convert(
-                        caseName, to: .snake
-                    )
+                    let snakeCaseName = caseName
+                        .translated(from: .pascal, to: .snake)
                     
                     let translatedCaseName = (snakeEnumName + "_" + snakeCaseName).uppercased()
                     

@@ -1,6 +1,6 @@
 import SwiftSyntax
 import SwiftSyntaxBuilder
-import CodeTranslator
+import Utils
 
 /// A representation of a Godot builtin class.
 ///
@@ -203,7 +203,7 @@ struct GodotBuiltinClass: Decodable {
     func constantsSyntax() -> MemberBlockItemListSyntax {
         if let constants {
             for constant in constants {
-                let name = NamingConvention.snake.convert(constant.name.lowercased(), to: .camel)
+                let name = constant.name.lowercased().translated(from: .snake, to: .camel)
                 
                 "public static let \(raw: name): \(raw: constant.type.syntax()) = \(raw: constant.value.syntax(forType: constant.type))"
             }
