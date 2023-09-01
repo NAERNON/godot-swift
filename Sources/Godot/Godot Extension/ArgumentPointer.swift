@@ -28,7 +28,7 @@ func withUnsafeArgumentPackPointer<each VariantRest : ConvertibleToVariant>(
     body: (Int, UnsafeMutablePointer<GDExtensionConstTypePtr?>) -> Void
 ) {
     var varargsArray = [Variant]()
-    repeat varargsArray.append((each varargs).makeVariant())
+    repeat varargsArray.append(Variant(each varargs))
     
     withUnsafeVarargArgumentPointers(to: varargsArray) { variantPointers in
         withUnsafeArgumentPackPointer(pointers, varargsPointers: variantPointers, body: body)

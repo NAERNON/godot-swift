@@ -61,15 +61,15 @@ public enum GodotEnumMacro: ExtensionMacro {
             """
             public static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
-            public func makeVariant() -> Godot.Variant {
+            public func makeVariant() -> Godot.Variant.Storage {
                 rawValue.makeVariant()
             }
             
-            public static func fromCompatibleVariant(_ variant: Godot.Variant) -> Self {
+            public static func fromCompatibleVariant(_ variant: borrowing Godot.Variant.Storage) -> Self {
                 Self(rawValue: RawValue.fromCompatibleVariant(variant))!
             }
             
-            public static func fromVariant(_ variant: Godot.Variant) throws -> Self {
+            public static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
                 enum Error: Swift.Error {
                     case incorrectRawValue
                     

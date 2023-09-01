@@ -32,10 +32,10 @@ public struct GodotDictionary {
     
     public subscript(key: Variant) -> Variant {
         get {
-            self._getValue(forKey: key)
+            Variant(self._getValue(forKey: key.storage))
         }
         set(newValue) {
-            self._set(value: newValue, forKey: key)
+            self._set(value: newValue.storage, forKey: key.storage)
         }
     }
     

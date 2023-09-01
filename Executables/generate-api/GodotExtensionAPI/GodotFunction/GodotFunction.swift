@@ -299,7 +299,7 @@ extension GodotFunction {
             
             if convertsAllParameterToVariant || (usesVariantGeneric && argument.type == .variant) {
                 let _ = caller = "\(caller).makeVariant()"
-                let _ = argumentType = .variant
+                let _ = argumentType = .variantStorage
             }
             
             try argumentType.argumentPointerAccessSyntax(

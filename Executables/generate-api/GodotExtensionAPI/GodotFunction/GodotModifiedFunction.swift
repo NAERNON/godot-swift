@@ -3,6 +3,7 @@ import CodeTranslator
 enum GodotModifiedFunctionElement {
     case name(String)
     case arguments([GodotArgument]?)
+    case returnType(GodotType?)
     case none
 }
 
@@ -34,7 +35,12 @@ struct GodotModifiedFunction<Source>: GodotFunction where Source : GodotFunction
     }
     
     var returnType: GodotType? {
-        source.returnType
+        switch modifiedElement {
+        case .returnType(let returnType):
+            returnType
+        default:
+            source.returnType
+        }
     }
     
     var isVararg: Bool { 
@@ -69,5 +75,13 @@ extension GodotFunction {
     
     func withArguments(_ arguments: [GodotArgument]?) -> GodotModifiedFunction<Self> {
         GodotModifiedFunction(self, modifiedElement: .arguments(arguments))
+    }
+    
+    func withReturnType(_ returnType: GodotType?) -> GodotModifiedFunction<Self> {
+        GodotModifiedFunction(self, modifiedElement: .returnType(returnType))
+    }
+    
+    var withVariantStorageReturnType: GodotModifiedFunction<Self> {
+        GodotModifiedFunction(self, modifiedElement: .returnType(returnType?.storage))
     }
 }

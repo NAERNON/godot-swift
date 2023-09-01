@@ -77,11 +77,11 @@ public enum GodotTypedArrayVariantConversionError: Error {
 extension GodotTypedArray: VariantConvertible {
     public static var variantType: Variant.RepresentationType { GodotArray.variantType }
     
-    public func makeVariant() -> Variant {
+    public func makeVariant() -> Variant.Storage {
         underlyingArray.makeVariant()
     }
     
-    public static func fromVariant(_ variant: Variant) throws -> GodotTypedArray<Element> {
+    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> GodotTypedArray<Element> {
         let underlyingArray = try GodotArray.fromVariant(variant)
         
         guard underlyingArray._isTyped() else {
@@ -107,7 +107,7 @@ extension GodotTypedArray: VariantConvertible {
         return GodotTypedArray(underlyingArray: underlyingArray)
     }
     
-    public static func fromCompatibleVariant(_ variant: Variant) -> GodotTypedArray<Element> {
+    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> GodotTypedArray<Element> {
         GodotTypedArray(underlyingArray: GodotArray.fromCompatibleVariant(variant))
     }
 }
@@ -147,10 +147,10 @@ extension GodotTypedArray: RandomAccessCollection {}
 extension GodotTypedArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Element {
         get {
-            Element.fromCompatibleVariant(underlyingArray[index])
+            Element.fromCompatibleVariant(underlyingArray._getValue(at: GDExtensionInt(index)))
         }
         set(newValue) {
-            underlyingArray[index] = newValue.makeVariant()
+            underlyingArray._setValue(newValue.makeVariant(), at: GDExtensionInt(index))
         }
     }
     
@@ -161,7 +161,7 @@ extension GodotTypedArray: RangeReplaceableCollection {
             if collectionIndex + subrange.lowerBound < subrange.upperBound {
                 self[rangeIndex] = element
             } else {
-                underlyingArray.insert(element.makeVariant(), at: rangeIndex)
+                underlyingArray._insert(position: rangeIndex, value: element)
             }
             rangeIndex += 1
         }

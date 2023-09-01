@@ -19,11 +19,11 @@ extension String {
 extension String: VariantConvertible {
     public static let variantType: Variant.RepresentationType = GodotString.variantType
     
-    public func makeVariant() -> Variant {
+    public func makeVariant() -> Variant.Storage {
         GodotString(swiftString: self).makeVariant()
     }
     
-    public static func fromCompatibleVariant(_ variant: Variant) -> Self {
+    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
         String(godotString: GodotString.fromCompatibleVariant(variant))
     }
 }

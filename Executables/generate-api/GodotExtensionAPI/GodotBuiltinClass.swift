@@ -365,6 +365,9 @@ struct GodotBuiltinClass: Decodable {
     @MemberBlockItemListBuilder
     func getterSetterSyntax() throws -> MemberBlockItemListSyntax {
         if let indexingReturnType, !isKeyed {
+            let borrows = indexingReturnType == .variant
+            let indexingReturnType = indexingReturnType.storage
+            
             """
             private static var __indexed_setter: GDExtensionPtrIndexedSetter = {
                 return gdextension_interface_variant_get_ptr_indexed_setter(\(raw: name.variantType!))!
@@ -388,7 +391,7 @@ struct GodotBuiltinClass: Decodable {
                 }
             }
             
-            try FunctionDeclSyntax("mutating internal func _setValue(_ value: \(raw: indexingReturnType.syntax(options: syntaxOptions)), at index: GDExtensionInt)") {
+            try FunctionDeclSyntax("mutating internal func _setValue(_ value: \(raw: borrows ? "borrowing " : "")\(raw: indexingReturnType.syntax(options: syntaxOptions)), at index: GDExtensionInt)") {
                 if useOpaque {
                     "replaceOpaqueValueIfNecessary()"
                 }
@@ -416,8 +419,8 @@ struct GodotBuiltinClass: Decodable {
             private static var __keyed_setter: GDExtensionPtrKeyedSetter = {
                 return gdextension_interface_variant_get_ptr_keyed_setter(\(raw: name.variantType!))!
             }()
-            internal func _getValue(forKey key: Variant) -> Variant {
-                let __returnValue = Variant()
+            internal func _getValue(forKey key: borrowing Variant.Storage) -> Variant.Storage {
+                let __returnValue = Variant.Storage()
                 
                 __returnValue.withUnsafeRawPointer { __ptr___returnValue in
                     key.withUnsafeRawPointer { __ptr_key in
@@ -433,7 +436,7 @@ struct GodotBuiltinClass: Decodable {
             private static var __keyed_getter: GDExtensionPtrKeyedGetter = {
                 return gdextension_interface_variant_get_ptr_keyed_getter(\(raw: name.variantType!))!
             }()
-            internal mutating func _set(value: Variant, forKey key: Variant) {
+            internal mutating func _set(value: borrowing Variant.Storage, forKey key: borrowing Variant.Storage) {
                 replaceOpaqueValueIfNecessary()
                 
                 value.withUnsafeRawPointer { __ptr_value in
@@ -448,7 +451,7 @@ struct GodotBuiltinClass: Decodable {
             private static var __keyed_checker: GDExtensionPtrKeyedChecker = {
                 return gdextension_interface_variant_get_ptr_keyed_checker(\(raw: name.variantType!))!
             }()
-            internal func _check(key: Variant) -> Bool {
+            internal func _check(key: borrowing Variant.Storage) -> Bool {
                 var keyCheck = UInt32()
                 
                 key.withUnsafeRawPointer { __ptr_key in
@@ -484,7 +487,7 @@ struct GodotBuiltinClass: Decodable {
         """
         
         let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
-        let translatedMethod = method.translated
+        let translatedMethod = method.withVariantStorageReturnType.translated
         let functionDecl = try translatedMethod.withNamePrefixed(by: "_").declSyntax(
             options: syntaxOptions,
             keywords: .internal

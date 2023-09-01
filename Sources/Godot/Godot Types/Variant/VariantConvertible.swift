@@ -3,13 +3,13 @@ import GodotExtensionHeaders
 /// A type that can be converted to a variant.
 public protocol ConvertibleToVariant {
     /// A variant representation of this instance.
-    func makeVariant() -> Variant
+    func makeVariant() -> Variant.Storage
 }
 
 /// A type that can be converted from a variant.
 public protocol ConvertibleFromVariant {
     /// Converts a variant into an instance of this type.
-    static func fromVariant(_ variant: Variant) throws -> Self
+    static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self
     
     /// Converts a variant into an instance of this type.
     ///
@@ -20,7 +20,7 @@ public protocol ConvertibleFromVariant {
     ///
     /// See the ``fromVariant(_:)`` method to get a throwing version
     /// of this method.
-    static func fromCompatibleVariant(_ variant: Variant) -> Self
+    static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self
 }
 
 /// A type that can be converted from, and to, a variant.
@@ -40,7 +40,7 @@ public protocol VariantConvertible: ConvertibleToVariant, ConvertibleFromVariant
 public extension VariantConvertible {
     static var __className: GodotStringName { GodotStringName() }
     
-    static func fromVariant(_ variant: Variant) throws -> Self {
+    static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
         try variant.checkType(Self.variantType)
         
         return fromCompatibleVariant(variant)

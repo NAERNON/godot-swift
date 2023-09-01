@@ -101,15 +101,15 @@ public struct Plane {
     }
     
     public func intersect3(b: Plane, c: Plane) -> Variant {
-        _intersect3(b: b, c: c)
+        Variant(_intersect3(b: b, c: c))
     }
     
     public func intersectsRay(from fromPoint: Vector3, dir: Vector3) -> Variant {
-        _intersectsRay(from: fromPoint, dir: dir)
+        Variant(_intersectsRay(from: fromPoint, dir: dir))
     }
     
     public func intersectsSegment(from fromPoint: Vector3, to toPoint: Vector3) -> Variant {
-        _intersectsSegment(from: fromPoint, to: toPoint)
+        Variant(_intersectsSegment(from: fromPoint, to: toPoint))
     }
 }
 

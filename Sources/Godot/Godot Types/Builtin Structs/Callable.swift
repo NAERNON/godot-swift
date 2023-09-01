@@ -37,7 +37,7 @@ public struct Callable {
     // MARK: Methods & variables
     
     public func callv(arguments: GodotArray) -> Variant {
-        _callv(arguments: arguments)
+        Variant(_callv(arguments: arguments))
     }
     
     public var isNull: Bool {
@@ -87,7 +87,7 @@ public struct Callable {
     public func call<each VariantRest : ConvertibleToVariant>(
         _ rest: repeat each VariantRest
     ) -> Variant {
-        _call(repeat each rest)
+        Variant(_call(repeat each rest))
     }
     
     public func callDeferred<each VariantRest : ConvertibleToVariant>(

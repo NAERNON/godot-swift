@@ -1,41 +1,28 @@
 import GodotExtensionHeaders
 
 /// A type used to transform Swift types to and from Godot types.
-public struct Variant {
-    internal enum Error: Swift.Error {
-        case unmatchingTypes(variantType: GDExtensionVariantType, checkedType: GDExtensionVariantType)
-        
-        var localizedDescription: String {
-            switch self {
-            case .unmatchingTypes(let variantType, let checkedType):
-                "The variant types don't match (\(variantType) and \(checkedType))."
-            }
-        }
-    }
-    
+public final class Variant {
     // MARK: Inits
+    
+    /// The storage containing the variant data.
+    public let storage: Storage
+    
+    public init(_ storage: consuming Storage) {
+        self.storage = storage
+    }
     
     /// Creates a new `nil` variant.
     public init() {
-        withUnsafeRawPointer { extensionTypePtr in
-            gdextension_interface_variant_new_nil(extensionTypePtr)
-        }
+        self.storage = Storage()
     }
     
-    public init(godotExtensionPointer: GDExtensionVariantPtr) {
-        withUnsafeRawPointer { extensionTypePtr in
-            gdextension_interface_variant_new_copy(extensionTypePtr, godotExtensionPointer)
-        }
+    /// Creates a variant containing the given value.
+    public init<T>(_ value: T) where T : ConvertibleToVariant {
+        self.storage = value.makeVariant()
     }
     
     public init(godotExtensionPointer: GDExtensionConstVariantPtr) {
-        withUnsafeRawPointer { extensionTypePtr in
-            gdextension_interface_variant_new_copy(extensionTypePtr, godotExtensionPointer)
-        }
-    }
-    
-    public init<T>(_ value: T) where T : ConvertibleToVariant {
-        self = value.makeVariant()
+        self.storage = .init(godotExtensionPointer: godotExtensionPointer)
     }
     
     // MARK: Getters
@@ -44,7 +31,7 @@ public struct Variant {
     ///
     /// - Parameter type: The type stored in the `Variant`.
     public func typed<T>(_ type: T.Type) throws -> T where T : ConvertibleFromVariant {
-        try type.fromVariant(self)
+        try type.fromVariant(storage)
     }
     
     /// Returns the value contained inside the `Variant`.
@@ -59,94 +46,28 @@ public struct Variant {
     ///
     /// - Parameter type: The type stored in the `Variant`.
     public func typed<T>(compatibleWith type: T.Type) -> T where T : ConvertibleFromVariant {
-        type.fromCompatibleVariant(self)
+        type.fromCompatibleVariant(storage)
     }
     
-    // MARK: - Functions
+    // MARK: Handle data
+    
+    /// Copies the variant to the given destination.
+    public func consumeByGodot(ontoUnsafePointer destination: GDExtensionVariantPtr) {
+        storage.consumeByGodot(ontoUnsafePointer: destination)
+    }
+    
+    /// Calls a closure with an extension type pointer of the underlying object.
+    public func withUnsafeRawPointer<Result>(
+        _ body: (GDExtensionVariantPtr) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawPointer(body)
+    }
+    
+    // MARK: Tools
     
     /// Returns the type of value this variant stores.
     public var type: GDExtensionVariantType {
-        var extensionVariantType: GDExtensionVariantType!
-        
-        withUnsafeRawPointer { extensionTypePtr in
-            extensionVariantType = gdextension_interface_variant_get_type(extensionTypePtr)
-        }
-        
-        return extensionVariantType
-    }
-    
-    /// A Boolean value indicating whether this variant is an `Int` or a `Float` value.
-    var isNumeric: Bool {
-        let type = self.type
-        return type == GDEXTENSION_VARIANT_TYPE_INT || type == GDEXTENSION_VARIANT_TYPE_FLOAT
-    }
-    
-    /// Checks that the variant type matches the given type.
-    public func checkType(_ type: RepresentationType) throws {
-        if self.type != type.storageType {
-            throw Error.unmatchingTypes(variantType: self.type, checkedType: type.storageType)
-        }
-    }
-    
-    fileprivate func evaluate(other: Variant, `operator`: Operator) -> Variant? {
-        var isValid: GDExtensionBool = 0
-        let returnVariant = Variant()
-        
-        self.withUnsafeRawPointer { extensionTypePtr in
-            other.withUnsafeRawPointer { otherNativeTypePtr in
-                returnVariant.withUnsafeRawPointer { returnNativeTypePtr in
-                    withUnsafeMutablePointer(to: &isValid) { validPtr in
-                        gdextension_interface_variant_evaluate(
-                            `operator`.godotOperator,
-                            extensionTypePtr,
-                            otherNativeTypePtr,
-                            returnNativeTypePtr,
-                            validPtr
-                        )
-                    }
-                }
-            }
-        }
-        
-        if isValid != 0 {
-            return returnVariant
-        } else {
-            return nil
-        }
-    }
-    
-    public var hashValue: Int {
-        var result: GDExtensionInt = 0
-        
-        withUnsafeRawPointer { extensionTypePtr in
-            result = gdextension_interface_variant_hash(extensionTypePtr)
-        }
-        
-        return Int(result)
-    }
-    
-    /// Passes the memory management of this instance onto Godot.
-    ///
-    /// There is a risk of memory leaking if not correctly used.
-    public func consumeByGodot(ontoUnsafePointer destination: GDExtensionVariantPtr) {
-        withUnsafeRawPointer { selfPtr in
-            gdextension_interface_variant_new_copy(destination, selfPtr)
-        }
-    }
-    
-    private var opaque: VariantOpaque = {
-        .init(size: Variant.opaqueSize)
-    }()
-    
-    /// Calls a closure with an extension type pointer of the underlying object.
-    internal func withUnsafeRawPointer<Result>(
-        _ body: (GDExtensionVariantPtr) throws -> Result
-    ) rethrows -> Result {
-        try opaque.withUnsafeMutableRawPointer(body)
-    }
-    
-    internal var opaqueDescription: String {
-        opaque.debugDescription
+        storage.type
     }
 }
 
@@ -154,116 +75,84 @@ public struct Variant {
 
 extension Variant: CustomDebugStringConvertible {
     public var debugDescription: String {
-        let string = GodotString()
-        
-        self.withUnsafeRawPointer { extensionTypePtr in
-            string.withUnsafeRawPointer { stringNativeTypePtr in
-                gdextension_interface_variant_stringify(extensionTypePtr, stringNativeTypePtr)
-            }
-        }
-        
-        return String(godotString: string)
+        storage.debugDescription
     }
 }
 
 extension Variant: Equatable {
     static public func == (lhs: Variant, rhs: Variant) -> Bool {
-        guard let variant = lhs.evaluate(other: rhs, operator: .equal) else {
-            return false
-        }
-        
-        return Bool.fromCompatibleVariant(variant)
+        lhs.storage == rhs.storage
     }
     
     static public func != (lhs: Variant, rhs: Variant) -> Bool {
-        guard let variant = lhs.evaluate(other: rhs, operator: .notEqual) else {
-            return true
-        }
-        
-        return Bool.fromCompatibleVariant(variant)
+        lhs.storage != rhs.storage
     }
 }
 
 extension Variant: ConvertibleToVariant, ConvertibleFromVariant {
-    public func makeVariant() -> Variant {
-        self
+    public func makeVariant() -> Variant.Storage {
+        self.storage.copy()
     }
     
-    public static func fromVariant(_ variant: Variant) throws -> Variant {
-        variant
+    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Variant {
+        Variant(variant.copy())
     }
     
-    public static func fromCompatibleVariant(_ variant: Variant) -> Variant {
-        variant
+    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Variant {
+        Variant(variant.copy())
     }
 }
 
 extension Variant: Comparable {
     static public func < (lhs: Variant, rhs: Variant) -> Bool {
-        guard let variant = lhs.evaluate(other: rhs, operator: .less) else {
-            return false
-        }
-        
-        return Bool.fromCompatibleVariant(variant)
+        lhs.storage < rhs.storage
     }
     
     static public func <= (lhs: Variant, rhs: Variant) -> Bool {
-        guard let variant = lhs.evaluate(other: rhs, operator: .lessEqual) else {
-            return false
-        }
-        
-        return Bool.fromCompatibleVariant(variant)
+        lhs.storage <= rhs.storage
     }
     
     static public func > (lhs: Variant, rhs: Variant) -> Bool {
-        guard let variant = lhs.evaluate(other: rhs, operator: .greater) else {
-            return false
-        }
-        
-        return Bool.fromCompatibleVariant(variant)
+        lhs.storage > rhs.storage
     }
     
     static public func >= (lhs: Variant, rhs: Variant) -> Bool {
-        guard let variant = lhs.evaluate(other: rhs, operator: .greaterEqual) else {
-            return false
-        }
-        
-        return Bool.fromCompatibleVariant(variant)
+        lhs.storage >= rhs.storage
     }
 }
 
 extension Variant: Hashable {
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(hashValue)
+        hasher.combine(storage.hashValue)
     }
 }
 
 extension Variant: ExpressibleByFloatLiteral {
-    public init(floatLiteral value: Double) {
+    public convenience init(floatLiteral value: Double) {
         self.init(value)
     }
 }
 
 extension Variant: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
-    public init(stringLiteral value: String) {
-        self.init(GodotString(swiftString: value))
+    public convenience init(stringLiteral value: String) {
+        self.init(value)
     }
 }
 
 extension Variant: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: Int) {
+    public convenience init(integerLiteral value: Int) {
         self.init(value)
     }
 }
 
 extension Variant: ExpressibleByBooleanLiteral {
-    public init(booleanLiteral value: BooleanLiteralType) {
+    public convenience init(booleanLiteral value: BooleanLiteralType) {
         self.init(value)
     }
 }
 
 extension Variant: ExpressibleByNilLiteral {
-    public init(nilLiteral: ()) {
+    public convenience init(nilLiteral: ()) {
         self.init()
     }
 }

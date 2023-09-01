@@ -188,6 +188,16 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     }
     
     static let variant: GodotType = "Variant"
+    static let variantStorage: GodotType = GodotType.scope(scopeType: .variant, type: "Storage")
+    
+    /// Returns `Variant.Storage` if the type is a `Variant`, or the current type otherwise.
+    var storage: GodotType {
+        if self == .variant {
+            return .variantStorage
+        } else {
+            return self
+        }
+    }
     
     func withMetadata(_ metadata: GodotTypeMetadata) -> GodotType {
         if self == "int" {
@@ -547,7 +557,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             "var \(raw: variableName): GDExtensionObjectPtr!"
         } else if isEnum {
             "var \(raw: variableName) = \(raw: syntax(options: options)).RawValue(0)"
-        } else if isBuiltinGodotClassWithOpaque || self == .variant {
+        } else if isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
             "let \(raw: variableName) = \(raw: syntax(options: options))()"
         } else {
             "var \(raw: variableName) = \(raw: syntax(options: options))()"
@@ -578,7 +588,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         pointerName: String,
         options: GodotTypeSyntaxOptions = []
     ) -> String {
-        if isBuiltinGodotClassWithOpaque || self == .variant {
+        if isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
             return "\(syntax(options: options))(godotExtensionPointer: \(pointerName))"
         } else if isGodotClass {
             return "\(syntax(options: options.subtracting(.optionalClasses))).retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(\(pointerName)))"
@@ -602,7 +612,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         pointerName: String,
         options: GodotTypeSyntaxOptions = []
     ) -> String {
-        if isBuiltinGodotClassWithOpaque || isGodotClass || self == .variant {
+        if isBuiltinGodotClassWithOpaque || isGodotClass || self == .variant || self == .variantStorage {
             return "\(instanceName).consumeByGodot(ontoUnsafePointer: \(pointerName))"
         } else {
             return "\(pointerName).assumingMemoryBound(to: \(syntax(options: options)).self).pointee = \(instanceName)"
@@ -630,7 +640,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             } else {
                 return "UnsafeMutableRawPointer"
             }
-        } else if isBuiltinGodotClassWithOpaque || self == .variant {
+        } else if isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
             return "UnsafeMutableRawPointer"
         } else {
             switch mutability {
@@ -662,7 +672,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         let pointerName = "__ptr_" + instanceName
         let instanceName = caller ?? CodeLanguage.swift.protectNameIfKeyword(for: instanceName)
         
-        if isGodotClass || isBuiltinGodotClassWithOpaque || self == .variant {
+        if isGodotClass || isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
             let closure = try ClosureExprSyntax(
                 signature: .init(parameterClause: .parameterClause(.init(parameters: [
                     "\(raw: pointerName)"

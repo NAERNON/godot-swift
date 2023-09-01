@@ -24,11 +24,6 @@ Godot Swift is a set of tool enabling Swift code to be accessible from the Godot
 - ``GodotEnum()``
 - ``GodotOptionSet()``
 
-### Working with variants
-
-- ``Variant``
-- ``VariantConvertible``
-
 ### Interacting with Godot
 
 - <doc:UsingBuiltinTypes>
@@ -38,6 +33,14 @@ Godot Swift is a set of tool enabling Swift code to be accessible from the Godot
 - ``gdPrintError(_:separator:)``
 
 - ``Real``
+
+### Working with variants
+
+- ``Variant``
+- ``Variant/Storage``
+- ``VariantConvertible``
+- ``ConvertibleToVariant``
+- ``ConvertibleFromVariant``
 
 ### Builtin types
 

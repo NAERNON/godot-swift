@@ -121,11 +121,11 @@ public struct AABB {
     }
     
     public func intersectsSegment(from fromPoint: Vector3, to toPoint: Vector3) -> Variant {
-        _intersectsSegment(from: fromPoint, to: toPoint)
+        Variant(_intersectsSegment(from: fromPoint, to: toPoint))
     }
     
     public func intersectsRay(from fromPoint: Vector3, dir: Vector3) -> Variant {
-        _intersectsRay(from: fromPoint, dir: dir)
+        Variant(_intersectsRay(from: fromPoint, dir: dir))
     }
 }
 

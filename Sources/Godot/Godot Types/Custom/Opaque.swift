@@ -1,15 +1,24 @@
 import GodotExtensionHeaders
 
-internal class BaseOpaque: CustomDebugStringConvertible {
+internal final class Opaque: CustomDebugStringConvertible {
     private let rawData: UnsafeMutablePointer<UInt8>
     let size: Int
     
-    init(size: Int) {
+    /// The destructor pointer for the opaque type.
+    /// If `nil`, no destructor will be called in the `deinit`.
+    var destructorPtr: GDExtensionPtrDestructor?
+    
+    init(size: Int, destructorPtr: GDExtensionPtrDestructor? = nil) {
         self.rawData = .allocate(capacity: size)
         self.size = size
+        self.destructorPtr = destructorPtr
     }
     
     deinit {
+        if let destructorPtr {
+            destructorPtr(rawData)
+        }
+        
         rawData.deinitialize(count: size)
         rawData.deallocate()
     }
@@ -51,33 +60,5 @@ internal class BaseOpaque: CustomDebugStringConvertible {
         }
         string += "]"
         return string
-    }
-}
-
-internal final class Opaque: BaseOpaque {
-    /// The destructor pointer for the opaque type.
-    /// If `nil`, no destructor will be called at the `deinit` call.
-    var destructorPtr: GDExtensionPtrDestructor?
-    
-    init(size: Int, destructorPtr: GDExtensionPtrDestructor? = nil) {
-        self.destructorPtr = destructorPtr
-
-        super.init(size: size)
-    }
-    
-    deinit {
-        if let destructorPtr {
-            withUnsafeMutableRawPointer { pointer in
-                destructorPtr(pointer)
-            }
-        }
-    }
-}
-
-internal final class VariantOpaque: BaseOpaque {
-    deinit {
-        withUnsafeMutableRawPointer { pointer in
-            gdextension_interface_variant_destroy(pointer)
-        }
     }
 }

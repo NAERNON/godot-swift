@@ -115,7 +115,7 @@ struct VariableMember: ExposableMember {
         """
         
         let setterExprSyntax: ExprSyntax = """
-        Unmanaged<\(raw: classContext.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue().\(raw: variableBinding.pattern.trimmedDescription) = \(variableType.trimmed).fromCompatibleVariant(Variant(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+        Unmanaged<\(raw: classContext.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue().\(raw: variableBinding.pattern.trimmedDescription) = \(variableType.trimmed).fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
         """
         
         let variableName = NamingConvention.camel.convert(variableBinding.pattern.trimmedDescription, to: .snake)

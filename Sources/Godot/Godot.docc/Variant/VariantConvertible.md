@@ -3,7 +3,7 @@
 Types that conform to the `VariantConvertible` protocol
 can convert to and from a variant. They also define what kind of variant the type is convertible to and from.
 
-For example, in the following example, the `Level` struct can be converted to and from a variant, while also stating that the variant representation is `Int`.
+For example, in the following code, the `Level` struct can be converted to and from a variant, while also stating that the variant representation is `Int`.
 
 ```swift
 struct Level: VariantConvertible {
@@ -11,21 +11,18 @@ struct Level: VariantConvertible {
 
     static let variantType: Variant.RepresentationType = Int.variantType
 
-    func makeVariant() -> Variant {
-        Variant(index)
+    func makeVariant() -> Variant.Storage {
+        index.makeVariant()
     }
 
-    static func fromVariant(_ variant: Variant) throws -> Level {
-        try Level(index: variant.typed(Int.self))
+    static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Level {
+        Level(index: try Int.fromVariant(variant))
     }
 
-    static func fromCompatibleVariant(_ variant: Variant) -> Level {
-        Level(index: variant.typed(compatibleWith: Int.self))
+    static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Level {
+        Level(index: Int.fromCompatibleVariant(variant))
     }
 }
-
-let level = Level(index: 3)
-let variant = Variant(level)
 ```
 
 ### Conforming to the VariantConvertible protocol
@@ -50,8 +47,8 @@ struct Level: VariantConvertible {
 
     static let variantType: Variant.RepresentationType = Int.variantType
 
-    static func fromVariant(_ variant: Variant) throws -> Level {
-        let index = try variant.typed(Int.self)
+    static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Level {
+        let index = try Int.fromVariant(variant)
 
         guard index >= 0 else {
             throw ConversionError.negative

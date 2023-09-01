@@ -31,7 +31,11 @@ extension ClassRegister {
         ) where Value : VariantConvertible {
             self.variantType = type.variantType
             self.name = name
-            self.defaultValue = defaultValue?.makeVariant()
+            if let defaultValue {
+                self.defaultValue = Variant(defaultValue)
+            } else {
+                self.defaultValue = nil
+            }
             self.className = className
         }
         

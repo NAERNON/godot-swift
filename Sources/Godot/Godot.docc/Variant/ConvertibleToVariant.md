@@ -2,7 +2,7 @@
 
 Types that conform to the `ConvertibleToVariant` protocol
 provide a variant representation.
-Use the `Variant` ``Variant/init(_:)`` initializer to
+Use the `Variant` ``Variant/init(_:)-81n45`` initializer to
 create a new variant from an instance of this type.
 
 For example, in the following code, the `Level` struct can be converted to a variant, using the `index` value as its representation:
@@ -11,12 +11,18 @@ For example, in the following code, the `Level` struct can be converted to a var
 struct Level: ConvertibleToVariant {
     let index: Int
 
-    func makeVariant() -> Variant {
-        Variant(index)
+    func makeVariant() -> Variant.Storage {
+        index.makeVariant()
     }
 }
+```
 
+For a given `Level` instance, create a variant like so:
+
+```swift
 let level = Level(index: 3)
+
+// Use the `init(_:)` from the `Variant` type
 let variant = Variant(level)
 ```
 
