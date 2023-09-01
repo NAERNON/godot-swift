@@ -21,10 +21,9 @@ struct GodotTranslatedFunction<Source>: GodotFunction where Source : GodotFuncti
             functionName = String(functionName.dropFirst(4))
         }
         
-        return CodeLanguage.c.translateFunction(
+        return generate_api.translatedFunction(
             name: functionName,
-            parameters: (source.arguments ?? []).map { .init(name: $0.name, label: nil, isLabelHidden: false) },
-            to: .swift
+            parameters: (source.arguments ?? []).map { .init(name: $0.name, label: nil, isLabelHidden: false) }
         )
     }
     
@@ -79,4 +78,109 @@ extension GodotFunction {
     var translatedArguments: GodotTranslatedFunction<Self> {
         GodotTranslatedFunction(self, translateName: false, translateArguments: true)
     }
+}
+
+// MARK: - Translation
+
+private struct FunctionParameter {
+    public var name: String
+    public var label: String?
+    public var isLabelHidden: Bool
+    
+    public init(name: String, label: String? = nil, isLabelHidden: Bool) {
+        self.name = name
+        self.label = label
+        self.isLabelHidden = isLabelHidden
+    }
+}
+
+/// Some parameters might start with a special keyword that should not be visible in the parameter name.
+private let preParameterNameKeywords: Set<String> = [
+    "for", "from", "to", "in", "by", "at", "with"
+]
+
+private func translatedFunction(
+    name: String,
+    parameters: [FunctionParameter]
+) -> (name: String, parameters: [FunctionParameter]) {
+    let decomposedFunctionName = NamingConvention.snake.decompose(string: name)
+    let translatedName = NamingConvention.camel.recompose(decomposedFunctionName)
+    
+    var translatedParameters = [FunctionParameter]()
+    for (index, parameter) in parameters.enumerated() {
+        let decomposedParameterLabel = NamingConvention.snake.decompose(string: parameter.name)
+        let firstParameterComponentIsKeyword = decomposedParameterLabel.count > 1
+        && preParameterNameKeywords.contains { keyword in
+            decomposedParameterLabel[0].caseInsensitiveCompare(keyword) == .orderedSame
+        }
+        let decomposedParameterName = firstParameterComponentIsKeyword ? Array(decomposedParameterLabel.dropFirst()) : decomposedParameterLabel
+        
+        let translatedLabel = NamingConvention.camel.recompose(decomposedParameterLabel)
+        let translatedName = NamingConvention.camel.recompose(decomposedParameterName)
+        
+        var isLabelHidden = false
+        
+        // We check that the name of the parameter is not redundant with the function name
+        if index == 0 {
+            var isParameterNameRedundant = true
+            for (index, parameterNameComponent) in decomposedParameterName.reversed().enumerated() {
+                let functionNameComponentIndex = decomposedFunctionName.count - 1 - index
+                guard functionNameComponentIndex >= 0 else { break }
+                
+                let functionNameComponent = decomposedFunctionName[functionNameComponentIndex].drop { $0 == "_" }
+                if functionNameComponent.caseInsensitiveCompare(parameterNameComponent) != .orderedSame {
+                    isParameterNameRedundant = false
+                }
+            }
+            
+            if isParameterNameRedundant {
+                isLabelHidden = true
+            }
+        }
+        
+        // We check that the name of the parameter is not made of one character
+        if parameter.name.count == 1 && parameters.count == 1 {
+            isLabelHidden = true
+        }
+        
+        translatedParameters.append(
+            FunctionParameter(name: translatedName,
+                              label: translatedLabel,
+                              isLabelHidden: isLabelHidden))
+    }
+    
+    // Because we might have removed the pre parameter keyword (such as for or in),
+    // we need to check that two parameters don't share the same name
+    // For instance, a function with "fromTexture" and "toTexture" parameters
+    // now have two "texture" parameters.
+    //
+    // Additionally, if the name starts with a number, it should also use the label.
+    //
+    // If that is the case, we use the label value as the name value.
+    var parametersIndexToUseLabelAsName = Set<Int>()
+    for index in 0..<translatedParameters.count {
+        if translatedParameters[index].name.first?.isNumber == true {
+            parametersIndexToUseLabelAsName.insert(index)
+        }
+        
+        for comparedIndex in (index+1)..<translatedParameters.count {
+            if translatedParameters[index].name == translatedParameters[comparedIndex].name {
+                parametersIndexToUseLabelAsName.insert(index)
+                parametersIndexToUseLabelAsName.insert(comparedIndex)
+            }
+        }
+    }
+    for index in parametersIndexToUseLabelAsName {
+        translatedParameters[index].name = translatedParameters[index].label!
+    }
+    
+    // Finally, some function parameters might have the same label and name.
+    // If that is the case, the label should be hidden.
+    for (index, parameter) in translatedParameters.enumerated() {
+        if parameter.label == parameter.name {
+            translatedParameters[index].label = nil
+        }
+    }
+    
+    return (translatedName, translatedParameters)
 }

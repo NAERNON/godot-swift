@@ -47,10 +47,9 @@ struct GodotEnum: Decodable {
     private func nameAndCases<T>(
         forType type: T.Type
     ) -> (name: String, cases: [Case<T>]) where T : FixedWidthInteger {
-        let translatedEnum = CodeLanguage.c.translateEnum(
+        let translatedEnum = translatedEnum(
             name: name.syntax(),
-            cases: values.map { $0.name },
-            to: .swift
+            cases: values.map { $0.name }
         )
         
         var cases = [Case<T>]()
@@ -108,4 +107,75 @@ struct GodotEnum: Decodable {
             """
         }
     }
+}
+
+// MARK: - Translation
+
+private func translatedEnum(
+    name: String,
+    cases: [String],
+    smartTranslation: Bool = true
+) -> (name: String, cases: [String]) {
+    guard !cases.isEmpty else {
+        return (name, cases)
+    }
+    
+    let casesComponents = cases.map { NamingConvention.snake.decompose(string: $0).map { $0.lowercased() } }
+    
+    // We count the number of same components on the left side on all the enums.
+    // They will be removed.
+    //
+    // Ex: `["SIDE_LEFT", "SIDE_TOP", "SIDE_RIGHT", "SIDE_BOTTOM"]`
+    // There is only one component common to all the cases : `SIDE`.
+    var numberOfComponentsToRemove = 0
+    
+    while true && smartTranslation {
+        let firstCaseComponents = casesComponents[0]
+        guard numberOfComponentsToRemove < firstCaseComponents.count else {
+            break
+        }
+        
+        let component = firstCaseComponents[numberOfComponentsToRemove]
+        var areSameComponents = true
+        for caseComponents in casesComponents {
+            if caseComponents.count <= numberOfComponentsToRemove
+                || caseComponents[numberOfComponentsToRemove] != component {
+                areSameComponents = false
+                break
+            }
+        }
+        
+        guard areSameComponents else { break }
+        
+        numberOfComponentsToRemove += 1
+    }
+    
+    var editedCasesComponents = casesComponents
+    for caseIndex in 0..<editedCasesComponents.count {
+        if editedCasesComponents[caseIndex].count > numberOfComponentsToRemove {
+            editedCasesComponents[caseIndex].removeFirst(numberOfComponentsToRemove)
+        }
+    }
+    
+    var casesStrings = [String]()
+    var casesStringsSet = Set<String>()
+    
+    for caseIndex in 0..<casesComponents.count {
+        let editedCaseComponents = editedCasesComponents[caseIndex]
+        var caseString = NamingConvention.camel.recompose(editedCaseComponents)
+        
+        // If the case string generated is empty, or doesn't begin with a letter,
+        // we use the original components, not the one without the same components..
+        if caseString.isEmpty || !caseString.first!.isLetter {
+            caseString = NamingConvention.camel.recompose(casesComponents[caseIndex])
+        }
+        
+        guard casesStringsSet.insert(caseString).inserted else {
+            return translatedEnum(name: name, cases: cases, smartTranslation: false)
+        }
+        
+        casesStrings.append(caseString)
+    }
+    
+    return (name, casesStrings)
 }
