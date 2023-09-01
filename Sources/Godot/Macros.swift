@@ -7,16 +7,16 @@
 /// Learn how to expose a custom class: <doc:CreatingCustomClass>.
 @attached(memberAttribute)
 @attached(member, names:
-    named(__exposeToGodot),
-    named(__className),
-    named(__staticClassName),
-    named(__isCustomGodotClass),
-    named(__instanceBindingCallbacks)
+    named(_$exposeToGodot),
+    named(_$className),
+    named(_$staticClassName),
+    named(_$isCustomGodotClass),
+    named(_$instanceBindingCallbacks)
 )
 public macro Exposable() = #externalMacro(module: "GodotMacros", type: "ExposableMacro")
 
 /// Enables a member to be exposed to the Godot editor.
-@attached(peer, names: prefixed(__godotRegister_))
+@attached(peer, names: prefixed(_$godotRegister_))
 public macro ExposableMember(_: Object.Type) = #externalMacro(module: "GodotMacros", type: "ExposableMemberMacro")
 
 /// Define and implements conformance of the GodotBridge protocol.

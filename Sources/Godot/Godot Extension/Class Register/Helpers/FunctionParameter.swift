@@ -55,7 +55,7 @@ extension ClassRegister {
                 type: type,
                 name: name,
                 defaultValue: defaultValue,
-                className: Value.__className
+                className: Value._$className
             )
         }
         
@@ -68,7 +68,7 @@ extension ClassRegister {
                 type: type,
                 name: .init(),
                 defaultValue: nil,
-                className: Value.__className
+                className: Value._$className
             )
         }
         

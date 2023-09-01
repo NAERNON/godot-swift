@@ -28,7 +28,7 @@ extension ClassRegister {
             freeInstanceFunction: GDExtensionClassFreeInstance
         ) {
             self.superclassType = superclassType
-            self.superclassName = superclassType.__className
+            self.superclassName = superclassType._$className
             
             self.toStringFunction = toStringFunction
             self.createInstanceFunction = createInstanceFunction

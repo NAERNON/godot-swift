@@ -41,7 +41,7 @@ public enum ReceiverMacro: PeerMacro {
             return []
         }
         
-        let receiverName = NamingConvention.camel.convert(functionDecl.name.trimmedDescription, to: .snake)
+        let receiverName = translatedFunctionName(functionDecl)
         let structureName = "Receiver_" + functionDecl.name.trimmedDescription
         let variableName = functionDecl.name.trimmedDescription + "Receiver"
         
@@ -70,5 +70,9 @@ public enum ReceiverMacro: PeerMacro {
             DeclSyntax(structDecl),
             varDecl
         ]
+    }
+    
+    static func translatedFunctionName(_ functionDecl: FunctionDeclSyntax) -> String {
+        NamingConvention.camel.convert(functionDecl.name.trimmedDescription, to: .snake)
     }
 }

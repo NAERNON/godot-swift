@@ -118,7 +118,7 @@ struct FunctionMember: ExposableMember {
             }
         }
         
-        let functionName = NamingConvention.camel.convert(functionDeclSyntax.name.trimmedDescription, to: .snake)
+        let functionName = ReceiverMacro.translatedFunctionName(functionDeclSyntax)
         let returnParameter: String
         let hasReturnType: Bool
         

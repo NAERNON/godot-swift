@@ -93,7 +93,7 @@ private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtens
     
     if level == .scene {
         for object in GodotExtension.bridge.exposedClasses {
-            object.self.__exposeToGodot()
+            object.self._$exposeToGodot()
         }
     }
     

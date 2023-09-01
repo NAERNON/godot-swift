@@ -17,7 +17,7 @@ public struct GodotTypedArray<Element> where Element : VariantConvertible {
     public init() {
         let array = GodotArray()
         array.withUnsafeRawPointer { ptr in
-            Element.__className.withUnsafeRawPointer { classNamePtr in
+            Element._$className.withUnsafeRawPointer { classNamePtr in
                 Variant().withUnsafeRawPointer { scriptPtr in
                     // TODO: Check script (last parameter)
                     gdextension_interface_array_set_typed(
@@ -96,11 +96,11 @@ extension GodotTypedArray: VariantConvertible {
         
         // If the class name is not empty, we must check against
         // the underlying array.
-        if !Element.__className._isEmpty() {
+        if !Element._$className._isEmpty() {
             let className = underlyingArray._typedClassName()
-            guard className == Element.__className else {
+            guard className == Element._$className else {
                 throw GodotTypedArrayVariantConversionError
-                    .incorrectClassName(expected: Element.__className, found: className)
+                    .incorrectClassName(expected: Element._$className, found: className)
             }
         }
         

@@ -34,11 +34,11 @@ public protocol VariantConvertible: ConvertibleToVariant, ConvertibleFromVariant
     /// Do not define this variable in your own types.
     /// Only ``Object`` and its subclasses define
     /// this variable.
-    static var __className: GodotStringName { get }
+    static var _$className: GodotStringName { get }
 }
 
 public extension VariantConvertible {
-    static var __className: GodotStringName { GodotStringName() }
+    static var _$className: GodotStringName { GodotStringName() }
     
     static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
         try variant.checkType(Self.variantType)

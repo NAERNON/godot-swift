@@ -84,23 +84,23 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
         switch classType {
         case .root, .refCounted, .standard:
             return """
-            private static let __staticClassName: GodotStringName = \(literal: className)
-            open \(raw: overrideKeyword) class var __className: GodotStringName { __staticClassName }
-            internal \(raw: overrideKeyword) class var __lastDerivedClassName: GodotStringName { __staticClassName }
-            open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { false }
+            private static let _$staticClassName: GodotStringName = \(literal: className)
+            open \(raw: overrideKeyword) class var _$className: GodotStringName { _$staticClassName }
+            internal \(raw: overrideKeyword) class var _$lastDerivedClassName: GodotStringName { _$staticClassName }
+            open \(raw: overrideKeyword) class var _$isCustomGodotClass: Bool { false }
             """
         case .refCountedRoot:
             return """
-            private static let __staticClassName: GodotStringName = \(literal: className)
-            open \(raw: overrideKeyword) class var __className: GodotStringName { __staticClassName }
-            internal \(raw: overrideKeyword) class var __lastDerivedClassName: GodotStringName { __staticClassName }
-            open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { false }
+            private static let _$staticClassName: GodotStringName = \(literal: className)
+            open \(raw: overrideKeyword) class var _$className: GodotStringName { _$staticClassName }
+            internal \(raw: overrideKeyword) class var _$lastDerivedClassName: GodotStringName { _$staticClassName }
+            open \(raw: overrideKeyword) class var _$isCustomGodotClass: Bool { false }
             """
         case .custom:
             return """
-            private static let __staticClassName: Godot.GodotStringName = \(literal: className)
-            open \(raw: overrideKeyword) class var __className: Godot.GodotStringName { __staticClassName }
-            open \(raw: overrideKeyword) class var __isCustomGodotClass: Bool { true }
+            private static let _$staticClassName: Godot.GodotStringName = \(literal: className)
+            open \(raw: overrideKeyword) class var _$className: Godot.GodotStringName { _$staticClassName }
+            open \(raw: overrideKeyword) class var _$isCustomGodotClass: Bool { true }
             """
         }
     }
@@ -120,24 +120,24 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             }
             
             private class func makeNewExtensionObjectPtr() -> GodotObjectPointer {
-                Self.__lastDerivedClassName.withUnsafeRawPointer { namePtr in
+                Self._$lastDerivedClassName.withUnsafeRawPointer { namePtr in
                     gdextension_interface_classdb_construct_object(namePtr)!
                 }
             }
             
             private func postInit() {
-                if Self.__isCustomGodotClass {
-                    Self.__className.withUnsafeRawPointer { classNamePtr in
+                if Self._$isCustomGodotClass {
+                    Self._$className.withUnsafeRawPointer { classNamePtr in
                         gdextension_interface_object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
                     }
                 }
             
                 if self is RefCounted {
-                    withUnsafePointer(to: Self.__instanceBindingCallbacks()) { callbacksPtr in
+                    withUnsafePointer(to: Self._$instanceBindingCallbacks()) { callbacksPtr in
                         gdextension_interface_object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passUnretained(self).toOpaque(), callbacksPtr)
                     }
                 } else {
-                    withUnsafePointer(to: Self.__instanceBindingCallbacks()) { callbacksPtr in
+                    withUnsafePointer(to: Self._$instanceBindingCallbacks()) { callbacksPtr in
                         gdextension_interface_object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passRetained(self).toOpaque(), callbacksPtr)
                     }
                 }
@@ -164,7 +164,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             deinit {
                 guard !isGodotMemoryFreed else { return }
                 
-                if Self.__isCustomGodotClass && isRefInitialized {
+                if Self._$isCustomGodotClass && isRefInitialized {
                     isGodotMemoryFreed = true
                     self.withUnsafeRawPointer { __ptr_self in
                         gdextension_interface_mem_free(__ptr_self)
@@ -194,7 +194,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     }
     
     private func instanceBindingCallbacks() throws -> DeclSyntax {
-        let signature = "open \(overrideKeyword) class func __instanceBindingCallbacks() -> Godot.GodotInstanceBindingCallbacks"
+        let signature = "open \(overrideKeyword) class func _$instanceBindingCallbacks() -> Godot.GodotInstanceBindingCallbacks"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
@@ -224,7 +224,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     }
     
     private func exposeToGodot() throws -> DeclSyntax {
-        let signature = "open \(overrideKeyword) class func __exposeToGodot()"
+        let signature = "open \(overrideKeyword) class func _$exposeToGodot()"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:

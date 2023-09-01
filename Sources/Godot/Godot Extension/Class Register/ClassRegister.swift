@@ -90,13 +90,13 @@ public final class ClassRegister {
     }
     
     /// Returns a Boolean value indicating whether the given class type
-    /// has the correct associated ``Object/__className``.
+    /// has the correct associated ``Object/_$className``.
     ///
     /// If the class name is not correct, it indicates that the custom registered class
     /// is not configured correctly. This might be a sign that the ``Exposable()``
     /// macro is not used.
     private func classNameIsEquivalentToType<Class>(classType: Class.Type) -> Bool where Class : Object {
-        GodotStringName(swiftString: .init(describing: classType)) == classType.__className
+        GodotStringName(swiftString: .init(describing: classType)) == classType._$className
     }
     
     /// Registers the given base Godot class.
@@ -119,7 +119,7 @@ public final class ClassRegister {
             type: classType
         )
         
-        godotClassNameToClassBinding[classType.__className] = classBinding
+        godotClassNameToClassBinding[classType._$className] = classBinding
         return classBinding
     }
     
@@ -238,7 +238,7 @@ public final class ClassRegister {
         isStatic: Bool,
         call: GDExtensionClassMethodCall
     ) -> FunctionBinding? where Class : Object {
-        let className = classType.__className
+        let className = classType._$className
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
@@ -312,7 +312,7 @@ public final class ClassRegister {
         named swiftFunctionName: GodotStringName,
         insideType classType: Class.Type
     ) -> FunctionOverrideBinding? where Class : Object {
-        let className = classType.__className
+        let className = classType._$className
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
@@ -391,7 +391,7 @@ public final class ClassRegister {
     where Class : Object,
           Variable : VariantConvertible
     {
-        let className = classType.__className
+        let className = classType._$className
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
@@ -475,7 +475,7 @@ public final class ClassRegister {
         isOptionSet: Bool,
         insideType classType: Class.Type
     ) -> EnumBinding? where Class : Object {
-        let className = classType.__className
+        let className = classType._$className
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
@@ -526,7 +526,7 @@ public final class ClassRegister {
         insideType classType: Class.Type,
         argumentParameters: [FunctionParameter]
     ) -> SignalBinding? where Class : Object {
-        let className = classType.__className
+        let className = classType._$className
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {

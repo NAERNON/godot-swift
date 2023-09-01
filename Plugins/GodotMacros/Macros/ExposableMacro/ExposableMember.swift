@@ -24,7 +24,7 @@ protocol ExposableMember {
 
 extension ExposableMember {
     var classExpositionFunctionIdentifier: String {
-        "__godotRegister_" + exposableMemberIdentifier
+        "_$godotRegister_" + exposableMemberIdentifier
     }
     
     var hasExposableMemberAttribute: Bool {
