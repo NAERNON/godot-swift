@@ -237,7 +237,7 @@ struct GodotClass: Decodable {
         } else {
             try standardMethodSyntax(method)
             
-            // TODO: Remove this non vararg version. There is a bug in the Swift beta.
+            // TODO: Remove this non vararg version. There is a bug in the Swift beta with parameter packs.
             if method.isVararg {
                 try standardMethodSyntax(method.nonVararg(), generateBinding: false)
             }
