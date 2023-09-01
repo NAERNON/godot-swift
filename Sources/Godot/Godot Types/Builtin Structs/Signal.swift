@@ -69,8 +69,8 @@ public struct Signal {
         _getConnections()
     }
     
-    public func emit(_ variants: Variant...) {
-        _emit(rest: variants)
+    public func emit<each VariantRest : ConvertibleToVariant>(_ rest: repeat each VariantRest) {
+        _emit(repeat each rest)
     }
 }
 

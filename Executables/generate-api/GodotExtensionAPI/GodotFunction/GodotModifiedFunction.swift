@@ -41,12 +41,8 @@ struct GodotModifiedFunction<Source>: GodotFunction where Source : GodotFunction
         source.isVararg
     }
     
-    var isVarargArray: Bool {
-        source.isVarargArray
-    }
-    
-    var useVariantGeneric: Bool {
-        source.useVariantGeneric
+    var usesVariantGeneric: Bool {
+        source.usesVariantGeneric
     }
     
     var isStatic: Bool {

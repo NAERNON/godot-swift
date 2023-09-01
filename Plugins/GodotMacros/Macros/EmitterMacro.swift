@@ -86,14 +86,14 @@ public enum EmitterMacro: MemberMacro, PeerMacro, ExtensionMacro {
             .map { $0.name + ": " + $0.type }
             .joined(separator: ", ")
         let parametersCallString = macroArguments.params
-            .map { "Godot.Variant(" + $0.name + ")" }
+            .map { $0.name }
             .joined(separator: ", ")
         
         let emitFunctionDecl = try FunctionDeclSyntax("public func emit(\(raw: parametersString))") {
             if parametersCallString.isEmpty {
                 "_ = object?.emitSignal(Self.signalName)"
             } else {
-                "_ = object?.emitSignal(Self.signalName, rest: \(raw: parametersCallString))"
+                "_ = object?.emitSignal(Self.signalName, \(raw: parametersCallString))"
             }
         }
         

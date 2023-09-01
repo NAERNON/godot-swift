@@ -40,7 +40,22 @@ struct GodotClass: Decodable {
         
         var returnType: GodotType? { returnValue?.type }
         
-        var useVariantGeneric: Bool { true }
+        private var prefersStandardCall: Bool?
+        private var usesStandardCall: Bool { isVararg == true || prefersStandardCall == true }
+        
+        var usesVariantGeneric: Bool { true }
+        var convertsAllParameterToVariant: Bool { usesStandardCall }
+        
+        func nonVararg() -> Method {
+            guard isVararg else {
+                return self
+            }
+            
+            var new = self
+            new.prefersStandardCall = true
+            new.isVararg = false
+            return new
+        }
         
         // MARK: Return value
         
@@ -75,7 +90,7 @@ struct GodotClass: Decodable {
         }
         
         func bindCall(selfExpression: String, argsExpression: String, returnExpression: String) -> ExprSyntax {
-            if isVararg {
+            if usesStandardCall {
                 """
                 gdextension_interface_object_method_bind_call(
                     Self.\(raw: ptrIdentifier),
@@ -215,11 +230,17 @@ struct GodotClass: Decodable {
         }
     }
     
+    @MemberBlockItemListBuilder
     private func methodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
         if method.isVirtual {
-            return try virtualMethodSyntax(method)
+            try virtualMethodSyntax(method)
         } else {
-            return try standardMethodSyntax(method)
+            try standardMethodSyntax(method)
+            
+            // TODO: Remove this non vararg version. There is a bug in the Swift beta.
+            if method.isVararg {
+                try standardMethodSyntax(method.nonVararg(), generateBinding: false)
+            }
         }
     }
     
@@ -256,45 +277,29 @@ struct GodotClass: Decodable {
     }
     
     @MemberBlockItemListBuilder
-    private func standardMethodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
-        """
-        private static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
-            __staticClassName.withUnsafeRawPointer { __ptr__class_name in
-            GodotStringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
-            return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))!
-            }
-            }
-        }()
-        """
+    private func standardMethodSyntax(
+        _ method: Method,
+        generateBinding: Bool = true
+    ) throws -> MemberBlockItemListSyntax {
+        if generateBinding {
+            """
+            private static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
+                __staticClassName.withUnsafeRawPointer { __ptr__class_name in
+                GodotStringName(swiftString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
+                return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))!
+                }
+                }
+            }()
+            """
+        }
         
         try method.withNamePrefixed(by: methodPrefix(method)).translated.declSyntax(
             options: syntaxOptions,
             keywords: methodIsPrivate(method) ? .private : .public
         ) {
-            var modifiedMethod = GodotModifiedFunction(method.translated)
-            
-            if var arguments = modifiedMethod.arguments {
-                for (index, argument) in arguments.enumerated() {
-                    // If the method is vararg, every parameter should be transformed to a variant.
-                    //
-                    // Every variant parameter is actually ConvertibleToVariant generic.
-                    // Se we need to make variants out of these generic types.
-                    if method.isVararg || argument.type == .variant {
-                        let variantName = "variant_" + argument.name
-                        
-                        let _ = arguments[index].name = variantName
-                        let _ = arguments[index].type = .variant
-                        
-                        "let \(raw: variantName) = \(raw: CodeLanguage.swift.protectNameIfKeyword(for: argument.name)).makeVariant()"
-                    }
-                }
-                
-                let _ = modifiedMethod.modifiedElement = .arguments(arguments)
-            }
-            
             if let returnType = method.returnType {
                 try returnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
-                    try modifiedMethod.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                    try method.translated.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
                         try instanceType.pointerAccessSyntax(
                             instanceName: instanceName,
                             options: syntaxOptions,
@@ -323,7 +328,7 @@ struct GodotClass: Decodable {
                     }
                 }
             } else {
-                try modifiedMethod.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                try method.translated.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
                     if method.isStatic {
                         method.bindCall(
                             selfExpression: "nil",

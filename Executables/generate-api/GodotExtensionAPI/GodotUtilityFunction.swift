@@ -19,6 +19,8 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
         }
     }
     
+    var usesVariantGeneric: Bool { true }
+    
     // MARK: Init
     
     enum CodingKeys: CodingKey {

@@ -12,19 +12,26 @@ protocol GodotFunction {
     var returnType: GodotType? { get }
     
     var isVararg: Bool { get }
-    var isVarargArray: Bool { get }
-    var useVariantGeneric: Bool { get }
     var isStatic: Bool { get }
     var isConst: Bool { get }
     var isMutating: Bool { get }
+    
+    /// A Boolean value indicating whether the function uses generics instead
+    /// of variants.
+    ///
+    /// If the function is vararg, a parameter pack is used at the end.
+    var usesVariantGeneric: Bool { get }
+    
+    /// A Boolean value indicating whether all parameters are converted to variants.
+    var convertsAllParameterToVariant: Bool { get }
 }
 
 // MARK: - Default behavior
 
 extension GodotFunction {
     var isVararg: Bool { false }
-    var isVarargArray: Bool { false }
-    var useVariantGeneric: Bool { false }
+    var usesVariantGeneric: Bool { false }
+    var convertsAllParameterToVariant: Bool { false }
     var isStatic: Bool { false }
     var isConst: Bool { false }
     var isMutating: Bool { false }
@@ -37,6 +44,7 @@ extension GodotFunction {
         "rest"
     }
     
+    /// Returns the syntax to place inside the generic function signature.
     private func genericSyntax() -> String? {
         var genericArguments = [String]()
         
@@ -48,6 +56,10 @@ extension GodotFunction {
                     index += 1
                 }
             }
+        }
+        
+        if isVararg {
+            genericArguments.append("each VariantRest : ConvertibleToVariant")
         }
         
         if genericArguments.isEmpty {
@@ -66,11 +78,11 @@ extension GodotFunction {
     /// For a vararg function with 3 arguments and a `Int32` type,
     /// it will return "`3 + Int32(rest.count)`".
     func argumentsCountSyntax<IntegerType: BinaryInteger>(type: IntegerType.Type) -> String {
-        var syntax = String(arguments?.count ?? 0)
         if isVararg {
-            syntax.append(" + \(IntegerType.self)(\(varargArgumentIdentifier).count)")
+            return "\(IntegerType.self)(packCount)"
+        } else {
+            return String(arguments?.count ?? 0)
         }
-        return syntax
     }
     
     /// Returns the declaration syntax of the function.
@@ -88,7 +100,7 @@ extension GodotFunction {
         
         functionHeader.append(CodeLanguage.swift.protectNameIfKeyword(for: name))
         
-        if useVariantGeneric,
+        if usesVariantGeneric,
            let genericSyntax = genericSyntax() 
         {
             functionHeader.append("<\(genericSyntax)>")
@@ -108,7 +120,7 @@ extension GodotFunction {
             parameterString.append(CodeLanguage.swift.protectNameIfKeyword(for: argument.name))
             parameterString.append(": ")
             
-            if useVariantGeneric,
+            if usesVariantGeneric,
                argument.type == .variant
             {
                 parameterString.append("Variant\(variantArgumentIndex)")
@@ -127,13 +139,13 @@ extension GodotFunction {
         
         if isVararg {
             if !arguments.isEmpty {
-                functionHeader.append(", ")
+                functionHeader.append(",")
             }
-            functionHeader.append(varargArgumentIdentifier)
-            if isVarargArray {
-                functionHeader.append(": [Variant]")
+            functionHeader.append("_ \(varargArgumentIdentifier): ")
+            if usesVariantGeneric {
+                functionHeader.append("repeat each VariantRest")
             } else {
-                functionHeader.append(": Variant...")
+                functionHeader.append("Variant...")
             }
         }
         
@@ -220,7 +232,6 @@ extension GodotFunction {
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let packName = "__accessPtr"
-        let varargPointerName = "__ptrs_" + varargArgumentIdentifier
         
         // No argument and vararg. Return no pack is created.
         if !forcePackCreation && (arguments == nil || arguments?.isEmpty == true) && !isVararg {
@@ -231,31 +242,17 @@ extension GodotFunction {
             if isVararg {
                 let closure = try ClosureExprSyntax(
                     signature: .init(parameterClause: .parameterClause(.init(parameters: [
-                        "\(raw: varargPointerName)"
+                        "packCount, \(raw: packName)"
                     ])))
                 ) {
-                    let closure = try ClosureExprSyntax(
-                        signature: .init(parameterClause: .parameterClause(.init(parameters: [
-                            "\(raw: packName)"
-                        ])))
-                    ) {
-                        try bodyBuilder(packName)
-                    }
-                    
-                    let functionName = if pointerNames.isEmpty {
-                        "withUnsafeArgumentPackPointer(varargs: \(varargPointerName))"
-                    } else {
-                        "withUnsafeArgumentPackPointer(\(pointerNames.joined(separator: ", ")), varargs: \(varargPointerName))"
-                    }
-                    
-                    FunctionCallExprSyntax(
-                        calledExpression: DeclReferenceExprSyntax(baseName: "\(raw: functionName)"),
-                        arguments: [],
-                        trailingClosure: closure
-                    )
+                    try bodyBuilder(packName)
                 }
                 
-                let functionName = "withUnsafeVarargArgumentPointers(to: \(varargArgumentIdentifier))"
+                let functionName = if pointerNames.isEmpty {
+                    "withUnsafeArgumentPackPointer(varargs: repeat each \(varargArgumentIdentifier))"
+                } else {
+                    "withUnsafeArgumentPackPointer(\(pointerNames.joined(separator: ", ")), varargs: repeat each \(varargArgumentIdentifier))"
+                }
                 
                 FunctionCallExprSyntax(
                     calledExpression: DeclReferenceExprSyntax(baseName: "\(raw: functionName)"),
@@ -288,24 +285,31 @@ extension GodotFunction {
     ///   - options: The options for type syntax.
     ///   - indexes: The indexes of the arguments to retreive.
     ///   - bodyBuilder: The body content syntax.
+    @CodeBlockItemListBuilder
     private func argumentsPointerAccessSyntax(
         options: GodotTypeSyntaxOptions,
         indexes: some Collection<Int>,
         @CodeBlockItemListBuilder bodyBuilder: ([String]) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
-        guard let index = indexes.first else {
-            return try bodyBuilder([])
-        }
-        
-        let argument = arguments![index]
-        
-        return try argument.type.argumentPointerAccessSyntax(
-            instanceName: argument.name,
-            options: options
-        ) { pointerName in
-            try argumentsPointerAccessSyntax(options: options, indexes: indexes.dropFirst()) { pointerNames in
-                try bodyBuilder([pointerName] + pointerNames)
+        if let index = indexes.first {
+            let argument = arguments![index]
+            var caller = CodeLanguage.swift.protectNameIfKeyword(for: argument.name)
+            
+            if convertsAllParameterToVariant || (usesVariantGeneric && argument.type == .variant) {
+                let _ = caller = "\(caller).makeVariant()"
             }
+            
+            try argument.type.argumentPointerAccessSyntax(
+                caller: caller,
+                instanceName: argument.name,
+                options: options
+            ) { pointerName in
+                try argumentsPointerAccessSyntax(options: options, indexes: indexes.dropFirst()) { pointerNames in
+                    try bodyBuilder([pointerName] + pointerNames)
+                }
+            }
+        } else {
+            try bodyBuilder([])
         }
     }
     

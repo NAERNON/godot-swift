@@ -645,19 +645,22 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// Returns a syntax for accessing the pointer of an instance of the type.
     ///
     /// - Parameters:
+    ///   - caller: The syntax calling the pointer.
+    ///   If nil, the `instanceName` is used as the caller.
     ///   - instanceName: The name of the instance.
     ///   - mutability: The mutability of the instance.
     ///   - bodyBuilder: The content syntax to access the pointer.
     ///   Use the value provided inside the closure to retreive the pointer name.
     @CodeBlockItemListBuilder
     func pointerAccessSyntax(
+        caller: String? = nil,
         instanceName: String,
         options: GodotTypeSyntaxOptions,
         mutability: Mutability = .const,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let pointerName = "__ptr_" + instanceName
-        let instanceName = CodeLanguage.swift.protectNameIfKeyword(for: instanceName)
+        let instanceName = caller ?? CodeLanguage.swift.protectNameIfKeyword(for: instanceName)
         
         if isGodotClass || isBuiltinGodotClassWithOpaque || self == .variant {
             let closure = try ClosureExprSyntax(
@@ -735,18 +738,22 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     /// used for a function argument.
     ///
     /// - Parameters:
+    ///   - caller: The syntax calling the pointer.
+    ///   If nil, the `instanceName` is used as the caller.
     ///   - instanceName: The name of the instance.
     ///   - mutability: The mutability of the instance.
     ///   - bodyBuilder: The content syntax to access the pointer.
     ///   Use the value provided inside the closure to retreive the pointer name.
     @CodeBlockItemListBuilder
     func argumentPointerAccessSyntax(
+        caller: String? = nil,
         instanceName: String,
         options: GodotTypeSyntaxOptions,
         mutability: Mutability = .const,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         try pointerAccessSyntax(
+            caller: caller,
             instanceName: instanceName,
             options: options,
             mutability: mutability

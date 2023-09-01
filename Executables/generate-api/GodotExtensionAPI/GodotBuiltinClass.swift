@@ -94,7 +94,7 @@ struct GodotBuiltinClass: Decodable {
             "__method_binding_\(name)"
         }
         
-        var isVarargArray: Bool {
+        var usesVariantGeneric: Bool { 
             true
         }
         

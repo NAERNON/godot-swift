@@ -20,14 +20,30 @@ func withUnsafeArgumentPackPointer(
     accessPointer.deallocate()
 }
 
-/// Calls the given closure with a pointer to the contiguous given pointers.
-func withUnsafeArgumentPackPointer(
+/// Calls the given closure with the number of arguments and a pointer
+/// to the contiguous given pointers and variants.
+func withUnsafeArgumentPackPointer<each VariantRest : ConvertibleToVariant>(
     _ pointers: GDExtensionConstTypePtr?...,
-    varargs: [GDExtensionVariantPtr],
-    body: (UnsafeMutablePointer<GDExtensionConstTypePtr?>) -> Void
+    varargs: repeat each VariantRest,
+    body: (Int, UnsafeMutablePointer<GDExtensionConstTypePtr?>) -> Void
+) {
+    var varargsArray = [Variant]()
+    repeat varargsArray.append((each varargs).makeVariant())
+    
+    withUnsafeVarargArgumentPointers(to: varargsArray) { variantPointers in
+        withUnsafeArgumentPackPointer(pointers, varargsPointers: variantPointers, body: body)
+    }
+}
+
+/// Calls the given closure with the number of arguments and a pointer
+/// to the contiguous given pointers and variants.
+private func withUnsafeArgumentPackPointer(
+    _ pointers: GDExtensionConstTypePtr?...,
+    varargsPointers: [GDExtensionVariantPtr],
+    body: (Int, UnsafeMutablePointer<GDExtensionConstTypePtr?>) -> Void
 ) {
     let pointersCount = pointers.count
-    let count = pointersCount + varargs.count
+    let count = pointersCount + varargsPointers.count
     let accessPointer = UnsafeMutablePointer<GDExtensionConstTypePtr?>.allocate(capacity: count)
     
     var index = 0
@@ -36,18 +52,21 @@ func withUnsafeArgumentPackPointer(
         index += 1
     }
     while index < count {
-        accessPointer[index] = GDExtensionConstTypePtr(varargs[index - pointersCount])
+        accessPointer[index] = GDExtensionConstTypePtr(varargsPointers[index - pointersCount])
         index += 1
     }
     
-    body(accessPointer)
+    body(count, accessPointer)
     
     accessPointer.deinitialize(count: count)
     accessPointer.deallocate()
 }
 
 /// Calls the given closure with an array of pointers to the given variants.
-func withUnsafeVarargArgumentPointers(to arguments: some Collection<Variant>, body: ([GDExtensionVariantPtr]) -> Void) {
+private func withUnsafeVarargArgumentPointers(
+    to arguments: some Collection<Variant>,
+    body: ([GDExtensionVariantPtr]) -> Void
+) {
     guard let first = arguments.first else {
         body([])
         return

@@ -84,24 +84,35 @@ public struct Callable {
         _unbind(argcount: argcount)
     }
     
-    public func call(_ variants: Variant...) -> Variant {
-        _call(rest: variants)
+    public func call<each VariantRest : ConvertibleToVariant>(
+        _ rest: repeat each VariantRest
+    ) -> Variant {
+        _call(repeat each rest)
     }
     
-    public func callDeferred(_ variants: Variant...) {
-        _callDeferred(rest: variants)
+    public func callDeferred<each VariantRest : ConvertibleToVariant>(
+        _ rest: repeat each VariantRest
+    ) {
+        _callDeferred(repeat each rest)
     }
     
-    public func rpc(_ variants: Variant...) {
-        _rpc(rest: variants)
+    public func rpc<each VariantRest : ConvertibleToVariant>(
+        _ rest: repeat each VariantRest
+    ) {
+        _rpc(repeat each rest)
     }
     
-    public func rpcId(peerId: Int, _ variants: Variant...) {
-        _rpcId(peerId: peerId, rest: variants)
+    public func rpcId<each VariantRest : ConvertibleToVariant>(
+        peerId: Int,
+        _ rest: repeat each VariantRest
+    ) {
+        _rpcId(peerId: peerId, repeat each rest)
     }
     
-    public func bind(_ variants: Variant...) -> Callable {
-        _bind(rest: variants)
+    public func bind<each VariantRest : ConvertibleToVariant>(
+        _ rest: repeat each VariantRest
+    ) -> Callable {
+        _bind(repeat each rest)
     }
 }
 
