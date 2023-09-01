@@ -109,15 +109,15 @@ public struct Transform2D {
     }
     
     public var rotation: Real {
-        _getRotation()
+        _rotation()
     }
     
     public var scale: Vector2 {
-        _getScale()
+        _scale()
     }
     
     public var skew: Real {
-        _getSkew()
+        _skew()
     }
     
     public var orthonormalized: Transform2D {

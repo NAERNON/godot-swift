@@ -43,23 +43,23 @@ public struct PackedByteArray {
     // MARK: Methods & variables
     
     public func stringFromASCII() -> GodotString {
-        _getStringFromAscii()
+        _stringFromAscii()
     }
     
     public func stringFromUTF8() -> GodotString {
-        _getStringFromUtf8()
+        _stringFromUtf8()
     }
     
     public func stringFromUTF16() -> GodotString {
-        _getStringFromUtf16()
+        _stringFromUtf16()
     }
     
     public func stringFromUTF32() -> GodotString {
-        _getStringFromUtf32()
+        _stringFromUtf32()
     }
     
     public func stringFromWChar() -> GodotString {
-        _getStringFromWchar()
+        _stringFromWchar()
     }
     
     public func hexEncoded() -> GodotString {

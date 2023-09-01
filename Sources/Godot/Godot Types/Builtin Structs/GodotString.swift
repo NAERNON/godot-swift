@@ -83,15 +83,15 @@ public struct GodotString {
     }
     
     public func slice(delimiter: GodotString, sliceIndex: Int) -> GodotString {
-        _getSlice(delimiter: delimiter, slice: sliceIndex)
+        _slice(delimiter: delimiter, slice: sliceIndex)
     }
     
     public func slicec(delimiter: Int, sliceIndex: Int) -> GodotString {
-        _getSlicec(delimiter: delimiter, slice: sliceIndex)
+        _slicec(delimiter: delimiter, slice: sliceIndex)
     }
     
     public func sliceCount(delimiter: GodotString) -> Int {
-        _getSliceCount(delimiter: delimiter)
+        _sliceCount(delimiter: delimiter)
     }
     
     public func find(_ substring: GodotString, from index: Int = 0) -> Int {
@@ -175,11 +175,11 @@ public struct GodotString {
     }
     
     public func `extension`() -> GodotString {
-        _getExtension()
+        _extension()
     }
     
     public func basename() -> GodotString {
-        _getBasename()
+        _basename()
     }
     
     public func pathJoin(file: GodotString) -> GodotString {
@@ -235,11 +235,11 @@ public struct GodotString {
     }
     
     public func baseDirectory() -> GodotString {
-        _getBaseDir()
+        _baseDir()
     }
     
     public func file() -> GodotString {
-        _getFile()
+        _file()
     }
     
     public func xmlEscaped(escapeQuotes: Bool = false) -> GodotString {

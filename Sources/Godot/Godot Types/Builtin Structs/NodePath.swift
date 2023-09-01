@@ -41,31 +41,31 @@ public struct NodePath {
     }
     
     public var nameCount: Int {
-        _getNameCount()
+        _nameCount()
     }
     
     public func name(at index: Int) -> GodotStringName {
-        _getName(idx: index)
+        _name(idx: index)
     }
     
     public var subnameCount: Int {
-        _getSubnameCount()
+        _subnameCount()
     }
     
     public func subname(at index: Int) -> GodotStringName {
-        _getSubname(idx: index)
+        _subname(idx: index)
     }
     
     public func concatenatedNames() -> GodotStringName {
-        _getConcatenatedNames()
+        _concatenatedNames()
     }
     
     public func concatenatedSubnames() -> GodotStringName {
-        _getConcatenatedSubnames()
+        _concatenatedSubnames()
     }
     
     public func propertyPath() -> NodePath {
-        _getAsPropertyPath()
+        _asPropertyPath()
     }
     
     public var isEmpty: Bool {

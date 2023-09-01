@@ -132,7 +132,7 @@ public struct Color {
     }
     
     public var luminance: Float {
-        _getLuminance()
+        _luminance()
     }
     
     public var srgbToLinear: Color {

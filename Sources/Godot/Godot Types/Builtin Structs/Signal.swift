@@ -41,15 +41,15 @@ public struct Signal {
     }
     
     public var object: Object? {
-        _getObject()
+        _object()
     }
     
     public var objectID: Int {
-        _getObjectId()
+        _objectId()
     }
     
     public var name: GodotStringName {
-        _getName()
+        _name()
     }
     
     @discardableResult
@@ -66,7 +66,7 @@ public struct Signal {
     }
     
     public func connections() -> GodotArray {
-        _getConnections()
+        _connections()
     }
     
     public func emit<each VariantRest : ConvertibleToVariant>(_ rest: repeat each VariantRest) {

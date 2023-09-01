@@ -39,11 +39,11 @@ public struct Rect2i {
     // MARK: Methods & variables
     
     public var center: Vector2i {
-        _getCenter()
+        _center()
     }
     
     public var area: Int {
-        _getArea()
+        _area()
     }
     
     public var hasArea: Bool {

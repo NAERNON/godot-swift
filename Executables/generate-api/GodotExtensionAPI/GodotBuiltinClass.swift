@@ -330,6 +330,7 @@ struct GodotBuiltinClass: Decodable {
     @MemberBlockItemListBuilder
     private func operatorSyntax(_ `operator`: Operator) throws -> MemberBlockItemListSyntax {
         let operatorFunction = OperatorFunction(operator: `operator`, type: name)
+            .translated
         
         """
         private static var \(raw: `operator`.ptrIdentifier): GDExtensionPtrOperatorEvaluator = {
@@ -337,13 +338,13 @@ struct GodotBuiltinClass: Decodable {
         }()
         """
         
-        try operatorFunction.translated.declSyntax(
+        try operatorFunction.declSyntax(
             hideAllLabels: true,
             options: syntaxOptions,
             keywords: .internal
         ) {
             try `operator`.returnType.instantiationSyntax { instanceType, instanceName in
-                try operatorFunction.translated.argumentsPointerAccessSyntax(options: syntaxOptions) { pointerNames in
+                try operatorFunction.argumentsPointerAccessSyntax(options: syntaxOptions) { pointerNames in
                     try instanceType.pointerAccessSyntax(
                         instanceName: instanceName,
                         options: syntaxOptions,
@@ -483,7 +484,8 @@ struct GodotBuiltinClass: Decodable {
         """
         
         let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
-        let functionDecl = try method.withNamePrefixed(by: "_").translated.declSyntax(
+        let translatedMethod = method.translated
+        let functionDecl = try translatedMethod.withNamePrefixed(by: "_").declSyntax(
             options: syntaxOptions,
             keywords: .internal
         ) {
@@ -491,9 +493,9 @@ struct GodotBuiltinClass: Decodable {
                 "replaceOpaqueValueIfNecessary()"
             }
             
-            if let returnType = method.returnType {
+            if let returnType = translatedMethod.returnType {
                 try returnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
-                    try method.translated.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                    try translatedMethod.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
                         try instanceType.pointerAccessSyntax(
                             instanceName: instanceName,
                             options: syntaxOptions,
@@ -514,7 +516,7 @@ struct GodotBuiltinClass: Decodable {
                     }
                 }
             } else {
-                try method.translated.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                try translatedMethod.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
                     if method.isStatic {
                         "Self.\(raw: method.ptrIdentifier)(nil, \(raw: packName), nil, \(raw: method.argumentsCountSyntax(type: Int32.self)))"
                     } else {

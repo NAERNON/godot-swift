@@ -88,7 +88,7 @@ extension GodotTypedArray: VariantConvertible {
             throw GodotTypedArrayVariantConversionError.notTyped
         }
         
-        let type = GDExtensionVariantType(rawValue: UInt32(underlyingArray._getTypedBuiltin()))
+        let type = GDExtensionVariantType(rawValue: UInt32(underlyingArray._typedBuiltin()))
         guard type == Element.variantType.storageType else {
             throw GodotTypedArrayVariantConversionError
                 .incorrectType(expected: Element.variantType.storageType, found: type)
@@ -97,7 +97,7 @@ extension GodotTypedArray: VariantConvertible {
         // If the class name is not empty, we must check against
         // the underlying array.
         if !Element.__className._isEmpty() {
-            let className = underlyingArray._getTypedClassName()
+            let className = underlyingArray._typedClassName()
             guard className == Element.__className else {
                 throw GodotTypedArrayVariantConversionError
                     .incorrectClassName(expected: Element.__className, found: className)

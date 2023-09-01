@@ -57,23 +57,23 @@ public struct Callable {
     }
     
     public var object: Object? {
-        _getObject()
+        _object()
     }
     
     public var objectID: Int {
-        _getObjectId()
+        _objectId()
     }
     
     public var method: GodotStringName {
-        _getMethod()
+        _method()
     }
     
     public var boundArgumentsCount: Int {
-        _getBoundArgumentsCount()
+        _boundArgumentsCount()
     }
     
     public func boundArguments() -> GodotArray {
-        _getBoundArguments()
+        _boundArguments()
     }
     
     mutating public func bindv(arguments: GodotArray) -> Callable {

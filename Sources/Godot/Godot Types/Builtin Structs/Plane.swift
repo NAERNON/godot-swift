@@ -73,7 +73,7 @@ public struct Plane {
     }
     
     public var center: Vector3 {
-        _getCenter()
+        _center()
     }
     
     public func isApproximatelyEqual(to other: Plane) -> Bool {

@@ -37,7 +37,7 @@ public struct RID {
     }
     
     public var id: Int {
-        _getId()
+        _id()
     }
 }
 

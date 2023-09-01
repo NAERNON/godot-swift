@@ -33,11 +33,11 @@ public struct AABB {
     }
     
     public var center: Vector3 {
-        _getCenter()
+        _center()
     }
     
     public var volume: Real {
-        _getVolume()
+        _volume()
     }
     
     public var hasVolume: Bool {
@@ -89,35 +89,35 @@ public struct AABB {
     }
     
     public func support(dir: Vector3) -> Vector3 {
-        _getSupport(dir: dir)
+        _support(dir: dir)
     }
     
     public var longestAxis: Vector3 {
-        _getLongestAxis()
+        _longestAxis()
     }
     
     public var longestAxisIndex: Int {
-        _getLongestAxisIndex()
+        _longestAxisIndex()
     }
     
     public var longestAxisSize: Real {
-        _getLongestAxisSize()
+        _longestAxisSize()
     }
     
     public var shortestAxis: Vector3 {
-        _getShortestAxis()
+        _shortestAxis()
     }
     
     public var shortestAxisIndex: Int {
-        _getShortestAxisIndex()
+        _shortestAxisIndex()
     }
     
     public var shortestAxisSize: Real {
-        _getShortestAxisSize()
+        _shortestAxisSize()
     }
     
     public func endpoint(index: Int) -> Vector3 {
-        _getEndpoint(idx: index)
+        _endpoint(idx: index)
     }
     
     public func intersectsSegment(from fromPoint: Vector3, to toPoint: Vector3) -> Variant {

@@ -174,7 +174,7 @@ public struct Quaternion {
     }
     
     public func euler(order: Int = 2) -> Vector3 {
-        _getEuler(order: order)
+        _euler(order: order)
     }
     
     public static func fromEuler(_ euler: Vector3) -> Quaternion {
@@ -182,11 +182,11 @@ public struct Quaternion {
     }
     
     public var axis: Vector3 {
-        _getAxis()
+        _axis()
     }
     
     public var angle: Real {
-        _getAngle()
+        _angle()
     }
 }
 

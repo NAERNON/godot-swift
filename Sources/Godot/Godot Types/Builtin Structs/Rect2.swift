@@ -43,11 +43,11 @@ public struct Rect2 {
     // MARK: Methods & variables
     
     public var center: Vector2 {
-        _getCenter()
+        _center()
     }
     
     public var area: Real {
-        _getArea()
+        _area()
     }
     
     public var hasArea: Bool {

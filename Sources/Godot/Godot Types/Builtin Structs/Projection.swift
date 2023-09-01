@@ -160,7 +160,7 @@ public struct Projection {
     }
     
     public func projectionPlane(_ plane: Int) -> Plane {
-        _getProjectionPlane(plane)
+        _projectionPlane(plane)
     }
     
     public var flippedY: Projection {
@@ -172,23 +172,23 @@ public struct Projection {
     }
     
     public static func fovY(fovX: Real, aspect: Real) -> Real {
-        _getFovy(fovx: fovX, aspect: aspect)
+        _fovy(fovx: fovX, aspect: aspect)
     }
     
     public var zFar: Real {
-        _getZFar()
+        _zFar()
     }
     
     public var zNear: Real {
-        _getZNear()
+        _zNear()
     }
     
     public var aspect: Real {
-        _getAspect()
+        _aspect()
     }
     
     public var fov: Real {
-        _getFov()
+        _fov()
     }
     
     public var isOrthogonal: Bool {
@@ -196,11 +196,11 @@ public struct Projection {
     }
     
     public var viewportHalfExtents: Vector2 {
-        _getViewportHalfExtents()
+        _viewportHalfExtents()
     }
     
     public var farPlaneHalfExtents: Vector2 {
-        _getFarPlaneHalfExtents()
+        _farPlaneHalfExtents()
     }
     
     public var inversed: Projection {
@@ -208,11 +208,11 @@ public struct Projection {
     }
     
     public func pixelsPerMetter(forPixelWidth pixelWidth: Int) -> Int {
-        _getPixelsPerMeter(forPixelWidth: pixelWidth)
+        _pixelsPerMeter(forPixelWidth: pixelWidth)
     }
     
     public var lodMultiplier: Real {
-        _getLodMultiplier()
+        _lodMultiplier()
     }
 }
 

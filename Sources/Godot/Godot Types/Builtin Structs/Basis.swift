@@ -87,11 +87,11 @@ public struct Basis {
     }
     
     public var scale: Vector3 {
-        _getScale()
+        _scale()
     }
     
     public func euler(order: Int = 2) -> Vector3 {
-        _getEuler(order: order)
+        _euler(order: order)
     }
     
     public func tdotx(_ vector: Vector3) -> Real {
@@ -119,7 +119,7 @@ public struct Basis {
     }
     
     public var rotation: Quaternion {
-        _getRotationQuaternion()
+        _rotationQuaternion()
     }
     
     public static func looking(
