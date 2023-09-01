@@ -30,11 +30,12 @@ protocol GodotFunction {
 
 extension GodotFunction {
     var isVararg: Bool { false }
-    var usesVariantGeneric: Bool { false }
-    var convertsAllParameterToVariant: Bool { false }
     var isStatic: Bool { false }
     var isConst: Bool { false }
     var isMutating: Bool { false }
+    
+    var usesVariantGeneric: Bool { false }
+    var convertsAllParameterToVariant: Bool { false }
 }
 
 // MARK: - Extensions
@@ -293,13 +294,15 @@ extension GodotFunction {
     ) throws -> CodeBlockItemListSyntax {
         if let index = indexes.first {
             let argument = arguments![index]
+            var argumentType = argument.type
             var caller = CodeLanguage.swift.protectNameIfKeyword(for: argument.name)
             
             if convertsAllParameterToVariant || (usesVariantGeneric && argument.type == .variant) {
                 let _ = caller = "\(caller).makeVariant()"
+                let _ = argumentType = .variant
             }
             
-            try argument.type.argumentPointerAccessSyntax(
+            try argumentType.argumentPointerAccessSyntax(
                 caller: caller,
                 instanceName: argument.name,
                 options: options
