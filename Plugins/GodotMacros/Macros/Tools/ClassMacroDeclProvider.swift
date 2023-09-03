@@ -237,13 +237,13 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                     ofType: self,
                     superclassType: \(raw: superclassName ?? "").self
                 ) { instancePtr, isValid, out in
-                    \(classDecl.name).__instanceGodotDescription(instancePtr, isValid, out)
+                    \(classDecl.name)._$instanceGodotDescription(instancePtr, isValid, out)
                 }
                 createInstanceFunction: { _ in
-                    \(classDecl.name).__makeNewInstanceManagedByGodot()
+                    \(classDecl.name)._$makeNewInstanceManagedByGodot()
                 }
                 freeInstanceFunction: { _, instancePtr in
-                    \(classDecl.name).__freeInstanceManagedByGodot(instancePtr)
+                    \(classDecl.name)._$freeInstanceManagedByGodot(instancePtr)
                 }
                 
                 guard classBinding != nil else { return }
@@ -262,7 +262,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
         switch classType {
         case .root:
             return """
-            public class func __instanceGodotDescription(
+            public class func _$instanceGodotDescription(
                 _ instancePtr: GDExtensionClassInstancePtr?,
                 _ isValid: UnsafeMutablePointer<GDExtensionBool>?,
                 _ out: GDExtensionStringPtr?
@@ -276,7 +276,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 godotStringDescription.consumeByGodot(ontoUnsafePointer: out!)
             }
             
-            public class func __makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
+            public class func _$makeNewInstanceManagedByGodot() -> UnsafeMutableRawPointer {
                 let extensionObjectPtr = Self.makeNewExtensionObjectPtr()
                 
                 let instance = Self.init(objectPointer: extensionObjectPtr)
@@ -289,7 +289,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 return instance.withUnsafeRawPointer { $0 }
             }
             
-            public class func __freeInstanceManagedByGodot(_ instancePtr: UnsafeMutableRawPointer?) {
+            public class func _$freeInstanceManagedByGodot(_ instancePtr: UnsafeMutableRawPointer?) {
                 guard let instancePtr else { return }
                 
                 Unmanaged<Self>.fromOpaque(instancePtr).release()
@@ -304,7 +304,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             """
         case .refCountedRoot:
             return """
-            public override class func __freeInstanceManagedByGodot(_ instancePtr: UnsafeMutableRawPointer?) {
+            public override class func _$freeInstanceManagedByGodot(_ instancePtr: UnsafeMutableRawPointer?) {
                 guard let instancePtr else { return }
                 
                 let instance = Unmanaged<Self>.fromOpaque(instancePtr).takeRetainedValue()
