@@ -117,7 +117,8 @@ Every public option set is exposed to Godot. All these structs must be marked ``
 
 #### Expose signals
 
-Every public receiver is exposed to Godot. All these structs must be marked ``Emitter(signal:args:)``. See the corresponding doc for more information.
+Signals are created through emitters in Swift.
+Every public emitter is exposed to Godot. All these structs must be marked ``Emitter(signal:args:)``. See the corresponding doc for more information.
 
 ```swift
 @Exposable public class Character: Node {
@@ -160,7 +161,7 @@ public extension Character {
 ### Override the initializers
 
 Every Godot class come with two required initializers.
-The base one is the you will use when creating new instances. The other one is called by Godot to instantiate your class from Godot.
+The base one is the one you use when creating new instances. The other one is called by Godot to instantiate your class from Godot.
 
 If you decide to override an initializer, you will have to override both: 
 
@@ -187,6 +188,6 @@ If you decide to override an initializer, you will have to override both:
 Godot classes all inherit from the top class ``Object``.
 There is one specific class that is a direct subclass of it: ``RefCounted``.
 
-If your class is a subclass of `RefCounted`, the class will behave just like in Swift, using automatic reference counting. The deinit will be called as soon as the object is no more in use.
+If your class is a subclass of `RefCounted`, the class will behave just like in Swift, using automatic reference counting. The deinit will be called as soon as the object is no longer in use.
 
 Things are different when your class is *not* a subclass of `RefCounted`. When a new object of such a class is instantiated, a reference to the instance is forever persisted. The only way to free the instance is to explicitly request Godot to free its memory.
