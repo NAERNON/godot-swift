@@ -85,9 +85,9 @@ Every public enum is exposed to Godot. All these enums must be marked ``GodotEnu
     // CHARACTER_EMOTION_NOT_SO_HAPPY
     // CHARACTER_EMOTION_SAD
     @GodotEnum public enum Emotion: Int64 {
-    case happy
-    case notSoHappy
-    case sad
+        case happy
+        case notSoHappy
+        case sad
     }
 }
 ```
@@ -105,12 +105,12 @@ Every public option set is exposed to Godot. All these structs must be marked ``
     // CHARACTER_ACTION_NONE
     // CHARACTER_ACTION_DREAMING
     @GodotOptionSet public struct CharacterAction {
-    public static let thinking: Self = .init(rawValue: 1 << 0)
-    public static let drawing: Self  = .init(rawValue: 1 << 1)
-    public static let sleeping: Self = .init(rawValue: 1 << 2)
+        public static let thinking: Self = .init(rawValue: 1 << 0)
+        public static let drawing: Self  = .init(rawValue: 1 << 1)
+        public static let sleeping: Self = .init(rawValue: 1 << 2)
 
-    public static let none: CharacterAction = []
-    public static let dreaming: CharacterAction = [.thinking, .sleeping]
+        public static let none: CharacterAction = []
+        public static let dreaming: CharacterAction = [.thinking, .sleeping]
     }
 }
 ```
