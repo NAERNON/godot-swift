@@ -100,7 +100,7 @@ $ swift run generate-api float-64
 
 ## Contributing
 
-Godot Swift is open-source and under a [MIT license](License).
+Godot Swift is open-source and under a [MIT license](LICENSE.md).
 If you want to make a change or add a new feature, please [open an issue](https://github.com/NAERNON/godot-swift/issues) or a [pull request](https://github.com/NAERNON/godot-swift/pull/new). 
 Also, feel free to [report a bug, an error or even a typo](https://github.com/NAERNON/godot-swift/issues).
 
