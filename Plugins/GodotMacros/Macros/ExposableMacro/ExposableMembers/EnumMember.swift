@@ -8,8 +8,7 @@ struct EnumMember: ExposableMember {
     
     init?(declSyntax: some DeclSyntaxProtocol) {
         guard let enumDeclSyntax = declSyntax.as(EnumDeclSyntax.self),
-              let tokens = enumDeclSyntax.modifiers?.map(\.name.tokenKind),
-              tokens.contains(where: {
+              enumDeclSyntax.modifiers.map(\.name.tokenKind).contains(where: {
                   $0 == .keyword(.public)
               })
         else {
@@ -32,31 +31,8 @@ struct EnumMember: ExposableMember {
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         let attributeSyntax = AttributeSyntax(attributeName: IdentifierTypeSyntax(name: "GodotEnum"))
-        let fixItMessage = GodotDiagnostic("Add '@GodotEnum'")
-        let diagnostic = GodotDiagnostic("Godot enums must be marked '@GodotEnum'")
         
-        // Check @GodotEnum
-        guard var attributes = enumDeclSyntax.attributes else {
-            // No attributes at all, so provide fixit that adds @GodotEnum
-            let fixedDecl = enumDeclSyntax
-                .with(\.leadingTrivia, .newline)
-                .with(
-                    \.attributes,
-                     AttributeListSyntax([.attribute(attributeSyntax)])
-                )
-            let fixIt = FixIt(message: fixItMessage, changes: [
-                .replace(
-                    oldNode: Syntax(enumDeclSyntax),
-                    newNode: Syntax(fixedDecl))
-            ])
-            
-            context.diagnose(Diagnostic(
-                node: Syntax(enumDeclSyntax.name),
-                message: diagnostic,
-                fixIt: fixIt
-            ))
-            return nil
-        }
+        var attributes = enumDeclSyntax.attributes
         
         // Check @GodotEnum
         guard attributes
@@ -69,7 +45,7 @@ struct EnumMember: ExposableMember {
                     \.attributes,
                      attributes
                 )
-            let fixIt = FixIt(message: fixItMessage, changes: [
+            let fixIt = FixIt(message: GodotDiagnostic("Insert '@GodotEnum'"), changes: [
                 .replace(
                     oldNode: Syntax(enumDeclSyntax),
                     newNode: Syntax(fixedDecl))
@@ -77,7 +53,7 @@ struct EnumMember: ExposableMember {
             
             context.diagnose(Diagnostic(
                 node: Syntax(enumDeclSyntax.name),
-                message: diagnostic,
+                message: GodotDiagnostic("Godot enums must be marked '@GodotEnum'"),
                 fixIt: fixIt
             ))
             return nil

@@ -7,12 +7,14 @@ struct VariableMember: ExposableMember {
     let variableDeclSyntax: VariableDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
-        guard let variableDeclSyntax = declSyntax.as(VariableDeclSyntax.self),
-              let tokens = variableDeclSyntax.modifiers?.map(\.name.tokenKind),
-              tokens.contains(where: {
-                  $0 == .keyword(.public) || $0 == .keyword(.open)
-              }),
-              !tokens.contains(where: { $0 == .keyword(.override) })
+        guard let variableDeclSyntax = declSyntax.as(VariableDeclSyntax.self) else {
+            return nil
+        }
+        
+        let tokens = variableDeclSyntax.modifiers.map(\.name.tokenKind)
+        guard tokens.contains(where: {
+            $0 == .keyword(.public) || $0 == .keyword(.open)
+        }) && !tokens.contains(where: { $0 == .keyword(.override) })
         else {
             return nil
         }
@@ -71,22 +73,20 @@ struct VariableMember: ExposableMember {
         }
         
         // Check static or class
-        if let modifiers = variableDeclSyntax.modifiers {
-            let diagnostic = GodotDiagnostic("Exposable variables cannot be marked 'static' or 'class'")
-            if let modifier = modifiers.first(where: { $0.name.tokenKind == .keyword(.static) }) {
-                context.diagnose(Diagnostic(
-                    node: Syntax(modifier),
-                    message: diagnostic
-                ))
-                isExposable = false
-            }
-            if let modifier = modifiers.first(where: { $0.name.tokenKind == .keyword(.class) }) {
-                context.diagnose(Diagnostic(
-                    node: Syntax(modifier),
-                    message: diagnostic
-                ))
-                isExposable = false
-            }
+        let staticClassDiagnostic = GodotDiagnostic("Exposable variables cannot be marked 'static' or 'class'")
+        if let modifier = variableDeclSyntax.modifiers.first(where: { $0.name.tokenKind == .keyword(.static) }) {
+            context.diagnose(Diagnostic(
+                node: Syntax(modifier),
+                message: staticClassDiagnostic
+            ))
+            isExposable = false
+        }
+        if let modifier = variableDeclSyntax.modifiers.first(where: { $0.name.tokenKind == .keyword(.class) }) {
+            context.diagnose(Diagnostic(
+                node: Syntax(modifier),
+                message: staticClassDiagnostic
+            ))
+            isExposable = false
         }
         
         guard isExposable else {

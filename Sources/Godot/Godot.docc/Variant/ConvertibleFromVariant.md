@@ -27,7 +27,7 @@ let variant: Variant = //...
 // Use the `typed(_:)` method that may throw
 let level = try variant.typed(Level.self)
 
-// Use the `typed(compatibleWith:_)` method that doesnt throw
+// Use the `typed(compatibleWith:_)` method that doesn't throw
 let level = variant.typed(compatibleWith: Level.self)
 ```
 

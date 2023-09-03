@@ -27,9 +27,9 @@ public enum EmitterMacro: MemberMacro, PeerMacro, ExtensionMacro {
         }
         
         // Check is public
-        guard structDecl.modifiers?.map(\.name.tokenKind).contains(where: {
+        guard structDecl.modifiers.map(\.name.tokenKind).contains(where: {
             $0 == .keyword(.public)
-        }) == true else {
+        }) else {
             context.diagnose(Diagnostic(
                 node: Syntax(structDecl.structKeyword),
                 message: GodotDiagnostic("Emitter is not public")

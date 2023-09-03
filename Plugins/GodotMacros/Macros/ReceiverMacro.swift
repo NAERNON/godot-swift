@@ -20,9 +20,9 @@ public enum ReceiverMacro: PeerMacro {
         }
         
         // Check is public or open
-        guard functionDecl.modifiers?.map(\.name.tokenKind).contains(where: {
+        guard functionDecl.modifiers.map(\.name.tokenKind).contains(where: {
             $0 == .keyword(.public) || $0 == .keyword(.open)
-        }) == true else {
+        }) else {
             context.diagnose(Diagnostic(
                 node: Syntax(functionDecl.funcKeyword),
                 message: GodotDiagnostic("Receiver is not public")
@@ -31,7 +31,7 @@ public enum ReceiverMacro: PeerMacro {
         }
         
         // Check is not override
-        if let overrideModifier = functionDecl.modifiers?.map(\.name).first(where: {
+        if let overrideModifier = functionDecl.modifiers.map(\.name).first(where: {
             $0.tokenKind == .keyword(.override)
         }) {
             context.diagnose(Diagnostic(

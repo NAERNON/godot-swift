@@ -7,12 +7,14 @@ struct FunctionMember: ExposableMember {
     let functionDeclSyntax: FunctionDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
-        guard let functionDeclSyntax = declSyntax.as(FunctionDeclSyntax.self),
-              let tokens = functionDeclSyntax.modifiers?.map(\.name.tokenKind),
-              tokens.contains(where: {
-                  $0 == .keyword(.public) || $0 == .keyword(.open)
-              }),
-              !tokens.contains(where: { $0 == .keyword(.override) })
+        guard let functionDeclSyntax = declSyntax.as(FunctionDeclSyntax.self) else {
+            return nil
+        }
+        
+        let tokens = functionDeclSyntax.modifiers.map(\.name.tokenKind)
+        guard tokens.contains(where: {
+            $0 == .keyword(.public) || $0 == .keyword(.open)
+        }) && !tokens.contains(where: { $0 == .keyword(.override) })
         else {
             return nil
         }
@@ -97,9 +99,9 @@ struct FunctionMember: ExposableMember {
         let consecutiveLastDefaultValues = consecutiveLastDefaultValues(in: context)
         
         // Syntax
-        let isStatic = functionDeclSyntax.modifiers?.map(\.name.tokenKind).contains(where: {
+        let isStatic = functionDeclSyntax.modifiers.map(\.name.tokenKind).contains(where: {
             $0 == .keyword(.static)
-        }) == true
+        })
         
         let parametersCount = functionDeclSyntax.signature.parameterClause.parameters.count
         let parameters = functionDeclSyntax.signature.parameterClause.parameters.enumerated().map

@@ -7,8 +7,7 @@ struct ClassMember: ExposableMember {
     
     init?(declSyntax: some DeclSyntaxProtocol) {
         guard let classDeclSyntax = declSyntax.as(ClassDeclSyntax.self),
-              let tokens = classDeclSyntax.modifiers?.map(\.name.tokenKind),
-              tokens.contains(where: {
+              classDeclSyntax.modifiers.map(\.name.tokenKind).contains(where: {
                   $0 == .keyword(.public)
               })
         else {

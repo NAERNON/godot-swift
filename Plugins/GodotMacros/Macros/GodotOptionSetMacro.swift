@@ -97,13 +97,13 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         
         for member in members {
             if let variableDecl = member.decl.as(VariableDeclSyntax.self) {
-                let isStatic = variableDecl.modifiers?.map(\.name.tokenKind).contains(where: {
+                let isStatic = variableDecl.modifiers.map(\.name.tokenKind).contains(where: {
                     $0 == .keyword(.static)
-                }) == true
+                })
                 
-                let isPublic = variableDecl.modifiers?.map(\.name.tokenKind).contains(where: {
+                let isPublic = variableDecl.modifiers.map(\.name.tokenKind).contains(where: {
                     $0 == .keyword(.public)
-                }) == true
+                })
                 
                 guard isStatic && isPublic else {
                     continue

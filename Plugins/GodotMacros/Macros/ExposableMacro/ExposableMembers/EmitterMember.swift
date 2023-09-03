@@ -8,12 +8,10 @@ struct EmitterMember: ExposableMember {
     
     init?(declSyntax: some DeclSyntaxProtocol) {
         guard let structDeclSyntax = declSyntax.as(StructDeclSyntax.self),
-              let attributes = structDeclSyntax.attributes,
-              let tokens = structDeclSyntax.modifiers?.map(\.name.tokenKind),
-              tokens.contains(where: {
+              structDeclSyntax.modifiers.map(\.name.tokenKind).contains(where: {
                   $0 == .keyword(.public)
               }),
-              attributes.contains(
+              structDeclSyntax.attributes.contains(
                 where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Emitter" }
               )
         else {
@@ -35,7 +33,7 @@ struct EmitterMember: ExposableMember {
         classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
-        guard let emitterAttribute = structDeclSyntax.attributes?.first(
+        guard let emitterAttribute = structDeclSyntax.attributes.first(
             where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Emitter" }
         )?.as(AttributeSyntax.self),
               let macroArguments = EmitterMacro.macroArguments(

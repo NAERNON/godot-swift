@@ -7,12 +7,14 @@ struct FunctionOverrideMember: ExposableMember {
     let functionDeclSyntax: FunctionDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
-        guard let functionDeclSyntax = declSyntax.as(FunctionDeclSyntax.self),
-              let tokens = functionDeclSyntax.modifiers?.map(\.name.tokenKind),
-              tokens.contains(where: {
-                  $0 == .keyword(.public) || $0 == .keyword(.open)
-              }),
-              tokens.contains(where: { $0 == .keyword(.override) })
+        guard let functionDeclSyntax = declSyntax.as(FunctionDeclSyntax.self) else {
+            return nil
+        }
+        
+        let tokens = functionDeclSyntax.modifiers.map(\.name.tokenKind)
+        guard tokens.contains(where: {
+            $0 == .keyword(.public) || $0 == .keyword(.open)
+        }) && tokens.contains(where: { $0 == .keyword(.override) })
         else {
             return nil
         }
