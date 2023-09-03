@@ -170,9 +170,9 @@ open class EditorScenePostImportPlugin: RefCounted {
             let _ = instance
         ._internalProcess(
             category: args[0]!.load(as: Int32.self),
-            baseNode: Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
-            node: Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!)),
-            resource: Godot.Resource.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
+            baseNode: Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            node: Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!)),
+            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
         )}
         let _get_import_options_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -202,7 +202,7 @@ open class EditorScenePostImportPlugin: RefCounted {
             let instance = Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._preProcess(
-            scene: Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            scene: Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _post_process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -211,7 +211,7 @@ open class EditorScenePostImportPlugin: RefCounted {
             let instance = Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._postProcess(
-            scene: Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            scene: Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         _virtualFunctions = [
             "_getInternalImportOptions" : ("_get_internal_import_options", _get_internal_import_options_call),

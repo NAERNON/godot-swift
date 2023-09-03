@@ -92,7 +92,7 @@ open class AudioStream: Resource {
                 )
             }
         }
-        return Godot.AudioStreamPlayback.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AudioStreamPlayback.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

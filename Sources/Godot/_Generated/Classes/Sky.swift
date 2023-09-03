@@ -153,7 +153,7 @@ open class Sky: Resource {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var material: Godot.Material? {

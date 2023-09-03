@@ -63,7 +63,7 @@ open class PackedScene: Resource {
                 }
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_can_instantiate: GDExtensionMethodBindPtr = {
@@ -107,7 +107,7 @@ open class PackedScene: Resource {
                 )
             }
         }
-        return Godot.SceneState.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SceneState.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

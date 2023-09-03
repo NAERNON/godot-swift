@@ -1146,7 +1146,7 @@ open class LineEdit: Control {
                 )
             }
         }
-        return Godot.PopupMenu.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PopupMenu.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_is_menu_visible: GDExtensionMethodBindPtr = {
@@ -1566,7 +1566,7 @@ open class LineEdit: Control {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_flat: GDExtensionMethodBindPtr = {

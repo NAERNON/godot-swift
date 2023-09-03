@@ -43,7 +43,7 @@ open class CameraServer: Object {
                 }
             }
         }
-        return Godot.CameraFeed.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CameraFeed.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_feed_count: GDExtensionMethodBindPtr = {

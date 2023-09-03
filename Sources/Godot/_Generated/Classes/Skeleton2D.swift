@@ -54,7 +54,7 @@ open class Skeleton2D: Node2D {
                 }
             }
         }
-        return Godot.Bone2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Bone2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_skeleton: GDExtensionMethodBindPtr = {
@@ -122,7 +122,7 @@ open class Skeleton2D: Node2D {
                 )
             }
         }
-        return Godot.SkeletonModificationStack2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SkeletonModificationStack2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_execute_modifications: GDExtensionMethodBindPtr = {

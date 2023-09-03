@@ -54,7 +54,7 @@ open class Crypto: RefCounted {
                 }
             }
         }
-        return Godot.CryptoKey.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CryptoKey.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_generate_self_signed_certificate: GDExtensionMethodBindPtr = {
@@ -88,7 +88,7 @@ open class Crypto: RefCounted {
                 }
             }
         }
-        return Godot.X509Certificate.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.X509Certificate.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_sign: GDExtensionMethodBindPtr = {

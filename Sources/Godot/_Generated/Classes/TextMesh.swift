@@ -180,7 +180,7 @@ open class TextMesh: PrimitiveMesh {
                 )
             }
         }
-        return Godot.Font.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Font.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_font_size: GDExtensionMethodBindPtr = {

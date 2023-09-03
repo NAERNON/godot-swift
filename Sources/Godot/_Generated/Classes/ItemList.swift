@@ -195,7 +195,7 @@ open class ItemList: Control {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_item_text_direction: GDExtensionMethodBindPtr = {
@@ -1679,7 +1679,7 @@ open class ItemList: Control {
                 )
             }
         }
-        return Godot.VScrollBar.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.VScrollBar.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_text_overrun_behavior: GDExtensionMethodBindPtr = {

@@ -30,7 +30,7 @@ open class TLSOptions: RefCounted {
                 }
             }
         }
-        return Godot.TLSOptions.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TLSOptions.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_client_unsafe: GDExtensionMethodBindPtr = {
@@ -56,7 +56,7 @@ open class TLSOptions: RefCounted {
                 }
             }
         }
-        return Godot.TLSOptions.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TLSOptions.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_server: GDExtensionMethodBindPtr = {
@@ -86,7 +86,7 @@ open class TLSOptions: RefCounted {
                 }
             }
         }
-        return Godot.TLSOptions.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TLSOptions.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

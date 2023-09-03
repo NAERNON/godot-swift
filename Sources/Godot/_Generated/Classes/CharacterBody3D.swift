@@ -1072,7 +1072,7 @@ open class CharacterBody3D: PhysicsBody3D {
                 }
             }
         }
-        return Godot.KinematicCollision3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.KinematicCollision3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_last_slide_collision: GDExtensionMethodBindPtr = {
@@ -1094,7 +1094,7 @@ open class CharacterBody3D: PhysicsBody3D {
                 )
             }
         }
-        return Godot.KinematicCollision3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.KinematicCollision3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var motionMode: Godot.CharacterBody3D.MotionMode {

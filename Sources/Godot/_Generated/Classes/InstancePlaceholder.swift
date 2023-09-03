@@ -58,7 +58,7 @@ open class InstancePlaceholder: Node {
                 }
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_instance_path: GDExtensionMethodBindPtr = {

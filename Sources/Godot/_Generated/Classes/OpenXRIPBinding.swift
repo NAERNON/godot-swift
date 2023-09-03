@@ -48,7 +48,7 @@ open class OpenXRIPBinding: Resource {
                 )
             }
         }
-        return Godot.OpenXRAction.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.OpenXRAction.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_path_count: GDExtensionMethodBindPtr = {

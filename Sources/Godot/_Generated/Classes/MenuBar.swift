@@ -558,7 +558,7 @@ open class MenuBar: Control {
                 }
             }
         }
-        return Godot.PopupMenu.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PopupMenu.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var isFlat: Bool {

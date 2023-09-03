@@ -24,7 +24,7 @@ open class GLTFMesh: Resource {
                 )
             }
         }
-        return Godot.ImporterMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ImporterMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {

@@ -48,7 +48,7 @@ open class LightOccluder2D: Node2D {
                 )
             }
         }
-        return Godot.OccluderPolygon2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.OccluderPolygon2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_occluder_light_mask: GDExtensionMethodBindPtr = {

@@ -1571,7 +1571,7 @@ open class Animation: Resource {
                 }
             }
         }
-        return Godot.Resource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_audio_track_get_key_start_offset: GDExtensionMethodBindPtr = {

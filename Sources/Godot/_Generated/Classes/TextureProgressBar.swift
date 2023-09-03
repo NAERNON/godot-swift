@@ -60,7 +60,7 @@ open class TextureProgressBar: Range {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_progress_texture: GDExtensionMethodBindPtr = {
@@ -106,7 +106,7 @@ open class TextureProgressBar: Range {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_over_texture: GDExtensionMethodBindPtr = {
@@ -152,7 +152,7 @@ open class TextureProgressBar: Range {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_fill_mode: GDExtensionMethodBindPtr = {

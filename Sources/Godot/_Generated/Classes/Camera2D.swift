@@ -725,7 +725,7 @@ open class Camera2D: Node2D {
                 )
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_position_smoothing_speed: GDExtensionMethodBindPtr = {

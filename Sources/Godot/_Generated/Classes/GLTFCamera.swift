@@ -28,7 +28,7 @@ open class GLTFCamera: Resource {
                 }
             }
         }
-        return Godot.GLTFCamera.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.GLTFCamera.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_to_node: GDExtensionMethodBindPtr = {
@@ -50,7 +50,7 @@ open class GLTFCamera: Resource {
                 )
             }
         }
-        return Godot.Camera3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Camera3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_from_dictionary: GDExtensionMethodBindPtr = {
@@ -74,7 +74,7 @@ open class GLTFCamera: Resource {
                 }
             }
         }
-        return Godot.GLTFCamera.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.GLTFCamera.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_to_dictionary: GDExtensionMethodBindPtr = {

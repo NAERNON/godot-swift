@@ -32,7 +32,7 @@ open class ScriptEditor: PanelContainer {
                 )
             }
         }
-        return Godot.ScriptEditorBase.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ScriptEditorBase.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_open_script_editors: GDExtensionMethodBindPtr = {
@@ -146,7 +146,7 @@ open class ScriptEditor: PanelContainer {
                 )
             }
         }
-        return Godot.Script.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Script.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_open_scripts: GDExtensionMethodBindPtr = {

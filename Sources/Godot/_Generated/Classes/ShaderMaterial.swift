@@ -48,7 +48,7 @@ open class ShaderMaterial: Material {
                 )
             }
         }
-        return Godot.Shader.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Shader.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_shader_parameter: GDExtensionMethodBindPtr = {

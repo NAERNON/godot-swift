@@ -194,7 +194,7 @@ open class TextureLayered: Texture {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

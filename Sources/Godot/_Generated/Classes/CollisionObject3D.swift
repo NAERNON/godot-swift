@@ -563,7 +563,7 @@ open class CollisionObject3D: Node3D {
                 }
             }
         }
-        return Godot.Object.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Object.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_shape_owner_set_disabled: GDExtensionMethodBindPtr = {
@@ -693,7 +693,7 @@ open class CollisionObject3D: Node3D {
                 }
             }
         }
-        return Godot.Shape3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Shape3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_shape_owner_get_shape_index: GDExtensionMethodBindPtr = {
@@ -874,8 +874,8 @@ open class CollisionObject3D: Node3D {
             let instance = Unmanaged<CollisionObject3D> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._inputEvent(
-            camera: Godot.Camera3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            event: Godot.InputEvent.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            event: Godot.InputEvent.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
             position: args[2]!.load(as: Godot.Vector3.self),
             normal: args[3]!.load(as: Godot.Vector3.self),
             shapeIdx: args[4]!.load(as: Int32.self)

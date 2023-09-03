@@ -48,7 +48,7 @@ open class MultiMeshInstance3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.MultiMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MultiMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var multimesh: Godot.MultiMesh? {

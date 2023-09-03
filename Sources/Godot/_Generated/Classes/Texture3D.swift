@@ -180,7 +180,7 @@ open class Texture3D: Texture {
                 )
             }
         }
-        return Godot.Resource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

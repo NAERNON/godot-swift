@@ -52,7 +52,7 @@ open class Path3D: Node3D {
                 )
             }
         }
-        return Godot.Curve3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var curve: Godot.Curve3D? {

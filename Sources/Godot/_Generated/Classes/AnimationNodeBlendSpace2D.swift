@@ -142,7 +142,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
                 }
             }
         }
-        return Godot.AnimationRootNode.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AnimationRootNode.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_remove_blend_point: GDExtensionMethodBindPtr = {

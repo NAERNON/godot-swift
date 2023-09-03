@@ -204,12 +204,12 @@ struct FunctionMember: ExposableMember {
     private func consecutiveLastDefaultValues(
         in context: some MacroExpansionContext
     ) -> [TokenSyntax] {
-        // Retreive all default values
+        // Retrieve all default values
         let parametersDefaultValues = functionDeclSyntax.signature.parameterClause.parameters.map {
             $0.defaultValue
         }
         
-        // Retreive all value literals
+        // Retrieve all value literals
         let valueLiterals = parametersDefaultValues.map { defaultValue -> TokenSyntax? in
             guard let defaultValue else {
                 return nil

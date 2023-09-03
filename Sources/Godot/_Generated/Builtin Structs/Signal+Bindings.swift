@@ -207,7 +207,7 @@ extension Signal {
                 Self.__method_binding_get_object(__ptr_self, nil, __ptr___temporary, 0)
             }
         }
-        return Godot.Object.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Object.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_object_id: GDExtensionPtrBuiltInMethod = {

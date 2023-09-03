@@ -333,7 +333,7 @@ open class WebXRInterface: XRInterface {
                 }
             }
         }
-        return Godot.XRPositionalTracker.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.XRPositionalTracker.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_input_source_target_ray_mode: GDExtensionMethodBindPtr = {

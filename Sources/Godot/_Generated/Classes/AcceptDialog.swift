@@ -36,7 +36,7 @@ open class AcceptDialog: Window {
                 )
             }
         }
-        return Godot.Button.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Button.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_label: GDExtensionMethodBindPtr = {
@@ -58,7 +58,7 @@ open class AcceptDialog: Window {
                 )
             }
         }
-        return Godot.Label.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Label.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_hide_on_ok: GDExtensionMethodBindPtr = {
@@ -176,7 +176,7 @@ open class AcceptDialog: Window {
                 }
             }
         }
-        return Godot.Button.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Button.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_cancel_button: GDExtensionMethodBindPtr = {
@@ -202,7 +202,7 @@ open class AcceptDialog: Window {
                 }
             }
         }
-        return Godot.Button.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Button.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_remove_button: GDExtensionMethodBindPtr = {

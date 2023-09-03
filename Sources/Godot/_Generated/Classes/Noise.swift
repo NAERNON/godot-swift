@@ -172,7 +172,7 @@ open class Noise: Resource {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_seamless_image: GDExtensionMethodBindPtr = {
@@ -208,7 +208,7 @@ open class Noise: Resource {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_image_3d: GDExtensionMethodBindPtr = {

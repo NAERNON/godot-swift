@@ -42,7 +42,7 @@ open class FileAccess: RefCounted {
                 }
             }
         }
-        return Godot.FileAccess.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.FileAccess.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_open_encrypted: GDExtensionMethodBindPtr = {
@@ -70,7 +70,7 @@ open class FileAccess: RefCounted {
                 }
             }
         }
-        return Godot.FileAccess.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.FileAccess.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_open_encrypted_with_pass: GDExtensionMethodBindPtr = {
@@ -98,7 +98,7 @@ open class FileAccess: RefCounted {
                 }
             }
         }
-        return Godot.FileAccess.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.FileAccess.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_open_compressed: GDExtensionMethodBindPtr = {
@@ -126,7 +126,7 @@ open class FileAccess: RefCounted {
                 }
             }
         }
-        return Godot.FileAccess.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.FileAccess.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_open_error: GDExtensionMethodBindPtr = {

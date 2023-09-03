@@ -183,7 +183,7 @@ open class ScriptExtension: Script {
             let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._inheritsScript(
-            Godot.Script.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            Godot.Script.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
         let _get_instance_base_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -201,7 +201,7 @@ open class ScriptExtension: Script {
             let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._instanceCreate(
-            forObject: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            forObject: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: UnsafeMutableRawPointer.self).pointee = returnValue}
         let _placeholder_instance_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -211,7 +211,7 @@ open class ScriptExtension: Script {
             let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._placeholderInstanceCreate(
-            forObject: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            forObject: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: UnsafeMutableRawPointer.self).pointee = returnValue}
         let _instance_has_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -221,7 +221,7 @@ open class ScriptExtension: Script {
             let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._instanceHas(
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
         let _has_source_code_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

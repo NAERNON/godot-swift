@@ -404,7 +404,7 @@ open class EditorProperty: Container {
                 )
             }
         }
-        return Godot.Object.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Object.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_update_property: GDExtensionMethodBindPtr = {

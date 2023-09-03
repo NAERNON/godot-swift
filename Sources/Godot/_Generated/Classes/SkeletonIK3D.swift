@@ -376,7 +376,7 @@ open class SkeletonIK3D: Node {
                 )
             }
         }
-        return Godot.Skeleton3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Skeleton3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_is_running: GDExtensionMethodBindPtr = {

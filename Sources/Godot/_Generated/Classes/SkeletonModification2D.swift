@@ -77,7 +77,7 @@ open class SkeletonModification2D: Resource {
                 )
             }
         }
-        return Godot.SkeletonModificationStack2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SkeletonModificationStack2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_is_setup: GDExtensionMethodBindPtr = {
@@ -287,7 +287,7 @@ open class SkeletonModification2D: Resource {
             let instance = Unmanaged<SkeletonModification2D> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._setupModification(
-            modificationStack: Godot.SkeletonModificationStack2D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            modificationStack: Godot.SkeletonModificationStack2D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _draw_editor_gizmo_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {

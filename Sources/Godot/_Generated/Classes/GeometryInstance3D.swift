@@ -72,7 +72,7 @@ open class GeometryInstance3D: VisualInstance3D {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_material_overlay: GDExtensionMethodBindPtr = {
@@ -118,7 +118,7 @@ open class GeometryInstance3D: VisualInstance3D {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_cast_shadows_setting: GDExtensionMethodBindPtr = {

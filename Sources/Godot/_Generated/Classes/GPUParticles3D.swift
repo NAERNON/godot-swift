@@ -640,7 +640,7 @@ open class GPUParticles3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_speed_scale: GDExtensionMethodBindPtr = {
@@ -824,7 +824,7 @@ open class GPUParticles3D: GeometryInstance3D {
                 }
             }
         }
-        return Godot.Mesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Mesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_skin: GDExtensionMethodBindPtr = {
@@ -870,7 +870,7 @@ open class GPUParticles3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.Skin.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Skin.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_restart: GDExtensionMethodBindPtr = {

@@ -48,7 +48,7 @@ open class Path2D: Node2D {
                 )
             }
         }
-        return Godot.Curve2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var curve: Godot.Curve2D? {

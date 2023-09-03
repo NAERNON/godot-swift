@@ -100,7 +100,7 @@ open class ResourceLoader: Object {
                 }
             }
         }
-        return Godot.Resource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_load: GDExtensionMethodBindPtr = {
@@ -130,7 +130,7 @@ open class ResourceLoader: Object {
                 }
             }
         }
-        return Godot.Resource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_recognized_extensions_for_type: GDExtensionMethodBindPtr = {

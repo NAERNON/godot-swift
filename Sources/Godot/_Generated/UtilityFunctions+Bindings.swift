@@ -1834,7 +1834,7 @@ internal func _instanceFromId(instanceId: Int) -> Object? {
             }
         }
     }
-    return Object.retreivedInstanceManagedByGodot(__temporary)
+    return Object.retrievedInstanceManagedByGodot(__temporary)
 }
 
 private var __function_binding_is_instance_id_valid: GDExtensionPtrUtilityFunction = {

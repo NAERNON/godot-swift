@@ -110,7 +110,7 @@ open class WebRTCPeerConnection: RefCounted {
                 }
             }
         }
-        return Godot.WebRTCDataChannel.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.WebRTCDataChannel.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_offer: GDExtensionMethodBindPtr = {

@@ -48,7 +48,7 @@ open class MeshInstance3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.Mesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Mesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_skeleton_path: GDExtensionMethodBindPtr = {
@@ -138,7 +138,7 @@ open class MeshInstance3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.Skin.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Skin.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_surface_override_material_count: GDExtensionMethodBindPtr = {
@@ -212,7 +212,7 @@ open class MeshInstance3D: GeometryInstance3D {
                 }
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_active_material: GDExtensionMethodBindPtr = {
@@ -238,7 +238,7 @@ open class MeshInstance3D: GeometryInstance3D {
                 }
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_trimesh_collision: GDExtensionMethodBindPtr = {

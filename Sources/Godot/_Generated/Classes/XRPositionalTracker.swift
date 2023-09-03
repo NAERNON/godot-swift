@@ -304,7 +304,7 @@ open class XRPositionalTracker: RefCounted {
                 }
             }
         }
-        return Godot.XRPose.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.XRPose.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_invalidate_pose: GDExtensionMethodBindPtr = {

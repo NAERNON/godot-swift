@@ -1229,7 +1229,7 @@ open class GraphEdit: Control {
                 )
             }
         }
-        return Godot.HBoxContainer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.HBoxContainer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_arrange_nodes: GDExtensionMethodBindPtr = {
@@ -1473,7 +1473,7 @@ open class GraphEdit: Control {
             let instance = Unmanaged<GraphEdit> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._isInInputHotzone(
-            inNode: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            inNode: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             inPort: args[1]!.load(as: Int32.self),
             mousePosition: args[2]!.load(as: Godot.Vector2.self)
         )
@@ -1485,7 +1485,7 @@ open class GraphEdit: Control {
             let instance = Unmanaged<GraphEdit> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._isInOutputHotzone(
-            inNode: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            inNode: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             inPort: args[1]!.load(as: Int32.self),
             mousePosition: args[2]!.load(as: Godot.Vector2.self)
         )

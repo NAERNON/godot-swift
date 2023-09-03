@@ -26,7 +26,7 @@ open class RegEx: RefCounted {
                 }
             }
         }
-        return Godot.RegEx.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.RegEx.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
@@ -100,7 +100,7 @@ open class RegEx: RefCounted {
                 }
             }
         }
-        return Godot.RegExMatch.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.RegExMatch.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_search_all: GDExtensionMethodBindPtr = {

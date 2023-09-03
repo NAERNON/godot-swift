@@ -950,7 +950,7 @@ open class MeshDataTool: RefCounted {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

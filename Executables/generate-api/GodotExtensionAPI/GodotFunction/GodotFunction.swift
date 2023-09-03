@@ -284,7 +284,7 @@ extension GodotFunction {
     ///
     /// - Parameters:
     ///   - options: The options for type syntax.
-    ///   - indexes: The indexes of the arguments to retreive.
+    ///   - indexes: The indexes of the arguments to retrieve.
     ///   - bodyBuilder: The body content syntax.
     @CodeBlockItemListBuilder
     private func argumentsPointerAccessSyntax(

@@ -162,7 +162,7 @@ open class GDExtensionManager: Object {
                 }
             }
         }
-        return Godot.GDExtension.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.GDExtension.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

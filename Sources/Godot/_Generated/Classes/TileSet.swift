@@ -242,7 +242,7 @@ open class TileSet: Resource {
                 }
             }
         }
-        return Godot.TileSetSource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TileSetSource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_tile_shape: GDExtensionMethodBindPtr = {
@@ -894,7 +894,7 @@ open class TileSet: Resource {
                 }
             }
         }
-        return Godot.PhysicsMaterial.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsMaterial.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_terrain_sets_count: GDExtensionMethodBindPtr = {
@@ -2098,7 +2098,7 @@ open class TileSet: Resource {
                 }
             }
         }
-        return Godot.TileMapPattern.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TileMapPattern.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_remove_pattern: GDExtensionMethodBindPtr = {

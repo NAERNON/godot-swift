@@ -209,7 +209,7 @@ open class EditorNode3DGizmoPlugin: Resource {
                 }
             }
         }
-        return Godot.StandardMaterial3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.StandardMaterial3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -224,7 +224,7 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._hasGizmo(
-            forNode3D: Godot.Node3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            forNode3D: Godot.Node3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
         let _create_gizmo_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -234,7 +234,7 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._createGizmo(
-            forNode3D: Godot.Node3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            forNode3D: Godot.Node3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _get_gizmo_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -276,7 +276,7 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._redraw(
-            gizmo: Godot.EditorNode3DGizmo.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _get_handle_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -285,7 +285,7 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             var returnValue = instance
         ._getHandleName(
-            gizmo: Godot.EditorNode3DGizmo.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             handleId: args[1]!.load(as: Int32.self),
             secondary: args[2]!.load(as: Bool.self)
         )
@@ -297,7 +297,7 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._isHandleHighlighted(
-            gizmo: Godot.EditorNode3DGizmo.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             handleId: args[1]!.load(as: Int32.self),
             secondary: args[2]!.load(as: Bool.self)
         )
@@ -309,7 +309,7 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._getHandleValue(
-            gizmo: Godot.EditorNode3DGizmo.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             handleId: args[1]!.load(as: Int32.self),
             secondary: args[2]!.load(as: Bool.self)
         )
@@ -321,10 +321,10 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._setHandle(
-            gizmo: Godot.EditorNode3DGizmo.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             handleId: args[1]!.load(as: Int32.self),
             secondary: args[2]!.load(as: Bool.self),
-            camera: Godot.Camera3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!)),
+            camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!)),
             screenPos: args[4]!.load(as: Godot.Vector2.self)
         )}
         let _commit_handle_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -334,7 +334,7 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._commitHandle(
-            gizmo: Godot.EditorNode3DGizmo.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             handleId: args[1]!.load(as: Int32.self),
             secondary: args[2]!.load(as: Bool.self),
             restore: Godot.Variant(godotExtensionPointer: args[3]!),
@@ -347,8 +347,8 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._subgizmosIntersectRay(
-            gizmo: Godot.EditorNode3DGizmo.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            camera: Godot.Camera3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
             screenPos: args[2]!.load(as: Godot.Vector2.self)
         )
         returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
@@ -359,8 +359,8 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             var returnValue = instance
         ._subgizmosIntersectFrustum(
-            gizmo: Godot.EditorNode3DGizmo.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            camera: Godot.Camera3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
             frustumPlanes: Godot.GodotTypedArray<Godot.Plane>(godotExtensionPointer: args[2]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
@@ -371,7 +371,7 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._getSubgizmoTransform(
-            gizmo: Godot.EditorNode3DGizmo.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             subgizmoId: args[1]!.load(as: Int32.self)
         )
         returnPtr!.assumingMemoryBound(to: Godot.Transform3D.self).pointee = returnValue}
@@ -382,7 +382,7 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._setSubgizmoTransform(
-            gizmo: Godot.EditorNode3DGizmo.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             subgizmoId: args[1]!.load(as: Int32.self),
             transform: args[2]!.load(as: Godot.Transform3D.self)
         )}
@@ -393,7 +393,7 @@ open class EditorNode3DGizmoPlugin: Resource {
             let instance = Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._commitSubgizmos(
-            gizmo: Godot.EditorNode3DGizmo.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             ids: Godot.PackedInt32Array(godotExtensionPointer: args[1]!),
             restores: Godot.GodotTypedArray<Godot.Transform3D>(godotExtensionPointer: args[2]!),
             cancel: args[3]!.load(as: Bool.self)

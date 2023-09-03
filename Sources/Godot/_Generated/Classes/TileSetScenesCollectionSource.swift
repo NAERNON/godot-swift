@@ -182,7 +182,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
                 }
             }
         }
-        return Godot.PackedScene.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PackedScene.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_scene_tile_display_placeholder: GDExtensionMethodBindPtr = {

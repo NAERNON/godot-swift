@@ -288,7 +288,7 @@ open class Line2D: Node2D {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_default_color: GDExtensionMethodBindPtr = {
@@ -378,7 +378,7 @@ open class Line2D: Node2D {
                 )
             }
         }
-        return Godot.Gradient.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Gradient.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
@@ -424,7 +424,7 @@ open class Line2D: Node2D {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_texture_mode: GDExtensionMethodBindPtr = {

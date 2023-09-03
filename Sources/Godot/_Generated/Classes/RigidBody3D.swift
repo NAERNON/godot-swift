@@ -260,7 +260,7 @@ open class RigidBody3D: PhysicsBody3D {
                 )
             }
         }
-        return Godot.PhysicsMaterial.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsMaterial.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_linear_velocity: GDExtensionMethodBindPtr = {
@@ -1612,7 +1612,7 @@ open class RigidBody3D: PhysicsBody3D {
             let instance = Unmanaged<RigidBody3D> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._integrateForces(
-            state: Godot.PhysicsDirectBodyState3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            state: Godot.PhysicsDirectBodyState3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         _virtualFunctions = [
             "_integrateForces" : ("_integrate_forces", _integrate_forces_call)

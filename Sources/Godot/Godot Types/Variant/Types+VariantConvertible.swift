@@ -7,7 +7,7 @@ private enum ConversionError: Error {
     var localizedDescription: String {
         switch self {
         case .objectType(let type):
-            "Cannot retreive object of type \(type) from variant."
+            "Cannot retrieve object of type \(type) from variant."
         case .nonNumeric(let type):
             "Variant of type \(type) isn't a numeric value."
         }
@@ -1078,7 +1078,7 @@ extension Object: VariantConvertible {
             toTypeConstructor_object(&instancePtr, extensionTypePtr)
         }
         
-        let instance = Self.retreivedInstanceManagedByGodot(instancePtr)
+        let instance = Self.retrievedInstanceManagedByGodot(instancePtr)
         
         assert(instance != nil, "Attempting to retrieve a non optional Object from a nil variant.")
         
@@ -1094,7 +1094,7 @@ extension Object: VariantConvertible {
             toTypeConstructor_object(&instancePtr, extensionTypePtr)
         }
         
-        guard let instance = Self.retreivedInstanceManagedByGodot(instancePtr) else {
+        guard let instance = Self.retrievedInstanceManagedByGodot(instancePtr) else {
             throw ConversionError.objectType(type: Self.self)
         }
         

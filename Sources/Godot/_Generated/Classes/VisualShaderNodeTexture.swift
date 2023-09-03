@@ -110,7 +110,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_texture_type: GDExtensionMethodBindPtr = {

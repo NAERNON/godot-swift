@@ -70,7 +70,7 @@ open class CurveXYZTexture: Texture2D {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_curve_y: GDExtensionMethodBindPtr = {
@@ -116,7 +116,7 @@ open class CurveXYZTexture: Texture2D {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_curve_z: GDExtensionMethodBindPtr = {
@@ -162,7 +162,7 @@ open class CurveXYZTexture: Texture2D {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var curveX: Godot.Curve? {

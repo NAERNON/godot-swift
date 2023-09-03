@@ -63,7 +63,7 @@ open class EditorResourceTooltipPlugin: RefCounted {
         ._makeTooltipForPath(
             Godot.GodotString(godotExtensionPointer: args[0]!),
             metadata: Godot.GodotDictionary(godotExtensionPointer: args[1]!),
-            base: Godot.Control.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
+            base: Godot.Control.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         _virtualFunctions = [

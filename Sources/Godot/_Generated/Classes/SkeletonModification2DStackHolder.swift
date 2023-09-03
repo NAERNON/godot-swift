@@ -48,7 +48,7 @@ open class SkeletonModification2DStackHolder: SkeletonModification2D {
                 )
             }
         }
-        return Godot.SkeletonModificationStack2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SkeletonModificationStack2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

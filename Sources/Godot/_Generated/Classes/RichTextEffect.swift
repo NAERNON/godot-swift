@@ -21,7 +21,7 @@ open class RichTextEffect: Resource {
             let instance = Unmanaged<RichTextEffect> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._processCustomFx(
-            charFx: Godot.CharFXTransform.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            charFx: Godot.CharFXTransform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
         _virtualFunctions = [

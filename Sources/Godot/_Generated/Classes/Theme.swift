@@ -68,7 +68,7 @@ open class Theme: Resource {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_has_icon: GDExtensionMethodBindPtr = {
@@ -250,7 +250,7 @@ open class Theme: Resource {
                 }
             }
         }
-        return Godot.StyleBox.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.StyleBox.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_has_stylebox: GDExtensionMethodBindPtr = {
@@ -432,7 +432,7 @@ open class Theme: Resource {
                 }
             }
         }
-        return Godot.Font.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Font.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_has_font: GDExtensionMethodBindPtr = {
@@ -1210,7 +1210,7 @@ open class Theme: Resource {
                 )
             }
         }
-        return Godot.Font.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Font.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_has_default_font: GDExtensionMethodBindPtr = {

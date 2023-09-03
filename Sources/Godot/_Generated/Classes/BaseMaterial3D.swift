@@ -1705,7 +1705,7 @@ open class BaseMaterial3D: Material {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_detail_blend_mode: GDExtensionMethodBindPtr = {

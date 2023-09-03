@@ -131,7 +131,7 @@ open class Environment: Resource {
                 )
             }
         }
-        return Godot.Sky.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Sky.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_sky_custom_fov: GDExtensionMethodBindPtr = {
@@ -2735,7 +2735,7 @@ open class Environment: Resource {
                 )
             }
         }
-        return Godot.Texture.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_fog_enabled: GDExtensionMethodBindPtr = {
@@ -3925,7 +3925,7 @@ open class Environment: Resource {
                 )
             }
         }
-        return Godot.Texture.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var background: Godot.Environment.BGMode {

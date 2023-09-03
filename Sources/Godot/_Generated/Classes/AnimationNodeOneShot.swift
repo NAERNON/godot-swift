@@ -103,7 +103,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_fadeout_time: GDExtensionMethodBindPtr = {
@@ -193,7 +193,7 @@ open class AnimationNodeOneShot: AnimationNodeSync {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_autorestart: GDExtensionMethodBindPtr = {

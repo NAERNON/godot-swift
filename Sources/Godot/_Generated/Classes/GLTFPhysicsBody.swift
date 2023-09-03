@@ -28,7 +28,7 @@ open class GLTFPhysicsBody: Resource {
                 }
             }
         }
-        return Godot.GLTFPhysicsBody.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.GLTFPhysicsBody.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_to_node: GDExtensionMethodBindPtr = {
@@ -50,7 +50,7 @@ open class GLTFPhysicsBody: Resource {
                 )
             }
         }
-        return Godot.CollisionObject3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CollisionObject3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_from_dictionary: GDExtensionMethodBindPtr = {
@@ -74,7 +74,7 @@ open class GLTFPhysicsBody: Resource {
                 }
             }
         }
-        return Godot.GLTFPhysicsBody.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.GLTFPhysicsBody.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_to_dictionary: GDExtensionMethodBindPtr = {

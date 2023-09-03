@@ -533,7 +533,7 @@ open class CollisionObject2D: Node2D {
                 }
             }
         }
-        return Godot.Object.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Object.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_shape_owner_set_disabled: GDExtensionMethodBindPtr = {
@@ -763,7 +763,7 @@ open class CollisionObject2D: Node2D {
                 }
             }
         }
-        return Godot.Shape2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Shape2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_shape_owner_get_shape_index: GDExtensionMethodBindPtr = {
@@ -933,8 +933,8 @@ open class CollisionObject2D: Node2D {
             let instance = Unmanaged<CollisionObject2D> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._inputEvent(
-            viewport: Godot.Viewport.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            event: Godot.InputEvent.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            viewport: Godot.Viewport.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            event: Godot.InputEvent.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
             shapeIdx: args[2]!.load(as: Int32.self)
         )}
         let _mouse_enter_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

@@ -48,7 +48,7 @@ open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
                 )
             }
         }
-        return Godot.Texture2DArray.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2DArray.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var textureArray: Godot.Texture2DArray? {

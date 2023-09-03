@@ -59,7 +59,7 @@ open class GradientTexture2D: Texture2D {
                 )
             }
         }
-        return Godot.Gradient.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Gradient.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_width: GDExtensionMethodBindPtr = {

@@ -48,7 +48,7 @@ open class WorldEnvironment: Node {
                 )
             }
         }
-        return Godot.Environment.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Environment.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_camera_attributes: GDExtensionMethodBindPtr = {
@@ -94,7 +94,7 @@ open class WorldEnvironment: Node {
                 )
             }
         }
-        return Godot.CameraAttributes.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CameraAttributes.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var environment: Godot.Environment? {

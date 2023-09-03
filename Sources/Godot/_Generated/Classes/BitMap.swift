@@ -290,7 +290,7 @@ open class BitMap: Resource {
                 )
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_opaque_to_polygons: GDExtensionMethodBindPtr = {

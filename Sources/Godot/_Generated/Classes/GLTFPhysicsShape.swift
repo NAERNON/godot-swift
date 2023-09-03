@@ -28,7 +28,7 @@ open class GLTFPhysicsShape: Resource {
                 }
             }
         }
-        return Godot.GLTFPhysicsShape.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.GLTFPhysicsShape.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_to_node: GDExtensionMethodBindPtr = {
@@ -54,7 +54,7 @@ open class GLTFPhysicsShape: Resource {
                 }
             }
         }
-        return Godot.CollisionShape3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CollisionShape3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_from_dictionary: GDExtensionMethodBindPtr = {
@@ -78,7 +78,7 @@ open class GLTFPhysicsShape: Resource {
                 }
             }
         }
-        return Godot.GLTFPhysicsShape.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.GLTFPhysicsShape.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_to_dictionary: GDExtensionMethodBindPtr = {
@@ -386,7 +386,7 @@ open class GLTFPhysicsShape: Resource {
                 )
             }
         }
-        return Godot.ImporterMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ImporterMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_importer_mesh: GDExtensionMethodBindPtr = {

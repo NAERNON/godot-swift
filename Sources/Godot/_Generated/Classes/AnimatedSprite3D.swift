@@ -68,7 +68,7 @@ open class AnimatedSprite3D: SpriteBase3D {
                 )
             }
         }
-        return Godot.SpriteFrames.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SpriteFrames.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_animation: GDExtensionMethodBindPtr = {

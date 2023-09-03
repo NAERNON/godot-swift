@@ -1735,7 +1735,7 @@ open class CanvasItem: Node {
                 )
             }
         }
-        return Godot.World2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.World2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_material: GDExtensionMethodBindPtr = {
@@ -1781,7 +1781,7 @@ open class CanvasItem: Node {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_use_parent_material: GDExtensionMethodBindPtr = {
@@ -1985,7 +1985,7 @@ open class CanvasItem: Node {
                 }
             }
         }
-        return Godot.InputEvent.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.InputEvent.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_visibility_layer: GDExtensionMethodBindPtr = {

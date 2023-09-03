@@ -63,7 +63,7 @@ open class SceneTree: MainLoop {
                 )
             }
         }
-        return Godot.Window.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Window.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_has_group: GDExtensionMethodBindPtr = {
@@ -355,7 +355,7 @@ open class SceneTree: MainLoop {
                 )
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_pause: GDExtensionMethodBindPtr = {
@@ -431,7 +431,7 @@ open class SceneTree: MainLoop {
                 }
             }
         }
-        return Godot.SceneTreeTimer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SceneTreeTimer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_tween: GDExtensionMethodBindPtr = {
@@ -453,7 +453,7 @@ open class SceneTree: MainLoop {
                 )
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_processed_tweens: GDExtensionMethodBindPtr = {
@@ -813,7 +813,7 @@ open class SceneTree: MainLoop {
                 }
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_current_scene: GDExtensionMethodBindPtr = {
@@ -859,7 +859,7 @@ open class SceneTree: MainLoop {
                 )
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_change_scene_to_file: GDExtensionMethodBindPtr = {
@@ -1005,7 +1005,7 @@ open class SceneTree: MainLoop {
                 }
             }
         }
-        return Godot.MultiplayerAPI.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MultiplayerAPI.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_multiplayer_poll_enabled: GDExtensionMethodBindPtr = {

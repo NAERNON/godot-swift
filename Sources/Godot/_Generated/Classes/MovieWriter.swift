@@ -100,7 +100,7 @@ open class MovieWriter: Object {
             let instance = Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._writeFrame(
-            frameImage: Godot.Image.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            frameImage: Godot.Image.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             audioFrameBlock: args[1]!.load(as: UnsafeRawPointer.self)
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}

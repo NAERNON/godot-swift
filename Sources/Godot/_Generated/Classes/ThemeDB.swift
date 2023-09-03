@@ -28,7 +28,7 @@ open class ThemeDB: Object {
                 )
             }
         }
-        return Godot.Theme.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Theme.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_project_theme: GDExtensionMethodBindPtr = {
@@ -50,7 +50,7 @@ open class ThemeDB: Object {
                 )
             }
         }
-        return Godot.Theme.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Theme.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_fallback_base_scale: GDExtensionMethodBindPtr = {
@@ -140,7 +140,7 @@ open class ThemeDB: Object {
                 )
             }
         }
-        return Godot.Font.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Font.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_fallback_font_size: GDExtensionMethodBindPtr = {
@@ -230,7 +230,7 @@ open class ThemeDB: Object {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_fallback_stylebox: GDExtensionMethodBindPtr = {
@@ -276,7 +276,7 @@ open class ThemeDB: Object {
                 )
             }
         }
-        return Godot.StyleBox.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.StyleBox.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var fallbackBaseScale: Double {

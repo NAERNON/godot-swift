@@ -37,7 +37,7 @@ open class EditorResourceConversionPlugin: RefCounted {
             let instance = Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._handles(
-            resource: Godot.Resource.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
         let _convert_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -47,7 +47,7 @@ open class EditorResourceConversionPlugin: RefCounted {
             let instance = Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._convert(
-            resource: Godot.Resource.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         _virtualFunctions = [

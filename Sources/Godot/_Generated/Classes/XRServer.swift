@@ -289,7 +289,7 @@ open class XRServer: Object {
                 }
             }
         }
-        return Godot.XRInterface.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.XRInterface.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_interfaces: GDExtensionMethodBindPtr = {
@@ -337,7 +337,7 @@ open class XRServer: Object {
                 }
             }
         }
-        return Godot.XRInterface.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.XRInterface.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_tracker: GDExtensionMethodBindPtr = {
@@ -437,7 +437,7 @@ open class XRServer: Object {
                 }
             }
         }
-        return Godot.XRPositionalTracker.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.XRPositionalTracker.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_primary_interface: GDExtensionMethodBindPtr = {
@@ -459,7 +459,7 @@ open class XRServer: Object {
                 )
             }
         }
-        return Godot.XRInterface.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.XRInterface.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_primary_interface: GDExtensionMethodBindPtr = {

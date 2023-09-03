@@ -215,7 +215,7 @@ open class SceneState: RefCounted {
                 }
             }
         }
-        return Godot.PackedScene.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PackedScene.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_node_groups: GDExtensionMethodBindPtr = {

@@ -290,7 +290,7 @@ open class NoiseTexture3D: Texture3D {
                 )
             }
         }
-        return Godot.Gradient.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Gradient.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_noise: GDExtensionMethodBindPtr = {
@@ -336,7 +336,7 @@ open class NoiseTexture3D: Texture3D {
                 )
             }
         }
-        return Godot.Noise.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Noise.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var invert: Bool {

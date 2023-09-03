@@ -55,7 +55,7 @@ extension Variant {
             case GDEXTENSION_VARIANT_OP_XOR: self = .xor
             case GDEXTENSION_VARIANT_OP_NOT: self = .not
             case GDEXTENSION_VARIANT_OP_IN: self = .in
-            default: fatalError("Cannot retreive Variant operator from GDExtensionVariantOperator")
+            default: fatalError("Cannot retrieve Variant operator from GDExtensionVariantOperator")
             }
         }
         

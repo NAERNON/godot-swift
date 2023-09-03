@@ -46,7 +46,7 @@ open class SkinReference: RefCounted {
                 )
             }
         }
-        return Godot.Skin.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Skin.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

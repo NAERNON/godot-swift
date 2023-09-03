@@ -488,7 +488,7 @@ open class PhysicalSkyMaterial: Material {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var rayleighCoefficient: Double {

@@ -225,10 +225,10 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     
     /// Returns the scope type at a given index.
     ///
-    /// - Parameter index: The index of the scope to retreive.
+    /// - Parameter index: The index of the scope to retrieve.
     /// An index of 0 would return the most global scope.
     /// Pass `nil` if you want the last scope (the most local one).
-    /// - Returns: The scope to retreive, if any.
+    /// - Returns: The scope to retrieve, if any.
     func scope(atIndex index: Int? = nil) -> GodotType? {
         switch self {
         case .scope(let scopeType, let type):
@@ -239,8 +239,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
                     return type.scope(atIndex: index - 1)
                 }
             } else {
-                if let retreivedScopeType = type.scope(atIndex: nil) {
-                    return retreivedScopeType
+                if let retrievedScopeType = type.scope(atIndex: nil) {
+                    return retrievedScopeType
                 } else {
                     return scopeType
                 }
@@ -566,7 +566,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         try bodyBuilder(instantiationType(), variableName)
         
         if isGodotClass {
-            "return \(raw: syntax(options: options.subtracting(.optionalClasses))).retreivedInstanceManagedByGodot(\(raw: variableName))"
+            "return \(raw: syntax(options: options.subtracting(.optionalClasses))).retrievedInstanceManagedByGodot(\(raw: variableName))"
         } else if isEnum {
             "return \(raw: syntax(options: options))(rawValue: \(raw: variableName))!"
         } else {
@@ -591,7 +591,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         if isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
             return "\(syntax(options: options))(godotExtensionPointer: \(pointerName))"
         } else if isGodotClass {
-            return "\(syntax(options: options.subtracting(.optionalClasses))).retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(\(pointerName)))"
+            return "\(syntax(options: options.subtracting(.optionalClasses))).retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(\(pointerName)))"
         } else {
             return "\(pointerName).load(as: \(syntax(options: options)).self)"
         }
@@ -660,7 +660,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ///   - instanceName: The name of the instance.
     ///   - mutability: The mutability of the instance.
     ///   - bodyBuilder: The content syntax to access the pointer.
-    ///   Use the value provided inside the closure to retreive the pointer name.
+    ///   Use the value provided inside the closure to retrieve the pointer name.
     @CodeBlockItemListBuilder
     func pointerAccessSyntax(
         caller: String? = nil,
@@ -753,7 +753,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ///   - instanceName: The name of the instance.
     ///   - mutability: The mutability of the instance.
     ///   - bodyBuilder: The content syntax to access the pointer.
-    ///   Use the value provided inside the closure to retreive the pointer name.
+    ///   Use the value provided inside the closure to retrieve the pointer name.
     @CodeBlockItemListBuilder
     func argumentPointerAccessSyntax(
         caller: String? = nil,

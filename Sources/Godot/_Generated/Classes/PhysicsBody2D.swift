@@ -34,7 +34,7 @@ open class PhysicsBody2D: CollisionObject2D {
                 }
             }
         }
-        return Godot.KinematicCollision2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.KinematicCollision2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_test_move: GDExtensionMethodBindPtr = {

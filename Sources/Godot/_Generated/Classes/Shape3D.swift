@@ -112,7 +112,7 @@ open class Shape3D: Resource {
                 )
             }
         }
-        return Godot.ArrayMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ArrayMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var customSolverBias: Double {

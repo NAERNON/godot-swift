@@ -94,7 +94,7 @@ open class OpenXRInteractionProfile: Resource {
                 }
             }
         }
-        return Godot.OpenXRIPBinding.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.OpenXRIPBinding.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_bindings: GDExtensionMethodBindPtr = {

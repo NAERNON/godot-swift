@@ -274,7 +274,7 @@ open class MeshLibrary: Resource {
                 }
             }
         }
-        return Godot.Mesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Mesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_item_mesh_transform: GDExtensionMethodBindPtr = {
@@ -326,7 +326,7 @@ open class MeshLibrary: Resource {
                 }
             }
         }
-        return Godot.NavigationMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.NavigationMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_item_navigation_mesh_transform: GDExtensionMethodBindPtr = {
@@ -430,7 +430,7 @@ open class MeshLibrary: Resource {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_remove_item: GDExtensionMethodBindPtr = {

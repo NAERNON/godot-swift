@@ -214,7 +214,7 @@ open class AnimationNodeTransition: AnimationNodeSync {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_allow_transition_to_self: GDExtensionMethodBindPtr = {

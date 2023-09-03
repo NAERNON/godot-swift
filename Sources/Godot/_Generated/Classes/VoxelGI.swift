@@ -56,7 +56,7 @@ open class VoxelGI: VisualInstance3D {
                 )
             }
         }
-        return Godot.VoxelGIData.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.VoxelGIData.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_subdiv: GDExtensionMethodBindPtr = {
@@ -190,7 +190,7 @@ open class VoxelGI: VisualInstance3D {
                 )
             }
         }
-        return Godot.CameraAttributes.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CameraAttributes.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_bake: GDExtensionMethodBindPtr = {

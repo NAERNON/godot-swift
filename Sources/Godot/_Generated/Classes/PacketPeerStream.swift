@@ -48,7 +48,7 @@ open class PacketPeerStream: PacketPeer {
                 )
             }
         }
-        return Godot.StreamPeer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.StreamPeer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_input_buffer_max_size: GDExtensionMethodBindPtr = {

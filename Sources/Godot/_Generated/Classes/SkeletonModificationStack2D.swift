@@ -92,7 +92,7 @@ open class SkeletonModificationStack2D: Resource {
                 }
             }
         }
-        return Godot.SkeletonModification2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SkeletonModification2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_modification: GDExtensionMethodBindPtr = {
@@ -340,7 +340,7 @@ open class SkeletonModificationStack2D: Resource {
                 )
             }
         }
-        return Godot.Skeleton2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Skeleton2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var enabled: Bool {

@@ -112,7 +112,7 @@ open class AudioEffectRecord: AudioEffect {
                 )
             }
         }
-        return Godot.AudioStreamWAV.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AudioStreamWAV.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var format: Godot.AudioStreamWAV.Format {

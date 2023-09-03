@@ -771,7 +771,7 @@ open class SpriteBase3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.TriangleMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TriangleMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var isCentered: Bool {

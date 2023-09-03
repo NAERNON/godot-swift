@@ -356,7 +356,7 @@ open class TubeTrailMesh: PrimitiveMesh {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var radius: Double {

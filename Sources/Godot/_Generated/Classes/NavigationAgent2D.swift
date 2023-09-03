@@ -934,7 +934,7 @@ open class NavigationAgent2D: Node {
                 )
             }
         }
-        return Godot.NavigationPathQueryResult2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.NavigationPathQueryResult2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_current_navigation_path: GDExtensionMethodBindPtr = {

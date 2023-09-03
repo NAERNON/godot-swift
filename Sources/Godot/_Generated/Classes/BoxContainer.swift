@@ -34,7 +34,7 @@ open class BoxContainer: Container {
                 }
             }
         }
-        return Godot.Control.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Control.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_alignment: GDExtensionMethodBindPtr = {

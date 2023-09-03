@@ -24,7 +24,7 @@ open class PhysicalBone2D: RigidBody2D {
                 )
             }
         }
-        return Godot.Joint2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Joint2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_auto_configure_joint: GDExtensionMethodBindPtr = {

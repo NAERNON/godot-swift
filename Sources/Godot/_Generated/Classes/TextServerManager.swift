@@ -106,7 +106,7 @@ open class TextServerManager: Object {
                 }
             }
         }
-        return Godot.TextServer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TextServer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_interfaces: GDExtensionMethodBindPtr = {
@@ -154,7 +154,7 @@ open class TextServerManager: Object {
                 }
             }
         }
-        return Godot.TextServer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TextServer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_primary_interface: GDExtensionMethodBindPtr = {
@@ -200,7 +200,7 @@ open class TextServerManager: Object {
                 )
             }
         }
-        return Godot.TextServer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TextServer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

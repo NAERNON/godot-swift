@@ -48,7 +48,7 @@ open class VisualShaderNodeCurveTexture: VisualShaderNodeResizableBase {
                 )
             }
         }
-        return Godot.CurveTexture.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CurveTexture.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var texture: Godot.CurveTexture? {

@@ -141,7 +141,7 @@ open class ENetConnection: RefCounted {
                 }
             }
         }
-        return Godot.ENetPacketPeer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ENetPacketPeer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_service: GDExtensionMethodBindPtr = {

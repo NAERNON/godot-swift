@@ -730,7 +730,7 @@ open class SurfaceTool: RefCounted {
                 }
             }
         }
-        return Godot.ArrayMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ArrayMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_commit_to_arrays: GDExtensionMethodBindPtr = {

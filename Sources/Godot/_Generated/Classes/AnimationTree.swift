@@ -114,7 +114,7 @@ open class AnimationTree: Node {
                 )
             }
         }
-        return Godot.AnimationNode.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AnimationNode.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_process_callback: GDExtensionMethodBindPtr = {
@@ -580,10 +580,10 @@ open class AnimationTree: Node {
             let instance = Unmanaged<AnimationTree> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._postProcessKeyValue(
-            animation: Godot.Animation.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            animation: Godot.Animation.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             track: args[1]!.load(as: Int32.self),
             value: Godot.Variant(godotExtensionPointer: args[2]!),
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!)),
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!)),
             objectIdx: args[4]!.load(as: Int32.self)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}

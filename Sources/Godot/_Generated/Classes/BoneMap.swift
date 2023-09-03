@@ -32,7 +32,7 @@ open class BoneMap: Resource {
                 )
             }
         }
-        return Godot.SkeletonProfile.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SkeletonProfile.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_profile: GDExtensionMethodBindPtr = {

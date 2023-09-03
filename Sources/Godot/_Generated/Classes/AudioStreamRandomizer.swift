@@ -134,7 +134,7 @@ open class AudioStreamRandomizer: AudioStream {
                 }
             }
         }
-        return Godot.AudioStream.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AudioStream.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_stream_probability_weight: GDExtensionMethodBindPtr = {

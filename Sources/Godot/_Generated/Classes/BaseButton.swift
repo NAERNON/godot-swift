@@ -500,7 +500,7 @@ open class BaseButton: Control {
                 )
             }
         }
-        return Godot.Shortcut.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Shortcut.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_button_group: GDExtensionMethodBindPtr = {
@@ -546,7 +546,7 @@ open class BaseButton: Control {
                 )
             }
         }
-        return Godot.ButtonGroup.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ButtonGroup.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var isDisabled: Bool {

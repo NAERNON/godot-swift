@@ -156,7 +156,7 @@ open class NavigationPolygon: Resource {
                 )
             }
         }
-        return Godot.NavigationMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.NavigationMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_outline: GDExtensionMethodBindPtr = {

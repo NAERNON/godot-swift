@@ -90,7 +90,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
                 }
             }
         }
-        return Godot.WebSocketPeer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.WebSocketPeer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_peer_address: GDExtensionMethodBindPtr = {

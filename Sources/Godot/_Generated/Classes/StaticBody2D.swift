@@ -136,7 +136,7 @@ open class StaticBody2D: PhysicsBody2D {
                 )
             }
         }
-        return Godot.PhysicsMaterial.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsMaterial.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var physicsMaterialOverride: Godot.PhysicsMaterial? {

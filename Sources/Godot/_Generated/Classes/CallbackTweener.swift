@@ -28,7 +28,7 @@ open class CallbackTweener: Tweener {
                 }
             }
         }
-        return Godot.CallbackTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CallbackTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

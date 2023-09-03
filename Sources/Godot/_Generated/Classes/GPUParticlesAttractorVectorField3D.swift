@@ -92,7 +92,7 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
                 )
             }
         }
-        return Godot.Texture3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var size: Godot.Vector3 {

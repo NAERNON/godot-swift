@@ -803,7 +803,7 @@ open class Camera3D: Node3D {
                 )
             }
         }
-        return Godot.Environment.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Environment.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_attributes: GDExtensionMethodBindPtr = {
@@ -849,7 +849,7 @@ open class Camera3D: Node3D {
                 )
             }
         }
-        return Godot.CameraAttributes.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CameraAttributes.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_keep_aspect_mode: GDExtensionMethodBindPtr = {

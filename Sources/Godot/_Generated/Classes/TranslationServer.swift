@@ -426,7 +426,7 @@ open class TranslationServer: Object {
                 }
             }
         }
-        return Godot.Translation.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Translation.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {

@@ -146,7 +146,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
                 )
             }
         }
-        return Godot.Texture3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_thickness: GDExtensionMethodBindPtr = {

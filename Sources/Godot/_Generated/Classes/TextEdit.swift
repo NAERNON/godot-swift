@@ -3215,7 +3215,7 @@ open class TextEdit: Control {
                 )
             }
         }
-        return Godot.VScrollBar.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.VScrollBar.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_h_scroll_bar: GDExtensionMethodBindPtr = {
@@ -3237,7 +3237,7 @@ open class TextEdit: Control {
                 )
             }
         }
-        return Godot.HScrollBar.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.HScrollBar.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_v_scroll: GDExtensionMethodBindPtr = {
@@ -4449,7 +4449,7 @@ open class TextEdit: Control {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_line_gutter_item_color: GDExtensionMethodBindPtr = {
@@ -4653,7 +4653,7 @@ open class TextEdit: Control {
                 )
             }
         }
-        return Godot.SyntaxHighlighter.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SyntaxHighlighter.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_highlight_current_line: GDExtensionMethodBindPtr = {
@@ -4895,7 +4895,7 @@ open class TextEdit: Control {
                 )
             }
         }
-        return Godot.PopupMenu.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PopupMenu.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_is_menu_visible: GDExtensionMethodBindPtr = {

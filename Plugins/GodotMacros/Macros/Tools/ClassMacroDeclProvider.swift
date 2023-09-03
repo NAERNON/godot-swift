@@ -4,7 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
 
-/// A type used to retreive class decls.
+/// A type used to retrieve class decls.
 struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     enum ClassType {
         case root

@@ -348,7 +348,7 @@ open class Node: Object {
                 }
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_has_node: GDExtensionMethodBindPtr = {
@@ -400,7 +400,7 @@ open class Node: Object {
                 }
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_node_or_null: GDExtensionMethodBindPtr = {
@@ -426,7 +426,7 @@ open class Node: Object {
                 }
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_parent: GDExtensionMethodBindPtr = {
@@ -448,7 +448,7 @@ open class Node: Object {
                 )
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_find_child: GDExtensionMethodBindPtr = {
@@ -478,7 +478,7 @@ open class Node: Object {
                 }
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_find_children: GDExtensionMethodBindPtr = {
@@ -536,7 +536,7 @@ open class Node: Object {
                 }
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_has_node_and_resource: GDExtensionMethodBindPtr = {
@@ -884,7 +884,7 @@ open class Node: Object {
                 )
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_index: GDExtensionMethodBindPtr = {
@@ -1786,7 +1786,7 @@ open class Node: Object {
                 )
             }
         }
-        return Godot.Window.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Window.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_last_exclusive_window: GDExtensionMethodBindPtr = {
@@ -1808,7 +1808,7 @@ open class Node: Object {
                 )
             }
         }
-        return Godot.Window.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Window.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_tree: GDExtensionMethodBindPtr = {
@@ -1830,7 +1830,7 @@ open class Node: Object {
                 )
             }
         }
-        return Godot.SceneTree.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SceneTree.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_tween: GDExtensionMethodBindPtr = {
@@ -1852,7 +1852,7 @@ open class Node: Object {
                 )
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_duplicate: GDExtensionMethodBindPtr = {
@@ -1878,7 +1878,7 @@ open class Node: Object {
                 }
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_replace_by: GDExtensionMethodBindPtr = {
@@ -2024,7 +2024,7 @@ open class Node: Object {
                 )
             }
         }
-        return Godot.Viewport.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Viewport.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_queue_free: GDExtensionMethodBindPtr = {
@@ -2172,7 +2172,7 @@ open class Node: Object {
                 )
             }
         }
-        return Godot.MultiplayerAPI.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MultiplayerAPI.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_rpc_config: GDExtensionMethodBindPtr = {
@@ -2774,7 +2774,7 @@ open class Node: Object {
             let instance = Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._input(
-            event: Godot.InputEvent.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            event: Godot.InputEvent.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _shortcut_input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2783,7 +2783,7 @@ open class Node: Object {
             let instance = Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._shortcutInput(
-            event: Godot.InputEvent.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            event: Godot.InputEvent.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _unhandled_input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2792,7 +2792,7 @@ open class Node: Object {
             let instance = Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._unhandledInput(
-            event: Godot.InputEvent.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            event: Godot.InputEvent.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _unhandled_key_input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2801,7 +2801,7 @@ open class Node: Object {
             let instance = Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._unhandledKeyInput(
-            event: Godot.InputEvent.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            event: Godot.InputEvent.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         _virtualFunctions = [
             "_process" : ("_process", _process_call),

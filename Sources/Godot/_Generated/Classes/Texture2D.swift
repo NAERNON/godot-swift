@@ -227,7 +227,7 @@ open class Texture2D: Texture {
                 )
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_placeholder: GDExtensionMethodBindPtr = {
@@ -249,7 +249,7 @@ open class Texture2D: Texture {
                 )
             }
         }
-        return Godot.Resource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

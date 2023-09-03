@@ -187,7 +187,7 @@ open class EditorPlugin: Node {
                 }
             }
         }
-        return Godot.Button.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Button.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_control_to_dock: GDExtensionMethodBindPtr = {
@@ -381,7 +381,7 @@ open class EditorPlugin: Node {
                 )
             }
         }
-        return Godot.PopupMenu.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PopupMenu.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_custom_type: GDExtensionMethodBindPtr = {
@@ -567,7 +567,7 @@ open class EditorPlugin: Node {
                 )
             }
         }
-        return Godot.EditorUndoRedoManager.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorUndoRedoManager.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_undo_redo_inspector_hook_callback: GDExtensionMethodBindPtr = {
@@ -1077,7 +1077,7 @@ open class EditorPlugin: Node {
                 )
             }
         }
-        return Godot.EditorInterface.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorInterface.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_script_create_dialog: GDExtensionMethodBindPtr = {
@@ -1099,7 +1099,7 @@ open class EditorPlugin: Node {
                 )
             }
         }
-        return Godot.ScriptCreateDialog.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ScriptCreateDialog.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_debugger_plugin: GDExtensionMethodBindPtr = {
@@ -1162,7 +1162,7 @@ open class EditorPlugin: Node {
             let instance = Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._forwardCanvasGuiInput(
-            event: Godot.InputEvent.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            event: Godot.InputEvent.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
         let _forward_canvas_draw_over_viewport_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -1172,7 +1172,7 @@ open class EditorPlugin: Node {
             let instance = Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._forwardCanvasDrawOverViewport(
-            viewportControl: Godot.Control.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            viewportControl: Godot.Control.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _forward_canvas_force_draw_over_viewport_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -1181,7 +1181,7 @@ open class EditorPlugin: Node {
             let instance = Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._forwardCanvasForceDrawOverViewport(
-            viewportControl: Godot.Control.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            viewportControl: Godot.Control.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _forward_3d_gui_input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -1190,8 +1190,8 @@ open class EditorPlugin: Node {
             let instance = Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._forward3DGuiInput(
-            viewportCamera: Godot.Camera3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            event: Godot.InputEvent.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
+            viewportCamera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            event: Godot.InputEvent.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
         )
         returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
         let _forward_3d_draw_over_viewport_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -1201,7 +1201,7 @@ open class EditorPlugin: Node {
             let instance = Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._forward3DDrawOverViewport(
-            viewportControl: Godot.Control.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            viewportControl: Godot.Control.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _forward_3d_force_draw_over_viewport_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -1210,7 +1210,7 @@ open class EditorPlugin: Node {
             let instance = Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._forward3DForceDrawOverViewport(
-            viewportControl: Godot.Control.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            viewportControl: Godot.Control.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _get_plugin_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -1252,7 +1252,7 @@ open class EditorPlugin: Node {
             let instance = Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._edit(
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _handles_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -1261,7 +1261,7 @@ open class EditorPlugin: Node {
             let instance = Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._handles(
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
         let _get_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -1317,7 +1317,7 @@ open class EditorPlugin: Node {
             let instance = Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._setWindowLayout(
-            configuration: Godot.ConfigFile.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            configuration: Godot.ConfigFile.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _get_window_layout_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -1326,7 +1326,7 @@ open class EditorPlugin: Node {
             let instance = Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._getWindowLayout(
-            configuration: Godot.ConfigFile.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            configuration: Godot.ConfigFile.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _build_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {

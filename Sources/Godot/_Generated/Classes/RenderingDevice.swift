@@ -1426,7 +1426,7 @@ open class RenderingDevice: Object {
                 }
             }
         }
-        return Godot.RDShaderSPIRV.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.RDShaderSPIRV.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_shader_compile_binary_from_spirv: GDExtensionMethodBindPtr = {
@@ -2884,7 +2884,7 @@ open class RenderingDevice: Object {
                 )
             }
         }
-        return Godot.RenderingDevice.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.RenderingDevice.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_resource_name: GDExtensionMethodBindPtr = {

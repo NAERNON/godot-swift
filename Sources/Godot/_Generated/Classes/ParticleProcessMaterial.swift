@@ -334,7 +334,7 @@ open class ParticleProcessMaterial: Material {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_color: GDExtensionMethodBindPtr = {
@@ -424,7 +424,7 @@ open class ParticleProcessMaterial: Material {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_color_initial_ramp: GDExtensionMethodBindPtr = {
@@ -470,7 +470,7 @@ open class ParticleProcessMaterial: Material {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_particle_flag: GDExtensionMethodBindPtr = {
@@ -698,7 +698,7 @@ open class ParticleProcessMaterial: Material {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_emission_normal_texture: GDExtensionMethodBindPtr = {
@@ -744,7 +744,7 @@ open class ParticleProcessMaterial: Material {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_emission_color_texture: GDExtensionMethodBindPtr = {
@@ -790,7 +790,7 @@ open class ParticleProcessMaterial: Material {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_emission_point_count: GDExtensionMethodBindPtr = {

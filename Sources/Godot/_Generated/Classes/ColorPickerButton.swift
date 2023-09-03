@@ -80,7 +80,7 @@ open class ColorPickerButton: Button {
                 )
             }
         }
-        return Godot.ColorPicker.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ColorPicker.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_popup: GDExtensionMethodBindPtr = {
@@ -102,7 +102,7 @@ open class ColorPickerButton: Button {
                 )
             }
         }
-        return Godot.PopupPanel.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PopupPanel.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_edit_alpha: GDExtensionMethodBindPtr = {

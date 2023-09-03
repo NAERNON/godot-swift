@@ -24,7 +24,7 @@ open class GLTFSpecGloss: Resource {
                 )
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_diffuse_img: GDExtensionMethodBindPtr = {
@@ -202,7 +202,7 @@ open class GLTFSpecGloss: Resource {
                 )
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_spec_gloss_img: GDExtensionMethodBindPtr = {

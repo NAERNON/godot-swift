@@ -518,7 +518,7 @@ open class GLTFState: Resource {
                 }
             }
         }
-        return Godot.AnimationPlayer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AnimationPlayer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_materials: GDExtensionMethodBindPtr = {
@@ -1204,7 +1204,7 @@ open class GLTFState: Resource {
                 }
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_node_index: GDExtensionMethodBindPtr = {

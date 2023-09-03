@@ -44,7 +44,7 @@ open class EditorFileSystem: Node {
                 )
             }
         }
-        return Godot.EditorFileSystemDirectory.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorFileSystemDirectory.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_is_scanning: GDExtensionMethodBindPtr = {
@@ -172,7 +172,7 @@ open class EditorFileSystem: Node {
                 }
             }
         }
-        return Godot.EditorFileSystemDirectory.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorFileSystemDirectory.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_file_type: GDExtensionMethodBindPtr = {

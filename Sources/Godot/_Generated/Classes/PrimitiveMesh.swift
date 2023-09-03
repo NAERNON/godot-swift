@@ -52,7 +52,7 @@ open class PrimitiveMesh: Mesh {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_mesh_arrays: GDExtensionMethodBindPtr = {

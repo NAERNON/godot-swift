@@ -156,7 +156,7 @@ open class XRNode3D: Node3D {
                 )
             }
         }
-        return Godot.XRPose.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.XRPose.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_trigger_haptic_pulse: GDExtensionMethodBindPtr = {

@@ -239,7 +239,7 @@ open class AnimationNodeStateMachineTransition: Resource {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_reset: GDExtensionMethodBindPtr = {

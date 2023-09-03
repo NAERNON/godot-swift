@@ -28,7 +28,7 @@ open class GLTFLight: Resource {
                 }
             }
         }
-        return Godot.GLTFLight.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.GLTFLight.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_to_node: GDExtensionMethodBindPtr = {
@@ -50,7 +50,7 @@ open class GLTFLight: Resource {
                 )
             }
         }
-        return Godot.Light3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Light3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_from_dictionary: GDExtensionMethodBindPtr = {
@@ -74,7 +74,7 @@ open class GLTFLight: Resource {
                 }
             }
         }
-        return Godot.GLTFLight.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.GLTFLight.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_to_dictionary: GDExtensionMethodBindPtr = {

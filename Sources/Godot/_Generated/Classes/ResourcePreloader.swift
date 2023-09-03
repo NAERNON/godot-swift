@@ -126,7 +126,7 @@ open class ResourcePreloader: Node {
                 }
             }
         }
-        return Godot.Resource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_resource_list: GDExtensionMethodBindPtr = {

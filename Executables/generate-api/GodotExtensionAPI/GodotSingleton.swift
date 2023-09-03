@@ -18,7 +18,7 @@ struct GodotSingleton: Decodable {
         private var _shared\(raw: name) = {
             \(typeSyntax)._$className.withUnsafeRawPointer { namePtr in
                 let instancePointer = gdextension_interface_global_get_singleton(namePtr)
-                return \(typeSyntax).retreivedInstanceManagedByGodot(instancePointer)!
+                return \(typeSyntax).retrievedInstanceManagedByGodot(instancePointer)!
             }
         }()
         

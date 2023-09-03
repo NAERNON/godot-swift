@@ -82,7 +82,7 @@ open class UPNP: RefCounted {
                 }
             }
         }
-        return Godot.UPNPDevice.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.UPNPDevice.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_device: GDExtensionMethodBindPtr = {
@@ -194,7 +194,7 @@ open class UPNP: RefCounted {
                 )
             }
         }
-        return Godot.UPNPDevice.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.UPNPDevice.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_discover: GDExtensionMethodBindPtr = {

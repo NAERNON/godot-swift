@@ -64,7 +64,7 @@ open class Material: Resource {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_render_priority: GDExtensionMethodBindPtr = {
@@ -148,7 +148,7 @@ open class Material: Resource {
                 )
             }
         }
-        return Godot.Resource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var renderPriority: Int32 {

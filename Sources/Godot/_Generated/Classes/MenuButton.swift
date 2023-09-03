@@ -28,7 +28,7 @@ open class MenuButton: Button {
                 )
             }
         }
-        return Godot.PopupMenu.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PopupMenu.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_show_popup: GDExtensionMethodBindPtr = {

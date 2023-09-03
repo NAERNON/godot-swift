@@ -138,7 +138,7 @@ open class StreamPeerTLS: StreamPeer {
                 )
             }
         }
-        return Godot.StreamPeer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.StreamPeer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_disconnect_from_stream: GDExtensionMethodBindPtr = {

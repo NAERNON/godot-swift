@@ -315,7 +315,7 @@ open class EditorFileDialog: ConfirmationDialog {
                 )
             }
         }
-        return Godot.VBoxContainer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.VBoxContainer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_line_edit: GDExtensionMethodBindPtr = {
@@ -337,7 +337,7 @@ open class EditorFileDialog: ConfirmationDialog {
                 )
             }
         }
-        return Godot.LineEdit.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.LineEdit.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_access: GDExtensionMethodBindPtr = {

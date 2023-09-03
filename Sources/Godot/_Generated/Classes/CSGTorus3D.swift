@@ -224,7 +224,7 @@ open class CSGTorus3D: CSGPrimitive3D {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_smooth_faces: GDExtensionMethodBindPtr = {

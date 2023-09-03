@@ -1466,7 +1466,7 @@ open class TextServerExtension: TextServer {
             fontRid: Godot.RID(godotExtensionPointer: args[0]!),
             size: args[1]!.load(as: Godot.Vector2i.self),
             textureIndex: args[2]!.load(as: Int64.self),
-            image: Godot.Image.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
+            image: Godot.Image.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
         )}
         let _font_get_texture_image_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {

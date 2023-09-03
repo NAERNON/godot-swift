@@ -61,7 +61,7 @@ open class TouchScreenButton: Node2D {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_texture_pressed: GDExtensionMethodBindPtr = {
@@ -107,7 +107,7 @@ open class TouchScreenButton: Node2D {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_bitmask: GDExtensionMethodBindPtr = {
@@ -153,7 +153,7 @@ open class TouchScreenButton: Node2D {
                 )
             }
         }
-        return Godot.BitMap.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.BitMap.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
@@ -199,7 +199,7 @@ open class TouchScreenButton: Node2D {
                 )
             }
         }
-        return Godot.Shape2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Shape2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_shape_centered: GDExtensionMethodBindPtr = {

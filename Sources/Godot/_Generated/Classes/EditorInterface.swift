@@ -46,7 +46,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.EditorCommandPalette.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorCommandPalette.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_resource_filesystem: GDExtensionMethodBindPtr = {
@@ -68,7 +68,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.EditorFileSystem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorFileSystem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_editor_paths: GDExtensionMethodBindPtr = {
@@ -90,7 +90,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.EditorPaths.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorPaths.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_resource_previewer: GDExtensionMethodBindPtr = {
@@ -112,7 +112,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.EditorResourcePreview.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorResourcePreview.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_selection: GDExtensionMethodBindPtr = {
@@ -134,7 +134,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.EditorSelection.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorSelection.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_editor_settings: GDExtensionMethodBindPtr = {
@@ -156,7 +156,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.EditorSettings.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorSettings.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_make_mesh_previews: GDExtensionMethodBindPtr = {
@@ -256,7 +256,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.Control.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Control.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_editor_main_screen: GDExtensionMethodBindPtr = {
@@ -278,7 +278,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.VBoxContainer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.VBoxContainer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_script_editor: GDExtensionMethodBindPtr = {
@@ -300,7 +300,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.ScriptEditor.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ScriptEditor.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_main_screen_editor: GDExtensionMethodBindPtr = {
@@ -516,7 +516,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.FileSystemDock.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.FileSystemDock.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_select_file: GDExtensionMethodBindPtr = {
@@ -626,7 +626,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.EditorInspector.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorInspector.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_inspect_object: GDExtensionMethodBindPtr = {
@@ -820,7 +820,7 @@ open class EditorInterface: Object {
                 )
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_save_scene: GDExtensionMethodBindPtr = {

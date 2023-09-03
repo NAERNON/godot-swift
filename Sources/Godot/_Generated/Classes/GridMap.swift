@@ -284,7 +284,7 @@ open class GridMap: Node3D {
                 )
             }
         }
-        return Godot.PhysicsMaterial.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsMaterial.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_bake_navigation: GDExtensionMethodBindPtr = {
@@ -418,7 +418,7 @@ open class GridMap: Node3D {
                 )
             }
         }
-        return Godot.MeshLibrary.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MeshLibrary.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_cell_size: GDExtensionMethodBindPtr = {

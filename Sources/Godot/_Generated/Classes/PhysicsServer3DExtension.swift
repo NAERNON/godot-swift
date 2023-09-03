@@ -1861,7 +1861,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
             let _ = instance
         ._softBodyUpdateRenderingServer(
             body: Godot.RID(godotExtensionPointer: args[0]!),
-            renderingServerHandler: Godot.PhysicsServer3DRenderingServerHandler.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
+            renderingServerHandler: Godot.PhysicsServer3DRenderingServerHandler.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
         )}
         let _soft_body_set_space_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {

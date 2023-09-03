@@ -117,7 +117,7 @@ open class EditorInspectorPlugin: RefCounted {
             let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._canHandle(
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
         let _parse_begin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -127,7 +127,7 @@ open class EditorInspectorPlugin: RefCounted {
             let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._parseBegin(
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _parse_category_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -136,7 +136,7 @@ open class EditorInspectorPlugin: RefCounted {
             let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._parseCategory(
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             category: Godot.GodotString(godotExtensionPointer: args[1]!)
         )}
         let _parse_group_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -146,7 +146,7 @@ open class EditorInspectorPlugin: RefCounted {
             let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._parseGroup(
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             group: Godot.GodotString(godotExtensionPointer: args[1]!)
         )}
         let _parse_property_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -156,7 +156,7 @@ open class EditorInspectorPlugin: RefCounted {
             let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._parseProperty(
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             type: args[1]!.load(as: Godot.Variant.GodotType.self),
             name: Godot.GodotString(godotExtensionPointer: args[2]!),
             hintType: args[3]!.load(as: Godot.PropertyHint.self),
@@ -172,7 +172,7 @@ open class EditorInspectorPlugin: RefCounted {
             let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._parseEnd(
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         _virtualFunctions = [
             "_canHandle" : ("_can_handle", _can_handle_call),

@@ -48,7 +48,7 @@ open class NavigationRegion2D: Node2D {
                 )
             }
         }
-        return Godot.NavigationPolygon.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.NavigationPolygon.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {

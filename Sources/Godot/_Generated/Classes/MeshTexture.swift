@@ -48,7 +48,7 @@ open class MeshTexture: Texture2D {
                 )
             }
         }
-        return Godot.Mesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Mesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_image_size: GDExtensionMethodBindPtr = {
@@ -138,7 +138,7 @@ open class MeshTexture: Texture2D {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var mesh: Godot.Mesh? {

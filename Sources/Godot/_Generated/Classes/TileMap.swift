@@ -65,7 +65,7 @@ open class TileMap: Node2D {
                 )
             }
         }
-        return Godot.TileSet.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TileSet.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_quadrant_size: GDExtensionMethodBindPtr = {
@@ -855,7 +855,7 @@ open class TileMap: Node2D {
                 }
             }
         }
-        return Godot.TileData.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TileData.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_coords_for_body_rid: GDExtensionMethodBindPtr = {
@@ -935,7 +935,7 @@ open class TileMap: Node2D {
                 }
             }
         }
-        return Godot.TileMapPattern.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TileMapPattern.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_map_pattern: GDExtensionMethodBindPtr = {
@@ -1404,7 +1404,7 @@ open class TileMap: Node2D {
         ._tileDataRuntimeUpdate(
             layer: args[0]!.load(as: Int32.self),
             coords: args[1]!.load(as: Godot.Vector2i.self),
-            tileData: Godot.TileData.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
+            tileData: Godot.TileData.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
         )}
         _virtualFunctions = [
             "_useTileDataRuntimeUpdate" : ("_use_tile_data_runtime_update", _use_tile_data_runtime_update_call),

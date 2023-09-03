@@ -359,7 +359,7 @@ open class TabBar: Control {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_tab_icon_max_width: GDExtensionMethodBindPtr = {
@@ -461,7 +461,7 @@ open class TabBar: Control {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_tab_disabled: GDExtensionMethodBindPtr = {

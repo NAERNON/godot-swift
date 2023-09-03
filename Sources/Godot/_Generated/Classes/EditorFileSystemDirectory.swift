@@ -50,7 +50,7 @@ open class EditorFileSystemDirectory: Object {
                 }
             }
         }
-        return Godot.EditorFileSystemDirectory.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorFileSystemDirectory.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_file_count: GDExtensionMethodBindPtr = {
@@ -294,7 +294,7 @@ open class EditorFileSystemDirectory: Object {
                 )
             }
         }
-        return Godot.EditorFileSystemDirectory.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorFileSystemDirectory.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_find_file_index: GDExtensionMethodBindPtr = {

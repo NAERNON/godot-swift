@@ -136,7 +136,7 @@ open class FogVolume: VisualInstance3D {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var size: Godot.Vector3 {

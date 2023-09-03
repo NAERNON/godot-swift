@@ -1434,7 +1434,7 @@ open class FontFile: Font {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_texture_offsets: GDExtensionMethodBindPtr = {

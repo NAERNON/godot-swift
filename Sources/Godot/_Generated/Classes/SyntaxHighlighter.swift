@@ -96,7 +96,7 @@ open class SyntaxHighlighter: Resource {
                 )
             }
         }
-        return Godot.TextEdit.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TextEdit.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

@@ -56,7 +56,7 @@ open class NavigationRegion3D: Node3D {
                 )
             }
         }
-        return Godot.NavigationMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.NavigationMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {

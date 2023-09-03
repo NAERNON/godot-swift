@@ -224,7 +224,7 @@ open class CSGSphere3D: CSGPrimitive3D {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var radius: Double {

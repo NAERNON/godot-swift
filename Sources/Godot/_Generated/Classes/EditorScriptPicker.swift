@@ -48,7 +48,7 @@ open class EditorScriptPicker: EditorResourcePicker {
                 )
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var scriptOwner: Godot.Node? {

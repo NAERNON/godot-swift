@@ -1,7 +1,7 @@
 # ``Godot/ConvertibleFromVariant``
 
 Types that conform to the `ConvertibleFromVariant` protocol can be converted from a variant.
-Use the `Variant` ``Variant/typed(_:)`` or ``Variant/typed(compatibleWith:)`` methods to retreive an instance from a variant.
+Use the `Variant` ``Variant/typed(_:)`` or ``Variant/typed(compatibleWith:)`` methods to retrieve an instance from a variant.
 
 For example, in the following code, the `Level` struct can be converted from a variant, using the `index` value as its representation:
 
@@ -19,7 +19,7 @@ struct Level: ConvertibleFromVariant {
 }
 ```
 
-For a given variant, retreive an instance like so:
+For a given variant, retrieve an instance like so:
 
 ```swift
 let variant: Variant = //...

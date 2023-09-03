@@ -420,7 +420,7 @@ open class GLTFSkin: Resource {
                 )
             }
         }
-        return Godot.Skin.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Skin.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_godot_skin: GDExtensionMethodBindPtr = {

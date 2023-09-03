@@ -627,7 +627,7 @@ open class PhysicsServer3D: Object {
                 }
             }
         }
-        return Godot.PhysicsDirectSpaceState3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsDirectSpaceState3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_area_create: GDExtensionMethodBindPtr = {
@@ -2677,7 +2677,7 @@ open class PhysicsServer3D: Object {
                 }
             }
         }
-        return Godot.PhysicsDirectBodyState3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsDirectBodyState3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_soft_body_get_bounds: GDExtensionMethodBindPtr = {

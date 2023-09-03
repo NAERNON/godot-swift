@@ -140,7 +140,7 @@ open class UDPServer: RefCounted {
                 )
             }
         }
-        return Godot.PacketPeerUDP.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PacketPeerUDP.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_stop: GDExtensionMethodBindPtr = {

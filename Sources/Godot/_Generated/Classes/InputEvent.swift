@@ -378,7 +378,7 @@ open class InputEvent: Resource {
                 }
             }
         }
-        return Godot.InputEvent.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.InputEvent.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var device: Int32 {

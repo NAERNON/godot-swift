@@ -112,7 +112,7 @@ open class GLTFSkeleton: Resource {
                 )
             }
         }
-        return Godot.Skeleton3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Skeleton3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_unique_names: GDExtensionMethodBindPtr = {
@@ -248,7 +248,7 @@ open class GLTFSkeleton: Resource {
                 }
             }
         }
-        return Godot.BoneAttachment3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.BoneAttachment3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var joints: Godot.PackedInt32Array {

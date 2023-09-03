@@ -3,7 +3,7 @@
 ///
 /// It can be decoded from the `extension_api.json` file.
 ///
-/// Use the ``size(ofClass:for:)`` function to retreive the size
+/// Use the ``size(ofClass:for:)`` function to retrieve the size
 /// of a specific class.
 struct GodotBuiltinClassSizes: Decodable {
     var sizes: [BuildConfiguration : [GodotType : Int]]

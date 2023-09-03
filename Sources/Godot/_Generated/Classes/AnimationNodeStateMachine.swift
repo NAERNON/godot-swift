@@ -88,7 +88,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
                 }
             }
         }
-        return Godot.AnimationNode.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AnimationNode.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_remove_node: GDExtensionMethodBindPtr = {
@@ -320,7 +320,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
                 }
             }
         }
-        return Godot.AnimationNodeStateMachineTransition.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AnimationNodeStateMachineTransition.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_transition_from: GDExtensionMethodBindPtr = {

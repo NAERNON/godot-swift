@@ -168,7 +168,7 @@ open class AnimationPlayer: Node {
                 }
             }
         }
-        return Godot.AnimationLibrary.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AnimationLibrary.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_animation_library_list: GDExtensionMethodBindPtr = {
@@ -242,7 +242,7 @@ open class AnimationPlayer: Node {
                 }
             }
         }
-        return Godot.Animation.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Animation.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_animation_list: GDExtensionMethodBindPtr = {
@@ -1417,10 +1417,10 @@ open class AnimationPlayer: Node {
             let instance = Unmanaged<AnimationPlayer> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._postProcessKeyValue(
-            animation: Godot.Animation.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            animation: Godot.Animation.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             track: args[1]!.load(as: Int32.self),
             value: Godot.Variant(godotExtensionPointer: args[2]!),
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!)),
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!)),
             objectIdx: args[4]!.load(as: Int32.self)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}

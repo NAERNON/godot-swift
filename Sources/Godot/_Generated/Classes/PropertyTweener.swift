@@ -28,7 +28,7 @@ open class PropertyTweener: Tweener {
                 }
             }
         }
-        return Godot.PropertyTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PropertyTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_from_current: GDExtensionMethodBindPtr = {
@@ -50,7 +50,7 @@ open class PropertyTweener: Tweener {
                 )
             }
         }
-        return Godot.PropertyTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PropertyTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_as_relative: GDExtensionMethodBindPtr = {
@@ -72,7 +72,7 @@ open class PropertyTweener: Tweener {
                 )
             }
         }
-        return Godot.PropertyTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PropertyTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_trans: GDExtensionMethodBindPtr = {
@@ -98,7 +98,7 @@ open class PropertyTweener: Tweener {
                 }
             }
         }
-        return Godot.PropertyTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PropertyTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_ease: GDExtensionMethodBindPtr = {
@@ -124,7 +124,7 @@ open class PropertyTweener: Tweener {
                 }
             }
         }
-        return Godot.PropertyTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PropertyTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_delay: GDExtensionMethodBindPtr = {
@@ -150,7 +150,7 @@ open class PropertyTweener: Tweener {
                 }
             }
         }
-        return Godot.PropertyTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PropertyTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

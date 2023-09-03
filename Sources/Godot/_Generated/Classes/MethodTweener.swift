@@ -28,7 +28,7 @@ open class MethodTweener: Tweener {
                 }
             }
         }
-        return Godot.MethodTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MethodTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_trans: GDExtensionMethodBindPtr = {
@@ -54,7 +54,7 @@ open class MethodTweener: Tweener {
                 }
             }
         }
-        return Godot.MethodTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MethodTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_ease: GDExtensionMethodBindPtr = {
@@ -80,7 +80,7 @@ open class MethodTweener: Tweener {
                 }
             }
         }
-        return Godot.MethodTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MethodTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

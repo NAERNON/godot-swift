@@ -4,7 +4,7 @@ import SwiftSyntaxBuilder
 
 /// A `GeneratedFile` represents a Swift file.
 ///
-/// Use the ``code()`` function to retreive the code of the file.
+/// Use the ``code()`` function to retrieve the code of the file.
 struct GeneratedFile {
     /// The path of the file.
     let path: String

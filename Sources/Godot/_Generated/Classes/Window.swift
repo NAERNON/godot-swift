@@ -1355,7 +1355,7 @@ open class Window: Viewport {
                 )
             }
         }
-        return Godot.Theme.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Theme.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_theme_type_variation: GDExtensionMethodBindPtr = {
@@ -1745,7 +1745,7 @@ open class Window: Viewport {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_theme_stylebox: GDExtensionMethodBindPtr = {
@@ -1773,7 +1773,7 @@ open class Window: Viewport {
                 }
             }
         }
-        return Godot.StyleBox.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.StyleBox.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_theme_font: GDExtensionMethodBindPtr = {
@@ -1801,7 +1801,7 @@ open class Window: Viewport {
                 }
             }
         }
-        return Godot.Font.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Font.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_theme_font_size: GDExtensionMethodBindPtr = {
@@ -2253,7 +2253,7 @@ open class Window: Viewport {
                 )
             }
         }
-        return Godot.Font.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Font.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_theme_default_font_size: GDExtensionMethodBindPtr = {

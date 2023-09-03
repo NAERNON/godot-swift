@@ -956,7 +956,7 @@ open class DisplayServer: Object {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_global_menu_get_item_indentation_level: GDExtensionMethodBindPtr = {
@@ -2326,7 +2326,7 @@ open class DisplayServer: Object {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_screen_set_orientation: GDExtensionMethodBindPtr = {

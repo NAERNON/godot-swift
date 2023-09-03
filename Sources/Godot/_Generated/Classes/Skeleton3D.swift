@@ -378,7 +378,7 @@ open class Skeleton3D: Node3D {
                 )
             }
         }
-        return Godot.Skin.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Skin.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_register_skin: GDExtensionMethodBindPtr = {
@@ -406,7 +406,7 @@ open class Skeleton3D: Node3D {
                 }
             }
         }
-        return Godot.SkinReference.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SkinReference.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_localize_rests: GDExtensionMethodBindPtr = {

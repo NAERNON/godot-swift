@@ -590,7 +590,7 @@ open class Label3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.Font.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Font.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_font_size: GDExtensionMethodBindPtr = {
@@ -1322,7 +1322,7 @@ open class Label3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.TriangleMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TriangleMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var pixelSize: Double {

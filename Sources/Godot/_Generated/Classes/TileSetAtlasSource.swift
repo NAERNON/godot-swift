@@ -48,7 +48,7 @@ open class TileSetAtlasSource: TileSetSource {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_margins: GDExtensionMethodBindPtr = {
@@ -830,7 +830,7 @@ open class TileSetAtlasSource: TileSetSource {
                 }
             }
         }
-        return Godot.TileData.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TileData.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_atlas_grid_size: GDExtensionMethodBindPtr = {
@@ -902,7 +902,7 @@ open class TileSetAtlasSource: TileSetSource {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_runtime_tile_texture_region: GDExtensionMethodBindPtr = {

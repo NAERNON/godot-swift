@@ -370,7 +370,7 @@ open class EditorExportPlugin: RefCounted {
             let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._beginCustomizeResources(
-            platform: Godot.EditorExportPlatform.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            platform: Godot.EditorExportPlatform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             features: Godot.PackedStringArray(godotExtensionPointer: args[1]!)
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
@@ -381,7 +381,7 @@ open class EditorExportPlugin: RefCounted {
             let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._customizeResource(
-            Godot.Resource.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             path: Godot.GodotString(godotExtensionPointer: args[1]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
@@ -392,7 +392,7 @@ open class EditorExportPlugin: RefCounted {
             let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._beginCustomizeScenes(
-            platform: Godot.EditorExportPlatform.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            platform: Godot.EditorExportPlatform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             features: Godot.PackedStringArray(godotExtensionPointer: args[1]!)
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
@@ -403,7 +403,7 @@ open class EditorExportPlugin: RefCounted {
             let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._customizeScene(
-            Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             path: Godot.GodotString(godotExtensionPointer: args[1]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
@@ -436,7 +436,7 @@ open class EditorExportPlugin: RefCounted {
             let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             var returnValue = instance
         ._getExportOptions(
-            platform: Godot.EditorExportPlatform.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            platform: Godot.EditorExportPlatform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _should_update_export_options_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -446,7 +446,7 @@ open class EditorExportPlugin: RefCounted {
             let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._shouldUpdateExportOptions(
-            platform: Godot.EditorExportPlatform.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            platform: Godot.EditorExportPlatform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
         let _get_export_features_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -456,7 +456,7 @@ open class EditorExportPlugin: RefCounted {
             let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             var returnValue = instance
         ._getExportFeatures(
-            platform: Godot.EditorExportPlatform.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            platform: Godot.EditorExportPlatform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             debug: args[1]!.load(as: Bool.self)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}

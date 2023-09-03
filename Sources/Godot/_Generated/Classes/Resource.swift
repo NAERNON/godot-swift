@@ -208,7 +208,7 @@ open class Resource: RefCounted {
                 )
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_setup_local_to_scene: GDExtensionMethodBindPtr = {
@@ -270,7 +270,7 @@ open class Resource: RefCounted {
                 }
             }
         }
-        return Godot.Resource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var isLocalToScene: Bool {

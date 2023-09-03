@@ -155,7 +155,7 @@ open class Viewport: Node {
                 )
             }
         }
-        return Godot.World2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.World2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_find_world_2d: GDExtensionMethodBindPtr = {
@@ -177,7 +177,7 @@ open class Viewport: Node {
                 )
             }
         }
-        return Godot.World2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.World2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_canvas_transform: GDExtensionMethodBindPtr = {
@@ -733,7 +733,7 @@ open class Viewport: Node {
                 )
             }
         }
-        return Godot.ViewportTexture.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ViewportTexture.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_physics_object_picking: GDExtensionMethodBindPtr = {
@@ -939,7 +939,7 @@ open class Viewport: Node {
                 )
             }
         }
-        return Godot.Camera2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Camera2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_as_audio_listener_2d: GDExtensionMethodBindPtr = {
@@ -1151,7 +1151,7 @@ open class Viewport: Node {
                 )
             }
         }
-        return Godot.Control.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Control.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_disable_input: GDExtensionMethodBindPtr = {
@@ -1953,7 +1953,7 @@ open class Viewport: Node {
                 )
             }
         }
-        return Godot.World3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.World3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_find_world_3d: GDExtensionMethodBindPtr = {
@@ -1975,7 +1975,7 @@ open class Viewport: Node {
                 )
             }
         }
-        return Godot.World3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.World3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_use_own_world_3d: GDExtensionMethodBindPtr = {
@@ -2041,7 +2041,7 @@ open class Viewport: Node {
                 )
             }
         }
-        return Godot.Camera3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Camera3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_as_audio_listener_3d: GDExtensionMethodBindPtr = {
@@ -2439,7 +2439,7 @@ open class Viewport: Node {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var is3DDisabled: Bool {

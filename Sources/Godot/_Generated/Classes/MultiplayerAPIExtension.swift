@@ -60,7 +60,7 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
             let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._setMultiplayerPeer(
-            Godot.MultiplayerPeer.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            Godot.MultiplayerPeer.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _get_multiplayer_peer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
@@ -94,7 +94,7 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
             let returnValue = instance
         ._rpc(
             peer: args[0]!.load(as: Int32.self),
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
             method: Godot.GodotStringName(godotExtensionPointer: args[2]!),
             args: Godot.GodotArray(godotExtensionPointer: args[3]!)
         )
@@ -114,7 +114,7 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
             let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._objectConfigurationAdd(
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             configuration: Godot.Variant(godotExtensionPointer: args[1]!)
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
@@ -125,7 +125,7 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
             let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._objectConfigurationRemove(
-            object: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             configuration: Godot.Variant(godotExtensionPointer: args[1]!)
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}

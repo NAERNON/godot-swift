@@ -354,7 +354,7 @@ open class Engine: Object {
                 )
             }
         }
-        return Godot.MainLoop.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MainLoop.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_version_info: GDExtensionMethodBindPtr = {
@@ -582,7 +582,7 @@ open class Engine: Object {
                 }
             }
         }
-        return Godot.Object.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Object.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_register_singleton: GDExtensionMethodBindPtr = {
@@ -756,7 +756,7 @@ open class Engine: Object {
                 }
             }
         }
-        return Godot.ScriptLanguage.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ScriptLanguage.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_is_editor_hint: GDExtensionMethodBindPtr = {

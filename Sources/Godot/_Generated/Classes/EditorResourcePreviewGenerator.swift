@@ -47,7 +47,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
             let instance = Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._generate(
-            resource: Godot.Resource.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             size: args[1]!.load(as: Godot.Vector2i.self),
             metadata: Godot.GodotDictionary(godotExtensionPointer: args[2]!)
         )

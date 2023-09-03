@@ -198,7 +198,7 @@ open class MultiplayerSynchronizer: Node {
                 )
             }
         }
-        return Godot.SceneReplicationConfig.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.SceneReplicationConfig.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_visibility_update_mode: GDExtensionMethodBindPtr = {

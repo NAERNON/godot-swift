@@ -92,7 +92,7 @@ open class CSGBox3D: CSGPrimitive3D {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var size: Godot.Vector3 {

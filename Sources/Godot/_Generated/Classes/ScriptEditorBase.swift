@@ -60,7 +60,7 @@ open class ScriptEditorBase: VBoxContainer {
                 )
             }
         }
-        return Godot.Control.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Control.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_syntax_highlighter: GDExtensionMethodBindPtr = {

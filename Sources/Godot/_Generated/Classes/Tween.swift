@@ -78,7 +78,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.PropertyTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PropertyTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_tween_interval: GDExtensionMethodBindPtr = {
@@ -104,7 +104,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.IntervalTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.IntervalTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_tween_callback: GDExtensionMethodBindPtr = {
@@ -130,7 +130,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.CallbackTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CallbackTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_tween_method: GDExtensionMethodBindPtr = {
@@ -162,7 +162,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.MethodTweener.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MethodTweener.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_custom_step: GDExtensionMethodBindPtr = {
@@ -354,7 +354,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_process_mode: GDExtensionMethodBindPtr = {
@@ -380,7 +380,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_pause_mode: GDExtensionMethodBindPtr = {
@@ -406,7 +406,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_parallel: GDExtensionMethodBindPtr = {
@@ -432,7 +432,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_loops: GDExtensionMethodBindPtr = {
@@ -458,7 +458,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_loops_left: GDExtensionMethodBindPtr = {
@@ -506,7 +506,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_trans: GDExtensionMethodBindPtr = {
@@ -532,7 +532,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_ease: GDExtensionMethodBindPtr = {
@@ -558,7 +558,7 @@ open class Tween: RefCounted {
                 }
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_parallel: GDExtensionMethodBindPtr = {
@@ -580,7 +580,7 @@ open class Tween: RefCounted {
                 )
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_chain: GDExtensionMethodBindPtr = {
@@ -602,7 +602,7 @@ open class Tween: RefCounted {
                 )
             }
         }
-        return Godot.Tween.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tween.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_interpolate_value: GDExtensionMethodBindPtr = {

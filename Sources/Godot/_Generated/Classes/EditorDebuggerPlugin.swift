@@ -39,7 +39,7 @@ open class EditorDebuggerPlugin: RefCounted {
                 }
             }
         }
-        return Godot.EditorDebuggerSession.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorDebuggerSession.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_sessions: GDExtensionMethodBindPtr = {

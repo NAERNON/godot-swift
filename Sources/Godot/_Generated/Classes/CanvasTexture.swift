@@ -48,7 +48,7 @@ open class CanvasTexture: Texture2D {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_normal_texture: GDExtensionMethodBindPtr = {
@@ -94,7 +94,7 @@ open class CanvasTexture: Texture2D {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_specular_texture: GDExtensionMethodBindPtr = {
@@ -140,7 +140,7 @@ open class CanvasTexture: Texture2D {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_specular_color: GDExtensionMethodBindPtr = {

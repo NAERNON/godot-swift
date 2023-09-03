@@ -146,7 +146,7 @@ open class AnimationLibrary: Resource {
                 }
             }
         }
-        return Godot.Animation.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Animation.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_animation_list: GDExtensionMethodBindPtr = {

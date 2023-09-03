@@ -168,7 +168,7 @@ open class HTTPClient: RefCounted {
                 )
             }
         }
-        return Godot.StreamPeer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.StreamPeer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_request_raw: GDExtensionMethodBindPtr = {

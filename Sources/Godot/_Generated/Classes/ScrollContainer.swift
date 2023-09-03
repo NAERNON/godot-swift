@@ -391,7 +391,7 @@ open class ScrollContainer: Container {
                 )
             }
         }
-        return Godot.HScrollBar.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.HScrollBar.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_v_scroll_bar: GDExtensionMethodBindPtr = {
@@ -413,7 +413,7 @@ open class ScrollContainer: Container {
                 )
             }
         }
-        return Godot.VScrollBar.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.VScrollBar.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_ensure_control_visible: GDExtensionMethodBindPtr = {

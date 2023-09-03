@@ -60,7 +60,7 @@ open class AnimationNodeBlendTree: AnimationRootNode {
                 }
             }
         }
-        return Godot.AnimationNode.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AnimationNode.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_remove_node: GDExtensionMethodBindPtr = {

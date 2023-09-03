@@ -180,7 +180,7 @@ open class Label: Control {
                 )
             }
         }
-        return Godot.LabelSettings.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.LabelSettings.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {

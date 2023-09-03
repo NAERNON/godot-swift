@@ -121,7 +121,7 @@ open class Tree: Control {
                 }
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_root: GDExtensionMethodBindPtr = {
@@ -143,7 +143,7 @@ open class Tree: Control {
                 )
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_column_custom_minimum_width: GDExtensionMethodBindPtr = {
@@ -415,7 +415,7 @@ open class Tree: Control {
                 }
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_selected: GDExtensionMethodBindPtr = {
@@ -437,7 +437,7 @@ open class Tree: Control {
                 )
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_selected: GDExtensionMethodBindPtr = {
@@ -635,7 +635,7 @@ open class Tree: Control {
                 )
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_edited_column: GDExtensionMethodBindPtr = {
@@ -763,7 +763,7 @@ open class Tree: Control {
                 }
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_column_at_position: GDExtensionMethodBindPtr = {

@@ -877,7 +877,7 @@ open class RenderingServer: Object {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_texture_2d_layer_get: GDExtensionMethodBindPtr = {
@@ -905,7 +905,7 @@ open class RenderingServer: Object {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_texture_3d_get: GDExtensionMethodBindPtr = {
@@ -7419,7 +7419,7 @@ open class RenderingServer: Object {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_environment_create: GDExtensionMethodBindPtr = {
@@ -8203,7 +8203,7 @@ open class RenderingServer: Object {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_screen_space_roughness_limiter_set_active: GDExtensionMethodBindPtr = {
@@ -12199,7 +12199,7 @@ open class RenderingServer: Object {
                 )
             }
         }
-        return Godot.RenderingDevice.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.RenderingDevice.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_local_rendering_device: GDExtensionMethodBindPtr = {
@@ -12221,7 +12221,7 @@ open class RenderingServer: Object {
                 )
             }
         }
-        return Godot.RenderingDevice.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.RenderingDevice.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var isRenderLoopEnabled: Bool {

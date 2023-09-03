@@ -172,7 +172,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
                 )
             }
         }
-        return Godot.ENetConnection.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ENetConnection.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_peer: GDExtensionMethodBindPtr = {
@@ -198,7 +198,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
                 }
             }
         }
-        return Godot.ENetPacketPeer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ENetPacketPeer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var host: Godot.ENetConnection? {

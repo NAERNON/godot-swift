@@ -196,7 +196,7 @@ open class KinematicCollision3D: RefCounted {
                 }
             }
         }
-        return Godot.Object.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Object.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_collider: GDExtensionMethodBindPtr = {
@@ -222,7 +222,7 @@ open class KinematicCollision3D: RefCounted {
                 }
             }
         }
-        return Godot.Object.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Object.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_collider_id: GDExtensionMethodBindPtr = {
@@ -300,7 +300,7 @@ open class KinematicCollision3D: RefCounted {
                 }
             }
         }
-        return Godot.Object.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Object.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_collider_shape_index: GDExtensionMethodBindPtr = {

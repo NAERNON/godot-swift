@@ -48,7 +48,7 @@ open class PhysicsShapeQueryParameters2D: RefCounted {
                 )
             }
         }
-        return Godot.Resource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_shape_rid: GDExtensionMethodBindPtr = {

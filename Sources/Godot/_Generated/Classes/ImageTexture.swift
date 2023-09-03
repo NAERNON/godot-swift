@@ -28,7 +28,7 @@ open class ImageTexture: Texture2D {
                 }
             }
         }
-        return Godot.ImageTexture.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ImageTexture.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_format: GDExtensionMethodBindPtr = {

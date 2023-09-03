@@ -54,7 +54,7 @@ open class RDShaderFile: Resource {
                 }
             }
         }
-        return Godot.RDShaderSPIRV.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.RDShaderSPIRV.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_version_list: GDExtensionMethodBindPtr = {

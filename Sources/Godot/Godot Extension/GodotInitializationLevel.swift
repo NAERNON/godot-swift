@@ -20,7 +20,7 @@ public enum GodotInitializationLevel: Comparable {
         case GDEXTENSION_MAX_INITIALIZATION_LEVEL:
             self = .level
         default:
-            fatalError("The initialization level could not be retreived.")
+            fatalError("The initialization level could not be retrieved.")
         }
     }
     

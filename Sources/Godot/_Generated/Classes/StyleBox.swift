@@ -205,7 +205,7 @@ open class StyleBox: Resource {
                 )
             }
         }
-        return Godot.CanvasItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CanvasItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_test_mask: GDExtensionMethodBindPtr = {

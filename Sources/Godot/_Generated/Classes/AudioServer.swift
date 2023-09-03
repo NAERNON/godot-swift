@@ -583,7 +583,7 @@ open class AudioServer: Object {
                 }
             }
         }
-        return Godot.AudioEffect.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AudioEffect.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_bus_effect_instance: GDExtensionMethodBindPtr = {
@@ -613,7 +613,7 @@ open class AudioServer: Object {
                 }
             }
         }
-        return Godot.AudioEffectInstance.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AudioEffectInstance.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_swap_bus_effects: GDExtensionMethodBindPtr = {
@@ -1117,7 +1117,7 @@ open class AudioServer: Object {
                 )
             }
         }
-        return Godot.AudioBusLayout.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AudioBusLayout.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_enable_tagging_used_audio_streams: GDExtensionMethodBindPtr = {

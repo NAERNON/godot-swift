@@ -114,7 +114,7 @@ open class SpringArm3D: Node3D {
                 )
             }
         }
-        return Godot.Shape3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Shape3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_excluded_object: GDExtensionMethodBindPtr = {

@@ -48,7 +48,7 @@ open class AudioStreamOggVorbis: AudioStream {
                 )
             }
         }
-        return Godot.OggPacketSequence.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.OggPacketSequence.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_loop: GDExtensionMethodBindPtr = {

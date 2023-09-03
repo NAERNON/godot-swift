@@ -184,7 +184,7 @@ open class TileData: Object {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_texture_origin: GDExtensionMethodBindPtr = {
@@ -412,7 +412,7 @@ open class TileData: Object {
                 }
             }
         }
-        return Godot.OccluderPolygon2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.OccluderPolygon2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_constant_linear_velocity: GDExtensionMethodBindPtr = {
@@ -960,7 +960,7 @@ open class TileData: Object {
                 }
             }
         }
-        return Godot.NavigationPolygon.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.NavigationPolygon.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_probability: GDExtensionMethodBindPtr = {

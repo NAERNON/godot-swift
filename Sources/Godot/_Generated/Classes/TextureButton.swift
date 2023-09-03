@@ -310,7 +310,7 @@ open class TextureButton: BaseButton {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_texture_pressed: GDExtensionMethodBindPtr = {
@@ -332,7 +332,7 @@ open class TextureButton: BaseButton {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_texture_hover: GDExtensionMethodBindPtr = {
@@ -354,7 +354,7 @@ open class TextureButton: BaseButton {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_texture_disabled: GDExtensionMethodBindPtr = {
@@ -376,7 +376,7 @@ open class TextureButton: BaseButton {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_texture_focused: GDExtensionMethodBindPtr = {
@@ -398,7 +398,7 @@ open class TextureButton: BaseButton {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_click_mask: GDExtensionMethodBindPtr = {
@@ -420,7 +420,7 @@ open class TextureButton: BaseButton {
                 )
             }
         }
-        return Godot.BitMap.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.BitMap.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_ignore_texture_size: GDExtensionMethodBindPtr = {

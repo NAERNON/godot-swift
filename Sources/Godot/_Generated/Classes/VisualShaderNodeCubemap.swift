@@ -104,7 +104,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
                 )
             }
         }
-        return Godot.Cubemap.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Cubemap.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_texture_type: GDExtensionMethodBindPtr = {

@@ -606,7 +606,7 @@ open class Node3D: Node {
                 )
             }
         }
-        return Godot.Node3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_ignore_transform_notification: GDExtensionMethodBindPtr = {
@@ -738,7 +738,7 @@ open class Node3D: Node {
                 )
             }
         }
-        return Godot.World3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.World3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_force_update_transform: GDExtensionMethodBindPtr = {

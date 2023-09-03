@@ -260,7 +260,7 @@ open class OptionButton: Button {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_item_id: GDExtensionMethodBindPtr = {
@@ -588,7 +588,7 @@ open class OptionButton: Button {
                 )
             }
         }
-        return Godot.PopupMenu.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PopupMenu.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_show_popup: GDExtensionMethodBindPtr = {

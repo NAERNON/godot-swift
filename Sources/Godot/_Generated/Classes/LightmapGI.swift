@@ -79,7 +79,7 @@ open class LightmapGI: VisualInstance3D {
                 )
             }
         }
-        return Godot.LightmapGIData.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.LightmapGIData.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_bake_quality: GDExtensionMethodBindPtr = {
@@ -345,7 +345,7 @@ open class LightmapGI: VisualInstance3D {
                 )
             }
         }
-        return Godot.Sky.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Sky.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_environment_custom_color: GDExtensionMethodBindPtr = {
@@ -655,7 +655,7 @@ open class LightmapGI: VisualInstance3D {
                 )
             }
         }
-        return Godot.CameraAttributes.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CameraAttributes.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var bakeQuality: Godot.LightmapGI.BakeQuality {

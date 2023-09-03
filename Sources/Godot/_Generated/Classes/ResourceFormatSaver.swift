@@ -37,7 +37,7 @@ open class ResourceFormatSaver: RefCounted {
             let instance = Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._save(
-            resource: Godot.Resource.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             path: Godot.GodotString(godotExtensionPointer: args[1]!),
             flags: args[2]!.load(as: UInt32.self)
         )
@@ -60,7 +60,7 @@ open class ResourceFormatSaver: RefCounted {
             let instance = Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._recognize(
-            resource: Godot.Resource.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
         let _get_recognized_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -70,7 +70,7 @@ open class ResourceFormatSaver: RefCounted {
             let instance = Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
             var returnValue = instance
         ._getRecognizedExtensions(
-            resource: Godot.Resource.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _recognize_path_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -80,7 +80,7 @@ open class ResourceFormatSaver: RefCounted {
             let instance = Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._recognizePath(
-            resource: Godot.Resource.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             path: Godot.GodotString(godotExtensionPointer: args[1]!)
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}

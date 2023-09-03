@@ -174,7 +174,7 @@ open class StreamPeerBuffer: StreamPeer {
                 )
             }
         }
-        return Godot.StreamPeerBuffer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.StreamPeerBuffer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var dataArray: Godot.PackedByteArray {

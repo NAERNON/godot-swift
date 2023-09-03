@@ -68,7 +68,7 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._importPreflight(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             extensions: Godot.PackedStringArray(godotExtensionPointer: args[1]!)
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
@@ -87,8 +87,8 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._parseNodeExtensions(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            gltfNode: Godot.GLTFNode.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gltfNode: Godot.GLTFNode.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
             extensions: Godot.GodotDictionary(godotExtensionPointer: args[2]!)
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
@@ -99,10 +99,10 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._parseImageData(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             imageData: Godot.PackedByteArray(godotExtensionPointer: args[1]!),
             mimeType: Godot.GodotString(godotExtensionPointer: args[2]!),
-            retImage: Godot.Image.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
+            retImage: Godot.Image.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         let _parse_texture_json_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -112,9 +112,9 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._parseTextureJson(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             textureJson: Godot.GodotDictionary(godotExtensionPointer: args[1]!),
-            retGltfTexture: Godot.GLTFTexture.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
+            retGltfTexture: Godot.GLTFTexture.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         let _generate_scene_node_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -124,9 +124,9 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._generateSceneNode(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            gltfNode: Godot.GLTFNode.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
-            sceneParent: Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gltfNode: Godot.GLTFNode.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            sceneParent: Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _import_post_parse_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -136,7 +136,7 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._importPostParse(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         let _import_node_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -146,10 +146,10 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._importNode(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            gltfNode: Godot.GLTFNode.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gltfNode: Godot.GLTFNode.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
             json: Godot.GodotDictionary(godotExtensionPointer: args[2]!),
-            node: Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
+            node: Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         let _import_post_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -159,8 +159,8 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._importPost(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            root: Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            root: Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         let _export_preflight_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -170,8 +170,8 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._exportPreflight(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            root: Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            root: Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         let _convert_scene_node_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -181,9 +181,9 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._convertSceneNode(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            gltfNode: Godot.GLTFNode.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
-            sceneNode: Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gltfNode: Godot.GLTFNode.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            sceneNode: Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
         )}
         let _export_node_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -192,10 +192,10 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._exportNode(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            gltfNode: Godot.GLTFNode.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            gltfNode: Godot.GLTFNode.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
             json: Godot.GodotDictionary(godotExtensionPointer: args[2]!),
-            node: Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
+            node: Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         let _export_post_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -205,7 +205,7 @@ open class GLTFDocumentExtension: Resource {
             let instance = Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._exportPost(
-            state: Godot.GLTFState.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            state: Godot.GLTFState.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         _virtualFunctions = [

@@ -53,7 +53,7 @@ open class MultiMesh: Resource {
                 )
             }
         }
-        return Godot.Mesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Mesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_use_colors: GDExtensionMethodBindPtr = {

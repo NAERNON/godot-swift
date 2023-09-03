@@ -257,7 +257,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
                 )
             }
         }
-        return Godot.Node3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_plugin: GDExtensionMethodBindPtr = {
@@ -279,7 +279,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
                 )
             }
         }
-        return Godot.EditorNode3DGizmoPlugin.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorNode3DGizmoPlugin.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
@@ -424,7 +424,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
         ._setHandle(
             id: args[0]!.load(as: Int32.self),
             secondary: args[1]!.load(as: Bool.self),
-            camera: Godot.Camera3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!)),
+            camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!)),
             point: args[3]!.load(as: Godot.Vector2.self)
         )}
         let _commit_handle_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -446,7 +446,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
             let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._subgizmosIntersectRay(
-            camera: Godot.Camera3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             point: args[1]!.load(as: Godot.Vector2.self)
         )
         returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
@@ -457,7 +457,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
             let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
             var returnValue = instance
         ._subgizmosIntersectFrustum(
-            camera: Godot.Camera3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             frustum: Godot.GodotTypedArray<Godot.Plane>(godotExtensionPointer: args[1]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}

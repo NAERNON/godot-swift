@@ -268,7 +268,7 @@ open class FogMaterial: Material {
                 )
             }
         }
-        return Godot.Texture3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var density: Double {

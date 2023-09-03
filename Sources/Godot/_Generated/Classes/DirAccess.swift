@@ -26,7 +26,7 @@ open class DirAccess: RefCounted {
                 }
             }
         }
-        return Godot.DirAccess.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.DirAccess.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_open_error: GDExtensionMethodBindPtr = {

@@ -94,7 +94,7 @@ open class OpenXRActionMap: Resource {
                 }
             }
         }
-        return Godot.OpenXRActionSet.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.OpenXRActionSet.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_action_set: GDExtensionMethodBindPtr = {
@@ -120,7 +120,7 @@ open class OpenXRActionMap: Resource {
                 }
             }
         }
-        return Godot.OpenXRActionSet.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.OpenXRActionSet.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_action_set: GDExtensionMethodBindPtr = {
@@ -260,7 +260,7 @@ open class OpenXRActionMap: Resource {
                 }
             }
         }
-        return Godot.OpenXRInteractionProfile.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.OpenXRInteractionProfile.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_interaction_profile: GDExtensionMethodBindPtr = {
@@ -286,7 +286,7 @@ open class OpenXRActionMap: Resource {
                 }
             }
         }
-        return Godot.OpenXRInteractionProfile.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.OpenXRInteractionProfile.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_interaction_profile: GDExtensionMethodBindPtr = {

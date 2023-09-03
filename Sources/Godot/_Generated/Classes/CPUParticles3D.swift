@@ -657,7 +657,7 @@ open class CPUParticles3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.Mesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Mesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_restart: GDExtensionMethodBindPtr = {
@@ -959,7 +959,7 @@ open class CPUParticles3D: GeometryInstance3D {
                 }
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_color: GDExtensionMethodBindPtr = {
@@ -1049,7 +1049,7 @@ open class CPUParticles3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.Gradient.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Gradient.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_color_initial_ramp: GDExtensionMethodBindPtr = {
@@ -1095,7 +1095,7 @@ open class CPUParticles3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.Gradient.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Gradient.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_particle_flag: GDExtensionMethodBindPtr = {
@@ -1695,7 +1695,7 @@ open class CPUParticles3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_scale_curve_x: GDExtensionMethodBindPtr = {
@@ -1741,7 +1741,7 @@ open class CPUParticles3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_scale_curve_y: GDExtensionMethodBindPtr = {
@@ -1787,7 +1787,7 @@ open class CPUParticles3D: GeometryInstance3D {
                 )
             }
         }
-        return Godot.Curve.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_scale_curve_z: GDExtensionMethodBindPtr = {

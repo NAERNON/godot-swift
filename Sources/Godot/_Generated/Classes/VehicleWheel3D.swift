@@ -486,7 +486,7 @@ open class VehicleWheel3D: Node3D {
                 )
             }
         }
-        return Godot.Node3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_roll_influence: GDExtensionMethodBindPtr = {

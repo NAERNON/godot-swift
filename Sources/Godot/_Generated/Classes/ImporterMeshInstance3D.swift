@@ -48,7 +48,7 @@ open class ImporterMeshInstance3D: Node3D {
                 )
             }
         }
-        return Godot.ImporterMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ImporterMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_skin: GDExtensionMethodBindPtr = {
@@ -94,7 +94,7 @@ open class ImporterMeshInstance3D: Node3D {
                 )
             }
         }
-        return Godot.Skin.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Skin.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_skeleton_path: GDExtensionMethodBindPtr = {

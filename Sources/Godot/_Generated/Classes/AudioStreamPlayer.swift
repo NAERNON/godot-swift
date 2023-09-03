@@ -58,7 +58,7 @@ open class AudioStreamPlayer: Node {
                 )
             }
         }
-        return Godot.AudioStream.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AudioStream.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_volume_db: GDExtensionMethodBindPtr = {
@@ -516,7 +516,7 @@ open class AudioStreamPlayer: Node {
                 )
             }
         }
-        return Godot.AudioStreamPlayback.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.AudioStreamPlayback.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var stream: Godot.AudioStream? {

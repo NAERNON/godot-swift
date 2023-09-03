@@ -52,7 +52,7 @@ open class MultiMeshInstance2D: Node2D {
                 )
             }
         }
-        return Godot.MultiMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MultiMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
@@ -98,7 +98,7 @@ open class MultiMeshInstance2D: Node2D {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var multimesh: Godot.MultiMesh? {

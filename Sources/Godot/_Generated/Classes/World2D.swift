@@ -90,7 +90,7 @@ open class World2D: Resource {
                 )
             }
         }
-        return Godot.PhysicsDirectSpaceState2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsDirectSpaceState2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var canvas: Godot.RID {

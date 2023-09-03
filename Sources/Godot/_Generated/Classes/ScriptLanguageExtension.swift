@@ -443,7 +443,7 @@ open class ScriptLanguageExtension: ScriptLanguage {
             let instance = Unmanaged<ScriptLanguageExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._openInExternalEditor(
-            script: Godot.Script.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            script: Godot.Script.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             line: args[1]!.load(as: Int32.self),
             column: args[2]!.load(as: Int32.self)
         )
@@ -465,7 +465,7 @@ open class ScriptLanguageExtension: ScriptLanguage {
         ._completeCode(
             Godot.GodotString(godotExtensionPointer: args[0]!),
             path: Godot.GodotString(godotExtensionPointer: args[1]!),
-            owner: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
+            owner: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _lookup_code_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -478,7 +478,7 @@ open class ScriptLanguageExtension: ScriptLanguage {
             Godot.GodotString(godotExtensionPointer: args[0]!),
             symbol: Godot.GodotString(godotExtensionPointer: args[1]!),
             path: Godot.GodotString(godotExtensionPointer: args[2]!),
-            owner: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
+            owner: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[3]!))
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _auto_indent_code_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -652,7 +652,7 @@ open class ScriptLanguageExtension: ScriptLanguage {
             let instance = Unmanaged<ScriptLanguageExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._reloadToolScript(
-            Godot.Script.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            Godot.Script.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             softReload: args[1]!.load(as: Bool.self)
         )}
         let _get_recognized_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

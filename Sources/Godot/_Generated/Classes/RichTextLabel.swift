@@ -1262,7 +1262,7 @@ open class RichTextLabel: Control {
                 )
             }
         }
-        return Godot.VScrollBar.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.VScrollBar.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_scroll_to_line: GDExtensionMethodBindPtr = {
@@ -2414,7 +2414,7 @@ open class RichTextLabel: Control {
                 )
             }
         }
-        return Godot.PopupMenu.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PopupMenu.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_is_menu_visible: GDExtensionMethodBindPtr = {

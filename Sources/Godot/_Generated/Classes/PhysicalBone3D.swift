@@ -1025,7 +1025,7 @@ open class PhysicalBone3D: PhysicsBody3D {
             let instance = Unmanaged<PhysicalBone3D> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._integrateForces(
-            state: Godot.PhysicsDirectBodyState3D.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            state: Godot.PhysicsDirectBodyState3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         _virtualFunctions = [
             "_integrateForces" : ("_integrate_forces", _integrate_forces_call)

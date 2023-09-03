@@ -118,7 +118,7 @@ open class TCPServer: RefCounted {
                 )
             }
         }
-        return Godot.StreamPeerTCP.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.StreamPeerTCP.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_stop: GDExtensionMethodBindPtr = {

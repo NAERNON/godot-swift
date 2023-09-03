@@ -633,7 +633,7 @@ open class GPUParticles2D: Node2D {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_speed_scale: GDExtensionMethodBindPtr = {
@@ -767,7 +767,7 @@ open class GPUParticles2D: Node2D {
                 )
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_capture_rect: GDExtensionMethodBindPtr = {

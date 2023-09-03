@@ -48,7 +48,7 @@ open class LightmapGIData: Resource {
                 )
             }
         }
-        return Godot.TextureLayered.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TextureLayered.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_uses_spherical_harmonics: GDExtensionMethodBindPtr = {

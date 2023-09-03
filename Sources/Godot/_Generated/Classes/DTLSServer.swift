@@ -58,7 +58,7 @@ open class DTLSServer: RefCounted {
                 }
             }
         }
-        return Godot.PacketPeerDTLS.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PacketPeerDTLS.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

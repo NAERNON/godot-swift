@@ -48,7 +48,7 @@ open class CollisionShape2D: Node2D {
                 )
             }
         }
-        return Godot.Shape2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Shape2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_disabled: GDExtensionMethodBindPtr = {

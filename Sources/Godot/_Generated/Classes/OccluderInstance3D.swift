@@ -186,7 +186,7 @@ open class OccluderInstance3D: Node3D {
                 )
             }
         }
-        return Godot.Occluder3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Occluder3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var occluder: Godot.Occluder3D? {

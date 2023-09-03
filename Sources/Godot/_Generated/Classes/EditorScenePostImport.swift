@@ -43,7 +43,7 @@ open class EditorScenePostImport: RefCounted {
             let instance = Unmanaged<EditorScenePostImport> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._postImport(
-            scene: Godot.Node.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            scene: Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         _virtualFunctions = [

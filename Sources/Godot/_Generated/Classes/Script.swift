@@ -166,7 +166,7 @@ open class Script: Resource {
                 )
             }
         }
-        return Godot.Script.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Script.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_instance_base_type: GDExtensionMethodBindPtr = {

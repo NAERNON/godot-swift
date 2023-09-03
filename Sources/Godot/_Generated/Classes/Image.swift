@@ -464,7 +464,7 @@ open class Image: Resource {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_from_data: GDExtensionMethodBindPtr = {
@@ -496,7 +496,7 @@ open class Image: Resource {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_data: GDExtensionMethodBindPtr = {
@@ -598,7 +598,7 @@ open class Image: Resource {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_save_png: GDExtensionMethodBindPtr = {
@@ -1120,7 +1120,7 @@ open class Image: Resource {
                 )
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_bump_map_to_normal_map: GDExtensionMethodBindPtr = {
@@ -1386,7 +1386,7 @@ open class Image: Resource {
                 }
             }
         }
-        return Godot.Image.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Image.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_copy_from: GDExtensionMethodBindPtr = {

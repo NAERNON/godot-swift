@@ -1107,7 +1107,7 @@ open class Control: CanvasItem {
                 )
             }
         }
-        return Godot.Control.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Control.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_find_next_valid_focus: GDExtensionMethodBindPtr = {
@@ -1129,7 +1129,7 @@ open class Control: CanvasItem {
                 )
             }
         }
-        return Godot.Control.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Control.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_h_size_flags: GDExtensionMethodBindPtr = {
@@ -1307,7 +1307,7 @@ open class Control: CanvasItem {
                 )
             }
         }
-        return Godot.Theme.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Theme.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_theme_type_variation: GDExtensionMethodBindPtr = {
@@ -1697,7 +1697,7 @@ open class Control: CanvasItem {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_theme_stylebox: GDExtensionMethodBindPtr = {
@@ -1725,7 +1725,7 @@ open class Control: CanvasItem {
                 }
             }
         }
-        return Godot.StyleBox.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.StyleBox.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_theme_font: GDExtensionMethodBindPtr = {
@@ -1753,7 +1753,7 @@ open class Control: CanvasItem {
                 }
             }
         }
-        return Godot.Font.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Font.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_theme_font_size: GDExtensionMethodBindPtr = {
@@ -2205,7 +2205,7 @@ open class Control: CanvasItem {
                 )
             }
         }
-        return Godot.Font.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Font.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_theme_default_font_size: GDExtensionMethodBindPtr = {
@@ -2249,7 +2249,7 @@ open class Control: CanvasItem {
                 )
             }
         }
-        return Godot.Control.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Control.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_h_grow_direction: GDExtensionMethodBindPtr = {
@@ -2931,7 +2931,7 @@ open class Control: CanvasItem {
                 )
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_update_minimum_size: GDExtensionMethodBindPtr = {
@@ -3576,7 +3576,7 @@ open class Control: CanvasItem {
             let instance = Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._guiInput(
-            event: Godot.InputEvent.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            event: Godot.InputEvent.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         _virtualFunctions = [
             "_hasPoint" : ("_has_point", _has_point_call),

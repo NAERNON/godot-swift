@@ -880,7 +880,7 @@ open class PhysicsDirectBodyState2D: Object {
                 }
             }
         }
-        return Godot.Object.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Object.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_contact_collider_shape: GDExtensionMethodBindPtr = {
@@ -1020,7 +1020,7 @@ open class PhysicsDirectBodyState2D: Object {
                 )
             }
         }
-        return Godot.PhysicsDirectSpaceState2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsDirectSpaceState2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var step: Double {

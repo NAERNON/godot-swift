@@ -178,7 +178,7 @@ open class PhysicsTestMotionResult2D: RefCounted {
                 )
             }
         }
-        return Godot.Object.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Object.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_collider_shape: GDExtensionMethodBindPtr = {

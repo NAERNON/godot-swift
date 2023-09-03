@@ -72,7 +72,7 @@ open class MultiplayerAPI: RefCounted {
                 )
             }
         }
-        return Godot.MultiplayerPeer.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MultiplayerPeer.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_multiplayer_peer: GDExtensionMethodBindPtr = {
@@ -360,7 +360,7 @@ open class MultiplayerAPI: RefCounted {
                 __ptr___temporary
             )
         }
-        return Godot.MultiplayerAPI.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.MultiplayerAPI.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var multiplayerPeer: Godot.MultiplayerPeer? {

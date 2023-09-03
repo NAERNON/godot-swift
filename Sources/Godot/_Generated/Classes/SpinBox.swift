@@ -350,7 +350,7 @@ open class SpinBox: Range {
                 )
             }
         }
-        return Godot.LineEdit.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.LineEdit.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var horizontalAlignment: Godot.HorizontalAlignment {

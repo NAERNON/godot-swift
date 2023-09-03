@@ -28,7 +28,7 @@ open class ButtonGroup: Resource {
                 )
             }
         }
-        return Godot.BaseButton.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.BaseButton.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_buttons: GDExtensionMethodBindPtr = {

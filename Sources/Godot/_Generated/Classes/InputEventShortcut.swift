@@ -48,7 +48,7 @@ open class InputEventShortcut: InputEvent {
                 )
             }
         }
-        return Godot.Shortcut.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Shortcut.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var shortcut: Godot.Shortcut? {

@@ -600,7 +600,7 @@ open class ArrayMesh: Mesh {
                 )
             }
         }
-        return Godot.ArrayMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ArrayMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var blendShapeMode: Godot.Mesh.BlendShapeMode {

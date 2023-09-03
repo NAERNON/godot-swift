@@ -336,7 +336,7 @@ open class EditorUndoRedoManager: Object {
                 }
             }
         }
-        return Godot.UndoRedo.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.UndoRedo.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

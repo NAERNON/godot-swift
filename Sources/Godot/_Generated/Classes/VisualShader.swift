@@ -112,7 +112,7 @@ open class VisualShader: Shader {
                 }
             }
         }
-        return Godot.VisualShaderNode.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.VisualShaderNode.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_node_position: GDExtensionMethodBindPtr = {

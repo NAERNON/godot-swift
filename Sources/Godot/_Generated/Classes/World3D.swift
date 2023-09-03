@@ -114,7 +114,7 @@ open class World3D: Resource {
                 )
             }
         }
-        return Godot.Environment.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Environment.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_fallback_environment: GDExtensionMethodBindPtr = {
@@ -160,7 +160,7 @@ open class World3D: Resource {
                 )
             }
         }
-        return Godot.Environment.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Environment.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_camera_attributes: GDExtensionMethodBindPtr = {
@@ -206,7 +206,7 @@ open class World3D: Resource {
                 )
             }
         }
-        return Godot.CameraAttributes.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.CameraAttributes.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_direct_space_state: GDExtensionMethodBindPtr = {
@@ -228,7 +228,7 @@ open class World3D: Resource {
                 )
             }
         }
-        return Godot.PhysicsDirectSpaceState3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsDirectSpaceState3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var environment: Godot.Environment? {

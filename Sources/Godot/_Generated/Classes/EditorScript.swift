@@ -51,7 +51,7 @@ open class EditorScript: RefCounted {
                 )
             }
         }
-        return Godot.Node.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Node.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_editor_interface: GDExtensionMethodBindPtr = {
@@ -73,7 +73,7 @@ open class EditorScript: RefCounted {
                 )
             }
         }
-        return Godot.EditorInterface.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.EditorInterface.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

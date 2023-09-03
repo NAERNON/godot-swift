@@ -140,7 +140,7 @@ open class TabContainer: Container {
                 )
             }
         }
-        return Godot.Control.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Control.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_tab_control: GDExtensionMethodBindPtr = {
@@ -166,7 +166,7 @@ open class TabContainer: Container {
                 }
             }
         }
-        return Godot.Control.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Control.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_tab_alignment: GDExtensionMethodBindPtr = {
@@ -444,7 +444,7 @@ open class TabContainer: Container {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_tab_disabled: GDExtensionMethodBindPtr = {
@@ -646,7 +646,7 @@ open class TabContainer: Container {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_tab_idx_at_point: GDExtensionMethodBindPtr = {
@@ -746,7 +746,7 @@ open class TabContainer: Container {
                 )
             }
         }
-        return Godot.Popup.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Popup.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_drag_to_rearrange_enabled: GDExtensionMethodBindPtr = {

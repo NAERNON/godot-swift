@@ -129,7 +129,7 @@ open class EditorResourcePicker: HBoxContainer {
                 )
             }
         }
-        return Godot.Resource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_toggle_mode: GDExtensionMethodBindPtr = {
@@ -298,7 +298,7 @@ open class EditorResourcePicker: HBoxContainer {
             let instance = Unmanaged<EditorResourcePicker> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._setCreateOptions(
-            menuNode: Godot.Object.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            menuNode: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
         )}
         let _handle_menu_selected_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {

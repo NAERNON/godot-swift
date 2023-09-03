@@ -21,7 +21,7 @@ The data inside a variant is stored in a `Storage` non copyable struct, enabling
 - ``init()``
 - ``init(_:)-81n45``
 
-### Retreive a value stored in a variant
+### Retrieve a value stored in a variant
 
 - ``typed(_:)``
 - ``typed(compatibleWith:)``

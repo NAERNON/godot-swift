@@ -1056,7 +1056,7 @@ open class PopupMenu: Popup {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_item_icon_max_width: GDExtensionMethodBindPtr = {
@@ -1446,7 +1446,7 @@ open class PopupMenu: Popup {
                 }
             }
         }
-        return Godot.Shortcut.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Shortcut.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_item_indent: GDExtensionMethodBindPtr = {

@@ -28,7 +28,7 @@ open class JavaClassWrapper: Object {
                 }
             }
         }
-        return Godot.JavaClass.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.JavaClass.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

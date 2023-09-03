@@ -36,7 +36,7 @@ open class PhysicsBody3D: CollisionObject3D {
                 }
             }
         }
-        return Godot.KinematicCollision3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.KinematicCollision3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_test_move: GDExtensionMethodBindPtr = {

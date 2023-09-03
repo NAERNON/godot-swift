@@ -388,7 +388,7 @@ open class ImporterMesh: Resource {
                 }
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_surface_format: GDExtensionMethodBindPtr = {
@@ -518,7 +518,7 @@ open class ImporterMesh: Resource {
                 }
             }
         }
-        return Godot.ArrayMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ArrayMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {

@@ -116,7 +116,7 @@ open class ShapeCast3D: Node3D {
                 )
             }
         }
-        return Godot.Shape3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Shape3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_target_position: GDExtensionMethodBindPtr = {
@@ -336,7 +336,7 @@ open class ShapeCast3D: Node3D {
                 }
             }
         }
-        return Godot.Object.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Object.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_collider_rid: GDExtensionMethodBindPtr = {

@@ -32,7 +32,7 @@ open class PhysicsRayQueryParameters2D: RefCounted {
                 }
             }
         }
-        return Godot.PhysicsRayQueryParameters2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsRayQueryParameters2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_from: GDExtensionMethodBindPtr = {

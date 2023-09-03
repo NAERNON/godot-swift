@@ -636,7 +636,7 @@ open class TreeItem: Object {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_icon_region: GDExtensionMethodBindPtr = {
@@ -1462,7 +1462,7 @@ open class TreeItem: Object {
                 }
             }
         }
-        return Godot.Font.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Font.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_custom_font_size: GDExtensionMethodBindPtr = {
@@ -1806,7 +1806,7 @@ open class TreeItem: Object {
                 }
             }
         }
-        return Godot.Texture2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Texture2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_button: GDExtensionMethodBindPtr = {
@@ -2158,7 +2158,7 @@ open class TreeItem: Object {
                 }
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_add_child: GDExtensionMethodBindPtr = {
@@ -2228,7 +2228,7 @@ open class TreeItem: Object {
                 )
             }
         }
-        return Godot.Tree.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Tree.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_next: GDExtensionMethodBindPtr = {
@@ -2250,7 +2250,7 @@ open class TreeItem: Object {
                 )
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_prev: GDExtensionMethodBindPtr = {
@@ -2272,7 +2272,7 @@ open class TreeItem: Object {
                 )
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_parent: GDExtensionMethodBindPtr = {
@@ -2294,7 +2294,7 @@ open class TreeItem: Object {
                 )
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_first_child: GDExtensionMethodBindPtr = {
@@ -2316,7 +2316,7 @@ open class TreeItem: Object {
                 )
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_next_in_tree: GDExtensionMethodBindPtr = {
@@ -2342,7 +2342,7 @@ open class TreeItem: Object {
                 }
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_prev_in_tree: GDExtensionMethodBindPtr = {
@@ -2368,7 +2368,7 @@ open class TreeItem: Object {
                 }
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_next_visible: GDExtensionMethodBindPtr = {
@@ -2394,7 +2394,7 @@ open class TreeItem: Object {
                 }
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_prev_visible: GDExtensionMethodBindPtr = {
@@ -2420,7 +2420,7 @@ open class TreeItem: Object {
                 }
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_child: GDExtensionMethodBindPtr = {
@@ -2446,7 +2446,7 @@ open class TreeItem: Object {
                 }
             }
         }
-        return Godot.TreeItem.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TreeItem.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_get_child_count: GDExtensionMethodBindPtr = {

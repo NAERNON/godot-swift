@@ -343,7 +343,7 @@ open class Mesh: Resource {
                 }
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_placeholder: GDExtensionMethodBindPtr = {
@@ -365,7 +365,7 @@ open class Mesh: Resource {
                 )
             }
         }
-        return Godot.Resource.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_trimesh_shape: GDExtensionMethodBindPtr = {
@@ -387,7 +387,7 @@ open class Mesh: Resource {
                 )
             }
         }
-        return Godot.ConcavePolygonShape3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ConcavePolygonShape3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_convex_shape: GDExtensionMethodBindPtr = {
@@ -415,7 +415,7 @@ open class Mesh: Resource {
                 }
             }
         }
-        return Godot.ConvexPolygonShape3D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.ConvexPolygonShape3D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_outline: GDExtensionMethodBindPtr = {
@@ -441,7 +441,7 @@ open class Mesh: Resource {
                 }
             }
         }
-        return Godot.Mesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Mesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_generate_triangle_mesh: GDExtensionMethodBindPtr = {
@@ -463,7 +463,7 @@ open class Mesh: Resource {
                 )
             }
         }
-        return Godot.TriangleMesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.TriangleMesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var lightmapSizeHint: Godot.Vector2i {
@@ -568,7 +568,7 @@ open class Mesh: Resource {
             let _ = instance
         ._surfaceSetMaterial(
             index: args[0]!.load(as: Int32.self),
-            material: Godot.Material.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
+            material: Godot.Material.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
         )}
         let _surface_get_material_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {

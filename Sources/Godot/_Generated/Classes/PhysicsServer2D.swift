@@ -511,7 +511,7 @@ open class PhysicsServer2D: Object {
                 }
             }
         }
-        return Godot.PhysicsDirectSpaceState2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsDirectSpaceState2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_area_create: GDExtensionMethodBindPtr = {
@@ -2587,7 +2587,7 @@ open class PhysicsServer2D: Object {
                 }
             }
         }
-        return Godot.PhysicsDirectBodyState2D.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.PhysicsDirectBodyState2D.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_joint_create: GDExtensionMethodBindPtr = {

@@ -24,7 +24,7 @@ open class ConfirmationDialog: AcceptDialog {
                 )
             }
         }
-        return Godot.Button.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Button.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_cancel_button_text: GDExtensionMethodBindPtr = {

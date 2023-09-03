@@ -48,7 +48,7 @@ open class CSGMesh3D: CSGPrimitive3D {
                 )
             }
         }
-        return Godot.Mesh.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Mesh.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_set_material: GDExtensionMethodBindPtr = {
@@ -94,7 +94,7 @@ open class CSGMesh3D: CSGPrimitive3D {
                 )
             }
         }
-        return Godot.Material.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
     }
 
     public var mesh: Godot.Mesh? {

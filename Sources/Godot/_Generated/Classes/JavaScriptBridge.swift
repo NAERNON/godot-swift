@@ -60,7 +60,7 @@ open class JavaScriptBridge: Object {
                 }
             }
         }
-        return Godot.JavaScriptObject.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.JavaScriptObject.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_callback: GDExtensionMethodBindPtr = {
@@ -86,7 +86,7 @@ open class JavaScriptBridge: Object {
                 }
             }
         }
-        return Godot.JavaScriptObject.retreivedInstanceManagedByGodot(__temporary)
+        return Godot.JavaScriptObject.retrievedInstanceManagedByGodot(__temporary)
     }
 
     private static var __method_binding_create_object: GDExtensionMethodBindPtr = {

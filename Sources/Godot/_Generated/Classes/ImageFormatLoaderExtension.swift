@@ -69,8 +69,8 @@ open class ImageFormatLoaderExtension: ImageFormatLoader {
             let instance = Unmanaged<ImageFormatLoaderExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._loadImage(
-            Godot.Image.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            fileaccess: Godot.FileAccess.retreivedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
+            Godot.Image.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
+            fileaccess: Godot.FileAccess.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
             flags: args[2]!.load(as: Godot.ImageFormatLoader.LoaderFlags.self),
             scale: args[3]!.load(as: Double.self)
         )
