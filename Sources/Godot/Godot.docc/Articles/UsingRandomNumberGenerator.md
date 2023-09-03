@@ -18,7 +18,7 @@ print([1, 2, 3, 4].shuffled())
 // Prints the array, shuffled.
 ```
 
-By default, Swift uses `SystemRandomNumberGenerator` as the source of random data. But all Swift functions that uses random data can also use a specific `RandomNumberGenerator` (the Swift protocol, not the Godot class).
+By default, Swift uses [`SystemRandomNumberGenerator`](https://developer.apple.com/documentation/swift/systemrandomnumbergenerator) as the source of random data. But all Swift functions that uses random data can also use a specific [`RandomNumberGenerator`](https://developer.apple.com/documentation/swift/randomnumbergenerator) (the Swift protocol, not the Godot class).
 And because the Godot ``RandomNumberGenerator`` class conforms to this protocol, it can be used as a source of random data as well.
 
 For example, in the following code, a Godot random number generator is created with a seed:

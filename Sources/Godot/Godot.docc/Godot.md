@@ -13,7 +13,7 @@ A library for interacting with Godot using Swift code.
 
 ## Overview
 
-Godot Swift is a set of tool enabling Swift code to be accessible from the Godot editor.
+Godot Swift is a set of tools enabling Swift code to be accessible from the Godot editor.
 
 ## Topics
 
