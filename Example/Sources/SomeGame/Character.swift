@@ -1,6 +1,6 @@
 import Godot
 
 @Exposable
-public final class Character: Node3D {
+public class Character: Node3D {
     
 }
