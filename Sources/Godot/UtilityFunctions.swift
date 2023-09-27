@@ -107,7 +107,7 @@ public func pinpong(_ value: Double, _ length: Double) -> Double {
 
 // MARK: - Other
 
-public func varToBytes(_ variable: Variant) -> PackedByteArray {
+public func varToBytes<Variant1 : ConvertibleToVariant>(_ variable: Variant1) -> PackedByteArray {
     _varToBytes(variable: variable)
 }
 
@@ -127,7 +127,7 @@ public func isInstanceIDValid(_ id: Int) -> Bool {
     _isInstanceIdValid(id: id)
 }
 
-public func isInstanceValid(_ instance: Variant) -> Bool {
+public func isInstanceValid<Variant1 : ConvertibleToVariant>(_ instance: Variant1) -> Bool {
     _isInstanceValid(instance: instance)
 }
 
