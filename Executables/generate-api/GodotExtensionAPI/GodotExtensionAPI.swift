@@ -42,6 +42,15 @@ struct GodotExtensionAPI: Decodable {
             classType == "Node" ||
             classType == "Node2D" ||
             classType == "Resource" ||
+            classType == "Engine" ||
+            classType == "Node3D" ||
+            classType == "VisualInstance3D" ||
+            classType == "GeometryInstance3D" ||
+            classType == "MeshInstance3D" ||
+            classType == "Mesh" ||
+            classType == "PrimitiveMesh" ||
+            classType == "BoxMesh" ||
+            classType == "TorusMesh" ||
             classType.syntax().hasPrefix("Input")
         }
     }
@@ -94,6 +103,11 @@ private extension GodotFunction {
 
 private extension GodotType {
     func isInFilter(classFilter: (GodotType) -> Bool) -> Bool {
-        return !isGodotClass || classFilter(self)
+        switch self {
+        case .typedArray(let genericType):
+            return genericType.isInFilter(classFilter: classFilter)
+        default:
+            return !isGodotClass || classFilter(self)
+        }
     }
 }
