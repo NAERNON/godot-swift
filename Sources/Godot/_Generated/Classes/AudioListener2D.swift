@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class AudioListener2D: Node2D {
     private static var __method_binding_make_current: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "make_current").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "make_current").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -25,7 +25,7 @@ open class AudioListener2D: Node2D {
 
     private static var __method_binding_clear_current: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_current").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_current").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -43,7 +43,7 @@ open class AudioListener2D: Node2D {
 
     private static var __method_binding_is_current: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_current").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_current").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

@@ -13,7 +13,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_set_has_tracking_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_has_tracking_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_has_tracking_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -35,7 +35,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_get_has_tracking_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_has_tracking_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_has_tracking_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -57,7 +57,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_set_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -79,7 +79,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_get_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2002593661)!
         }
         }
@@ -101,7 +101,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2952846383)!
         }
         }
@@ -123,7 +123,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_get_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3229777777)!
         }
         }
@@ -145,7 +145,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_get_adjusted_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_adjusted_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_adjusted_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3229777777)!
         }
         }
@@ -167,7 +167,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_set_linear_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -189,7 +189,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_get_linear_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -211,7 +211,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_set_angular_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -233,7 +233,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_get_angular_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -255,7 +255,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_set_tracking_confidence: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tracking_confidence").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tracking_confidence").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4171656666)!
         }
         }
@@ -277,7 +277,7 @@ open class XRPose: RefCounted {
 
     private static var __method_binding_get_tracking_confidence: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tracking_confidence").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tracking_confidence").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2064923680)!
         }
         }

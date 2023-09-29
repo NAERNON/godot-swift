@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class MeshDataTool: RefCounted {
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -25,7 +25,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_create_from_surface: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_from_surface").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_from_surface").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2727020678)!
         }
         }
@@ -55,7 +55,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_commit_to_surface: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "commit_to_surface").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "commit_to_surface").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3521099812)!
         }
         }
@@ -83,7 +83,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_format: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_format").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_format").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -105,7 +105,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -127,7 +127,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_edge_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_edge_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_edge_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -149,7 +149,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_face_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_face_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_face_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -171,7 +171,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_vertex: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertex").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertex").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1530502735)!
         }
         }
@@ -195,7 +195,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 711720468)!
         }
         }
@@ -221,7 +221,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_vertex_normal: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertex_normal").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertex_normal").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1530502735)!
         }
         }
@@ -245,7 +245,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex_normal: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex_normal").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex_normal").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 711720468)!
         }
         }
@@ -271,7 +271,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_vertex_tangent: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertex_tangent").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertex_tangent").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1104099133)!
         }
         }
@@ -295,7 +295,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex_tangent: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex_tangent").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex_tangent").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1372055458)!
         }
         }
@@ -321,7 +321,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_vertex_uv: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertex_uv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertex_uv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 163021252)!
         }
         }
@@ -345,7 +345,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex_uv: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex_uv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex_uv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2299179447)!
         }
         }
@@ -371,7 +371,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_vertex_uv2: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertex_uv2").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertex_uv2").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 163021252)!
         }
         }
@@ -395,7 +395,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex_uv2: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex_uv2").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex_uv2").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2299179447)!
         }
         }
@@ -421,7 +421,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_vertex_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertex_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertex_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2878471219)!
         }
         }
@@ -445,7 +445,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3457211756)!
         }
         }
@@ -471,7 +471,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_vertex_bones: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertex_bones").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertex_bones").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3500328261)!
         }
         }
@@ -495,7 +495,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex_bones: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex_bones").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex_bones").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1706082319)!
         }
         }
@@ -521,7 +521,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_vertex_weights: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertex_weights").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertex_weights").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1345852415)!
         }
         }
@@ -545,7 +545,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex_weights: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex_weights").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex_weights").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1542882410)!
         }
         }
@@ -571,7 +571,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_vertex_meta: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertex_meta").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertex_meta").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2152698145)!
         }
         }
@@ -595,7 +595,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex_meta: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex_meta").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex_meta").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4227898402)!
         }
         }
@@ -621,7 +621,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex_edges: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex_edges").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex_edges").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1706082319)!
         }
         }
@@ -647,7 +647,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_vertex_faces: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertex_faces").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertex_faces").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1706082319)!
         }
         }
@@ -673,7 +673,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_edge_vertex: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_edge_vertex").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_edge_vertex").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3175239445)!
         }
         }
@@ -701,7 +701,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_edge_faces: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_edge_faces").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_edge_faces").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1706082319)!
         }
         }
@@ -727,7 +727,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_edge_meta: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_edge_meta").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_edge_meta").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2152698145)!
         }
         }
@@ -751,7 +751,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_edge_meta: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_edge_meta").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_edge_meta").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4227898402)!
         }
         }
@@ -777,7 +777,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_face_vertex: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_face_vertex").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_face_vertex").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3175239445)!
         }
         }
@@ -805,7 +805,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_face_edge: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_face_edge").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_face_edge").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3175239445)!
         }
         }
@@ -833,7 +833,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_face_meta: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_face_meta").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_face_meta").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2152698145)!
         }
         }
@@ -857,7 +857,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_face_meta: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_face_meta").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_face_meta").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4227898402)!
         }
         }
@@ -883,7 +883,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_face_normal: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_face_normal").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_face_normal").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 711720468)!
         }
         }
@@ -909,7 +909,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_set_material: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_material").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_material").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2757459619)!
         }
         }
@@ -933,7 +933,7 @@ open class MeshDataTool: RefCounted {
 
     private static var __method_binding_get_material: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_material").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_material").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 5934680)!
         }
         }

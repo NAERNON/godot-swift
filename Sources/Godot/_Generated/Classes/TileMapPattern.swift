@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class TileMapPattern: Resource {
     private static var __method_binding_set_cell: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cell").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cell").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 634000503)!
         }
         }
@@ -35,7 +35,7 @@ open class TileMapPattern: Resource {
 
     private static var __method_binding_has_cell: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_cell").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_cell").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3900751641)!
         }
         }
@@ -61,7 +61,7 @@ open class TileMapPattern: Resource {
 
     private static var __method_binding_remove_cell: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_cell").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_cell").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4153096796)!
         }
         }
@@ -85,7 +85,7 @@ open class TileMapPattern: Resource {
 
     private static var __method_binding_get_cell_source_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cell_source_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cell_source_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2485466453)!
         }
         }
@@ -111,7 +111,7 @@ open class TileMapPattern: Resource {
 
     private static var __method_binding_get_cell_atlas_coords: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cell_atlas_coords").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cell_atlas_coords").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3050897911)!
         }
         }
@@ -137,7 +137,7 @@ open class TileMapPattern: Resource {
 
     private static var __method_binding_get_cell_alternative_tile: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cell_alternative_tile").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cell_alternative_tile").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2485466453)!
         }
         }
@@ -163,7 +163,7 @@ open class TileMapPattern: Resource {
 
     private static var __method_binding_get_used_cells: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_used_cells").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_used_cells").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
@@ -185,7 +185,7 @@ open class TileMapPattern: Resource {
 
     private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3690982128)!
         }
         }
@@ -207,7 +207,7 @@ open class TileMapPattern: Resource {
 
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }
@@ -229,7 +229,7 @@ open class TileMapPattern: Resource {
 
     private static var __method_binding_is_empty: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

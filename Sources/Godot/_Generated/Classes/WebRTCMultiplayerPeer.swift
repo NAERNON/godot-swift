@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class WebRTCMultiplayerPeer: MultiplayerPeer {
     private static var __method_binding_create_server: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_server").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_server").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2865356025)!
         }
         }
@@ -33,7 +33,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_create_client: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_client").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_client").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1777354631)!
         }
         }
@@ -61,7 +61,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_create_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1777354631)!
         }
         }
@@ -89,7 +89,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_add_peer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_peer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_peer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2555866323)!
         }
         }
@@ -121,7 +121,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_remove_peer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_peer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_peer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -143,7 +143,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_has_peer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_peer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_peer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3067735520)!
         }
         }
@@ -169,7 +169,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_get_peer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_peer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_peer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3554694381)!
         }
         }
@@ -195,7 +195,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_get_peers: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_peers").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_peers").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2382534195)!
         }
         }

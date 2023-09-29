@@ -275,7 +275,7 @@ extension Projection {
     }
 
     private static var __method_binding_create_depth_correction: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "create_depth_correction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_depth_correction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 1228516048)!
         }
     }()
@@ -292,7 +292,7 @@ extension Projection {
     }
 
     private static var __method_binding_create_light_atlas_rect: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "create_light_atlas_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_light_atlas_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 2654950662)!
         }
     }()
@@ -309,7 +309,7 @@ extension Projection {
     }
 
     private static var __method_binding_create_perspective: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "create_perspective").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_perspective").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 390915442)!
         }
     }()
@@ -334,7 +334,7 @@ extension Projection {
     }
 
     private static var __method_binding_create_perspective_hmd: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "create_perspective_hmd").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_perspective_hmd").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 2857674800)!
         }
     }()
@@ -365,7 +365,7 @@ extension Projection {
     }
 
     private static var __method_binding_create_for_hmd: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "create_for_hmd").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_for_hmd").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 4184144994)!
         }
     }()
@@ -396,7 +396,7 @@ extension Projection {
     }
 
     private static var __method_binding_create_orthogonal: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "create_orthogonal").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_orthogonal").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 3707929169)!
         }
     }()
@@ -423,7 +423,7 @@ extension Projection {
     }
 
     private static var __method_binding_create_orthogonal_aspect: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "create_orthogonal_aspect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_orthogonal_aspect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 390915442)!
         }
     }()
@@ -448,7 +448,7 @@ extension Projection {
     }
 
     private static var __method_binding_create_frustum: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "create_frustum").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_frustum").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 3707929169)!
         }
     }()
@@ -475,7 +475,7 @@ extension Projection {
     }
 
     private static var __method_binding_create_frustum_aspect: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "create_frustum_aspect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_frustum_aspect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 1535076251)!
         }
     }()
@@ -502,7 +502,7 @@ extension Projection {
     }
 
     private static var __method_binding_create_fit_aabb: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "create_fit_aabb").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_fit_aabb").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 2264694907)!
         }
     }()
@@ -519,7 +519,7 @@ extension Projection {
     }
 
     private static var __method_binding_determinant: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "determinant").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "determinant").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 466405837)!
         }
     }()
@@ -535,7 +535,7 @@ extension Projection {
     }
 
     private static var __method_binding_perspective_znear_adjusted: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "perspective_znear_adjusted").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "perspective_znear_adjusted").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 3584785443)!
         }
     }()
@@ -555,7 +555,7 @@ extension Projection {
     }
 
     private static var __method_binding_get_projection_plane: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_projection_plane").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_projection_plane").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 1551184160)!
         }
     }()
@@ -575,7 +575,7 @@ extension Projection {
     }
 
     private static var __method_binding_flipped_y: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "flipped_y").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "flipped_y").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 4212530932)!
         }
     }()
@@ -591,7 +591,7 @@ extension Projection {
     }
 
     private static var __method_binding_jitter_offseted: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "jitter_offseted").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "jitter_offseted").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 2448438599)!
         }
     }()
@@ -611,7 +611,7 @@ extension Projection {
     }
 
     private static var __method_binding_get_fovy: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_fovy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fovy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 3514207532)!
         }
     }()
@@ -630,7 +630,7 @@ extension Projection {
     }
 
     private static var __method_binding_get_z_far: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_z_far").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_z_far").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 466405837)!
         }
     }()
@@ -646,7 +646,7 @@ extension Projection {
     }
 
     private static var __method_binding_get_z_near: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_z_near").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_z_near").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 466405837)!
         }
     }()
@@ -662,7 +662,7 @@ extension Projection {
     }
 
     private static var __method_binding_get_aspect: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_aspect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_aspect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 466405837)!
         }
     }()
@@ -678,7 +678,7 @@ extension Projection {
     }
 
     private static var __method_binding_get_fov: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_fov").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fov").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 466405837)!
         }
     }()
@@ -694,7 +694,7 @@ extension Projection {
     }
 
     private static var __method_binding_is_orthogonal: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_orthogonal").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_orthogonal").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 3918633141)!
         }
     }()
@@ -710,7 +710,7 @@ extension Projection {
     }
 
     private static var __method_binding_get_viewport_half_extents: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_viewport_half_extents").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_viewport_half_extents").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 2428350749)!
         }
     }()
@@ -726,7 +726,7 @@ extension Projection {
     }
 
     private static var __method_binding_get_far_plane_half_extents: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_far_plane_half_extents").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_far_plane_half_extents").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 2428350749)!
         }
     }()
@@ -742,7 +742,7 @@ extension Projection {
     }
 
     private static var __method_binding_inverse: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "inverse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "inverse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 4212530932)!
         }
     }()
@@ -758,7 +758,7 @@ extension Projection {
     }
 
     private static var __method_binding_get_pixels_per_meter: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_pixels_per_meter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pixels_per_meter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 4103005248)!
         }
     }()
@@ -778,7 +778,7 @@ extension Projection {
     }
 
     private static var __method_binding_get_lod_multiplier: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_lod_multiplier").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_lod_multiplier").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PROJECTION, __ptr__method_name, 466405837)!
         }
     }()

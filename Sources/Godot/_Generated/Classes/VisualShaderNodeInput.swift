@@ -11,7 +11,7 @@ open class VisualShaderNodeInput: VisualShaderNode {
 
     private static var __method_binding_set_input_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_input_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_input_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -33,7 +33,7 @@ open class VisualShaderNodeInput: VisualShaderNode {
 
     private static var __method_binding_get_input_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_input_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -55,7 +55,7 @@ open class VisualShaderNodeInput: VisualShaderNode {
 
     private static var __method_binding_get_input_real_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_input_real_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_real_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }

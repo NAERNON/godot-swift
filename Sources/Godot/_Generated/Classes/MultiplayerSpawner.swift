@@ -15,7 +15,7 @@ open class MultiplayerSpawner: Node {
 
     private static var __method_binding_add_spawnable_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_spawnable_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_spawnable_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -37,7 +37,7 @@ open class MultiplayerSpawner: Node {
 
     private static var __method_binding_get_spawnable_scene_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_spawnable_scene_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_spawnable_scene_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -59,7 +59,7 @@ open class MultiplayerSpawner: Node {
 
     private static var __method_binding_get_spawnable_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_spawnable_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_spawnable_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -85,7 +85,7 @@ open class MultiplayerSpawner: Node {
 
     private static var __method_binding_clear_spawnable_scenes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_spawnable_scenes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_spawnable_scenes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -103,7 +103,7 @@ open class MultiplayerSpawner: Node {
 
     private static var __method_binding_spawn: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "spawn").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "spawn").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1991184589)!
         }
         }
@@ -129,7 +129,7 @@ open class MultiplayerSpawner: Node {
 
     private static var __method_binding_get_spawn_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_spawn_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_spawn_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -151,7 +151,7 @@ open class MultiplayerSpawner: Node {
 
     private static var __method_binding_set_spawn_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_spawn_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_spawn_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -173,7 +173,7 @@ open class MultiplayerSpawner: Node {
 
     private static var __method_binding_get_spawn_limit: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_spawn_limit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_spawn_limit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -195,7 +195,7 @@ open class MultiplayerSpawner: Node {
 
     private static var __method_binding_set_spawn_limit: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_spawn_limit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_spawn_limit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -217,7 +217,7 @@ open class MultiplayerSpawner: Node {
 
     private static var __method_binding_get_spawn_function: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_spawn_function").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_spawn_function").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1307783378)!
         }
         }
@@ -239,7 +239,7 @@ open class MultiplayerSpawner: Node {
 
     private static var __method_binding_set_spawn_function: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_spawn_function").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_spawn_function").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1611583062)!
         }
         }

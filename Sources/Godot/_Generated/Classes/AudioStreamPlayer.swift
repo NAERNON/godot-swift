@@ -17,7 +17,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_set_stream: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_stream").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_stream").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2210767741)!
         }
         }
@@ -41,7 +41,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_get_stream: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_stream").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_stream").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 160907539)!
         }
         }
@@ -63,7 +63,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_set_volume_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volume_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volume_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -85,7 +85,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_get_volume_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volume_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volume_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -107,7 +107,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_set_pitch_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pitch_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pitch_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -129,7 +129,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_get_pitch_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pitch_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pitch_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -151,7 +151,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_play: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "play").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "play").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1958160172)!
         }
         }
@@ -173,7 +173,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_seek: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "seek").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "seek").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -195,7 +195,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "stop").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "stop").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -213,7 +213,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_is_playing: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_playing").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_playing").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -235,7 +235,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_get_playback_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_playback_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_playback_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 191475506)!
         }
         }
@@ -257,7 +257,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_set_bus: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bus").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bus").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -279,7 +279,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_get_bus: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bus").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bus").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2002593661)!
         }
         }
@@ -301,7 +301,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_set_autoplay: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_autoplay").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_autoplay").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -323,7 +323,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_is_autoplay_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_autoplay_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_autoplay_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -345,7 +345,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_set_mix_target: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_mix_target").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_mix_target").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2300306138)!
         }
         }
@@ -367,7 +367,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_get_mix_target: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_mix_target").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_mix_target").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 172807476)!
         }
         }
@@ -389,7 +389,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_set_stream_paused: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_stream_paused").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_stream_paused").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -411,7 +411,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_get_stream_paused: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_stream_paused").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_stream_paused").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -433,7 +433,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_set_max_polyphony: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_max_polyphony").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_max_polyphony").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -455,7 +455,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_get_max_polyphony: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_max_polyphony").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_max_polyphony").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -477,7 +477,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_has_stream_playback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_stream_playback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_stream_playback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -499,7 +499,7 @@ open class AudioStreamPlayer: Node {
 
     private static var __method_binding_get_stream_playback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_stream_playback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_stream_playback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 210135309)!
         }
         }

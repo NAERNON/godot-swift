@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class PCKPacker: RefCounted {
     private static var __method_binding_pck_start: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "pck_start").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "pck_start").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3232891339)!
         }
         }
@@ -39,7 +39,7 @@ open class PCKPacker: RefCounted {
 
     private static var __method_binding_add_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2215643711)!
         }
         }
@@ -69,7 +69,7 @@ open class PCKPacker: RefCounted {
 
     private static var __method_binding_flush: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "flush").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "flush").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1633102583)!
         }
         }

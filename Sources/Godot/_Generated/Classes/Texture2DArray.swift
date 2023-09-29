@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Texture2DArray: ImageTextureLayered {
     private static var __method_binding_create_placeholder: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_placeholder").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_placeholder").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 121922552)!
         }
         }

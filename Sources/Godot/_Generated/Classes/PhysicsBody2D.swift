@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class PhysicsBody2D: CollisionObject2D {
     private static var __method_binding_move_and_collide: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "move_and_collide").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "move_and_collide").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1529961754)!
         }
         }
@@ -39,7 +39,7 @@ open class PhysicsBody2D: CollisionObject2D {
 
     private static var __method_binding_test_move: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "test_move").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "test_move").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1369208982)!
         }
         }
@@ -75,7 +75,7 @@ open class PhysicsBody2D: CollisionObject2D {
 
     private static var __method_binding_get_collision_exceptions: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_exceptions").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_exceptions").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -97,7 +97,7 @@ open class PhysicsBody2D: CollisionObject2D {
 
     private static var __method_binding_add_collision_exception_with: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_collision_exception_with").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_collision_exception_with").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1078189570)!
         }
         }
@@ -121,7 +121,7 @@ open class PhysicsBody2D: CollisionObject2D {
 
     private static var __method_binding_remove_collision_exception_with: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_collision_exception_with").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_collision_exception_with").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1078189570)!
         }
         }

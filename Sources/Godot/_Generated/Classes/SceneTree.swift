@@ -46,7 +46,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_get_root: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_root").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_root").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1757182445)!
         }
         }
@@ -68,7 +68,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_has_group: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_group").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_group").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -94,7 +94,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_is_auto_accept_quit: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_auto_accept_quit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_auto_accept_quit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -116,7 +116,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_auto_accept_quit: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_auto_accept_quit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_auto_accept_quit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -138,7 +138,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_is_quit_on_go_back: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_quit_on_go_back").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_quit_on_go_back").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -160,7 +160,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_quit_on_go_back: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_quit_on_go_back").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_quit_on_go_back").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -182,7 +182,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_debug_collisions_hint: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_debug_collisions_hint").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_debug_collisions_hint").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -204,7 +204,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_is_debugging_collisions_hint: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_debugging_collisions_hint").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_debugging_collisions_hint").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -226,7 +226,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_debug_paths_hint: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_debug_paths_hint").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_debug_paths_hint").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -248,7 +248,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_is_debugging_paths_hint: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_debugging_paths_hint").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_debugging_paths_hint").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -270,7 +270,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_debug_navigation_hint: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_debug_navigation_hint").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_debug_navigation_hint").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -292,7 +292,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_is_debugging_navigation_hint: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_debugging_navigation_hint").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_debugging_navigation_hint").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -314,7 +314,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_edited_scene_root: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_edited_scene_root").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_edited_scene_root").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1078189570)!
         }
         }
@@ -338,7 +338,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_get_edited_scene_root: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_edited_scene_root").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_edited_scene_root").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3160264692)!
         }
         }
@@ -360,7 +360,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_pause: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pause").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pause").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -382,7 +382,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_is_paused: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_paused").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_paused").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -404,7 +404,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_create_timer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_timer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_timer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1780978058)!
         }
         }
@@ -436,7 +436,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_create_tween: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_tween").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_tween").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3426978995)!
         }
         }
@@ -458,7 +458,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_get_processed_tweens: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_processed_tweens").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_processed_tweens").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -480,7 +480,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_get_node_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_node_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_node_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -502,7 +502,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_get_frame: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_frame").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_frame").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -524,7 +524,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_quit: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "quit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "quit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1995695955)!
         }
         }
@@ -546,7 +546,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_queue_delete: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "queue_delete").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "queue_delete").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3975164845)!
         }
         }
@@ -570,7 +570,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_call_group_flags: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "call_group_flags").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "call_group_flags").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1527739229)!
         }
         }
@@ -618,7 +618,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_notify_group_flags: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "notify_group_flags").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "notify_group_flags").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1245489420)!
         }
         }
@@ -644,7 +644,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_group_flags: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_group_flags").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_group_flags").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3497599527)!
         }
         }
@@ -672,7 +672,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_call_group: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "call_group").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "call_group").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1257962832)!
         }
         }
@@ -716,7 +716,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_notify_group: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "notify_group").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "notify_group").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2415702435)!
         }
         }
@@ -740,7 +740,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_group: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_group").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_group").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1279312029)!
         }
         }
@@ -766,7 +766,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_get_nodes_in_group: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_nodes_in_group").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_nodes_in_group").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 689397652)!
         }
         }
@@ -792,7 +792,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_get_first_node_in_group: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_first_node_in_group").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_first_node_in_group").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4071044623)!
         }
         }
@@ -818,7 +818,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_current_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_current_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_current_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1078189570)!
         }
         }
@@ -842,7 +842,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_get_current_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_current_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_current_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3160264692)!
         }
         }
@@ -864,7 +864,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_change_scene_to_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "change_scene_to_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "change_scene_to_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -890,7 +890,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_change_scene_to_packed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "change_scene_to_packed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "change_scene_to_packed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 107349098)!
         }
         }
@@ -918,7 +918,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_reload_current_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "reload_current_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "reload_current_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166280745)!
         }
         }
@@ -940,7 +940,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_unload_current_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "unload_current_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "unload_current_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -958,7 +958,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_multiplayer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_multiplayer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_multiplayer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2385607013)!
         }
         }
@@ -984,7 +984,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_get_multiplayer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_multiplayer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_multiplayer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3453401404)!
         }
         }
@@ -1010,7 +1010,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_set_multiplayer_poll_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_multiplayer_poll_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_multiplayer_poll_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1032,7 +1032,7 @@ open class SceneTree: MainLoop {
 
     private static var __method_binding_is_multiplayer_poll_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_multiplayer_poll_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_multiplayer_poll_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

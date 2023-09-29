@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class VisualShaderNodeExpression: VisualShaderNodeGroupBase {
     private static var __method_binding_set_expression: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_expression").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_expression").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -29,7 +29,7 @@ open class VisualShaderNodeExpression: VisualShaderNodeGroupBase {
 
     private static var __method_binding_get_expression: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_expression").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_expression").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }

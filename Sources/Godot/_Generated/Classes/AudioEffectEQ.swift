@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class AudioEffectEQ: AudioEffect {
     private static var __method_binding_set_band_gain_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_band_gain_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_band_gain_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -31,7 +31,7 @@ open class AudioEffectEQ: AudioEffect {
 
     private static var __method_binding_get_band_gain_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_band_gain_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_band_gain_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -57,7 +57,7 @@ open class AudioEffectEQ: AudioEffect {
 
     private static var __method_binding_get_band_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_band_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_band_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

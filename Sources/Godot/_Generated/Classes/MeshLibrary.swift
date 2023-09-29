@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class MeshLibrary: Resource {
     private static var __method_binding_create_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -29,7 +29,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_set_item_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -53,7 +53,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_set_item_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 969122797)!
         }
         }
@@ -79,7 +79,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_set_item_mesh_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_mesh_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_mesh_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3616898986)!
         }
         }
@@ -103,7 +103,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_set_item_navigation_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_navigation_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_navigation_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3483353960)!
         }
         }
@@ -129,7 +129,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_set_item_navigation_mesh_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_navigation_mesh_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_navigation_mesh_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3616898986)!
         }
         }
@@ -153,7 +153,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_set_item_navigation_layers: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_navigation_layers").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_navigation_layers").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -177,7 +177,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_set_item_shapes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_shapes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_shapes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 537221740)!
         }
         }
@@ -201,7 +201,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_set_item_preview: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_preview").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_preview").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 666127730)!
         }
         }
@@ -227,7 +227,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_get_item_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -253,7 +253,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_get_item_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1576363275)!
         }
         }
@@ -279,7 +279,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_get_item_mesh_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_mesh_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_mesh_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1965739696)!
         }
         }
@@ -305,7 +305,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_get_item_navigation_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_navigation_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_navigation_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2729647406)!
         }
         }
@@ -331,7 +331,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_get_item_navigation_mesh_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_navigation_mesh_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_navigation_mesh_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1965739696)!
         }
         }
@@ -357,7 +357,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_get_item_navigation_layers: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_navigation_layers").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_navigation_layers").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -383,7 +383,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_get_item_shapes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_shapes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_shapes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 663333327)!
         }
         }
@@ -409,7 +409,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_get_item_preview: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_preview").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_preview").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3536238170)!
         }
         }
@@ -435,7 +435,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_remove_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -457,7 +457,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_find_item_by_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "find_item_by_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "find_item_by_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1321353865)!
         }
         }
@@ -483,7 +483,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -501,7 +501,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_get_item_list: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_list").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_list").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1930428628)!
         }
         }
@@ -523,7 +523,7 @@ open class MeshLibrary: Resource {
 
     private static var __method_binding_get_last_unused_item_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_last_unused_item_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_last_unused_item_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

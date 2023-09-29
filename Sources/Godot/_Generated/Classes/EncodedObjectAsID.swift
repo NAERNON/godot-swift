@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class EncodedObjectAsID: RefCounted {
     private static var __method_binding_set_object_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_object_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_object_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -29,7 +29,7 @@ open class EncodedObjectAsID: RefCounted {
 
     private static var __method_binding_get_object_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_object_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_object_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

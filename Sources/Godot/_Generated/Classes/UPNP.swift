@@ -39,7 +39,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_get_device_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_device_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_device_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -61,7 +61,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_get_device: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_device").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_device").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2193290270)!
         }
         }
@@ -87,7 +87,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_add_device: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_device").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_device").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 986715920)!
         }
         }
@@ -111,7 +111,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_set_device: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_device").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_device").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3015133723)!
         }
         }
@@ -137,7 +137,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_remove_device: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_device").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_device").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -159,7 +159,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_clear_devices: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_devices").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_devices").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -177,7 +177,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_get_gateway: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gateway").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gateway").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2276800779)!
         }
         }
@@ -199,7 +199,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_discover: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "discover").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "discover").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1575334765)!
         }
         }
@@ -229,7 +229,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_query_external_address: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "query_external_address").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "query_external_address").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -251,7 +251,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_add_port_mapping: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_port_mapping").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_port_mapping").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3358934458)!
         }
         }
@@ -285,7 +285,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_delete_port_mapping: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "delete_port_mapping").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "delete_port_mapping").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 760296170)!
         }
         }
@@ -313,7 +313,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_set_discover_multicast_if: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_discover_multicast_if").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_discover_multicast_if").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -335,7 +335,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_get_discover_multicast_if: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_discover_multicast_if").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_discover_multicast_if").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -357,7 +357,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_set_discover_local_port: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_discover_local_port").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_discover_local_port").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -379,7 +379,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_get_discover_local_port: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_discover_local_port").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_discover_local_port").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -401,7 +401,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_set_discover_ipv6: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_discover_ipv6").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_discover_ipv6").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -423,7 +423,7 @@ open class UPNP: RefCounted {
 
     private static var __method_binding_is_discover_ipv6: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_discover_ipv6").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_discover_ipv6").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

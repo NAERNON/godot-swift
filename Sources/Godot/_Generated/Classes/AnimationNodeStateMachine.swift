@@ -13,7 +13,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_add_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2055804584)!
         }
         }
@@ -41,7 +41,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_replace_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "replace_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "replace_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2559412862)!
         }
         }
@@ -67,7 +67,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_get_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 625644256)!
         }
         }
@@ -93,7 +93,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_remove_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -115,7 +115,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_rename_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "rename_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rename_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
@@ -139,7 +139,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_has_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -165,7 +165,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_get_node_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_node_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_node_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 739213945)!
         }
         }
@@ -193,7 +193,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_set_node_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_node_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_node_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1999414630)!
         }
         }
@@ -217,7 +217,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_get_node_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_node_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_node_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3100822709)!
         }
         }
@@ -243,7 +243,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_has_transition: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_transition").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_transition").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
@@ -271,7 +271,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_add_transition: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_transition").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_transition").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 795486887)!
         }
         }
@@ -299,7 +299,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_get_transition: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_transition").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_transition").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4192381260)!
         }
         }
@@ -325,7 +325,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_get_transition_from: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_transition_from").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_transition_from").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 659327637)!
         }
         }
@@ -351,7 +351,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_get_transition_to: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_transition_to").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_transition_to").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 659327637)!
         }
         }
@@ -377,7 +377,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_get_transition_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_transition_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_transition_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -399,7 +399,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_remove_transition_by_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_transition_by_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_transition_by_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -421,7 +421,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_remove_transition: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_transition").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_transition").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
@@ -445,7 +445,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_set_graph_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_graph_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_graph_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -467,7 +467,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_get_graph_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_graph_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_graph_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -489,7 +489,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_set_state_machine_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_state_machine_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_state_machine_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2584759088)!
         }
         }
@@ -511,7 +511,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_get_state_machine_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_state_machine_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_state_machine_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1140726469)!
         }
         }
@@ -533,7 +533,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_set_allow_transition_to_self: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_allow_transition_to_self").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_allow_transition_to_self").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -555,7 +555,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_is_allow_transition_to_self: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_allow_transition_to_self").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_allow_transition_to_self").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -577,7 +577,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_set_reset_ends: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_reset_ends").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_reset_ends").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -599,7 +599,7 @@ open class AnimationNodeStateMachine: AnimationRootNode {
 
     private static var __method_binding_are_ends_reset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "are_ends_reset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "are_ends_reset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

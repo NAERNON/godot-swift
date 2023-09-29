@@ -11,7 +11,7 @@ open class EditorScenePostImport: RefCounted {
 
     private static var __method_binding_get_source_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_source_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_source_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }

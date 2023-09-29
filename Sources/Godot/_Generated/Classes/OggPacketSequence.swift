@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class OggPacketSequence: Resource {
     private static var __method_binding_set_packet_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_packet_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_packet_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -29,7 +29,7 @@ open class OggPacketSequence: Resource {
 
     private static var __method_binding_get_packet_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_packet_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_packet_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
@@ -51,7 +51,7 @@ open class OggPacketSequence: Resource {
 
     private static var __method_binding_set_packet_granule_positions: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_packet_granule_positions").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_packet_granule_positions").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3709968205)!
         }
         }
@@ -73,7 +73,7 @@ open class OggPacketSequence: Resource {
 
     private static var __method_binding_get_packet_granule_positions: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_packet_granule_positions").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_packet_granule_positions").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 235988956)!
         }
         }
@@ -95,7 +95,7 @@ open class OggPacketSequence: Resource {
 
     private static var __method_binding_set_sampling_rate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sampling_rate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sampling_rate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -117,7 +117,7 @@ open class OggPacketSequence: Resource {
 
     private static var __method_binding_get_sampling_rate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sampling_rate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sampling_rate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -139,7 +139,7 @@ open class OggPacketSequence: Resource {
 
     private static var __method_binding_get_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

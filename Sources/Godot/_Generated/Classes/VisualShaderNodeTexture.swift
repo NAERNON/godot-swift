@@ -25,7 +25,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
 
     private static var __method_binding_set_source: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_source").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_source").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 905262939)!
         }
         }
@@ -47,7 +47,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
 
     private static var __method_binding_get_source: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_source").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_source").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2896297444)!
         }
         }
@@ -69,7 +69,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
 
     private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_texture").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_texture").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4051416890)!
         }
         }
@@ -93,7 +93,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
 
     private static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_texture").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_texture").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3635182373)!
         }
         }
@@ -115,7 +115,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
 
     private static var __method_binding_set_texture_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_texture_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_texture_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 986314081)!
         }
         }
@@ -137,7 +137,7 @@ open class VisualShaderNodeTexture: VisualShaderNode {
 
     private static var __method_binding_get_texture_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_texture_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_texture_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3290430153)!
         }
         }

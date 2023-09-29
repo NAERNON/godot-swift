@@ -17,7 +17,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_intensity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_intensity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_intensity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -39,7 +39,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_get_intensity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_intensity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_intensity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -61,7 +61,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_ambient_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ambient_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ambient_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1748981278)!
         }
         }
@@ -83,7 +83,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_get_ambient_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ambient_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ambient_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1014607621)!
         }
         }
@@ -105,7 +105,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_ambient_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ambient_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ambient_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -127,7 +127,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_get_ambient_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ambient_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ambient_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }
@@ -149,7 +149,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_ambient_color_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ambient_color_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ambient_color_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -171,7 +171,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_get_ambient_color_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ambient_color_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ambient_color_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -193,7 +193,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_max_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_max_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_max_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -215,7 +215,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_get_max_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_max_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_max_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -237,7 +237,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_mesh_lod_threshold: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_mesh_lod_threshold").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_mesh_lod_threshold").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -259,7 +259,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_get_mesh_lod_threshold: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_mesh_lod_threshold").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_mesh_lod_threshold").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -281,7 +281,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -303,7 +303,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -325,7 +325,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_origin_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_origin_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_origin_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -347,7 +347,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_get_origin_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_origin_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_origin_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -369,7 +369,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_as_interior: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_as_interior").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_as_interior").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -391,7 +391,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_is_set_as_interior: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_set_as_interior").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_set_as_interior").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -413,7 +413,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_enable_box_projection: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enable_box_projection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enable_box_projection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -435,7 +435,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_is_box_projection_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_box_projection_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_box_projection_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -457,7 +457,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_enable_shadows: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enable_shadows").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enable_shadows").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -479,7 +479,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_are_shadows_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "are_shadows_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "are_shadows_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -501,7 +501,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cull_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cull_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -523,7 +523,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_get_cull_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cull_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cull_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -545,7 +545,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_set_update_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_update_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_update_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4090221187)!
         }
         }
@@ -567,7 +567,7 @@ open class ReflectionProbe: VisualInstance3D {
 
     private static var __method_binding_get_update_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_update_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_update_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2367550552)!
         }
         }

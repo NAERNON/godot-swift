@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class AnimatableBody3D: StaticBody3D {
     private static var __method_binding_set_sync_to_physics: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sync_to_physics").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sync_to_physics").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -29,7 +29,7 @@ open class AnimatableBody3D: StaticBody3D {
 
     private static var __method_binding_is_sync_to_physics_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_sync_to_physics_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_sync_to_physics_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

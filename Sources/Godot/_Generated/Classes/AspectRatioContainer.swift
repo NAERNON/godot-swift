@@ -19,7 +19,7 @@ open class AspectRatioContainer: Container {
 
     private static var __method_binding_set_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -41,7 +41,7 @@ open class AspectRatioContainer: Container {
 
     private static var __method_binding_get_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -63,7 +63,7 @@ open class AspectRatioContainer: Container {
 
     private static var __method_binding_set_stretch_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_stretch_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_stretch_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1876743467)!
         }
         }
@@ -85,7 +85,7 @@ open class AspectRatioContainer: Container {
 
     private static var __method_binding_get_stretch_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_stretch_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_stretch_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3416449033)!
         }
         }
@@ -107,7 +107,7 @@ open class AspectRatioContainer: Container {
 
     private static var __method_binding_set_alignment_horizontal: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_alignment_horizontal").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_alignment_horizontal").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2147829016)!
         }
         }
@@ -129,7 +129,7 @@ open class AspectRatioContainer: Container {
 
     private static var __method_binding_get_alignment_horizontal: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_alignment_horizontal").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_alignment_horizontal").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3838875429)!
         }
         }
@@ -151,7 +151,7 @@ open class AspectRatioContainer: Container {
 
     private static var __method_binding_set_alignment_vertical: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_alignment_vertical").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_alignment_vertical").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2147829016)!
         }
         }
@@ -173,7 +173,7 @@ open class AspectRatioContainer: Container {
 
     private static var __method_binding_get_alignment_vertical: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_alignment_vertical").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_alignment_vertical").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3838875429)!
         }
         }

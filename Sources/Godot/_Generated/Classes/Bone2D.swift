@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Bone2D: Node2D {
     private static var __method_binding_set_rest: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_rest").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_rest").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2761652528)!
         }
         }
@@ -29,7 +29,7 @@ open class Bone2D: Node2D {
 
     private static var __method_binding_get_rest: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_rest").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_rest").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3814499831)!
         }
         }
@@ -51,7 +51,7 @@ open class Bone2D: Node2D {
 
     private static var __method_binding_apply_rest: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "apply_rest").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "apply_rest").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -69,7 +69,7 @@ open class Bone2D: Node2D {
 
     private static var __method_binding_get_skeleton_rest: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skeleton_rest").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skeleton_rest").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3814499831)!
         }
         }
@@ -91,7 +91,7 @@ open class Bone2D: Node2D {
 
     private static var __method_binding_get_index_in_skeleton: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_index_in_skeleton").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_index_in_skeleton").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -113,7 +113,7 @@ open class Bone2D: Node2D {
 
     private static var __method_binding_set_autocalculate_length_and_angle: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_autocalculate_length_and_angle").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_autocalculate_length_and_angle").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -135,7 +135,7 @@ open class Bone2D: Node2D {
 
     private static var __method_binding_get_autocalculate_length_and_angle: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_autocalculate_length_and_angle").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_autocalculate_length_and_angle").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -157,7 +157,7 @@ open class Bone2D: Node2D {
 
     private static var __method_binding_set_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -179,7 +179,7 @@ open class Bone2D: Node2D {
 
     private static var __method_binding_get_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -201,7 +201,7 @@ open class Bone2D: Node2D {
 
     private static var __method_binding_set_bone_angle: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bone_angle").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bone_angle").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -223,7 +223,7 @@ open class Bone2D: Node2D {
 
     private static var __method_binding_get_bone_angle: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bone_angle").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bone_angle").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

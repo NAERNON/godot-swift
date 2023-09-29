@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Button: BaseButton {
     private static var __method_binding_set_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -29,7 +29,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_get_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -51,7 +51,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_set_text_overrun_behavior: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_text_overrun_behavior").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_text_overrun_behavior").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1008890932)!
         }
         }
@@ -73,7 +73,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_get_text_overrun_behavior: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_text_overrun_behavior").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_text_overrun_behavior").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3779142101)!
         }
         }
@@ -95,7 +95,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_text_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_text_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 119160795)!
         }
         }
@@ -117,7 +117,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_text_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_text_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 797257663)!
         }
         }
@@ -139,7 +139,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_set_language: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_language").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_language").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -161,7 +161,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_get_language: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_language").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_language").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -183,7 +183,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_set_button_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_button_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_button_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4051416890)!
         }
         }
@@ -207,7 +207,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_get_button_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_button_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_button_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3635182373)!
         }
         }
@@ -229,7 +229,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_set_flat: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_flat").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_flat").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -251,7 +251,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_is_flat: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_flat").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_flat").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -273,7 +273,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_set_clip_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_clip_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_clip_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -295,7 +295,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_get_clip_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_clip_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_clip_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -317,7 +317,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_set_text_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_text_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_text_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2312603777)!
         }
         }
@@ -339,7 +339,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_get_text_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_text_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_text_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 341400642)!
         }
         }
@@ -361,7 +361,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_set_icon_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_icon_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_icon_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2312603777)!
         }
         }
@@ -383,7 +383,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_get_icon_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_icon_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_icon_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 341400642)!
         }
         }
@@ -405,7 +405,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_set_vertical_icon_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertical_icon_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertical_icon_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1796458609)!
         }
         }
@@ -427,7 +427,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_get_vertical_icon_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertical_icon_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertical_icon_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3274884059)!
         }
         }
@@ -449,7 +449,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_set_expand_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_expand_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_expand_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -471,7 +471,7 @@ open class Button: BaseButton {
 
     private static var __method_binding_is_expand_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_expand_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_expand_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

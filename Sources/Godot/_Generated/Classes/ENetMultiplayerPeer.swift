@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ENetMultiplayerPeer: MultiplayerPeer {
     private static var __method_binding_create_server: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_server").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_server").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1616151701)!
         }
         }
@@ -41,7 +41,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_create_client: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_client").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_client").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 920217784)!
         }
         }
@@ -77,7 +77,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_create_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844576869)!
         }
         }
@@ -103,7 +103,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_add_mesh_peer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_mesh_peer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_mesh_peer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1293458335)!
         }
         }
@@ -133,7 +133,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_set_bind_ip: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bind_ip").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bind_ip").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -155,7 +155,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_get_host: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_host").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_host").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4103238886)!
         }
         }
@@ -177,7 +177,7 @@ open class ENetMultiplayerPeer: MultiplayerPeer {
 
     private static var __method_binding_get_peer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_peer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_peer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3793311544)!
         }
         }

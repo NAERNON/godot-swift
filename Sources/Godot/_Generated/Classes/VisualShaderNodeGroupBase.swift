@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
     private static var __method_binding_set_inputs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_inputs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_inputs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -29,7 +29,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_get_inputs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_inputs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_inputs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -51,7 +51,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_set_outputs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_outputs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_outputs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -73,7 +73,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_get_outputs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_outputs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_outputs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -95,7 +95,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_is_valid_port_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_valid_port_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_valid_port_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -121,7 +121,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_add_input_port: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_input_port").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_input_port").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2285447957)!
         }
         }
@@ -147,7 +147,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_remove_input_port: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_input_port").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_input_port").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -169,7 +169,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_get_input_port_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_input_port_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_port_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -191,7 +191,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_has_input_port: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_input_port").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_input_port").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -217,7 +217,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_clear_input_ports: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_input_ports").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_input_ports").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -235,7 +235,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_add_output_port: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_output_port").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_output_port").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2285447957)!
         }
         }
@@ -261,7 +261,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_remove_output_port: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_output_port").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_output_port").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -283,7 +283,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_get_output_port_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_output_port_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_output_port_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -305,7 +305,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_has_output_port: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_output_port").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_output_port").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -331,7 +331,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_clear_output_ports: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_output_ports").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_output_ports").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -349,7 +349,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_set_input_port_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_input_port_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_input_port_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -373,7 +373,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_set_input_port_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_input_port_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_input_port_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -397,7 +397,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_set_output_port_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_output_port_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_output_port_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -421,7 +421,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_set_output_port_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_output_port_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_output_port_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -445,7 +445,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_get_free_input_port_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_free_input_port_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_free_input_port_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -467,7 +467,7 @@ open class VisualShaderNodeGroupBase: VisualShaderNodeResizableBase {
 
     private static var __method_binding_get_free_output_port_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_free_output_port_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_free_output_port_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

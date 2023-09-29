@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
     private static var __method_binding_push_frame: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "push_frame").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "push_frame").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3975407249)!
         }
         }
@@ -33,7 +33,7 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
 
     private static var __method_binding_can_push_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "can_push_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "can_push_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -59,7 +59,7 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
 
     private static var __method_binding_push_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "push_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "push_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1361156557)!
         }
         }
@@ -85,7 +85,7 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
 
     private static var __method_binding_get_frames_available: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_frames_available").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_frames_available").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -107,7 +107,7 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
 
     private static var __method_binding_get_skips: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skips").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skips").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -129,7 +129,7 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
 
     private static var __method_binding_clear_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }

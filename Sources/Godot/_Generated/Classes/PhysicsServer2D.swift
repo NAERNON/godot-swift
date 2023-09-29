@@ -112,7 +112,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_world_boundary_shape_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "world_boundary_shape_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "world_boundary_shape_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -134,7 +134,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_separation_ray_shape_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "separation_ray_shape_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "separation_ray_shape_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -156,7 +156,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_segment_shape_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "segment_shape_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "segment_shape_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -178,7 +178,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_circle_shape_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "circle_shape_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "circle_shape_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -200,7 +200,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_rectangle_shape_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "rectangle_shape_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rectangle_shape_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -222,7 +222,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_capsule_shape_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "capsule_shape_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "capsule_shape_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -244,7 +244,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_convex_polygon_shape_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "convex_polygon_shape_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "convex_polygon_shape_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -266,7 +266,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_concave_polygon_shape_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "concave_polygon_shape_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "concave_polygon_shape_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -288,7 +288,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_shape_set_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "shape_set_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "shape_set_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3175752987)!
         }
         }
@@ -312,7 +312,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_shape_get_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "shape_get_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "shape_get_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1240598777)!
         }
         }
@@ -338,7 +338,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_shape_get_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "shape_get_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "shape_get_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4171304767)!
         }
         }
@@ -364,7 +364,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_space_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "space_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "space_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -386,7 +386,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_space_set_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "space_set_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "space_set_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1265174801)!
         }
         }
@@ -410,7 +410,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_space_is_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "space_is_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "space_is_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -436,7 +436,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_space_set_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "space_set_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "space_set_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 949194586)!
         }
         }
@@ -462,7 +462,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_space_get_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "space_get_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "space_get_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 874111783)!
         }
         }
@@ -490,7 +490,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_space_get_direct_state: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "space_get_direct_state").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "space_get_direct_state").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3160173886)!
         }
         }
@@ -516,7 +516,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -538,7 +538,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_set_space: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_set_space").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_set_space").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 395945892)!
         }
         }
@@ -562,7 +562,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_get_space: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_get_space").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_get_space").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3814569979)!
         }
         }
@@ -588,7 +588,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_add_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_add_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_add_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 754862190)!
         }
         }
@@ -616,7 +616,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_set_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_set_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_set_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2310537182)!
         }
         }
@@ -642,7 +642,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_set_shape_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_set_shape_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_set_shape_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 736082694)!
         }
         }
@@ -668,7 +668,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_set_shape_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_set_shape_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_set_shape_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2658558584)!
         }
         }
@@ -694,7 +694,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_get_shape_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_get_shape_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_get_shape_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -720,7 +720,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_get_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_get_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_get_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1066463050)!
         }
         }
@@ -748,7 +748,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_get_shape_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_get_shape_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_get_shape_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1324854622)!
         }
         }
@@ -776,7 +776,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_remove_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_remove_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_remove_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -800,7 +800,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_clear_shapes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_clear_shapes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_clear_shapes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }
@@ -822,7 +822,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_set_collision_layer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_set_collision_layer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_set_collision_layer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -846,7 +846,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_get_collision_layer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_get_collision_layer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_get_collision_layer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -872,7 +872,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_set_collision_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_set_collision_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_set_collision_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -896,7 +896,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_get_collision_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_get_collision_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_get_collision_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -922,7 +922,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_set_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_set_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_set_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1257146028)!
         }
         }
@@ -948,7 +948,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_set_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_set_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_set_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1246044741)!
         }
         }
@@ -972,7 +972,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_get_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_get_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_get_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3047435120)!
         }
         }
@@ -1000,7 +1000,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_get_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_get_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_get_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 213527486)!
         }
         }
@@ -1026,7 +1026,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_attach_object_instance_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_attach_object_instance_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_attach_object_instance_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -1050,7 +1050,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_get_object_instance_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_get_object_instance_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_get_object_instance_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1076,7 +1076,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_attach_canvas_instance_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_attach_canvas_instance_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_attach_canvas_instance_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -1100,7 +1100,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_get_canvas_instance_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_get_canvas_instance_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_get_canvas_instance_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1126,7 +1126,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_set_monitor_callback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_set_monitor_callback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_set_monitor_callback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3379118538)!
         }
         }
@@ -1150,7 +1150,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_set_area_monitor_callback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_set_area_monitor_callback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_set_area_monitor_callback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3379118538)!
         }
         }
@@ -1174,7 +1174,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_area_set_monitorable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "area_set_monitorable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "area_set_monitorable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1265174801)!
         }
         }
@@ -1198,7 +1198,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -1220,7 +1220,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_space: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_space").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_space").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 395945892)!
         }
         }
@@ -1244,7 +1244,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_space: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_space").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_space").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3814569979)!
         }
         }
@@ -1270,7 +1270,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1658067650)!
         }
         }
@@ -1294,7 +1294,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3261702585)!
         }
         }
@@ -1320,7 +1320,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_add_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_add_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_add_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 754862190)!
         }
         }
@@ -1348,7 +1348,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2310537182)!
         }
         }
@@ -1374,7 +1374,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_shape_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_shape_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_shape_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 736082694)!
         }
         }
@@ -1400,7 +1400,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_shape_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_shape_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_shape_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1426,7 +1426,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1066463050)!
         }
         }
@@ -1454,7 +1454,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_shape_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_shape_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_shape_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1324854622)!
         }
         }
@@ -1482,7 +1482,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_remove_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_remove_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_remove_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -1506,7 +1506,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_clear_shapes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_clear_shapes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_clear_shapes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }
@@ -1528,7 +1528,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_shape_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_shape_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_shape_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2658558584)!
         }
         }
@@ -1554,7 +1554,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_shape_as_one_way_collision: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_shape_as_one_way_collision").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_shape_as_one_way_collision").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2556489974)!
         }
         }
@@ -1582,7 +1582,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_attach_object_instance_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_attach_object_instance_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_attach_object_instance_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -1606,7 +1606,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_object_instance_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_object_instance_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_object_instance_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1632,7 +1632,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_attach_canvas_instance_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_attach_canvas_instance_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_attach_canvas_instance_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -1656,7 +1656,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_canvas_instance_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_canvas_instance_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_canvas_instance_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1682,7 +1682,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_continuous_collision_detection_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_continuous_collision_detection_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_continuous_collision_detection_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1882257015)!
         }
         }
@@ -1706,7 +1706,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_continuous_collision_detection_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_continuous_collision_detection_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_continuous_collision_detection_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2661282217)!
         }
         }
@@ -1732,7 +1732,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_collision_layer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_collision_layer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_collision_layer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -1756,7 +1756,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_collision_layer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_collision_layer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_collision_layer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1782,7 +1782,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_collision_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_collision_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_collision_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -1806,7 +1806,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_collision_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_collision_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_collision_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1832,7 +1832,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_collision_priority: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_collision_priority").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_collision_priority").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1794382983)!
         }
         }
@@ -1856,7 +1856,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_collision_priority: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_collision_priority").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_collision_priority").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 866169185)!
         }
         }
@@ -1882,7 +1882,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2715630609)!
         }
         }
@@ -1908,7 +1908,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3208033526)!
         }
         }
@@ -1936,7 +1936,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_reset_mass_properties: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_reset_mass_properties").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_reset_mass_properties").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }
@@ -1958,7 +1958,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_state: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_state").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_state").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1706355209)!
         }
         }
@@ -1984,7 +1984,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_state: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_state").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_state").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4036367961)!
         }
         }
@@ -2012,7 +2012,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_apply_central_impulse: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_apply_central_impulse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_apply_central_impulse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3201125042)!
         }
         }
@@ -2036,7 +2036,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_apply_torque_impulse: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_apply_torque_impulse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_apply_torque_impulse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1794382983)!
         }
         }
@@ -2060,7 +2060,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_apply_impulse: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_apply_impulse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_apply_impulse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 34330743)!
         }
         }
@@ -2086,7 +2086,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_apply_central_force: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_apply_central_force").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_apply_central_force").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3201125042)!
         }
         }
@@ -2110,7 +2110,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_apply_force: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_apply_force").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_apply_force").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 34330743)!
         }
         }
@@ -2136,7 +2136,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_apply_torque: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_apply_torque").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_apply_torque").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1794382983)!
         }
         }
@@ -2160,7 +2160,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_add_constant_central_force: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_add_constant_central_force").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_add_constant_central_force").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3201125042)!
         }
         }
@@ -2184,7 +2184,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_add_constant_force: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_add_constant_force").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_add_constant_force").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 34330743)!
         }
         }
@@ -2210,7 +2210,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_add_constant_torque: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_add_constant_torque").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_add_constant_torque").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1794382983)!
         }
         }
@@ -2234,7 +2234,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_constant_force: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_constant_force").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_constant_force").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3201125042)!
         }
         }
@@ -2258,7 +2258,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_constant_force: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_constant_force").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_constant_force").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2440833711)!
         }
         }
@@ -2284,7 +2284,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_constant_torque: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_constant_torque").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_constant_torque").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1794382983)!
         }
         }
@@ -2308,7 +2308,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_constant_torque: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_constant_torque").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_constant_torque").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 866169185)!
         }
         }
@@ -2334,7 +2334,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_axis_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_axis_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_axis_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3201125042)!
         }
         }
@@ -2358,7 +2358,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_add_collision_exception: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_add_collision_exception").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_add_collision_exception").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 395945892)!
         }
         }
@@ -2382,7 +2382,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_remove_collision_exception: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_remove_collision_exception").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_remove_collision_exception").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 395945892)!
         }
         }
@@ -2406,7 +2406,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_max_contacts_reported: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_max_contacts_reported").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_max_contacts_reported").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -2430,7 +2430,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_max_contacts_reported: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_max_contacts_reported").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_max_contacts_reported").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -2456,7 +2456,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_omit_force_integration: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_omit_force_integration").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_omit_force_integration").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1265174801)!
         }
         }
@@ -2480,7 +2480,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_is_omitting_force_integration: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_is_omitting_force_integration").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_is_omitting_force_integration").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -2506,7 +2506,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_set_force_integration_callback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_set_force_integration_callback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_set_force_integration_callback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3059434249)!
         }
         }
@@ -2532,7 +2532,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_test_motion: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_test_motion").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_test_motion").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1699844009)!
         }
         }
@@ -2566,7 +2566,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_body_get_direct_state: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "body_get_direct_state").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "body_get_direct_state").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1191931871)!
         }
         }
@@ -2592,7 +2592,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_joint_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "joint_create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "joint_create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
@@ -2614,7 +2614,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_joint_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "joint_clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "joint_clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }
@@ -2636,7 +2636,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_joint_set_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "joint_set_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "joint_set_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3972556514)!
         }
         }
@@ -2662,7 +2662,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_joint_get_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "joint_get_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "joint_get_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4016448949)!
         }
         }
@@ -2690,7 +2690,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_joint_disable_collisions_between_bodies: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "joint_disable_collisions_between_bodies").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "joint_disable_collisions_between_bodies").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1265174801)!
         }
         }
@@ -2714,7 +2714,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_joint_is_disabled_collisions_between_bodies: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "joint_is_disabled_collisions_between_bodies").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "joint_is_disabled_collisions_between_bodies").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -2740,7 +2740,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_joint_make_pin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "joint_make_pin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "joint_make_pin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2288600450)!
         }
         }
@@ -2768,7 +2768,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_joint_make_groove: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "joint_make_groove").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "joint_make_groove").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3573265764)!
         }
         }
@@ -2800,7 +2800,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_joint_make_damped_spring: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "joint_make_damped_spring").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "joint_make_damped_spring").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 206603952)!
         }
         }
@@ -2830,7 +2830,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_pin_joint_set_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "pin_joint_set_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "pin_joint_set_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 550574241)!
         }
         }
@@ -2856,7 +2856,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_pin_joint_get_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "pin_joint_get_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "pin_joint_get_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 348281383)!
         }
         }
@@ -2884,7 +2884,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_damped_spring_joint_set_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "damped_spring_joint_set_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "damped_spring_joint_set_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 220564071)!
         }
         }
@@ -2910,7 +2910,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_damped_spring_joint_get_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "damped_spring_joint_get_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "damped_spring_joint_get_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2075871277)!
         }
         }
@@ -2938,7 +2938,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_joint_get_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "joint_get_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "joint_get_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4262502231)!
         }
         }
@@ -2964,7 +2964,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_free_rid: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "free_rid").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "free_rid").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }
@@ -2986,7 +2986,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_set_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -3008,7 +3008,7 @@ open class PhysicsServer2D: Object {
 
     private static var __method_binding_get_process_info: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_process_info").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_process_info").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 576496006)!
         }
         }

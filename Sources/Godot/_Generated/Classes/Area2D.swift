@@ -47,7 +47,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_gravity_space_override_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gravity_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gravity_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2879900038)!
         }
         }
@@ -69,7 +69,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_gravity_space_override_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gravity_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gravity_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3990256304)!
         }
         }
@@ -91,7 +91,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_gravity_is_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gravity_is_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gravity_is_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -113,7 +113,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_is_gravity_a_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_gravity_a_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_gravity_a_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -135,7 +135,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_gravity_point_unit_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gravity_point_unit_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gravity_point_unit_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -157,7 +157,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_gravity_point_unit_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gravity_point_unit_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gravity_point_unit_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -179,7 +179,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_gravity_point_center: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gravity_point_center").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gravity_point_center").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -201,7 +201,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_gravity_point_center: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gravity_point_center").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gravity_point_center").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -223,7 +223,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_gravity_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gravity_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gravity_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -245,7 +245,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_gravity_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gravity_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gravity_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -267,7 +267,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_gravity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gravity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gravity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -289,7 +289,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_gravity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gravity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gravity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -311,7 +311,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_linear_damp_space_override_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_linear_damp_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_linear_damp_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2879900038)!
         }
         }
@@ -333,7 +333,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_linear_damp_space_override_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_linear_damp_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_linear_damp_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3990256304)!
         }
         }
@@ -355,7 +355,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_angular_damp_space_override_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_angular_damp_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_angular_damp_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2879900038)!
         }
         }
@@ -377,7 +377,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_angular_damp_space_override_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_angular_damp_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_angular_damp_space_override_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3990256304)!
         }
         }
@@ -399,7 +399,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_linear_damp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_linear_damp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_linear_damp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -421,7 +421,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_linear_damp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_linear_damp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_linear_damp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -443,7 +443,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_angular_damp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_angular_damp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_angular_damp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -465,7 +465,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_angular_damp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_angular_damp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_angular_damp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -487,7 +487,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_priority: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_priority").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_priority").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -509,7 +509,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_priority: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_priority").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_priority").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -531,7 +531,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_monitoring: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_monitoring").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_monitoring").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -553,7 +553,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_is_monitoring: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_monitoring").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_monitoring").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -575,7 +575,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_monitorable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_monitorable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_monitorable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -597,7 +597,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_is_monitorable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_monitorable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_monitorable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -619,7 +619,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_overlapping_bodies: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_overlapping_bodies").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_overlapping_bodies").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
@@ -641,7 +641,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_overlapping_areas: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_overlapping_areas").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_overlapping_areas").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
@@ -663,7 +663,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_has_overlapping_bodies: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_overlapping_bodies").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_overlapping_bodies").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -685,7 +685,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_has_overlapping_areas: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_overlapping_areas").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_overlapping_areas").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -707,7 +707,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_overlaps_body: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "overlaps_body").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "overlaps_body").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3093956946)!
         }
         }
@@ -735,7 +735,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_overlaps_area: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "overlaps_area").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "overlaps_area").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3093956946)!
         }
         }
@@ -763,7 +763,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_audio_bus_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_audio_bus_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_audio_bus_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -785,7 +785,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_get_audio_bus_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_audio_bus_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_audio_bus_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2002593661)!
         }
         }
@@ -807,7 +807,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_set_audio_bus_override: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_audio_bus_override").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_audio_bus_override").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -829,7 +829,7 @@ open class Area2D: CollisionObject2D {
 
     private static var __method_binding_is_overriding_audio_bus: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_overriding_audio_bus").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_overriding_audio_bus").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

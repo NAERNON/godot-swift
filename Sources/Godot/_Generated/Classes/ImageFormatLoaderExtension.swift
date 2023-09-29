@@ -15,7 +15,7 @@ open class ImageFormatLoaderExtension: ImageFormatLoader {
 
     private static var __method_binding_add_format_loader: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_format_loader").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_format_loader").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -33,7 +33,7 @@ open class ImageFormatLoaderExtension: ImageFormatLoader {
 
     private static var __method_binding_remove_format_loader: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_format_loader").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_format_loader").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }

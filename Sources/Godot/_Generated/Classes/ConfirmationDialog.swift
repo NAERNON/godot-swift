@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ConfirmationDialog: AcceptDialog {
     private static var __method_binding_get_cancel_button: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cancel_button").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cancel_button").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1856205918)!
         }
         }
@@ -29,7 +29,7 @@ open class ConfirmationDialog: AcceptDialog {
 
     private static var __method_binding_set_cancel_button_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cancel_button_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cancel_button_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -51,7 +51,7 @@ open class ConfirmationDialog: AcceptDialog {
 
     private static var __method_binding_get_cancel_button_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cancel_button_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cancel_button_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }

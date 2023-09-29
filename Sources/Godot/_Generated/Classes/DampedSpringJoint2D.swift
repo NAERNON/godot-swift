@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class DampedSpringJoint2D: Joint2D {
     private static var __method_binding_set_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -29,7 +29,7 @@ open class DampedSpringJoint2D: Joint2D {
 
     private static var __method_binding_get_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -51,7 +51,7 @@ open class DampedSpringJoint2D: Joint2D {
 
     private static var __method_binding_set_rest_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_rest_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_rest_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -73,7 +73,7 @@ open class DampedSpringJoint2D: Joint2D {
 
     private static var __method_binding_get_rest_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_rest_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_rest_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -95,7 +95,7 @@ open class DampedSpringJoint2D: Joint2D {
 
     private static var __method_binding_set_stiffness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_stiffness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_stiffness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -117,7 +117,7 @@ open class DampedSpringJoint2D: Joint2D {
 
     private static var __method_binding_get_stiffness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_stiffness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_stiffness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -139,7 +139,7 @@ open class DampedSpringJoint2D: Joint2D {
 
     private static var __method_binding_set_damping: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_damping").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_damping").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -161,7 +161,7 @@ open class DampedSpringJoint2D: Joint2D {
 
     private static var __method_binding_get_damping: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_damping").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_damping").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class GLTFMesh: Resource {
     private static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3754628756)!
         }
         }
@@ -29,7 +29,7 @@ open class GLTFMesh: Resource {
 
     private static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2255166972)!
         }
         }
@@ -53,7 +53,7 @@ open class GLTFMesh: Resource {
 
     private static var __method_binding_get_blend_weights: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_blend_weights").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_blend_weights").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2445143706)!
         }
         }
@@ -75,7 +75,7 @@ open class GLTFMesh: Resource {
 
     private static var __method_binding_set_blend_weights: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_blend_weights").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_blend_weights").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2899603908)!
         }
         }
@@ -97,7 +97,7 @@ open class GLTFMesh: Resource {
 
     private static var __method_binding_get_instance_materials: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_instance_materials").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_instance_materials").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -119,7 +119,7 @@ open class GLTFMesh: Resource {
 
     private static var __method_binding_set_instance_materials: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_instance_materials").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_instance_materials").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }

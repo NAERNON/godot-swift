@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class CharFXTransform: RefCounted {
     private static var __method_binding_get_range: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_range").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_range").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2741790807)!
         }
         }
@@ -29,7 +29,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_range: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_range").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_range").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }
@@ -51,7 +51,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_get_elapsed_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_elapsed_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_elapsed_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 191475506)!
         }
         }
@@ -73,7 +73,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_elapsed_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_elapsed_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_elapsed_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -95,7 +95,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_is_visible: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_visible").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_visible").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -117,7 +117,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_visibility: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_visibility").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_visibility").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -139,7 +139,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_is_outline: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_outline").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_outline").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -161,7 +161,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_outline: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_outline").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_outline").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -183,7 +183,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1497962370)!
         }
         }
@@ -205,7 +205,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -227,7 +227,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_get_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3200896285)!
         }
         }
@@ -249,7 +249,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -271,7 +271,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_get_environment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_environment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_environment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2382534195)!
         }
         }
@@ -293,7 +293,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_environment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_environment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_environment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155329257)!
         }
         }
@@ -315,7 +315,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_get_glyph_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glyph_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glyph_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -337,7 +337,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_glyph_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glyph_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glyph_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -359,7 +359,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_get_relative_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_relative_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_relative_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -381,7 +381,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_relative_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_relative_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_relative_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -403,7 +403,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_get_glyph_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glyph_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glyph_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -425,7 +425,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_glyph_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glyph_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glyph_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -447,7 +447,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_get_glyph_flags: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glyph_flags").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glyph_flags").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -469,7 +469,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_glyph_flags: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glyph_flags").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glyph_flags").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -491,7 +491,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_get_font: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_font").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_font").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2944877500)!
         }
         }
@@ -513,7 +513,7 @@ open class CharFXTransform: RefCounted {
 
     private static var __method_binding_set_font: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_font").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_font").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }

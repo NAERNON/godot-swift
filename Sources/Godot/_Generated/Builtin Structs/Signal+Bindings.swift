@@ -181,7 +181,7 @@ extension Signal {
     }
 
     private static var __method_binding_is_null: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_null").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_null").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3918633141)!
         }
     }()
@@ -196,7 +196,7 @@ extension Signal {
     }
 
     private static var __method_binding_get_object: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_object").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_object").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 4008621732)!
         }
     }()
@@ -211,7 +211,7 @@ extension Signal {
     }
 
     private static var __method_binding_get_object_id: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_object_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_object_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3173160232)!
         }
     }()
@@ -226,7 +226,7 @@ extension Signal {
     }
 
     private static var __method_binding_get_name: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 1825232092)!
         }
     }()
@@ -241,7 +241,7 @@ extension Signal {
     }
 
     private static var __method_binding_connect: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "connect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "connect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 979702392)!
         }
     }()
@@ -263,7 +263,7 @@ extension Signal {
     }
 
     private static var __method_binding_disconnect: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "disconnect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "disconnect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3470848906)!
         }
     }()
@@ -279,7 +279,7 @@ extension Signal {
     }
 
     private static var __method_binding_is_connected: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_connected").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_connected").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 4129521963)!
         }
     }()
@@ -298,7 +298,7 @@ extension Signal {
     }
 
     private static var __method_binding_get_connections: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_connections").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_connections").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 4144163970)!
         }
     }()
@@ -313,7 +313,7 @@ extension Signal {
     }
 
     private static var __method_binding_emit: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "emit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "emit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3286317445)!
         }
     }()

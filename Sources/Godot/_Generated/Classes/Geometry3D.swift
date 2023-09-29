@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Geometry3D: Object {
     private static var __method_binding_build_box_planes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "build_box_planes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "build_box_planes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3622277145)!
         }
         }
@@ -33,7 +33,7 @@ open class Geometry3D: Object {
 
     private static var __method_binding_build_cylinder_planes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "build_cylinder_planes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "build_cylinder_planes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3142160516)!
         }
         }
@@ -65,7 +65,7 @@ open class Geometry3D: Object {
 
     private static var __method_binding_build_capsule_planes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "build_capsule_planes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "build_capsule_planes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 410870045)!
         }
         }
@@ -99,7 +99,7 @@ open class Geometry3D: Object {
 
     private static var __method_binding_get_closest_points_between_segments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_closest_points_between_segments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_closest_points_between_segments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1056373962)!
         }
         }
@@ -131,7 +131,7 @@ open class Geometry3D: Object {
 
     private static var __method_binding_get_closest_point_to_segment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_closest_point_to_segment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_closest_point_to_segment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2168193209)!
         }
         }
@@ -161,7 +161,7 @@ open class Geometry3D: Object {
 
     private static var __method_binding_get_closest_point_to_segment_uncapped: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_closest_point_to_segment_uncapped").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_closest_point_to_segment_uncapped").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2168193209)!
         }
         }
@@ -191,7 +191,7 @@ open class Geometry3D: Object {
 
     private static var __method_binding_ray_intersects_triangle: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "ray_intersects_triangle").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "ray_intersects_triangle").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1718655448)!
         }
         }
@@ -225,7 +225,7 @@ open class Geometry3D: Object {
 
     private static var __method_binding_segment_intersects_triangle: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "segment_intersects_triangle").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "segment_intersects_triangle").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1718655448)!
         }
         }
@@ -259,7 +259,7 @@ open class Geometry3D: Object {
 
     private static var __method_binding_segment_intersects_sphere: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "segment_intersects_sphere").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "segment_intersects_sphere").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4080141172)!
         }
         }
@@ -291,7 +291,7 @@ open class Geometry3D: Object {
 
     private static var __method_binding_segment_intersects_cylinder: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "segment_intersects_cylinder").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "segment_intersects_cylinder").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2361316491)!
         }
         }
@@ -323,7 +323,7 @@ open class Geometry3D: Object {
 
     private static var __method_binding_segment_intersects_convex: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "segment_intersects_convex").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "segment_intersects_convex").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 537425332)!
         }
         }
@@ -353,7 +353,7 @@ open class Geometry3D: Object {
 
     private static var __method_binding_clip_polygon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clip_polygon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clip_polygon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2603188319)!
         }
         }

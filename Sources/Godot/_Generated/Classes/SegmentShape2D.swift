@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class SegmentShape2D: Shape2D {
     private static var __method_binding_set_a: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_a").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_a").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -29,7 +29,7 @@ open class SegmentShape2D: Shape2D {
 
     private static var __method_binding_get_a: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_a").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_a").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -51,7 +51,7 @@ open class SegmentShape2D: Shape2D {
 
     private static var __method_binding_set_b: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_b").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_b").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -73,7 +73,7 @@ open class SegmentShape2D: Shape2D {
 
     private static var __method_binding_get_b: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_b").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_b").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }

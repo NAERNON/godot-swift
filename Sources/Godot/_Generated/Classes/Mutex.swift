@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Mutex: RefCounted {
     private static var __method_binding_lock: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "lock").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "lock").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -25,7 +25,7 @@ open class Mutex: RefCounted {
 
     private static var __method_binding_try_lock: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "try_lock").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "try_lock").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -47,7 +47,7 @@ open class Mutex: RefCounted {
 
     private static var __method_binding_unlock: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "unlock").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "unlock").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }

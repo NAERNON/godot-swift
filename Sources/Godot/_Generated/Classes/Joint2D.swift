@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Joint2D: Node2D {
     private static var __method_binding_set_node_a: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_node_a").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_node_a").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -29,7 +29,7 @@ open class Joint2D: Node2D {
 
     private static var __method_binding_get_node_a: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_node_a").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_node_a").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -51,7 +51,7 @@ open class Joint2D: Node2D {
 
     private static var __method_binding_set_node_b: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_node_b").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_node_b").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -73,7 +73,7 @@ open class Joint2D: Node2D {
 
     private static var __method_binding_get_node_b: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_node_b").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_node_b").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -95,7 +95,7 @@ open class Joint2D: Node2D {
 
     private static var __method_binding_set_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -117,7 +117,7 @@ open class Joint2D: Node2D {
 
     private static var __method_binding_get_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -139,7 +139,7 @@ open class Joint2D: Node2D {
 
     private static var __method_binding_set_exclude_nodes_from_collision: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_exclude_nodes_from_collision").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_exclude_nodes_from_collision").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -161,7 +161,7 @@ open class Joint2D: Node2D {
 
     private static var __method_binding_get_exclude_nodes_from_collision: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_exclude_nodes_from_collision").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_exclude_nodes_from_collision").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

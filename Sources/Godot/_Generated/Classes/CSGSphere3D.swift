@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class CSGSphere3D: CSGPrimitive3D {
     private static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_radius").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_radius").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -29,7 +29,7 @@ open class CSGSphere3D: CSGPrimitive3D {
 
     private static var __method_binding_get_radius: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_radius").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_radius").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -51,7 +51,7 @@ open class CSGSphere3D: CSGPrimitive3D {
 
     private static var __method_binding_set_radial_segments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_radial_segments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_radial_segments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -73,7 +73,7 @@ open class CSGSphere3D: CSGPrimitive3D {
 
     private static var __method_binding_get_radial_segments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_radial_segments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_radial_segments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -95,7 +95,7 @@ open class CSGSphere3D: CSGPrimitive3D {
 
     private static var __method_binding_set_rings: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_rings").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_rings").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -117,7 +117,7 @@ open class CSGSphere3D: CSGPrimitive3D {
 
     private static var __method_binding_get_rings: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_rings").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_rings").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -139,7 +139,7 @@ open class CSGSphere3D: CSGPrimitive3D {
 
     private static var __method_binding_set_smooth_faces: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_smooth_faces").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_smooth_faces").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -161,7 +161,7 @@ open class CSGSphere3D: CSGPrimitive3D {
 
     private static var __method_binding_get_smooth_faces: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_smooth_faces").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_smooth_faces").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -183,7 +183,7 @@ open class CSGSphere3D: CSGPrimitive3D {
 
     private static var __method_binding_set_material: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_material").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_material").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2757459619)!
         }
         }
@@ -207,7 +207,7 @@ open class CSGSphere3D: CSGPrimitive3D {
 
     private static var __method_binding_get_material: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_material").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_material").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 5934680)!
         }
         }

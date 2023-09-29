@@ -20,7 +20,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_set_blend_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_blend_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_blend_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1786054936)!
         }
         }
@@ -42,7 +42,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_get_blend_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_blend_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_blend_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3318684035)!
         }
         }
@@ -64,7 +64,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_set_light_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_light_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_light_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 628074070)!
         }
         }
@@ -86,7 +86,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_get_light_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_light_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_light_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3863292382)!
         }
         }
@@ -108,7 +108,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_set_particles_animation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_particles_animation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_particles_animation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -130,7 +130,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_get_particles_animation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_particles_animation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_particles_animation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -152,7 +152,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_set_particles_anim_h_frames: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_particles_anim_h_frames").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_particles_anim_h_frames").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -174,7 +174,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_get_particles_anim_h_frames: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_particles_anim_h_frames").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_particles_anim_h_frames").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -196,7 +196,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_set_particles_anim_v_frames: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_particles_anim_v_frames").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_particles_anim_v_frames").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -218,7 +218,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_get_particles_anim_v_frames: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_particles_anim_v_frames").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_particles_anim_v_frames").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -240,7 +240,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_set_particles_anim_loop: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_particles_anim_loop").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_particles_anim_loop").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -262,7 +262,7 @@ open class CanvasItemMaterial: Material {
 
     private static var __method_binding_get_particles_anim_loop: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_particles_anim_loop").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_particles_anim_loop").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

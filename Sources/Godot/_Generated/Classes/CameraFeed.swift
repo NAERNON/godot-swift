@@ -19,7 +19,7 @@ open class CameraFeed: RefCounted {
 
     private static var __method_binding_get_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -41,7 +41,7 @@ open class CameraFeed: RefCounted {
 
     private static var __method_binding_is_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -63,7 +63,7 @@ open class CameraFeed: RefCounted {
 
     private static var __method_binding_set_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -85,7 +85,7 @@ open class CameraFeed: RefCounted {
 
     private static var __method_binding_get_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -107,7 +107,7 @@ open class CameraFeed: RefCounted {
 
     private static var __method_binding_get_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2711679033)!
         }
         }
@@ -129,7 +129,7 @@ open class CameraFeed: RefCounted {
 
     private static var __method_binding_get_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3814499831)!
         }
         }
@@ -151,7 +151,7 @@ open class CameraFeed: RefCounted {
 
     private static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_transform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_transform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2761652528)!
         }
         }
@@ -173,7 +173,7 @@ open class CameraFeed: RefCounted {
 
     private static var __method_binding_get_datatype: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_datatype").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_datatype").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1477782850)!
         }
         }

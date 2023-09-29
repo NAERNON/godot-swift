@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Occluder3D: Resource {
     private static var __method_binding_get_vertices: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertices").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertices").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 497664490)!
         }
         }
@@ -29,7 +29,7 @@ open class Occluder3D: Resource {
 
     private static var __method_binding_get_indices: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_indices").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_indices").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1930428628)!
         }
         }

@@ -23,7 +23,7 @@ open class EditorDebuggerSession: RefCounted {
 
     private static var __method_binding_send_message: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "send_message").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "send_message").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3780025912)!
         }
         }
@@ -47,7 +47,7 @@ open class EditorDebuggerSession: RefCounted {
 
     private static var __method_binding_toggle_profiler: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "toggle_profiler").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "toggle_profiler").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 35674246)!
         }
         }
@@ -73,7 +73,7 @@ open class EditorDebuggerSession: RefCounted {
 
     private static var __method_binding_is_breaked: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_breaked").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_breaked").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -95,7 +95,7 @@ open class EditorDebuggerSession: RefCounted {
 
     private static var __method_binding_is_debuggable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_debuggable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_debuggable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -117,7 +117,7 @@ open class EditorDebuggerSession: RefCounted {
 
     private static var __method_binding_is_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -139,7 +139,7 @@ open class EditorDebuggerSession: RefCounted {
 
     private static var __method_binding_add_session_tab: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_session_tab").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_session_tab").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
@@ -163,7 +163,7 @@ open class EditorDebuggerSession: RefCounted {
 
     private static var __method_binding_remove_session_tab: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_session_tab").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_session_tab").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }

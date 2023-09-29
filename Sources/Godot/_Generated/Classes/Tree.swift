@@ -78,7 +78,7 @@ open class Tree: Control {
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -96,7 +96,7 @@ open class Tree: Control {
 
     private static var __method_binding_create_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 528467046)!
         }
         }
@@ -126,7 +126,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_root: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_root").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_root").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1514277247)!
         }
         }
@@ -148,7 +148,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_column_custom_minimum_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_column_custom_minimum_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_column_custom_minimum_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -172,7 +172,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_column_expand: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_column_expand").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_column_expand").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -196,7 +196,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_column_expand_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_column_expand_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_column_expand_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -220,7 +220,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_column_clip_content: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_column_clip_content").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_column_clip_content").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -244,7 +244,7 @@ open class Tree: Control {
 
     private static var __method_binding_is_column_expanding: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_column_expanding").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_column_expanding").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -270,7 +270,7 @@ open class Tree: Control {
 
     private static var __method_binding_is_column_clipping_content: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_column_clipping_content").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_column_clipping_content").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -296,7 +296,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_column_expand_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_column_expand_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_column_expand_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -322,7 +322,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_column_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_column_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_column_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -348,7 +348,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_hide_root: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_hide_root").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_hide_root").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -370,7 +370,7 @@ open class Tree: Control {
 
     private static var __method_binding_is_root_hidden: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_root_hidden").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_root_hidden").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -392,7 +392,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_next_selected: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_next_selected").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_next_selected").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 873446299)!
         }
         }
@@ -420,7 +420,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_selected: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_selected").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_selected").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1514277247)!
         }
         }
@@ -442,7 +442,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_selected: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_selected").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_selected").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2662547442)!
         }
         }
@@ -468,7 +468,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_selected_column: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_selected_column").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_selected_column").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -490,7 +490,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_pressed_button: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pressed_button").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pressed_button").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -512,7 +512,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_select_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_select_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_select_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3223887270)!
         }
         }
@@ -534,7 +534,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_select_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_select_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_select_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 100748571)!
         }
         }
@@ -556,7 +556,7 @@ open class Tree: Control {
 
     private static var __method_binding_deselect_all: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "deselect_all").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "deselect_all").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -574,7 +574,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_columns: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_columns").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_columns").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -596,7 +596,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_columns: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_columns").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_columns").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -618,7 +618,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_edited: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_edited").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_edited").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1514277247)!
         }
         }
@@ -640,7 +640,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_edited_column: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_edited_column").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_edited_column").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -662,7 +662,7 @@ open class Tree: Control {
 
     private static var __method_binding_edit_selected: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "edit_selected").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "edit_selected").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2595650253)!
         }
         }
@@ -688,7 +688,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_custom_popup_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_custom_popup_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_custom_popup_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1639390495)!
         }
         }
@@ -710,7 +710,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_item_area_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_area_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_area_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1235226180)!
         }
         }
@@ -742,7 +742,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_item_at_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_at_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_at_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4193340126)!
         }
         }
@@ -768,7 +768,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_column_at_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_column_at_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_column_at_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3820158470)!
         }
         }
@@ -794,7 +794,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_drop_section_at_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_drop_section_at_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_drop_section_at_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3820158470)!
         }
         }
@@ -820,7 +820,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_button_id_at_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_button_id_at_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_button_id_at_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3820158470)!
         }
         }
@@ -846,7 +846,7 @@ open class Tree: Control {
 
     private static var __method_binding_ensure_cursor_is_visible: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "ensure_cursor_is_visible").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "ensure_cursor_is_visible").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -864,7 +864,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_column_titles_visible: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_column_titles_visible").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_column_titles_visible").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -886,7 +886,7 @@ open class Tree: Control {
 
     private static var __method_binding_are_column_titles_visible: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "are_column_titles_visible").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "are_column_titles_visible").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -908,7 +908,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_column_title: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_column_title").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_column_title").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -932,7 +932,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_column_title: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_column_title").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_column_title").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -958,7 +958,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_column_title_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_column_title_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_column_title_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3276431499)!
         }
         }
@@ -982,7 +982,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_column_title_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_column_title_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_column_title_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4171562184)!
         }
         }
@@ -1008,7 +1008,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_column_title_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_column_title_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_column_title_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1707680378)!
         }
         }
@@ -1032,7 +1032,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_column_title_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_column_title_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_column_title_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4235602388)!
         }
         }
@@ -1058,7 +1058,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_column_title_language: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_column_title_language").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_column_title_language").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -1082,7 +1082,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_column_title_language: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_column_title_language").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_column_title_language").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -1108,7 +1108,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_scroll: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_scroll").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_scroll").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -1130,7 +1130,7 @@ open class Tree: Control {
 
     private static var __method_binding_scroll_to_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "scroll_to_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "scroll_to_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1314737213)!
         }
         }
@@ -1156,7 +1156,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_h_scroll_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_h_scroll_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_h_scroll_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1178,7 +1178,7 @@ open class Tree: Control {
 
     private static var __method_binding_is_h_scroll_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_h_scroll_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_h_scroll_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1200,7 +1200,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_v_scroll_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_v_scroll_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_v_scroll_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1222,7 +1222,7 @@ open class Tree: Control {
 
     private static var __method_binding_is_v_scroll_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_v_scroll_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_v_scroll_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1244,7 +1244,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_hide_folding: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_hide_folding").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_hide_folding").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1266,7 +1266,7 @@ open class Tree: Control {
 
     private static var __method_binding_is_folding_hidden: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_folding_hidden").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_folding_hidden").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1288,7 +1288,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_enable_recursive_folding: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enable_recursive_folding").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enable_recursive_folding").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1310,7 +1310,7 @@ open class Tree: Control {
 
     private static var __method_binding_is_recursive_folding_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_recursive_folding_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_recursive_folding_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1332,7 +1332,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_drop_mode_flags: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_drop_mode_flags").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_drop_mode_flags").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -1354,7 +1354,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_drop_mode_flags: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_drop_mode_flags").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_drop_mode_flags").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -1376,7 +1376,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_allow_rmb_select: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_allow_rmb_select").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_allow_rmb_select").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1398,7 +1398,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_allow_rmb_select: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_allow_rmb_select").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_allow_rmb_select").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1420,7 +1420,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_allow_reselect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_allow_reselect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_allow_reselect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1442,7 +1442,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_allow_reselect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_allow_reselect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_allow_reselect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1464,7 +1464,7 @@ open class Tree: Control {
 
     private static var __method_binding_set_allow_search: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_allow_search").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_allow_search").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1486,7 +1486,7 @@ open class Tree: Control {
 
     private static var __method_binding_get_allow_search: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_allow_search").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_allow_search").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

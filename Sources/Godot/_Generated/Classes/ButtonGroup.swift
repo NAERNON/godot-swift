@@ -11,7 +11,7 @@ open class ButtonGroup: Resource {
 
     private static var __method_binding_get_pressed_button: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pressed_button").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pressed_button").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3886434893)!
         }
         }
@@ -33,7 +33,7 @@ open class ButtonGroup: Resource {
 
     private static var __method_binding_get_buttons: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_buttons").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_buttons").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -55,7 +55,7 @@ open class ButtonGroup: Resource {
 
     private static var __method_binding_set_allow_unpress: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_allow_unpress").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_allow_unpress").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -77,7 +77,7 @@ open class ButtonGroup: Resource {
 
     private static var __method_binding_is_allow_unpress: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_allow_unpress").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_allow_unpress").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }

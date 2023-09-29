@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class PackedDataContainerRef: RefCounted {
     private static var __method_binding_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

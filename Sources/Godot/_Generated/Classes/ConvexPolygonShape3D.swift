@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ConvexPolygonShape3D: Shape3D {
     private static var __method_binding_set_points: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_points").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_points").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 334873810)!
         }
         }
@@ -29,7 +29,7 @@ open class ConvexPolygonShape3D: Shape3D {
 
     private static var __method_binding_get_points: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_points").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_points").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 497664490)!
         }
         }

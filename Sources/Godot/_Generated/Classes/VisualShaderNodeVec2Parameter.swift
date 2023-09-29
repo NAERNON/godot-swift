@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class VisualShaderNodeVec2Parameter: VisualShaderNodeParameter {
     private static var __method_binding_set_default_value_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_default_value_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_default_value_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -29,7 +29,7 @@ open class VisualShaderNodeVec2Parameter: VisualShaderNodeParameter {
 
     private static var __method_binding_is_default_value_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_default_value_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_default_value_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -51,7 +51,7 @@ open class VisualShaderNodeVec2Parameter: VisualShaderNodeParameter {
 
     private static var __method_binding_set_default_value: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_default_value").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_default_value").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -73,7 +73,7 @@ open class VisualShaderNodeVec2Parameter: VisualShaderNodeParameter {
 
     private static var __method_binding_get_default_value: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_default_value").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_default_value").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }

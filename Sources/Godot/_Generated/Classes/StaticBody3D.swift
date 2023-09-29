@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class StaticBody3D: PhysicsBody3D {
     private static var __method_binding_set_constant_linear_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_constant_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_constant_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -29,7 +29,7 @@ open class StaticBody3D: PhysicsBody3D {
 
     private static var __method_binding_set_constant_angular_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_constant_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_constant_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -51,7 +51,7 @@ open class StaticBody3D: PhysicsBody3D {
 
     private static var __method_binding_get_constant_linear_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_constant_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_constant_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -73,7 +73,7 @@ open class StaticBody3D: PhysicsBody3D {
 
     private static var __method_binding_get_constant_angular_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_constant_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_constant_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -95,7 +95,7 @@ open class StaticBody3D: PhysicsBody3D {
 
     private static var __method_binding_set_physics_material_override: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_physics_material_override").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_physics_material_override").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1784508650)!
         }
         }
@@ -119,7 +119,7 @@ open class StaticBody3D: PhysicsBody3D {
 
     private static var __method_binding_get_physics_material_override: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_physics_material_override").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_physics_material_override").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2521850424)!
         }
         }

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class PacketPeerStream: PacketPeer {
     private static var __method_binding_set_stream_peer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_stream_peer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_stream_peer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3281897016)!
         }
         }
@@ -31,7 +31,7 @@ open class PacketPeerStream: PacketPeer {
 
     private static var __method_binding_get_stream_peer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_stream_peer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_stream_peer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2741655269)!
         }
         }
@@ -53,7 +53,7 @@ open class PacketPeerStream: PacketPeer {
 
     private static var __method_binding_set_input_buffer_max_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_input_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_input_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -75,7 +75,7 @@ open class PacketPeerStream: PacketPeer {
 
     private static var __method_binding_set_output_buffer_max_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_output_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_output_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -97,7 +97,7 @@ open class PacketPeerStream: PacketPeer {
 
     private static var __method_binding_get_input_buffer_max_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_input_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -119,7 +119,7 @@ open class PacketPeerStream: PacketPeer {
 
     private static var __method_binding_get_output_buffer_max_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_output_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_output_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Semaphore: RefCounted {
     private static var __method_binding_wait: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "wait").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "wait").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -25,7 +25,7 @@ open class Semaphore: RefCounted {
 
     private static var __method_binding_try_wait: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "try_wait").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "try_wait").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -47,7 +47,7 @@ open class Semaphore: RefCounted {
 
     private static var __method_binding_post: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "post").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "post").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }

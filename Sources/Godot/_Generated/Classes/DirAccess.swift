@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class DirAccess: RefCounted {
     private static var __method_binding_open: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "open").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "open").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1923528528)!
         }
         }
@@ -31,7 +31,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_open_error: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_open_error").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_open_error").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166280745)!
         }
         }
@@ -51,7 +51,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_list_dir_begin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "list_dir_begin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "list_dir_begin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2018049411)!
         }
         }
@@ -73,7 +73,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_next: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_next").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_next").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2841200299)!
         }
         }
@@ -95,7 +95,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_current_is_dir: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "current_is_dir").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "current_is_dir").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -117,7 +117,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_list_dir_end: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "list_dir_end").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "list_dir_end").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -135,7 +135,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_files: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_files").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_files").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2981934095)!
         }
         }
@@ -157,7 +157,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_files_at: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_files_at").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_files_at").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3538744774)!
         }
         }
@@ -181,7 +181,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_directories: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_directories").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_directories").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2981934095)!
         }
         }
@@ -203,7 +203,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_directories_at: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_directories_at").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_directories_at").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3538744774)!
         }
         }
@@ -227,7 +227,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_drive_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_drive_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_drive_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -247,7 +247,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_drive_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_drive_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_drive_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 990163283)!
         }
         }
@@ -271,7 +271,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_current_drive: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_current_drive").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_current_drive").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -293,7 +293,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_change_dir: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "change_dir").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "change_dir").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -319,7 +319,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_current_dir: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_current_dir").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_current_dir").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1287308131)!
         }
         }
@@ -345,7 +345,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_make_dir: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "make_dir").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "make_dir").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -371,7 +371,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_make_dir_absolute: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "make_dir_absolute").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "make_dir_absolute").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -395,7 +395,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_make_dir_recursive: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "make_dir_recursive").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "make_dir_recursive").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -421,7 +421,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_make_dir_recursive_absolute: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "make_dir_recursive_absolute").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "make_dir_recursive_absolute").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -445,7 +445,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_file_exists: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "file_exists").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "file_exists").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2323990056)!
         }
         }
@@ -471,7 +471,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_dir_exists: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "dir_exists").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "dir_exists").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2323990056)!
         }
         }
@@ -497,7 +497,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_dir_exists_absolute: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "dir_exists_absolute").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "dir_exists_absolute").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2323990056)!
         }
         }
@@ -521,7 +521,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_space_left: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_space_left").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_space_left").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -543,7 +543,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_copy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "copy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "copy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 198434953)!
         }
         }
@@ -573,7 +573,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_copy_absolute: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "copy_absolute").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "copy_absolute").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 198434953)!
         }
         }
@@ -601,7 +601,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_rename: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "rename").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rename").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 852856452)!
         }
         }
@@ -629,7 +629,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_rename_absolute: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "rename_absolute").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rename_absolute").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 852856452)!
         }
         }
@@ -655,7 +655,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_remove: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -681,7 +681,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_remove_absolute: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_absolute").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_absolute").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -705,7 +705,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_set_include_navigational: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_include_navigational").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_include_navigational").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -727,7 +727,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_include_navigational: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_include_navigational").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_include_navigational").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -749,7 +749,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_set_include_hidden: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_include_hidden").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_include_hidden").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -771,7 +771,7 @@ open class DirAccess: RefCounted {
 
     private static var __method_binding_get_include_hidden: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_include_hidden").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_include_hidden").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

@@ -19,7 +19,7 @@ open class ColorPickerButton: Button {
 
     private static var __method_binding_set_pick_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pick_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pick_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -41,7 +41,7 @@ open class ColorPickerButton: Button {
 
     private static var __method_binding_get_pick_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pick_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pick_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }
@@ -63,7 +63,7 @@ open class ColorPickerButton: Button {
 
     private static var __method_binding_get_picker: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_picker").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_picker").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 331835996)!
         }
         }
@@ -85,7 +85,7 @@ open class ColorPickerButton: Button {
 
     private static var __method_binding_get_popup: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_popup").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_popup").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1322440207)!
         }
         }
@@ -107,7 +107,7 @@ open class ColorPickerButton: Button {
 
     private static var __method_binding_set_edit_alpha: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_edit_alpha").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_edit_alpha").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -129,7 +129,7 @@ open class ColorPickerButton: Button {
 
     private static var __method_binding_is_editing_alpha: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_editing_alpha").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_editing_alpha").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class GLTFSpecGloss: Resource {
     private static var __method_binding_get_diffuse_img: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_diffuse_img").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_diffuse_img").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 564927088)!
         }
         }
@@ -29,7 +29,7 @@ open class GLTFSpecGloss: Resource {
 
     private static var __method_binding_set_diffuse_img: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_diffuse_img").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_diffuse_img").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 532598488)!
         }
         }
@@ -53,7 +53,7 @@ open class GLTFSpecGloss: Resource {
 
     private static var __method_binding_get_diffuse_factor: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_diffuse_factor").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_diffuse_factor").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3200896285)!
         }
         }
@@ -75,7 +75,7 @@ open class GLTFSpecGloss: Resource {
 
     private static var __method_binding_set_diffuse_factor: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_diffuse_factor").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_diffuse_factor").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -97,7 +97,7 @@ open class GLTFSpecGloss: Resource {
 
     private static var __method_binding_get_gloss_factor: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gloss_factor").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gloss_factor").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 191475506)!
         }
         }
@@ -119,7 +119,7 @@ open class GLTFSpecGloss: Resource {
 
     private static var __method_binding_set_gloss_factor: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gloss_factor").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gloss_factor").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -141,7 +141,7 @@ open class GLTFSpecGloss: Resource {
 
     private static var __method_binding_get_specular_factor: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_specular_factor").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_specular_factor").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3200896285)!
         }
         }
@@ -163,7 +163,7 @@ open class GLTFSpecGloss: Resource {
 
     private static var __method_binding_set_specular_factor: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_specular_factor").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_specular_factor").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -185,7 +185,7 @@ open class GLTFSpecGloss: Resource {
 
     private static var __method_binding_get_spec_gloss_img: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_spec_gloss_img").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_spec_gloss_img").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 564927088)!
         }
         }
@@ -207,7 +207,7 @@ open class GLTFSpecGloss: Resource {
 
     private static var __method_binding_set_spec_gloss_img: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_spec_gloss_img").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_spec_gloss_img").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 532598488)!
         }
         }

@@ -180,7 +180,7 @@ extension RID {
     }
 
     private static var __method_binding_is_valid: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_valid").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_valid").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RID, __ptr__method_name, 3918633141)!
         }
     }()
@@ -195,7 +195,7 @@ extension RID {
     }
 
     private static var __method_binding_get_id: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RID, __ptr__method_name, 3173160232)!
         }
     }()

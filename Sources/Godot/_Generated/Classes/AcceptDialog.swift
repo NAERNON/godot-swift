@@ -19,7 +19,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_get_ok_button: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ok_button").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ok_button").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1856205918)!
         }
         }
@@ -41,7 +41,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_get_label: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_label").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_label").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 566733104)!
         }
         }
@@ -63,7 +63,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_set_hide_on_ok: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_hide_on_ok").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_hide_on_ok").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -85,7 +85,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_get_hide_on_ok: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_hide_on_ok").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_hide_on_ok").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -107,7 +107,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_set_close_on_escape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_close_on_escape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_close_on_escape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -129,7 +129,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_get_close_on_escape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_close_on_escape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_close_on_escape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -151,7 +151,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_add_button: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_button").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_button").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4158837846)!
         }
         }
@@ -181,7 +181,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_add_cancel_button: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_cancel_button").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_cancel_button").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 242045556)!
         }
         }
@@ -207,7 +207,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_remove_button: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_button").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_button").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
@@ -231,7 +231,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_register_text_enter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "register_text_enter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "register_text_enter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
@@ -255,7 +255,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_set_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -277,7 +277,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_get_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -299,7 +299,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_set_autowrap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_autowrap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_autowrap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -321,7 +321,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_has_autowrap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_autowrap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_autowrap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -343,7 +343,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_set_ok_button_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ok_button_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ok_button_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -365,7 +365,7 @@ open class AcceptDialog: Window {
 
     private static var __method_binding_get_ok_button_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ok_button_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ok_button_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }

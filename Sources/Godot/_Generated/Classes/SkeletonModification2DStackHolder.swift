@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class SkeletonModification2DStackHolder: SkeletonModification2D {
     private static var __method_binding_set_held_modification_stack: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_held_modification_stack").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_held_modification_stack").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3907307132)!
         }
         }
@@ -31,7 +31,7 @@ open class SkeletonModification2DStackHolder: SkeletonModification2D {
 
     private static var __method_binding_get_held_modification_stack: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_held_modification_stack").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_held_modification_stack").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2107508396)!
         }
         }

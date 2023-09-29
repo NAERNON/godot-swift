@@ -15,7 +15,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_set_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -37,7 +37,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_take_over_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "take_over_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "take_over_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -59,7 +59,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_get_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -81,7 +81,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_set_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -103,7 +103,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_get_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -125,7 +125,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_rid").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_rid").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2944877500)!
         }
         }
@@ -147,7 +147,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_set_local_to_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_local_to_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_local_to_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -169,7 +169,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_is_local_to_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_local_to_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_local_to_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -191,7 +191,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_get_local_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_local_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_local_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3160264692)!
         }
         }
@@ -213,7 +213,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_setup_local_to_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "setup_local_to_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "setup_local_to_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -231,7 +231,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_emit_changed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "emit_changed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "emit_changed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -249,7 +249,7 @@ open class Resource: RefCounted {
 
     private static var __method_binding_duplicate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "duplicate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "duplicate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 482882304)!
         }
         }

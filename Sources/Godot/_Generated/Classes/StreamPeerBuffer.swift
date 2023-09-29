@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class StreamPeerBuffer: StreamPeer {
     private static var __method_binding_seek: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "seek").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "seek").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -29,7 +29,7 @@ open class StreamPeerBuffer: StreamPeer {
 
     private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -51,7 +51,7 @@ open class StreamPeerBuffer: StreamPeer {
 
     private static var __method_binding_get_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -73,7 +73,7 @@ open class StreamPeerBuffer: StreamPeer {
 
     private static var __method_binding_resize: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "resize").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "resize").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -95,7 +95,7 @@ open class StreamPeerBuffer: StreamPeer {
 
     private static var __method_binding_set_data_array: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_data_array").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_data_array").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2971499966)!
         }
         }
@@ -117,7 +117,7 @@ open class StreamPeerBuffer: StreamPeer {
 
     private static var __method_binding_get_data_array: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_data_array").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_data_array").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2362200018)!
         }
         }
@@ -139,7 +139,7 @@ open class StreamPeerBuffer: StreamPeer {
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -157,7 +157,7 @@ open class StreamPeerBuffer: StreamPeer {
 
     private static var __method_binding_duplicate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "duplicate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "duplicate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2474064677)!
         }
         }

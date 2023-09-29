@@ -316,7 +316,7 @@ extension Basis {
     }
 
     private static var __method_binding_inverse: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "inverse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "inverse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 594669093)!
         }
     }()
@@ -332,7 +332,7 @@ extension Basis {
     }
 
     private static var __method_binding_transposed: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "transposed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "transposed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 594669093)!
         }
     }()
@@ -348,7 +348,7 @@ extension Basis {
     }
 
     private static var __method_binding_orthonormalized: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "orthonormalized").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "orthonormalized").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 594669093)!
         }
     }()
@@ -364,7 +364,7 @@ extension Basis {
     }
 
     private static var __method_binding_determinant: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "determinant").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "determinant").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 466405837)!
         }
     }()
@@ -380,7 +380,7 @@ extension Basis {
     }
 
     private static var __method_binding_rotated: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "rotated").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rotated").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 1998708965)!
         }
     }()
@@ -402,7 +402,7 @@ extension Basis {
     }
 
     private static var __method_binding_scaled: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "scaled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "scaled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 3934786792)!
         }
     }()
@@ -422,7 +422,7 @@ extension Basis {
     }
 
     private static var __method_binding_get_scale: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 1776574132)!
         }
     }()
@@ -438,7 +438,7 @@ extension Basis {
     }
 
     private static var __method_binding_get_euler: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_euler").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_euler").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 1394941017)!
         }
     }()
@@ -458,7 +458,7 @@ extension Basis {
     }
 
     private static var __method_binding_tdotx: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "tdotx").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "tdotx").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 1047977935)!
         }
     }()
@@ -478,7 +478,7 @@ extension Basis {
     }
 
     private static var __method_binding_tdoty: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "tdoty").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "tdoty").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 1047977935)!
         }
     }()
@@ -498,7 +498,7 @@ extension Basis {
     }
 
     private static var __method_binding_tdotz: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "tdotz").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "tdotz").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 1047977935)!
         }
     }()
@@ -518,7 +518,7 @@ extension Basis {
     }
 
     private static var __method_binding_slerp: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "slerp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "slerp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 3118673011)!
         }
     }()
@@ -540,7 +540,7 @@ extension Basis {
     }
 
     private static var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 3165333982)!
         }
     }()
@@ -560,7 +560,7 @@ extension Basis {
     }
 
     private static var __method_binding_is_finite: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 3918633141)!
         }
     }()
@@ -576,7 +576,7 @@ extension Basis {
     }
 
     private static var __method_binding_get_rotation_quaternion: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_rotation_quaternion").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_rotation_quaternion").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 4274879941)!
         }
     }()
@@ -592,7 +592,7 @@ extension Basis {
     }
 
     private static var __method_binding_looking_at: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "looking_at").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "looking_at").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 3728732505)!
         }
     }()
@@ -613,7 +613,7 @@ extension Basis {
     }
 
     private static var __method_binding_from_scale: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "from_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "from_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 3703240166)!
         }
     }()
@@ -630,7 +630,7 @@ extension Basis {
     }
 
     private static var __method_binding_from_euler: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "from_euler").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "from_euler").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 2802321791)!
         }
     }()

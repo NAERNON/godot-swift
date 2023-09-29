@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class EngineDebugger: Object {
     private static var __method_binding_is_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -29,7 +29,7 @@ open class EngineDebugger: Object {
 
     private static var __method_binding_register_profiler: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "register_profiler").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "register_profiler").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3651669560)!
         }
         }
@@ -55,7 +55,7 @@ open class EngineDebugger: Object {
 
     private static var __method_binding_unregister_profiler: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "unregister_profiler").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "unregister_profiler").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -77,7 +77,7 @@ open class EngineDebugger: Object {
 
     private static var __method_binding_is_profiling: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_profiling").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_profiling").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2041966384)!
         }
         }
@@ -103,7 +103,7 @@ open class EngineDebugger: Object {
 
     private static var __method_binding_has_profiler: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_profiler").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_profiler").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2041966384)!
         }
         }
@@ -129,7 +129,7 @@ open class EngineDebugger: Object {
 
     private static var __method_binding_profiler_add_frame_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "profiler_add_frame_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "profiler_add_frame_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1895267858)!
         }
         }
@@ -153,7 +153,7 @@ open class EngineDebugger: Object {
 
     private static var __method_binding_profiler_enable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "profiler_enable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "profiler_enable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 438160728)!
         }
         }
@@ -179,7 +179,7 @@ open class EngineDebugger: Object {
 
     private static var __method_binding_register_message_capture: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "register_message_capture").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "register_message_capture").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1874754934)!
         }
         }
@@ -203,7 +203,7 @@ open class EngineDebugger: Object {
 
     private static var __method_binding_unregister_message_capture: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "unregister_message_capture").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "unregister_message_capture").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -225,7 +225,7 @@ open class EngineDebugger: Object {
 
     private static var __method_binding_has_capture: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_capture").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_capture").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2041966384)!
         }
         }
@@ -251,7 +251,7 @@ open class EngineDebugger: Object {
 
     private static var __method_binding_send_message: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "send_message").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "send_message").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1209351045)!
         }
         }

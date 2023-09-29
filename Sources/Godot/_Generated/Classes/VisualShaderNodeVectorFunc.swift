@@ -44,7 +44,7 @@ open class VisualShaderNodeVectorFunc: VisualShaderNodeVectorBase {
 
     private static var __method_binding_set_function: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_function").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_function").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 629964457)!
         }
         }
@@ -66,7 +66,7 @@ open class VisualShaderNodeVectorFunc: VisualShaderNodeVectorBase {
 
     private static var __method_binding_get_function: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_function").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_function").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4047776843)!
         }
         }

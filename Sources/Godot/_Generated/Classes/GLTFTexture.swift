@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class GLTFTexture: Resource {
     private static var __method_binding_get_src_image: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_src_image").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_src_image").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -29,7 +29,7 @@ open class GLTFTexture: Resource {
 
     private static var __method_binding_set_src_image: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_src_image").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_src_image").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -51,7 +51,7 @@ open class GLTFTexture: Resource {
 
     private static var __method_binding_get_sampler: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sampler").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sampler").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -73,7 +73,7 @@ open class GLTFTexture: Resource {
 
     private static var __method_binding_set_sampler: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sampler").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sampler").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }

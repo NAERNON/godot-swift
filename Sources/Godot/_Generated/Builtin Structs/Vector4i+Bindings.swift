@@ -477,7 +477,7 @@ extension Vector4i {
     }
 
     private static var __method_binding_min_axis_index: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "min_axis_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "min_axis_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_VECTOR4I, __ptr__method_name, 3173160232)!
         }
     }()
@@ -493,7 +493,7 @@ extension Vector4i {
     }
 
     private static var __method_binding_max_axis_index: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "max_axis_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "max_axis_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_VECTOR4I, __ptr__method_name, 3173160232)!
         }
     }()
@@ -509,7 +509,7 @@ extension Vector4i {
     }
 
     private static var __method_binding_length: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_VECTOR4I, __ptr__method_name, 466405837)!
         }
     }()
@@ -525,7 +525,7 @@ extension Vector4i {
     }
 
     private static var __method_binding_length_squared: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "length_squared").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "length_squared").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_VECTOR4I, __ptr__method_name, 3173160232)!
         }
     }()
@@ -541,7 +541,7 @@ extension Vector4i {
     }
 
     private static var __method_binding_sign: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "sign").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "sign").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_VECTOR4I, __ptr__method_name, 4134919947)!
         }
     }()
@@ -557,7 +557,7 @@ extension Vector4i {
     }
 
     private static var __method_binding_abs: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "abs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "abs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_VECTOR4I, __ptr__method_name, 4134919947)!
         }
     }()
@@ -573,7 +573,7 @@ extension Vector4i {
     }
 
     private static var __method_binding_clamp: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "clamp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clamp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_VECTOR4I, __ptr__method_name, 3046490913)!
         }
     }()
@@ -595,7 +595,7 @@ extension Vector4i {
     }
 
     private static var __method_binding_snapped: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "snapped").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "snapped").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_VECTOR4I, __ptr__method_name, 1181693102)!
         }
     }()

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class InputEventGesture: InputEventWithModifiers {
     private static var __method_binding_set_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -29,7 +29,7 @@ open class InputEventGesture: InputEventWithModifiers {
 
     private static var __method_binding_get_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class PhysicsDirectSpaceState3D: Object {
     private static var __method_binding_intersect_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "intersect_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "intersect_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 45993382)!
         }
         }
@@ -37,7 +37,7 @@ open class PhysicsDirectSpaceState3D: Object {
 
     private static var __method_binding_intersect_ray: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "intersect_ray").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "intersect_ray").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3957970750)!
         }
         }
@@ -65,7 +65,7 @@ open class PhysicsDirectSpaceState3D: Object {
 
     private static var __method_binding_intersect_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "intersect_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "intersect_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 550215980)!
         }
         }
@@ -95,7 +95,7 @@ open class PhysicsDirectSpaceState3D: Object {
 
     private static var __method_binding_cast_motion: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "cast_motion").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "cast_motion").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1778757334)!
         }
         }
@@ -123,7 +123,7 @@ open class PhysicsDirectSpaceState3D: Object {
 
     private static var __method_binding_collide_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "collide_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "collide_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 550215980)!
         }
         }
@@ -153,7 +153,7 @@ open class PhysicsDirectSpaceState3D: Object {
 
     private static var __method_binding_get_rest_info: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_rest_info").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_rest_info").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1376751592)!
         }
         }

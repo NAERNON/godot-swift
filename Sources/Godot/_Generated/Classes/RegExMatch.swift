@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class RegExMatch: RefCounted {
     private static var __method_binding_get_subject: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_subject").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_subject").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -29,7 +29,7 @@ open class RegExMatch: RefCounted {
 
     private static var __method_binding_get_group_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_group_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_group_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -51,7 +51,7 @@ open class RegExMatch: RefCounted {
 
     private static var __method_binding_get_names: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_names").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_names").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3102165223)!
         }
         }
@@ -73,7 +73,7 @@ open class RegExMatch: RefCounted {
 
     private static var __method_binding_get_strings: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_strings").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_strings").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -95,7 +95,7 @@ open class RegExMatch: RefCounted {
 
     private static var __method_binding_get_string: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_string").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_string").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 687115856)!
         }
         }
@@ -121,7 +121,7 @@ open class RegExMatch: RefCounted {
 
     private static var __method_binding_get_start: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_start").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_start").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 490464691)!
         }
         }
@@ -147,7 +147,7 @@ open class RegExMatch: RefCounted {
 
     private static var __method_binding_get_end: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_end").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_end").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 490464691)!
         }
         }

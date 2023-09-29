@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class PacketPeer: RefCounted {
     private static var __method_binding_get_var: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_var").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_var").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3442865206)!
         }
         }
@@ -33,7 +33,7 @@ open class PacketPeer: RefCounted {
 
     private static var __method_binding_put_var: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "put_var").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "put_var").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2436251611)!
         }
         }
@@ -61,7 +61,7 @@ open class PacketPeer: RefCounted {
 
     private static var __method_binding_get_packet: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_packet").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_packet").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2115431945)!
         }
         }
@@ -83,7 +83,7 @@ open class PacketPeer: RefCounted {
 
     private static var __method_binding_put_packet: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "put_packet").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "put_packet").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 680677267)!
         }
         }
@@ -109,7 +109,7 @@ open class PacketPeer: RefCounted {
 
     private static var __method_binding_get_packet_error: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_packet_error").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_packet_error").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3185525595)!
         }
         }
@@ -131,7 +131,7 @@ open class PacketPeer: RefCounted {
 
     private static var __method_binding_get_available_packet_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_available_packet_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_available_packet_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -153,7 +153,7 @@ open class PacketPeer: RefCounted {
 
     private static var __method_binding_get_encode_buffer_max_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_encode_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_encode_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -175,7 +175,7 @@ open class PacketPeer: RefCounted {
 
     private static var __method_binding_set_encode_buffer_max_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_encode_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_encode_buffer_max_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }

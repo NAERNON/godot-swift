@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class CodeHighlighter: SyntaxHighlighter {
     private static var __method_binding_add_keyword_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_keyword_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_keyword_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1636512886)!
         }
         }
@@ -31,7 +31,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_remove_keyword_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_keyword_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_keyword_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -53,7 +53,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_has_keyword_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_keyword_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_keyword_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -79,7 +79,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_get_keyword_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_keyword_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_keyword_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3855908743)!
         }
         }
@@ -105,7 +105,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_set_keyword_colors: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155329257)!
         }
         }
@@ -127,7 +127,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_clear_keyword_colors: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -145,7 +145,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_get_keyword_colors: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3102165223)!
         }
         }
@@ -167,7 +167,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_add_member_keyword_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_member_keyword_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_member_keyword_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1636512886)!
         }
         }
@@ -191,7 +191,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_remove_member_keyword_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_member_keyword_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_member_keyword_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -213,7 +213,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_has_member_keyword_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_member_keyword_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_member_keyword_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -239,7 +239,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_get_member_keyword_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_member_keyword_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_member_keyword_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3855908743)!
         }
         }
@@ -265,7 +265,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_set_member_keyword_colors: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_member_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_member_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155329257)!
         }
         }
@@ -287,7 +287,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_clear_member_keyword_colors: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_member_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_member_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -305,7 +305,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_get_member_keyword_colors: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_member_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_member_keyword_colors").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3102165223)!
         }
         }
@@ -327,7 +327,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_add_color_region: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_color_region").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_color_region").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2924977451)!
         }
         }
@@ -355,7 +355,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_remove_color_region: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_color_region").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_color_region").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -377,7 +377,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_has_color_region: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_color_region").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_color_region").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -403,7 +403,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_set_color_regions: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_color_regions").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_color_regions").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155329257)!
         }
         }
@@ -425,7 +425,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_clear_color_regions: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_color_regions").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_color_regions").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -443,7 +443,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_get_color_regions: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_color_regions").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_color_regions").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3102165223)!
         }
         }
@@ -465,7 +465,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_set_function_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_function_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_function_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -487,7 +487,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_get_function_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_function_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_function_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }
@@ -509,7 +509,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_set_number_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_number_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_number_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -531,7 +531,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_get_number_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_number_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_number_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }
@@ -553,7 +553,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_set_symbol_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_symbol_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_symbol_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -575,7 +575,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_get_symbol_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_symbol_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_symbol_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }
@@ -597,7 +597,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_set_member_variable_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_member_variable_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_member_variable_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -619,7 +619,7 @@ open class CodeHighlighter: SyntaxHighlighter {
 
     private static var __method_binding_get_member_variable_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_member_variable_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_member_variable_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }

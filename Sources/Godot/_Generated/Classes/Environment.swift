@@ -46,7 +46,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_background: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_background").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_background").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4071623990)!
         }
         }
@@ -68,7 +68,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_background: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_background").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_background").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1843210413)!
         }
         }
@@ -90,7 +90,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sky: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sky").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sky").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3336722921)!
         }
         }
@@ -114,7 +114,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sky: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sky").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sky").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1177136966)!
         }
         }
@@ -136,7 +136,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sky_custom_fov: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sky_custom_fov").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sky_custom_fov").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -158,7 +158,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sky_custom_fov: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sky_custom_fov").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sky_custom_fov").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -180,7 +180,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sky_rotation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sky_rotation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sky_rotation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -202,7 +202,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sky_rotation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sky_rotation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sky_rotation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -224,7 +224,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_bg_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bg_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bg_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -246,7 +246,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_bg_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bg_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bg_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }
@@ -268,7 +268,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_bg_energy_multiplier: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bg_energy_multiplier").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bg_energy_multiplier").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -290,7 +290,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_bg_energy_multiplier: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bg_energy_multiplier").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bg_energy_multiplier").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -312,7 +312,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_bg_intensity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bg_intensity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bg_intensity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -334,7 +334,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_bg_intensity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bg_intensity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bg_intensity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -356,7 +356,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_canvas_max_layer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_canvas_max_layer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_canvas_max_layer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -378,7 +378,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_canvas_max_layer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_canvas_max_layer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_canvas_max_layer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -400,7 +400,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_camera_feed_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_camera_feed_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_camera_feed_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -422,7 +422,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_camera_feed_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_camera_feed_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_camera_feed_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -444,7 +444,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ambient_light_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ambient_light_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ambient_light_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -466,7 +466,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ambient_light_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ambient_light_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ambient_light_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }
@@ -488,7 +488,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ambient_source: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ambient_source").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ambient_source").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2607780160)!
         }
         }
@@ -510,7 +510,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ambient_source: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ambient_source").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ambient_source").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 67453933)!
         }
         }
@@ -532,7 +532,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ambient_light_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ambient_light_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ambient_light_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -554,7 +554,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ambient_light_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ambient_light_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ambient_light_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -576,7 +576,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ambient_light_sky_contribution: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ambient_light_sky_contribution").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ambient_light_sky_contribution").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -598,7 +598,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ambient_light_sky_contribution: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ambient_light_sky_contribution").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ambient_light_sky_contribution").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -620,7 +620,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_reflection_source: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_reflection_source").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_reflection_source").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 299673197)!
         }
         }
@@ -642,7 +642,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_reflection_source: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_reflection_source").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_reflection_source").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 777700713)!
         }
         }
@@ -664,7 +664,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_tonemapper: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tonemapper").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tonemapper").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1509116664)!
         }
         }
@@ -686,7 +686,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_tonemapper: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tonemapper").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tonemapper").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2908408137)!
         }
         }
@@ -708,7 +708,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_tonemap_exposure: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tonemap_exposure").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tonemap_exposure").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -730,7 +730,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_tonemap_exposure: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tonemap_exposure").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tonemap_exposure").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -752,7 +752,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_tonemap_white: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tonemap_white").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tonemap_white").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -774,7 +774,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_tonemap_white: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tonemap_white").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tonemap_white").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -796,7 +796,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssr_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssr_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssr_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -818,7 +818,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_ssr_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_ssr_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_ssr_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -840,7 +840,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssr_max_steps: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssr_max_steps").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssr_max_steps").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -862,7 +862,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssr_max_steps: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssr_max_steps").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssr_max_steps").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -884,7 +884,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssr_fade_in: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssr_fade_in").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssr_fade_in").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -906,7 +906,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssr_fade_in: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssr_fade_in").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssr_fade_in").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -928,7 +928,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssr_fade_out: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssr_fade_out").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssr_fade_out").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -950,7 +950,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssr_fade_out: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssr_fade_out").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssr_fade_out").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -972,7 +972,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssr_depth_tolerance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssr_depth_tolerance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssr_depth_tolerance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -994,7 +994,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssr_depth_tolerance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssr_depth_tolerance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssr_depth_tolerance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1016,7 +1016,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssao_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssao_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssao_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1038,7 +1038,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_ssao_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_ssao_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_ssao_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1060,7 +1060,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssao_radius: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssao_radius").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssao_radius").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1082,7 +1082,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssao_radius: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssao_radius").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssao_radius").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1104,7 +1104,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssao_intensity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssao_intensity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssao_intensity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1126,7 +1126,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssao_intensity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssao_intensity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssao_intensity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1148,7 +1148,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssao_power: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssao_power").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssao_power").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1170,7 +1170,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssao_power: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssao_power").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssao_power").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1192,7 +1192,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssao_detail: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssao_detail").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssao_detail").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1214,7 +1214,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssao_detail: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssao_detail").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssao_detail").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1236,7 +1236,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssao_horizon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssao_horizon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssao_horizon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1258,7 +1258,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssao_horizon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssao_horizon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssao_horizon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1280,7 +1280,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssao_sharpness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssao_sharpness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssao_sharpness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1302,7 +1302,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssao_sharpness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssao_sharpness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssao_sharpness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1324,7 +1324,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssao_direct_light_affect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssao_direct_light_affect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssao_direct_light_affect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1346,7 +1346,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssao_direct_light_affect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssao_direct_light_affect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssao_direct_light_affect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1368,7 +1368,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssao_ao_channel_affect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssao_ao_channel_affect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssao_ao_channel_affect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1390,7 +1390,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssao_ao_channel_affect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssao_ao_channel_affect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssao_ao_channel_affect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1412,7 +1412,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssil_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssil_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssil_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1434,7 +1434,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_ssil_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_ssil_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_ssil_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1456,7 +1456,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssil_radius: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssil_radius").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssil_radius").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1478,7 +1478,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssil_radius: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssil_radius").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssil_radius").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1500,7 +1500,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssil_intensity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssil_intensity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssil_intensity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1522,7 +1522,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssil_intensity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssil_intensity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssil_intensity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1544,7 +1544,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssil_sharpness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssil_sharpness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssil_sharpness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1566,7 +1566,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssil_sharpness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssil_sharpness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssil_sharpness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1588,7 +1588,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_ssil_normal_rejection: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ssil_normal_rejection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ssil_normal_rejection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1610,7 +1610,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_ssil_normal_rejection: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ssil_normal_rejection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ssil_normal_rejection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1632,7 +1632,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1654,7 +1654,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_sdfgi_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_sdfgi_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_sdfgi_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1676,7 +1676,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_cascades: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_cascades").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_cascades").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -1698,7 +1698,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sdfgi_cascades: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sdfgi_cascades").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sdfgi_cascades").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -1720,7 +1720,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_min_cell_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_min_cell_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_min_cell_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1742,7 +1742,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sdfgi_min_cell_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sdfgi_min_cell_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sdfgi_min_cell_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1764,7 +1764,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_max_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_max_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_max_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1786,7 +1786,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sdfgi_max_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sdfgi_max_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sdfgi_max_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1808,7 +1808,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_cascade0_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_cascade0_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_cascade0_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1830,7 +1830,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sdfgi_cascade0_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sdfgi_cascade0_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sdfgi_cascade0_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1852,7 +1852,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_y_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_y_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_y_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3608608372)!
         }
         }
@@ -1874,7 +1874,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sdfgi_y_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sdfgi_y_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sdfgi_y_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2568002245)!
         }
         }
@@ -1896,7 +1896,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_use_occlusion: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_use_occlusion").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_use_occlusion").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1918,7 +1918,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_sdfgi_using_occlusion: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_sdfgi_using_occlusion").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_sdfgi_using_occlusion").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1940,7 +1940,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_bounce_feedback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_bounce_feedback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_bounce_feedback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1962,7 +1962,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sdfgi_bounce_feedback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sdfgi_bounce_feedback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sdfgi_bounce_feedback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1984,7 +1984,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_read_sky_light: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_read_sky_light").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_read_sky_light").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -2006,7 +2006,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_sdfgi_reading_sky_light: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_sdfgi_reading_sky_light").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_sdfgi_reading_sky_light").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -2028,7 +2028,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2050,7 +2050,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sdfgi_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sdfgi_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sdfgi_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2072,7 +2072,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_normal_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_normal_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_normal_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2094,7 +2094,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sdfgi_normal_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sdfgi_normal_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sdfgi_normal_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2116,7 +2116,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_sdfgi_probe_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sdfgi_probe_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sdfgi_probe_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2138,7 +2138,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_sdfgi_probe_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sdfgi_probe_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sdfgi_probe_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2160,7 +2160,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -2182,7 +2182,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_glow_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_glow_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_glow_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -2204,7 +2204,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_level: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_level").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_level").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -2228,7 +2228,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_glow_level: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glow_level").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glow_level").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -2254,7 +2254,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_normalized: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_normalized").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_normalized").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -2276,7 +2276,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_glow_normalized: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_glow_normalized").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_glow_normalized").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -2298,7 +2298,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_intensity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_intensity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_intensity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2320,7 +2320,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_glow_intensity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glow_intensity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glow_intensity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2342,7 +2342,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2364,7 +2364,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_glow_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glow_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glow_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2386,7 +2386,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_mix: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_mix").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_mix").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2408,7 +2408,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_glow_mix: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glow_mix").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glow_mix").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2430,7 +2430,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_bloom: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_bloom").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_bloom").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2452,7 +2452,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_glow_bloom: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glow_bloom").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glow_bloom").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2474,7 +2474,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_blend_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_blend_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_blend_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2561587761)!
         }
         }
@@ -2496,7 +2496,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_glow_blend_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glow_blend_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glow_blend_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1529667332)!
         }
         }
@@ -2518,7 +2518,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_hdr_bleed_threshold: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_hdr_bleed_threshold").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_hdr_bleed_threshold").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2540,7 +2540,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_glow_hdr_bleed_threshold: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glow_hdr_bleed_threshold").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glow_hdr_bleed_threshold").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2562,7 +2562,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_hdr_bleed_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_hdr_bleed_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_hdr_bleed_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2584,7 +2584,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_glow_hdr_bleed_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glow_hdr_bleed_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glow_hdr_bleed_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2606,7 +2606,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_hdr_luminance_cap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_hdr_luminance_cap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_hdr_luminance_cap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2628,7 +2628,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_glow_hdr_luminance_cap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glow_hdr_luminance_cap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glow_hdr_luminance_cap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2650,7 +2650,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_map_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_map_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_map_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2672,7 +2672,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_glow_map_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glow_map_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glow_map_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2694,7 +2694,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_glow_map: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glow_map").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glow_map").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1790811099)!
         }
         }
@@ -2718,7 +2718,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_glow_map: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glow_map").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glow_map").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4037048985)!
         }
         }
@@ -2740,7 +2740,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_fog_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fog_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fog_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -2762,7 +2762,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_fog_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_fog_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_fog_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -2784,7 +2784,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_fog_light_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fog_light_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fog_light_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -2806,7 +2806,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_fog_light_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fog_light_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fog_light_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }
@@ -2828,7 +2828,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_fog_light_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fog_light_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fog_light_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2850,7 +2850,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_fog_light_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fog_light_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fog_light_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2872,7 +2872,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_fog_sun_scatter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fog_sun_scatter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fog_sun_scatter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2894,7 +2894,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_fog_sun_scatter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fog_sun_scatter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fog_sun_scatter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2916,7 +2916,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_fog_density: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fog_density").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fog_density").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2938,7 +2938,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_fog_density: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fog_density").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fog_density").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -2960,7 +2960,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_fog_height: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fog_height").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fog_height").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -2982,7 +2982,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_fog_height: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fog_height").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fog_height").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3004,7 +3004,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_fog_height_density: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fog_height_density").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fog_height_density").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3026,7 +3026,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_fog_height_density: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fog_height_density").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fog_height_density").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3048,7 +3048,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_fog_aerial_perspective: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fog_aerial_perspective").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fog_aerial_perspective").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3070,7 +3070,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_fog_aerial_perspective: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fog_aerial_perspective").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fog_aerial_perspective").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3092,7 +3092,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_fog_sky_affect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fog_sky_affect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fog_sky_affect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3114,7 +3114,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_fog_sky_affect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fog_sky_affect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fog_sky_affect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3136,7 +3136,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -3158,7 +3158,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_volumetric_fog_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_volumetric_fog_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_volumetric_fog_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -3180,7 +3180,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_emission: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_emission").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_emission").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -3202,7 +3202,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_volumetric_fog_emission: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volumetric_fog_emission").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volumetric_fog_emission").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }
@@ -3224,7 +3224,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_albedo: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_albedo").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_albedo").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -3246,7 +3246,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_volumetric_fog_albedo: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volumetric_fog_albedo").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volumetric_fog_albedo").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }
@@ -3268,7 +3268,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_density: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_density").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_density").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3290,7 +3290,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_volumetric_fog_density: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volumetric_fog_density").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volumetric_fog_density").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3312,7 +3312,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_emission_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_emission_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_emission_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3334,7 +3334,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_volumetric_fog_emission_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volumetric_fog_emission_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volumetric_fog_emission_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3356,7 +3356,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_anisotropy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_anisotropy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_anisotropy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3378,7 +3378,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_volumetric_fog_anisotropy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volumetric_fog_anisotropy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volumetric_fog_anisotropy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3400,7 +3400,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3422,7 +3422,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_volumetric_fog_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volumetric_fog_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volumetric_fog_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3444,7 +3444,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_detail_spread: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_detail_spread").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_detail_spread").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3466,7 +3466,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_volumetric_fog_detail_spread: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volumetric_fog_detail_spread").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volumetric_fog_detail_spread").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3488,7 +3488,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_gi_inject: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_gi_inject").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_gi_inject").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3510,7 +3510,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_volumetric_fog_gi_inject: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volumetric_fog_gi_inject").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volumetric_fog_gi_inject").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3532,7 +3532,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_ambient_inject: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_ambient_inject").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_ambient_inject").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3554,7 +3554,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_volumetric_fog_ambient_inject: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volumetric_fog_ambient_inject").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volumetric_fog_ambient_inject").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3576,7 +3576,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_sky_affect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_sky_affect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_sky_affect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3598,7 +3598,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_volumetric_fog_sky_affect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volumetric_fog_sky_affect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volumetric_fog_sky_affect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3620,7 +3620,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_temporal_reprojection_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_temporal_reprojection_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_temporal_reprojection_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -3642,7 +3642,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_volumetric_fog_temporal_reprojection_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_volumetric_fog_temporal_reprojection_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_volumetric_fog_temporal_reprojection_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -3664,7 +3664,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_volumetric_fog_temporal_reprojection_amount: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_volumetric_fog_temporal_reprojection_amount").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_volumetric_fog_temporal_reprojection_amount").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3686,7 +3686,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_volumetric_fog_temporal_reprojection_amount: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_volumetric_fog_temporal_reprojection_amount").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_volumetric_fog_temporal_reprojection_amount").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3708,7 +3708,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_adjustment_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_adjustment_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_adjustment_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -3730,7 +3730,7 @@ open class Environment: Resource {
 
     private static var __method_binding_is_adjustment_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_adjustment_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_adjustment_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -3752,7 +3752,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_adjustment_brightness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_adjustment_brightness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_adjustment_brightness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3774,7 +3774,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_adjustment_brightness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_adjustment_brightness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_adjustment_brightness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3796,7 +3796,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_adjustment_contrast: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_adjustment_contrast").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_adjustment_contrast").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3818,7 +3818,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_adjustment_contrast: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_adjustment_contrast").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_adjustment_contrast").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3840,7 +3840,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_adjustment_saturation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_adjustment_saturation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_adjustment_saturation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3862,7 +3862,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_adjustment_saturation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_adjustment_saturation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_adjustment_saturation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -3884,7 +3884,7 @@ open class Environment: Resource {
 
     private static var __method_binding_set_adjustment_color_correction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_adjustment_color_correction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_adjustment_color_correction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1790811099)!
         }
         }
@@ -3908,7 +3908,7 @@ open class Environment: Resource {
 
     private static var __method_binding_get_adjustment_color_correction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_adjustment_color_correction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_adjustment_color_correction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4037048985)!
         }
         }

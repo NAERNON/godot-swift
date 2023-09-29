@@ -11,7 +11,7 @@ open class SceneTreeTimer: RefCounted {
 
     private static var __method_binding_set_time_left: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_time_left").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_time_left").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -33,7 +33,7 @@ open class SceneTreeTimer: RefCounted {
 
     private static var __method_binding_get_time_left: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_time_left").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_time_left").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

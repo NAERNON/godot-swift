@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ConcavePolygonShape2D: Shape2D {
     private static var __method_binding_set_segments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_segments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_segments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1509147220)!
         }
         }
@@ -29,7 +29,7 @@ open class ConcavePolygonShape2D: Shape2D {
 
     private static var __method_binding_get_segments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_segments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_segments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2961356807)!
         }
         }

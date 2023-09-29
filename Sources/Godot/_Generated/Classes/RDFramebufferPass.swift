@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class RDFramebufferPass: RefCounted {
     private static var __method_binding_set_color_attachments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_color_attachments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_color_attachments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614634198)!
         }
         }
@@ -29,7 +29,7 @@ open class RDFramebufferPass: RefCounted {
 
     private static var __method_binding_get_color_attachments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_color_attachments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_color_attachments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1930428628)!
         }
         }
@@ -51,7 +51,7 @@ open class RDFramebufferPass: RefCounted {
 
     private static var __method_binding_set_input_attachments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_input_attachments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_input_attachments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614634198)!
         }
         }
@@ -73,7 +73,7 @@ open class RDFramebufferPass: RefCounted {
 
     private static var __method_binding_get_input_attachments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_input_attachments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_attachments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1930428628)!
         }
         }
@@ -95,7 +95,7 @@ open class RDFramebufferPass: RefCounted {
 
     private static var __method_binding_set_resolve_attachments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_resolve_attachments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_resolve_attachments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614634198)!
         }
         }
@@ -117,7 +117,7 @@ open class RDFramebufferPass: RefCounted {
 
     private static var __method_binding_get_resolve_attachments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_resolve_attachments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_resolve_attachments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1930428628)!
         }
         }
@@ -139,7 +139,7 @@ open class RDFramebufferPass: RefCounted {
 
     private static var __method_binding_set_preserve_attachments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_preserve_attachments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_preserve_attachments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614634198)!
         }
         }
@@ -161,7 +161,7 @@ open class RDFramebufferPass: RefCounted {
 
     private static var __method_binding_get_preserve_attachments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_preserve_attachments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_preserve_attachments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1930428628)!
         }
         }
@@ -183,7 +183,7 @@ open class RDFramebufferPass: RefCounted {
 
     private static var __method_binding_set_depth_attachment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_depth_attachment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_depth_attachment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -205,7 +205,7 @@ open class RDFramebufferPass: RefCounted {
 
     private static var __method_binding_get_depth_attachment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_depth_attachment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_depth_attachment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

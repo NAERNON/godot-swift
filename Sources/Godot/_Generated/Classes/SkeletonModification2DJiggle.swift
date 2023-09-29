@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class SkeletonModification2DJiggle: SkeletonModification2D {
     private static var __method_binding_set_target_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_target_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_target_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -29,7 +29,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_target_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_target_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_target_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -51,7 +51,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_jiggle_data_chain_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_jiggle_data_chain_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_jiggle_data_chain_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -73,7 +73,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_jiggle_data_chain_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_jiggle_data_chain_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_jiggle_data_chain_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -95,7 +95,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_stiffness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_stiffness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_stiffness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -117,7 +117,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_stiffness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_stiffness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_stiffness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -139,7 +139,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_mass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_mass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_mass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -161,7 +161,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_mass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_mass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_mass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -183,7 +183,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_damping: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_damping").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_damping").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -205,7 +205,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_damping: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_damping").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_damping").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -227,7 +227,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_use_gravity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_use_gravity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_use_gravity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -249,7 +249,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_use_gravity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_use_gravity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_use_gravity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -271,7 +271,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_gravity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gravity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gravity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -293,7 +293,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_gravity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gravity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gravity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -315,7 +315,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_use_colliders: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_use_colliders").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_use_colliders").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -337,7 +337,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_use_colliders: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_use_colliders").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_use_colliders").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -359,7 +359,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_collision_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_collision_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -381,7 +381,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -403,7 +403,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_jiggle_joint_bone2d_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_jiggle_joint_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_jiggle_joint_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2761262315)!
         }
         }
@@ -427,7 +427,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_jiggle_joint_bone2d_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_jiggle_joint_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_jiggle_joint_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 408788394)!
         }
         }
@@ -453,7 +453,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_jiggle_joint_bone_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_jiggle_joint_bone_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_jiggle_joint_bone_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -477,7 +477,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_jiggle_joint_bone_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_jiggle_joint_bone_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_jiggle_joint_bone_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -503,7 +503,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_jiggle_joint_override: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_jiggle_joint_override").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_jiggle_joint_override").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -527,7 +527,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_jiggle_joint_override: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_jiggle_joint_override").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_jiggle_joint_override").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -553,7 +553,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_jiggle_joint_stiffness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_jiggle_joint_stiffness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_jiggle_joint_stiffness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -577,7 +577,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_jiggle_joint_stiffness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_jiggle_joint_stiffness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_jiggle_joint_stiffness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -603,7 +603,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_jiggle_joint_mass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_jiggle_joint_mass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_jiggle_joint_mass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -627,7 +627,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_jiggle_joint_mass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_jiggle_joint_mass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_jiggle_joint_mass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -653,7 +653,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_jiggle_joint_damping: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_jiggle_joint_damping").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_jiggle_joint_damping").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -677,7 +677,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_jiggle_joint_damping: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_jiggle_joint_damping").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_jiggle_joint_damping").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -703,7 +703,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_jiggle_joint_use_gravity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_jiggle_joint_use_gravity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_jiggle_joint_use_gravity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -727,7 +727,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_jiggle_joint_use_gravity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_jiggle_joint_use_gravity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_jiggle_joint_use_gravity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -753,7 +753,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_set_jiggle_joint_gravity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_jiggle_joint_gravity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_jiggle_joint_gravity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 163021252)!
         }
         }
@@ -777,7 +777,7 @@ open class SkeletonModification2DJiggle: SkeletonModification2D {
 
     private static var __method_binding_get_jiggle_joint_gravity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_jiggle_joint_gravity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_jiggle_joint_gravity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2299179447)!
         }
         }

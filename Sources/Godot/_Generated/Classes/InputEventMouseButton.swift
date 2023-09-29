@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class InputEventMouseButton: InputEventMouse {
     private static var __method_binding_set_factor: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_factor").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_factor").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -29,7 +29,7 @@ open class InputEventMouseButton: InputEventMouse {
 
     private static var __method_binding_get_factor: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_factor").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_factor").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -51,7 +51,7 @@ open class InputEventMouseButton: InputEventMouse {
 
     private static var __method_binding_set_button_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_button_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_button_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3624991109)!
         }
         }
@@ -73,7 +73,7 @@ open class InputEventMouseButton: InputEventMouse {
 
     private static var __method_binding_get_button_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_button_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_button_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1132662608)!
         }
         }
@@ -95,7 +95,7 @@ open class InputEventMouseButton: InputEventMouse {
 
     private static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -117,7 +117,7 @@ open class InputEventMouseButton: InputEventMouse {
 
     private static var __method_binding_set_canceled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_canceled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_canceled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -139,7 +139,7 @@ open class InputEventMouseButton: InputEventMouse {
 
     private static var __method_binding_set_double_click: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_double_click").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_double_click").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -161,7 +161,7 @@ open class InputEventMouseButton: InputEventMouse {
 
     private static var __method_binding_is_double_click: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_double_click").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_double_click").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

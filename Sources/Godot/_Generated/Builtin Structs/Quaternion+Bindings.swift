@@ -427,7 +427,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_length: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 466405837)!
         }
     }()
@@ -443,7 +443,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_length_squared: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "length_squared").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "length_squared").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 466405837)!
         }
     }()
@@ -459,7 +459,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_normalized: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "normalized").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "normalized").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 4274879941)!
         }
     }()
@@ -475,7 +475,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_is_normalized: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_normalized").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_normalized").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 3918633141)!
         }
     }()
@@ -491,7 +491,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 1682156903)!
         }
     }()
@@ -511,7 +511,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_is_finite: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 3918633141)!
         }
     }()
@@ -527,7 +527,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_inverse: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "inverse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "inverse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 4274879941)!
         }
     }()
@@ -543,7 +543,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_log: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "log").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "log").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 4274879941)!
         }
     }()
@@ -559,7 +559,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_exp: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "exp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "exp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 4274879941)!
         }
     }()
@@ -575,7 +575,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_angle_to: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "angle_to").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "angle_to").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 3244682419)!
         }
     }()
@@ -595,7 +595,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_dot: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "dot").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "dot").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 3244682419)!
         }
     }()
@@ -615,7 +615,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_slerp: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "slerp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "slerp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 1773590316)!
         }
     }()
@@ -637,7 +637,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_slerpni: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "slerpni").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "slerpni").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 1773590316)!
         }
     }()
@@ -659,7 +659,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_spherical_cubic_interpolate: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "spherical_cubic_interpolate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "spherical_cubic_interpolate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 2150967576)!
         }
     }()
@@ -685,7 +685,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_spherical_cubic_interpolate_in_time: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "spherical_cubic_interpolate_in_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "spherical_cubic_interpolate_in_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 1436023539)!
         }
     }()
@@ -717,7 +717,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_get_euler: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_euler").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_euler").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 1394941017)!
         }
     }()
@@ -737,7 +737,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_from_euler: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "from_euler").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "from_euler").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 4053467903)!
         }
     }()
@@ -754,7 +754,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_get_axis: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_axis").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_axis").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 1776574132)!
         }
     }()
@@ -770,7 +770,7 @@ extension Quaternion {
     }
 
     private static var __method_binding_get_angle: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_angle").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_angle").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_QUATERNION, __ptr__method_name, 466405837)!
         }
     }()

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class CameraTexture: Texture2D {
     private static var __method_binding_set_camera_feed_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_camera_feed_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_camera_feed_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -29,7 +29,7 @@ open class CameraTexture: Texture2D {
 
     private static var __method_binding_get_camera_feed_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_camera_feed_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_camera_feed_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -51,7 +51,7 @@ open class CameraTexture: Texture2D {
 
     private static var __method_binding_set_which_feed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_which_feed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_which_feed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1595299230)!
         }
         }
@@ -73,7 +73,7 @@ open class CameraTexture: Texture2D {
 
     private static var __method_binding_get_which_feed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_which_feed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_which_feed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 91039457)!
         }
         }
@@ -95,7 +95,7 @@ open class CameraTexture: Texture2D {
 
     private static var __method_binding_set_camera_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_camera_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_camera_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -117,7 +117,7 @@ open class CameraTexture: Texture2D {
 
     private static var __method_binding_get_camera_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_camera_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_camera_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

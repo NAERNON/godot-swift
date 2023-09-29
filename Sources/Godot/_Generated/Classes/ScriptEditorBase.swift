@@ -43,7 +43,7 @@ open class ScriptEditorBase: VBoxContainer {
 
     private static var __method_binding_get_base_editor: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_base_editor").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_base_editor").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2783021301)!
         }
         }
@@ -65,7 +65,7 @@ open class ScriptEditorBase: VBoxContainer {
 
     private static var __method_binding_add_syntax_highlighter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_syntax_highlighter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_syntax_highlighter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1092774468)!
         }
         }

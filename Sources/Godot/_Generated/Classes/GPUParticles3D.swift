@@ -27,7 +27,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_emitting: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_emitting").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_emitting").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -49,7 +49,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_amount: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_amount").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_amount").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -71,7 +71,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_lifetime: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_lifetime").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_lifetime").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -93,7 +93,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_one_shot: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_one_shot").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_one_shot").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -115,7 +115,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_pre_process_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pre_process_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pre_process_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -137,7 +137,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_explosiveness_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_explosiveness_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_explosiveness_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -159,7 +159,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_randomness_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_randomness_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_randomness_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -181,7 +181,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_visibility_aabb: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_visibility_aabb").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_visibility_aabb").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 259215842)!
         }
         }
@@ -203,7 +203,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_use_local_coordinates: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_use_local_coordinates").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_use_local_coordinates").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -225,7 +225,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_fixed_fps: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fixed_fps").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fixed_fps").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -247,7 +247,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_fractional_delta: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fractional_delta").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fractional_delta").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -269,7 +269,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_interpolate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_interpolate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_interpolate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -291,7 +291,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_process_material: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_process_material").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_process_material").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2757459619)!
         }
         }
@@ -315,7 +315,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_speed_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_speed_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_speed_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -337,7 +337,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_collision_base_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_collision_base_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_collision_base_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -359,7 +359,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_is_emitting: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_emitting").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_emitting").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -381,7 +381,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_amount: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_amount").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_amount").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -403,7 +403,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_lifetime: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_lifetime").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_lifetime").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -425,7 +425,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_one_shot: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_one_shot").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_one_shot").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -447,7 +447,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_pre_process_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pre_process_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pre_process_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -469,7 +469,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_explosiveness_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_explosiveness_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_explosiveness_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -491,7 +491,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_randomness_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_randomness_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_randomness_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -513,7 +513,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_visibility_aabb: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_visibility_aabb").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_visibility_aabb").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1068685055)!
         }
         }
@@ -535,7 +535,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_use_local_coordinates: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_use_local_coordinates").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_use_local_coordinates").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -557,7 +557,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_fixed_fps: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fixed_fps").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fixed_fps").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -579,7 +579,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_fractional_delta: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fractional_delta").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fractional_delta").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -601,7 +601,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_interpolate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_interpolate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_interpolate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -623,7 +623,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_process_material: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_process_material").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_process_material").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 5934680)!
         }
         }
@@ -645,7 +645,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_speed_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_speed_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_speed_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -667,7 +667,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_collision_base_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_base_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_base_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -689,7 +689,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_draw_order: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_draw_order").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_draw_order").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1208074815)!
         }
         }
@@ -711,7 +711,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_draw_order: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_draw_order").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_draw_order").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3770381780)!
         }
         }
@@ -733,7 +733,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_draw_passes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_draw_passes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_draw_passes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -755,7 +755,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_draw_pass_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_draw_pass_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_draw_pass_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 969122797)!
         }
         }
@@ -781,7 +781,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_draw_passes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_draw_passes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_draw_passes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -803,7 +803,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_draw_pass_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_draw_pass_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_draw_pass_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1576363275)!
         }
         }
@@ -829,7 +829,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_skin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_skin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_skin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3971435618)!
         }
         }
@@ -853,7 +853,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_skin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2074563878)!
         }
         }
@@ -875,7 +875,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_restart: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "restart").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "restart").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -893,7 +893,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_capture_aabb: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "capture_aabb").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "capture_aabb").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1068685055)!
         }
         }
@@ -915,7 +915,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_sub_emitter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sub_emitter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sub_emitter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -937,7 +937,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_sub_emitter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sub_emitter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sub_emitter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -959,7 +959,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_emit_particle: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "emit_particle").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "emit_particle").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 992173727)!
         }
         }
@@ -989,7 +989,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_trail_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_trail_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_trail_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1011,7 +1011,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_trail_lifetime: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_trail_lifetime").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_trail_lifetime").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1033,7 +1033,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_is_trail_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_trail_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_trail_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1055,7 +1055,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_trail_lifetime: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_trail_lifetime").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_trail_lifetime").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1077,7 +1077,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_set_transform_align: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_transform_align").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_transform_align").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3892425954)!
         }
         }
@@ -1099,7 +1099,7 @@ open class GPUParticles3D: GeometryInstance3D {
 
     private static var __method_binding_get_transform_align: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_transform_align").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_transform_align").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2100992166)!
         }
         }

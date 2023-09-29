@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ImporterMeshInstance3D: Node3D {
     private static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2255166972)!
         }
         }
@@ -31,7 +31,7 @@ open class ImporterMeshInstance3D: Node3D {
 
     private static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_mesh").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_mesh").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3161779525)!
         }
         }
@@ -53,7 +53,7 @@ open class ImporterMeshInstance3D: Node3D {
 
     private static var __method_binding_set_skin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_skin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_skin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3971435618)!
         }
         }
@@ -77,7 +77,7 @@ open class ImporterMeshInstance3D: Node3D {
 
     private static var __method_binding_get_skin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2074563878)!
         }
         }
@@ -99,7 +99,7 @@ open class ImporterMeshInstance3D: Node3D {
 
     private static var __method_binding_set_skeleton_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_skeleton_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_skeleton_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -121,7 +121,7 @@ open class ImporterMeshInstance3D: Node3D {
 
     private static var __method_binding_get_skeleton_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skeleton_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skeleton_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }

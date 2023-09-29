@@ -13,7 +13,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_add_stream: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_stream").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_stream").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3197802065)!
         }
         }
@@ -41,7 +41,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_move_stream: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "move_stream").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "move_stream").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -65,7 +65,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_remove_stream: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_stream").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_stream").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -87,7 +87,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_set_stream: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_stream").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_stream").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 111075094)!
         }
         }
@@ -113,7 +113,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_get_stream: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_stream").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_stream").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2739380747)!
         }
         }
@@ -139,7 +139,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_set_stream_probability_weight: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_stream_probability_weight").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_stream_probability_weight").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -163,7 +163,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_get_stream_probability_weight: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_stream_probability_weight").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_stream_probability_weight").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -189,7 +189,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_set_streams_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_streams_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_streams_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -211,7 +211,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_get_streams_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_streams_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_streams_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -233,7 +233,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_set_random_pitch: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_random_pitch").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_random_pitch").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -255,7 +255,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_get_random_pitch: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_random_pitch").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_random_pitch").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -277,7 +277,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_set_random_volume_offset_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_random_volume_offset_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_random_volume_offset_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -299,7 +299,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_get_random_volume_offset_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_random_volume_offset_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_random_volume_offset_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -321,7 +321,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_set_playback_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_playback_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_playback_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3950967023)!
         }
         }
@@ -343,7 +343,7 @@ open class AudioStreamRandomizer: AudioStream {
 
     private static var __method_binding_get_playback_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_playback_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_playback_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3943055077)!
         }
         }

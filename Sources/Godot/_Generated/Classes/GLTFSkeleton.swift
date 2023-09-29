@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class GLTFSkeleton: Resource {
     private static var __method_binding_get_joints: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_joints").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_joints").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 969006518)!
         }
         }
@@ -29,7 +29,7 @@ open class GLTFSkeleton: Resource {
 
     private static var __method_binding_set_joints: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_joints").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_joints").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614634198)!
         }
         }
@@ -51,7 +51,7 @@ open class GLTFSkeleton: Resource {
 
     private static var __method_binding_get_roots: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_roots").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_roots").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 969006518)!
         }
         }
@@ -73,7 +73,7 @@ open class GLTFSkeleton: Resource {
 
     private static var __method_binding_set_roots: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_roots").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_roots").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614634198)!
         }
         }
@@ -95,7 +95,7 @@ open class GLTFSkeleton: Resource {
 
     private static var __method_binding_get_godot_skeleton: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_godot_skeleton").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_godot_skeleton").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1814733083)!
         }
         }
@@ -117,7 +117,7 @@ open class GLTFSkeleton: Resource {
 
     private static var __method_binding_get_unique_names: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_unique_names").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_unique_names").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -139,7 +139,7 @@ open class GLTFSkeleton: Resource {
 
     private static var __method_binding_set_unique_names: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_unique_names").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_unique_names").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -161,7 +161,7 @@ open class GLTFSkeleton: Resource {
 
     private static var __method_binding_get_godot_bone_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_godot_bone_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_godot_bone_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2382534195)!
         }
         }
@@ -183,7 +183,7 @@ open class GLTFSkeleton: Resource {
 
     private static var __method_binding_set_godot_bone_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_godot_bone_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_godot_bone_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155329257)!
         }
         }
@@ -205,7 +205,7 @@ open class GLTFSkeleton: Resource {
 
     private static var __method_binding_get_bone_attachment_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bone_attachment_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bone_attachment_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -227,7 +227,7 @@ open class GLTFSkeleton: Resource {
 
     private static var __method_binding_get_bone_attachment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bone_attachment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bone_attachment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 945440495)!
         }
         }

@@ -19,7 +19,7 @@ open class EditorFeatureProfile: RefCounted {
 
     private static var __method_binding_set_disable_class: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_disable_class").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_disable_class").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2524380260)!
         }
         }
@@ -43,7 +43,7 @@ open class EditorFeatureProfile: RefCounted {
 
     private static var __method_binding_is_class_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_class_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_class_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -69,7 +69,7 @@ open class EditorFeatureProfile: RefCounted {
 
     private static var __method_binding_set_disable_class_editor: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_disable_class_editor").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_disable_class_editor").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2524380260)!
         }
         }
@@ -93,7 +93,7 @@ open class EditorFeatureProfile: RefCounted {
 
     private static var __method_binding_is_class_editor_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_class_editor_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_class_editor_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -119,7 +119,7 @@ open class EditorFeatureProfile: RefCounted {
 
     private static var __method_binding_set_disable_class_property: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_disable_class_property").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_disable_class_property").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 865197084)!
         }
         }
@@ -145,7 +145,7 @@ open class EditorFeatureProfile: RefCounted {
 
     private static var __method_binding_is_class_property_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_class_property_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_class_property_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
@@ -173,7 +173,7 @@ open class EditorFeatureProfile: RefCounted {
 
     private static var __method_binding_set_disable_feature: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_disable_feature").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_disable_feature").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1884871044)!
         }
         }
@@ -197,7 +197,7 @@ open class EditorFeatureProfile: RefCounted {
 
     private static var __method_binding_is_feature_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_feature_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_feature_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2974403161)!
         }
         }
@@ -223,7 +223,7 @@ open class EditorFeatureProfile: RefCounted {
 
     private static var __method_binding_get_feature_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_feature_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_feature_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3401335809)!
         }
         }
@@ -249,7 +249,7 @@ open class EditorFeatureProfile: RefCounted {
 
     private static var __method_binding_save_to_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save_to_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save_to_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -275,7 +275,7 @@ open class EditorFeatureProfile: RefCounted {
 
     private static var __method_binding_load_from_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load_from_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load_from_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }

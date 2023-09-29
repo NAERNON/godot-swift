@@ -18,7 +18,7 @@ open class Range: Control {
 
     private static var __method_binding_get_value: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_value").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_value").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -40,7 +40,7 @@ open class Range: Control {
 
     private static var __method_binding_get_min: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_min").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_min").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -62,7 +62,7 @@ open class Range: Control {
 
     private static var __method_binding_get_max: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_max").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_max").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -84,7 +84,7 @@ open class Range: Control {
 
     private static var __method_binding_get_step: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_step").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_step").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -106,7 +106,7 @@ open class Range: Control {
 
     private static var __method_binding_get_page: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_page").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_page").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -128,7 +128,7 @@ open class Range: Control {
 
     private static var __method_binding_get_as_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_as_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_as_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -150,7 +150,7 @@ open class Range: Control {
 
     private static var __method_binding_set_value: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_value").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_value").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -172,7 +172,7 @@ open class Range: Control {
 
     private static var __method_binding_set_value_no_signal: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_value_no_signal").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_value_no_signal").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -194,7 +194,7 @@ open class Range: Control {
 
     private static var __method_binding_set_min: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_min").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_min").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -216,7 +216,7 @@ open class Range: Control {
 
     private static var __method_binding_set_max: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_max").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_max").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -238,7 +238,7 @@ open class Range: Control {
 
     private static var __method_binding_set_step: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_step").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_step").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -260,7 +260,7 @@ open class Range: Control {
 
     private static var __method_binding_set_page: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_page").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_page").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -282,7 +282,7 @@ open class Range: Control {
 
     private static var __method_binding_set_as_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_as_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_as_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -304,7 +304,7 @@ open class Range: Control {
 
     private static var __method_binding_set_use_rounded_values: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_use_rounded_values").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_use_rounded_values").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -326,7 +326,7 @@ open class Range: Control {
 
     private static var __method_binding_is_using_rounded_values: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_using_rounded_values").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_using_rounded_values").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -348,7 +348,7 @@ open class Range: Control {
 
     private static var __method_binding_set_exp_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_exp_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_exp_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -370,7 +370,7 @@ open class Range: Control {
 
     private static var __method_binding_is_ratio_exp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_ratio_exp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_ratio_exp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -392,7 +392,7 @@ open class Range: Control {
 
     private static var __method_binding_set_allow_greater: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_allow_greater").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_allow_greater").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -414,7 +414,7 @@ open class Range: Control {
 
     private static var __method_binding_is_greater_allowed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_greater_allowed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_greater_allowed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -436,7 +436,7 @@ open class Range: Control {
 
     private static var __method_binding_set_allow_lesser: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_allow_lesser").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_allow_lesser").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -458,7 +458,7 @@ open class Range: Control {
 
     private static var __method_binding_is_lesser_allowed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_lesser_allowed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_lesser_allowed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -480,7 +480,7 @@ open class Range: Control {
 
     private static var __method_binding_share: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "share").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "share").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1078189570)!
         }
         }
@@ -504,7 +504,7 @@ open class Range: Control {
 
     private static var __method_binding_unshare: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "unshare").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "unshare").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }

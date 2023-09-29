@@ -29,7 +29,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_set_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -51,7 +51,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_is_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -73,7 +73,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_set_tree_root: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tree_root").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tree_root").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 712869711)!
         }
         }
@@ -97,7 +97,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_tree_root: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tree_root").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tree_root").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1462070895)!
         }
         }
@@ -119,7 +119,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_set_process_callback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_process_callback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_process_callback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1723352826)!
         }
         }
@@ -141,7 +141,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_process_callback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_process_callback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_process_callback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 891317132)!
         }
         }
@@ -163,7 +163,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_set_animation_player: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_animation_player").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_animation_player").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -185,7 +185,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_animation_player: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_animation_player").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_animation_player").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -207,7 +207,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_set_advance_expression_base_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_advance_expression_base_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_advance_expression_base_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -229,7 +229,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_advance_expression_base_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_advance_expression_base_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_advance_expression_base_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -251,7 +251,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_set_root_motion_track: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_root_motion_track").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_root_motion_track").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -273,7 +273,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_root_motion_track: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_root_motion_track").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_root_motion_track").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -295,7 +295,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_set_audio_max_polyphony: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_audio_max_polyphony").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_audio_max_polyphony").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -317,7 +317,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_audio_max_polyphony: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_audio_max_polyphony").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_audio_max_polyphony").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -339,7 +339,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_root_motion_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_root_motion_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_root_motion_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -361,7 +361,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_root_motion_rotation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_root_motion_rotation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_root_motion_rotation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1222331677)!
         }
         }
@@ -383,7 +383,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_root_motion_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_root_motion_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_root_motion_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -405,7 +405,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_root_motion_position_accumulator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_root_motion_position_accumulator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_root_motion_position_accumulator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -427,7 +427,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_root_motion_rotation_accumulator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_root_motion_rotation_accumulator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_root_motion_rotation_accumulator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1222331677)!
         }
         }
@@ -449,7 +449,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_get_root_motion_scale_accumulator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_root_motion_scale_accumulator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_root_motion_scale_accumulator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -471,7 +471,7 @@ open class AnimationTree: Node {
 
     private static var __method_binding_advance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "advance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "advance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }

@@ -13,7 +13,7 @@ open class Thread: RefCounted {
 
     private static var __method_binding_start: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "start").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "start").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2779832528)!
         }
         }
@@ -41,7 +41,7 @@ open class Thread: RefCounted {
 
     private static var __method_binding_get_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -63,7 +63,7 @@ open class Thread: RefCounted {
 
     private static var __method_binding_is_started: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_started").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_started").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -85,7 +85,7 @@ open class Thread: RefCounted {
 
     private static var __method_binding_is_alive: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_alive").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_alive").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -107,7 +107,7 @@ open class Thread: RefCounted {
 
     private static var __method_binding_wait_to_finish: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "wait_to_finish").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "wait_to_finish").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1460262497)!
         }
         }
@@ -129,7 +129,7 @@ open class Thread: RefCounted {
 
     private static var __method_binding_set_thread_safety_checks_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_thread_safety_checks_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_thread_safety_checks_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }

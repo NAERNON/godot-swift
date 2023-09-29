@@ -13,7 +13,7 @@ open class BoxContainer: Container {
 
     private static var __method_binding_add_spacer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_spacer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_spacer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1326660695)!
         }
         }
@@ -39,7 +39,7 @@ open class BoxContainer: Container {
 
     private static var __method_binding_set_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2456745134)!
         }
         }
@@ -61,7 +61,7 @@ open class BoxContainer: Container {
 
     private static var __method_binding_get_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1915476527)!
         }
         }
@@ -83,7 +83,7 @@ open class BoxContainer: Container {
 
     private static var __method_binding_set_vertical: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertical").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertical").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -105,7 +105,7 @@ open class BoxContainer: Container {
 
     private static var __method_binding_is_vertical: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_vertical").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_vertical").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

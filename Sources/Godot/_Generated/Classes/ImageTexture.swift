@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ImageTexture: Texture2D {
     private static var __method_binding_create_from_image: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_from_image").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_from_image").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2775144163)!
         }
         }
@@ -33,7 +33,7 @@ open class ImageTexture: Texture2D {
 
     private static var __method_binding_get_format: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_format").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_format").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3847873762)!
         }
         }
@@ -55,7 +55,7 @@ open class ImageTexture: Texture2D {
 
     private static var __method_binding_set_image: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_image").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_image").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 532598488)!
         }
         }
@@ -79,7 +79,7 @@ open class ImageTexture: Texture2D {
 
     private static var __method_binding_update: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "update").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "update").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 532598488)!
         }
         }
@@ -103,7 +103,7 @@ open class ImageTexture: Texture2D {
 
     private static var __method_binding_set_size_override: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_size_override").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_size_override").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }

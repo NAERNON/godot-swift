@@ -20,7 +20,7 @@ open class IP: Object {
 
     private static var __method_binding_resolve_hostname: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "resolve_hostname").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "resolve_hostname").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 396864159)!
         }
         }
@@ -48,7 +48,7 @@ open class IP: Object {
 
     private static var __method_binding_resolve_hostname_addresses: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "resolve_hostname_addresses").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "resolve_hostname_addresses").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3462780090)!
         }
         }
@@ -76,7 +76,7 @@ open class IP: Object {
 
     private static var __method_binding_resolve_hostname_queue_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "resolve_hostname_queue_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "resolve_hostname_queue_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3936392508)!
         }
         }
@@ -104,7 +104,7 @@ open class IP: Object {
 
     private static var __method_binding_get_resolve_item_status: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_resolve_item_status").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_resolve_item_status").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3812250196)!
         }
         }
@@ -130,7 +130,7 @@ open class IP: Object {
 
     private static var __method_binding_get_resolve_item_address: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_resolve_item_address").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_resolve_item_address").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -156,7 +156,7 @@ open class IP: Object {
 
     private static var __method_binding_get_resolve_item_addresses: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_resolve_item_addresses").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_resolve_item_addresses").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 663333327)!
         }
         }
@@ -182,7 +182,7 @@ open class IP: Object {
 
     private static var __method_binding_erase_resolve_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "erase_resolve_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "erase_resolve_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -204,7 +204,7 @@ open class IP: Object {
 
     private static var __method_binding_get_local_addresses: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_local_addresses").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_local_addresses").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -226,7 +226,7 @@ open class IP: Object {
 
     private static var __method_binding_get_local_interfaces: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_local_interfaces").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_local_interfaces").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
@@ -248,7 +248,7 @@ open class IP: Object {
 
     private static var __method_binding_clear_cache: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_cache").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_cache").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3005725572)!
         }
         }

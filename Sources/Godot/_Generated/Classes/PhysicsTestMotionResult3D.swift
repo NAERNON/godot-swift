@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class PhysicsTestMotionResult3D: RefCounted {
     private static var __method_binding_get_travel: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_travel").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_travel").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -29,7 +29,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_remainder: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_remainder").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_remainder").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -51,7 +51,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collision_safe_fraction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_safe_fraction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_safe_fraction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -73,7 +73,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collision_unsafe_fraction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_unsafe_fraction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_unsafe_fraction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -95,7 +95,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collision_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -117,7 +117,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collision_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1914908202)!
         }
         }
@@ -143,7 +143,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collision_normal: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_normal").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_normal").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1914908202)!
         }
         }
@@ -169,7 +169,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collider_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collider_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collider_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1914908202)!
         }
         }
@@ -195,7 +195,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collider_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collider_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collider_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1591665591)!
         }
         }
@@ -221,7 +221,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collider_rid: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collider_rid").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collider_rid").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1231817359)!
         }
         }
@@ -247,7 +247,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collider: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collider").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collider").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2639523548)!
         }
         }
@@ -273,7 +273,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collider_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collider_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collider_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1591665591)!
         }
         }
@@ -299,7 +299,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collision_local_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_local_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_local_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1591665591)!
         }
         }
@@ -325,7 +325,7 @@ open class PhysicsTestMotionResult3D: RefCounted {
 
     private static var __method_binding_get_collision_depth: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_depth").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_depth").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 218038398)!
         }
         }

@@ -245,7 +245,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_get_center: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_center").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_center").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 2428350749)!
         }
     }()
@@ -261,7 +261,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_get_area: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_area").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_area").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 466405837)!
         }
     }()
@@ -277,7 +277,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_has_area: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "has_area").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_area").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 3918633141)!
         }
     }()
@@ -293,7 +293,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_has_point: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "has_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 3190634762)!
         }
     }()
@@ -313,7 +313,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 1908192260)!
         }
     }()
@@ -333,7 +333,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_is_finite: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 3918633141)!
         }
     }()
@@ -349,7 +349,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_intersects: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "intersects").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "intersects").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 819294880)!
         }
     }()
@@ -371,7 +371,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_encloses: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encloses").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encloses").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 1908192260)!
         }
     }()
@@ -391,7 +391,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_intersection: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "intersection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "intersection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 2282977743)!
         }
     }()
@@ -411,7 +411,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_merge: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "merge").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "merge").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 2282977743)!
         }
     }()
@@ -431,7 +431,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_expand: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "expand").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "expand").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 293272265)!
         }
     }()
@@ -451,7 +451,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_grow: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "grow").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "grow").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 39664498)!
         }
     }()
@@ -471,7 +471,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_grow_side: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "grow_side").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "grow_side").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 4177736158)!
         }
     }()
@@ -493,7 +493,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_grow_individual: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "grow_individual").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "grow_individual").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 3203390369)!
         }
     }()
@@ -519,7 +519,7 @@ extension Rect2 {
     }
 
     private static var __method_binding_abs: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "abs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "abs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2, __ptr__method_name, 3107653634)!
         }
     }()

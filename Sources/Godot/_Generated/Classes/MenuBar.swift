@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class MenuBar: Control {
     private static var __method_binding_set_switch_on_hover: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_switch_on_hover").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_switch_on_hover").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -29,7 +29,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_is_switch_on_hover: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_switch_on_hover").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_switch_on_hover").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -51,7 +51,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_set_disable_shortcuts: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_disable_shortcuts").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_disable_shortcuts").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -73,7 +73,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_set_prefer_global_menu: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_prefer_global_menu").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_prefer_global_menu").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -95,7 +95,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_is_prefer_global_menu: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_prefer_global_menu").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_prefer_global_menu").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -117,7 +117,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_is_native_menu: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_native_menu").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_native_menu").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -139,7 +139,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_get_menu_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_menu_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_menu_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -161,7 +161,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_text_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_text_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 119160795)!
         }
         }
@@ -183,7 +183,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_text_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_text_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 797257663)!
         }
         }
@@ -205,7 +205,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_set_language: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_language").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_language").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -227,7 +227,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_get_language: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_language").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_language").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -249,7 +249,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_set_flat: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_flat").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_flat").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -271,7 +271,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_is_flat: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_flat").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_flat").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -293,7 +293,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_set_start_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_start_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_start_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -315,7 +315,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_get_start_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_start_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_start_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -337,7 +337,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_set_menu_title: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_menu_title").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_menu_title").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -361,7 +361,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_get_menu_title: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_menu_title").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_menu_title").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -387,7 +387,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_set_menu_tooltip: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_menu_tooltip").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_menu_tooltip").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -411,7 +411,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_get_menu_tooltip: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_menu_tooltip").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_menu_tooltip").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -437,7 +437,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_set_menu_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_menu_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_menu_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -461,7 +461,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_is_menu_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_menu_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_menu_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -487,7 +487,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_set_menu_hidden: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_menu_hidden").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_menu_hidden").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -511,7 +511,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_is_menu_hidden: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_menu_hidden").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_menu_hidden").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -537,7 +537,7 @@ open class MenuBar: Control {
 
     private static var __method_binding_get_menu_popup: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_menu_popup").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_menu_popup").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2100501353)!
         }
         }

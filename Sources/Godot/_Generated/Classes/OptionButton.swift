@@ -15,7 +15,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_add_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3043792800)!
         }
         }
@@ -39,7 +39,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_add_icon_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_icon_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_icon_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3944051090)!
         }
         }
@@ -67,7 +67,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_set_item_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -91,7 +91,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_set_item_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 666127730)!
         }
         }
@@ -117,7 +117,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_set_item_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -141,7 +141,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_set_item_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -165,7 +165,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_set_item_metadata: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_metadata").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_metadata").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2152698145)!
         }
         }
@@ -189,7 +189,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_set_item_tooltip: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_tooltip").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_tooltip").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -213,7 +213,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_item_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -239,7 +239,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_item_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3536238170)!
         }
         }
@@ -265,7 +265,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_item_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -291,7 +291,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_item_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -317,7 +317,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_item_metadata: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_metadata").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_metadata").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4227898402)!
         }
         }
@@ -343,7 +343,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_item_tooltip: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_tooltip").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_tooltip").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -369,7 +369,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_is_item_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_item_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_item_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -395,7 +395,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_is_item_separator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_item_separator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_item_separator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -421,7 +421,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_add_separator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_separator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_separator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3005725572)!
         }
         }
@@ -443,7 +443,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -461,7 +461,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_select: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "select").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "select").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -483,7 +483,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_selected: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_selected").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_selected").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -505,7 +505,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_selected_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_selected_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_selected_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -527,7 +527,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_selected_metadata: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_selected_metadata").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_selected_metadata").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1214101251)!
         }
         }
@@ -549,7 +549,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_remove_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -571,7 +571,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_popup: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_popup").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_popup").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 229722558)!
         }
         }
@@ -593,7 +593,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_show_popup: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "show_popup").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "show_popup").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -611,7 +611,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_set_item_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -633,7 +633,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_item_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -655,7 +655,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_has_selectable_items: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_selectable_items").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_selectable_items").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -677,7 +677,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_selectable_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_selectable_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_selectable_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 894402480)!
         }
         }
@@ -703,7 +703,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_set_fit_to_longest_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fit_to_longest_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fit_to_longest_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -725,7 +725,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_is_fit_to_longest_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_fit_to_longest_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_fit_to_longest_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -747,7 +747,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_set_allow_reselect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_allow_reselect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_allow_reselect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -769,7 +769,7 @@ open class OptionButton: Button {
 
     private static var __method_binding_get_allow_reselect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_allow_reselect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_allow_reselect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

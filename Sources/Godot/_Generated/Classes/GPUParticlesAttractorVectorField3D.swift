@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -29,7 +29,7 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
 
     private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -51,7 +51,7 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
 
     private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_texture").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_texture").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1188404210)!
         }
         }
@@ -75,7 +75,7 @@ open class GPUParticlesAttractorVectorField3D: GPUParticlesAttractor3D {
 
     private static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_texture").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_texture").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373985333)!
         }
         }

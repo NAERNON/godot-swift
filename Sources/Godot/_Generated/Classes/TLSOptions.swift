@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class TLSOptions: RefCounted {
     private static var __method_binding_client: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "client").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "client").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3565000357)!
         }
         }
@@ -35,7 +35,7 @@ open class TLSOptions: RefCounted {
 
     private static var __method_binding_client_unsafe: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "client_unsafe").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "client_unsafe").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2090251749)!
         }
         }
@@ -61,7 +61,7 @@ open class TLSOptions: RefCounted {
 
     private static var __method_binding_server: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "server").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "server").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36969539)!
         }
         }

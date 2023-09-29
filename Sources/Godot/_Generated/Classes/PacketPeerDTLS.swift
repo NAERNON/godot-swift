@@ -15,7 +15,7 @@ open class PacketPeerDTLS: PacketPeer {
 
     private static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "poll").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "poll").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -33,7 +33,7 @@ open class PacketPeerDTLS: PacketPeer {
 
     private static var __method_binding_connect_to_peer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "connect_to_peer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "connect_to_peer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1801538152)!
         }
         }
@@ -67,7 +67,7 @@ open class PacketPeerDTLS: PacketPeer {
 
     private static var __method_binding_get_status: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_status").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_status").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3248654679)!
         }
         }
@@ -89,7 +89,7 @@ open class PacketPeerDTLS: PacketPeer {
 
     private static var __method_binding_disconnect_from_peer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "disconnect_from_peer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "disconnect_from_peer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }

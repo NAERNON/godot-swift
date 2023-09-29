@@ -51,7 +51,7 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
     func extensionFunctionPointerSyntax() -> DeclSyntax {
         """
         private var \(raw: ptrIdentifier): GDExtensionPtrUtilityFunction = {
-            GodotStringName(swiftString: \(literal: baseName)).withUnsafeRawPointer { __ptr__method_name in
+            GodotStringName(swiftStaticString: \(literal: baseName)).withUnsafeRawPointer { __ptr__method_name in
             return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, \(literal: hash))!
             }
         }()

@@ -32,7 +32,7 @@ open class Texture2D: Texture {
 
     private static var __method_binding_get_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -54,7 +54,7 @@ open class Texture2D: Texture {
 
     private static var __method_binding_get_height: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_height").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_height").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -76,7 +76,7 @@ open class Texture2D: Texture {
 
     private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -98,7 +98,7 @@ open class Texture2D: Texture {
 
     private static var __method_binding_has_alpha: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_alpha").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_alpha").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -120,7 +120,7 @@ open class Texture2D: Texture {
 
     private static var __method_binding_draw: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "draw").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "draw").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1115460088)!
         }
         }
@@ -148,7 +148,7 @@ open class Texture2D: Texture {
 
     private static var __method_binding_draw_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "draw_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "draw_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 575156982)!
         }
         }
@@ -178,7 +178,7 @@ open class Texture2D: Texture {
 
     private static var __method_binding_draw_rect_region: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "draw_rect_region").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "draw_rect_region").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1066564656)!
         }
         }
@@ -210,7 +210,7 @@ open class Texture2D: Texture {
 
     private static var __method_binding_get_image: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_image").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_image").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4190603485)!
         }
         }
@@ -232,7 +232,7 @@ open class Texture2D: Texture {
 
     private static var __method_binding_create_placeholder: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_placeholder").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_placeholder").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 121922552)!
         }
         }

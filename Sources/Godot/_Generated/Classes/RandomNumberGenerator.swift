@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class RandomNumberGenerator: RefCounted {
     private static var __method_binding_set_seed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_seed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_seed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -29,7 +29,7 @@ open class RandomNumberGenerator: RefCounted {
 
     private static var __method_binding_get_seed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_seed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_seed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -51,7 +51,7 @@ open class RandomNumberGenerator: RefCounted {
 
     private static var __method_binding_set_state: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_state").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_state").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -73,7 +73,7 @@ open class RandomNumberGenerator: RefCounted {
 
     private static var __method_binding_get_state: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_state").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_state").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -95,7 +95,7 @@ open class RandomNumberGenerator: RefCounted {
 
     private static var __method_binding_randi: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "randi").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "randi").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -117,7 +117,7 @@ open class RandomNumberGenerator: RefCounted {
 
     private static var __method_binding_randf: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "randf").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "randf").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 191475506)!
         }
         }
@@ -139,7 +139,7 @@ open class RandomNumberGenerator: RefCounted {
 
     private static var __method_binding_randfn: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "randfn").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "randfn").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 837325100)!
         }
         }
@@ -167,7 +167,7 @@ open class RandomNumberGenerator: RefCounted {
 
     private static var __method_binding_randf_range: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "randf_range").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "randf_range").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4269894367)!
         }
         }
@@ -195,7 +195,7 @@ open class RandomNumberGenerator: RefCounted {
 
     private static var __method_binding_randi_range: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "randi_range").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "randi_range").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 50157827)!
         }
         }
@@ -223,7 +223,7 @@ open class RandomNumberGenerator: RefCounted {
 
     private static var __method_binding_randomize: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "randomize").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "randomize").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }

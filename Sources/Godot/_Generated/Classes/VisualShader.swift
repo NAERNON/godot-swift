@@ -37,7 +37,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3978014962)!
         }
         }
@@ -59,7 +59,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_add_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1560769431)!
         }
         }
@@ -89,7 +89,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_get_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3784670312)!
         }
         }
@@ -117,7 +117,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_set_node_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_node_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_node_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2726660721)!
         }
         }
@@ -143,7 +143,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_get_node_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_node_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_node_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2175036082)!
         }
         }
@@ -171,7 +171,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_get_node_list: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_node_list").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_node_list").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2370592410)!
         }
         }
@@ -197,7 +197,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_get_valid_node_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_valid_node_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_valid_node_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 629467342)!
         }
         }
@@ -223,7 +223,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_remove_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844050912)!
         }
         }
@@ -247,7 +247,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_replace_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "replace_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "replace_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3144735253)!
         }
         }
@@ -273,7 +273,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_is_node_connection: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_node_connection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_node_connection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3922381898)!
         }
         }
@@ -307,7 +307,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_can_connect_nodes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "can_connect_nodes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "can_connect_nodes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3922381898)!
         }
         }
@@ -341,7 +341,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_connect_nodes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "connect_nodes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "connect_nodes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3081049573)!
         }
         }
@@ -375,7 +375,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_disconnect_nodes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "disconnect_nodes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "disconnect_nodes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2268060358)!
         }
         }
@@ -405,7 +405,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_connect_nodes_forced: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "connect_nodes_forced").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "connect_nodes_forced").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2268060358)!
         }
         }
@@ -435,7 +435,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_get_node_connections: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_node_connections").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_node_connections").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1441964831)!
         }
         }
@@ -461,7 +461,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_set_graph_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_graph_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_graph_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -483,7 +483,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_get_graph_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_graph_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_graph_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -505,7 +505,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_add_varying: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_varying").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_varying").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2084110726)!
         }
         }
@@ -531,7 +531,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_remove_varying: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_varying").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_varying").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -553,7 +553,7 @@ open class VisualShader: Shader {
 
     private static var __method_binding_has_varying: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_varying").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_varying").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }

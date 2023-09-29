@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
     private static var __method_binding_set_texture_array: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_texture_array").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_texture_array").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2206200446)!
         }
         }
@@ -31,7 +31,7 @@ open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
 
     private static var __method_binding_get_texture_array: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_texture_array").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_texture_array").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 146117123)!
         }
         }

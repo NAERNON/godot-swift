@@ -17,7 +17,7 @@ open class SyntaxHighlighter: Resource {
 
     private static var __method_binding_get_line_syntax_highlighting: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_line_syntax_highlighting").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_line_syntax_highlighting").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3554694381)!
         }
         }
@@ -43,7 +43,7 @@ open class SyntaxHighlighter: Resource {
 
     private static var __method_binding_update_cache: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "update_cache").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "update_cache").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -61,7 +61,7 @@ open class SyntaxHighlighter: Resource {
 
     private static var __method_binding_clear_highlighting_cache: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_highlighting_cache").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_highlighting_cache").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -79,7 +79,7 @@ open class SyntaxHighlighter: Resource {
 
     private static var __method_binding_get_text_edit: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_text_edit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_text_edit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1893027089)!
         }
         }

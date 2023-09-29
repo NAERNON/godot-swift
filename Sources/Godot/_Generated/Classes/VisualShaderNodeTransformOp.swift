@@ -20,7 +20,7 @@ open class VisualShaderNodeTransformOp: VisualShaderNode {
 
     private static var __method_binding_set_operator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_operator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_operator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2287310733)!
         }
         }
@@ -42,7 +42,7 @@ open class VisualShaderNodeTransformOp: VisualShaderNode {
 
     private static var __method_binding_get_operator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_operator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_operator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1238663601)!
         }
         }

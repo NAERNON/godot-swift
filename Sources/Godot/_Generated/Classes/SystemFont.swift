@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class SystemFont: Font {
     private static var __method_binding_set_antialiasing: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_antialiasing").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_antialiasing").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1669900)!
         }
         }
@@ -29,7 +29,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_get_antialiasing: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_antialiasing").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_antialiasing").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4262718649)!
         }
         }
@@ -51,7 +51,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_generate_mipmaps: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_generate_mipmaps").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_generate_mipmaps").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -73,7 +73,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_get_generate_mipmaps: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_generate_mipmaps").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_generate_mipmaps").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -95,7 +95,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_allow_system_fallback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_allow_system_fallback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_allow_system_fallback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -117,7 +117,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_is_allow_system_fallback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_allow_system_fallback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_allow_system_fallback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -139,7 +139,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_force_autohinter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_force_autohinter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_force_autohinter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -161,7 +161,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_is_force_autohinter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_force_autohinter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_force_autohinter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -183,7 +183,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_hinting: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_hinting").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_hinting").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1827459492)!
         }
         }
@@ -205,7 +205,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_get_hinting: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_hinting").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_hinting").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3683214614)!
         }
         }
@@ -227,7 +227,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_subpixel_positioning: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_subpixel_positioning").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_subpixel_positioning").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4225742182)!
         }
         }
@@ -249,7 +249,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_get_subpixel_positioning: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_subpixel_positioning").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_subpixel_positioning").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1069238588)!
         }
         }
@@ -271,7 +271,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_multichannel_signed_distance_field: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_multichannel_signed_distance_field").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_multichannel_signed_distance_field").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -293,7 +293,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_is_multichannel_signed_distance_field: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_multichannel_signed_distance_field").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_multichannel_signed_distance_field").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -315,7 +315,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_msdf_pixel_range: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_msdf_pixel_range").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_msdf_pixel_range").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -337,7 +337,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_get_msdf_pixel_range: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_msdf_pixel_range").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_msdf_pixel_range").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -359,7 +359,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_msdf_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_msdf_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_msdf_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -381,7 +381,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_get_msdf_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_msdf_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_msdf_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -403,7 +403,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_oversampling: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_oversampling").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_oversampling").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -425,7 +425,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_get_oversampling: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_oversampling").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_oversampling").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -447,7 +447,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_get_font_names: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_font_names").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_font_names").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -469,7 +469,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_font_names: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_font_names").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_font_names").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4015028928)!
         }
         }
@@ -491,7 +491,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_get_font_italic: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_font_italic").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_font_italic").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -513,7 +513,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_font_italic: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_font_italic").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_font_italic").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -535,7 +535,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_font_weight: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_font_weight").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_font_weight").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -557,7 +557,7 @@ open class SystemFont: Font {
 
     private static var __method_binding_set_font_stretch: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_font_stretch").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_font_stretch").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }

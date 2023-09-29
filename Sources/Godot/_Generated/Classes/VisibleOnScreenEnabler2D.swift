@@ -13,7 +13,7 @@ open class VisibleOnScreenEnabler2D: VisibleOnScreenNotifier2D {
 
     private static var __method_binding_set_enable_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enable_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enable_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2961788752)!
         }
         }
@@ -35,7 +35,7 @@ open class VisibleOnScreenEnabler2D: VisibleOnScreenNotifier2D {
 
     private static var __method_binding_get_enable_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_enable_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_enable_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2650445576)!
         }
         }
@@ -57,7 +57,7 @@ open class VisibleOnScreenEnabler2D: VisibleOnScreenNotifier2D {
 
     private static var __method_binding_set_enable_node_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enable_node_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enable_node_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -79,7 +79,7 @@ open class VisibleOnScreenEnabler2D: VisibleOnScreenNotifier2D {
 
     private static var __method_binding_get_enable_node_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_enable_node_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_enable_node_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 277076166)!
         }
         }

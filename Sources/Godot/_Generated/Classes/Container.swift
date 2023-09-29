@@ -23,7 +23,7 @@ open class Container: Control {
 
     private static var __method_binding_queue_sort: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "queue_sort").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "queue_sort").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -41,7 +41,7 @@ open class Container: Control {
 
     private static var __method_binding_fit_child_in_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "fit_child_in_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "fit_child_in_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1993438598)!
         }
         }

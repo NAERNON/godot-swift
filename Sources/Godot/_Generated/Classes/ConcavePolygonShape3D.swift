@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ConcavePolygonShape3D: Shape3D {
     private static var __method_binding_set_faces: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_faces").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_faces").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 334873810)!
         }
         }
@@ -29,7 +29,7 @@ open class ConcavePolygonShape3D: Shape3D {
 
     private static var __method_binding_get_faces: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_faces").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_faces").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 497664490)!
         }
         }
@@ -51,7 +51,7 @@ open class ConcavePolygonShape3D: Shape3D {
 
     private static var __method_binding_set_backface_collision_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_backface_collision_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_backface_collision_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -73,7 +73,7 @@ open class ConcavePolygonShape3D: Shape3D {
 
     private static var __method_binding_is_backface_collision_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_backface_collision_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_backface_collision_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

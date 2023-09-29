@@ -52,7 +52,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -74,7 +74,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -96,7 +96,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_current_tab: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_current_tab").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_current_tab").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -118,7 +118,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_current_tab: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_current_tab").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_current_tab").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -140,7 +140,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_previous_tab: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_previous_tab").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_previous_tab").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -162,7 +162,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_title: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_title").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_title").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -186,7 +186,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_title: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_title").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_title").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -212,7 +212,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_text_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_text_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_text_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1707680378)!
         }
         }
@@ -236,7 +236,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_text_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_text_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_text_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4235602388)!
         }
         }
@@ -262,7 +262,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_language: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_language").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_language").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -286,7 +286,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_language: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_language").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_language").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -312,7 +312,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 666127730)!
         }
         }
@@ -338,7 +338,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3536238170)!
         }
         }
@@ -364,7 +364,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_icon_max_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_icon_max_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_icon_max_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -388,7 +388,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_icon_max_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_icon_max_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_icon_max_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -414,7 +414,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_button_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_button_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_button_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 666127730)!
         }
         }
@@ -440,7 +440,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_button_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_button_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_button_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3536238170)!
         }
         }
@@ -466,7 +466,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -490,7 +490,7 @@ open class TabBar: Control {
 
     private static var __method_binding_is_tab_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_tab_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_tab_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -516,7 +516,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_hidden: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_hidden").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_hidden").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -540,7 +540,7 @@ open class TabBar: Control {
 
     private static var __method_binding_is_tab_hidden: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_tab_hidden").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_tab_hidden").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -566,7 +566,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_metadata: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_metadata").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_metadata").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2152698145)!
         }
         }
@@ -590,7 +590,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_metadata: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_metadata").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_metadata").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4227898402)!
         }
         }
@@ -616,7 +616,7 @@ open class TabBar: Control {
 
     private static var __method_binding_remove_tab: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_tab").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_tab").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -638,7 +638,7 @@ open class TabBar: Control {
 
     private static var __method_binding_add_tab: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_tab").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_tab").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1465444425)!
         }
         }
@@ -664,7 +664,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_idx_at_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_idx_at_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_idx_at_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3820158470)!
         }
         }
@@ -690,7 +690,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2413632353)!
         }
         }
@@ -712,7 +712,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_alignment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_alignment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_alignment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2178122193)!
         }
         }
@@ -734,7 +734,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_clip_tabs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_clip_tabs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_clip_tabs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -756,7 +756,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_clip_tabs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_clip_tabs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_clip_tabs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -778,7 +778,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -800,7 +800,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_offset_buttons_visible: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_offset_buttons_visible").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_offset_buttons_visible").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -822,7 +822,7 @@ open class TabBar: Control {
 
     private static var __method_binding_ensure_tab_visible: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "ensure_tab_visible").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "ensure_tab_visible").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -844,7 +844,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3327874267)!
         }
         }
@@ -870,7 +870,7 @@ open class TabBar: Control {
 
     private static var __method_binding_move_tab: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "move_tab").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "move_tab").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -894,7 +894,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tab_close_display_policy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tab_close_display_policy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tab_close_display_policy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2212906737)!
         }
         }
@@ -916,7 +916,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tab_close_display_policy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tab_close_display_policy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tab_close_display_policy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2956568028)!
         }
         }
@@ -938,7 +938,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_max_tab_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_max_tab_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_max_tab_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -960,7 +960,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_max_tab_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_max_tab_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_max_tab_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -982,7 +982,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_scrolling_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_scrolling_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_scrolling_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1004,7 +1004,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_scrolling_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_scrolling_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_scrolling_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1026,7 +1026,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_drag_to_rearrange_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_drag_to_rearrange_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_drag_to_rearrange_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1048,7 +1048,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_drag_to_rearrange_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_drag_to_rearrange_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_drag_to_rearrange_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1070,7 +1070,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_tabs_rearrange_group: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tabs_rearrange_group").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tabs_rearrange_group").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -1092,7 +1092,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_tabs_rearrange_group: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tabs_rearrange_group").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tabs_rearrange_group").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -1114,7 +1114,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_scroll_to_selected: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_scroll_to_selected").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_scroll_to_selected").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1136,7 +1136,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_scroll_to_selected: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_scroll_to_selected").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_scroll_to_selected").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1158,7 +1158,7 @@ open class TabBar: Control {
 
     private static var __method_binding_set_select_with_rmb: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_select_with_rmb").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_select_with_rmb").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1180,7 +1180,7 @@ open class TabBar: Control {
 
     private static var __method_binding_get_select_with_rmb: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_select_with_rmb").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_select_with_rmb").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1202,7 +1202,7 @@ open class TabBar: Control {
 
     private static var __method_binding_clear_tabs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_tabs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_tabs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }

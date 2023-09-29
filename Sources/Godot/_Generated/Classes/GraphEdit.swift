@@ -92,7 +92,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_connect_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "connect_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "connect_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 195065850)!
         }
         }
@@ -124,7 +124,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_is_node_connected: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_node_connected").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_node_connected").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4216241294)!
         }
         }
@@ -156,7 +156,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_disconnect_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "disconnect_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "disconnect_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1933654315)!
         }
         }
@@ -184,7 +184,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_connection_activity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_connection_activity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_connection_activity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1141899943)!
         }
         }
@@ -214,7 +214,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_connection_list: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_connection_list").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_connection_list").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
@@ -236,7 +236,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_clear_connections: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_connections").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_connections").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -254,7 +254,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_force_connection_drag_end: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "force_connection_drag_end").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "force_connection_drag_end").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -272,7 +272,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_scroll_ofs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_scroll_ofs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_scroll_ofs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -294,7 +294,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_scroll_ofs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_scroll_ofs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_scroll_ofs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -316,7 +316,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_add_valid_right_disconnect_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_valid_right_disconnect_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_valid_right_disconnect_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -338,7 +338,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_remove_valid_right_disconnect_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_valid_right_disconnect_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_valid_right_disconnect_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -360,7 +360,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_add_valid_left_disconnect_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_valid_left_disconnect_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_valid_left_disconnect_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -382,7 +382,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_remove_valid_left_disconnect_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_valid_left_disconnect_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_valid_left_disconnect_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -404,7 +404,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_add_valid_connection_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_valid_connection_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_valid_connection_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -428,7 +428,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_remove_valid_connection_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_valid_connection_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_valid_connection_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -452,7 +452,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_is_valid_connection_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_valid_connection_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_valid_connection_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2522259332)!
         }
         }
@@ -480,7 +480,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_connection_line: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_connection_line").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_connection_line").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1562168077)!
         }
         }
@@ -508,7 +508,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_panning_scheme: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_panning_scheme").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_panning_scheme").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 18893313)!
         }
         }
@@ -530,7 +530,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_panning_scheme: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_panning_scheme").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_panning_scheme").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 549924446)!
         }
         }
@@ -552,7 +552,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_zoom: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_zoom").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_zoom").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -574,7 +574,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_zoom: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_zoom").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_zoom").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -596,7 +596,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_zoom_min: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_zoom_min").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_zoom_min").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -618,7 +618,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_zoom_min: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_zoom_min").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_zoom_min").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -640,7 +640,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_zoom_max: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_zoom_max").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_zoom_max").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -662,7 +662,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_zoom_max: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_zoom_max").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_zoom_max").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -684,7 +684,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_zoom_step: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_zoom_step").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_zoom_step").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -706,7 +706,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_zoom_step: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_zoom_step").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_zoom_step").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -728,7 +728,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_show_zoom_label: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_show_zoom_label").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_show_zoom_label").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -750,7 +750,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_is_showing_zoom_label: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_showing_zoom_label").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_showing_zoom_label").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -772,7 +772,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_snap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_snap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_snap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -794,7 +794,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_snap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_snap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_snap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -816,7 +816,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_use_snap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_use_snap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_use_snap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -838,7 +838,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_is_using_snap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_using_snap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_using_snap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -860,7 +860,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_connection_lines_curvature: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_connection_lines_curvature").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_connection_lines_curvature").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -882,7 +882,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_connection_lines_curvature: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_connection_lines_curvature").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_connection_lines_curvature").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -904,7 +904,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_connection_lines_thickness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_connection_lines_thickness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_connection_lines_thickness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -926,7 +926,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_connection_lines_thickness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_connection_lines_thickness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_connection_lines_thickness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -948,7 +948,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_connection_lines_antialiased: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_connection_lines_antialiased").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_connection_lines_antialiased").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -970,7 +970,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_is_connection_lines_antialiased: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_connection_lines_antialiased").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_connection_lines_antialiased").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -992,7 +992,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_minimap_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_minimap_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_minimap_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -1014,7 +1014,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_minimap_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_minimap_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_minimap_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -1036,7 +1036,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_minimap_opacity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_minimap_opacity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_minimap_opacity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1058,7 +1058,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_minimap_opacity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_minimap_opacity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_minimap_opacity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1080,7 +1080,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_minimap_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_minimap_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_minimap_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1102,7 +1102,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_is_minimap_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_minimap_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_minimap_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1124,7 +1124,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_arrange_nodes_button_hidden: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_arrange_nodes_button_hidden").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_arrange_nodes_button_hidden").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1146,7 +1146,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_is_arrange_nodes_button_hidden: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_arrange_nodes_button_hidden").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_arrange_nodes_button_hidden").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1168,7 +1168,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_right_disconnects: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_right_disconnects").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_right_disconnects").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1190,7 +1190,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_is_right_disconnects_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_right_disconnects_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_right_disconnects_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1212,7 +1212,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_get_zoom_hbox: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_zoom_hbox").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_zoom_hbox").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3590609951)!
         }
         }
@@ -1234,7 +1234,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_arrange_nodes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "arrange_nodes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "arrange_nodes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -1252,7 +1252,7 @@ open class GraphEdit: Control {
 
     private static var __method_binding_set_selected: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_selected").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_selected").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1078189570)!
         }
         }

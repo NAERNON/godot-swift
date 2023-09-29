@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class SkeletonModificationStack2D: Resource {
     private static var __method_binding_setup: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "setup").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "setup").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -25,7 +25,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_execute: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "execute").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "execute").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1005356550)!
         }
         }
@@ -49,7 +49,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_enable_all_modifications: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "enable_all_modifications").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "enable_all_modifications").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -71,7 +71,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_get_modification: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_modification").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_modification").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2570274329)!
         }
         }
@@ -97,7 +97,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_add_modification: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_modification").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_modification").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 354162120)!
         }
         }
@@ -121,7 +121,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_delete_modification: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "delete_modification").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "delete_modification").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -143,7 +143,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_set_modification: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_modification").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_modification").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1098262544)!
         }
         }
@@ -169,7 +169,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_set_modification_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_modification_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_modification_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -191,7 +191,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_get_modification_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_modification_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_modification_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -213,7 +213,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_get_is_setup: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_is_setup").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_is_setup").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -235,7 +235,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -257,7 +257,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_get_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -279,7 +279,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_set_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -301,7 +301,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_get_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -323,7 +323,7 @@ open class SkeletonModificationStack2D: Resource {
 
     private static var __method_binding_get_skeleton: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skeleton").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skeleton").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1697361217)!
         }
         }

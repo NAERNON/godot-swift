@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class TubeTrailMesh: PrimitiveMesh {
     private static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_radius").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_radius").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -29,7 +29,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_get_radius: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_radius").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_radius").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -51,7 +51,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_set_radial_steps: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_radial_steps").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_radial_steps").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -73,7 +73,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_get_radial_steps: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_radial_steps").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_radial_steps").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -95,7 +95,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_set_sections: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sections").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sections").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -117,7 +117,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_get_sections: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sections").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sections").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -139,7 +139,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_set_section_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_section_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_section_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -161,7 +161,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_get_section_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_section_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_section_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -183,7 +183,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_set_section_rings: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_section_rings").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_section_rings").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -205,7 +205,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_get_section_rings: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_section_rings").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_section_rings").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -227,7 +227,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_set_cap_top: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cap_top").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cap_top").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -249,7 +249,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_is_cap_top: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_cap_top").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_cap_top").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -271,7 +271,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_set_cap_bottom: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cap_bottom").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cap_bottom").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -293,7 +293,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_is_cap_bottom: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_cap_bottom").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_cap_bottom").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -315,7 +315,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_set_curve: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_curve").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_curve").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 270443179)!
         }
         }
@@ -339,7 +339,7 @@ open class TubeTrailMesh: PrimitiveMesh {
 
     private static var __method_binding_get_curve: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_curve").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_curve").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2460114913)!
         }
         }

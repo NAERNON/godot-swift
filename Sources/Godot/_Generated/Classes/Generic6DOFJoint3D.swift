@@ -42,7 +42,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_set_param_x: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_param_x").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_param_x").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2018184242)!
         }
         }
@@ -66,7 +66,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_get_param_x: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_param_x").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_param_x").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2599835054)!
         }
         }
@@ -92,7 +92,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_set_param_y: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_param_y").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_param_y").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2018184242)!
         }
         }
@@ -116,7 +116,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_get_param_y: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_param_y").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_param_y").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2599835054)!
         }
         }
@@ -142,7 +142,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_set_param_z: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_param_z").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_param_z").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2018184242)!
         }
         }
@@ -166,7 +166,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_get_param_z: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_param_z").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_param_z").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2599835054)!
         }
         }
@@ -192,7 +192,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_set_flag_x: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_flag_x").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_flag_x").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2451594564)!
         }
         }
@@ -216,7 +216,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_get_flag_x: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_flag_x").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_flag_x").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2122427807)!
         }
         }
@@ -242,7 +242,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_set_flag_y: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_flag_y").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_flag_y").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2451594564)!
         }
         }
@@ -266,7 +266,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_get_flag_y: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_flag_y").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_flag_y").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2122427807)!
         }
         }
@@ -292,7 +292,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_set_flag_z: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_flag_z").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_flag_z").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2451594564)!
         }
         }
@@ -316,7 +316,7 @@ open class Generic6DOFJoint3D: Joint3D {
 
     private static var __method_binding_get_flag_z: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_flag_z").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_flag_z").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2122427807)!
         }
         }

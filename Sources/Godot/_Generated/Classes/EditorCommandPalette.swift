@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class EditorCommandPalette: ConfirmationDialog {
     private static var __method_binding_add_command: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_command").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_command").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3664614892)!
         }
         }
@@ -35,7 +35,7 @@ open class EditorCommandPalette: ConfirmationDialog {
 
     private static var __method_binding_remove_command: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_command").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_command").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class PhysicsMaterial: Resource {
     private static var __method_binding_set_friction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_friction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_friction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -29,7 +29,7 @@ open class PhysicsMaterial: Resource {
 
     private static var __method_binding_get_friction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_friction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_friction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -51,7 +51,7 @@ open class PhysicsMaterial: Resource {
 
     private static var __method_binding_set_rough: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_rough").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_rough").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -73,7 +73,7 @@ open class PhysicsMaterial: Resource {
 
     private static var __method_binding_is_rough: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_rough").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_rough").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -95,7 +95,7 @@ open class PhysicsMaterial: Resource {
 
     private static var __method_binding_set_bounce: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bounce").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bounce").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -117,7 +117,7 @@ open class PhysicsMaterial: Resource {
 
     private static var __method_binding_get_bounce: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bounce").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bounce").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -139,7 +139,7 @@ open class PhysicsMaterial: Resource {
 
     private static var __method_binding_set_absorbent: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_absorbent").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_absorbent").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -161,7 +161,7 @@ open class PhysicsMaterial: Resource {
 
     private static var __method_binding_is_absorbent: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_absorbent").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_absorbent").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class MobileVRInterface: XRInterface {
     private static var __method_binding_set_eye_height: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_eye_height").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_eye_height").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -29,7 +29,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_get_eye_height: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_eye_height").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_eye_height").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -51,7 +51,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_set_iod: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_iod").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_iod").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -73,7 +73,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_get_iod: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_iod").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_iod").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -95,7 +95,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_set_display_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_display_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_display_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -117,7 +117,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_get_display_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_display_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_display_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -139,7 +139,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_set_display_to_lens: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_display_to_lens").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_display_to_lens").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -161,7 +161,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_get_display_to_lens: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_display_to_lens").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_display_to_lens").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -183,7 +183,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_set_oversample: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_oversample").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_oversample").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -205,7 +205,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_get_oversample: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_oversample").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_oversample").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -227,7 +227,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_set_k1: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_k1").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_k1").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -249,7 +249,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_get_k1: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_k1").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_k1").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -271,7 +271,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_set_k2: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_k2").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_k2").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -293,7 +293,7 @@ open class MobileVRInterface: XRInterface {
 
     private static var __method_binding_get_k2: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_k2").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_k2").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

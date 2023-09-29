@@ -22,7 +22,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_set_h_scroll: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_h_scroll").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_h_scroll").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -44,7 +44,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_get_h_scroll: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_h_scroll").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_h_scroll").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -66,7 +66,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_set_v_scroll: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_v_scroll").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_v_scroll").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -88,7 +88,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_get_v_scroll: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_v_scroll").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_v_scroll").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -110,7 +110,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_set_horizontal_custom_step: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_horizontal_custom_step").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_horizontal_custom_step").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -132,7 +132,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_get_horizontal_custom_step: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_horizontal_custom_step").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_horizontal_custom_step").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -154,7 +154,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_set_vertical_custom_step: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertical_custom_step").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertical_custom_step").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -176,7 +176,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_get_vertical_custom_step: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertical_custom_step").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertical_custom_step").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -198,7 +198,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_set_horizontal_scroll_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_horizontal_scroll_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_horizontal_scroll_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2750506364)!
         }
         }
@@ -220,7 +220,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_get_horizontal_scroll_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_horizontal_scroll_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_horizontal_scroll_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3987985145)!
         }
         }
@@ -242,7 +242,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_set_vertical_scroll_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertical_scroll_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertical_scroll_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2750506364)!
         }
         }
@@ -264,7 +264,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_get_vertical_scroll_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_vertical_scroll_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_vertical_scroll_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3987985145)!
         }
         }
@@ -286,7 +286,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_set_deadzone: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_deadzone").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_deadzone").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -308,7 +308,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_get_deadzone: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_deadzone").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_deadzone").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -330,7 +330,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_set_follow_focus: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_follow_focus").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_follow_focus").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -352,7 +352,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_is_following_focus: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_following_focus").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_following_focus").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -374,7 +374,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_get_h_scroll_bar: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_h_scroll_bar").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_h_scroll_bar").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4004517983)!
         }
         }
@@ -396,7 +396,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_get_v_scroll_bar: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_v_scroll_bar").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_v_scroll_bar").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2630340773)!
         }
         }
@@ -418,7 +418,7 @@ open class ScrollContainer: Container {
 
     private static var __method_binding_ensure_control_visible: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "ensure_control_visible").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "ensure_control_visible").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }

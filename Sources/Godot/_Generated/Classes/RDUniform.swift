@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class RDUniform: RefCounted {
     private static var __method_binding_set_uniform_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_uniform_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_uniform_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1664894931)!
         }
         }
@@ -29,7 +29,7 @@ open class RDUniform: RefCounted {
 
     private static var __method_binding_get_uniform_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_uniform_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_uniform_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 475470040)!
         }
         }
@@ -51,7 +51,7 @@ open class RDUniform: RefCounted {
 
     private static var __method_binding_set_binding: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_binding").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_binding").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -73,7 +73,7 @@ open class RDUniform: RefCounted {
 
     private static var __method_binding_get_binding: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_binding").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_binding").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -95,7 +95,7 @@ open class RDUniform: RefCounted {
 
     private static var __method_binding_add_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }
@@ -117,7 +117,7 @@ open class RDUniform: RefCounted {
 
     private static var __method_binding_clear_ids: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_ids").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_ids").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -135,7 +135,7 @@ open class RDUniform: RefCounted {
 
     private static var __method_binding_get_ids: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ids").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ids").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }

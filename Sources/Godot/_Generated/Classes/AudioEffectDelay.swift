@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class AudioEffectDelay: AudioEffect {
     private static var __method_binding_set_dry: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_dry").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_dry").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -29,7 +29,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_get_dry: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_dry").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_dry").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 191475506)!
         }
         }
@@ -51,7 +51,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_tap1_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tap1_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tap1_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -73,7 +73,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_is_tap1_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_tap1_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_tap1_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -95,7 +95,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_tap1_delay_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tap1_delay_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tap1_delay_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -117,7 +117,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_get_tap1_delay_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tap1_delay_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tap1_delay_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -139,7 +139,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_tap1_level_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tap1_level_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tap1_level_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -161,7 +161,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_get_tap1_level_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tap1_level_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tap1_level_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -183,7 +183,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_tap1_pan: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tap1_pan").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tap1_pan").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -205,7 +205,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_get_tap1_pan: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tap1_pan").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tap1_pan").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -227,7 +227,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_tap2_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tap2_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tap2_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -249,7 +249,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_is_tap2_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_tap2_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_tap2_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -271,7 +271,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_tap2_delay_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tap2_delay_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tap2_delay_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -293,7 +293,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_get_tap2_delay_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tap2_delay_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tap2_delay_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -315,7 +315,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_tap2_level_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tap2_level_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tap2_level_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -337,7 +337,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_get_tap2_level_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tap2_level_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tap2_level_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -359,7 +359,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_tap2_pan: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tap2_pan").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tap2_pan").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -381,7 +381,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_get_tap2_pan: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tap2_pan").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tap2_pan").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -403,7 +403,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_feedback_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_feedback_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_feedback_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -425,7 +425,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_is_feedback_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_feedback_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_feedback_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -447,7 +447,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_feedback_delay_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_feedback_delay_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_feedback_delay_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -469,7 +469,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_get_feedback_delay_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_feedback_delay_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_feedback_delay_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -491,7 +491,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_feedback_level_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_feedback_level_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_feedback_level_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -513,7 +513,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_get_feedback_level_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_feedback_level_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_feedback_level_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -535,7 +535,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_set_feedback_lowpass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_feedback_lowpass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_feedback_lowpass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -557,7 +557,7 @@ open class AudioEffectDelay: AudioEffect {
 
     private static var __method_binding_get_feedback_lowpass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_feedback_lowpass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_feedback_lowpass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

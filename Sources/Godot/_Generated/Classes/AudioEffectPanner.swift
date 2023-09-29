@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class AudioEffectPanner: AudioEffect {
     private static var __method_binding_set_pan: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pan").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pan").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -29,7 +29,7 @@ open class AudioEffectPanner: AudioEffect {
 
     private static var __method_binding_get_pan: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pan").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pan").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

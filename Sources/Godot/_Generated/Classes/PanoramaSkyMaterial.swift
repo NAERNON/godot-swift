@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class PanoramaSkyMaterial: Material {
     private static var __method_binding_set_panorama: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_panorama").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_panorama").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4051416890)!
         }
         }
@@ -31,7 +31,7 @@ open class PanoramaSkyMaterial: Material {
 
     private static var __method_binding_get_panorama: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_panorama").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_panorama").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3635182373)!
         }
         }
@@ -53,7 +53,7 @@ open class PanoramaSkyMaterial: Material {
 
     private static var __method_binding_set_filtering_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_filtering_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_filtering_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -75,7 +75,7 @@ open class PanoramaSkyMaterial: Material {
 
     private static var __method_binding_is_filtering_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_filtering_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_filtering_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

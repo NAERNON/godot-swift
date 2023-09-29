@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_set_voice_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_voice_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_voice_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -29,7 +29,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_get_voice_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_voice_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_voice_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -51,7 +51,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_set_voice_delay_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_voice_delay_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_voice_delay_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -75,7 +75,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_get_voice_delay_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_voice_delay_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_voice_delay_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -101,7 +101,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_set_voice_rate_hz: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_voice_rate_hz").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_voice_rate_hz").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -125,7 +125,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_get_voice_rate_hz: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_voice_rate_hz").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_voice_rate_hz").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -151,7 +151,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_set_voice_depth_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_voice_depth_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_voice_depth_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -175,7 +175,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_get_voice_depth_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_voice_depth_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_voice_depth_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -201,7 +201,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_set_voice_level_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_voice_level_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_voice_level_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -225,7 +225,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_get_voice_level_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_voice_level_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_voice_level_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -251,7 +251,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_set_voice_cutoff_hz: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_voice_cutoff_hz").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_voice_cutoff_hz").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -275,7 +275,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_get_voice_cutoff_hz: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_voice_cutoff_hz").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_voice_cutoff_hz").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -301,7 +301,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_set_voice_pan: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_voice_pan").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_voice_pan").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -325,7 +325,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_get_voice_pan: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_voice_pan").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_voice_pan").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -351,7 +351,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_set_wet: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_wet").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_wet").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -373,7 +373,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_get_wet: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_wet").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_wet").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -395,7 +395,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_set_dry: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_dry").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_dry").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -417,7 +417,7 @@ open class AudioEffectChorus: AudioEffect {
 
     private static var __method_binding_get_dry: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_dry").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_dry").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

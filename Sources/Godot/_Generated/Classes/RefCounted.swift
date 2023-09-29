@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class RefCounted: Object {
     private static var __method_binding_init_ref: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "init_ref").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "init_ref").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -29,7 +29,7 @@ open class RefCounted: Object {
 
     private static var __method_binding_reference: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "reference").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "reference").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -51,7 +51,7 @@ open class RefCounted: Object {
 
     private static var __method_binding_unreference: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "unreference").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "unreference").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -73,7 +73,7 @@ open class RefCounted: Object {
 
     private static var __method_binding_get_reference_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_reference_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_reference_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

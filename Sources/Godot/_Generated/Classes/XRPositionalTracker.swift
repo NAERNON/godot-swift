@@ -37,7 +37,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_get_tracker_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tracker_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tracker_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2784508102)!
         }
         }
@@ -59,7 +59,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_set_tracker_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tracker_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tracker_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3055763575)!
         }
         }
@@ -81,7 +81,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_get_tracker_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tracker_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tracker_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2002593661)!
         }
         }
@@ -103,7 +103,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_set_tracker_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tracker_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tracker_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -125,7 +125,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_get_tracker_desc: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tracker_desc").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tracker_desc").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -147,7 +147,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_set_tracker_desc: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tracker_desc").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tracker_desc").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -169,7 +169,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_get_tracker_profile: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tracker_profile").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tracker_profile").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -191,7 +191,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_set_tracker_profile: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tracker_profile").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tracker_profile").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -213,7 +213,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_get_tracker_hand: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tracker_hand").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tracker_hand").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4181770860)!
         }
         }
@@ -235,7 +235,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_set_tracker_hand: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tracker_hand").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tracker_hand").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3904108980)!
         }
         }
@@ -257,7 +257,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_has_pose: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_pose").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_pose").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -283,7 +283,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_get_pose: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pose").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pose").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4099720006)!
         }
         }
@@ -309,7 +309,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_invalidate_pose: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "invalidate_pose").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "invalidate_pose").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -331,7 +331,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_set_pose: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pose").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pose").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3451230163)!
         }
         }
@@ -361,7 +361,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_get_input: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_input").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2760726917)!
         }
         }
@@ -387,7 +387,7 @@ open class XRPositionalTracker: RefCounted {
 
     private static var __method_binding_set_input: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_input").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_input").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3776071444)!
         }
         }

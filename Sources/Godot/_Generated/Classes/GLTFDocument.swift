@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class GLTFDocument: Resource {
     private static var __method_binding_append_from_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "append_from_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "append_from_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1862991421)!
         }
         }
@@ -41,7 +41,7 @@ open class GLTFDocument: Resource {
 
     private static var __method_binding_append_from_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "append_from_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "append_from_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2818062664)!
         }
         }
@@ -75,7 +75,7 @@ open class GLTFDocument: Resource {
 
     private static var __method_binding_append_from_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "append_from_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "append_from_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 374125375)!
         }
         }
@@ -109,7 +109,7 @@ open class GLTFDocument: Resource {
 
     private static var __method_binding_generate_scene: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "generate_scene").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "generate_scene").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2770277081)!
         }
         }
@@ -143,7 +143,7 @@ open class GLTFDocument: Resource {
 
     private static var __method_binding_generate_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "generate_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "generate_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 741783455)!
         }
         }
@@ -171,7 +171,7 @@ open class GLTFDocument: Resource {
 
     private static var __method_binding_write_to_filesystem: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "write_to_filesystem").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "write_to_filesystem").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1784551478)!
         }
         }
@@ -201,7 +201,7 @@ open class GLTFDocument: Resource {
 
     private static var __method_binding_register_gltf_document_extension: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "register_gltf_document_extension").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "register_gltf_document_extension").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3752678331)!
         }
         }
@@ -225,7 +225,7 @@ open class GLTFDocument: Resource {
 
     private static var __method_binding_unregister_gltf_document_extension: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "unregister_gltf_document_extension").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "unregister_gltf_document_extension").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2684415758)!
         }
         }

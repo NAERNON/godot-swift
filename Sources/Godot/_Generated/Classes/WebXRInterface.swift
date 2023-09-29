@@ -66,7 +66,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_is_session_supported: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_session_supported").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_session_supported").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -88,7 +88,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_set_session_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_session_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_session_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -110,7 +110,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_get_session_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_session_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_session_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -132,7 +132,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_set_required_features: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_required_features").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_required_features").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -154,7 +154,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_get_required_features: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_required_features").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_required_features").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -176,7 +176,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_set_optional_features: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_optional_features").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_optional_features").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -198,7 +198,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_get_optional_features: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_optional_features").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_optional_features").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -220,7 +220,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_get_reference_space_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_reference_space_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_reference_space_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -242,7 +242,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_set_requested_reference_space_types: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_requested_reference_space_types").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_requested_reference_space_types").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -264,7 +264,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_get_requested_reference_space_types: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_requested_reference_space_types").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_requested_reference_space_types").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -286,7 +286,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_is_input_source_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_input_source_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_input_source_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -312,7 +312,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_get_input_source_tracker: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_input_source_tracker").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_source_tracker").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 636011756)!
         }
         }
@@ -338,7 +338,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_get_input_source_target_ray_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_input_source_target_ray_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_source_target_ray_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2852387453)!
         }
         }
@@ -364,7 +364,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_get_visibility_state: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_visibility_state").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_visibility_state").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -386,7 +386,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_get_display_refresh_rate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_display_refresh_rate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_display_refresh_rate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -408,7 +408,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_set_display_refresh_rate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_display_refresh_rate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_display_refresh_rate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -430,7 +430,7 @@ open class WebXRInterface: XRInterface {
 
     private static var __method_binding_get_available_display_refresh_rates: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_available_display_refresh_rates").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_available_display_refresh_rates").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }

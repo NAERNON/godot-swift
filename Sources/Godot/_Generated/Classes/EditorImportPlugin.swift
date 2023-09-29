@@ -55,7 +55,7 @@ open class EditorImportPlugin: ResourceImporter {
 
     private static var __method_binding_append_import_external_resource: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "append_import_external_resource").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "append_import_external_resource").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3645925746)!
         }
         }

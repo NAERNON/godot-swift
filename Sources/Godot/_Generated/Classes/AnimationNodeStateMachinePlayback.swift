@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class AnimationNodeStateMachinePlayback: Resource {
     private static var __method_binding_travel: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "travel").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "travel").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3683006648)!
         }
         }
@@ -31,7 +31,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
 
     private static var __method_binding_start: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "start").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "start").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3683006648)!
         }
         }
@@ -55,7 +55,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
 
     private static var __method_binding_next: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "next").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "next").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -73,7 +73,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
 
     private static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "stop").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "stop").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -91,7 +91,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
 
     private static var __method_binding_is_playing: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_playing").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_playing").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -113,7 +113,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
 
     private static var __method_binding_get_current_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_current_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_current_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2002593661)!
         }
         }
@@ -135,7 +135,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
 
     private static var __method_binding_get_current_play_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_current_play_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_current_play_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -157,7 +157,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
 
     private static var __method_binding_get_current_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_current_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_current_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -179,7 +179,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
 
     private static var __method_binding_get_fading_from_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fading_from_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fading_from_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2002593661)!
         }
         }
@@ -201,7 +201,7 @@ open class AnimationNodeStateMachinePlayback: Resource {
 
     private static var __method_binding_get_travel_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_travel_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_travel_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }

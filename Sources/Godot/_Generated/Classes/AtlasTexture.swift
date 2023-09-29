@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class AtlasTexture: Texture2D {
     private static var __method_binding_set_atlas: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_atlas").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_atlas").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4051416890)!
         }
         }
@@ -31,7 +31,7 @@ open class AtlasTexture: Texture2D {
 
     private static var __method_binding_get_atlas: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_atlas").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_atlas").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3635182373)!
         }
         }
@@ -53,7 +53,7 @@ open class AtlasTexture: Texture2D {
 
     private static var __method_binding_set_region: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_region").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_region").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2046264180)!
         }
         }
@@ -75,7 +75,7 @@ open class AtlasTexture: Texture2D {
 
     private static var __method_binding_get_region: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_region").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_region").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1639390495)!
         }
         }
@@ -97,7 +97,7 @@ open class AtlasTexture: Texture2D {
 
     private static var __method_binding_set_margin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_margin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_margin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2046264180)!
         }
         }
@@ -119,7 +119,7 @@ open class AtlasTexture: Texture2D {
 
     private static var __method_binding_get_margin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_margin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_margin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1639390495)!
         }
         }
@@ -141,7 +141,7 @@ open class AtlasTexture: Texture2D {
 
     private static var __method_binding_set_filter_clip: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_filter_clip").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_filter_clip").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -163,7 +163,7 @@ open class AtlasTexture: Texture2D {
 
     private static var __method_binding_has_filter_clip: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_filter_clip").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_filter_clip").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

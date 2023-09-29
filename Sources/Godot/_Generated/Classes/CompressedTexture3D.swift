@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class CompressedTexture3D: Texture3D {
     private static var __method_binding_load: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -33,7 +33,7 @@ open class CompressedTexture3D: Texture3D {
 
     private static var __method_binding_get_load_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_load_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_load_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }

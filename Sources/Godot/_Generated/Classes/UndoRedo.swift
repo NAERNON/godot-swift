@@ -17,7 +17,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_create_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3900135403)!
         }
         }
@@ -43,7 +43,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_commit_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "commit_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "commit_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3216645846)!
         }
         }
@@ -65,7 +65,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_is_committing_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_committing_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_committing_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -87,7 +87,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_add_do_method: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_do_method").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_do_method").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1611583062)!
         }
         }
@@ -109,7 +109,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_add_undo_method: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_undo_method").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_undo_method").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1611583062)!
         }
         }
@@ -131,7 +131,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_add_do_property: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_do_property").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_do_property").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1017172818)!
         }
         }
@@ -159,7 +159,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_add_undo_property: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_undo_property").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_undo_property").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1017172818)!
         }
         }
@@ -187,7 +187,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_add_do_reference: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_do_reference").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_do_reference").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3975164845)!
         }
         }
@@ -211,7 +211,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_add_undo_reference: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_undo_reference").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_undo_reference").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3975164845)!
         }
         }
@@ -235,7 +235,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_start_force_keep_in_merge_ends: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "start_force_keep_in_merge_ends").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "start_force_keep_in_merge_ends").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -253,7 +253,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_end_force_keep_in_merge_ends: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "end_force_keep_in_merge_ends").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "end_force_keep_in_merge_ends").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -271,7 +271,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_get_history_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_history_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_history_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -293,7 +293,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_get_current_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_current_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_current_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -315,7 +315,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_get_action_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_action_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_action_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 990163283)!
         }
         }
@@ -341,7 +341,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_clear_history: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_history").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_history").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3216645846)!
         }
         }
@@ -363,7 +363,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_get_current_action_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_current_action_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_current_action_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -385,7 +385,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_has_undo: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_undo").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_undo").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -407,7 +407,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_has_redo: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_redo").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_redo").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -429,7 +429,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_get_version: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_version").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_version").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -451,7 +451,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_redo: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "redo").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "redo").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -473,7 +473,7 @@ open class UndoRedo: Object {
 
     private static var __method_binding_undo: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "undo").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "undo").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class AudioStreamOggVorbis: AudioStream {
     private static var __method_binding_set_packet_sequence: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_packet_sequence").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_packet_sequence").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 438882457)!
         }
         }
@@ -31,7 +31,7 @@ open class AudioStreamOggVorbis: AudioStream {
 
     private static var __method_binding_get_packet_sequence: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_packet_sequence").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_packet_sequence").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2801636033)!
         }
         }
@@ -53,7 +53,7 @@ open class AudioStreamOggVorbis: AudioStream {
 
     private static var __method_binding_set_loop: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_loop").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_loop").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -75,7 +75,7 @@ open class AudioStreamOggVorbis: AudioStream {
 
     private static var __method_binding_has_loop: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_loop").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_loop").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -97,7 +97,7 @@ open class AudioStreamOggVorbis: AudioStream {
 
     private static var __method_binding_set_loop_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_loop_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_loop_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -119,7 +119,7 @@ open class AudioStreamOggVorbis: AudioStream {
 
     private static var __method_binding_get_loop_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_loop_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_loop_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -141,7 +141,7 @@ open class AudioStreamOggVorbis: AudioStream {
 
     private static var __method_binding_set_bpm: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bpm").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bpm").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -163,7 +163,7 @@ open class AudioStreamOggVorbis: AudioStream {
 
     private static var __method_binding_get_bpm: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bpm").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bpm").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -185,7 +185,7 @@ open class AudioStreamOggVorbis: AudioStream {
 
     private static var __method_binding_set_beat_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_beat_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_beat_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -207,7 +207,7 @@ open class AudioStreamOggVorbis: AudioStream {
 
     private static var __method_binding_get_beat_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_beat_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_beat_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -229,7 +229,7 @@ open class AudioStreamOggVorbis: AudioStream {
 
     private static var __method_binding_set_bar_beats: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bar_beats").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bar_beats").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -251,7 +251,7 @@ open class AudioStreamOggVorbis: AudioStream {
 
     private static var __method_binding_get_bar_beats: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bar_beats").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bar_beats").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

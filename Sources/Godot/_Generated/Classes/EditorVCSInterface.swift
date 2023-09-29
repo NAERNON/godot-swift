@@ -101,7 +101,7 @@ open class EditorVCSInterface: Object {
 
     private static var __method_binding_create_diff_line: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_diff_line").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_diff_line").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2901184053)!
         }
         }
@@ -133,7 +133,7 @@ open class EditorVCSInterface: Object {
 
     private static var __method_binding_create_diff_hunk: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_diff_hunk").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_diff_hunk").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3784842090)!
         }
         }
@@ -165,7 +165,7 @@ open class EditorVCSInterface: Object {
 
     private static var __method_binding_create_diff_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_diff_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_diff_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2723227684)!
         }
         }
@@ -193,7 +193,7 @@ open class EditorVCSInterface: Object {
 
     private static var __method_binding_create_commit: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_commit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_commit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1075983584)!
         }
         }
@@ -227,7 +227,7 @@ open class EditorVCSInterface: Object {
 
     private static var __method_binding_create_status_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_status_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_status_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1083471673)!
         }
         }
@@ -257,7 +257,7 @@ open class EditorVCSInterface: Object {
 
     private static var __method_binding_add_diff_hunks_into_diff_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_diff_hunks_into_diff_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_diff_hunks_into_diff_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4015243225)!
         }
         }
@@ -285,7 +285,7 @@ open class EditorVCSInterface: Object {
 
     private static var __method_binding_add_line_diffs_into_diff_hunk: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_line_diffs_into_diff_hunk").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_line_diffs_into_diff_hunk").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4015243225)!
         }
         }
@@ -313,7 +313,7 @@ open class EditorVCSInterface: Object {
 
     private static var __method_binding_popup_error: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "popup_error").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "popup_error").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }

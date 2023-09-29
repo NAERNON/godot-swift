@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
     private static var __method_binding_set_title: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_title").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_title").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -29,7 +29,7 @@ open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
 
     private static var __method_binding_get_title: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_title").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_title").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -51,7 +51,7 @@ open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
 
     private static var __method_binding_set_description: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_description").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_description").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -73,7 +73,7 @@ open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
 
     private static var __method_binding_get_description: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_description").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_description").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }

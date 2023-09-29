@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class GLTFTextureSampler: Resource {
     private static var __method_binding_get_mag_filter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_mag_filter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_mag_filter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -29,7 +29,7 @@ open class GLTFTextureSampler: Resource {
 
     private static var __method_binding_set_mag_filter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_mag_filter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_mag_filter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -51,7 +51,7 @@ open class GLTFTextureSampler: Resource {
 
     private static var __method_binding_get_min_filter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_min_filter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_min_filter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -73,7 +73,7 @@ open class GLTFTextureSampler: Resource {
 
     private static var __method_binding_set_min_filter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_min_filter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_min_filter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -95,7 +95,7 @@ open class GLTFTextureSampler: Resource {
 
     private static var __method_binding_get_wrap_s: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_wrap_s").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_wrap_s").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -117,7 +117,7 @@ open class GLTFTextureSampler: Resource {
 
     private static var __method_binding_set_wrap_s: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_wrap_s").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_wrap_s").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -139,7 +139,7 @@ open class GLTFTextureSampler: Resource {
 
     private static var __method_binding_get_wrap_t: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_wrap_t").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_wrap_t").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -161,7 +161,7 @@ open class GLTFTextureSampler: Resource {
 
     private static var __method_binding_set_wrap_t: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_wrap_t").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_wrap_t").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }

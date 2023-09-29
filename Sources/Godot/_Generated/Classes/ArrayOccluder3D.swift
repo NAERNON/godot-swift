@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ArrayOccluder3D: Occluder3D {
     private static var __method_binding_set_arrays: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_arrays").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_arrays").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3233972621)!
         }
         }
@@ -31,7 +31,7 @@ open class ArrayOccluder3D: Occluder3D {
 
     private static var __method_binding_set_vertices: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_vertices").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_vertices").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 334873810)!
         }
         }
@@ -53,7 +53,7 @@ open class ArrayOccluder3D: Occluder3D {
 
     private static var __method_binding_set_indices: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_indices").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_indices").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614634198)!
         }
         }

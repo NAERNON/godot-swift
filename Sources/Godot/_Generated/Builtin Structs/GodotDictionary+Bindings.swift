@@ -200,7 +200,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_size: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 3173160232)!
         }
     }()
@@ -215,7 +215,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_is_empty: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 3918633141)!
         }
     }()
@@ -230,7 +230,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_clear: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 3218959716)!
         }
     }()
@@ -242,7 +242,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_merge: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "merge").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "merge").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 2079548978)!
         }
     }()
@@ -260,7 +260,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_has: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "has").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 3680194679)!
         }
     }()
@@ -279,7 +279,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_has_all: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "has_all").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_all").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 2988181878)!
         }
     }()
@@ -298,7 +298,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_find_key: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "find_key").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "find_key").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 1988825835)!
         }
     }()
@@ -317,7 +317,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_erase: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "erase").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "erase").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 1776646889)!
         }
     }()
@@ -337,7 +337,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_hash: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "hash").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "hash").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 3173160232)!
         }
     }()
@@ -352,7 +352,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_keys: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "keys").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "keys").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 4144163970)!
         }
     }()
@@ -367,7 +367,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_values: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "values").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "values").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 4144163970)!
         }
     }()
@@ -382,7 +382,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_duplicate: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "duplicate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "duplicate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 830099069)!
         }
     }()
@@ -401,7 +401,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_get: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 2205440559)!
         }
     }()
@@ -422,7 +422,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_make_read_only: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "make_read_only").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "make_read_only").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 3218959716)!
         }
     }()
@@ -434,7 +434,7 @@ extension GodotDictionary {
     }
 
     private static var __method_binding_is_read_only: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_read_only").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_read_only").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 3918633141)!
         }
     }()

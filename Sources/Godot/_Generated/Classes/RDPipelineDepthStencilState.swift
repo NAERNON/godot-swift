@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class RDPipelineDepthStencilState: RefCounted {
     private static var __method_binding_set_enable_depth_test: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enable_depth_test").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enable_depth_test").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -29,7 +29,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_enable_depth_test: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_enable_depth_test").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_enable_depth_test").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -51,7 +51,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_enable_depth_write: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enable_depth_write").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enable_depth_write").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -73,7 +73,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_enable_depth_write: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_enable_depth_write").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_enable_depth_write").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -95,7 +95,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_depth_compare_operator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_depth_compare_operator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_depth_compare_operator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2573711505)!
         }
         }
@@ -117,7 +117,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_depth_compare_operator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_depth_compare_operator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_depth_compare_operator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 269730778)!
         }
         }
@@ -139,7 +139,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_enable_depth_range: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enable_depth_range").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enable_depth_range").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -161,7 +161,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_enable_depth_range: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_enable_depth_range").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_enable_depth_range").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -183,7 +183,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_depth_range_min: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_depth_range_min").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_depth_range_min").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -205,7 +205,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_depth_range_min: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_depth_range_min").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_depth_range_min").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -227,7 +227,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_depth_range_max: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_depth_range_max").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_depth_range_max").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -249,7 +249,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_depth_range_max: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_depth_range_max").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_depth_range_max").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -271,7 +271,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_enable_stencil: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enable_stencil").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enable_stencil").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -293,7 +293,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_enable_stencil: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_enable_stencil").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_enable_stencil").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -315,7 +315,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_front_op_fail: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_front_op_fail").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_front_op_fail").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2092799566)!
         }
         }
@@ -337,7 +337,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_front_op_fail: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_front_op_fail").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_front_op_fail").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1714732389)!
         }
         }
@@ -359,7 +359,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_front_op_pass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_front_op_pass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_front_op_pass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2092799566)!
         }
         }
@@ -381,7 +381,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_front_op_pass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_front_op_pass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_front_op_pass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1714732389)!
         }
         }
@@ -403,7 +403,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_front_op_depth_fail: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_front_op_depth_fail").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_front_op_depth_fail").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2092799566)!
         }
         }
@@ -425,7 +425,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_front_op_depth_fail: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_front_op_depth_fail").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_front_op_depth_fail").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1714732389)!
         }
         }
@@ -447,7 +447,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_front_op_compare: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_front_op_compare").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_front_op_compare").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2573711505)!
         }
         }
@@ -469,7 +469,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_front_op_compare: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_front_op_compare").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_front_op_compare").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 269730778)!
         }
         }
@@ -491,7 +491,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_front_op_compare_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_front_op_compare_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_front_op_compare_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -513,7 +513,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_front_op_compare_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_front_op_compare_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_front_op_compare_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -535,7 +535,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_front_op_write_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_front_op_write_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_front_op_write_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -557,7 +557,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_front_op_write_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_front_op_write_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_front_op_write_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -579,7 +579,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_front_op_reference: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_front_op_reference").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_front_op_reference").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -601,7 +601,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_front_op_reference: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_front_op_reference").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_front_op_reference").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -623,7 +623,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_back_op_fail: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_back_op_fail").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_back_op_fail").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2092799566)!
         }
         }
@@ -645,7 +645,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_back_op_fail: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_back_op_fail").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_back_op_fail").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1714732389)!
         }
         }
@@ -667,7 +667,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_back_op_pass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_back_op_pass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_back_op_pass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2092799566)!
         }
         }
@@ -689,7 +689,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_back_op_pass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_back_op_pass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_back_op_pass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1714732389)!
         }
         }
@@ -711,7 +711,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_back_op_depth_fail: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_back_op_depth_fail").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_back_op_depth_fail").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2092799566)!
         }
         }
@@ -733,7 +733,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_back_op_depth_fail: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_back_op_depth_fail").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_back_op_depth_fail").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1714732389)!
         }
         }
@@ -755,7 +755,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_back_op_compare: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_back_op_compare").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_back_op_compare").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2573711505)!
         }
         }
@@ -777,7 +777,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_back_op_compare: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_back_op_compare").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_back_op_compare").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 269730778)!
         }
         }
@@ -799,7 +799,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_back_op_compare_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_back_op_compare_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_back_op_compare_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -821,7 +821,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_back_op_compare_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_back_op_compare_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_back_op_compare_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -843,7 +843,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_back_op_write_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_back_op_write_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_back_op_write_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -865,7 +865,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_back_op_write_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_back_op_write_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_back_op_write_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -887,7 +887,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_set_back_op_reference: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_back_op_reference").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_back_op_reference").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -909,7 +909,7 @@ open class RDPipelineDepthStencilState: RefCounted {
 
     private static var __method_binding_get_back_op_reference: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_back_op_reference").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_back_op_reference").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

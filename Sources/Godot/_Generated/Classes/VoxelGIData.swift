@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class VoxelGIData: Resource {
     private static var __method_binding_allocate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "allocate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "allocate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4041601946)!
         }
         }
@@ -41,7 +41,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_get_bounds: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bounds").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bounds").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1068685055)!
         }
         }
@@ -63,7 +63,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_get_octree_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_octree_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_octree_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -85,7 +85,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_get_to_cell_xform: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_to_cell_xform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_to_cell_xform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3229777777)!
         }
         }
@@ -107,7 +107,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_get_octree_cells: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_octree_cells").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_octree_cells").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2362200018)!
         }
         }
@@ -129,7 +129,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_get_data_cells: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_data_cells").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_data_cells").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2362200018)!
         }
         }
@@ -151,7 +151,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_get_level_counts: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_level_counts").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_level_counts").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1930428628)!
         }
         }
@@ -173,7 +173,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_set_dynamic_range: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_dynamic_range").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_dynamic_range").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -195,7 +195,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_get_dynamic_range: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_dynamic_range").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_dynamic_range").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -217,7 +217,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_set_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -239,7 +239,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_get_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -261,7 +261,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_set_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -283,7 +283,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_get_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -305,7 +305,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_set_normal_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_normal_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_normal_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -327,7 +327,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_get_normal_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_normal_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_normal_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -349,7 +349,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_set_propagation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_propagation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_propagation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -371,7 +371,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_get_propagation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_propagation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_propagation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -393,7 +393,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_set_interior: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_interior").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_interior").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -415,7 +415,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_is_interior: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_interior").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_interior").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -437,7 +437,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_set_use_two_bounces: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_use_two_bounces").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_use_two_bounces").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -459,7 +459,7 @@ open class VoxelGIData: Resource {
 
     private static var __method_binding_is_using_two_bounces: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_using_two_bounces").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_using_two_bounces").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

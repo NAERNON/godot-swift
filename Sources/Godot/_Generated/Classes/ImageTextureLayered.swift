@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ImageTextureLayered: TextureLayered {
     private static var __method_binding_create_from_images: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_from_images").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_from_images").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2785773503)!
         }
         }
@@ -33,7 +33,7 @@ open class ImageTextureLayered: TextureLayered {
 
     private static var __method_binding_update_layer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "update_layer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "update_layer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3331733361)!
         }
         }

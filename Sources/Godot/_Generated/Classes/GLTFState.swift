@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class GLTFState: Resource {
     private static var __method_binding_add_used_extension: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_used_extension").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_used_extension").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2678287736)!
         }
         }
@@ -31,7 +31,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_json: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_json").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_json").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2382534195)!
         }
         }
@@ -53,7 +53,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_json: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_json").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_json").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155329257)!
         }
         }
@@ -75,7 +75,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_major_version: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_major_version").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_major_version").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -97,7 +97,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_major_version: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_major_version").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_major_version").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -119,7 +119,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_minor_version: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_minor_version").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_minor_version").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -141,7 +141,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_minor_version: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_minor_version").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_minor_version").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -163,7 +163,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_glb_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_glb_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_glb_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2115431945)!
         }
         }
@@ -185,7 +185,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_glb_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_glb_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_glb_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2971499966)!
         }
         }
@@ -207,7 +207,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_use_named_skin_binds: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_use_named_skin_binds").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_use_named_skin_binds").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -229,7 +229,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_use_named_skin_binds: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_use_named_skin_binds").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_use_named_skin_binds").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -251,7 +251,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_nodes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_nodes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_nodes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -273,7 +273,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_nodes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_nodes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_nodes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -295,7 +295,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_buffers: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_buffers").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_buffers").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -317,7 +317,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_buffers: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_buffers").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_buffers").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -339,7 +339,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_buffer_views: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_buffer_views").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_buffer_views").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -361,7 +361,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_buffer_views: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_buffer_views").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_buffer_views").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -383,7 +383,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_accessors: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_accessors").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_accessors").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -405,7 +405,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_accessors: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_accessors").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_accessors").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -427,7 +427,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_meshes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_meshes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_meshes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -449,7 +449,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_meshes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_meshes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_meshes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -471,7 +471,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_animation_players_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_animation_players_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_animation_players_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3744713108)!
         }
         }
@@ -497,7 +497,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_animation_player: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_animation_player").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_animation_player").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 925043400)!
         }
         }
@@ -523,7 +523,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_materials: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_materials").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_materials").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -545,7 +545,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_materials: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_materials").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_materials").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -567,7 +567,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_scene_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_scene_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_scene_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2841200299)!
         }
         }
@@ -589,7 +589,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_scene_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_scene_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_scene_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -611,7 +611,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_base_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_base_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_base_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2841200299)!
         }
         }
@@ -633,7 +633,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_base_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_base_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_base_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -655,7 +655,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_root_nodes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_root_nodes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_root_nodes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 969006518)!
         }
         }
@@ -677,7 +677,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_root_nodes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_root_nodes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_root_nodes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614634198)!
         }
         }
@@ -699,7 +699,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_textures: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_textures").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_textures").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -721,7 +721,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_textures: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_textures").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_textures").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -743,7 +743,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_texture_samplers: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_texture_samplers").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_texture_samplers").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -765,7 +765,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_texture_samplers: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_texture_samplers").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_texture_samplers").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -787,7 +787,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_images: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_images").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_images").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -809,7 +809,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_images: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_images").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_images").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -831,7 +831,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_skins: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skins").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skins").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -853,7 +853,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_skins: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_skins").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_skins").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -875,7 +875,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_cameras: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cameras").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cameras").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -897,7 +897,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_cameras: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cameras").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cameras").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -919,7 +919,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_lights: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_lights").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_lights").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -941,7 +941,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_lights: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_lights").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_lights").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -963,7 +963,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_unique_names: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_unique_names").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_unique_names").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -985,7 +985,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_unique_names: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_unique_names").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_unique_names").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -1007,7 +1007,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_unique_animation_names: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_unique_animation_names").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_unique_animation_names").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -1029,7 +1029,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_unique_animation_names: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_unique_animation_names").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_unique_animation_names").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -1051,7 +1051,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_skeletons: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skeletons").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skeletons").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -1073,7 +1073,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_skeletons: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_skeletons").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_skeletons").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -1095,7 +1095,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_create_animations: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_create_animations").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_create_animations").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -1117,7 +1117,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_create_animations: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_create_animations").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_create_animations").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1139,7 +1139,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_animations: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_animations").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_animations").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -1161,7 +1161,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_animations: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_animations").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_animations").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -1183,7 +1183,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_scene_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_scene_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_scene_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4253421667)!
         }
         }
@@ -1209,7 +1209,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_node_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_node_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_node_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1205807060)!
         }
         }
@@ -1237,7 +1237,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_additional_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_additional_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_additional_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2138907829)!
         }
         }
@@ -1263,7 +1263,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_additional_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_additional_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_additional_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3776071444)!
         }
         }
@@ -1287,7 +1287,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_get_handle_binary_image: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_handle_binary_image").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_handle_binary_image").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -1309,7 +1309,7 @@ open class GLTFState: Resource {
 
     private static var __method_binding_set_handle_binary_image: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_handle_binary_image").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_handle_binary_image").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }

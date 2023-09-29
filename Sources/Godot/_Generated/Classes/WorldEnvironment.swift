@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class WorldEnvironment: Node {
     private static var __method_binding_set_environment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_environment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_environment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4143518816)!
         }
         }
@@ -31,7 +31,7 @@ open class WorldEnvironment: Node {
 
     private static var __method_binding_get_environment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_environment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_environment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3082064660)!
         }
         }
@@ -53,7 +53,7 @@ open class WorldEnvironment: Node {
 
     private static var __method_binding_set_camera_attributes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_camera_attributes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_camera_attributes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2817810567)!
         }
         }
@@ -77,7 +77,7 @@ open class WorldEnvironment: Node {
 
     private static var __method_binding_get_camera_attributes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_camera_attributes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_camera_attributes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3921283215)!
         }
         }

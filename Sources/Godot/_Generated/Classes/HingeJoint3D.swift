@@ -24,7 +24,7 @@ open class HingeJoint3D: Joint3D {
 
     private static var __method_binding_set_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3082977519)!
         }
         }
@@ -48,7 +48,7 @@ open class HingeJoint3D: Joint3D {
 
     private static var __method_binding_get_param: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_param").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_param").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4066002676)!
         }
         }
@@ -74,7 +74,7 @@ open class HingeJoint3D: Joint3D {
 
     private static var __method_binding_set_flag: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_flag").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_flag").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1083494620)!
         }
         }
@@ -98,7 +98,7 @@ open class HingeJoint3D: Joint3D {
 
     private static var __method_binding_get_flag: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_flag").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_flag").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2841369610)!
         }
         }

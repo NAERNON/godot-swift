@@ -14,7 +14,7 @@ open class PackedScene: Resource {
 
     private static var __method_binding_pack: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "pack").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "pack").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2584678054)!
         }
         }
@@ -42,7 +42,7 @@ open class PackedScene: Resource {
 
     private static var __method_binding_instantiate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "instantiate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "instantiate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2628778455)!
         }
         }
@@ -68,7 +68,7 @@ open class PackedScene: Resource {
 
     private static var __method_binding_can_instantiate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "can_instantiate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "can_instantiate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -90,7 +90,7 @@ open class PackedScene: Resource {
 
     private static var __method_binding_get_state: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_state").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_state").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3479783971)!
         }
         }

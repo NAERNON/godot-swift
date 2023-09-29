@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class SceneReplicationConfig: Resource {
     private static var __method_binding_get_properties: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_properties").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_properties").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
@@ -29,7 +29,7 @@ open class SceneReplicationConfig: Resource {
 
     private static var __method_binding_add_property: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_property").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_property").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3818401521)!
         }
         }
@@ -53,7 +53,7 @@ open class SceneReplicationConfig: Resource {
 
     private static var __method_binding_has_property: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_property").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_property").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 861721659)!
         }
         }
@@ -79,7 +79,7 @@ open class SceneReplicationConfig: Resource {
 
     private static var __method_binding_remove_property: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_property").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_property").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -101,7 +101,7 @@ open class SceneReplicationConfig: Resource {
 
     private static var __method_binding_property_get_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "property_get_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "property_get_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1382022557)!
         }
         }
@@ -127,7 +127,7 @@ open class SceneReplicationConfig: Resource {
 
     private static var __method_binding_property_get_spawn: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "property_get_spawn").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "property_get_spawn").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3456846888)!
         }
         }
@@ -153,7 +153,7 @@ open class SceneReplicationConfig: Resource {
 
     private static var __method_binding_property_set_spawn: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "property_set_spawn").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "property_set_spawn").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3868023870)!
         }
         }
@@ -177,7 +177,7 @@ open class SceneReplicationConfig: Resource {
 
     private static var __method_binding_property_get_sync: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "property_get_sync").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "property_get_sync").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3456846888)!
         }
         }
@@ -203,7 +203,7 @@ open class SceneReplicationConfig: Resource {
 
     private static var __method_binding_property_set_sync: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "property_set_sync").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "property_set_sync").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3868023870)!
         }
         }
@@ -227,7 +227,7 @@ open class SceneReplicationConfig: Resource {
 
     private static var __method_binding_property_get_watch: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "property_get_watch").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "property_get_watch").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3456846888)!
         }
         }
@@ -253,7 +253,7 @@ open class SceneReplicationConfig: Resource {
 
     private static var __method_binding_property_set_watch: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "property_set_watch").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "property_set_watch").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3868023870)!
         }
         }

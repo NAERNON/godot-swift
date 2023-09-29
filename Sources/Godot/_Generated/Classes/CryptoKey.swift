@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class CryptoKey: Resource {
     private static var __method_binding_save: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 885841341)!
         }
         }
@@ -35,7 +35,7 @@ open class CryptoKey: Resource {
 
     private static var __method_binding_load: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 885841341)!
         }
         }
@@ -63,7 +63,7 @@ open class CryptoKey: Resource {
 
     private static var __method_binding_is_public_only: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_public_only").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_public_only").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -85,7 +85,7 @@ open class CryptoKey: Resource {
 
     private static var __method_binding_save_to_string: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save_to_string").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save_to_string").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 32795936)!
         }
         }
@@ -111,7 +111,7 @@ open class CryptoKey: Resource {
 
     private static var __method_binding_load_from_string: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load_from_string").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load_from_string").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 885841341)!
         }
         }

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class WeakRef: RefCounted {
     private static var __method_binding_get_ref: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ref").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ref").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1214101251)!
         }
         }

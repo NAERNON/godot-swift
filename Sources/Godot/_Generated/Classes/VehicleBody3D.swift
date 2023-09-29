@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class VehicleBody3D: RigidBody3D {
     private static var __method_binding_set_engine_force: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_engine_force").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_engine_force").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -29,7 +29,7 @@ open class VehicleBody3D: RigidBody3D {
 
     private static var __method_binding_get_engine_force: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_engine_force").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_engine_force").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -51,7 +51,7 @@ open class VehicleBody3D: RigidBody3D {
 
     private static var __method_binding_set_brake: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_brake").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_brake").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -73,7 +73,7 @@ open class VehicleBody3D: RigidBody3D {
 
     private static var __method_binding_get_brake: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_brake").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_brake").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -95,7 +95,7 @@ open class VehicleBody3D: RigidBody3D {
 
     private static var __method_binding_set_steering: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_steering").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_steering").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -117,7 +117,7 @@ open class VehicleBody3D: RigidBody3D {
 
     private static var __method_binding_get_steering: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_steering").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_steering").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

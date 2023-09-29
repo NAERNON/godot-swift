@@ -18,7 +18,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_set_gradient: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gradient").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gradient").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2756054477)!
         }
         }
@@ -42,7 +42,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_get_gradient: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gradient").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gradient").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 132272999)!
         }
         }
@@ -64,7 +64,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_set_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -86,7 +86,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_set_height: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_height").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_height").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -108,7 +108,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_set_use_hdr: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_use_hdr").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_use_hdr").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -130,7 +130,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_is_using_hdr: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_using_hdr").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_using_hdr").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -152,7 +152,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_set_fill: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fill").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fill").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3623927636)!
         }
         }
@@ -174,7 +174,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_get_fill: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fill").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fill").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1876227217)!
         }
         }
@@ -196,7 +196,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_set_fill_from: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fill_from").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fill_from").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -218,7 +218,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_get_fill_from: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fill_from").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fill_from").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -240,7 +240,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_set_fill_to: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fill_to").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fill_to").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -262,7 +262,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_get_fill_to: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fill_to").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fill_to").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -284,7 +284,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_set_repeat: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_repeat").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_repeat").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1357597002)!
         }
         }
@@ -306,7 +306,7 @@ open class GradientTexture2D: Texture2D {
 
     private static var __method_binding_get_repeat: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_repeat").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_repeat").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3351758665)!
         }
         }

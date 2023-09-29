@@ -15,7 +15,7 @@ open class VisibleOnScreenNotifier2D: Node2D {
 
     private static var __method_binding_set_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2046264180)!
         }
         }
@@ -37,7 +37,7 @@ open class VisibleOnScreenNotifier2D: Node2D {
 
     private static var __method_binding_get_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1639390495)!
         }
         }
@@ -59,7 +59,7 @@ open class VisibleOnScreenNotifier2D: Node2D {
 
     private static var __method_binding_is_on_screen: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_on_screen").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_on_screen").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class DTLSServer: RefCounted {
     private static var __method_binding_setup: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "setup").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "setup").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1262296096)!
         }
         }
@@ -35,7 +35,7 @@ open class DTLSServer: RefCounted {
 
     private static var __method_binding_take_connection: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "take_connection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "take_connection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3946580474)!
         }
         }

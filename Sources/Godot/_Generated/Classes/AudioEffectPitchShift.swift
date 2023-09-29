@@ -16,7 +16,7 @@ open class AudioEffectPitchShift: AudioEffect {
 
     private static var __method_binding_set_pitch_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pitch_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pitch_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -38,7 +38,7 @@ open class AudioEffectPitchShift: AudioEffect {
 
     private static var __method_binding_get_pitch_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pitch_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pitch_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -60,7 +60,7 @@ open class AudioEffectPitchShift: AudioEffect {
 
     private static var __method_binding_set_oversampling: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_oversampling").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_oversampling").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -82,7 +82,7 @@ open class AudioEffectPitchShift: AudioEffect {
 
     private static var __method_binding_get_oversampling: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_oversampling").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_oversampling").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -104,7 +104,7 @@ open class AudioEffectPitchShift: AudioEffect {
 
     private static var __method_binding_set_fft_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fft_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fft_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2323518741)!
         }
         }
@@ -126,7 +126,7 @@ open class AudioEffectPitchShift: AudioEffect {
 
     private static var __method_binding_get_fft_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fft_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fft_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2361246789)!
         }
         }

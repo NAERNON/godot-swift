@@ -27,7 +27,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
 
     private static var __method_binding_set_op_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_op_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_op_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 377800221)!
         }
         }
@@ -49,7 +49,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
 
     private static var __method_binding_get_op_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_op_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_op_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3997800514)!
         }
         }
@@ -71,7 +71,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
 
     private static var __method_binding_set_function: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_function").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_function").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1944704156)!
         }
         }
@@ -93,7 +93,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
 
     private static var __method_binding_get_function: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_function").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_function").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2389093396)!
         }
         }
@@ -115,7 +115,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
 
     private static var __method_binding_set_precision: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_precision").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_precision").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 797270566)!
         }
         }
@@ -137,7 +137,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
 
     private static var __method_binding_get_precision: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_precision").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_precision").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3822547323)!
         }
         }

@@ -27,7 +27,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_set_sprite_frames: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sprite_frames").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sprite_frames").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 905781144)!
         }
         }
@@ -51,7 +51,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_get_sprite_frames: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sprite_frames").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sprite_frames").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3804851214)!
         }
         }
@@ -73,7 +73,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_set_animation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_animation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_animation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -95,7 +95,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_get_animation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_animation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_animation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2002593661)!
         }
         }
@@ -117,7 +117,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_set_autoplay: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_autoplay").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_autoplay").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -139,7 +139,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_get_autoplay: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_autoplay").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_autoplay").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -161,7 +161,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_is_playing: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_playing").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_playing").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -183,7 +183,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_play: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "play").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "play").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2372066587)!
         }
         }
@@ -209,7 +209,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_play_backwards: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "play_backwards").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "play_backwards").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1421762485)!
         }
         }
@@ -231,7 +231,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_pause: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "pause").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "pause").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -249,7 +249,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "stop").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "stop").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -267,7 +267,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_set_frame: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_frame").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_frame").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -289,7 +289,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_get_frame: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_frame").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_frame").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -311,7 +311,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_set_frame_progress: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_frame_progress").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_frame_progress").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -333,7 +333,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_get_frame_progress: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_frame_progress").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_frame_progress").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -355,7 +355,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_set_frame_and_progress: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_frame_and_progress").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_frame_and_progress").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -379,7 +379,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_set_speed_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_speed_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_speed_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -401,7 +401,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_get_speed_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_speed_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_speed_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -423,7 +423,7 @@ open class AnimatedSprite3D: SpriteBase3D {
 
     private static var __method_binding_get_playing_speed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_playing_speed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_playing_speed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

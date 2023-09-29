@@ -340,7 +340,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_inverse: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "inverse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "inverse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 3816817146)!
         }
     }()
@@ -356,7 +356,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_affine_inverse: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "affine_inverse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "affine_inverse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 3816817146)!
         }
     }()
@@ -372,7 +372,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_orthonormalized: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "orthonormalized").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "orthonormalized").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 3816817146)!
         }
     }()
@@ -388,7 +388,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_rotated: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "rotated").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rotated").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1563203923)!
         }
     }()
@@ -410,7 +410,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_rotated_local: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "rotated_local").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rotated_local").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1563203923)!
         }
     }()
@@ -432,7 +432,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_scaled: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "scaled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "scaled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1405596198)!
         }
     }()
@@ -452,7 +452,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_scaled_local: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "scaled_local").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "scaled_local").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1405596198)!
         }
     }()
@@ -472,7 +472,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_translated: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "translated").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "translated").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1405596198)!
         }
     }()
@@ -492,7 +492,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_translated_local: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "translated_local").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "translated_local").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1405596198)!
         }
     }()
@@ -512,7 +512,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_looking_at: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "looking_at").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "looking_at").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 90889270)!
         }
     }()
@@ -536,7 +536,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_interpolate_with: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "interpolate_with").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "interpolate_with").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1786453358)!
         }
     }()
@@ -558,7 +558,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 696001652)!
         }
     }()
@@ -578,7 +578,7 @@ extension Transform3D {
     }
 
     private static var __method_binding_is_finite: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 3918633141)!
         }
     }()

@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class HMACContext: RefCounted {
     private static var __method_binding_start: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "start").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "start").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3537364598)!
         }
         }
@@ -35,7 +35,7 @@ open class HMACContext: RefCounted {
 
     private static var __method_binding_update: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "update").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "update").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 680677267)!
         }
         }
@@ -61,7 +61,7 @@ open class HMACContext: RefCounted {
 
     private static var __method_binding_finish: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "finish").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "finish").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2115431945)!
         }
         }

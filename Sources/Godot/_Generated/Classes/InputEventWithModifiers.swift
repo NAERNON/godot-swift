@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class InputEventWithModifiers: InputEventFromWindow {
     private static var __method_binding_set_command_or_control_autoremap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_command_or_control_autoremap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_command_or_control_autoremap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -29,7 +29,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
 
     private static var __method_binding_is_command_or_control_autoremap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_command_or_control_autoremap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_command_or_control_autoremap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -51,7 +51,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
 
     private static var __method_binding_is_command_or_control_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_command_or_control_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_command_or_control_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -73,7 +73,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
 
     private static var __method_binding_set_alt_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_alt_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_alt_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -95,7 +95,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
 
     private static var __method_binding_is_alt_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_alt_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_alt_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -117,7 +117,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
 
     private static var __method_binding_set_shift_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_shift_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_shift_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -139,7 +139,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
 
     private static var __method_binding_is_shift_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_shift_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_shift_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -161,7 +161,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
 
     private static var __method_binding_set_ctrl_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ctrl_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ctrl_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -183,7 +183,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
 
     private static var __method_binding_is_ctrl_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_ctrl_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_ctrl_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -205,7 +205,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
 
     private static var __method_binding_set_meta_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_meta_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_meta_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -227,7 +227,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
 
     private static var __method_binding_is_meta_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_meta_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_meta_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -249,7 +249,7 @@ open class InputEventWithModifiers: InputEventFromWindow {
 
     private static var __method_binding_get_modifiers_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_modifiers_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_modifiers_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1258259499)!
         }
         }

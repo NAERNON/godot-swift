@@ -27,7 +27,7 @@ open class OpenXRInterface: XRInterface {
 
     private static var __method_binding_get_display_refresh_rate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_display_refresh_rate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_display_refresh_rate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -49,7 +49,7 @@ open class OpenXRInterface: XRInterface {
 
     private static var __method_binding_set_display_refresh_rate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_display_refresh_rate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_display_refresh_rate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -71,7 +71,7 @@ open class OpenXRInterface: XRInterface {
 
     private static var __method_binding_get_render_target_size_multiplier: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_render_target_size_multiplier").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_render_target_size_multiplier").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -93,7 +93,7 @@ open class OpenXRInterface: XRInterface {
 
     private static var __method_binding_set_render_target_size_multiplier: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_render_target_size_multiplier").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_render_target_size_multiplier").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -115,7 +115,7 @@ open class OpenXRInterface: XRInterface {
 
     private static var __method_binding_is_action_set_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_action_set_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_action_set_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -141,7 +141,7 @@ open class OpenXRInterface: XRInterface {
 
     private static var __method_binding_set_action_set_active: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_action_set_active").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_action_set_active").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2678287736)!
         }
         }
@@ -165,7 +165,7 @@ open class OpenXRInterface: XRInterface {
 
     private static var __method_binding_get_action_sets: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_action_sets").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_action_sets").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
@@ -187,7 +187,7 @@ open class OpenXRInterface: XRInterface {
 
     private static var __method_binding_get_available_display_refresh_rates: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_available_display_refresh_rates").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_available_display_refresh_rates").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }

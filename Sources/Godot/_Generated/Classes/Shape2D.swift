@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Shape2D: Resource {
     private static var __method_binding_set_custom_solver_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_custom_solver_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_custom_solver_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -29,7 +29,7 @@ open class Shape2D: Resource {
 
     private static var __method_binding_get_custom_solver_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_custom_solver_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_custom_solver_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -51,7 +51,7 @@ open class Shape2D: Resource {
 
     private static var __method_binding_collide: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "collide").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "collide").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3709843132)!
         }
         }
@@ -83,7 +83,7 @@ open class Shape2D: Resource {
 
     private static var __method_binding_collide_with_motion: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "collide_with_motion").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "collide_with_motion").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2869556801)!
         }
         }
@@ -119,7 +119,7 @@ open class Shape2D: Resource {
 
     private static var __method_binding_collide_and_get_contacts: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "collide_and_get_contacts").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "collide_and_get_contacts").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3056932662)!
         }
         }
@@ -151,7 +151,7 @@ open class Shape2D: Resource {
 
     private static var __method_binding_collide_with_motion_and_get_contacts: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "collide_with_motion_and_get_contacts").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "collide_with_motion_and_get_contacts").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3620351573)!
         }
         }
@@ -187,7 +187,7 @@ open class Shape2D: Resource {
 
     private static var __method_binding_draw: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "draw").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "draw").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2948539648)!
         }
         }
@@ -211,7 +211,7 @@ open class Shape2D: Resource {
 
     private static var __method_binding_get_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1639390495)!
         }
         }

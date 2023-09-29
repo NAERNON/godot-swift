@@ -216,7 +216,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_size: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3173160232)!
         }
     }()
@@ -231,7 +231,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_is_empty: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3918633141)!
         }
     }()
@@ -246,7 +246,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_set: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "set").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
         }
     }()
@@ -264,7 +264,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_push_back: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "push_back").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "push_back").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 694024632)!
         }
     }()
@@ -284,7 +284,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_append: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "append").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "append").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 694024632)!
         }
     }()
@@ -304,7 +304,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_append_array: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "append_array").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "append_array").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 791097111)!
         }
     }()
@@ -320,7 +320,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_remove_at: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "remove_at").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_at").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2823966027)!
         }
     }()
@@ -336,7 +336,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_insert: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "insert").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "insert").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1487112728)!
         }
     }()
@@ -358,7 +358,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_fill: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "fill").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "fill").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2823966027)!
         }
     }()
@@ -374,7 +374,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_resize: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "resize").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "resize").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 848867239)!
         }
     }()
@@ -394,7 +394,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_clear: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3218959716)!
         }
     }()
@@ -406,7 +406,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_has: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "has").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 931488181)!
         }
     }()
@@ -425,7 +425,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_reverse: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "reverse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "reverse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3218959716)!
         }
     }()
@@ -437,7 +437,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_slice: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "slice").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "slice").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2278869132)!
         }
     }()
@@ -458,7 +458,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_sort: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "sort").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "sort").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3218959716)!
         }
     }()
@@ -470,7 +470,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_bsearch: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "bsearch").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "bsearch").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3380005890)!
         }
     }()
@@ -492,7 +492,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_duplicate: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "duplicate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "duplicate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 851781288)!
         }
     }()
@@ -507,7 +507,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_find: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "find").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "find").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2984303840)!
         }
     }()
@@ -528,7 +528,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_rfind: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "rfind").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rfind").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2984303840)!
         }
     }()
@@ -549,7 +549,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_count: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
         }
     }()
@@ -568,7 +568,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_get_string_from_ascii: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_string_from_ascii").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_string_from_ascii").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
         }
     }()
@@ -583,7 +583,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_get_string_from_utf8: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_string_from_utf8").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_string_from_utf8").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
         }
     }()
@@ -598,7 +598,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_get_string_from_utf16: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_string_from_utf16").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_string_from_utf16").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
         }
     }()
@@ -613,7 +613,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_get_string_from_utf32: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_string_from_utf32").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_string_from_utf32").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
         }
     }()
@@ -628,7 +628,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_get_string_from_wchar: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_string_from_wchar").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_string_from_wchar").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
         }
     }()
@@ -643,7 +643,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_hex_encode: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "hex_encode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "hex_encode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
         }
     }()
@@ -658,7 +658,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_compress: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "compress").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "compress").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1845905913)!
         }
     }()
@@ -677,7 +677,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decompress: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decompress").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decompress").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2278869132)!
         }
     }()
@@ -698,7 +698,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decompress_dynamic: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decompress_dynamic").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decompress_dynamic").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2278869132)!
         }
     }()
@@ -719,7 +719,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_u8: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_u8").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_u8").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
         }
     }()
@@ -738,7 +738,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_s8: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_s8").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_s8").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
         }
     }()
@@ -757,7 +757,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_u16: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_u16").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_u16").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
         }
     }()
@@ -776,7 +776,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_s16: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_s16").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_s16").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
         }
     }()
@@ -795,7 +795,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_u32: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_u32").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_u32").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
         }
     }()
@@ -814,7 +814,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_s32: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_s32").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_s32").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
         }
     }()
@@ -833,7 +833,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_u64: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_u64").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_u64").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
         }
     }()
@@ -852,7 +852,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_s64: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_s64").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_s64").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
         }
     }()
@@ -871,7 +871,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_half: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_half").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_half").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1401583798)!
         }
     }()
@@ -890,7 +890,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_float: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_float").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_float").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1401583798)!
         }
     }()
@@ -909,7 +909,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_double: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_double").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_double").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1401583798)!
         }
     }()
@@ -928,7 +928,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_has_encoded_var: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "has_encoded_var").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_encoded_var").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2914632957)!
         }
     }()
@@ -949,7 +949,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_var: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_var").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_var").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1740420038)!
         }
     }()
@@ -970,7 +970,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_decode_var_size: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "decode_var_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decode_var_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 954237325)!
         }
     }()
@@ -991,7 +991,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_to_int32_array: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "to_int32_array").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "to_int32_array").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3158844420)!
         }
     }()
@@ -1006,7 +1006,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_to_int64_array: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "to_int64_array").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "to_int64_array").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1961294120)!
         }
     }()
@@ -1021,7 +1021,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_to_float32_array: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "to_float32_array").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "to_float32_array").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3575107827)!
         }
     }()
@@ -1036,7 +1036,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_to_float64_array: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "to_float64_array").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "to_float64_array").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1627308337)!
         }
     }()
@@ -1051,7 +1051,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_u8: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_u8").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_u8").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
         }
     }()
@@ -1069,7 +1069,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_s8: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_s8").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_s8").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
         }
     }()
@@ -1087,7 +1087,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_u16: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_u16").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_u16").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
         }
     }()
@@ -1105,7 +1105,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_s16: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_s16").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_s16").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
         }
     }()
@@ -1123,7 +1123,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_u32: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_u32").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_u32").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
         }
     }()
@@ -1141,7 +1141,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_s32: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_s32").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_s32").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
         }
     }()
@@ -1159,7 +1159,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_u64: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_u64").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_u64").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
         }
     }()
@@ -1177,7 +1177,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_s64: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_s64").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_s64").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
         }
     }()
@@ -1195,7 +1195,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_half: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_half").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_half").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1113000516)!
         }
     }()
@@ -1213,7 +1213,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_float: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_float").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_float").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1113000516)!
         }
     }()
@@ -1231,7 +1231,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_double: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_double").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_double").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1113000516)!
         }
     }()
@@ -1249,7 +1249,7 @@ extension PackedByteArray {
     }
 
     private static var __method_binding_encode_var: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encode_var").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encode_var").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2604460497)!
         }
     }()

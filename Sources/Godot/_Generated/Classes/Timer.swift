@@ -16,7 +16,7 @@ open class Timer: Node {
 
     private static var __method_binding_set_wait_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_wait_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_wait_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -38,7 +38,7 @@ open class Timer: Node {
 
     private static var __method_binding_get_wait_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_wait_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_wait_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -60,7 +60,7 @@ open class Timer: Node {
 
     private static var __method_binding_set_one_shot: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_one_shot").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_one_shot").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -82,7 +82,7 @@ open class Timer: Node {
 
     private static var __method_binding_is_one_shot: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_one_shot").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_one_shot").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -104,7 +104,7 @@ open class Timer: Node {
 
     private static var __method_binding_set_autostart: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_autostart").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_autostart").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -126,7 +126,7 @@ open class Timer: Node {
 
     private static var __method_binding_has_autostart: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_autostart").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_autostart").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -148,7 +148,7 @@ open class Timer: Node {
 
     private static var __method_binding_start: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "start").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "start").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1392008558)!
         }
         }
@@ -170,7 +170,7 @@ open class Timer: Node {
 
     private static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "stop").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "stop").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -188,7 +188,7 @@ open class Timer: Node {
 
     private static var __method_binding_set_paused: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_paused").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_paused").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -210,7 +210,7 @@ open class Timer: Node {
 
     private static var __method_binding_is_paused: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_paused").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_paused").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -232,7 +232,7 @@ open class Timer: Node {
 
     private static var __method_binding_is_stopped: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_stopped").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_stopped").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -254,7 +254,7 @@ open class Timer: Node {
 
     private static var __method_binding_get_time_left: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_time_left").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_time_left").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -276,7 +276,7 @@ open class Timer: Node {
 
     private static var __method_binding_set_timer_process_callback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_timer_process_callback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_timer_process_callback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3469495063)!
         }
         }
@@ -298,7 +298,7 @@ open class Timer: Node {
 
     private static var __method_binding_get_timer_process_callback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_timer_process_callback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_timer_process_callback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2672570227)!
         }
         }

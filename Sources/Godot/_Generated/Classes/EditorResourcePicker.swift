@@ -22,7 +22,7 @@ open class EditorResourcePicker: HBoxContainer {
 
     private static var __method_binding_set_base_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_base_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_base_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -44,7 +44,7 @@ open class EditorResourcePicker: HBoxContainer {
 
     private static var __method_binding_get_base_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_base_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_base_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -66,7 +66,7 @@ open class EditorResourcePicker: HBoxContainer {
 
     private static var __method_binding_get_allowed_types: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_allowed_types").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_allowed_types").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -88,7 +88,7 @@ open class EditorResourcePicker: HBoxContainer {
 
     private static var __method_binding_set_edited_resource: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_edited_resource").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_edited_resource").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 968641751)!
         }
         }
@@ -112,7 +112,7 @@ open class EditorResourcePicker: HBoxContainer {
 
     private static var __method_binding_get_edited_resource: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_edited_resource").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_edited_resource").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2674603643)!
         }
         }
@@ -134,7 +134,7 @@ open class EditorResourcePicker: HBoxContainer {
 
     private static var __method_binding_set_toggle_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_toggle_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_toggle_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -156,7 +156,7 @@ open class EditorResourcePicker: HBoxContainer {
 
     private static var __method_binding_is_toggle_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_toggle_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_toggle_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -178,7 +178,7 @@ open class EditorResourcePicker: HBoxContainer {
 
     private static var __method_binding_set_toggle_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_toggle_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_toggle_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -200,7 +200,7 @@ open class EditorResourcePicker: HBoxContainer {
 
     private static var __method_binding_set_editable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_editable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_editable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -222,7 +222,7 @@ open class EditorResourcePicker: HBoxContainer {
 
     private static var __method_binding_is_editable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_editable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_editable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

@@ -57,7 +57,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_set_label: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_label").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_label").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -79,7 +79,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_get_label: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_label").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_label").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -101,7 +101,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_set_read_only: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_read_only").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_read_only").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -123,7 +123,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_is_read_only: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_read_only").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_read_only").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -145,7 +145,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_set_checkable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_checkable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_checkable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -167,7 +167,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_is_checkable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_checkable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_checkable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -189,7 +189,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_set_checked: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_checked").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_checked").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -211,7 +211,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_is_checked: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_checked").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_checked").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -233,7 +233,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_set_draw_warning: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_draw_warning").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_draw_warning").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -255,7 +255,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_is_draw_warning: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_draw_warning").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_draw_warning").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -277,7 +277,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_set_keying: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_keying").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_keying").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -299,7 +299,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_is_keying: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_keying").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_keying").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -321,7 +321,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_set_deletable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_deletable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_deletable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -343,7 +343,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_is_deletable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_deletable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_deletable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -365,7 +365,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_get_edited_property: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_edited_property").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_edited_property").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2002593661)!
         }
         }
@@ -387,7 +387,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_get_edited_object: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_edited_object").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_edited_object").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2050059866)!
         }
         }
@@ -409,7 +409,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_update_property: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "update_property").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "update_property").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -427,7 +427,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_add_focusable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_focusable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_focusable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
@@ -451,7 +451,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_set_bottom_editor: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bottom_editor").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bottom_editor").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
@@ -475,7 +475,7 @@ open class EditorProperty: Container {
 
     private static var __method_binding_emit_changed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "emit_changed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "emit_changed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3069422438)!
         }
         }

@@ -31,7 +31,7 @@ open class Time: Object {
 
     private static var __method_binding_get_datetime_dict_from_unix_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_datetime_dict_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_datetime_dict_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3485342025)!
         }
         }
@@ -57,7 +57,7 @@ open class Time: Object {
 
     private static var __method_binding_get_date_dict_from_unix_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_date_dict_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_date_dict_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3485342025)!
         }
         }
@@ -83,7 +83,7 @@ open class Time: Object {
 
     private static var __method_binding_get_time_dict_from_unix_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_time_dict_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_time_dict_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3485342025)!
         }
         }
@@ -109,7 +109,7 @@ open class Time: Object {
 
     private static var __method_binding_get_datetime_string_from_unix_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_datetime_string_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_datetime_string_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2311239925)!
         }
         }
@@ -137,7 +137,7 @@ open class Time: Object {
 
     private static var __method_binding_get_date_string_from_unix_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_date_string_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_date_string_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -163,7 +163,7 @@ open class Time: Object {
 
     private static var __method_binding_get_time_string_from_unix_time: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_time_string_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_time_string_from_unix_time").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -189,7 +189,7 @@ open class Time: Object {
 
     private static var __method_binding_get_datetime_dict_from_datetime_string: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_datetime_dict_from_datetime_string").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_datetime_dict_from_datetime_string").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3253569256)!
         }
         }
@@ -217,7 +217,7 @@ open class Time: Object {
 
     private static var __method_binding_get_datetime_string_from_datetime_dict: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_datetime_string_from_datetime_dict").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_datetime_string_from_datetime_dict").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1898123706)!
         }
         }
@@ -245,7 +245,7 @@ open class Time: Object {
 
     private static var __method_binding_get_unix_time_from_datetime_dict: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_unix_time_from_datetime_dict").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_unix_time_from_datetime_dict").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3021115443)!
         }
         }
@@ -271,7 +271,7 @@ open class Time: Object {
 
     private static var __method_binding_get_unix_time_from_datetime_string: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_unix_time_from_datetime_string").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_unix_time_from_datetime_string").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1321353865)!
         }
         }
@@ -297,7 +297,7 @@ open class Time: Object {
 
     private static var __method_binding_get_offset_string_from_offset_minutes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_offset_string_from_offset_minutes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_offset_string_from_offset_minutes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -323,7 +323,7 @@ open class Time: Object {
 
     private static var __method_binding_get_datetime_dict_from_system: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_datetime_dict_from_system").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_datetime_dict_from_system").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 205769976)!
         }
         }
@@ -349,7 +349,7 @@ open class Time: Object {
 
     private static var __method_binding_get_date_dict_from_system: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_date_dict_from_system").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_date_dict_from_system").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 205769976)!
         }
         }
@@ -375,7 +375,7 @@ open class Time: Object {
 
     private static var __method_binding_get_time_dict_from_system: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_time_dict_from_system").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_time_dict_from_system").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 205769976)!
         }
         }
@@ -401,7 +401,7 @@ open class Time: Object {
 
     private static var __method_binding_get_datetime_string_from_system: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_datetime_string_from_system").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_datetime_string_from_system").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1136425492)!
         }
         }
@@ -429,7 +429,7 @@ open class Time: Object {
 
     private static var __method_binding_get_date_string_from_system: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_date_string_from_system").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_date_string_from_system").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1162154673)!
         }
         }
@@ -455,7 +455,7 @@ open class Time: Object {
 
     private static var __method_binding_get_time_string_from_system: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_time_string_from_system").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_time_string_from_system").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1162154673)!
         }
         }
@@ -481,7 +481,7 @@ open class Time: Object {
 
     private static var __method_binding_get_time_zone_from_system: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_time_zone_from_system").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_time_zone_from_system").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3102165223)!
         }
         }
@@ -503,7 +503,7 @@ open class Time: Object {
 
     private static var __method_binding_get_unix_time_from_system: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_unix_time_from_system").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_unix_time_from_system").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -525,7 +525,7 @@ open class Time: Object {
 
     private static var __method_binding_get_ticks_msec: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ticks_msec").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ticks_msec").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -547,7 +547,7 @@ open class Time: Object {
 
     private static var __method_binding_get_ticks_usec: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ticks_usec").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ticks_usec").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

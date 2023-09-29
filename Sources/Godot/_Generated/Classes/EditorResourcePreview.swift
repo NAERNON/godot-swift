@@ -11,7 +11,7 @@ open class EditorResourcePreview: Node {
 
     private static var __method_binding_queue_resource_preview: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "queue_resource_preview").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "queue_resource_preview").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 233177534)!
         }
         }
@@ -41,7 +41,7 @@ open class EditorResourcePreview: Node {
 
     private static var __method_binding_queue_edited_resource_preview: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "queue_edited_resource_preview").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "queue_edited_resource_preview").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1608376650)!
         }
         }
@@ -73,7 +73,7 @@ open class EditorResourcePreview: Node {
 
     private static var __method_binding_add_preview_generator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_preview_generator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_preview_generator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 332288124)!
         }
         }
@@ -97,7 +97,7 @@ open class EditorResourcePreview: Node {
 
     private static var __method_binding_remove_preview_generator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_preview_generator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_preview_generator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 332288124)!
         }
         }
@@ -121,7 +121,7 @@ open class EditorResourcePreview: Node {
 
     private static var __method_binding_check_for_invalidation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "check_for_invalidation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "check_for_invalidation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }

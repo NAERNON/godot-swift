@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ShaderInclude: Resource {
     private static var __method_binding_set_code: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_code").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_code").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -29,7 +29,7 @@ open class ShaderInclude: Resource {
 
     private static var __method_binding_get_code: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_code").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_code").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }

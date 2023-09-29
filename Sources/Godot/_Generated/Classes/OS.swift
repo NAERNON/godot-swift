@@ -22,7 +22,7 @@ open class OS: Object {
 
     private static var __method_binding_get_connected_midi_inputs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_connected_midi_inputs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_connected_midi_inputs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2981934095)!
         }
         }
@@ -44,7 +44,7 @@ open class OS: Object {
 
     private static var __method_binding_open_midi_inputs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "open_midi_inputs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "open_midi_inputs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -62,7 +62,7 @@ open class OS: Object {
 
     private static var __method_binding_close_midi_inputs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "close_midi_inputs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "close_midi_inputs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -80,7 +80,7 @@ open class OS: Object {
 
     private static var __method_binding_alert: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "alert").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "alert").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 233059325)!
         }
         }
@@ -104,7 +104,7 @@ open class OS: Object {
 
     private static var __method_binding_crash: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "crash").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "crash").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -126,7 +126,7 @@ open class OS: Object {
 
     private static var __method_binding_set_low_processor_usage_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_low_processor_usage_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_low_processor_usage_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -148,7 +148,7 @@ open class OS: Object {
 
     private static var __method_binding_is_in_low_processor_usage_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_in_low_processor_usage_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_in_low_processor_usage_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -170,7 +170,7 @@ open class OS: Object {
 
     private static var __method_binding_set_low_processor_usage_mode_sleep_usec: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_low_processor_usage_mode_sleep_usec").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_low_processor_usage_mode_sleep_usec").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -192,7 +192,7 @@ open class OS: Object {
 
     private static var __method_binding_get_low_processor_usage_mode_sleep_usec: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_low_processor_usage_mode_sleep_usec").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_low_processor_usage_mode_sleep_usec").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -214,7 +214,7 @@ open class OS: Object {
 
     private static var __method_binding_set_delta_smoothing: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_delta_smoothing").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_delta_smoothing").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -236,7 +236,7 @@ open class OS: Object {
 
     private static var __method_binding_is_delta_smoothing_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_delta_smoothing_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_delta_smoothing_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -258,7 +258,7 @@ open class OS: Object {
 
     private static var __method_binding_get_processor_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_processor_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_processor_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -280,7 +280,7 @@ open class OS: Object {
 
     private static var __method_binding_get_processor_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_processor_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_processor_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -302,7 +302,7 @@ open class OS: Object {
 
     private static var __method_binding_get_system_fonts: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_system_fonts").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_system_fonts").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -324,7 +324,7 @@ open class OS: Object {
 
     private static var __method_binding_get_system_font_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_system_font_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_system_font_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2262142305)!
         }
         }
@@ -356,7 +356,7 @@ open class OS: Object {
 
     private static var __method_binding_get_system_font_path_for_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_system_font_path_for_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_system_font_path_for_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3824042574)!
         }
         }
@@ -394,7 +394,7 @@ open class OS: Object {
 
     private static var __method_binding_get_executable_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_executable_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_executable_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -416,7 +416,7 @@ open class OS: Object {
 
     private static var __method_binding_read_string_from_stdin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "read_string_from_stdin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "read_string_from_stdin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2841200299)!
         }
         }
@@ -438,7 +438,7 @@ open class OS: Object {
 
     private static var __method_binding_execute: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "execute").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "execute").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2881709059)!
         }
         }
@@ -472,7 +472,7 @@ open class OS: Object {
 
     private static var __method_binding_create_process: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_process").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_process").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2903767230)!
         }
         }
@@ -502,7 +502,7 @@ open class OS: Object {
 
     private static var __method_binding_create_instance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_instance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_instance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1080601263)!
         }
         }
@@ -528,7 +528,7 @@ open class OS: Object {
 
     private static var __method_binding_kill: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "kill").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "kill").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844576869)!
         }
         }
@@ -554,7 +554,7 @@ open class OS: Object {
 
     private static var __method_binding_shell_open: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "shell_open").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "shell_open").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -580,7 +580,7 @@ open class OS: Object {
 
     private static var __method_binding_shell_show_in_file_manager: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "shell_show_in_file_manager").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "shell_show_in_file_manager").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 885841341)!
         }
         }
@@ -608,7 +608,7 @@ open class OS: Object {
 
     private static var __method_binding_is_process_running: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_process_running").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_process_running").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -634,7 +634,7 @@ open class OS: Object {
 
     private static var __method_binding_get_process_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_process_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_process_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -656,7 +656,7 @@ open class OS: Object {
 
     private static var __method_binding_has_environment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_environment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_environment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -682,7 +682,7 @@ open class OS: Object {
 
     private static var __method_binding_get_environment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_environment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_environment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3135753539)!
         }
         }
@@ -708,7 +708,7 @@ open class OS: Object {
 
     private static var __method_binding_set_environment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_environment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_environment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3605043004)!
         }
         }
@@ -732,7 +732,7 @@ open class OS: Object {
 
     private static var __method_binding_unset_environment: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "unset_environment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "unset_environment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3089850668)!
         }
         }
@@ -754,7 +754,7 @@ open class OS: Object {
 
     private static var __method_binding_get_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -776,7 +776,7 @@ open class OS: Object {
 
     private static var __method_binding_get_distribution_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_distribution_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_distribution_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -798,7 +798,7 @@ open class OS: Object {
 
     private static var __method_binding_get_version: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_version").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_version").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -820,7 +820,7 @@ open class OS: Object {
 
     private static var __method_binding_get_cmdline_args: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cmdline_args").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cmdline_args").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2981934095)!
         }
         }
@@ -842,7 +842,7 @@ open class OS: Object {
 
     private static var __method_binding_get_cmdline_user_args: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cmdline_user_args").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cmdline_user_args").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2981934095)!
         }
         }
@@ -864,7 +864,7 @@ open class OS: Object {
 
     private static var __method_binding_get_video_adapter_driver_info: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_video_adapter_driver_info").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_video_adapter_driver_info").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -886,7 +886,7 @@ open class OS: Object {
 
     private static var __method_binding_set_restart_on_exit: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_restart_on_exit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_restart_on_exit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 611198603)!
         }
         }
@@ -910,7 +910,7 @@ open class OS: Object {
 
     private static var __method_binding_is_restart_on_exit_set: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_restart_on_exit_set").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_restart_on_exit_set").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -932,7 +932,7 @@ open class OS: Object {
 
     private static var __method_binding_get_restart_on_exit_arguments: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_restart_on_exit_arguments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_restart_on_exit_arguments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -954,7 +954,7 @@ open class OS: Object {
 
     private static var __method_binding_delay_usec: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "delay_usec").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "delay_usec").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 998575451)!
         }
         }
@@ -976,7 +976,7 @@ open class OS: Object {
 
     private static var __method_binding_delay_msec: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "delay_msec").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "delay_msec").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 998575451)!
         }
         }
@@ -998,7 +998,7 @@ open class OS: Object {
 
     private static var __method_binding_get_locale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_locale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_locale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -1020,7 +1020,7 @@ open class OS: Object {
 
     private static var __method_binding_get_locale_language: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_locale_language").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_locale_language").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -1042,7 +1042,7 @@ open class OS: Object {
 
     private static var __method_binding_get_model_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_model_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_model_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -1064,7 +1064,7 @@ open class OS: Object {
 
     private static var __method_binding_is_userfs_persistent: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_userfs_persistent").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_userfs_persistent").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1086,7 +1086,7 @@ open class OS: Object {
 
     private static var __method_binding_is_stdout_verbose: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_stdout_verbose").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_stdout_verbose").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1108,7 +1108,7 @@ open class OS: Object {
 
     private static var __method_binding_is_debug_build: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_debug_build").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_debug_build").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1130,7 +1130,7 @@ open class OS: Object {
 
     private static var __method_binding_get_static_memory_usage: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_static_memory_usage").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_static_memory_usage").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -1152,7 +1152,7 @@ open class OS: Object {
 
     private static var __method_binding_get_static_memory_peak_usage: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_static_memory_peak_usage").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_static_memory_peak_usage").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -1174,7 +1174,7 @@ open class OS: Object {
 
     private static var __method_binding_get_memory_info: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_memory_info").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_memory_info").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3102165223)!
         }
         }
@@ -1196,7 +1196,7 @@ open class OS: Object {
 
     private static var __method_binding_move_to_trash: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "move_to_trash").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "move_to_trash").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2113323047)!
         }
         }
@@ -1222,7 +1222,7 @@ open class OS: Object {
 
     private static var __method_binding_get_user_data_dir: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_user_data_dir").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_user_data_dir").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -1244,7 +1244,7 @@ open class OS: Object {
 
     private static var __method_binding_get_system_dir: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_system_dir").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_system_dir").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1965199849)!
         }
         }
@@ -1272,7 +1272,7 @@ open class OS: Object {
 
     private static var __method_binding_get_config_dir: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_config_dir").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_config_dir").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -1294,7 +1294,7 @@ open class OS: Object {
 
     private static var __method_binding_get_data_dir: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_data_dir").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_data_dir").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -1316,7 +1316,7 @@ open class OS: Object {
 
     private static var __method_binding_get_cache_dir: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cache_dir").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cache_dir").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -1338,7 +1338,7 @@ open class OS: Object {
 
     private static var __method_binding_get_unique_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_unique_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_unique_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -1360,7 +1360,7 @@ open class OS: Object {
 
     private static var __method_binding_get_keycode_string: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_keycode_string").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_keycode_string").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2261993717)!
         }
         }
@@ -1386,7 +1386,7 @@ open class OS: Object {
 
     private static var __method_binding_is_keycode_unicode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_keycode_unicode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_keycode_unicode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -1412,7 +1412,7 @@ open class OS: Object {
 
     private static var __method_binding_find_keycode_from_string: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "find_keycode_from_string").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "find_keycode_from_string").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1084858572)!
         }
         }
@@ -1438,7 +1438,7 @@ open class OS: Object {
 
     private static var __method_binding_set_use_file_access_save_and_swap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_use_file_access_save_and_swap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_use_file_access_save_and_swap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1460,7 +1460,7 @@ open class OS: Object {
 
     private static var __method_binding_set_thread_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_thread_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_thread_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -1486,7 +1486,7 @@ open class OS: Object {
 
     private static var __method_binding_get_thread_caller_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_thread_caller_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_thread_caller_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -1508,7 +1508,7 @@ open class OS: Object {
 
     private static var __method_binding_get_main_thread_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_main_thread_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_main_thread_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -1530,7 +1530,7 @@ open class OS: Object {
 
     private static var __method_binding_has_feature: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_feature").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_feature").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -1556,7 +1556,7 @@ open class OS: Object {
 
     private static var __method_binding_request_permission: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "request_permission").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "request_permission").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2323990056)!
         }
         }
@@ -1582,7 +1582,7 @@ open class OS: Object {
 
     private static var __method_binding_request_permissions: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "request_permissions").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "request_permissions").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -1604,7 +1604,7 @@ open class OS: Object {
 
     private static var __method_binding_get_granted_permissions: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_granted_permissions").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_granted_permissions").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }

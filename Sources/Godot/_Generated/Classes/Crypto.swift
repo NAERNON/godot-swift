@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Crypto: RefCounted {
     private static var __method_binding_generate_random_bytes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "generate_random_bytes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "generate_random_bytes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 47165747)!
         }
         }
@@ -33,7 +33,7 @@ open class Crypto: RefCounted {
 
     private static var __method_binding_generate_rsa: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "generate_rsa").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "generate_rsa").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1237515462)!
         }
         }
@@ -59,7 +59,7 @@ open class Crypto: RefCounted {
 
     private static var __method_binding_generate_self_signed_certificate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "generate_self_signed_certificate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "generate_self_signed_certificate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 947314696)!
         }
         }
@@ -93,7 +93,7 @@ open class Crypto: RefCounted {
 
     private static var __method_binding_sign: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "sign").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "sign").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1673662703)!
         }
         }
@@ -125,7 +125,7 @@ open class Crypto: RefCounted {
 
     private static var __method_binding_verify: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "verify").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "verify").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2805902225)!
         }
         }
@@ -159,7 +159,7 @@ open class Crypto: RefCounted {
 
     private static var __method_binding_encrypt: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "encrypt").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encrypt").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2361793670)!
         }
         }
@@ -189,7 +189,7 @@ open class Crypto: RefCounted {
 
     private static var __method_binding_decrypt: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "decrypt").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decrypt").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2361793670)!
         }
         }
@@ -219,7 +219,7 @@ open class Crypto: RefCounted {
 
     private static var __method_binding_hmac_digest: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "hmac_digest").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "hmac_digest").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2368951203)!
         }
         }
@@ -249,7 +249,7 @@ open class Crypto: RefCounted {
 
     private static var __method_binding_constant_time_compare: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "constant_time_compare").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "constant_time_compare").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1024142237)!
         }
         }

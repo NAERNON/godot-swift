@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ZIPReader: RefCounted {
     private static var __method_binding_open: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "open").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "open").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -33,7 +33,7 @@ open class ZIPReader: RefCounted {
 
     private static var __method_binding_close: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "close").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "close").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166280745)!
         }
         }
@@ -55,7 +55,7 @@ open class ZIPReader: RefCounted {
 
     private static var __method_binding_get_files: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_files").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_files").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2981934095)!
         }
         }
@@ -77,7 +77,7 @@ open class ZIPReader: RefCounted {
 
     private static var __method_binding_read_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "read_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "read_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 156385007)!
         }
         }

@@ -18,7 +18,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_add_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3629403827)!
         }
         }
@@ -42,7 +42,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_remove_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -64,7 +64,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -88,7 +88,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4025615559)!
         }
         }
@@ -114,7 +114,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_reverse: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "reverse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "reverse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -132,7 +132,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2878471219)!
         }
         }
@@ -156,7 +156,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_get_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2624840992)!
         }
         }
@@ -182,7 +182,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_sample: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "sample").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "sample").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1250405064)!
         }
         }
@@ -208,7 +208,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_point_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_point_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -230,7 +230,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_set_offsets: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_offsets").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_offsets").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2899603908)!
         }
         }
@@ -252,7 +252,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_get_offsets: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_offsets").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_offsets").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 675695659)!
         }
         }
@@ -274,7 +274,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_set_colors: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_colors").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_colors").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3546319833)!
         }
         }
@@ -296,7 +296,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_get_colors: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_colors").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_colors").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1392750486)!
         }
         }
@@ -318,7 +318,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_set_interpolation_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_interpolation_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_interpolation_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1971444490)!
         }
         }
@@ -340,7 +340,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_get_interpolation_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_interpolation_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_interpolation_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3674172981)!
         }
         }
@@ -362,7 +362,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_set_interpolation_color_space: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_interpolation_color_space").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_interpolation_color_space").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3685995981)!
         }
         }
@@ -384,7 +384,7 @@ open class Gradient: Resource {
 
     private static var __method_binding_get_interpolation_color_space: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_interpolation_color_space").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_interpolation_color_space").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1538296000)!
         }
         }

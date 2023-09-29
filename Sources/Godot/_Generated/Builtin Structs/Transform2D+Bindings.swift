@@ -351,7 +351,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_inverse: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "inverse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "inverse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 1420440541)!
         }
     }()
@@ -367,7 +367,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_affine_inverse: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "affine_inverse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "affine_inverse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 1420440541)!
         }
     }()
@@ -383,7 +383,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_get_rotation: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_rotation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_rotation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 466405837)!
         }
     }()
@@ -399,7 +399,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_get_origin: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_origin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_origin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 2428350749)!
         }
     }()
@@ -415,7 +415,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_get_scale: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 2428350749)!
         }
     }()
@@ -431,7 +431,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_get_skew: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_skew").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skew").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 466405837)!
         }
     }()
@@ -447,7 +447,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_orthonormalized: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "orthonormalized").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "orthonormalized").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 1420440541)!
         }
     }()
@@ -463,7 +463,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_rotated: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "rotated").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rotated").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 729597514)!
         }
     }()
@@ -483,7 +483,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_rotated_local: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "rotated_local").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rotated_local").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 729597514)!
         }
     }()
@@ -503,7 +503,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_scaled: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "scaled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "scaled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 1446323263)!
         }
     }()
@@ -523,7 +523,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_scaled_local: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "scaled_local").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "scaled_local").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 1446323263)!
         }
     }()
@@ -543,7 +543,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_translated: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "translated").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "translated").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 1446323263)!
         }
     }()
@@ -563,7 +563,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_translated_local: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "translated_local").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "translated_local").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 1446323263)!
         }
     }()
@@ -583,7 +583,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_determinant: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "determinant").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "determinant").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 466405837)!
         }
     }()
@@ -599,7 +599,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_basis_xform: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "basis_xform").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "basis_xform").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 2026743667)!
         }
     }()
@@ -619,7 +619,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_basis_xform_inv: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "basis_xform_inv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "basis_xform_inv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 2026743667)!
         }
     }()
@@ -639,7 +639,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_interpolate_with: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "interpolate_with").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "interpolate_with").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 359399686)!
         }
     }()
@@ -661,7 +661,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 3837431929)!
         }
     }()
@@ -681,7 +681,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_is_finite: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 3918633141)!
         }
     }()
@@ -697,7 +697,7 @@ extension Transform2D {
     }
 
     private static var __method_binding_looking_at: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "looking_at").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "looking_at").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D, __ptr__method_name, 1446323263)!
         }
     }()

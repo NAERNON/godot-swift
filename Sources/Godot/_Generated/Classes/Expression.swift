@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Expression: RefCounted {
     private static var __method_binding_parse: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "parse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "parse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3658149758)!
         }
         }
@@ -35,7 +35,7 @@ open class Expression: RefCounted {
 
     private static var __method_binding_execute: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "execute").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "execute").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3712471238)!
         }
         }
@@ -69,7 +69,7 @@ open class Expression: RefCounted {
 
     private static var __method_binding_has_execute_failed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_execute_failed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_execute_failed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -91,7 +91,7 @@ open class Expression: RefCounted {
 
     private static var __method_binding_get_error_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_error_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_error_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }

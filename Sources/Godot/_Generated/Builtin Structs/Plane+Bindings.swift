@@ -329,7 +329,7 @@ extension Plane {
     }
 
     private static var __method_binding_normalized: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "normalized").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "normalized").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PLANE, __ptr__method_name, 1051796340)!
         }
     }()
@@ -345,7 +345,7 @@ extension Plane {
     }
 
     private static var __method_binding_get_center: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_center").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_center").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PLANE, __ptr__method_name, 1776574132)!
         }
     }()
@@ -361,7 +361,7 @@ extension Plane {
     }
 
     private static var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PLANE, __ptr__method_name, 1150170233)!
         }
     }()
@@ -381,7 +381,7 @@ extension Plane {
     }
 
     private static var __method_binding_is_finite: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PLANE, __ptr__method_name, 3918633141)!
         }
     }()
@@ -397,7 +397,7 @@ extension Plane {
     }
 
     private static var __method_binding_is_point_over: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_point_over").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_point_over").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PLANE, __ptr__method_name, 1749054343)!
         }
     }()
@@ -417,7 +417,7 @@ extension Plane {
     }
 
     private static var __method_binding_distance_to: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "distance_to").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "distance_to").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PLANE, __ptr__method_name, 1047977935)!
         }
     }()
@@ -437,7 +437,7 @@ extension Plane {
     }
 
     private static var __method_binding_has_point: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "has_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PLANE, __ptr__method_name, 1258189072)!
         }
     }()
@@ -459,7 +459,7 @@ extension Plane {
     }
 
     private static var __method_binding_project: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "project").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "project").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PLANE, __ptr__method_name, 2923479887)!
         }
     }()
@@ -479,7 +479,7 @@ extension Plane {
     }
 
     private static var __method_binding_intersect_3: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "intersect_3").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "intersect_3").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PLANE, __ptr__method_name, 2012052692)!
         }
     }()
@@ -501,7 +501,7 @@ extension Plane {
     }
 
     private static var __method_binding_intersects_ray: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "intersects_ray").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "intersects_ray").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PLANE, __ptr__method_name, 2048133369)!
         }
     }()
@@ -523,7 +523,7 @@ extension Plane {
     }
 
     private static var __method_binding_intersects_segment: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "intersects_segment").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "intersects_segment").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PLANE, __ptr__method_name, 2048133369)!
         }
     }()

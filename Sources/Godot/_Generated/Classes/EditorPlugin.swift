@@ -136,7 +136,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_control_to_container: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_control_to_container").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_control_to_container").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3092750152)!
         }
         }
@@ -162,7 +162,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_control_to_bottom_panel: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_control_to_bottom_panel").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_control_to_bottom_panel").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3526039376)!
         }
         }
@@ -192,7 +192,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_control_to_dock: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_control_to_dock").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_control_to_dock").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3354871258)!
         }
         }
@@ -218,7 +218,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_control_from_docks: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_control_from_docks").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_control_from_docks").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
@@ -242,7 +242,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_control_from_bottom_panel: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_control_from_bottom_panel").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_control_from_bottom_panel").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
@@ -266,7 +266,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_control_from_container: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_control_from_container").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_control_from_container").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3092750152)!
         }
         }
@@ -292,7 +292,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_tool_menu_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_tool_menu_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_tool_menu_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2137474292)!
         }
         }
@@ -316,7 +316,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_tool_submenu_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_tool_submenu_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_tool_submenu_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1019428915)!
         }
         }
@@ -342,7 +342,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_tool_menu_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_tool_menu_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_tool_menu_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -364,7 +364,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_get_export_as_menu: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_export_as_menu").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_export_as_menu").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1775878644)!
         }
         }
@@ -386,7 +386,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_custom_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_custom_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_custom_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1986814599)!
         }
         }
@@ -418,7 +418,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_custom_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_custom_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_custom_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -440,7 +440,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_autoload_singleton: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_autoload_singleton").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_autoload_singleton").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3186203200)!
         }
         }
@@ -464,7 +464,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_autoload_singleton: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_autoload_singleton").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_autoload_singleton").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -486,7 +486,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_update_overlays: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "update_overlays").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "update_overlays").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -508,7 +508,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_make_bottom_panel_item_visible: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "make_bottom_panel_item_visible").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "make_bottom_panel_item_visible").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
@@ -532,7 +532,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_hide_bottom_panel: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "hide_bottom_panel").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "hide_bottom_panel").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -550,7 +550,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_get_undo_redo: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_undo_redo").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_undo_redo").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 773492341)!
         }
         }
@@ -572,7 +572,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_undo_redo_inspector_hook_callback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_undo_redo_inspector_hook_callback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_undo_redo_inspector_hook_callback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1611583062)!
         }
         }
@@ -594,7 +594,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_undo_redo_inspector_hook_callback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_undo_redo_inspector_hook_callback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_undo_redo_inspector_hook_callback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1611583062)!
         }
         }
@@ -616,7 +616,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_queue_save_layout: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "queue_save_layout").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "queue_save_layout").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -634,7 +634,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_translation_parser_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_translation_parser_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_translation_parser_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3116463128)!
         }
         }
@@ -658,7 +658,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_translation_parser_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_translation_parser_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_translation_parser_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3116463128)!
         }
         }
@@ -682,7 +682,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_import_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_import_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_import_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3113975762)!
         }
         }
@@ -708,7 +708,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_import_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_import_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_import_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2312482773)!
         }
         }
@@ -732,7 +732,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_scene_format_importer_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_scene_format_importer_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_scene_format_importer_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2764104752)!
         }
         }
@@ -758,7 +758,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_scene_format_importer_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_scene_format_importer_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_scene_format_importer_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2637776123)!
         }
         }
@@ -782,7 +782,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_scene_post_import_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_scene_post_import_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_scene_post_import_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3492436322)!
         }
         }
@@ -808,7 +808,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_scene_post_import_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_scene_post_import_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_scene_post_import_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3045178206)!
         }
         }
@@ -832,7 +832,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_export_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_export_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_export_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4095952207)!
         }
         }
@@ -856,7 +856,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_export_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_export_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_export_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4095952207)!
         }
         }
@@ -880,7 +880,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_node_3d_gizmo_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_node_3d_gizmo_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_node_3d_gizmo_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1541015022)!
         }
         }
@@ -904,7 +904,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_node_3d_gizmo_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_node_3d_gizmo_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_node_3d_gizmo_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1541015022)!
         }
         }
@@ -928,7 +928,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_inspector_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_inspector_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_inspector_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 546395733)!
         }
         }
@@ -952,7 +952,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_inspector_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_inspector_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_inspector_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 546395733)!
         }
         }
@@ -976,7 +976,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_resource_conversion_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_resource_conversion_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_resource_conversion_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2124849111)!
         }
         }
@@ -1000,7 +1000,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_resource_conversion_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_resource_conversion_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_resource_conversion_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2124849111)!
         }
         }
@@ -1024,7 +1024,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_set_input_event_forwarding_always_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_input_event_forwarding_always_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_input_event_forwarding_always_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -1042,7 +1042,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_set_force_draw_over_forwarding_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_force_draw_over_forwarding_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_force_draw_over_forwarding_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -1060,7 +1060,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_get_editor_interface: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_editor_interface").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_editor_interface").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4223731786)!
         }
         }
@@ -1082,7 +1082,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_get_script_create_dialog: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_script_create_dialog").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_script_create_dialog").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3121871482)!
         }
         }
@@ -1104,7 +1104,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_add_debugger_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_debugger_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_debugger_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3749880309)!
         }
         }
@@ -1128,7 +1128,7 @@ open class EditorPlugin: Node {
 
     private static var __method_binding_remove_debugger_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_debugger_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_debugger_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3749880309)!
         }
         }

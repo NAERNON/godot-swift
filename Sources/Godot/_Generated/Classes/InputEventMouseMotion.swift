@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class InputEventMouseMotion: InputEventMouse {
     private static var __method_binding_set_tilt: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tilt").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tilt").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -29,7 +29,7 @@ open class InputEventMouseMotion: InputEventMouse {
 
     private static var __method_binding_get_tilt: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tilt").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tilt").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -51,7 +51,7 @@ open class InputEventMouseMotion: InputEventMouse {
 
     private static var __method_binding_set_pressure: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pressure").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pressure").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -73,7 +73,7 @@ open class InputEventMouseMotion: InputEventMouse {
 
     private static var __method_binding_get_pressure: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pressure").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pressure").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -95,7 +95,7 @@ open class InputEventMouseMotion: InputEventMouse {
 
     private static var __method_binding_set_pen_inverted: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pen_inverted").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pen_inverted").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -117,7 +117,7 @@ open class InputEventMouseMotion: InputEventMouse {
 
     private static var __method_binding_get_pen_inverted: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pen_inverted").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pen_inverted").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -139,7 +139,7 @@ open class InputEventMouseMotion: InputEventMouse {
 
     private static var __method_binding_set_relative: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_relative").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_relative").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -161,7 +161,7 @@ open class InputEventMouseMotion: InputEventMouse {
 
     private static var __method_binding_get_relative: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_relative").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_relative").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -183,7 +183,7 @@ open class InputEventMouseMotion: InputEventMouse {
 
     private static var __method_binding_set_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -205,7 +205,7 @@ open class InputEventMouseMotion: InputEventMouse {
 
     private static var __method_binding_get_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }

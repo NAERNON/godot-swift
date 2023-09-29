@@ -15,7 +15,7 @@ open class BoneMap: Resource {
 
     private static var __method_binding_get_profile: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_profile").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_profile").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4291782652)!
         }
         }
@@ -37,7 +37,7 @@ open class BoneMap: Resource {
 
     private static var __method_binding_set_profile: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_profile").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_profile").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3870374136)!
         }
         }
@@ -61,7 +61,7 @@ open class BoneMap: Resource {
 
     private static var __method_binding_get_skeleton_bone_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skeleton_bone_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skeleton_bone_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1965194235)!
         }
         }
@@ -87,7 +87,7 @@ open class BoneMap: Resource {
 
     private static var __method_binding_set_skeleton_bone_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_skeleton_bone_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_skeleton_bone_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
@@ -111,7 +111,7 @@ open class BoneMap: Resource {
 
     private static var __method_binding_find_profile_bone_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "find_profile_bone_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "find_profile_bone_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1965194235)!
         }
         }

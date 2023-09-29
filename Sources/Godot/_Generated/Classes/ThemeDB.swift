@@ -11,7 +11,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_get_default_theme: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_default_theme").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_default_theme").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 754276358)!
         }
         }
@@ -33,7 +33,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_get_project_theme: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_project_theme").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_project_theme").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 754276358)!
         }
         }
@@ -55,7 +55,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_set_fallback_base_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fallback_base_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fallback_base_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -77,7 +77,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_get_fallback_base_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fallback_base_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fallback_base_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 191475506)!
         }
         }
@@ -99,7 +99,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_set_fallback_font: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fallback_font").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fallback_font").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1262170328)!
         }
         }
@@ -123,7 +123,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_get_fallback_font: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fallback_font").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fallback_font").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3656929885)!
         }
         }
@@ -145,7 +145,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_set_fallback_font_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fallback_font_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fallback_font_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -167,7 +167,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_get_fallback_font_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fallback_font_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fallback_font_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
@@ -189,7 +189,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_set_fallback_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fallback_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fallback_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4051416890)!
         }
         }
@@ -213,7 +213,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_get_fallback_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fallback_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fallback_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 255860311)!
         }
         }
@@ -235,7 +235,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_set_fallback_stylebox: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fallback_stylebox").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fallback_stylebox").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2797200388)!
         }
         }
@@ -259,7 +259,7 @@ open class ThemeDB: Object {
 
     private static var __method_binding_get_fallback_stylebox: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fallback_stylebox").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fallback_stylebox").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 496040854)!
         }
         }

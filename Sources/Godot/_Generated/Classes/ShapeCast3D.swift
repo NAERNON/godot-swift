@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class ShapeCast3D: Node3D {
     private static var __method_binding_resource_changed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "resource_changed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "resource_changed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 968641751)!
         }
         }
@@ -31,7 +31,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -53,7 +53,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_is_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -75,7 +75,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1549710052)!
         }
         }
@@ -99,7 +99,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3214262478)!
         }
         }
@@ -121,7 +121,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_set_target_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_target_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_target_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -143,7 +143,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_target_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_target_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_target_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -165,7 +165,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_set_margin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_margin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_margin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -187,7 +187,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_margin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_margin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_margin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -209,7 +209,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_set_max_results: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_max_results").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_max_results").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -231,7 +231,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_max_results: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_max_results").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_max_results").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -253,7 +253,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_is_colliding: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_colliding").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_colliding").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -275,7 +275,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_collision_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -297,7 +297,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_force_shapecast_update: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "force_shapecast_update").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "force_shapecast_update").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -315,7 +315,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_collider: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collider").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collider").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3332903315)!
         }
         }
@@ -341,7 +341,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_collider_rid: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collider_rid").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collider_rid").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 495598643)!
         }
         }
@@ -367,7 +367,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_collider_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collider_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collider_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -393,7 +393,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_collision_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 711720468)!
         }
         }
@@ -419,7 +419,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_collision_normal: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_normal").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_normal").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 711720468)!
         }
         }
@@ -445,7 +445,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_closest_collision_safe_fraction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_closest_collision_safe_fraction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_closest_collision_safe_fraction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -467,7 +467,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_closest_collision_unsafe_fraction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_closest_collision_unsafe_fraction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_closest_collision_unsafe_fraction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -489,7 +489,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_add_exception_rid: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_exception_rid").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_exception_rid").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }
@@ -511,7 +511,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_add_exception: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_exception").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_exception").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1976431078)!
         }
         }
@@ -535,7 +535,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_remove_exception_rid: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_exception_rid").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_exception_rid").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }
@@ -557,7 +557,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_remove_exception: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_exception").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_exception").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1976431078)!
         }
         }
@@ -581,7 +581,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_clear_exceptions: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_exceptions").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_exceptions").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -599,7 +599,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_collision_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_collision_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -621,7 +621,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -643,7 +643,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_set_collision_mask_value: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_collision_mask_value").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_collision_mask_value").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -667,7 +667,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_collision_mask_value: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_collision_mask_value").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_collision_mask_value").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -693,7 +693,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_set_exclude_parent_body: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_exclude_parent_body").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_exclude_parent_body").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -715,7 +715,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_exclude_parent_body: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_exclude_parent_body").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_exclude_parent_body").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -737,7 +737,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_set_collide_with_areas: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_collide_with_areas").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_collide_with_areas").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -759,7 +759,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_is_collide_with_areas_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_collide_with_areas_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_collide_with_areas_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -781,7 +781,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_set_collide_with_bodies: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_collide_with_bodies").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_collide_with_bodies").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -803,7 +803,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_is_collide_with_bodies_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_collide_with_bodies_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_collide_with_bodies_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -825,7 +825,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_set_debug_shape_custom_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_debug_shape_custom_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_debug_shape_custom_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -847,7 +847,7 @@ open class ShapeCast3D: Node3D {
 
     private static var __method_binding_get_debug_shape_custom_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_debug_shape_custom_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_debug_shape_custom_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }

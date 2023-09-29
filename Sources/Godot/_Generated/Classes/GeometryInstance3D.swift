@@ -31,7 +31,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_material_override: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_material_override").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_material_override").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2757459619)!
         }
         }
@@ -55,7 +55,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_material_override: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_material_override").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_material_override").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 5934680)!
         }
         }
@@ -77,7 +77,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_material_overlay: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_material_overlay").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_material_overlay").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2757459619)!
         }
         }
@@ -101,7 +101,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_material_overlay: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_material_overlay").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_material_overlay").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 5934680)!
         }
         }
@@ -123,7 +123,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_cast_shadows_setting: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cast_shadows_setting").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cast_shadows_setting").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 856677339)!
         }
         }
@@ -145,7 +145,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_cast_shadows_setting: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cast_shadows_setting").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cast_shadows_setting").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3383019359)!
         }
         }
@@ -167,7 +167,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_lod_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_lod_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_lod_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -189,7 +189,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_lod_bias: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_lod_bias").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_lod_bias").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -211,7 +211,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_transparency: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_transparency").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_transparency").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -233,7 +233,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_transparency: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_transparency").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_transparency").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -255,7 +255,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_visibility_range_end_margin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_visibility_range_end_margin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_visibility_range_end_margin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -277,7 +277,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_visibility_range_end_margin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_visibility_range_end_margin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_visibility_range_end_margin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -299,7 +299,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_visibility_range_end: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_visibility_range_end").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_visibility_range_end").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -321,7 +321,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_visibility_range_end: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_visibility_range_end").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_visibility_range_end").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -343,7 +343,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_visibility_range_begin_margin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_visibility_range_begin_margin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_visibility_range_begin_margin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -365,7 +365,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_visibility_range_begin_margin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_visibility_range_begin_margin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_visibility_range_begin_margin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -387,7 +387,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_visibility_range_begin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_visibility_range_begin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_visibility_range_begin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -409,7 +409,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_visibility_range_begin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_visibility_range_begin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_visibility_range_begin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -431,7 +431,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_visibility_range_fade_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_visibility_range_fade_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_visibility_range_fade_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1440117808)!
         }
         }
@@ -453,7 +453,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_visibility_range_fade_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_visibility_range_fade_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_visibility_range_fade_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2067221882)!
         }
         }
@@ -475,7 +475,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_instance_shader_parameter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_instance_shader_parameter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_instance_shader_parameter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3776071444)!
         }
         }
@@ -499,7 +499,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_instance_shader_parameter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_instance_shader_parameter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_instance_shader_parameter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2760726917)!
         }
         }
@@ -525,7 +525,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_extra_cull_margin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_extra_cull_margin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_extra_cull_margin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -547,7 +547,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_extra_cull_margin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_extra_cull_margin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_extra_cull_margin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -569,7 +569,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_lightmap_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_lightmap_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_lightmap_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2462696582)!
         }
         }
@@ -591,7 +591,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_lightmap_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_lightmap_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_lightmap_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 798767852)!
         }
         }
@@ -613,7 +613,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_gi_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gi_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gi_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2548557163)!
         }
         }
@@ -635,7 +635,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_gi_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gi_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gi_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2188566509)!
         }
         }
@@ -657,7 +657,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_ignore_occlusion_culling: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ignore_occlusion_culling").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ignore_occlusion_culling").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -679,7 +679,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_is_ignoring_occlusion_culling: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_ignoring_occlusion_culling").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_ignoring_occlusion_culling").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -701,7 +701,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_set_custom_aabb: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_custom_aabb").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_custom_aabb").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 259215842)!
         }
         }
@@ -723,7 +723,7 @@ open class GeometryInstance3D: VisualInstance3D {
 
     private static var __method_binding_get_custom_aabb: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_custom_aabb").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_custom_aabb").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1068685055)!
         }
         }

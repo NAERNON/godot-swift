@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class InputEventMIDI: InputEvent {
     private static var __method_binding_set_channel: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_channel").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_channel").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -29,7 +29,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_get_channel: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_channel").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_channel").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -51,7 +51,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_set_message: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_message").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_message").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1064271510)!
         }
         }
@@ -73,7 +73,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_get_message: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_message").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_message").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1936512097)!
         }
         }
@@ -95,7 +95,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_set_pitch: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pitch").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pitch").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -117,7 +117,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_get_pitch: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pitch").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pitch").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -139,7 +139,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_set_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -161,7 +161,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_get_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -183,7 +183,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_set_instrument: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_instrument").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_instrument").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -205,7 +205,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_get_instrument: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_instrument").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_instrument").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -227,7 +227,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_set_pressure: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pressure").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pressure").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -249,7 +249,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_get_pressure: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pressure").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pressure").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -271,7 +271,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_set_controller_number: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_controller_number").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_controller_number").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -293,7 +293,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_get_controller_number: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_controller_number").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_controller_number").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -315,7 +315,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_set_controller_value: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_controller_value").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_controller_value").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -337,7 +337,7 @@ open class InputEventMIDI: InputEvent {
 
     private static var __method_binding_get_controller_value: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_controller_value").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_controller_value").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

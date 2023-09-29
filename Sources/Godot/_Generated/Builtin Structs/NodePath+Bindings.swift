@@ -177,7 +177,7 @@ extension NodePath {
     }
 
     private static var __method_binding_is_absolute: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_absolute").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_absolute").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3918633141)!
         }
     }()
@@ -192,7 +192,7 @@ extension NodePath {
     }
 
     private static var __method_binding_get_name_count: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_name_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_name_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
         }
     }()
@@ -207,7 +207,7 @@ extension NodePath {
     }
 
     private static var __method_binding_get_name: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 2948586938)!
         }
     }()
@@ -226,7 +226,7 @@ extension NodePath {
     }
 
     private static var __method_binding_get_subname_count: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_subname_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_subname_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
         }
     }()
@@ -241,7 +241,7 @@ extension NodePath {
     }
 
     private static var __method_binding_hash: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "hash").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "hash").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
         }
     }()
@@ -256,7 +256,7 @@ extension NodePath {
     }
 
     private static var __method_binding_get_subname: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_subname").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_subname").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 2948586938)!
         }
     }()
@@ -275,7 +275,7 @@ extension NodePath {
     }
 
     private static var __method_binding_get_concatenated_names: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_concatenated_names").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_concatenated_names").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1825232092)!
         }
     }()
@@ -290,7 +290,7 @@ extension NodePath {
     }
 
     private static var __method_binding_get_concatenated_subnames: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_concatenated_subnames").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_concatenated_subnames").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1825232092)!
         }
     }()
@@ -305,7 +305,7 @@ extension NodePath {
     }
 
     private static var __method_binding_get_as_property_path: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_as_property_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_as_property_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1598598043)!
         }
     }()
@@ -320,7 +320,7 @@ extension NodePath {
     }
 
     private static var __method_binding_is_empty: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3918633141)!
         }
     }()

@@ -13,7 +13,7 @@ open class ZIPPacker: RefCounted {
 
     private static var __method_binding_open: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "open").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "open").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3715508516)!
         }
         }
@@ -41,7 +41,7 @@ open class ZIPPacker: RefCounted {
 
     private static var __method_binding_start_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "start_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "start_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -67,7 +67,7 @@ open class ZIPPacker: RefCounted {
 
     private static var __method_binding_write_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "write_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "write_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 680677267)!
         }
         }
@@ -93,7 +93,7 @@ open class ZIPPacker: RefCounted {
 
     private static var __method_binding_close_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "close_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "close_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166280745)!
         }
         }
@@ -115,7 +115,7 @@ open class ZIPPacker: RefCounted {
 
     private static var __method_binding_close: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "close").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "close").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166280745)!
         }
         }

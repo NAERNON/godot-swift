@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
     private static var __method_binding_set_target_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_target_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_target_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -29,7 +29,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_get_target_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_target_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_target_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -51,7 +51,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_set_target_minimum_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_target_minimum_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_target_minimum_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -73,7 +73,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_get_target_minimum_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_target_minimum_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_target_minimum_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -95,7 +95,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_set_target_maximum_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_target_maximum_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_target_maximum_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -117,7 +117,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_get_target_maximum_distance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_target_maximum_distance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_target_maximum_distance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -139,7 +139,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_set_flip_bend_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_flip_bend_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_flip_bend_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -161,7 +161,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_get_flip_bend_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_flip_bend_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_flip_bend_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -183,7 +183,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_set_joint_one_bone2d_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_joint_one_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_joint_one_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -205,7 +205,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_get_joint_one_bone2d_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_joint_one_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_joint_one_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -227,7 +227,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_set_joint_one_bone_idx: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_joint_one_bone_idx").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_joint_one_bone_idx").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -249,7 +249,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_get_joint_one_bone_idx: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_joint_one_bone_idx").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_joint_one_bone_idx").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -271,7 +271,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_set_joint_two_bone2d_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_joint_two_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_joint_two_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -293,7 +293,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_get_joint_two_bone2d_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_joint_two_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_joint_two_bone2d_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -315,7 +315,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_set_joint_two_bone_idx: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_joint_two_bone_idx").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_joint_two_bone_idx").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -337,7 +337,7 @@ open class SkeletonModification2DTwoBoneIK: SkeletonModification2D {
 
     private static var __method_binding_get_joint_two_bone_idx: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_joint_two_bone_idx").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_joint_two_bone_idx").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

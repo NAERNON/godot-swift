@@ -19,7 +19,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_set_root_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_root_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_root_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
@@ -41,7 +41,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_get_root_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_root_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_root_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
@@ -63,7 +63,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -81,7 +81,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_disconnect_peer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "disconnect_peer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "disconnect_peer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -103,7 +103,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_get_authenticating_peers: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_authenticating_peers").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_authenticating_peers").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 969006518)!
         }
         }
@@ -125,7 +125,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_send_auth: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "send_auth").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "send_auth").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 506032537)!
         }
         }
@@ -153,7 +153,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_complete_auth: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "complete_auth").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "complete_auth").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844576869)!
         }
         }
@@ -179,7 +179,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_set_auth_callback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_auth_callback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_auth_callback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1611583062)!
         }
         }
@@ -201,7 +201,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_get_auth_callback: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_auth_callback").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_auth_callback").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1307783378)!
         }
         }
@@ -223,7 +223,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_set_auth_timeout: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_auth_timeout").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_auth_timeout").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -245,7 +245,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_get_auth_timeout: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_auth_timeout").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_auth_timeout").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -267,7 +267,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_set_refuse_new_connections: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_refuse_new_connections").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_refuse_new_connections").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -289,7 +289,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_is_refusing_new_connections: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_refusing_new_connections").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_refusing_new_connections").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -311,7 +311,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_set_allow_object_decoding: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_allow_object_decoding").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_allow_object_decoding").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -333,7 +333,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_is_object_decoding_allowed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_object_decoding_allowed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_object_decoding_allowed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -355,7 +355,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_set_server_relay_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_server_relay_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_server_relay_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -377,7 +377,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_is_server_relay_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_server_relay_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_server_relay_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -399,7 +399,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_send_bytes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "send_bytes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "send_bytes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2742700601)!
         }
         }
@@ -431,7 +431,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_get_max_sync_packet_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_max_sync_packet_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_max_sync_packet_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -453,7 +453,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_set_max_sync_packet_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_max_sync_packet_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_max_sync_packet_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -475,7 +475,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_get_max_delta_packet_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_max_delta_packet_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_max_delta_packet_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -497,7 +497,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     private static var __method_binding_set_max_delta_packet_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_max_delta_packet_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_max_delta_packet_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }

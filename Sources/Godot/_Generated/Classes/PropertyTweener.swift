@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class PropertyTweener: Tweener {
     private static var __method_binding_from: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "from").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "from").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4190193059)!
         }
         }
@@ -33,7 +33,7 @@ open class PropertyTweener: Tweener {
 
     private static var __method_binding_from_current: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "from_current").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "from_current").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4279177709)!
         }
         }
@@ -55,7 +55,7 @@ open class PropertyTweener: Tweener {
 
     private static var __method_binding_as_relative: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "as_relative").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "as_relative").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4279177709)!
         }
         }
@@ -77,7 +77,7 @@ open class PropertyTweener: Tweener {
 
     private static var __method_binding_set_trans: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_trans").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_trans").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1899107404)!
         }
         }
@@ -103,7 +103,7 @@ open class PropertyTweener: Tweener {
 
     private static var __method_binding_set_ease: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ease").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ease").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1080455622)!
         }
         }
@@ -129,7 +129,7 @@ open class PropertyTweener: Tweener {
 
     private static var __method_binding_set_delay: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_delay").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_delay").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2171559331)!
         }
         }

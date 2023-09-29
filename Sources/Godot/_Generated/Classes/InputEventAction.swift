@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class InputEventAction: InputEvent {
     private static var __method_binding_set_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -29,7 +29,7 @@ open class InputEventAction: InputEvent {
 
     private static var __method_binding_get_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2002593661)!
         }
         }
@@ -51,7 +51,7 @@ open class InputEventAction: InputEvent {
 
     private static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -73,7 +73,7 @@ open class InputEventAction: InputEvent {
 
     private static var __method_binding_set_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -95,7 +95,7 @@ open class InputEventAction: InputEvent {
 
     private static var __method_binding_get_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

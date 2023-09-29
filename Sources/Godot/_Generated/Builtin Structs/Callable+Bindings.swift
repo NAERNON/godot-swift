@@ -181,7 +181,7 @@ extension Callable {
     }
 
     private static var __method_binding_callv: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "callv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "callv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 413578926)!
         }
     }()
@@ -200,7 +200,7 @@ extension Callable {
     }
 
     private static var __method_binding_is_null: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_null").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_null").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
         }
     }()
@@ -215,7 +215,7 @@ extension Callable {
     }
 
     private static var __method_binding_is_custom: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_custom").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_custom").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
         }
     }()
@@ -230,7 +230,7 @@ extension Callable {
     }
 
     private static var __method_binding_is_standard: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_standard").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_standard").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
         }
     }()
@@ -245,7 +245,7 @@ extension Callable {
     }
 
     private static var __method_binding_is_valid: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "is_valid").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_valid").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
         }
     }()
@@ -260,7 +260,7 @@ extension Callable {
     }
 
     private static var __method_binding_get_object: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_object").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_object").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 4008621732)!
         }
     }()
@@ -275,7 +275,7 @@ extension Callable {
     }
 
     private static var __method_binding_get_object_id: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_object_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_object_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3173160232)!
         }
     }()
@@ -290,7 +290,7 @@ extension Callable {
     }
 
     private static var __method_binding_get_method: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_method").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_method").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 1825232092)!
         }
     }()
@@ -305,7 +305,7 @@ extension Callable {
     }
 
     private static var __method_binding_get_bound_arguments_count: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_bound_arguments_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bound_arguments_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3173160232)!
         }
     }()
@@ -320,7 +320,7 @@ extension Callable {
     }
 
     private static var __method_binding_get_bound_arguments: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_bound_arguments").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bound_arguments").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 4144163970)!
         }
     }()
@@ -335,7 +335,7 @@ extension Callable {
     }
 
     private static var __method_binding_hash: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "hash").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "hash").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3173160232)!
         }
     }()
@@ -350,7 +350,7 @@ extension Callable {
     }
 
     private static var __method_binding_bindv: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "bindv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "bindv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3564560322)!
         }
     }()
@@ -370,7 +370,7 @@ extension Callable {
     }
 
     private static var __method_binding_unbind: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "unbind").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "unbind").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 755001590)!
         }
     }()
@@ -389,7 +389,7 @@ extension Callable {
     }
 
     private static var __method_binding_call: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "call").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "call").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3643564216)!
         }
     }()
@@ -406,7 +406,7 @@ extension Callable {
     }
 
     private static var __method_binding_call_deferred: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "call_deferred").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "call_deferred").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3286317445)!
         }
     }()
@@ -419,7 +419,7 @@ extension Callable {
     }
 
     private static var __method_binding_rpc: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "rpc").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rpc").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3286317445)!
         }
     }()
@@ -432,7 +432,7 @@ extension Callable {
     }
 
     private static var __method_binding_rpc_id: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "rpc_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rpc_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 2270047679)!
         }
     }()
@@ -447,7 +447,7 @@ extension Callable {
     }
 
     private static var __method_binding_bind: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "bind").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "bind").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3224143119)!
         }
     }()

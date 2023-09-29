@@ -14,7 +14,7 @@ open class AudioEffectFilter: AudioEffect {
 
     private static var __method_binding_set_cutoff: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cutoff").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cutoff").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -36,7 +36,7 @@ open class AudioEffectFilter: AudioEffect {
 
     private static var __method_binding_get_cutoff: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cutoff").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cutoff").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -58,7 +58,7 @@ open class AudioEffectFilter: AudioEffect {
 
     private static var __method_binding_set_resonance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_resonance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_resonance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -80,7 +80,7 @@ open class AudioEffectFilter: AudioEffect {
 
     private static var __method_binding_get_resonance: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_resonance").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_resonance").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -102,7 +102,7 @@ open class AudioEffectFilter: AudioEffect {
 
     private static var __method_binding_set_gain: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gain").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gain").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -124,7 +124,7 @@ open class AudioEffectFilter: AudioEffect {
 
     private static var __method_binding_get_gain: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gain").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gain").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -146,7 +146,7 @@ open class AudioEffectFilter: AudioEffect {
 
     private static var __method_binding_set_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 771740901)!
         }
         }
@@ -168,7 +168,7 @@ open class AudioEffectFilter: AudioEffect {
 
     private static var __method_binding_get_db: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_db").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_db").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3981721890)!
         }
         }

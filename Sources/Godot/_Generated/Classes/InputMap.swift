@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class InputMap: Object {
     private static var __method_binding_has_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -33,7 +33,7 @@ open class InputMap: Object {
 
     private static var __method_binding_get_actions: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_actions").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_actions").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
@@ -55,7 +55,7 @@ open class InputMap: Object {
 
     private static var __method_binding_add_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 573731101)!
         }
         }
@@ -79,7 +79,7 @@ open class InputMap: Object {
 
     private static var __method_binding_erase_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "erase_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "erase_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -101,7 +101,7 @@ open class InputMap: Object {
 
     private static var __method_binding_action_set_deadzone: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "action_set_deadzone").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "action_set_deadzone").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4135858297)!
         }
         }
@@ -125,7 +125,7 @@ open class InputMap: Object {
 
     private static var __method_binding_action_get_deadzone: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "action_get_deadzone").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "action_get_deadzone").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1391627649)!
         }
         }
@@ -151,7 +151,7 @@ open class InputMap: Object {
 
     private static var __method_binding_action_add_event: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "action_add_event").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "action_add_event").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 518302593)!
         }
         }
@@ -177,7 +177,7 @@ open class InputMap: Object {
 
     private static var __method_binding_action_has_event: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "action_has_event").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "action_has_event").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1185871985)!
         }
         }
@@ -207,7 +207,7 @@ open class InputMap: Object {
 
     private static var __method_binding_action_erase_event: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "action_erase_event").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "action_erase_event").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 518302593)!
         }
         }
@@ -233,7 +233,7 @@ open class InputMap: Object {
 
     private static var __method_binding_action_erase_events: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "action_erase_events").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "action_erase_events").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -255,7 +255,7 @@ open class InputMap: Object {
 
     private static var __method_binding_action_get_events: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "action_get_events").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "action_get_events").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 689397652)!
         }
         }
@@ -281,7 +281,7 @@ open class InputMap: Object {
 
     private static var __method_binding_event_is_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "event_is_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "event_is_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3193353650)!
         }
         }
@@ -313,7 +313,7 @@ open class InputMap: Object {
 
     private static var __method_binding_load_from_project_settings: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load_from_project_settings").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load_from_project_settings").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }

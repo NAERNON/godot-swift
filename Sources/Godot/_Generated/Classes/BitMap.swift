@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class BitMap: Resource {
     private static var __method_binding_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }
@@ -29,7 +29,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_create_from_image_alpha: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_from_image_alpha").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_from_image_alpha").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 505265891)!
         }
         }
@@ -55,7 +55,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_set_bitv: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bitv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bitv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4153096796)!
         }
         }
@@ -79,7 +79,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_set_bit: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1383440665)!
         }
         }
@@ -105,7 +105,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_get_bitv: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bitv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bitv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3900751641)!
         }
         }
@@ -131,7 +131,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_get_bit: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2522259332)!
         }
         }
@@ -159,7 +159,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_set_bit_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bit_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bit_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 472162941)!
         }
         }
@@ -183,7 +183,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_get_true_bit_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_true_bit_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_true_bit_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -205,7 +205,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3690982128)!
         }
         }
@@ -227,7 +227,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_resize: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "resize").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "resize").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }
@@ -249,7 +249,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_grow_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "grow_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "grow_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3317281434)!
         }
         }
@@ -273,7 +273,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_convert_to_image: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "convert_to_image").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "convert_to_image").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4190603485)!
         }
         }
@@ -295,7 +295,7 @@ open class BitMap: Resource {
 
     private static var __method_binding_opaque_to_polygons: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "opaque_to_polygons").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "opaque_to_polygons").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 876132484)!
         }
         }

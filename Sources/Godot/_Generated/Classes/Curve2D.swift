@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class Curve2D: Resource {
     private static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_point_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_point_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -29,7 +29,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_set_point_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_point_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_point_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -51,7 +51,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_add_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2437345566)!
         }
         }
@@ -79,7 +79,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_set_point_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_point_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_point_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 163021252)!
         }
         }
@@ -103,7 +103,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_get_point_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_point_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_point_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2299179447)!
         }
         }
@@ -129,7 +129,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_set_point_in: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_point_in").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_point_in").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 163021252)!
         }
         }
@@ -153,7 +153,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_get_point_in: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_point_in").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_point_in").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2299179447)!
         }
         }
@@ -179,7 +179,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_set_point_out: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_point_out").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_point_out").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 163021252)!
         }
         }
@@ -203,7 +203,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_get_point_out: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_point_out").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_point_out").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2299179447)!
         }
         }
@@ -229,7 +229,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_remove_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -251,7 +251,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_clear_points: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_points").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_points").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -269,7 +269,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_sample: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "sample").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "sample").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 26514310)!
         }
         }
@@ -297,7 +297,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_samplef: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "samplef").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "samplef").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3588506812)!
         }
         }
@@ -323,7 +323,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_set_bake_interval: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bake_interval").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bake_interval").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -345,7 +345,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_get_bake_interval: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bake_interval").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bake_interval").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -367,7 +367,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_get_baked_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_baked_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_baked_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -389,7 +389,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_sample_baked: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "sample_baked").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "sample_baked").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3464257706)!
         }
         }
@@ -417,7 +417,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_sample_baked_with_rotation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "sample_baked_with_rotation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "sample_baked_with_rotation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3296056341)!
         }
         }
@@ -445,7 +445,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_get_baked_points: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_baked_points").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_baked_points").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2961356807)!
         }
         }
@@ -467,7 +467,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_get_closest_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_closest_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_closest_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2656412154)!
         }
         }
@@ -493,7 +493,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_get_closest_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_closest_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_closest_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2276447920)!
         }
         }
@@ -519,7 +519,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_tessellate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "tessellate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "tessellate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 958145977)!
         }
         }
@@ -547,7 +547,7 @@ open class Curve2D: Resource {
 
     private static var __method_binding_tessellate_even_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "tessellate_even_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "tessellate_even_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2319761637)!
         }
         }

@@ -15,7 +15,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -37,7 +37,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -59,7 +59,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_texture").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_texture").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2086764391)!
         }
         }
@@ -85,7 +85,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_texture").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_texture").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3244119503)!
         }
         }
@@ -111,7 +111,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_emission_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_emission_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_emission_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -133,7 +133,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_get_emission_energy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_emission_energy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_emission_energy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -155,7 +155,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_albedo_mix: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_albedo_mix").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_albedo_mix").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -177,7 +177,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_get_albedo_mix: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_albedo_mix").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_albedo_mix").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -199,7 +199,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_modulate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_modulate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_modulate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -221,7 +221,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_get_modulate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_modulate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_modulate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444240500)!
         }
         }
@@ -243,7 +243,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_upper_fade: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_upper_fade").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_upper_fade").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -265,7 +265,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_get_upper_fade: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_upper_fade").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_upper_fade").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -287,7 +287,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_lower_fade: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_lower_fade").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_lower_fade").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -309,7 +309,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_get_lower_fade: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_lower_fade").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_lower_fade").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -331,7 +331,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_normal_fade: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_normal_fade").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_normal_fade").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -353,7 +353,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_get_normal_fade: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_normal_fade").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_normal_fade").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -375,7 +375,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_enable_distance_fade: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_enable_distance_fade").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_enable_distance_fade").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -397,7 +397,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_is_distance_fade_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_distance_fade_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_distance_fade_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -419,7 +419,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_distance_fade_begin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_distance_fade_begin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_distance_fade_begin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -441,7 +441,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_get_distance_fade_begin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_distance_fade_begin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_distance_fade_begin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -463,7 +463,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_distance_fade_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_distance_fade_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_distance_fade_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -485,7 +485,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_get_distance_fade_length: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_distance_fade_length").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_distance_fade_length").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -507,7 +507,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cull_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cull_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -529,7 +529,7 @@ open class Decal: VisualInstance3D {
 
     private static var __method_binding_get_cull_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cull_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cull_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

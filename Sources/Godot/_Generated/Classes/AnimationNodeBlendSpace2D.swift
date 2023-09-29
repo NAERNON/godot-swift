@@ -17,7 +17,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_add_blend_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_blend_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_blend_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1533588937)!
         }
         }
@@ -45,7 +45,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_set_blend_point_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_blend_point_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_blend_point_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 163021252)!
         }
         }
@@ -69,7 +69,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_blend_point_position: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_blend_point_position").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_blend_point_position").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2299179447)!
         }
         }
@@ -95,7 +95,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_set_blend_point_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_blend_point_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_blend_point_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4240341528)!
         }
         }
@@ -121,7 +121,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_blend_point_node: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_blend_point_node").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_blend_point_node").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 665599029)!
         }
         }
@@ -147,7 +147,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_remove_blend_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_blend_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_blend_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -169,7 +169,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_blend_point_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_blend_point_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_blend_point_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -191,7 +191,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_add_triangle: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_triangle").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_triangle").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 642454959)!
         }
         }
@@ -219,7 +219,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_triangle_point: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_triangle_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_triangle_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 50157827)!
         }
         }
@@ -247,7 +247,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_remove_triangle: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_triangle").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_triangle").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -269,7 +269,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_triangle_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_triangle_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_triangle_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -291,7 +291,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_set_min_space: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_min_space").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_min_space").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -313,7 +313,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_min_space: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_min_space").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_min_space").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -335,7 +335,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_set_max_space: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_max_space").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_max_space").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -357,7 +357,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_max_space: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_max_space").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_max_space").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -379,7 +379,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_set_snap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_snap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_snap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -401,7 +401,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_snap: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_snap").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_snap").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
@@ -423,7 +423,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_set_x_label: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_x_label").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_x_label").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -445,7 +445,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_x_label: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_x_label").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_x_label").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -467,7 +467,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_set_y_label: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_y_label").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_y_label").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -489,7 +489,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_y_label: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_y_label").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_y_label").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -511,7 +511,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_set_auto_triangles: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_auto_triangles").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_auto_triangles").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -533,7 +533,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_auto_triangles: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_auto_triangles").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_auto_triangles").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -555,7 +555,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_set_blend_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_blend_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_blend_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 81193520)!
         }
         }
@@ -577,7 +577,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_get_blend_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_blend_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_blend_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1398433632)!
         }
         }
@@ -599,7 +599,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_set_use_sync: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_use_sync").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_use_sync").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -621,7 +621,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
 
     private static var __method_binding_is_using_sync: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_using_sync").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_using_sync").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

@@ -15,7 +15,7 @@ open class Translation: Resource {
 
     private static var __method_binding_set_locale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_locale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_locale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -37,7 +37,7 @@ open class Translation: Resource {
 
     private static var __method_binding_get_locale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_locale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_locale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -59,7 +59,7 @@ open class Translation: Resource {
 
     private static var __method_binding_add_message: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_message").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_message").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 971803314)!
         }
         }
@@ -85,7 +85,7 @@ open class Translation: Resource {
 
     private static var __method_binding_add_plural_message: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_plural_message").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_plural_message").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 360316719)!
         }
         }
@@ -111,7 +111,7 @@ open class Translation: Resource {
 
     private static var __method_binding_get_message: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_message").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_message").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 58037827)!
         }
         }
@@ -139,7 +139,7 @@ open class Translation: Resource {
 
     private static var __method_binding_get_plural_message: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_plural_message").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_plural_message").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1333931916)!
         }
         }
@@ -171,7 +171,7 @@ open class Translation: Resource {
 
     private static var __method_binding_erase_message: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "erase_message").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "erase_message").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3919944288)!
         }
         }
@@ -195,7 +195,7 @@ open class Translation: Resource {
 
     private static var __method_binding_get_message_list: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_message_list").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_message_list").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -217,7 +217,7 @@ open class Translation: Resource {
 
     private static var __method_binding_get_translated_message_list: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_translated_message_list").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_translated_message_list").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -239,7 +239,7 @@ open class Translation: Resource {
 
     private static var __method_binding_get_message_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_message_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_message_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

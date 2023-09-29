@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class StreamPeerGZIP: StreamPeer {
     private static var __method_binding_start_compression: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "start_compression").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "start_compression").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 781582770)!
         }
         }
@@ -35,7 +35,7 @@ open class StreamPeerGZIP: StreamPeer {
 
     private static var __method_binding_start_decompression: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "start_decompression").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "start_decompression").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 781582770)!
         }
         }
@@ -63,7 +63,7 @@ open class StreamPeerGZIP: StreamPeer {
 
     private static var __method_binding_finish: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "finish").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "finish").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166280745)!
         }
         }
@@ -85,7 +85,7 @@ open class StreamPeerGZIP: StreamPeer {
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }

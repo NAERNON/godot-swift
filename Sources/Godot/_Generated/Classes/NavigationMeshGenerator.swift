@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class NavigationMeshGenerator: Object {
     private static var __method_binding_bake: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "bake").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "bake").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1401173477)!
         }
         }
@@ -35,7 +35,7 @@ open class NavigationMeshGenerator: Object {
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2923361153)!
         }
         }
@@ -59,7 +59,7 @@ open class NavigationMeshGenerator: Object {
 
     private static var __method_binding_parse_source_geometry_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "parse_source_geometry_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "parse_source_geometry_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3703028813)!
         }
         }
@@ -93,7 +93,7 @@ open class NavigationMeshGenerator: Object {
 
     private static var __method_binding_bake_from_source_geometry_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "bake_from_source_geometry_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "bake_from_source_geometry_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3669016597)!
         }
         }

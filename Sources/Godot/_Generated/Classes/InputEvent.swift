@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class InputEvent: Resource {
     private static var __method_binding_set_device: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_device").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_device").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -29,7 +29,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_get_device: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_device").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_device").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -51,7 +51,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_is_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1558498928)!
         }
         }
@@ -79,7 +79,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_is_action_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_action_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_action_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1631499404)!
         }
         }
@@ -109,7 +109,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_is_action_released: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_action_released").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_action_released").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1558498928)!
         }
         }
@@ -137,7 +137,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_get_action_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_action_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_action_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 801543509)!
         }
         }
@@ -165,7 +165,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_is_canceled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_canceled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_canceled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -187,7 +187,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_is_pressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_pressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_pressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -209,7 +209,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_is_released: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_released").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_released").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -231,7 +231,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_is_echo: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_echo").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_echo").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -253,7 +253,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_as_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "as_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "as_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -275,7 +275,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_is_match: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_match").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_match").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3392494811)!
         }
         }
@@ -305,7 +305,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_is_action_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_action_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_action_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -327,7 +327,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_accumulate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "accumulate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "accumulate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1062211774)!
         }
         }
@@ -355,7 +355,7 @@ open class InputEvent: Resource {
 
     private static var __method_binding_xformed_by: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "xformed_by").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "xformed_by").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2747409789)!
         }
         }

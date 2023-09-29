@@ -47,7 +47,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_noise_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_noise_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_noise_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2624461392)!
         }
         }
@@ -69,7 +69,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_noise_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_noise_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_noise_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1458108610)!
         }
         }
@@ -91,7 +91,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_seed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_seed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_seed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -113,7 +113,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_seed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_seed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_seed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -135,7 +135,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_frequency: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_frequency").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_frequency").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -157,7 +157,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_frequency: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_frequency").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_frequency").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -179,7 +179,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -201,7 +201,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -223,7 +223,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_fractal_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fractal_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fractal_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4132731174)!
         }
         }
@@ -245,7 +245,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_fractal_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fractal_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fractal_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1036889279)!
         }
         }
@@ -267,7 +267,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_fractal_octaves: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fractal_octaves").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fractal_octaves").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -289,7 +289,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_fractal_octaves: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fractal_octaves").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fractal_octaves").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -311,7 +311,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_fractal_lacunarity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fractal_lacunarity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fractal_lacunarity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -333,7 +333,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_fractal_lacunarity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fractal_lacunarity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fractal_lacunarity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -355,7 +355,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_fractal_gain: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fractal_gain").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fractal_gain").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -377,7 +377,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_fractal_gain: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fractal_gain").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fractal_gain").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -399,7 +399,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_fractal_weighted_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fractal_weighted_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fractal_weighted_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -421,7 +421,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_fractal_weighted_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fractal_weighted_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fractal_weighted_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -443,7 +443,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_fractal_ping_pong_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_fractal_ping_pong_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_fractal_ping_pong_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -465,7 +465,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_fractal_ping_pong_strength: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_fractal_ping_pong_strength").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_fractal_ping_pong_strength").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -487,7 +487,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_cellular_distance_function: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cellular_distance_function").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cellular_distance_function").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1006013267)!
         }
         }
@@ -509,7 +509,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_cellular_distance_function: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cellular_distance_function").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cellular_distance_function").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2021274088)!
         }
         }
@@ -531,7 +531,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_cellular_jitter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cellular_jitter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cellular_jitter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -553,7 +553,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_cellular_jitter: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cellular_jitter").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cellular_jitter").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -575,7 +575,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_cellular_return_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_cellular_return_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_cellular_return_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2654169698)!
         }
         }
@@ -597,7 +597,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_cellular_return_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_cellular_return_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_cellular_return_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3699796343)!
         }
         }
@@ -619,7 +619,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_domain_warp_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_domain_warp_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_domain_warp_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -641,7 +641,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_is_domain_warp_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_domain_warp_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_domain_warp_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -663,7 +663,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_domain_warp_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_domain_warp_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_domain_warp_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3629692980)!
         }
         }
@@ -685,7 +685,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_domain_warp_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_domain_warp_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_domain_warp_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2980162020)!
         }
         }
@@ -707,7 +707,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_domain_warp_amplitude: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_domain_warp_amplitude").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_domain_warp_amplitude").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -729,7 +729,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_domain_warp_amplitude: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_domain_warp_amplitude").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_domain_warp_amplitude").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -751,7 +751,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_domain_warp_frequency: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_domain_warp_frequency").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_domain_warp_frequency").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -773,7 +773,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_domain_warp_frequency: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_domain_warp_frequency").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_domain_warp_frequency").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -795,7 +795,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_domain_warp_fractal_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_domain_warp_fractal_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_domain_warp_fractal_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3999408287)!
         }
         }
@@ -817,7 +817,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_domain_warp_fractal_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_domain_warp_fractal_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_domain_warp_fractal_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 407716934)!
         }
         }
@@ -839,7 +839,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_domain_warp_fractal_octaves: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_domain_warp_fractal_octaves").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_domain_warp_fractal_octaves").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -861,7 +861,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_domain_warp_fractal_octaves: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_domain_warp_fractal_octaves").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_domain_warp_fractal_octaves").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -883,7 +883,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_domain_warp_fractal_lacunarity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_domain_warp_fractal_lacunarity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_domain_warp_fractal_lacunarity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -905,7 +905,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_domain_warp_fractal_lacunarity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_domain_warp_fractal_lacunarity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_domain_warp_fractal_lacunarity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -927,7 +927,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_set_domain_warp_fractal_gain: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_domain_warp_fractal_gain").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_domain_warp_fractal_gain").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -949,7 +949,7 @@ open class FastNoiseLite: Noise {
 
     private static var __method_binding_get_domain_warp_fractal_gain: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_domain_warp_fractal_gain").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_domain_warp_fractal_gain").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }

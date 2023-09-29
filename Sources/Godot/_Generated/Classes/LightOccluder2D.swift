@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class LightOccluder2D: Node2D {
     private static var __method_binding_set_occluder_polygon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_occluder_polygon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_occluder_polygon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3258315893)!
         }
         }
@@ -31,7 +31,7 @@ open class LightOccluder2D: Node2D {
 
     private static var __method_binding_get_occluder_polygon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_occluder_polygon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_occluder_polygon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3962317075)!
         }
         }
@@ -53,7 +53,7 @@ open class LightOccluder2D: Node2D {
 
     private static var __method_binding_set_occluder_light_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_occluder_light_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_occluder_light_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -75,7 +75,7 @@ open class LightOccluder2D: Node2D {
 
     private static var __method_binding_get_occluder_light_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_occluder_light_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_occluder_light_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -97,7 +97,7 @@ open class LightOccluder2D: Node2D {
 
     private static var __method_binding_set_as_sdf_collision: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_as_sdf_collision").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_as_sdf_collision").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -119,7 +119,7 @@ open class LightOccluder2D: Node2D {
 
     private static var __method_binding_is_set_as_sdf_collision: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_set_as_sdf_collision").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_set_as_sdf_collision").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

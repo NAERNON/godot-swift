@@ -23,7 +23,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3224536192)!
         }
         }
@@ -49,7 +49,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_icon_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_icon_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_icon_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1200674553)!
         }
         }
@@ -79,7 +79,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_check_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_check_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_check_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3224536192)!
         }
         }
@@ -105,7 +105,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_icon_check_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_icon_check_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_icon_check_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1200674553)!
         }
         }
@@ -135,7 +135,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_radio_check_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_radio_check_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_radio_check_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3224536192)!
         }
         }
@@ -161,7 +161,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_icon_radio_check_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_icon_radio_check_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_icon_radio_check_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1200674553)!
         }
         }
@@ -191,7 +191,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_multistate_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_multistate_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_multistate_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1585218420)!
         }
         }
@@ -221,7 +221,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_shortcut: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_shortcut").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_shortcut").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2168272394)!
         }
         }
@@ -249,7 +249,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_icon_shortcut: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_icon_shortcut").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_icon_shortcut").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 68101841)!
         }
         }
@@ -281,7 +281,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_check_shortcut: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_check_shortcut").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_check_shortcut").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2168272394)!
         }
         }
@@ -309,7 +309,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_icon_check_shortcut: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_icon_check_shortcut").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_icon_check_shortcut").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 68101841)!
         }
         }
@@ -341,7 +341,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_radio_check_shortcut: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_radio_check_shortcut").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_radio_check_shortcut").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2168272394)!
         }
         }
@@ -369,7 +369,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_icon_radio_check_shortcut: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_icon_radio_check_shortcut").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_icon_radio_check_shortcut").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 68101841)!
         }
         }
@@ -401,7 +401,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_submenu_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_submenu_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_submenu_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3728518296)!
         }
         }
@@ -427,7 +427,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -451,7 +451,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_text_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_text_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_text_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1707680378)!
         }
         }
@@ -475,7 +475,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_language: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_language").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_language").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -499,7 +499,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 666127730)!
         }
         }
@@ -525,7 +525,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_icon_max_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_icon_max_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_icon_max_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -549,7 +549,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_icon_modulate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_icon_modulate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_icon_modulate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2878471219)!
         }
         }
@@ -573,7 +573,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_checked: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_checked").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_checked").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -597,7 +597,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -621,7 +621,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_accelerator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_accelerator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_accelerator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2992817551)!
         }
         }
@@ -645,7 +645,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_metadata: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_metadata").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_metadata").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2152698145)!
         }
         }
@@ -669,7 +669,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -693,7 +693,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_submenu: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_submenu").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_submenu").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -717,7 +717,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_as_separator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_as_separator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_as_separator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -741,7 +741,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_as_checkable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_as_checkable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_as_checkable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -765,7 +765,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_as_radio_checkable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_as_radio_checkable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_as_radio_checkable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -789,7 +789,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_tooltip: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_tooltip").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_tooltip").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 501894301)!
         }
         }
@@ -813,7 +813,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_shortcut: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_shortcut").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_shortcut").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 825127832)!
         }
         }
@@ -841,7 +841,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_indent: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_indent").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_indent").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -865,7 +865,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_multistate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_multistate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_multistate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -889,7 +889,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_shortcut_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_shortcut_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_shortcut_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -913,7 +913,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_toggle_item_checked: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "toggle_item_checked").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "toggle_item_checked").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -935,7 +935,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_toggle_item_multistate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "toggle_item_multistate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "toggle_item_multistate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -957,7 +957,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_text: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_text").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_text").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -983,7 +983,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_text_direction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_text_direction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_text_direction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4235602388)!
         }
         }
@@ -1009,7 +1009,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_language: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_language").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_language").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -1035,7 +1035,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_icon: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_icon").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_icon").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3536238170)!
         }
         }
@@ -1061,7 +1061,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_icon_max_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_icon_max_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_icon_max_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -1087,7 +1087,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_icon_modulate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_icon_modulate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_icon_modulate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3457211756)!
         }
         }
@@ -1113,7 +1113,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_is_item_checked: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_item_checked").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_item_checked").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -1139,7 +1139,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -1165,7 +1165,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -1191,7 +1191,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_accelerator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_accelerator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_accelerator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 253789942)!
         }
         }
@@ -1217,7 +1217,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_metadata: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_metadata").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_metadata").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4227898402)!
         }
         }
@@ -1243,7 +1243,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_is_item_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_item_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_item_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -1269,7 +1269,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_submenu: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_submenu").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_submenu").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -1295,7 +1295,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_is_item_separator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_item_separator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_item_separator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -1321,7 +1321,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_is_item_checkable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_item_checkable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_item_checkable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -1347,7 +1347,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_is_item_radio_checkable: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_item_radio_checkable").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_item_radio_checkable").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -1373,7 +1373,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_is_item_shortcut_disabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_item_shortcut_disabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_item_shortcut_disabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -1399,7 +1399,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_tooltip: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_tooltip").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_tooltip").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -1425,7 +1425,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_shortcut: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_shortcut").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_shortcut").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1449483325)!
         }
         }
@@ -1451,7 +1451,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_indent: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_indent").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_indent").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -1477,7 +1477,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_focused_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_focused_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_focused_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -1499,7 +1499,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_focused_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_focused_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_focused_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -1521,7 +1521,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_item_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_item_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_item_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -1543,7 +1543,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_item_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_item_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_item_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -1565,7 +1565,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_scroll_to_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "scroll_to_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "scroll_to_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -1587,7 +1587,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_remove_item: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_item").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_item").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -1609,7 +1609,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_add_separator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_separator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_separator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2266703459)!
         }
         }
@@ -1633,7 +1633,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -1651,7 +1651,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_hide_on_item_selection: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_hide_on_item_selection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_hide_on_item_selection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1673,7 +1673,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_is_hide_on_item_selection: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_hide_on_item_selection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_hide_on_item_selection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1695,7 +1695,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_hide_on_checkable_item_selection: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_hide_on_checkable_item_selection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_hide_on_checkable_item_selection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1717,7 +1717,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_is_hide_on_checkable_item_selection: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_hide_on_checkable_item_selection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_hide_on_checkable_item_selection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1739,7 +1739,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_hide_on_state_item_selection: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_hide_on_state_item_selection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_hide_on_state_item_selection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1761,7 +1761,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_is_hide_on_state_item_selection: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_hide_on_state_item_selection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_hide_on_state_item_selection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -1783,7 +1783,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_submenu_popup_delay: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_submenu_popup_delay").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_submenu_popup_delay").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1805,7 +1805,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_submenu_popup_delay: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_submenu_popup_delay").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_submenu_popup_delay").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -1827,7 +1827,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_set_allow_search: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_allow_search").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_allow_search").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1849,7 +1849,7 @@ open class PopupMenu: Popup {
 
     private static var __method_binding_get_allow_search: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_allow_search").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_allow_search").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

@@ -20,7 +20,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_is_valid_gateway: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_valid_gateway").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_valid_gateway").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -42,7 +42,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_query_external_address: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "query_external_address").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "query_external_address").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -64,7 +64,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_add_port_mapping: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_port_mapping").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_port_mapping").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3358934458)!
         }
         }
@@ -98,7 +98,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_delete_port_mapping: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "delete_port_mapping").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "delete_port_mapping").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 760296170)!
         }
         }
@@ -126,7 +126,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_set_description_url: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_description_url").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_description_url").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -148,7 +148,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_get_description_url: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_description_url").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_description_url").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -170,7 +170,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_set_service_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_service_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_service_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -192,7 +192,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_get_service_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_service_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_service_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -214,7 +214,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_set_igd_control_url: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_igd_control_url").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_igd_control_url").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -236,7 +236,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_get_igd_control_url: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_igd_control_url").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_igd_control_url").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -258,7 +258,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_set_igd_service_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_igd_service_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_igd_service_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -280,7 +280,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_get_igd_service_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_igd_service_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_igd_service_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -302,7 +302,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_set_igd_our_addr: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_igd_our_addr").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_igd_our_addr").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -324,7 +324,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_get_igd_our_addr: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_igd_our_addr").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_igd_our_addr").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -346,7 +346,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_set_igd_status: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_igd_status").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_igd_status").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 519504122)!
         }
         }
@@ -368,7 +368,7 @@ open class UPNPDevice: RefCounted {
 
     private static var __method_binding_get_igd_status: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_igd_status").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_igd_status").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 180887011)!
         }
         }

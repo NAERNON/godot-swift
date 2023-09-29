@@ -24,7 +24,7 @@ open class ResourceSaver: Object {
 
     private static var __method_binding_save: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2303056517)!
         }
         }
@@ -56,7 +56,7 @@ open class ResourceSaver: Object {
 
     private static var __method_binding_get_recognized_extensions: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_recognized_extensions").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_recognized_extensions").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4223597960)!
         }
         }
@@ -84,7 +84,7 @@ open class ResourceSaver: Object {
 
     private static var __method_binding_add_resource_format_saver: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_resource_format_saver").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_resource_format_saver").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 362894272)!
         }
         }
@@ -110,7 +110,7 @@ open class ResourceSaver: Object {
 
     private static var __method_binding_remove_resource_format_saver: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_resource_format_saver").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_resource_format_saver").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3373026878)!
         }
         }

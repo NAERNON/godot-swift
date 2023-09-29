@@ -230,7 +230,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_get_center: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_center").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_center").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 3444277866)!
         }
     }()
@@ -246,7 +246,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_get_area: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "get_area").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_area").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 3173160232)!
         }
     }()
@@ -262,7 +262,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_has_area: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "has_area").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_area").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 3918633141)!
         }
     }()
@@ -278,7 +278,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_has_point: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "has_point").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_point").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 328189994)!
         }
     }()
@@ -298,7 +298,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_intersects: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "intersects").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "intersects").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 3434691493)!
         }
     }()
@@ -318,7 +318,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_encloses: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "encloses").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "encloses").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 3434691493)!
         }
     }()
@@ -338,7 +338,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_intersection: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "intersection").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "intersection").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 717431873)!
         }
     }()
@@ -358,7 +358,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_merge: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "merge").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "merge").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 717431873)!
         }
     }()
@@ -378,7 +378,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_expand: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "expand").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "expand").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 1355196872)!
         }
     }()
@@ -398,7 +398,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_grow: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "grow").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "grow").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 1578070074)!
         }
     }()
@@ -418,7 +418,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_grow_side: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "grow_side").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "grow_side").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 3191154199)!
         }
     }()
@@ -440,7 +440,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_grow_individual: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "grow_individual").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "grow_individual").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 1893743416)!
         }
     }()
@@ -466,7 +466,7 @@ extension Rect2i {
     }
 
     private static var __method_binding_abs: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftString: "abs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "abs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_RECT2I, __ptr__method_name, 1469025700)!
         }
     }()

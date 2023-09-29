@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class RDAttachmentFormat: RefCounted {
     private static var __method_binding_set_format: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_format").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_format").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 565531219)!
         }
         }
@@ -29,7 +29,7 @@ open class RDAttachmentFormat: RefCounted {
 
     private static var __method_binding_get_format: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_format").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_format").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2235804183)!
         }
         }
@@ -51,7 +51,7 @@ open class RDAttachmentFormat: RefCounted {
 
     private static var __method_binding_set_samples: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_samples").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_samples").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3774171498)!
         }
         }
@@ -73,7 +73,7 @@ open class RDAttachmentFormat: RefCounted {
 
     private static var __method_binding_get_samples: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_samples").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_samples").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 407791724)!
         }
         }
@@ -95,7 +95,7 @@ open class RDAttachmentFormat: RefCounted {
 
     private static var __method_binding_set_usage_flags: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_usage_flags").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_usage_flags").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -117,7 +117,7 @@ open class RDAttachmentFormat: RefCounted {
 
     private static var __method_binding_get_usage_flags: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_usage_flags").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_usage_flags").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

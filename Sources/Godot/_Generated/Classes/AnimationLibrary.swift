@@ -23,7 +23,7 @@ open class AnimationLibrary: Resource {
 
     private static var __method_binding_add_animation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_animation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_animation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1811855551)!
         }
         }
@@ -53,7 +53,7 @@ open class AnimationLibrary: Resource {
 
     private static var __method_binding_remove_animation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_animation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_animation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -75,7 +75,7 @@ open class AnimationLibrary: Resource {
 
     private static var __method_binding_rename_animation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "rename_animation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rename_animation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
@@ -99,7 +99,7 @@ open class AnimationLibrary: Resource {
 
     private static var __method_binding_has_animation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_animation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_animation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -125,7 +125,7 @@ open class AnimationLibrary: Resource {
 
     private static var __method_binding_get_animation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_animation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_animation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2933122410)!
         }
         }
@@ -151,7 +151,7 @@ open class AnimationLibrary: Resource {
 
     private static var __method_binding_get_animation_list: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_animation_list").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_animation_list").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }

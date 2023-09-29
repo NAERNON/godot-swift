@@ -17,7 +17,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -39,7 +39,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -61,7 +61,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_set_resolution: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_resolution").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_resolution").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1155629297)!
         }
         }
@@ -83,7 +83,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_get_resolution: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_resolution").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_resolution").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2919555867)!
         }
         }
@@ -105,7 +105,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_texture").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_texture").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1188404210)!
         }
         }
@@ -129,7 +129,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_texture").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_texture").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373985333)!
         }
         }
@@ -151,7 +151,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_set_thickness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_thickness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_thickness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -173,7 +173,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_get_thickness: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_thickness").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_thickness").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -195,7 +195,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_set_bake_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bake_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bake_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -217,7 +217,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_get_bake_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bake_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bake_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -239,7 +239,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_set_bake_mask_value: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bake_mask_value").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bake_mask_value").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
@@ -263,7 +263,7 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
 
     private static var __method_binding_get_bake_mask_value: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bake_mask_value").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bake_mask_value").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }

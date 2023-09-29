@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class OptimizedTranslation: Translation {
     private static var __method_binding_generate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "generate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "generate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1466479800)!
         }
         }

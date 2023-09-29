@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class TranslationServer: Object {
     private static var __method_binding_set_locale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_locale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_locale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -29,7 +29,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_get_locale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_locale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_locale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -51,7 +51,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_get_tool_locale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_tool_locale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_tool_locale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2841200299)!
         }
         }
@@ -73,7 +73,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_compare_locales: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "compare_locales").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "compare_locales").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2878152881)!
         }
         }
@@ -101,7 +101,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_standardize_locale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "standardize_locale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "standardize_locale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3135753539)!
         }
         }
@@ -127,7 +127,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_get_all_languages: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_all_languages").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_all_languages").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -149,7 +149,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_get_language_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_language_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_language_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3135753539)!
         }
         }
@@ -175,7 +175,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_get_all_scripts: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_all_scripts").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_all_scripts").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -197,7 +197,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_get_script_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_script_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_script_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3135753539)!
         }
         }
@@ -223,7 +223,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_get_all_countries: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_all_countries").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_all_countries").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -245,7 +245,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_get_country_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_country_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_country_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3135753539)!
         }
         }
@@ -271,7 +271,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_get_locale_name: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_locale_name").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_locale_name").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3135753539)!
         }
         }
@@ -297,7 +297,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_translate: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "translate").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "translate").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 58037827)!
         }
         }
@@ -325,7 +325,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_translate_plural: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "translate_plural").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "translate_plural").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1333931916)!
         }
         }
@@ -357,7 +357,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_add_translation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_translation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_translation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1466479800)!
         }
         }
@@ -381,7 +381,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_remove_translation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_translation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_translation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1466479800)!
         }
         }
@@ -405,7 +405,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_get_translation_object: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_translation_object").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_translation_object").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2065240175)!
         }
         }
@@ -431,7 +431,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -449,7 +449,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_get_loaded_locales: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_loaded_locales").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_loaded_locales").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -471,7 +471,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_is_pseudolocalization_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_pseudolocalization_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_pseudolocalization_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -493,7 +493,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_set_pseudolocalization_enabled: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pseudolocalization_enabled").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pseudolocalization_enabled").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -515,7 +515,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_reload_pseudolocalization: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "reload_pseudolocalization").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "reload_pseudolocalization").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -533,7 +533,7 @@ open class TranslationServer: Object {
 
     private static var __method_binding_pseudolocalize: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "pseudolocalize").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "pseudolocalize").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1965194235)!
         }
         }

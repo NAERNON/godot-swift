@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class OpenXRIPBinding: Resource {
     private static var __method_binding_set_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 349361333)!
         }
         }
@@ -31,7 +31,7 @@ open class OpenXRIPBinding: Resource {
 
     private static var __method_binding_get_action: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_action").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_action").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4072409085)!
         }
         }
@@ -53,7 +53,7 @@ open class OpenXRIPBinding: Resource {
 
     private static var __method_binding_get_path_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_path_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_path_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -75,7 +75,7 @@ open class OpenXRIPBinding: Resource {
 
     private static var __method_binding_set_paths: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_paths").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_paths").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4015028928)!
         }
         }
@@ -97,7 +97,7 @@ open class OpenXRIPBinding: Resource {
 
     private static var __method_binding_get_paths: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_paths").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_paths").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
@@ -119,7 +119,7 @@ open class OpenXRIPBinding: Resource {
 
     private static var __method_binding_has_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -145,7 +145,7 @@ open class OpenXRIPBinding: Resource {
 
     private static var __method_binding_add_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -167,7 +167,7 @@ open class OpenXRIPBinding: Resource {
 
     private static var __method_binding_remove_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }

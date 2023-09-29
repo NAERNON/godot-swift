@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class SkinReference: RefCounted {
     private static var __method_binding_get_skeleton: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skeleton").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skeleton").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2944877500)!
         }
         }
@@ -29,7 +29,7 @@ open class SkinReference: RefCounted {
 
     private static var __method_binding_get_skin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2074563878)!
         }
         }

@@ -15,7 +15,7 @@ open class TextServerManager: Object {
 
     private static var __method_binding_add_interface: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_interface").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_interface").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1799689403)!
         }
         }
@@ -39,7 +39,7 @@ open class TextServerManager: Object {
 
     private static var __method_binding_get_interface_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_interface_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_interface_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -61,7 +61,7 @@ open class TextServerManager: Object {
 
     private static var __method_binding_remove_interface: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_interface").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_interface").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1799689403)!
         }
         }
@@ -85,7 +85,7 @@ open class TextServerManager: Object {
 
     private static var __method_binding_get_interface: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_interface").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_interface").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1672475555)!
         }
         }
@@ -111,7 +111,7 @@ open class TextServerManager: Object {
 
     private static var __method_binding_get_interfaces: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_interfaces").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_interfaces").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
@@ -133,7 +133,7 @@ open class TextServerManager: Object {
 
     private static var __method_binding_find_interface: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "find_interface").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "find_interface").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240905781)!
         }
         }
@@ -159,7 +159,7 @@ open class TextServerManager: Object {
 
     private static var __method_binding_set_primary_interface: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_primary_interface").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_primary_interface").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1799689403)!
         }
         }
@@ -183,7 +183,7 @@ open class TextServerManager: Object {
 
     private static var __method_binding_get_primary_interface: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_primary_interface").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_primary_interface").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 905850878)!
         }
         }

@@ -39,7 +39,7 @@ open class FileSystemDock: VBoxContainer {
 
     private static var __method_binding_navigate_to_path: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "navigate_to_path").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "navigate_to_path").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -61,7 +61,7 @@ open class FileSystemDock: VBoxContainer {
 
     private static var __method_binding_add_resource_tooltip_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_resource_tooltip_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_resource_tooltip_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2258356838)!
         }
         }
@@ -85,7 +85,7 @@ open class FileSystemDock: VBoxContainer {
 
     private static var __method_binding_remove_resource_tooltip_plugin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "remove_resource_tooltip_plugin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "remove_resource_tooltip_plugin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2258356838)!
         }
         }

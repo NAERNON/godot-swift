@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class GridContainer: Container {
     private static var __method_binding_set_columns: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_columns").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_columns").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -29,7 +29,7 @@ open class GridContainer: Container {
 
     private static var __method_binding_get_columns: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_columns").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_columns").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }

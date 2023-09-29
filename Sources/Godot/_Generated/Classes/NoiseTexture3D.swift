@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class NoiseTexture3D: Texture3D {
     private static var __method_binding_set_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -29,7 +29,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_set_height: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_height").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_height").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -51,7 +51,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_set_depth: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_depth").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_depth").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -73,7 +73,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_set_invert: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_invert").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_invert").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -95,7 +95,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_get_invert: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_invert").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_invert").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -117,7 +117,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_set_seamless: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_seamless").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_seamless").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -139,7 +139,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_get_seamless: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_seamless").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_seamless").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -161,7 +161,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_set_seamless_blend_skirt: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_seamless_blend_skirt").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_seamless_blend_skirt").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -183,7 +183,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_get_seamless_blend_skirt: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_seamless_blend_skirt").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_seamless_blend_skirt").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 191475506)!
         }
         }
@@ -205,7 +205,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_set_normalize: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_normalize").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_normalize").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -227,7 +227,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_is_normalized: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_normalized").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_normalized").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -249,7 +249,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_set_color_ramp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_color_ramp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_color_ramp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2756054477)!
         }
         }
@@ -273,7 +273,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_get_color_ramp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_color_ramp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_color_ramp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 132272999)!
         }
         }
@@ -295,7 +295,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_set_noise: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_noise").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_noise").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4135492439)!
         }
         }
@@ -319,7 +319,7 @@ open class NoiseTexture3D: Texture3D {
 
     private static var __method_binding_get_noise: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_noise").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_noise").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 185851837)!
         }
         }

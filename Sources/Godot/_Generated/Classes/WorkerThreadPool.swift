@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class WorkerThreadPool: Object {
     private static var __method_binding_add_task: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_task").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_task").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3976347598)!
         }
         }
@@ -37,7 +37,7 @@ open class WorkerThreadPool: Object {
 
     private static var __method_binding_is_task_completed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_task_completed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_task_completed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -63,7 +63,7 @@ open class WorkerThreadPool: Object {
 
     private static var __method_binding_wait_for_task_completion: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "wait_for_task_completion").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "wait_for_task_completion").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844576869)!
         }
         }
@@ -89,7 +89,7 @@ open class WorkerThreadPool: Object {
 
     private static var __method_binding_add_group_task: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_group_task").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_group_task").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2377228549)!
         }
         }
@@ -123,7 +123,7 @@ open class WorkerThreadPool: Object {
 
     private static var __method_binding_is_group_task_completed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_group_task_completed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_group_task_completed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -149,7 +149,7 @@ open class WorkerThreadPool: Object {
 
     private static var __method_binding_get_group_processed_element_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_group_processed_element_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_group_processed_element_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -175,7 +175,7 @@ open class WorkerThreadPool: Object {
 
     private static var __method_binding_wait_for_group_task_completion: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "wait_for_group_task_completion").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "wait_for_group_task_completion").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }

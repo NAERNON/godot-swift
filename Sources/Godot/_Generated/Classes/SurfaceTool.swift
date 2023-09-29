@@ -23,7 +23,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_skin_weight_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_skin_weight_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_skin_weight_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 618679515)!
         }
         }
@@ -45,7 +45,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_get_skin_weight_count: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_skin_weight_count").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_skin_weight_count").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1072401130)!
         }
         }
@@ -67,7 +67,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_custom_format: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_custom_format").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_custom_format").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4087759856)!
         }
         }
@@ -91,7 +91,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_get_custom_format: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_custom_format").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_custom_format").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 839863283)!
         }
         }
@@ -117,7 +117,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_begin: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "begin").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "begin").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2230304113)!
         }
         }
@@ -139,7 +139,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_add_vertex: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_vertex").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_vertex").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -161,7 +161,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_color").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_color").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -183,7 +183,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_normal: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_normal").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_normal").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -205,7 +205,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_tangent: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_tangent").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_tangent").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3505987427)!
         }
         }
@@ -227,7 +227,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_uv: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_uv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_uv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -249,7 +249,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_uv2: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_uv2").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_uv2").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -271,7 +271,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_bones: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bones").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bones").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614634198)!
         }
         }
@@ -293,7 +293,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_weights: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_weights").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_weights").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2899603908)!
         }
         }
@@ -315,7 +315,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_custom: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_custom").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_custom").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2878471219)!
         }
         }
@@ -339,7 +339,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_smooth_group: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_smooth_group").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_smooth_group").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -361,7 +361,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_add_triangle_fan: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_triangle_fan").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_triangle_fan").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 297960074)!
         }
         }
@@ -393,7 +393,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_add_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "add_index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "add_index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -415,7 +415,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_index: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "index").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "index").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -433,7 +433,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_deindex: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "deindex").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "deindex").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -451,7 +451,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_generate_normals: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "generate_normals").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "generate_normals").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 107499316)!
         }
         }
@@ -473,7 +473,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_generate_tangents: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "generate_tangents").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "generate_tangents").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -491,7 +491,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_optimize_indices_for_cache: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "optimize_indices_for_cache").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "optimize_indices_for_cache").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -509,7 +509,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_get_aabb: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_aabb").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_aabb").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1068685055)!
         }
         }
@@ -531,7 +531,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_generate_lod: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "generate_lod").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "generate_lod").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1894448909)!
         }
         }
@@ -559,7 +559,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_set_material: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_material").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_material").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2757459619)!
         }
         }
@@ -583,7 +583,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_get_primitive_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_primitive_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_primitive_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 768822145)!
         }
         }
@@ -605,7 +605,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -623,7 +623,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_create_from: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_from").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_from").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1767024570)!
         }
         }
@@ -649,7 +649,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_create_from_blend_shape: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_from_blend_shape").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_from_blend_shape").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1306185582)!
         }
         }
@@ -677,7 +677,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_append_from: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "append_from").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "append_from").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2217967155)!
         }
         }
@@ -705,7 +705,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_commit: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "commit").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "commit").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4107864055)!
         }
         }
@@ -735,7 +735,7 @@ open class SurfaceTool: RefCounted {
 
     private static var __method_binding_commit_to_arrays: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "commit_to_arrays").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "commit_to_arrays").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }

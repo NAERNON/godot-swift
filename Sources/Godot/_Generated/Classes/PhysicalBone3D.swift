@@ -23,7 +23,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_apply_central_impulse: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "apply_central_impulse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "apply_central_impulse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -45,7 +45,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_apply_impulse: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "apply_impulse").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "apply_impulse").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1002852006)!
         }
         }
@@ -69,7 +69,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_joint_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_joint_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_joint_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2289552604)!
         }
         }
@@ -91,7 +91,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_joint_type: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_joint_type").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_joint_type").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 931347320)!
         }
         }
@@ -113,7 +113,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_joint_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_joint_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_joint_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2952846383)!
         }
         }
@@ -135,7 +135,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_joint_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_joint_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_joint_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3229777777)!
         }
         }
@@ -157,7 +157,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_joint_rotation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_joint_rotation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_joint_rotation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -179,7 +179,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_joint_rotation: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_joint_rotation").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_joint_rotation").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -201,7 +201,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_body_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_body_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_body_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2952846383)!
         }
         }
@@ -223,7 +223,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_body_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_body_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_body_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3229777777)!
         }
         }
@@ -245,7 +245,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_simulate_physics: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_simulate_physics").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_simulate_physics").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -267,7 +267,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_is_simulating_physics: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_simulating_physics").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_simulating_physics").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -289,7 +289,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_bone_id: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bone_id").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bone_id").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -311,7 +311,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_mass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_mass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_mass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -333,7 +333,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_mass: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_mass").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_mass").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -355,7 +355,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_friction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_friction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_friction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -377,7 +377,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_friction: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_friction").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_friction").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -399,7 +399,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_bounce: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_bounce").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_bounce").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -421,7 +421,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_bounce: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_bounce").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_bounce").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -443,7 +443,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_gravity_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gravity_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gravity_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -465,7 +465,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_gravity_scale: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gravity_scale").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gravity_scale").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -487,7 +487,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_linear_damp_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_linear_damp_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_linear_damp_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1244972221)!
         }
         }
@@ -509,7 +509,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_linear_damp_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_linear_damp_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_linear_damp_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 205884699)!
         }
         }
@@ -531,7 +531,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_angular_damp_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_angular_damp_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_angular_damp_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1244972221)!
         }
         }
@@ -553,7 +553,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_angular_damp_mode: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_angular_damp_mode").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_angular_damp_mode").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 205884699)!
         }
         }
@@ -575,7 +575,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_linear_damp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_linear_damp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_linear_damp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -597,7 +597,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_linear_damp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_linear_damp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_linear_damp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -619,7 +619,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_angular_damp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_angular_damp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_angular_damp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -641,7 +641,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_angular_damp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_angular_damp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_angular_damp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -663,7 +663,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_linear_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -685,7 +685,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_linear_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_linear_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -707,7 +707,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_angular_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -729,7 +729,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_get_angular_velocity: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_angular_velocity").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -751,7 +751,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_use_custom_integrator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_use_custom_integrator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_use_custom_integrator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -773,7 +773,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_is_using_custom_integrator: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_using_custom_integrator").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_using_custom_integrator").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
@@ -795,7 +795,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_set_can_sleep: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_can_sleep").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_can_sleep").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -817,7 +817,7 @@ open class PhysicalBone3D: PhysicsBody3D {
 
     private static var __method_binding_is_able_to_sleep: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_able_to_sleep").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_able_to_sleep").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

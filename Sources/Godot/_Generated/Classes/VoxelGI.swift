@@ -15,7 +15,7 @@ open class VoxelGI: VisualInstance3D {
 
     private static var __method_binding_set_probe_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_probe_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_probe_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1637849675)!
         }
         }
@@ -39,7 +39,7 @@ open class VoxelGI: VisualInstance3D {
 
     private static var __method_binding_get_probe_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_probe_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_probe_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1730645405)!
         }
         }
@@ -61,7 +61,7 @@ open class VoxelGI: VisualInstance3D {
 
     private static var __method_binding_set_subdiv: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_subdiv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_subdiv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240898472)!
         }
         }
@@ -83,7 +83,7 @@ open class VoxelGI: VisualInstance3D {
 
     private static var __method_binding_get_subdiv: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_subdiv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_subdiv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4261647950)!
         }
         }
@@ -105,7 +105,7 @@ open class VoxelGI: VisualInstance3D {
 
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
         }
         }
@@ -127,7 +127,7 @@ open class VoxelGI: VisualInstance3D {
 
     private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
         }
         }
@@ -149,7 +149,7 @@ open class VoxelGI: VisualInstance3D {
 
     private static var __method_binding_set_camera_attributes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_camera_attributes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_camera_attributes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2817810567)!
         }
         }
@@ -173,7 +173,7 @@ open class VoxelGI: VisualInstance3D {
 
     private static var __method_binding_get_camera_attributes: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_camera_attributes").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_camera_attributes").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3921283215)!
         }
         }
@@ -195,7 +195,7 @@ open class VoxelGI: VisualInstance3D {
 
     private static var __method_binding_bake: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "bake").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "bake").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2781551026)!
         }
         }
@@ -221,7 +221,7 @@ open class VoxelGI: VisualInstance3D {
 
     private static var __method_binding_debug_bake: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "debug_bake").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "debug_bake").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }

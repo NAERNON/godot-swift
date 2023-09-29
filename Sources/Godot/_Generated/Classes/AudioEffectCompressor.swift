@@ -7,7 +7,7 @@ import GodotExtensionHeaders
 open class AudioEffectCompressor: AudioEffect {
     private static var __method_binding_set_threshold: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_threshold").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_threshold").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -29,7 +29,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_get_threshold: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_threshold").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_threshold").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -51,7 +51,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_set_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -73,7 +73,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_get_ratio: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_ratio").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_ratio").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -95,7 +95,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_set_gain: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_gain").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_gain").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -117,7 +117,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_get_gain: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_gain").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_gain").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -139,7 +139,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_set_attack_us: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_attack_us").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_attack_us").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -161,7 +161,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_get_attack_us: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_attack_us").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_attack_us").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -183,7 +183,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_set_release_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_release_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_release_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -205,7 +205,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_get_release_ms: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_release_ms").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_release_ms").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -227,7 +227,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_set_mix: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_mix").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_mix").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -249,7 +249,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_get_mix: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_mix").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_mix").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
@@ -271,7 +271,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_set_sidechain: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_sidechain").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_sidechain").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -293,7 +293,7 @@ open class AudioEffectCompressor: AudioEffect {
 
     private static var __method_binding_get_sidechain: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_sidechain").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_sidechain").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2002593661)!
         }
         }

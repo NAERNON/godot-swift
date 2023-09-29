@@ -87,7 +87,7 @@ open class Image: Resource {
 
     private static var __method_binding_get_width: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_width").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_width").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -109,7 +109,7 @@ open class Image: Resource {
 
     private static var __method_binding_get_height: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_height").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_height").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -131,7 +131,7 @@ open class Image: Resource {
 
     private static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_size").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3690982128)!
         }
         }
@@ -153,7 +153,7 @@ open class Image: Resource {
 
     private static var __method_binding_has_mipmaps: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "has_mipmaps").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "has_mipmaps").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -175,7 +175,7 @@ open class Image: Resource {
 
     private static var __method_binding_get_format: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_format").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_format").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3847873762)!
         }
         }
@@ -197,7 +197,7 @@ open class Image: Resource {
 
     private static var __method_binding_get_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2362200018)!
         }
         }
@@ -219,7 +219,7 @@ open class Image: Resource {
 
     private static var __method_binding_convert: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "convert").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "convert").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2120693146)!
         }
         }
@@ -241,7 +241,7 @@ open class Image: Resource {
 
     private static var __method_binding_get_mipmap_offset: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_mipmap_offset").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_mipmap_offset").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
@@ -267,7 +267,7 @@ open class Image: Resource {
 
     private static var __method_binding_resize_to_po2: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "resize_to_po2").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "resize_to_po2").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4189212329)!
         }
         }
@@ -291,7 +291,7 @@ open class Image: Resource {
 
     private static var __method_binding_resize: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "resize").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "resize").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2461393748)!
         }
         }
@@ -317,7 +317,7 @@ open class Image: Resource {
 
     private static var __method_binding_shrink_x2: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "shrink_x2").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "shrink_x2").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -335,7 +335,7 @@ open class Image: Resource {
 
     private static var __method_binding_crop: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "crop").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "crop").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
@@ -359,7 +359,7 @@ open class Image: Resource {
 
     private static var __method_binding_flip_x: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "flip_x").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "flip_x").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -377,7 +377,7 @@ open class Image: Resource {
 
     private static var __method_binding_flip_y: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "flip_y").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "flip_y").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -395,7 +395,7 @@ open class Image: Resource {
 
     private static var __method_binding_generate_mipmaps: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "generate_mipmaps").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "generate_mipmaps").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1633102583)!
         }
         }
@@ -421,7 +421,7 @@ open class Image: Resource {
 
     private static var __method_binding_clear_mipmaps: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "clear_mipmaps").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "clear_mipmaps").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -439,7 +439,7 @@ open class Image: Resource {
 
     private static var __method_binding_create: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 986942177)!
         }
         }
@@ -469,7 +469,7 @@ open class Image: Resource {
 
     private static var __method_binding_create_from_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "create_from_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "create_from_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 299398494)!
         }
         }
@@ -501,7 +501,7 @@ open class Image: Resource {
 
     private static var __method_binding_set_data: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_data").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_data").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2740482212)!
         }
         }
@@ -531,7 +531,7 @@ open class Image: Resource {
 
     private static var __method_binding_is_empty: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -553,7 +553,7 @@ open class Image: Resource {
 
     private static var __method_binding_load: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
@@ -579,7 +579,7 @@ open class Image: Resource {
 
     private static var __method_binding_load_from_file: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load_from_file").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load_from_file").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 736337515)!
         }
         }
@@ -603,7 +603,7 @@ open class Image: Resource {
 
     private static var __method_binding_save_png: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save_png").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save_png").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2113323047)!
         }
         }
@@ -629,7 +629,7 @@ open class Image: Resource {
 
     private static var __method_binding_save_png_to_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save_png_to_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save_png_to_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2362200018)!
         }
         }
@@ -651,7 +651,7 @@ open class Image: Resource {
 
     private static var __method_binding_save_jpg: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save_jpg").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save_jpg").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 578836491)!
         }
         }
@@ -679,7 +679,7 @@ open class Image: Resource {
 
     private static var __method_binding_save_jpg_to_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save_jpg_to_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save_jpg_to_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 592235273)!
         }
         }
@@ -705,7 +705,7 @@ open class Image: Resource {
 
     private static var __method_binding_save_exr: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save_exr").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save_exr").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3108122999)!
         }
         }
@@ -733,7 +733,7 @@ open class Image: Resource {
 
     private static var __method_binding_save_exr_to_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save_exr_to_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save_exr_to_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3178917920)!
         }
         }
@@ -759,7 +759,7 @@ open class Image: Resource {
 
     private static var __method_binding_save_webp: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save_webp").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save_webp").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3594949219)!
         }
         }
@@ -789,7 +789,7 @@ open class Image: Resource {
 
     private static var __method_binding_save_webp_to_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "save_webp_to_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "save_webp_to_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1214628238)!
         }
         }
@@ -817,7 +817,7 @@ open class Image: Resource {
 
     private static var __method_binding_detect_alpha: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "detect_alpha").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "detect_alpha").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2030116505)!
         }
         }
@@ -839,7 +839,7 @@ open class Image: Resource {
 
     private static var __method_binding_is_invisible: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_invisible").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_invisible").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -861,7 +861,7 @@ open class Image: Resource {
 
     private static var __method_binding_detect_used_channels: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "detect_used_channels").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "detect_used_channels").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2703139984)!
         }
         }
@@ -887,7 +887,7 @@ open class Image: Resource {
 
     private static var __method_binding_compress: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "compress").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "compress").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4094210332)!
         }
         }
@@ -917,7 +917,7 @@ open class Image: Resource {
 
     private static var __method_binding_compress_from_channels: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "compress_from_channels").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "compress_from_channels").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 279105990)!
         }
         }
@@ -947,7 +947,7 @@ open class Image: Resource {
 
     private static var __method_binding_decompress: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "decompress").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "decompress").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166280745)!
         }
         }
@@ -969,7 +969,7 @@ open class Image: Resource {
 
     private static var __method_binding_is_compressed: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "is_compressed").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_compressed").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
@@ -991,7 +991,7 @@ open class Image: Resource {
 
     private static var __method_binding_rotate_90: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "rotate_90").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rotate_90").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1901204267)!
         }
         }
@@ -1013,7 +1013,7 @@ open class Image: Resource {
 
     private static var __method_binding_rotate_180: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "rotate_180").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rotate_180").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -1031,7 +1031,7 @@ open class Image: Resource {
 
     private static var __method_binding_fix_alpha_edges: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "fix_alpha_edges").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "fix_alpha_edges").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -1049,7 +1049,7 @@ open class Image: Resource {
 
     private static var __method_binding_premultiply_alpha: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "premultiply_alpha").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "premultiply_alpha").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -1067,7 +1067,7 @@ open class Image: Resource {
 
     private static var __method_binding_srgb_to_linear: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "srgb_to_linear").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "srgb_to_linear").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -1085,7 +1085,7 @@ open class Image: Resource {
 
     private static var __method_binding_normal_map_to_xy: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "normal_map_to_xy").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "normal_map_to_xy").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
@@ -1103,7 +1103,7 @@ open class Image: Resource {
 
     private static var __method_binding_rgbe_to_srgb: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "rgbe_to_srgb").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "rgbe_to_srgb").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 564927088)!
         }
         }
@@ -1125,7 +1125,7 @@ open class Image: Resource {
 
     private static var __method_binding_bump_map_to_normal_map: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "bump_map_to_normal_map").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "bump_map_to_normal_map").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3423495036)!
         }
         }
@@ -1147,7 +1147,7 @@ open class Image: Resource {
 
     private static var __method_binding_compute_image_metrics: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "compute_image_metrics").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "compute_image_metrics").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3080961247)!
         }
         }
@@ -1177,7 +1177,7 @@ open class Image: Resource {
 
     private static var __method_binding_blit_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "blit_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "blit_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2903928755)!
         }
         }
@@ -1205,7 +1205,7 @@ open class Image: Resource {
 
     private static var __method_binding_blit_rect_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "blit_rect_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "blit_rect_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3383581145)!
         }
         }
@@ -1237,7 +1237,7 @@ open class Image: Resource {
 
     private static var __method_binding_blend_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "blend_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "blend_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2903928755)!
         }
         }
@@ -1265,7 +1265,7 @@ open class Image: Resource {
 
     private static var __method_binding_blend_rect_mask: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "blend_rect_mask").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "blend_rect_mask").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3383581145)!
         }
         }
@@ -1297,7 +1297,7 @@ open class Image: Resource {
 
     private static var __method_binding_fill: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "fill").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "fill").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920490490)!
         }
         }
@@ -1319,7 +1319,7 @@ open class Image: Resource {
 
     private static var __method_binding_fill_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "fill_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "fill_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 514693913)!
         }
         }
@@ -1343,7 +1343,7 @@ open class Image: Resource {
 
     private static var __method_binding_get_used_rect: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_used_rect").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_used_rect").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 410525958)!
         }
         }
@@ -1365,7 +1365,7 @@ open class Image: Resource {
 
     private static var __method_binding_get_region: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_region").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_region").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2601441065)!
         }
         }
@@ -1391,7 +1391,7 @@ open class Image: Resource {
 
     private static var __method_binding_copy_from: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "copy_from").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "copy_from").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 532598488)!
         }
         }
@@ -1415,7 +1415,7 @@ open class Image: Resource {
 
     private static var __method_binding_get_pixelv: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pixelv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pixelv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1532707496)!
         }
         }
@@ -1441,7 +1441,7 @@ open class Image: Resource {
 
     private static var __method_binding_get_pixel: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "get_pixel").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_pixel").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2165839948)!
         }
         }
@@ -1469,7 +1469,7 @@ open class Image: Resource {
 
     private static var __method_binding_set_pixelv: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pixelv").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pixelv").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 287851464)!
         }
         }
@@ -1493,7 +1493,7 @@ open class Image: Resource {
 
     private static var __method_binding_set_pixel: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "set_pixel").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_pixel").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3733378741)!
         }
         }
@@ -1519,7 +1519,7 @@ open class Image: Resource {
 
     private static var __method_binding_adjust_bcs: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "adjust_bcs").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "adjust_bcs").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2385087082)!
         }
         }
@@ -1545,7 +1545,7 @@ open class Image: Resource {
 
     private static var __method_binding_load_png_from_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load_png_from_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load_png_from_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 680677267)!
         }
         }
@@ -1571,7 +1571,7 @@ open class Image: Resource {
 
     private static var __method_binding_load_jpg_from_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load_jpg_from_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load_jpg_from_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 680677267)!
         }
         }
@@ -1597,7 +1597,7 @@ open class Image: Resource {
 
     private static var __method_binding_load_webp_from_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load_webp_from_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load_webp_from_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 680677267)!
         }
         }
@@ -1623,7 +1623,7 @@ open class Image: Resource {
 
     private static var __method_binding_load_tga_from_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load_tga_from_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load_tga_from_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 680677267)!
         }
         }
@@ -1649,7 +1649,7 @@ open class Image: Resource {
 
     private static var __method_binding_load_bmp_from_buffer: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftString: "load_bmp_from_buffer").withUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "load_bmp_from_buffer").withUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 680677267)!
         }
         }
