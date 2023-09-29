@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://bmx3xyipr5417"]
+[gd_scene load_steps=2 format=3 uid="uid://bmx3xyipr5417"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Script" path="res://main.gd" id="1_0j4uu"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_0j4uu")
 
 [node name="Character" type="Character" parent="."]
 
@@ -9,3 +12,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.750296, -0.321931, 0.577423, 2.95372e-17, 0.873424, 0.486961, -0.661102, -0.365364, 0.655326, 0, 3.76492, 0)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

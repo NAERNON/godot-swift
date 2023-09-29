@@ -89,4 +89,11 @@ public class Character: Node3D {
         gdPrint("Emit fast speed")
         emitterReachedFastSpeed.emit()
     }
+    
+    // MARK: Receivers
+    
+    @Receiver
+    public func timerEnded() {
+        gdPrint("Timer ended received")
+    }
 }
