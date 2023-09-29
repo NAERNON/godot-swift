@@ -14,7 +14,7 @@ let package = Package(
             targets: ["SomeGame"]),
     ],
     dependencies: [
-        // Replace this dependency with:
+        // Replace this dependency in your own project with:
         // .package(url: "https://github.com/NAERNON/godot-swift", branch: "main")
         .package(path: "../")
     ],
