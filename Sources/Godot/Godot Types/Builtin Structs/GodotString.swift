@@ -16,6 +16,18 @@ public struct GodotString {
         }
     }
     
+    internal init(swiftStaticString: StaticString) {
+        self.init()
+        
+        withUnsafeRawPointer { extensionPtr in
+            swiftStaticString.withUTF8Buffer { buffer in
+                buffer.baseAddress?.withMemoryRebound(to: Int8.self, capacity: buffer.count) { cString in
+                    gdextension_interface_string_new_with_utf8_chars(extensionPtr, cString)
+                }
+            }
+        }
+    }
+    
     public init(_ value: GodotString) {
         self = value
     }

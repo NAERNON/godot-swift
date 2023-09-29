@@ -10,6 +10,10 @@ public struct GodotStringName {
         self = Self._constructor_godotstring(from: GodotString(swiftString: swiftString))
     }
     
+    public init(swiftStaticString: StaticString) {
+        self = Self._constructor_godotstring(from: GodotString(swiftStaticString: swiftStaticString))
+    }
+    
     public init(_ value: GodotStringName) {
         self = value
     }
@@ -348,9 +352,9 @@ public struct GodotStringName {
 
 // MARK: - Extensions
 
-extension GodotStringName: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
-    public init(stringLiteral value: String) {
-        self.init(swiftString: value)
+extension GodotStringName: ExpressibleByStringLiteral {
+    public init(stringLiteral value: StaticString) {
+        self.init(swiftStaticString: value)
     }
 }
 
