@@ -5,3 +5,4 @@ func _ready():
     
     var character = get_node("Character") as Character
     timer.timeout.connect(character.timer_ended)
+    character.print_some_cool_stuff("YEAH!!")

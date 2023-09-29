@@ -96,4 +96,10 @@ public class Character: Node3D {
     public func timerEnded() {
         gdPrint("Timer ended received")
     }
+    
+    // MARK: Functions
+    
+    public func printSomeCoolStuff(withString string: GodotString) {
+        gdPrint("Printing some cool stuff: \(string)")
+    }
 }
