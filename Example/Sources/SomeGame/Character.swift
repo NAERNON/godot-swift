@@ -5,9 +5,41 @@ public class Character: Node3D {
     public var moveSpeed: Float = 2
     public var moveFriction: Float = 2.5
     public var fastSpeedTrigger: Float = 3
+    public var movementOptions: MovementOptions = []
     
+    public var shape: Shape = .box {
+        didSet {
+            meshInstance.mesh = shape.mesh()
+        }
+    }
+    
+    private let meshInstance = MeshInstance3D()
     private var currentSpeed: Float = 0
     private var canTriggerFastSpeed = true
+    
+    // MARK: Enums & Option sets
+    
+    @GodotEnum
+    public enum Shape: Int64 {
+        case box
+        case torus
+        
+        func mesh() -> Mesh {
+            switch self {
+            case .box:
+                BoxMesh()
+            case .torus:
+                TorusMesh()
+            }
+        }
+    }
+    
+    @GodotOptionSet
+    public struct MovementOptions {
+        public static let none: Self = .init(rawValue: 0)
+        public static let stopsImmediately: Self = .init(rawValue: 1 << 0)
+        public static let canOnlyGoLeft: Self = .init(rawValue: 1 << 1)
+    }
     
     // MARK: Signals
     
@@ -19,8 +51,7 @@ public class Character: Node3D {
     public override func _ready() {
         gdPrint("The character is ready")
         
-        let meshInstance = MeshInstance3D()
-        meshInstance.mesh = BoxMesh()
+        meshInstance.mesh = shape.mesh()
         addChild(node: meshInstance)
     }
     
@@ -31,10 +62,13 @@ public class Character: Node3D {
         
         let floatDelta = Float(delta)
         
-        if Input.shared.isActionPressed(action: "move_right") {
+        if Input.shared.isActionPressed(action: "move_right"),
+           !movementOptions.contains(.canOnlyGoLeft) {
             currentSpeed += floatDelta * moveSpeed
         } else if Input.shared.isActionPressed(action: "move_left") {
             currentSpeed -= floatDelta * moveSpeed
+        } else if movementOptions.contains(.stopsImmediately) {
+            currentSpeed = 0
         } else {
             currentSpeed *= 1 - moveFriction * floatDelta
         }

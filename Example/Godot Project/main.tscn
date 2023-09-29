@@ -3,10 +3,9 @@
 [node name="Node3D" type="Node3D"]
 
 [node name="Character" type="Character" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00883836, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.63165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.750296, -0.321931, 0.577423, 2.95372e-17, 0.873424, 0.486961, -0.661102, -0.365364, 0.655326, 0, 3.76492, 0)
