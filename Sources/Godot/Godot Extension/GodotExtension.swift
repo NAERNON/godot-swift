@@ -26,7 +26,7 @@ public enum GodotExtension {
     
     public private(set) static var version: GodotVersion!
     
-    private(set) static var bridge: GodotBridge.Type!
+    private(set) static var bridge: Bridge.Type!
     
     private(set) static var getProcAddress: GDExtensionInterfaceGetProcAddress!
     private(set) static var libraryPtr: GDExtensionClassLibraryPtr!
@@ -54,7 +54,7 @@ public enum GodotExtension {
         getProcAddress: GetProcAddress,
         libraryPtr: ClassLibraryPointer,
         initializationPtr: InitializationPointer
-    ) throws where T : GodotBridge {
+    ) throws where T : Bridge {
         guard !isInitialized else {
             throw InitializationError.alreadyInitialized
         }

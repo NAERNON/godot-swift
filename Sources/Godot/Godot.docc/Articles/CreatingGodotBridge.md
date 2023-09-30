@@ -16,24 +16,24 @@ To define a bridge, simply make a struct, class or enum with an attached ``Bridg
 
 ```swift
 @Bridge
-enum MyGame {
+public enum SomeGameBridge {
     // Custom parameters
 }
 ```
 
-By using this macro, a C function is automatically generated. This is the function Godot will call to initialize your module.
+By using this macro, a public C function is automatically generated. This is the function Godot will call to initialize your module.
 
 The generated C function is named "*type*`_godot_init`" where "*type*" is the name of the type the macro is attached to, in lowercase. For example:
 
 ```swift
 @Bridge
-enum MyGame {
+public enum SomeGameBridge {
     // Custom parameters
 }
 
 // Automatically generates:
-@_cdecl("mygame_godot_init")
-func MyGame_godot_init(...) {
+@_cdecl("somegamebridge_godot_init")
+public func SomeGameBridge_godot_init(...) {
     // Automatically generated Godot initialization
 }
 ```
@@ -42,14 +42,14 @@ func MyGame_godot_init(...) {
 
 ### Expose custom Godot classes
 
-Because the macro automatically conforms the attached type to the ``GodotBridge`` protocol, the information provided by the protocol is used to specify custom parameters for Godot, like what classes are exposed to the Godot editor.
+Because the macro automatically conforms the attached type to the ``Bridge`` protocol, the information provided by the protocol is used to specify custom parameters for Godot, like what classes are exposed to the Godot editor.
 
-To expose custom classes to Godot that you will be able to use within the Godot editor, define the ``GodotBridge/exposedClasses`` static variable. For example:
+To expose custom classes to Godot that you will be able to use within the Godot editor, define the ``Bridge/exposedClasses`` static variable. For example:
 
 ```swift
 @Bridge
-enum MyGame {
-    static let exposedClasses: [Object.Type] = [
+public enum SomeGameBridge {
+    public static let exposedClasses: [Object.Type] = [
         CharacterNode.self,
         CharacterDarkSideNode.self
     ]
@@ -62,18 +62,18 @@ Subclasses you expose should be registered right after their superclasses. In th
 
 ### Provide custom initialization and deinitialization
 
-If you want to perform some custom operations during either the initialization or deinitialization of Godot, implement the ``GodotBridge/initialize(level:)`` function or ``GodotBridge/deinitialize(level:)`` function. For example:
+If you want to perform some custom operations during either the initialization or deinitialization of Godot, implement the ``Bridge/initialize(level:)`` function or ``Bridge/deinitialize(level:)`` function. For example:
 
 ```swift
 @Bridge
-enum MyGame {
-    static let exposedClasses: [Object.Type] = [...]
+public enum SomeGameBridge {
+    public static let exposedClasses: [Object.Type] = [...]
 
-    static func initialize(level: GodotInitializationLevel) {
+    public static func initialize(level: GodotInitializationLevel) {
         // Custom initialization
     }
 
-    static func deinitialize(level: GodotInitializationLevel) {
+    public static func deinitialize(level: GodotInitializationLevel) {
         // Custom deinitialization
     }
 }

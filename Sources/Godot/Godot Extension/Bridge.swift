@@ -2,11 +2,11 @@ import GodotExtensionHeaders
 
 /// A type that provides Godot initialization parameters.
 ///
-/// You should not declare conformances to `GodotBridge` directly.
+/// You should not declare conformances to `Bridge` directly.
 /// Use the ``Bridge()`` macro to automatically conform to this protocol.
 ///
 /// Learn how to create a bridge: <doc:CreatingGodotBridge>.
-public protocol GodotBridge {
+public protocol Bridge {
     /// All the custom classes to expose to Godot.
     ///
     /// Only expose ``Object`` classes that are defined using
@@ -42,10 +42,19 @@ public protocol GodotBridge {
 
 // MARK: - Default implementation
 
-public extension GodotBridge {
+public extension Bridge {
     static var exposedClasses: [Object.Type] { [] }
     static var minimumInitializationLevel: GodotInitializationLevel { .core }
     
     static func initialize(level: GodotInitializationLevel) {}
     static func deinitialize(level: GodotInitializationLevel) {}
 }
+
+// MARK: - Macro
+
+/// Define and implements conformance of the Bridge protocol.
+///
+/// Learn how to create a bridge: <doc:CreatingGodotBridge>.
+@attached(extension, conformances: Bridge)
+@attached(peer, names: suffixed(_godot_init))
+public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro")

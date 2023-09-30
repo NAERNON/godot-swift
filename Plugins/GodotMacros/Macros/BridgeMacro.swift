@@ -11,12 +11,12 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
         conformingTo protocols: [TypeSyntax],
         in context: some MacroExpansionContext
     ) throws -> [ExtensionDeclSyntax] {
-        let godotBridgeExtension: DeclSyntax =
+        let bridgeExtension: DeclSyntax =
         """
-        extension \(type.trimmed): GodotBridge {}
+        extension \(type.trimmed): Godot.Bridge {}
         """
         
-        guard let extensionDecl = godotBridgeExtension.as(ExtensionDeclSyntax.self) else {
+        guard let extensionDecl = bridgeExtension.as(ExtensionDeclSyntax.self) else {
             return []
         }
         
@@ -28,21 +28,44 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
         providingPeersOf declaration: some DeclSyntaxProtocol,
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
+        let declName: TokenSyntax
+        let isPublic: Bool
+        let notPublicFixItNode: Syntax
+        let notPublicFixIt: FixIt
+        
         if let decl = declaration.as(ClassDeclSyntax.self) {
-            return [libInitDecl(identifier: decl.name)]
+            declName = decl.name
+            isPublic = decl.isPublic()
+            (notPublicFixIt, notPublicFixItNode) = decl.notPublicFixIt()
         } else if let decl = declaration.as(StructDeclSyntax.self) {
-            return [libInitDecl(identifier: decl.name)]
+            declName = decl.name
+            isPublic = decl.isPublic()
+            (notPublicFixIt, notPublicFixItNode) = decl.notPublicFixIt()
         } else if let decl = declaration.as(EnumDeclSyntax.self) {
-            return [libInitDecl(identifier: decl.name)]
+            declName = decl.name
+            isPublic = decl.isPublic()
+            (notPublicFixIt, notPublicFixItNode) = decl.notPublicFixIt()
+        } else {
+            let diagnostic = Diagnostic(
+                node: Syntax(node),
+                message: GodotDiagnostic("Bridge must either be a 'class', 'struct' or 'enum'")
+            )
+            context.diagnose(diagnostic)
+            
+            return []
         }
         
-        let diagnostic = Diagnostic(
-            node: Syntax(node),
-            message: GodotDiagnostic("Bridge must either be a 'class', 'struct' or 'enum'")
-        )
-        context.diagnose(diagnostic)
+        // Check is public or open
+        guard isPublic else {
+            context.diagnose(Diagnostic(
+                node: notPublicFixItNode,
+                message: GodotDiagnostic("Bridge must be public"),
+                fixIt: notPublicFixIt
+            ))
+            return []
+        }
         
-        return []
+        return [libInitDecl(identifier: declName)]
     }
     
     private static func libInitDecl(identifier: TokenSyntax) -> DeclSyntax {
@@ -51,7 +74,7 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
         return DeclSyntax(
             """
             @_cdecl("\(raw: functionName.lowercased())")
-            internal func \(raw: functionName)(
+            public func \(raw: functionName)(
                 getProcAddress: Godot.GodotExtension.GetProcAddress,
                 libraryPtr: Godot.GodotExtension.ClassLibraryPointer,
                 initializationPtr: Godot.GodotExtension.InitializationPointer

@@ -19,13 +19,6 @@ public macro Exposable() = #externalMacro(module: "GodotMacros", type: "Exposabl
 @attached(peer, names: prefixed(_$godotRegister_))
 public macro ExposableMember(_: Object.Type) = #externalMacro(module: "GodotMacros", type: "ExposableMemberMacro")
 
-/// Define and implements conformance of the GodotBridge protocol.
-///
-/// Learn how to create a bridge: <doc:CreatingGodotBridge>.
-@attached(extension, conformances: GodotBridge)
-@attached(peer, names: suffixed(_godot_init))
-public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro")
-
 /// Converts a Swift enum into an enum usable by Godot.
 @attached(extension, conformances: VariantConvertible, names:
     named(variantType),
