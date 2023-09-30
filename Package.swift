@@ -65,5 +65,15 @@ let package = Package(
             ],
             path: "Plugins/GodotMacros"
         ),
+        
+        // MARK: Tests
+        
+        .testTarget(
+            name: "GodotMacrosTests",
+            dependencies: [
+                "GodotMacros",
+                .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
+            ]
+        ),
     ]
 )
