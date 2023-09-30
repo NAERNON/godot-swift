@@ -403,7 +403,7 @@ extension Float: VariantConvertible {
     public func makeVariant() -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: Double(self)) { otherNativeTypePtr in
                 fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
