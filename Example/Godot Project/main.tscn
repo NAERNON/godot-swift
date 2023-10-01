@@ -6,6 +6,7 @@
 script = ExtResource("1_0j4uu")
 
 [node name="Character" type="Character" parent="."]
+move_speed = 8.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
