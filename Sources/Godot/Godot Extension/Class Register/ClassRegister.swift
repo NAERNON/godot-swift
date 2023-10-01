@@ -95,7 +95,7 @@ public final class ClassRegister {
     /// If the class name is not correct, it indicates that the custom registered class
     /// is not configured correctly. This might be a sign that the ``Exposable()``
     /// macro is not used.
-    private func classNameIsEquivalentToType<Class>(classType: Class.Type) -> Bool where Class : Object {
+    internal func classNameIsEquivalentToType<Class>(classType: Class.Type) -> Bool where Class : Object {
         GodotStringName(swiftString: .init(describing: classType)) == classType._$className
     }
     

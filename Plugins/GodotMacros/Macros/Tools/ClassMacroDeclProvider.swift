@@ -112,6 +112,9 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             public required init() {
                 extensionObjectPtr = Self.makeNewExtensionObjectPtr()
                 
+                assert(GodotExtension.classRegister.classNameIsEquivalentToType(classType: Self.self),
+                    "Trying to instantiate a class not marked '@Exposable'")
+                
                 postInit()
             }
             
