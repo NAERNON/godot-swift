@@ -34,15 +34,27 @@ struct VariableMember: ExposableMember {
         classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
-        guard let variableBinding = variableDeclSyntax.bindings.first else {
+        guard let variableBinding = variableDeclSyntax.bindings.first,
+              let binding = variableDeclSyntax.bindings.first else {
             return nil
         }
         
-        // Check type is explicitly written
-        guard let variableType = variableDeclSyntax.bindings.first?.typeAnnotation?.type else {
+        // Check type
+        let variableType: TypeSyntax
+        if let type = binding.typeAnnotation?.type {
+            variableType = type
+        } else if binding.initializer?.value.is(IntegerLiteralExprSyntax.self) == true {
+            variableType = "Int"
+        } else if binding.initializer?.value.is(FloatLiteralExprSyntax.self) == true {
+            variableType = "Double"
+        } else if binding.initializer?.value.is(StringLiteralExprSyntax.self) == true {
+            variableType = "Swift.String"
+        } else if binding.initializer?.value.is(BooleanLiteralExprSyntax.self) == true {
+            variableType = "Bool"
+        } else {
             context.diagnose(Diagnostic(
                 node: Syntax(variableBinding),
-                message: GodotDiagnostic("Exposable variables must explicitly define their type")
+                message: GodotDiagnostic("Cannot retrieve type of '\(binding.pattern.trimmedDescription)' for exposition")
             ))
             return nil
         }
