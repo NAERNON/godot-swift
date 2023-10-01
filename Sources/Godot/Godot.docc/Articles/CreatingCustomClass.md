@@ -24,7 +24,7 @@ This is an example of a class correctly defined:
 
 Once a class is correctly defined, it can be exposed to Godot through a bridge. See <doc:CreatingGodotBridge> to learn how to setup a bridge.
 
-> Warning: Do not use a custom Godot class not marked with the ``Exposable()`` macro.
+> Warning: Do not use or instantiate a custom Godot class not marked with the ``Exposable()`` macro, and not exposed using a bridge.
 
 ### Expose members
 
