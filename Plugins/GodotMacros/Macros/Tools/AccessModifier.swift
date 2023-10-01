@@ -5,9 +5,13 @@ import SwiftDiagnostics
 
 protocol DeclSyntaxWithAccessModifier: DeclSyntaxProtocol {
     var modifiers: DeclModifierListSyntax { get }
-    var typeKeyword: TokenSyntax { get }
     
     func withModifiers(_ modifiers: DeclModifierListSyntax) -> Self
+}
+
+protocol DeclSyntaxWithTypeKeyword: DeclSyntaxProtocol {
+    var typeKeyword: TokenSyntax { get }
+    
     func withTypeKeyword(_ tokenSyntax: TokenSyntax) -> Self
 }
 
@@ -18,10 +22,25 @@ extension DeclSyntaxWithAccessModifier {
         }
     }
     
+    func isAccessModifierMoreAccessible(than keyword: Keyword) -> Bool {
+        var keywordReached = false
+        for orderedModifier in orderedAccessModifiers {
+            if orderedModifier == keyword {
+                keywordReached = true
+            }
+            
+            if orderedModifier == accessModifierKeyword() ?? .internal {
+                return keywordReached
+            }
+        }
+        
+        return false
+    }
+    
     func accessModifierKeyword() -> Keyword? {
         for modifier in modifiers {
             if case let .keyword(keyword) = modifier.name.tokenKind,
-                  keyword.isAccessModifier {
+               keyword.isAccessModifier {
                 return keyword
             }
         }
@@ -29,7 +48,7 @@ extension DeclSyntaxWithAccessModifier {
         return nil
     }
     
-    func effectiveAccessModifier(minimum: Keyword? = nil) -> DeclModifierSyntax {
+    func effectiveAccessModifierKeyword(minimum: Keyword? = nil) -> Keyword {
         let accessModifier = accessModifierKeyword() ?? .internal
         
         if let minimum {
@@ -44,14 +63,20 @@ extension DeclSyntaxWithAccessModifier {
                 }
                 
                 if minimumReached && modifierReached {
-                    return .init(name: .keyword(orderedModifier))
+                    return orderedModifier
                 }
             }
         }
         
-        return .init(name: .keyword(accessModifier))
+        return accessModifier
     }
     
+    func effectiveAccessModifier(minimum: Keyword? = nil) -> DeclModifierSyntax {
+        .init(name: .keyword(effectiveAccessModifierKeyword(minimum: minimum)))
+    }
+}
+
+extension DeclSyntaxWithAccessModifier where Self : DeclSyntaxWithTypeKeyword {
     /// Returns a FixIt that adds a public modifier.
     ///
     /// This fix it doesn't check if the modifiers already contain a public keyword.
@@ -105,7 +130,7 @@ extension DeclSyntaxWithAccessModifier {
 
 // MARK: Conformances
 
-extension EnumDeclSyntax: DeclSyntaxWithAccessModifier {
+extension EnumDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKeyword {
     var typeKeyword: TokenSyntax { enumKeyword }
     
     func withModifiers(_ modifiers: DeclModifierListSyntax) -> EnumDeclSyntax {
@@ -117,7 +142,7 @@ extension EnumDeclSyntax: DeclSyntaxWithAccessModifier {
     }
 }
 
-extension StructDeclSyntax: DeclSyntaxWithAccessModifier {
+extension StructDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKeyword {
     var typeKeyword: TokenSyntax { structKeyword }
     
     func withModifiers(_ modifiers: DeclModifierListSyntax) -> StructDeclSyntax {
@@ -129,7 +154,7 @@ extension StructDeclSyntax: DeclSyntaxWithAccessModifier {
     }
 }
 
-extension ClassDeclSyntax: DeclSyntaxWithAccessModifier {
+extension ClassDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKeyword {
     var typeKeyword: TokenSyntax { classKeyword }
     
     func withModifiers(_ modifiers: DeclModifierListSyntax) -> ClassDeclSyntax {
@@ -138,6 +163,12 @@ extension ClassDeclSyntax: DeclSyntaxWithAccessModifier {
     
     func withTypeKeyword(_ tokenSyntax: TokenSyntax) -> ClassDeclSyntax {
         self.with(\.classKeyword, tokenSyntax)
+    }
+}
+
+extension VariableDeclSyntax: DeclSyntaxWithAccessModifier {
+    func withModifiers(_ modifiers: DeclModifierListSyntax) -> VariableDeclSyntax {
+        self.with(\.modifiers, modifiers)
     }
 }
 

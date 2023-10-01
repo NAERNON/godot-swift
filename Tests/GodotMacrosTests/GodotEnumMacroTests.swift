@@ -371,4 +371,27 @@ final class GodotEnumMacroTests: XCTestCase {
         throw XCTSkip("macros are only supported when running tests for the host platform")
 #endif
     }
+    
+    func testDefinitionOnStruct() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @GodotEnum
+            public struct SomeEnum {}
+            """,
+            expandedSource: """
+            public struct SomeEnum {}
+            """,
+            diagnostics: [.init(message: "Godot enum must be an 'enum'",
+                                line: 1,
+                                column: 1,
+                                severity: .error,
+                                fixIts: [])
+            ],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
 }

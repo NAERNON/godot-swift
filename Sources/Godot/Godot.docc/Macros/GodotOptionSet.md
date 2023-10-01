@@ -13,21 +13,18 @@ See the example below.
 
 ### Usage
 
-A Godot option set must be a `struct`.
-Every public static variable must be `let` constants, and their type must:
-- be of the same type as the option set
-- be explicitly written before the `=` statement (use either `Self` or the name of the struct to write the type)
+A Godot option set must be a `struct`. 
 
 The following code transforms the struct into an option set Godot is capable of manipulating:
 
 ```swift
 @GodotOptionSet public struct CharacterAction {
     // CHARACTER_ACTION_THINKING
-    public static let thinking: Self = .init(rawValue: 1 << 0)
+    public static let thinking = CharacterAction(rawValue: 1 << 0)
     // CHARACTER_ACTION_DRAWING
-    public static let drawing: Self  = .init(rawValue: 1 << 1)
+    public static let drawing  = CharacterAction(rawValue: 1 << 1)
     // CHARACTER_ACTION_SLEEPING
-    public static let sleeping: Self = .init(rawValue: 1 << 2)
+    public static let sleeping = CharacterAction(rawValue: 1 << 2)
 
     // CHARACTER_ACTION_NONE
     public static let none: CharacterAction = []

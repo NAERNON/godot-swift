@@ -20,28 +20,27 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
             return []
         }
         
-        guard let cases = optionSetCases(for: structDecl, in: context) else {
-            return []
-        }
+        let cases = optionSetCases(for: structDecl, in: context)
         
-        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): OptionSet, Godot.VariantConvertible") {
+        let accessModifier = structDecl.effectiveAccessModifier(minimum: .fileprivate)
+        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Swift.OptionSet, Godot.VariantConvertible") {
             """
-            public static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
+            \(accessModifier) static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
-            public func makeVariant() -> Godot.Variant.Storage {
+            \(accessModifier) func makeVariant() -> Godot.Variant.Storage {
                 rawValue.makeVariant()
             }
             
-            public static func fromCompatibleVariant(_ variant: borrowing Godot.Variant.Storage) -> Self {
+            \(accessModifier) static func fromCompatibleVariant(_ variant: borrowing Godot.Variant.Storage) -> Self {
                 Self(rawValue: RawValue.fromCompatibleVariant(variant))
             }
             
-            public static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
+            \(accessModifier) static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
                 Self(rawValue: try RawValue.fromVariant(variant))
             }
             """
             
-            try FunctionDeclSyntax("public static func godotExposableValues() -> [(Godot.GodotStringName, Int64)]") {
+            try FunctionDeclSyntax("fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)]") {
                 "["
                 for caseName in cases {
                     let snakeEnumName = structDecl.name.trimmedDescription
@@ -66,17 +65,18 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         providingMembersOf declaration: some DeclGroupSyntax,
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
-        guard declaration.is(StructDeclSyntax.self) else {
+        guard let structDecl = declaration.as(StructDeclSyntax.self) else {
             return []
         }
         
+        let accessModifier = structDecl.effectiveAccessModifier(minimum: .fileprivate)
         return [
         """
-        public typealias RawValue = Int64
+        \(accessModifier) typealias RawValue = Int64
         
-        public let rawValue: Int64
+        \(accessModifier) let rawValue: Int64
         
-        public init(rawValue: Int64) {
+        \(accessModifier) init(rawValue: Int64) {
             self.rawValue = rawValue
         }
         """
@@ -86,90 +86,50 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
     private static func optionSetCases(
         for structDecl: StructDeclSyntax,
         in context: some MacroExpansionContext
-    ) -> [String]? {
+    ) -> [String] {
         let members = structDecl.memberBlock.members
         let structName = structDecl.name.trimmedDescription
         
         var cases = [String]()
-        var casesAreCorrect = true
         
-        let caseNotLetAndExplicitTypeDiagnostic = GodotDiagnostic("Expected 'Self' before '=' in Godot option set static variable")
+        let accessModifierKeyword = structDecl.effectiveAccessModifierKeyword(minimum: .fileprivate)
         
         for member in members {
             if let variableDecl = member.decl.as(VariableDeclSyntax.self) {
                 let isStatic = variableDecl.modifiers.map(\.name.tokenKind).contains(where: {
                     $0 == .keyword(.static)
                 })
+                let isAccessible = variableDecl.isAccessModifierMoreAccessible(than: accessModifierKeyword)
+                let isLet = variableDecl.bindingSpecifier.tokenKind == .keyword(.let)
                 
-                let isPublic = variableDecl.modifiers.map(\.name.tokenKind).contains(where: {
-                    $0 == .keyword(.public)
-                })
-                
-                guard isStatic && isPublic else {
-                    continue
-                }
-                
-                // Any public static value inside an GodotOptionSet should
-                // be a let, with an explicit type to Self, or the name of the struct
-                guard variableDecl.bindingSpecifier.tokenKind == .keyword(.let),
-                      let binding = variableDecl.bindings.first else {
-                    context.diagnose(Diagnostic(
-                        node: Syntax(variableDecl.bindingSpecifier),
-                        message: caseNotLetAndExplicitTypeDiagnostic
-                    ))
-                    casesAreCorrect = false
+                // We only retrieve static, accessible and let variables.
+                guard isStatic && isAccessible && isLet,
+                      let binding = variableDecl.bindings.first
+                else {
                     continue
                 }
                 
                 // Check that a type is explicitly defined
-                guard let typeAnnotation = binding.typeAnnotation,
-                      let typeSyntax = typeAnnotation.type.as(IdentifierTypeSyntax.self)?.name.tokenKind
-                else {
-                    // Provide fixit with the type Self added before the = of
-                    // the static variable
-                    let fixedBindingDecl = binding
-                        .with(
-                            \.typeAnnotation,
-                             TypeAnnotationSyntax(
-                                colon: .colonToken(leadingTrivia: [], trailingTrivia: .space),
-                                type: IdentifierTypeSyntax(name: .keyword(.Self))
-                             )
-                             .with(\.trailingTrivia, .space)
-                             .with(\.leadingTrivia, [])
-                        )
-                        .with(\.pattern.trailingTrivia, [])
-                    let fixIt = FixIt(message: GodotDiagnostic("Insert 'Self'"), changes: [
-                        .replace(
-                            oldNode: Syntax(binding),
-                            newNode: Syntax(fixedBindingDecl))
-                    ])
-                    
-                    context.diagnose(Diagnostic(
-                        node: Syntax(variableDecl.bindings),
-                        message: caseNotLetAndExplicitTypeDiagnostic,
-                        fixIt: fixIt
-                    ))
-                    casesAreCorrect = false
-                    continue
-                }
-                
-                // Check that the given type is either Self or the name of the struct
-                switch typeSyntax {
-                case .keyword(.Self), .identifier(structName):
-                    cases.append(binding.pattern.trimmedDescription)
-                default:
-                    context.diagnose(Diagnostic(
-                        node: Syntax(typeAnnotation),
-                        message: caseNotLetAndExplicitTypeDiagnostic
-                    ))
-                    casesAreCorrect = false
-                    continue
+                if let typeAnnotation = binding.typeAnnotation,
+                   let typeSyntax = typeAnnotation.type.as(IdentifierTypeSyntax.self)?.name.tokenKind {
+                    // Check that the given type is either Self or the name of the struct
+                    switch typeSyntax {
+                    case .keyword(.Self), .identifier(structName):
+                        cases.append(binding.pattern.trimmedDescription)
+                    default:
+                        continue
+                    }
+                } else if let calledInitializer = binding.initializer?.value.as(FunctionCallExprSyntax.self)?
+                    .calledExpression.trimmedDescription {
+                    // Check that the value provided is the same type
+                    switch calledInitializer {
+                    case "Self", structName:
+                        cases.append(binding.pattern.trimmedDescription)
+                    default:
+                        continue
+                    }
                 }
             }
-        }
-        
-        guard casesAreCorrect else {
-            return nil
         }
         
         return cases
