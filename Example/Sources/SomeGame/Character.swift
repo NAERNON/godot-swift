@@ -36,9 +36,9 @@ public class Character: Node3D {
     
     @GodotOptionSet
     public struct MovementOptions {
-        public static let none: Self = .init(rawValue: 0)
-        public static let stopsImmediately: Self = .init(rawValue: 1 << 0)
-        public static let canOnlyGoLeft: Self = .init(rawValue: 1 << 1)
+        public static let none             = MovementOptions([])
+        public static let stopsImmediately = MovementOptions(rawValue: 1 << 0)
+        public static let canOnlyGoLeft    = MovementOptions(rawValue: 1 << 1)
     }
     
     // MARK: Signals
