@@ -4,6 +4,8 @@ import SwiftSyntaxMacros
 /// A type that can be exposed inside an exposable class.
 protocol ExposableMember {
     /// Creates a new instance of the exposable member.
+    ///
+    /// If returns nil, the member should not be considered for exposition.
     init?(declSyntax: some DeclSyntaxProtocol)
     
     /// An identifier used to identify the member exposition.

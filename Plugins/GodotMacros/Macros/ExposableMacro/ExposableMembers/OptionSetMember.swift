@@ -7,9 +7,7 @@ struct OptionSetMember: ExposableMember {
     
     init?(declSyntax: some DeclSyntaxProtocol) {
         guard let structDeclSyntax = declSyntax.as(StructDeclSyntax.self),
-              structDeclSyntax.modifiers.map(\.name.tokenKind).contains(where: {
-                  $0 == .keyword(.public)
-              }),
+              structDeclSyntax.isPublic(),
               structDeclSyntax.attributes.contains(
                 where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "GodotOptionSet" }
               )

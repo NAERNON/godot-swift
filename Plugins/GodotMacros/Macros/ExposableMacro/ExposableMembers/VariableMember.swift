@@ -12,9 +12,7 @@ struct VariableMember: ExposableMember {
         }
         
         let tokens = variableDeclSyntax.modifiers.map(\.name.tokenKind)
-        guard tokens.contains(where: {
-            $0 == .keyword(.public) || $0 == .keyword(.open)
-        }) && !tokens.contains(where: { $0 == .keyword(.override) })
+        guard variableDeclSyntax.isPublic() && !tokens.contains(where: { $0 == .keyword(.override) })
         else {
             return nil
         }

@@ -30,9 +30,7 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro {
         }
         
         // Check is public or open
-        guard classDecl.modifiers.map(\.name.tokenKind).contains(where: {
-            $0 == .keyword(.public) || $0 == .keyword(.open)
-        }) else {
+        guard classDecl.isPublic() else {
             context.diagnose(Diagnostic(
                 node: Syntax(classDecl.classKeyword),
                 message: GodotDiagnostic("Exposable class is not public")

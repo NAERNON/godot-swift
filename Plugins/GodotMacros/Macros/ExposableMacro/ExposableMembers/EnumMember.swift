@@ -8,9 +8,7 @@ struct EnumMember: ExposableMember {
     
     init?(declSyntax: some DeclSyntaxProtocol) {
         guard let enumDeclSyntax = declSyntax.as(EnumDeclSyntax.self),
-              enumDeclSyntax.modifiers.map(\.name.tokenKind).contains(where: {
-                  $0 == .keyword(.public)
-              })
+              enumDeclSyntax.isPublic()
         else {
             return nil
         }
