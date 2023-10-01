@@ -40,7 +40,7 @@ struct VariableMember: ExposableMember {
         // Check type
         let variableType: TypeSyntax
         if let type = binding.typeAnnotation?.type {
-            variableType = type
+            variableType = type.trimmed
         } else if binding.initializer?.value.is(IntegerLiteralExprSyntax.self) == true {
             variableType = "Int"
         } else if binding.initializer?.value.is(FloatLiteralExprSyntax.self) == true {
@@ -113,7 +113,7 @@ struct VariableMember: ExposableMember {
         } else if variableBinding.initializer != nil {
             hasSetter = true
         } else if let accessors = variableBinding.accessorBlock?.accessors.as(AccessorDeclListSyntax.self) {
-            hasSetter = accessors.contains(where: { $0.accessorSpecifier == .keyword(.set) })
+            hasSetter = accessors.contains(where: { $0.accessorSpecifier.tokenKind == .keyword(.set) })
         } else {
             hasSetter = false
         }
