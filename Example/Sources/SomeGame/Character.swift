@@ -102,4 +102,11 @@ public class Character: Node3D {
     public func printSomeCoolStuff(withString string: GodotString) {
         gdPrint("Printing some cool stuff: \(string)")
     }
+    
+    @ExpositionIgnored
+    public func doSomeThrowingStuff() throws {
+        // This function throws, so it cannot be exposed to Godot.
+        // We use the @ExpositionIgnored macro to prevent exposition.
+        // ...
+    }
 }

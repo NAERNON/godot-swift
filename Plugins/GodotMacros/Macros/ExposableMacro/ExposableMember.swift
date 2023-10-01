@@ -38,6 +38,16 @@ extension ExposableMember {
             where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "ExposableMember" }
         )
     }
+    
+    var hasExpositionIgnoredAttribute: Bool {
+        guard let attributes else {
+            return false
+        }
+        
+        return attributes.contains(
+            where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "ExpositionIgnored" }
+        )
+    }
 }
 
 extension DeclSyntaxProtocol {

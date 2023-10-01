@@ -28,9 +28,7 @@ Once a class is correctly defined, it can be exposed to Godot through a bridge. 
 
 ### Expose members
 
-Every public member defined inside the class are exposed to Godot and must meet a few strict requirements.
-
-> Tip: Defining public members in an extension won't be covered by the macro. So use extensions to publicly expose members that cannot be exposed to Godot.
+Every public member defined inside the class are, by default, exposed to Godot.
 
 #### Expose variables
 
@@ -135,7 +133,8 @@ Every public emitter is exposed to Godot. All these structs must be marked ``Emi
 #### Unexposable members
 
 Other than the members defined before, no member can be exposed to Godot.
-Do *not* define public members that cannot be exposed to Godot. Place them in extensions instead:
+
+If you still need to make a member public, use either the ``ExpositionIgnored()`` macro to prevent exposition or place the member in an extension:
 
 ```swift
 // The class `Character` can be exposed
@@ -144,6 +143,15 @@ Do *not* define public members that cannot be exposed to Godot. Place them in ex
     // because it throws
     // Making it private prevents the exposition
     private func eat(quantity: Double) throws {
+        // ...
+    }
+
+    // The `eatAnyway` function couldn't be exposed to Godot
+    // because MyFood is a custom type that does not conform
+    // to the VariantConvertible protcol
+    // Using @ExpositionIgnored prevents the exposition
+    @ExpositionIgnored
+    public func eatAnyway(food: MyFood) throws {
         // ...
     }
 }

@@ -45,7 +45,8 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro {
             in: context
         ) {
             for member in classDecl.memberBlock.members {
-                if let exposableMember = member.decl.exposableMember() {
+                if let exposableMember = member.decl.exposableMember(),
+                   !exposableMember.hasExpositionIgnoredAttribute {
                     "\(raw: exposableMember.classExpositionFunctionIdentifier)()"
                 }
             }
@@ -62,7 +63,8 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro {
     ) throws -> [AttributeSyntax] {
         guard let classDecl = declaration.as(ClassDeclSyntax.self),
               let exposableMember = member.exposableMember(),
-              !exposableMember.hasExposableMemberAttribute else {
+              !exposableMember.hasExposableMemberAttribute,
+              !exposableMember.hasExpositionIgnoredAttribute else {
             return []
         }
         
