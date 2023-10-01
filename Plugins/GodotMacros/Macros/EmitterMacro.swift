@@ -28,12 +28,7 @@ public enum EmitterMacro: MemberMacro, PeerMacro, ExtensionMacro {
         
         // Check is public
         guard structDecl.isPublic() else {
-            let notPublicFixIt = structDecl.notPublicFixIt()
-            context.diagnose(Diagnostic(
-                node: notPublicFixIt.node,
-                message: GodotDiagnostic("Emitter is not public"),
-                fixIt: notPublicFixIt.fixIt
-            ))
+            context.diagnose(structDecl.notPublicDiagnostic(description: "Emitter is not public"))
             return []
         }
         

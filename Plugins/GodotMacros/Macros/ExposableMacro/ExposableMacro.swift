@@ -31,17 +31,19 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro {
         
         // Check is public or open
         guard classDecl.isPublic() else {
-            context.diagnose(Diagnostic(
-                node: Syntax(classDecl.classKeyword),
-                message: GodotDiagnostic("Exposable class is not public")
-            ))
+            context.diagnose(classDecl.notPublicDiagnostic(description: "Exposable class is not public"))
             return []
         }
+        
+        let isFinal = classDecl.modifiers.map(\.name.tokenKind).contains(where: {
+            $0 == .keyword(.final)
+        })
         
         // Syntax
         let provider = ClassMacroDeclProvider(
             customClassDecl: classDecl,
-            superclassName: inheritedElement.type.trimmedDescription,
+            superclassName: inheritedElement.type.trimmedDescription, 
+            isFinal: isFinal,
             in: context
         ) {
             for member in classDecl.memberBlock.members {

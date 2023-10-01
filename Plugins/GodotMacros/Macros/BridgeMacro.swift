@@ -30,21 +30,21 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
     ) throws -> [DeclSyntax] {
         let declName: TokenSyntax
         let isPublic: Bool
-        let notPublicFixItNode: Syntax
-        let notPublicFixIt: FixIt
+        let notPublicDiagnostic: Diagnostic
+        let diagnosticDescription = "Bridge must be public"
         
         if let decl = declaration.as(ClassDeclSyntax.self) {
             declName = decl.name
             isPublic = decl.isPublic()
-            (notPublicFixIt, notPublicFixItNode) = decl.notPublicFixIt()
+            notPublicDiagnostic = decl.notPublicDiagnostic(description: diagnosticDescription)
         } else if let decl = declaration.as(StructDeclSyntax.self) {
             declName = decl.name
             isPublic = decl.isPublic()
-            (notPublicFixIt, notPublicFixItNode) = decl.notPublicFixIt()
+            notPublicDiagnostic = decl.notPublicDiagnostic(description: diagnosticDescription)
         } else if let decl = declaration.as(EnumDeclSyntax.self) {
             declName = decl.name
             isPublic = decl.isPublic()
-            (notPublicFixIt, notPublicFixItNode) = decl.notPublicFixIt()
+            notPublicDiagnostic = decl.notPublicDiagnostic(description: diagnosticDescription)
         } else {
             let diagnostic = Diagnostic(
                 node: Syntax(node),
@@ -57,11 +57,7 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
         
         // Check is public or open
         guard isPublic else {
-            context.diagnose(Diagnostic(
-                node: notPublicFixItNode,
-                message: GodotDiagnostic("Bridge must be public"),
-                fixIt: notPublicFixIt
-            ))
+            context.diagnose(notPublicDiagnostic)
             return []
         }
         

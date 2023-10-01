@@ -126,6 +126,23 @@ extension DeclSyntaxWithAccessModifier where Self : DeclSyntaxWithTypeKeyword {
             return (fixIt, Syntax(typeKeyword))
         }
     }
+    
+    func notPublicDiagnostic(description: String, includeFixit: Bool = true) -> Diagnostic {
+        let notPublicFixIt = notPublicFixIt()
+        
+        if includeFixit {
+            return Diagnostic(
+                node: notPublicFixIt.node,
+                message: GodotDiagnostic(description),
+                fixIt: notPublicFixIt.fixIt
+            )
+        } else {
+            return Diagnostic(
+                node: notPublicFixIt.node,
+                message: GodotDiagnostic(description)
+            )
+        }
+    }
 }
 
 // MARK: Conformances

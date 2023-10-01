@@ -21,12 +21,7 @@ public enum ReceiverMacro: PeerMacro {
         
         // Check is public or open
         guard functionDecl.isPublic() else {
-            let notPublicFixIt = functionDecl.notPublicFixIt()
-            context.diagnose(Diagnostic(
-                node: notPublicFixIt.node,
-                message: GodotDiagnostic("Receiver is not public"),
-                fixIt: notPublicFixIt.fixIt
-            ))
+            context.diagnose(functionDecl.notPublicDiagnostic(description: "Receiver is not public"))
             return []
         }
         

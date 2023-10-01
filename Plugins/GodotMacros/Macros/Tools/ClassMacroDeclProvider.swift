@@ -17,6 +17,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     let classDecl: ClassDeclSyntax
     let classType: ClassType
     let superclassName: String?
+    let isFinal: Bool
     let exposeToGodotCustomDecl: (() throws -> CodeBlockItemListSyntax)?
     let context: Context
     
@@ -28,6 +29,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
         self.classDecl = classDecl
         self.classType = classType
         self.superclassName = nil
+        self.isFinal = false
         self.exposeToGodotCustomDecl = nil
         self.context = context
     }
@@ -35,12 +37,14 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     init(
         customClassDecl: ClassDeclSyntax,
         superclassName: String,
+        isFinal: Bool,
         in context: Context,
         @CodeBlockItemListBuilder exposeToGodotCustomDecl: @escaping () -> CodeBlockItemListSyntax
     ) {
         self.classDecl = customClassDecl
         self.classType = .custom
         self.superclassName = superclassName
+        self.isFinal = isFinal
         self.exposeToGodotCustomDecl = exposeToGodotCustomDecl
         self.context = context
     }
@@ -51,6 +55,10 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     
     private var overrideKeyword: String {
         classType == .root ? "" : "override"
+    }
+    
+    private var openKeyword: String {
+        isFinal ? "public" : "open"
     }
     
     func decls() throws -> [DeclSyntax] {
@@ -99,8 +107,8 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
         case .custom:
             return """
             private static let _$staticClassName: Godot.GodotStringName = \(literal: className)
-            open \(raw: overrideKeyword) class var _$className: Godot.GodotStringName { _$staticClassName }
-            open \(raw: overrideKeyword) class var _$isCustomGodotClass: Bool { true }
+            \(raw: openKeyword) \(raw: overrideKeyword) class var _$className: Godot.GodotStringName { _$staticClassName }
+            \(raw: openKeyword) \(raw: overrideKeyword) class var _$isCustomGodotClass: Bool { true }
             """
         }
     }
@@ -197,7 +205,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     }
     
     private func instanceBindingCallbacks() throws -> DeclSyntax {
-        let signature = "open \(overrideKeyword) class func _$instanceBindingCallbacks() -> Godot.GodotInstanceBindingCallbacks"
+        let signature = "\(openKeyword) \(overrideKeyword) class func _$instanceBindingCallbacks() -> Godot.GodotInstanceBindingCallbacks"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
@@ -227,7 +235,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     }
     
     private func exposeToGodot() throws -> DeclSyntax {
-        let signature = "open \(overrideKeyword) class func _$exposeToGodot()"
+        let signature = "\(openKeyword) \(overrideKeyword) class func _$exposeToGodot()"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
