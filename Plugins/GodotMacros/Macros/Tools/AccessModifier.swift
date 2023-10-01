@@ -166,6 +166,18 @@ extension ClassDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKeywo
     }
 }
 
+extension FunctionDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKeyword {
+    var typeKeyword: TokenSyntax { funcKeyword }
+    
+    func withModifiers(_ modifiers: DeclModifierListSyntax) -> FunctionDeclSyntax {
+        self.with(\.modifiers, modifiers)
+    }
+    
+    func withTypeKeyword(_ tokenSyntax: TokenSyntax) -> FunctionDeclSyntax {
+        self.with(\.funcKeyword, tokenSyntax)
+    }
+}
+
 extension VariableDeclSyntax: DeclSyntaxWithAccessModifier {
     func withModifiers(_ modifiers: DeclModifierListSyntax) -> VariableDeclSyntax {
         self.with(\.modifiers, modifiers)

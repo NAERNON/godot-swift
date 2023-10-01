@@ -27,12 +27,12 @@ public enum EmitterMacro: MemberMacro, PeerMacro, ExtensionMacro {
         }
         
         // Check is public
-        guard structDecl.modifiers.map(\.name.tokenKind).contains(where: {
-            $0 == .keyword(.public)
-        }) else {
+        guard structDecl.isPublic() else {
+            let notPublicFixIt = structDecl.notPublicFixIt()
             context.diagnose(Diagnostic(
-                node: Syntax(structDecl.structKeyword),
-                message: GodotDiagnostic("Emitter is not public")
+                node: notPublicFixIt.node,
+                message: GodotDiagnostic("Emitter is not public"),
+                fixIt: notPublicFixIt.fixIt
             ))
             return []
         }
@@ -127,7 +127,7 @@ public enum EmitterMacro: MemberMacro, PeerMacro, ExtensionMacro {
         conformingTo protocols: [TypeSyntax],
         in context: some MacroExpansionContext
     ) throws -> [ExtensionDeclSyntax] {
-        let decl = try ExtensionDeclSyntax("extension \(type): Godot.EmitterProtocol") {}
+        let decl = try ExtensionDeclSyntax("extension \(type): Godot.Emitter") {}
         
         return [decl]
     }

@@ -14,18 +14,18 @@ public enum ReceiverMacro: PeerMacro {
         guard let functionDecl = declaration.as(FunctionDeclSyntax.self) else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotDiagnostic("Reeiver must be a function")
+                message: GodotDiagnostic("Receiver must be a function")
             ))
             return []
         }
         
         // Check is public or open
-        guard functionDecl.modifiers.map(\.name.tokenKind).contains(where: {
-            $0 == .keyword(.public) || $0 == .keyword(.open)
-        }) else {
+        guard functionDecl.isPublic() else {
+            let notPublicFixIt = functionDecl.notPublicFixIt()
             context.diagnose(Diagnostic(
-                node: Syntax(functionDecl.funcKeyword),
-                message: GodotDiagnostic("Receiver is not public")
+                node: notPublicFixIt.node,
+                message: GodotDiagnostic("Receiver is not public"),
+                fixIt: notPublicFixIt.fixIt
             ))
             return []
         }
@@ -50,7 +50,7 @@ public enum ReceiverMacro: PeerMacro {
                 parameter.type.trimmedDescription
             }
         
-        let structDecl = try StructDeclSyntax("public struct \(raw: structureName): Godot.ReceiverProtocol") {
+        let structDecl = try StructDeclSyntax("public struct \(raw: structureName): Godot.Receiver") {
             """
             public typealias SignalInput = (\(raw: functionParameterTypes.joined(separator: ", ")))
             

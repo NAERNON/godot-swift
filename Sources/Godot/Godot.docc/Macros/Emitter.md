@@ -64,11 +64,11 @@ Emitting the signal becomes:
 Emitters are designed to work with receivers.
 See the ``Receiver()`` macro to learn how to setup a receiver.
 
-Connect any receiver that has the same input type by calling the ``EmitterProtocol/connect(_:flags:)`` method.
+Connect any receiver that has the same input type by calling the ``Emitter/connect(_:flags:)`` method.
 
-Use the ``EmitterProtocol/disconnect(_:)`` method to disconnect a receiver.
+Use the ``Emitter/disconnect(_:)`` method to disconnect a receiver.
 
-Check that an emitter is connected to a receiver by calling the  ``EmitterProtocol/isConnected(to:)`` method.
+Check that an emitter is connected to a receiver by calling the  ``Emitter/isConnected(to:)`` method.
 
 ```swift
 @Exposable public class Character: Node {

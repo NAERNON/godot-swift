@@ -44,22 +44,6 @@ public macro GodotEnum() = #externalMacro(module: "GodotMacros", type: "GodotEnu
 )
 public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "GodotOptionSetMacro")
 
-/// Converts a Swift struct into a Godot signal.
-@attached(extension, conformances: Godot.EmitterProtocol)
-@attached(peer, names: prefixed(emitter))
-@attached(member, names:
-    named(SignalInput),
-    named(signalName),
-    named(object),
-    named(init),
-    named(emit)
-)
-public macro Emitter(signal: StaticString? = nil, args: (StaticString, Any.Type)...) = #externalMacro(module: "GodotMacros", type: "EmitterMacro")
-
-/// Converts a Swift function into a Godot signal receiver.
-@attached(peer, names: suffixed(Receiver), prefixed(Receiver_))
-public macro Receiver() = #externalMacro(module: "GodotMacros", type: "ReceiverMacro")
-
 // MARK: - Internal macros
 
 @attached(member, names: arbitrary)
