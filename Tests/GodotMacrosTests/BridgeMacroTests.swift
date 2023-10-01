@@ -6,7 +6,7 @@ import XCTest
 #if canImport(GodotMacros)
 import GodotMacros
 
-let testMacros: [String: Macro.Type] = [
+private let testMacros: [String: Macro.Type] = [
     "Bridge": BridgeMacro.self,
 ]
 #endif

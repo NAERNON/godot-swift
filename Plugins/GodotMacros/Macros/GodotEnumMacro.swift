@@ -57,19 +57,20 @@ public enum GodotEnumMacro: ExtensionMacro {
             return []
         }
         
+        let accessModifier = enumDecl.effectiveAccessModifier(minimum: .fileprivate)
         let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.VariantConvertible") {
             """
-            public static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
+            \(accessModifier) static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
-            public func makeVariant() -> Godot.Variant.Storage {
+            \(accessModifier) func makeVariant() -> Godot.Variant.Storage {
                 rawValue.makeVariant()
             }
             
-            public static func fromCompatibleVariant(_ variant: borrowing Godot.Variant.Storage) -> Self {
+            \(accessModifier) static func fromCompatibleVariant(_ variant: borrowing Godot.Variant.Storage) -> Self {
                 Self(rawValue: RawValue.fromCompatibleVariant(variant))!
             }
             
-            public static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
+            \(accessModifier) static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
                 enum Error: Swift.Error {
                     case incorrectRawValue
                     
@@ -87,7 +88,7 @@ public enum GodotEnumMacro: ExtensionMacro {
             }
             """
             
-            try FunctionDeclSyntax("public static func godotExposableValues() -> [(Godot.GodotStringName, Int64)]") {
+            try FunctionDeclSyntax("fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)]") {
                 "["
                 for caseName in enumCases(for: enumDecl) {
                     let snakeEnumName = enumDecl.name.trimmedDescription

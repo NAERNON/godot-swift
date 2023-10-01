@@ -18,6 +18,40 @@ extension DeclSyntaxWithAccessModifier {
         }
     }
     
+    func accessModifierKeyword() -> Keyword? {
+        for modifier in modifiers {
+            if case let .keyword(keyword) = modifier.name.tokenKind,
+                  keyword.isAccessModifier {
+                return keyword
+            }
+        }
+        
+        return nil
+    }
+    
+    func effectiveAccessModifier(minimum: Keyword? = nil) -> DeclModifierSyntax {
+        let accessModifier = accessModifierKeyword() ?? .internal
+        
+        if let minimum {
+            var minimumReached = false
+            var modifierReached = false
+            for orderedModifier in orderedAccessModifiers {
+                if orderedModifier == minimum {
+                    minimumReached = true
+                }
+                if orderedModifier == accessModifier {
+                    modifierReached = true
+                }
+                
+                if minimumReached && modifierReached {
+                    return .init(name: .keyword(orderedModifier))
+                }
+            }
+        }
+        
+        return .init(name: .keyword(accessModifier))
+    }
+    
     /// Returns a FixIt that adds a public modifier.
     ///
     /// This fix it doesn't check if the modifiers already contain a public keyword.
@@ -109,12 +143,18 @@ extension ClassDeclSyntax: DeclSyntaxWithAccessModifier {
 
 // MARK: Keyword extension
 
+private let orderedAccessModifiers: [Keyword] = [
+    .private,
+    .fileprivate,
+    .internal,
+    .public,
+    .open,
+]
+
 private extension Keyword {
     var isAccessModifier: Bool {
-        switch self {
-        case .open, .public, .internal, .private, .package:
-            true
-        default: false
+        orderedAccessModifiers.contains { keyword in
+            keyword == self
         }
     }
 }
