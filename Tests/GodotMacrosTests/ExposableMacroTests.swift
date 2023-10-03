@@ -21,6 +21,8 @@ final class ExposableMacroTests: XCTestCase {
                 public var value1: Int = 0
                 public var value2: Int = 0
                 private var value3: Int = 0
+                @ExpositionIgnored
+                public var value4: Int = 0
             }
             """,
             expandedSource: """
@@ -30,6 +32,8 @@ final class ExposableMacroTests: XCTestCase {
                 @ExposableMember(MyClass)
                 public var value2: Int = 0
                 private var value3: Int = 0
+                @ExpositionIgnored
+                public var value4: Int = 0
             
                 private static let _$staticClassName: Godot.GodotStringName = "MyClass"
                 open override class var _$className: Godot.GodotStringName { _$staticClassName }
@@ -82,6 +86,8 @@ final class ExposableMacroTests: XCTestCase {
                 public var value1: Int = 0
                 public var value2: Int = 0
                 private var value3: Int = 0
+                @ExpositionIgnored
+                public var value4: Int = 0
             }
             """,
             expandedSource: """
@@ -91,6 +97,8 @@ final class ExposableMacroTests: XCTestCase {
                 @ExposableMember(MyClass)
                 public var value2: Int = 0
                 private var value3: Int = 0
+                @ExpositionIgnored
+                public var value4: Int = 0
             
                 private static let _$staticClassName: Godot.GodotStringName = "MyClass"
                 public override class var _$className: Godot.GodotStringName { _$staticClassName }
