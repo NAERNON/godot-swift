@@ -269,7 +269,7 @@ final class GodotEnumMacroTests: XCTestCase {
             @GodotEnum
             public enum SomeEnum: Int64 {
                 case someValue
-                case someValue2
+                case someValue2, someValue3, someValue4
                 case another
                 case anotherGoodValue
             }
@@ -277,7 +277,7 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             public enum SomeEnum: Int64 {
                 case someValue
-                case someValue2
+                case someValue2, someValue3, someValue4
                 case another
                 case anotherGoodValue
             }
@@ -313,6 +313,8 @@ final class GodotEnumMacroTests: XCTestCase {
                     [
                     ("SOME_ENUM_SOME_VALUE", Self.someValue.rawValue),
                     ("SOME_ENUM_SOME_VALUE2", Self.someValue2.rawValue),
+                    ("SOME_ENUM_SOME_VALUE3", Self.someValue3.rawValue),
+                    ("SOME_ENUM_SOME_VALUE4", Self.someValue4.rawValue),
                     ("SOME_ENUM_ANOTHER", Self.another.rawValue),
                     ("SOME_ENUM_ANOTHER_GOOD_VALUE", Self.anotherGoodValue.rawValue),]
                 }
