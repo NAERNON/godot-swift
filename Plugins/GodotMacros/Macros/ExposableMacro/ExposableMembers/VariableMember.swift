@@ -32,28 +32,7 @@ struct VariableMember: ExposableMember {
         classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
-        guard let variableBinding = variableDeclSyntax.bindings.first,
-              let binding = variableDeclSyntax.bindings.first else {
-            return nil
-        }
-        
-        // Check type
-        let variableType: TypeSyntax
-        if let type = binding.typeAnnotation?.type {
-            variableType = type.trimmed
-        } else if binding.initializer?.value.is(IntegerLiteralExprSyntax.self) == true {
-            variableType = "Int"
-        } else if binding.initializer?.value.is(FloatLiteralExprSyntax.self) == true {
-            variableType = "Double"
-        } else if binding.initializer?.value.is(StringLiteralExprSyntax.self) == true {
-            variableType = "Swift.String"
-        } else if binding.initializer?.value.is(BooleanLiteralExprSyntax.self) == true {
-            variableType = "Bool"
-        } else {
-            context.diagnose(Diagnostic(
-                node: Syntax(variableBinding),
-                message: GodotDiagnostic("Cannot retrieve type of '\(binding.pattern.trimmedDescription)' for exposition")
-            ))
+        guard let variableBinding = variableDeclSyntax.bindings.first else {
             return nil
         }
         
@@ -120,12 +99,15 @@ struct VariableMember: ExposableMember {
         
         // Syntax
         
+        let swiftVariableName = variableBinding.pattern.trimmed
+        let className = classContext.trimmed
+        
         let getterExprSyntax: ExprSyntax = """
-        Unmanaged<\(raw: classContext.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue().\(raw: variableBinding.pattern.trimmedDescription).makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName).makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
         """
         
         let setterExprSyntax: ExprSyntax = """
-        Unmanaged<\(raw: classContext.trimmedDescription)>.fromOpaque(instancePtr!).takeUnretainedValue().\(raw: variableBinding.pattern.trimmedDescription) = \(variableType.trimmed).fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName) = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
         """
         
         let variableName = variableBinding.pattern.trimmedDescription.translated(from: .camel, to: .snake)
@@ -136,7 +118,7 @@ struct VariableMember: ExposableMember {
             return """
             Godot.GodotExtension.classRegister.registerVariable(
                 named: \(literal: variableName),
-                type: \(variableType).self,
+                keyPath: \\.\(raw: swiftVariableName),
                 insideType: self,
                 getterName: \(literal: getterName),
                 setterName: \(literal: setterName)
@@ -150,7 +132,7 @@ struct VariableMember: ExposableMember {
             return """
             Godot.GodotExtension.classRegister.registerVariable(
                 named: \(literal: variableName),
-                type: \(variableType).self,
+                keyPath: \\.\(raw: swiftVariableName),
                 insideType: self,
                 getterName: \(literal: getterName)
             ) { _, instancePtr, args, argsCount, returnPtr, error in

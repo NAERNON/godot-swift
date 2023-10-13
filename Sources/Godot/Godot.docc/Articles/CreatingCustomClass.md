@@ -32,8 +32,7 @@ Every public member defined inside the class are, by default, exposed to Godot.
 
 #### Expose variables
 
-Every public or open variable is exposed to Godot. All these variables must be of a type conforming to the ``VariantConvertible`` protocol.
-Only *basic* variables can be exposed (no async etc.):
+Every public or open variable is exposed to Godot. All these variables must be of a type conforming to the ``VariantConvertible`` protocol. Exposed variables cannot have async or throwing getters.
 
 ```swift
 @Exposable public class Character: Node {
@@ -53,7 +52,7 @@ Only *basic* variables can be exposed (no async etc.):
 #### Expose functions
 
 Every public or open function is exposed to Godot. All these functions must use parameters and return type conforming to the ``VariantConvertible`` protocol.
-Only *basic* functions can be exposed (no `async`, `throws`, generic etc.).
+Exposed functions cannot be async, throw, be generic or have variadic parameters.
 
 ```swift
 @Exposable public class Character: Node {

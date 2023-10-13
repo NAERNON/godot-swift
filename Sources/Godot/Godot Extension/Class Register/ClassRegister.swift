@@ -371,7 +371,7 @@ public final class ClassRegister {
     ///
     /// - Parameters:
     ///   - variableName: The variable name.
-    ///   - type: The variable type.
+    ///   - keyPath: The key path to the variable.
     ///   - classType: The type of the class the variable is part of.
     ///   - getterName: The name of the getter function.
     ///   - setterName: The name of the setter function, if a setter is available.
@@ -381,7 +381,7 @@ public final class ClassRegister {
     @discardableResult
     public func registerVariable<Class, Variable>(
         named variableName: GodotStringName,
-        type: Variable.Type,
+        keyPath: KeyPath<Class, Variable>,
         insideType classType: Class.Type,
         getterName: GodotStringName,
         setterName: GodotStringName? = nil,

@@ -25,14 +25,14 @@ final class ExposableVariableMacroTests: XCTestCase {
             private static func _$godotRegister_myVariable() {
                 Godot.GodotExtension.classRegister.registerVariable(
                     named: "my_variable",
-                    type: Int.self,
+                    keyPath: \\.myVariable,
                     insideType: self,
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = Int.fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
@@ -57,14 +57,14 @@ final class ExposableVariableMacroTests: XCTestCase {
             private static func _$godotRegister_myVariable() {
                 Godot.GodotExtension.classRegister.registerVariable(
                     named: "my_variable",
-                    type: Int.self,
+                    keyPath: \\.myVariable,
                     insideType: self,
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = Int.fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
@@ -89,14 +89,14 @@ final class ExposableVariableMacroTests: XCTestCase {
             private static func _$godotRegister_myVariable() {
                 Godot.GodotExtension.classRegister.registerVariable(
                     named: "my_variable",
-                    type: Double.self,
+                    keyPath: \\.myVariable,
                     insideType: self,
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = Double.fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
@@ -121,14 +121,14 @@ final class ExposableVariableMacroTests: XCTestCase {
             private static func _$godotRegister_myVariable() {
                 Godot.GodotExtension.classRegister.registerVariable(
                     named: "my_variable",
-                    type: Swift.String.self,
+                    keyPath: \\.myVariable,
                     insideType: self,
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = Swift.String.fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
@@ -159,14 +159,14 @@ final class ExposableVariableMacroTests: XCTestCase {
             private static func _$godotRegister_myVariable() {
                 Godot.GodotExtension.classRegister.registerVariable(
                     named: "my_variable",
-                    type: Int.self,
+                    keyPath: \\.myVariable,
                     insideType: self,
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = Int.fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
@@ -191,7 +191,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             private static func _$godotRegister_myVariable() {
                 Godot.GodotExtension.classRegister.registerVariable(
                     named: "my_variable",
-                    type: Int.self,
+                    keyPath: \\.myVariable,
                     insideType: self,
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -220,7 +220,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             private static func _$godotRegister_myVariable() {
                 Godot.GodotExtension.classRegister.registerVariable(
                     named: "my_variable",
-                    type: Int.self,
+                    keyPath: \\.myVariable,
                     insideType: self,
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -253,7 +253,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             private static func _$godotRegister_myVariable() {
                 Godot.GodotExtension.classRegister.registerVariable(
                     named: "my_variable",
-                    type: Int.self,
+                    keyPath: \\.myVariable,
                     insideType: self,
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -286,7 +286,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             private static func _$godotRegister_myVariable() {
                 Godot.GodotExtension.classRegister.registerVariable(
                     named: "my_variable",
-                    type: Int.self,
+                    keyPath: \\.myVariable,
                     insideType: self,
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in

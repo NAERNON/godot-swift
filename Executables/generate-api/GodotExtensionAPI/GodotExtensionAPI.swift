@@ -42,6 +42,7 @@ struct GodotExtensionAPI: Decodable {
             classType == "Node" ||
             classType == "Node2D" ||
             classType == "Resource" ||
+            classType == "ResourceLoader" ||
             classType == "Engine" ||
             classType == "Node3D" ||
             classType == "VisualInstance3D" ||
