@@ -41,8 +41,18 @@ struct GodotExtensionAPI: Decodable {
             classType == "CanvasItem" ||
             classType == "Node" ||
             classType == "Node2D" ||
+            classType == "Sprite2D" ||
+            classType == "Shape2D" ||
+            classType == "RectangleShape2D" ||
+            classType == "CollisionObject2D" ||
+            classType == "PhysicsBody2D" ||
+            classType == "RigidBody2D" ||
+            classType == "StaticBody2D" ||
+            classType == "CollisionShape2D" ||
             classType == "Resource" ||
             classType == "ResourceLoader" ||
+            classType == "Texture" ||
+            classType == "Texture2D" ||
             classType == "Engine" ||
             classType == "Node3D" ||
             classType == "VisualInstance3D" ||
