@@ -88,13 +88,20 @@ struct VariableMember: ExposableMember {
         
         let hasSetter: Bool
         if variableDeclSyntax.bindingSpecifier.tokenKind == .keyword(.let) {
+            // Is a let property
+            hasSetter = false
+        } else if variableDeclSyntax.modifiers.contains(where: isModifierInternalSet) {
+            // Is at least internal(set)
             hasSetter = false
         } else if variableBinding.initializer != nil {
+            // Has an initializer
+            hasSetter = true
+        } else if variableBinding.accessorBlock == nil {
+            // Has no accessor block
             hasSetter = true
         } else if let accessors = variableBinding.accessorBlock?.accessors.as(AccessorDeclListSyntax.self) {
+            // Has a set {} in the accessors
             hasSetter = accessors.contains(where: { $0.accessorSpecifier.tokenKind == .keyword(.set) })
-        } else if variableBinding.accessorBlock == nil {
-            hasSetter = true
         } else {
             hasSetter = false
         }
@@ -142,5 +149,19 @@ struct VariableMember: ExposableMember {
             }
             """
         }
+    }
+    
+    private func isModifierInternalSet(_ modifier: DeclModifierSyntax) -> Bool {
+        let tokenKind = modifier.name.tokenKind
+        
+        guard tokenKind == .keyword(.private) ||
+                tokenKind == .keyword(.fileprivate) ||
+                tokenKind == .keyword(.internal) ||
+                tokenKind == .keyword(.package),
+              let detail = modifier.detail else {
+            return false
+        }
+        
+        return detail.detail.tokenKind == .identifier("set")
     }
 }
