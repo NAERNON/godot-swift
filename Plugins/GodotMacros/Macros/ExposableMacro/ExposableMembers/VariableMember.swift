@@ -93,6 +93,8 @@ struct VariableMember: ExposableMember {
             hasSetter = true
         } else if let accessors = variableBinding.accessorBlock?.accessors.as(AccessorDeclListSyntax.self) {
             hasSetter = accessors.contains(where: { $0.accessorSpecifier.tokenKind == .keyword(.set) })
+        } else if variableBinding.accessorBlock == nil {
+            hasSetter = true
         } else {
             hasSetter = false
         }

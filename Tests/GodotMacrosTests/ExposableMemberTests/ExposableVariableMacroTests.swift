@@ -44,7 +44,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #endif
     }
     
-    func testPublicVariableWithoutTypeInt() throws {
+    func testPublicVariableWithoutType() throws {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
@@ -76,85 +76,15 @@ final class ExposableVariableMacroTests: XCTestCase {
 #endif
     }
     
-    func testPublicVariableWithoutTypeDouble() throws {
+    func testPublicVariableWithoutInitializer() throws {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
             @ExposableMember(MyClass)
-            public var myVariable = 0.0
+            public var myVariable: SomeType
             """,
             expandedSource: """
-            public var myVariable = 0.0
-            
-            private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
-                    named: "my_variable",
-                    keyPath: \\.myVariable,
-                    insideType: self,
-                    getterName: "get_my_variable",
-                    setterName: "set_my_variable"
-                ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
-                } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
-                }
-            }
-            """,
-            diagnostics: [],
-            macros: testMacros
-        )
-#else
-        throw XCTSkip("macros are only supported when running tests for the host platform")
-#endif
-    }
-    
-    func testPublicVariableWithoutTypeString() throws {
-#if canImport(GodotMacros)
-        assertMacroExpansion(
-            """
-            @ExposableMember(MyClass)
-            public var myVariable = "bla"
-            """,
-            expandedSource: """
-            public var myVariable = "bla"
-            
-            private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
-                    named: "my_variable",
-                    keyPath: \\.myVariable,
-                    insideType: self,
-                    getterName: "get_my_variable",
-                    setterName: "set_my_variable"
-                ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
-                } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
-                }
-            }
-            """,
-            diagnostics: [],
-            macros: testMacros
-        )
-#else
-        throw XCTSkip("macros are only supported when running tests for the host platform")
-#endif
-    }
-    
-    func testPublicVariableWithGetSet() throws {
-#if canImport(GodotMacros)
-        assertMacroExpansion(
-            """
-            @ExposableMember(MyClass)
-            public var myVariable: Int {
-                get { }
-                set { }
-            }
-            """,
-            expandedSource: """
-            public var myVariable: Int {
-                get { }
-                set { }
-            }
+            public var myVariable: SomeType
             
             private static func _$godotRegister_myVariable() {
                 Godot.GodotExtension.classRegister.registerVariable(
@@ -291,6 +221,44 @@ final class ExposableVariableMacroTests: XCTestCase {
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                }
+            }
+            """,
+            diagnostics: [],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
+    
+    func testPublicVariableWithGetSet() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @ExposableMember(MyClass)
+            public var myVariable: Int {
+                get { }
+                set { }
+            }
+            """,
+            expandedSource: """
+            public var myVariable: Int {
+                get { }
+                set { }
+            }
+            
+            private static func _$godotRegister_myVariable() {
+                Godot.GodotExtension.classRegister.registerVariable(
+                    named: "my_variable",
+                    keyPath: \\.myVariable,
+                    insideType: self,
+                    getterName: "get_my_variable",
+                    setterName: "set_my_variable"
+                ) { _, instancePtr, args, argsCount, returnPtr, error in
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
