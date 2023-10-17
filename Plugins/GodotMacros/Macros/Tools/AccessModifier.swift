@@ -92,14 +92,15 @@ extension DeclSyntaxWithAccessModifier where Self : DeclSyntaxWithTypeKeyword {
                 continue
             }
             
-            modifiers[modifierIndex] = .init(name: .keyword(.public))
+            let token = modifiers[modifierIndex].name
+            let newToken = token.with(\.tokenKind, .keyword(.public))
             
             let fixIt = FixIt(message: GodotDiagnostic("Replace '\(keyword)' with 'public'"), changes: [
                 .replace(
-                    oldNode: Syntax(self.modifiers),
-                    newNode: Syntax(modifiers))
+                    oldNode: Syntax(token),
+                    newNode: Syntax(newToken))
             ])
-            return (fixIt, Syntax(modifier))
+            return (fixIt, Syntax(token))
         }
         
         if modifiers.isEmpty {
@@ -207,6 +208,7 @@ private let orderedAccessModifiers: [Keyword] = [
     .private,
     .fileprivate,
     .internal,
+    .package,
     .public,
     .open,
 ]
