@@ -1,7 +1,7 @@
 import GodotExtensionHeaders
 
 extension Object {
-    class func retrievedInstanceManagedByGodot(_ instancePtr: GDExtensionObjectPtr?) -> Self? {
+    internal class func retrievedInstanceManagedByGodot(_ instancePtr: GDExtensionObjectPtr?) -> Self? {
         guard let instancePtr else {
             return nil
         }
