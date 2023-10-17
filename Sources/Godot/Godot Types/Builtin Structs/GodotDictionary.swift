@@ -1,7 +1,9 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct GodotDictionary {
+public struct GodotDictionary {}
+
+extension GodotDictionary {
     public init() {
         self = Self._constructor()
     }

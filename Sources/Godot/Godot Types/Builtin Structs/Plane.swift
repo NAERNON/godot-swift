@@ -7,7 +7,9 @@ public struct Plane {
         self.normal = normal
         self.d = d
     }
-    
+}
+
+extension Plane {
     public init<T>(normal: Vector3, d: T) where T : BinaryFloatingPoint {
         self.init(normal: normal, d: Real(d))
     }

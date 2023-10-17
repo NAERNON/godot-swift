@@ -1,7 +1,9 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct PackedInt32Array {
+public struct PackedInt32Array {}
+
+extension PackedInt32Array {
     public init() {
         self = Self._constructor()
     }

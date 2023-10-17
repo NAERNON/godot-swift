@@ -9,7 +9,9 @@ public struct Vector3i {
         self.y = y
         self.z = z
     }
-    
+}
+
+extension Vector3i {
     public init<T>(x: T, y: T, z: T) where T : BinaryFloatingPoint {
         self.init(x: Int(x), y: Int(y), z: Int(z))
     }

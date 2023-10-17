@@ -1,7 +1,9 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct PackedVector3Array {
+public struct PackedVector3Array {}
+
+extension PackedVector3Array {
     public init() {
         self = Self._constructor()
     }

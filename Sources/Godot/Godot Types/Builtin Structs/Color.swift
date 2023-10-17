@@ -11,7 +11,9 @@ public struct Color {
         self.b = b
         self.a = a
     }
-    
+}
+
+extension Color {
     public init<T>(r: T, g: T, b: T, a: T) where T: BinaryFloatingPoint {
         self.init(r: Float(r), g: Float(g), b: Float(b), a: Float(a))
     }

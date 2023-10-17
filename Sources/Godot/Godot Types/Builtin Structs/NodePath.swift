@@ -1,7 +1,9 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct NodePath {
+public struct NodePath {}
+
+extension NodePath {
     public init() {
         self = Self._constructor()
     }

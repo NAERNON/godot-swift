@@ -11,7 +11,9 @@ public struct Projection {
         self.zAxis = zAxis
         self.wAxis = wAxis
     }
-    
+}
+
+extension Projection {
     public init<T>(xAxisX: T, xAxisY: T, xAxisZ: T, xAxisW: T,
                    yAxisX: T, yAxisY: T, yAxisZ: T, yAxisW: T,
                    zAxisX: T, zAxisY: T, zAxisZ: T, zAxisW: T,

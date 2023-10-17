@@ -7,7 +7,9 @@ public struct AABB {
         self.position = position
         self.size = size
     }
-    
+}
+
+extension AABB {
     public init() {
         self.init(position: Vector3(), size: Vector3())
     }

@@ -1,7 +1,9 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct PackedFloat64Array {
+public struct PackedFloat64Array {}
+
+extension PackedFloat64Array {
     public init() {
         self = Self._constructor()
     }

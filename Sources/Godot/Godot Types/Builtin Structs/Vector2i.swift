@@ -7,7 +7,9 @@ public struct Vector2i {
         self.x = x
         self.y = y
     }
-    
+}
+
+extension Vector2i {
     public init<T>(x: T, y: T) where T : BinaryFloatingPoint {
         self.init(x: Int(x), y: Int(y))
     }

@@ -11,7 +11,9 @@ public struct Vector4i {
         self.z = z
         self.w = w
     }
-    
+}
+
+extension Vector4i {
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryFloatingPoint {
         self.init(x: Int(x), y: Int(y), z: Int(z), w: Int(w))
     }

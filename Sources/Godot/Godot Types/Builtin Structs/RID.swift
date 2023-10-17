@@ -1,7 +1,9 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct RID {
+public struct RID {}
+
+extension RID {
     public init() {
         self = Self._constructor()
     }

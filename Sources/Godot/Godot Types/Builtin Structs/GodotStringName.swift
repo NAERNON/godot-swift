@@ -1,7 +1,9 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct GodotStringName {
+public struct GodotStringName {}
+
+extension GodotStringName {
     public init() {
         self = Self._constructor()
     }

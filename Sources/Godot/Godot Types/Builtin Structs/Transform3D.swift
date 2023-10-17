@@ -7,7 +7,9 @@ public struct Transform3D {
         self.basis = basis
         self.origin = origin
     }
-    
+}
+
+extension Transform3D {
     public init() {
         self.init(basis: Basis(), origin: Vector3())
     }

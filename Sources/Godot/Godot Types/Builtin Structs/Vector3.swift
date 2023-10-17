@@ -9,7 +9,9 @@ public struct Vector3 {
         self.y = y
         self.z = z
     }
-    
+}
+
+extension Vector3 {
     public init<T>(x: T, y: T, z: T) where T : BinaryFloatingPoint {
         self.init(x: Real(x), y: Real(y), z: Real(z))
     }

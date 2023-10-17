@@ -1,7 +1,9 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct Callable {
+public struct Callable {}
+
+extension Callable {
     public init() {
         self = Self._constructor()
     }

@@ -9,7 +9,9 @@ public struct Basis {
         self.yAxis = yAxis
         self.zAxis = zAxis
     }
-    
+}
+
+extension Basis {
     public init() {
         self.init(xAxis: Vector3(), yAxis: Vector3(), zAxis: Vector3())
     }

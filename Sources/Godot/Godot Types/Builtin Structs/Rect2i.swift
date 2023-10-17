@@ -7,7 +7,9 @@ public struct Rect2i {
         self.position = position
         self.size = size
     }
-    
+}
+
+extension Rect2i {
     public init<T>(x: T, y: T, width: T, height: T) where T : BinaryFloatingPoint {
         self.init(position: Vector2i(x: x, y: y),
                   size: Vector2i(x: width, y: height))

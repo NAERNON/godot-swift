@@ -1,7 +1,9 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct GodotArray {
+public struct GodotArray {}
+
+extension GodotArray {
     public init() {
         self = Self._constructor()
     }

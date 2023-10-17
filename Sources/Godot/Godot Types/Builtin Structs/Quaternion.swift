@@ -11,7 +11,9 @@ public struct Quaternion {
         self.z = z
         self.w = w
     }
-    
+}
+
+extension Quaternion {
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryFloatingPoint {
         self.init(x: Real(x), y: Real(y), z: Real(z), w: Real(w))
     }

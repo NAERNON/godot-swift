@@ -1,7 +1,9 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct Signal {
+public struct Signal {}
+
+extension Signal {
     public init() {
         self = Self._constructor()
     }

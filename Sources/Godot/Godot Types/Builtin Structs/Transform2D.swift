@@ -9,7 +9,9 @@ public struct Transform2D {
         self.yAxis = yAxis
         self.origin = origin
     }
-    
+}
+
+extension Transform2D {
     public init() {
         self.init(xAxis: Vector2(), yAxis: Vector2(), origin: Vector2())
     }
