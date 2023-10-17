@@ -29,43 +29,6 @@ struct GodotExtensionAPI: Decodable {
     
     // MARK: Filter
     
-    /// Returns a new `GodotExtensionAPI` with only a small subset of classes.
-    func subset() -> GodotExtensionAPI {
-        filter { classType in
-            classType == "Object" ||
-            classType == "RefCounted" ||
-            classType == "RandomNumberGenerator" ||
-            classType == "TextServer" ||
-            classType == "AStar2D" ||
-            classType == "Control" ||
-            classType == "CanvasItem" ||
-            classType == "Node" ||
-            classType == "Node2D" ||
-            classType == "Sprite2D" ||
-            classType == "Shape2D" ||
-            classType == "RectangleShape2D" ||
-            classType == "CollisionObject2D" ||
-            classType == "PhysicsBody2D" ||
-            classType == "RigidBody2D" ||
-            classType == "StaticBody2D" ||
-            classType == "CollisionShape2D" ||
-            classType == "Resource" ||
-            classType == "ResourceLoader" ||
-            classType == "Texture" ||
-            classType == "Texture2D" ||
-            classType == "Engine" ||
-            classType == "Node3D" ||
-            classType == "VisualInstance3D" ||
-            classType == "GeometryInstance3D" ||
-            classType == "MeshInstance3D" ||
-            classType == "Mesh" ||
-            classType == "PrimitiveMesh" ||
-            classType == "BoxMesh" ||
-            classType == "TorusMesh" ||
-            classType.syntax().hasPrefix("Input")
-        }
-    }
-    
     func filter(classFilter: (GodotType) -> Bool) -> GodotExtensionAPI {
         var newAPIs = self
         
