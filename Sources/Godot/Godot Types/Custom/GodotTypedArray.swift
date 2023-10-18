@@ -114,12 +114,6 @@ extension GodotTypedArray: VariantConvertible {
 
 // MARK: - Extensions
 
-extension GodotTypedArray: CustomDebugStringConvertible {
-    public var debugDescription: Swift.String {
-        underlyingArray.debugDescription
-    }
-}
-
 extension GodotTypedArray: Sequence {}
 
 extension GodotTypedArray: Collection {
@@ -184,10 +178,28 @@ extension GodotTypedArray: ExpressibleByArrayLiteral {
 
 extension GodotTypedArray: Codable where Element : Codable {
     public func encode(to encoder: Encoder) throws {
-        try Array(self).encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(contentsOf: self)
     }
-
+    
     public init(from decoder: Decoder) throws {
-        self.init(try Array<Element>(from: decoder))
+        var container = try decoder.unkeyedContainer()
+        var array = Self()
+        while let element = try container.decodeIfPresent(Self.Element.self) {
+            array.append(element)
+        }
+        self = array
+    }
+}
+
+extension GodotTypedArray: CustomStringConvertible {
+    public var description: String {
+        "[\(self.map { String(reflecting: $0) }.joined(separator: ", "))]"
+    }
+}
+
+extension GodotTypedArray: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "[\(self.map { String(reflecting: $0) }.joined(separator: ", "))]"
     }
 }

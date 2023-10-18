@@ -10,6 +10,8 @@ public struct Plane {
 }
 
 extension Plane {
+    // MARK: Constructors
+    
     public init<T>(normal: Vector3, d: T) where T : BinaryFloatingPoint {
         self.init(normal: normal, d: Real(d))
     }
@@ -47,10 +49,6 @@ extension Plane {
     }
     
     // MARK: Operators
-    
-    public static func == (lhs: Plane, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
     
     public static prefix func - (plane: Plane) -> Plane {
         Self._operatorNegate(plane)
@@ -111,13 +109,15 @@ extension Plane {
     }
 }
 
-// MARK: - Extensions
-
 extension Plane: Equatable, Hashable {}
 
 extension Plane: Codable {
     public func encode(to encoder: Encoder) throws {
-        try [normal.x, normal.y, normal.z, d].encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(normal.x)
+        try unkeyedContainer.encode(normal.y)
+        try unkeyedContainer.encode(normal.z)
+        try unkeyedContainer.encode(d)
     }
     
     public init(from decoder: Decoder) throws {
@@ -127,5 +127,17 @@ extension Plane: Codable {
         let z = try container.decode(Real.self)
         let d = try container.decode(Real.self)
         self.init(x: x, y: y, z: z, d: d)
+    }
+}
+
+extension Plane: CustomStringConvertible {
+    public var description: String {
+        "(normal: \(normal), d: \(d))"
+    }
+}
+
+extension Plane: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "Plane(normal: \(normal), d: \(d))"
     }
 }

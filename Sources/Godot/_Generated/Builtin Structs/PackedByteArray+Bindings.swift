@@ -1273,8 +1273,3 @@ extension PackedByteArray {
     }
 
     }
-extension PackedByteArray: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

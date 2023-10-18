@@ -4,12 +4,10 @@ import GodotExtensionHeaders
 public struct Signal {}
 
 extension Signal {
+    // MARK: Constructors
+    
     public init() {
         self = Self._constructor()
-    }
-    
-    public init(_ value: Signal) {
-        self = value
     }
     
     public init(object: Object, signal: GodotStringName) {
@@ -24,12 +22,6 @@ extension Signal {
     
     internal mutating func withCopiedOpaque() -> Self {
         Self._constructor_signal(from: self)
-    }
-    
-    // MARK: Operators
-    
-    public static func == (lhs: Signal, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
     }
     
     // MARK: Methods & variables
@@ -72,10 +64,28 @@ extension Signal {
     }
 }
 
-// MARK: - Extensions
-
 extension Signal: Equatable {
     public static func == (lhs: Signal, rhs: Signal) -> Bool {
         Self._operatorEqual(lhs, rhs)
+    }
+}
+
+extension Signal: CustomStringConvertible {
+    public var description: String {
+        if let object {
+            "(\(object), \(name))"
+        } else {
+            "(nil, \(name))"
+        }
+    }
+}
+
+extension Signal: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        if let object {
+            "Signal(object: \(String(reflecting: object)), \(name))"
+        } else {
+            "Signal(object: nil, \(name))"
+        }
     }
 }

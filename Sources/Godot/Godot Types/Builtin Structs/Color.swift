@@ -5,7 +5,7 @@ public struct Color {
     public var b: Float
     public var a: Float
     
-    public init(r: Float, g: Float, b: Float, a: Float) {
+    public init(r: Float, g: Float, b: Float, a: Float = 1) {
         self.r = r
         self.g = g
         self.b = b
@@ -14,20 +14,22 @@ public struct Color {
 }
 
 extension Color {
-    public init<T>(r: T, g: T, b: T, a: T) where T: BinaryFloatingPoint {
-        self.init(r: Float(r), g: Float(g), b: Float(b), a: Float(a))
-    }
+    // MARK: Constructors
     
-    public init<T>(r: T, g: T, b: T) where T: BinaryFloatingPoint {
-        self.init(r: Float(r), g: Float(g), b: Float(b), a: 1)
+    public init<T>(r: T, g: T, b: T, a: T = 1) where T: BinaryFloatingPoint {
+        self.init(r: Float(r), g: Float(g), b: Float(b), a: Float(a))
     }
     
     public init(code: GodotString) {
         self = Self._constructor_godotstring(code: code)
     }
     
-    public init<T>(code: GodotString, a: T) where T: BinaryFloatingPoint {
-        self = Self._constructor_godotstring_float(code: code, alpha: Float(a))
+    public init(code: GodotString, alpha: Float) {
+        self = Self._constructor_godotstring_float(code: code, alpha: alpha)
+    }
+    
+    public init<T>(code: GodotString, alpha: T) where T: BinaryFloatingPoint {
+        self.init(code: code, alpha: Float(alpha))
     }
     
     public init() {
@@ -36,24 +38,36 @@ extension Color {
     
     // MARK: Operators
     
-    public static func == (lhs: Color, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
+    public static func * (lhs: Color, rhs: Int) -> Color {
+        Self._operatorMultiply(lhs, rhs)
     }
     
     public static func * <T>(lhs: Color, rhs: T) -> Color where T : BinaryInteger {
-        Self._operatorMultiply(lhs, Int(rhs))
+        lhs * Int(rhs)
+    }
+    
+    public static func * (lhs: Color, rhs: Float) -> Color {
+        Self._operatorMultiply(lhs, rhs)
     }
     
     public static func * <T>(lhs: Color, rhs: T) -> Color where T : BinaryFloatingPoint {
-        Self._operatorMultiply(lhs, Float(rhs))
+        lhs * Float(rhs)
+    }
+    
+    public static func / (lhs: Color, rhs: Int) -> Color {
+        Self._operatorDivide(lhs, rhs)
     }
     
     public static func / <T>(lhs: Color, rhs: T) -> Color where T : BinaryInteger {
-        Self._operatorDivide(lhs, Int(rhs))
+        lhs / Int(rhs)
+    }
+    
+    public static func / (lhs: Color, rhs: Float) -> Color {
+        Self._operatorDivide(lhs, rhs)
     }
     
     public static func / <T>(lhs: Color, rhs: T) -> Color where T : BinaryFloatingPoint {
-        Self._operatorDivide(lhs, Float(rhs))
+        lhs / Float(rhs)
     }
     
     public static func + (lhs: Color, rhs: Color) -> Color {
@@ -178,20 +192,36 @@ extension Color {
     }
 }
 
-// MARK: - Extensions
-
 extension Color: Equatable, Hashable {}
 
 extension Color: Codable {
     public func encode(to encoder: Encoder) throws {
-        try [r, g, b, a].encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(r)
+        try unkeyedContainer.encode(g)
+        try unkeyedContainer.encode(b)
+        try unkeyedContainer.encode(a)
     }
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        r = try container.decode(Float.self)
-        g = try container.decode(Float.self)
-        b = try container.decode(Float.self)
-        a = try container.decode(Float.self)
+        let r = try container.decode(Float.self)
+        let g = try container.decode(Float.self)
+        let b = try container.decode(Float.self)
+        let a = try container.decode(Float.self)
+        
+        self.init(r: r, g: g, b: b, a: a)
+    }
+}
+
+extension Color: CustomStringConvertible {
+    public var description: String {
+        "(\(r), \(g), \(b), \(a))"
+    }
+}
+
+extension Color: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "Color(r: \(r), g: \(g), b: \(b), a: \(a))"
     }
 }

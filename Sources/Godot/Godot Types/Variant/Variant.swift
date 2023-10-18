@@ -73,9 +73,15 @@ public final class Variant {
 
 // MARK: - Extensions
 
+extension Variant: CustomStringConvertible {
+    public var description: String {
+        storage.description
+    }
+}
+
 extension Variant: CustomDebugStringConvertible {
     public var debugDescription: String {
-        storage.debugDescription
+        "Variant(type: \(type), value: \(storage.description))"
     }
 }
 

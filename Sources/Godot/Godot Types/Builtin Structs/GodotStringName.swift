@@ -4,6 +4,8 @@ import GodotExtensionHeaders
 public struct GodotStringName {}
 
 extension GodotStringName {
+    // MARK: Constructors
+    
     public init() {
         self = Self._constructor()
     }
@@ -14,10 +16,6 @@ extension GodotStringName {
     
     public init(swiftStaticString: StaticString) {
         self = Self._constructor_godotstring(from: GodotString(swiftStaticString: swiftStaticString))
-    }
-    
-    public init(_ value: GodotStringName) {
-        self = value
     }
     
     public init<Subject>(describing instance: Subject) {
@@ -53,12 +51,12 @@ extension GodotStringName {
     
     // MARK: Operators
     
-    public static func == (lhs: GodotStringName, rhs: some ConvertibleToVariant) -> Bool {
+    public static func == (lhs: GodotStringName, rhs: GodotString) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
     
-    public static func == (lhs: GodotStringName, rhs: GodotString) -> Bool {
-        Self._operatorEqual(lhs, rhs)
+    public static func == (lhs: GodotStringName, rhs: String) -> Bool {
+        lhs == GodotString(swiftString: rhs)
     }
     
     // MARK: Methods & variables
@@ -352,8 +350,6 @@ extension GodotStringName {
     }
 }
 
-// MARK: - Extensions
-
 extension GodotStringName: ExpressibleByStringLiteral {
     public init(stringLiteral value: StaticString) {
         self.init(swiftStaticString: value)
@@ -381,5 +377,17 @@ extension GodotStringName: Codable {
     
     public init(from decoder: Decoder) throws {
         self.init(swiftString: try String(from: decoder))
+    }
+}
+
+extension GodotStringName: CustomStringConvertible {
+    public var description: String {
+        String(godotStringName: self)
+    }
+}
+
+extension GodotStringName: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "\"\(String(godotStringName: self))\""
     }
 }

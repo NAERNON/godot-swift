@@ -1285,8 +1285,3 @@ extension Vector2 {
     }
 
     }
-extension Vector2: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

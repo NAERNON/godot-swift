@@ -14,6 +14,8 @@ public struct Quaternion {
 }
 
 extension Quaternion {
+    // MARK: Constructors
+    
     public init<T>(x: T, y: T, z: T, w: T) where T : BinaryFloatingPoint {
         self.init(x: Real(x), y: Real(y), z: Real(z), w: Real(w))
     }
@@ -26,12 +28,16 @@ extension Quaternion {
         self = Self._constructor_basis(from: basis)
     }
     
+    public init(axis: Vector3, angle: Real) {
+        self = Self._constructor_vector3_float(axis: axis, angle: angle)
+    }
+    
     public init<T>(axis: Vector3, angle: T) where T : BinaryFloatingPoint {
-        self = Self._constructor_vector3_float(axis: axis, angle: Real(angle))
+        self.init(axis: axis, angle: Real(angle))
     }
     
     public init<T>(axis: Vector3, angle: T) where T : BinaryInteger {
-        self = Self._constructor_vector3_float(axis: axis, angle: Real(angle))
+        self.init(axis: axis, angle: Real(angle))
     }
     
     public init(fromArc: Vector3, toArc: Vector3) {
@@ -43,10 +49,6 @@ extension Quaternion {
     }
     
     // MARK: Operators
-    
-    public static func == (lhs: Quaternion, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
     
     public static prefix func - (quaternion: Quaternion) -> Quaternion {
         Self._operatorNegate(quaternion)
@@ -188,20 +190,35 @@ extension Quaternion {
     }
 }
 
-// MARK: - Extensions
-
 extension Quaternion: Equatable, Hashable {}
 
 extension Quaternion: Codable {
     public func encode(to encoder: Encoder) throws {
-        try [x, y, z, w].encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(x)
+        try unkeyedContainer.encode(y)
+        try unkeyedContainer.encode(z)
+        try unkeyedContainer.encode(w)
     }
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        x = try container.decode(Real.self)
-        y = try container.decode(Real.self)
-        z = try container.decode(Real.self)
-        w = try container.decode(Real.self)
+        let x = try container.decode(Real.self)
+        let y = try container.decode(Real.self)
+        let z = try container.decode(Real.self)
+        let w = try container.decode(Real.self)
+        self.init(x: x, y: y, z: z, w: w)
+    }
+}
+
+extension Quaternion: CustomStringConvertible {
+    public var description: String {
+        "(x: \(x), y: \(y), z: \(z), w: \(w))"
+    }
+}
+
+extension Quaternion: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "Quaternion(x: \(x), y: \(y), z: \(z), w: \(w))"
     }
 }

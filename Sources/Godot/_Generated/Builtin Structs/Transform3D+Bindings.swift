@@ -594,8 +594,3 @@ extension Transform3D {
     }
 
     }
-extension Transform3D: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

@@ -464,8 +464,3 @@ extension Callable {
     }
 
     }
-extension Callable: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

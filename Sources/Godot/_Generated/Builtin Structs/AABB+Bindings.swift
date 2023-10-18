@@ -647,8 +647,3 @@ extension AABB {
     }
 
     }
-extension AABB: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

@@ -545,8 +545,3 @@ extension Plane {
     }
 
     }
-extension Plane: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

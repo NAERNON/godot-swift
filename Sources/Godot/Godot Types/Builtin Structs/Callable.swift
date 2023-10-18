@@ -4,12 +4,10 @@ import GodotExtensionHeaders
 public struct Callable {}
 
 extension Callable {
+    // MARK: Constructors
+    
     public init() {
         self = Self._constructor()
-    }
-    
-    public init(_ value: Callable) {
-        self = value
     }
     
     public init(object: Object, method: GodotStringName) {
@@ -24,12 +22,6 @@ extension Callable {
     
     internal mutating func withCopiedOpaque() -> Self {
         Self._constructor_callable(from: self)
-    }
-    
-    // MARK: Operators
-    
-    public static func == (lhs: Callable, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
     }
     
     // MARK: Methods & variables
@@ -114,8 +106,6 @@ extension Callable {
     }
 }
 
-// MARK: - Extensions
-
 extension Callable: Equatable {
     public static func == (lhs: Callable, rhs: Callable) -> Bool {
         Self._operatorEqual(lhs, rhs)
@@ -127,5 +117,25 @@ extension Callable: Hashable {
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(_hash())
+    }
+}
+
+extension Callable: CustomStringConvertible {
+    public var description: String {
+        if let object {
+            "(\(object), \(method))"
+        } else {
+            "(nil, \(method))"
+        }
+    }
+}
+
+extension Callable: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        if let object {
+            "Callable(object: \(String(reflecting: object)), \(method))"
+        } else {
+            "Callable(object: nil, \(method))"
+        }
     }
 }

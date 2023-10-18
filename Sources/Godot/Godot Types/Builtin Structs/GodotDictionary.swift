@@ -4,12 +4,10 @@ import GodotExtensionHeaders
 public struct GodotDictionary {}
 
 extension GodotDictionary {
+    // MARK: Constructors
+    
     public init() {
         self = Self._constructor()
-    }
-    
-    public init(_ value: GodotDictionary) {
-        self = value
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {
@@ -23,10 +21,6 @@ extension GodotDictionary {
     }
     
     // MARK: Operators
-    
-    public static func == (lhs: GodotDictionary, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
     
     public subscript(key: Variant) -> Variant {
         get {
@@ -45,8 +39,6 @@ extension GodotDictionary {
         self._values()
     }
 }
-
-// MARK: - Extensions
 
 extension GodotDictionary: Equatable {
     public static func == (lhs: GodotDictionary, rhs: GodotDictionary) -> Bool {
@@ -99,5 +91,17 @@ extension GodotDictionary: Hashable {
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(_hash())
+    }
+}
+
+extension GodotDictionary: CustomStringConvertible {
+    public var description: String {
+        "[\(self.map { "\(String(reflecting: $0.0)): \(String(reflecting: $0.1))" }.joined(separator: ", "))]"
+    }
+}
+
+extension GodotDictionary: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "[\(self.map { "\(String(reflecting: $0.0)): \(String(reflecting: $0.1))" }.joined(separator: ", "))]"
     }
 }

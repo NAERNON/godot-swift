@@ -12,6 +12,8 @@ public struct Basis {
 }
 
 extension Basis {
+    // MARK: Constructors
+    
     public init() {
         self.init(xAxis: Vector3(), yAxis: Vector3(), zAxis: Vector3())
     }
@@ -28,26 +30,34 @@ extension Basis {
         self = Self._constructor_quaternion(from: quaternion)
     }
     
+    public init(axis: Vector3, angle: Real) {
+        self = Self._constructor_vector3_float(axis: axis, angle: angle)
+    }
+    
     public init<T>(axis: Vector3, angle: T) where T : BinaryFloatingPoint {
-        self = Self._constructor_vector3_float(axis: axis, angle: Real(angle))
+        self.init(axis: axis, angle: Real(angle))
     }
     
     public init<T>(axis: Vector3, angle: T) where T : BinaryInteger {
-        self = Self._constructor_vector3_float(axis: axis, angle: Real(angle))
+        self.init(axis: axis, angle: Real(angle))
     }
     
     // MARK: Operators
     
-    public static func == (lhs: Basis, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
+    public static func * (lhs: Basis, rhs: Int) -> Basis {
+        Self._operatorMultiply(lhs, rhs)
     }
     
     public static func * <T>(lhs: Basis, rhs: T) -> Basis where T : BinaryInteger {
-        Self._operatorMultiply(lhs, Int(rhs))
+        lhs * Int(rhs)
+    }
+    
+    public static func * (lhs: Basis, rhs: Real) -> Basis {
+        Self._operatorMultiply(lhs, rhs)
     }
     
     public static func * <T>(lhs: Basis, rhs: T) -> Basis where T : BinaryFloatingPoint {
-        Self._operatorMultiply(lhs, Real(rhs))
+        lhs * Real(rhs)
     }
     
     public static func * (lhs: Basis, rhs: Vector3) -> Vector3 {
@@ -137,13 +147,14 @@ extension Basis {
     }
 }
 
-// MARK: - Extensions
-
 extension Basis: Equatable, Hashable {}
 
 extension Basis: Codable {
     public func encode(to encoder: Encoder) throws {
-        try [xAxis, yAxis, zAxis].encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(xAxis)
+        try unkeyedContainer.encode(yAxis)
+        try unkeyedContainer.encode(zAxis)
     }
     
     public init(from decoder: Decoder) throws {
@@ -151,5 +162,17 @@ extension Basis: Codable {
         xAxis = try container.decode(Vector3.self)
         yAxis = try container.decode(Vector3.self)
         zAxis = try container.decode(Vector3.self)
+    }
+}
+
+extension Basis: CustomStringConvertible {
+    public var description: String {
+        "(xAxis: \(xAxis), yAxis: \(yAxis), zAxis: \(zAxis))"
+    }
+}
+
+extension Basis: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "Basis(xAxis: \(xAxis), yAxis: \(yAxis), zAxis: \(zAxis))"
     }
 }

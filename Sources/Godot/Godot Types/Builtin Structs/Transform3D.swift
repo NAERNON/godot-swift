@@ -10,6 +10,8 @@ public struct Transform3D {
 }
 
 extension Transform3D {
+    // MARK: Constructors
+    
     public init() {
         self.init(basis: Basis(), origin: Vector3())
     }
@@ -44,20 +46,32 @@ extension Transform3D {
     
     // MARK: Operators
     
-    public static func == (lhs: Transform3D, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
+    public static func * (lhs: Transform3D, rhs: Int) -> Transform3D {
+        Self._operatorMultiply(lhs, rhs)
     }
     
     public static func * <T>(lhs: Transform3D, rhs: T) -> Transform3D where T : BinaryInteger {
-        Self._operatorMultiply(lhs, Int(rhs))
+        lhs * Int(rhs)
+    }
+    
+    public static func * (lhs: Int, rhs: Transform3D) -> Transform3D {
+        Self._operatorMultiply(rhs, lhs)
     }
     
     public static func * <T>(lhs: T, rhs: Transform3D) -> Transform3D where T : BinaryInteger {
-        Self._operatorMultiply(rhs, Int(lhs))
+        rhs * Int(lhs)
+    }
+    
+    public static func * (lhs: Transform3D, rhs: Real) -> Transform3D {
+        Self._operatorMultiply(lhs, rhs)
     }
     
     public static func * <T>(lhs: Transform3D, rhs: T) -> Transform3D where T : BinaryFloatingPoint {
-        Self._operatorMultiply(lhs, Real(rhs))
+        lhs * Real(rhs)
+    }
+    
+    public static func * (lhs: Real, rhs: Transform3D) -> Transform3D {
+        rhs * Real(lhs)
     }
     
     public static func * <T>(lhs: T, rhs: Transform3D) -> Transform3D where T : BinaryFloatingPoint {
@@ -143,13 +157,15 @@ extension Transform3D {
     }
 }
 
-// MARK: - Extensions
-
 extension Transform3D: Equatable, Hashable {}
 
 extension Transform3D: Codable {
     public func encode(to encoder: Encoder) throws {
-        try [basis.xAxis, basis.yAxis, basis.zAxis, origin].encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(basis.xAxis)
+        try unkeyedContainer.encode(basis.yAxis)
+        try unkeyedContainer.encode(basis.zAxis)
+        try unkeyedContainer.encode(origin)
     }
     
     public init(from decoder: Decoder) throws {
@@ -159,5 +175,17 @@ extension Transform3D: Codable {
         let zAxis = try container.decode(Vector3.self)
         let origin = try container.decode(Vector3.self)
         self.init(xAxis: xAxis, yAxis: yAxis, zAxis: zAxis, origin: origin)
+    }
+}
+
+extension Transform3D: CustomStringConvertible {
+    public var description: String {
+        "(origin: \(origin), basis: \(basis))"
+    }
+}
+
+extension Transform3D: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "Transform3D(origin: \(origin), basis: \(basis))"
     }
 }

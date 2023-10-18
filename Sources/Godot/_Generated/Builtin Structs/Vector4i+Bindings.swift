@@ -615,8 +615,3 @@ extension Vector4i {
     }
 
     }
-extension Vector4i: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

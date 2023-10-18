@@ -4,12 +4,10 @@ import GodotExtensionHeaders
 public struct PackedByteArray {}
 
 extension PackedByteArray {
+    // MARK: Constructors
+    
     public init() {
         self = Self._constructor()
-    }
-    
-    public init(_ value: PackedByteArray) {
-        self = value
     }
     
     public init(array: GodotArray) {
@@ -30,12 +28,6 @@ extension PackedByteArray {
     
     internal mutating func withCopiedOpaque() -> Self {
         self._duplicate()
-    }
-    
-    // MARK: Operators
-    
-    public static func == (lhs: PackedByteArray, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
     }
     
     // MARK: Methods & variables
@@ -202,8 +194,6 @@ extension PackedByteArray {
     }
 }
 
-// MARK: - Extensions
-
 extension PackedByteArray: Sequence {}
 
 extension PackedByteArray: Collection {
@@ -274,10 +264,28 @@ extension PackedByteArray: Equatable {
 
 extension PackedByteArray: Codable {
     public func encode(to encoder: Encoder) throws {
-        try self.map { $0 }.encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(contentsOf: self)
     }
     
     public init(from decoder: Decoder) throws {
-        self.init(try Swift.Array<Element>(from: decoder))
+        var container = try decoder.unkeyedContainer()
+        var array = Self()
+        while let element = try container.decodeIfPresent(Self.Element.self) {
+            array.append(element)
+        }
+        self = array
+    }
+}
+
+extension PackedByteArray: CustomStringConvertible {
+    public var description: String {
+        "[\(self.map { String(reflecting: $0) }.joined(separator: ", "))]"
+    }
+}
+
+extension PackedByteArray: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "[\(self.map { String(reflecting: $0) }.joined(separator: ", "))]"
     }
 }

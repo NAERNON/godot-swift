@@ -449,8 +449,3 @@ extension GodotDictionary {
     }
 
     }
-extension GodotDictionary: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

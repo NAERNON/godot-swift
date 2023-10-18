@@ -1275,8 +1275,3 @@ extension GodotArray {
     }
 
     }
-extension GodotArray: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

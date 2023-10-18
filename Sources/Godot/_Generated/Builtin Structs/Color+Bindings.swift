@@ -1069,8 +1069,3 @@ extension Color {
     }
 
     }
-extension Color: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

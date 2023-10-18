@@ -4,12 +4,10 @@ import GodotExtensionHeaders
 public struct NodePath {}
 
 extension NodePath {
+    // MARK: Constructors
+    
     public init() {
         self = Self._constructor()
-    }
-    
-    public init(_ value: NodePath) {
-        self = value
     }
     
     public init(string: GodotString) {
@@ -24,12 +22,6 @@ extension NodePath {
     
     internal mutating func withCopiedOpaque() -> Self {
         Self._constructor_nodepath(from: self)
-    }
-        
-    // MARK: Operators
-    
-    public static func == (lhs: NodePath, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
     }
     
     // MARK: Methods & variables
@@ -71,8 +63,6 @@ extension NodePath {
     }
 }
 
-// MARK: - Extensions
-
 extension NodePath: Equatable {
     public static func == (lhs: NodePath, rhs: NodePath) -> Bool {
         Self._operatorEqual(lhs, rhs)
@@ -90,5 +80,17 @@ extension NodePath: Hashable {
 extension NodePath: ExpressibleByStringLiteral {
     public init(stringLiteral value: String) {
         self.init(string: GodotString(swiftString: value))
+    }
+}
+
+extension NodePath: CustomStringConvertible {
+    public var description: String {
+        String(describing: concatenatedNames())
+    }
+}
+
+extension NodePath: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "NodePath(\"\(String(describing: concatenatedNames()))\")"
     }
 }

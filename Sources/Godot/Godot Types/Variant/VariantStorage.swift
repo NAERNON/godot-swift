@@ -96,7 +96,7 @@ extension Variant {
             Int(gdextension_interface_variant_hash(rawData))
         }
         
-        public var debugDescription: String {
+        public var description: String {
             let string = GodotString()
             
             string.withUnsafeRawPointer { stringNativeTypePtr in

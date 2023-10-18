@@ -717,8 +717,3 @@ extension Transform2D {
     }
 
     }
-extension Transform2D: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

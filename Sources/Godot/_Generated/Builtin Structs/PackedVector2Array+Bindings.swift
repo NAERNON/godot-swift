@@ -598,8 +598,3 @@ extension PackedVector2Array {
     }
 
     }
-extension PackedVector2Array: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

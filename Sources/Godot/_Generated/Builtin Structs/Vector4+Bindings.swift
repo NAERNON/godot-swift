@@ -949,8 +949,3 @@ extension Vector4 {
     }
 
     }
-extension Vector4: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

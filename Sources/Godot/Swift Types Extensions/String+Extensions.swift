@@ -14,6 +14,14 @@ extension String {
     public init(godotStringName: GodotStringName) {
         self.init(godotString: GodotString(stringName: godotStringName))
     }
+    
+    public static func == (lhs: String, rhs: GodotString) -> Bool {
+        GodotString(swiftString: lhs) == rhs
+    }
+    
+    public static func == (lhs: String, rhs: GodotStringName) -> Bool {
+        GodotString(swiftString: lhs) == rhs
+    }
 }
 
 extension String: VariantConvertible {

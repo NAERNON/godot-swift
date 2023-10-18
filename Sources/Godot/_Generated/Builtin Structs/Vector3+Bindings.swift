@@ -1335,8 +1335,3 @@ extension Vector3 {
     }
 
     }
-extension Vector3: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

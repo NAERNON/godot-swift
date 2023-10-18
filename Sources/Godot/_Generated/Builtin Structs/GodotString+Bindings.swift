@@ -2771,8 +2771,3 @@ extension GodotString {
     }
 
     }
-extension GodotString: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

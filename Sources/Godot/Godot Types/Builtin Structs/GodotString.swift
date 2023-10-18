@@ -4,6 +4,8 @@ import GodotExtensionHeaders
 public struct GodotString {}
 
 extension GodotString {
+    // MARK: Constructors
+    
     public init() {
         self = Self._constructor()
     }
@@ -28,10 +30,6 @@ extension GodotString {
                 }
             }
         }
-    }
-    
-    public init(_ value: GodotString) {
-        self = value
     }
     
     public init<Subject>(describing instance: Subject) {
@@ -62,16 +60,16 @@ extension GodotString {
     
     // MARK: Operators
     
-    public static func == (lhs: GodotString, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
-    
     public static func + (lhs: GodotString, rhs: GodotString) -> GodotString {
         Self._operatorAdd(lhs, rhs)
     }
     
     public static func == (lhs: GodotString, rhs: GodotStringName) -> Bool {
         Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func == (lhs: GodotString, rhs: String) -> Bool {
+        lhs == GodotString(swiftString: rhs)
     }
     
     // MARK: Methods & variables
@@ -389,8 +387,6 @@ extension GodotString {
     }
 }
 
-// MARK: - Extensions
-
 extension GodotString: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
     public init(stringLiteral value: String) {
         self.init(swiftString: value)
@@ -495,12 +491,6 @@ extension GodotString: TextOutputStream {
     }
 }
 
-extension GodotString: LosslessStringConvertible {
-    public var description: String {
-        .init(godotString: self)
-    }
-}
-
 extension GodotString: Codable {
     public func encode(to encoder: Encoder) throws {
         try String(godotString: self).encode(to: encoder)
@@ -508,5 +498,17 @@ extension GodotString: Codable {
     
     public init(from decoder: Decoder) throws {
         self.init(swiftString: try String(from: decoder))
+    }
+}
+
+extension GodotString: LosslessStringConvertible, CustomStringConvertible {
+    public var description: String {
+        String(godotString: self)
+    }
+}
+
+extension GodotString: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "\"\(String(godotString: self))\""
     }
 }

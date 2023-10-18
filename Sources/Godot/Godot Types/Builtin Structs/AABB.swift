@@ -10,15 +10,13 @@ public struct AABB {
 }
 
 extension AABB {
+    // MARK: Constructors
+    
     public init() {
         self.init(position: Vector3(), size: Vector3())
     }
     
     // MARK: Operators
-    
-    public static func == (lhs: AABB, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
     
     public static func * (lhs: AABB, rhs: Transform3D) -> AABB {
         Self._operatorMultiply(lhs, rhs)
@@ -127,18 +125,42 @@ extension AABB {
     }
 }
 
-// MARK: - Extensions
-
 extension AABB: Equatable, Hashable {}
 
 extension AABB: Codable {
     public func encode(to encoder: Encoder) throws {
-        try [position, size].encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(position.x)
+        try unkeyedContainer.encode(position.y)
+        try unkeyedContainer.encode(position.z)
+        try unkeyedContainer.encode(size.x)
+        try unkeyedContainer.encode(size.y)
+        try unkeyedContainer.encode(size.z)
     }
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        position = try container.decode(Vector3.self)
-        size = try container.decode(Vector3.self)
+        let positionX = try container.decode(Real.self)
+        let positionY = try container.decode(Real.self)
+        let positionZ = try container.decode(Real.self)
+        let sizeX = try container.decode(Real.self)
+        let sizeY = try container.decode(Real.self)
+        let sizeZ = try container.decode(Real.self)
+        
+        self.init(
+            position: Vector3(x: positionX, y: positionY, z: positionZ),
+            size: Vector3(x: sizeX, y: sizeY, z: sizeZ))
+    }
+}
+
+extension AABB: CustomStringConvertible {
+    public var description: String {
+        "(position: \(position), size: \(size))"
+    }
+}
+
+extension AABB: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "AABB(position: \(position), size: \(size))"
     }
 }

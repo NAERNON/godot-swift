@@ -583,8 +583,3 @@ extension PackedColorArray {
     }
 
     }
-extension PackedColorArray: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

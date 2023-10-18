@@ -12,6 +12,8 @@ public struct Vector3i {
 }
 
 extension Vector3i {
+    // MARK: Constructors
+    
     public init<T>(x: T, y: T, z: T) where T : BinaryFloatingPoint {
         self.init(x: Int(x), y: Int(y), z: Int(z))
     }
@@ -30,10 +32,6 @@ extension Vector3i {
     
     // MARK: Operators
     
-    public static func == (lhs: Vector3i, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
-    
     public static prefix func - (vector3i: Vector3i) -> Vector3i {
         Self._operatorNegate(vector3i)
     }
@@ -42,32 +40,60 @@ extension Vector3i {
         Self._operatorPositive(vector3i)
     }
     
+    public static func * (lhs: Vector3i, rhs: Int) -> Vector3i {
+        Self._operatorMultiply(lhs, rhs)
+    }
+    
     public static func * <T>(lhs: Vector3i, rhs: T) -> Vector3i where T : BinaryInteger {
-        Self._operatorMultiply(lhs, Int(rhs))
+        lhs * Int(rhs)
+    }
+    
+    public static func * (lhs: Int, rhs: Vector3i) -> Vector3i {
+        Self._operatorMultiply(rhs, lhs)
     }
     
     public static func * <T>(lhs: T, rhs: Vector3i) -> Vector3i where T : BinaryInteger {
-        Self._operatorMultiply(rhs, Int(lhs))
+        rhs * Int(lhs)
+    }
+    
+    public static func * (lhs: Vector3i, rhs: Real) -> Vector3 {
+        Self._operatorMultiply(lhs, rhs)
     }
     
     public static func * <T>(lhs: Vector3i, rhs: T) -> Vector3 where T : BinaryFloatingPoint {
-        Self._operatorMultiply(lhs, Real(rhs))
+        lhs * Real(rhs)
+    }
+    
+    public static func * (lhs: Real, rhs: Vector3i) -> Vector3 {
+        Self._operatorMultiply(rhs, lhs)
     }
     
     public static func * <T>(lhs: T, rhs: Vector3i) -> Vector3 where T : BinaryFloatingPoint {
-        Self._operatorMultiply(rhs, Real(lhs))
+        rhs * Real(lhs)
+    }
+    
+    public static func / (lhs: Vector3i, rhs: Int) -> Vector3i {
+        Self._operatorDivide(lhs, rhs)
     }
     
     public static func / <T>(lhs: Vector3i, rhs: T) -> Vector3i where T : BinaryInteger {
-        Self._operatorDivide(lhs, Int(rhs))
+        lhs / Int(rhs)
+    }
+    
+    public static func / (lhs: Vector3i, rhs: Real) -> Vector3 {
+        Self._operatorDivide(lhs, rhs)
     }
     
     public static func / <T>(lhs: Vector3i, rhs: T) -> Vector3 where T : BinaryFloatingPoint {
-        Self._operatorDivide(lhs, Real(rhs))
+        lhs / Real(rhs)
+    }
+    
+    public static func % (lhs: Vector3i, rhs: Int) -> Vector3i {
+        Self._operatorModule(lhs, rhs)
     }
     
     public static func % <T>(lhs: Vector3i, rhs: T) -> Vector3i where T : BinaryInteger {
-        Self._operatorModule(lhs, Int(rhs))
+        lhs % Int(rhs)
     }
     
     public static func < (lhs: Vector3i, rhs: Vector3i) -> Bool {
@@ -141,21 +167,35 @@ extension Vector3i {
     }
 }
 
-// MARK: - Extensions
-
 extension Vector3i: Equatable, Hashable {}
 
 extension Vector3i: AdditiveArithmetic, Comparable {}
 
 extension Vector3i: Codable {
     public func encode(to encoder: Encoder) throws {
-        try [x, y, z].encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(x)
+        try unkeyedContainer.encode(y)
+        try unkeyedContainer.encode(z)
     }
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        x = try container.decode(Int.self)
-        y = try container.decode(Int.self)
-        z = try container.decode(Int.self)
+        let x = try container.decode(Int.self)
+        let y = try container.decode(Int.self)
+        let z = try container.decode(Int.self)
+        self.init(x: x, y: y, z: z)
+    }
+}
+
+extension Vector3i: CustomStringConvertible {
+    public var description: String {
+        "(\(x), \(y), \(z))"
+    }
+}
+
+extension Vector3i: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "Vector3i(x: \(x), y: \(y), z: \(z))"
     }
 }

@@ -34,14 +34,6 @@ extension GeneratedFile {
                 try builtinClass.methodsSyntax()
                     .with(\.trailingTrivia, .newlines(2))
             }
-            
-            """
-            extension \(raw: builtinClass.name.syntax()): CustomDebugStringConvertible {
-                public var debugDescription: String {
-                    Variant(self).debugDescription
-                }
-            }
-            """
         }
     }
 }

@@ -4,12 +4,10 @@ import GodotExtensionHeaders
 public struct RID {}
 
 extension RID {
+    // MARK: Constructors
+    
     public init() {
         self = Self._constructor()
-    }
-    
-    public init(_ value: RID) {
-        self = value
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {
@@ -22,12 +20,6 @@ extension RID {
         Self._constructor_rid(from: self)
     }
     
-    // MARK: Operators
-    
-    public static func == (lhs: RID, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
-    
     // MARK: Methods & variables
     
     public var isValid: Bool {
@@ -38,8 +30,6 @@ extension RID {
         _id()
     }
 }
-
-// MARK: - Extensions
 
 extension RID: Equatable {
     public static func == (lhs: RID, rhs: RID) -> Bool {
@@ -62,5 +52,17 @@ extension RID: Comparable {
     
     public static func >= (lhs: RID, rhs: RID) -> Bool {
         Self._operatorGreaterEqual(lhs, rhs)
+    }
+}
+
+extension RID: CustomStringConvertible {
+    public var description: String {
+        String(describing: id)
+    }
+}
+
+extension RID: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "RID(\(String(describing: id)))"
     }
 }

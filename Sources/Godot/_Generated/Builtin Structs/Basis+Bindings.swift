@@ -649,8 +649,3 @@ extension Basis {
     }
 
     }
-extension Basis: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

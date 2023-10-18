@@ -535,8 +535,3 @@ extension Rect2 {
     }
 
     }
-extension Rect2: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

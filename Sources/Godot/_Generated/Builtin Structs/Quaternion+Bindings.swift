@@ -786,8 +786,3 @@ extension Quaternion {
     }
 
     }
-extension Quaternion: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

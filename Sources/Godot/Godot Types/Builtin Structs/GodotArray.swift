@@ -4,12 +4,10 @@ import GodotExtensionHeaders
 public struct GodotArray {}
 
 extension GodotArray {
+    // MARK: Constructors
+    
     public init() {
         self = Self._constructor()
-    }
-    
-    public init(_ value: GodotArray) {
-        self = value
     }
     
     public init(byteArray: PackedByteArray) {
@@ -57,15 +55,7 @@ extension GodotArray {
     internal mutating func withCopiedOpaque() -> Self {
         self._duplicate(deep: true)
     }
-    
-    // MARK: Operators
-    
-    public static func == (lhs: GodotArray, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
 }
-
-// MARK: - Extensions
 
 extension GodotArray: Sequence {}
 
@@ -140,5 +130,17 @@ extension GodotArray: Hashable {
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(_hash())
+    }
+}
+
+extension GodotArray: CustomStringConvertible {
+    public var description: String {
+        "[\(self.map { String(reflecting: $0) }.joined(separator: ", "))]"
+    }
+}
+
+extension GodotArray: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "[\(self.map { String(reflecting: $0) }.joined(separator: ", "))]"
     }
 }

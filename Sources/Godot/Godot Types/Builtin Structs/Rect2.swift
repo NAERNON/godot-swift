@@ -10,6 +10,8 @@ public struct Rect2 {
 }
 
 extension Rect2 {
+    // MARK: Constructors
+    
     public init<T>(x: T, y: T, width: T, height: T) where T : BinaryFloatingPoint {
         self.init(position: Vector2(x: x, y: y),
                   size: Vector2(x: width, y: height))
@@ -29,10 +31,6 @@ extension Rect2 {
     }
     
     // MARK: Operators
-    
-    public static func == (lhs: Rect2, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
     
     public static func * (lhs: Rect2, rhs: Transform2D) -> Rect2 {
         Self._operatorMultiply(lhs, rhs)
@@ -101,18 +99,30 @@ extension Rect2 {
     }
 }
 
-// MARK: - Extensions
-
 extension Rect2: Equatable, Hashable {}
 
 extension Rect2: Codable {
     public func encode(to encoder: Encoder) throws {
-        try [position, size].encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(position)
+        try unkeyedContainer.encode(size)
     }
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
         position = try container.decode(Vector2.self)
         size = try container.decode(Vector2.self)
+    }
+}
+
+extension Rect2: CustomStringConvertible {
+    public var description: String {
+        "(\(position.x), \(position.y), \(size.x), \(size.y))"
+    }
+}
+
+extension Rect2: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "Rect2(x: \(position.x), y: \(position.y), width: \(size.x), height: \(size.y))"
     }
 }

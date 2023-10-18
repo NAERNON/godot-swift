@@ -4,12 +4,10 @@ import GodotExtensionHeaders
 public struct PackedFloat32Array {}
 
 extension PackedFloat32Array {
+    // MARK: Constructors
+    
     public init() {
         self = Self._constructor()
-    }
-    
-    public init(_ value: PackedFloat32Array) {
-        self = value
     }
     
     public init(array: GodotArray) {
@@ -26,20 +24,12 @@ extension PackedFloat32Array {
         self._duplicate()
     }
     
-    // MARK: Operators
-    
-    public static func == (lhs: PackedFloat32Array, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
-    
     // MARK: Methods & variables
     
     public func byteArray() -> PackedByteArray {
         _toByteArray()
     }
 }
-
-// MARK: - Extensions
 
 extension PackedFloat32Array: Sequence {}
 
@@ -111,10 +101,28 @@ extension PackedFloat32Array: Equatable {
 
 extension PackedFloat32Array: Codable {
     public func encode(to encoder: Encoder) throws {
-        try self.map { $0 }.encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(contentsOf: self)
     }
     
     public init(from decoder: Decoder) throws {
-        self.init(try Swift.Array<Element>(from: decoder))
+        var container = try decoder.unkeyedContainer()
+        var array = Self()
+        while let element = try container.decodeIfPresent(Self.Element.self) {
+            array.append(element)
+        }
+        self = array
+    }
+}
+
+extension PackedFloat32Array: CustomStringConvertible {
+    public var description: String {
+        "[\(self.map { String(reflecting: $0) }.joined(separator: ", "))]"
+    }
+}
+
+extension PackedFloat32Array: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "[\(self.map { String(reflecting: $0) }.joined(separator: ", "))]"
     }
 }

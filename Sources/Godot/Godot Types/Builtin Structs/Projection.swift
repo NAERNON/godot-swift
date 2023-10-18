@@ -14,6 +14,8 @@ public struct Projection {
 }
 
 extension Projection {
+    // MARK: Constructors
+    
     public init<T>(xAxisX: T, xAxisY: T, xAxisZ: T, xAxisW: T,
                    yAxisX: T, yAxisY: T, yAxisZ: T, yAxisW: T,
                    zAxisX: T, zAxisY: T, zAxisZ: T, zAxisW: T,
@@ -43,10 +45,6 @@ extension Projection {
     }
     
     // MARK: Operators
-    
-    public static func == (lhs: Projection, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
     
     public static func * (lhs: Projection, rhs: Vector4) -> Vector4 {
         Self._operatorMultiply(lhs, rhs)
@@ -214,20 +212,35 @@ extension Projection {
     }
 }
 
-// MARK: - Extensions
-
 extension Projection: Equatable, Hashable {}
 
 extension Projection: Codable {
     public func encode(to encoder: Encoder) throws {
-        try [xAxis, yAxis, zAxis, wAxis].encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(xAxis)
+        try unkeyedContainer.encode(yAxis)
+        try unkeyedContainer.encode(zAxis)
+        try unkeyedContainer.encode(wAxis)
     }
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        xAxis = try container.decode(Vector4.self)
-        yAxis = try container.decode(Vector4.self)
-        zAxis = try container.decode(Vector4.self)
-        wAxis = try container.decode(Vector4.self)
+        let xAxis = try container.decode(Vector4.self)
+        let yAxis = try container.decode(Vector4.self)
+        let zAxis = try container.decode(Vector4.self)
+        let wAxis = try container.decode(Vector4.self)
+        self.init(xAxis: xAxis, yAxis: yAxis, zAxis: zAxis, wAxis: wAxis)
+    }
+}
+
+extension Projection: CustomStringConvertible {
+    public var description: String {
+        "(x: \(xAxis), y: \(yAxis), z: \(zAxis), w: \(wAxis))"
+    }
+}
+
+extension Projection: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "Projection(x: \(xAxis), y: \(yAxis), z: \(zAxis), w: \(wAxis))"
     }
 }

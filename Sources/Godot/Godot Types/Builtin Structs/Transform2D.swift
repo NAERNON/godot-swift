@@ -12,6 +12,8 @@ public struct Transform2D {
 }
 
 extension Transform2D {
+    // MARK: Constructors
+    
     public init() {
         self.init(xAxis: Vector2(), yAxis: Vector2(), origin: Vector2())
     }
@@ -32,16 +34,29 @@ extension Transform2D {
                   origin: Vector2(x: originX, y: originY))
     }
     
+    public init(rotation: Real, position: Vector2) {
+        self = Self._constructor_float_vector2(rotation: rotation, position: position)
+    }
+    
     public init<T>(rotation: T, position: Vector2) where T : BinaryFloatingPoint {
-        self = Self._constructor_float_vector2(rotation: Real(rotation), position: position)
+        self.init(rotation: Real(rotation), position: position)
     }
     
     public init<T>(rotation: T, position: Vector2) where T : BinaryInteger {
-        self = Self._constructor_float_vector2(rotation: Real(rotation), position: position)
+        self.init(rotation: Real(rotation), position: position)
+    }
+    
+    public init(rotation: Real, scale: Vector2, skew: Real, position: Vector2) {
+        self = Self._constructor_float_vector2_float_vector2(
+            rotation: rotation,
+            scale: scale,
+            skew: skew,
+            position: position
+        )
     }
     
     public init<T>(rotation: T, scale: Vector2, skew: T, position: Vector2) where T : BinaryFloatingPoint {
-        self = Self._constructor_float_vector2_float_vector2(
+        self.init(
             rotation: Real(rotation),
             scale: scale,
             skew: Real(skew),
@@ -50,7 +65,7 @@ extension Transform2D {
     }
     
     public init<T>(rotation: T, scale: Vector2, skew: T, position: Vector2) where T : BinaryInteger {
-        self = Self._constructor_float_vector2_float_vector2(
+        self.init(
             rotation: Real(rotation),
             scale: scale,
             skew: Real(skew),
@@ -60,20 +75,32 @@ extension Transform2D {
     
     // MARK: Operators
     
-    public static func == (lhs: Transform2D, rhs: some ConvertibleToVariant) -> Bool {
-        Self._operatorEqual(lhs, rhs)
+    public static func * (lhs: Transform2D, rhs: Int) -> Transform2D {
+        Self._operatorMultiply(lhs, rhs)
     }
     
     public static func * <T>(lhs: Transform2D, rhs: T) -> Transform2D where T : BinaryInteger {
-        Self._operatorMultiply(lhs, Int(rhs))
+        lhs * Int(rhs)
+    }
+    
+    public static func * (lhs: Int, rhs: Transform2D) -> Transform2D {
+        Self._operatorMultiply(rhs, lhs)
     }
     
     public static func * <T>(lhs: T, rhs: Transform2D) -> Transform2D where T : BinaryInteger {
-        Self._operatorMultiply(rhs, Int(lhs))
+        rhs * Int(lhs)
+    }
+    
+    public static func * (lhs: Transform2D, rhs: Real) -> Transform2D {
+        Self._operatorMultiply(lhs, rhs)
     }
     
     public static func * <T>(lhs: Transform2D, rhs: T) -> Transform2D where T : BinaryFloatingPoint {
-        Self._operatorMultiply(lhs, Real(rhs))
+        lhs * Real(rhs)
+    }
+    
+    public static func * (lhs: Real, rhs: Transform2D) -> Transform2D {
+        rhs * Real(lhs)
     }
     
     public static func * <T>(lhs: T, rhs: Transform2D) -> Transform2D where T : BinaryFloatingPoint {
@@ -175,19 +202,33 @@ extension Transform2D {
     }
 }
 
-// MARK: - Extensions
-
 extension Transform2D: Equatable, Hashable {}
 
 extension Transform2D: Codable {
     public func encode(to encoder: Encoder) throws {
-        try [xAxis, yAxis, origin].encode(to: encoder)
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(xAxis)
+        try unkeyedContainer.encode(yAxis)
+        try unkeyedContainer.encode(origin)
     }
     
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        xAxis = try container.decode(Vector2.self)
-        yAxis = try container.decode(Vector2.self)
-        origin = try container.decode(Vector2.self)
+        let xAxis = try container.decode(Vector2.self)
+        let yAxis = try container.decode(Vector2.self)
+        let origin = try container.decode(Vector2.self)
+        self.init(xAxis: xAxis, yAxis: yAxis, origin: origin)
+    }
+}
+
+extension Transform2D: CustomStringConvertible {
+    public var description: String {
+        "(origin: \(origin), x: \(xAxis), y: \(yAxis))"
+    }
+}
+
+extension Transform2D: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "Transform2D(origin: \(origin), x: \(xAxis), y: \(yAxis))"
     }
 }

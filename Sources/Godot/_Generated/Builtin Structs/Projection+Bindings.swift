@@ -794,8 +794,3 @@ extension Projection {
     }
 
     }
-extension Projection: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}

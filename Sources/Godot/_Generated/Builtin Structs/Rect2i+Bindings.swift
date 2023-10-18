@@ -482,8 +482,3 @@ extension Rect2i {
     }
 
     }
-extension Rect2i: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        Variant(self).debugDescription
-    }
-}
