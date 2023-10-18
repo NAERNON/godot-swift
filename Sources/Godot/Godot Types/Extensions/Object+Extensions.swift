@@ -75,3 +75,15 @@ extension Object: Equatable {
         lhs.instanceId() == rhs.instanceId()
     }
 }
+
+extension Object: CustomStringConvertible {
+    public var description: String {
+        "\(Self.self)<\(instanceId())>"
+    }
+}
+
+extension Object: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "\(Self.self)<\(instanceId())>"
+    }
+}
