@@ -387,6 +387,56 @@ open class TreeItem: Object {
         return Godot.TextServer.AutowrapMode(rawValue: __temporary)!
     }
 
+    private static var __method_binding_set_text_overrun_behavior: GDExtensionMethodBindPtr = {
+        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_text_overrun_behavior").withUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1940772195)!
+        }
+        }
+    }()
+    public func setTextOverrunBehavior(column: Int32, overrunBehavior: Godot.TextServer.OverrunBehavior) {
+        withUnsafePointer(to: column) { (__ptr_column) in
+            withUnsafePointer(to: overrunBehavior) { (__ptr_overrunBehavior) in
+                withUnsafeArgumentPackPointer(__ptr_column, __ptr_overrunBehavior) { (__accessPtr) in
+                    `self`.withUnsafeRawPointer { (__ptr_self) in
+                        gdextension_interface_object_method_bind_ptrcall(
+                            Self.__method_binding_set_text_overrun_behavior,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    private static var __method_binding_get_text_overrun_behavior: GDExtensionMethodBindPtr = {
+        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_text_overrun_behavior").withUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3782727860)!
+        }
+        }
+    }()
+    public func textOverrunBehavior(column: Int32) -> Godot.TextServer.OverrunBehavior {
+        var __temporary = Godot.TextServer.OverrunBehavior.RawValue(0)
+        withUnsafePointer(to: column) { (__ptr_column) in
+            withUnsafeArgumentPackPointer(__ptr_column) { (__accessPtr) in
+                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
+                    `self`.withUnsafeRawPointer { (__ptr_self) in
+                        gdextension_interface_object_method_bind_ptrcall(
+                            Self.__method_binding_get_text_overrun_behavior,
+                            __ptr_self,
+                            __accessPtr,
+                            __ptr___temporary
+                        )
+                    }
+                }
+            }
+        }
+        return Godot.TextServer.OverrunBehavior(rawValue: __temporary)!
+    }
+
     private static var __method_binding_set_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_structured_text_bidi_override").withUnsafeRawPointer { __ptr__method_name in

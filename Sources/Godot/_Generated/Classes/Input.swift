@@ -544,6 +544,34 @@ open class Input: Object {
         return __temporary
     }
 
+    private static var __method_binding_should_ignore_device: GDExtensionMethodBindPtr = {
+        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "should_ignore_device").withUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2522259332)!
+        }
+        }
+    }()
+    public func shouldIgnoreDevice(vendorId: Int32, productId: Int32) -> Bool {
+        var __temporary = Bool()
+        withUnsafePointer(to: vendorId) { (__ptr_vendorId) in
+            withUnsafePointer(to: productId) { (__ptr_productId) in
+                withUnsafeArgumentPackPointer(__ptr_vendorId, __ptr_productId) { (__accessPtr) in
+                    withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
+                        `self`.withUnsafeRawPointer { (__ptr_self) in
+                            gdextension_interface_object_method_bind_ptrcall(
+                                Self.__method_binding_should_ignore_device,
+                                __ptr_self,
+                                __accessPtr,
+                                __ptr___temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
+        return __temporary
+    }
+
     private static var __method_binding_get_connected_joypads: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connected_joypads").withUnsafeRawPointer { __ptr__method_name in

@@ -28,6 +28,7 @@ open class LightmapGI: VisualInstance3D {
         case meshesInvalid = 6
         case cantCreateImage = 7
         case userAborted = 8
+        case textureSizeTooSmall = 9
     }
     public enum EnvironmentMode: UInt32 {
         case disabled = 0

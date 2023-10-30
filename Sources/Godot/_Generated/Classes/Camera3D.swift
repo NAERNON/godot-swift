@@ -364,6 +364,28 @@ open class Camera3D: Node3D {
         return __temporary
     }
 
+    private static var __method_binding_get_camera_projection: GDExtensionMethodBindPtr = {
+        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_camera_projection").withUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2910717950)!
+        }
+        }
+    }()
+    public func cameraProjection() -> Godot.Projection {
+        var __temporary = Godot.Projection()
+        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
+            `self`.withUnsafeRawPointer { (__ptr_self) in
+                gdextension_interface_object_method_bind_ptrcall(
+                    Self.__method_binding_get_camera_projection,
+                    __ptr_self,
+                    nil,
+                    __ptr___temporary
+                )
+            }
+        }
+        return __temporary
+    }
+
     private static var __method_binding_get_fov: GDExtensionMethodBindPtr = {
         _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fov").withUnsafeRawPointer { __ptr__method_name in

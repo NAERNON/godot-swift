@@ -402,6 +402,7 @@ internal extension ClassRegister {
             OpenXRHand._$exposeToGodot()
             OpenXRIPBinding._$exposeToGodot()
             OpenXRInteractionProfile._$exposeToGodot()
+            OpenXRInteractionProfileMetadata._$exposeToGodot()
             OpenXRInterface._$exposeToGodot()
             OptimizedTranslation._$exposeToGodot()
             OptionButton._$exposeToGodot()
