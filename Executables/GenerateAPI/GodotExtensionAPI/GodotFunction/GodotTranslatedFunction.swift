@@ -23,7 +23,9 @@ struct GodotTranslatedFunction<Source>: GodotFunction where Source : GodotFuncti
         
         return generate_api.translatedFunction(
             name: functionName,
-            parameters: (source.arguments ?? []).map { .init(name: $0.name, label: nil, isLabelHidden: false) }
+            parameters: (source.arguments ?? []).map { .init(name: $0.name,
+                                                             label: nil,
+                                                             isLabelHidden: $0.isLabelHidden) }
         )
     }
     
@@ -118,7 +120,7 @@ private func translatedFunction(
         let translatedLabel = NamingConvention.camel.recompose(decomposedParameterLabel)
         let translatedName = NamingConvention.camel.recompose(decomposedParameterName)
         
-        var isLabelHidden = false
+        var isLabelHidden = parameter.isLabelHidden
         
         // We check that the name of the parameter is not redundant with the function name
         if index == 0 {

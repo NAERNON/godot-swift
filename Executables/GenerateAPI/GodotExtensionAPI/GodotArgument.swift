@@ -27,11 +27,12 @@ struct GodotArgument: Decodable {
         }
     }
     
-    enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case name
         case type
         case meta
         case defaultValue
+        case labelHidden = "(swift)labelHidden"
     }
     
     init(from decoder: Decoder) throws {
@@ -43,5 +44,9 @@ struct GodotArgument: Decodable {
             meta: try container.decodeIfPresent(GodotTypeMetadata.self, forKey: .meta),
             defaultValue: try container.decodeIfPresent(GodotConstant.self, forKey: .defaultValue)
         )
+        
+        if let isLabelHidden = try container.decodeIfPresent(Bool.self, forKey: .labelHidden) {
+            self.isLabelHidden = isLabelHidden
+        }
     }
 }

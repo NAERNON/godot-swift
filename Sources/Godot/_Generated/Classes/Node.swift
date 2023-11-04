@@ -200,7 +200,7 @@ open class Node: Object {
         }
         }
     }()
-    public func addChild(node: Godot.Node?, forceReadableName: Bool = false, `internal`: Godot.Node.InternalMode = Node.InternalMode(rawValue: 0)!) {
+    public func addChild(_ node: Godot.Node?, forceReadableName: Bool = false, `internal`: Godot.Node.InternalMode = Node.InternalMode(rawValue: 0)!) {
         node.withUnsafeRawPointer { (__ptr_node) in
             withUnsafePointer(to: __ptr_node) { (_ptr___ptr_node) in
                 withUnsafePointer(to: forceReadableName) { (__ptr_forceReadableName) in
@@ -228,7 +228,7 @@ open class Node: Object {
         }
         }
     }()
-    public func removeChild(node: Godot.Node?) {
+    public func removeChild(_ node: Godot.Node?) {
         node.withUnsafeRawPointer { (__ptr_node) in
             withUnsafePointer(to: __ptr_node) { (_ptr___ptr_node) in
                 withUnsafeArgumentPackPointer(_ptr___ptr_node) { (__accessPtr) in
