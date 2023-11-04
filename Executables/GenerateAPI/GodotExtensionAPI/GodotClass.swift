@@ -425,6 +425,9 @@ struct GodotClass: Decodable {
         }
         
         propertyName = backticksKeyword(propertyName.translated(from: .snake, to: .camel))
+        if propertyName == "description" {
+            propertyName = "godotDescription"
+        }
         
         let getterParameter: String?
         if let index = property.index,

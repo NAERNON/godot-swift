@@ -104,7 +104,7 @@ open class VisualShaderNodeComment: VisualShaderNodeResizableBase {
         }
     }
 
-    public var description: Godot.GodotString {
+    public var godotDescription: Godot.GodotString {
         get {
             __getDescription()
         }
