@@ -2,20 +2,20 @@ import GodotExtensionHeaders
 
 /// An object that enables the registration of custom Godot classes.
 ///
-/// Do not use `ClassRegister` directly.
+/// Do not use `ClassRegistrar` directly.
 /// See <doc:CreatingGodotBridge> to learn how to expose custom classes to Godot.
 ///
-/// Before registering any type, the `ClassRegister` should be initialized with a level
+/// Before registering any type, the `ClassRegistrar` should be initialized with a level
 /// using the `initialize(level:)` function.
 ///
-/// Use the `shared` singleton since it is the only `ClassRegister` available.
-public final class ClassRegister {
+/// Use the `shared` singleton since it is the only `ClassRegistrar` available.
+public final class ClassRegistrar {
     // MARK: Properties
     
-    /// The shared `ClassRegister`.
+    /// The shared `ClassRegistrar`.
     ///
-    /// This is the only `ClassRegister` available.
-    internal static let shared = ClassRegister()
+    /// This is the only `ClassRegistrar` available.
+    internal static let shared = ClassRegistrar()
     
     /// The current Godot initialization level.
     public private(set) var currentLevel: GodotInitializationLevel?
@@ -198,7 +198,7 @@ public final class ClassRegister {
             unreference_func: nil,
             create_instance_func: classBinding.createInstanceFunction, // This one is mandatory.
             free_instance_func: classBinding.freeInstanceFunction, // This one is mandatory.
-            get_virtual_func: { ClassRegister.virtualFuncCall(fromUserDataPtr: $0, methodNamePtr: $1) },
+            get_virtual_func: { ClassRegistrar.virtualFuncCall(fromUserDataPtr: $0, methodNamePtr: $1) },
             get_rid_func: nil,
             class_userdata: Unmanaged.passUnretained(classBinding).toOpaque()
         )

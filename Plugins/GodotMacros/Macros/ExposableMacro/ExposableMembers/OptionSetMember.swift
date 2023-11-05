@@ -31,7 +31,7 @@ struct OptionSetMember: ExposableMember {
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         return """
-        Godot.GodotExtension.classRegister.registerEnumOrOptionSet(
+        Godot.GodotExtension.classRegistrar.registerEnumOrOptionSet(
             named: \(literal: structDeclSyntax.name.trimmedDescription),
             values: \(raw: structDeclSyntax.name.trimmedDescription).godotExposableValues(),
             isOptionSet: true,

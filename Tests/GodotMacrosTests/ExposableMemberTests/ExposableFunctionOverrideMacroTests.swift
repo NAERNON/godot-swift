@@ -23,7 +23,7 @@ final class ExposableFunctionOverrideMacroTests: XCTestCase {
             public override func myFunction()
             
             private static func _$godotRegister_myFunction() {
-                Godot.GodotExtension.classRegister.registerFunctionOverride(
+                Godot.GodotExtension.classRegistrar.registerFunctionOverride(
                     named: "myFunction",
                     insideType: self
                 )

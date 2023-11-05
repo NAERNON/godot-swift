@@ -25,7 +25,7 @@ final class ExposableEmitterMacroTests: XCTestCase {
             public struct Jumped {}
             
             private static func _$godotRegister_Jumped() {
-                Godot.GodotExtension.classRegister.registerSignal(
+                Godot.GodotExtension.classRegistrar.registerSignal(
                     named: Jumped.signalName,
                     insideType: self,
                     argumentParameters:  [
@@ -55,7 +55,7 @@ final class ExposableEmitterMacroTests: XCTestCase {
             public struct Jumped {}
             
             private static func _$godotRegister_Jumped() {
-                Godot.GodotExtension.classRegister.registerSignal(
+                Godot.GodotExtension.classRegistrar.registerSignal(
                     named: Jumped.signalName,
                     insideType: self,
                     argumentParameters:  [
@@ -85,7 +85,7 @@ final class ExposableEmitterMacroTests: XCTestCase {
             public struct Jumped {}
             
             private static func _$godotRegister_Jumped() {
-                Godot.GodotExtension.classRegister.registerSignal(
+                Godot.GodotExtension.classRegistrar.registerSignal(
                     named: Jumped.signalName,
                     insideType: self,
                     argumentParameters:  [

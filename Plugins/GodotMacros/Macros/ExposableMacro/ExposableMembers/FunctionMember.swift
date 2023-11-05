@@ -131,7 +131,7 @@ struct FunctionMember: ExposableMember {
         }
         
         let functionCallSyntax = ExprSyntax("""
-        Godot.GodotExtension.classRegister.registerFunction(
+        Godot.GodotExtension.classRegistrar.registerFunction(
             named: \(literal: functionName),
             insideType: self,
             argumentParameters: [

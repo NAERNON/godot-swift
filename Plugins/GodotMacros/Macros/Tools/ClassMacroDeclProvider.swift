@@ -120,7 +120,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             public required init() {
                 extensionObjectPtr = Self.makeNewExtensionObjectPtr()
                 
-                assert(GodotExtension.classRegister.classNameIsEquivalentToType(classType: Self.self),
+                assert(GodotExtension.classRegistrar.classNameIsEquivalentToType(classType: Self.self),
                     "Trying to instantiate a class not marked '@Exposable'")
                 
                 postInit()
@@ -240,11 +240,11 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
                 """
-                GodotExtension.classRegister.registerBaseGodotClass(ofType: self)
+                GodotExtension.classRegistrar.registerBaseGodotClass(ofType: self)
                 """
             case .custom:
                 """
-                let classBinding = Godot.GodotExtension.classRegister.registerCustomClass(
+                let classBinding = Godot.GodotExtension.classRegistrar.registerCustomClass(
                     ofType: self,
                     superclassType: \(raw: superclassName ?? "").self
                 ) { instancePtr, isValid, out in

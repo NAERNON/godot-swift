@@ -1,5 +1,5 @@
 
-extension ClassRegister {
+extension ClassRegistrar {
     /// A representation of a function parameter.
     ///
     /// This structure is used to register functions.
@@ -75,8 +75,8 @@ extension ClassRegister {
         // MARK: PropertyInfo
         
         /// Creates a `PropertyInfo` using the information of the parameter.
-        var propertyInfo: ClassRegister.PropertyInfo {
-            ClassRegister.PropertyInfo(
+        var propertyInfo: ClassRegistrar.PropertyInfo {
+            ClassRegistrar.PropertyInfo(
                 variantType: variantType,
                 name: name,
                 defaultValue: defaultValue,

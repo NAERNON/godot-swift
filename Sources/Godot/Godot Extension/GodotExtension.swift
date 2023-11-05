@@ -34,7 +34,7 @@ public enum GodotExtension {
     private(set) static var initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>!
     
     /// The class register used to register custom classes and expose them to the Godot editor.
-    public static let classRegister = ClassRegister.shared
+    public static let classRegistrar = ClassRegistrar.shared
     
     // MARK: Initialize
     
@@ -88,8 +88,8 @@ public enum GodotExtension {
 private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtensionInitializationLevel) {
     let level = GodotInitializationLevel(level)
     
-    GodotExtension.classRegister.initialize(level: level)
-    GodotExtension.classRegister.registerGodotClasses(forLevel: level)
+    GodotExtension.classRegistrar.initialize(level: level)
+    GodotExtension.classRegistrar.registerGodotClasses(forLevel: level)
     
     if level == .scene {
         for object in GodotExtension.bridge.exposedClasses {
@@ -103,6 +103,6 @@ private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtens
 private func deinitializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtensionInitializationLevel) {
     let level = GodotInitializationLevel(level)
     
-    GodotExtension.classRegister.deinitialize(level: level)
+    GodotExtension.classRegistrar.deinitialize(level: level)
     GodotExtension.bridge.deinitialize(level: level)
 }

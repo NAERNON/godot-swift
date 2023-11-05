@@ -1,5 +1,5 @@
 
-extension ClassRegister {
+extension ClassRegistrar {
     public struct EnumBinding {
         public let name: GodotStringName
         

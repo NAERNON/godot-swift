@@ -1,6 +1,6 @@
 import GodotExtensionHeaders
 
-extension ClassRegister {
+extension ClassRegistrar {
     public final class FunctionBinding {
         struct PropertiesDataPointer<T> {
             let returnValue: UnsafeMutablePointer<T>

@@ -50,7 +50,7 @@ struct EmitterMember: ExposableMember {
         }
         
         return """
-        Godot.GodotExtension.classRegister.registerSignal(
+        Godot.GodotExtension.classRegistrar.registerSignal(
             named: \(raw: structDeclSyntax.name.trimmedDescription).signalName,
             insideType: self,
             argumentParameters:  [

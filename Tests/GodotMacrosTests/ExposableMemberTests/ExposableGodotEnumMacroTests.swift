@@ -25,7 +25,7 @@ final class ExposableGodotEnumMacroTests: XCTestCase {
             public enum MyEnum {}
             
             private static func _$godotRegister_MyEnum() {
-                Godot.GodotExtension.classRegister.registerEnumOrOptionSet(
+                Godot.GodotExtension.classRegistrar.registerEnumOrOptionSet(
                     named: "MyEnum",
                     values: MyEnum.godotExposableValues(),
                     isOptionSet: false,

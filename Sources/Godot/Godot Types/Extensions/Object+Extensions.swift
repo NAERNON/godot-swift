@@ -11,7 +11,7 @@ extension Object {
             return nil
         }
         
-        guard let binding = GodotExtension.classRegister.binding(forClassNamed: className) else {
+        guard let binding = GodotExtension.classRegistrar.binding(forClassNamed: className) else {
             gdDebugPrintError("No class binding found for class \(className)")
             return nil
         }

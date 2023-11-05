@@ -2,7 +2,7 @@
 // THIS FILE IS GENERATED. EDITS WILL BE LOST.
 //
 
-internal extension ClassRegister {
+internal extension ClassRegistrar {
     func registerGodotClasses(forLevel level: GodotInitializationLevel) {
         switch level {
         case .core:

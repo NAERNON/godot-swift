@@ -1,5 +1,5 @@
 
-extension ClassRegister {
+extension ClassRegistrar {
     public struct VariableBinding {
         public let name: GodotStringName
         

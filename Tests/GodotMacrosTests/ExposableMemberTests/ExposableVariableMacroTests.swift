@@ -23,7 +23,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             public var myVariable: Int = 0
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
@@ -55,7 +55,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             open var myVariable: Int = 0
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
@@ -87,7 +87,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             public var myVariable = 0
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
@@ -119,7 +119,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             public var myVariable: SomeType
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
@@ -151,7 +151,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             public let myVariable: Int = 0
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
@@ -180,7 +180,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             public let myVariable = 0
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
@@ -213,7 +213,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             }
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
@@ -246,7 +246,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             }
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
@@ -281,7 +281,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             }
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
@@ -313,7 +313,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             public private(set) var myVariable: Int = 0
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
@@ -342,7 +342,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             public fileprivate(set) var myVariable: Int = 0
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
@@ -370,7 +370,7 @@ final class ExposableVariableMacroTests: XCTestCase {
             public internal(set) var myVariable: Int = 0
             
             private static func _$godotRegister_myVariable() {
-                Godot.GodotExtension.classRegister.registerVariable(
+                Godot.GodotExtension.classRegistrar.registerVariable(
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,

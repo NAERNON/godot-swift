@@ -99,5 +99,5 @@ Godot Swift is a set of tools enabling Swift code to be accessible from the Godo
 
 ### Godot extension types
 
-- ``ClassRegister``
+- ``ClassRegistrar``
 - ``GodotExtension``

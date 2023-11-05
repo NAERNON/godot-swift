@@ -1,6 +1,6 @@
 import GodotExtensionHeaders
 
-extension ClassRegister {
+extension ClassRegistrar {
     public class ClassBinding {
         let level: GodotInitializationLevel
         

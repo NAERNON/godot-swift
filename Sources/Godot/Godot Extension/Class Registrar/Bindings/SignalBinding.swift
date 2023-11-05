@@ -1,6 +1,6 @@
 import GodotExtensionHeaders
 
-extension ClassRegister {
+extension ClassRegistrar {
     public struct SignalBinding {
         public let name: GodotStringName
         

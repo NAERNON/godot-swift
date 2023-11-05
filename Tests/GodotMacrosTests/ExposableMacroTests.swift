@@ -50,7 +50,7 @@ final class ExposableMacroTests: XCTestCase {
                 }
             
                 open override class func _$exposeToGodot() {
-                    let classBinding = Godot.GodotExtension.classRegister.registerCustomClass(
+                    let classBinding = Godot.GodotExtension.classRegistrar.registerCustomClass(
                         ofType: self,
                         superclassType: Object.self
                     ) { instancePtr, isValid, out in
@@ -115,7 +115,7 @@ final class ExposableMacroTests: XCTestCase {
                 }
             
                 public override class func _$exposeToGodot() {
-                    let classBinding = Godot.GodotExtension.classRegister.registerCustomClass(
+                    let classBinding = Godot.GodotExtension.classRegistrar.registerCustomClass(
                         ofType: self,
                         superclassType: Object.self
                     ) { instancePtr, isValid, out in

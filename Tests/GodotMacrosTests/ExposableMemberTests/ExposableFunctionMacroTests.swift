@@ -23,7 +23,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
             public func myFunction()
             
             private static func _$godotRegister_myFunction() {
-                Godot.GodotExtension.classRegister.registerFunction(
+                Godot.GodotExtension.classRegistrar.registerFunction(
                     named: "my_function",
                     insideType: self,
                     argumentParameters: [
@@ -57,7 +57,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
             public func myFunction(a: Int)
             
             private static func _$godotRegister_myFunction() {
-                Godot.GodotExtension.classRegister.registerFunction(
+                Godot.GodotExtension.classRegistrar.registerFunction(
                     named: "my_function",
                     insideType: self,
                     argumentParameters: [
@@ -93,7 +93,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
             public func myFunction(_ a: Int)
             
             private static func _$godotRegister_myFunction() {
-                Godot.GodotExtension.classRegister.registerFunction(
+                Godot.GodotExtension.classRegistrar.registerFunction(
                     named: "my_function",
                     insideType: self,
                     argumentParameters: [
@@ -128,7 +128,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
             public func myFunction(with a: Int)
             
             private static func _$godotRegister_myFunction() {
-                Godot.GodotExtension.classRegister.registerFunction(
+                Godot.GodotExtension.classRegistrar.registerFunction(
                     named: "my_function",
                     insideType: self,
                     argumentParameters: [
@@ -164,7 +164,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
             public func myFunction() -> Int
             
             private static func _$godotRegister_myFunction() {
-                Godot.GodotExtension.classRegister.registerFunction(
+                Godot.GodotExtension.classRegistrar.registerFunction(
                     named: "my_function",
                     insideType: self,
                     argumentParameters: [
@@ -200,7 +200,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
             public static func myFunction()
             
             private static func _$godotRegister_myFunction() {
-                Godot.GodotExtension.classRegister.registerFunction(
+                Godot.GodotExtension.classRegistrar.registerFunction(
                     named: "my_function",
                     insideType: self,
                     argumentParameters: [
@@ -234,7 +234,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
             public func myFunction(a: Int = 3)
             
             private static func _$godotRegister_myFunction() {
-                Godot.GodotExtension.classRegister.registerFunction(
+                Godot.GodotExtension.classRegistrar.registerFunction(
                     named: "my_function",
                     insideType: self,
                     argumentParameters: [

@@ -1,6 +1,6 @@
 import GodotExtensionHeaders
 
-extension ClassRegister {
+extension ClassRegistrar {
     struct PropertyInfo {
         let variantType: Variant.RepresentationType
         let name: GodotStringName

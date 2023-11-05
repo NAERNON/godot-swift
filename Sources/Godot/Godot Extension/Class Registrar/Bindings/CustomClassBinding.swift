@@ -1,6 +1,6 @@
 import GodotExtensionHeaders
 
-extension ClassRegister {
+extension ClassRegistrar {
     public class CustomClassBinding: ClassBinding {
         let superclassType: Object.Type
         let superclassName: GodotStringName

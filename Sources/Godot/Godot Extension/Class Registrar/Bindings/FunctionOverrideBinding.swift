@@ -1,6 +1,6 @@
 import GodotExtensionHeaders
 
-extension ClassRegister {
+extension ClassRegistrar {
     public final class FunctionOverrideBinding {
         public enum FunctionCall {
             case virtualFunc(GDExtensionClassCallVirtual)

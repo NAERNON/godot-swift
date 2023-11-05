@@ -33,7 +33,7 @@ struct FunctionOverrideMember: ExposableMember {
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         return ExprSyntax("""
-        Godot.GodotExtension.classRegister.registerFunctionOverride(
+        Godot.GodotExtension.classRegistrar.registerFunctionOverride(
             named: \(literal: functionDeclSyntax.name.trimmedDescription),
             insideType: self
         )

@@ -125,7 +125,7 @@ struct VariableMember: ExposableMember {
         
         if hasSetter {
             return """
-            Godot.GodotExtension.classRegister.registerVariable(
+            Godot.GodotExtension.classRegistrar.registerVariable(
                 named: \(literal: variableName),
                 keyPath: \\.\(raw: swiftVariableName),
                 insideType: self,
@@ -139,7 +139,7 @@ struct VariableMember: ExposableMember {
             """
         } else {
             return """
-            Godot.GodotExtension.classRegister.registerVariable(
+            Godot.GodotExtension.classRegistrar.registerVariable(
                 named: \(literal: variableName),
                 keyPath: \\.\(raw: swiftVariableName),
                 insideType: self,

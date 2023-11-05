@@ -58,7 +58,7 @@ struct EnumMember: ExposableMember {
         }
         
         return """
-        Godot.GodotExtension.classRegister.registerEnumOrOptionSet(
+        Godot.GodotExtension.classRegistrar.registerEnumOrOptionSet(
             named: \(literal: enumDeclSyntax.name.trimmedDescription),
             values: \(raw: enumDeclSyntax.name.trimmedDescription).godotExposableValues(),
             isOptionSet: false,

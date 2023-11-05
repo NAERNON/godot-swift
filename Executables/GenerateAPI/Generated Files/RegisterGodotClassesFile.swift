@@ -3,7 +3,7 @@ import SwiftSyntax
 extension GeneratedFile {
     static func registerGodotClasses(_ extensionAPI: GodotExtensionAPI) -> GeneratedFile {
         .init(path: "RegisterGodotClasses.swift") {
-            try ExtensionDeclSyntax("internal extension ClassRegister") {
+            try ExtensionDeclSyntax("internal extension ClassRegistrar") {
                 try FunctionDeclSyntax("func registerGodotClasses(forLevel level: GodotInitializationLevel)") {
                     """
                     switch level {

@@ -25,7 +25,7 @@ final class ExposableGodotOptionSetMacroTests: XCTestCase {
             public struct MyOptionSet {}
             
             private static func _$godotRegister_MyOptionSet() {
-                Godot.GodotExtension.classRegister.registerEnumOrOptionSet(
+                Godot.GodotExtension.classRegistrar.registerEnumOrOptionSet(
                     named: "MyOptionSet",
                     values: MyOptionSet.godotExposableValues(),
                     isOptionSet: true,
