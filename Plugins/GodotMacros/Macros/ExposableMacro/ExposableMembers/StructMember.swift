@@ -29,7 +29,7 @@ struct StructMember: ExposableMember {
     ) -> ExprSyntax? {
         context.diagnose(Diagnostic(
             node: Syntax(structDeclSyntax.name),
-            message: GodotDiagnostic("'@ExposableMember' cannot be applied to a simple struct")
+            message: GodotDiagnostic("'@ExpositionAvailable' cannot be applied to a simple struct")
         ))
         
         return nil

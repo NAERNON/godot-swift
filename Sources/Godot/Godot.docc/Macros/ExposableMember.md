@@ -1,4 +1,4 @@
-# ``Godot/ExposableMember(_:)``
+# ``Godot/ExpositionAvailable(_:)``
 
 This macro adds exposition support for Godot.
 
@@ -12,10 +12,10 @@ Using this macro on a member requires passing the type of class in which the mac
 
 ```swift
 @Exposable public class Character: Node {
-    @ExposableMember(Character)
+    @ExpositionAvailable(Character)
     public var isSleeping = true
 }
 ```
 
-The macro will create a static method that, once called, registers the member whithin Godot.
+The macro will create a static method that, once called, registers the member within Godot.
 This function is automatically called inside classes marked `@Exposable`.

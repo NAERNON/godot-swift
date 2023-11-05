@@ -7,7 +7,7 @@ import XCTest
 import GodotMacros
 
 private let testMacros: [String: Macro.Type] = [
-    "ExposableMember": ExposableMemberMacro.self,
+    "ExpositionAvailable": ExpositionAvailableMacro.self,
 ]
 #endif
 
@@ -16,7 +16,7 @@ final class ExposableFunctionOverrideMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public override func myFunction()
             """,
             expandedSource: """

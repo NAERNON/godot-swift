@@ -29,13 +29,13 @@ extension ExposableMember {
         "_$godotRegister_" + exposableMemberIdentifier
     }
     
-    var hasExposableMemberAttribute: Bool {
+    var hasExpositionAvailableAttribute: Bool {
         guard let attributes else {
             return false
         }
         
         return attributes.contains(
-            where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "ExposableMember" }
+            where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "ExpositionAvailable" }
         )
     }
     

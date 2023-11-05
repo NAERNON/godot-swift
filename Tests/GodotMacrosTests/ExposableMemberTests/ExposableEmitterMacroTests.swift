@@ -7,7 +7,7 @@ import XCTest
 import GodotMacros
 
 private let testMacros: [String: Macro.Type] = [
-    "ExposableMember": ExposableMemberMacro.self,
+    "ExpositionAvailable": ExpositionAvailableMacro.self,
 ]
 #endif
 
@@ -16,7 +16,7 @@ final class ExposableEmitterMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             @Emitter
             public struct Jumped {}
             """,
@@ -46,7 +46,7 @@ final class ExposableEmitterMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             @Emitter(args: ("height", Double))
             public struct Jumped {}
             """,
@@ -76,7 +76,7 @@ final class ExposableEmitterMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             @Emitter(args: ("height", Double), ("jumpDistance", Int))
             public struct Jumped {}
             """,

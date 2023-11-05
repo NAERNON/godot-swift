@@ -29,7 +29,7 @@ struct ClassMember: ExposableMember {
     ) -> ExprSyntax? {
         context.diagnose(Diagnostic(
             node: Syntax(classDeclSyntax.name),
-            message: GodotDiagnostic("'@ExposableMember' cannot be applied to a class")
+            message: GodotDiagnostic("'@ExpositionAvailable' cannot be applied to a class")
         ))
         
         return nil

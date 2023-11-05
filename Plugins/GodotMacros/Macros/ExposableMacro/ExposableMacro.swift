@@ -65,11 +65,11 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro {
     ) throws -> [AttributeSyntax] {
         guard let classDecl = declaration.as(ClassDeclSyntax.self),
               let exposableMember = member.exposableMember(),
-              !exposableMember.hasExposableMemberAttribute,
+              !exposableMember.hasExpositionAvailableAttribute,
               !exposableMember.hasExpositionIgnoredAttribute else {
             return []
         }
         
-        return [AttributeSyntax("@ExposableMember(\(classDecl.name))")]
+        return [AttributeSyntax("@ExpositionAvailable(\(classDecl.name))")]
     }
 }

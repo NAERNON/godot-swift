@@ -27,9 +27,9 @@ final class ExposableMacroTests: XCTestCase {
             """,
             expandedSource: """
             public class MyClass: Object {
-                @ExposableMember(MyClass)
+                @ExpositionAvailable(MyClass)
                 public var value1: Int = 0
-                @ExposableMember(MyClass)
+                @ExpositionAvailable(MyClass)
                 public var value2: Int = 0
                 private var value3: Int = 0
                 @ExpositionIgnored
@@ -92,9 +92,9 @@ final class ExposableMacroTests: XCTestCase {
             """,
             expandedSource: """
             public final class MyClass: Object {
-                @ExposableMember(MyClass)
+                @ExpositionAvailable(MyClass)
                 public var value1: Int = 0
-                @ExposableMember(MyClass)
+                @ExpositionAvailable(MyClass)
                 public var value2: Int = 0
                 private var value3: Int = 0
                 @ExpositionIgnored
@@ -154,9 +154,9 @@ final class ExposableMacroTests: XCTestCase {
             """,
             expandedSource: """
             class MyClass: Object {
-                @ExposableMember(MyClass)
+                @ExpositionAvailable(MyClass)
                 public var value1: Int = 0
-                @ExposableMember(MyClass)
+                @ExpositionAvailable(MyClass)
                 public var value2: Int = 0
                 private var value3: Int = 0
             }

@@ -7,7 +7,7 @@ import XCTest
 import GodotMacros
 
 private let testMacros: [String: Macro.Type] = [
-    "ExposableMember": ExposableMemberMacro.self,
+    "ExpositionAvailable": ExpositionAvailableMacro.self,
 ]
 #endif
 
@@ -16,7 +16,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public func myFunction()
             """,
             expandedSource: """
@@ -50,7 +50,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public func myFunction(a: Int)
             """,
             expandedSource: """
@@ -86,7 +86,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public func myFunction(_ a: Int)
             """,
             expandedSource: """
@@ -121,7 +121,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public func myFunction(with a: Int)
             """,
             expandedSource: """
@@ -157,7 +157,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public func myFunction() -> Int
             """,
             expandedSource: """
@@ -193,7 +193,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public static func myFunction()
             """,
             expandedSource: """
@@ -227,7 +227,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public func myFunction(a: Int = 3)
             """,
             expandedSource: """
@@ -268,13 +268,13 @@ final class ExposableFunctionMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             private func myFunction()
             """,
             expandedSource: """
             private func myFunction()
             """,
-            diagnostics: [.init(message: "Declaration is not an exposable member",
+            diagnostics: [.init(message: "Declaration is not exposable",
                                 line: 1,
                                 column: 1,
                                 severity: .error,
@@ -291,13 +291,13 @@ final class ExposableFunctionMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             internal func myFunction()
             """,
             expandedSource: """
             internal func myFunction()
             """,
-            diagnostics: [.init(message: "Declaration is not an exposable member",
+            diagnostics: [.init(message: "Declaration is not exposable",
                                 line: 1,
                                 column: 1,
                                 severity: .error,
@@ -314,13 +314,13 @@ final class ExposableFunctionMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             func myFunction()
             """,
             expandedSource: """
             func myFunction()
             """,
-            diagnostics: [.init(message: "Declaration is not an exposable member",
+            diagnostics: [.init(message: "Declaration is not exposable",
                                 line: 1,
                                 column: 1,
                                 severity: .error,

@@ -27,7 +27,8 @@ Godot Swift is a set of tools enabling Swift code to be accessible from the Godo
 - <doc:CreatingCustomClass>
 
 - ``Exposable()``
-- ``ExposableMember(_:)``
+- ``ExpositionIgnored()``
+- ``ExpositionAvailable(_:)``
 - ``Emitter(signal:args:)``
 - ``Receiver()``
 - ``GodotEnum()``

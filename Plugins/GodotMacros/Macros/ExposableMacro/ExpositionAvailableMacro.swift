@@ -4,7 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
 
-public enum ExposableMemberMacro: PeerMacro {
+public enum ExpositionAvailableMacro: PeerMacro {
     public static func expansion(
         of node: AttributeSyntax,
         providingPeersOf declaration: some DeclSyntaxProtocol,
@@ -13,7 +13,7 @@ public enum ExposableMemberMacro: PeerMacro {
         guard let exposableMember = declaration.exposableMember() else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotDiagnostic("Declaration is not an exposable member")
+                message: GodotDiagnostic("Declaration is not exposable")
             ))
             
             return []

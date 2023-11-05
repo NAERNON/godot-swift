@@ -7,7 +7,7 @@ import XCTest
 import GodotMacros
 
 private let testMacros: [String: Macro.Type] = [
-    "ExposableMember": ExposableMemberMacro.self,
+    "ExpositionAvailable": ExpositionAvailableMacro.self,
 ]
 #endif
 
@@ -16,7 +16,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public var myVariable: Int = 0
             """,
             expandedSource: """
@@ -48,7 +48,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             open var myVariable: Int = 0
             """,
             expandedSource: """
@@ -80,7 +80,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public var myVariable = 0
             """,
             expandedSource: """
@@ -112,7 +112,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public var myVariable: SomeType
             """,
             expandedSource: """
@@ -144,7 +144,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public let myVariable: Int = 0
             """,
             expandedSource: """
@@ -173,7 +173,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public let myVariable = 0
             """,
             expandedSource: """
@@ -202,7 +202,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public var myVariable: Int {
                 0
             }
@@ -235,7 +235,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public var myVariable: Int {
                 get { 0 }
             }
@@ -268,7 +268,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public var myVariable: Int {
                 get { }
                 set { }
@@ -306,7 +306,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public private(set) var myVariable: Int = 0
             """,
             expandedSource: """
@@ -335,7 +335,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public fileprivate(set) var myVariable: Int = 0
             """,
             expandedSource: """
@@ -363,7 +363,7 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             public internal(set) var myVariable: Int = 0
             """,
             expandedSource: """
@@ -392,13 +392,13 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             private var myVariable: Int = 0
             """,
             expandedSource: """
             private var myVariable: Int = 0
             """,
-            diagnostics: [.init(message: "Declaration is not an exposable member",
+            diagnostics: [.init(message: "Declaration is not exposable",
                                 line: 1,
                                 column: 1,
                                 severity: .error,
@@ -415,13 +415,13 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             internal var myVariable: Int = 0
             """,
             expandedSource: """
             internal var myVariable: Int = 0
             """,
-            diagnostics: [.init(message: "Declaration is not an exposable member",
+            diagnostics: [.init(message: "Declaration is not exposable",
                                 line: 1,
                                 column: 1,
                                 severity: .error,
@@ -438,13 +438,13 @@ final class ExposableVariableMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             var myVariable: Int = 0
             """,
             expandedSource: """
             var myVariable: Int = 0
             """,
-            diagnostics: [.init(message: "Declaration is not an exposable member",
+            diagnostics: [.init(message: "Declaration is not exposable",
                                 line: 1,
                                 column: 1,
                                 severity: .error,

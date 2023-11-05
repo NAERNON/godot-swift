@@ -15,7 +15,7 @@ public macro Exposable() = #externalMacro(module: "GodotMacros", type: "Exposabl
 
 /// Enables a member to be exposed to the Godot editor.
 @attached(peer, names: prefixed(_$godotRegister_))
-public macro ExposableMember(_: Object.Type) = #externalMacro(module: "GodotMacros", type: "ExposableMemberMacro")
+public macro ExpositionAvailable(_: Object.Type) = #externalMacro(module: "GodotMacros", type: "ExpositionAvailableMacro")
 
 /// Prevents a member from being exposed to the Godot editor.
 @attached(peer)

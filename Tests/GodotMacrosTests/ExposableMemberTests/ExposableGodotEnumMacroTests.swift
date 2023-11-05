@@ -7,7 +7,7 @@ import XCTest
 import GodotMacros
 
 private let testMacros: [String: Macro.Type] = [
-    "ExposableMember": ExposableMemberMacro.self,
+    "ExpositionAvailable": ExpositionAvailableMacro.self,
 ]
 #endif
 
@@ -16,7 +16,7 @@ final class ExposableGodotEnumMacroTests: XCTestCase {
 #if canImport(GodotMacros)
         assertMacroExpansion(
             """
-            @ExposableMember(MyClass)
+            @ExpositionAvailable(MyClass)
             @GodotEnum
             public enum MyEnum {}
             """,
