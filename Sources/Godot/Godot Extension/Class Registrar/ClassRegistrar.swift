@@ -383,6 +383,7 @@ public final class ClassRegistrar {
         named variableName: GodotStringName,
         keyPath: KeyPath<Class, Variable>,
         insideType classType: Class.Type,
+        hint: EditorHint,
         getterName: GodotStringName,
         setterName: GodotStringName? = nil,
         getterCall: GDExtensionClassMethodCall,
@@ -400,11 +401,11 @@ public final class ClassRegistrar {
         }
         
         guard classBinding.variable(named: variableName) == nil else {
-            gdDebugPrintError("Cannot register variable \(variableName) because the class \(className) already registered a variableName with the same name.")
+            gdDebugPrintError("Cannot register variable \(variableName) because the class \(className) already registered a variable with the same name.")
             return nil
         }
         
-        let parameter = FunctionParameter.argument(Variable.self, name: variableName)
+        var parameter = FunctionParameter.argument(Variable.self, name: variableName)
         
         guard let getterBinding = registerFunction(
             named: getterName,
@@ -439,6 +440,8 @@ public final class ClassRegistrar {
             setter: setterBinding
         )
         classBinding.appendVariable(variableBinding)
+        
+        parameter.editorHint = hint
         
         getterName.withUnsafeRawPointer { getterPtr in
             (setterName ?? GodotStringName()).withUnsafeRawPointer { setterPtr in

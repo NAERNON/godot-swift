@@ -41,7 +41,7 @@ extension ClassRegistrar {
             self.name = name
             self.defaultValue = defaultValue
             self.hint = hint
-            self.hintString = GodotString()
+            self.hintString = hintString
             
             if hint == .resourceType {
                 self.className = GodotStringName(string: hintString)

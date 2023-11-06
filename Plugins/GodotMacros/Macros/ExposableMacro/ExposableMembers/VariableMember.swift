@@ -129,6 +129,7 @@ struct VariableMember: ExposableMember {
                 named: \(literal: variableName),
                 keyPath: \\.\(raw: swiftVariableName),
                 insideType: self,
+                hint: \(raw: hintSyntax()),
                 getterName: \(literal: getterName),
                 setterName: \(literal: setterName)
             ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -143,6 +144,7 @@ struct VariableMember: ExposableMember {
                 named: \(literal: variableName),
                 keyPath: \\.\(raw: swiftVariableName),
                 insideType: self,
+                hint: \(raw: hintSyntax()),
                 getterName: \(literal: getterName)
             ) { _, instancePtr, args, argsCount, returnPtr, error in
                 \(getterExprSyntax)
@@ -163,5 +165,21 @@ struct VariableMember: ExposableMember {
         }
         
         return detail.detail.tokenKind == .identifier("set")
+    }
+    
+    private func hintSyntax() -> String {
+        guard let hintContent = attributes?
+            .first(where: {
+                $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Hint"
+            })?
+            .as(AttributeSyntax.self)?
+            .arguments?
+            .as(LabeledExprListSyntax.self)?
+            .first
+        else {
+            return ".none"
+        }
+        
+        return hintContent.trimmedDescription
     }
 }

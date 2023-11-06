@@ -8,18 +8,21 @@ extension ClassRegistrar {
     /// or use `returnParameter(_:)` to create a return `FunctionParameter`.
     public struct FunctionParameter {
         /// The variant representation type of the parameter.
-        public let variantType: Variant.RepresentationType
+        public var variantType: Variant.RepresentationType
         
         /// The name of the parameter.
-        public let name: GodotStringName
+        public var name: GodotStringName
         
         /// The default value of the parameter.
-        public let defaultValue: Variant?
+        public var defaultValue: Variant?
         
         /// The name of the class.
         ///
         /// If the parameter is *not* a class, the string is empty.
-        public let className: GodotStringName
+        public var className: GodotStringName
+        
+        /// The parameter editor hint.
+        public var editorHint: EditorHint
         
         // MARK: Init
         
@@ -37,6 +40,7 @@ extension ClassRegistrar {
                 self.defaultValue = nil
             }
             self.className = className
+            self.editorHint = .none
         }
         
         /// Creates a new FunctionParameter used as a function argument.
@@ -80,8 +84,8 @@ extension ClassRegistrar {
                 variantType: variantType,
                 name: name,
                 defaultValue: defaultValue,
-                hint: .none,
-                hintString: .init(),
+                hint: editorHint.hint,
+                hintString: editorHint.string,
                 usageFlags: .default,
                 className: className
             )

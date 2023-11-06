@@ -34,6 +34,11 @@ Godot Swift is a set of tools enabling Swift code to be accessible from the Godo
 - ``GodotEnum()``
 - ``GodotOptionSet()``
 
+### Editor hinting
+
+- ``Hint(_:)``
+- ``EditorHint``
+
 ### Interacting with Godot
 
 - <doc:UsingBuiltinTypes>
