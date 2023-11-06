@@ -27,6 +27,42 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
+                    getterName: "get_my_variable",
+                    setterName: "set_my_variable"
+                ) { _, instancePtr, args, argsCount, returnPtr, error in
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                }
+            }
+            """,
+            diagnostics: [],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
+    
+    func testPublicVariableWithHint() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @ExpositionAvailable(MyClass)
+            @Hint(someHint)
+            public var myVariable: Int = 0
+            """,
+            expandedSource: """
+            @Hint(someHint)
+            public var myVariable: Int = 0
+            
+            private static func _$godotRegister_myVariable() {
+                Godot.GodotExtension.classRegistrar.registerVariable(
+                    named: "my_variable",
+                    keyPath: \\.myVariable,
+                    insideType: self,
+                    hint: someHint,
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -59,6 +95,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -91,6 +128,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -123,6 +161,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -155,6 +194,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
@@ -184,6 +224,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
@@ -217,6 +258,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
@@ -250,6 +292,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
@@ -285,6 +328,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -317,6 +361,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
@@ -346,6 +391,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
@@ -374,6 +420,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     named: "my_variable",
                     keyPath: \\.myVariable,
                     insideType: self,
+                    hint: .none,
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
