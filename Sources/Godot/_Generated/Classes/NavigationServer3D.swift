@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class NavigationServer3D: Object {
-    public enum ProcessInfo: UInt32 {
+    public enum ProcessInfo: UInt32, GodotEnum {
         case activeMaps = 0
         case regionCount = 1
         case agentCount = 2
@@ -15,6 +15,18 @@ open class NavigationServer3D: Object {
         case edgeMergeCount = 6
         case edgeConnectionCount = 7
         case edgeFreeCount = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Active Maps", 0),
+            ("Region Count", 1),
+            ("Agent Count", 2),
+            ("Link Count", 3),
+            ("Polygon Count", 4),
+            ("Edge Count", 5),
+            ("Edge Merge Count", 6),
+            ("Edge Connection Count", 7),
+            ("Edge Free Count", 8),]
+        }
     }
 
     @Emitter(signal: "map_changed", args: ("map", Godot.RID))

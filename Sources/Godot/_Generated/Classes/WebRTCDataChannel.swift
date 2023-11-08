@@ -5,15 +5,27 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class WebRTCDataChannel: PacketPeer {
-    public enum WriteMode: UInt32 {
+    public enum WriteMode: UInt32, GodotEnum {
         case text = 0
         case binary = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Text", 0),
+            ("Binary", 1),]
+        }
     }
-    public enum ChannelState: UInt32 {
+    public enum ChannelState: UInt32, GodotEnum {
         case connecting = 0
         case open = 1
         case closing = 2
         case closed = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Connecting", 0),
+            ("Open", 1),
+            ("Closing", 2),
+            ("Closed", 3),]
+        }
     }
 
     private static var __method_binding_poll: GDExtensionMethodBindPtr = {

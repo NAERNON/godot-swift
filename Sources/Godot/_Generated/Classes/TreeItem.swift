@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TreeItem: Object {
-    public enum TreeCellMode: UInt32 {
+    public enum TreeCellMode: UInt32, GodotEnum {
         case string = 0
         case check = 1
         case range = 2
         case icon = 3
         case custom = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("String", 0),
+            ("Check", 1),
+            ("Range", 2),
+            ("Icon", 3),
+            ("Custom", 4),]
+        }
     }
 
     private static var __method_binding_set_cell_mode: GDExtensionMethodBindPtr = {

@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TileMap: Node2D {
-    public enum VisibilityMode: UInt32 {
+    public enum VisibilityMode: UInt32, GodotEnum {
         case `default` = 0
         case forceHide = 2
         case forceShow = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`default`", 0),
+            ("Force Hide", 2),
+            ("Force Show", 1),]
+        }
     }
 
     @Emitter(signal: "changed")

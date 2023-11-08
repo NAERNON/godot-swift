@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TextureProgressBar: Range {
-    public enum FillMode: UInt32 {
+    public enum FillMode: UInt32, GodotEnum {
         case leftToRight = 0
         case rightToLeft = 1
         case topToBottom = 2
@@ -15,6 +15,18 @@ open class TextureProgressBar: Range {
         case bilinearLeftAndRight = 6
         case bilinearTopAndBottom = 7
         case clockwiseAndCounterClockwise = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Left To Right", 0),
+            ("Right To Left", 1),
+            ("Top To Bottom", 2),
+            ("Bottom To Top", 3),
+            ("Clockwise", 4),
+            ("Counter Clockwise", 5),
+            ("Bilinear Left And Right", 6),
+            ("Bilinear Top And Bottom", 7),
+            ("Clockwise And Counter Clockwise", 8),]
+        }
     }
 
     private static var __method_binding_set_under_texture: GDExtensionMethodBindPtr = {

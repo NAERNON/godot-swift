@@ -5,15 +5,27 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Tree: Control {
-    public enum SelectMode: UInt32 {
+    public enum SelectMode: UInt32, GodotEnum {
         case single = 0
         case row = 1
         case multi = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Single", 0),
+            ("Row", 1),
+            ("Multi", 2),]
+        }
     }
-    public enum DropModeFlags: UInt32 {
+    public enum DropModeFlags: UInt32, GodotEnum {
         case disabled = 0
         case onItem = 1
         case inbetween = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("On Item", 1),
+            ("Inbetween", 2),]
+        }
     }
 
     @Emitter(signal: "item_selected")

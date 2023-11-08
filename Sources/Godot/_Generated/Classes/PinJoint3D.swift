@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PinJoint3D: Joint3D {
-    public enum Param: UInt32 {
+    public enum Param: UInt32, GodotEnum {
         case bias = 0
         case damping = 1
         case impulseClamp = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bias", 0),
+            ("Damping", 1),
+            ("Impulse Clamp", 2),]
+        }
     }
 
     private static var __method_binding_set_param: GDExtensionMethodBindPtr = {

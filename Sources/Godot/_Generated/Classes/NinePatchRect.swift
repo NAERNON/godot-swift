@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class NinePatchRect: Control {
-    public enum AxisStretchMode: UInt32 {
+    public enum AxisStretchMode: UInt32, GodotEnum {
         case stretch = 0
         case tile = 1
         case tileFit = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Stretch", 0),
+            ("Tile", 1),
+            ("Tile Fit", 2),]
+        }
     }
 
     @Emitter(signal: "texture_changed")

@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeParameter: VisualShaderNode {
-    public enum Qualifier: UInt32 {
+    public enum Qualifier: UInt32, GodotEnum {
         case none = 0
         case global = 1
         case instance = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Global", 1),
+            ("Instance", 2),
+            ("Max", 3),]
+        }
     }
 
     private static var __method_binding_set_parameter_name: GDExtensionMethodBindPtr = {

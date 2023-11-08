@@ -5,11 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CameraServer: Object {
-    public enum FeedImage: UInt32 {
+    public enum FeedImage: UInt32, GodotEnum {
         case rgbaImage = 0
         public static let ycbcrImage: Self = .rgbaImage
         public static let yImage: Self = .rgbaImage
         case cbcrImage = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Rgba Image", 0),
+            ("Cbcr Image", 1),]
+        }
     }
 
     @Emitter(signal: "camera_feed_added", args: ("id", Int))

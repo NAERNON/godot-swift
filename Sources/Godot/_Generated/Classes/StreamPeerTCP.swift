@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class StreamPeerTCP: StreamPeer {
-    public enum Status: UInt32 {
+    public enum Status: UInt32, GodotEnum {
         case none = 0
         case connecting = 1
         case connected = 2
         case error = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Connecting", 1),
+            ("Connected", 2),
+            ("Error", 3),]
+        }
     }
 
     private static var __method_binding_bind: GDExtensionMethodBindPtr = {

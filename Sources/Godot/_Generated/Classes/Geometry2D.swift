@@ -5,23 +5,44 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Geometry2D: Object {
-    public enum PolyBooleanOperation: UInt32 {
+    public enum PolyBooleanOperation: UInt32, GodotEnum {
         case union = 0
         case difference = 1
         case intersection = 2
         case xor = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Union", 0),
+            ("Difference", 1),
+            ("Intersection", 2),
+            ("Xor", 3),]
+        }
     }
-    public enum PolyJoinType: UInt32 {
+    public enum PolyJoinType: UInt32, GodotEnum {
         case square = 0
         case round = 1
         case miter = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Square", 0),
+            ("Round", 1),
+            ("Miter", 2),]
+        }
     }
-    public enum PolyEndType: UInt32 {
+    public enum PolyEndType: UInt32, GodotEnum {
         case polygon = 0
         case joined = 1
         case butt = 2
         case square = 3
         case round = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Polygon", 0),
+            ("Joined", 1),
+            ("Butt", 2),
+            ("Square", 3),
+            ("Round", 4),]
+        }
     }
 
     private static var __method_binding_is_point_in_circle: GDExtensionMethodBindPtr = {

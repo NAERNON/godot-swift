@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SurfaceTool: RefCounted {
-    public enum CustomFormat: UInt32 {
+    public enum CustomFormat: UInt32, GodotEnum {
         case rgba8Unorm = 0
         case rgba8Snorm = 1
         case rgHalf = 2
@@ -15,10 +15,27 @@ open class SurfaceTool: RefCounted {
         case rgbFloat = 6
         case rgbaFloat = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Rgba8 Unorm", 0),
+            ("Rgba8 Snorm", 1),
+            ("Rg Half", 2),
+            ("Rgba Half", 3),
+            ("R Float", 4),
+            ("Rg Float", 5),
+            ("Rgb Float", 6),
+            ("Rgba Float", 7),
+            ("Max", 8),]
+        }
     }
-    public enum SkinWeightCount: UInt32 {
+    public enum SkinWeightCount: UInt32, GodotEnum {
         case skin4Weights = 0
         case skin8Weights = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Skin4 Weights", 0),
+            ("Skin8 Weights", 1),]
+        }
     }
 
     private static var __method_binding_set_skin_weight_count: GDExtensionMethodBindPtr = {

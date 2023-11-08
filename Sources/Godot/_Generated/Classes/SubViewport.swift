@@ -5,17 +5,31 @@
 import GodotExtensionHeaders
 @GodotClass
 open class SubViewport: Viewport {
-    public enum ClearMode: UInt32 {
+    public enum ClearMode: UInt32, GodotEnum {
         case always = 0
         case never = 1
         case once = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Always", 0),
+            ("Never", 1),
+            ("Once", 2),]
+        }
     }
-    public enum UpdateMode: UInt32 {
+    public enum UpdateMode: UInt32, GodotEnum {
         case disabled = 0
         case once = 1
         case whenVisible = 2
         case whenParentVisible = 3
         case always = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Once", 1),
+            ("When Visible", 2),
+            ("When Parent Visible", 3),
+            ("Always", 4),]
+        }
     }
 
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {

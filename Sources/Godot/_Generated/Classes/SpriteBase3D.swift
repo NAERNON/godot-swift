@@ -5,19 +5,35 @@
 import GodotExtensionHeaders
 @GodotClass
 open class SpriteBase3D: GeometryInstance3D {
-    public enum DrawFlags: UInt32 {
+    public enum DrawFlags: UInt32, GodotEnum {
         case transparent = 0
         case shaded = 1
         case doubleSided = 2
         case disableDepthTest = 3
         case fixedSize = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Transparent", 0),
+            ("Shaded", 1),
+            ("Double Sided", 2),
+            ("Disable Depth Test", 3),
+            ("Fixed Size", 4),
+            ("Max", 5),]
+        }
     }
-    public enum AlphaCutMode: UInt32 {
+    public enum AlphaCutMode: UInt32, GodotEnum {
         case disabled = 0
         case discard = 1
         case opaquePrepass = 2
         case hash = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Discard", 1),
+            ("Opaque Prepass", 2),
+            ("Hash", 3),]
+        }
     }
 
     private static var __method_binding_set_centered: GDExtensionMethodBindPtr = {

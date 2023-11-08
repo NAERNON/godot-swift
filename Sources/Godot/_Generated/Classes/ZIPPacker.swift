@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ZIPPacker: RefCounted {
-    public enum ZipAppend: UInt32 {
+    public enum ZipAppend: UInt32, GodotEnum {
         case create = 0
         case createafter = 1
         case addinzip = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Create", 0),
+            ("Createafter", 1),
+            ("Addinzip", 2),]
+        }
     }
 
     private static var __method_binding_open: GDExtensionMethodBindPtr = {

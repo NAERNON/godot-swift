@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TextEdit: Control {
-    public enum MenuItems: UInt32 {
+    public enum MenuItems: UInt32, GodotEnum {
         case cut = 0
         case copy = 1
         case paste = 2
@@ -37,37 +37,108 @@ open class TextEdit: Control {
         case insertWj = 28
         case insertShy = 29
         case max = 30
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Cut", 0),
+            ("Copy", 1),
+            ("Paste", 2),
+            ("Clear", 3),
+            ("Select All", 4),
+            ("Undo", 5),
+            ("Redo", 6),
+            ("Submenu Text Dir", 7),
+            ("Dir Inherited", 8),
+            ("Dir Auto", 9),
+            ("Dir Ltr", 10),
+            ("Dir Rtl", 11),
+            ("Display Ucc", 12),
+            ("Submenu Insert Ucc", 13),
+            ("Insert Lrm", 14),
+            ("Insert Rlm", 15),
+            ("Insert Lre", 16),
+            ("Insert Rle", 17),
+            ("Insert Lro", 18),
+            ("Insert Rlo", 19),
+            ("Insert Pdf", 20),
+            ("Insert Alm", 21),
+            ("Insert Lri", 22),
+            ("Insert Rli", 23),
+            ("Insert Fsi", 24),
+            ("Insert Pdi", 25),
+            ("Insert Zwj", 26),
+            ("Insert Zwnj", 27),
+            ("Insert Wj", 28),
+            ("Insert Shy", 29),
+            ("Max", 30),]
+        }
     }
-    public enum EditAction: UInt32 {
+    public enum EditAction: UInt32, GodotEnum {
         case none = 0
         case typing = 1
         case backspace = 2
         case delete = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Typing", 1),
+            ("Backspace", 2),
+            ("Delete", 3),]
+        }
     }
-    public enum SearchFlags: UInt32 {
+    public enum SearchFlags: UInt32, GodotEnum {
         case matchCase = 1
         case wholeWords = 2
         case backwards = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Match Case", 1),
+            ("Whole Words", 2),
+            ("Backwards", 4),]
+        }
     }
-    public enum CaretType: UInt32 {
+    public enum CaretType: UInt32, GodotEnum {
         case line = 0
         case block = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Line", 0),
+            ("Block", 1),]
+        }
     }
-    public enum SelectionMode: UInt32 {
+    public enum SelectionMode: UInt32, GodotEnum {
         case none = 0
         case shift = 1
         case pointer = 2
         case word = 3
         case line = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Shift", 1),
+            ("Pointer", 2),
+            ("Word", 3),
+            ("Line", 4),]
+        }
     }
-    public enum LineWrappingMode: UInt32 {
+    public enum LineWrappingMode: UInt32, GodotEnum {
         case none = 0
         case boundary = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Boundary", 1),]
+        }
     }
-    public enum GutterType: UInt32 {
+    public enum GutterType: UInt32, GodotEnum {
         case string = 0
         case icon = 1
         case custom = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("String", 0),
+            ("Icon", 1),
+            ("Custom", 2),]
+        }
     }
 
     @Emitter(signal: "text_set")

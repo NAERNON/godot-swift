@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class GDExtension: Resource {
-    public enum InitializationLevel: UInt32 {
+    public enum InitializationLevel: UInt32, GodotEnum {
         case core = 0
         case servers = 1
         case scene = 2
         case editor = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Core", 0),
+            ("Servers", 1),
+            ("Scene", 2),
+            ("Editor", 3),]
+        }
     }
 
     private static var __method_binding_open_library: GDExtensionMethodBindPtr = {

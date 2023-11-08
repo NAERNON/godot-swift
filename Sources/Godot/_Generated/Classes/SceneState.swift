@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SceneState: RefCounted {
-    public enum GenEditState: UInt32 {
+    public enum GenEditState: UInt32, GodotEnum {
         case disabled = 0
         case instance = 1
         case main = 2
         case mainInherited = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Instance", 1),
+            ("Main", 2),
+            ("Main Inherited", 3),]
+        }
     }
 
     private static var __method_binding_get_node_count: GDExtensionMethodBindPtr = {

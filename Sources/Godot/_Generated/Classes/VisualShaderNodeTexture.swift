@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeTexture: VisualShaderNode {
-    public enum Source: UInt32 {
+    public enum Source: UInt32, GodotEnum {
         case texture = 0
         case screen = 1
         case source2DTexture = 2
@@ -15,12 +15,31 @@ open class VisualShaderNodeTexture: VisualShaderNode {
         case source3DNormal = 6
         case roughness = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Texture", 0),
+            ("Screen", 1),
+            ("Source2 D Texture", 2),
+            ("Source2 D Normal", 3),
+            ("Depth", 4),
+            ("Port", 5),
+            ("Source3 D Normal", 6),
+            ("Roughness", 7),
+            ("Max", 8),]
+        }
     }
-    public enum TextureType: UInt32 {
+    public enum TextureType: UInt32, GodotEnum {
         case data = 0
         case color = 1
         case normalMap = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Data", 0),
+            ("Color", 1),
+            ("Normal Map", 2),
+            ("Max", 3),]
+        }
     }
 
     private static var __method_binding_set_source: GDExtensionMethodBindPtr = {

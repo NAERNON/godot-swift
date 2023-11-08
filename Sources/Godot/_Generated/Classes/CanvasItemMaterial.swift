@@ -5,17 +5,31 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class CanvasItemMaterial: Material {
-    public enum BlendMode: UInt32 {
+    public enum BlendMode: UInt32, GodotEnum {
         case mix = 0
         case add = 1
         case sub = 2
         case mul = 3
         case premultAlpha = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Mix", 0),
+            ("Add", 1),
+            ("Sub", 2),
+            ("Mul", 3),
+            ("Premult Alpha", 4),]
+        }
     }
-    public enum LightMode: UInt32 {
+    public enum LightMode: UInt32, GodotEnum {
         case normal = 0
         case unshaded = 1
         case lightOnly = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Normal", 0),
+            ("Unshaded", 1),
+            ("Light Only", 2),]
+        }
     }
 
     private static var __method_binding_set_blend_mode: GDExtensionMethodBindPtr = {

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class XRServer: Object {
-    public enum TrackerType: UInt32 {
+    public enum TrackerType: UInt32, GodotEnum {
         case head = 1
         case controller = 2
         case basestation = 4
@@ -13,11 +13,27 @@ open class XRServer: Object {
         case anyKnown = 127
         case unknown = 128
         case any = 255
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Head", 1),
+            ("Controller", 2),
+            ("Basestation", 4),
+            ("Anchor", 8),
+            ("Any Known", 127),
+            ("Unknown", 128),
+            ("Any", 255),]
+        }
     }
-    public enum RotationMode: UInt32 {
+    public enum RotationMode: UInt32, GodotEnum {
         case resetFullRotation = 0
         case resetButKeepTilt = 1
         case dontResetRotation = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Reset Full Rotation", 0),
+            ("Reset But Keep Tilt", 1),
+            ("Dont Reset Rotation", 2),]
+        }
     }
 
     @Emitter(signal: "interface_added", args: ("interfaceName", Godot.GodotStringName))

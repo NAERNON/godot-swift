@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CSGShape3D: GeometryInstance3D {
-    public enum Operation: UInt32 {
+    public enum Operation: UInt32, GodotEnum {
         case union = 0
         case intersection = 1
         case subtraction = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Union", 0),
+            ("Intersection", 1),
+            ("Subtraction", 2),]
+        }
     }
 
     private static var __method_binding_is_root_shape: GDExtensionMethodBindPtr = {

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Image: Resource {
-    public enum Format: UInt32 {
+    public enum Format: UInt32, GodotEnum {
         case l8 = 0
         case la8 = 1
         case r8 = 2
@@ -46,43 +46,129 @@ open class Image: Resource {
         case astc8x8 = 37
         case astc8x8Hdr = 38
         case max = 39
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("L8", 0),
+            ("La8", 1),
+            ("R8", 2),
+            ("Rg8", 3),
+            ("Rgb8", 4),
+            ("Rgba8", 5),
+            ("Rgba4444", 6),
+            ("Rgb565", 7),
+            ("Rf", 8),
+            ("Rgf", 9),
+            ("Rgbf", 10),
+            ("Rgbaf", 11),
+            ("Rh", 12),
+            ("Rgh", 13),
+            ("Rgbh", 14),
+            ("Rgbah", 15),
+            ("Rgbe9995", 16),
+            ("Dxt1", 17),
+            ("Dxt3", 18),
+            ("Dxt5", 19),
+            ("Rgtc R", 20),
+            ("Rgtc Rg", 21),
+            ("Bptc Rgba", 22),
+            ("Bptc Rgbf", 23),
+            ("Bptc Rgbfu", 24),
+            ("Etc", 25),
+            ("Etc2 R11", 26),
+            ("Etc2 R11s", 27),
+            ("Etc2 Rg11", 28),
+            ("Etc2 Rg11s", 29),
+            ("Etc2 Rgb8", 30),
+            ("Etc2 Rgba8", 31),
+            ("Etc2 Rgb8a1", 32),
+            ("Etc2 Ra As Rg", 33),
+            ("Dxt5 Ra As Rg", 34),
+            ("Astc4x4", 35),
+            ("Astc4x4 Hdr", 36),
+            ("Astc8x8", 37),
+            ("Astc8x8 Hdr", 38),
+            ("Max", 39),]
+        }
     }
-    public enum Interpolation: UInt32 {
+    public enum Interpolation: UInt32, GodotEnum {
         case nearest = 0
         case bilinear = 1
         case cubic = 2
         case trilinear = 3
         case lanczos = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Nearest", 0),
+            ("Bilinear", 1),
+            ("Cubic", 2),
+            ("Trilinear", 3),
+            ("Lanczos", 4),]
+        }
     }
-    public enum AlphaMode: UInt32 {
+    public enum AlphaMode: UInt32, GodotEnum {
         case none = 0
         case bit = 1
         case blend = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Bit", 1),
+            ("Blend", 2),]
+        }
     }
-    public enum CompressMode: UInt32 {
+    public enum CompressMode: UInt32, GodotEnum {
         case s3tc = 0
         case etc = 1
         case etc2 = 2
         case bptc = 3
         case astc = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("S3tc", 0),
+            ("Etc", 1),
+            ("Etc2", 2),
+            ("Bptc", 3),
+            ("Astc", 4),
+            ("Max", 5),]
+        }
     }
-    public enum UsedChannels: UInt32 {
+    public enum UsedChannels: UInt32, GodotEnum {
         case l = 0
         case la = 1
         case r = 2
         case rg = 3
         case rgb = 4
         case rgba = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("L", 0),
+            ("La", 1),
+            ("R", 2),
+            ("Rg", 3),
+            ("Rgb", 4),
+            ("Rgba", 5),]
+        }
     }
-    public enum CompressSource: UInt32 {
+    public enum CompressSource: UInt32, GodotEnum {
         case generic = 0
         case srgb = 1
         case normal = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Generic", 0),
+            ("Srgb", 1),
+            ("Normal", 2),]
+        }
     }
-    public enum ASTCFormat: UInt32 {
+    public enum ASTCFormat: UInt32, GodotEnum {
         case astcFormat4x4 = 0
         case astcFormat8x8 = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Astc Format4x4", 0),
+            ("Astc Format8x8", 1),]
+        }
     }
 
     private static var __method_binding_get_width: GDExtensionMethodBindPtr = {

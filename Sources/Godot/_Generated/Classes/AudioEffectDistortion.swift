@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioEffectDistortion: AudioEffect {
-    public enum Mode: UInt32 {
+    public enum Mode: UInt32, GodotEnum {
         case clip = 0
         case atan = 1
         case lofi = 2
         case overdrive = 3
         case waveshape = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Clip", 0),
+            ("Atan", 1),
+            ("Lofi", 2),
+            ("Overdrive", 3),
+            ("Waveshape", 4),]
+        }
     }
 
     private static var __method_binding_set_mode: GDExtensionMethodBindPtr = {

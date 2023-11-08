@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ProgressBar: Range {
-    public enum FillMode: UInt32 {
+    public enum FillMode: UInt32, GodotEnum {
         case beginToEnd = 0
         case endToBegin = 1
         case topToBottom = 2
         case bottomToTop = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Begin To End", 0),
+            ("End To Begin", 1),
+            ("Top To Bottom", 2),
+            ("Bottom To Top", 3),]
+        }
     }
 
     private static var __method_binding_set_fill_mode: GDExtensionMethodBindPtr = {

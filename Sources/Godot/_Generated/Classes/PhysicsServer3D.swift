@@ -5,20 +5,35 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PhysicsServer3D: Object {
-    public enum JointType: UInt32 {
+    public enum JointType: UInt32, GodotEnum {
         case pin = 0
         case hinge = 1
         case slider = 2
         case coneTwist = 3
         case jointType6dof = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Pin", 0),
+            ("Hinge", 1),
+            ("Slider", 2),
+            ("Cone Twist", 3),
+            ("Joint Type6dof", 4),
+            ("Max", 5),]
+        }
     }
-    public enum PinJointParam: UInt32 {
+    public enum PinJointParam: UInt32, GodotEnum {
         case bias = 0
         case damping = 1
         case impulseClamp = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bias", 0),
+            ("Damping", 1),
+            ("Impulse Clamp", 2),]
+        }
     }
-    public enum HingeJointParam: UInt32 {
+    public enum HingeJointParam: UInt32, GodotEnum {
         case bias = 0
         case limitUpper = 1
         case limitLower = 2
@@ -27,12 +42,28 @@ open class PhysicsServer3D: Object {
         case limitRelaxation = 5
         case motorTargetVelocity = 6
         case motorMaxImpulse = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bias", 0),
+            ("Limit Upper", 1),
+            ("Limit Lower", 2),
+            ("Limit Bias", 3),
+            ("Limit Softness", 4),
+            ("Limit Relaxation", 5),
+            ("Motor Target Velocity", 6),
+            ("Motor Max Impulse", 7),]
+        }
     }
-    public enum HingeJointFlag: UInt32 {
+    public enum HingeJointFlag: UInt32, GodotEnum {
         case useLimit = 0
         case enableMotor = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Use Limit", 0),
+            ("Enable Motor", 1),]
+        }
     }
-    public enum SliderJointParam: UInt32 {
+    public enum SliderJointParam: UInt32, GodotEnum {
         case linearLimitUpper = 0
         case linearLimitLower = 1
         case linearLimitSoftness = 2
@@ -56,15 +87,49 @@ open class PhysicsServer3D: Object {
         case angularOrthogonalRestitution = 20
         case angularOrthogonalDamping = 21
         case max = 22
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear Limit Upper", 0),
+            ("Linear Limit Lower", 1),
+            ("Linear Limit Softness", 2),
+            ("Linear Limit Restitution", 3),
+            ("Linear Limit Damping", 4),
+            ("Linear Motion Softness", 5),
+            ("Linear Motion Restitution", 6),
+            ("Linear Motion Damping", 7),
+            ("Linear Orthogonal Softness", 8),
+            ("Linear Orthogonal Restitution", 9),
+            ("Linear Orthogonal Damping", 10),
+            ("Angular Limit Upper", 11),
+            ("Angular Limit Lower", 12),
+            ("Angular Limit Softness", 13),
+            ("Angular Limit Restitution", 14),
+            ("Angular Limit Damping", 15),
+            ("Angular Motion Softness", 16),
+            ("Angular Motion Restitution", 17),
+            ("Angular Motion Damping", 18),
+            ("Angular Orthogonal Softness", 19),
+            ("Angular Orthogonal Restitution", 20),
+            ("Angular Orthogonal Damping", 21),
+            ("Max", 22),]
+        }
     }
-    public enum ConeTwistJointParam: UInt32 {
+    public enum ConeTwistJointParam: UInt32, GodotEnum {
         case swingSpan = 0
         case twistSpan = 1
         case bias = 2
         case softness = 3
         case relaxation = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Swing Span", 0),
+            ("Twist Span", 1),
+            ("Bias", 2),
+            ("Softness", 3),
+            ("Relaxation", 4),]
+        }
     }
-    public enum G6DOFJointAxisParam: UInt32 {
+    public enum G6DOFJointAxisParam: UInt32, GodotEnum {
         case linearLowerLimit = 0
         case linearUpperLimit = 1
         case linearLimitSoftness = 2
@@ -81,14 +146,40 @@ open class PhysicsServer3D: Object {
         case angularErp = 16
         case angularMotorTargetVelocity = 17
         case angularMotorForceLimit = 18
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear Lower Limit", 0),
+            ("Linear Upper Limit", 1),
+            ("Linear Limit Softness", 2),
+            ("Linear Restitution", 3),
+            ("Linear Damping", 4),
+            ("Linear Motor Target Velocity", 5),
+            ("Linear Motor Force Limit", 6),
+            ("Angular Lower Limit", 10),
+            ("Angular Upper Limit", 11),
+            ("Angular Limit Softness", 12),
+            ("Angular Damping", 13),
+            ("Angular Restitution", 14),
+            ("Angular Force Limit", 15),
+            ("Angular Erp", 16),
+            ("Angular Motor Target Velocity", 17),
+            ("Angular Motor Force Limit", 18),]
+        }
     }
-    public enum G6DOFJointAxisFlag: UInt32 {
+    public enum G6DOFJointAxisFlag: UInt32, GodotEnum {
         case linearLimit = 0
         case angularLimit = 1
         case motor = 4
         case linearMotor = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear Limit", 0),
+            ("Angular Limit", 1),
+            ("Motor", 4),
+            ("Linear Motor", 5),]
+        }
     }
-    public enum ShapeType: UInt32 {
+    public enum ShapeType: UInt32, GodotEnum {
         case worldBoundary = 0
         case separationRay = 1
         case sphere = 2
@@ -100,8 +191,22 @@ open class PhysicsServer3D: Object {
         case heightmap = 8
         case softBody = 9
         case custom = 10
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("World Boundary", 0),
+            ("Separation Ray", 1),
+            ("Sphere", 2),
+            ("Box", 3),
+            ("Capsule", 4),
+            ("Cylinder", 5),
+            ("Convex Polygon", 6),
+            ("Concave Polygon", 7),
+            ("Heightmap", 8),
+            ("Soft Body", 9),
+            ("Custom", 10),]
+        }
     }
-    public enum AreaParameter: UInt32 {
+    public enum AreaParameter: UInt32, GodotEnum {
         case gravityOverrideMode = 0
         case gravity = 1
         case gravityVector = 2
@@ -116,21 +221,53 @@ open class PhysicsServer3D: Object {
         case windSource = 11
         case windDirection = 12
         case windAttenuationFactor = 13
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Gravity Override Mode", 0),
+            ("Gravity", 1),
+            ("Gravity Vector", 2),
+            ("Gravity Is Point", 3),
+            ("Gravity Point Unit Distance", 4),
+            ("Linear Damp Override Mode", 5),
+            ("Linear Damp", 6),
+            ("Angular Damp Override Mode", 7),
+            ("Angular Damp", 8),
+            ("Priority", 9),
+            ("Wind Force Magnitude", 10),
+            ("Wind Source", 11),
+            ("Wind Direction", 12),
+            ("Wind Attenuation Factor", 13),]
+        }
     }
-    public enum AreaSpaceOverrideMode: UInt32 {
+    public enum AreaSpaceOverrideMode: UInt32, GodotEnum {
         case disabled = 0
         case combine = 1
         case combineReplace = 2
         case replace = 3
         case replaceCombine = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Combine", 1),
+            ("Combine Replace", 2),
+            ("Replace", 3),
+            ("Replace Combine", 4),]
+        }
     }
-    public enum BodyMode: UInt32 {
+    public enum BodyMode: UInt32, GodotEnum {
         case `static` = 0
         case kinematic = 1
         case rigid = 2
         case rigidLinear = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`static`", 0),
+            ("Kinematic", 1),
+            ("Rigid", 2),
+            ("Rigid Linear", 3),]
+        }
     }
-    public enum BodyParameter: UInt32 {
+    public enum BodyParameter: UInt32, GodotEnum {
         case bounce = 0
         case friction = 1
         case mass = 2
@@ -142,28 +279,66 @@ open class PhysicsServer3D: Object {
         case linearDamp = 8
         case angularDamp = 9
         case max = 10
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bounce", 0),
+            ("Friction", 1),
+            ("Mass", 2),
+            ("Inertia", 3),
+            ("Center Of Mass", 4),
+            ("Gravity Scale", 5),
+            ("Linear Damp Mode", 6),
+            ("Angular Damp Mode", 7),
+            ("Linear Damp", 8),
+            ("Angular Damp", 9),
+            ("Max", 10),]
+        }
     }
-    public enum BodyDampMode: UInt32 {
+    public enum BodyDampMode: UInt32, GodotEnum {
         case combine = 0
         case replace = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Combine", 0),
+            ("Replace", 1),]
+        }
     }
-    public enum BodyState: UInt32 {
+    public enum BodyState: UInt32, GodotEnum {
         case transform = 0
         case linearVelocity = 1
         case angularVelocity = 2
         case sleeping = 3
         case canSleep = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Transform", 0),
+            ("Linear Velocity", 1),
+            ("Angular Velocity", 2),
+            ("Sleeping", 3),
+            ("Can Sleep", 4),]
+        }
     }
-    public enum AreaBodyStatus: UInt32 {
+    public enum AreaBodyStatus: UInt32, GodotEnum {
         case added = 0
         case removed = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Added", 0),
+            ("Removed", 1),]
+        }
     }
-    public enum ProcessInfo: UInt32 {
+    public enum ProcessInfo: UInt32, GodotEnum {
         case activeObjects = 0
         case collisionPairs = 1
         case islandCount = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Active Objects", 0),
+            ("Collision Pairs", 1),
+            ("Island Count", 2),]
+        }
     }
-    public enum SpaceParameter: UInt32 {
+    public enum SpaceParameter: UInt32, GodotEnum {
         case contactRecycleRadius = 0
         case contactMaxSeparation = 1
         case contactMaxAllowedPenetration = 2
@@ -172,14 +347,34 @@ open class PhysicsServer3D: Object {
         case bodyAngularVelocitySleepThreshold = 5
         case bodyTimeToSleep = 6
         case solverIterations = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Contact Recycle Radius", 0),
+            ("Contact Max Separation", 1),
+            ("Contact Max Allowed Penetration", 2),
+            ("Contact Default Bias", 3),
+            ("Body Linear Velocity Sleep Threshold", 4),
+            ("Body Angular Velocity Sleep Threshold", 5),
+            ("Body Time To Sleep", 6),
+            ("Solver Iterations", 7),]
+        }
     }
-    public enum BodyAxis: UInt32 {
+    public enum BodyAxis: UInt32, GodotEnum {
         case linearX = 1
         case linearY = 2
         case linearZ = 4
         case angularX = 8
         case angularY = 16
         case angularZ = 32
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear X", 1),
+            ("Linear Y", 2),
+            ("Linear Z", 4),
+            ("Angular X", 8),
+            ("Angular Y", 16),
+            ("Angular Z", 32),]
+        }
     }
 
     private static var __method_binding_world_boundary_shape_create: GDExtensionMethodBindPtr = {

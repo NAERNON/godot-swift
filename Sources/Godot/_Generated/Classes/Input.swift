@@ -5,14 +5,22 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Input: Object {
-    public enum MouseMode: UInt32 {
+    public enum MouseMode: UInt32, GodotEnum {
         case visible = 0
         case hidden = 1
         case captured = 2
         case confined = 3
         case confinedHidden = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Visible", 0),
+            ("Hidden", 1),
+            ("Captured", 2),
+            ("Confined", 3),
+            ("Confined Hidden", 4),]
+        }
     }
-    public enum CursorShape: UInt32 {
+    public enum CursorShape: UInt32, GodotEnum {
         case arrow = 0
         case ibeam = 1
         case pointingHand = 2
@@ -30,6 +38,26 @@ open class Input: Object {
         case vsplit = 14
         case hsplit = 15
         case help = 16
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Arrow", 0),
+            ("Ibeam", 1),
+            ("Pointing Hand", 2),
+            ("Cross", 3),
+            ("Wait", 4),
+            ("Busy", 5),
+            ("Drag", 6),
+            ("Can Drop", 7),
+            ("Forbidden", 8),
+            ("Vsize", 9),
+            ("Hsize", 10),
+            ("Bdiagsize", 11),
+            ("Fdiagsize", 12),
+            ("Move", 13),
+            ("Vsplit", 14),
+            ("Hsplit", 15),
+            ("Help", 16),]
+        }
     }
 
     @Emitter(signal: "joy_connection_changed", args: ("device", Int), ("connected", Bool))

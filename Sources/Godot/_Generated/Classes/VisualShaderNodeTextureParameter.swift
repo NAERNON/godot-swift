@@ -5,20 +5,35 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
-    public enum TextureType: UInt32 {
+    public enum TextureType: UInt32, GodotEnum {
         case data = 0
         case color = 1
         case normalMap = 2
         case anisotropy = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Data", 0),
+            ("Color", 1),
+            ("Normal Map", 2),
+            ("Anisotropy", 3),
+            ("Max", 4),]
+        }
     }
-    public enum ColorDefault: UInt32 {
+    public enum ColorDefault: UInt32, GodotEnum {
         case white = 0
         case black = 1
         case transparent = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("White", 0),
+            ("Black", 1),
+            ("Transparent", 2),
+            ("Max", 3),]
+        }
     }
-    public enum TextureFilter: UInt32 {
+    public enum TextureFilter: UInt32, GodotEnum {
         case `default` = 0
         case nearest = 1
         case linear = 2
@@ -27,19 +42,45 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
         case nearestMipmapAnisotropic = 5
         case linearMipmapAnisotropic = 6
         case max = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`default`", 0),
+            ("Nearest", 1),
+            ("Linear", 2),
+            ("Nearest Mipmap", 3),
+            ("Linear Mipmap", 4),
+            ("Nearest Mipmap Anisotropic", 5),
+            ("Linear Mipmap Anisotropic", 6),
+            ("Max", 7),]
+        }
     }
-    public enum TextureRepeat: UInt32 {
+    public enum TextureRepeat: UInt32, GodotEnum {
         case `default` = 0
         case enabled = 1
         case disabled = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`default`", 0),
+            ("Enabled", 1),
+            ("Disabled", 2),
+            ("Max", 3),]
+        }
     }
-    public enum TextureSource: UInt32 {
+    public enum TextureSource: UInt32, GodotEnum {
         case none = 0
         case screen = 1
         case depth = 2
         case normalRoughness = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Screen", 1),
+            ("Depth", 2),
+            ("Normal Roughness", 3),
+            ("Max", 4),]
+        }
     }
 
     private static var __method_binding_set_texture_type: GDExtensionMethodBindPtr = {

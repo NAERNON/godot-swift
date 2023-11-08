@@ -5,19 +5,35 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AStarGrid2D: RefCounted {
-    public enum Heuristic: UInt32 {
+    public enum Heuristic: UInt32, GodotEnum {
         case euclidean = 0
         case manhattan = 1
         case octile = 2
         case chebyshev = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Euclidean", 0),
+            ("Manhattan", 1),
+            ("Octile", 2),
+            ("Chebyshev", 3),
+            ("Max", 4),]
+        }
     }
-    public enum DiagonalMode: UInt32 {
+    public enum DiagonalMode: UInt32, GodotEnum {
         case always = 0
         case never = 1
         case atLeastOneWalkable = 2
         case onlyIfNoObstacles = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Always", 0),
+            ("Never", 1),
+            ("At Least One Walkable", 2),
+            ("Only If No Obstacles", 3),
+            ("Max", 4),]
+        }
     }
 
     open func _estimateCost(fromId: Godot.Vector2i, toId: Godot.Vector2i) -> Double {

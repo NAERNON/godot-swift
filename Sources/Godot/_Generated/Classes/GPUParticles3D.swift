@@ -5,24 +5,46 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GPUParticles3D: GeometryInstance3D {
-    public enum DrawOrder: UInt32 {
+    public enum DrawOrder: UInt32, GodotEnum {
         case index = 0
         case lifetime = 1
         case reverseLifetime = 2
         case viewDepth = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Index", 0),
+            ("Lifetime", 1),
+            ("Reverse Lifetime", 2),
+            ("View Depth", 3),]
+        }
     }
-    public enum EmitFlags: UInt32 {
+    public enum EmitFlags: UInt32, GodotEnum {
         case position = 1
         case rotationScale = 2
         case velocity = 4
         case color = 8
         case custom = 16
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Position", 1),
+            ("Rotation Scale", 2),
+            ("Velocity", 4),
+            ("Color", 8),
+            ("Custom", 16),]
+        }
     }
-    public enum TransformAlign: UInt32 {
+    public enum TransformAlign: UInt32, GodotEnum {
         case disabled = 0
         case zBillboard = 1
         case yToVelocity = 2
         case zBillboardYToVelocity = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Z Billboard", 1),
+            ("Y To Velocity", 2),
+            ("Z Billboard Y To Velocity", 3),]
+        }
     }
 
     private static var __method_binding_set_emitting: GDExtensionMethodBindPtr = {

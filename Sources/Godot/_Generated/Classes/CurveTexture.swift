@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class CurveTexture: Texture2D {
-    public enum TextureMode: UInt32 {
+    public enum TextureMode: UInt32, GodotEnum {
         case rgb = 0
         case red = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Rgb", 0),
+            ("Red", 1),]
+        }
     }
 
     private static var __method_binding_set_width: GDExtensionMethodBindPtr = {

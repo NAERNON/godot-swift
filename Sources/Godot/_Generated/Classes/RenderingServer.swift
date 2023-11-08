@@ -5,28 +5,52 @@
 import GodotExtensionHeaders
 @GodotClass
 open class RenderingServer: Object {
-    public enum TextureLayeredType: UInt32 {
+    public enum TextureLayeredType: UInt32, GodotEnum {
         case textureLayered2DArray = 0
         case cubemap = 1
         case cubemapArray = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Texture Layered2 D Array", 0),
+            ("Cubemap", 1),
+            ("Cubemap Array", 2),]
+        }
     }
-    public enum CubeMapLayer: UInt32 {
+    public enum CubeMapLayer: UInt32, GodotEnum {
         case left = 0
         case right = 1
         case bottom = 2
         case top = 3
         case front = 4
         case back = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Left", 0),
+            ("Right", 1),
+            ("Bottom", 2),
+            ("Top", 3),
+            ("Front", 4),
+            ("Back", 5),]
+        }
     }
-    public enum ShaderMode: UInt32 {
+    public enum ShaderMode: UInt32, GodotEnum {
         case spatial = 0
         case canvasItem = 1
         case particles = 2
         case sky = 3
         case fog = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Spatial", 0),
+            ("Canvas Item", 1),
+            ("Particles", 2),
+            ("Sky", 3),
+            ("Fog", 4),
+            ("Max", 5),]
+        }
     }
-    public enum ArrayType: UInt32 {
+    public enum ArrayType: UInt32, GodotEnum {
         case vertex = 0
         case normal = 1
         case tangent = 2
@@ -41,8 +65,25 @@ open class RenderingServer: Object {
         case weights = 11
         case index = 12
         case max = 13
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Vertex", 0),
+            ("Normal", 1),
+            ("Tangent", 2),
+            ("Color", 3),
+            ("Tex Uv", 4),
+            ("Tex Uv2", 5),
+            ("Custom0", 6),
+            ("Custom1", 7),
+            ("Custom2", 8),
+            ("Custom3", 9),
+            ("Bones", 10),
+            ("Weights", 11),
+            ("Index", 12),
+            ("Max", 13),]
+        }
     }
-    public enum ArrayCustomFormat: UInt32 {
+    public enum ArrayCustomFormat: UInt32, GodotEnum {
         case rgba8Unorm = 0
         case rgba8Snorm = 1
         case rgHalf = 2
@@ -52,6 +93,18 @@ open class RenderingServer: Object {
         case rgbFloat = 6
         case rgbaFloat = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Rgba8 Unorm", 0),
+            ("Rgba8 Snorm", 1),
+            ("Rg Half", 2),
+            ("Rgba Half", 3),
+            ("R Float", 4),
+            ("Rg Float", 5),
+            ("Rgb Float", 6),
+            ("Rgba Float", 7),
+            ("Max", 8),]
+        }
     }
     public struct ArrayFormat: OptionSet {
         public let rawValue: UInt32
@@ -87,36 +140,70 @@ open class RenderingServer: Object {
         public static let flagUse8BoneWeights: Self = .init(rawValue: 134217728)
         public static let flagUsesEmptyVertexArray: Self = .init(rawValue: 268435456)
     }
-    public enum PrimitiveType: UInt32 {
+    public enum PrimitiveType: UInt32, GodotEnum {
         case points = 0
         case lines = 1
         case lineStrip = 2
         case triangles = 3
         case triangleStrip = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Points", 0),
+            ("Lines", 1),
+            ("Line Strip", 2),
+            ("Triangles", 3),
+            ("Triangle Strip", 4),
+            ("Max", 5),]
+        }
     }
-    public enum BlendShapeMode: UInt32 {
+    public enum BlendShapeMode: UInt32, GodotEnum {
         case normalized = 0
         case relative = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Normalized", 0),
+            ("Relative", 1),]
+        }
     }
-    public enum MultimeshTransformFormat: UInt32 {
+    public enum MultimeshTransformFormat: UInt32, GodotEnum {
         case multimeshTransform2D = 0
         case multimeshTransform3D = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Multimesh Transform2 D", 0),
+            ("Multimesh Transform3 D", 1),]
+        }
     }
-    public enum LightProjectorFilter: UInt32 {
+    public enum LightProjectorFilter: UInt32, GodotEnum {
         case nearest = 0
         case linear = 1
         case nearestMipmaps = 2
         case linearMipmaps = 3
         case nearestMipmapsAnisotropic = 4
         case linearMipmapsAnisotropic = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Nearest", 0),
+            ("Linear", 1),
+            ("Nearest Mipmaps", 2),
+            ("Linear Mipmaps", 3),
+            ("Nearest Mipmaps Anisotropic", 4),
+            ("Linear Mipmaps Anisotropic", 5),]
+        }
     }
-    public enum LightType: UInt32 {
+    public enum LightType: UInt32, GodotEnum {
         case directional = 0
         case omni = 1
         case spot = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Directional", 0),
+            ("Omni", 1),
+            ("Spot", 2),]
+        }
     }
-    public enum LightParam: UInt32 {
+    public enum LightParam: UInt32, GodotEnum {
         case energy = 0
         case indirectEnergy = 1
         case volumetricFogEnergy = 2
@@ -139,27 +226,75 @@ open class RenderingServer: Object {
         case transmittanceBias = 19
         case intensity = 20
         case max = 21
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Energy", 0),
+            ("Indirect Energy", 1),
+            ("Volumetric Fog Energy", 2),
+            ("Specular", 3),
+            ("Range", 4),
+            ("Size", 5),
+            ("Attenuation", 6),
+            ("Spot Angle", 7),
+            ("Spot Attenuation", 8),
+            ("Shadow Max Distance", 9),
+            ("Shadow Split1 Offset", 10),
+            ("Shadow Split2 Offset", 11),
+            ("Shadow Split3 Offset", 12),
+            ("Shadow Fade Start", 13),
+            ("Shadow Normal Bias", 14),
+            ("Shadow Bias", 15),
+            ("Shadow Pancake Size", 16),
+            ("Shadow Opacity", 17),
+            ("Shadow Blur", 18),
+            ("Transmittance Bias", 19),
+            ("Intensity", 20),
+            ("Max", 21),]
+        }
     }
-    public enum LightBakeMode: UInt32 {
+    public enum LightBakeMode: UInt32, GodotEnum {
         case disabled = 0
         case `static` = 1
         case dynamic = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("`static`", 1),
+            ("Dynamic", 2),]
+        }
     }
-    public enum LightOmniShadowMode: UInt32 {
+    public enum LightOmniShadowMode: UInt32, GodotEnum {
         case dualParaboloid = 0
         case cube = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Dual Paraboloid", 0),
+            ("Cube", 1),]
+        }
     }
-    public enum LightDirectionalShadowMode: UInt32 {
+    public enum LightDirectionalShadowMode: UInt32, GodotEnum {
         case orthogonal = 0
         case parallel2Splits = 1
         case parallel4Splits = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Orthogonal", 0),
+            ("Parallel2 Splits", 1),
+            ("Parallel4 Splits", 2),]
+        }
     }
-    public enum LightDirectionalSkyMode: UInt32 {
+    public enum LightDirectionalSkyMode: UInt32, GodotEnum {
         case lightAndSky = 0
         case lightOnly = 1
         case skyOnly = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Light And Sky", 0),
+            ("Light Only", 1),
+            ("Sky Only", 2),]
+        }
     }
-    public enum ShadowQuality: UInt32 {
+    public enum ShadowQuality: UInt32, GodotEnum {
         case hard = 0
         case softVeryLow = 1
         case softLow = 2
@@ -167,52 +302,114 @@ open class RenderingServer: Object {
         case softHigh = 4
         case softUltra = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Hard", 0),
+            ("Soft Very Low", 1),
+            ("Soft Low", 2),
+            ("Soft Medium", 3),
+            ("Soft High", 4),
+            ("Soft Ultra", 5),
+            ("Max", 6),]
+        }
     }
-    public enum ReflectionProbeUpdateMode: UInt32 {
+    public enum ReflectionProbeUpdateMode: UInt32, GodotEnum {
         case once = 0
         case always = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Once", 0),
+            ("Always", 1),]
+        }
     }
-    public enum ReflectionProbeAmbientMode: UInt32 {
+    public enum ReflectionProbeAmbientMode: UInt32, GodotEnum {
         case disabled = 0
         case environment = 1
         case color = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Environment", 1),
+            ("Color", 2),]
+        }
     }
-    public enum DecalTexture: UInt32 {
+    public enum DecalTexture: UInt32, GodotEnum {
         case albedo = 0
         case normal = 1
         case orm = 2
         case emission = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Albedo", 0),
+            ("Normal", 1),
+            ("Orm", 2),
+            ("Emission", 3),
+            ("Max", 4),]
+        }
     }
-    public enum DecalFilter: UInt32 {
+    public enum DecalFilter: UInt32, GodotEnum {
         case nearest = 0
         case linear = 1
         case nearestMipmaps = 2
         case linearMipmaps = 3
         case nearestMipmapsAnisotropic = 4
         case linearMipmapsAnisotropic = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Nearest", 0),
+            ("Linear", 1),
+            ("Nearest Mipmaps", 2),
+            ("Linear Mipmaps", 3),
+            ("Nearest Mipmaps Anisotropic", 4),
+            ("Linear Mipmaps Anisotropic", 5),]
+        }
     }
-    public enum VoxelGIQuality: UInt32 {
+    public enum VoxelGIQuality: UInt32, GodotEnum {
         case low = 0
         case high = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Low", 0),
+            ("High", 1),]
+        }
     }
-    public enum ParticlesMode: UInt32 {
+    public enum ParticlesMode: UInt32, GodotEnum {
         case particlesMode2D = 0
         case particlesMode3D = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Particles Mode2 D", 0),
+            ("Particles Mode3 D", 1),]
+        }
     }
-    public enum ParticlesTransformAlign: UInt32 {
+    public enum ParticlesTransformAlign: UInt32, GodotEnum {
         case disabled = 0
         case zBillboard = 1
         case yToVelocity = 2
         case zBillboardYToVelocity = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Z Billboard", 1),
+            ("Y To Velocity", 2),
+            ("Z Billboard Y To Velocity", 3),]
+        }
     }
-    public enum ParticlesDrawOrder: UInt32 {
+    public enum ParticlesDrawOrder: UInt32, GodotEnum {
         case index = 0
         case lifetime = 1
         case reverseLifetime = 2
         case viewDepth = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Index", 0),
+            ("Lifetime", 1),
+            ("Reverse Lifetime", 2),
+            ("View Depth", 3),]
+        }
     }
-    public enum ParticlesCollisionType: UInt32 {
+    public enum ParticlesCollisionType: UInt32, GodotEnum {
         case sphereAttract = 0
         case boxAttract = 1
         case vectorFieldAttract = 2
@@ -220,8 +417,18 @@ open class RenderingServer: Object {
         case boxCollide = 4
         case sdfCollide = 5
         case heightfieldCollide = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Sphere Attract", 0),
+            ("Box Attract", 1),
+            ("Vector Field Attract", 2),
+            ("Sphere Collide", 3),
+            ("Box Collide", 4),
+            ("Sdf Collide", 5),
+            ("Heightfield Collide", 6),]
+        }
     }
-    public enum ParticlesCollisionHeightfieldResolution: UInt32 {
+    public enum ParticlesCollisionHeightfieldResolution: UInt32, GodotEnum {
         case particlesCollisionHeightfieldResolution256 = 0
         case particlesCollisionHeightfieldResolution512 = 1
         case particlesCollisionHeightfieldResolution1024 = 2
@@ -229,80 +436,174 @@ open class RenderingServer: Object {
         case particlesCollisionHeightfieldResolution4096 = 4
         case particlesCollisionHeightfieldResolution8192 = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Particles Collision Heightfield Resolution256", 0),
+            ("Particles Collision Heightfield Resolution512", 1),
+            ("Particles Collision Heightfield Resolution1024", 2),
+            ("Particles Collision Heightfield Resolution2048", 3),
+            ("Particles Collision Heightfield Resolution4096", 4),
+            ("Particles Collision Heightfield Resolution8192", 5),
+            ("Max", 6),]
+        }
     }
-    public enum FogVolumeShape: UInt32 {
+    public enum FogVolumeShape: UInt32, GodotEnum {
         case ellipsoid = 0
         case cone = 1
         case cylinder = 2
         case box = 3
         case world = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Ellipsoid", 0),
+            ("Cone", 1),
+            ("Cylinder", 2),
+            ("Box", 3),
+            ("World", 4),
+            ("Max", 5),]
+        }
     }
-    public enum ViewportScaling3DMode: UInt32 {
+    public enum ViewportScaling3DMode: UInt32, GodotEnum {
         case bilinear = 0
         case fsr = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bilinear", 0),
+            ("Fsr", 1),
+            ("Max", 2),]
+        }
     }
-    public enum ViewportUpdateMode: UInt32 {
+    public enum ViewportUpdateMode: UInt32, GodotEnum {
         case disabled = 0
         case once = 1
         case whenVisible = 2
         case whenParentVisible = 3
         case always = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Once", 1),
+            ("When Visible", 2),
+            ("When Parent Visible", 3),
+            ("Always", 4),]
+        }
     }
-    public enum ViewportClearMode: UInt32 {
+    public enum ViewportClearMode: UInt32, GodotEnum {
         case always = 0
         case never = 1
         case onlyNextFrame = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Always", 0),
+            ("Never", 1),
+            ("Only Next Frame", 2),]
+        }
     }
-    public enum ViewportEnvironmentMode: UInt32 {
+    public enum ViewportEnvironmentMode: UInt32, GodotEnum {
         case disabled = 0
         case enabled = 1
         case inherit = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Enabled", 1),
+            ("Inherit", 2),
+            ("Max", 3),]
+        }
     }
-    public enum ViewportSDFOversize: UInt32 {
+    public enum ViewportSDFOversize: UInt32, GodotEnum {
         case viewportSdfOversize100Percent = 0
         case viewportSdfOversize120Percent = 1
         case viewportSdfOversize150Percent = 2
         case viewportSdfOversize200Percent = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Viewport Sdf Oversize100 Percent", 0),
+            ("Viewport Sdf Oversize120 Percent", 1),
+            ("Viewport Sdf Oversize150 Percent", 2),
+            ("Viewport Sdf Oversize200 Percent", 3),
+            ("Max", 4),]
+        }
     }
-    public enum ViewportSDFScale: UInt32 {
+    public enum ViewportSDFScale: UInt32, GodotEnum {
         case viewportSdfScale100Percent = 0
         case viewportSdfScale50Percent = 1
         case viewportSdfScale25Percent = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Viewport Sdf Scale100 Percent", 0),
+            ("Viewport Sdf Scale50 Percent", 1),
+            ("Viewport Sdf Scale25 Percent", 2),
+            ("Max", 3),]
+        }
     }
-    public enum ViewportMSAA: UInt32 {
+    public enum ViewportMSAA: UInt32, GodotEnum {
         case disabled = 0
         case viewportMsaa2x = 1
         case viewportMsaa4x = 2
         case viewportMsaa8x = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Viewport Msaa2x", 1),
+            ("Viewport Msaa4x", 2),
+            ("Viewport Msaa8x", 3),
+            ("Max", 4),]
+        }
     }
-    public enum ViewportScreenSpaceAA: UInt32 {
+    public enum ViewportScreenSpaceAA: UInt32, GodotEnum {
         case disabled = 0
         case fxaa = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Fxaa", 1),
+            ("Max", 2),]
+        }
     }
-    public enum ViewportOcclusionCullingBuildQuality: UInt32 {
+    public enum ViewportOcclusionCullingBuildQuality: UInt32, GodotEnum {
         case low = 0
         case medium = 1
         case high = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Low", 0),
+            ("Medium", 1),
+            ("High", 2),]
+        }
     }
-    public enum ViewportRenderInfo: UInt32 {
+    public enum ViewportRenderInfo: UInt32, GodotEnum {
         case objectsInFrame = 0
         case primitivesInFrame = 1
         case drawCallsInFrame = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Objects In Frame", 0),
+            ("Primitives In Frame", 1),
+            ("Draw Calls In Frame", 2),
+            ("Max", 3),]
+        }
     }
-    public enum ViewportRenderInfoType: UInt32 {
+    public enum ViewportRenderInfoType: UInt32, GodotEnum {
         case visible = 0
         case shadow = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Visible", 0),
+            ("Shadow", 1),
+            ("Max", 2),]
+        }
     }
-    public enum ViewportDebugDraw: UInt32 {
+    public enum ViewportDebugDraw: UInt32, GodotEnum {
         case disabled = 0
         case unshaded = 1
         case lighting = 2
@@ -329,20 +630,63 @@ open class RenderingServer: Object {
         case clusterReflectionProbes = 23
         case occluders = 24
         case motionVectors = 25
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Unshaded", 1),
+            ("Lighting", 2),
+            ("Overdraw", 3),
+            ("Wireframe", 4),
+            ("Normal Buffer", 5),
+            ("Voxel Gi Albedo", 6),
+            ("Voxel Gi Lighting", 7),
+            ("Voxel Gi Emission", 8),
+            ("Shadow Atlas", 9),
+            ("Directional Shadow Atlas", 10),
+            ("Scene Luminance", 11),
+            ("Ssao", 12),
+            ("Ssil", 13),
+            ("Pssm Splits", 14),
+            ("Decal Atlas", 15),
+            ("Sdfgi", 16),
+            ("Sdfgi Probes", 17),
+            ("Gi Buffer", 18),
+            ("Disable Lod", 19),
+            ("Cluster Omni Lights", 20),
+            ("Cluster Spot Lights", 21),
+            ("Cluster Decals", 22),
+            ("Cluster Reflection Probes", 23),
+            ("Occluders", 24),
+            ("Motion Vectors", 25),]
+        }
     }
-    public enum ViewportVRSMode: UInt32 {
+    public enum ViewportVRSMode: UInt32, GodotEnum {
         case disabled = 0
         case texture = 1
         case xr = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Texture", 1),
+            ("Xr", 2),
+            ("Max", 3),]
+        }
     }
-    public enum SkyMode: UInt32 {
+    public enum SkyMode: UInt32, GodotEnum {
         case automatic = 0
         case quality = 1
         case incremental = 2
         case realtime = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Automatic", 0),
+            ("Quality", 1),
+            ("Incremental", 2),
+            ("Realtime", 3),]
+        }
     }
-    public enum EnvironmentBG: UInt32 {
+    public enum EnvironmentBG: UInt32, GodotEnum {
         case clearColor = 0
         case color = 1
         case sky = 2
@@ -350,57 +694,124 @@ open class RenderingServer: Object {
         case keep = 4
         case cameraFeed = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Clear Color", 0),
+            ("Color", 1),
+            ("Sky", 2),
+            ("Canvas", 3),
+            ("Keep", 4),
+            ("Camera Feed", 5),
+            ("Max", 6),]
+        }
     }
-    public enum EnvironmentAmbientSource: UInt32 {
+    public enum EnvironmentAmbientSource: UInt32, GodotEnum {
         case bg = 0
         case disabled = 1
         case color = 2
         case sky = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bg", 0),
+            ("Disabled", 1),
+            ("Color", 2),
+            ("Sky", 3),]
+        }
     }
-    public enum EnvironmentReflectionSource: UInt32 {
+    public enum EnvironmentReflectionSource: UInt32, GodotEnum {
         case bg = 0
         case disabled = 1
         case sky = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bg", 0),
+            ("Disabled", 1),
+            ("Sky", 2),]
+        }
     }
-    public enum EnvironmentGlowBlendMode: UInt32 {
+    public enum EnvironmentGlowBlendMode: UInt32, GodotEnum {
         case additive = 0
         case screen = 1
         case softlight = 2
         case replace = 3
         case mix = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Additive", 0),
+            ("Screen", 1),
+            ("Softlight", 2),
+            ("Replace", 3),
+            ("Mix", 4),]
+        }
     }
-    public enum EnvironmentToneMapper: UInt32 {
+    public enum EnvironmentToneMapper: UInt32, GodotEnum {
         case linear = 0
         case reinhard = 1
         case filmic = 2
         case aces = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear", 0),
+            ("Reinhard", 1),
+            ("Filmic", 2),
+            ("Aces", 3),]
+        }
     }
-    public enum EnvironmentSSRRoughnessQuality: UInt32 {
+    public enum EnvironmentSSRRoughnessQuality: UInt32, GodotEnum {
         case disabled = 0
         case low = 1
         case medium = 2
         case high = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Low", 1),
+            ("Medium", 2),
+            ("High", 3),]
+        }
     }
-    public enum EnvironmentSSAOQuality: UInt32 {
+    public enum EnvironmentSSAOQuality: UInt32, GodotEnum {
         case veryLow = 0
         case low = 1
         case medium = 2
         case high = 3
         case ultra = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Very Low", 0),
+            ("Low", 1),
+            ("Medium", 2),
+            ("High", 3),
+            ("Ultra", 4),]
+        }
     }
-    public enum EnvironmentSSILQuality: UInt32 {
+    public enum EnvironmentSSILQuality: UInt32, GodotEnum {
         case veryLow = 0
         case low = 1
         case medium = 2
         case high = 3
         case ultra = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Very Low", 0),
+            ("Low", 1),
+            ("Medium", 2),
+            ("High", 3),
+            ("Ultra", 4),]
+        }
     }
-    public enum EnvironmentSDFGIYScale: UInt32 {
+    public enum EnvironmentSDFGIYScale: UInt32, GodotEnum {
         case envSdfgiYScale50Percent = 0
         case envSdfgiYScale75Percent = 1
         case envSdfgiYScale100Percent = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Env Sdfgi Y Scale50 Percent", 0),
+            ("Env Sdfgi Y Scale75 Percent", 1),
+            ("Env Sdfgi Y Scale100 Percent", 2),]
+        }
     }
-    public enum EnvironmentSDFGIRayCount: UInt32 {
+    public enum EnvironmentSDFGIRayCount: UInt32, GodotEnum {
         case envSdfgiRayCount4 = 0
         case envSdfgiRayCount8 = 1
         case envSdfgiRayCount16 = 2
@@ -409,8 +820,19 @@ open class RenderingServer: Object {
         case envSdfgiRayCount96 = 5
         case envSdfgiRayCount128 = 6
         case max = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Env Sdfgi Ray Count4", 0),
+            ("Env Sdfgi Ray Count8", 1),
+            ("Env Sdfgi Ray Count16", 2),
+            ("Env Sdfgi Ray Count32", 3),
+            ("Env Sdfgi Ray Count64", 4),
+            ("Env Sdfgi Ray Count96", 5),
+            ("Env Sdfgi Ray Count128", 6),
+            ("Max", 7),]
+        }
     }
-    public enum EnvironmentSDFGIFramesToConverge: UInt32 {
+    public enum EnvironmentSDFGIFramesToConverge: UInt32, GodotEnum {
         case in5Frames = 0
         case in10Frames = 1
         case in15Frames = 2
@@ -418,33 +840,72 @@ open class RenderingServer: Object {
         case in25Frames = 4
         case in30Frames = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("In5 Frames", 0),
+            ("In10 Frames", 1),
+            ("In15 Frames", 2),
+            ("In20 Frames", 3),
+            ("In25 Frames", 4),
+            ("In30 Frames", 5),
+            ("Max", 6),]
+        }
     }
-    public enum EnvironmentSDFGIFramesToUpdateLight: UInt32 {
+    public enum EnvironmentSDFGIFramesToUpdateLight: UInt32, GodotEnum {
         case in1Frame = 0
         case in2Frames = 1
         case in4Frames = 2
         case in8Frames = 3
         case in16Frames = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("In1 Frame", 0),
+            ("In2 Frames", 1),
+            ("In4 Frames", 2),
+            ("In8 Frames", 3),
+            ("In16 Frames", 4),
+            ("Max", 5),]
+        }
     }
-    public enum SubSurfaceScatteringQuality: UInt32 {
+    public enum SubSurfaceScatteringQuality: UInt32, GodotEnum {
         case disabled = 0
         case low = 1
         case medium = 2
         case high = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Low", 1),
+            ("Medium", 2),
+            ("High", 3),]
+        }
     }
-    public enum DOFBokehShape: UInt32 {
+    public enum DOFBokehShape: UInt32, GodotEnum {
         case box = 0
         case hexagon = 1
         case circle = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Box", 0),
+            ("Hexagon", 1),
+            ("Circle", 2),]
+        }
     }
-    public enum DOFBlurQuality: UInt32 {
+    public enum DOFBlurQuality: UInt32, GodotEnum {
         case veryLow = 0
         case low = 1
         case medium = 2
         case high = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Very Low", 0),
+            ("Low", 1),
+            ("Medium", 2),
+            ("High", 3),]
+        }
     }
-    public enum InstanceType: UInt32 {
+    public enum InstanceType: UInt32, GodotEnum {
         case none = 0
         case mesh = 1
         case multimesh = 2
@@ -460,42 +921,100 @@ open class RenderingServer: Object {
         case fogVolume = 12
         case max = 13
         case geometryMask = 14
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Mesh", 1),
+            ("Multimesh", 2),
+            ("Particles", 3),
+            ("Particles Collision", 4),
+            ("Light", 5),
+            ("Reflection Probe", 6),
+            ("Decal", 7),
+            ("Voxel Gi", 8),
+            ("Lightmap", 9),
+            ("Occluder", 10),
+            ("Visiblity Notifier", 11),
+            ("Fog Volume", 12),
+            ("Max", 13),
+            ("Geometry Mask", 14),]
+        }
     }
-    public enum InstanceFlags: UInt32 {
+    public enum InstanceFlags: UInt32, GodotEnum {
         case useBakedLight = 0
         case useDynamicGi = 1
         case drawNextFrameIfVisible = 2
         case ignoreOcclusionCulling = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Use Baked Light", 0),
+            ("Use Dynamic Gi", 1),
+            ("Draw Next Frame If Visible", 2),
+            ("Ignore Occlusion Culling", 3),
+            ("Max", 4),]
+        }
     }
-    public enum ShadowCastingSetting: UInt32 {
+    public enum ShadowCastingSetting: UInt32, GodotEnum {
         case off = 0
         case on = 1
         case doubleSided = 2
         case shadowsOnly = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Off", 0),
+            ("On", 1),
+            ("Double Sided", 2),
+            ("Shadows Only", 3),]
+        }
     }
-    public enum VisibilityRangeFadeMode: UInt32 {
+    public enum VisibilityRangeFadeMode: UInt32, GodotEnum {
         case disabled = 0
         case `self` = 1
         case dependencies = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("`self`", 1),
+            ("Dependencies", 2),]
+        }
     }
-    public enum BakeChannels: UInt32 {
+    public enum BakeChannels: UInt32, GodotEnum {
         case albedoAlpha = 0
         case normal = 1
         case orm = 2
         case emission = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Albedo Alpha", 0),
+            ("Normal", 1),
+            ("Orm", 2),
+            ("Emission", 3),]
+        }
     }
-    public enum CanvasTextureChannel: UInt32 {
+    public enum CanvasTextureChannel: UInt32, GodotEnum {
         case diffuse = 0
         case normal = 1
         case specular = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Diffuse", 0),
+            ("Normal", 1),
+            ("Specular", 2),]
+        }
     }
-    public enum NinePatchAxisMode: UInt32 {
+    public enum NinePatchAxisMode: UInt32, GodotEnum {
         case stretch = 0
         case tile = 1
         case tileFit = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Stretch", 0),
+            ("Tile", 1),
+            ("Tile Fit", 2),]
+        }
     }
-    public enum CanvasItemTextureFilter: UInt32 {
+    public enum CanvasItemTextureFilter: UInt32, GodotEnum {
         case `default` = 0
         case nearest = 1
         case linear = 2
@@ -504,41 +1023,91 @@ open class RenderingServer: Object {
         case nearestWithMipmapsAnisotropic = 5
         case linearWithMipmapsAnisotropic = 6
         case max = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`default`", 0),
+            ("Nearest", 1),
+            ("Linear", 2),
+            ("Nearest With Mipmaps", 3),
+            ("Linear With Mipmaps", 4),
+            ("Nearest With Mipmaps Anisotropic", 5),
+            ("Linear With Mipmaps Anisotropic", 6),
+            ("Max", 7),]
+        }
     }
-    public enum CanvasItemTextureRepeat: UInt32 {
+    public enum CanvasItemTextureRepeat: UInt32, GodotEnum {
         case `default` = 0
         case disabled = 1
         case enabled = 2
         case mirror = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`default`", 0),
+            ("Disabled", 1),
+            ("Enabled", 2),
+            ("Mirror", 3),
+            ("Max", 4),]
+        }
     }
-    public enum CanvasGroupMode: UInt32 {
+    public enum CanvasGroupMode: UInt32, GodotEnum {
         case disabled = 0
         case clipOnly = 1
         case clipAndDraw = 2
         case transparent = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Clip Only", 1),
+            ("Clip And Draw", 2),
+            ("Transparent", 3),]
+        }
     }
-    public enum CanvasLightMode: UInt32 {
+    public enum CanvasLightMode: UInt32, GodotEnum {
         case point = 0
         case directional = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Point", 0),
+            ("Directional", 1),]
+        }
     }
-    public enum CanvasLightBlendMode: UInt32 {
+    public enum CanvasLightBlendMode: UInt32, GodotEnum {
         case add = 0
         case sub = 1
         case mix = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Add", 0),
+            ("Sub", 1),
+            ("Mix", 2),]
+        }
     }
-    public enum CanvasLightShadowFilter: UInt32 {
+    public enum CanvasLightShadowFilter: UInt32, GodotEnum {
         case none = 0
         case pcf5 = 1
         case pcf13 = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Pcf5", 1),
+            ("Pcf13", 2),
+            ("Max", 3),]
+        }
     }
-    public enum CanvasOccluderPolygonCullMode: UInt32 {
+    public enum CanvasOccluderPolygonCullMode: UInt32, GodotEnum {
         case disabled = 0
         case clockwise = 1
         case counterClockwise = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Clockwise", 1),
+            ("Counter Clockwise", 2),]
+        }
     }
-    public enum GlobalShaderParameterType: UInt32 {
+    public enum GlobalShaderParameterType: UInt32, GodotEnum {
         case bool = 0
         case bvec2 = 1
         case bvec3 = 2
@@ -568,18 +1137,64 @@ open class RenderingServer: Object {
         case sampler3d = 26
         case samplercube = 27
         case max = 28
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bool", 0),
+            ("Bvec2", 1),
+            ("Bvec3", 2),
+            ("Bvec4", 3),
+            ("Int", 4),
+            ("Ivec2", 5),
+            ("Ivec3", 6),
+            ("Ivec4", 7),
+            ("Rect2i", 8),
+            ("Uint", 9),
+            ("Uvec2", 10),
+            ("Uvec3", 11),
+            ("Uvec4", 12),
+            ("Float", 13),
+            ("Vec2", 14),
+            ("Vec3", 15),
+            ("Vec4", 16),
+            ("Color", 17),
+            ("Rect2", 18),
+            ("Mat2", 19),
+            ("Mat3", 20),
+            ("Mat4", 21),
+            ("Transform2 D", 22),
+            ("Transform", 23),
+            ("Sampler2d", 24),
+            ("Sampler2darray", 25),
+            ("Sampler3d", 26),
+            ("Samplercube", 27),
+            ("Max", 28),]
+        }
     }
-    public enum RenderingInfo: UInt32 {
+    public enum RenderingInfo: UInt32, GodotEnum {
         case totalObjectsInFrame = 0
         case totalPrimitivesInFrame = 1
         case totalDrawCallsInFrame = 2
         case textureMemUsed = 3
         case bufferMemUsed = 4
         case videoMemUsed = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Total Objects In Frame", 0),
+            ("Total Primitives In Frame", 1),
+            ("Total Draw Calls In Frame", 2),
+            ("Texture Mem Used", 3),
+            ("Buffer Mem Used", 4),
+            ("Video Mem Used", 5),]
+        }
     }
-    public enum Features: UInt32 {
+    public enum Features: UInt32, GodotEnum {
         case shaders = 0
         case multithreaded = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Shaders", 0),
+            ("Multithreaded", 1),]
+        }
     }
 
     @Emitter(signal: "frame_pre_draw")

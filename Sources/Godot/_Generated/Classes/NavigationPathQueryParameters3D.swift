@@ -5,12 +5,21 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class NavigationPathQueryParameters3D: RefCounted {
-    public enum PathfindingAlgorithm: UInt32 {
+    public enum PathfindingAlgorithm: UInt32, GodotEnum {
         case pathfindingAlgorithmAstar = 0
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Pathfinding Algorithm Astar", 0),]
+        }
     }
-    public enum PathPostProcessing: UInt32 {
+    public enum PathPostProcessing: UInt32, GodotEnum {
         case corridorfunnel = 0
         case edgecentered = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Corridorfunnel", 0),
+            ("Edgecentered", 1),]
+        }
     }
     public struct PathMetadataFlags: OptionSet {
         public let rawValue: UInt32

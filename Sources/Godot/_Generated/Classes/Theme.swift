@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Theme: Resource {
-    public enum DataType: UInt32 {
+    public enum DataType: UInt32, GodotEnum {
         case color = 0
         case constant = 1
         case font = 2
@@ -13,6 +13,16 @@ open class Theme: Resource {
         case icon = 4
         case stylebox = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Color", 0),
+            ("Constant", 1),
+            ("Font", 2),
+            ("Font Size", 3),
+            ("Icon", 4),
+            ("Stylebox", 5),
+            ("Max", 6),]
+        }
     }
 
     private static var __method_binding_set_icon: GDExtensionMethodBindPtr = {

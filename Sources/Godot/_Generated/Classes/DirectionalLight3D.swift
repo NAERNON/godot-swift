@@ -5,15 +5,27 @@
 import GodotExtensionHeaders
 @GodotClass
 open class DirectionalLight3D: Light3D {
-    public enum ShadowMode: UInt32 {
+    public enum ShadowMode: UInt32, GodotEnum {
         case orthogonal = 0
         case parallel2Splits = 1
         case parallel4Splits = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Orthogonal", 0),
+            ("Parallel2 Splits", 1),
+            ("Parallel4 Splits", 2),]
+        }
     }
-    public enum SkyMode: UInt32 {
+    public enum SkyMode: UInt32, GodotEnum {
         case lightAndSky = 0
         case lightOnly = 1
         case skyOnly = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Light And Sky", 0),
+            ("Light Only", 1),
+            ("Sky Only", 2),]
+        }
     }
 
     private static var __method_binding_set_shadow_mode: GDExtensionMethodBindPtr = {

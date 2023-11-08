@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ResourceFormatLoader: RefCounted {
-    public enum CacheMode: UInt32 {
+    public enum CacheMode: UInt32, GodotEnum {
         case ignore = 0
         case reuse = 1
         case replace = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Ignore", 0),
+            ("Reuse", 1),
+            ("Replace", 2),]
+        }
     }
 
     open func _getRecognizedExtensions() -> Godot.PackedStringArray {

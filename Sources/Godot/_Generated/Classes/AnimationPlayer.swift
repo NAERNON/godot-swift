@@ -5,14 +5,25 @@
 import GodotExtensionHeaders
 @GodotClass
 open class AnimationPlayer: Node {
-    public enum AnimationProcessCallback: UInt32 {
+    public enum AnimationProcessCallback: UInt32, GodotEnum {
         case physics = 0
         case idle = 1
         case manual = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Physics", 0),
+            ("Idle", 1),
+            ("Manual", 2),]
+        }
     }
-    public enum AnimationMethodCallMode: UInt32 {
+    public enum AnimationMethodCallMode: UInt32, GodotEnum {
         case deferred = 0
         case immediate = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Deferred", 0),
+            ("Immediate", 1),]
+        }
     }
 
     @Emitter(signal: "animation_finished", args: ("animName", Godot.GodotStringName))

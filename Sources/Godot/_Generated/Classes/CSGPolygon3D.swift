@@ -5,19 +5,36 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CSGPolygon3D: CSGPrimitive3D {
-    public enum Mode: UInt32 {
+    public enum Mode: UInt32, GodotEnum {
         case depth = 0
         case spin = 1
         case path = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Depth", 0),
+            ("Spin", 1),
+            ("Path", 2),]
+        }
     }
-    public enum PathRotation: UInt32 {
+    public enum PathRotation: UInt32, GodotEnum {
         case polygon = 0
         case path = 1
         case pathFollow = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Polygon", 0),
+            ("Path", 1),
+            ("Path Follow", 2),]
+        }
     }
-    public enum PathIntervalType: UInt32 {
+    public enum PathIntervalType: UInt32, GodotEnum {
         case distance = 0
         case subdivide = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Distance", 0),
+            ("Subdivide", 1),]
+        }
     }
 
     private static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {

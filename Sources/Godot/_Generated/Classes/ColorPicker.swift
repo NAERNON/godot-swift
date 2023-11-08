@@ -5,18 +5,33 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ColorPicker: VBoxContainer {
-    public enum ColorModeType: UInt32 {
+    public enum ColorModeType: UInt32, GodotEnum {
         case rgb = 0
         case hsv = 1
         case raw = 2
         case okhsl = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Rgb", 0),
+            ("Hsv", 1),
+            ("Raw", 2),
+            ("Okhsl", 3),]
+        }
     }
-    public enum PickerShapeType: UInt32 {
+    public enum PickerShapeType: UInt32, GodotEnum {
         case hsvRectangle = 0
         case hsvWheel = 1
         case vhsCircle = 2
         case okhslCircle = 3
         case none = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Hsv Rectangle", 0),
+            ("Hsv Wheel", 1),
+            ("Vhs Circle", 2),
+            ("Okhsl Circle", 3),
+            ("None", 4),]
+        }
     }
 
     @Emitter(signal: "color_changed", args: ("color", Godot.Color))

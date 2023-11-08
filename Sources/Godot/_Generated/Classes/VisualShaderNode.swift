@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNode: Resource {
-    public enum PortType: UInt32 {
+    public enum PortType: UInt32, GodotEnum {
         case scalar = 0
         case scalarInt = 1
         case scalarUint = 2
@@ -16,6 +16,19 @@ open class VisualShaderNode: Resource {
         case transform = 7
         case sampler = 8
         case max = 9
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Scalar", 0),
+            ("Scalar Int", 1),
+            ("Scalar Uint", 2),
+            ("Vector2 D", 3),
+            ("Vector3 D", 4),
+            ("Vector4d", 5),
+            ("Boolean", 6),
+            ("Transform", 7),
+            ("Sampler", 8),
+            ("Max", 9),]
+        }
     }
 
     private static var __method_binding_set_output_port_for_preview: GDExtensionMethodBindPtr = {

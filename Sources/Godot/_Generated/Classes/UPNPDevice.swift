@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class UPNPDevice: RefCounted {
-    public enum IGDStatus: UInt32 {
+    public enum IGDStatus: UInt32, GodotEnum {
         case ok = 0
         case httpError = 1
         case httpEmpty = 2
@@ -16,6 +16,19 @@ open class UPNPDevice: RefCounted {
         case invalidControl = 7
         case mallocError = 8
         case unknownError = 9
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Ok", 0),
+            ("Http Error", 1),
+            ("Http Empty", 2),
+            ("No Urls", 3),
+            ("No Igd", 4),
+            ("Disconnected", 5),
+            ("Unknown Device", 6),
+            ("Invalid Control", 7),
+            ("Malloc Error", 8),
+            ("Unknown Error", 9),]
+        }
     }
 
     private static var __method_binding_is_valid_gateway: GDExtensionMethodBindPtr = {

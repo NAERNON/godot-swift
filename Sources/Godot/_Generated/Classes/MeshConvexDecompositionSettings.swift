@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class MeshConvexDecompositionSettings: RefCounted {
-    public enum Mode: UInt32 {
+    public enum Mode: UInt32, GodotEnum {
         case voxel = 0
         case tetrahedron = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Voxel", 0),
+            ("Tetrahedron", 1),]
+        }
     }
 
     private static var __method_binding_set_max_concavity: GDExtensionMethodBindPtr = {

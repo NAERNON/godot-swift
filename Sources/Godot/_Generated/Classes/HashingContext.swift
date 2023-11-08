@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class HashingContext: RefCounted {
-    public enum HashType: UInt32 {
+    public enum HashType: UInt32, GodotEnum {
         case md5 = 0
         case sha1 = 1
         case sha256 = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Md5", 0),
+            ("Sha1", 1),
+            ("Sha256", 2),]
+        }
     }
 
     private static var __method_binding_start: GDExtensionMethodBindPtr = {

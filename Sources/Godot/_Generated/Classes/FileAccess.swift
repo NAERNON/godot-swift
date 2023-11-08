@@ -5,18 +5,33 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class FileAccess: RefCounted {
-    public enum ModeFlags: UInt32 {
+    public enum ModeFlags: UInt32, GodotEnum {
         case read = 1
         case write = 2
         case readWrite = 3
         case writeRead = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Read", 1),
+            ("Write", 2),
+            ("Read Write", 3),
+            ("Write Read", 7),]
+        }
     }
-    public enum CompressionMode: UInt32 {
+    public enum CompressionMode: UInt32, GodotEnum {
         case fastlz = 0
         case deflate = 1
         case zstd = 2
         case gzip = 3
         case brotli = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Fastlz", 0),
+            ("Deflate", 1),
+            ("Zstd", 2),
+            ("Gzip", 3),
+            ("Brotli", 4),]
+        }
     }
 
     private static var __method_binding_open: GDExtensionMethodBindPtr = {

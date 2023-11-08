@@ -13,9 +13,14 @@ extension Vector2i {
     public static let up: Vector2i = Vector2i(x: 0, y: -1)
     public static let down: Vector2i = Vector2i(x: 0, y: 1)
 
-    public enum Axis: UInt32 {
+    public enum Axis: UInt32, GodotEnum {
         case x = 0
         case y = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("X", 0),
+            ("Y", 1),]
+        }
     }
 
     private static var __constructor: GDExtensionPtrConstructor = {

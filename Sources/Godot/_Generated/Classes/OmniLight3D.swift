@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotClass
 open class OmniLight3D: Light3D {
-    public enum ShadowMode: UInt32 {
+    public enum ShadowMode: UInt32, GodotEnum {
         case dualParaboloid = 0
         case cube = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Dual Paraboloid", 0),
+            ("Cube", 1),]
+        }
     }
 
     private static var __method_binding_set_shadow_mode: GDExtensionMethodBindPtr = {

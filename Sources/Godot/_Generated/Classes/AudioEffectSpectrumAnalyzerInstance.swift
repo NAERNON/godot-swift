@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioEffectSpectrumAnalyzerInstance: AudioEffectInstance {
-    public enum MagnitudeMode: UInt32 {
+    public enum MagnitudeMode: UInt32, GodotEnum {
         case average = 0
         case max = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Average", 0),
+            ("Max", 1),]
+        }
     }
 
     private static var __method_binding_get_magnitude_for_frequency_range: GDExtensionMethodBindPtr = {

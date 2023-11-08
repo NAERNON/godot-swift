@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class XRInterface: RefCounted {
-    public enum Capabilities: UInt32 {
+    public enum Capabilities: UInt32, GodotEnum {
         case none = 0
         case mono = 1
         case stereo = 2
@@ -13,25 +13,57 @@ open class XRInterface: RefCounted {
         case vr = 8
         case ar = 16
         case external = 32
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Mono", 1),
+            ("Stereo", 2),
+            ("Quad", 4),
+            ("Vr", 8),
+            ("Ar", 16),
+            ("External", 32),]
+        }
     }
-    public enum TrackingStatus: UInt32 {
+    public enum TrackingStatus: UInt32, GodotEnum {
         case normalTracking = 0
         case excessiveMotion = 1
         case insufficientFeatures = 2
         case unknownTracking = 3
         case notTracking = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Normal Tracking", 0),
+            ("Excessive Motion", 1),
+            ("Insufficient Features", 2),
+            ("Unknown Tracking", 3),
+            ("Not Tracking", 4),]
+        }
     }
-    public enum PlayAreaMode: UInt32 {
+    public enum PlayAreaMode: UInt32, GodotEnum {
         case unknown = 0
         case xrPlayArea3dof = 1
         case sitting = 2
         case roomscale = 3
         case stage = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Unknown", 0),
+            ("Xr Play Area3dof", 1),
+            ("Sitting", 2),
+            ("Roomscale", 3),
+            ("Stage", 4),]
+        }
     }
-    public enum EnvironmentBlendMode: UInt32 {
+    public enum EnvironmentBlendMode: UInt32, GodotEnum {
         case opaque = 0
         case additive = 1
         case alphaBlend = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Opaque", 0),
+            ("Additive", 1),
+            ("Alpha Blend", 2),]
+        }
     }
 
     @Emitter(signal: "play_area_changed", args: ("mode", Int))

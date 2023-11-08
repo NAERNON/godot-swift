@@ -5,20 +5,35 @@
 import GodotExtensionHeaders
 @GodotClass
 open class LightmapGI: VisualInstance3D {
-    public enum BakeQuality: UInt32 {
+    public enum BakeQuality: UInt32, GodotEnum {
         case low = 0
         case medium = 1
         case high = 2
         case ultra = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Low", 0),
+            ("Medium", 1),
+            ("High", 2),
+            ("Ultra", 3),]
+        }
     }
-    public enum GenerateProbes: UInt32 {
+    public enum GenerateProbes: UInt32, GodotEnum {
         case disabled = 0
         case subdiv4 = 1
         case subdiv8 = 2
         case subdiv16 = 3
         case subdiv32 = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Subdiv4", 1),
+            ("Subdiv8", 2),
+            ("Subdiv16", 3),
+            ("Subdiv32", 4),]
+        }
     }
-    public enum BakeError: UInt32 {
+    public enum BakeError: UInt32, GodotEnum {
         case ok = 0
         case noSceneRoot = 1
         case foreignData = 2
@@ -29,12 +44,32 @@ open class LightmapGI: VisualInstance3D {
         case cantCreateImage = 7
         case userAborted = 8
         case textureSizeTooSmall = 9
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Ok", 0),
+            ("No Scene Root", 1),
+            ("Foreign Data", 2),
+            ("No Lightmapper", 3),
+            ("No Save Path", 4),
+            ("No Meshes", 5),
+            ("Meshes Invalid", 6),
+            ("Cant Create Image", 7),
+            ("User Aborted", 8),
+            ("Texture Size Too Small", 9),]
+        }
     }
-    public enum EnvironmentMode: UInt32 {
+    public enum EnvironmentMode: UInt32, GodotEnum {
         case disabled = 0
         case scene = 1
         case customSky = 2
         case customColor = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Scene", 1),
+            ("Custom Sky", 2),
+            ("Custom Color", 3),]
+        }
     }
 
     private static var __method_binding_set_light_data: GDExtensionMethodBindPtr = {

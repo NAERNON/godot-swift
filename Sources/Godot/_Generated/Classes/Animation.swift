@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Animation: Resource {
-    public enum TrackType: UInt32 {
+    public enum TrackType: UInt32, GodotEnum {
         case value = 0
         case position3D = 1
         case rotation3D = 2
@@ -15,33 +15,77 @@ open class Animation: Resource {
         case bezier = 6
         case audio = 7
         case animation = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Value", 0),
+            ("Position3 D", 1),
+            ("Rotation3 D", 2),
+            ("Scale3 D", 3),
+            ("Blend Shape", 4),
+            ("Method", 5),
+            ("Bezier", 6),
+            ("Audio", 7),
+            ("Animation", 8),]
+        }
     }
-    public enum InterpolationType: UInt32 {
+    public enum InterpolationType: UInt32, GodotEnum {
         case nearest = 0
         case linear = 1
         case cubic = 2
         case linearAngle = 3
         case cubicAngle = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Nearest", 0),
+            ("Linear", 1),
+            ("Cubic", 2),
+            ("Linear Angle", 3),
+            ("Cubic Angle", 4),]
+        }
     }
-    public enum UpdateMode: UInt32 {
+    public enum UpdateMode: UInt32, GodotEnum {
         case continuous = 0
         case discrete = 1
         case capture = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Continuous", 0),
+            ("Discrete", 1),
+            ("Capture", 2),]
+        }
     }
-    public enum LoopMode: UInt32 {
+    public enum LoopMode: UInt32, GodotEnum {
         case none = 0
         case linear = 1
         case pingpong = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Linear", 1),
+            ("Pingpong", 2),]
+        }
     }
-    public enum LoopedFlag: UInt32 {
+    public enum LoopedFlag: UInt32, GodotEnum {
         case none = 0
         case end = 1
         case start = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("End", 1),
+            ("Start", 2),]
+        }
     }
-    public enum FindMode: UInt32 {
+    public enum FindMode: UInt32, GodotEnum {
         case nearest = 0
         case approx = 1
         case exact = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Nearest", 0),
+            ("Approx", 1),
+            ("Exact", 2),]
+        }
     }
 
     private static var __method_binding_add_track: GDExtensionMethodBindPtr = {

@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class XRPose: RefCounted {
-    public enum TrackingConfidence: UInt32 {
+    public enum TrackingConfidence: UInt32, GodotEnum {
         case none = 0
         case low = 1
         case high = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Low", 1),
+            ("High", 2),]
+        }
     }
 
     private static var __method_binding_set_has_tracking_data: GDExtensionMethodBindPtr = {

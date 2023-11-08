@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GDExtensionManager: Object {
-    public enum LoadStatus: UInt32 {
+    public enum LoadStatus: UInt32, GodotEnum {
         case ok = 0
         case failed = 1
         case alreadyLoaded = 2
         case notLoaded = 3
         case needsRestart = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Ok", 0),
+            ("Failed", 1),
+            ("Already Loaded", 2),
+            ("Not Loaded", 3),
+            ("Needs Restart", 4),]
+        }
     }
 
     private static var __method_binding_load_extension: GDExtensionMethodBindPtr = {

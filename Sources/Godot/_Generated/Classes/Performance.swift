@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Performance: Object {
-    public enum Monitor: UInt32 {
+    public enum Monitor: UInt32, GodotEnum {
         case timeFps = 0
         case timeProcess = 1
         case timePhysicsProcess = 2
@@ -40,6 +40,43 @@ open class Performance: Object {
         case navigationEdgeConnectionCount = 31
         case navigationEdgeFreeCount = 32
         case monitorMax = 33
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Time Fps", 0),
+            ("Time Process", 1),
+            ("Time Physics Process", 2),
+            ("Time Navigation Process", 3),
+            ("Memory Static", 4),
+            ("Memory Static Max", 5),
+            ("Memory Message Buffer Max", 6),
+            ("Object Count", 7),
+            ("Object Resource Count", 8),
+            ("Object Node Count", 9),
+            ("Object Orphan Node Count", 10),
+            ("Render Total Objects In Frame", 11),
+            ("Render Total Primitives In Frame", 12),
+            ("Render Total Draw Calls In Frame", 13),
+            ("Render Video Mem Used", 14),
+            ("Render Texture Mem Used", 15),
+            ("Render Buffer Mem Used", 16),
+            ("Physics2 D Active Objects", 17),
+            ("Physics2 D Collision Pairs", 18),
+            ("Physics2 D Island Count", 19),
+            ("Physics3 D Active Objects", 20),
+            ("Physics3 D Collision Pairs", 21),
+            ("Physics3 D Island Count", 22),
+            ("Audio Output Latency", 23),
+            ("Navigation Active Maps", 24),
+            ("Navigation Region Count", 25),
+            ("Navigation Agent Count", 26),
+            ("Navigation Link Count", 27),
+            ("Navigation Polygon Count", 28),
+            ("Navigation Edge Count", 29),
+            ("Navigation Edge Merge Count", 30),
+            ("Navigation Edge Connection Count", 31),
+            ("Navigation Edge Free Count", 32),
+            ("Monitor Max", 33),]
+        }
     }
 
     private static var __method_binding_get_monitor: GDExtensionMethodBindPtr = {

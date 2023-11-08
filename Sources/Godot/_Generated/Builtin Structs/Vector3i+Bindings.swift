@@ -16,10 +16,16 @@ extension Vector3i {
     public static let forward: Vector3i = Vector3i(x: 0, y: 0, z: -1)
     public static let back: Vector3i = Vector3i(x: 0, y: 0, z: 1)
 
-    public enum Axis: UInt32 {
+    public enum Axis: UInt32, GodotEnum {
         case x = 0
         case y = 1
         case z = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("X", 0),
+            ("Y", 1),
+            ("Z", 2),]
+        }
     }
 
     private static var __constructor: GDExtensionPtrConstructor = {

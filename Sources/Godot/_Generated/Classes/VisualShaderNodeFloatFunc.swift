@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeFloatFunc: VisualShaderNode {
-    public enum Function: UInt32 {
+    public enum Function: UInt32, GodotEnum {
         case sin = 0
         case cos = 1
         case tan = 2
@@ -39,6 +39,42 @@ open class VisualShaderNodeFloatFunc: VisualShaderNode {
         case trunc = 30
         case oneminus = 31
         case max = 32
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Sin", 0),
+            ("Cos", 1),
+            ("Tan", 2),
+            ("Asin", 3),
+            ("Acos", 4),
+            ("Atan", 5),
+            ("Sinh", 6),
+            ("Cosh", 7),
+            ("Tanh", 8),
+            ("Log", 9),
+            ("Exp", 10),
+            ("Sqrt", 11),
+            ("Abs", 12),
+            ("Sign", 13),
+            ("Floor", 14),
+            ("Round", 15),
+            ("Ceil", 16),
+            ("Fract", 17),
+            ("Saturate", 18),
+            ("Negate", 19),
+            ("Acosh", 20),
+            ("Asinh", 21),
+            ("Atanh", 22),
+            ("Degrees", 23),
+            ("Exp2", 24),
+            ("Inverse Sqrt", 25),
+            ("Log2", 26),
+            ("Radians", 27),
+            ("Reciprocal", 28),
+            ("Roundeven", 29),
+            ("Trunc", 30),
+            ("Oneminus", 31),
+            ("Max", 32),]
+        }
     }
 
     private static var __method_binding_set_function: GDExtensionMethodBindPtr = {

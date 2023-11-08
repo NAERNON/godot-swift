@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNodeStateMachine: AnimationRootNode {
-    public enum StateMachineType: UInt32 {
+    public enum StateMachineType: UInt32, GodotEnum {
         case root = 0
         case nested = 1
         case grouped = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Root", 0),
+            ("Nested", 1),
+            ("Grouped", 2),]
+        }
     }
 
     private static var __method_binding_add_node: GDExtensionMethodBindPtr = {

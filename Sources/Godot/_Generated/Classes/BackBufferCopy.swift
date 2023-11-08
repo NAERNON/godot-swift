@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class BackBufferCopy: Node2D {
-    public enum CopyMode: UInt32 {
+    public enum CopyMode: UInt32, GodotEnum {
         case disabled = 0
         case rect = 1
         case viewport = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Rect", 1),
+            ("Viewport", 2),]
+        }
     }
 
     private static var __method_binding_set_rect: GDExtensionMethodBindPtr = {

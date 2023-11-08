@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Sky: Resource {
-    public enum RadianceSize: UInt32 {
+    public enum RadianceSize: UInt32, GodotEnum {
         case radianceSize32 = 0
         case radianceSize64 = 1
         case radianceSize128 = 2
@@ -14,12 +14,30 @@ open class Sky: Resource {
         case radianceSize1024 = 5
         case radianceSize2048 = 6
         case max = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Radiance Size32", 0),
+            ("Radiance Size64", 1),
+            ("Radiance Size128", 2),
+            ("Radiance Size256", 3),
+            ("Radiance Size512", 4),
+            ("Radiance Size1024", 5),
+            ("Radiance Size2048", 6),
+            ("Max", 7),]
+        }
     }
-    public enum ProcessMode: UInt32 {
+    public enum ProcessMode: UInt32, GodotEnum {
         case automatic = 0
         case quality = 1
         case incremental = 2
         case realtime = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Automatic", 0),
+            ("Quality", 1),
+            ("Incremental", 2),
+            ("Realtime", 3),]
+        }
     }
 
     private static var __method_binding_set_radiance_size: GDExtensionMethodBindPtr = {

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorPlugin: Node {
-    public enum CustomControlContainer: UInt32 {
+    public enum CustomControlContainer: UInt32, GodotEnum {
         case toolbar = 0
         case spatialEditorMenu = 1
         case spatialEditorSideLeft = 2
@@ -18,8 +18,23 @@ open class EditorPlugin: Node {
         case inspectorBottom = 9
         case projectSettingTabLeft = 10
         case projectSettingTabRight = 11
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Toolbar", 0),
+            ("Spatial Editor Menu", 1),
+            ("Spatial Editor Side Left", 2),
+            ("Spatial Editor Side Right", 3),
+            ("Spatial Editor Bottom", 4),
+            ("Canvas Editor Menu", 5),
+            ("Canvas Editor Side Left", 6),
+            ("Canvas Editor Side Right", 7),
+            ("Canvas Editor Bottom", 8),
+            ("Inspector Bottom", 9),
+            ("Project Setting Tab Left", 10),
+            ("Project Setting Tab Right", 11),]
+        }
     }
-    public enum DockSlot: UInt32 {
+    public enum DockSlot: UInt32, GodotEnum {
         case leftUl = 0
         case leftBl = 1
         case leftUr = 2
@@ -29,11 +44,29 @@ open class EditorPlugin: Node {
         case rightUr = 6
         case rightBr = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Left Ul", 0),
+            ("Left Bl", 1),
+            ("Left Ur", 2),
+            ("Left Br", 3),
+            ("Right Ul", 4),
+            ("Right Bl", 5),
+            ("Right Ur", 6),
+            ("Right Br", 7),
+            ("Max", 8),]
+        }
     }
-    public enum AfterGUIInput: UInt32 {
+    public enum AfterGUIInput: UInt32, GodotEnum {
         case pass = 0
         case stop = 1
         case custom = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Pass", 0),
+            ("Stop", 1),
+            ("Custom", 2),]
+        }
     }
 
     @Emitter(signal: "scene_changed", args: ("sceneRoot", Godot.Node?))

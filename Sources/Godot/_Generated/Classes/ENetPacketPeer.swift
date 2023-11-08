@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ENetPacketPeer: PacketPeer {
-    public enum PeerState: UInt32 {
+    public enum PeerState: UInt32, GodotEnum {
         case disconnected = 0
         case connecting = 1
         case acknowledgingConnect = 2
@@ -16,8 +16,21 @@ open class ENetPacketPeer: PacketPeer {
         case disconnecting = 7
         case acknowledgingDisconnect = 8
         case zombie = 9
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disconnected", 0),
+            ("Connecting", 1),
+            ("Acknowledging Connect", 2),
+            ("Connection Pending", 3),
+            ("Connection Succeeded", 4),
+            ("Connected", 5),
+            ("Disconnect Later", 6),
+            ("Disconnecting", 7),
+            ("Acknowledging Disconnect", 8),
+            ("Zombie", 9),]
+        }
     }
-    public enum PeerStatistic: UInt32 {
+    public enum PeerStatistic: UInt32, GodotEnum {
         case packetLoss = 0
         case packetLossVariance = 1
         case packetLossEpoch = 2
@@ -32,6 +45,23 @@ open class ENetPacketPeer: PacketPeer {
         case packetThrottleAcceleration = 11
         case packetThrottleDeceleration = 12
         case packetThrottleInterval = 13
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Packet Loss", 0),
+            ("Packet Loss Variance", 1),
+            ("Packet Loss Epoch", 2),
+            ("Round Trip Time", 3),
+            ("Round Trip Time Variance", 4),
+            ("Last Round Trip Time", 5),
+            ("Last Round Trip Time Variance", 6),
+            ("Packet Throttle", 7),
+            ("Packet Throttle Limit", 8),
+            ("Packet Throttle Counter", 9),
+            ("Packet Throttle Epoch", 10),
+            ("Packet Throttle Acceleration", 11),
+            ("Packet Throttle Deceleration", 12),
+            ("Packet Throttle Interval", 13),]
+        }
     }
 
     private static var __method_binding_peer_disconnect: GDExtensionMethodBindPtr = {

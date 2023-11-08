@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Time: Object {
-    public enum Month: UInt32 {
+    public enum Month: UInt32, GodotEnum {
         case january = 1
         case february = 2
         case march = 3
@@ -18,8 +18,23 @@ open class Time: Object {
         case october = 10
         case november = 11
         case december = 12
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("January", 1),
+            ("February", 2),
+            ("March", 3),
+            ("April", 4),
+            ("May", 5),
+            ("June", 6),
+            ("July", 7),
+            ("August", 8),
+            ("September", 9),
+            ("October", 10),
+            ("November", 11),
+            ("December", 12),]
+        }
     }
-    public enum Weekday: UInt32 {
+    public enum Weekday: UInt32, GodotEnum {
         case sunday = 0
         case monday = 1
         case tuesday = 2
@@ -27,6 +42,16 @@ open class Time: Object {
         case thursday = 4
         case friday = 5
         case saturday = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Sunday", 0),
+            ("Monday", 1),
+            ("Tuesday", 2),
+            ("Wednesday", 3),
+            ("Thursday", 4),
+            ("Friday", 5),
+            ("Saturday", 6),]
+        }
     }
 
     private static var __method_binding_get_datetime_dict_from_unix_time: GDExtensionMethodBindPtr = {

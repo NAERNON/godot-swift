@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class MultiplayerSynchronizer: Node {
-    public enum VisibilityUpdateMode: UInt32 {
+    public enum VisibilityUpdateMode: UInt32, GodotEnum {
         case idle = 0
         case physics = 1
         case none = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Idle", 0),
+            ("Physics", 1),
+            ("None", 2),]
+        }
     }
 
     @Emitter(signal: "synchronized")

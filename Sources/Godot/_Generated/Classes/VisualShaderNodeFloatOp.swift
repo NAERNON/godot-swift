@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeFloatOp: VisualShaderNode {
-    public enum Operator: UInt32 {
+    public enum Operator: UInt32, GodotEnum {
         case add = 0
         case sub = 1
         case mul = 2
@@ -17,6 +17,20 @@ open class VisualShaderNodeFloatOp: VisualShaderNode {
         case atan2 = 8
         case step = 9
         case enumSize = 10
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Add", 0),
+            ("Sub", 1),
+            ("Mul", 2),
+            ("Div", 3),
+            ("Mod", 4),
+            ("Pow", 5),
+            ("Max", 6),
+            ("Min", 7),
+            ("Atan2", 8),
+            ("Step", 9),
+            ("Enum Size", 10),]
+        }
     }
 
     private static var __method_binding_set_operator: GDExtensionMethodBindPtr = {

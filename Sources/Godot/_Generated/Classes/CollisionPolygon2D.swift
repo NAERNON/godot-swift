@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CollisionPolygon2D: Node2D {
-    public enum BuildMode: UInt32 {
+    public enum BuildMode: UInt32, GodotEnum {
         case solids = 0
         case segments = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Solids", 0),
+            ("Segments", 1),]
+        }
     }
 
     private static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {

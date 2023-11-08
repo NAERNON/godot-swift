@@ -5,11 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CPUParticles2D: Node2D {
-    public enum DrawOrder: UInt32 {
+    public enum DrawOrder: UInt32, GodotEnum {
         case index = 0
         case lifetime = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Index", 0),
+            ("Lifetime", 1),]
+        }
     }
-    public enum Parameter: UInt32 {
+    public enum Parameter: UInt32, GodotEnum {
         case initialLinearVelocity = 0
         case angularVelocity = 1
         case orbitVelocity = 2
@@ -23,14 +28,37 @@ open class CPUParticles2D: Node2D {
         case animSpeed = 10
         case animOffset = 11
         case max = 12
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Initial Linear Velocity", 0),
+            ("Angular Velocity", 1),
+            ("Orbit Velocity", 2),
+            ("Linear Accel", 3),
+            ("Radial Accel", 4),
+            ("Tangential Accel", 5),
+            ("Damping", 6),
+            ("Angle", 7),
+            ("Scale", 8),
+            ("Hue Variation", 9),
+            ("Anim Speed", 10),
+            ("Anim Offset", 11),
+            ("Max", 12),]
+        }
     }
-    public enum ParticleFlags: UInt32 {
+    public enum ParticleFlags: UInt32, GodotEnum {
         case alignYToVelocity = 0
         case rotateY = 1
         case disableZ = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Align Y To Velocity", 0),
+            ("Rotate Y", 1),
+            ("Disable Z", 2),
+            ("Max", 3),]
+        }
     }
-    public enum EmissionShape: UInt32 {
+    public enum EmissionShape: UInt32, GodotEnum {
         case point = 0
         case sphere = 1
         case sphereSurface = 2
@@ -38,6 +66,16 @@ open class CPUParticles2D: Node2D {
         case points = 4
         case directedPoints = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Point", 0),
+            ("Sphere", 1),
+            ("Sphere Surface", 2),
+            ("Rectangle", 3),
+            ("Points", 4),
+            ("Directed Points", 5),
+            ("Max", 6),]
+        }
     }
 
     private static var __method_binding_set_emitting: GDExtensionMethodBindPtr = {

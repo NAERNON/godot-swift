@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class SplitContainer: Container {
-    public enum DraggerVisibility: UInt32 {
+    public enum DraggerVisibility: UInt32, GodotEnum {
         case visible = 0
         case hidden = 1
         case hiddenCollapsed = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Visible", 0),
+            ("Hidden", 1),
+            ("Hidden Collapsed", 2),]
+        }
     }
 
     @Emitter(signal: "dragged", args: ("offset", Int))

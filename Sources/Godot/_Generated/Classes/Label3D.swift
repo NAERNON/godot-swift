@@ -5,18 +5,33 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Label3D: GeometryInstance3D {
-    public enum DrawFlags: UInt32 {
+    public enum DrawFlags: UInt32, GodotEnum {
         case shaded = 0
         case doubleSided = 1
         case disableDepthTest = 2
         case fixedSize = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Shaded", 0),
+            ("Double Sided", 1),
+            ("Disable Depth Test", 2),
+            ("Fixed Size", 3),
+            ("Max", 4),]
+        }
     }
-    public enum AlphaCutMode: UInt32 {
+    public enum AlphaCutMode: UInt32, GodotEnum {
         case disabled = 0
         case discard = 1
         case opaquePrepass = 2
         case hash = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Discard", 1),
+            ("Opaque Prepass", 2),
+            ("Hash", 3),]
+        }
     }
 
     private static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {

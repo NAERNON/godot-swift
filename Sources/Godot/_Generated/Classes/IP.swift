@@ -5,17 +5,31 @@
 import GodotExtensionHeaders
 @GodotClass
 open class IP: Object {
-    public enum ResolverStatus: UInt32 {
+    public enum ResolverStatus: UInt32, GodotEnum {
         case none = 0
         case waiting = 1
         case done = 2
         case error = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Waiting", 1),
+            ("Done", 2),
+            ("Error", 3),]
+        }
     }
-    public enum GodotType: UInt32 {
+    public enum GodotType: UInt32, GodotEnum {
         case none = 0
         case ipv4 = 1
         case ipv6 = 2
         case any = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Ipv4", 1),
+            ("Ipv6", 2),
+            ("Any", 3),]
+        }
     }
 
     private static var __method_binding_resolve_hostname: GDExtensionMethodBindPtr = {

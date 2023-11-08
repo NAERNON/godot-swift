@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeSample3D: VisualShaderNode {
-    public enum Source: UInt32 {
+    public enum Source: UInt32, GodotEnum {
         case texture = 0
         case port = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Texture", 0),
+            ("Port", 1),
+            ("Max", 2),]
+        }
     }
 
     private static var __method_binding_set_source: GDExtensionMethodBindPtr = {

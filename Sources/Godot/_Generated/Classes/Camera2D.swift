@@ -5,13 +5,23 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Camera2D: Node2D {
-    public enum AnchorMode: UInt32 {
+    public enum AnchorMode: UInt32, GodotEnum {
         case fixedTopLeft = 0
         case dragCenter = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Fixed Top Left", 0),
+            ("Drag Center", 1),]
+        }
     }
-    public enum Camera2DProcessCallback: UInt32 {
+    public enum Camera2DProcessCallback: UInt32, GodotEnum {
         case physics = 0
         case idle = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Physics", 0),
+            ("Idle", 1),]
+        }
     }
 
     private static var __method_binding_set_offset: GDExtensionMethodBindPtr = {

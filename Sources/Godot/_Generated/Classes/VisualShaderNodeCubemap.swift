@@ -5,16 +5,29 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeCubemap: VisualShaderNode {
-    public enum Source: UInt32 {
+    public enum Source: UInt32, GodotEnum {
         case texture = 0
         case port = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Texture", 0),
+            ("Port", 1),
+            ("Max", 2),]
+        }
     }
-    public enum TextureType: UInt32 {
+    public enum TextureType: UInt32, GodotEnum {
         case data = 0
         case color = 1
         case normalMap = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Data", 0),
+            ("Color", 1),
+            ("Normal Map", 2),
+            ("Max", 3),]
+        }
     }
 
     private static var __method_binding_set_source: GDExtensionMethodBindPtr = {

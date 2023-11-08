@@ -5,11 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class OS: Object {
-    public enum RenderingDriver: UInt32 {
+    public enum RenderingDriver: UInt32, GodotEnum {
         case vulkan = 0
         case opengl3 = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Vulkan", 0),
+            ("Opengl3", 1),]
+        }
     }
-    public enum SystemDir: UInt32 {
+    public enum SystemDir: UInt32, GodotEnum {
         case desktop = 0
         case dcim = 1
         case documents = 2
@@ -18,6 +23,17 @@ open class OS: Object {
         case music = 5
         case pictures = 6
         case ringtones = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Desktop", 0),
+            ("Dcim", 1),
+            ("Documents", 2),
+            ("Downloads", 3),
+            ("Movies", 4),
+            ("Music", 5),
+            ("Pictures", 6),
+            ("Ringtones", 7),]
+        }
     }
 
     private static var __method_binding_get_connected_midi_inputs: GDExtensionMethodBindPtr = {

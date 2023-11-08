@@ -5,17 +5,31 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Node: Object {
-    public enum ProcessMode: UInt32 {
+    public enum ProcessMode: UInt32, GodotEnum {
         case inherit = 0
         case pausable = 1
         case whenPaused = 2
         case always = 3
         case disabled = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Inherit", 0),
+            ("Pausable", 1),
+            ("When Paused", 2),
+            ("Always", 3),
+            ("Disabled", 4),]
+        }
     }
-    public enum ProcessThreadGroup: UInt32 {
+    public enum ProcessThreadGroup: UInt32, GodotEnum {
         case inherit = 0
         case mainThread = 1
         case subThread = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Inherit", 0),
+            ("Main Thread", 1),
+            ("Sub Thread", 2),]
+        }
     }
     public struct ProcessThreadMessages: OptionSet {
         public let rawValue: UInt32
@@ -28,16 +42,29 @@ open class Node: Object {
         public static let physics: Self = .init(rawValue: 2)
         public static let all: Self = .init(rawValue: 3)
     }
-    public enum DuplicateFlags: UInt32 {
+    public enum DuplicateFlags: UInt32, GodotEnum {
         case signals = 1
         case groups = 2
         case scripts = 4
         case useInstantiation = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Signals", 1),
+            ("Groups", 2),
+            ("Scripts", 4),
+            ("Use Instantiation", 8),]
+        }
     }
-    public enum InternalMode: UInt32 {
+    public enum InternalMode: UInt32, GodotEnum {
         case disabled = 0
         case front = 1
         case back = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Front", 1),
+            ("Back", 2),]
+        }
     }
 
     @Emitter(signal: "ready")

@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PathFollow3D: Node3D {
-    public enum RotationMode: UInt32 {
+    public enum RotationMode: UInt32, GodotEnum {
         case none = 0
         case y = 1
         case xy = 2
         case xyz = 3
         case oriented = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Y", 1),
+            ("Xy", 2),
+            ("Xyz", 3),
+            ("Oriented", 4),]
+        }
     }
 
     private static var __method_binding_set_progress: GDExtensionMethodBindPtr = {

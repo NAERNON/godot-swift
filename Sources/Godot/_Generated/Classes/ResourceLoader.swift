@@ -5,16 +5,29 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ResourceLoader: Object {
-    public enum ThreadLoadStatus: UInt32 {
+    public enum ThreadLoadStatus: UInt32, GodotEnum {
         case invalidResource = 0
         case inProgress = 1
         case failed = 2
         case loaded = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Invalid Resource", 0),
+            ("In Progress", 1),
+            ("Failed", 2),
+            ("Loaded", 3),]
+        }
     }
-    public enum CacheMode: UInt32 {
+    public enum CacheMode: UInt32, GodotEnum {
         case ignore = 0
         case reuse = 1
         case replace = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Ignore", 0),
+            ("Reuse", 1),
+            ("Replace", 2),]
+        }
     }
 
     private static var __method_binding_load_threaded_request: GDExtensionMethodBindPtr = {

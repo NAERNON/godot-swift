@@ -107,16 +107,7 @@ public enum GodotEnumMacro: ExtensionMacro {
             try FunctionDeclSyntax("\(accessModifier) static func hintValues() -> [(name: Swift.String, value: RawValue)]") {
                 "["
                 for caseName in enumCases(for: enumDecl) {
-                    let decomposed = NamingConvention.camel.decompose(string: caseName)
-                    let translatedName = decomposed.map { name in
-                        guard !name.isEmpty else {
-                            return name
-                        }
-                        
-                        var new = name
-                        new.insert(contentsOf: new.removeFirst().uppercased(), at: name.startIndex)
-                        return new
-                    }.joined(separator: " ")
+                    let translatedName = NamingConvention.camel.makeSentence(caseName)
                     
                     "(\(literal: translatedName), Self.\(raw: caseName).rawValue),"
                 }

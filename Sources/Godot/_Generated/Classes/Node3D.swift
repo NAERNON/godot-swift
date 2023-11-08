@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Node3D: Node {
-    public enum RotationEditMode: UInt32 {
+    public enum RotationEditMode: UInt32, GodotEnum {
         case euler = 0
         case quaternion = 1
         case basis = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Euler", 0),
+            ("Quaternion", 1),
+            ("Basis", 2),]
+        }
     }
 
     @Emitter(signal: "visibility_changed")

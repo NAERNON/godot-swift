@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class StreamPeerTLS: StreamPeer {
-    public enum Status: UInt32 {
+    public enum Status: UInt32, GodotEnum {
         case disconnected = 0
         case handshaking = 1
         case connected = 2
         case error = 3
         case errorHostnameMismatch = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disconnected", 0),
+            ("Handshaking", 1),
+            ("Connected", 2),
+            ("Error", 3),
+            ("Error Hostname Mismatch", 4),]
+        }
     }
 
     private static var __method_binding_poll: GDExtensionMethodBindPtr = {

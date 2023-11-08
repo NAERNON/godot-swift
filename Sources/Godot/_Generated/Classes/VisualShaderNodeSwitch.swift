@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeSwitch: VisualShaderNode {
-    public enum OpType: UInt32 {
+    public enum OpType: UInt32, GodotEnum {
         case float = 0
         case int = 1
         case uint = 2
@@ -15,6 +15,18 @@ open class VisualShaderNodeSwitch: VisualShaderNode {
         case boolean = 6
         case transform = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Float", 0),
+            ("Int", 1),
+            ("Uint", 2),
+            ("Vector2 D", 3),
+            ("Vector3 D", 4),
+            ("Vector4d", 5),
+            ("Boolean", 6),
+            ("Transform", 7),
+            ("Max", 8),]
+        }
     }
 
     private static var __method_binding_set_op_type: GDExtensionMethodBindPtr = {

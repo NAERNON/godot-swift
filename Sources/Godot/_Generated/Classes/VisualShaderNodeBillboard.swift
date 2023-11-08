@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeBillboard: VisualShaderNode {
-    public enum BillboardType: UInt32 {
+    public enum BillboardType: UInt32, GodotEnum {
         case disabled = 0
         case enabled = 1
         case fixedY = 2
         case particles = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Enabled", 1),
+            ("Fixed Y", 2),
+            ("Particles", 3),
+            ("Max", 4),]
+        }
     }
 
     private static var __method_binding_set_billboard_type: GDExtensionMethodBindPtr = {

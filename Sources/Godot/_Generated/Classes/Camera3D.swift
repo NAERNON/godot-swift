@@ -5,19 +5,36 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Camera3D: Node3D {
-    public enum ProjectionType: UInt32 {
+    public enum ProjectionType: UInt32, GodotEnum {
         case perspective = 0
         case orthogonal = 1
         case frustum = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Perspective", 0),
+            ("Orthogonal", 1),
+            ("Frustum", 2),]
+        }
     }
-    public enum KeepAspect: UInt32 {
+    public enum KeepAspect: UInt32, GodotEnum {
         case width = 0
         case height = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Width", 0),
+            ("Height", 1),]
+        }
     }
-    public enum DopplerTracking: UInt32 {
+    public enum DopplerTracking: UInt32, GodotEnum {
         case disabled = 0
         case idleStep = 1
         case physicsStep = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Idle Step", 1),
+            ("Physics Step", 2),]
+        }
     }
 
     private static var __method_binding_project_ray_normal: GDExtensionMethodBindPtr = {

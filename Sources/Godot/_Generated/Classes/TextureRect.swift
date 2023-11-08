@@ -5,15 +5,24 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TextureRect: Control {
-    public enum ExpandMode: UInt32 {
+    public enum ExpandMode: UInt32, GodotEnum {
         case keepSize = 0
         case ignoreSize = 1
         case fitWidth = 2
         case fitWidthProportional = 3
         case fitHeight = 4
         case fitHeightProportional = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Keep Size", 0),
+            ("Ignore Size", 1),
+            ("Fit Width", 2),
+            ("Fit Width Proportional", 3),
+            ("Fit Height", 4),
+            ("Fit Height Proportional", 5),]
+        }
     }
-    public enum StretchMode: UInt32 {
+    public enum StretchMode: UInt32, GodotEnum {
         case scale = 0
         case tile = 1
         case keep = 2
@@ -21,6 +30,16 @@ open class TextureRect: Control {
         case keepAspect = 4
         case keepAspectCentered = 5
         case keepAspectCovered = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Scale", 0),
+            ("Tile", 1),
+            ("Keep", 2),
+            ("Keep Centered", 3),
+            ("Keep Aspect", 4),
+            ("Keep Aspect Centered", 5),
+            ("Keep Aspect Covered", 6),]
+        }
     }
 
     private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {

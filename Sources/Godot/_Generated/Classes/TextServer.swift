@@ -5,28 +5,55 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class TextServer: RefCounted {
-    public enum FontAntialiasing: UInt32 {
+    public enum FontAntialiasing: UInt32, GodotEnum {
         case none = 0
         case gray = 1
         case lcd = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Gray", 1),
+            ("Lcd", 2),]
+        }
     }
-    public enum FontLCDSubpixelLayout: UInt32 {
+    public enum FontLCDSubpixelLayout: UInt32, GodotEnum {
         case none = 0
         case hrgb = 1
         case hbgr = 2
         case vrgb = 3
         case vbgr = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Hrgb", 1),
+            ("Hbgr", 2),
+            ("Vrgb", 3),
+            ("Vbgr", 4),
+            ("Max", 5),]
+        }
     }
-    public enum Direction: UInt32 {
+    public enum Direction: UInt32, GodotEnum {
         case auto = 0
         case ltr = 1
         case rtl = 2
         case inherited = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Auto", 0),
+            ("Ltr", 1),
+            ("Rtl", 2),
+            ("Inherited", 3),]
+        }
     }
-    public enum Orientation: UInt32 {
+    public enum Orientation: UInt32, GodotEnum {
         case horizontal = 0
         case vertical = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Horizontal", 0),
+            ("Vertical", 1),]
+        }
     }
     public struct JustificationFlag: OptionSet {
         public let rawValue: UInt32
@@ -45,11 +72,18 @@ open class TextServer: RefCounted {
         public static let skipLastLineWithVisibleChars: Self = .init(rawValue: 64)
         public static let doNotSkipSingleLine: Self = .init(rawValue: 128)
     }
-    public enum AutowrapMode: UInt32 {
+    public enum AutowrapMode: UInt32, GodotEnum {
         case off = 0
         case arbitrary = 1
         case word = 2
         case wordSmart = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Off", 0),
+            ("Arbitrary", 1),
+            ("Word", 2),
+            ("Word Smart", 3),]
+        }
     }
     public struct LineBreakFlag: OptionSet {
         public let rawValue: UInt32
@@ -65,19 +99,35 @@ open class TextServer: RefCounted {
         public static let adaptive: Self = .init(rawValue: 8)
         public static let trimEdgeSpaces: Self = .init(rawValue: 16)
     }
-    public enum VisibleCharactersBehavior: UInt32 {
+    public enum VisibleCharactersBehavior: UInt32, GodotEnum {
         case charsBeforeShaping = 0
         case charsAfterShaping = 1
         case glyphsAuto = 2
         case glyphsLtr = 3
         case glyphsRtl = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Chars Before Shaping", 0),
+            ("Chars After Shaping", 1),
+            ("Glyphs Auto", 2),
+            ("Glyphs Ltr", 3),
+            ("Glyphs Rtl", 4),]
+        }
     }
-    public enum OverrunBehavior: UInt32 {
+    public enum OverrunBehavior: UInt32, GodotEnum {
         case noTrimming = 0
         case trimChar = 1
         case trimWord = 2
         case trimEllipsis = 3
         case trimWordEllipsis = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("No Trimming", 0),
+            ("Trim Char", 1),
+            ("Trim Word", 2),
+            ("Trim Ellipsis", 3),
+            ("Trim Word Ellipsis", 4),]
+        }
     }
     public struct TextOverrunFlag: OptionSet {
         public let rawValue: UInt32
@@ -114,20 +164,35 @@ open class TextServer: RefCounted {
         public static let safeToInsertTatweel: Self = .init(rawValue: 2048)
         public static let embeddedObject: Self = .init(rawValue: 4096)
     }
-    public enum Hinting: UInt32 {
+    public enum Hinting: UInt32, GodotEnum {
         case none = 0
         case light = 1
         case normal = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Light", 1),
+            ("Normal", 2),]
+        }
     }
-    public enum SubpixelPositioning: UInt32 {
+    public enum SubpixelPositioning: UInt32, GodotEnum {
         case disabled = 0
         case auto = 1
         case oneHalf = 2
         case oneQuarter = 3
         case oneHalfMaxSize = 20
         case oneQuarterMaxSize = 16
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Auto", 1),
+            ("One Half", 2),
+            ("One Quarter", 3),
+            ("One Half Max Size", 20),
+            ("One Quarter Max Size", 16),]
+        }
     }
-    public enum Feature: UInt32 {
+    public enum Feature: UInt32, GodotEnum {
         case simpleLayout = 1
         case bidiLayout = 2
         case verticalLayout = 4
@@ -143,18 +208,50 @@ open class TextServer: RefCounted {
         case useSupportData = 4096
         case unicodeIdentifiers = 8192
         case unicodeSecurity = 16384
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Simple Layout", 1),
+            ("Bidi Layout", 2),
+            ("Vertical Layout", 4),
+            ("Shaping", 8),
+            ("Kashida Justification", 16),
+            ("Break Iterators", 32),
+            ("Font Bitmap", 64),
+            ("Font Dynamic", 128),
+            ("Font Msdf", 256),
+            ("Font System", 512),
+            ("Font Variable", 1024),
+            ("Context Sensitive Case Conversion", 2048),
+            ("Use Support Data", 4096),
+            ("Unicode Identifiers", 8192),
+            ("Unicode Security", 16384),]
+        }
     }
-    public enum ContourPointTag: UInt32 {
+    public enum ContourPointTag: UInt32, GodotEnum {
         case on = 1
         case offConic = 0
         case offCubic = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("On", 1),
+            ("Off Conic", 0),
+            ("Off Cubic", 2),]
+        }
     }
-    public enum SpacingType: UInt32 {
+    public enum SpacingType: UInt32, GodotEnum {
         case glyph = 0
         case space = 1
         case top = 2
         case bottom = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Glyph", 0),
+            ("Space", 1),
+            ("Top", 2),
+            ("Bottom", 3),
+            ("Max", 4),]
+        }
     }
     public struct FontStyle: OptionSet {
         public let rawValue: UInt32
@@ -167,7 +264,7 @@ open class TextServer: RefCounted {
         public static let italic: Self = .init(rawValue: 2)
         public static let fixedWidth: Self = .init(rawValue: 4)
     }
-    public enum StructuredTextParser: UInt32 {
+    public enum StructuredTextParser: UInt32, GodotEnum {
         case `default` = 0
         case uri = 1
         case file = 2
@@ -175,6 +272,16 @@ open class TextServer: RefCounted {
         case list = 4
         case gdscript = 5
         case custom = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`default`", 0),
+            ("Uri", 1),
+            ("File", 2),
+            ("Email", 3),
+            ("List", 4),
+            ("Gdscript", 5),
+            ("Custom", 6),]
+        }
     }
 
     private static var __method_binding_has_feature: GDExtensionMethodBindPtr = {

@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorUndoRedoManager: Object {
-    public enum SpecialHistory: Int32 {
+    public enum SpecialHistory: Int32, GodotEnum {
         case globalHistory = 0
         case remoteHistory = -9
         case invalidHistory = -99
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Global History", 0),
+            ("Remote History", -9),
+            ("Invalid History", -99),]
+        }
     }
 
     @Emitter(signal: "history_changed")

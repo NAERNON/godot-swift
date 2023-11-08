@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
-    public enum Mode: UInt32 {
+    public enum Mode: UInt32, GodotEnum {
         case linear = 0
         case radial = 1
         case tangential = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear", 0),
+            ("Radial", 1),
+            ("Tangential", 2),
+            ("Max", 3),]
+        }
     }
 
     private static var __method_binding_set_mode: GDExtensionMethodBindPtr = {

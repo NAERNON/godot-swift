@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class XMLParser: RefCounted {
-    public enum NodeType: UInt32 {
+    public enum NodeType: UInt32, GodotEnum {
         case none = 0
         case element = 1
         case elementEnd = 2
@@ -13,6 +13,16 @@ open class XMLParser: RefCounted {
         case comment = 4
         case cdata = 5
         case unknown = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Element", 1),
+            ("Element End", 2),
+            ("Text", 3),
+            ("Comment", 4),
+            ("Cdata", 5),
+            ("Unknown", 6),]
+        }
     }
 
     private static var __method_binding_read: GDExtensionMethodBindPtr = {

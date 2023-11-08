@@ -5,15 +5,27 @@
 import GodotExtensionHeaders
 @GodotClass
 open class OpenXRHand: Node3D {
-    public enum Hands: UInt32 {
+    public enum Hands: UInt32, GodotEnum {
         case left = 0
         case right = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Left", 0),
+            ("Right", 1),
+            ("Max", 2),]
+        }
     }
-    public enum MotionRange: UInt32 {
+    public enum MotionRange: UInt32, GodotEnum {
         case unobstructed = 0
         case conformToController = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Unobstructed", 0),
+            ("Conform To Controller", 1),
+            ("Max", 2),]
+        }
     }
 
     private static var __method_binding_set_hand: GDExtensionMethodBindPtr = {

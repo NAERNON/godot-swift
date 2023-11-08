@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Light3D: VisualInstance3D {
-    public enum Param: UInt32 {
+    public enum Param: UInt32, GodotEnum {
         case energy = 0
         case indirectEnergy = 1
         case volumetricFogEnergy = 2
@@ -28,11 +28,42 @@ open class Light3D: VisualInstance3D {
         case transmittanceBias = 19
         case intensity = 20
         case max = 21
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Energy", 0),
+            ("Indirect Energy", 1),
+            ("Volumetric Fog Energy", 2),
+            ("Specular", 3),
+            ("Range", 4),
+            ("Size", 5),
+            ("Attenuation", 6),
+            ("Spot Angle", 7),
+            ("Spot Attenuation", 8),
+            ("Shadow Max Distance", 9),
+            ("Shadow Split1 Offset", 10),
+            ("Shadow Split2 Offset", 11),
+            ("Shadow Split3 Offset", 12),
+            ("Shadow Fade Start", 13),
+            ("Shadow Normal Bias", 14),
+            ("Shadow Bias", 15),
+            ("Shadow Pancake Size", 16),
+            ("Shadow Opacity", 17),
+            ("Shadow Blur", 18),
+            ("Transmittance Bias", 19),
+            ("Intensity", 20),
+            ("Max", 21),]
+        }
     }
-    public enum BakeMode: UInt32 {
+    public enum BakeMode: UInt32, GodotEnum {
         case disabled = 0
         case `static` = 1
         case dynamic = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("`static`", 1),
+            ("Dynamic", 2),]
+        }
     }
 
     private static var __method_binding_set_editor_only: GDExtensionMethodBindPtr = {

@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class FlowContainer: Container {
-    public enum AlignmentMode: UInt32 {
+    public enum AlignmentMode: UInt32, GodotEnum {
         case begin = 0
         case center = 1
         case end = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Begin", 0),
+            ("Center", 1),
+            ("End", 2),]
+        }
     }
 
     private static var __method_binding_get_line_count: GDExtensionMethodBindPtr = {

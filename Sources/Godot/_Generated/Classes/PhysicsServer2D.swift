@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PhysicsServer2D: Object {
-    public enum SpaceParameter: UInt32 {
+    public enum SpaceParameter: UInt32, GodotEnum {
         case contactRecycleRadius = 0
         case contactMaxSeparation = 1
         case contactMaxAllowedPenetration = 2
@@ -15,8 +15,20 @@ open class PhysicsServer2D: Object {
         case bodyTimeToSleep = 6
         case constraintDefaultBias = 7
         case solverIterations = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Contact Recycle Radius", 0),
+            ("Contact Max Separation", 1),
+            ("Contact Max Allowed Penetration", 2),
+            ("Contact Default Bias", 3),
+            ("Body Linear Velocity Sleep Threshold", 4),
+            ("Body Angular Velocity Sleep Threshold", 5),
+            ("Body Time To Sleep", 6),
+            ("Constraint Default Bias", 7),
+            ("Solver Iterations", 8),]
+        }
     }
-    public enum ShapeType: UInt32 {
+    public enum ShapeType: UInt32, GodotEnum {
         case worldBoundary = 0
         case separationRay = 1
         case segment = 2
@@ -26,8 +38,20 @@ open class PhysicsServer2D: Object {
         case convexPolygon = 6
         case concavePolygon = 7
         case custom = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("World Boundary", 0),
+            ("Separation Ray", 1),
+            ("Segment", 2),
+            ("Circle", 3),
+            ("Rectangle", 4),
+            ("Capsule", 5),
+            ("Convex Polygon", 6),
+            ("Concave Polygon", 7),
+            ("Custom", 8),]
+        }
     }
-    public enum AreaParameter: UInt32 {
+    public enum AreaParameter: UInt32, GodotEnum {
         case gravityOverrideMode = 0
         case gravity = 1
         case gravityVector = 2
@@ -38,21 +62,49 @@ open class PhysicsServer2D: Object {
         case angularDampOverrideMode = 7
         case angularDamp = 8
         case priority = 9
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Gravity Override Mode", 0),
+            ("Gravity", 1),
+            ("Gravity Vector", 2),
+            ("Gravity Is Point", 3),
+            ("Gravity Point Unit Distance", 4),
+            ("Linear Damp Override Mode", 5),
+            ("Linear Damp", 6),
+            ("Angular Damp Override Mode", 7),
+            ("Angular Damp", 8),
+            ("Priority", 9),]
+        }
     }
-    public enum AreaSpaceOverrideMode: UInt32 {
+    public enum AreaSpaceOverrideMode: UInt32, GodotEnum {
         case disabled = 0
         case combine = 1
         case combineReplace = 2
         case replace = 3
         case replaceCombine = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Combine", 1),
+            ("Combine Replace", 2),
+            ("Replace", 3),
+            ("Replace Combine", 4),]
+        }
     }
-    public enum BodyMode: UInt32 {
+    public enum BodyMode: UInt32, GodotEnum {
         case `static` = 0
         case kinematic = 1
         case rigid = 2
         case rigidLinear = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`static`", 0),
+            ("Kinematic", 1),
+            ("Rigid", 2),
+            ("Rigid Linear", 3),]
+        }
     }
-    public enum BodyParameter: UInt32 {
+    public enum BodyParameter: UInt32, GodotEnum {
         case bounce = 0
         case friction = 1
         case mass = 2
@@ -64,50 +116,117 @@ open class PhysicsServer2D: Object {
         case linearDamp = 8
         case angularDamp = 9
         case max = 10
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bounce", 0),
+            ("Friction", 1),
+            ("Mass", 2),
+            ("Inertia", 3),
+            ("Center Of Mass", 4),
+            ("Gravity Scale", 5),
+            ("Linear Damp Mode", 6),
+            ("Angular Damp Mode", 7),
+            ("Linear Damp", 8),
+            ("Angular Damp", 9),
+            ("Max", 10),]
+        }
     }
-    public enum BodyDampMode: UInt32 {
+    public enum BodyDampMode: UInt32, GodotEnum {
         case combine = 0
         case replace = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Combine", 0),
+            ("Replace", 1),]
+        }
     }
-    public enum BodyState: UInt32 {
+    public enum BodyState: UInt32, GodotEnum {
         case transform = 0
         case linearVelocity = 1
         case angularVelocity = 2
         case sleeping = 3
         case canSleep = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Transform", 0),
+            ("Linear Velocity", 1),
+            ("Angular Velocity", 2),
+            ("Sleeping", 3),
+            ("Can Sleep", 4),]
+        }
     }
-    public enum JointType: UInt32 {
+    public enum JointType: UInt32, GodotEnum {
         case pin = 0
         case groove = 1
         case dampedSpring = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Pin", 0),
+            ("Groove", 1),
+            ("Damped Spring", 2),
+            ("Max", 3),]
+        }
     }
-    public enum JointParam: UInt32 {
+    public enum JointParam: UInt32, GodotEnum {
         case bias = 0
         case maxBias = 1
         case maxForce = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bias", 0),
+            ("Max Bias", 1),
+            ("Max Force", 2),]
+        }
     }
-    public enum PinJointParam: UInt32 {
+    public enum PinJointParam: UInt32, GodotEnum {
         case pinJointSoftness = 0
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Pin Joint Softness", 0),]
+        }
     }
-    public enum DampedSpringParam: UInt32 {
+    public enum DampedSpringParam: UInt32, GodotEnum {
         case restLength = 0
         case stiffness = 1
         case damping = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Rest Length", 0),
+            ("Stiffness", 1),
+            ("Damping", 2),]
+        }
     }
-    public enum CCDMode: UInt32 {
+    public enum CCDMode: UInt32, GodotEnum {
         case disabled = 0
         case castRay = 1
         case castShape = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Cast Ray", 1),
+            ("Cast Shape", 2),]
+        }
     }
-    public enum AreaBodyStatus: UInt32 {
+    public enum AreaBodyStatus: UInt32, GodotEnum {
         case added = 0
         case removed = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Added", 0),
+            ("Removed", 1),]
+        }
     }
-    public enum ProcessInfo: UInt32 {
+    public enum ProcessInfo: UInt32, GodotEnum {
         case activeObjects = 0
         case collisionPairs = 1
         case islandCount = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Active Objects", 0),
+            ("Collision Pairs", 1),
+            ("Island Count", 2),]
+        }
     }
 
     private static var __method_binding_world_boundary_shape_create: GDExtensionMethodBindPtr = {

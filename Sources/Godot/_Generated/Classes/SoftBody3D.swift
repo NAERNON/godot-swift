@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotClass
 open class SoftBody3D: MeshInstance3D {
-    public enum DisableMode: UInt32 {
+    public enum DisableMode: UInt32, GodotEnum {
         case remove = 0
         case keepActive = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Remove", 0),
+            ("Keep Active", 1),]
+        }
     }
 
     private static var __method_binding_get_physics_rid: GDExtensionMethodBindPtr = {

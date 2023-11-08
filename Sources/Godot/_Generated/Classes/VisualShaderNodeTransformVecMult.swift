@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeTransformVecMult: VisualShaderNode {
-    public enum Operator: UInt32 {
+    public enum Operator: UInt32, GodotEnum {
         case axb = 0
         case bxa = 1
         case op3x3Axb = 2
         case op3x3Bxa = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Axb", 0),
+            ("Bxa", 1),
+            ("Op3x3 Axb", 2),
+            ("Op3x3 Bxa", 3),
+            ("Max", 4),]
+        }
     }
 
     private static var __method_binding_set_operator: GDExtensionMethodBindPtr = {

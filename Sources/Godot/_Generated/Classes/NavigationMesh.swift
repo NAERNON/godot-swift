@@ -5,23 +5,44 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class NavigationMesh: Resource {
-    public enum SamplePartitionType: UInt32 {
+    public enum SamplePartitionType: UInt32, GodotEnum {
         case watershed = 0
         case monotone = 1
         case layers = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Watershed", 0),
+            ("Monotone", 1),
+            ("Layers", 2),
+            ("Max", 3),]
+        }
     }
-    public enum ParsedGeometryType: UInt32 {
+    public enum ParsedGeometryType: UInt32, GodotEnum {
         case meshInstances = 0
         case staticColliders = 1
         case both = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Mesh Instances", 0),
+            ("Static Colliders", 1),
+            ("Both", 2),
+            ("Max", 3),]
+        }
     }
-    public enum SourceGeometryMode: UInt32 {
+    public enum SourceGeometryMode: UInt32, GodotEnum {
         case rootNodeChildren = 0
         case groupsWithChildren = 1
         case groupsExplicit = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Root Node Children", 0),
+            ("Groups With Children", 1),
+            ("Groups Explicit", 2),
+            ("Max", 3),]
+        }
     }
 
     private static var __method_binding_set_sample_partition_type: GDExtensionMethodBindPtr = {

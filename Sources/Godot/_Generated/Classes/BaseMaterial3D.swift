@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class BaseMaterial3D: Material {
-    public enum TextureParam: UInt32 {
+    public enum TextureParam: UInt32, GodotEnum {
         case albedo = 0
         case metallic = 1
         case roughness = 2
@@ -25,8 +25,30 @@ open class BaseMaterial3D: Material {
         case detailNormal = 16
         case orm = 17
         case max = 18
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Albedo", 0),
+            ("Metallic", 1),
+            ("Roughness", 2),
+            ("Emission", 3),
+            ("Normal", 4),
+            ("Rim", 5),
+            ("Clearcoat", 6),
+            ("Flowmap", 7),
+            ("Ambient Occlusion", 8),
+            ("Heightmap", 9),
+            ("Subsurface Scattering", 10),
+            ("Subsurface Transmittance", 11),
+            ("Backlight", 12),
+            ("Refraction", 13),
+            ("Detail Mask", 14),
+            ("Detail Albedo", 15),
+            ("Detail Normal", 16),
+            ("Orm", 17),
+            ("Max", 18),]
+        }
     }
-    public enum TextureFilter: UInt32 {
+    public enum TextureFilter: UInt32, GodotEnum {
         case nearest = 0
         case linear = 1
         case nearestWithMipmaps = 2
@@ -34,26 +56,57 @@ open class BaseMaterial3D: Material {
         case nearestWithMipmapsAnisotropic = 4
         case linearWithMipmapsAnisotropic = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Nearest", 0),
+            ("Linear", 1),
+            ("Nearest With Mipmaps", 2),
+            ("Linear With Mipmaps", 3),
+            ("Nearest With Mipmaps Anisotropic", 4),
+            ("Linear With Mipmaps Anisotropic", 5),
+            ("Max", 6),]
+        }
     }
-    public enum DetailUV: UInt32 {
+    public enum DetailUV: UInt32, GodotEnum {
         case detailUv1 = 0
         case detailUv2 = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Detail Uv1", 0),
+            ("Detail Uv2", 1),]
+        }
     }
-    public enum Transparency: UInt32 {
+    public enum Transparency: UInt32, GodotEnum {
         case disabled = 0
         case alpha = 1
         case alphaScissor = 2
         case alphaHash = 3
         case alphaDepthPrePass = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Alpha", 1),
+            ("Alpha Scissor", 2),
+            ("Alpha Hash", 3),
+            ("Alpha Depth Pre Pass", 4),
+            ("Max", 5),]
+        }
     }
-    public enum ShadingMode: UInt32 {
+    public enum ShadingMode: UInt32, GodotEnum {
         case unshaded = 0
         case perPixel = 1
         case perVertex = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Unshaded", 0),
+            ("Per Pixel", 1),
+            ("Per Vertex", 2),
+            ("Max", 3),]
+        }
     }
-    public enum Feature: UInt32 {
+    public enum Feature: UInt32, GodotEnum {
         case emission = 0
         case normalMapping = 1
         case rim = 2
@@ -67,29 +120,70 @@ open class BaseMaterial3D: Material {
         case refraction = 10
         case detail = 11
         case max = 12
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Emission", 0),
+            ("Normal Mapping", 1),
+            ("Rim", 2),
+            ("Clearcoat", 3),
+            ("Anisotropy", 4),
+            ("Ambient Occlusion", 5),
+            ("Height Mapping", 6),
+            ("Subsurface Scattering", 7),
+            ("Subsurface Transmittance", 8),
+            ("Backlight", 9),
+            ("Refraction", 10),
+            ("Detail", 11),
+            ("Max", 12),]
+        }
     }
-    public enum BlendMode: UInt32 {
+    public enum BlendMode: UInt32, GodotEnum {
         case mix = 0
         case add = 1
         case sub = 2
         case mul = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Mix", 0),
+            ("Add", 1),
+            ("Sub", 2),
+            ("Mul", 3),]
+        }
     }
-    public enum AlphaAntiAliasing: UInt32 {
+    public enum AlphaAntiAliasing: UInt32, GodotEnum {
         case off = 0
         case alphaToCoverage = 1
         case alphaToCoverageAndToOne = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Off", 0),
+            ("Alpha To Coverage", 1),
+            ("Alpha To Coverage And To One", 2),]
+        }
     }
-    public enum DepthDrawMode: UInt32 {
+    public enum DepthDrawMode: UInt32, GodotEnum {
         case opaqueOnly = 0
         case always = 1
         case disabled = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Opaque Only", 0),
+            ("Always", 1),
+            ("Disabled", 2),]
+        }
     }
-    public enum CullMode: UInt32 {
+    public enum CullMode: UInt32, GodotEnum {
         case back = 0
         case front = 1
         case disabled = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Back", 0),
+            ("Front", 1),
+            ("Disabled", 2),]
+        }
     }
-    public enum Flags: UInt32 {
+    public enum Flags: UInt32, GodotEnum {
         case disableDepthTest = 0
         case albedoFromVertexColor = 1
         case srgbVertexColor = 2
@@ -112,40 +206,105 @@ open class BaseMaterial3D: Material {
         case particleTrailsMode = 19
         case albedoTextureMsdf = 20
         case max = 21
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disable Depth Test", 0),
+            ("Albedo From Vertex Color", 1),
+            ("Srgb Vertex Color", 2),
+            ("Use Point Size", 3),
+            ("Fixed Size", 4),
+            ("Billboard Keep Scale", 5),
+            ("Uv1 Use Triplanar", 6),
+            ("Uv2 Use Triplanar", 7),
+            ("Uv1 Use World Triplanar", 8),
+            ("Uv2 Use World Triplanar", 9),
+            ("Ao On Uv2", 10),
+            ("Emission On Uv2", 11),
+            ("Albedo Texture Force Srgb", 12),
+            ("Dont Receive Shadows", 13),
+            ("Disable Ambient Light", 14),
+            ("Use Shadow To Opacity", 15),
+            ("Use Texture Repeat", 16),
+            ("Invert Heightmap", 17),
+            ("Subsurface Mode Skin", 18),
+            ("Particle Trails Mode", 19),
+            ("Albedo Texture Msdf", 20),
+            ("Max", 21),]
+        }
     }
-    public enum DiffuseMode: UInt32 {
+    public enum DiffuseMode: UInt32, GodotEnum {
         case burley = 0
         case lambert = 1
         case lambertWrap = 2
         case toon = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Burley", 0),
+            ("Lambert", 1),
+            ("Lambert Wrap", 2),
+            ("Toon", 3),]
+        }
     }
-    public enum SpecularMode: UInt32 {
+    public enum SpecularMode: UInt32, GodotEnum {
         case schlickGgx = 0
         case toon = 1
         case disabled = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Schlick Ggx", 0),
+            ("Toon", 1),
+            ("Disabled", 2),]
+        }
     }
-    public enum BillboardMode: UInt32 {
+    public enum BillboardMode: UInt32, GodotEnum {
         case disabled = 0
         case enabled = 1
         case fixedY = 2
         case particles = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Enabled", 1),
+            ("Fixed Y", 2),
+            ("Particles", 3),]
+        }
     }
-    public enum TextureChannel: UInt32 {
+    public enum TextureChannel: UInt32, GodotEnum {
         case red = 0
         case green = 1
         case blue = 2
         case alpha = 3
         case grayscale = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Red", 0),
+            ("Green", 1),
+            ("Blue", 2),
+            ("Alpha", 3),
+            ("Grayscale", 4),]
+        }
     }
-    public enum EmissionOperator: UInt32 {
+    public enum EmissionOperator: UInt32, GodotEnum {
         case add = 0
         case multiply = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Add", 0),
+            ("Multiply", 1),]
+        }
     }
-    public enum DistanceFadeMode: UInt32 {
+    public enum DistanceFadeMode: UInt32, GodotEnum {
         case disabled = 0
         case pixelAlpha = 1
         case pixelDither = 2
         case objectDither = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Pixel Alpha", 1),
+            ("Pixel Dither", 2),
+            ("Object Dither", 3),]
+        }
     }
 
     private static var __method_binding_set_albedo: GDExtensionMethodBindPtr = {

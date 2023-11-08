@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Environment: Resource {
-    public enum BGMode: UInt32 {
+    public enum BGMode: UInt32, GodotEnum {
         case clearColor = 0
         case color = 1
         case sky = 2
@@ -13,35 +13,79 @@ open class Environment: Resource {
         case keep = 4
         case cameraFeed = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Clear Color", 0),
+            ("Color", 1),
+            ("Sky", 2),
+            ("Canvas", 3),
+            ("Keep", 4),
+            ("Camera Feed", 5),
+            ("Max", 6),]
+        }
     }
-    public enum AmbientSource: UInt32 {
+    public enum AmbientSource: UInt32, GodotEnum {
         case bg = 0
         case disabled = 1
         case color = 2
         case sky = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bg", 0),
+            ("Disabled", 1),
+            ("Color", 2),
+            ("Sky", 3),]
+        }
     }
-    public enum ReflectionSource: UInt32 {
+    public enum ReflectionSource: UInt32, GodotEnum {
         case bg = 0
         case disabled = 1
         case sky = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bg", 0),
+            ("Disabled", 1),
+            ("Sky", 2),]
+        }
     }
-    public enum ToneMapper: UInt32 {
+    public enum ToneMapper: UInt32, GodotEnum {
         case linear = 0
         case reinhardt = 1
         case filmic = 2
         case aces = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear", 0),
+            ("Reinhardt", 1),
+            ("Filmic", 2),
+            ("Aces", 3),]
+        }
     }
-    public enum GlowBlendMode: UInt32 {
+    public enum GlowBlendMode: UInt32, GodotEnum {
         case additive = 0
         case screen = 1
         case softlight = 2
         case replace = 3
         case mix = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Additive", 0),
+            ("Screen", 1),
+            ("Softlight", 2),
+            ("Replace", 3),
+            ("Mix", 4),]
+        }
     }
-    public enum SDFGIYScale: UInt32 {
+    public enum SDFGIYScale: UInt32, GodotEnum {
         case sdfgiYScale50Percent = 0
         case sdfgiYScale75Percent = 1
         case sdfgiYScale100Percent = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Sdfgi Y Scale50 Percent", 0),
+            ("Sdfgi Y Scale75 Percent", 1),
+            ("Sdfgi Y Scale100 Percent", 2),]
+        }
     }
 
     private static var __method_binding_set_background: GDExtensionMethodBindPtr = {

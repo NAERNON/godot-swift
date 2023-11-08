@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class VisibleOnScreenEnabler3D: VisibleOnScreenNotifier3D {
-    public enum EnableMode: UInt32 {
+    public enum EnableMode: UInt32, GodotEnum {
         case inherit = 0
         case always = 1
         case whenPaused = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Inherit", 0),
+            ("Always", 1),
+            ("When Paused", 2),]
+        }
     }
 
     private static var __method_binding_set_enable_mode: GDExtensionMethodBindPtr = {

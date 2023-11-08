@@ -5,20 +5,38 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Line2D: Node2D {
-    public enum LineJointMode: UInt32 {
+    public enum LineJointMode: UInt32, GodotEnum {
         case sharp = 0
         case bevel = 1
         case round = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Sharp", 0),
+            ("Bevel", 1),
+            ("Round", 2),]
+        }
     }
-    public enum LineCapMode: UInt32 {
+    public enum LineCapMode: UInt32, GodotEnum {
         case none = 0
         case box = 1
         case round = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Box", 1),
+            ("Round", 2),]
+        }
     }
-    public enum LineTextureMode: UInt32 {
+    public enum LineTextureMode: UInt32, GodotEnum {
         case none = 0
         case tile = 1
         case stretch = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Tile", 1),
+            ("Stretch", 2),]
+        }
     }
 
     private static var __method_binding_set_points: GDExtensionMethodBindPtr = {

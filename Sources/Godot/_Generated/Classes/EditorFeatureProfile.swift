@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class EditorFeatureProfile: RefCounted {
-    public enum Feature: UInt32 {
+    public enum Feature: UInt32, GodotEnum {
         case feature3D = 0
         case script = 1
         case assetLib = 2
@@ -15,6 +15,18 @@ open class EditorFeatureProfile: RefCounted {
         case importDock = 6
         case historyDock = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Feature3 D", 0),
+            ("Script", 1),
+            ("Asset Lib", 2),
+            ("Scene Tree", 3),
+            ("Node Dock", 4),
+            ("Filesystem Dock", 5),
+            ("Import Dock", 6),
+            ("History Dock", 7),
+            ("Max", 8),]
+        }
     }
 
     private static var __method_binding_set_disable_class: GDExtensionMethodBindPtr = {

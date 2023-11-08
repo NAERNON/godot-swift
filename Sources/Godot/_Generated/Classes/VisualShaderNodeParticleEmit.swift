@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeParticleEmit: VisualShaderNode {
-    public enum EmitFlags: UInt32 {
+    public enum EmitFlags: UInt32, GodotEnum {
         case position = 1
         case rotScale = 2
         case velocity = 4
         case color = 8
         case custom = 16
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Position", 1),
+            ("Rot Scale", 2),
+            ("Velocity", 4),
+            ("Color", 8),
+            ("Custom", 16),]
+        }
     }
 
     private static var __method_binding_set_flags: GDExtensionMethodBindPtr = {

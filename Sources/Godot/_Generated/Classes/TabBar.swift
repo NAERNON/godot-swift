@@ -5,17 +5,31 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TabBar: Control {
-    public enum AlignmentMode: UInt32 {
+    public enum AlignmentMode: UInt32, GodotEnum {
         case left = 0
         case center = 1
         case right = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Left", 0),
+            ("Center", 1),
+            ("Right", 2),
+            ("Max", 3),]
+        }
     }
-    public enum CloseButtonDisplayPolicy: UInt32 {
+    public enum CloseButtonDisplayPolicy: UInt32, GodotEnum {
         case showNever = 0
         case showActiveOnly = 1
         case showAlways = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Show Never", 0),
+            ("Show Active Only", 1),
+            ("Show Always", 2),
+            ("Max", 3),]
+        }
     }
 
     @Emitter(signal: "tab_selected", args: ("tab", Int))

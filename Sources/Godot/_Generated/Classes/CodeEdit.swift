@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CodeEdit: TextEdit {
-    public enum CodeCompletionKind: UInt32 {
+    public enum CodeCompletionKind: UInt32, GodotEnum {
         case `class` = 0
         case function = 1
         case signal = 2
@@ -16,12 +16,32 @@ open class CodeEdit: TextEdit {
         case nodePath = 7
         case filePath = 8
         case plainText = 9
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`class`", 0),
+            ("Function", 1),
+            ("Signal", 2),
+            ("Variable", 3),
+            ("Member", 4),
+            ("`enum`", 5),
+            ("Constant", 6),
+            ("Node Path", 7),
+            ("File Path", 8),
+            ("Plain Text", 9),]
+        }
     }
-    public enum CodeCompletionLocation: UInt32 {
+    public enum CodeCompletionLocation: UInt32, GodotEnum {
         case local = 0
         case parentMask = 256
         case otherUserCode = 512
         case other = 1024
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Local", 0),
+            ("Parent Mask", 256),
+            ("Other User Code", 512),
+            ("Other", 1024),]
+        }
     }
 
     @Emitter(signal: "breakpoint_toggled", args: ("line", Int))

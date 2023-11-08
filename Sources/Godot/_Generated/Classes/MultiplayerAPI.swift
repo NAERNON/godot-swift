@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class MultiplayerAPI: RefCounted {
-    public enum RPCMode: UInt32 {
+    public enum RPCMode: UInt32, GodotEnum {
         case disabled = 0
         case anyPeer = 1
         case authority = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Any Peer", 1),
+            ("Authority", 2),]
+        }
     }
 
     @Emitter(signal: "peer_connected", args: ("id", Int))

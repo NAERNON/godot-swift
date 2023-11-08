@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class LinkButton: BaseButton {
-    public enum UnderlineMode: UInt32 {
+    public enum UnderlineMode: UInt32, GodotEnum {
         case always = 0
         case onHover = 1
         case never = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Always", 0),
+            ("On Hover", 1),
+            ("Never", 2),]
+        }
     }
 
     private static var __method_binding_set_text: GDExtensionMethodBindPtr = {

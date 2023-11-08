@@ -22,7 +22,7 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             private enum SomeEnum: Int64 {}
             
-            extension SomeEnum: Godot.VariantConvertible {
+            extension SomeEnum: Godot.VariantConvertible, Godot.GodotEnum {
                 fileprivate static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 fileprivate func makeVariant() -> Godot.Variant.Storage {
@@ -50,6 +50,9 @@ final class GodotEnumMacroTests: XCTestCase {
                     return value
                 }
                 fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                    []
+                }
+                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
             }
@@ -72,7 +75,7 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             fileprivate enum SomeEnum: Int64 {}
             
-            extension SomeEnum: Godot.VariantConvertible {
+            extension SomeEnum: Godot.VariantConvertible, Godot.GodotEnum {
                 fileprivate static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 fileprivate func makeVariant() -> Godot.Variant.Storage {
@@ -102,6 +105,9 @@ final class GodotEnumMacroTests: XCTestCase {
                 fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
+                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                    []
+                }
             }
             """,
             diagnostics: [],
@@ -122,7 +128,7 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             enum SomeEnum: Int64 {}
             
-            extension SomeEnum: Godot.VariantConvertible {
+            extension SomeEnum: Godot.VariantConvertible, Godot.GodotEnum {
                 internal static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 internal func makeVariant() -> Godot.Variant.Storage {
@@ -150,6 +156,9 @@ final class GodotEnumMacroTests: XCTestCase {
                     return value
                 }
                 fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                    []
+                }
+                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
             }
@@ -172,7 +181,7 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             internal enum SomeEnum: Int64 {}
             
-            extension SomeEnum: Godot.VariantConvertible {
+            extension SomeEnum: Godot.VariantConvertible, Godot.GodotEnum {
                 internal static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 internal func makeVariant() -> Godot.Variant.Storage {
@@ -202,6 +211,9 @@ final class GodotEnumMacroTests: XCTestCase {
                 fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
+                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                    []
+                }
             }
             """,
             diagnostics: [],
@@ -222,7 +234,7 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             public enum SomeEnum: Int64 {}
             
-            extension SomeEnum: Godot.VariantConvertible {
+            extension SomeEnum: Godot.VariantConvertible, Godot.GodotEnum {
                 public static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 public func makeVariant() -> Godot.Variant.Storage {
@@ -252,6 +264,9 @@ final class GodotEnumMacroTests: XCTestCase {
                 fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
+                public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                    []
+                }
             }
             """,
             diagnostics: [],
@@ -271,7 +286,7 @@ final class GodotEnumMacroTests: XCTestCase {
                 case someValue
                 case someValue2, someValue3, someValue4
                 case another
-                case anotherGoodValue
+                case anotherGOODValue
             }
             """,
             expandedSource: """
@@ -279,10 +294,10 @@ final class GodotEnumMacroTests: XCTestCase {
                 case someValue
                 case someValue2, someValue3, someValue4
                 case another
-                case anotherGoodValue
+                case anotherGOODValue
             }
             
-            extension SomeEnum: Godot.VariantConvertible {
+            extension SomeEnum: Godot.VariantConvertible, Godot.GodotEnum {
                 public static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 public func makeVariant() -> Godot.Variant.Storage {
@@ -316,7 +331,16 @@ final class GodotEnumMacroTests: XCTestCase {
                     ("SOME_ENUM_SOME_VALUE3", Self.someValue3.rawValue),
                     ("SOME_ENUM_SOME_VALUE4", Self.someValue4.rawValue),
                     ("SOME_ENUM_ANOTHER", Self.another.rawValue),
-                    ("SOME_ENUM_ANOTHER_GOOD_VALUE", Self.anotherGoodValue.rawValue),]
+                    ("SOME_ENUM_ANOTHER_GOOD_VALUE", Self.anotherGOODValue.rawValue),]
+                }
+                public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                    [
+                    ("Some Value", Self.someValue.rawValue),
+                    ("Some Value2", Self.someValue2.rawValue),
+                    ("Some Value3", Self.someValue3.rawValue),
+                    ("Some Value4", Self.someValue4.rawValue),
+                    ("Another", Self.another.rawValue),
+                    ("Another GOOD Value", Self.anotherGOODValue.rawValue),]
                 }
             }
             """,

@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotRootClass
 open class Object {
-    public enum ConnectFlags: UInt32 {
+    public enum ConnectFlags: UInt32, GodotEnum {
         case deferred = 1
         case persist = 2
         case oneShot = 4
         case referenceCounted = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Deferred", 1),
+            ("Persist", 2),
+            ("One Shot", 4),
+            ("Reference Counted", 8),]
+        }
     }
 
     @Emitter(signal: "script_changed")

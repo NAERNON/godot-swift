@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotClass
 open class JSONRPC: Object {
-    public enum ErrorCode: Int32 {
+    public enum ErrorCode: Int32, GodotEnum {
         case parseError = -32700
         case invalidRequest = -32600
         case methodNotFound = -32601
         case invalidParams = -32602
         case internalError = -32603
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Parse Error", -32700),
+            ("Invalid Request", -32600),
+            ("Method Not Found", -32601),
+            ("Invalid Params", -32602),
+            ("Internal Error", -32603),]
+        }
     }
 
     private static var __method_binding_set_scope: GDExtensionMethodBindPtr = {

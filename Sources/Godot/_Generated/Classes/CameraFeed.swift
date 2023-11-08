@@ -5,16 +5,29 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class CameraFeed: RefCounted {
-    public enum FeedDataType: UInt32 {
+    public enum FeedDataType: UInt32, GodotEnum {
         case noimage = 0
         case rgb = 1
         case ycbcr = 2
         case ycbcrSep = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Noimage", 0),
+            ("Rgb", 1),
+            ("Ycbcr", 2),
+            ("Ycbcr Sep", 3),]
+        }
     }
-    public enum FeedPosition: UInt32 {
+    public enum FeedPosition: UInt32, GodotEnum {
         case unspecified = 0
         case front = 1
         case back = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Unspecified", 0),
+            ("Front", 1),
+            ("Back", 2),]
+        }
     }
 
     private static var __method_binding_get_id: GDExtensionMethodBindPtr = {

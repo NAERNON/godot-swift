@@ -5,16 +5,29 @@
 import GodotExtensionHeaders
 @GodotClass
 open class AudioStreamPlayer3D: Node3D {
-    public enum AttenuationModel: UInt32 {
+    public enum AttenuationModel: UInt32, GodotEnum {
         case inverseDistance = 0
         case inverseSquareDistance = 1
         case logarithmic = 2
         case disabled = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Inverse Distance", 0),
+            ("Inverse Square Distance", 1),
+            ("Logarithmic", 2),
+            ("Disabled", 3),]
+        }
     }
-    public enum DopplerTracking: UInt32 {
+    public enum DopplerTracking: UInt32, GodotEnum {
         case disabled = 0
         case idleStep = 1
         case physicsStep = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Idle Step", 1),
+            ("Physics Step", 2),]
+        }
     }
 
     @Emitter(signal: "finished")

@@ -5,15 +5,27 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Gradient: Resource {
-    public enum InterpolationMode: UInt32 {
+    public enum InterpolationMode: UInt32, GodotEnum {
         case linear = 0
         case constant = 1
         case cubic = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear", 0),
+            ("Constant", 1),
+            ("Cubic", 2),]
+        }
     }
-    public enum ColorSpace: UInt32 {
+    public enum ColorSpace: UInt32, GodotEnum {
         case srgb = 0
         case linearSrgb = 1
         case oklab = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Srgb", 0),
+            ("Linear Srgb", 1),
+            ("Oklab", 2),]
+        }
     }
 
     private static var __method_binding_add_point: GDExtensionMethodBindPtr = {

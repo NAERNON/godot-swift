@@ -5,28 +5,55 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GeometryInstance3D: VisualInstance3D {
-    public enum ShadowCastingSetting: UInt32 {
+    public enum ShadowCastingSetting: UInt32, GodotEnum {
         case off = 0
         case on = 1
         case doubleSided = 2
         case shadowsOnly = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Off", 0),
+            ("On", 1),
+            ("Double Sided", 2),
+            ("Shadows Only", 3),]
+        }
     }
-    public enum GIMode: UInt32 {
+    public enum GIMode: UInt32, GodotEnum {
         case disabled = 0
         case `static` = 1
         case dynamic = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("`static`", 1),
+            ("Dynamic", 2),]
+        }
     }
-    public enum LightmapScale: UInt32 {
+    public enum LightmapScale: UInt32, GodotEnum {
         case lightmapScale1x = 0
         case lightmapScale2x = 1
         case lightmapScale4x = 2
         case lightmapScale8x = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Lightmap Scale1x", 0),
+            ("Lightmap Scale2x", 1),
+            ("Lightmap Scale4x", 2),
+            ("Lightmap Scale8x", 3),
+            ("Max", 4),]
+        }
     }
-    public enum VisibilityRangeFadeMode: UInt32 {
+    public enum VisibilityRangeFadeMode: UInt32, GodotEnum {
         case disabled = 0
         case `self` = 1
         case dependencies = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("`self`", 1),
+            ("Dependencies", 2),]
+        }
     }
 
     private static var __method_binding_set_material_override: GDExtensionMethodBindPtr = {

@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ScrollContainer: Container {
-    public enum ScrollMode: UInt32 {
+    public enum ScrollMode: UInt32, GodotEnum {
         case disabled = 0
         case auto = 1
         case showAlways = 2
         case showNever = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Auto", 1),
+            ("Show Always", 2),
+            ("Show Never", 3),]
+        }
     }
 
     @Emitter(signal: "scroll_started")

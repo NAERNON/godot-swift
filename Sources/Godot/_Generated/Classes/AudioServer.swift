@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotClass
 open class AudioServer: Object {
-    public enum SpeakerMode: UInt32 {
+    public enum SpeakerMode: UInt32, GodotEnum {
         case modeStereo = 0
         case surround31 = 1
         case surround51 = 2
         case surround71 = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Mode Stereo", 0),
+            ("Surround31", 1),
+            ("Surround51", 2),
+            ("Surround71", 3),]
+        }
     }
 
     @Emitter(signal: "bus_layout_changed")

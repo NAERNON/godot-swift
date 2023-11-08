@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeTransformOp: VisualShaderNode {
-    public enum Operator: UInt32 {
+    public enum Operator: UInt32, GodotEnum {
         case axb = 0
         case bxa = 1
         case axbComp = 2
@@ -16,6 +16,19 @@ open class VisualShaderNodeTransformOp: VisualShaderNode {
         case aDivB = 7
         case bDivA = 8
         case max = 9
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Axb", 0),
+            ("Bxa", 1),
+            ("Axb Comp", 2),
+            ("Bxa Comp", 3),
+            ("Add", 4),
+            ("A Minus B", 5),
+            ("B Minus A", 6),
+            ("A Div B", 7),
+            ("B Div A", 8),
+            ("Max", 9),]
+        }
     }
 
     private static var __method_binding_set_operator: GDExtensionMethodBindPtr = {

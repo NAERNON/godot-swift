@@ -5,15 +5,27 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class GradientTexture2D: Texture2D {
-    public enum Fill: UInt32 {
+    public enum Fill: UInt32, GodotEnum {
         case linear = 0
         case radial = 1
         case square = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear", 0),
+            ("Radial", 1),
+            ("Square", 2),]
+        }
     }
-    public enum Repeat: UInt32 {
+    public enum Repeat: UInt32, GodotEnum {
         case none = 0
         case `repeat` = 1
         case mirror = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("`repeat`", 1),
+            ("Mirror", 2),]
+        }
     }
 
     private static var __method_binding_set_gradient: GDExtensionMethodBindPtr = {

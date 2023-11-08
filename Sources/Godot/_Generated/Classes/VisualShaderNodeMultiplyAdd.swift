@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeMultiplyAdd: VisualShaderNode {
-    public enum OpType: UInt32 {
+    public enum OpType: UInt32, GodotEnum {
         case scalar = 0
         case vector2D = 1
         case vector3D = 2
         case vector4d = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Scalar", 0),
+            ("Vector2 D", 1),
+            ("Vector3 D", 2),
+            ("Vector4d", 3),
+            ("Max", 4),]
+        }
     }
 
     private static var __method_binding_set_op_type: GDExtensionMethodBindPtr = {

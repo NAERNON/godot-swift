@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CanvasItem: Node {
-    public enum TextureFilter: UInt32 {
+    public enum TextureFilter: UInt32, GodotEnum {
         case parentNode = 0
         case nearest = 1
         case linear = 2
@@ -14,19 +14,45 @@ open class CanvasItem: Node {
         case nearestWithMipmapsAnisotropic = 5
         case linearWithMipmapsAnisotropic = 6
         case max = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Parent Node", 0),
+            ("Nearest", 1),
+            ("Linear", 2),
+            ("Nearest With Mipmaps", 3),
+            ("Linear With Mipmaps", 4),
+            ("Nearest With Mipmaps Anisotropic", 5),
+            ("Linear With Mipmaps Anisotropic", 6),
+            ("Max", 7),]
+        }
     }
-    public enum TextureRepeat: UInt32 {
+    public enum TextureRepeat: UInt32, GodotEnum {
         case parentNode = 0
         case disabled = 1
         case enabled = 2
         case mirror = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Parent Node", 0),
+            ("Disabled", 1),
+            ("Enabled", 2),
+            ("Mirror", 3),
+            ("Max", 4),]
+        }
     }
-    public enum ClipChildrenMode: UInt32 {
+    public enum ClipChildrenMode: UInt32, GodotEnum {
         case disabled = 0
         case only = 1
         case andDraw = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Only", 1),
+            ("And Draw", 2),
+            ("Max", 3),]
+        }
     }
 
     @Emitter(signal: "draw")

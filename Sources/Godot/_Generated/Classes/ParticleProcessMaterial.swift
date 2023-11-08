@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ParticleProcessMaterial: Material {
-    public enum Parameter: UInt32 {
+    public enum Parameter: UInt32, GodotEnum {
         case initialLinearVelocity = 0
         case angularVelocity = 1
         case orbitVelocity = 2
@@ -22,14 +22,40 @@ open class ParticleProcessMaterial: Material {
         case turbVelInfluence = 13
         case turbInitDisplacement = 14
         case turbInfluenceOverLife = 12
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Initial Linear Velocity", 0),
+            ("Angular Velocity", 1),
+            ("Orbit Velocity", 2),
+            ("Linear Accel", 3),
+            ("Radial Accel", 4),
+            ("Tangential Accel", 5),
+            ("Damping", 6),
+            ("Angle", 7),
+            ("Scale", 8),
+            ("Hue Variation", 9),
+            ("Anim Speed", 10),
+            ("Anim Offset", 11),
+            ("Max", 15),
+            ("Turb Vel Influence", 13),
+            ("Turb Init Displacement", 14),
+            ("Turb Influence Over Life", 12),]
+        }
     }
-    public enum ParticleFlags: UInt32 {
+    public enum ParticleFlags: UInt32, GodotEnum {
         case alignYToVelocity = 0
         case rotateY = 1
         case disableZ = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Align Y To Velocity", 0),
+            ("Rotate Y", 1),
+            ("Disable Z", 2),
+            ("Max", 3),]
+        }
     }
-    public enum EmissionShape: UInt32 {
+    public enum EmissionShape: UInt32, GodotEnum {
         case point = 0
         case sphere = 1
         case sphereSurface = 2
@@ -38,19 +64,45 @@ open class ParticleProcessMaterial: Material {
         case directedPoints = 5
         case ring = 6
         case max = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Point", 0),
+            ("Sphere", 1),
+            ("Sphere Surface", 2),
+            ("Box", 3),
+            ("Points", 4),
+            ("Directed Points", 5),
+            ("Ring", 6),
+            ("Max", 7),]
+        }
     }
-    public enum SubEmitterMode: UInt32 {
+    public enum SubEmitterMode: UInt32, GodotEnum {
         case disabled = 0
         case constant = 1
         case atEnd = 2
         case atCollision = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Constant", 1),
+            ("At End", 2),
+            ("At Collision", 3),
+            ("Max", 4),]
+        }
     }
-    public enum CollisionMode: UInt32 {
+    public enum CollisionMode: UInt32, GodotEnum {
         case disabled = 0
         case rigid = 1
         case hideOnContact = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Rigid", 1),
+            ("Hide On Contact", 2),
+            ("Max", 3),]
+        }
     }
 
     private static var __method_binding_set_direction: GDExtensionMethodBindPtr = {

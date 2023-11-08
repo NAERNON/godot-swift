@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RibbonTrailMesh: PrimitiveMesh {
-    public enum Shape: UInt32 {
+    public enum Shape: UInt32, GodotEnum {
         case flat = 0
         case cross = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Flat", 0),
+            ("Cross", 1),]
+        }
     }
 
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {

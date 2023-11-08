@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class EditorScenePostImportPlugin: RefCounted {
-    public enum InternalImportCategory: UInt32 {
+    public enum InternalImportCategory: UInt32, GodotEnum {
         case node = 0
         case mesh3DNode = 1
         case mesh = 2
@@ -14,6 +14,17 @@ open class EditorScenePostImportPlugin: RefCounted {
         case animationNode = 5
         case skeleton3DNode = 6
         case max = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Node", 0),
+            ("Mesh3 D Node", 1),
+            ("Mesh", 2),
+            ("Material", 3),
+            ("Animation", 4),
+            ("Animation Node", 5),
+            ("Skeleton3 D Node", 6),
+            ("Max", 7),]
+        }
     }
 
     open func _getInternalImportOptions(category: Int32) {

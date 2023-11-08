@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TouchScreenButton: Node2D {
-    public enum VisibilityMode: UInt32 {
+    public enum VisibilityMode: UInt32, GodotEnum {
         case always = 0
         case touchscreenOnly = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Always", 0),
+            ("Touchscreen Only", 1),]
+        }
     }
 
     @Emitter(signal: "pressed")

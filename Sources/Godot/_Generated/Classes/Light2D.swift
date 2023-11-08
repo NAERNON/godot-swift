@@ -5,15 +5,27 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Light2D: Node2D {
-    public enum ShadowFilter: UInt32 {
+    public enum ShadowFilter: UInt32, GodotEnum {
         case none = 0
         case pcf5 = 1
         case pcf13 = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Pcf5", 1),
+            ("Pcf13", 2),]
+        }
     }
-    public enum BlendMode: UInt32 {
+    public enum BlendMode: UInt32, GodotEnum {
         case add = 0
         case sub = 1
         case mix = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Add", 0),
+            ("Sub", 1),
+            ("Mix", 2),]
+        }
     }
 
     private static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {

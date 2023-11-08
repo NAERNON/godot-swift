@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class OccluderPolygon2D: Resource {
-    public enum CullMode: UInt32 {
+    public enum CullMode: UInt32, GodotEnum {
         case disabled = 0
         case clockwise = 1
         case counterClockwise = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Clockwise", 1),
+            ("Counter Clockwise", 2),]
+        }
     }
 
     private static var __method_binding_set_closed: GDExtensionMethodBindPtr = {

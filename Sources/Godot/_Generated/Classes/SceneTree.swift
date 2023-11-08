@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotClass
 open class SceneTree: MainLoop {
-    public enum GroupCallFlags: UInt32 {
+    public enum GroupCallFlags: UInt32, GodotEnum {
         case `default` = 0
         case reverse = 1
         case deferred = 2
         case unique = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`default`", 0),
+            ("Reverse", 1),
+            ("Deferred", 2),
+            ("Unique", 4),]
+        }
     }
 
     @Emitter(signal: "tree_changed")

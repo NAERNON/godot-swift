@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeIntFunc: VisualShaderNode {
-    public enum Function: UInt32 {
+    public enum Function: UInt32, GodotEnum {
         case abs = 0
         case negate = 1
         case sign = 2
         case bitwiseNot = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Abs", 0),
+            ("Negate", 1),
+            ("Sign", 2),
+            ("Bitwise Not", 3),
+            ("Max", 4),]
+        }
     }
 
     private static var __method_binding_set_function: GDExtensionMethodBindPtr = {

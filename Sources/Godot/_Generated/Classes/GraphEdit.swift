@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GraphEdit: Control {
-    public enum PanningScheme: UInt32 {
+    public enum PanningScheme: UInt32, GodotEnum {
         case zooms = 0
         case pans = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Zooms", 0),
+            ("Pans", 1),]
+        }
     }
 
     @Emitter(signal: "connection_request", args: ("fromNode", Godot.GodotStringName), ("fromPort", Int), ("toNode", Godot.GodotStringName), ("toPort", Int))

@@ -5,21 +5,40 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorFileDialog: ConfirmationDialog {
-    public enum FileMode: UInt32 {
+    public enum FileMode: UInt32, GodotEnum {
         case openFile = 0
         case openFiles = 1
         case openDir = 2
         case openAny = 3
         case saveFile = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Open File", 0),
+            ("Open Files", 1),
+            ("Open Dir", 2),
+            ("Open Any", 3),
+            ("Save File", 4),]
+        }
     }
-    public enum Access: UInt32 {
+    public enum Access: UInt32, GodotEnum {
         case resources = 0
         case userdata = 1
         case filesystem = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Resources", 0),
+            ("Userdata", 1),
+            ("Filesystem", 2),]
+        }
     }
-    public enum DisplayMode: UInt32 {
+    public enum DisplayMode: UInt32, GodotEnum {
         case thumbnails = 0
         case list = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Thumbnails", 0),
+            ("List", 1),]
+        }
     }
 
     @Emitter(signal: "file_selected", args: ("path", Godot.GodotString))

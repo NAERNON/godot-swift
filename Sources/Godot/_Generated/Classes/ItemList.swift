@@ -5,13 +5,23 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ItemList: Control {
-    public enum IconMode: UInt32 {
+    public enum IconMode: UInt32, GodotEnum {
         case top = 0
         case left = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Top", 0),
+            ("Left", 1),]
+        }
     }
-    public enum SelectMode: UInt32 {
+    public enum SelectMode: UInt32, GodotEnum {
         case single = 0
         case multi = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Single", 0),
+            ("Multi", 1),]
+        }
     }
 
     @Emitter(signal: "item_selected", args: ("index", Int))

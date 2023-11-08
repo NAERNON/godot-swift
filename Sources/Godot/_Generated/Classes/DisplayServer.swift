@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class DisplayServer: Object {
-    public enum Feature: UInt32 {
+    public enum Feature: UInt32, GodotEnum {
         case globalMenu = 0
         case subwindows = 1
         case touchscreen = 2
@@ -27,15 +27,47 @@ open class DisplayServer: Object {
         case textToSpeech = 19
         case extendToTitle = 20
         case screenCapture = 21
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Global Menu", 0),
+            ("Subwindows", 1),
+            ("Touchscreen", 2),
+            ("Mouse", 3),
+            ("Mouse Warp", 4),
+            ("Clipboard", 5),
+            ("Virtual Keyboard", 6),
+            ("Cursor Shape", 7),
+            ("Custom Cursor Shape", 8),
+            ("Native Dialog", 9),
+            ("Ime", 10),
+            ("Window Transparency", 11),
+            ("Hidpi", 12),
+            ("Icon", 13),
+            ("Native Icon", 14),
+            ("Orientation", 15),
+            ("Swap Buffers", 16),
+            ("Clipboard Primary", 18),
+            ("Text To Speech", 19),
+            ("Extend To Title", 20),
+            ("Screen Capture", 21),]
+        }
     }
-    public enum MouseMode: UInt32 {
+    public enum MouseMode: UInt32, GodotEnum {
         case visible = 0
         case hidden = 1
         case captured = 2
         case confined = 3
         case confinedHidden = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Visible", 0),
+            ("Hidden", 1),
+            ("Captured", 2),
+            ("Confined", 3),
+            ("Confined Hidden", 4),]
+        }
     }
-    public enum ScreenOrientation: UInt32 {
+    public enum ScreenOrientation: UInt32, GodotEnum {
         case landscape = 0
         case portrait = 1
         case reverseLandscape = 2
@@ -43,8 +75,18 @@ open class DisplayServer: Object {
         case sensorLandscape = 4
         case sensorPortrait = 5
         case sensor = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Landscape", 0),
+            ("Portrait", 1),
+            ("Reverse Landscape", 2),
+            ("Reverse Portrait", 3),
+            ("Sensor Landscape", 4),
+            ("Sensor Portrait", 5),
+            ("Sensor", 6),]
+        }
     }
-    public enum VirtualKeyboardType: UInt32 {
+    public enum VirtualKeyboardType: UInt32, GodotEnum {
         case `default` = 0
         case multiline = 1
         case number = 2
@@ -53,8 +95,19 @@ open class DisplayServer: Object {
         case emailAddress = 5
         case password = 6
         case url = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`default`", 0),
+            ("Multiline", 1),
+            ("Number", 2),
+            ("Number Decimal", 3),
+            ("Phone", 4),
+            ("Email Address", 5),
+            ("Password", 6),
+            ("Url", 7),]
+        }
     }
-    public enum CursorShape: UInt32 {
+    public enum CursorShape: UInt32, GodotEnum {
         case arrow = 0
         case ibeam = 1
         case pointingHand = 2
@@ -73,15 +126,44 @@ open class DisplayServer: Object {
         case hsplit = 15
         case help = 16
         case max = 17
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Arrow", 0),
+            ("Ibeam", 1),
+            ("Pointing Hand", 2),
+            ("Cross", 3),
+            ("Wait", 4),
+            ("Busy", 5),
+            ("Drag", 6),
+            ("Can Drop", 7),
+            ("Forbidden", 8),
+            ("Vsize", 9),
+            ("Hsize", 10),
+            ("Bdiagsize", 11),
+            ("Fdiagsize", 12),
+            ("Move", 13),
+            ("Vsplit", 14),
+            ("Hsplit", 15),
+            ("Help", 16),
+            ("Max", 17),]
+        }
     }
-    public enum WindowMode: UInt32 {
+    public enum WindowMode: UInt32, GodotEnum {
         case windowed = 0
         case minimized = 1
         case maximized = 2
         case fullscreen = 3
         case exclusiveFullscreen = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Windowed", 0),
+            ("Minimized", 1),
+            ("Maximized", 2),
+            ("Fullscreen", 3),
+            ("Exclusive Fullscreen", 4),]
+        }
     }
-    public enum WindowFlags: UInt32 {
+    public enum WindowFlags: UInt32, GodotEnum {
         case resizeDisabled = 0
         case borderless = 1
         case alwaysOnTop = 2
@@ -91,8 +173,20 @@ open class DisplayServer: Object {
         case extendToTitle = 6
         case mousePassthrough = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Resize Disabled", 0),
+            ("Borderless", 1),
+            ("Always On Top", 2),
+            ("Transparent", 3),
+            ("No Focus", 4),
+            ("Popup", 5),
+            ("Extend To Title", 6),
+            ("Mouse Passthrough", 7),
+            ("Max", 8),]
+        }
     }
-    public enum WindowEvent: UInt32 {
+    public enum WindowEvent: UInt32, GodotEnum {
         case mouseEnter = 0
         case mouseExit = 1
         case focusIn = 2
@@ -101,24 +195,56 @@ open class DisplayServer: Object {
         case goBackRequest = 5
         case dpiChange = 6
         case titlebarChange = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Mouse Enter", 0),
+            ("Mouse Exit", 1),
+            ("Focus In", 2),
+            ("Focus Out", 3),
+            ("Close Request", 4),
+            ("Go Back Request", 5),
+            ("Dpi Change", 6),
+            ("Titlebar Change", 7),]
+        }
     }
-    public enum VSyncMode: UInt32 {
+    public enum VSyncMode: UInt32, GodotEnum {
         case disabled = 0
         case enabled = 1
         case adaptive = 2
         case mailbox = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Enabled", 1),
+            ("Adaptive", 2),
+            ("Mailbox", 3),]
+        }
     }
-    public enum HandleType: UInt32 {
+    public enum HandleType: UInt32, GodotEnum {
         case displayHandle = 0
         case windowHandle = 1
         case windowView = 2
         case openglContext = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Display Handle", 0),
+            ("Window Handle", 1),
+            ("Window View", 2),
+            ("Opengl Context", 3),]
+        }
     }
-    public enum TTSUtteranceEvent: UInt32 {
+    public enum TTSUtteranceEvent: UInt32, GodotEnum {
         case started = 0
         case ended = 1
         case canceled = 2
         case boundary = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Started", 0),
+            ("Ended", 1),
+            ("Canceled", 2),
+            ("Boundary", 3),]
+        }
     }
 
     private static var __method_binding_has_feature: GDExtensionMethodBindPtr = {

@@ -5,15 +5,27 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class MultiplayerPeer: PacketPeer {
-    public enum ConnectionStatus: UInt32 {
+    public enum ConnectionStatus: UInt32, GodotEnum {
         case disconnected = 0
         case connecting = 1
         case connected = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disconnected", 0),
+            ("Connecting", 1),
+            ("Connected", 2),]
+        }
     }
-    public enum TransferMode: UInt32 {
+    public enum TransferMode: UInt32, GodotEnum {
         case unreliable = 0
         case unreliableOrdered = 1
         case reliable = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Unreliable", 0),
+            ("Unreliable Ordered", 1),
+            ("Reliable", 2),]
+        }
     }
 
     @Emitter(signal: "peer_connected", args: ("id", Int))

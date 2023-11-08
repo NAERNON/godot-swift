@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeColorFunc: VisualShaderNode {
-    public enum Function: UInt32 {
+    public enum Function: UInt32, GodotEnum {
         case grayscale = 0
         case hsv2rgb = 1
         case rgb2hsv = 2
         case sepia = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Grayscale", 0),
+            ("Hsv2rgb", 1),
+            ("Rgb2hsv", 2),
+            ("Sepia", 3),
+            ("Max", 4),]
+        }
     }
 
     private static var __method_binding_set_function: GDExtensionMethodBindPtr = {

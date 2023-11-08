@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShader: Shader {
-    public enum GodotType: UInt32 {
+    public enum GodotType: UInt32, GodotEnum {
         case vertex = 0
         case fragment = 1
         case light = 2
@@ -17,13 +17,33 @@ open class VisualShader: Shader {
         case sky = 8
         case fog = 9
         case max = 10
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Vertex", 0),
+            ("Fragment", 1),
+            ("Light", 2),
+            ("Start", 3),
+            ("Process", 4),
+            ("Collide", 5),
+            ("Start Custom", 6),
+            ("Process Custom", 7),
+            ("Sky", 8),
+            ("Fog", 9),
+            ("Max", 10),]
+        }
     }
-    public enum VaryingMode: UInt32 {
+    public enum VaryingMode: UInt32, GodotEnum {
         case vertexToFragLight = 0
         case fragToLight = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Vertex To Frag Light", 0),
+            ("Frag To Light", 1),
+            ("Max", 2),]
+        }
     }
-    public enum VaryingType: UInt32 {
+    public enum VaryingType: UInt32, GodotEnum {
         case float = 0
         case int = 1
         case uint = 2
@@ -33,6 +53,18 @@ open class VisualShader: Shader {
         case boolean = 6
         case transform = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Float", 0),
+            ("Int", 1),
+            ("Uint", 2),
+            ("Vector2 D", 3),
+            ("Vector3 D", 4),
+            ("Vector4d", 5),
+            ("Boolean", 6),
+            ("Transform", 7),
+            ("Max", 8),]
+        }
     }
 
     private static var __method_binding_set_mode: GDExtensionMethodBindPtr = {

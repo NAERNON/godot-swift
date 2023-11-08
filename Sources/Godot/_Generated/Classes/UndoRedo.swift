@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class UndoRedo: Object {
-    public enum MergeMode: UInt32 {
+    public enum MergeMode: UInt32, GodotEnum {
         case disable = 0
         case ends = 1
         case all = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disable", 0),
+            ("Ends", 1),
+            ("All", 2),]
+        }
     }
 
     @Emitter(signal: "version_changed")

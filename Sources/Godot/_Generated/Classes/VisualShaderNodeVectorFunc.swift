@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeVectorFunc: VisualShaderNodeVectorBase {
-    public enum Function: UInt32 {
+    public enum Function: UInt32, GodotEnum {
         case normalize = 0
         case saturate = 1
         case negate = 2
@@ -40,6 +40,43 @@ open class VisualShaderNodeVectorFunc: VisualShaderNodeVectorBase {
         case trunc = 31
         case oneminus = 32
         case max = 33
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Normalize", 0),
+            ("Saturate", 1),
+            ("Negate", 2),
+            ("Reciprocal", 3),
+            ("Abs", 4),
+            ("Acos", 5),
+            ("Acosh", 6),
+            ("Asin", 7),
+            ("Asinh", 8),
+            ("Atan", 9),
+            ("Atanh", 10),
+            ("Ceil", 11),
+            ("Cos", 12),
+            ("Cosh", 13),
+            ("Degrees", 14),
+            ("Exp", 15),
+            ("Exp2", 16),
+            ("Floor", 17),
+            ("Fract", 18),
+            ("Inverse Sqrt", 19),
+            ("Log", 20),
+            ("Log2", 21),
+            ("Radians", 22),
+            ("Round", 23),
+            ("Roundeven", 24),
+            ("Sign", 25),
+            ("Sin", 26),
+            ("Sinh", 27),
+            ("Sqrt", 28),
+            ("Tan", 29),
+            ("Tanh", 30),
+            ("Trunc", 31),
+            ("Oneminus", 32),
+            ("Max", 33),]
+        }
     }
 
     private static var __method_binding_set_function: GDExtensionMethodBindPtr = {

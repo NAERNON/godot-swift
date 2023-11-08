@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CollisionObject2D: Node2D {
-    public enum DisableMode: UInt32 {
+    public enum DisableMode: UInt32, GodotEnum {
         case remove = 0
         case makeStatic = 1
         case keepActive = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Remove", 0),
+            ("Make Static", 1),
+            ("Keep Active", 2),]
+        }
     }
 
     @Emitter(signal: "input_event", args: ("viewport", Godot.Node?), ("event", Godot.InputEvent?), ("shapeIdx", Int))

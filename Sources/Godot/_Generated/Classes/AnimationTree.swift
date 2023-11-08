@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class AnimationTree: Node {
-    public enum AnimationProcessCallback: UInt32 {
+    public enum AnimationProcessCallback: UInt32, GodotEnum {
         case physics = 0
         case idle = 1
         case manual = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Physics", 0),
+            ("Idle", 1),
+            ("Manual", 2),]
+        }
     }
 
     @Emitter(signal: "animation_player_changed")

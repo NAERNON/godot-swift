@@ -5,16 +5,29 @@
 import GodotExtensionHeaders
 @GodotClass
 open class AspectRatioContainer: Container {
-    public enum StretchMode: UInt32 {
+    public enum StretchMode: UInt32, GodotEnum {
         case widthControlsHeight = 0
         case heightControlsWidth = 1
         case fit = 2
         case cover = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Width Controls Height", 0),
+            ("Height Controls Width", 1),
+            ("Fit", 2),
+            ("Cover", 3),]
+        }
     }
-    public enum AlignmentMode: UInt32 {
+    public enum AlignmentMode: UInt32, GodotEnum {
         case begin = 0
         case center = 1
         case end = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Begin", 0),
+            ("Center", 1),
+            ("End", 2),]
+        }
     }
 
     private static var __method_binding_set_ratio: GDExtensionMethodBindPtr = {

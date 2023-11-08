@@ -5,18 +5,33 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorVCSInterface: Object {
-    public enum ChangeType: UInt32 {
+    public enum ChangeType: UInt32, GodotEnum {
         case new = 0
         case modified = 1
         case renamed = 2
         case deleted = 3
         case typechange = 4
         case unmerged = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("New", 0),
+            ("Modified", 1),
+            ("Renamed", 2),
+            ("Deleted", 3),
+            ("Typechange", 4),
+            ("Unmerged", 5),]
+        }
     }
-    public enum TreeArea: UInt32 {
+    public enum TreeArea: UInt32, GodotEnum {
         case commit = 0
         case staged = 1
         case unstaged = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Commit", 0),
+            ("Staged", 1),
+            ("Unstaged", 2),]
+        }
     }
 
     open func _initialize(projectPath: Godot.GodotString) -> Bool {

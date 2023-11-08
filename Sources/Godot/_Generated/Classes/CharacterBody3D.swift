@@ -5,14 +5,25 @@
 import GodotExtensionHeaders
 @GodotClass
 open class CharacterBody3D: PhysicsBody3D {
-    public enum MotionMode: UInt32 {
+    public enum MotionMode: UInt32, GodotEnum {
         case grounded = 0
         case floating = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Grounded", 0),
+            ("Floating", 1),]
+        }
     }
-    public enum PlatformOnLeave: UInt32 {
+    public enum PlatformOnLeave: UInt32, GodotEnum {
         case addVelocity = 0
         case addUpwardVelocity = 1
         case doNothing = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Add Velocity", 0),
+            ("Add Upward Velocity", 1),
+            ("Do Nothing", 2),]
+        }
     }
 
     private static var __method_binding_move_and_slide: GDExtensionMethodBindPtr = {

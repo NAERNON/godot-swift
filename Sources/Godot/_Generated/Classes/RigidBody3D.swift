@@ -5,17 +5,32 @@
 import GodotExtensionHeaders
 @GodotClass
 open class RigidBody3D: PhysicsBody3D {
-    public enum FreezeMode: UInt32 {
+    public enum FreezeMode: UInt32, GodotEnum {
         case `static` = 0
         case kinematic = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`static`", 0),
+            ("Kinematic", 1),]
+        }
     }
-    public enum CenterOfMassMode: UInt32 {
+    public enum CenterOfMassMode: UInt32, GodotEnum {
         case auto = 0
         case custom = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Auto", 0),
+            ("Custom", 1),]
+        }
     }
-    public enum DampMode: UInt32 {
+    public enum DampMode: UInt32, GodotEnum {
         case combine = 0
         case replace = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Combine", 0),
+            ("Replace", 1),]
+        }
     }
 
     @Emitter(signal: "body_shape_entered", args: ("bodyRid", Godot.RID), ("body", Godot.Node?), ("bodyShapeIndex", Int), ("localShapeIndex", Int))

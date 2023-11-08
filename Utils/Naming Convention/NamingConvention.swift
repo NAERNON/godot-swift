@@ -21,3 +21,23 @@ public extension StringProtocol {
         return destination.recompose(source.decompose(string: String(self)))
     }
 }
+
+public extension NamingConvention {
+    /// Returns a string converted as a sentence.
+    ///
+    /// If the camel String was "someValueOutput", the result
+    /// would be "Some Value Output".
+    func makeSentence(_ sentence: String) -> String {
+        let decomposed = decompose(string: sentence)
+        
+        return decomposed.map { name in
+            guard !name.isEmpty else {
+                return name
+            }
+            
+            var new = name
+            new.insert(contentsOf: new.removeFirst().uppercased(), at: name.startIndex)
+            return new
+        }.joined(separator: " ")
+    }
+}

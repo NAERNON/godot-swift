@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class XRPositionalTracker: RefCounted {
-    public enum TrackerHand: UInt32 {
+    public enum TrackerHand: UInt32, GodotEnum {
         case unknown = 0
         case left = 1
         case right = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Unknown", 0),
+            ("Left", 1),
+            ("Right", 2),]
+        }
     }
 
     @Emitter(signal: "pose_changed", args: ("pose", Godot.XRPose?))

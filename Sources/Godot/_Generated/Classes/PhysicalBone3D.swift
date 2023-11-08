@@ -5,17 +5,31 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PhysicalBone3D: PhysicsBody3D {
-    public enum DampMode: UInt32 {
+    public enum DampMode: UInt32, GodotEnum {
         case combine = 0
         case replace = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Combine", 0),
+            ("Replace", 1),]
+        }
     }
-    public enum JointType: UInt32 {
+    public enum JointType: UInt32, GodotEnum {
         case none = 0
         case pin = 1
         case cone = 2
         case hinge = 3
         case slider = 4
         case jointType6dof = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Pin", 1),
+            ("Cone", 2),
+            ("Hinge", 3),
+            ("Slider", 4),
+            ("Joint Type6dof", 5),]
+        }
     }
 
     open func _integrateForces(state: Godot.PhysicsDirectBodyState3D?) {

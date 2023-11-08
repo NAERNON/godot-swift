@@ -5,25 +5,46 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class TileSet: Resource {
-    public enum TileShape: UInt32 {
+    public enum TileShape: UInt32, GodotEnum {
         case square = 0
         case isometric = 1
         case halfOffsetSquare = 2
         case hexagon = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Square", 0),
+            ("Isometric", 1),
+            ("Half Offset Square", 2),
+            ("Hexagon", 3),]
+        }
     }
-    public enum TileLayout: UInt32 {
+    public enum TileLayout: UInt32, GodotEnum {
         case stacked = 0
         case stackedOffset = 1
         case stairsRight = 2
         case stairsDown = 3
         case diamondRight = 4
         case diamondDown = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Stacked", 0),
+            ("Stacked Offset", 1),
+            ("Stairs Right", 2),
+            ("Stairs Down", 3),
+            ("Diamond Right", 4),
+            ("Diamond Down", 5),]
+        }
     }
-    public enum TileOffsetAxis: UInt32 {
+    public enum TileOffsetAxis: UInt32, GodotEnum {
         case horizontal = 0
         case vertical = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Horizontal", 0),
+            ("Vertical", 1),]
+        }
     }
-    public enum CellNeighbor: UInt32 {
+    public enum CellNeighbor: UInt32, GodotEnum {
         case rightSide = 0
         case rightCorner = 1
         case bottomRightSide = 2
@@ -40,11 +61,36 @@ open class TileSet: Resource {
         case topCorner = 13
         case topRightSide = 14
         case topRightCorner = 15
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Right Side", 0),
+            ("Right Corner", 1),
+            ("Bottom Right Side", 2),
+            ("Bottom Right Corner", 3),
+            ("Bottom Side", 4),
+            ("Bottom Corner", 5),
+            ("Bottom Left Side", 6),
+            ("Bottom Left Corner", 7),
+            ("Left Side", 8),
+            ("Left Corner", 9),
+            ("Top Left Side", 10),
+            ("Top Left Corner", 11),
+            ("Top Side", 12),
+            ("Top Corner", 13),
+            ("Top Right Side", 14),
+            ("Top Right Corner", 15),]
+        }
     }
-    public enum TerrainMode: UInt32 {
+    public enum TerrainMode: UInt32, GodotEnum {
         case cornersAndSides = 0
         case corners = 1
         case sides = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Corners And Sides", 0),
+            ("Corners", 1),
+            ("Sides", 2),]
+        }
     }
 
     private static var __method_binding_get_next_source_id: GDExtensionMethodBindPtr = {

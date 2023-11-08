@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class WebXRInterface: XRInterface {
-    public enum TargetRayMode: UInt32 {
+    public enum TargetRayMode: UInt32, GodotEnum {
         case unknown = 0
         case gaze = 1
         case trackedPointer = 2
         case screen = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Unknown", 0),
+            ("Gaze", 1),
+            ("Tracked Pointer", 2),
+            ("Screen", 3),]
+        }
     }
 
     @Emitter(signal: "session_supported", args: ("sessionMode", Godot.GodotString), ("supported", Bool))

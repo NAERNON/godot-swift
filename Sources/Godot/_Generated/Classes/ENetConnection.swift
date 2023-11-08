@@ -5,25 +5,48 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ENetConnection: RefCounted {
-    public enum CompressionMode: UInt32 {
+    public enum CompressionMode: UInt32, GodotEnum {
         case none = 0
         case rangeCoder = 1
         case fastlz = 2
         case zlib = 3
         case zstd = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Range Coder", 1),
+            ("Fastlz", 2),
+            ("Zlib", 3),
+            ("Zstd", 4),]
+        }
     }
-    public enum EventType: Int32 {
+    public enum EventType: Int32, GodotEnum {
         case error = -1
         case none = 0
         case connect = 1
         case disconnect = 2
         case receive = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Error", -1),
+            ("None", 0),
+            ("Connect", 1),
+            ("Disconnect", 2),
+            ("Receive", 3),]
+        }
     }
-    public enum HostStatistic: UInt32 {
+    public enum HostStatistic: UInt32, GodotEnum {
         case sentData = 0
         case sentPackets = 1
         case receivedData = 2
         case receivedPackets = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Sent Data", 0),
+            ("Sent Packets", 1),
+            ("Received Data", 2),
+            ("Received Packets", 3),]
+        }
     }
 
     private static var __method_binding_create_host_bound: GDExtensionMethodBindPtr = {

@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ResourceImporter: RefCounted {
-    public enum ImportOrder: UInt32 {
+    public enum ImportOrder: UInt32, GodotEnum {
         case `default` = 0
         case scene = 100
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`default`", 0),
+            ("Scene", 100),]
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

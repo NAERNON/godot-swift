@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Area3D: CollisionObject3D {
-    public enum SpaceOverride: UInt32 {
+    public enum SpaceOverride: UInt32, GodotEnum {
         case disabled = 0
         case combine = 1
         case combineReplace = 2
         case replace = 3
         case replaceCombine = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Combine", 1),
+            ("Combine Replace", 2),
+            ("Replace", 3),
+            ("Replace Combine", 4),]
+        }
     }
 
     @Emitter(signal: "body_shape_entered", args: ("bodyRid", Godot.RID), ("body", Godot.Node3D?), ("bodyShapeIndex", Int), ("localShapeIndex", Int))

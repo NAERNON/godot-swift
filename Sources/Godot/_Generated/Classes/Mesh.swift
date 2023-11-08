@@ -5,14 +5,22 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Mesh: Resource {
-    public enum PrimitiveType: UInt32 {
+    public enum PrimitiveType: UInt32, GodotEnum {
         case points = 0
         case lines = 1
         case lineStrip = 2
         case triangles = 3
         case triangleStrip = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Points", 0),
+            ("Lines", 1),
+            ("Line Strip", 2),
+            ("Triangles", 3),
+            ("Triangle Strip", 4),]
+        }
     }
-    public enum ArrayType: UInt32 {
+    public enum ArrayType: UInt32, GodotEnum {
         case vertex = 0
         case normal = 1
         case tangent = 2
@@ -27,8 +35,25 @@ open class Mesh: Resource {
         case weights = 11
         case index = 12
         case max = 13
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Vertex", 0),
+            ("Normal", 1),
+            ("Tangent", 2),
+            ("Color", 3),
+            ("Tex Uv", 4),
+            ("Tex Uv2", 5),
+            ("Custom0", 6),
+            ("Custom1", 7),
+            ("Custom2", 8),
+            ("Custom3", 9),
+            ("Bones", 10),
+            ("Weights", 11),
+            ("Index", 12),
+            ("Max", 13),]
+        }
     }
-    public enum ArrayCustomFormat: UInt32 {
+    public enum ArrayCustomFormat: UInt32, GodotEnum {
         case rgba8Unorm = 0
         case rgba8Snorm = 1
         case rgHalf = 2
@@ -38,6 +63,18 @@ open class Mesh: Resource {
         case rgbFloat = 6
         case rgbaFloat = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Rgba8 Unorm", 0),
+            ("Rgba8 Snorm", 1),
+            ("Rg Half", 2),
+            ("Rgba Half", 3),
+            ("R Float", 4),
+            ("Rg Float", 5),
+            ("Rgb Float", 6),
+            ("Rgba Float", 7),
+            ("Max", 8),]
+        }
     }
     public struct ArrayFormat: OptionSet {
         public let rawValue: UInt32
@@ -73,9 +110,14 @@ open class Mesh: Resource {
         public static let flagUse8BoneWeights: Self = .init(rawValue: 134217728)
         public static let flagUsesEmptyVertexArray: Self = .init(rawValue: 268435456)
     }
-    public enum BlendShapeMode: UInt32 {
+    public enum BlendShapeMode: UInt32, GodotEnum {
         case normalized = 0
         case relative = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Normalized", 0),
+            ("Relative", 1),]
+        }
     }
 
     open func _getSurfaceCount() -> Int32 {

@@ -5,13 +5,22 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class PortableCompressedTexture2D: Texture2D {
-    public enum CompressionMode: UInt32 {
+    public enum CompressionMode: UInt32, GodotEnum {
         case lossless = 0
         case lossy = 1
         case basisUniversal = 2
         case s3tc = 3
         case etc2 = 4
         case bptc = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Lossless", 0),
+            ("Lossy", 1),
+            ("Basis Universal", 2),
+            ("S3tc", 3),
+            ("Etc2", 4),
+            ("Bptc", 5),]
+        }
     }
 
     private static var __method_binding_create_from_image: GDExtensionMethodBindPtr = {

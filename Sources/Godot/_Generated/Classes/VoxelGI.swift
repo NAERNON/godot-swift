@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotClass
 open class VoxelGI: VisualInstance3D {
-    public enum Subdiv: UInt32 {
+    public enum Subdiv: UInt32, GodotEnum {
         case subdiv64 = 0
         case subdiv128 = 1
         case subdiv256 = 2
         case subdiv512 = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Subdiv64", 0),
+            ("Subdiv128", 1),
+            ("Subdiv256", 2),
+            ("Subdiv512", 3),
+            ("Max", 4),]
+        }
     }
 
     private static var __method_binding_set_probe_data: GDExtensionMethodBindPtr = {

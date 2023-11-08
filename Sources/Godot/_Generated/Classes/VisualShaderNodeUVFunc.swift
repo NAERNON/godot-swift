@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeUVFunc: VisualShaderNode {
-    public enum Function: UInt32 {
+    public enum Function: UInt32, GodotEnum {
         case panning = 0
         case scaling = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Panning", 0),
+            ("Scaling", 1),
+            ("Max", 2),]
+        }
     }
 
     private static var __method_binding_set_function: GDExtensionMethodBindPtr = {

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Generic6DOFJoint3D: Joint3D {
-    public enum Param: UInt32 {
+    public enum Param: UInt32, GodotEnum {
         case linearLowerLimit = 0
         case linearUpperLimit = 1
         case linearLimitSoftness = 2
@@ -29,8 +29,34 @@ open class Generic6DOFJoint3D: Joint3D {
         case angularSpringDamping = 20
         case angularSpringEquilibriumPoint = 21
         case max = 22
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear Lower Limit", 0),
+            ("Linear Upper Limit", 1),
+            ("Linear Limit Softness", 2),
+            ("Linear Restitution", 3),
+            ("Linear Damping", 4),
+            ("Linear Motor Target Velocity", 5),
+            ("Linear Motor Force Limit", 6),
+            ("Linear Spring Stiffness", 7),
+            ("Linear Spring Damping", 8),
+            ("Linear Spring Equilibrium Point", 9),
+            ("Angular Lower Limit", 10),
+            ("Angular Upper Limit", 11),
+            ("Angular Limit Softness", 12),
+            ("Angular Damping", 13),
+            ("Angular Restitution", 14),
+            ("Angular Force Limit", 15),
+            ("Angular Erp", 16),
+            ("Angular Motor Target Velocity", 17),
+            ("Angular Motor Force Limit", 18),
+            ("Angular Spring Stiffness", 19),
+            ("Angular Spring Damping", 20),
+            ("Angular Spring Equilibrium Point", 21),
+            ("Max", 22),]
+        }
     }
-    public enum Flag: UInt32 {
+    public enum Flag: UInt32, GodotEnum {
         case enableLinearLimit = 0
         case enableAngularLimit = 1
         case enableLinearSpring = 3
@@ -38,6 +64,16 @@ open class Generic6DOFJoint3D: Joint3D {
         case enableMotor = 4
         case enableLinearMotor = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Enable Linear Limit", 0),
+            ("Enable Angular Limit", 1),
+            ("Enable Linear Spring", 3),
+            ("Enable Angular Spring", 2),
+            ("Enable Motor", 4),
+            ("Enable Linear Motor", 5),
+            ("Max", 6),]
+        }
     }
 
     private static var __method_binding_set_param_x: GDExtensionMethodBindPtr = {

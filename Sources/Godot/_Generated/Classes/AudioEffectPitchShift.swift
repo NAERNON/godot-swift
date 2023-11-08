@@ -5,13 +5,22 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioEffectPitchShift: AudioEffect {
-    public enum FFTSize: UInt32 {
+    public enum FFTSize: UInt32, GodotEnum {
         case fftSize256 = 0
         case fftSize512 = 1
         case fftSize1024 = 2
         case fftSize2048 = 3
         case fftSize4096 = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Fft Size256", 0),
+            ("Fft Size512", 1),
+            ("Fft Size1024", 2),
+            ("Fft Size2048", 3),
+            ("Fft Size4096", 4),
+            ("Max", 5),]
+        }
     }
 
     private static var __method_binding_set_pitch_scale: GDExtensionMethodBindPtr = {

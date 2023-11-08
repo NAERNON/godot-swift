@@ -5,16 +5,27 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Tween: RefCounted {
-    public enum TweenProcessMode: UInt32 {
+    public enum TweenProcessMode: UInt32, GodotEnum {
         case physics = 0
         case idle = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Physics", 0),
+            ("Idle", 1),]
+        }
     }
-    public enum TweenPauseMode: UInt32 {
+    public enum TweenPauseMode: UInt32, GodotEnum {
         case bound = 0
         case stop = 1
         case process = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bound", 0),
+            ("Stop", 1),
+            ("Process", 2),]
+        }
     }
-    public enum TransitionType: UInt32 {
+    public enum TransitionType: UInt32, GodotEnum {
         case linear = 0
         case sine = 1
         case quint = 2
@@ -27,12 +38,34 @@ open class Tween: RefCounted {
         case bounce = 9
         case back = 10
         case spring = 11
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear", 0),
+            ("Sine", 1),
+            ("Quint", 2),
+            ("Quart", 3),
+            ("Quad", 4),
+            ("Expo", 5),
+            ("Elastic", 6),
+            ("Cubic", 7),
+            ("Circ", 8),
+            ("Bounce", 9),
+            ("Back", 10),
+            ("Spring", 11),]
+        }
     }
-    public enum EaseType: UInt32 {
+    public enum EaseType: UInt32, GodotEnum {
         case `in` = 0
         case out = 1
         case inOut = 2
         case outIn = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`in`", 0),
+            ("Out", 1),
+            ("In Out", 2),
+            ("Out In", 3),]
+        }
     }
 
     @Emitter(signal: "step_finished", args: ("idx", Int))

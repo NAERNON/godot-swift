@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class PlaneMesh: PrimitiveMesh {
-    public enum Orientation: UInt32 {
+    public enum Orientation: UInt32, GodotEnum {
         case x = 0
         case y = 1
         case z = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("X", 0),
+            ("Y", 1),
+            ("Z", 2),]
+        }
     }
 
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {

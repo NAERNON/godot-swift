@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class LineEdit: Control {
-    public enum MenuItems: UInt32 {
+    public enum MenuItems: UInt32, GodotEnum {
         case cut = 0
         case copy = 1
         case paste = 2
@@ -37,8 +37,42 @@ open class LineEdit: Control {
         case insertWj = 28
         case insertShy = 29
         case max = 30
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Cut", 0),
+            ("Copy", 1),
+            ("Paste", 2),
+            ("Clear", 3),
+            ("Select All", 4),
+            ("Undo", 5),
+            ("Redo", 6),
+            ("Submenu Text Dir", 7),
+            ("Dir Inherited", 8),
+            ("Dir Auto", 9),
+            ("Dir Ltr", 10),
+            ("Dir Rtl", 11),
+            ("Display Ucc", 12),
+            ("Submenu Insert Ucc", 13),
+            ("Insert Lrm", 14),
+            ("Insert Rlm", 15),
+            ("Insert Lre", 16),
+            ("Insert Rle", 17),
+            ("Insert Lro", 18),
+            ("Insert Rlo", 19),
+            ("Insert Pdf", 20),
+            ("Insert Alm", 21),
+            ("Insert Lri", 22),
+            ("Insert Rli", 23),
+            ("Insert Fsi", 24),
+            ("Insert Pdi", 25),
+            ("Insert Zwj", 26),
+            ("Insert Zwnj", 27),
+            ("Insert Wj", 28),
+            ("Insert Shy", 29),
+            ("Max", 30),]
+        }
     }
-    public enum VirtualKeyboardType: UInt32 {
+    public enum VirtualKeyboardType: UInt32, GodotEnum {
         case `default` = 0
         case multiline = 1
         case number = 2
@@ -47,6 +81,17 @@ open class LineEdit: Control {
         case emailAddress = 5
         case password = 6
         case url = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`default`", 0),
+            ("Multiline", 1),
+            ("Number", 2),
+            ("Number Decimal", 3),
+            ("Phone", 4),
+            ("Email Address", 5),
+            ("Password", 6),
+            ("Url", 7),]
+        }
     }
 
     @Emitter(signal: "text_changed", args: ("newText", Godot.GodotString))

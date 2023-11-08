@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ScriptLanguageExtension: ScriptLanguage {
-    public enum LookupResultType: UInt32 {
+    public enum LookupResultType: UInt32, GodotEnum {
         case scriptLocation = 0
         case `class` = 1
         case classConstant = 2
@@ -16,14 +16,34 @@ open class ScriptLanguageExtension: ScriptLanguage {
         case classTbdGlobalscope = 7
         case classAnnotation = 8
         case max = 9
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Script Location", 0),
+            ("`class`", 1),
+            ("Class Constant", 2),
+            ("Class Property", 3),
+            ("Class Method", 4),
+            ("Class Signal", 5),
+            ("Class Enum", 6),
+            ("Class Tbd Globalscope", 7),
+            ("Class Annotation", 8),
+            ("Max", 9),]
+        }
     }
-    public enum CodeCompletionLocation: UInt32 {
+    public enum CodeCompletionLocation: UInt32, GodotEnum {
         case local = 0
         case parentMask = 256
         case otherUserCode = 512
         case other = 1024
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Local", 0),
+            ("Parent Mask", 256),
+            ("Other User Code", 512),
+            ("Other", 1024),]
+        }
     }
-    public enum CodeCompletionKind: UInt32 {
+    public enum CodeCompletionKind: UInt32, GodotEnum {
         case `class` = 0
         case function = 1
         case signal = 2
@@ -35,6 +55,20 @@ open class ScriptLanguageExtension: ScriptLanguage {
         case filePath = 8
         case plainText = 9
         case max = 10
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`class`", 0),
+            ("Function", 1),
+            ("Signal", 2),
+            ("Variable", 3),
+            ("Member", 4),
+            ("`enum`", 5),
+            ("Constant", 6),
+            ("Node Path", 7),
+            ("File Path", 8),
+            ("Plain Text", 9),
+            ("Max", 10),]
+        }
     }
 
     open func _getName() -> Godot.GodotString {

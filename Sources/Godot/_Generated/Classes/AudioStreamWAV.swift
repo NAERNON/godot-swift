@@ -5,16 +5,29 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioStreamWAV: AudioStream {
-    public enum Format: UInt32 {
+    public enum Format: UInt32, GodotEnum {
         case format8Bits = 0
         case format16Bits = 1
         case imaAdpcm = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Format8 Bits", 0),
+            ("Format16 Bits", 1),
+            ("Ima Adpcm", 2),]
+        }
     }
-    public enum LoopMode: UInt32 {
+    public enum LoopMode: UInt32, GodotEnum {
         case disabled = 0
         case forward = 1
         case pingpong = 2
         case backward = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Forward", 1),
+            ("Pingpong", 2),
+            ("Backward", 3),]
+        }
     }
 
     private static var __method_binding_set_data: GDExtensionMethodBindPtr = {

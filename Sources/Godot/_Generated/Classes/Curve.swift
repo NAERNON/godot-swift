@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Curve: Resource {
-    public enum TangentMode: UInt32 {
+    public enum TangentMode: UInt32, GodotEnum {
         case free = 0
         case linear = 1
         case modeCount = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Free", 0),
+            ("Linear", 1),
+            ("Mode Count", 2),]
+        }
     }
 
     @Emitter(signal: "range_changed")

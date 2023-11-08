@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioEffectFilter: AudioEffect {
-    public enum FilterDB: UInt32 {
+    public enum FilterDB: UInt32, GodotEnum {
         case filter6db = 0
         case filter12db = 1
         case filter18db = 2
         case filter24db = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Filter6db", 0),
+            ("Filter12db", 1),
+            ("Filter18db", 2),
+            ("Filter24db", 3),]
+        }
     }
 
     private static var __method_binding_set_cutoff: GDExtensionMethodBindPtr = {

@@ -5,15 +5,27 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNodeOneShot: AnimationNodeSync {
-    public enum OneShotRequest: UInt32 {
+    public enum OneShotRequest: UInt32, GodotEnum {
         case none = 0
         case fire = 1
         case abort = 2
         case fadeOut = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Fire", 1),
+            ("Abort", 2),
+            ("Fade Out", 3),]
+        }
     }
-    public enum MixMode: UInt32 {
+    public enum MixMode: UInt32, GodotEnum {
         case blend = 0
         case add = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Blend", 0),
+            ("Add", 1),]
+        }
     }
 
     private static var __method_binding_set_fadein_time: GDExtensionMethodBindPtr = {

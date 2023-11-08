@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNodeBlendSpace2D: AnimationRootNode {
-    public enum BlendMode: UInt32 {
+    public enum BlendMode: UInt32, GodotEnum {
         case interpolated = 0
         case discrete = 1
         case discreteCarry = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Interpolated", 0),
+            ("Discrete", 1),
+            ("Discrete Carry", 2),]
+        }
     }
 
     @Emitter(signal: "triangles_updated")

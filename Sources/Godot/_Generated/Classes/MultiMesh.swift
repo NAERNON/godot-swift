@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class MultiMesh: Resource {
-    public enum TransformFormat: UInt32 {
+    public enum TransformFormat: UInt32, GodotEnum {
         case transform2D = 0
         case transform3D = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Transform2 D", 0),
+            ("Transform3 D", 1),]
+        }
     }
 
     private static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {

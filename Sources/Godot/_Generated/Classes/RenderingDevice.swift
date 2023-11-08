@@ -5,15 +5,24 @@
 import GodotExtensionHeaders
 @GodotClass
 open class RenderingDevice: Object {
-    public enum DeviceType: UInt32 {
+    public enum DeviceType: UInt32, GodotEnum {
         case other = 0
         case integratedGpu = 1
         case discreteGpu = 2
         case virtualGpu = 3
         case cpu = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Other", 0),
+            ("Integrated Gpu", 1),
+            ("Discrete Gpu", 2),
+            ("Virtual Gpu", 3),
+            ("Cpu", 4),
+            ("Max", 5),]
+        }
     }
-    public enum DriverResource: UInt32 {
+    public enum DriverResource: UInt32, GodotEnum {
         case device = 0
         case physicalDevice = 1
         case instance = 2
@@ -27,8 +36,24 @@ open class RenderingDevice: Object {
         case buffer = 10
         case computePipeline = 11
         case renderPipeline = 12
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Device", 0),
+            ("Physical Device", 1),
+            ("Instance", 2),
+            ("Queue", 3),
+            ("Queue Family Index", 4),
+            ("Image", 5),
+            ("Image View", 6),
+            ("Image Native Texture Format", 7),
+            ("Sampler", 8),
+            ("Descriptor Set", 9),
+            ("Buffer", 10),
+            ("Compute Pipeline", 11),
+            ("Render Pipeline", 12),]
+        }
     }
-    public enum DataFormat: UInt32 {
+    public enum DataFormat: UInt32, GodotEnum {
         case r4g4UnormPack8 = 0
         case r4g4b4a4UnormPack16 = 1
         case b4g4r4a4UnormPack16 = 2
@@ -248,6 +273,228 @@ open class RenderingDevice: Object {
         case g16B16r162plane422Unorm = 216
         case g16B16R163plane444Unorm = 217
         case max = 218
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("R4g4 Unorm Pack8", 0),
+            ("R4g4b4a4 Unorm Pack16", 1),
+            ("B4g4r4a4 Unorm Pack16", 2),
+            ("R5g6b5 Unorm Pack16", 3),
+            ("B5g6r5 Unorm Pack16", 4),
+            ("R5g5b5a1 Unorm Pack16", 5),
+            ("B5g5r5a1 Unorm Pack16", 6),
+            ("A1r5g5b5 Unorm Pack16", 7),
+            ("R8 Unorm", 8),
+            ("R8 Snorm", 9),
+            ("R8 Uscaled", 10),
+            ("R8 Sscaled", 11),
+            ("R8 Uint", 12),
+            ("R8 Sint", 13),
+            ("R8 Srgb", 14),
+            ("R8g8 Unorm", 15),
+            ("R8g8 Snorm", 16),
+            ("R8g8 Uscaled", 17),
+            ("R8g8 Sscaled", 18),
+            ("R8g8 Uint", 19),
+            ("R8g8 Sint", 20),
+            ("R8g8 Srgb", 21),
+            ("R8g8b8 Unorm", 22),
+            ("R8g8b8 Snorm", 23),
+            ("R8g8b8 Uscaled", 24),
+            ("R8g8b8 Sscaled", 25),
+            ("R8g8b8 Uint", 26),
+            ("R8g8b8 Sint", 27),
+            ("R8g8b8 Srgb", 28),
+            ("B8g8r8 Unorm", 29),
+            ("B8g8r8 Snorm", 30),
+            ("B8g8r8 Uscaled", 31),
+            ("B8g8r8 Sscaled", 32),
+            ("B8g8r8 Uint", 33),
+            ("B8g8r8 Sint", 34),
+            ("B8g8r8 Srgb", 35),
+            ("R8g8b8a8 Unorm", 36),
+            ("R8g8b8a8 Snorm", 37),
+            ("R8g8b8a8 Uscaled", 38),
+            ("R8g8b8a8 Sscaled", 39),
+            ("R8g8b8a8 Uint", 40),
+            ("R8g8b8a8 Sint", 41),
+            ("R8g8b8a8 Srgb", 42),
+            ("B8g8r8a8 Unorm", 43),
+            ("B8g8r8a8 Snorm", 44),
+            ("B8g8r8a8 Uscaled", 45),
+            ("B8g8r8a8 Sscaled", 46),
+            ("B8g8r8a8 Uint", 47),
+            ("B8g8r8a8 Sint", 48),
+            ("B8g8r8a8 Srgb", 49),
+            ("A8b8g8r8 Unorm Pack32", 50),
+            ("A8b8g8r8 Snorm Pack32", 51),
+            ("A8b8g8r8 Uscaled Pack32", 52),
+            ("A8b8g8r8 Sscaled Pack32", 53),
+            ("A8b8g8r8 Uint Pack32", 54),
+            ("A8b8g8r8 Sint Pack32", 55),
+            ("A8b8g8r8 Srgb Pack32", 56),
+            ("A2r10g10b10 Unorm Pack32", 57),
+            ("A2r10g10b10 Snorm Pack32", 58),
+            ("A2r10g10b10 Uscaled Pack32", 59),
+            ("A2r10g10b10 Sscaled Pack32", 60),
+            ("A2r10g10b10 Uint Pack32", 61),
+            ("A2r10g10b10 Sint Pack32", 62),
+            ("A2b10g10r10 Unorm Pack32", 63),
+            ("A2b10g10r10 Snorm Pack32", 64),
+            ("A2b10g10r10 Uscaled Pack32", 65),
+            ("A2b10g10r10 Sscaled Pack32", 66),
+            ("A2b10g10r10 Uint Pack32", 67),
+            ("A2b10g10r10 Sint Pack32", 68),
+            ("R16 Unorm", 69),
+            ("R16 Snorm", 70),
+            ("R16 Uscaled", 71),
+            ("R16 Sscaled", 72),
+            ("R16 Uint", 73),
+            ("R16 Sint", 74),
+            ("R16 Sfloat", 75),
+            ("R16g16 Unorm", 76),
+            ("R16g16 Snorm", 77),
+            ("R16g16 Uscaled", 78),
+            ("R16g16 Sscaled", 79),
+            ("R16g16 Uint", 80),
+            ("R16g16 Sint", 81),
+            ("R16g16 Sfloat", 82),
+            ("R16g16b16 Unorm", 83),
+            ("R16g16b16 Snorm", 84),
+            ("R16g16b16 Uscaled", 85),
+            ("R16g16b16 Sscaled", 86),
+            ("R16g16b16 Uint", 87),
+            ("R16g16b16 Sint", 88),
+            ("R16g16b16 Sfloat", 89),
+            ("R16g16b16a16 Unorm", 90),
+            ("R16g16b16a16 Snorm", 91),
+            ("R16g16b16a16 Uscaled", 92),
+            ("R16g16b16a16 Sscaled", 93),
+            ("R16g16b16a16 Uint", 94),
+            ("R16g16b16a16 Sint", 95),
+            ("R16g16b16a16 Sfloat", 96),
+            ("R32 Uint", 97),
+            ("R32 Sint", 98),
+            ("R32 Sfloat", 99),
+            ("R32g32 Uint", 100),
+            ("R32g32 Sint", 101),
+            ("R32g32 Sfloat", 102),
+            ("R32g32b32 Uint", 103),
+            ("R32g32b32 Sint", 104),
+            ("R32g32b32 Sfloat", 105),
+            ("R32g32b32a32 Uint", 106),
+            ("R32g32b32a32 Sint", 107),
+            ("R32g32b32a32 Sfloat", 108),
+            ("R64 Uint", 109),
+            ("R64 Sint", 110),
+            ("R64 Sfloat", 111),
+            ("R64g64 Uint", 112),
+            ("R64g64 Sint", 113),
+            ("R64g64 Sfloat", 114),
+            ("R64g64b64 Uint", 115),
+            ("R64g64b64 Sint", 116),
+            ("R64g64b64 Sfloat", 117),
+            ("R64g64b64a64 Uint", 118),
+            ("R64g64b64a64 Sint", 119),
+            ("R64g64b64a64 Sfloat", 120),
+            ("B10g11r11 Ufloat Pack32", 121),
+            ("E5b9g9r9 Ufloat Pack32", 122),
+            ("D16 Unorm", 123),
+            ("X8 D24 Unorm Pack32", 124),
+            ("D32 Sfloat", 125),
+            ("S8 Uint", 126),
+            ("D16 Unorm S8 Uint", 127),
+            ("D24 Unorm S8 Uint", 128),
+            ("D32 Sfloat S8 Uint", 129),
+            ("Bc1 Rgb Unorm Block", 130),
+            ("Bc1 Rgb Srgb Block", 131),
+            ("Bc1 Rgba Unorm Block", 132),
+            ("Bc1 Rgba Srgb Block", 133),
+            ("Bc2 Unorm Block", 134),
+            ("Bc2 Srgb Block", 135),
+            ("Bc3 Unorm Block", 136),
+            ("Bc3 Srgb Block", 137),
+            ("Bc4 Unorm Block", 138),
+            ("Bc4 Snorm Block", 139),
+            ("Bc5 Unorm Block", 140),
+            ("Bc5 Snorm Block", 141),
+            ("Bc6h Ufloat Block", 142),
+            ("Bc6h Sfloat Block", 143),
+            ("Bc7 Unorm Block", 144),
+            ("Bc7 Srgb Block", 145),
+            ("Etc2 R8g8b8 Unorm Block", 146),
+            ("Etc2 R8g8b8 Srgb Block", 147),
+            ("Etc2 R8g8b8a1 Unorm Block", 148),
+            ("Etc2 R8g8b8a1 Srgb Block", 149),
+            ("Etc2 R8g8b8a8 Unorm Block", 150),
+            ("Etc2 R8g8b8a8 Srgb Block", 151),
+            ("Eac R11 Unorm Block", 152),
+            ("Eac R11 Snorm Block", 153),
+            ("Eac R11g11 Unorm Block", 154),
+            ("Eac R11g11 Snorm Block", 155),
+            ("Astc4x4 Unorm Block", 156),
+            ("Astc4x4 Srgb Block", 157),
+            ("Astc5x4 Unorm Block", 158),
+            ("Astc5x4 Srgb Block", 159),
+            ("Astc5x5 Unorm Block", 160),
+            ("Astc5x5 Srgb Block", 161),
+            ("Astc6x5 Unorm Block", 162),
+            ("Astc6x5 Srgb Block", 163),
+            ("Astc6x6 Unorm Block", 164),
+            ("Astc6x6 Srgb Block", 165),
+            ("Astc8x5 Unorm Block", 166),
+            ("Astc8x5 Srgb Block", 167),
+            ("Astc8x6 Unorm Block", 168),
+            ("Astc8x6 Srgb Block", 169),
+            ("Astc8x8 Unorm Block", 170),
+            ("Astc8x8 Srgb Block", 171),
+            ("Astc10x5 Unorm Block", 172),
+            ("Astc10x5 Srgb Block", 173),
+            ("Astc10x6 Unorm Block", 174),
+            ("Astc10x6 Srgb Block", 175),
+            ("Astc10x8 Unorm Block", 176),
+            ("Astc10x8 Srgb Block", 177),
+            ("Astc10x10 Unorm Block", 178),
+            ("Astc10x10 Srgb Block", 179),
+            ("Astc12x10 Unorm Block", 180),
+            ("Astc12x10 Srgb Block", 181),
+            ("Astc12x12 Unorm Block", 182),
+            ("Astc12x12 Srgb Block", 183),
+            ("G8b8g8r8422 Unorm", 184),
+            ("B8g8r8g8422 Unorm", 185),
+            ("G8 B8 R83plane420 Unorm", 186),
+            ("G8 B8r82plane420 Unorm", 187),
+            ("G8 B8 R83plane422 Unorm", 188),
+            ("G8 B8r82plane422 Unorm", 189),
+            ("G8 B8 R83plane444 Unorm", 190),
+            ("R10x6 Unorm Pack16", 191),
+            ("R10x6g10x6 Unorm2pack16", 192),
+            ("R10x6g10x6b10x6a10x6 Unorm4pack16", 193),
+            ("G10x6b10x6g10x6r10x6422 Unorm4pack16", 194),
+            ("B10x6g10x6r10x6g10x6422 Unorm4pack16", 195),
+            ("G10x6 B10x6 R10x63plane420 Unorm3pack16", 196),
+            ("G10x6 B10x6r10x62plane420 Unorm3pack16", 197),
+            ("G10x6 B10x6 R10x63plane422 Unorm3pack16", 198),
+            ("G10x6 B10x6r10x62plane422 Unorm3pack16", 199),
+            ("G10x6 B10x6 R10x63plane444 Unorm3pack16", 200),
+            ("R12x4 Unorm Pack16", 201),
+            ("R12x4g12x4 Unorm2pack16", 202),
+            ("R12x4g12x4b12x4a12x4 Unorm4pack16", 203),
+            ("G12x4b12x4g12x4r12x4422 Unorm4pack16", 204),
+            ("B12x4g12x4r12x4g12x4422 Unorm4pack16", 205),
+            ("G12x4 B12x4 R12x43plane420 Unorm3pack16", 206),
+            ("G12x4 B12x4r12x42plane420 Unorm3pack16", 207),
+            ("G12x4 B12x4 R12x43plane422 Unorm3pack16", 208),
+            ("G12x4 B12x4r12x42plane422 Unorm3pack16", 209),
+            ("G12x4 B12x4 R12x43plane444 Unorm3pack16", 210),
+            ("G16b16g16r16422 Unorm", 211),
+            ("B16g16r16g16422 Unorm", 212),
+            ("G16 B16 R163plane420 Unorm", 213),
+            ("G16 B16r162plane420 Unorm", 214),
+            ("G16 B16 R163plane422 Unorm", 215),
+            ("G16 B16r162plane422 Unorm", 216),
+            ("G16 B16 R163plane444 Unorm", 217),
+            ("Max", 218),]
+        }
     }
     public struct BarrierMask: OptionSet {
         public let rawValue: UInt32
@@ -262,7 +509,7 @@ open class RenderingDevice: Object {
         public static let allBarriers: Self = .init(rawValue: 7)
         public static let noBarrier: Self = .init(rawValue: 8)
     }
-    public enum TextureType: UInt32 {
+    public enum TextureType: UInt32, GodotEnum {
         case textureType1d = 0
         case textureType2D = 1
         case textureType3D = 2
@@ -271,8 +518,19 @@ open class RenderingDevice: Object {
         case textureType2DArray = 5
         case cubeArray = 6
         case max = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Texture Type1d", 0),
+            ("Texture Type2 D", 1),
+            ("Texture Type3 D", 2),
+            ("Cube", 3),
+            ("Texture Type1d Array", 4),
+            ("Texture Type2 D Array", 5),
+            ("Cube Array", 6),
+            ("Max", 7),]
+        }
     }
-    public enum TextureSamples: UInt32 {
+    public enum TextureSamples: UInt32, GodotEnum {
         case textureSamples1 = 0
         case textureSamples2 = 1
         case textureSamples4 = 2
@@ -281,6 +539,17 @@ open class RenderingDevice: Object {
         case textureSamples32 = 5
         case textureSamples64 = 6
         case max = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Texture Samples1", 0),
+            ("Texture Samples2", 1),
+            ("Texture Samples4", 2),
+            ("Texture Samples8", 3),
+            ("Texture Samples16", 4),
+            ("Texture Samples32", 5),
+            ("Texture Samples64", 6),
+            ("Max", 7),]
+        }
     }
     public struct TextureUsageBits: OptionSet {
         public let rawValue: UInt32
@@ -300,7 +569,7 @@ open class RenderingDevice: Object {
         public static let canCopyToBit: Self = .init(rawValue: 256)
         public static let inputAttachmentBit: Self = .init(rawValue: 512)
     }
-    public enum TextureSwizzle: UInt32 {
+    public enum TextureSwizzle: UInt32, GodotEnum {
         case identity = 0
         case zero = 1
         case one = 2
@@ -309,25 +578,56 @@ open class RenderingDevice: Object {
         case b = 5
         case a = 6
         case max = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Identity", 0),
+            ("Zero", 1),
+            ("One", 2),
+            ("R", 3),
+            ("G", 4),
+            ("B", 5),
+            ("A", 6),
+            ("Max", 7),]
+        }
     }
-    public enum TextureSliceType: UInt32 {
+    public enum TextureSliceType: UInt32, GodotEnum {
         case textureSlice2D = 0
         case cubemap = 1
         case textureSlice3D = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Texture Slice2 D", 0),
+            ("Cubemap", 1),
+            ("Texture Slice3 D", 2),]
+        }
     }
-    public enum SamplerFilter: UInt32 {
+    public enum SamplerFilter: UInt32, GodotEnum {
         case nearest = 0
         case linear = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Nearest", 0),
+            ("Linear", 1),]
+        }
     }
-    public enum SamplerRepeatMode: UInt32 {
+    public enum SamplerRepeatMode: UInt32, GodotEnum {
         case `repeat` = 0
         case mirroredRepeat = 1
         case clampToEdge = 2
         case clampToBorder = 3
         case mirrorClampToEdge = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`repeat`", 0),
+            ("Mirrored Repeat", 1),
+            ("Clamp To Edge", 2),
+            ("Clamp To Border", 3),
+            ("Mirror Clamp To Edge", 4),
+            ("Max", 5),]
+        }
     }
-    public enum SamplerBorderColor: UInt32 {
+    public enum SamplerBorderColor: UInt32, GodotEnum {
         case floatTransparentBlack = 0
         case intTransparentBlack = 1
         case floatOpaqueBlack = 2
@@ -335,14 +635,34 @@ open class RenderingDevice: Object {
         case floatOpaqueWhite = 4
         case intOpaqueWhite = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Float Transparent Black", 0),
+            ("Int Transparent Black", 1),
+            ("Float Opaque Black", 2),
+            ("Int Opaque Black", 3),
+            ("Float Opaque White", 4),
+            ("Int Opaque White", 5),
+            ("Max", 6),]
+        }
     }
-    public enum VertexFrequency: UInt32 {
+    public enum VertexFrequency: UInt32, GodotEnum {
         case vertex = 0
         case instance = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Vertex", 0),
+            ("Instance", 1),]
+        }
     }
-    public enum IndexBufferFormat: UInt32 {
+    public enum IndexBufferFormat: UInt32, GodotEnum {
         case uint16 = 0
         case uint32 = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Uint16", 0),
+            ("Uint32", 1),]
+        }
     }
     public struct StorageBufferUsage: OptionSet {
         public let rawValue: UInt32
@@ -353,7 +673,7 @@ open class RenderingDevice: Object {
 
         public static let storageBufferUsageDispatchIndirect: Self = .init(rawValue: 1)
     }
-    public enum UniformType: UInt32 {
+    public enum UniformType: UInt32, GodotEnum {
         case sampler = 0
         case samplerWithTexture = 1
         case texture = 2
@@ -365,8 +685,22 @@ open class RenderingDevice: Object {
         case storageBuffer = 8
         case inputAttachment = 9
         case max = 10
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Sampler", 0),
+            ("Sampler With Texture", 1),
+            ("Texture", 2),
+            ("Image", 3),
+            ("Texture Buffer", 4),
+            ("Sampler With Texture Buffer", 5),
+            ("Image Buffer", 6),
+            ("Uniform Buffer", 7),
+            ("Storage Buffer", 8),
+            ("Input Attachment", 9),
+            ("Max", 10),]
+        }
     }
-    public enum RenderPrimitive: UInt32 {
+    public enum RenderPrimitive: UInt32, GodotEnum {
         case points = 0
         case lines = 1
         case linesWithAdjacency = 2
@@ -379,17 +713,43 @@ open class RenderingDevice: Object {
         case triangleStripsWithRestartIndex = 9
         case tesselationPatch = 10
         case max = 11
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Points", 0),
+            ("Lines", 1),
+            ("Lines With Adjacency", 2),
+            ("Linestrips", 3),
+            ("Linestrips With Adjacency", 4),
+            ("Triangles", 5),
+            ("Triangles With Adjacency", 6),
+            ("Triangle Strips", 7),
+            ("Triangle Strips With Ajacency", 8),
+            ("Triangle Strips With Restart Index", 9),
+            ("Tesselation Patch", 10),
+            ("Max", 11),]
+        }
     }
-    public enum PolygonCullMode: UInt32 {
+    public enum PolygonCullMode: UInt32, GodotEnum {
         case disabled = 0
         case front = 1
         case back = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Front", 1),
+            ("Back", 2),]
+        }
     }
-    public enum PolygonFrontFace: UInt32 {
+    public enum PolygonFrontFace: UInt32, GodotEnum {
         case clockwise = 0
         case counterClockwise = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Clockwise", 0),
+            ("Counter Clockwise", 1),]
+        }
     }
-    public enum StencilOperation: UInt32 {
+    public enum StencilOperation: UInt32, GodotEnum {
         case keep = 0
         case zero = 1
         case replace = 2
@@ -399,8 +759,20 @@ open class RenderingDevice: Object {
         case incrementAndWrap = 6
         case decrementAndWrap = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Keep", 0),
+            ("Zero", 1),
+            ("Replace", 2),
+            ("Increment And Clamp", 3),
+            ("Decrement And Clamp", 4),
+            ("Invert", 5),
+            ("Increment And Wrap", 6),
+            ("Decrement And Wrap", 7),
+            ("Max", 8),]
+        }
     }
-    public enum CompareOperator: UInt32 {
+    public enum CompareOperator: UInt32, GodotEnum {
         case never = 0
         case less = 1
         case equal = 2
@@ -410,8 +782,20 @@ open class RenderingDevice: Object {
         case greaterOrEqual = 6
         case always = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Never", 0),
+            ("Less", 1),
+            ("Equal", 2),
+            ("Less Or Equal", 3),
+            ("Greater", 4),
+            ("Not Equal", 5),
+            ("Greater Or Equal", 6),
+            ("Always", 7),
+            ("Max", 8),]
+        }
     }
-    public enum LogicOperation: UInt32 {
+    public enum LogicOperation: UInt32, GodotEnum {
         case clear = 0
         case and = 1
         case andReverse = 2
@@ -429,8 +813,28 @@ open class RenderingDevice: Object {
         case nand = 14
         case set = 15
         case max = 16
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Clear", 0),
+            ("And", 1),
+            ("And Reverse", 2),
+            ("Copy", 3),
+            ("And Inverted", 4),
+            ("No Op", 5),
+            ("Xor", 6),
+            ("Or", 7),
+            ("Nor", 8),
+            ("Equivalent", 9),
+            ("Invert", 10),
+            ("Or Reverse", 11),
+            ("Copy Inverted", 12),
+            ("Or Inverted", 13),
+            ("Nand", 14),
+            ("Set", 15),
+            ("Max", 16),]
+        }
     }
-    public enum BlendFactor: UInt32 {
+    public enum BlendFactor: UInt32, GodotEnum {
         case zero = 0
         case one = 1
         case srcColor = 2
@@ -451,14 +855,46 @@ open class RenderingDevice: Object {
         case src1Alpha = 17
         case oneMinusSrc1Alpha = 18
         case max = 19
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Zero", 0),
+            ("One", 1),
+            ("Src Color", 2),
+            ("One Minus Src Color", 3),
+            ("Dst Color", 4),
+            ("One Minus Dst Color", 5),
+            ("Src Alpha", 6),
+            ("One Minus Src Alpha", 7),
+            ("Dst Alpha", 8),
+            ("One Minus Dst Alpha", 9),
+            ("Constant Color", 10),
+            ("One Minus Constant Color", 11),
+            ("Constant Alpha", 12),
+            ("One Minus Constant Alpha", 13),
+            ("Src Alpha Saturate", 14),
+            ("Src1 Color", 15),
+            ("One Minus Src1 Color", 16),
+            ("Src1 Alpha", 17),
+            ("One Minus Src1 Alpha", 18),
+            ("Max", 19),]
+        }
     }
-    public enum BlendOperation: UInt32 {
+    public enum BlendOperation: UInt32, GodotEnum {
         case add = 0
         case subtract = 1
         case reverseSubtract = 2
         case minimum = 3
         case maximum = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Add", 0),
+            ("Subtract", 1),
+            ("Reverse Subtract", 2),
+            ("Minimum", 3),
+            ("Maximum", 4),
+            ("Max", 5),]
+        }
     }
     public struct PipelineDynamicStateFlags: OptionSet {
         public let rawValue: UInt32
@@ -475,7 +911,7 @@ open class RenderingDevice: Object {
         public static let stencilWriteMask: Self = .init(rawValue: 32)
         public static let stencilReference: Self = .init(rawValue: 64)
     }
-    public enum InitialAction: UInt32 {
+    public enum InitialAction: UInt32, GodotEnum {
         case clear = 0
         case clearRegion = 1
         case clearRegionContinue = 2
@@ -483,14 +919,31 @@ open class RenderingDevice: Object {
         case drop = 4
         case `continue` = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Clear", 0),
+            ("Clear Region", 1),
+            ("Clear Region Continue", 2),
+            ("Keep", 3),
+            ("Drop", 4),
+            ("`continue`", 5),
+            ("Max", 6),]
+        }
     }
-    public enum FinalAction: UInt32 {
+    public enum FinalAction: UInt32, GodotEnum {
         case read = 0
         case discard = 1
         case `continue` = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Read", 0),
+            ("Discard", 1),
+            ("`continue`", 2),
+            ("Max", 3),]
+        }
     }
-    public enum ShaderStage: UInt32 {
+    public enum ShaderStage: UInt32, GodotEnum {
         case vertex = 0
         case fragment = 1
         case tesselationControl = 2
@@ -502,17 +955,39 @@ open class RenderingDevice: Object {
         public static let tesselationControlBit: Self = .compute
         case tesselationEvaluationBit = 8
         case computeBit = 16
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Vertex", 0),
+            ("Fragment", 1),
+            ("Tesselation Control", 2),
+            ("Tesselation Evaluation", 3),
+            ("Compute", 4),
+            ("Max", 5),
+            ("Tesselation Evaluation Bit", 8),
+            ("Compute Bit", 16),]
+        }
     }
-    public enum ShaderLanguage: UInt32 {
+    public enum ShaderLanguage: UInt32, GodotEnum {
         case glsl = 0
         case hlsl = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Glsl", 0),
+            ("Hlsl", 1),]
+        }
     }
-    public enum PipelineSpecializationConstantType: UInt32 {
+    public enum PipelineSpecializationConstantType: UInt32, GodotEnum {
         case bool = 0
         case int = 1
         case float = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bool", 0),
+            ("Int", 1),
+            ("Float", 2),]
+        }
     }
-    public enum Limit: UInt32 {
+    public enum Limit: UInt32, GodotEnum {
         case maxBoundUniformSets = 0
         case maxFramebufferColorAttachments = 1
         case maxTexturesPerUniformSet = 2
@@ -550,11 +1025,57 @@ open class RenderingDevice: Object {
         case maxComputeWorkgroupSizeZ = 34
         case maxViewportDimensionsX = 35
         case maxViewportDimensionsY = 36
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Max Bound Uniform Sets", 0),
+            ("Max Framebuffer Color Attachments", 1),
+            ("Max Textures Per Uniform Set", 2),
+            ("Max Samplers Per Uniform Set", 3),
+            ("Max Storage Buffers Per Uniform Set", 4),
+            ("Max Storage Images Per Uniform Set", 5),
+            ("Max Uniform Buffers Per Uniform Set", 6),
+            ("Max Draw Indexed Index", 7),
+            ("Max Framebuffer Height", 8),
+            ("Max Framebuffer Width", 9),
+            ("Max Texture Array Layers", 10),
+            ("Max Texture Size1d", 11),
+            ("Max Texture Size2 D", 12),
+            ("Max Texture Size3 D", 13),
+            ("Max Texture Size Cube", 14),
+            ("Max Textures Per Shader Stage", 15),
+            ("Max Samplers Per Shader Stage", 16),
+            ("Max Storage Buffers Per Shader Stage", 17),
+            ("Max Storage Images Per Shader Stage", 18),
+            ("Max Uniform Buffers Per Shader Stage", 19),
+            ("Max Push Constant Size", 20),
+            ("Max Uniform Buffer Size", 21),
+            ("Max Vertex Input Attribute Offset", 22),
+            ("Max Vertex Input Attributes", 23),
+            ("Max Vertex Input Bindings", 24),
+            ("Max Vertex Input Binding Stride", 25),
+            ("Min Uniform Buffer Offset Alignment", 26),
+            ("Max Compute Shared Memory Size", 27),
+            ("Max Compute Workgroup Count X", 28),
+            ("Max Compute Workgroup Count Y", 29),
+            ("Max Compute Workgroup Count Z", 30),
+            ("Max Compute Workgroup Invocations", 31),
+            ("Max Compute Workgroup Size X", 32),
+            ("Max Compute Workgroup Size Y", 33),
+            ("Max Compute Workgroup Size Z", 34),
+            ("Max Viewport Dimensions X", 35),
+            ("Max Viewport Dimensions Y", 36),]
+        }
     }
-    public enum MemoryType: UInt32 {
+    public enum MemoryType: UInt32, GodotEnum {
         case textures = 0
         case buffers = 1
         case total = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Textures", 0),
+            ("Buffers", 1),
+            ("Total", 2),]
+        }
     }
 
     private static var __method_binding_texture_create: GDExtensionMethodBindPtr = {

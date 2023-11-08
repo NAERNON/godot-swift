@@ -5,14 +5,22 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Window: Viewport {
-    public enum Mode: UInt32 {
+    public enum Mode: UInt32, GodotEnum {
         case windowed = 0
         case minimized = 1
         case maximized = 2
         case fullscreen = 3
         case exclusiveFullscreen = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Windowed", 0),
+            ("Minimized", 1),
+            ("Maximized", 2),
+            ("Fullscreen", 3),
+            ("Exclusive Fullscreen", 4),]
+        }
     }
-    public enum Flags: UInt32 {
+    public enum Flags: UInt32, GodotEnum {
         case resizeDisabled = 0
         case borderless = 1
         case alwaysOnTop = 2
@@ -22,32 +30,74 @@ open class Window: Viewport {
         case extendToTitle = 6
         case mousePassthrough = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Resize Disabled", 0),
+            ("Borderless", 1),
+            ("Always On Top", 2),
+            ("Transparent", 3),
+            ("No Focus", 4),
+            ("Popup", 5),
+            ("Extend To Title", 6),
+            ("Mouse Passthrough", 7),
+            ("Max", 8),]
+        }
     }
-    public enum ContentScaleMode: UInt32 {
+    public enum ContentScaleMode: UInt32, GodotEnum {
         case disabled = 0
         case canvasItems = 1
         case viewport = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Canvas Items", 1),
+            ("Viewport", 2),]
+        }
     }
-    public enum ContentScaleAspect: UInt32 {
+    public enum ContentScaleAspect: UInt32, GodotEnum {
         case ignore = 0
         case keep = 1
         case keepWidth = 2
         case keepHeight = 3
         case expand = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Ignore", 0),
+            ("Keep", 1),
+            ("Keep Width", 2),
+            ("Keep Height", 3),
+            ("Expand", 4),]
+        }
     }
-    public enum LayoutDirection: UInt32 {
+    public enum LayoutDirection: UInt32, GodotEnum {
         case inherited = 0
         case locale = 1
         case ltr = 2
         case rtl = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Inherited", 0),
+            ("Locale", 1),
+            ("Ltr", 2),
+            ("Rtl", 3),]
+        }
     }
-    public enum WindowInitialPosition: UInt32 {
+    public enum WindowInitialPosition: UInt32, GodotEnum {
         case absolute = 0
         case centerPrimaryScreen = 1
         case centerMainWindowScreen = 2
         case centerOtherScreen = 3
         case centerScreenWithMouseFocus = 4
         case centerScreenWithKeyboardFocus = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Absolute", 0),
+            ("Center Primary Screen", 1),
+            ("Center Main Window Screen", 2),
+            ("Center Other Screen", 3),
+            ("Center Screen With Mouse Focus", 4),
+            ("Center Screen With Keyboard Focus", 5),]
+        }
     }
 
     @Emitter(signal: "window_input", args: ("event", Godot.InputEvent?))

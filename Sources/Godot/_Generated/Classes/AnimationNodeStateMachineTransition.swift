@@ -5,15 +5,27 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNodeStateMachineTransition: Resource {
-    public enum SwitchMode: UInt32 {
+    public enum SwitchMode: UInt32, GodotEnum {
         case immediate = 0
         case sync = 1
         case atEnd = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Immediate", 0),
+            ("Sync", 1),
+            ("At End", 2),]
+        }
     }
-    public enum AdvanceMode: UInt32 {
+    public enum AdvanceMode: UInt32, GodotEnum {
         case disabled = 0
         case enabled = 1
         case auto = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Enabled", 1),
+            ("Auto", 2),]
+        }
     }
 
     @Emitter(signal: "advance_condition_changed")

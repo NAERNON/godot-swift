@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioStreamRandomizer: AudioStream {
-    public enum PlaybackMode: UInt32 {
+    public enum PlaybackMode: UInt32, GodotEnum {
         case randomNoRepeats = 0
         case random = 1
         case sequential = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Random No Repeats", 0),
+            ("Random", 1),
+            ("Sequential", 2),]
+        }
     }
 
     private static var __method_binding_add_stream: GDExtensionMethodBindPtr = {

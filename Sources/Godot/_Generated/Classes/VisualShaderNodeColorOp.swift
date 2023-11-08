@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeColorOp: VisualShaderNode {
-    public enum Operator: UInt32 {
+    public enum Operator: UInt32, GodotEnum {
         case screen = 0
         case difference = 1
         case darken = 2
@@ -16,6 +16,19 @@ open class VisualShaderNodeColorOp: VisualShaderNode {
         case softLight = 7
         case hardLight = 8
         case max = 9
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Screen", 0),
+            ("Difference", 1),
+            ("Darken", 2),
+            ("Lighten", 3),
+            ("Overlay", 4),
+            ("Dodge", 5),
+            ("Burn", 6),
+            ("Soft Light", 7),
+            ("Hard Light", 8),
+            ("Max", 9),]
+        }
     }
 
     private static var __method_binding_set_operator: GDExtensionMethodBindPtr = {

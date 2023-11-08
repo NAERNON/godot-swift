@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SkeletonProfile: Resource {
-    public enum TailDirection: UInt32 {
+    public enum TailDirection: UInt32, GodotEnum {
         case averageChildren = 0
         case specificChild = 1
         case end = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Average Children", 0),
+            ("Specific Child", 1),
+            ("End", 2),]
+        }
     }
 
     @Emitter(signal: "profile_updated")

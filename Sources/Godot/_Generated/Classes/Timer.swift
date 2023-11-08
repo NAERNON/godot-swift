@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Timer: Node {
-    public enum TimerProcessCallback: UInt32 {
+    public enum TimerProcessCallback: UInt32, GodotEnum {
         case physics = 0
         case idle = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Physics", 0),
+            ("Idle", 1),]
+        }
     }
 
     @Emitter(signal: "timeout")

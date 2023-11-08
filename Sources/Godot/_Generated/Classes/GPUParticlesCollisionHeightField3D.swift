@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
-    public enum Resolution: UInt32 {
+    public enum Resolution: UInt32, GodotEnum {
         case resolution256 = 0
         case resolution512 = 1
         case resolution1024 = 2
@@ -13,10 +13,25 @@ open class GPUParticlesCollisionHeightField3D: GPUParticlesCollision3D {
         case resolution4096 = 4
         case resolution8192 = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Resolution256", 0),
+            ("Resolution512", 1),
+            ("Resolution1024", 2),
+            ("Resolution2048", 3),
+            ("Resolution4096", 4),
+            ("Resolution8192", 5),
+            ("Max", 6),]
+        }
     }
-    public enum UpdateMode: UInt32 {
+    public enum UpdateMode: UInt32, GodotEnum {
         case whenMoved = 0
         case always = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("When Moved", 0),
+            ("Always", 1),]
+        }
     }
 
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {

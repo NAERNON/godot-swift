@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Viewport: Node {
-    public enum PositionalShadowAtlasQuadrantSubdiv: UInt32 {
+    public enum PositionalShadowAtlasQuadrantSubdiv: UInt32, GodotEnum {
         case disabled = 0
         case shadowAtlasQuadrantSubdiv1 = 1
         case shadowAtlasQuadrantSubdiv4 = 2
@@ -14,36 +14,80 @@ open class Viewport: Node {
         case shadowAtlasQuadrantSubdiv256 = 5
         case shadowAtlasQuadrantSubdiv1024 = 6
         case max = 7
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Shadow Atlas Quadrant Subdiv1", 1),
+            ("Shadow Atlas Quadrant Subdiv4", 2),
+            ("Shadow Atlas Quadrant Subdiv16", 3),
+            ("Shadow Atlas Quadrant Subdiv64", 4),
+            ("Shadow Atlas Quadrant Subdiv256", 5),
+            ("Shadow Atlas Quadrant Subdiv1024", 6),
+            ("Max", 7),]
+        }
     }
-    public enum Scaling3DMode: UInt32 {
+    public enum Scaling3DMode: UInt32, GodotEnum {
         case bilinear = 0
         case fsr = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bilinear", 0),
+            ("Fsr", 1),
+            ("Max", 2),]
+        }
     }
-    public enum MSAA: UInt32 {
+    public enum MSAA: UInt32, GodotEnum {
         case disabled = 0
         case msaa2x = 1
         case msaa4x = 2
         case msaa8x = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Msaa2x", 1),
+            ("Msaa4x", 2),
+            ("Msaa8x", 3),
+            ("Max", 4),]
+        }
     }
-    public enum ScreenSpaceAA: UInt32 {
+    public enum ScreenSpaceAA: UInt32, GodotEnum {
         case disabled = 0
         case fxaa = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Fxaa", 1),
+            ("Max", 2),]
+        }
     }
-    public enum RenderInfo: UInt32 {
+    public enum RenderInfo: UInt32, GodotEnum {
         case objectsInFrame = 0
         case primitivesInFrame = 1
         case drawCallsInFrame = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Objects In Frame", 0),
+            ("Primitives In Frame", 1),
+            ("Draw Calls In Frame", 2),
+            ("Max", 3),]
+        }
     }
-    public enum RenderInfoType: UInt32 {
+    public enum RenderInfoType: UInt32, GodotEnum {
         case visible = 0
         case shadow = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Visible", 0),
+            ("Shadow", 1),
+            ("Max", 2),]
+        }
     }
-    public enum DebugDraw: UInt32 {
+    public enum DebugDraw: UInt32, GodotEnum {
         case disabled = 0
         case unshaded = 1
         case lighting = 2
@@ -70,38 +114,104 @@ open class Viewport: Node {
         case clusterReflectionProbes = 23
         case occluders = 24
         case motionVectors = 25
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Unshaded", 1),
+            ("Lighting", 2),
+            ("Overdraw", 3),
+            ("Wireframe", 4),
+            ("Normal Buffer", 5),
+            ("Voxel Gi Albedo", 6),
+            ("Voxel Gi Lighting", 7),
+            ("Voxel Gi Emission", 8),
+            ("Shadow Atlas", 9),
+            ("Directional Shadow Atlas", 10),
+            ("Scene Luminance", 11),
+            ("Ssao", 12),
+            ("Ssil", 13),
+            ("Pssm Splits", 14),
+            ("Decal Atlas", 15),
+            ("Sdfgi", 16),
+            ("Sdfgi Probes", 17),
+            ("Gi Buffer", 18),
+            ("Disable Lod", 19),
+            ("Cluster Omni Lights", 20),
+            ("Cluster Spot Lights", 21),
+            ("Cluster Decals", 22),
+            ("Cluster Reflection Probes", 23),
+            ("Occluders", 24),
+            ("Motion Vectors", 25),]
+        }
     }
-    public enum DefaultCanvasItemTextureFilter: UInt32 {
+    public enum DefaultCanvasItemTextureFilter: UInt32, GodotEnum {
         case nearest = 0
         case linear = 1
         case linearWithMipmaps = 2
         case nearestWithMipmaps = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Nearest", 0),
+            ("Linear", 1),
+            ("Linear With Mipmaps", 2),
+            ("Nearest With Mipmaps", 3),
+            ("Max", 4),]
+        }
     }
-    public enum DefaultCanvasItemTextureRepeat: UInt32 {
+    public enum DefaultCanvasItemTextureRepeat: UInt32, GodotEnum {
         case disabled = 0
         case enabled = 1
         case mirror = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Enabled", 1),
+            ("Mirror", 2),
+            ("Max", 3),]
+        }
     }
-    public enum SDFOversize: UInt32 {
+    public enum SDFOversize: UInt32, GodotEnum {
         case sdfOversize100Percent = 0
         case sdfOversize120Percent = 1
         case sdfOversize150Percent = 2
         case sdfOversize200Percent = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Sdf Oversize100 Percent", 0),
+            ("Sdf Oversize120 Percent", 1),
+            ("Sdf Oversize150 Percent", 2),
+            ("Sdf Oversize200 Percent", 3),
+            ("Max", 4),]
+        }
     }
-    public enum SDFScale: UInt32 {
+    public enum SDFScale: UInt32, GodotEnum {
         case sdfScale100Percent = 0
         case sdfScale50Percent = 1
         case sdfScale25Percent = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Sdf Scale100 Percent", 0),
+            ("Sdf Scale50 Percent", 1),
+            ("Sdf Scale25 Percent", 2),
+            ("Max", 3),]
+        }
     }
-    public enum VRSMode: UInt32 {
+    public enum VRSMode: UInt32, GodotEnum {
         case disabled = 0
         case texture = 1
         case xr = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Texture", 1),
+            ("Xr", 2),
+            ("Max", 3),]
+        }
     }
 
     @Emitter(signal: "size_changed")

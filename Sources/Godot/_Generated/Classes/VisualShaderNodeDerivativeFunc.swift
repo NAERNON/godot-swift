@@ -5,24 +5,46 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
-    public enum OpType: UInt32 {
+    public enum OpType: UInt32, GodotEnum {
         case scalar = 0
         case vector2D = 1
         case vector3D = 2
         case vector4d = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Scalar", 0),
+            ("Vector2 D", 1),
+            ("Vector3 D", 2),
+            ("Vector4d", 3),
+            ("Max", 4),]
+        }
     }
-    public enum Function: UInt32 {
+    public enum Function: UInt32, GodotEnum {
         case sum = 0
         case x = 1
         case y = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Sum", 0),
+            ("X", 1),
+            ("Y", 2),
+            ("Max", 3),]
+        }
     }
-    public enum Precision: UInt32 {
+    public enum Precision: UInt32, GodotEnum {
         case none = 0
         case coarse = 1
         case fine = 2
         case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Coarse", 1),
+            ("Fine", 2),
+            ("Max", 3),]
+        }
     }
 
     private static var __method_binding_set_op_type: GDExtensionMethodBindPtr = {

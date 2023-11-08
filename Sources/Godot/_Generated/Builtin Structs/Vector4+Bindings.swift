@@ -12,11 +12,18 @@ extension Vector4 {
     public static let one: Vector4 = Vector4(x: 1, y: 1, z: 1, w: 1)
     public static let inf: Vector4 = Vector4(x: .infinity, y: .infinity, z: .infinity, w: .infinity)
 
-    public enum Axis: UInt32 {
+    public enum Axis: UInt32, GodotEnum {
         case x = 0
         case y = 1
         case z = 2
         case w = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("X", 0),
+            ("Y", 1),
+            ("Z", 2),
+            ("W", 3),]
+        }
     }
 
     private static var __constructor: GDExtensionPtrConstructor = {

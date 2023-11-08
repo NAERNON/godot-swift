@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Decal: VisualInstance3D {
-    public enum DecalTexture: UInt32 {
+    public enum DecalTexture: UInt32, GodotEnum {
         case albedo = 0
         case normal = 1
         case orm = 2
         case emission = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Albedo", 0),
+            ("Normal", 1),
+            ("Orm", 2),
+            ("Emission", 3),
+            ("Max", 4),]
+        }
     }
 
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {

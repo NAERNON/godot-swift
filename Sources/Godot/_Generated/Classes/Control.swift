@@ -5,12 +5,18 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Control: CanvasItem {
-    public enum FocusMode: UInt32 {
+    public enum FocusMode: UInt32, GodotEnum {
         case none = 0
         case click = 1
         case all = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Click", 1),
+            ("All", 2),]
+        }
     }
-    public enum CursorShape: UInt32 {
+    public enum CursorShape: UInt32, GodotEnum {
         case arrow = 0
         case ibeam = 1
         case pointingHand = 2
@@ -28,8 +34,28 @@ open class Control: CanvasItem {
         case vsplit = 14
         case hsplit = 15
         case help = 16
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Arrow", 0),
+            ("Ibeam", 1),
+            ("Pointing Hand", 2),
+            ("Cross", 3),
+            ("Wait", 4),
+            ("Busy", 5),
+            ("Drag", 6),
+            ("Can Drop", 7),
+            ("Forbidden", 8),
+            ("Vsize", 9),
+            ("Hsize", 10),
+            ("Bdiagsize", 11),
+            ("Fdiagsize", 12),
+            ("Move", 13),
+            ("Vsplit", 14),
+            ("Hsplit", 15),
+            ("Help", 16),]
+        }
     }
-    public enum LayoutPreset: UInt32 {
+    public enum LayoutPreset: UInt32, GodotEnum {
         case topLeft = 0
         case topRight = 1
         case bottomLeft = 2
@@ -46,12 +72,38 @@ open class Control: CanvasItem {
         case vcenterWide = 13
         case hcenterWide = 14
         case fullRect = 15
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Top Left", 0),
+            ("Top Right", 1),
+            ("Bottom Left", 2),
+            ("Bottom Right", 3),
+            ("Center Left", 4),
+            ("Center Top", 5),
+            ("Center Right", 6),
+            ("Center Bottom", 7),
+            ("Center", 8),
+            ("Left Wide", 9),
+            ("Top Wide", 10),
+            ("Right Wide", 11),
+            ("Bottom Wide", 12),
+            ("Vcenter Wide", 13),
+            ("Hcenter Wide", 14),
+            ("Full Rect", 15),]
+        }
     }
-    public enum LayoutPresetMode: UInt32 {
+    public enum LayoutPresetMode: UInt32, GodotEnum {
         case minsize = 0
         case keepWidth = 1
         case keepHeight = 2
         case keepSize = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Minsize", 0),
+            ("Keep Width", 1),
+            ("Keep Height", 2),
+            ("Keep Size", 3),]
+        }
     }
     public struct SizeFlags: OptionSet {
         public let rawValue: UInt32
@@ -67,31 +119,62 @@ open class Control: CanvasItem {
         public static let shrinkCenter: Self = .init(rawValue: 4)
         public static let shrinkEnd: Self = .init(rawValue: 8)
     }
-    public enum MouseFilter: UInt32 {
+    public enum MouseFilter: UInt32, GodotEnum {
         case stop = 0
         case pass = 1
         case ignore = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Stop", 0),
+            ("Pass", 1),
+            ("Ignore", 2),]
+        }
     }
-    public enum GrowDirection: UInt32 {
+    public enum GrowDirection: UInt32, GodotEnum {
         case begin = 0
         case end = 1
         case both = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Begin", 0),
+            ("End", 1),
+            ("Both", 2),]
+        }
     }
-    public enum Anchor: UInt32 {
+    public enum Anchor: UInt32, GodotEnum {
         case begin = 0
         case end = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Begin", 0),
+            ("End", 1),]
+        }
     }
-    public enum LayoutDirection: UInt32 {
+    public enum LayoutDirection: UInt32, GodotEnum {
         case inherited = 0
         case locale = 1
         case ltr = 2
         case rtl = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Inherited", 0),
+            ("Locale", 1),
+            ("Ltr", 2),
+            ("Rtl", 3),]
+        }
     }
-    public enum TextDirection: UInt32 {
+    public enum TextDirection: UInt32, GodotEnum {
         case inherited = 3
         case auto = 0
         case ltr = 1
         case rtl = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Inherited", 3),
+            ("Auto", 0),
+            ("Ltr", 1),
+            ("Rtl", 2),]
+        }
     }
 
     @Emitter(signal: "resized")

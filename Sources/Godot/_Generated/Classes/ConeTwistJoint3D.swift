@@ -5,13 +5,22 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ConeTwistJoint3D: Joint3D {
-    public enum Param: UInt32 {
+    public enum Param: UInt32, GodotEnum {
         case swingSpan = 0
         case twistSpan = 1
         case bias = 2
         case softness = 3
         case relaxation = 4
         case max = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Swing Span", 0),
+            ("Twist Span", 1),
+            ("Bias", 2),
+            ("Softness", 3),
+            ("Relaxation", 4),
+            ("Max", 5),]
+        }
     }
 
     private static var __method_binding_set_param: GDExtensionMethodBindPtr = {

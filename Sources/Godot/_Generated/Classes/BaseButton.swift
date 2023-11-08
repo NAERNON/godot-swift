@@ -5,16 +5,29 @@
 import GodotExtensionHeaders
 @GodotClass
 open class BaseButton: Control {
-    public enum DrawMode: UInt32 {
+    public enum DrawMode: UInt32, GodotEnum {
         case normal = 0
         case pressed = 1
         case hover = 2
         case disabled = 3
         case hoverPressed = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Normal", 0),
+            ("Pressed", 1),
+            ("Hover", 2),
+            ("Disabled", 3),
+            ("Hover Pressed", 4),]
+        }
     }
-    public enum ActionMode: UInt32 {
+    public enum ActionMode: UInt32, GodotEnum {
         case press = 0
         case release = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Press", 0),
+            ("Release", 1),]
+        }
     }
 
     @Emitter(signal: "pressed")

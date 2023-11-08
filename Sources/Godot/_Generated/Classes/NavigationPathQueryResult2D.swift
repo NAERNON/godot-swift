@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class NavigationPathQueryResult2D: RefCounted {
-    public enum PathSegmentType: UInt32 {
+    public enum PathSegmentType: UInt32, GodotEnum {
         case region = 0
         case link = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Region", 0),
+            ("Link", 1),]
+        }
     }
 
     private static var __method_binding_set_path: GDExtensionMethodBindPtr = {

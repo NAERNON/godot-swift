@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class HTTPClient: RefCounted {
-    public enum Method: UInt32 {
+    public enum Method: UInt32, GodotEnum {
         case get = 0
         case head = 1
         case post = 2
@@ -16,8 +16,21 @@ open class HTTPClient: RefCounted {
         case connect = 7
         case patch = 8
         case max = 9
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Get", 0),
+            ("Head", 1),
+            ("Post", 2),
+            ("Put", 3),
+            ("Delete", 4),
+            ("Options", 5),
+            ("Trace", 6),
+            ("Connect", 7),
+            ("Patch", 8),
+            ("Max", 9),]
+        }
     }
-    public enum Status: UInt32 {
+    public enum Status: UInt32, GodotEnum {
         case disconnected = 0
         case resolving = 1
         case cantResolve = 2
@@ -28,8 +41,21 @@ open class HTTPClient: RefCounted {
         case body = 7
         case connectionError = 8
         case tlsHandshakeError = 9
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disconnected", 0),
+            ("Resolving", 1),
+            ("Cant Resolve", 2),
+            ("Connecting", 3),
+            ("Cant Connect", 4),
+            ("Connected", 5),
+            ("Requesting", 6),
+            ("Body", 7),
+            ("Connection Error", 8),
+            ("Tls Handshake Error", 9),]
+        }
     }
-    public enum ResponseCode: UInt32 {
+    public enum ResponseCode: UInt32, GodotEnum {
         case `continue` = 100
         case switchingProtocols = 101
         case processing = 102
@@ -91,6 +117,70 @@ open class HTTPClient: RefCounted {
         case loopDetected = 508
         case notExtended = 510
         case networkAuthRequired = 511
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("`continue`", 100),
+            ("Switching Protocols", 101),
+            ("Processing", 102),
+            ("Ok", 200),
+            ("Created", 201),
+            ("Accepted", 202),
+            ("Non Authoritative Information", 203),
+            ("No Content", 204),
+            ("Reset Content", 205),
+            ("Partial Content", 206),
+            ("Multi Status", 207),
+            ("Already Reported", 208),
+            ("Im Used", 226),
+            ("Multiple Choices", 300),
+            ("Moved Permanently", 301),
+            ("Found", 302),
+            ("See Other", 303),
+            ("Not Modified", 304),
+            ("Use Proxy", 305),
+            ("Switch Proxy", 306),
+            ("Temporary Redirect", 307),
+            ("Permanent Redirect", 308),
+            ("Bad Request", 400),
+            ("Unauthorized", 401),
+            ("Payment Required", 402),
+            ("Forbidden", 403),
+            ("Not Found", 404),
+            ("Method Not Allowed", 405),
+            ("Not Acceptable", 406),
+            ("Proxy Authentication Required", 407),
+            ("Request Timeout", 408),
+            ("Conflict", 409),
+            ("Gone", 410),
+            ("Length Required", 411),
+            ("Precondition Failed", 412),
+            ("Request Entity Too Large", 413),
+            ("Request Uri Too Long", 414),
+            ("Unsupported Media Type", 415),
+            ("Requested Range Not Satisfiable", 416),
+            ("Expectation Failed", 417),
+            ("Im A Teapot", 418),
+            ("Misdirected Request", 421),
+            ("Unprocessable Entity", 422),
+            ("Locked", 423),
+            ("Failed Dependency", 424),
+            ("Upgrade Required", 426),
+            ("Precondition Required", 428),
+            ("Too Many Requests", 429),
+            ("Request Header Fields Too Large", 431),
+            ("Unavailable For Legal Reasons", 451),
+            ("Internal Server Error", 500),
+            ("Not Implemented", 501),
+            ("Bad Gateway", 502),
+            ("Service Unavailable", 503),
+            ("Gateway Timeout", 504),
+            ("Http Version Not Supported", 505),
+            ("Variant Also Negotiates", 506),
+            ("Insufficient Storage", 507),
+            ("Loop Detected", 508),
+            ("Not Extended", 510),
+            ("Network Auth Required", 511),]
+        }
     }
 
     private static var __method_binding_connect_to_host: GDExtensionMethodBindPtr = {

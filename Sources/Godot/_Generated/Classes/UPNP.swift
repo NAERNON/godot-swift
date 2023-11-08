@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class UPNP: RefCounted {
-    public enum UPNPResult: UInt32 {
+    public enum UPNPResult: UInt32, GodotEnum {
         case success = 0
         case notAuthorized = 1
         case portMappingNotFound = 2
@@ -35,6 +35,38 @@ open class UPNP: RefCounted {
         case noGateway = 26
         case noDevices = 27
         case unknownError = 28
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Success", 0),
+            ("Not Authorized", 1),
+            ("Port Mapping Not Found", 2),
+            ("Inconsistent Parameters", 3),
+            ("No Such Entry In Array", 4),
+            ("Action Failed", 5),
+            ("Src Ip Wildcard Not Permitted", 6),
+            ("Ext Port Wildcard Not Permitted", 7),
+            ("Int Port Wildcard Not Permitted", 8),
+            ("Remote Host Must Be Wildcard", 9),
+            ("Ext Port Must Be Wildcard", 10),
+            ("No Port Maps Available", 11),
+            ("Conflict With Other Mechanism", 12),
+            ("Conflict With Other Mapping", 13),
+            ("Same Port Values Required", 14),
+            ("Only Permanent Lease Supported", 15),
+            ("Invalid Gateway", 16),
+            ("Invalid Port", 17),
+            ("Invalid Protocol", 18),
+            ("Invalid Duration", 19),
+            ("Invalid Args", 20),
+            ("Invalid Response", 21),
+            ("Invalid Param", 22),
+            ("Http Error", 23),
+            ("Socket Error", 24),
+            ("Mem Alloc Error", 25),
+            ("No Gateway", 26),
+            ("No Devices", 27),
+            ("Unknown Error", 28),]
+        }
     }
 
     private static var __method_binding_get_device_count: GDExtensionMethodBindPtr = {

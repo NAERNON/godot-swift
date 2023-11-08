@@ -5,27 +5,50 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class FastNoiseLite: Noise {
-    public enum NoiseType: UInt32 {
+    public enum NoiseType: UInt32, GodotEnum {
         case value = 5
         case valueCubic = 4
         case perlin = 3
         case cellular = 2
         case simplex = 0
         case simplexSmooth = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Value", 5),
+            ("Value Cubic", 4),
+            ("Perlin", 3),
+            ("Cellular", 2),
+            ("Simplex", 0),
+            ("Simplex Smooth", 1),]
+        }
     }
-    public enum FractalType: UInt32 {
+    public enum FractalType: UInt32, GodotEnum {
         case none = 0
         case fbm = 1
         case ridged = 2
         case pingPong = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Fbm", 1),
+            ("Ridged", 2),
+            ("Ping Pong", 3),]
+        }
     }
-    public enum CellularDistanceFunction: UInt32 {
+    public enum CellularDistanceFunction: UInt32, GodotEnum {
         case euclidean = 0
         case euclideanSquared = 1
         case manhattan = 2
         case hybrid = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Euclidean", 0),
+            ("Euclidean Squared", 1),
+            ("Manhattan", 2),
+            ("Hybrid", 3),]
+        }
     }
-    public enum CellularReturnType: UInt32 {
+    public enum CellularReturnType: UInt32, GodotEnum {
         case cellValue = 0
         case distance = 1
         case distance2 = 2
@@ -33,16 +56,38 @@ open class FastNoiseLite: Noise {
         case distance2Sub = 4
         case distance2Mul = 5
         case distance2Div = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Cell Value", 0),
+            ("Distance", 1),
+            ("Distance2", 2),
+            ("Distance2 Add", 3),
+            ("Distance2 Sub", 4),
+            ("Distance2 Mul", 5),
+            ("Distance2 Div", 6),]
+        }
     }
-    public enum DomainWarpType: UInt32 {
+    public enum DomainWarpType: UInt32, GodotEnum {
         case simplex = 0
         case simplexReduced = 1
         case basicGrid = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Simplex", 0),
+            ("Simplex Reduced", 1),
+            ("Basic Grid", 2),]
+        }
     }
-    public enum DomainWarpFractalType: UInt32 {
+    public enum DomainWarpFractalType: UInt32, GodotEnum {
         case none = 0
         case progressive = 1
         case independent = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Progressive", 1),
+            ("Independent", 2),]
+        }
     }
 
     private static var __method_binding_set_noise_type: GDExtensionMethodBindPtr = {

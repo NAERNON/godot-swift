@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Shader: Resource {
-    public enum Mode: UInt32 {
+    public enum Mode: UInt32, GodotEnum {
         case spatial = 0
         case canvasItem = 1
         case particles = 2
         case sky = 3
         case fog = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Spatial", 0),
+            ("Canvas Item", 1),
+            ("Particles", 2),
+            ("Sky", 3),
+            ("Fog", 4),]
+        }
     }
 
     private static var __method_binding_get_mode: GDExtensionMethodBindPtr = {

@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class AudioStreamPlayer: Node {
-    public enum MixTarget: UInt32 {
+    public enum MixTarget: UInt32, GodotEnum {
         case stereo = 0
         case surround = 1
         case center = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Stereo", 0),
+            ("Surround", 1),
+            ("Center", 2),]
+        }
     }
 
     @Emitter(signal: "finished")

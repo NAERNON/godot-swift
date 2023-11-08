@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeUIntOp: VisualShaderNode {
-    public enum Operator: UInt32 {
+    public enum Operator: UInt32, GodotEnum {
         case add = 0
         case sub = 1
         case mul = 2
@@ -19,6 +19,22 @@ open class VisualShaderNodeUIntOp: VisualShaderNode {
         case bitwiseLeftShift = 10
         case bitwiseRightShift = 11
         case enumSize = 12
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Add", 0),
+            ("Sub", 1),
+            ("Mul", 2),
+            ("Div", 3),
+            ("Mod", 4),
+            ("Max", 5),
+            ("Min", 6),
+            ("Bitwise And", 7),
+            ("Bitwise Or", 8),
+            ("Bitwise Xor", 9),
+            ("Bitwise Left Shift", 10),
+            ("Bitwise Right Shift", 11),
+            ("Enum Size", 12),]
+        }
     }
 
     private static var __method_binding_set_operator: GDExtensionMethodBindPtr = {

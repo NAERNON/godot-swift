@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GraphNode: Container {
-    public enum Overlay: UInt32 {
+    public enum Overlay: UInt32, GodotEnum {
         case disabled = 0
         case breakpoint = 1
         case position = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Breakpoint", 1),
+            ("Position", 2),]
+        }
     }
 
     @Emitter(signal: "position_offset_changed")

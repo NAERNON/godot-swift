@@ -5,14 +5,25 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ReflectionProbe: VisualInstance3D {
-    public enum UpdateMode: UInt32 {
+    public enum UpdateMode: UInt32, GodotEnum {
         case once = 0
         case always = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Once", 0),
+            ("Always", 1),]
+        }
     }
-    public enum AmbientMode: UInt32 {
+    public enum AmbientMode: UInt32, GodotEnum {
         case disabled = 0
         case environment = 1
         case color = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Disabled", 0),
+            ("Environment", 1),
+            ("Color", 2),]
+        }
     }
 
     private static var __method_binding_set_intensity: GDExtensionMethodBindPtr = {

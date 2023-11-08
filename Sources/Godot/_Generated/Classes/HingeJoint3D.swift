@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class HingeJoint3D: Joint3D {
-    public enum Param: UInt32 {
+    public enum Param: UInt32, GodotEnum {
         case bias = 0
         case limitUpper = 1
         case limitLower = 2
@@ -15,11 +15,29 @@ open class HingeJoint3D: Joint3D {
         case motorTargetVelocity = 6
         case motorMaxImpulse = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bias", 0),
+            ("Limit Upper", 1),
+            ("Limit Lower", 2),
+            ("Limit Bias", 3),
+            ("Limit Softness", 4),
+            ("Limit Relaxation", 5),
+            ("Motor Target Velocity", 6),
+            ("Motor Max Impulse", 7),
+            ("Max", 8),]
+        }
     }
-    public enum Flag: UInt32 {
+    public enum Flag: UInt32, GodotEnum {
         case useLimit = 0
         case enableMotor = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Use Limit", 0),
+            ("Enable Motor", 1),
+            ("Max", 2),]
+        }
     }
 
     private static var __method_binding_set_param: GDExtensionMethodBindPtr = {

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
-    public enum Resolution: UInt32 {
+    public enum Resolution: UInt32, GodotEnum {
         case resolution16 = 0
         case resolution32 = 1
         case resolution64 = 2
@@ -13,6 +13,16 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         case resolution256 = 4
         case resolution512 = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Resolution16", 0),
+            ("Resolution32", 1),
+            ("Resolution64", 2),
+            ("Resolution128", 3),
+            ("Resolution256", 4),
+            ("Resolution512", 5),
+            ("Max", 6),]
+        }
     }
 
     private static var __method_binding_set_size: GDExtensionMethodBindPtr = {

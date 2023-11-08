@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Thread: RefCounted {
-    public enum Priority: UInt32 {
+    public enum Priority: UInt32, GodotEnum {
         case low = 0
         case normal = 1
         case high = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Low", 0),
+            ("Normal", 1),
+            ("High", 2),]
+        }
     }
 
     private static var __method_binding_start: GDExtensionMethodBindPtr = {

@@ -5,26 +5,50 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class WebRTCPeerConnection: RefCounted {
-    public enum ConnectionState: UInt32 {
+    public enum ConnectionState: UInt32, GodotEnum {
         case new = 0
         case connecting = 1
         case connected = 2
         case disconnected = 3
         case failed = 4
         case closed = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("New", 0),
+            ("Connecting", 1),
+            ("Connected", 2),
+            ("Disconnected", 3),
+            ("Failed", 4),
+            ("Closed", 5),]
+        }
     }
-    public enum GatheringState: UInt32 {
+    public enum GatheringState: UInt32, GodotEnum {
         case new = 0
         case gathering = 1
         case complete = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("New", 0),
+            ("Gathering", 1),
+            ("Complete", 2),]
+        }
     }
-    public enum SignalingState: UInt32 {
+    public enum SignalingState: UInt32, GodotEnum {
         case stable = 0
         case haveLocalOffer = 1
         case haveRemoteOffer = 2
         case haveLocalPranswer = 3
         case haveRemotePranswer = 4
         case closed = 5
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Stable", 0),
+            ("Have Local Offer", 1),
+            ("Have Remote Offer", 2),
+            ("Have Local Pranswer", 3),
+            ("Have Remote Pranswer", 4),
+            ("Closed", 5),]
+        }
     }
 
     @Emitter(signal: "session_description_created", args: ("type", Godot.GodotString), ("sdp", Godot.GodotString))

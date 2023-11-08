@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeCompare: VisualShaderNode {
-    public enum ComparisonType: UInt32 {
+    public enum ComparisonType: UInt32, GodotEnum {
         case scalar = 0
         case scalarInt = 1
         case scalarUint = 2
@@ -15,8 +15,20 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         case boolean = 6
         case transform = 7
         case max = 8
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Scalar", 0),
+            ("Scalar Int", 1),
+            ("Scalar Uint", 2),
+            ("Vector2 D", 3),
+            ("Vector3 D", 4),
+            ("Vector4d", 5),
+            ("Boolean", 6),
+            ("Transform", 7),
+            ("Max", 8),]
+        }
     }
-    public enum Function: UInt32 {
+    public enum Function: UInt32, GodotEnum {
         case equal = 0
         case notEqual = 1
         case greaterThan = 2
@@ -24,11 +36,27 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         case lessThan = 4
         case lessThanEqual = 5
         case max = 6
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Equal", 0),
+            ("Not Equal", 1),
+            ("Greater Than", 2),
+            ("Greater Than Equal", 3),
+            ("Less Than", 4),
+            ("Less Than Equal", 5),
+            ("Max", 6),]
+        }
     }
-    public enum Condition: UInt32 {
+    public enum Condition: UInt32, GodotEnum {
         case all = 0
         case any = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("All", 0),
+            ("Any", 1),
+            ("Max", 2),]
+        }
     }
 
     private static var __method_binding_set_comparison_type: GDExtensionMethodBindPtr = {

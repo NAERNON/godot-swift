@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNode: Resource {
-    public enum FilterAction: UInt32 {
+    public enum FilterAction: UInt32, GodotEnum {
         case ignore = 0
         case pass = 1
         case stop = 2
         case blend = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Ignore", 0),
+            ("Pass", 1),
+            ("Stop", 2),
+            ("Blend", 3),]
+        }
     }
 
     @Emitter(signal: "tree_changed")

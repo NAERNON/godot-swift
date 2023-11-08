@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class HTTPRequest: Node {
-    public enum Result: UInt32 {
+    public enum Result: UInt32, GodotEnum {
         case success = 0
         case chunkedBodySizeMismatch = 1
         case cantConnect = 2
@@ -20,6 +20,23 @@ open class HTTPRequest: Node {
         case downloadFileWriteError = 11
         case redirectLimitReached = 12
         case timeout = 13
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Success", 0),
+            ("Chunked Body Size Mismatch", 1),
+            ("Cant Connect", 2),
+            ("Cant Resolve", 3),
+            ("Connection Error", 4),
+            ("Tls Handshake Error", 5),
+            ("No Response", 6),
+            ("Body Size Limit Exceeded", 7),
+            ("Body Decompress Failed", 8),
+            ("Request Failed", 9),
+            ("Download File Cant Open", 10),
+            ("Download File Write Error", 11),
+            ("Redirect Limit Reached", 12),
+            ("Timeout", 13),]
+        }
     }
 
     @Emitter(signal: "request_completed", args: ("result", Int), ("responseCode", Int), ("headers", Godot.PackedStringArray), ("body", Godot.PackedByteArray))

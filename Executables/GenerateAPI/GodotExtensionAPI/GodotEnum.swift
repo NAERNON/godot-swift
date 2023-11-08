@@ -67,6 +67,7 @@ struct GodotEnum: Decodable {
         
         var alreadyAddedCases = [T : String]()
         var caseStrings = [String]()
+        var hintNamesAndValues = [(String, T)]()
         
         for `case` in temporaryCases {
             // Sometimes, given enums don't have unique values, and two cases can have the same value.
@@ -78,11 +79,21 @@ struct GodotEnum: Decodable {
                 // The value is unique.
                 caseStrings.append("case \(`case`.name) = \(`case`.value)")
                 alreadyAddedCases[`case`.value] = `case`.name
+                
+                hintNamesAndValues.append((NamingConvention.camel.makeSentence(`case`.name), `case`.value))
             }
         }
         
-        return try EnumDeclSyntax("public enum \(raw: name): \(raw: T.self)") {
+        return try EnumDeclSyntax("public enum \(raw: name): \(raw: T.self), GodotEnum") {
             "\(raw: caseStrings.joined(separator: "\n"))"
+            
+            try FunctionDeclSyntax("public static func hintValues() -> [(name: String, value: RawValue)]") {
+                "["
+                for hintNameAndValue in hintNamesAndValues {
+                    "\(raw: "(\"\(hintNameAndValue.0)\", \(hintNameAndValue.1)),")"
+                }
+                "]"
+            }
         }
     }
     

@@ -5,9 +5,14 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNodeAnimation: AnimationRootNode {
-    public enum PlayMode: UInt32 {
+    public enum PlayMode: UInt32, GodotEnum {
         case forward = 0
         case backward = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Forward", 0),
+            ("Backward", 1),]
+        }
     }
 
     private static var __method_binding_set_animation: GDExtensionMethodBindPtr = {

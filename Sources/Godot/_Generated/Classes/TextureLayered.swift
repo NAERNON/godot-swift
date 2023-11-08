@@ -5,10 +5,16 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class TextureLayered: Texture {
-    public enum LayeredType: UInt32 {
+    public enum LayeredType: UInt32, GodotEnum {
         case layeredType2DArray = 0
         case cubemap = 1
         case cubemapArray = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Layered Type2 D Array", 0),
+            ("Cubemap", 1),
+            ("Cubemap Array", 2),]
+        }
     }
 
     open func _getFormat() -> Godot.Image.Format {

@@ -5,12 +5,20 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AESContext: RefCounted {
-    public enum Mode: UInt32 {
+    public enum Mode: UInt32, GodotEnum {
         case ecbEncrypt = 0
         case ecbDecrypt = 1
         case cbcEncrypt = 2
         case cbcDecrypt = 3
         case max = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Ecb Encrypt", 0),
+            ("Ecb Decrypt", 1),
+            ("Cbc Encrypt", 2),
+            ("Cbc Decrypt", 3),
+            ("Max", 4),]
+        }
     }
 
     private static var __method_binding_start: GDExtensionMethodBindPtr = {

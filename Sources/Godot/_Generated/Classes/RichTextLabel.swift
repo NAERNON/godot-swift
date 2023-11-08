@@ -5,16 +5,29 @@
 import GodotExtensionHeaders
 @GodotClass
 open class RichTextLabel: Control {
-    public enum ListType: UInt32 {
+    public enum ListType: UInt32, GodotEnum {
         case numbers = 0
         case letters = 1
         case roman = 2
         case dots = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Numbers", 0),
+            ("Letters", 1),
+            ("Roman", 2),
+            ("Dots", 3),]
+        }
     }
-    public enum MenuItems: UInt32 {
+    public enum MenuItems: UInt32, GodotEnum {
         case copy = 0
         case selectAll = 1
         case max = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Copy", 0),
+            ("Select All", 1),
+            ("Max", 2),]
+        }
     }
 
     @Emitter(signal: "meta_clicked", args: ("meta", Godot.Variant))

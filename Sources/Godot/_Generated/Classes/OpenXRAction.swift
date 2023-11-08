@@ -5,11 +5,18 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class OpenXRAction: Resource {
-    public enum ActionType: UInt32 {
+    public enum ActionType: UInt32, GodotEnum {
         case bool = 0
         case float = 1
         case vector2 = 2
         case pose = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bool", 0),
+            ("Float", 1),
+            ("Vector2", 2),
+            ("Pose", 3),]
+        }
     }
 
     private static var __method_binding_set_localized_name: GDExtensionMethodBindPtr = {

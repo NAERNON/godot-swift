@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class SliderJoint3D: Joint3D {
-    public enum Param: UInt32 {
+    public enum Param: UInt32, GodotEnum {
         case linearLimitUpper = 0
         case linearLimitLower = 1
         case linearLimitSoftness = 2
@@ -29,6 +29,32 @@ open class SliderJoint3D: Joint3D {
         case angularOrthogonalRestitution = 20
         case angularOrthogonalDamping = 21
         case max = 22
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Linear Limit Upper", 0),
+            ("Linear Limit Lower", 1),
+            ("Linear Limit Softness", 2),
+            ("Linear Limit Restitution", 3),
+            ("Linear Limit Damping", 4),
+            ("Linear Motion Softness", 5),
+            ("Linear Motion Restitution", 6),
+            ("Linear Motion Damping", 7),
+            ("Linear Orthogonal Softness", 8),
+            ("Linear Orthogonal Restitution", 9),
+            ("Linear Orthogonal Damping", 10),
+            ("Angular Limit Upper", 11),
+            ("Angular Limit Lower", 12),
+            ("Angular Limit Softness", 13),
+            ("Angular Limit Restitution", 14),
+            ("Angular Limit Damping", 15),
+            ("Angular Motion Softness", 16),
+            ("Angular Motion Restitution", 17),
+            ("Angular Motion Damping", 18),
+            ("Angular Orthogonal Softness", 19),
+            ("Angular Orthogonal Restitution", 20),
+            ("Angular Orthogonal Damping", 21),
+            ("Max", 22),]
+        }
     }
 
     private static var __method_binding_set_param: GDExtensionMethodBindPtr = {
