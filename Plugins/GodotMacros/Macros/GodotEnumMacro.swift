@@ -58,7 +58,7 @@ public enum GodotEnumMacro: ExtensionMacro {
         }
         
         let accessModifier = enumDecl.effectiveAccessModifier(minimum: .fileprivate)
-        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.VariantConvertible") {
+        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.VariantConvertible, Godot.GodotEnum") {
             """
             \(accessModifier) static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
@@ -90,16 +90,35 @@ public enum GodotEnumMacro: ExtensionMacro {
             
             try FunctionDeclSyntax("fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)]") {
                 "["
+                let snakeEnumName = enumDecl.name.trimmedDescription
+                    .translated(from: .pascal, to: .snake)
+                
                 for caseName in enumCases(for: enumDecl) {
-                    let snakeEnumName = enumDecl.name.trimmedDescription
-                        .translated(from: .pascal, to: .snake)
-                    
                     let snakeCaseName = caseName
                         .translated(from: .pascal, to: .snake)
                     
                     let translatedCaseName = (snakeEnumName + "_" + snakeCaseName).uppercased()
                     
                     "(\(literal: translatedCaseName), Self.\(raw: caseName).rawValue),"
+                }
+                "]"
+            }
+            
+            try FunctionDeclSyntax("\(accessModifier) static func hintValues() -> [(name: Swift.String, value: RawValue)]") {
+                "["
+                for caseName in enumCases(for: enumDecl) {
+                    let decomposed = NamingConvention.camel.decompose(string: caseName)
+                    let translatedName = decomposed.map { name in
+                        guard !name.isEmpty else {
+                            return name
+                        }
+                        
+                        var new = name
+                        new.insert(contentsOf: new.removeFirst().uppercased(), at: name.startIndex)
+                        return new
+                    }.joined(separator: " ")
+                    
+                    "(\(literal: translatedName), Self.\(raw: caseName).rawValue),"
                 }
                 "]"
             }

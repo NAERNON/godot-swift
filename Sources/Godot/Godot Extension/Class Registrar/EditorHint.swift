@@ -12,6 +12,8 @@ public struct EditorHint {
     
     public static let none: EditorHint = .init(hint: .none, string: .init())
     
+    // MARK: Range
+    
     /// An set of options for range hinting.
     public struct RangeOptions: OptionSet {
         public let rawValue: UInt8
@@ -71,6 +73,40 @@ public struct EditorHint {
         }
         
         return GodotString(swiftString: string)
+    }
+    
+    // MARK: Enum
+    
+    public static func `enum`(
+        _ values: String...
+    ) -> EditorHint {
+        if values.allSatisfy({ isEnumCaseValid($0) }) {
+            self.init(
+                hint: .enum,
+                string: GodotString(swiftString: values.joined(separator: ","))
+            )
+        } else {
+            .none
+        }
+    }
+    
+    private static func isEnumCaseValid(_ enumCase: String) -> Bool {
+        !enumCase.contains { $0 == "," }
+    }
+    
+    public static func `enum`<Enum>(
+        _ enumType: Enum.Type
+    ) -> EditorHint where Enum : GodotEnum {
+        let string = enumType.hintValues()
+            .map { (name, value) in
+                "\(name):\(value)"
+            }
+            .joined(separator: ",")
+        
+        return .init(
+            hint: .enum,
+            string: GodotString(swiftString: string)
+        )
     }
 }
 
