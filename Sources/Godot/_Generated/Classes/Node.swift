@@ -31,7 +31,7 @@ open class Node: Object {
             ("Sub Thread", 2),]
         }
     }
-    public struct ProcessThreadMessages: OptionSet {
+    public struct ProcessThreadMessages: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -41,6 +41,12 @@ open class Node: Object {
         public static let flagProcessThreadMessages: Self = .init(rawValue: 1)
         public static let physics: Self = .init(rawValue: 2)
         public static let all: Self = .init(rawValue: 3)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Flag Process Thread Messages", 1),
+            ("Physics", 2),
+            ("All", 3),]
+        }
     }
     public enum DuplicateFlags: UInt32, GodotEnum {
         case signals = 1

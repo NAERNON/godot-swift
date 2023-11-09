@@ -106,7 +106,7 @@ open class RenderingServer: Object {
             ("Max", 8),]
         }
     }
-    public struct ArrayFormat: OptionSet {
+    public struct ArrayFormat: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -139,6 +139,35 @@ open class RenderingServer: Object {
         public static let flagUseDynamicUpdate: Self = .init(rawValue: 67108864)
         public static let flagUse8BoneWeights: Self = .init(rawValue: 134217728)
         public static let flagUsesEmptyVertexArray: Self = .init(rawValue: 268435456)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Format Vertex", 1),
+            ("Format Normal", 2),
+            ("Format Tangent", 4),
+            ("Format Color", 8),
+            ("Format Tex Uv", 16),
+            ("Format Tex Uv2", 32),
+            ("Format Custom0", 64),
+            ("Format Custom1", 128),
+            ("Format Custom2", 256),
+            ("Format Custom3", 512),
+            ("Format Bones", 1024),
+            ("Format Weights", 2048),
+            ("Format Index", 4096),
+            ("Format Blend Shape Mask", 7),
+            ("Format Custom Base", 13),
+            ("Format Custom Bits", 3),
+            ("Format Custom0 Shift", 13),
+            ("Format Custom1 Shift", 16),
+            ("Format Custom2 Shift", 19),
+            ("Format Custom3 Shift", 22),
+            ("Format Custom Mask", 7),
+            ("Compress Flags Base", 25),
+            ("Flag Use2 D Vertices", 33554432),
+            ("Flag Use Dynamic Update", 67108864),
+            ("Flag Use8 Bone Weights", 134217728),
+            ("Flag Uses Empty Vertex Array", 268435456),]
+        }
     }
     public enum PrimitiveType: UInt32, GodotEnum {
         case points = 0

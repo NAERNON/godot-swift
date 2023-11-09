@@ -496,7 +496,7 @@ open class RenderingDevice: Object {
             ("Max", 218),]
         }
     }
-    public struct BarrierMask: OptionSet {
+    public struct BarrierMask: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -508,6 +508,14 @@ open class RenderingDevice: Object {
         public static let transfer: Self = .init(rawValue: 4)
         public static let allBarriers: Self = .init(rawValue: 7)
         public static let noBarrier: Self = .init(rawValue: 8)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Raster", 1),
+            ("Compute", 2),
+            ("Transfer", 4),
+            ("All Barriers", 7),
+            ("No Barrier", 8),]
+        }
     }
     public enum TextureType: UInt32, GodotEnum {
         case textureType1d = 0
@@ -551,7 +559,7 @@ open class RenderingDevice: Object {
             ("Max", 7),]
         }
     }
-    public struct TextureUsageBits: OptionSet {
+    public struct TextureUsageBits: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -568,6 +576,19 @@ open class RenderingDevice: Object {
         public static let canCopyFromBit: Self = .init(rawValue: 128)
         public static let canCopyToBit: Self = .init(rawValue: 256)
         public static let inputAttachmentBit: Self = .init(rawValue: 512)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Sampling Bit", 1),
+            ("Color Attachment Bit", 2),
+            ("Depth Stencil Attachment Bit", 4),
+            ("Storage Bit", 8),
+            ("Storage Atomic Bit", 16),
+            ("Cpu Read Bit", 32),
+            ("Can Update Bit", 64),
+            ("Can Copy From Bit", 128),
+            ("Can Copy To Bit", 256),
+            ("Input Attachment Bit", 512),]
+        }
     }
     public enum TextureSwizzle: UInt32, GodotEnum {
         case identity = 0
@@ -664,7 +685,7 @@ open class RenderingDevice: Object {
             ("Uint32", 1),]
         }
     }
-    public struct StorageBufferUsage: OptionSet {
+    public struct StorageBufferUsage: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -672,6 +693,10 @@ open class RenderingDevice: Object {
         }
 
         public static let storageBufferUsageDispatchIndirect: Self = .init(rawValue: 1)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Storage Buffer Usage Dispatch Indirect", 1),]
+        }
     }
     public enum UniformType: UInt32, GodotEnum {
         case sampler = 0
@@ -896,7 +921,7 @@ open class RenderingDevice: Object {
             ("Max", 5),]
         }
     }
-    public struct PipelineDynamicStateFlags: OptionSet {
+    public struct PipelineDynamicStateFlags: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -910,6 +935,16 @@ open class RenderingDevice: Object {
         public static let stencilCompareMask: Self = .init(rawValue: 16)
         public static let stencilWriteMask: Self = .init(rawValue: 32)
         public static let stencilReference: Self = .init(rawValue: 64)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Line Width", 1),
+            ("Depth Bias", 2),
+            ("Blend Constants", 4),
+            ("Depth Bounds", 8),
+            ("Stencil Compare Mask", 16),
+            ("Stencil Write Mask", 32),
+            ("Stencil Reference", 64),]
+        }
     }
     public enum InitialAction: UInt32, GodotEnum {
         case clear = 0

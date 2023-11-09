@@ -62,7 +62,7 @@ struct GodotEnum: Decodable {
     }
     
     private func enumSyntax<T>(forType type: T.Type) throws -> EnumDeclSyntax
-    where T : FixedWidthInteger {
+    where T : FixedWidthInteger, T : ExpressibleByLiteralSyntax {
         let (name, temporaryCases) = self.nameAndCases(forType: type)
         
         var alreadyAddedCases = [T : String]()
@@ -80,7 +80,10 @@ struct GodotEnum: Decodable {
                 caseStrings.append("case \(`case`.name) = \(`case`.value)")
                 alreadyAddedCases[`case`.value] = `case`.name
                 
-                hintNamesAndValues.append((NamingConvention.camel.makeSentence(`case`.name), `case`.value))
+                hintNamesAndValues.append((
+                    NamingConvention.camel.makeSentence(`case`.name),
+                    `case`.value
+                ))
             }
         }
         
@@ -90,7 +93,7 @@ struct GodotEnum: Decodable {
             try FunctionDeclSyntax("public static func hintValues() -> [(name: String, value: RawValue)]") {
                 "["
                 for hintNameAndValue in hintNamesAndValues {
-                    "\(raw: "(\"\(hintNameAndValue.0)\", \(hintNameAndValue.1)),")"
+                    "(\(literal: hintNameAndValue.0), \(literal: hintNameAndValue.1)),"
                 }
                 "]"
             }
@@ -99,14 +102,15 @@ struct GodotEnum: Decodable {
     
     private func optionSetSyntax<T>(
         forType type: T.Type
-    ) throws -> StructDeclSyntax where T : FixedWidthInteger {
+    ) throws -> StructDeclSyntax
+    where T : FixedWidthInteger, T : ExpressibleByLiteralSyntax {
         let (name, cases) = self.nameAndCases(forType: type)
         
         let caseStrings = cases.map {
             "public static let \($0.name): Self = .init(rawValue: \($0.value))"
         }
         
-        return try StructDeclSyntax("public struct \(raw: name): OptionSet") {
+        return try StructDeclSyntax("public struct \(raw: name): GodotOptionSet") {
             """
             public let rawValue: \(raw: T.self)
             
@@ -116,6 +120,16 @@ struct GodotEnum: Decodable {
             
             \(raw: caseStrings.joined(separator: "\n"))
             """
+            
+            try FunctionDeclSyntax("public static func hintValues() -> [(name: String, value: RawValue)]") {
+                "["
+                for `case` in cases {
+                    let translatedName = NamingConvention.camel.makeSentence(`case`.name)
+                    
+                    "(\(literal: translatedName), \(literal: `case`.value)),"
+                }
+                "]"
+            }
         }
     }
 }

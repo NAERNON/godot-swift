@@ -105,7 +105,7 @@ open class Control: CanvasItem {
             ("Keep Size", 3),]
         }
     }
-    public struct SizeFlags: OptionSet {
+    public struct SizeFlags: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -118,6 +118,15 @@ open class Control: CanvasItem {
         public static let expandFill: Self = .init(rawValue: 3)
         public static let shrinkCenter: Self = .init(rawValue: 4)
         public static let shrinkEnd: Self = .init(rawValue: 8)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Shrink Begin", 0),
+            ("Fill", 1),
+            ("Expand", 2),
+            ("Expand Fill", 3),
+            ("Shrink Center", 4),
+            ("Shrink End", 8),]
+        }
     }
     public enum MouseFilter: UInt32, GodotEnum {
         case stop = 0

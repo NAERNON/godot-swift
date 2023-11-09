@@ -23,7 +23,7 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         let cases = optionSetCases(for: structDecl, in: context)
         
         let accessModifier = structDecl.effectiveAccessModifier(minimum: .fileprivate)
-        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Swift.OptionSet, Godot.VariantConvertible") {
+        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.GodotOptionSet, Godot.VariantConvertible") {
             """
             \(accessModifier) static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
@@ -42,16 +42,26 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
             
             try FunctionDeclSyntax("fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)]") {
                 "["
+                let snakeOptionSetName = structDecl.name.trimmedDescription
+                    .translated(from: .pascal, to: .snake)
+                
                 for caseName in cases {
-                    let snakeEnumName = structDecl.name.trimmedDescription
-                        .translated(from: .pascal, to: .snake)
-                    
                     let snakeCaseName = caseName
                         .translated(from: .pascal, to: .snake)
                     
-                    let translatedCaseName = (snakeEnumName + "_" + snakeCaseName).uppercased()
+                    let translatedCaseName = (snakeOptionSetName + "_" + snakeCaseName).uppercased()
                     
                     "(\(literal: translatedCaseName), Self.\(raw: caseName).rawValue),"
+                }
+                "]"
+            }
+            
+            try FunctionDeclSyntax("\(accessModifier) static func hintValues() -> [(name: Swift.String, value: RawValue)]") {
+                "["
+                for caseName in cases {
+                    let translatedName = NamingConvention.camel.makeSentence(caseName)
+                    
+                    "(\(literal: translatedName), Self.\(raw: caseName).rawValue),"
                 }
                 "]"
             }

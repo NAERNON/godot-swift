@@ -516,7 +516,7 @@ public enum Key: UInt32, GodotEnum {
     }
 }
 
-public struct KeyModifierMask: OptionSet {
+public struct KeyModifierMask: GodotOptionSet {
     public let rawValue: UInt32
 
     public init(rawValue: UInt32) {
@@ -532,6 +532,18 @@ public struct KeyModifierMask: OptionSet {
     public static let maskCtrl: Self = .init(rawValue: 268435456)
     public static let maskKpad: Self = .init(rawValue: 536870912)
     public static let maskGroupSwitch: Self = .init(rawValue: 1073741824)
+    public static func hintValues() -> [(name: String, value: RawValue)] {
+        [
+        ("Code Mask", 8388607),
+        ("Modifier Mask", 532676608),
+        ("Mask Cmd Or Ctrl", 16777216),
+        ("Mask Shift", 33554432),
+        ("Mask Alt", 67108864),
+        ("Mask Meta", 134217728),
+        ("Mask Ctrl", 268435456),
+        ("Mask Kpad", 536870912),
+        ("Mask Group Switch", 1073741824),]
+    }
 }
 
 public enum MouseButton: UInt32, GodotEnum {
@@ -560,7 +572,7 @@ public enum MouseButton: UInt32, GodotEnum {
     }
 }
 
-public struct MouseButtonMask: OptionSet {
+public struct MouseButtonMask: GodotOptionSet {
     public let rawValue: UInt32
 
     public init(rawValue: UInt32) {
@@ -572,6 +584,14 @@ public struct MouseButtonMask: OptionSet {
     public static let middle: Self = .init(rawValue: 4)
     public static let mbXbutton1: Self = .init(rawValue: 128)
     public static let mbXbutton2: Self = .init(rawValue: 256)
+    public static func hintValues() -> [(name: String, value: RawValue)] {
+        [
+        ("Left", 1),
+        ("Right", 2),
+        ("Middle", 4),
+        ("Mb Xbutton1", 128),
+        ("Mb Xbutton2", 256),]
+    }
 }
 
 public enum JoyButton: Int32, GodotEnum {
@@ -884,7 +904,7 @@ public enum PropertyHint: UInt32, GodotEnum {
     }
 }
 
-public struct PropertyUsageFlags: OptionSet {
+public struct PropertyUsageFlags: GodotOptionSet {
     public let rawValue: UInt32
 
     public init(rawValue: UInt32) {
@@ -923,9 +943,44 @@ public struct PropertyUsageFlags: OptionSet {
     public static let secret: Self = .init(rawValue: 536870912)
     public static let `default`: Self = .init(rawValue: 6)
     public static let noEditor: Self = .init(rawValue: 2)
+    public static func hintValues() -> [(name: String, value: RawValue)] {
+        [
+        ("None", 0),
+        ("Storage", 2),
+        ("Editor", 4),
+        ("`internal`", 8),
+        ("Checkable", 16),
+        ("Checked", 32),
+        ("Group", 64),
+        ("Category", 128),
+        ("Subgroup", 256),
+        ("Class Is Bitfield", 512),
+        ("No Instance State", 1024),
+        ("Restart If Changed", 2048),
+        ("Script Variable", 4096),
+        ("Store If Null", 8192),
+        ("Update All If Modified", 16384),
+        ("Script Default Value", 32768),
+        ("Class Is Enum", 65536),
+        ("Nil Is Variant", 131072),
+        ("Array", 262144),
+        ("Always Duplicate", 524288),
+        ("Never Duplicate", 1048576),
+        ("High End Gfx", 2097152),
+        ("Node Path From Scene Root", 4194304),
+        ("Resource Not Persistent", 8388608),
+        ("Keying Increments", 16777216),
+        ("Deferred Set Resource", 33554432),
+        ("Editor Instantiate Object", 67108864),
+        ("Editor Basic Setting", 134217728),
+        ("Read Only", 268435456),
+        ("Secret", 536870912),
+        ("`default`", 6),
+        ("No Editor", 2),]
+    }
 }
 
-public struct MethodFlags: OptionSet {
+public struct MethodFlags: GodotOptionSet {
     public let rawValue: UInt32
 
     public init(rawValue: UInt32) {
@@ -940,5 +995,16 @@ public struct MethodFlags: OptionSet {
     public static let flagStatic: Self = .init(rawValue: 32)
     public static let flagObjectCore: Self = .init(rawValue: 64)
     public static let flagsDefault: Self = .init(rawValue: 1)
+    public static func hintValues() -> [(name: String, value: RawValue)] {
+        [
+        ("Flag Normal", 1),
+        ("Flag Editor", 2),
+        ("Flag Const", 4),
+        ("Flag Virtual", 8),
+        ("Flag Vararg", 16),
+        ("Flag Static", 32),
+        ("Flag Object Core", 64),
+        ("Flags Default", 1),]
+    }
 }
 

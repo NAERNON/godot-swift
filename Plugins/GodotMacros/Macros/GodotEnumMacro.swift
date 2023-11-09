@@ -57,6 +57,8 @@ public enum GodotEnumMacro: ExtensionMacro {
             return []
         }
         
+        let cases = enumCases(for: enumDecl)
+        
         let accessModifier = enumDecl.effectiveAccessModifier(minimum: .fileprivate)
         let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.VariantConvertible, Godot.GodotEnum") {
             """
@@ -93,7 +95,7 @@ public enum GodotEnumMacro: ExtensionMacro {
                 let snakeEnumName = enumDecl.name.trimmedDescription
                     .translated(from: .pascal, to: .snake)
                 
-                for caseName in enumCases(for: enumDecl) {
+                for caseName in cases {
                     let snakeCaseName = caseName
                         .translated(from: .pascal, to: .snake)
                     
@@ -106,7 +108,7 @@ public enum GodotEnumMacro: ExtensionMacro {
             
             try FunctionDeclSyntax("\(accessModifier) static func hintValues() -> [(name: Swift.String, value: RawValue)]") {
                 "["
-                for caseName in enumCases(for: enumDecl) {
+                for caseName in cases {
                     let translatedName = NamingConvention.camel.makeSentence(caseName)
                     
                     "(\(literal: translatedName), Self.\(raw: caseName).rawValue),"

@@ -55,7 +55,7 @@ open class TextServer: RefCounted {
             ("Vertical", 1),]
         }
     }
-    public struct JustificationFlag: OptionSet {
+    public struct JustificationFlag: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -71,6 +71,18 @@ open class TextServer: RefCounted {
         public static let skipLastLine: Self = .init(rawValue: 32)
         public static let skipLastLineWithVisibleChars: Self = .init(rawValue: 64)
         public static let doNotSkipSingleLine: Self = .init(rawValue: 128)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Kashida", 1),
+            ("Word Bound", 2),
+            ("Trim Edge Spaces", 4),
+            ("After Last Tab", 8),
+            ("Constrain Ellipsis", 16),
+            ("Skip Last Line", 32),
+            ("Skip Last Line With Visible Chars", 64),
+            ("Do Not Skip Single Line", 128),]
+        }
     }
     public enum AutowrapMode: UInt32, GodotEnum {
         case off = 0
@@ -85,7 +97,7 @@ open class TextServer: RefCounted {
             ("Word Smart", 3),]
         }
     }
-    public struct LineBreakFlag: OptionSet {
+    public struct LineBreakFlag: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -98,6 +110,15 @@ open class TextServer: RefCounted {
         public static let graphemeBound: Self = .init(rawValue: 4)
         public static let adaptive: Self = .init(rawValue: 8)
         public static let trimEdgeSpaces: Self = .init(rawValue: 16)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Mandatory", 1),
+            ("Word Bound", 2),
+            ("Grapheme Bound", 4),
+            ("Adaptive", 8),
+            ("Trim Edge Spaces", 16),]
+        }
     }
     public enum VisibleCharactersBehavior: UInt32, GodotEnum {
         case charsBeforeShaping = 0
@@ -129,7 +150,7 @@ open class TextServer: RefCounted {
             ("Trim Word Ellipsis", 4),]
         }
     }
-    public struct TextOverrunFlag: OptionSet {
+    public struct TextOverrunFlag: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -142,8 +163,17 @@ open class TextServer: RefCounted {
         public static let addEllipsis: Self = .init(rawValue: 4)
         public static let enforceEllipsis: Self = .init(rawValue: 8)
         public static let justificationAware: Self = .init(rawValue: 16)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("No Trim", 0),
+            ("Trim", 1),
+            ("Trim Word Only", 2),
+            ("Add Ellipsis", 4),
+            ("Enforce Ellipsis", 8),
+            ("Justification Aware", 16),]
+        }
     }
-    public struct GraphemeFlag: OptionSet {
+    public struct GraphemeFlag: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -163,6 +193,22 @@ open class TextServer: RefCounted {
         public static let connected: Self = .init(rawValue: 1024)
         public static let safeToInsertTatweel: Self = .init(rawValue: 2048)
         public static let embeddedObject: Self = .init(rawValue: 4096)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Valid", 1),
+            ("Rtl", 2),
+            ("Virtual", 4),
+            ("Space", 8),
+            ("Break Hard", 16),
+            ("Break Soft", 32),
+            ("Tab", 64),
+            ("Elongation", 128),
+            ("Punctuation", 256),
+            ("Underscore", 512),
+            ("Connected", 1024),
+            ("Safe To Insert Tatweel", 2048),
+            ("Embedded Object", 4096),]
+        }
     }
     public enum Hinting: UInt32, GodotEnum {
         case none = 0
@@ -253,7 +299,7 @@ open class TextServer: RefCounted {
             ("Max", 4),]
         }
     }
-    public struct FontStyle: OptionSet {
+    public struct FontStyle: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -263,6 +309,12 @@ open class TextServer: RefCounted {
         public static let bold: Self = .init(rawValue: 1)
         public static let italic: Self = .init(rawValue: 2)
         public static let fixedWidth: Self = .init(rawValue: 4)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Bold", 1),
+            ("Italic", 2),
+            ("Fixed Width", 4),]
+        }
     }
     public enum StructuredTextParser: UInt32, GodotEnum {
         case `default` = 0

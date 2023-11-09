@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ResourceSaver: Object {
-    public struct SaverFlags: OptionSet {
+    public struct SaverFlags: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -20,6 +20,17 @@ open class ResourceSaver: Object {
         public static let saveBigEndian: Self = .init(rawValue: 16)
         public static let compress: Self = .init(rawValue: 32)
         public static let replaceSubresourcePaths: Self = .init(rawValue: 64)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Relative Paths", 1),
+            ("Bundle Resources", 2),
+            ("Change Path", 4),
+            ("Omit Editor Properties", 8),
+            ("Save Big Endian", 16),
+            ("Compress", 32),
+            ("Replace Subresource Paths", 64),]
+        }
     }
 
     private static var __method_binding_save: GDExtensionMethodBindPtr = {

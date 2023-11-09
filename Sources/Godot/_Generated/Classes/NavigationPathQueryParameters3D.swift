@@ -21,7 +21,7 @@ open class NavigationPathQueryParameters3D: RefCounted {
             ("Edgecentered", 1),]
         }
     }
-    public struct PathMetadataFlags: OptionSet {
+    public struct PathMetadataFlags: GodotOptionSet {
         public let rawValue: UInt32
 
         public init(rawValue: UInt32) {
@@ -33,6 +33,14 @@ open class NavigationPathQueryParameters3D: RefCounted {
         public static let rids: Self = .init(rawValue: 2)
         public static let owners: Self = .init(rawValue: 4)
         public static let all: Self = .init(rawValue: 7)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("None", 0),
+            ("Types", 1),
+            ("Rids", 2),
+            ("Owners", 4),
+            ("All", 7),]
+        }
     }
 
     private static var __method_binding_set_pathfinding_algorithm: GDExtensionMethodBindPtr = {

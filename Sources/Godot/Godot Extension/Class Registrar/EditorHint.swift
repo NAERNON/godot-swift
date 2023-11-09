@@ -161,6 +161,39 @@ public struct EditorHint {
             string: string
         )
     }
+    
+    /// Hints that an integer property is a bitmask,
+    /// where the list is provided by a Godot option set.
+    public static func optionSet<OptionSet>(
+        _ optionSetType: OptionSet.Type
+    ) -> EditorHint
+    where OptionSet : GodotOptionSet,
+          OptionSet.RawValue : FixedWidthInteger
+    {
+        var valueToName = [OptionSet.RawValue : String]()
+        for (name, value) in optionSetType.hintValues() {
+            if valueToName[value] == nil {
+                valueToName[value] = name
+            }
+        }
+        
+        guard let (max, _) = valueToName.max(by: { lhs, rhs in lhs.key < rhs.key }) else {
+            return .none
+        }
+        
+        var string = String()
+        var powerOfTwo: OptionSet.RawValue = 1
+        while powerOfTwo <= max {
+            string.append((valueToName[powerOfTwo] ?? "") + ",")
+            
+            powerOfTwo *= 2
+        }
+        
+        return self.init(
+            hint: .flags,
+            string: GodotString(swiftString: string)
+        )
+    }
 }
 
 // MARK: - Macro
