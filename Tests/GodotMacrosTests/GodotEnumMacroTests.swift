@@ -49,10 +49,10 @@ final class GodotEnumMacroTests: XCTestCase {
             
                     return value
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
-                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
             }
@@ -102,10 +102,10 @@ final class GodotEnumMacroTests: XCTestCase {
             
                     return value
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
-                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
             }
@@ -155,10 +155,10 @@ final class GodotEnumMacroTests: XCTestCase {
             
                     return value
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
-                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
             }
@@ -208,10 +208,10 @@ final class GodotEnumMacroTests: XCTestCase {
             
                     return value
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
-                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
             }
@@ -261,10 +261,10 @@ final class GodotEnumMacroTests: XCTestCase {
             
                     return value
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
-                public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
             }
@@ -324,15 +324,6 @@ final class GodotEnumMacroTests: XCTestCase {
             
                     return value
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
-                    [
-                    ("SOME_ENUM_SOME_VALUE", Self.someValue.rawValue),
-                    ("SOME_ENUM_SOME_VALUE2", Self.someValue2.rawValue),
-                    ("SOME_ENUM_SOME_VALUE3", Self.someValue3.rawValue),
-                    ("SOME_ENUM_SOME_VALUE4", Self.someValue4.rawValue),
-                    ("SOME_ENUM_ANOTHER", Self.`another`.rawValue),
-                    ("SOME_ENUM_ANOTHER_GOOD_VALUE", Self.anotherGOODValue.rawValue),]
-                }
                 public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     [
                     ("Some Value", Self.someValue.rawValue),
@@ -341,6 +332,15 @@ final class GodotEnumMacroTests: XCTestCase {
                     ("Some Value4", Self.someValue4.rawValue),
                     ("Another", Self.`another`.rawValue),
                     ("Another GOOD Value", Self.anotherGOODValue.rawValue),]
+                }
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                    [
+                    ("SOME_ENUM_SOME_VALUE", Self.someValue.rawValue),
+                    ("SOME_ENUM_SOME_VALUE2", Self.someValue2.rawValue),
+                    ("SOME_ENUM_SOME_VALUE3", Self.someValue3.rawValue),
+                    ("SOME_ENUM_SOME_VALUE4", Self.someValue4.rawValue),
+                    ("SOME_ENUM_ANOTHER", Self.`another`.rawValue),
+                    ("SOME_ENUM_ANOTHER_GOOD_VALUE", Self.anotherGOODValue.rawValue),]
                 }
             }
             """,

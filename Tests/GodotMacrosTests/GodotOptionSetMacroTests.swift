@@ -44,10 +44,10 @@ final class GodotOptionSetMacroTests: XCTestCase {
                 fileprivate static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
                     Self (rawValue: try RawValue.fromVariant(variant))
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
-                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
             }
@@ -92,10 +92,10 @@ final class GodotOptionSetMacroTests: XCTestCase {
                 fileprivate static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
                     Self (rawValue: try RawValue.fromVariant(variant))
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
-                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
             }
@@ -140,10 +140,10 @@ final class GodotOptionSetMacroTests: XCTestCase {
                 internal static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
                     Self (rawValue: try RawValue.fromVariant(variant))
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
-                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
             }
@@ -188,10 +188,10 @@ final class GodotOptionSetMacroTests: XCTestCase {
                 internal static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
                     Self (rawValue: try RawValue.fromVariant(variant))
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
-                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
             }
@@ -236,10 +236,10 @@ final class GodotOptionSetMacroTests: XCTestCase {
                 public static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
                     Self (rawValue: try RawValue.fromVariant(variant))
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
-                public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
                     []
                 }
             }
@@ -304,19 +304,19 @@ final class GodotOptionSetMacroTests: XCTestCase {
                 public static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
                     Self (rawValue: try RawValue.fromVariant(variant))
                 }
-                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
-                    [
-                    ("SOME_OPTION_SET_VALUE", Self.value.rawValue),
-                    ("SOME_OPTION_SET_VALUE2", Self.value2.rawValue),
-                    ("SOME_OPTION_SET_ANOTHER_VALUE", Self.`anotherValue`.rawValue),
-                    ("SOME_OPTION_SET_ANOTHER_VALUE2", Self.anotherValue2.rawValue),]
-                }
                 public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     [
                     ("Value", Self.value.rawValue),
                     ("Value2", Self.value2.rawValue),
                     ("Another Value", Self.`anotherValue`.rawValue),
                     ("Another Value2", Self.anotherValue2.rawValue),]
+                }
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                    [
+                    ("SOME_OPTION_SET_VALUE", Self.value.rawValue),
+                    ("SOME_OPTION_SET_VALUE2", Self.value2.rawValue),
+                    ("SOME_OPTION_SET_ANOTHER_VALUE", Self.`anotherValue`.rawValue),
+                    ("SOME_OPTION_SET_ANOTHER_VALUE2", Self.anotherValue2.rawValue),]
                 }
             }
             """,

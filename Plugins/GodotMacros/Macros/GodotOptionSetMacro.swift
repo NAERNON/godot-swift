@@ -40,6 +40,16 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
             }
             """
             
+            try FunctionDeclSyntax("\(accessModifier) static func hintValues() -> [(name: Swift.String, value: RawValue)]") {
+                "["
+                for caseName in cases {
+                    let translatedName = NamingConvention.camel.makeSentence(caseName)
+                    
+                    "(\(literal: translatedName), Self.\(raw: caseName).rawValue),"
+                }
+                "]"
+            }
+            
             try FunctionDeclSyntax("fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)]") {
                 "["
                 let snakeOptionSetName = structDecl.name.trimmedDescription
@@ -52,16 +62,6 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
                     let translatedCaseName = (snakeOptionSetName + "_" + snakeCaseName).uppercased()
                     
                     "(\(literal: translatedCaseName), Self.\(raw: caseName).rawValue),"
-                }
-                "]"
-            }
-            
-            try FunctionDeclSyntax("\(accessModifier) static func hintValues() -> [(name: Swift.String, value: RawValue)]") {
-                "["
-                for caseName in cases {
-                    let translatedName = NamingConvention.camel.makeSentence(caseName)
-                    
-                    "(\(literal: translatedName), Self.\(raw: caseName).rawValue),"
                 }
                 "]"
             }
