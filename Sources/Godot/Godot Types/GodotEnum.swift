@@ -3,7 +3,7 @@
 ///
 /// Do not declare `GodotEnum` conformances yourself.
 /// Use ``GodotEnum()`` macro instead.
-public protocol GodotEnum: RawRepresentable {
+public protocol GodotEnum: RawRepresentable where RawValue : FixedWidthInteger {
     /// Returns the name and values used for hinting
     /// in the Godot editor.
     static func hintValues() -> [(name: String, value: RawValue)]

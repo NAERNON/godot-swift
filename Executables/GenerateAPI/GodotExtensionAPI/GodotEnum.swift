@@ -67,7 +67,6 @@ struct GodotEnum: Decodable {
         
         var alreadyAddedCases = [T : String]()
         var caseStrings = [String]()
-        var hintNamesAndValues = [(String, T)]()
         
         for `case` in temporaryCases {
             // Sometimes, given enums don't have unique values, and two cases can have the same value.
@@ -79,24 +78,13 @@ struct GodotEnum: Decodable {
                 // The value is unique.
                 caseStrings.append("case \(`case`.name) = \(`case`.value)")
                 alreadyAddedCases[`case`.value] = `case`.name
-                
-                hintNamesAndValues.append((
-                    NamingConvention.camel.makeSentence(`case`.name),
-                    `case`.value
-                ))
             }
         }
         
         return try EnumDeclSyntax("public enum \(raw: name): \(raw: T.self), GodotEnum") {
             "\(raw: caseStrings.joined(separator: "\n"))"
             
-            try FunctionDeclSyntax("public static func hintValues() -> [(name: String, value: RawValue)]") {
-                "["
-                for hintNameAndValue in hintNamesAndValues {
-                    "(\(literal: hintNameAndValue.0), \(literal: hintNameAndValue.1)),"
-                }
-                "]"
-            }
+            try hintValuesFunctionSyntax(forType: type)
         }
     }
     
@@ -121,15 +109,29 @@ struct GodotEnum: Decodable {
             \(raw: caseStrings.joined(separator: "\n"))
             """
             
-            try FunctionDeclSyntax("public static func hintValues() -> [(name: String, value: RawValue)]") {
-                "["
-                for `case` in cases {
-                    let translatedName = NamingConvention.camel.makeSentence(`case`.name)
-                    
-                    "(\(literal: translatedName), \(literal: `case`.value)),"
-                }
-                "]"
+            try hintValuesFunctionSyntax(forType: type)
+        }
+    }
+    
+    private func hintValuesFunctionSyntax<T>(
+        forType type: T.Type
+    ) throws -> FunctionDeclSyntax
+    where T : FixedWidthInteger, T : ExpressibleByLiteralSyntax
+    {
+        var hintNamesAndValues = [T : String]()
+        
+        for `case` in self.nameAndCases(forType: type).cases
+        where hintNamesAndValues[`case`.value] == nil
+        {
+            hintNamesAndValues[`case`.value] = NamingConvention.camel.makeSentence(`case`.name)
+        }
+        
+        return try FunctionDeclSyntax("public static func hintValues() -> [(name: String, value: RawValue)]") {
+            "["
+            for (value, name) in hintNamesAndValues.sorted(by: { $0.key < $1.key }) {
+                "(\(literal: name), \(literal: value)),"
             }
+            "]"
         }
     }
 }

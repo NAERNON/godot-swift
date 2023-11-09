@@ -36,10 +36,10 @@ open class ParticleProcessMaterial: Material {
             ("Hue Variation", 9),
             ("Anim Speed", 10),
             ("Anim Offset", 11),
-            ("Max", 15),
+            ("Turb Influence Over Life", 12),
             ("Turb Vel Influence", 13),
             ("Turb Init Displacement", 14),
-            ("Turb Influence Over Life", 12),]
+            ("Max", 15),]
         }
     }
     public enum ParticleFlags: UInt32, GodotEnum {

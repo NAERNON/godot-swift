@@ -179,10 +179,10 @@ open class Control: CanvasItem {
         case rtl = 2
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Inherited", 3),
             ("Auto", 0),
             ("Ltr", 1),
-            ("Rtl", 2),]
+            ("Rtl", 2),
+            ("Inherited", 3),]
         }
     }
 

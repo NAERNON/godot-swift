@@ -68,8 +68,8 @@ open class Generic6DOFJoint3D: Joint3D {
             [
             ("Enable Linear Limit", 0),
             ("Enable Angular Limit", 1),
-            ("Enable Linear Spring", 3),
             ("Enable Angular Spring", 2),
+            ("Enable Linear Spring", 3),
             ("Enable Motor", 4),
             ("Enable Linear Motor", 5),
             ("Max", 6),]

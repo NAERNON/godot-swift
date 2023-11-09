@@ -14,10 +14,10 @@ open class JSONRPC: Object {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Parse Error", -32700),
-            ("Invalid Request", -32600),
-            ("Method Not Found", -32601),
+            ("Internal Error", -32603),
             ("Invalid Params", -32602),
-            ("Internal Error", -32603),]
+            ("Method Not Found", -32601),
+            ("Invalid Request", -32600),]
         }
     }
 

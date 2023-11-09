@@ -118,9 +118,8 @@ public struct EditorHint {
         _ enumType: Enum.Type
     ) -> EditorHint where Enum : GodotEnum {
         let string = enumType.hintValues()
-            .map { (name, value) in
-                "\(name):\(value)"
-            }
+            .sorted { $0.value < $1.value }
+            .map { (name, value) in "\(name):\(value)" }
             .joined(separator: ",")
         
         return .init(
@@ -166,10 +165,7 @@ public struct EditorHint {
     /// where the list is provided by a Godot option set.
     public static func optionSet<OptionSet>(
         _ optionSetType: OptionSet.Type
-    ) -> EditorHint
-    where OptionSet : GodotOptionSet,
-          OptionSet.RawValue : FixedWidthInteger
-    {
+    ) -> EditorHint where OptionSet : GodotOptionSet {
         var valueToName = [OptionSet.RawValue : String]()
         for (name, value) in optionSetType.hintValues() {
             if valueToName[value] == nil {

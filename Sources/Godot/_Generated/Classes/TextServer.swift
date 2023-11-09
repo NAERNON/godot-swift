@@ -234,8 +234,8 @@ open class TextServer: RefCounted {
             ("Auto", 1),
             ("One Half", 2),
             ("One Quarter", 3),
-            ("One Half Max Size", 20),
-            ("One Quarter Max Size", 16),]
+            ("One Quarter Max Size", 16),
+            ("One Half Max Size", 20),]
         }
     }
     public enum Feature: UInt32, GodotEnum {
@@ -279,8 +279,8 @@ open class TextServer: RefCounted {
         case offCubic = 2
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("On", 1),
             ("Off Conic", 0),
+            ("On", 1),
             ("Off Cubic", 2),]
         }
     }

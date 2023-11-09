@@ -3,7 +3,7 @@
 ///
 /// Do not declare `GodotOptionSet` conformances yourself.
 /// Use ``GodotOptionSet()`` macro instead.
-public protocol GodotOptionSet: OptionSet {
+public protocol GodotOptionSet: OptionSet where RawValue : FixedWidthInteger {
     /// Returns the name and values used for hinting
     /// in the Godot editor.
     static func hintValues() -> [(name: String, value: RawValue)]

@@ -11,9 +11,9 @@ open class EditorUndoRedoManager: Object {
         case invalidHistory = -99
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Global History", 0),
+            ("Invalid History", -99),
             ("Remote History", -9),
-            ("Invalid History", -99),]
+            ("Global History", 0),]
         }
     }
 

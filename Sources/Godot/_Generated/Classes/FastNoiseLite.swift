@@ -14,12 +14,12 @@ open class FastNoiseLite: Noise {
         case simplexSmooth = 1
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Value", 5),
-            ("Value Cubic", 4),
-            ("Perlin", 3),
-            ("Cellular", 2),
             ("Simplex", 0),
-            ("Simplex Smooth", 1),]
+            ("Simplex Smooth", 1),
+            ("Cellular", 2),
+            ("Perlin", 3),
+            ("Value Cubic", 4),
+            ("Value", 5),]
         }
     }
     public enum FractalType: UInt32, GodotEnum {
