@@ -25,7 +25,7 @@ open class GeometryInstance3D: VisualInstance3D {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
-            ("`static`", 1),
+            ("Static", 1),
             ("Dynamic", 2),]
         }
     }
@@ -51,7 +51,7 @@ open class GeometryInstance3D: VisualInstance3D {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
-            ("`self`", 1),
+            ("Self", 1),
             ("Dependencies", 2),]
         }
     }

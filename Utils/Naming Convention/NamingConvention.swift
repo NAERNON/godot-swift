@@ -18,7 +18,7 @@ public extension StringProtocol {
     ) -> String {
         guard source != destination else { return String(self) }
         
-        return destination.recompose(source.decompose(string: String(self)))
+        return destination.recompose(source.decompose(string: removeBackticks(self)))
     }
 }
 
@@ -28,7 +28,7 @@ public extension NamingConvention {
     /// If the camel String was "someValueOutput", the result
     /// would be "Some Value Output".
     func makeSentence(_ sentence: String) -> String {
-        let decomposed = decompose(string: sentence)
+        let decomposed = decompose(string: removeBackticks(sentence))
         
         return decomposed.map { name in
             guard !name.isEmpty else {

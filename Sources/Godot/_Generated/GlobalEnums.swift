@@ -709,7 +709,7 @@ public enum MIDIMessage: UInt32, GodotEnum {
         ("Tune Request", 246),
         ("Timing Clock", 248),
         ("Start", 250),
-        ("`continue`", 251),
+        ("Continue", 251),
         ("Stop", 252),
         ("Active Sensing", 254),
         ("System Reset", 255),]
@@ -864,7 +864,7 @@ public enum PropertyHint: UInt32, GodotEnum {
         [
         ("None", 0),
         ("Range", 1),
-        ("`enum`", 2),
+        ("Enum", 2),
         ("Enum Suggestion", 3),
         ("Exp Easing", 4),
         ("Link", 5),
@@ -948,7 +948,7 @@ public struct PropertyUsageFlags: GodotOptionSet {
         ("None", 0),
         ("Storage", 2),
         ("Editor", 4),
-        ("`internal`", 8),
+        ("Internal", 8),
         ("Checkable", 16),
         ("Checked", 32),
         ("Group", 64),
@@ -975,7 +975,7 @@ public struct PropertyUsageFlags: GodotOptionSet {
         ("Editor Basic Setting", 134217728),
         ("Read Only", 268435456),
         ("Secret", 536870912),
-        ("`default`", 6),
+        ("Default", 6),
         ("No Editor", 2),]
     }
 }

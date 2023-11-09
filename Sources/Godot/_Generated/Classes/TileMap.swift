@@ -11,7 +11,7 @@ open class TileMap: Node2D {
         case forceShow = 1
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`default`", 0),
+            ("Default", 0),
             ("Force Hide", 2),
             ("Force Show", 1),]
         }

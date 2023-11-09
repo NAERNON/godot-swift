@@ -23,7 +23,7 @@ open class GradientTexture2D: Texture2D {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("None", 0),
-            ("`repeat`", 1),
+            ("Repeat", 1),
             ("Mirror", 2),]
         }
     }

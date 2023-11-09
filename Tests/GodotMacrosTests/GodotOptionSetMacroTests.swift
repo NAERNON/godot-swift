@@ -30,7 +30,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
                     self.rawValue = rawValue
                 }}
             
-            extension SomeOptionSet: Swift.OptionSet, Godot.VariantConvertible {
+            extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantConvertible {
                 fileprivate static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 fileprivate func makeVariant() -> Godot.Variant.Storage {
@@ -45,6 +45,9 @@ final class GodotOptionSetMacroTests: XCTestCase {
                     Self (rawValue: try RawValue.fromVariant(variant))
                 }
                 fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                    []
+                }
+                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
             }
@@ -75,7 +78,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
                     self.rawValue = rawValue
                 }}
             
-            extension SomeOptionSet: Swift.OptionSet, Godot.VariantConvertible {
+            extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantConvertible {
                 fileprivate static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 fileprivate func makeVariant() -> Godot.Variant.Storage {
@@ -90,6 +93,9 @@ final class GodotOptionSetMacroTests: XCTestCase {
                     Self (rawValue: try RawValue.fromVariant(variant))
                 }
                 fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                    []
+                }
+                fileprivate static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
             }
@@ -120,7 +126,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
                     self.rawValue = rawValue
                 }}
             
-            extension SomeOptionSet: Swift.OptionSet, Godot.VariantConvertible {
+            extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantConvertible {
                 internal static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 internal func makeVariant() -> Godot.Variant.Storage {
@@ -135,6 +141,9 @@ final class GodotOptionSetMacroTests: XCTestCase {
                     Self (rawValue: try RawValue.fromVariant(variant))
                 }
                 fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                    []
+                }
+                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
             }
@@ -165,7 +174,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
                     self.rawValue = rawValue
                 }}
             
-            extension SomeOptionSet: Swift.OptionSet, Godot.VariantConvertible {
+            extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantConvertible {
                 internal static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 internal func makeVariant() -> Godot.Variant.Storage {
@@ -180,6 +189,9 @@ final class GodotOptionSetMacroTests: XCTestCase {
                     Self (rawValue: try RawValue.fromVariant(variant))
                 }
                 fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                    []
+                }
+                internal static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
             }
@@ -210,7 +222,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
                     self.rawValue = rawValue
                 }}
             
-            extension SomeOptionSet: Swift.OptionSet, Godot.VariantConvertible {
+            extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantConvertible {
                 public static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 public func makeVariant() -> Godot.Variant.Storage {
@@ -225,6 +237,9 @@ final class GodotOptionSetMacroTests: XCTestCase {
                     Self (rawValue: try RawValue.fromVariant(variant))
                 }
                 fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                    []
+                }
+                public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
                     []
                 }
             }
@@ -245,7 +260,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
             public struct SomeOptionSet {
                 public static let value: Self = .init(rawValue: 0)
                 public static let value2: SomeOptionSet = .init(rawValue: 0)
-                public static let anotherValue = Self(rawValue: 0)
+                public static let `anotherValue` = Self(rawValue: 0)
                 public static let anotherValue2 = SomeOptionSet(rawValue: 0)
             
                 public static var wrongValue1 = SomeOptionSet(rawValue: 0)
@@ -258,7 +273,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
             public struct SomeOptionSet {
                 public static let value: Self = .init(rawValue: 0)
                 public static let value2: SomeOptionSet = .init(rawValue: 0)
-                public static let anotherValue = Self(rawValue: 0)
+                public static let `anotherValue` = Self(rawValue: 0)
                 public static let anotherValue2 = SomeOptionSet(rawValue: 0)
             
                 public static var wrongValue1 = SomeOptionSet(rawValue: 0)
@@ -275,7 +290,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
                 }
             }
             
-            extension SomeOptionSet: Swift.OptionSet, Godot.VariantConvertible {
+            extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantConvertible {
                 public static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
             
                 public func makeVariant() -> Godot.Variant.Storage {
@@ -293,8 +308,15 @@ final class GodotOptionSetMacroTests: XCTestCase {
                     [
                     ("SOME_OPTION_SET_VALUE", Self.value.rawValue),
                     ("SOME_OPTION_SET_VALUE2", Self.value2.rawValue),
-                    ("SOME_OPTION_SET_ANOTHER_VALUE", Self.anotherValue.rawValue),
+                    ("SOME_OPTION_SET_ANOTHER_VALUE", Self.`anotherValue`.rawValue),
                     ("SOME_OPTION_SET_ANOTHER_VALUE2", Self.anotherValue2.rawValue),]
+                }
+                public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                    [
+                    ("Value", Self.value.rawValue),
+                    ("Value2", Self.value2.rawValue),
+                    ("Another Value", Self.`anotherValue`.rawValue),
+                    ("Another Value2", Self.anotherValue2.rawValue),]
                 }
             }
             """,

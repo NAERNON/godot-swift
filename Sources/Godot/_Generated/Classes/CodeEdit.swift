@@ -18,12 +18,12 @@ open class CodeEdit: TextEdit {
         case plainText = 9
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`class`", 0),
+            ("Class", 0),
             ("Function", 1),
             ("Signal", 2),
             ("Variable", 3),
             ("Member", 4),
-            ("`enum`", 5),
+            ("Enum", 5),
             ("Constant", 6),
             ("Node Path", 7),
             ("File Path", 8),

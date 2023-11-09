@@ -10,7 +10,7 @@ open class RigidBody2D: PhysicsBody2D {
         case kinematic = 1
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`static`", 0),
+            ("Static", 0),
             ("Kinematic", 1),]
         }
     }

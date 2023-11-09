@@ -10,7 +10,7 @@ open class ResourceImporter: RefCounted {
         case scene = 100
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`default`", 0),
+            ("Default", 0),
             ("Scene", 100),]
         }
     }

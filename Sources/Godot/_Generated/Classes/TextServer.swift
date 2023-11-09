@@ -326,7 +326,7 @@ open class TextServer: RefCounted {
         case custom = 6
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`default`", 0),
+            ("Default", 0),
             ("Uri", 1),
             ("File", 2),
             ("Email", 3),

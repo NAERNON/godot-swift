@@ -12,7 +12,7 @@ open class SceneTree: MainLoop {
         case unique = 4
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`default`", 0),
+            ("Default", 0),
             ("Reverse", 1),
             ("Deferred", 2),
             ("Unique", 4),]

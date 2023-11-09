@@ -65,3 +65,12 @@ public func backticksKeyword(_ string: String) -> String {
     
     return string
 }
+
+/// Removes backticks around the given string if has them.
+public func removeBackticks(_ string: some StringProtocol) -> String {
+    if string.count >= 2 && string.first == "`" && string.last == "`" {
+        return String(string.dropLast(1).dropFirst(1))
+    }
+    
+    return String(string)
+}

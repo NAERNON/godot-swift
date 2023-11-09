@@ -119,7 +119,7 @@ open class HTTPClient: RefCounted {
         case networkAuthRequired = 511
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`continue`", 100),
+            ("Continue", 100),
             ("Switching Protocols", 101),
             ("Processing", 102),
             ("Ok", 200),

@@ -46,6 +46,40 @@ final class ExposableFunctionMacroTests: XCTestCase {
 #endif
     }
     
+    func testPublicFunctionWithBacksticks() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @ExpositionAvailable(MyClass)
+            public func `myFunction`()
+            """,
+            expandedSource: """
+            public func `myFunction`()
+            
+            private static func _$godotRegister_myFunction() {
+                Godot.GodotExtension.classRegistrar.registerFunction(
+                    named: "my_function",
+                    insideType: self,
+                    argumentParameters: [
+            
+                    ],
+                    returnParameter: nil,
+                    isStatic: false
+                ) {
+                    _, instancePtr, args, argsCount, returnPtr, error in
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue()
+                    .`myFunction`()
+                }
+            }
+            """,
+            diagnostics: [],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
+    
     func testPublicFunctionWithParameter() throws {
 #if canImport(GodotMacros)
         assertMacroExpansion(

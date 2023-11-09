@@ -640,7 +640,7 @@ open class RenderingDevice: Object {
         case max = 5
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`repeat`", 0),
+            ("Repeat", 0),
             ("Mirrored Repeat", 1),
             ("Clamp To Edge", 2),
             ("Clamp To Border", 3),
@@ -961,7 +961,7 @@ open class RenderingDevice: Object {
             ("Clear Region Continue", 2),
             ("Keep", 3),
             ("Drop", 4),
-            ("`continue`", 5),
+            ("Continue", 5),
             ("Max", 6),]
         }
     }
@@ -974,7 +974,7 @@ open class RenderingDevice: Object {
             [
             ("Read", 0),
             ("Discard", 1),
-            ("`continue`", 2),
+            ("Continue", 2),
             ("Max", 3),]
         }
     }

@@ -19,7 +19,7 @@ open class ScriptLanguageExtension: ScriptLanguage {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Script Location", 0),
-            ("`class`", 1),
+            ("Class", 1),
             ("Class Constant", 2),
             ("Class Property", 3),
             ("Class Method", 4),
@@ -57,12 +57,12 @@ open class ScriptLanguageExtension: ScriptLanguage {
         case max = 10
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`class`", 0),
+            ("Class", 0),
             ("Function", 1),
             ("Signal", 2),
             ("Variable", 3),
             ("Member", 4),
-            ("`enum`", 5),
+            ("Enum", 5),
             ("Constant", 6),
             ("Node Path", 7),
             ("File Path", 8),

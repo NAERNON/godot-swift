@@ -61,7 +61,7 @@ open class Tween: RefCounted {
         case outIn = 3
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`in`", 0),
+            ("In", 0),
             ("Out", 1),
             ("In Out", 2),
             ("Out In", 3),]

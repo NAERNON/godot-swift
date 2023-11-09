@@ -285,7 +285,7 @@ final class GodotEnumMacroTests: XCTestCase {
             public enum SomeEnum: Int64 {
                 case someValue
                 case someValue2, someValue3, someValue4
-                case another
+                case `another`
                 case anotherGOODValue
             }
             """,
@@ -293,7 +293,7 @@ final class GodotEnumMacroTests: XCTestCase {
             public enum SomeEnum: Int64 {
                 case someValue
                 case someValue2, someValue3, someValue4
-                case another
+                case `another`
                 case anotherGOODValue
             }
             
@@ -330,7 +330,7 @@ final class GodotEnumMacroTests: XCTestCase {
                     ("SOME_ENUM_SOME_VALUE2", Self.someValue2.rawValue),
                     ("SOME_ENUM_SOME_VALUE3", Self.someValue3.rawValue),
                     ("SOME_ENUM_SOME_VALUE4", Self.someValue4.rawValue),
-                    ("SOME_ENUM_ANOTHER", Self.another.rawValue),
+                    ("SOME_ENUM_ANOTHER", Self.`another`.rawValue),
                     ("SOME_ENUM_ANOTHER_GOOD_VALUE", Self.anotherGOODValue.rawValue),]
                 }
                 public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
@@ -339,7 +339,7 @@ final class GodotEnumMacroTests: XCTestCase {
                     ("Some Value2", Self.someValue2.rawValue),
                     ("Some Value3", Self.someValue3.rawValue),
                     ("Some Value4", Self.someValue4.rawValue),
-                    ("Another", Self.another.rawValue),
+                    ("Another", Self.`another`.rawValue),
                     ("Another GOOD Value", Self.anotherGOODValue.rawValue),]
                 }
             }

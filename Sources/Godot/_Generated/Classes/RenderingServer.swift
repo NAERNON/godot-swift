@@ -288,7 +288,7 @@ open class RenderingServer: Object {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
-            ("`static`", 1),
+            ("Static", 1),
             ("Dynamic", 2),]
         }
     }
@@ -1004,7 +1004,7 @@ open class RenderingServer: Object {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
-            ("`self`", 1),
+            ("Self", 1),
             ("Dependencies", 2),]
         }
     }
@@ -1054,7 +1054,7 @@ open class RenderingServer: Object {
         case max = 7
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`default`", 0),
+            ("Default", 0),
             ("Nearest", 1),
             ("Linear", 2),
             ("Nearest With Mipmaps", 3),
@@ -1072,7 +1072,7 @@ open class RenderingServer: Object {
         case max = 4
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`default`", 0),
+            ("Default", 0),
             ("Disabled", 1),
             ("Enabled", 2),
             ("Mirror", 3),

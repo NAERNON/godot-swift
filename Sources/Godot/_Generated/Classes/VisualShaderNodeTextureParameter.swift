@@ -44,7 +44,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
         case max = 7
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`default`", 0),
+            ("Default", 0),
             ("Nearest", 1),
             ("Linear", 2),
             ("Nearest Mipmap", 3),
@@ -61,7 +61,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
         case max = 3
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`default`", 0),
+            ("Default", 0),
             ("Enabled", 1),
             ("Disabled", 2),
             ("Max", 3),]

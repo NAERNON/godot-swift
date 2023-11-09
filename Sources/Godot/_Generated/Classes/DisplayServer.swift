@@ -97,7 +97,7 @@ open class DisplayServer: Object {
         case url = 7
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`default`", 0),
+            ("Default", 0),
             ("Multiline", 1),
             ("Number", 2),
             ("Number Decimal", 3),

@@ -98,7 +98,7 @@ open class PhysicsServer2D: Object {
         case rigidLinear = 3
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("`static`", 0),
+            ("Static", 0),
             ("Kinematic", 1),
             ("Rigid", 2),
             ("Rigid Linear", 3),]

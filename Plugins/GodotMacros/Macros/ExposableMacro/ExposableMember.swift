@@ -1,5 +1,6 @@
 import SwiftSyntax
 import SwiftSyntaxMacros
+import Utils
 
 /// A type that can be exposed inside an exposable class.
 protocol ExposableMember {
@@ -26,7 +27,7 @@ protocol ExposableMember {
 
 extension ExposableMember {
     var classExpositionFunctionIdentifier: String {
-        "_$godotRegister_" + exposableMemberIdentifier
+        "_$godotRegister_" + removeBackticks(exposableMemberIdentifier)
     }
     
     var hasExpositionAvailableAttribute: Bool {
