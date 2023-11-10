@@ -132,9 +132,8 @@ public struct EditorHint {
     
     /// Hints that a floating point property should
     /// be edited via an exponential easing function.
-    public static var expEasing: EditorHint {
+    public static let expEasing: EditorHint =
         expEasing(attenuation: false, `inout`: false)
-    }
     
     /// Hints that a floating point property should
     /// be edited via an exponential easing function.
@@ -190,6 +189,28 @@ public struct EditorHint {
             string: GodotString(swiftString: string)
         )
     }
+    
+    // MARK: Layers
+    
+    /// Hints that an integer property is a bitmask
+    /// using the optionally named 2D render layers.
+    public static let layers2DRender: EditorHint =
+        .init(hint: .layers2DRender, string: GodotString())
+    
+    /// Hints that an integer property is a bitmask
+    /// using the optionally named 2D physics layers.
+    public static let layers2DPhysics: EditorHint =
+        .init(hint: .layers2DPhysics, string: GodotString())
+    
+    /// Hints that an integer property is a bitmask
+    /// using the optionally named 3D render layers.
+    public static let layers3DRender: EditorHint =
+        .init(hint: .layers3DRender, string: GodotString())
+    
+    /// Hints that an integer property is a bitmask
+    /// using the optionally named 3D physics layers.
+    public static let layers3DPhysics: EditorHint =
+        .init(hint: .layers3DPhysics, string: GodotString())
 }
 
 // MARK: - Macro
