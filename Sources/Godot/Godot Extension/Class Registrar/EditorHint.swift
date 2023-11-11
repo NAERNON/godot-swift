@@ -47,12 +47,12 @@ public struct EditorHint {
     
     /// Hints that an integer or floating point property
     /// should be within a given range.
-    public static func range(
-        _ min: Int,
-        _ max: Int,
-        step: Int? = nil,
+    public static func range<Value>(
+        _ min: Value,
+        _ max: Value,
+        step: Value? = nil,
         options: RangeOptions = []
-    ) -> EditorHint {
+    ) -> EditorHint where Value : FixedWidthInteger {
         self.init(
             hint: .range,
             string: rangeHintString(min, max, step: step, options: options)
@@ -61,12 +61,12 @@ public struct EditorHint {
     
     /// Hints that an integer or floating point property
     /// should be within a given range.
-    public static func range(
-        _ min: Double,
-        _ max: Double,
-        step: Double? = nil,
+    public static func range<Value>(
+        _ min: Value,
+        _ max: Value,
+        step: Value? = nil,
         options: RangeOptions = []
-    ) -> EditorHint {
+    ) -> EditorHint where Value : FloatingPoint {
         self.init(
             hint: .range,
             string: rangeHintString(min, max, step: step, options: options)
