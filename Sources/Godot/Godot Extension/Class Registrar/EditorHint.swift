@@ -358,6 +358,11 @@ public struct EditorHint {
         )
     }
     
+    /// Hints that a property is a node.
+    /// Editing it will show a popup menu of available nodes.
+    public static let node: EditorHint =
+        .init(hint: .nodeType, string: GodotString())
+    
     // MARK: Text
     
     /// Hints that a string property is text with line breaks.
@@ -409,11 +414,21 @@ extension EditorHint {
     ) -> EditorHint where Variable : Resource {
         return .resource(Variable.self)
     }
-    
     public static func _defaultForValue<Class, Variable>(
         at _: KeyPath<Class, Variable?>
     ) -> EditorHint where Variable : Resource {
         return .resource(Variable.self)
+    }
+    
+    public static func _defaultForValue<Class, Variable>(
+        at _: KeyPath<Class, Variable>
+    ) -> EditorHint where Variable : Node {
+        return .node
+    }
+    public static func _defaultForValue<Class, Variable>(
+        at _: KeyPath<Class, Variable?>
+    ) -> EditorHint where Variable : Node {
+        return .node
     }
 }
 
