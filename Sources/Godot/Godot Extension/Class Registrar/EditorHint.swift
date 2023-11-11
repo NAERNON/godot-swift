@@ -1,18 +1,16 @@
 
 /// A type used to provide additional information
 /// for an exposed property in the Godot editor.
-///
-/// Use the ``Hint(_:)`` macro to define a hint for a value.
 public struct EditorHint {
-    public var hint: PropertyHint
-    public var string: GodotString
+    internal var hint: PropertyHint
+    internal var string: GodotString
     
     private init(hint: PropertyHint, string: GodotString) {
         self.hint = hint
         self.string = string
     }
     
-    public enum HintError: Error, CustomStringConvertible {
+    internal enum HintError: Error, CustomStringConvertible {
         case commaInEnumCase
         case commaInFileFilter
         
@@ -162,6 +160,38 @@ public struct EditorHint {
         )
     }
     
+    // MARK: OptionSet
+    
+    /// Hints that an integer property is a bitmask,
+    /// where the list is provided by a Godot option set.
+    public static func optionSet<OptionSet>(
+        _ optionSetType: OptionSet.Type
+    ) -> EditorHint where OptionSet : GodotOptionSet {
+        var valueToName = [OptionSet.RawValue : String]()
+        for (name, value) in optionSetType.hintValues() {
+            if valueToName[value] == nil {
+                valueToName[value] = name
+            }
+        }
+        
+        guard let (max, _) = valueToName.max(by: { lhs, rhs in lhs.key < rhs.key }) else {
+            return .none
+        }
+        
+        var string = String()
+        var powerOfTwo: OptionSet.RawValue = 1
+        while powerOfTwo <= max {
+            string.append((valueToName[powerOfTwo] ?? "") + ",")
+            
+            powerOfTwo *= 2
+        }
+        
+        return self.init(
+            hint: .flags,
+            string: GodotString(swiftString: string)
+        )
+    }
+    
     // MARK: Exp easing
     
     /// Hints that a floating point property should
@@ -191,36 +221,6 @@ public struct EditorHint {
         return self.init(
             hint: .expEasing,
             string: string
-        )
-    }
-    
-    /// Hints that an integer property is a bitmask,
-    /// where the list is provided by a Godot option set.
-    public static func optionSet<OptionSet>(
-        _ optionSetType: OptionSet.Type
-    ) -> EditorHint where OptionSet : GodotOptionSet {
-        var valueToName = [OptionSet.RawValue : String]()
-        for (name, value) in optionSetType.hintValues() {
-            if valueToName[value] == nil {
-                valueToName[value] = name
-            }
-        }
-        
-        guard let (max, _) = valueToName.max(by: { lhs, rhs in lhs.key < rhs.key }) else {
-            return .none
-        }
-        
-        var string = String()
-        var powerOfTwo: OptionSet.RawValue = 1
-        while powerOfTwo <= max {
-            string.append((valueToName[powerOfTwo] ?? "") + ",")
-            
-            powerOfTwo *= 2
-        }
-        
-        return self.init(
-            hint: .flags,
-            string: GodotString(swiftString: string)
         )
     }
     
@@ -386,5 +386,16 @@ public struct EditorHint {
 // MARK: - Macro
 
 /// Provides a hint for the Godot editor.
+///
+/// Use this macro to provide hinting on the Godot editor.
+/// Simply attach this macro to an exposed variable,
+/// and set the macro property to an ``EditorHint``:
+///
+/// ```swift
+/// @Exposable public class Character: Node {
+///     @Hint(.range(1, 50))
+///     public var speed: Double = 10.0
+/// }
+/// ```
 @attached(peer)
 public macro Hint(_ hint: EditorHint) = #externalMacro(module: "GodotMacros", type: "HintMacro")

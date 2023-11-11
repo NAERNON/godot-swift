@@ -165,6 +165,18 @@ public extension Character {
 }
 ```
 
+
+### Editor hinting
+
+It is possible to provide additional editor hinting using the ``Hint(_:)`` macro. See ``EditorHint`` for a list of all available hints.
+
+```swift
+@Exposable public class Character: Node {
+    @Hint(.range(1, 50))
+    public var speed: Double = 10.0
+}
+```
+
 ### Override the initializers
 
 Every Godot class come with two required initializers.
