@@ -1,6 +1,8 @@
 
 /// A type used to provide additional information
 /// for an exposed property in the Godot editor.
+///
+/// Use the ``Hint(_:)`` macro to define a hint for a value.
 public struct EditorHint {
     public var hint: PropertyHint
     public var string: GodotString
@@ -8,6 +10,20 @@ public struct EditorHint {
     private init(hint: PropertyHint, string: GodotString) {
         self.hint = hint
         self.string = string
+    }
+    
+    public enum HintError: Error, CustomStringConvertible {
+        case commaInEnumCase
+        case commaInFileFilter
+        
+        public var description: String {
+            switch self {
+            case .commaInEnumCase:
+                "Enum case name cannot contain a comma"
+            case .commaInFileFilter:
+                "File filter cannot contain a comma"
+            }
+        }
     }
     
     public static let none: EditorHint = .init(hint: .none, string: .init())
@@ -84,7 +100,7 @@ public struct EditorHint {
     ///
     /// Define every value like so:
     /// ```swift
-    /// EditorHint.enum("Hello", "Something", "Else")
+    /// @Hint(.enum("Hello", "Something", "Else"))
     /// ```
     ///
     /// For integer and floating point properties,
@@ -92,23 +108,41 @@ public struct EditorHint {
     /// Explicit values can also be specified
     /// by appending `:integer` to the name:
     /// ```swift
-    /// EditorHint.enum("Zero", "One", "Three:3", "Four", "Six:6")
+    /// @Hint(.enum("Zero", "One", "Three:3", "Four", "Six:6"))
     /// ```
     public static func `enum`(
-        _ values: String...
+        _ values: String...,
+        function: String = #function,
+        file: String = #file,
+        line: Int32 = #line
     ) -> EditorHint {
-        if values.allSatisfy({ isEnumCaseValid($0) }) {
-            self.init(
-                hint: .enum,
-                string: GodotString(swiftString: values.joined(separator: ","))
-            )
-        } else {
-            .none
-        }
+        let swiftString = values
+            .filter { enumCase in
+                do {
+                    try checkEnumCaseValidity(enumCase)
+                    return true
+                } catch {
+                    gdDebugPrintWarning(
+                        "Enum case hint \"\(enumCase)\" is ignored. (\(error))",
+                        function: function,
+                        file: file,
+                        line: line
+                    )
+                    return false
+                }
+            }
+            .joined(separator: ",")
+        
+        return self.init(
+            hint: .enum,
+            string: GodotString(swiftString: swiftString)
+        )
     }
     
-    private static func isEnumCaseValid(_ enumCase: String) -> Bool {
-        !enumCase.contains { $0 == "," }
+    private static func checkEnumCaseValidity(_ enumCase: String) throws {
+        if enumCase.contains(where: { $0 == "," }) {
+            throw HintError.commaInEnumCase
+        }
     }
     
     /// Hints that an integer or floating point property is
@@ -211,6 +245,100 @@ public struct EditorHint {
     /// using the optionally named 3D physics layers.
     public static let layers3DPhysics: EditorHint =
         .init(hint: .layers3DPhysics, string: GodotString())
+    
+    // MARK: File
+    
+    /// Hints that a string property is a path to a file.
+    /// Editing it will show a file dialog for picking the path.
+    ///
+    /// Define every filter like so:
+    /// ```swift
+    /// @Hint(.file("*.jpg", "*.png"))
+    /// ```
+    public static func file(
+        _ filters: String...,
+        function: String = #function,
+        file: String = #file,
+        line: Int32 = #line
+    ) -> EditorHint {
+        let swiftString = filters
+            .filter { filter in
+                do {
+                    try checkFileFilterValidity(filter)
+                    return true
+                } catch {
+                    gdDebugPrintWarning(
+                        "File filter hint \"\(filter)\" is ignored. (\(error))",
+                        function: function,
+                        file: file,
+                        line: line
+                    )
+                    return false
+                }
+            }
+            .joined(separator: ",")
+        
+        return self.init(
+            hint: .file,
+            string: GodotString(swiftString: swiftString)
+        )
+    }
+    
+    /// Hints that a string property is an absolute path
+    /// to a file outside the project folder.
+    /// Editing it will show a file dialog for picking the path.
+    ///
+    /// Define every filter like so:
+    /// ```swift
+    /// @Hint(.globalFile("*.jpg", "*.png"))
+    /// ```
+    public static func globalFile(
+        _ filters: String...,
+        function: String = #function,
+        file: String = #file,
+        line: Int32 = #line
+    ) -> EditorHint {
+        let swiftString = filters
+            .filter { filter in
+                do {
+                    try checkFileFilterValidity(filter)
+                    return true
+                } catch {
+                    gdDebugPrintWarning(
+                        "File filter hint \"\(filter)\" is ignored. (\(error))",
+                        function: function,
+                        file: file,
+                        line: line
+                    )
+                    return false
+                }
+            }
+            .joined(separator: ",")
+        
+        return self.init(
+            hint: .globalFile,
+            string: GodotString(swiftString: swiftString)
+        )
+    }
+    
+    private static func checkFileFilterValidity(_ enumCase: String) throws {
+        if enumCase.contains(where: { $0 == "," }) {
+            throw HintError.commaInFileFilter
+        }
+    }
+    
+    // MARK: Dir
+    
+    /// Hints that a string property is a path to a directory.
+    /// Editing it will show a file dialog for picking the path.
+    public static let dir: EditorHint =
+        .init(hint: .dir, string: GodotString())
+    
+    /// Hints that a string property is an absolute path
+    /// to a directory outside the project folder.
+    /// Editing it will show a file dialog for picking the path.
+    public static let globalDir: EditorHint =
+        .init(hint: .globalDir, string: GodotString())
 }
 
 // MARK: - Macro
