@@ -339,6 +339,24 @@ public struct EditorHint {
     /// Editing it will show a file dialog for picking the path.
     public static let globalDir: EditorHint =
         .init(hint: .globalDir, string: GodotString())
+    
+    // MARK: Resource
+    
+    /// Hints that a property is an instance of a `Resource` type.
+    /// Editing it will show a popup menu of valid resource types to instantiate.
+    public static let resource: EditorHint =
+        .init(hint: .resourceType, string: GodotString())
+    
+    /// Hints that a property is an instance of a `Resource` type.
+    /// Editing it will show a popup menu of valid resource types to instantiate.
+    ///
+    /// - Parameter type: The type of resource to request.
+    public static func resource(_ type: Resource.Type) -> EditorHint {
+        .init(
+            hint: .resourceType,
+            string: GodotString(stringName: type._$className)
+        )
+    }
 }
 
 // MARK: - Macro
