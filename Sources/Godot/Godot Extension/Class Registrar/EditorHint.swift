@@ -354,7 +354,7 @@ public struct EditorHint {
     public static func resource(_ type: Resource.Type) -> EditorHint {
         .init(
             hint: .resourceType,
-            string: GodotString(stringName: type._$className)
+            string: GodotString(stringName: type._$lastDerivedClassName)
         )
     }
     
@@ -381,6 +381,40 @@ public struct EditorHint {
     /// i.e. only R, G and B channels are edited.
     public static let noAlpha: EditorHint =
         .init(hint: .colorNoAlpha, string: GodotString())
+}
+
+// MARK: - Default hints
+
+extension EditorHint {
+    public static func _defaultForValue<Class, Variable>(
+        at _: KeyPath<Class, Variable>
+    ) -> EditorHint {
+        return .none
+    }
+    
+    public static func _defaultForValue<Class, Variable>(
+        at _: KeyPath<Class, Variable>
+    ) -> EditorHint where Variable : GodotEnum {
+        return .enum(Variable.self)
+    }
+    
+    public static func _defaultForValue<Class, Variable>(
+        at _: KeyPath<Class, Variable>
+    ) -> EditorHint where Variable : GodotOptionSet {
+        return .optionSet(Variable.self)
+    }
+    
+    public static func _defaultForValue<Class, Variable>(
+        at _: KeyPath<Class, Variable>
+    ) -> EditorHint where Variable : Resource {
+        return .resource(Variable.self)
+    }
+    
+    public static func _defaultForValue<Class, Variable>(
+        at _: KeyPath<Class, Variable?>
+    ) -> EditorHint where Variable : Resource {
+        return .resource(Variable.self)
+    }
 }
 
 // MARK: - Macro
