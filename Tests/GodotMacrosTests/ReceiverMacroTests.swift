@@ -111,6 +111,39 @@ final class ReceiverMacroTests: XCTestCase {
 #endif
     }
     
+    func testReceiverWithBackticks() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @Receiver
+            public func `someFunction`() {}
+            """,
+            expandedSource: """
+            public func `someFunction`() {}
+            
+            public struct Receiver_someFunction: Godot.Receiver {
+                public typealias SignalInput = ()
+            
+                public static let receiverName: Godot.GodotStringName = "some_function"
+            
+                public weak private (set) var object: Godot.Object?
+                fileprivate init(_ object: Godot.Object) {
+                    self.object = object
+                }
+            }
+            
+            public var someFunctionReceiver: Receiver_someFunction {
+                .init(self)
+            }
+            """,
+            diagnostics: [],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
+    
     func testReceiverNotPublic() throws {
 #if canImport(GodotMacros)
         assertMacroExpansion(

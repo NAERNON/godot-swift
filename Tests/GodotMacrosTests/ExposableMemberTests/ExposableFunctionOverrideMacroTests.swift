@@ -36,4 +36,29 @@ final class ExposableFunctionOverrideMacroTests: XCTestCase {
         throw XCTSkip("macros are only supported when running tests for the host platform")
 #endif
     }
+    
+    func testPublicOverrideFunctionWithBackticks() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @ExpositionAvailable(MyClass)
+            public override func `myFunction`()
+            """,
+            expandedSource: """
+            public override func `myFunction`()
+            
+            private static func _$godotRegister_myFunction() {
+                Godot.GodotExtension.classRegistrar.registerFunctionOverride(
+                    named: "myFunction",
+                    insideType: self
+                )
+            }
+            """,
+            diagnostics: [],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
 }

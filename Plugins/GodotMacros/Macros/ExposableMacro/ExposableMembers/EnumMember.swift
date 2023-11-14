@@ -57,9 +57,11 @@ struct EnumMember: ExposableMember {
             return nil
         }
         
+        let enumName = removeBackticks(enumDeclSyntax.name.trimmedDescription)
+        
         return """
         Godot.GodotExtension.classRegistrar.registerEnumOrOptionSet(
-            named: \(literal: enumDeclSyntax.name.trimmedDescription),
+            named: \(literal: enumName),
             values: \(raw: enumDeclSyntax.name.trimmedDescription).godotExposableValues(),
             isOptionSet: false,
             insideType: self

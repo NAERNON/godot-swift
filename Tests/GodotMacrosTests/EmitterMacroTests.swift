@@ -52,6 +52,46 @@ final class EmitterMacroTests: XCTestCase {
 #endif
     }
     
+    func testEmitterWithBackticks() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @Emitter
+            public struct `Jumped` {}
+            """,
+            expandedSource: """
+            public struct `Jumped` {
+            
+                public typealias SignalInput = ()
+            
+                public static let signalName: Godot.GodotStringName = "jumped"
+            
+                public weak private(set) var object: Godot.Object?
+            
+                fileprivate init(_ object: Godot.Object) {
+                    self.object = object
+                }
+            
+                public func emit() {
+                    _ = object?.emitSignal(Self.signalName)
+                }}
+            
+            public var emitterJumped: `Jumped` {
+                .init(self)
+            }
+            
+            extension `Jumped`: Godot.Emitter {
+            }
+
+            """,
+            diagnostics: [],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
+    
     func testEmitterWithArgs() throws {
 #if canImport(GodotMacros)
         assertMacroExpansion(

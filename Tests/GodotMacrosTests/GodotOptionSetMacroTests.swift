@@ -328,6 +328,54 @@ final class GodotOptionSetMacroTests: XCTestCase {
 #endif
     }
     
+    func testPublicOptionSetWithBackticks() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @GodotOptionSet
+            public struct `SomeOptionSet` {}
+            """,
+            expandedSource: """
+            public struct `SomeOptionSet` {
+            
+                public typealias RawValue = Int64
+            
+                public let rawValue: Int64
+            
+                public init(rawValue: Int64) {
+                    self.rawValue = rawValue
+                }}
+            
+            extension `SomeOptionSet`: Godot.GodotOptionSet, Godot.VariantConvertible {
+                public static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
+            
+                public func makeVariant() -> Godot.Variant.Storage {
+                    rawValue.makeVariant()
+                }
+            
+                public static func fromCompatibleVariant(_ variant: borrowing Godot.Variant.Storage) -> Self {
+                    Self (rawValue: RawValue.fromCompatibleVariant(variant))
+                }
+            
+                public static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
+                    Self (rawValue: try RawValue.fromVariant(variant))
+                }
+                public static func hintValues() -> [(name: Swift.String, value: RawValue)] {
+                    []
+                }
+                fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)] {
+                    []
+                }
+            }
+            """,
+            diagnostics: [],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
+    
     func testDefinitionOnEnum() throws {
 #if canImport(GodotMacros)
         assertMacroExpansion(

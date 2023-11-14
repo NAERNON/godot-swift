@@ -36,9 +36,10 @@ public enum ReceiverMacro: PeerMacro {
             return []
         }
         
+        let functionName = removeBackticks(functionDecl.name.trimmedDescription)
         let receiverName = translatedFunctionName(functionDecl)
-        let structureName = "Receiver_" + functionDecl.name.trimmedDescription
-        let variableName = functionDecl.name.trimmedDescription + "Receiver"
+        let structureName = "Receiver_" + functionName
+        let variableName = functionName + "Receiver"
         
         let functionParameterTypes = functionDecl.signature.parameterClause.parameters
             .map { parameter in

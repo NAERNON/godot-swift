@@ -108,7 +108,7 @@ public enum EmitterMacro: MemberMacro, PeerMacro, ExtensionMacro {
             return []
         }
         
-        let variableName = "emitter" + structDecl.name.trimmedDescription
+        let variableName = "emitter" + removeBackticks(structDecl.name.trimmedDescription)
         
         return [
             "public var \(raw: variableName): \(raw: structDecl.name.trimmed) { .init(self) }"

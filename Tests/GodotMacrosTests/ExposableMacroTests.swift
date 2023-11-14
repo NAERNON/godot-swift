@@ -173,4 +173,55 @@ final class ExposableMacroTests: XCTestCase {
         throw XCTSkip("macros are only supported when running tests for the host platform")
 #endif
     }
+    
+    func testPublicClassWithBackticks() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @Exposable
+            public class `MyClass`: Object {
+            }
+            """,
+            expandedSource: """
+            public class `MyClass`: Object {
+            
+                private static let _$staticClassName: Godot.GodotStringName = "MyClass"
+                open override class var _$className: Godot.GodotStringName { _$staticClassName }
+                open override class var _$isCustomGodotClass: Bool { true }
+            
+                open override class func _$instanceBindingCallbacks() -> Godot.GodotInstanceBindingCallbacks {
+                    return Godot.GodotInstanceBindingCallbacks { token, instancePtr in
+                        return nil
+                    } free_callback: { token, instancePtr, bindingsPtr in
+            
+                    } reference_callback: { token, instancePtr, reference in
+                        `MyClass`.__referenceCallback(instancePtr, reference)
+                    }
+                }
+            
+                open override class func _$exposeToGodot() {
+                    let classBinding = Godot.GodotExtension.classRegistrar.registerCustomClass(
+                        ofType: self,
+                        superclassType: Object.self
+                    ) { instancePtr, isValid, out in
+                        `MyClass`._$instanceGodotDescription(instancePtr, isValid, out)
+                    }
+                    createInstanceFunction: { _ in
+                        `MyClass`._$makeNewInstanceManagedByGodot()
+                    }
+                    freeInstanceFunction: { _, instancePtr in
+                        `MyClass`._$freeInstanceManagedByGodot(instancePtr)
+                    }
+            
+                guard classBinding != nil else { return }
+                }
+            }
+            """,
+            diagnostics: [],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
 }

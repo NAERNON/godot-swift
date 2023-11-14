@@ -3,6 +3,7 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
+import Utils
 
 /// A type used to retrieve class decls.
 struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
@@ -87,7 +88,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     }
     
     private func staticProperties() -> DeclSyntax {
-        let className = className.trimmedDescription
+        let className = removeBackticks(className.trimmedDescription)
         
         switch classType {
         case .root, .refCounted, .standard:

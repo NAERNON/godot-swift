@@ -52,6 +52,46 @@ final class BridgeMacroTests: XCTestCase {
 #endif
     }
     
+    func testBridgeSuccessWithBackticks() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @Bridge
+            public enum `SomeGameBridge` {}
+            """,
+            expandedSource: """
+            public enum `SomeGameBridge` {}
+            
+            @_cdecl("somegamebridge_godot_init")
+            public func SomeGameBridge_godot_init(
+                getProcAddress: Godot.GodotExtension.GetProcAddress,
+                libraryPtr: Godot.GodotExtension.ClassLibraryPointer,
+                initializationPtr: Godot.GodotExtension.InitializationPointer
+            ) -> Godot.GodotExtension.InitializationResult {
+                do {
+                    try Godot.GodotExtension.initialize(
+                        using: `SomeGameBridge` .self,
+                        getProcAddress: getProcAddress,
+                        libraryPtr: libraryPtr,
+                        initializationPtr: initializationPtr
+                    )
+                    return 1
+                } catch {
+                    return 0
+                }
+            }
+            
+            extension `SomeGameBridge`: Godot.Bridge {
+            }
+            """,
+            diagnostics: [],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
+    
     func testNoAccessModifierBridge() throws {
 #if canImport(GodotMacros)
         assertMacroExpansion(

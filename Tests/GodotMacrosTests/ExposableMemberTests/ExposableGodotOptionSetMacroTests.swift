@@ -40,4 +40,33 @@ final class ExposableGodotOptionSetMacroTests: XCTestCase {
         throw XCTSkip("macros are only supported when running tests for the host platform")
 #endif
     }
+    
+    func testPublicGodotOptionSetWithBackticks() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @ExpositionAvailable(MyClass)
+            @GodotOptionSet
+            public struct `MyOptionSet` {}
+            """,
+            expandedSource: """
+            @GodotOptionSet
+            public struct `MyOptionSet` {}
+            
+            private static func _$godotRegister_MyOptionSet() {
+                Godot.GodotExtension.classRegistrar.registerEnumOrOptionSet(
+                    named: "MyOptionSet",
+                    values: `MyOptionSet`.godotExposableValues(),
+                    isOptionSet: true,
+                    insideType: self
+                )
+            }
+            """,
+            diagnostics: [],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
 }

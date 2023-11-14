@@ -2,6 +2,7 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
+import Utils
 
 public enum BridgeMacro: ExtensionMacro, PeerMacro {
     public static func expansion(
@@ -65,7 +66,7 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
     }
     
     private static func libInitDecl(identifier: TokenSyntax) -> DeclSyntax {
-        let functionName = identifier.trimmedDescription + "_godot_init"
+        let functionName = removeBackticks(identifier.trimmedDescription) + "_godot_init"
         
         return DeclSyntax(
             """

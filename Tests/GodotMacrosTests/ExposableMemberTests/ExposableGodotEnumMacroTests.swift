@@ -40,4 +40,33 @@ final class ExposableGodotEnumMacroTests: XCTestCase {
         throw XCTSkip("macros are only supported when running tests for the host platform")
 #endif
     }
+    
+    func testPublicGodotEnumWithBackticks() throws {
+#if canImport(GodotMacros)
+        assertMacroExpansion(
+            """
+            @ExpositionAvailable(MyClass)
+            @GodotEnum
+            public enum `MyEnum` {}
+            """,
+            expandedSource: """
+            @GodotEnum
+            public enum `MyEnum` {}
+            
+            private static func _$godotRegister_MyEnum() {
+                Godot.GodotExtension.classRegistrar.registerEnumOrOptionSet(
+                    named: "MyEnum",
+                    values: `MyEnum`.godotExposableValues(),
+                    isOptionSet: false,
+                    insideType: self
+                )
+            }
+            """,
+            diagnostics: [],
+            macros: testMacros
+        )
+#else
+        throw XCTSkip("macros are only supported when running tests for the host platform")
+#endif
+    }
 }

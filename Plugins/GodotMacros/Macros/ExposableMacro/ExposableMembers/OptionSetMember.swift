@@ -1,6 +1,7 @@
 import SwiftSyntax
 import SwiftDiagnostics
 import SwiftSyntaxMacros
+import Utils
 
 struct OptionSetMember: ExposableMember {
     let structDeclSyntax: StructDeclSyntax
@@ -30,9 +31,11 @@ struct OptionSetMember: ExposableMember {
         classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
+        let optionSetName = removeBackticks(structDeclSyntax.name.trimmedDescription)
+        
         return """
         Godot.GodotExtension.classRegistrar.registerEnumOrOptionSet(
-            named: \(literal: structDeclSyntax.name.trimmedDescription),
+            named: \(literal: optionSetName),
             values: \(raw: structDeclSyntax.name.trimmedDescription).godotExposableValues(),
             isOptionSet: true,
             insideType: self
