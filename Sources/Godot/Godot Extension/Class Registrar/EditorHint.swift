@@ -24,6 +24,7 @@ public struct EditorHint {
         }
     }
     
+    /// Removes any Godot editor hint.
     public static let none: EditorHint = .init(hint: .none, string: .init())
     
     // MARK: Range
