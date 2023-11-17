@@ -100,8 +100,12 @@ struct VariableMember: ExposableMember {
             // Has no accessor block
             hasSetter = true
         } else if let accessors = variableBinding.accessorBlock?.accessors.as(AccessorDeclListSyntax.self) {
-            // Has a set {} in the accessors
-            hasSetter = accessors.contains(where: { $0.accessorSpecifier.tokenKind == .keyword(.set) })
+            // Has a set, didSet or willSet in the accessors
+            hasSetter = accessors.contains(where: {
+                $0.accessorSpecifier.tokenKind == .keyword(.set) ||
+                $0.accessorSpecifier.tokenKind == .keyword(.didSet) ||
+                $0.accessorSpecifier.tokenKind == .keyword(.willSet)
+            })
         } else {
             hasSetter = false
         }
