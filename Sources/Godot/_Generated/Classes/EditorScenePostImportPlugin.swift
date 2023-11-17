@@ -87,9 +87,9 @@ open class EditorScenePostImportPlugin: RefCounted {
         }
         }
     }()
-    public func addImportOption<Variant1 : ConvertibleToVariant>(name: Godot.GodotString, value: Variant1) {
+    public func addImportOption<Variant1 : VariantEncodable>(name: Godot.GodotString, value: Variant1) {
         name.withUnsafeRawPointer { (__ptr_name) in
-            value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(
@@ -111,10 +111,10 @@ open class EditorScenePostImportPlugin: RefCounted {
         }
         }
     }()
-    public func addImportOptionAdvanced<Variant1 : ConvertibleToVariant>(type: Godot.Variant.GodotType, name: Godot.GodotString, defaultValue: Variant1, hint: Godot.PropertyHint = PropertyHint(rawValue: 0)!, hintString: Godot.GodotString = "", usageFlags: Int32 = 6) {
+    public func addImportOptionAdvanced<Variant1 : VariantEncodable>(type: Godot.Variant.GodotType, name: Godot.GodotString, defaultValue: Variant1, hint: Godot.PropertyHint = PropertyHint(rawValue: 0)!, hintString: Godot.GodotString = "", usageFlags: Int32 = 6) {
         withUnsafePointer(to: type) { (__ptr_type) in
             name.withUnsafeRawPointer { (__ptr_name) in
-                defaultValue.makeVariant().withUnsafeRawPointer { (__ptr_defaultValue) in
+                Godot.Variant.Storage(defaultValue).withUnsafeRawPointer { (__ptr_defaultValue) in
                     withUnsafePointer(to: hint) { (__ptr_hint) in
                         hintString.withUnsafeRawPointer { (__ptr_hintString) in
                             withUnsafePointer(to: usageFlags) { (__ptr_usageFlags) in

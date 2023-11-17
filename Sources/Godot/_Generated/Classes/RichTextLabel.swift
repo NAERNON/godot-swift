@@ -483,8 +483,8 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func pushMeta<Variant1 : ConvertibleToVariant>(data: Variant1) {
-        data.makeVariant().withUnsafeRawPointer { (__ptr_data) in
+    public func pushMeta<Variant1 : VariantEncodable>(data: Variant1) {
+        Godot.Variant.Storage(data).withUnsafeRawPointer { (__ptr_data) in
             withUnsafeArgumentPackPointer(__ptr_data) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     gdextension_interface_object_method_bind_ptrcall(
@@ -2393,8 +2393,8 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func installEffect<Variant1 : ConvertibleToVariant>(_ effect: Variant1) {
-        effect.makeVariant().withUnsafeRawPointer { (__ptr_effect) in
+    public func installEffect<Variant1 : VariantEncodable>(_ effect: Variant1) {
+        Godot.Variant.Storage(effect).withUnsafeRawPointer { (__ptr_effect) in
             withUnsafeArgumentPackPointer(__ptr_effect) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     gdextension_interface_object_method_bind_ptrcall(

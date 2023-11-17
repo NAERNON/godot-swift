@@ -12,11 +12,11 @@ public protocol GodotEnum: RawRepresentable where RawValue : FixedWidthInteger {
 // MARK: - Macro
 
 /// Converts a Swift enum into an enum usable by Godot.
-@attached(extension, conformances: VariantConvertible, GodotEnum, names:
-    named(variantType),
-    named(makeVariant),
-    named(fromCompatibleVariant),
-    named(fromVariant),
+@attached(extension, conformances: VariantCodable, GodotEnum, names:
+    named(variantRepresentationType),
+    named(encodeVariantStorage),
+    named(decodeCompatibleVariantStorage),
+    named(decodeVariantStorage),
     named(godotExposableValues),
     named(hintValues)
 )

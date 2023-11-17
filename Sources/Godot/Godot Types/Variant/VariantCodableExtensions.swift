@@ -19,23 +19,23 @@ private enum ConversionError: Error {
 private var fromTypeConstructor_bool = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
 private var toTypeConstructor_bool = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
 
-extension Bool: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .bool
+extension Bool: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .bool
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_bool(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = UInt8()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_bool(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -50,23 +50,23 @@ extension Bool: VariantConvertible {
 private var fromTypeConstructor_int = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)!
 private var toTypeConstructor_int = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)!
 
-extension Int: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .int
+extension Int: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .int
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -75,32 +75,32 @@ extension Int: VariantConvertible {
         return newValue
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        guard variant.isNumeric else {
-            throw ConversionError.nonNumeric(type: variant.type)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Int {
+        guard storage.isNumeric else {
+            throw ConversionError.nonNumeric(type: storage.type)
         }
         
-        return fromCompatibleVariant(variant)
+        return decodeCompatibleVariantStorage(storage)
     }
 }
 
-extension Int8: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .int8
+extension Int8: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .int8
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -109,32 +109,32 @@ extension Int8: VariantConvertible {
         return newValue
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        guard variant.isNumeric else {
-            throw ConversionError.nonNumeric(type: variant.type)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        guard storage.isNumeric else {
+            throw ConversionError.nonNumeric(type: storage.type)
         }
         
-        return fromCompatibleVariant(variant)
+        return decodeCompatibleVariantStorage(storage)
     }
 }
 
-extension Int16: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .int16
+extension Int16: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .int16
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -143,32 +143,32 @@ extension Int16: VariantConvertible {
         return newValue
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        guard variant.isNumeric else {
-            throw ConversionError.nonNumeric(type: variant.type)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        guard storage.isNumeric else {
+            throw ConversionError.nonNumeric(type: storage.type)
         }
         
-        return fromCompatibleVariant(variant)
+        return decodeCompatibleVariantStorage(storage)
     }
 }
 
-extension Int32: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .int32
+extension Int32: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .int32
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -177,32 +177,32 @@ extension Int32: VariantConvertible {
         return newValue
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        guard variant.isNumeric else {
-            throw ConversionError.nonNumeric(type: variant.type)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        guard storage.isNumeric else {
+            throw ConversionError.nonNumeric(type: storage.type)
         }
         
-        return fromCompatibleVariant(variant)
+        return decodeCompatibleVariantStorage(storage)
     }
 }
 
-extension Int64: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .int64
+extension Int64: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .int64
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -211,32 +211,32 @@ extension Int64: VariantConvertible {
         return newValue
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        guard variant.isNumeric else {
-            throw ConversionError.nonNumeric(type: variant.type)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        guard storage.isNumeric else {
+            throw ConversionError.nonNumeric(type: storage.type)
         }
         
-        return fromCompatibleVariant(variant)
+        return decodeCompatibleVariantStorage(storage)
     }
 }
 
-extension UInt8: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .uint8
+extension UInt8: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .uint8
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -245,32 +245,32 @@ extension UInt8: VariantConvertible {
         return newValue
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        guard variant.isNumeric else {
-            throw ConversionError.nonNumeric(type: variant.type)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        guard storage.isNumeric else {
+            throw ConversionError.nonNumeric(type: storage.type)
         }
         
-        return fromCompatibleVariant(variant)
+        return decodeCompatibleVariantStorage(storage)
     }
 }
 
-extension UInt16: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .uint16
+extension UInt16: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .uint16
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -279,32 +279,32 @@ extension UInt16: VariantConvertible {
         return newValue
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        guard variant.isNumeric else {
-            throw ConversionError.nonNumeric(type: variant.type)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        guard storage.isNumeric else {
+            throw ConversionError.nonNumeric(type: storage.type)
         }
         
-        return fromCompatibleVariant(variant)
+        return decodeCompatibleVariantStorage(storage)
     }
 }
 
-extension UInt32: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .uint32
+extension UInt32: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .uint32
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -313,32 +313,32 @@ extension UInt32: VariantConvertible {
         return newValue
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        guard variant.isNumeric else {
-            throw ConversionError.nonNumeric(type: variant.type)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        guard storage.isNumeric else {
+            throw ConversionError.nonNumeric(type: storage.type)
         }
         
-        return fromCompatibleVariant(variant)
+        return decodeCompatibleVariantStorage(storage)
     }
 }
 
-extension UInt64: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .uint64
+extension UInt64: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .uint64
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -347,12 +347,12 @@ extension UInt64: VariantConvertible {
         return newValue
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        guard variant.isNumeric else {
-            throw ConversionError.nonNumeric(type: variant.type)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        guard storage.isNumeric else {
+            throw ConversionError.nonNumeric(type: storage.type)
         }
         
-        return fromCompatibleVariant(variant)
+        return decodeCompatibleVariantStorage(storage)
     }
 }
 
@@ -361,23 +361,23 @@ extension UInt64: VariantConvertible {
 private var fromTypeConstructor_float = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
 private var toTypeConstructor_float = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
 
-extension Double: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .double
+extension Double: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .double
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -386,34 +386,34 @@ extension Double: VariantConvertible {
         return newValue
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        guard variant.isNumeric else {
-            throw ConversionError.nonNumeric(type: variant.type)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        guard storage.isNumeric else {
+            throw ConversionError.nonNumeric(type: storage.type)
         }
         
-        return fromCompatibleVariant(variant)
+        return decodeCompatibleVariantStorage(storage)
     }
 }
 
 // MARK: - Float
 
-extension Float: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .float
+extension Float: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .float
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: Double(self)) { otherNativeTypePtr in
+            withUnsafePointer(to: Double(value)) { otherNativeTypePtr in
                 fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Double()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -422,12 +422,12 @@ extension Float: VariantConvertible {
         return Float(newValue)
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        guard variant.isNumeric else {
-            throw ConversionError.nonNumeric(type: variant.type)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        guard storage.isNumeric else {
+            throw ConversionError.nonNumeric(type: storage.type)
         }
         
-        return fromCompatibleVariant(variant)
+        return decodeCompatibleVariantStorage(storage)
     }
 }
 
@@ -436,23 +436,23 @@ extension Float: VariantConvertible {
 private var fromTypeConstructor_string = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)!
 private var toTypeConstructor_string = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)!
 
-extension GodotString: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .string
+extension GodotString: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .string
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_string(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = GodotString()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_string(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -467,23 +467,23 @@ extension GodotString: VariantConvertible {
 private var fromTypeConstructor_vector2 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
 private var toTypeConstructor_vector2 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
 
-extension Vector2: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .vector2
+extension Vector2: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .vector2
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector2()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -498,23 +498,23 @@ extension Vector2: VariantConvertible {
 private var fromTypeConstructor_vector2i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
 private var toTypeConstructor_vector2i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
 
-extension Vector2i: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .vector2i
+extension Vector2i: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .vector2i
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector2i()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -529,23 +529,23 @@ extension Vector2i: VariantConvertible {
 private var fromTypeConstructor_rect2 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)!
 private var toTypeConstructor_rect2 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)!
 
-extension Rect2: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .rect2
+extension Rect2: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .rect2
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_rect2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Rect2()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_rect2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -560,23 +560,23 @@ extension Rect2: VariantConvertible {
 private var fromTypeConstructor_rect2i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
 private var toTypeConstructor_rect2i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
 
-extension Rect2i: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .rect2i
+extension Rect2i: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .rect2i
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_rect2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Rect2i()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_rect2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -591,23 +591,23 @@ extension Rect2i: VariantConvertible {
 private var fromTypeConstructor_vector3 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)!
 private var toTypeConstructor_vector3 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)!
 
-extension Vector3: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .vector3
+extension Vector3: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .vector3
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector3(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector3()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector3(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -622,23 +622,23 @@ extension Vector3: VariantConvertible {
 private var fromTypeConstructor_vector3i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
 private var toTypeConstructor_vector3i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
 
-extension Vector3i: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .vector3i
+extension Vector3i: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .vector3i
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector3i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector3i()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector3i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -653,23 +653,23 @@ extension Vector3i: VariantConvertible {
 private var fromTypeConstructor_transform2D = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)!
 private var toTypeConstructor_transform2D = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)!
 
-extension Transform2D: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .transform2D
+extension Transform2D: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .transform2D
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_transform2D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Transform2D()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_transform2D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -684,23 +684,23 @@ extension Transform2D: VariantConvertible {
 private var fromTypeConstructor_vector4 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)!
 private var toTypeConstructor_vector4 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)!
 
-extension Vector4: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .vector4
+extension Vector4: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .vector4
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector4(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector4()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector4(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -715,23 +715,23 @@ extension Vector4: VariantConvertible {
 private var fromTypeConstructor_vector4i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
 private var toTypeConstructor_vector4i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
 
-extension Vector4i: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .vector4i
+extension Vector4i: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .vector4i
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector4i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector4i()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector4i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -746,23 +746,23 @@ extension Vector4i: VariantConvertible {
 private var fromTypeConstructor_plane = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)!
 private var toTypeConstructor_plane = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)!
 
-extension Plane: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .plane
+extension Plane: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .plane
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_plane(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Plane()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_plane(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -777,23 +777,23 @@ extension Plane: VariantConvertible {
 private var fromTypeConstructor_quaternion = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)!
 private var toTypeConstructor_quaternion = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)!
 
-extension Quaternion: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .quaternion
+extension Quaternion: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .quaternion
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_quaternion(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Quaternion()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_quaternion(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -808,23 +808,23 @@ extension Quaternion: VariantConvertible {
 private var fromTypeConstructor_aabb = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)!
 private var toTypeConstructor_aabb = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)!
 
-extension AABB: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .aabb
+extension AABB: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .aabb
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_aabb(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = AABB()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_aabb(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -839,23 +839,23 @@ extension AABB: VariantConvertible {
 private var fromTypeConstructor_basis = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)!
 private var toTypeConstructor_basis = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)!
 
-extension Basis: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .basis
+extension Basis: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .basis
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_basis(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Basis()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_basis(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -870,23 +870,23 @@ extension Basis: VariantConvertible {
 private var fromTypeConstructor_transform3D = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)!
 private var toTypeConstructor_transform3D = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)!
 
-extension Transform3D: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .transform3D
+extension Transform3D: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .transform3D
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_transform3D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Transform3D()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_transform3D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -901,23 +901,23 @@ extension Transform3D: VariantConvertible {
 private var fromTypeConstructor_projection = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)!
 private var toTypeConstructor_projection = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)!
 
-extension Projection: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .projection
+extension Projection: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .projection
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_projection(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Projection()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_projection(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -932,23 +932,23 @@ extension Projection: VariantConvertible {
 private var fromTypeConstructor_color = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)!
 private var toTypeConstructor_color = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)!
 
-extension Color: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .color
+extension Color: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .color
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            withUnsafePointer(to: self) { otherNativeTypePtr in
+            withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_color(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Color()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_color(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -963,23 +963,23 @@ extension Color: VariantConvertible {
 private var fromTypeConstructor_stringName = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
 private var toTypeConstructor_stringName = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
 
-extension GodotStringName: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .stringName
+extension GodotStringName: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .stringName
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_stringName(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = GodotStringName()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_stringName(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -994,23 +994,23 @@ extension GodotStringName: VariantConvertible {
 private var fromTypeConstructor_nodePath = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
 private var toTypeConstructor_nodePath = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
 
-extension NodePath: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .nodePath
+extension NodePath: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .nodePath
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_nodePath(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = NodePath()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_nodePath(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1025,23 +1025,23 @@ extension NodePath: VariantConvertible {
 private var fromTypeConstructor_rid = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)!
 private var toTypeConstructor_rid = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)!
 
-extension RID: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .rid
+extension RID: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .rid
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_rid(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = RID()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_rid(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1056,13 +1056,13 @@ extension RID: VariantConvertible {
 private var fromTypeConstructor_object = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
 private var toTypeConstructor_object = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
 
-extension Object: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .object
+extension Object: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .object
     
-    public func makeVariant() -> Variant.Storage {
+    public final class func encodeVariantStorage(_ value: Object) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 withUnsafePointer(to: otherNativeTypePtr) { pointer in
                     fromTypeConstructor_object(extensionTypePtr, UnsafeMutableRawPointer(mutating: pointer))
                 }
@@ -1071,10 +1071,10 @@ extension Object: VariantConvertible {
         return variant
     }
     
-    public final class func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public final class func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         var instancePtr = UnsafeMutableRawPointer(bitPattern: 0)
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             toTypeConstructor_object(&instancePtr, extensionTypePtr)
         }
         
@@ -1085,12 +1085,12 @@ extension Object: VariantConvertible {
         return instance!
     }
     
-    public final class func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        try variant.checkType(Self.variantType)
+    public final class func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        try storage.checkType(Self.variantRepresentationType)
         
         var instancePtr = UnsafeMutableRawPointer(bitPattern: 0)
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             toTypeConstructor_object(&instancePtr, extensionTypePtr)
         }
         
@@ -1104,37 +1104,37 @@ extension Object: VariantConvertible {
 
 // MARK: - Optional<Object>
 
-extension Optional: ConvertibleToVariant where Wrapped : Object {
-    public func makeVariant() -> Variant.Storage {
-        switch self {
+extension Optional: VariantEncodable where Wrapped : Object {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
+        switch value {
         case .none:
             Variant.Storage()
         case .some(let wrapped):
-            wrapped.makeVariant()
+            Wrapped.encodeVariantStorage(wrapped)
         }
     }
 }
 
-extension Optional: ConvertibleFromVariant where Wrapped : Object {
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
-        if variant.isNil {
+extension Optional: VariantDecodable where Wrapped : Object {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
+        if storage.isNil {
             nil
         } else {
-            Wrapped.fromCompatibleVariant(variant)
+            Wrapped.decodeCompatibleVariantStorage(storage)
         }
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Self {
-        if variant.isNil {
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        if storage.isNil {
             nil
         } else {
-            try Wrapped.fromVariant(variant)
+            try Wrapped.decodeVariantStorage(storage)
         }
     }
 }
 
-extension Optional: VariantConvertible where Wrapped : Object {
-    public static var variantType: Variant.RepresentationType { .object }
+extension Optional: VariantCodable where Wrapped : Object {
+    public static var variantRepresentationType: Variant.RepresentationType { .object }
     public static var _$className: GodotStringName { Wrapped._$className }
 }
 
@@ -1143,23 +1143,23 @@ extension Optional: VariantConvertible where Wrapped : Object {
 private var fromTypeConstructor_callable = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
 private var toTypeConstructor_callable = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
 
-extension Callable: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .callable
+extension Callable: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .callable
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_callable(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = Callable()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_callable(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1174,23 +1174,23 @@ extension Callable: VariantConvertible {
 private var fromTypeConstructor_signal = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
 private var toTypeConstructor_signal = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
 
-extension Signal: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .signal
+extension Signal: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .signal
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_signal(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = Signal()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_signal(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1205,23 +1205,23 @@ extension Signal: VariantConvertible {
 private var fromTypeConstructor_dictionary = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 private var toTypeConstructor_dictionary = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 
-extension GodotDictionary: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .dictionary
+extension GodotDictionary: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .dictionary
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_dictionary(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = GodotDictionary()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_dictionary(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1236,23 +1236,23 @@ extension GodotDictionary: VariantConvertible {
 private var fromTypeConstructor_array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 private var toTypeConstructor_array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 
-extension GodotArray: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .array
+extension GodotArray: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .array
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = GodotArray()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1267,23 +1267,23 @@ extension GodotArray: VariantConvertible {
 private var fromTypeConstructor_packedByteArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
 private var toTypeConstructor_packedByteArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
 
-extension PackedByteArray: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .packedByteArray
+extension PackedByteArray: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .packedByteArray
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedByteArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = PackedByteArray()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedByteArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1298,23 +1298,23 @@ extension PackedByteArray: VariantConvertible {
 private var fromTypeConstructor_packedInt32Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
 private var toTypeConstructor_packedInt32Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
 
-extension PackedInt32Array: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .packedInt32Array
+extension PackedInt32Array: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .packedInt32Array
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedInt32Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = PackedInt32Array()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedInt32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1329,23 +1329,23 @@ extension PackedInt32Array: VariantConvertible {
 private var fromTypeConstructor_packedInt64Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
 private var toTypeConstructor_packedInt64Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
 
-extension PackedInt64Array: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .packedInt64Array
+extension PackedInt64Array: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .packedInt64Array
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedInt64Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = PackedInt64Array()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedInt64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1360,23 +1360,23 @@ extension PackedInt64Array: VariantConvertible {
 private var fromTypeConstructor_packedFloat32Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
 private var toTypeConstructor_packedFloat32Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
 
-extension PackedFloat32Array: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .packedFloat32Array
+extension PackedFloat32Array: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .packedFloat32Array
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedFloat32Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = PackedFloat32Array()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedFloat32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1391,23 +1391,23 @@ extension PackedFloat32Array: VariantConvertible {
 private var fromTypeConstructor_packedFloat64Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
 private var toTypeConstructor_packedFloat64Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
 
-extension PackedFloat64Array: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .packedFloat64Array
+extension PackedFloat64Array: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .packedFloat64Array
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedFloat64Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = PackedFloat64Array()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedFloat64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1422,23 +1422,23 @@ extension PackedFloat64Array: VariantConvertible {
 private var fromTypeConstructor_packedStringArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
 private var toTypeConstructor_packedStringArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
 
-extension PackedStringArray: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .packedStringArray
+extension PackedStringArray: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .packedStringArray
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedStringArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = PackedStringArray()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedStringArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1453,23 +1453,23 @@ extension PackedStringArray: VariantConvertible {
 private var fromTypeConstructor_packedVector2Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
 private var toTypeConstructor_packedVector2Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
 
-extension PackedVector2Array: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .packedVector2Array
+extension PackedVector2Array: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .packedVector2Array
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedVector2Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = PackedVector2Array()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedVector2Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1484,23 +1484,23 @@ extension PackedVector2Array: VariantConvertible {
 private var fromTypeConstructor_packedVector3Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
 private var toTypeConstructor_packedVector3Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
 
-extension PackedVector3Array: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .packedVector3Array
+extension PackedVector3Array: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .packedVector3Array
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedVector3Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = PackedVector3Array()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedVector3Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
@@ -1515,23 +1515,23 @@ extension PackedVector3Array: VariantConvertible {
 private var fromTypeConstructor_packedColorArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
 private var toTypeConstructor_packedColorArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
 
-extension PackedColorArray: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = .packedColorArray
+extension PackedColorArray: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = .packedColorArray
     
-    public func makeVariant() -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
-            self.withUnsafeRawPointer { otherNativeTypePtr in
+            value.withUnsafeRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedColorArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
         return variant
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = PackedColorArray()
         
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        storage.withUnsafeRawPointer { extensionTypePtr in
             newValue.withUnsafeRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedColorArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }

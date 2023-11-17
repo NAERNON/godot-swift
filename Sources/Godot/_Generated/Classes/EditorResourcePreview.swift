@@ -16,12 +16,12 @@ open class EditorResourcePreview: Node {
         }
         }
     }()
-    public func queueResourcePreview<Variant1 : ConvertibleToVariant>(path: Godot.GodotString, receiver: Godot.Object?, receiverFunc: Godot.GodotStringName, userdata: Variant1) {
+    public func queueResourcePreview<Variant1 : VariantEncodable>(path: Godot.GodotString, receiver: Godot.Object?, receiverFunc: Godot.GodotStringName, userdata: Variant1) {
         path.withUnsafeRawPointer { (__ptr_path) in
             receiver.withUnsafeRawPointer { (__ptr_receiver) in
                 withUnsafePointer(to: __ptr_receiver) { (_ptr___ptr_receiver) in
                     receiverFunc.withUnsafeRawPointer { (__ptr_receiverFunc) in
-                        userdata.makeVariant().withUnsafeRawPointer { (__ptr_userdata) in
+                        Godot.Variant.Storage(userdata).withUnsafeRawPointer { (__ptr_userdata) in
                             withUnsafeArgumentPackPointer(__ptr_path, _ptr___ptr_receiver, __ptr_receiverFunc, __ptr_userdata) { (__accessPtr) in
                                 `self`.withUnsafeRawPointer { (__ptr_self) in
                                     gdextension_interface_object_method_bind_ptrcall(
@@ -46,13 +46,13 @@ open class EditorResourcePreview: Node {
         }
         }
     }()
-    public func queueEditedResourcePreview<Variant1 : ConvertibleToVariant>(resource: Godot.Resource?, receiver: Godot.Object?, receiverFunc: Godot.GodotStringName, userdata: Variant1) {
+    public func queueEditedResourcePreview<Variant1 : VariantEncodable>(resource: Godot.Resource?, receiver: Godot.Object?, receiverFunc: Godot.GodotStringName, userdata: Variant1) {
         resource.withUnsafeRawPointer { (__ptr_resource) in
             withUnsafePointer(to: __ptr_resource) { (_ptr___ptr_resource) in
                 receiver.withUnsafeRawPointer { (__ptr_receiver) in
                     withUnsafePointer(to: __ptr_receiver) { (_ptr___ptr_receiver) in
                         receiverFunc.withUnsafeRawPointer { (__ptr_receiverFunc) in
-                            userdata.makeVariant().withUnsafeRawPointer { (__ptr_userdata) in
+                            Godot.Variant.Storage(userdata).withUnsafeRawPointer { (__ptr_userdata) in
                                 withUnsafeArgumentPackPointer(_ptr___ptr_resource, _ptr___ptr_receiver, __ptr_receiverFunc, __ptr_userdata) { (__accessPtr) in
                                     `self`.withUnsafeRawPointer { (__ptr_self) in
                                         gdextension_interface_object_method_bind_ptrcall(

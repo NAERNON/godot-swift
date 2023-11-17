@@ -298,10 +298,10 @@ extension GodotArray {
     private static var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
         return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
     }()
-    static internal func _operatorEqual<Variant1 : ConvertibleToVariant>(_ lhs: Godot.GodotArray, _ rhs: Variant1) -> Bool {
+    static internal func _operatorEqual<Variant1 : VariantEncodable>(_ lhs: Godot.GodotArray, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            rhs.makeVariant().withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -313,10 +313,10 @@ extension GodotArray {
     private static var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
         return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
     }()
-    static internal func _operatorNotEqual<Variant1 : ConvertibleToVariant>(_ lhs: Godot.GodotArray, _ rhs: Variant1) -> Bool {
+    static internal func _operatorNotEqual<Variant1 : VariantEncodable>(_ lhs: Godot.GodotArray, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            rhs.makeVariant().withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -575,9 +575,9 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
         }
     }()
-    mutating internal func _pushBack<Variant1 : ConvertibleToVariant>(value: Variant1) {
+    mutating internal func _pushBack<Variant1 : VariantEncodable>(value: Variant1) {
         replaceOpaqueValueIfNecessary()
-        value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     Self.__method_binding_push_back(__ptr_self, __accessPtr, nil, 1)
@@ -591,9 +591,9 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
         }
     }()
-    mutating internal func _pushFront<Variant1 : ConvertibleToVariant>(value: Variant1) {
+    mutating internal func _pushFront<Variant1 : VariantEncodable>(value: Variant1) {
         replaceOpaqueValueIfNecessary()
-        value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     Self.__method_binding_push_front(__ptr_self, __accessPtr, nil, 1)
@@ -607,9 +607,9 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
         }
     }()
-    mutating internal func _append<Variant1 : ConvertibleToVariant>(value: Variant1) {
+    mutating internal func _append<Variant1 : VariantEncodable>(value: Variant1) {
         replaceOpaqueValueIfNecessary()
-        value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     Self.__method_binding_append(__ptr_self, __accessPtr, nil, 1)
@@ -659,11 +659,11 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3176316662)!
         }
     }()
-    @discardableResult mutating internal func _insert<Variant1 : ConvertibleToVariant>(position: Int, value: Variant1) -> Int {
+    @discardableResult mutating internal func _insert<Variant1 : VariantEncodable>(position: Int, value: Variant1) -> Int {
         replaceOpaqueValueIfNecessary()
         var __temporary = Int()
         withUnsafePointer(to: position) { (__ptr_position) in
-            value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_position, __ptr_value) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -697,9 +697,9 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
         }
     }()
-    mutating internal func _fill<Variant1 : ConvertibleToVariant>(value: Variant1) {
+    mutating internal func _fill<Variant1 : VariantEncodable>(value: Variant1) {
         replaceOpaqueValueIfNecessary()
-        value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     Self.__method_binding_fill(__ptr_self, __accessPtr, nil, 1)
@@ -713,9 +713,9 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
         }
     }()
-    mutating internal func _erase<Variant1 : ConvertibleToVariant>(value: Variant1) {
+    mutating internal func _erase<Variant1 : VariantEncodable>(value: Variant1) {
         replaceOpaqueValueIfNecessary()
-        value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     Self.__method_binding_erase(__ptr_self, __accessPtr, nil, 1)
@@ -774,9 +774,9 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2336346817)!
         }
     }()
-    internal func _find<Variant1 : ConvertibleToVariant>(what: Variant1, from: Int = 0) -> Int {
+    internal func _find<Variant1 : VariantEncodable>(what: Variant1, from: Int = 0) -> Int {
         var __temporary = Int()
-        what.makeVariant().withUnsafeRawPointer { (__ptr_what) in
+        Godot.Variant.Storage(what).withUnsafeRawPointer { (__ptr_what) in
             withUnsafePointer(to: from) { (__ptr_from) in
                 withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -795,9 +795,9 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2336346817)!
         }
     }()
-    internal func _rfind<Variant1 : ConvertibleToVariant>(what: Variant1, from: Int = -1) -> Int {
+    internal func _rfind<Variant1 : VariantEncodable>(what: Variant1, from: Int = -1) -> Int {
         var __temporary = Int()
-        what.makeVariant().withUnsafeRawPointer { (__ptr_what) in
+        Godot.Variant.Storage(what).withUnsafeRawPointer { (__ptr_what) in
             withUnsafePointer(to: from) { (__ptr_from) in
                 withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -816,9 +816,9 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1481661226)!
         }
     }()
-    internal func _count<Variant1 : ConvertibleToVariant>(value: Variant1) -> Int {
+    internal func _count<Variant1 : VariantEncodable>(value: Variant1) -> Int {
         var __temporary = Int()
-        value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -835,9 +835,9 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3680194679)!
         }
     }()
-    internal func _has<Variant1 : ConvertibleToVariant>(value: Variant1) -> Bool {
+    internal func _has<Variant1 : VariantEncodable>(value: Variant1) -> Bool {
         var __temporary = Bool()
-        value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -946,9 +946,9 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3372222236)!
         }
     }()
-    internal func _bsearch<Variant1 : ConvertibleToVariant>(value: Variant1, before: Bool = true) -> Int {
+    internal func _bsearch<Variant1 : VariantEncodable>(value: Variant1, before: Bool = true) -> Int {
         var __temporary = Int()
-        value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
             withUnsafePointer(to: before) { (__ptr_before) in
                 withUnsafeArgumentPackPointer(__ptr_value, __ptr_before) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -967,9 +967,9 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 161317131)!
         }
     }()
-    internal func _bsearchCustom<Variant1 : ConvertibleToVariant>(value: Variant1, `func`: Godot.Callable, before: Bool = true) -> Int {
+    internal func _bsearchCustom<Variant1 : VariantEncodable>(value: Variant1, `func`: Godot.Callable, before: Bool = true) -> Int {
         var __temporary = Int()
-        value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
             `func`.withUnsafeRawPointer { (__ptr_func) in
                 withUnsafePointer(to: before) { (__ptr_before) in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_func, __ptr_before) { (__accessPtr) in
@@ -1084,10 +1084,10 @@ extension GodotArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 4272450342)!
         }
     }()
-    internal func _reduce<Variant1 : ConvertibleToVariant>(method: Godot.Callable, accum: Variant1 = Variant()) -> Godot.Variant.Storage {
+    internal func _reduce<Variant1 : VariantEncodable>(method: Godot.Callable, accum: Variant1 = Variant()) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
         method.withUnsafeRawPointer { (__ptr_method) in
-            accum.makeVariant().withUnsafeRawPointer { (__ptr_accum) in
+            Godot.Variant.Storage(accum).withUnsafeRawPointer { (__ptr_accum) in
                 withUnsafeArgumentPackPointer(__ptr_method, __ptr_accum) { (__accessPtr) in
                     __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in

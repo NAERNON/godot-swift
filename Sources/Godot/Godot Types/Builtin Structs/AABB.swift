@@ -117,11 +117,11 @@ extension AABB {
     }
     
     public func intersectsSegment(from fromPoint: Vector3, to toPoint: Vector3) -> Variant {
-        Variant(_intersectsSegment(from: fromPoint, to: toPoint))
+        Variant(storage: _intersectsSegment(from: fromPoint, to: toPoint))
     }
     
     public func intersectsRay(from fromPoint: Vector3, dir: Vector3) -> Variant {
-        Variant(_intersectsRay(from: fromPoint, dir: dir))
+        Variant(storage: _intersectsRay(from: fromPoint, dir: dir))
     }
 }
 

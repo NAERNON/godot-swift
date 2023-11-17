@@ -53,14 +53,14 @@ extension GodotFunction {
             var index = 1
             for argument in arguments {
                 if argument.type == .variant {
-                    genericArguments.append("Variant\(index) : ConvertibleToVariant")
+                    genericArguments.append("Variant\(index) : VariantEncodable")
                     index += 1
                 }
             }
         }
         
         if isVararg {
-            genericArguments.append("each VariantRest : ConvertibleToVariant")
+            genericArguments.append("each VariantRest : VariantEncodable")
         }
         
         if genericArguments.isEmpty {
@@ -298,7 +298,7 @@ extension GodotFunction {
             var caller = backticksKeyword(argument.name)
             
             if convertsAllParameterToVariant || (usesVariantGeneric && argument.type == .variant) {
-                let _ = caller = "\(caller).makeVariant()"
+                let _ = caller = "Godot.Variant.Storage(\(caller))"
                 let _ = argumentType = .variantStorage
             }
             

@@ -1,22 +1,22 @@
 
-extension Array: ConvertibleFromVariant where Element : VariantConvertible {
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Array<Element> {
-        try .init(GodotTypedArray<Element>.fromVariant(variant))
+extension Array: VariantDecodable where Element : VariantCodable {
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Array<Element> {
+        try .init(GodotTypedArray<Element>.decodeVariantStorage(storage))
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Array<Element> {
-        .init(GodotTypedArray<Element>.fromCompatibleVariant(variant))
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Array<Element> {
+        .init(GodotTypedArray<Element>.decodeCompatibleVariantStorage(storage))
     }
 }
 
-extension Array: ConvertibleToVariant where Element : VariantConvertible {
-    public func makeVariant() -> Variant.Storage {
-        GodotTypedArray(self).makeVariant()
+extension Array: VariantEncodable where Element : VariantCodable {
+    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
+        GodotTypedArray.encodeVariantStorage(GodotTypedArray(value))
     }
 }
 
-extension Array: VariantConvertible where Element : VariantConvertible {
-    public static var variantType: Variant.RepresentationType {
-        GodotTypedArray<Element>.variantType
+extension Array: VariantCodable where Element : VariantCodable {
+    public static var variantRepresentationType: Variant.RepresentationType {
+        GodotTypedArray<Element>.variantRepresentationType
     }
 }

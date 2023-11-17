@@ -80,10 +80,10 @@ extension Signal {
     private static var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
         return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_NIL)!
     }()
-    static internal func _operatorEqual<Variant1 : ConvertibleToVariant>(_ lhs: Godot.Signal, _ rhs: Variant1) -> Bool {
+    static internal func _operatorEqual<Variant1 : VariantEncodable>(_ lhs: Godot.Signal, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            rhs.makeVariant().withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -95,10 +95,10 @@ extension Signal {
     private static var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
         return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_NIL)!
     }()
-    static internal func _operatorNotEqual<Variant1 : ConvertibleToVariant>(_ lhs: Godot.Signal, _ rhs: Variant1) -> Bool {
+    static internal func _operatorNotEqual<Variant1 : VariantEncodable>(_ lhs: Godot.Signal, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            rhs.makeVariant().withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -317,7 +317,7 @@ extension Signal {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3286317445)!
         }
     }()
-    internal func _emit<each VariantRest : ConvertibleToVariant>(_ rest: repeat each VariantRest) {
+    internal func _emit<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { (packCount, __accessPtr) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 Self.__method_binding_emit(__ptr_self, __accessPtr, nil, Int32(packCount))

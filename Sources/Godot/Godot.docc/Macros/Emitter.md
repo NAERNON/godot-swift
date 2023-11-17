@@ -57,7 +57,7 @@ Emitting the signal becomes:
 }
 ```
 
->important: Only ``VariantConvertible`` types may be used as arguments.
+>important: Only ``VariantCodable`` types may be used as arguments.
 
 ### Connect to a receiver
 

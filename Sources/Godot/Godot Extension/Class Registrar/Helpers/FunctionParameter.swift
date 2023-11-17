@@ -8,7 +8,7 @@ extension ClassRegistrar {
     /// or use `returnParameter(_:)` to create a return `FunctionParameter`.
     public struct FunctionParameter {
         /// The variant representation type of the parameter.
-        public var variantType: Variant.RepresentationType
+        public var variantRepresentationType: Variant.RepresentationType
         
         /// The name of the parameter.
         public var name: GodotStringName
@@ -31,8 +31,8 @@ extension ClassRegistrar {
             name: GodotStringName,
             defaultValue: Value?,
             className: GodotStringName
-        ) where Value : VariantConvertible {
-            self.variantType = type.variantType
+        ) where Value : VariantCodable {
+            self.variantRepresentationType = type.variantRepresentationType
             self.name = name
             if let defaultValue {
                 self.defaultValue = Variant(defaultValue)
@@ -54,7 +54,7 @@ extension ClassRegistrar {
             name: GodotStringName,
             defaultValue: Value? = nil
         ) -> FunctionParameter
-        where Value : VariantConvertible {
+        where Value : VariantCodable {
             FunctionParameter(
                 type: type,
                 name: name,
@@ -67,7 +67,7 @@ extension ClassRegistrar {
         ///
         /// - Parameter type: The type of the parameter.
         public static func returnParameter<Value>(_ type: Value.Type) -> FunctionParameter
-        where Value : VariantConvertible {
+        where Value : VariantCodable {
             FunctionParameter(
                 type: type,
                 name: .init(),
@@ -81,7 +81,7 @@ extension ClassRegistrar {
         /// Creates a `PropertyInfo` using the information of the parameter.
         var propertyInfo: ClassRegistrar.PropertyInfo {
             ClassRegistrar.PropertyInfo(
-                variantType: variantType,
+                variantRepresentationType: variantRepresentationType,
                 name: name,
                 defaultValue: defaultValue,
                 hint: editorHint.hint,

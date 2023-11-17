@@ -2016,10 +2016,10 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func materialSetParam<Variant1 : ConvertibleToVariant>(material: Godot.RID, parameter: Godot.GodotStringName, value: Variant1) {
+    public func materialSetParam<Variant1 : VariantEncodable>(material: Godot.RID, parameter: Godot.GodotStringName, value: Variant1) {
         material.withUnsafeRawPointer { (__ptr_material) in
             parameter.withUnsafeRawPointer { (__ptr_parameter) in
-                value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+                Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                     withUnsafeArgumentPackPointer(__ptr_material, __ptr_parameter, __ptr_value) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(
@@ -9780,10 +9780,10 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func instanceGeometrySetShaderParameter<Variant1 : ConvertibleToVariant>(instance: Godot.RID, parameter: Godot.GodotStringName, value: Variant1) {
+    public func instanceGeometrySetShaderParameter<Variant1 : VariantEncodable>(instance: Godot.RID, parameter: Godot.GodotStringName, value: Variant1) {
         instance.withUnsafeRawPointer { (__ptr_instance) in
             parameter.withUnsafeRawPointer { (__ptr_parameter) in
-                value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+                Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                     withUnsafeArgumentPackPointer(__ptr_instance, __ptr_parameter, __ptr_value) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(
@@ -12126,10 +12126,10 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func globalShaderParameterAdd<Variant1 : ConvertibleToVariant>(name: Godot.GodotStringName, type: Godot.RenderingServer.GlobalShaderParameterType, defaultValue: Variant1) {
+    public func globalShaderParameterAdd<Variant1 : VariantEncodable>(name: Godot.GodotStringName, type: Godot.RenderingServer.GlobalShaderParameterType, defaultValue: Variant1) {
         name.withUnsafeRawPointer { (__ptr_name) in
             withUnsafePointer(to: type) { (__ptr_type) in
-                defaultValue.makeVariant().withUnsafeRawPointer { (__ptr_defaultValue) in
+                Godot.Variant.Storage(defaultValue).withUnsafeRawPointer { (__ptr_defaultValue) in
                     withUnsafeArgumentPackPointer(__ptr_name, __ptr_type, __ptr_defaultValue) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(
@@ -12196,9 +12196,9 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func globalShaderParameterSet<Variant1 : ConvertibleToVariant>(name: Godot.GodotStringName, value: Variant1) {
+    public func globalShaderParameterSet<Variant1 : VariantEncodable>(name: Godot.GodotStringName, value: Variant1) {
         name.withUnsafeRawPointer { (__ptr_name) in
-            value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(
@@ -12220,9 +12220,9 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func globalShaderParameterSetOverride<Variant1 : ConvertibleToVariant>(name: Godot.GodotStringName, value: Variant1) {
+    public func globalShaderParameterSetOverride<Variant1 : VariantEncodable>(name: Godot.GodotStringName, value: Variant1) {
         name.withUnsafeRawPointer { (__ptr_name) in
-            value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(

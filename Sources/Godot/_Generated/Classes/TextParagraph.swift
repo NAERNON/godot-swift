@@ -326,14 +326,14 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func addString<Variant1 : ConvertibleToVariant>(text: Godot.GodotString, font: Godot.Font?, fontSize: Int32, language: Godot.GodotString = "", meta: Variant1 = Variant()) -> Bool {
+    public func addString<Variant1 : VariantEncodable>(text: Godot.GodotString, font: Godot.Font?, fontSize: Int32, language: Godot.GodotString = "", meta: Variant1 = Variant()) -> Bool {
         var __temporary = Bool()
         text.withUnsafeRawPointer { (__ptr_text) in
             font.withUnsafeRawPointer { (__ptr_font) in
                 withUnsafePointer(to: __ptr_font) { (_ptr___ptr_font) in
                     withUnsafePointer(to: fontSize) { (__ptr_fontSize) in
                         language.withUnsafeRawPointer { (__ptr_language) in
-                            meta.makeVariant().withUnsafeRawPointer { (__ptr_meta) in
+                            Godot.Variant.Storage(meta).withUnsafeRawPointer { (__ptr_meta) in
                                 withUnsafeArgumentPackPointer(__ptr_text, _ptr___ptr_font, __ptr_fontSize, __ptr_language, __ptr_meta) { (__accessPtr) in
                                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                                         `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -362,9 +362,9 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func addObject<Variant1 : ConvertibleToVariant>(key: Variant1, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, length: Int32 = 1, baseline: Double = 0.0) -> Bool {
+    public func addObject<Variant1 : VariantEncodable>(key: Variant1, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, length: Int32 = 1, baseline: Double = 0.0) -> Bool {
         var __temporary = Bool()
-        key.makeVariant().withUnsafeRawPointer { (__ptr_key) in
+        Godot.Variant.Storage(key).withUnsafeRawPointer { (__ptr_key) in
             withUnsafePointer(to: size) { (__ptr_size) in
                 withUnsafePointer(to: inlineAlign) { (__ptr_inlineAlign) in
                     withUnsafePointer(to: length) { (__ptr_length) in
@@ -396,9 +396,9 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func resizeObject<Variant1 : ConvertibleToVariant>(key: Variant1, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, baseline: Double = 0.0) -> Bool {
+    public func resizeObject<Variant1 : VariantEncodable>(key: Variant1, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, baseline: Double = 0.0) -> Bool {
         var __temporary = Bool()
-        key.makeVariant().withUnsafeRawPointer { (__ptr_key) in
+        Godot.Variant.Storage(key).withUnsafeRawPointer { (__ptr_key) in
             withUnsafePointer(to: size) { (__ptr_size) in
                 withUnsafePointer(to: inlineAlign) { (__ptr_inlineAlign) in
                     withUnsafePointer(to: baseline) { (__ptr_baseline) in
@@ -876,10 +876,10 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineObjectRect<Variant1 : ConvertibleToVariant>(line: Int32, key: Variant1) -> Godot.Rect2 {
+    public func lineObjectRect<Variant1 : VariantEncodable>(line: Int32, key: Variant1) -> Godot.Rect2 {
         var __temporary = Godot.Rect2()
         withUnsafePointer(to: line) { (__ptr_line) in
-            key.makeVariant().withUnsafeRawPointer { (__ptr_key) in
+            Godot.Variant.Storage(key).withUnsafeRawPointer { (__ptr_key) in
                 withUnsafeArgumentPackPointer(__ptr_line, __ptr_key) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in

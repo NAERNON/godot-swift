@@ -1843,14 +1843,14 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    public func addCodeCompletionOption<Variant1 : ConvertibleToVariant>(type: Godot.CodeEdit.CodeCompletionKind, displayText: Godot.GodotString, insertText: Godot.GodotString, textColor: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), icon: Godot.Resource? = nil, value: Variant1 = 0, location: Int32 = 1024) {
+    public func addCodeCompletionOption<Variant1 : VariantEncodable>(type: Godot.CodeEdit.CodeCompletionKind, displayText: Godot.GodotString, insertText: Godot.GodotString, textColor: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), icon: Godot.Resource? = nil, value: Variant1 = 0, location: Int32 = 1024) {
         withUnsafePointer(to: type) { (__ptr_type) in
             displayText.withUnsafeRawPointer { (__ptr_displayText) in
                 insertText.withUnsafeRawPointer { (__ptr_insertText) in
                     withUnsafePointer(to: textColor) { (__ptr_textColor) in
                         icon.withUnsafeRawPointer { (__ptr_icon) in
                             withUnsafePointer(to: __ptr_icon) { (_ptr___ptr_icon) in
-                                value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+                                Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                                     withUnsafePointer(to: location) { (__ptr_location) in
                                         withUnsafeArgumentPackPointer(__ptr_type, __ptr_displayText, __ptr_insertText, __ptr_textColor, _ptr___ptr_icon, __ptr_value, __ptr_location) { (__accessPtr) in
                                             `self`.withUnsafeRawPointer { (__ptr_self) in

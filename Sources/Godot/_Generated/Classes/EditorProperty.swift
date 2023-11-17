@@ -480,9 +480,9 @@ open class EditorProperty: Container {
         }
         }
     }()
-    public func emitChanged<Variant1 : ConvertibleToVariant>(property: Godot.GodotStringName, value: Variant1, field: Godot.GodotStringName = "", changing: Bool = false) {
+    public func emitChanged<Variant1 : VariantEncodable>(property: Godot.GodotStringName, value: Variant1, field: Godot.GodotStringName = "", changing: Bool = false) {
         property.withUnsafeRawPointer { (__ptr_property) in
-            value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                 field.withUnsafeRawPointer { (__ptr_field) in
                     withUnsafePointer(to: changing) { (__ptr_changing) in
                         withUnsafeArgumentPackPointer(__ptr_property, __ptr_value, __ptr_field, __ptr_changing) { (__accessPtr) in

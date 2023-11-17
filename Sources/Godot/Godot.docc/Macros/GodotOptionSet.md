@@ -1,7 +1,7 @@
 # ``Godot/GodotOptionSet()``
 
 This macro conforms the attached option set to the
-``VariantConvertible`` protocol, enabling the option set to be used as a type for function parameters and variables for Godot.
+``VariantCodable`` protocol, enabling the option set to be used as a type for function parameters and variables for Godot.
 It also conforms the option set to the `OptionSet` protocol and provides:
 - a public `rawValue` constant of type `Int64`
 - a public `init(rawValue:_)` initializer that sets the `rawValue` constant

@@ -582,10 +582,10 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func callGroupFlags<each VariantRest : ConvertibleToVariant>(_ flags: Int, group: Godot.GodotStringName, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
-        flags.makeVariant().withUnsafeRawPointer { (__ptr_flags) in
-            group.makeVariant().withUnsafeRawPointer { (__ptr_group) in
-                method.makeVariant().withUnsafeRawPointer { (__ptr_method) in
+    public func callGroupFlags<each VariantRest : VariantEncodable>(_ flags: Int, group: Godot.GodotStringName, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+        Godot.Variant.Storage(flags).withUnsafeRawPointer { (__ptr_flags) in
+            Godot.Variant.Storage(group).withUnsafeRawPointer { (__ptr_group) in
+                Godot.Variant.Storage(method).withUnsafeRawPointer { (__ptr_method) in
                     withUnsafeArgumentPackPointer(__ptr_flags, __ptr_group, __ptr_method, varargs: repeat each rest) { (packCount, __accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_call(
@@ -603,9 +603,9 @@ open class SceneTree: MainLoop {
         }
     }
     public func callGroupFlags(_ flags: Int, group: Godot.GodotStringName, method: Godot.GodotStringName) {
-        flags.makeVariant().withUnsafeRawPointer { (__ptr_flags) in
-            group.makeVariant().withUnsafeRawPointer { (__ptr_group) in
-                method.makeVariant().withUnsafeRawPointer { (__ptr_method) in
+        Godot.Variant.Storage(flags).withUnsafeRawPointer { (__ptr_flags) in
+            Godot.Variant.Storage(group).withUnsafeRawPointer { (__ptr_group) in
+                Godot.Variant.Storage(method).withUnsafeRawPointer { (__ptr_method) in
                     withUnsafeArgumentPackPointer(__ptr_flags, __ptr_group, __ptr_method) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_call(
@@ -656,11 +656,11 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func setGroupFlags<Variant1 : ConvertibleToVariant>(callFlags: UInt32, group: Godot.GodotStringName, property: Godot.GodotString, value: Variant1) {
+    public func setGroupFlags<Variant1 : VariantEncodable>(callFlags: UInt32, group: Godot.GodotStringName, property: Godot.GodotString, value: Variant1) {
         withUnsafePointer(to: callFlags) { (__ptr_callFlags) in
             group.withUnsafeRawPointer { (__ptr_group) in
                 property.withUnsafeRawPointer { (__ptr_property) in
-                    value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+                    Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                         withUnsafeArgumentPackPointer(__ptr_callFlags, __ptr_group, __ptr_property, __ptr_value) { (__accessPtr) in
                             `self`.withUnsafeRawPointer { (__ptr_self) in
                                 gdextension_interface_object_method_bind_ptrcall(
@@ -684,9 +684,9 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func callGroup<each VariantRest : ConvertibleToVariant>(_ group: Godot.GodotStringName, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
-        group.makeVariant().withUnsafeRawPointer { (__ptr_group) in
-            method.makeVariant().withUnsafeRawPointer { (__ptr_method) in
+    public func callGroup<each VariantRest : VariantEncodable>(_ group: Godot.GodotStringName, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+        Godot.Variant.Storage(group).withUnsafeRawPointer { (__ptr_group) in
+            Godot.Variant.Storage(method).withUnsafeRawPointer { (__ptr_method) in
                 withUnsafeArgumentPackPointer(__ptr_group, __ptr_method, varargs: repeat each rest) { (packCount, __accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_call(
@@ -703,8 +703,8 @@ open class SceneTree: MainLoop {
         }
     }
     public func callGroup(_ group: Godot.GodotStringName, method: Godot.GodotStringName) {
-        group.makeVariant().withUnsafeRawPointer { (__ptr_group) in
-            method.makeVariant().withUnsafeRawPointer { (__ptr_method) in
+        Godot.Variant.Storage(group).withUnsafeRawPointer { (__ptr_group) in
+            Godot.Variant.Storage(method).withUnsafeRawPointer { (__ptr_method) in
                 withUnsafeArgumentPackPointer(__ptr_group, __ptr_method) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_call(
@@ -752,10 +752,10 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func setGroup<Variant1 : ConvertibleToVariant>(_ group: Godot.GodotStringName, property: Godot.GodotString, value: Variant1) {
+    public func setGroup<Variant1 : VariantEncodable>(_ group: Godot.GodotStringName, property: Godot.GodotString, value: Variant1) {
         group.withUnsafeRawPointer { (__ptr_group) in
             property.withUnsafeRawPointer { (__ptr_property) in
-                value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+                Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                     withUnsafeArgumentPackPointer(__ptr_group, __ptr_property, __ptr_value) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(

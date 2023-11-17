@@ -60,19 +60,19 @@ public enum GodotEnumMacro: ExtensionMacro {
         let cases = enumCases(for: enumDecl)
         
         let accessModifier = enumDecl.effectiveAccessModifier(minimum: .fileprivate)
-        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.VariantConvertible, Godot.GodotEnum") {
+        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.VariantCodable, Godot.GodotEnum") {
             """
-            \(accessModifier) static let variantType: Godot.Variant.RepresentationType = RawValue.variantType
+            \(accessModifier) static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
             
-            \(accessModifier) func makeVariant() -> Godot.Variant.Storage {
-                rawValue.makeVariant()
+            \(accessModifier) static func encodeVariantStorage(_ value: Self) -> Godot.Variant.Storage {
+                RawValue.encodeVariantStorage(value.rawValue)
             }
             
-            \(accessModifier) static func fromCompatibleVariant(_ variant: borrowing Godot.Variant.Storage) -> Self {
-                Self(rawValue: RawValue.fromCompatibleVariant(variant))!
+            \(accessModifier) static func decodeCompatibleVariantStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
+                Self(rawValue: RawValue.decodeCompatibleVariantStorage(storage))!
             }
             
-            \(accessModifier) static func fromVariant(_ variant: borrowing Godot.Variant.Storage) throws -> Self {
+            \(accessModifier) static func decodeVariantStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
                 enum Error: Swift.Error {
                     case incorrectRawValue
                     
@@ -81,7 +81,7 @@ public enum GodotEnumMacro: ExtensionMacro {
                     }
                 }
                 
-                let rawValue = try RawValue.fromVariant(variant)
+                let rawValue = try RawValue.decodeVariantStorage(storage)
                 guard let value = Self(rawValue: rawValue) else {
                     throw Error.incorrectRawValue
                 }

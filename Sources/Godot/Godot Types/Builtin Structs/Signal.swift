@@ -59,7 +59,7 @@ extension Signal {
         _connections()
     }
     
-    public func emit<each VariantRest : ConvertibleToVariant>(_ rest: repeat each VariantRest) {
+    public func emit<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) {
         _emit(repeat each rest)
     }
 }

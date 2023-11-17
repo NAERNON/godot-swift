@@ -234,11 +234,11 @@ open class MultiplayerAPI: RefCounted {
         }
         }
     }()
-    public func objectConfigurationAdd<Variant1 : ConvertibleToVariant>(object: Godot.Object?, configuration: Variant1) -> Godot.ErrorType {
+    public func objectConfigurationAdd<Variant1 : VariantEncodable>(object: Godot.Object?, configuration: Variant1) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
-                configuration.makeVariant().withUnsafeRawPointer { (__ptr_configuration) in
+                Godot.Variant.Storage(configuration).withUnsafeRawPointer { (__ptr_configuration) in
                     withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_configuration) { (__accessPtr) in
                         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                             `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -264,11 +264,11 @@ open class MultiplayerAPI: RefCounted {
         }
         }
     }()
-    public func objectConfigurationRemove<Variant1 : ConvertibleToVariant>(object: Godot.Object?, configuration: Variant1) -> Godot.ErrorType {
+    public func objectConfigurationRemove<Variant1 : VariantEncodable>(object: Godot.Object?, configuration: Variant1) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
-                configuration.makeVariant().withUnsafeRawPointer { (__ptr_configuration) in
+                Godot.Variant.Storage(configuration).withUnsafeRawPointer { (__ptr_configuration) in
                     withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_configuration) { (__accessPtr) in
                         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                             `self`.withUnsafeRawPointer { (__ptr_self) in

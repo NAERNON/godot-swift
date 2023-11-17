@@ -80,10 +80,10 @@ extension Callable {
     private static var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
         return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_NIL)!
     }()
-    static internal func _operatorEqual<Variant1 : ConvertibleToVariant>(_ lhs: Godot.Callable, _ rhs: Variant1) -> Bool {
+    static internal func _operatorEqual<Variant1 : VariantEncodable>(_ lhs: Godot.Callable, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            rhs.makeVariant().withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -95,10 +95,10 @@ extension Callable {
     private static var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
         return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_NIL)!
     }()
-    static internal func _operatorNotEqual<Variant1 : ConvertibleToVariant>(_ lhs: Godot.Callable, _ rhs: Variant1) -> Bool {
+    static internal func _operatorNotEqual<Variant1 : VariantEncodable>(_ lhs: Godot.Callable, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            rhs.makeVariant().withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -393,7 +393,7 @@ extension Callable {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3643564216)!
         }
     }()
-    internal func _call<each VariantRest : ConvertibleToVariant>(_ rest: repeat each VariantRest) -> Godot.Variant.Storage {
+    internal func _call<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { (packCount, __accessPtr) in
             __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -410,7 +410,7 @@ extension Callable {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3286317445)!
         }
     }()
-    internal func _callDeferred<each VariantRest : ConvertibleToVariant>(_ rest: repeat each VariantRest) {
+    internal func _callDeferred<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { (packCount, __accessPtr) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 Self.__method_binding_call_deferred(__ptr_self, __accessPtr, nil, Int32(packCount))
@@ -423,7 +423,7 @@ extension Callable {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3286317445)!
         }
     }()
-    internal func _rpc<each VariantRest : ConvertibleToVariant>(_ rest: repeat each VariantRest) {
+    internal func _rpc<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { (packCount, __accessPtr) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 Self.__method_binding_rpc(__ptr_self, __accessPtr, nil, Int32(packCount))
@@ -436,7 +436,7 @@ extension Callable {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 2270047679)!
         }
     }()
-    internal func _rpcId<each VariantRest : ConvertibleToVariant>(peerId: Int, _ rest: repeat each VariantRest) {
+    internal func _rpcId<each VariantRest : VariantEncodable>(peerId: Int, _ rest: repeat each VariantRest) {
         withUnsafePointer(to: peerId) { (__ptr_peerId) in
             withUnsafeArgumentPackPointer(__ptr_peerId, varargs: repeat each rest) { (packCount, __accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -451,7 +451,7 @@ extension Callable {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3224143119)!
         }
     }()
-    internal func _bind<each VariantRest : ConvertibleToVariant>(_ rest: repeat each VariantRest) -> Godot.Callable {
+    internal func _bind<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) -> Godot.Callable {
         let __temporary = Godot.Callable()
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { (packCount, __accessPtr) in
             __temporary.withUnsafeRawPointer { (__ptr___temporary) in

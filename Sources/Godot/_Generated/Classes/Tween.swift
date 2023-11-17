@@ -87,12 +87,12 @@ open class Tween: RefCounted {
         }
         }
     }()
-    public func tweenProperty<Variant1 : ConvertibleToVariant>(object: Godot.Object?, property: Godot.NodePath, finalVal: Variant1, duration: Double) -> Godot.PropertyTweener? {
+    public func tweenProperty<Variant1 : VariantEncodable>(object: Godot.Object?, property: Godot.NodePath, finalVal: Variant1, duration: Double) -> Godot.PropertyTweener? {
         var __temporary: GDExtensionObjectPtr!
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
                 property.withUnsafeRawPointer { (__ptr_property) in
-                    finalVal.makeVariant().withUnsafeRawPointer { (__ptr_finalVal) in
+                    Godot.Variant.Storage(finalVal).withUnsafeRawPointer { (__ptr_finalVal) in
                         withUnsafePointer(to: duration) { (__ptr_duration) in
                             withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_property, __ptr_finalVal, __ptr_duration) { (__accessPtr) in
                                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -173,11 +173,11 @@ open class Tween: RefCounted {
         }
         }
     }()
-    public func tweenMethod<Variant1 : ConvertibleToVariant, Variant2 : ConvertibleToVariant>(_ method: Godot.Callable, from: Variant1, to: Variant2, duration: Double) -> Godot.MethodTweener? {
+    public func tweenMethod<Variant1 : VariantEncodable, Variant2 : VariantEncodable>(_ method: Godot.Callable, from: Variant1, to: Variant2, duration: Double) -> Godot.MethodTweener? {
         var __temporary: GDExtensionObjectPtr!
         method.withUnsafeRawPointer { (__ptr_method) in
-            from.makeVariant().withUnsafeRawPointer { (__ptr_from) in
-                to.makeVariant().withUnsafeRawPointer { (__ptr_to) in
+            Godot.Variant.Storage(from).withUnsafeRawPointer { (__ptr_from) in
+                Godot.Variant.Storage(to).withUnsafeRawPointer { (__ptr_to) in
                     withUnsafePointer(to: duration) { (__ptr_duration) in
                         withUnsafeArgumentPackPointer(__ptr_method, __ptr_from, __ptr_to, __ptr_duration) { (__accessPtr) in
                             withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -645,10 +645,10 @@ open class Tween: RefCounted {
         }
         }
     }()
-    static public func interpolateValue<Variant1 : ConvertibleToVariant, Variant2 : ConvertibleToVariant>(initialValue: Variant1, deltaValue: Variant2, elapsedTime: Double, duration: Double, transType: Godot.Tween.TransitionType, easeType: Godot.Tween.EaseType) -> Godot.Variant {
+    static public func interpolateValue<Variant1 : VariantEncodable, Variant2 : VariantEncodable>(initialValue: Variant1, deltaValue: Variant2, elapsedTime: Double, duration: Double, transType: Godot.Tween.TransitionType, easeType: Godot.Tween.EaseType) -> Godot.Variant {
         let __temporary = Godot.Variant()
-        initialValue.makeVariant().withUnsafeRawPointer { (__ptr_initialValue) in
-            deltaValue.makeVariant().withUnsafeRawPointer { (__ptr_deltaValue) in
+        Godot.Variant.Storage(initialValue).withUnsafeRawPointer { (__ptr_initialValue) in
+            Godot.Variant.Storage(deltaValue).withUnsafeRawPointer { (__ptr_deltaValue) in
                 withUnsafePointer(to: elapsedTime) { (__ptr_elapsedTime) in
                     withUnsafePointer(to: duration) { (__ptr_duration) in
                         withUnsafePointer(to: transType) { (__ptr_transType) in

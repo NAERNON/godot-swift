@@ -32,7 +32,7 @@ Every public member defined inside the class are, by default, exposed to Godot.
 
 #### Expose variables
 
-Every public or open variable is exposed to Godot. All these variables must be of a type conforming to the ``VariantConvertible`` protocol. Exposed variables cannot have async or throwing getters.
+Every public or open variable is exposed to Godot. All these variables must be of a type conforming to the ``VariantCodable`` protocol. Exposed variables cannot have async or throwing getters.
 
 ```swift
 @Exposable public class Character: Node {
@@ -51,7 +51,7 @@ Every public or open variable is exposed to Godot. All these variables must be o
 
 #### Expose functions
 
-Every public or open function is exposed to Godot. All these functions must use parameters and return type conforming to the ``VariantConvertible`` protocol.
+Every public or open function is exposed to Godot. All these functions must use parameters and return type conforming to the ``VariantCodable`` protocol.
 Exposed functions cannot be async, throw, be generic or have variadic parameters.
 
 ```swift
@@ -147,7 +147,7 @@ If you still need to make a member public, use either the ``ExpositionIgnored()`
 
     // The `eatAnyway` function couldn't be exposed to Godot
     // because MyFood is a custom type that does not conform
-    // to the VariantConvertible protcol
+    // to the VariantCodable protcol
     // Using @ExpositionIgnored prevents the exposition
     @ExpositionIgnored
     public func eatAnyway(food: MyFood) throws {

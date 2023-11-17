@@ -12,9 +12,9 @@ open class JSON: Resource {
         }
         }
     }()
-    static public func stringify<Variant1 : ConvertibleToVariant>(data: Variant1, indent: Godot.GodotString = "", sortKeys: Bool = true, fullPrecision: Bool = false) -> Godot.GodotString {
+    static public func stringify<Variant1 : VariantEncodable>(data: Variant1, indent: Godot.GodotString = "", sortKeys: Bool = true, fullPrecision: Bool = false) -> Godot.GodotString {
         let __temporary = Godot.GodotString()
-        data.makeVariant().withUnsafeRawPointer { (__ptr_data) in
+        Godot.Variant.Storage(data).withUnsafeRawPointer { (__ptr_data) in
             indent.withUnsafeRawPointer { (__ptr_indent) in
                 withUnsafePointer(to: sortKeys) { (__ptr_sortKeys) in
                     withUnsafePointer(to: fullPrecision) { (__ptr_fullPrecision) in
@@ -116,8 +116,8 @@ open class JSON: Resource {
         }
         }
     }()
-    private func __setData<Variant1 : ConvertibleToVariant>(_ data: Variant1) {
-        data.makeVariant().withUnsafeRawPointer { (__ptr_data) in
+    private func __setData<Variant1 : VariantEncodable>(_ data: Variant1) {
+        Godot.Variant.Storage(data).withUnsafeRawPointer { (__ptr_data) in
             withUnsafeArgumentPackPointer(__ptr_data) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     gdextension_interface_object_method_bind_ptrcall(

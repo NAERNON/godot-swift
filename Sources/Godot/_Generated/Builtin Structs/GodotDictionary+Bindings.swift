@@ -52,10 +52,10 @@ extension GodotDictionary {
     private static var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
         return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_DICTIONARY, GDEXTENSION_VARIANT_TYPE_NIL)!
     }()
-    static internal func _operatorEqual<Variant1 : ConvertibleToVariant>(_ lhs: Godot.GodotDictionary, _ rhs: Variant1) -> Bool {
+    static internal func _operatorEqual<Variant1 : VariantEncodable>(_ lhs: Godot.GodotDictionary, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            rhs.makeVariant().withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -67,10 +67,10 @@ extension GodotDictionary {
     private static var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
         return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_DICTIONARY, GDEXTENSION_VARIANT_TYPE_NIL)!
     }()
-    static internal func _operatorNotEqual<Variant1 : ConvertibleToVariant>(_ lhs: Godot.GodotDictionary, _ rhs: Variant1) -> Bool {
+    static internal func _operatorNotEqual<Variant1 : VariantEncodable>(_ lhs: Godot.GodotDictionary, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            rhs.makeVariant().withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -264,9 +264,9 @@ extension GodotDictionary {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 3680194679)!
         }
     }()
-    internal func _has<Variant1 : ConvertibleToVariant>(key: Variant1) -> Bool {
+    internal func _has<Variant1 : VariantEncodable>(key: Variant1) -> Bool {
         var __temporary = Bool()
-        key.makeVariant().withUnsafeRawPointer { (__ptr_key) in
+        Godot.Variant.Storage(key).withUnsafeRawPointer { (__ptr_key) in
             withUnsafeArgumentPackPointer(__ptr_key) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -302,9 +302,9 @@ extension GodotDictionary {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 1988825835)!
         }
     }()
-    internal func _findKey<Variant1 : ConvertibleToVariant>(value: Variant1) -> Godot.Variant.Storage {
+    internal func _findKey<Variant1 : VariantEncodable>(value: Variant1) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
-        value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -321,10 +321,10 @@ extension GodotDictionary {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 1776646889)!
         }
     }()
-    @discardableResult mutating internal func _erase<Variant1 : ConvertibleToVariant>(key: Variant1) -> Bool {
+    @discardableResult mutating internal func _erase<Variant1 : VariantEncodable>(key: Variant1) -> Bool {
         replaceOpaqueValueIfNecessary()
         var __temporary = Bool()
-        key.makeVariant().withUnsafeRawPointer { (__ptr_key) in
+        Godot.Variant.Storage(key).withUnsafeRawPointer { (__ptr_key) in
             withUnsafeArgumentPackPointer(__ptr_key) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -405,10 +405,10 @@ extension GodotDictionary {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 2205440559)!
         }
     }()
-    internal func _get<Variant1 : ConvertibleToVariant, Variant2 : ConvertibleToVariant>(key: Variant1, `default`: Variant2 = Variant()) -> Godot.Variant.Storage {
+    internal func _get<Variant1 : VariantEncodable, Variant2 : VariantEncodable>(key: Variant1, `default`: Variant2 = Variant()) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
-        key.makeVariant().withUnsafeRawPointer { (__ptr_key) in
-            `default`.makeVariant().withUnsafeRawPointer { (__ptr_default) in
+        Godot.Variant.Storage(key).withUnsafeRawPointer { (__ptr_key) in
+            Godot.Variant.Storage(`default`).withUnsafeRawPointer { (__ptr_default) in
                 withUnsafeArgumentPackPointer(__ptr_key, __ptr_default) { (__accessPtr) in
                     __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in

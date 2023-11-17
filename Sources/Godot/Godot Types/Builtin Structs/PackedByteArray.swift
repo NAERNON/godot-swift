@@ -117,7 +117,7 @@ extension PackedByteArray {
     }
     
     public func decodeVar(at byteOffset: Int, allowObjects: Bool = false) -> Variant {
-        Variant(_decodeVar(byteOffset: byteOffset, allowObjects: allowObjects))
+        Variant(storage: _decodeVar(byteOffset: byteOffset, allowObjects: allowObjects))
     }
     
     public func decodeVarSize(at byteOffset: Int, allowObjects: Bool = false) -> Int {

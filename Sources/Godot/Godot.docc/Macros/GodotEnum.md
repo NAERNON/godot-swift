@@ -1,7 +1,7 @@
 # ``Godot/GodotEnum()``
 
 This macro conforms the attached enum to the
-``VariantConvertible`` protocol, enabling the enum to be used as a type for function parameters and variables for Godot.
+``VariantCodable`` protocol, enabling the enum to be used as a type for function parameters and variables for Godot.
 
 ### Naming convention
 

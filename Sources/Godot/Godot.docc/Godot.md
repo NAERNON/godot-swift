@@ -55,9 +55,9 @@ Godot Swift is a set of tools enabling Swift code to be accessible from the Godo
 
 - ``Variant``
 - ``Variant/Storage``
-- ``VariantConvertible``
-- ``ConvertibleToVariant``
-- ``ConvertibleFromVariant``
+- ``VariantCodable``
+- ``VariantEncodable``
+- ``VariantDecodable``
 
 ### Builtin types
 

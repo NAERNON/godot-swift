@@ -76,10 +76,10 @@ extension PackedByteArray {
     private static var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
         return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
     }()
-    static internal func _operatorEqual<Variant1 : ConvertibleToVariant>(_ lhs: Godot.PackedByteArray, _ rhs: Variant1) -> Bool {
+    static internal func _operatorEqual<Variant1 : VariantEncodable>(_ lhs: Godot.PackedByteArray, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            rhs.makeVariant().withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -91,10 +91,10 @@ extension PackedByteArray {
     private static var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
         return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
     }()
-    static internal func _operatorNotEqual<Variant1 : ConvertibleToVariant>(_ lhs: Godot.PackedByteArray, _ rhs: Variant1) -> Bool {
+    static internal func _operatorNotEqual<Variant1 : VariantEncodable>(_ lhs: Godot.PackedByteArray, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            rhs.makeVariant().withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -1253,11 +1253,11 @@ extension PackedByteArray {
         return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2604460497)!
         }
     }()
-    @discardableResult mutating internal func _encodeVar<Variant1 : ConvertibleToVariant>(byteOffset: Int, value: Variant1, allowObjects: Bool = false) -> Int {
+    @discardableResult mutating internal func _encodeVar<Variant1 : VariantEncodable>(byteOffset: Int, value: Variant1, allowObjects: Bool = false) -> Int {
         replaceOpaqueValueIfNecessary()
         var __temporary = Int()
         withUnsafePointer(to: byteOffset) { (__ptr_byteOffset) in
-            value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                 withUnsafePointer(to: allowObjects) { (__ptr_allowObjects) in
                     withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value, __ptr_allowObjects) { (__accessPtr) in
                         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in

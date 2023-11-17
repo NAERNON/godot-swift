@@ -112,11 +112,11 @@ struct VariableMember: ExposableMember {
         let className = classContext.trimmed
         
         let getterExprSyntax: ExprSyntax = """
-        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName).makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+        Godot.Variant.Storage(Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName)).consumeByGodot(ontoUnsafePointer: returnPtr!)
         """
         
         let setterExprSyntax: ExprSyntax = """
-        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName) = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName) = .decodeCompatibleVariantStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
         """
         
         let variableName = variableBinding.pattern.trimmedDescription.translated(from: .camel, to: .snake)

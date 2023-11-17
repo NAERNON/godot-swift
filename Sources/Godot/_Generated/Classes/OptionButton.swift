@@ -170,9 +170,9 @@ open class OptionButton: Button {
         }
         }
     }()
-    public func setItemMetadata<Variant1 : ConvertibleToVariant>(idx: Int32, metadata: Variant1) {
+    public func setItemMetadata<Variant1 : VariantEncodable>(idx: Int32, metadata: Variant1) {
         withUnsafePointer(to: idx) { (__ptr_idx) in
-            metadata.makeVariant().withUnsafeRawPointer { (__ptr_metadata) in
+            Godot.Variant.Storage(metadata).withUnsafeRawPointer { (__ptr_metadata) in
                 withUnsafeArgumentPackPointer(__ptr_idx, __ptr_metadata) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(

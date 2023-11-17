@@ -6,8 +6,8 @@ import GodotExtensionHeaders
 ///
 /// Under the hood, this collection uses the Godot ``GodotArray`` type.
 ///
-/// Only ``VariantConvertible`` elements can be contained inside a `TypedArray`.
-public struct GodotTypedArray<Element> where Element : VariantConvertible {
+/// Only ``VariantCodable`` elements can be contained inside a `TypedArray`.
+public struct GodotTypedArray<Element> where Element : VariantCodable {
     private var underlyingArray: GodotArray
     
     public init(_ value: GodotTypedArray<Element>) {
@@ -21,7 +21,7 @@ public struct GodotTypedArray<Element> where Element : VariantConvertible {
                 Variant().withUnsafeRawPointer { scriptPtr in
                     // TODO: Check script (last parameter)
                     gdextension_interface_array_set_typed(
-                        ptr, Element.variantType.storageType, classNamePtr, scriptPtr
+                        ptr, Element.variantRepresentationType.storageType, classNamePtr, scriptPtr
                     )
                 }
             }
@@ -55,7 +55,7 @@ public struct GodotTypedArray<Element> where Element : VariantConvertible {
     }
 }
 
-// MARK: - VariantConvertible
+// MARK: - VariantCodable
 
 public enum GodotTypedArrayVariantConversionError: Error {
     case notTyped
@@ -74,24 +74,24 @@ public enum GodotTypedArrayVariantConversionError: Error {
     }
 }
 
-extension GodotTypedArray: VariantConvertible {
-    public static var variantType: Variant.RepresentationType { GodotArray.variantType }
+extension GodotTypedArray: VariantCodable {
+    public static var variantRepresentationType: Variant.RepresentationType { GodotArray.variantRepresentationType }
     
-    public func makeVariant() -> Variant.Storage {
-        underlyingArray.makeVariant()
+    public static func encodeVariantStorage(_ value: GodotTypedArray<Element>) -> Variant.Storage {
+        GodotArray.encodeVariantStorage(value.underlyingArray)
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> GodotTypedArray<Element> {
-        let underlyingArray = try GodotArray.fromVariant(variant)
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> GodotTypedArray<Element> {
+        let underlyingArray = try GodotArray.decodeVariantStorage(storage)
         
         guard underlyingArray._isTyped() else {
             throw GodotTypedArrayVariantConversionError.notTyped
         }
         
         let type = GDExtensionVariantType(rawValue: UInt32(underlyingArray._typedBuiltin()))
-        guard type == Element.variantType.storageType else {
+        guard type == Element.variantRepresentationType.storageType else {
             throw GodotTypedArrayVariantConversionError
-                .incorrectType(expected: Element.variantType.storageType, found: type)
+                .incorrectType(expected: Element.variantRepresentationType.storageType, found: type)
         }
         
         // If the class name is not empty, we must check against
@@ -107,8 +107,8 @@ extension GodotTypedArray: VariantConvertible {
         return GodotTypedArray(underlyingArray: underlyingArray)
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> GodotTypedArray<Element> {
-        GodotTypedArray(underlyingArray: GodotArray.fromCompatibleVariant(variant))
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> GodotTypedArray<Element> {
+        GodotTypedArray(underlyingArray: GodotArray.decodeCompatibleVariantStorage(storage))
     }
 }
 
@@ -141,10 +141,10 @@ extension GodotTypedArray: RandomAccessCollection {}
 extension GodotTypedArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Element {
         get {
-            Element.fromCompatibleVariant(underlyingArray._getValue(at: GDExtensionInt(index)))
+            Element.decodeCompatibleVariantStorage(underlyingArray._getValue(at: GDExtensionInt(index)))
         }
         set(newValue) {
-            underlyingArray._setValue(newValue.makeVariant(), at: GDExtensionInt(index))
+            underlyingArray._setValue(Element.encodeVariantStorage(newValue), at: GDExtensionInt(index))
         }
     }
     

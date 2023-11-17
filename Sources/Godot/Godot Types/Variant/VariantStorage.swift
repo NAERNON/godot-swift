@@ -9,12 +9,12 @@ extension Variant {
     /// the use of a non copyable structure makes for a great optimization.
     public struct Storage: ~Copyable {
         internal enum Error: Swift.Error {
-            case unmatchingTypes(variantType: GDExtensionVariantType, checkedType: GDExtensionVariantType)
+            case unmatchingTypes(variantRepresentationType: GDExtensionVariantType, checkedType: GDExtensionVariantType)
             
             var localizedDescription: String {
                 switch self {
-                case .unmatchingTypes(let variantType, let checkedType):
-                    "The variant types don't match (\(variantType) and \(checkedType))."
+                case .unmatchingTypes(let variantRepresentationType, let checkedType):
+                    "The variant types don't match (\(variantRepresentationType) and \(checkedType))."
                 }
             }
         }
@@ -37,6 +37,10 @@ extension Variant {
             self.rawData = .allocate(capacity: Variant.opaqueSize)
             
             gdextension_interface_variant_new_copy(rawData, godotExtensionPointer)
+        }
+        
+        public init<T>(_ value: T) where T : VariantEncodable {
+            self = T.encodeVariantStorage(value)
         }
         
         deinit {
@@ -82,7 +86,7 @@ extension Variant {
         /// Checks that the variant type matches the given type.
         public func checkType(_ type: RepresentationType) throws {
             if self.type != type.storageType {
-                throw Error.unmatchingTypes(variantType: self.type, checkedType: type.storageType)
+                throw Error.unmatchingTypes(variantRepresentationType: self.type, checkedType: type.storageType)
             }
         }
         
@@ -133,27 +137,27 @@ extension Variant {
         }
         
         static public func == (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.fromCompatibleVariant(lhs.evaluate(other: rhs, operator: .equal))
+            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .equal))
         }
         
         static public func != (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.fromCompatibleVariant(lhs.evaluate(other: rhs, operator: .notEqual))
+            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .notEqual))
         }
         
         static public func < (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.fromCompatibleVariant(lhs.evaluate(other: rhs, operator: .less))
+            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .less))
         }
         
         static public func <= (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.fromCompatibleVariant(lhs.evaluate(other: rhs, operator: .lessEqual))
+            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .lessEqual))
         }
         
         static public func > (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.fromCompatibleVariant(lhs.evaluate(other: rhs, operator: .greater))
+            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .greater))
         }
         
         static public func >= (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.fromCompatibleVariant(lhs.evaluate(other: rhs, operator: .greaterEqual))
+            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .greaterEqual))
         }
     }
 }

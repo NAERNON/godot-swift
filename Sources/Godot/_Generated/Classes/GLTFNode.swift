@@ -566,9 +566,9 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    public func setAdditionalData<Variant1 : ConvertibleToVariant>(extensionName: Godot.GodotStringName, additionalData: Variant1) {
+    public func setAdditionalData<Variant1 : VariantEncodable>(extensionName: Godot.GodotStringName, additionalData: Variant1) {
         extensionName.withUnsafeRawPointer { (__ptr_extensionName) in
-            additionalData.makeVariant().withUnsafeRawPointer { (__ptr_additionalData) in
+            Godot.Variant.Storage(additionalData).withUnsafeRawPointer { (__ptr_additionalData) in
                 withUnsafeArgumentPackPointer(__ptr_extensionName, __ptr_additionalData) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(

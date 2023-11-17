@@ -12,7 +12,7 @@ open class GDScript: Script {
         }
         }
     }()
-    public func new<each VariantRest : ConvertibleToVariant>(_ rest: repeat each VariantRest) -> Godot.Variant {
+    public func new<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) -> Godot.Variant {
         let __temporary = Godot.Variant()
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { (packCount, __accessPtr) in
             __temporary.withUnsafeRawPointer { (__ptr___temporary) in

@@ -224,7 +224,7 @@ struct GodotBuiltinClass: Decodable {
         if hasDestructor {
             """
             private static var __destructor: GDExtensionPtrDestructor = {
-                return gdextension_interface_variant_get_ptr_destructor(\(raw: name.variantType!))!
+                return gdextension_interface_variant_get_ptr_destructor(\(raw: name.variantRepresentationType!))!
             }()
             """
         }
@@ -242,7 +242,7 @@ struct GodotBuiltinClass: Decodable {
     ) throws -> MemberBlockItemListSyntax {
         """
         private static var \(raw: constructor.ptrIdentifier): GDExtensionPtrConstructor = {
-            return gdextension_interface_variant_get_ptr_constructor(\(raw: name.variantType!), \(literal: constructor.index))!
+            return gdextension_interface_variant_get_ptr_constructor(\(raw: name.variantRepresentationType!), \(literal: constructor.index))!
         }()
         """
         
@@ -335,7 +335,7 @@ struct GodotBuiltinClass: Decodable {
         
         """
         private static var \(raw: `operator`.ptrIdentifier): GDExtensionPtrOperatorEvaluator = {
-            return gdextension_interface_variant_get_ptr_operator_evaluator(\(raw: `operator`.extensionSyntax), \(raw: name.variantType!), \(raw: `operator`.rightType?.variantType ?? "GDEXTENSION_VARIANT_TYPE_NIL"))!
+            return gdextension_interface_variant_get_ptr_operator_evaluator(\(raw: `operator`.extensionSyntax), \(raw: name.variantRepresentationType!), \(raw: `operator`.rightType?.variantRepresentationType ?? "GDEXTENSION_VARIANT_TYPE_NIL"))!
         }()
         """
         
@@ -371,10 +371,10 @@ struct GodotBuiltinClass: Decodable {
             
             """
             private static var __indexed_setter: GDExtensionPtrIndexedSetter = {
-                return gdextension_interface_variant_get_ptr_indexed_setter(\(raw: name.variantType!))!
+                return gdextension_interface_variant_get_ptr_indexed_setter(\(raw: name.variantRepresentationType!))!
             }()
             private static var __indexed_getter: GDExtensionPtrIndexedGetter = {
-                return gdextension_interface_variant_get_ptr_indexed_getter(\(raw: name.variantType!))!
+                return gdextension_interface_variant_get_ptr_indexed_getter(\(raw: name.variantRepresentationType!))!
             }()
             """
             
@@ -418,7 +418,7 @@ struct GodotBuiltinClass: Decodable {
         if isKeyed {
             """
             private static var __keyed_setter: GDExtensionPtrKeyedSetter = {
-                return gdextension_interface_variant_get_ptr_keyed_setter(\(raw: name.variantType!))!
+                return gdextension_interface_variant_get_ptr_keyed_setter(\(raw: name.variantRepresentationType!))!
             }()
             internal func _getValue(forKey key: borrowing Variant.Storage) -> Variant.Storage {
                 let __returnValue = Variant.Storage()
@@ -435,7 +435,7 @@ struct GodotBuiltinClass: Decodable {
             }
             
             private static var __keyed_getter: GDExtensionPtrKeyedGetter = {
-                return gdextension_interface_variant_get_ptr_keyed_getter(\(raw: name.variantType!))!
+                return gdextension_interface_variant_get_ptr_keyed_getter(\(raw: name.variantRepresentationType!))!
             }()
             internal mutating func _set(value: borrowing Variant.Storage, forKey key: borrowing Variant.Storage) {
                 replaceOpaqueValueIfNecessary()
@@ -450,7 +450,7 @@ struct GodotBuiltinClass: Decodable {
             }
             
             private static var __keyed_checker: GDExtensionPtrKeyedChecker = {
-                return gdextension_interface_variant_get_ptr_keyed_checker(\(raw: name.variantType!))!
+                return gdextension_interface_variant_get_ptr_keyed_checker(\(raw: name.variantRepresentationType!))!
             }()
             internal func _check(key: borrowing Variant.Storage) -> Bool {
                 var keyCheck = UInt32()
@@ -482,7 +482,7 @@ struct GodotBuiltinClass: Decodable {
         """
         private static var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod = {
             GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
-            return gdextension_interface_variant_get_ptr_builtin_method(\(raw: name.variantType!), __ptr__method_name, \(literal: method.hash))!
+            return gdextension_interface_variant_get_ptr_builtin_method(\(raw: name.variantRepresentationType!), __ptr__method_name, \(literal: method.hash))!
             }
         }()
         """

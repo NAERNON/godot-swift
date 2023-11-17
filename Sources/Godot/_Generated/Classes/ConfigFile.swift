@@ -12,10 +12,10 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func setValue<Variant1 : ConvertibleToVariant>(section: Godot.GodotString, key: Godot.GodotString, value: Variant1) {
+    public func setValue<Variant1 : VariantEncodable>(section: Godot.GodotString, key: Godot.GodotString, value: Variant1) {
         section.withUnsafeRawPointer { (__ptr_section) in
             key.withUnsafeRawPointer { (__ptr_key) in
-                value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+                Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                     withUnsafeArgumentPackPointer(__ptr_section, __ptr_key, __ptr_value) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(
@@ -38,11 +38,11 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func value<Variant1 : ConvertibleToVariant>(section: Godot.GodotString, key: Godot.GodotString, `default`: Variant1 = Variant()) -> Godot.Variant {
+    public func value<Variant1 : VariantEncodable>(section: Godot.GodotString, key: Godot.GodotString, `default`: Variant1 = Variant()) -> Godot.Variant {
         let __temporary = Godot.Variant()
         section.withUnsafeRawPointer { (__ptr_section) in
             key.withUnsafeRawPointer { (__ptr_key) in
-                `default`.makeVariant().withUnsafeRawPointer { (__ptr_default) in
+                Godot.Variant.Storage(`default`).withUnsafeRawPointer { (__ptr_default) in
                     withUnsafeArgumentPackPointer(__ptr_section, __ptr_key, __ptr_default) { (__accessPtr) in
                         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                             `self`.withUnsafeRawPointer { (__ptr_self) in

@@ -1318,11 +1318,11 @@ open class Theme: Resource {
         }
         }
     }()
-    public func setThemeItem<Variant1 : ConvertibleToVariant>(dataType: Godot.Theme.DataType, name: Godot.GodotStringName, themeType: Godot.GodotStringName, value: Variant1) {
+    public func setThemeItem<Variant1 : VariantEncodable>(dataType: Godot.Theme.DataType, name: Godot.GodotStringName, themeType: Godot.GodotStringName, value: Variant1) {
         withUnsafePointer(to: dataType) { (__ptr_dataType) in
             name.withUnsafeRawPointer { (__ptr_name) in
                 themeType.withUnsafeRawPointer { (__ptr_themeType) in
-                    value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+                    Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                         withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_name, __ptr_themeType, __ptr_value) { (__accessPtr) in
                             `self`.withUnsafeRawPointer { (__ptr_self) in
                                 gdextension_interface_object_method_bind_ptrcall(

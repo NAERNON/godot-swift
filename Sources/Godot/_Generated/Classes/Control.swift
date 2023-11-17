@@ -2717,8 +2717,8 @@ open class Control: CanvasItem {
         }
         }
     }()
-    public func forceDrag<Variant1 : ConvertibleToVariant>(data: Variant1, preview: Godot.Control?) {
-        data.makeVariant().withUnsafeRawPointer { (__ptr_data) in
+    public func forceDrag<Variant1 : VariantEncodable>(data: Variant1, preview: Godot.Control?) {
+        Godot.Variant.Storage(data).withUnsafeRawPointer { (__ptr_data) in
             preview.withUnsafeRawPointer { (__ptr_preview) in
                 withUnsafePointer(to: __ptr_preview) { (_ptr___ptr_preview) in
                     withUnsafeArgumentPackPointer(__ptr_data, _ptr___ptr_preview) { (__accessPtr) in

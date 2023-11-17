@@ -97,15 +97,15 @@ extension Plane {
     }
     
     public func intersect3(b: Plane, c: Plane) -> Variant {
-        Variant(_intersect3(b: b, c: c))
+        Variant(storage: _intersect3(b: b, c: c))
     }
     
     public func intersectsRay(from fromPoint: Vector3, dir: Vector3) -> Variant {
-        Variant(_intersectsRay(from: fromPoint, dir: dir))
+        Variant(storage: _intersectsRay(from: fromPoint, dir: dir))
     }
     
     public func intersectsSegment(from fromPoint: Vector3, to toPoint: Vector3) -> Variant {
-        Variant(_intersectsSegment(from: fromPoint, to: toPoint))
+        Variant(storage: _intersectsSegment(from: fromPoint, to: toPoint))
     }
 }
 

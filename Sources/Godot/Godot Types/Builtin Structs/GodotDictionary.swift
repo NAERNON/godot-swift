@@ -24,7 +24,7 @@ extension GodotDictionary {
     
     public subscript(key: Variant) -> Variant {
         get {
-            Variant(self._getValue(forKey: key.storage))
+            Variant(storage: self._getValue(forKey: key.storage))
         }
         set(newValue) {
             self._set(value: newValue.storage, forKey: key.storage)

@@ -106,9 +106,9 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addDoMethod<each VariantRest : ConvertibleToVariant>(object: Godot.Object?, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
-        object.makeVariant().withUnsafeRawPointer { (__ptr_object) in
-            method.makeVariant().withUnsafeRawPointer { (__ptr_method) in
+    public func addDoMethod<each VariantRest : VariantEncodable>(object: Godot.Object?, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+        Godot.Variant.Storage(object).withUnsafeRawPointer { (__ptr_object) in
+            Godot.Variant.Storage(method).withUnsafeRawPointer { (__ptr_method) in
                 withUnsafeArgumentPackPointer(__ptr_object, __ptr_method, varargs: repeat each rest) { (packCount, __accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_call(
@@ -125,8 +125,8 @@ open class EditorUndoRedoManager: Object {
         }
     }
     public func addDoMethod(object: Godot.Object?, method: Godot.GodotStringName) {
-        object.makeVariant().withUnsafeRawPointer { (__ptr_object) in
-            method.makeVariant().withUnsafeRawPointer { (__ptr_method) in
+        Godot.Variant.Storage(object).withUnsafeRawPointer { (__ptr_object) in
+            Godot.Variant.Storage(method).withUnsafeRawPointer { (__ptr_method) in
                 withUnsafeArgumentPackPointer(__ptr_object, __ptr_method) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_call(
@@ -150,9 +150,9 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addUndoMethod<each VariantRest : ConvertibleToVariant>(object: Godot.Object?, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
-        object.makeVariant().withUnsafeRawPointer { (__ptr_object) in
-            method.makeVariant().withUnsafeRawPointer { (__ptr_method) in
+    public func addUndoMethod<each VariantRest : VariantEncodable>(object: Godot.Object?, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+        Godot.Variant.Storage(object).withUnsafeRawPointer { (__ptr_object) in
+            Godot.Variant.Storage(method).withUnsafeRawPointer { (__ptr_method) in
                 withUnsafeArgumentPackPointer(__ptr_object, __ptr_method, varargs: repeat each rest) { (packCount, __accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_call(
@@ -169,8 +169,8 @@ open class EditorUndoRedoManager: Object {
         }
     }
     public func addUndoMethod(object: Godot.Object?, method: Godot.GodotStringName) {
-        object.makeVariant().withUnsafeRawPointer { (__ptr_object) in
-            method.makeVariant().withUnsafeRawPointer { (__ptr_method) in
+        Godot.Variant.Storage(object).withUnsafeRawPointer { (__ptr_object) in
+            Godot.Variant.Storage(method).withUnsafeRawPointer { (__ptr_method) in
                 withUnsafeArgumentPackPointer(__ptr_object, __ptr_method) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_call(
@@ -194,11 +194,11 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addDoProperty<Variant1 : ConvertibleToVariant>(object: Godot.Object?, property: Godot.GodotStringName, value: Variant1) {
+    public func addDoProperty<Variant1 : VariantEncodable>(object: Godot.Object?, property: Godot.GodotStringName, value: Variant1) {
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
                 property.withUnsafeRawPointer { (__ptr_property) in
-                    value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+                    Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                         withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_property, __ptr_value) { (__accessPtr) in
                             `self`.withUnsafeRawPointer { (__ptr_self) in
                                 gdextension_interface_object_method_bind_ptrcall(
@@ -222,11 +222,11 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addUndoProperty<Variant1 : ConvertibleToVariant>(object: Godot.Object?, property: Godot.GodotStringName, value: Variant1) {
+    public func addUndoProperty<Variant1 : VariantEncodable>(object: Godot.Object?, property: Godot.GodotStringName, value: Variant1) {
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
                 property.withUnsafeRawPointer { (__ptr_property) in
-                    value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+                    Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                         withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_property, __ptr_value) { (__accessPtr) in
                             `self`.withUnsafeRawPointer { (__ptr_self) in
                                 gdextension_interface_object_method_bind_ptrcall(

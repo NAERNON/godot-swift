@@ -334,12 +334,12 @@ open class ClassDB: Object {
         }
         }
     }()
-    public func classSetProperty<Variant1 : ConvertibleToVariant>(object: Godot.Object?, property: Godot.GodotStringName, value: Variant1) -> Godot.ErrorType {
+    public func classSetProperty<Variant1 : VariantEncodable>(object: Godot.Object?, property: Godot.GodotStringName, value: Variant1) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
                 property.withUnsafeRawPointer { (__ptr_property) in
-                    value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+                    Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
                         withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_property, __ptr_value) { (__accessPtr) in
                             withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                                 `self`.withUnsafeRawPointer { (__ptr_self) in

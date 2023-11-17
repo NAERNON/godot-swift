@@ -554,9 +554,9 @@ open class TabContainer: Container {
         }
         }
     }()
-    public func setTabMetadata<Variant1 : ConvertibleToVariant>(tabIdx: Int32, metadata: Variant1) {
+    public func setTabMetadata<Variant1 : VariantEncodable>(tabIdx: Int32, metadata: Variant1) {
         withUnsafePointer(to: tabIdx) { (__ptr_tabIdx) in
-            metadata.makeVariant().withUnsafeRawPointer { (__ptr_metadata) in
+            Godot.Variant.Storage(metadata).withUnsafeRawPointer { (__ptr_metadata) in
                 withUnsafeArgumentPackPointer(__ptr_tabIdx, __ptr_metadata) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(

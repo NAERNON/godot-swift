@@ -2,7 +2,7 @@ import GodotExtensionHeaders
 
 extension ClassRegistrar {
     struct PropertyInfo {
-        let variantType: Variant.RepresentationType
+        let variantRepresentationType: Variant.RepresentationType
         let name: GodotStringName
         let className: GodotStringName
         let hint: PropertyHint
@@ -11,7 +11,7 @@ extension ClassRegistrar {
         private let usage: UInt32
         
         static let none = PropertyInfo(
-            variantType: .nil,
+            variantRepresentationType: .nil,
             name: .init(),
             defaultValue: .none,
             hint: .none,
@@ -21,7 +21,7 @@ extension ClassRegistrar {
         )
         
         static let vararg = PropertyInfo(
-            variantType: .nil,
+            variantRepresentationType: .nil,
             name: "vararg",
             defaultValue: .none,
             hint: .none,
@@ -30,14 +30,14 @@ extension ClassRegistrar {
             className: .init()
         )
         
-        init(variantType: Variant.RepresentationType,
+        init(variantRepresentationType: Variant.RepresentationType,
              name: GodotStringName,
              defaultValue: Variant? = nil,
              hint: PropertyHint = .none,
              hintString: GodotString = .init(),
              usageFlags: PropertyUsageFlags...,
              className: GodotStringName) {
-            self.variantType = variantType
+            self.variantRepresentationType = variantRepresentationType
             self.name = name
             self.defaultValue = defaultValue
             self.hint = hint
@@ -57,7 +57,7 @@ extension ClassRegistrar {
                 className.withUnsafeRawPointer { classeNamePtr in
                     hintString.withUnsafeRawPointer { hintStringPtr in
                         let info = GDExtensionPropertyInfo(
-                            type: variantType.storageType,
+                            type: variantRepresentationType.storageType,
                             name: namePtr,
                             class_name: classeNamePtr,
                             hint: hint.rawValue,

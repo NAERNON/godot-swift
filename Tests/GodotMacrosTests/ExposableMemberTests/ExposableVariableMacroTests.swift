@@ -31,9 +31,9 @@ final class ExposableVariableMacroTests: XCTestCase {
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .decodeCompatibleVariantStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
@@ -66,9 +66,9 @@ final class ExposableVariableMacroTests: XCTestCase {
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .decodeCompatibleVariantStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
@@ -99,9 +99,9 @@ final class ExposableVariableMacroTests: XCTestCase {
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .decodeCompatibleVariantStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
@@ -132,9 +132,9 @@ final class ExposableVariableMacroTests: XCTestCase {
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .decodeCompatibleVariantStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
@@ -165,9 +165,9 @@ final class ExposableVariableMacroTests: XCTestCase {
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .decodeCompatibleVariantStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
@@ -197,7 +197,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     hint: ._defaultForValue(at: \\MyClass.myVariable),
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 }
             }
             """,
@@ -227,7 +227,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     hint: ._defaultForValue(at: \\MyClass.myVariable),
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 }
             }
             """,
@@ -261,7 +261,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     hint: ._defaultForValue(at: \\MyClass.myVariable),
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 }
             }
             """,
@@ -295,7 +295,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     hint: ._defaultForValue(at: \\MyClass.myVariable),
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 }
             }
             """,
@@ -332,9 +332,9 @@ final class ExposableVariableMacroTests: XCTestCase {
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable = .decodeCompatibleVariantStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,
@@ -364,7 +364,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     hint: ._defaultForValue(at: \\MyClass.myVariable),
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 }
             }
             """,
@@ -394,7 +394,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     hint: ._defaultForValue(at: \\MyClass.myVariable),
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 }
             }
             """,
@@ -423,7 +423,7 @@ final class ExposableVariableMacroTests: XCTestCase {
                     hint: ._defaultForValue(at: \\MyClass.myVariable),
                     getterName: "get_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().myVariable).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 }
             }
             """,
@@ -454,9 +454,9 @@ final class ExposableVariableMacroTests: XCTestCase {
                     getterName: "get_my_variable",
                     setterName: "set_my_variable"
                 ) { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().`myVariable`.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.Storage(Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().`myVariable`).consumeByGodot(ontoUnsafePointer: returnPtr!)
                 } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
-                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().`myVariable` = .fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+                    Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue().`myVariable` = .decodeCompatibleVariantStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
                 }
             }
             """,

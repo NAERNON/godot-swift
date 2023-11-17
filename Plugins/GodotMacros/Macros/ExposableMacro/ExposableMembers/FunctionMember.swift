@@ -179,7 +179,7 @@ struct FunctionMember: ExposableMember {
                     ")"
                     
                     if hasReturnType {
-                        "returnValue.makeVariant().consumeByGodot(ontoUnsafePointer: returnPtr!)"
+                        "Godot.Variant.Storage(returnValue).consumeByGodot(ontoUnsafePointer: returnPtr!)"
                     }
                 }
                 

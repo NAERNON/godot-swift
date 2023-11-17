@@ -446,8 +446,8 @@ open class StreamPeer: RefCounted {
         }
         }
     }()
-    public func putVar<Variant1 : ConvertibleToVariant>(value: Variant1, fullObjects: Bool = false) {
-        value.makeVariant().withUnsafeRawPointer { (__ptr_value) in
+    public func putVar<Variant1 : VariantEncodable>(value: Variant1, fullObjects: Bool = false) {
+        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
             withUnsafePointer(to: fullObjects) { (__ptr_fullObjects) in
                 withUnsafeArgumentPackPointer(__ptr_value, __ptr_fullObjects) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in

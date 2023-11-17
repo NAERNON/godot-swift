@@ -407,7 +407,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     
     // MARK: - Syntax
     
-    var variantType: String? {
+    var variantRepresentationType: String? {
         typeToGodotVariantType[syntax()]
     }
     

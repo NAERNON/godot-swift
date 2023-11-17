@@ -30,7 +30,7 @@ extension Vector2i {
     
     // MARK: Operators
     
-    public static func == (lhs: Vector2i, rhs: some ConvertibleToVariant) -> Bool {
+    public static func == (lhs: Vector2i, rhs: some VariantEncodable) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
     

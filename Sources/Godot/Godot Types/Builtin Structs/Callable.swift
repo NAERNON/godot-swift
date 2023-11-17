@@ -27,7 +27,7 @@ extension Callable {
     // MARK: Methods & variables
     
     public func callv(arguments: GodotArray) -> Variant {
-        Variant(_callv(arguments: arguments))
+        Variant(storage: _callv(arguments: arguments))
     }
     
     public var isNull: Bool {
@@ -74,32 +74,32 @@ extension Callable {
         _unbind(argcount: argcount)
     }
     
-    public func call<each VariantRest : ConvertibleToVariant>(
+    public func call<each VariantRest : VariantEncodable>(
         _ rest: repeat each VariantRest
     ) -> Variant {
-        Variant(_call(repeat each rest))
+        Variant(storage: _call(repeat each rest))
     }
     
-    public func callDeferred<each VariantRest : ConvertibleToVariant>(
+    public func callDeferred<each VariantRest : VariantEncodable>(
         _ rest: repeat each VariantRest
     ) {
         _callDeferred(repeat each rest)
     }
     
-    public func rpc<each VariantRest : ConvertibleToVariant>(
+    public func rpc<each VariantRest : VariantEncodable>(
         _ rest: repeat each VariantRest
     ) {
         _rpc(repeat each rest)
     }
     
-    public func rpcId<each VariantRest : ConvertibleToVariant>(
+    public func rpcId<each VariantRest : VariantEncodable>(
         peerId: Int,
         _ rest: repeat each VariantRest
     ) {
         _rpcId(peerId: peerId, repeat each rest)
     }
     
-    public func bind<each VariantRest : ConvertibleToVariant>(
+    public func bind<each VariantRest : VariantEncodable>(
         _ rest: repeat each VariantRest
     ) -> Callable {
         _bind(repeat each rest)

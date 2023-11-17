@@ -24,14 +24,14 @@ extension String {
     }
 }
 
-extension String: VariantConvertible {
-    public static let variantType: Variant.RepresentationType = GodotString.variantType
+extension String: VariantCodable {
+    public static let variantRepresentationType: Variant.RepresentationType = GodotString.variantRepresentationType
     
-    public func makeVariant() -> Variant.Storage {
-        GodotString(swiftString: self).makeVariant()
+    public static func encodeVariantStorage(_ value: String) -> Variant.Storage {
+        GodotString.encodeVariantStorage(GodotString(swiftString: value))
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Self {
-        String(godotString: GodotString.fromCompatibleVariant(variant))
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> String {
+        String(godotString: GodotString.decodeCompatibleVariantStorage(storage))
     }
 }

@@ -7,7 +7,7 @@ public final class Variant {
     /// The storage containing the variant data.
     public let storage: Storage
     
-    public init(_ storage: consuming Storage) {
+    public init(storage: consuming Storage) {
         self.storage = storage
     }
     
@@ -17,8 +17,8 @@ public final class Variant {
     }
     
     /// Creates a variant containing the given value.
-    public init<T>(_ value: T) where T : ConvertibleToVariant {
-        self.storage = value.makeVariant()
+    public init<T>(_ value: T) where T : VariantEncodable {
+        self.storage = T.encodeVariantStorage(value)
     }
     
     public init(godotExtensionPointer: GDExtensionConstVariantPtr) {
@@ -30,8 +30,8 @@ public final class Variant {
     /// Returns the value contained inside the `Variant`.
     ///
     /// - Parameter type: The type stored in the `Variant`.
-    public func typed<T>(_ type: T.Type) throws -> T where T : ConvertibleFromVariant {
-        try type.fromVariant(storage)
+    public func unwrap<T>(_ type: T.Type) throws -> T where T : VariantDecodable {
+        try type.decodeVariantStorage(storage)
     }
     
     /// Returns the value contained inside the `Variant`.
@@ -42,11 +42,11 @@ public final class Variant {
     /// >important: Requesting a type non compatible with
     /// this variant may stop execution.
     ///
-    /// Use ``typed(_:)`` for a throwing version of this function.
+    /// Use ``unwrap(_:)`` for a throwing version of this function.
     ///
     /// - Parameter type: The type stored in the `Variant`.
-    public func typed<T>(compatibleWith type: T.Type) -> T where T : ConvertibleFromVariant {
-        type.fromCompatibleVariant(storage)
+    public func unwrap<T>(assuming type: T.Type) -> T where T : VariantDecodable {
+        type.decodeCompatibleVariantStorage(storage)
     }
     
     // MARK: Handle data
@@ -95,17 +95,17 @@ extension Variant: Equatable {
     }
 }
 
-extension Variant: ConvertibleToVariant, ConvertibleFromVariant {
-    public func makeVariant() -> Variant.Storage {
-        self.storage.copy()
+extension Variant: VariantEncodable, VariantDecodable {
+    public static func encodeVariantStorage(_ value: Variant) -> Storage {
+        value.storage.copy()
     }
     
-    public static func fromVariant(_ variant: borrowing Variant.Storage) throws -> Variant {
-        Variant(variant.copy())
+    public static func decodeVariantStorage(_ storage: borrowing Storage) throws -> Variant {
+        Variant(storage: storage.copy())
     }
     
-    public static func fromCompatibleVariant(_ variant: borrowing Variant.Storage) -> Variant {
-        Variant(variant.copy())
+    public static func decodeCompatibleVariantStorage(_ storage: borrowing Storage) -> Variant {
+        Variant(storage: storage.copy())
     }
 }
 

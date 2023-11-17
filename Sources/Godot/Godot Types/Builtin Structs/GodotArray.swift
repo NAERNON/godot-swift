@@ -84,7 +84,7 @@ extension GodotArray: RandomAccessCollection {}
 extension GodotArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Variant {
         get {
-            Variant(self._getValue(at: Int64(index)))
+            Variant(storage: self._getValue(at: Int64(index)))
         }
         set(newValue) {
             self._setValue(newValue.storage, at: Int64(index))
