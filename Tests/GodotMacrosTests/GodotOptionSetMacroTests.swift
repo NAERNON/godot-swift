@@ -22,13 +22,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
             expandedSource: """
             private struct SomeOptionSet {
             
-                fileprivate typealias RawValue = Int64
-            
-                fileprivate let rawValue: Int64
-            
-                fileprivate init(rawValue: Int64) {
-                    self.rawValue = rawValue
-                }}
+                fileprivate typealias RawValue = Int64}
             
             extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantCodable {
                 fileprivate static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
@@ -70,13 +64,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
             expandedSource: """
             fileprivate struct SomeOptionSet {
             
-                fileprivate typealias RawValue = Int64
-            
-                fileprivate let rawValue: Int64
-            
-                fileprivate init(rawValue: Int64) {
-                    self.rawValue = rawValue
-                }}
+                fileprivate typealias RawValue = Int64}
             
             extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantCodable {
                 fileprivate static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
@@ -118,13 +106,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
             expandedSource: """
             struct SomeOptionSet {
             
-                internal typealias RawValue = Int64
-            
-                internal let rawValue: Int64
-            
-                internal init(rawValue: Int64) {
-                    self.rawValue = rawValue
-                }}
+                internal typealias RawValue = Int64}
             
             extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantCodable {
                 internal static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
@@ -166,13 +148,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
             expandedSource: """
             internal struct SomeOptionSet {
             
-                internal typealias RawValue = Int64
-            
-                internal let rawValue: Int64
-            
-                internal init(rawValue: Int64) {
-                    self.rawValue = rawValue
-                }}
+                internal typealias RawValue = Int64}
             
             extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantCodable {
                 internal static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
@@ -214,13 +190,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
             expandedSource: """
             public struct SomeOptionSet {
             
-                public typealias RawValue = Int64
-            
-                public let rawValue: Int64
-            
-                public init(rawValue: Int64) {
-                    self.rawValue = rawValue
-                }}
+                public typealias RawValue = Int64}
             
             extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantCodable {
                 public static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
@@ -282,12 +252,6 @@ final class GodotOptionSetMacroTests: XCTestCase {
                 internal static let wrongValue3 = SomeOptionSet(rawValue: 0)
             
                 public typealias RawValue = Int64
-            
-                public let rawValue: Int64
-            
-                public init(rawValue: Int64) {
-                    self.rawValue = rawValue
-                }
             }
             
             extension SomeOptionSet: Godot.GodotOptionSet, Godot.VariantCodable {
@@ -338,13 +302,7 @@ final class GodotOptionSetMacroTests: XCTestCase {
             expandedSource: """
             public struct `SomeOptionSet` {
             
-                public typealias RawValue = Int64
-            
-                public let rawValue: Int64
-            
-                public init(rawValue: Int64) {
-                    self.rawValue = rawValue
-                }}
+                public typealias RawValue = Int64}
             
             extension `SomeOptionSet`: Godot.GodotOptionSet, Godot.VariantCodable {
                 public static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType

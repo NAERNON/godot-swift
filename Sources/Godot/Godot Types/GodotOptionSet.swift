@@ -21,8 +21,6 @@ public protocol GodotOptionSet: OptionSet where RawValue : FixedWidthInteger {
     named(hintValues)
 )
 @attached(member, names:
-    named(RawValue),
-    named(rawValue),
-    named(init)
+    named(RawValue)
 )
 public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "GodotOptionSetMacro")

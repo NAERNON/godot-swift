@@ -102,6 +102,11 @@ Every public option set is exposed to Godot. All these structs must be marked ``
     // CHARACTER_ACTION_NONE
     // CHARACTER_ACTION_DREAMING
     @GodotOptionSet public struct CharacterAction {
+        public let rawValue: Int64
+        public init(rawValue: Int64) {
+            self.rawValue = rawValue
+        }
+
         public static let thinking: Self = .init(rawValue: 1 << 0)
         public static let drawing: Self  = .init(rawValue: 1 << 1)
         public static let sleeping: Self = .init(rawValue: 1 << 2)

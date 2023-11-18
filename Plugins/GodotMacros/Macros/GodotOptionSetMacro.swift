@@ -83,12 +83,6 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         return [
         """
         \(accessModifier) typealias RawValue = Int64
-        
-        \(accessModifier) let rawValue: Int64
-        
-        \(accessModifier) init(rawValue: Int64) {
-            self.rawValue = rawValue
-        }
         """
         ]
     }
