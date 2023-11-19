@@ -39,8 +39,8 @@ Use the ``Hint(_:)`` macro to define a hint for a value.
 - ``file(_:function:file:line:)``
 - ``globalFile(_:function:file:line:)``
 
-- ``dir``
-- ``globalDir``
+- ``directory``
+- ``globalDirectory``
 
 ### Resource
 

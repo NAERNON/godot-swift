@@ -332,13 +332,13 @@ public struct EditorHint {
     
     /// Hints that a string property is a path to a directory.
     /// Editing it will show a file dialog for picking the path.
-    public static let dir: EditorHint =
+    public static let directory: EditorHint =
         .init(hint: .dir, string: GodotString())
     
     /// Hints that a string property is an absolute path
     /// to a directory outside the project folder.
     /// Editing it will show a file dialog for picking the path.
-    public static let globalDir: EditorHint =
+    public static let globalDirectory: EditorHint =
         .init(hint: .globalDir, string: GodotString())
     
     // MARK: Resource
