@@ -177,7 +177,7 @@ It is possible to provide additional editor hinting using the ``Hint(_:)`` macro
 
 ```swift
 @Exposable public class Character: Node {
-    @Hint(.range(1, 50))
+    @Hint(.range(1...50))
     public var speed: Double = 10.0
 }
 ```

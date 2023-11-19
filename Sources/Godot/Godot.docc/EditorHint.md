@@ -10,8 +10,8 @@ Use the ``Hint(_:)`` macro to define a hint for a value.
 
 ### Range
 
-- ``range(_:_:step:options:)-5web0``
-- ``range(_:_:step:options:)-j2jq``
+- ``range(_:step:options:)-7gzw``
+- ``range(_:step:options:)-5la76``
 
 ### Enum
 

@@ -47,28 +47,26 @@ public struct EditorHint {
     /// Hints that an integer or floating point property
     /// should be within a given range.
     public static func range<Value>(
-        _ min: Value,
-        _ max: Value,
+        _ range: ClosedRange<Value>,
         step: Value? = nil,
         options: RangeOptions = []
     ) -> EditorHint where Value : FixedWidthInteger {
         self.init(
             hint: .range,
-            string: rangeHintString(min, max, step: step, options: options)
+            string: rangeHintString(range.lowerBound, range.upperBound, step: step, options: options)
         )
     }
     
     /// Hints that an integer or floating point property
     /// should be within a given range.
     public static func range<Value>(
-        _ min: Value,
-        _ max: Value,
+        _ range: ClosedRange<Value>,
         step: Value? = nil,
         options: RangeOptions = []
     ) -> EditorHint where Value : FloatingPoint {
         self.init(
             hint: .range,
-            string: rangeHintString(min, max, step: step, options: options)
+            string: rangeHintString(range.lowerBound, range.upperBound, step: step, options: options)
         )
     }
     
@@ -443,7 +441,7 @@ extension EditorHint {
 ///
 /// ```swift
 /// @Exposable public class Character: Node {
-///     @Hint(.range(1, 50))
+///     @Hint(.range(1...50))
 ///     public var speed: Double = 10.0
 /// }
 /// ```
