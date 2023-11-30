@@ -41,7 +41,7 @@ public extension VariantCodable {
     static var _$className: GodotStringName { GodotStringName() }
     
     static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        try storage.checkType(Self.variantRepresentationType)
+        try storage.checkIsConvertible(to: variantRepresentationType)
         
         return decodeCompatibleVariantStorage(storage)
     }

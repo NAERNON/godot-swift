@@ -31,13 +31,13 @@ let level = try variant.unwrap(Level.self)
 let level = variant.unwrap(assuming: Level.self)
 ```
 
-Use the ``Variant/Storage/checkType(_:)`` method to check the type of a variant and throw an error if the types don't match:
+Use the ``Variant/Storage/checkIsConvertible(to:)`` method to check that a storage can be converted to a given type and throw an error if not:
 
 ```swift
 static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Level {
-    try storage.checkType(Int.variantRepresentationType)
+    try storage.checkIsConvertible(to: Int.variantRepresentationType)
 
-    return Level(index: try Int.decodeVariantStorage(storage))
+    //...
 }
 ```
 
@@ -45,4 +45,4 @@ static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws ->
 
 To add `VariantDecodable` conformance to your type, you must declare the following requirements:
 - The `decodeVariantStorage(_:)` static method that decodes a variant storage to your own type
-- The `decodeCompatibleVariantStorage(_:)` static method that decodes a variant storage to your own type, assuming the given variant is convertible
+- The `decodeCompatibleVariantStorage(_:)` static method that decodes a variant storage to your own type, assuming the given variant is convertible to your type

@@ -8,15 +8,8 @@ extension Variant {
     /// a function parameter is passed between Godot and Swift,
     /// the use of a non copyable structure makes for a great optimization.
     public struct Storage: ~Copyable {
-        internal enum Error: Swift.Error {
-            case unmatchingTypes(variantRepresentationType: GDExtensionVariantType, checkedType: GDExtensionVariantType)
-            
-            var localizedDescription: String {
-                switch self {
-                case .unmatchingTypes(let variantRepresentationType, let checkedType):
-                    "The variant types don't match (\(variantRepresentationType) and \(checkedType))."
-                }
-            }
+        public enum Error: Swift.Error {
+            case cannotConvertType(from: GDExtensionVariantType, to: GDExtensionVariantType)
         }
         
         private let rawData: UnsafeMutablePointer<UInt8>
@@ -83,19 +76,6 @@ extension Variant {
             type == GDEXTENSION_VARIANT_TYPE_NIL
         }
         
-        /// Checks that the variant type matches the given type.
-        public func checkType(_ type: RepresentationType) throws {
-            if self.type != type.storageType {
-                throw Error.unmatchingTypes(variantRepresentationType: self.type, checkedType: type.storageType)
-            }
-        }
-        
-        /// A Boolean value indicating whether this variant is an `Int` or a `Float` value.
-        public var isNumeric: Bool {
-            let type = self.type
-            return type == GDEXTENSION_VARIANT_TYPE_INT || type == GDEXTENSION_VARIANT_TYPE_FLOAT
-        }
-        
         public var hashValue: Int {
             Int(gdextension_interface_variant_hash(rawData))
         }
@@ -110,6 +90,27 @@ extension Variant {
             return String(godotString: string)
         }
         
+        /// Throws an error if the variant cannot be converted
+        /// to a given type.
+        public func checkIsConvertible(to type: Variant.RepresentationType) throws {
+            let storageType = type.storageType
+            if !isConvertible(to: storageType) {
+                throw Error.cannotConvertType(from: self.type, to: storageType)
+            }
+        }
+        
+        /// Returns a Boolean value indicating whether the variant can
+        /// be converted to a given type.
+        public func isConvertible(to type: GDExtensionVariantType) -> Bool {
+            gdextension_interface_variant_can_convert(self.type, type) == 0 ? false : true
+        }
+        
+        /// Returns a Boolean value indicating whether the variant can
+        /// be converted to a given type using stricter rules.
+        public func isStrictlyConvertible(to type: GDExtensionVariantType) -> Bool {
+            gdextension_interface_variant_can_convert_strict(self.type, type) == 0 ? false : true
+        }
+        
         // MARK: Operators
         
         func evaluate(other: borrowing Variant.Storage, `operator`: Operator) -> Variant.Storage {
@@ -119,15 +120,13 @@ extension Variant {
             self.withUnsafeRawPointer { extensionTypePtr in
                 other.withUnsafeRawPointer { otherNativeTypePtr in
                     returnVariant.withUnsafeRawPointer { returnNativeTypePtr in
-                        withUnsafeMutablePointer(to: &isValid) { validPtr in
-                            gdextension_interface_variant_evaluate(
-                                `operator`.godotOperator,
-                                extensionTypePtr,
-                                otherNativeTypePtr,
-                                returnNativeTypePtr,
-                                validPtr
-                            )
-                        }
+                        gdextension_interface_variant_evaluate(
+                            `operator`.godotOperator,
+                            extensionTypePtr,
+                            otherNativeTypePtr,
+                            returnNativeTypePtr,
+                            &isValid
+                        )
                     }
                 }
             }

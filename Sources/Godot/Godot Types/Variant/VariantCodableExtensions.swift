@@ -1,19 +1,5 @@
 import GodotExtensionHeaders
 
-private enum ConversionError: Error {
-    case objectType(type: Object.Type)
-    case nonNumeric(type: GDExtensionVariantType)
-    
-    var localizedDescription: String {
-        switch self {
-        case .objectType(let type):
-            "Cannot retrieve object of type \(type) from variant."
-        case .nonNumeric(let type):
-            "Variant of type \(type) isn't a numeric value."
-        }
-    }
-}
-
 // MARK: - Bool
 
 private var fromTypeConstructor_bool = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
@@ -74,14 +60,6 @@ extension Int: VariantCodable {
         
         return newValue
     }
-    
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Int {
-        guard storage.isNumeric else {
-            throw ConversionError.nonNumeric(type: storage.type)
-        }
-        
-        return decodeCompatibleVariantStorage(storage)
-    }
 }
 
 extension Int8: VariantCodable {
@@ -107,14 +85,6 @@ extension Int8: VariantCodable {
         }
         
         return newValue
-    }
-    
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        guard storage.isNumeric else {
-            throw ConversionError.nonNumeric(type: storage.type)
-        }
-        
-        return decodeCompatibleVariantStorage(storage)
     }
 }
 
@@ -142,14 +112,6 @@ extension Int16: VariantCodable {
         
         return newValue
     }
-    
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        guard storage.isNumeric else {
-            throw ConversionError.nonNumeric(type: storage.type)
-        }
-        
-        return decodeCompatibleVariantStorage(storage)
-    }
 }
 
 extension Int32: VariantCodable {
@@ -175,14 +137,6 @@ extension Int32: VariantCodable {
         }
         
         return newValue
-    }
-    
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        guard storage.isNumeric else {
-            throw ConversionError.nonNumeric(type: storage.type)
-        }
-        
-        return decodeCompatibleVariantStorage(storage)
     }
 }
 
@@ -210,14 +164,6 @@ extension Int64: VariantCodable {
         
         return newValue
     }
-    
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        guard storage.isNumeric else {
-            throw ConversionError.nonNumeric(type: storage.type)
-        }
-        
-        return decodeCompatibleVariantStorage(storage)
-    }
 }
 
 extension UInt8: VariantCodable {
@@ -243,14 +189,6 @@ extension UInt8: VariantCodable {
         }
         
         return newValue
-    }
-    
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        guard storage.isNumeric else {
-            throw ConversionError.nonNumeric(type: storage.type)
-        }
-        
-        return decodeCompatibleVariantStorage(storage)
     }
 }
 
@@ -278,14 +216,6 @@ extension UInt16: VariantCodable {
         
         return newValue
     }
-    
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        guard storage.isNumeric else {
-            throw ConversionError.nonNumeric(type: storage.type)
-        }
-        
-        return decodeCompatibleVariantStorage(storage)
-    }
 }
 
 extension UInt32: VariantCodable {
@@ -312,14 +242,6 @@ extension UInt32: VariantCodable {
         
         return newValue
     }
-    
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        guard storage.isNumeric else {
-            throw ConversionError.nonNumeric(type: storage.type)
-        }
-        
-        return decodeCompatibleVariantStorage(storage)
-    }
 }
 
 extension UInt64: VariantCodable {
@@ -345,14 +267,6 @@ extension UInt64: VariantCodable {
         }
         
         return newValue
-    }
-    
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        guard storage.isNumeric else {
-            throw ConversionError.nonNumeric(type: storage.type)
-        }
-        
-        return decodeCompatibleVariantStorage(storage)
     }
 }
 
@@ -385,14 +299,6 @@ extension Double: VariantCodable {
         
         return newValue
     }
-    
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        guard storage.isNumeric else {
-            throw ConversionError.nonNumeric(type: storage.type)
-        }
-        
-        return decodeCompatibleVariantStorage(storage)
-    }
 }
 
 // MARK: - Float
@@ -420,14 +326,6 @@ extension Float: VariantCodable {
         }
         
         return Float(newValue)
-    }
-    
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        guard storage.isNumeric else {
-            throw ConversionError.nonNumeric(type: storage.type)
-        }
-        
-        return decodeCompatibleVariantStorage(storage)
     }
 }
 
@@ -1057,6 +955,10 @@ private var fromTypeConstructor_object = gdextension_interface_get_variant_from_
 private var toTypeConstructor_object = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
 
 extension Object: VariantCodable {
+    private enum VariantConversionError: Error {
+        case cannotConvertToObject(type: Object.Type)
+    }
+    
     public static let variantRepresentationType: Variant.RepresentationType = .object
     
     public final class func encodeVariantStorage(_ value: Object) -> Variant.Storage {
@@ -1086,7 +988,7 @@ extension Object: VariantCodable {
     }
     
     public final class func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        try storage.checkType(Self.variantRepresentationType)
+        try storage.checkIsConvertible(to: Self.variantRepresentationType)
         
         var instancePtr = UnsafeMutableRawPointer(bitPattern: 0)
         
@@ -1095,7 +997,7 @@ extension Object: VariantCodable {
         }
         
         guard let instance = Self.retrievedInstanceManagedByGodot(instancePtr) else {
-            throw ConversionError.objectType(type: Self.self)
+            throw VariantConversionError.cannotConvertToObject(type: Self.self)
         }
         
         return instance

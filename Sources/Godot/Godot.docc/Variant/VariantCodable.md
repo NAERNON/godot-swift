@@ -49,7 +49,7 @@ To add `VariantCodable` conformance to your type, you must declare the following
 
 The ``VariantEncodable/encodeVariantStorage(_:)`` method must create variants with type matching that of the `variantRepresentationType` static variable.
 
-The `decodeVariantStorage(_:)` method of the `VariantDecodable` protocol has a default implementation that uses the `decodeCompatibleVariantStorage(_:)` while checking that the given variant storage has the same type as `variantRepresentationType`. You can override this default behavior and add additional checks.
+The `decodeVariantStorage(_:)` method of the `VariantDecodable` protocol has a default implementation that uses the `decodeCompatibleVariantStorage(_:)` while checking that the given variant storage can be converted to `variantRepresentationType`. You can override this default behavior and add additional checks.
 For example, in the following code, an additional check is performed:
 
 ```swift
@@ -63,7 +63,7 @@ struct Level: VariantCodable {
     static let variantRepresentationType: Variant.RepresentationType = Int.variantRepresentationType
 
     static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Level {
-        let index = try Int.fromVariant(storage)
+        let index = try Int.decodeVariantStorage(storage)
 
         guard index >= 0 else {
             throw ConversionError.negative

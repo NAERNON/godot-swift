@@ -61,17 +61,6 @@ public enum GodotTypedArrayVariantConversionError: Error {
     case notTyped
     case incorrectType(expected: GDExtensionVariantType, found: GDExtensionVariantType)
     case incorrectClassName(expected: GodotStringName, found: GodotStringName)
-    
-    public var localizedDescription: String {
-        switch self {
-        case .notTyped:
-            "The underlying array is not typed."
-        case .incorrectType(let expected, let found):
-            "The underlying array is typed \(found) but the expected type is \(expected)."
-        case .incorrectClassName(let expected, let found):
-            "The underlying array is typed with class \(found) but the expected class is \(expected)."
-        }
-    }
 }
 
 extension GodotTypedArray: VariantCodable {
