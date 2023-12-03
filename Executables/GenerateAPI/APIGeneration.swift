@@ -17,12 +17,17 @@ struct APIGeneration: ParsableCommand {
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         let fileManager = FileManager.default
         
-        let currentURL = URL(filePath: fileManager.currentDirectoryPath, directoryHint: .isDirectory)
-        let apiJsonFileURL = currentURL
-            .appendingPathComponent("Sources")
-            .appendingPathComponent("GodotExtensionHeaders")
-            .appendingPathComponent("extension_api.json", isDirectory: true)
-        let generatedFolderURL = currentURL
+        guard let apiJsonFileURL = Bundle.module.url(
+            forResource: "extension_api",
+            withExtension: "json"
+        ) else {
+            fatalError("Cannot find 'extension_api.json' file")
+        }
+        
+        let generatedFolderURL = URL(filePath: #file)
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
             .appendingPathComponent("Sources")
             .appendingPathComponent("Godot")
             .appendingPathComponent("_Generated", isDirectory: true)
@@ -72,9 +77,10 @@ struct APIGeneration: ParsableCommand {
                 print("")
             }
             
-            try process(file: file,
-                        fileManager: fileManager,
-                        atURL: generatedFolderURL)
+            try process(
+                file: file,
+                fileManager: fileManager,
+                at: generatedFolderURL)
         }
         
         let generationDuration = Date.now.timeIntervalSince(generationStart)
@@ -91,7 +97,7 @@ struct APIGeneration: ParsableCommand {
     private func process(
         file: GeneratedFile,
         fileManager: FileManager,
-        atURL url: URL
+        at url: URL
     ) throws {
         let fileURL = url.appending(path: file.path)
         

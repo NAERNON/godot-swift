@@ -51,7 +51,10 @@ let package = Package(
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
                 .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
             ],
-            path: "Executables/GenerateAPI"
+            path: "Executables/GenerateAPI",
+            resources: [
+                .process("extension_api.json")
+            ]
         ),
         
         // MARK: Plugins
