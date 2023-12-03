@@ -17,7 +17,7 @@ public final class Variant {
     }
     
     /// Creates a variant containing the given value.
-    public init<T>(_ value: T) where T : VariantEncodable {
+    public init<T>(_ value: consuming T) where T : VariantEncodable {
         self.storage = T.encodeVariantStorage(value)
     }
     
@@ -96,7 +96,7 @@ extension Variant: Equatable {
 }
 
 extension Variant: VariantEncodable, VariantDecodable {
-    public static func encodeVariantStorage(_ value: Variant) -> Storage {
+    public static func encodeVariantStorage(_ value: consuming Variant) -> Storage {
         value.storage.copy()
     }
     

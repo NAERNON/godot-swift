@@ -3,7 +3,7 @@ import GodotExtensionHeaders
 /// A type that can be encoded to a variant.
 public protocol VariantEncodable {
     /// A variant storage representing the given value.
-    static func encodeVariantStorage(_ value: Self) -> Variant.Storage
+    static func encodeVariantStorage(_ value: consuming Self) -> Variant.Storage
 }
 
 /// A type that can be decoded from a variant.

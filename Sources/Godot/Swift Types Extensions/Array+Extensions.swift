@@ -10,7 +10,7 @@ extension Array: VariantDecodable where Element : VariantCodable {
 }
 
 extension Array: VariantEncodable where Element : VariantCodable {
-    public static func encodeVariantStorage(_ value: Self) -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: consuming Self) -> Variant.Storage {
         GodotTypedArray.encodeVariantStorage(GodotTypedArray(value))
     }
 }

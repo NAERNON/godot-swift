@@ -32,7 +32,7 @@ extension Variant {
             gdextension_interface_variant_new_copy(rawData, godotExtensionPointer)
         }
         
-        public init<T>(_ value: T) where T : VariantEncodable {
+        public init<T>(_ value: consuming T) where T : VariantEncodable {
             self = T.encodeVariantStorage(value)
         }
         

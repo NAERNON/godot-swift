@@ -66,7 +66,7 @@ public enum GodotTypedArrayVariantConversionError: Error {
 extension GodotTypedArray: VariantCodable {
     public static var variantRepresentationType: Variant.RepresentationType { GodotArray.variantRepresentationType }
     
-    public static func encodeVariantStorage(_ value: GodotTypedArray<Element>) -> Variant.Storage {
+    public static func encodeVariantStorage(_ value: consuming GodotTypedArray<Element>) -> Variant.Storage {
         GodotArray.encodeVariantStorage(value.underlyingArray)
     }
     
