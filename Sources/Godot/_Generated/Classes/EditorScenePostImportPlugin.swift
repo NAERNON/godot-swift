@@ -31,11 +31,11 @@ open class EditorScenePostImportPlugin: RefCounted {
     }
 
     open func _getInternalOptionVisibility(category: Int32, forAnimation animation: Bool, option: Godot.GodotString) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _getInternalOptionUpdateViewRequired(category: Int32, option: Godot.GodotString) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _internalProcess(category: Int32, baseNode: Godot.Node?, node: Godot.Node?, resource: Godot.Resource?) {
@@ -45,7 +45,7 @@ open class EditorScenePostImportPlugin: RefCounted {
     }
 
     open func _getOptionVisibility(path: Godot.GodotString, forAnimation animation: Bool, option: Godot.GodotString) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _preProcess(scene: Godot.Node?) {
@@ -111,7 +111,7 @@ open class EditorScenePostImportPlugin: RefCounted {
         }
         }
     }()
-    public func addImportOptionAdvanced<Variant1 : VariantEncodable>(type: Godot.Variant.GodotType, name: Godot.GodotString, defaultValue: Variant1, hint: Godot.PropertyHint = PropertyHint(rawValue: 0)!, hintString: Godot.GodotString = "", usageFlags: Int32 = 6) {
+    public func addImportOptionAdvanced<Variant1 : VariantEncodable>(type: Godot.Variant.StorageType, name: Godot.GodotString, defaultValue: Variant1, hint: Godot.PropertyHint = PropertyHint(rawValue: 0)!, hintString: Godot.GodotString = "", usageFlags: Int32 = 6) {
         withUnsafePointer(to: type) { (__ptr_type) in
             name.withUnsafeRawPointer { (__ptr_name) in
                 Godot.Variant.Storage(defaultValue).withUnsafeRawPointer { (__ptr_defaultValue) in

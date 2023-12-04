@@ -66,7 +66,7 @@ public final class Variant {
     // MARK: Tools
     
     /// Returns the type of value this variant stores.
-    public var type: GDExtensionVariantType {
+    public var type: StorageType {
         storage.type
     }
 }
@@ -109,56 +109,8 @@ extension Variant: VariantEncodable, VariantDecodable {
     }
 }
 
-extension Variant: Comparable {
-    static public func < (lhs: Variant, rhs: Variant) -> Bool {
-        lhs.storage < rhs.storage
-    }
-    
-    static public func <= (lhs: Variant, rhs: Variant) -> Bool {
-        lhs.storage <= rhs.storage
-    }
-    
-    static public func > (lhs: Variant, rhs: Variant) -> Bool {
-        lhs.storage > rhs.storage
-    }
-    
-    static public func >= (lhs: Variant, rhs: Variant) -> Bool {
-        lhs.storage >= rhs.storage
-    }
-}
-
 extension Variant: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(storage.hashValue)
-    }
-}
-
-extension Variant: ExpressibleByFloatLiteral {
-    public convenience init(floatLiteral value: Double) {
-        self.init(value)
-    }
-}
-
-extension Variant: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
-    public convenience init(stringLiteral value: String) {
-        self.init(value)
-    }
-}
-
-extension Variant: ExpressibleByIntegerLiteral {
-    public convenience init(integerLiteral value: Int) {
-        self.init(value)
-    }
-}
-
-extension Variant: ExpressibleByBooleanLiteral {
-    public convenience init(booleanLiteral value: BooleanLiteralType) {
-        self.init(value)
-    }
-}
-
-extension Variant: ExpressibleByNilLiteral {
-    public convenience init(nilLiteral: ()) {
-        self.init()
     }
 }

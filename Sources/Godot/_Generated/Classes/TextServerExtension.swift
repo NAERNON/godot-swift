@@ -519,7 +519,7 @@ open class TextServerExtension: TextServer {
     }
 
     open func _shapedGetSpanMeta(shaped: Godot.RID, index: Int64) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _shapedSetSpanUpdateFont(shaped: Godot.RID, index: Int64, fonts: Godot.GodotTypedArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.GodotDictionary) {

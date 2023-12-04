@@ -467,7 +467,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             case "String": return "GodotString"
             case "StringName": return "GodotStringName"
             case "Error": return "ErrorType"
-            case "Type": return "GodotType"
+            case "Type": return options.contains(.typeIsStorageType) ? "StorageType" : "GodotType"
             default:
                 if options.contains(.optionalClasses) && isGodotClass {
                     return string + "?"
@@ -480,8 +480,15 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         case .bitfield(let type):
             return type._syntax(options: options, scopeIndex: scopeIndex)
         case .scope(let scopeType, let type):
-            return scopeType._syntax(options: options.subtracting(.optionalClasses), scopeIndex: scopeIndex)
-                + "." + type._syntax(options: options, scopeIndex: scopeIndex+1)
+            let base = scopeType._syntax(
+                options: options.subtracting(.optionalClasses),
+                scopeIndex: scopeIndex
+            )
+            let additional = type._syntax(
+                options: options.union(scopeType == .variant ? [.typeIsStorageType] : []),
+                scopeIndex: scopeIndex+1
+            )
+            return base + "." + additional
         case .generic(let type, let genericType):
             return type._syntax(options: options.subtracting(.optionalClasses), scopeIndex: scopeIndex) + "<"
                 + genericType._syntax(options: options, scopeIndex: 0) + ">"

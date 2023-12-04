@@ -30,7 +30,7 @@ open class AnimationTree: Node {
     }
 
     open func _postProcessKeyValue(animation: Godot.Animation?, track: Int32, value: Godot.Variant, object: Godot.Object?, objectIdx: Int32) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     private static var __method_binding_set_active: GDExtensionMethodBindPtr = {

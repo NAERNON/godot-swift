@@ -96,7 +96,7 @@ open class ScriptExtension: Script {
     }
 
     open func _getPropertyDefaultValue(property: Godot.GodotStringName) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _updateExports() {
@@ -127,7 +127,7 @@ open class ScriptExtension: Script {
     }
 
     open func _getRpcConfig() -> Godot.Variant {
-        nil
+        Variant()
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

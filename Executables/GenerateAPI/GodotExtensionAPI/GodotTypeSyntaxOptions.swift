@@ -15,4 +15,7 @@ struct GodotTypeSyntaxOptions: OptionSet {
     static let prefixByGodot   = GodotTypeSyntaxOptions(rawValue: 1 << 3)
     /// All Godot classes are marked optional.
     static let optionalClasses = GodotTypeSyntaxOptions(rawValue: 1 << 4)
+    /// All types named "Typed" are named "StorageType"
+    /// instead of "GodotType".
+    static let typeIsStorageType = GodotTypeSyntaxOptions(rawValue: 1 << 5)
 }

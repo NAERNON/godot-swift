@@ -48,7 +48,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
     }
 
     open func _shapeGetData(shape: Godot.RID) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _shapeGetCustomSolverBias(shape: Godot.RID) -> Double {
@@ -154,7 +154,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
     }
 
     open func _areaGetParam(area: Godot.RID, param: Godot.PhysicsServer2D.AreaParameter) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _areaGetTransform(area: Godot.RID) -> Godot.Transform2D {
@@ -284,7 +284,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
     }
 
     open func _bodyGetParam(body: Godot.RID, param: Godot.PhysicsServer2D.BodyParameter) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _bodyResetMassProperties(body: Godot.RID) {
@@ -294,7 +294,7 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
     }
 
     open func _bodyGetState(body: Godot.RID, state: Godot.PhysicsServer2D.BodyState) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _bodyApplyCentralImpulse(body: Godot.RID, impulse: Godot.Vector2) {

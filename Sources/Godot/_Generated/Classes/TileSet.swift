@@ -1658,7 +1658,7 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func setCustomDataLayerType(layerIndex: Int32, layerType: Godot.Variant.GodotType) {
+    public func setCustomDataLayerType(layerIndex: Int32, layerType: Godot.Variant.StorageType) {
         withUnsafePointer(to: layerIndex) { (__ptr_layerIndex) in
             withUnsafePointer(to: layerType) { (__ptr_layerType) in
                 withUnsafeArgumentPackPointer(__ptr_layerIndex, __ptr_layerType) { (__accessPtr) in
@@ -1682,8 +1682,8 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func customDataLayerType(layerIndex: Int32) -> Godot.Variant.GodotType {
-        var __temporary = Godot.Variant.GodotType.RawValue(0)
+    public func customDataLayerType(layerIndex: Int32) -> Godot.Variant.StorageType {
+        var __temporary = Godot.Variant.StorageType.RawValue(0)
         withUnsafePointer(to: layerIndex) { (__ptr_layerIndex) in
             withUnsafeArgumentPackPointer(__ptr_layerIndex) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -1698,7 +1698,7 @@ open class TileSet: Resource {
                 }
             }
         }
-        return Godot.Variant.GodotType(rawValue: __temporary)!
+        return Godot.Variant.StorageType(rawValue: __temporary)!
     }
 
     private static var __method_binding_set_source_level_tile_proxy: GDExtensionMethodBindPtr = {

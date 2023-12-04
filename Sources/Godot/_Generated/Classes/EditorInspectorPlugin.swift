@@ -18,7 +18,7 @@ open class EditorInspectorPlugin: RefCounted {
     open func _parseGroup(object: Godot.Object?, group: Godot.GodotString) {
     }
 
-    open func _parseProperty(object: Godot.Object?, type: Godot.Variant.GodotType, name: Godot.GodotString, hintType: Godot.PropertyHint, hintString: Godot.GodotString, usageFlags: Godot.PropertyUsageFlags, wide: Bool) -> Bool {
+    open func _parseProperty(object: Godot.Object?, type: Godot.Variant.StorageType, name: Godot.GodotString, hintType: Godot.PropertyHint, hintString: Godot.GodotString, usageFlags: Godot.PropertyUsageFlags, wide: Bool) -> Bool {
         Bool()
     }
 
@@ -157,7 +157,7 @@ open class EditorInspectorPlugin: RefCounted {
             let returnValue = instance
         ._parseProperty(
             object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            type: args[1]!.load(as: Godot.Variant.GodotType.self),
+            type: args[1]!.load(as: Godot.Variant.StorageType.self),
             name: Godot.GodotString(godotExtensionPointer: args[2]!),
             hintType: args[3]!.load(as: Godot.PropertyHint.self),
             hintString: Godot.GodotString(godotExtensionPointer: args[4]!),

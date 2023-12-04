@@ -357,10 +357,10 @@ struct GodotClass: Decodable {
     private func virtualMethodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
         try method.translated.declSyntax(options: syntaxOptions, keywords: .open) {
             if let returnType = method.returnType {
-                if returnType.isGodotClass
-                    || returnType == .variant
-                    || returnType.isOptional {
+                if returnType.isGodotClass || returnType.isOptional {
                     "nil"
+                } else if returnType == .variant {
+                    "Variant()"
                 } else if returnType.isEnum {
                     "\(raw: returnType.syntax(options: syntaxOptions))(rawValue: 0)!"
                 } else if returnType.isPointer {

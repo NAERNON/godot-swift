@@ -1,7 +1,7 @@
 import GodotExtensionHeaders
 
 extension Variant {
-    public enum Operator: Int {
+    enum Operator: Int {
         case equal         = 0
         case notEqual      = 1
         case less          = 2

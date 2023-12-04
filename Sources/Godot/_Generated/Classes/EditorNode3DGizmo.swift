@@ -17,7 +17,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
     }
 
     open func _getHandleValue(id: Int32, secondary: Bool) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _setHandle(id: Int32, secondary: Bool, camera: Godot.Camera3D?, point: Godot.Vector2) {

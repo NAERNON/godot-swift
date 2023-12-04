@@ -9,7 +9,7 @@ extension Variant {
     /// the use of a non copyable structure makes for a great optimization.
     public struct Storage: ~Copyable {
         public enum Error: Swift.Error {
-            case cannotConvertType(from: GDExtensionVariantType, to: GDExtensionVariantType)
+            case cannotConvertType(from: StorageType, to: StorageType)
         }
         
         private let rawData: UnsafeMutablePointer<UInt8>
@@ -67,13 +67,18 @@ extension Variant {
         // MARK: Tools
         
         /// Returns the variant type.
-        public var type: GDExtensionVariantType {
+        private var extensionType: GDExtensionVariantType {
             gdextension_interface_variant_get_type(rawData)
+        }
+        
+        /// Returns the variant type.
+        public var type: StorageType {
+            .init(rawValue: extensionType.rawValue)!
         }
         
         /// Returns a Boolean value indicating whether the storage is nil.
         public var isNil: Bool {
-            type == GDEXTENSION_VARIANT_TYPE_NIL
+            extensionType == GDEXTENSION_VARIANT_TYPE_NIL
         }
         
         public var hashValue: Int {
@@ -101,14 +106,20 @@ extension Variant {
         
         /// Returns a Boolean value indicating whether the variant can
         /// be converted to a given type.
-        public func isConvertible(to type: GDExtensionVariantType) -> Bool {
-            gdextension_interface_variant_can_convert(self.type, type) == 0 ? false : true
+        public func isConvertible(to type: StorageType) -> Bool {
+            gdextension_interface_variant_can_convert(
+                self.extensionType,
+                type.extensionType
+            ) == 0 ? false : true
         }
         
         /// Returns a Boolean value indicating whether the variant can
         /// be converted to a given type using stricter rules.
-        public func isStrictlyConvertible(to type: GDExtensionVariantType) -> Bool {
-            gdextension_interface_variant_can_convert_strict(self.type, type) == 0 ? false : true
+        public func isStrictlyConvertible(to type: StorageType) -> Bool {
+            gdextension_interface_variant_can_convert_strict(
+                self.extensionType,
+                type.extensionType
+            ) == 0 ? false : true
         }
         
         // MARK: Operators
@@ -141,22 +152,6 @@ extension Variant {
         
         static public func != (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
             Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .notEqual))
-        }
-        
-        static public func < (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .less))
-        }
-        
-        static public func <= (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .lessEqual))
-        }
-        
-        static public func > (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .greater))
-        }
-        
-        static public func >= (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .greaterEqual))
         }
     }
 }

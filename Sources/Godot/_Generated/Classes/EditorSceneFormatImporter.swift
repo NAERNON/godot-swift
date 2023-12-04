@@ -21,7 +21,7 @@ open class EditorSceneFormatImporter: RefCounted {
     }
 
     open func _getOptionVisibility(path: Godot.GodotString, forAnimation animation: Bool, option: Godot.GodotString) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

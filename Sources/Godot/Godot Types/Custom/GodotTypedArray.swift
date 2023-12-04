@@ -21,7 +21,10 @@ public struct GodotTypedArray<Element> where Element : VariantCodable {
                 Variant().withUnsafeRawPointer { scriptPtr in
                     // TODO: Check script (last parameter)
                     gdextension_interface_array_set_typed(
-                        ptr, Element.variantRepresentationType.storageType, classNamePtr, scriptPtr
+                        ptr,
+                        Element.variantRepresentationType.storageType.extensionType,
+                        classNamePtr,
+                        scriptPtr
                     )
                 }
             }
@@ -77,10 +80,13 @@ extension GodotTypedArray: VariantCodable {
             throw GodotTypedArrayVariantConversionError.notTyped
         }
         
-        let type = GDExtensionVariantType(rawValue: UInt32(underlyingArray._typedBuiltin()))
+        let type = Variant.StorageType(rawValue: UInt32(underlyingArray._typedBuiltin()))!
         guard type == Element.variantRepresentationType.storageType else {
             throw GodotTypedArrayVariantConversionError
-                .incorrectType(expected: Element.variantRepresentationType.storageType, found: type)
+                .incorrectType(
+                    expected: Element.variantRepresentationType.storageType.extensionType,
+                    found: type.extensionType
+                )
         }
         
         // If the class name is not empty, we must check against

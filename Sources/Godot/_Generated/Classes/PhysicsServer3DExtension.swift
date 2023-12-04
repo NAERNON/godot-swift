@@ -63,7 +63,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     }
 
     open func _shapeGetData(shape: Godot.RID) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _shapeGetCustomSolverBias(shape: Godot.RID) -> Double {
@@ -158,7 +158,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     }
 
     open func _areaGetParam(area: Godot.RID, param: Godot.PhysicsServer3D.AreaParameter) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _areaGetTransform(area: Godot.RID) -> Godot.Transform3D {
@@ -285,7 +285,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     }
 
     open func _bodyGetParam(body: Godot.RID, param: Godot.PhysicsServer3D.BodyParameter) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _bodyResetMassProperties(body: Godot.RID) {
@@ -295,7 +295,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     }
 
     open func _bodyGetState(body: Godot.RID, state: Godot.PhysicsServer3D.BodyState) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _bodyApplyCentralImpulse(body: Godot.RID, impulse: Godot.Vector3) {
@@ -442,7 +442,7 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     }
 
     open func _softBodyGetState(body: Godot.RID, state: Godot.PhysicsServer3D.BodyState) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _softBodySetTransform(body: Godot.RID, transform: Godot.Transform3D) {

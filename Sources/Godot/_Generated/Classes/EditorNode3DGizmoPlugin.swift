@@ -41,7 +41,7 @@ open class EditorNode3DGizmoPlugin: Resource {
     }
 
     open func _getHandleValue(gizmo: Godot.EditorNode3DGizmo?, handleId: Int32, secondary: Bool) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _setHandle(gizmo: Godot.EditorNode3DGizmo?, handleId: Int32, secondary: Bool, camera: Godot.Camera3D?, screenPos: Godot.Vector2) {

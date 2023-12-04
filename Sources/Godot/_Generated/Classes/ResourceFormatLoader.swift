@@ -58,7 +58,7 @@ open class ResourceFormatLoader: RefCounted {
     }
 
     open func _load(path: Godot.GodotString, originalPath: Godot.GodotString, useSubThreads: Bool, cacheMode: Int32) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

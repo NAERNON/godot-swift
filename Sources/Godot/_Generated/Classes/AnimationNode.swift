@@ -44,7 +44,7 @@ open class AnimationNode: Resource {
     }
 
     open func _getParameterDefaultValue(parameter: Godot.GodotStringName) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _isParameterReadOnly(parameter: Godot.GodotStringName) -> Bool {

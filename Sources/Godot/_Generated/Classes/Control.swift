@@ -239,7 +239,7 @@ open class Control: CanvasItem {
     }
 
     open func _getDragData(atPosition position: Godot.Vector2) -> Godot.Variant {
-        nil
+        Variant()
     }
 
     open func _canDropData(atPosition position: Godot.Vector2, data: Godot.Variant) -> Bool {
