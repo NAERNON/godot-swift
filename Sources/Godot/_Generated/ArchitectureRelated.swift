@@ -15,6 +15,10 @@ extension Variant {
 /// change the `Real` type and break related code.
 public typealias Real = Float
 
+extension Int {
+    public static let variantRepresentationType: Variant.RepresentationType = .int64
+}
+
 extension UInt {
     public static let variantRepresentationType: Variant.RepresentationType = .uint64
 }

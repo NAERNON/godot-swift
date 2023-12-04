@@ -12,6 +12,9 @@ extension GeneratedFile {
             realDeclSyntax(type: configuration.floatingPointType)
                 .with(\.trailingTrivia, .newlines(2))
             
+            try intVariantRepresentationDeclSyntax(architecture: configuration.architecture)
+                .with(\.trailingTrivia, .newlines(2))
+            
             try uintVariantRepresentationDeclSyntax(architecture: configuration.architecture)
                 .with(\.trailingTrivia, .newlines(2))
         }
@@ -51,6 +54,19 @@ extension GeneratedFile {
             /// change the `Real` type and break related code.
             public typealias Real = \(raw: floatingPointTypeString)
             """
+    }
+    
+    private static func intVariantRepresentationDeclSyntax(
+        architecture: BuildConfiguration.Architecture
+    ) throws -> ExtensionDeclSyntax {
+        let type = switch architecture {
+        case .arch32: ".int32"
+        case .arch64: ".int64"
+        }
+        
+        return try ExtensionDeclSyntax("extension Int") {
+            "public static let variantRepresentationType: Variant.RepresentationType = \(raw: type)"
+        }
     }
     
     private static func uintVariantRepresentationDeclSyntax(

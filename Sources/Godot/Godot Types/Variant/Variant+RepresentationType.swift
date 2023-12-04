@@ -7,7 +7,6 @@ extension Variant {
     public enum RepresentationType: Int {
         case `nil`
         case bool
-        case int
         case uint8
         case uint16
         case uint32
@@ -62,7 +61,6 @@ extension Variant {
             switch self {
             case .nil: GDEXTENSION_VARIANT_TYPE_NIL
             case .bool: GDEXTENSION_VARIANT_TYPE_BOOL
-            case .int: GDEXTENSION_VARIANT_TYPE_INT
             case .uint8: GDEXTENSION_VARIANT_TYPE_INT
             case .uint16: GDEXTENSION_VARIANT_TYPE_INT
             case .uint32: GDEXTENSION_VARIANT_TYPE_INT
