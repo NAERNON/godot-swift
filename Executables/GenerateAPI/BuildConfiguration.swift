@@ -31,7 +31,7 @@ enum BuildConfiguration: String {
         }
     }
     
-    var architecure: Architecture {
+    var architecture: Architecture {
         switch self {
         case .float32, .double32: return .arch32
         case .float64, .double64: return .arch64

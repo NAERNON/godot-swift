@@ -52,8 +52,7 @@ struct APIGeneration: ParsableCommand {
         
         let godotFiles = [
             GeneratedFile.globalEnum(extensionAPI),
-            GeneratedFile.real(type: buildConfiguration.floatingPointType),
-            GeneratedFile.variantSize(extensionAPI, with: buildConfiguration),
+            GeneratedFile.architectureRelated(extensionAPI, with: buildConfiguration),
             GeneratedFile.utilityFunctions(extensionAPI),
             GeneratedFile.registerGodotClasses(extensionAPI),
             GeneratedFile.singletons(extensionAPI),
