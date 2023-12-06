@@ -962,7 +962,7 @@ open class TreeItem: Object {
     }()
     public func setMetadata<Variant1 : VariantEncodable>(column: Int32, meta: Variant1) {
         withUnsafePointer(to: column) { (__ptr_column) in
-            Godot.Variant.Storage(meta).withUnsafeRawPointer { (__ptr_meta) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: meta) { (__ptr_meta) in
                 withUnsafeArgumentPackPointer(__ptr_column, __ptr_meta) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(
@@ -2629,7 +2629,7 @@ open class TreeItem: Object {
         }
     }()
     public func callRecursive<each VariantRest : VariantEncodable>(method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
-        Godot.Variant.Storage(method).withUnsafeRawPointer { (__ptr_method) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: method) { (__ptr_method) in
             withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { (packCount, __accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     gdextension_interface_object_method_bind_call(
@@ -2645,7 +2645,7 @@ open class TreeItem: Object {
         }
     }
     public func callRecursive(method: Godot.GodotStringName) {
-        Godot.Variant.Storage(method).withUnsafeRawPointer { (__ptr_method) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: method) { (__ptr_method) in
             withUnsafeArgumentPackPointer(__ptr_method) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     gdextension_interface_object_method_bind_call(

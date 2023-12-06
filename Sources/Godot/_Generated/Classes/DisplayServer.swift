@@ -340,7 +340,7 @@ open class DisplayServer: Object {
             label.withUnsafeRawPointer { (__ptr_label) in
                 callback.withUnsafeRawPointer { (__ptr_callback) in
                     keyCallback.withUnsafeRawPointer { (__ptr_keyCallback) in
-                        Godot.Variant.Storage(tag).withUnsafeRawPointer { (__ptr_tag) in
+                        Godot.Variant.withStorageUnsafeRawPointer(to: tag) { (__ptr_tag) in
                             withUnsafePointer(to: accelerator) { (__ptr_accelerator) in
                                 withUnsafePointer(to: index) { (__ptr_index) in
                                     withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_label, __ptr_callback, __ptr_keyCallback, __ptr_tag, __ptr_accelerator, __ptr_index) { (__accessPtr) in
@@ -378,7 +378,7 @@ open class DisplayServer: Object {
             label.withUnsafeRawPointer { (__ptr_label) in
                 callback.withUnsafeRawPointer { (__ptr_callback) in
                     keyCallback.withUnsafeRawPointer { (__ptr_keyCallback) in
-                        Godot.Variant.Storage(tag).withUnsafeRawPointer { (__ptr_tag) in
+                        Godot.Variant.withStorageUnsafeRawPointer(to: tag) { (__ptr_tag) in
                             withUnsafePointer(to: accelerator) { (__ptr_accelerator) in
                                 withUnsafePointer(to: index) { (__ptr_index) in
                                     withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_label, __ptr_callback, __ptr_keyCallback, __ptr_tag, __ptr_accelerator, __ptr_index) { (__accessPtr) in
@@ -418,7 +418,7 @@ open class DisplayServer: Object {
                     label.withUnsafeRawPointer { (__ptr_label) in
                         callback.withUnsafeRawPointer { (__ptr_callback) in
                             keyCallback.withUnsafeRawPointer { (__ptr_keyCallback) in
-                                Godot.Variant.Storage(tag).withUnsafeRawPointer { (__ptr_tag) in
+                                Godot.Variant.withStorageUnsafeRawPointer(to: tag) { (__ptr_tag) in
                                     withUnsafePointer(to: accelerator) { (__ptr_accelerator) in
                                         withUnsafePointer(to: index) { (__ptr_index) in
                                             withUnsafeArgumentPackPointer(__ptr_menuRoot, _ptr___ptr_icon, __ptr_label, __ptr_callback, __ptr_keyCallback, __ptr_tag, __ptr_accelerator, __ptr_index) { (__accessPtr) in
@@ -460,7 +460,7 @@ open class DisplayServer: Object {
                     label.withUnsafeRawPointer { (__ptr_label) in
                         callback.withUnsafeRawPointer { (__ptr_callback) in
                             keyCallback.withUnsafeRawPointer { (__ptr_keyCallback) in
-                                Godot.Variant.Storage(tag).withUnsafeRawPointer { (__ptr_tag) in
+                                Godot.Variant.withStorageUnsafeRawPointer(to: tag) { (__ptr_tag) in
                                     withUnsafePointer(to: accelerator) { (__ptr_accelerator) in
                                         withUnsafePointer(to: index) { (__ptr_index) in
                                             withUnsafeArgumentPackPointer(__ptr_menuRoot, _ptr___ptr_icon, __ptr_label, __ptr_callback, __ptr_keyCallback, __ptr_tag, __ptr_accelerator, __ptr_index) { (__accessPtr) in
@@ -500,7 +500,7 @@ open class DisplayServer: Object {
             label.withUnsafeRawPointer { (__ptr_label) in
                 callback.withUnsafeRawPointer { (__ptr_callback) in
                     keyCallback.withUnsafeRawPointer { (__ptr_keyCallback) in
-                        Godot.Variant.Storage(tag).withUnsafeRawPointer { (__ptr_tag) in
+                        Godot.Variant.withStorageUnsafeRawPointer(to: tag) { (__ptr_tag) in
                             withUnsafePointer(to: accelerator) { (__ptr_accelerator) in
                                 withUnsafePointer(to: index) { (__ptr_index) in
                                     withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_label, __ptr_callback, __ptr_keyCallback, __ptr_tag, __ptr_accelerator, __ptr_index) { (__accessPtr) in
@@ -540,7 +540,7 @@ open class DisplayServer: Object {
                     label.withUnsafeRawPointer { (__ptr_label) in
                         callback.withUnsafeRawPointer { (__ptr_callback) in
                             keyCallback.withUnsafeRawPointer { (__ptr_keyCallback) in
-                                Godot.Variant.Storage(tag).withUnsafeRawPointer { (__ptr_tag) in
+                                Godot.Variant.withStorageUnsafeRawPointer(to: tag) { (__ptr_tag) in
                                     withUnsafePointer(to: accelerator) { (__ptr_accelerator) in
                                         withUnsafePointer(to: index) { (__ptr_index) in
                                             withUnsafeArgumentPackPointer(__ptr_menuRoot, _ptr___ptr_icon, __ptr_label, __ptr_callback, __ptr_keyCallback, __ptr_tag, __ptr_accelerator, __ptr_index) { (__accessPtr) in
@@ -582,7 +582,7 @@ open class DisplayServer: Object {
                     withUnsafePointer(to: defaultState) { (__ptr_defaultState) in
                         callback.withUnsafeRawPointer { (__ptr_callback) in
                             keyCallback.withUnsafeRawPointer { (__ptr_keyCallback) in
-                                Godot.Variant.Storage(tag).withUnsafeRawPointer { (__ptr_tag) in
+                                Godot.Variant.withStorageUnsafeRawPointer(to: tag) { (__ptr_tag) in
                                     withUnsafePointer(to: accelerator) { (__ptr_accelerator) in
                                         withUnsafePointer(to: index) { (__ptr_index) in
                                             withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_label, __ptr_maxStates, __ptr_defaultState, __ptr_callback, __ptr_keyCallback, __ptr_tag, __ptr_accelerator, __ptr_index) { (__accessPtr) in
@@ -675,7 +675,7 @@ open class DisplayServer: Object {
     public func globalMenuGetItemIndexFromTag<Variant1 : VariantEncodable>(menuRoot: Godot.GodotString, tag: Variant1) -> Int32 {
         var __temporary = Int32()
         menuRoot.withUnsafeRawPointer { (__ptr_menuRoot) in
-            Godot.Variant.Storage(tag).withUnsafeRawPointer { (__ptr_tag) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: tag) { (__ptr_tag) in
                 withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_tag) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -1253,7 +1253,7 @@ open class DisplayServer: Object {
     public func globalMenuSetItemTag<Variant1 : VariantEncodable>(menuRoot: Godot.GodotString, idx: Int32, tag: Variant1) {
         menuRoot.withUnsafeRawPointer { (__ptr_menuRoot) in
             withUnsafePointer(to: idx) { (__ptr_idx) in
-                Godot.Variant.Storage(tag).withUnsafeRawPointer { (__ptr_tag) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: tag) { (__ptr_tag) in
                     withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx, __ptr_tag) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(

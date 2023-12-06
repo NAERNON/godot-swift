@@ -400,7 +400,7 @@ open class XRPositionalTracker: RefCounted {
     }()
     public func setInput<Variant1 : VariantEncodable>(name: Godot.GodotStringName, value: Variant1) {
         name.withUnsafeRawPointer { (__ptr_name) in
-            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(

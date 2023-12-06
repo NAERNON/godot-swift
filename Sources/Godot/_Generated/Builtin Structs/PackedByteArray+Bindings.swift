@@ -79,7 +79,7 @@ extension PackedByteArray {
     static internal func _operatorEqual<Variant1 : VariantEncodable>(_ lhs: Godot.PackedByteArray, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -94,7 +94,7 @@ extension PackedByteArray {
     static internal func _operatorNotEqual<Variant1 : VariantEncodable>(_ lhs: Godot.PackedByteArray, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -1257,7 +1257,7 @@ extension PackedByteArray {
         replaceOpaqueValueIfNecessary()
         var __temporary = Int()
         withUnsafePointer(to: byteOffset) { (__ptr_byteOffset) in
-            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafePointer(to: allowObjects) { (__ptr_allowObjects) in
                     withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value, __ptr_allowObjects) { (__accessPtr) in
                         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in

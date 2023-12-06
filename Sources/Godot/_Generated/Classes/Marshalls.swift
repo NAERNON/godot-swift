@@ -14,7 +14,7 @@ open class Marshalls: Object {
     }()
     public func variantToBase64<Variant1 : VariantEncodable>(variant: Variant1, fullObjects: Bool = false) -> Godot.GodotString {
         let __temporary = Godot.GodotString()
-        Godot.Variant.Storage(variant).withUnsafeRawPointer { (__ptr_variant) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: variant) { (__ptr_variant) in
             withUnsafePointer(to: fullObjects) { (__ptr_fullObjects) in
                 withUnsafeArgumentPackPointer(__ptr_variant, __ptr_fullObjects) { (__accessPtr) in
                     __temporary.withUnsafeRawPointer { (__ptr___temporary) in

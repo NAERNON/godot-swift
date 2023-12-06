@@ -14,7 +14,7 @@ open class PropertyTweener: Tweener {
     }()
     public func from<Variant1 : VariantEncodable>(value: Variant1) -> Godot.PropertyTweener? {
         var __temporary: GDExtensionObjectPtr!
-        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in

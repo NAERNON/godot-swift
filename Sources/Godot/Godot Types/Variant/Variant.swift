@@ -63,6 +63,28 @@ public final class Variant {
         try storage.withUnsafeRawPointer(body)
     }
     
+    /// Calls a closure with a storage of the given value.
+    public static func withStorage<Value, Result>(
+        of value: Value,
+        _ body: (borrowing Storage) throws -> Result
+    ) rethrows -> Result where Value : VariantEncodable {
+        try Value.withEncodedVariantStorage(value) { storage in
+            try body(storage)
+        }
+    }
+    
+    /// Calls a closure with an extension type pointer of the given value storage.
+    public static func withStorageUnsafeRawPointer<Value, Result>(
+        to value: Value,
+        _ body: (GDExtensionVariantPtr) throws -> Result
+    ) rethrows -> Result where Value : VariantEncodable {
+        try Value.withEncodedVariantStorage(value) { storage in
+            try storage.withUnsafeRawPointer { rawPointer in
+                try body(rawPointer)
+            }
+        }
+    }
+    
     // MARK: Tools
     
     /// Returns the type of value this variant stores.
@@ -98,6 +120,13 @@ extension Variant: Equatable {
 extension Variant: VariantEncodable, VariantDecodable {
     public static func encodeVariantStorage(_ value: consuming Variant) -> Storage {
         value.storage.copy()
+    }
+    
+    public static func withEncodedVariantStorage<Result>(
+        _ value: consuming Variant,
+        body: (borrowing Variant.Storage) throws -> Result
+    ) rethrows -> Result {
+        try body(value.storage)
     }
     
     public static func decodeVariantStorage(_ storage: borrowing Storage) throws -> Variant {

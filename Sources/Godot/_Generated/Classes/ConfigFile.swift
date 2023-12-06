@@ -15,7 +15,7 @@ open class ConfigFile: RefCounted {
     public func setValue<Variant1 : VariantEncodable>(section: Godot.GodotString, key: Godot.GodotString, value: Variant1) {
         section.withUnsafeRawPointer { (__ptr_section) in
             key.withUnsafeRawPointer { (__ptr_key) in
-                Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                     withUnsafeArgumentPackPointer(__ptr_section, __ptr_key, __ptr_value) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(
@@ -42,7 +42,7 @@ open class ConfigFile: RefCounted {
         let __temporary = Godot.Variant()
         section.withUnsafeRawPointer { (__ptr_section) in
             key.withUnsafeRawPointer { (__ptr_key) in
-                Godot.Variant.Storage(`default`).withUnsafeRawPointer { (__ptr_default) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: `default`) { (__ptr_default) in
                     withUnsafeArgumentPackPointer(__ptr_section, __ptr_key, __ptr_default) { (__accessPtr) in
                         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                             `self`.withUnsafeRawPointer { (__ptr_self) in

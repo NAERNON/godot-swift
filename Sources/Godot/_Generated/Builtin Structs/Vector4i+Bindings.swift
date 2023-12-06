@@ -127,7 +127,7 @@ extension Vector4i {
     static internal func _operatorEqual<Variant1 : VariantEncodable>(_ lhs: Godot.Vector4i, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -142,7 +142,7 @@ extension Vector4i {
     static internal func _operatorNotEqual<Variant1 : VariantEncodable>(_ lhs: Godot.Vector4i, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }

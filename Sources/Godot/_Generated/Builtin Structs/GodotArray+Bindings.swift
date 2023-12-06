@@ -301,7 +301,7 @@ extension GodotArray {
     static internal func _operatorEqual<Variant1 : VariantEncodable>(_ lhs: Godot.GodotArray, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -316,7 +316,7 @@ extension GodotArray {
     static internal func _operatorNotEqual<Variant1 : VariantEncodable>(_ lhs: Godot.GodotArray, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -577,7 +577,7 @@ extension GodotArray {
     }()
     mutating internal func _pushBack<Variant1 : VariantEncodable>(value: Variant1) {
         replaceOpaqueValueIfNecessary()
-        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     Self.__method_binding_push_back(__ptr_self, __accessPtr, nil, 1)
@@ -593,7 +593,7 @@ extension GodotArray {
     }()
     mutating internal func _pushFront<Variant1 : VariantEncodable>(value: Variant1) {
         replaceOpaqueValueIfNecessary()
-        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     Self.__method_binding_push_front(__ptr_self, __accessPtr, nil, 1)
@@ -609,7 +609,7 @@ extension GodotArray {
     }()
     mutating internal func _append<Variant1 : VariantEncodable>(value: Variant1) {
         replaceOpaqueValueIfNecessary()
-        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     Self.__method_binding_append(__ptr_self, __accessPtr, nil, 1)
@@ -663,7 +663,7 @@ extension GodotArray {
         replaceOpaqueValueIfNecessary()
         var __temporary = Int()
         withUnsafePointer(to: position) { (__ptr_position) in
-            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_position, __ptr_value) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -699,7 +699,7 @@ extension GodotArray {
     }()
     mutating internal func _fill<Variant1 : VariantEncodable>(value: Variant1) {
         replaceOpaqueValueIfNecessary()
-        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     Self.__method_binding_fill(__ptr_self, __accessPtr, nil, 1)
@@ -715,7 +715,7 @@ extension GodotArray {
     }()
     mutating internal func _erase<Variant1 : VariantEncodable>(value: Variant1) {
         replaceOpaqueValueIfNecessary()
-        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     Self.__method_binding_erase(__ptr_self, __accessPtr, nil, 1)
@@ -776,7 +776,7 @@ extension GodotArray {
     }()
     internal func _find<Variant1 : VariantEncodable>(what: Variant1, from: Int = 0) -> Int {
         var __temporary = Int()
-        Godot.Variant.Storage(what).withUnsafeRawPointer { (__ptr_what) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: what) { (__ptr_what) in
             withUnsafePointer(to: from) { (__ptr_from) in
                 withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -797,7 +797,7 @@ extension GodotArray {
     }()
     internal func _rfind<Variant1 : VariantEncodable>(what: Variant1, from: Int = -1) -> Int {
         var __temporary = Int()
-        Godot.Variant.Storage(what).withUnsafeRawPointer { (__ptr_what) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: what) { (__ptr_what) in
             withUnsafePointer(to: from) { (__ptr_from) in
                 withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -818,7 +818,7 @@ extension GodotArray {
     }()
     internal func _count<Variant1 : VariantEncodable>(value: Variant1) -> Int {
         var __temporary = Int()
-        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -837,7 +837,7 @@ extension GodotArray {
     }()
     internal func _has<Variant1 : VariantEncodable>(value: Variant1) -> Bool {
         var __temporary = Bool()
-        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -948,7 +948,7 @@ extension GodotArray {
     }()
     internal func _bsearch<Variant1 : VariantEncodable>(value: Variant1, before: Bool = true) -> Int {
         var __temporary = Int()
-        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafePointer(to: before) { (__ptr_before) in
                 withUnsafeArgumentPackPointer(__ptr_value, __ptr_before) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -969,7 +969,7 @@ extension GodotArray {
     }()
     internal func _bsearchCustom<Variant1 : VariantEncodable>(value: Variant1, `func`: Godot.Callable, before: Bool = true) -> Int {
         var __temporary = Int()
-        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             `func`.withUnsafeRawPointer { (__ptr_func) in
                 withUnsafePointer(to: before) { (__ptr_before) in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_func, __ptr_before) { (__accessPtr) in
@@ -1087,7 +1087,7 @@ extension GodotArray {
     internal func _reduce<Variant1 : VariantEncodable>(method: Godot.Callable, accum: Variant1 = Variant()) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
         method.withUnsafeRawPointer { (__ptr_method) in
-            Godot.Variant.Storage(accum).withUnsafeRawPointer { (__ptr_accum) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: accum) { (__ptr_accum) in
                 withUnsafeArgumentPackPointer(__ptr_method, __ptr_accum) { (__accessPtr) in
                     __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in

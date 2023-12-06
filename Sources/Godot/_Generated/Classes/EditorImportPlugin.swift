@@ -65,7 +65,7 @@ open class EditorImportPlugin: ResourceImporter {
         path.withUnsafeRawPointer { (__ptr_path) in
             customOptions.withUnsafeRawPointer { (__ptr_customOptions) in
                 customImporter.withUnsafeRawPointer { (__ptr_customImporter) in
-                    Godot.Variant.Storage(generatorParameters).withUnsafeRawPointer { (__ptr_generatorParameters) in
+                    Godot.Variant.withStorageUnsafeRawPointer(to: generatorParameters) { (__ptr_generatorParameters) in
                         withUnsafeArgumentPackPointer(__ptr_path, __ptr_customOptions, __ptr_customImporter, __ptr_generatorParameters) { (__accessPtr) in
                             withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                                 `self`.withUnsafeRawPointer { (__ptr_self) in

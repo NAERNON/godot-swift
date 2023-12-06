@@ -294,18 +294,16 @@ extension GodotFunction {
     ) throws -> CodeBlockItemListSyntax {
         if let index = indexes.first {
             let argument = arguments![index]
-            var argumentType = argument.type
-            var caller = backticksKeyword(argument.name)
-            
-            if convertsAllParameterToVariant || (usesVariantGeneric && argument.type == .variant) {
-                let _ = caller = "Godot.Variant.Storage(\(caller))"
-                let _ = argumentType = .variantStorage
-            }
+            let argumentType = argument.type
+            let caller = backticksKeyword(argument.name)
+            let accessThroughVariantStorage = convertsAllParameterToVariant ||
+                (usesVariantGeneric && argument.type == .variant)
             
             try argumentType.argumentPointerAccessSyntax(
                 caller: caller,
                 instanceName: argument.name,
-                options: options
+                options: options,
+                accessThroughVariantStorage: accessThroughVariantStorage
             ) { pointerName in
                 try argumentsPointerAccessSyntax(options: options, indexes: indexes.dropFirst()) { pointerNames in
                     try bodyBuilder([pointerName] + pointerNames)

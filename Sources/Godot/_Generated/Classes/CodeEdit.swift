@@ -1850,7 +1850,7 @@ open class CodeEdit: TextEdit {
                     withUnsafePointer(to: textColor) { (__ptr_textColor) in
                         icon.withUnsafeRawPointer { (__ptr_icon) in
                             withUnsafePointer(to: __ptr_icon) { (_ptr___ptr_icon) in
-                                Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+                                Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                                     withUnsafePointer(to: location) { (__ptr_location) in
                                         withUnsafeArgumentPackPointer(__ptr_type, __ptr_displayText, __ptr_insertText, __ptr_textColor, _ptr___ptr_icon, __ptr_value, __ptr_location) { (__accessPtr) in
                                             `self`.withUnsafeRawPointer { (__ptr_self) in

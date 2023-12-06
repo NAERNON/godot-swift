@@ -44,7 +44,7 @@ open class EditorSettings: Resource {
     }()
     public func setSetting<Variant1 : VariantEncodable>(name: Godot.GodotString, value: Variant1) {
         name.withUnsafeRawPointer { (__ptr_name) in
-            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(
@@ -116,7 +116,7 @@ open class EditorSettings: Resource {
     }()
     public func setInitialValue<Variant1 : VariantEncodable>(name: Godot.GodotStringName, value: Variant1, updateCurrent: Bool) {
         name.withUnsafeRawPointer { (__ptr_name) in
-            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafePointer(to: updateCurrent) { (__ptr_updateCurrent) in
                     withUnsafeArgumentPackPointer(__ptr_name, __ptr_value, __ptr_updateCurrent) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -165,7 +165,7 @@ open class EditorSettings: Resource {
     public func setProjectMetadata<Variant1 : VariantEncodable>(section: Godot.GodotString, key: Godot.GodotString, data: Variant1) {
         section.withUnsafeRawPointer { (__ptr_section) in
             key.withUnsafeRawPointer { (__ptr_key) in
-                Godot.Variant.Storage(data).withUnsafeRawPointer { (__ptr_data) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: data) { (__ptr_data) in
                     withUnsafeArgumentPackPointer(__ptr_section, __ptr_key, __ptr_data) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(
@@ -192,7 +192,7 @@ open class EditorSettings: Resource {
         let __temporary = Godot.Variant()
         section.withUnsafeRawPointer { (__ptr_section) in
             key.withUnsafeRawPointer { (__ptr_key) in
-                Godot.Variant.Storage(`default`).withUnsafeRawPointer { (__ptr_default) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: `default`) { (__ptr_default) in
                     withUnsafeArgumentPackPointer(__ptr_section, __ptr_key, __ptr_default) { (__accessPtr) in
                         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                             `self`.withUnsafeRawPointer { (__ptr_self) in

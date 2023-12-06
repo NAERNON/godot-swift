@@ -21,7 +21,7 @@ open class EditorResourcePreview: Node {
             receiver.withUnsafeRawPointer { (__ptr_receiver) in
                 withUnsafePointer(to: __ptr_receiver) { (_ptr___ptr_receiver) in
                     receiverFunc.withUnsafeRawPointer { (__ptr_receiverFunc) in
-                        Godot.Variant.Storage(userdata).withUnsafeRawPointer { (__ptr_userdata) in
+                        Godot.Variant.withStorageUnsafeRawPointer(to: userdata) { (__ptr_userdata) in
                             withUnsafeArgumentPackPointer(__ptr_path, _ptr___ptr_receiver, __ptr_receiverFunc, __ptr_userdata) { (__accessPtr) in
                                 `self`.withUnsafeRawPointer { (__ptr_self) in
                                     gdextension_interface_object_method_bind_ptrcall(
@@ -52,7 +52,7 @@ open class EditorResourcePreview: Node {
                 receiver.withUnsafeRawPointer { (__ptr_receiver) in
                     withUnsafePointer(to: __ptr_receiver) { (_ptr___ptr_receiver) in
                         receiverFunc.withUnsafeRawPointer { (__ptr_receiverFunc) in
-                            Godot.Variant.Storage(userdata).withUnsafeRawPointer { (__ptr_userdata) in
+                            Godot.Variant.withStorageUnsafeRawPointer(to: userdata) { (__ptr_userdata) in
                                 withUnsafeArgumentPackPointer(_ptr___ptr_resource, _ptr___ptr_receiver, __ptr_receiverFunc, __ptr_userdata) { (__accessPtr) in
                                     `self`.withUnsafeRawPointer { (__ptr_self) in
                                         gdextension_interface_object_method_bind_ptrcall(

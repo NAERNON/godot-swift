@@ -110,7 +110,7 @@ open class MultiplayerSpawner: Node {
     }()
     public func spawn<Variant1 : VariantEncodable>(data: Variant1 = Variant()) -> Godot.Node? {
         var __temporary: GDExtensionObjectPtr!
-        Godot.Variant.Storage(data).withUnsafeRawPointer { (__ptr_data) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: data) { (__ptr_data) in
             withUnsafeArgumentPackPointer(__ptr_data) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in

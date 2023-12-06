@@ -666,6 +666,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ///   If nil, the `instanceName` is used as the caller.
     ///   - instanceName: The name of the instance.
     ///   - mutability: The mutability of the instance.
+    ///   - accessThroughVariantStorage: A Boolean value indicating whether
+    ///   the pointer is accessed through a variant storage.
     ///   - bodyBuilder: The content syntax to access the pointer.
     ///   Use the value provided inside the closure to retrieve the pointer name.
     @CodeBlockItemListBuilder
@@ -674,12 +676,27 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         instanceName: String,
         options: GodotTypeSyntaxOptions,
         mutability: Mutability = .const,
+        accessThroughVariantStorage: Bool = false,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let pointerName = "__ptr_" + instanceName
         let instanceName = caller ?? backticksKeyword(instanceName)
         
-        if isGodotClass || isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
+        if accessThroughVariantStorage {
+            let closure = try ClosureExprSyntax(
+                signature: .init(parameterClause: .parameterClause(.init(parameters: [
+                    "\(raw: pointerName)"
+                ])))
+            ) {
+                try bodyBuilder(pointerName)
+            }
+            
+            FunctionCallExprSyntax(
+                calledExpression: DeclReferenceExprSyntax(baseName: "Godot.Variant.withStorageUnsafeRawPointer(to: \(raw: instanceName))"),
+                arguments: [],
+                trailingClosure: closure
+            )
+        } else if isGodotClass || isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
             let closure = try ClosureExprSyntax(
                 signature: .init(parameterClause: .parameterClause(.init(parameters: [
                     "\(raw: pointerName)"
@@ -759,6 +776,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ///   If nil, the `instanceName` is used as the caller.
     ///   - instanceName: The name of the instance.
     ///   - mutability: The mutability of the instance.
+    ///   - accessThroughVariantStorage: A Boolean value indicating whether
+    ///   the pointer is accessed through a variant storage.
     ///   - bodyBuilder: The content syntax to access the pointer.
     ///   Use the value provided inside the closure to retrieve the pointer name.
     @CodeBlockItemListBuilder
@@ -767,15 +786,17 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         instanceName: String,
         options: GodotTypeSyntaxOptions,
         mutability: Mutability = .const,
+        accessThroughVariantStorage: Bool = false,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         try pointerAccessSyntax(
             caller: caller,
             instanceName: instanceName,
             options: options,
-            mutability: mutability
+            mutability: mutability,
+            accessThroughVariantStorage: accessThroughVariantStorage
         ) { pointerName in
-            if isGodotClass {
+            if isGodotClass && !accessThroughVariantStorage {
                 let newPointerName = "_ptr_" + pointerName
                 let closure = try ClosureExprSyntax(
                     signature: .init(parameterClause: .parameterClause(.init(parameters: [

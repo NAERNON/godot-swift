@@ -4369,7 +4369,7 @@ open class TextEdit: Control {
     public func setLineGutterMetadata<Variant1 : VariantEncodable>(line: Int32, gutter: Int32, metadata: Variant1) {
         withUnsafePointer(to: line) { (__ptr_line) in
             withUnsafePointer(to: gutter) { (__ptr_gutter) in
-                Godot.Variant.Storage(metadata).withUnsafeRawPointer { (__ptr_metadata) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: metadata) { (__ptr_metadata) in
                     withUnsafeArgumentPackPointer(__ptr_line, __ptr_gutter, __ptr_metadata) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(

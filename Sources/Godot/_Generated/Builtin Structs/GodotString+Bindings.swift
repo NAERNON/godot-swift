@@ -103,7 +103,7 @@ extension GodotString {
     static internal func _operatorEqual<Variant1 : VariantEncodable>(_ lhs: Godot.GodotString, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -118,7 +118,7 @@ extension GodotString {
     static internal func _operatorNotEqual<Variant1 : VariantEncodable>(_ lhs: Godot.GodotString, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -133,7 +133,7 @@ extension GodotString {
     static internal func _operatorModule<Variant1 : VariantEncodable>(_ lhs: Godot.GodotString, _ rhs: Variant1) -> Godot.GodotString {
         let __temporary = GodotString()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                     Self.__operator_binding_module_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -1421,7 +1421,7 @@ extension GodotString {
     }()
     internal func _format<Variant1 : VariantEncodable>(values: Variant1, placeholder: Godot.GodotString = "{_}") -> Godot.GodotString {
         let __temporary = Godot.GodotString()
-        Godot.Variant.Storage(values).withUnsafeRawPointer { (__ptr_values) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: values) { (__ptr_values) in
             placeholder.withUnsafeRawPointer { (__ptr_placeholder) in
                 withUnsafeArgumentPackPointer(__ptr_values, __ptr_placeholder) { (__accessPtr) in
                     __temporary.withUnsafeRawPointer { (__ptr___temporary) in

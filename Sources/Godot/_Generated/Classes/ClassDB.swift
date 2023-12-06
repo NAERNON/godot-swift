@@ -339,7 +339,7 @@ open class ClassDB: Object {
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
                 property.withUnsafeRawPointer { (__ptr_property) in
-                    Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+                    Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                         withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_property, __ptr_value) { (__accessPtr) in
                             withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                                 `self`.withUnsafeRawPointer { (__ptr_self) in

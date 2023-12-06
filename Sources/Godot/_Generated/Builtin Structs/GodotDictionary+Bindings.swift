@@ -55,7 +55,7 @@ extension GodotDictionary {
     static internal func _operatorEqual<Variant1 : VariantEncodable>(_ lhs: Godot.GodotDictionary, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -70,7 +70,7 @@ extension GodotDictionary {
     static internal func _operatorNotEqual<Variant1 : VariantEncodable>(_ lhs: Godot.GodotDictionary, _ rhs: Variant1) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
-            Godot.Variant.Storage(rhs).withUnsafeRawPointer { (__ptr_rhs) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     Self.__operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
@@ -266,7 +266,7 @@ extension GodotDictionary {
     }()
     internal func _has<Variant1 : VariantEncodable>(key: Variant1) -> Bool {
         var __temporary = Bool()
-        Godot.Variant.Storage(key).withUnsafeRawPointer { (__ptr_key) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
             withUnsafeArgumentPackPointer(__ptr_key) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -304,7 +304,7 @@ extension GodotDictionary {
     }()
     internal func _findKey<Variant1 : VariantEncodable>(value: Variant1) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
-        Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -324,7 +324,7 @@ extension GodotDictionary {
     @discardableResult mutating internal func _erase<Variant1 : VariantEncodable>(key: Variant1) -> Bool {
         replaceOpaqueValueIfNecessary()
         var __temporary = Bool()
-        Godot.Variant.Storage(key).withUnsafeRawPointer { (__ptr_key) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
             withUnsafeArgumentPackPointer(__ptr_key) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -407,8 +407,8 @@ extension GodotDictionary {
     }()
     internal func _get<Variant1 : VariantEncodable, Variant2 : VariantEncodable>(key: Variant1, `default`: Variant2 = Variant()) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
-        Godot.Variant.Storage(key).withUnsafeRawPointer { (__ptr_key) in
-            Godot.Variant.Storage(`default`).withUnsafeRawPointer { (__ptr_default) in
+        Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: `default`) { (__ptr_default) in
                 withUnsafeArgumentPackPointer(__ptr_key, __ptr_default) { (__accessPtr) in
                     __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in

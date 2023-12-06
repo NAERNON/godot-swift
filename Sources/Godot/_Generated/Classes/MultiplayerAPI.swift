@@ -238,7 +238,7 @@ open class MultiplayerAPI: RefCounted {
         var __temporary = Godot.ErrorType.RawValue(0)
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
-                Godot.Variant.Storage(configuration).withUnsafeRawPointer { (__ptr_configuration) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: configuration) { (__ptr_configuration) in
                     withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_configuration) { (__accessPtr) in
                         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                             `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -268,7 +268,7 @@ open class MultiplayerAPI: RefCounted {
         var __temporary = Godot.ErrorType.RawValue(0)
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
-                Godot.Variant.Storage(configuration).withUnsafeRawPointer { (__ptr_configuration) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: configuration) { (__ptr_configuration) in
                     withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_configuration) { (__accessPtr) in
                         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                             `self`.withUnsafeRawPointer { (__ptr_self) in

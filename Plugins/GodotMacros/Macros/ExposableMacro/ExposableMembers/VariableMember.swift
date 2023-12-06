@@ -116,7 +116,9 @@ struct VariableMember: ExposableMember {
         let className = classContext.trimmed
         
         let getterExprSyntax: ExprSyntax = """
-        Godot.Variant.Storage(Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName)).consumeByGodot(ontoUnsafePointer: returnPtr!)
+        Godot.Variant.withStorage(of: Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName)) { storage in
+            storage.consumeByGodot(ontoUnsafePointer: returnPtr!)
+        }
         """
         
         let setterExprSyntax: ExprSyntax = """

@@ -177,7 +177,9 @@ final class ExposableFunctionMacroTests: XCTestCase {
                     let returnValue =
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue()
                     .myFunction()
-                    Godot.Variant.Storage(returnValue).consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    Godot.Variant.withStorage(of: returnValue) { storage in
+                        storage.consumeByGodot(ontoUnsafePointer: returnPtr!)
+                    }
                 }
             }
             """,

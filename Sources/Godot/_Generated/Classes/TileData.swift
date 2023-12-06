@@ -1016,7 +1016,7 @@ open class TileData: Object {
     }()
     public func setCustomData<Variant1 : VariantEncodable>(layerName: Godot.GodotString, value: Variant1) {
         layerName.withUnsafeRawPointer { (__ptr_layerName) in
-            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_layerName, __ptr_value) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(
@@ -1066,7 +1066,7 @@ open class TileData: Object {
     }()
     public func setCustomDataByLayerId<Variant1 : VariantEncodable>(_ layerId: Int32, value: Variant1) {
         withUnsafePointer(to: layerId) { (__ptr_layerId) in
-            Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_layerId, __ptr_value) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(

@@ -414,7 +414,7 @@ open class PhysicsServer2D: Object {
     }()
     public func shapeSetData<Variant1 : VariantEncodable>(shape: Godot.RID, data: Variant1) {
         shape.withUnsafeRawPointer { (__ptr_shape) in
-            Godot.Variant.Storage(data).withUnsafeRawPointer { (__ptr_data) in
+            Godot.Variant.withStorageUnsafeRawPointer(to: data) { (__ptr_data) in
                 withUnsafeArgumentPackPointer(__ptr_shape, __ptr_data) { (__accessPtr) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
                         gdextension_interface_object_method_bind_ptrcall(
@@ -1049,7 +1049,7 @@ open class PhysicsServer2D: Object {
     public func areaSetParam<Variant1 : VariantEncodable>(area: Godot.RID, param: Godot.PhysicsServer2D.AreaParameter, value: Variant1) {
         area.withUnsafeRawPointer { (__ptr_area) in
             withUnsafePointer(to: param) { (__ptr_param) in
-                Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                     withUnsafeArgumentPackPointer(__ptr_area, __ptr_param, __ptr_value) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(
@@ -2009,7 +2009,7 @@ open class PhysicsServer2D: Object {
     public func bodySetParam<Variant1 : VariantEncodable>(body: Godot.RID, param: Godot.PhysicsServer2D.BodyParameter, value: Variant1) {
         body.withUnsafeRawPointer { (__ptr_body) in
             withUnsafePointer(to: param) { (__ptr_param) in
-                Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                     withUnsafeArgumentPackPointer(__ptr_body, __ptr_param, __ptr_value) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(
@@ -2085,7 +2085,7 @@ open class PhysicsServer2D: Object {
     public func bodySetState<Variant1 : VariantEncodable>(body: Godot.RID, state: Godot.PhysicsServer2D.BodyState, value: Variant1) {
         body.withUnsafeRawPointer { (__ptr_body) in
             withUnsafePointer(to: state) { (__ptr_state) in
-                Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                     withUnsafeArgumentPackPointer(__ptr_body, __ptr_state, __ptr_value) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(
@@ -2633,7 +2633,7 @@ open class PhysicsServer2D: Object {
     public func bodySetForceIntegrationCallback<Variant1 : VariantEncodable>(body: Godot.RID, callable: Godot.Callable, userdata: Variant1 = Variant()) {
         body.withUnsafeRawPointer { (__ptr_body) in
             callable.withUnsafeRawPointer { (__ptr_callable) in
-                Godot.Variant.Storage(userdata).withUnsafeRawPointer { (__ptr_userdata) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: userdata) { (__ptr_userdata) in
                     withUnsafeArgumentPackPointer(__ptr_body, __ptr_callable, __ptr_userdata) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(

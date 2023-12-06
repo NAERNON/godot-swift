@@ -699,7 +699,7 @@ open class Animation: Resource {
         var __temporary = Int32()
         withUnsafePointer(to: trackIdx) { (__ptr_trackIdx) in
             withUnsafePointer(to: time) { (__ptr_time) in
-                Godot.Variant.Storage(key).withUnsafeRawPointer { (__ptr_key) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
                     withUnsafePointer(to: transition) { (__ptr_transition) in
                         withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_time, __ptr_key, __ptr_transition) { (__accessPtr) in
                             withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -778,7 +778,7 @@ open class Animation: Resource {
     public func trackSetKeyValue<Variant1 : VariantEncodable>(trackIdx: Int32, key: Int32, value: Variant1) {
         withUnsafePointer(to: trackIdx) { (__ptr_trackIdx) in
             withUnsafePointer(to: key) { (__ptr_key) in
-                Godot.Variant.Storage(value).withUnsafeRawPointer { (__ptr_value) in
+                Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                     withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_key, __ptr_value) { (__accessPtr) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
                             gdextension_interface_object_method_bind_ptrcall(

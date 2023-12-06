@@ -2,8 +2,23 @@ import GodotExtensionHeaders
 
 /// A type that can be encoded to a variant.
 public protocol VariantEncodable {
-    /// A variant storage representing the given value.
+    /// Returns a variant storage representing the given value.
     static func encodeVariantStorage(_ value: consuming Self) -> Variant.Storage
+    
+    /// Invokes the given closure with a variant storage representing the given argument.
+    static func withEncodedVariantStorage<Result>(
+        _ value: consuming Self,
+        body: (borrowing Variant.Storage) throws -> Result
+    ) rethrows -> Result
+}
+
+extension VariantEncodable {
+    public static func withEncodedVariantStorage<Result>(
+        _ value: consuming Self,
+        body: (borrowing Variant.Storage) throws -> Result
+    ) rethrows -> Result {
+        try body(encodeVariantStorage(value))
+    }
 }
 
 /// A type that can be decoded from a variant.
