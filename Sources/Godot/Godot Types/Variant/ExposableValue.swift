@@ -15,7 +15,7 @@ public extension ExposableValue {
     }
     
     static func convertFromStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        try storage.checkIsConvertible(to: variantRepresentationType)
+        try storage.checkIsConvertible(to: variantRepresentationType.storageType)
         
         return convertFromCheckedStorage(storage)
     }

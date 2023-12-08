@@ -104,8 +104,7 @@ extension Variant {
         
         /// Throws an error if the variant cannot be converted
         /// to a given type.
-        public func checkIsConvertible(to type: Variant.RepresentationType) throws {
-            let storageType = type.storageType
+        public func checkIsConvertible(to storageType: Variant.StorageType) throws {
             if !isConvertible(to: storageType) {
                 throw Error.cannotConvertType(from: self.type, to: storageType)
             }

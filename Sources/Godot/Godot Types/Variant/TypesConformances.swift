@@ -976,7 +976,7 @@ extension RID: ExposableValue {
 private var fromTypeConstructor_object = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
 private var toTypeConstructor_object = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
 
-extension Object: ExposableValue {
+extension Object: VariantStorable {
     private enum VariantConversionError: Error, CustomStringConvertible {
         case cannotConvertToObject(type: Object.Type)
         
@@ -988,7 +988,7 @@ extension Object: ExposableValue {
         }
     }
     
-    public static let variantRepresentationType: Variant.RepresentationType = .object
+    public static var variantStorageType: Variant.StorageType? { .object }
     
     public final class func convertToStorage(_ value: consuming Object) -> Variant.Storage {
         let variant = Variant.Storage()
@@ -1017,7 +1017,7 @@ extension Object: ExposableValue {
     }
     
     public final class func convertFromStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        try storage.checkIsConvertible(to: Self.variantRepresentationType)
+        try storage.checkIsConvertible(to: .object)
         
         var instancePtr = UnsafeMutableRawPointer(bitPattern: 0)
         
@@ -1034,35 +1034,6 @@ extension Object: ExposableValue {
 }
 
 // MARK: - Optional<Object>
-
-extension Optional: VariantStorableIn where Wrapped : Object {
-    public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
-        switch value {
-        case .none:
-            Variant.Storage()
-        case .some(let wrapped):
-            Wrapped.convertToStorage(wrapped)
-        }
-    }
-}
-
-extension Optional: VariantStorableOut where Wrapped : Object {
-    public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        if storage.isNil {
-            nil
-        } else {
-            Wrapped.convertFromCheckedStorage(storage)
-        }
-    }
-    
-    public static func convertFromStorage(_ storage: borrowing Variant.Storage) throws -> Self {
-        if storage.isNil {
-            nil
-        } else {
-            try Wrapped.convertFromStorage(storage)
-        }
-    }
-}
 
 extension Optional: VariantStorable where Wrapped : Object {
     public static var variantStorageType: Variant.StorageType? { .object }
@@ -1171,7 +1142,7 @@ extension GodotDictionary: ExposableValue {
 private var fromTypeConstructor_array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 private var toTypeConstructor_array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 
-extension GodotArray: ExposableValue {
+extension GodotArray: VariantStorable {
     private enum VariantConversionError: Error, CustomStringConvertible {
         case typedArray
         case untypedArray
@@ -1192,7 +1163,7 @@ extension GodotArray: ExposableValue {
         }
     }
     
-    public static var variantRepresentationType: Variant.RepresentationType { .array }
+    public static var variantStorageType: Variant.StorageType? { .array }
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
@@ -1255,6 +1226,10 @@ extension GodotArray: ExposableValue {
         
         return newValue
     }
+}
+
+extension GodotArray: ExposableValue where Element : ExposableValue {
+    public static var variantRepresentationType: Variant.RepresentationType { .array }
 }
 
 // MARK: - PackedByteArray
@@ -1533,5 +1508,56 @@ extension PackedColorArray: ExposableValue {
         }
         
         return newValue
+    }
+}
+
+// MARK: - Optional
+
+extension Optional: VariantStorableIn where Wrapped : VariantStorableIn {
+    public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
+        switch value {
+        case .none:
+            Variant.Storage()
+        case .some(let wrapped):
+            Wrapped.convertToStorage(wrapped)
+        }
+    }
+    
+    public static func withValueStorage<Result>(
+        _ value: consuming Optional<Wrapped>
+        , body: (borrowing Variant.Storage) throws -> Result
+    ) rethrows -> Result {
+        switch value {
+        case .none:
+            try body(Variant.Storage())
+        case .some(let wrapped):
+            try Wrapped.withValueStorage(wrapped, body: body)
+        }
+    }
+}
+
+extension Optional: VariantStorableOut where Wrapped : VariantStorableOut {
+    public static func convertFromStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        if storage.isNil {
+            nil
+        } else {
+            try Wrapped.convertFromStorage(storage)
+        }
+    }
+    
+    public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
+        if storage.isNil {
+            nil
+        } else {
+            Wrapped.convertFromCheckedStorage(storage)
+        }
+    }
+    
+    public static func convertFromCheckedStorage(consuming storage: consuming Variant.Storage) -> Self {
+        if storage.isNil {
+            nil
+        } else {
+            Wrapped.convertFromCheckedStorage(consuming: storage)
+        }
     }
 }
