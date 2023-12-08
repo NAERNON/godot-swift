@@ -143,7 +143,7 @@ extension Signal {
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _operatorEqual<Value: VariantEncodable>(_ lhs: Godot.Signal, _ rhs: Value) -> Bool {
+    static internal func _operatorEqual<Value: VariantStorableIn>(_ lhs: Godot.Signal, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -155,7 +155,7 @@ extension Signal {
         return __temporary
     }
 
-    static internal func _operatorNotEqual<Value: VariantEncodable>(_ lhs: Godot.Signal, _ rhs: Value) -> Bool {
+    static internal func _operatorNotEqual<Value: VariantStorableIn>(_ lhs: Godot.Signal, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -213,7 +213,7 @@ extension Signal {
         return __temporary
     }
 
-    static internal func _operatorIn<Value: VariantEncodable & VariantDecodable>(_ lhs: Godot.Signal, _ rhs: Godot.GodotArray<Value>) -> Bool {
+    static internal func _operatorIn<Value: VariantStorable>(_ lhs: Godot.Signal, _ rhs: Godot.GodotArray<Value>) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in
@@ -317,7 +317,7 @@ extension Signal {
         return __temporary
     }
 
-    internal func _emit<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) {
+    internal func _emit<each VariantRest : VariantStorableIn>(_ rest: repeat each VariantRest) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { (packCount, __accessPtr) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 __method_binding_emit(__ptr_self, __accessPtr, nil, Int32(packCount))

@@ -288,7 +288,7 @@ open class LinkButton: BaseButton {
         }
         }
     }()
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantEncodable & VariantDecodable>(args: Godot.GodotArray<Value>) {
+    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(args: Godot.GodotArray<Value>) {
         args.withUnsafeRawPointer { (__ptr_args) in
             withUnsafeArgumentPackPointer(__ptr_args) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

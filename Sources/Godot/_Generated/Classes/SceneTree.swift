@@ -582,7 +582,7 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func callGroupFlags<each VariantRest : VariantEncodable>(_ flags: Int, group: Godot.GodotStringName, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+    public func callGroupFlags<each VariantRest : VariantStorableIn>(_ flags: Int, group: Godot.GodotStringName, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
         Godot.Variant.withStorageUnsafeRawPointer(to: flags) { (__ptr_flags) in
             Godot.Variant.withStorageUnsafeRawPointer(to: group) { (__ptr_group) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: method) { (__ptr_method) in
@@ -656,7 +656,7 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func setGroupFlags<Value: VariantEncodable>(callFlags: UInt32, group: Godot.GodotStringName, property: Godot.GodotString, value: Value) {
+    public func setGroupFlags<Value: VariantStorableIn>(callFlags: UInt32, group: Godot.GodotStringName, property: Godot.GodotString, value: Value) {
         withUnsafePointer(to: callFlags) { (__ptr_callFlags) in
             group.withUnsafeRawPointer { (__ptr_group) in
                 property.withUnsafeRawPointer { (__ptr_property) in
@@ -684,7 +684,7 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func callGroup<each VariantRest : VariantEncodable>(_ group: Godot.GodotStringName, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+    public func callGroup<each VariantRest : VariantStorableIn>(_ group: Godot.GodotStringName, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
         Godot.Variant.withStorageUnsafeRawPointer(to: group) { (__ptr_group) in
             Godot.Variant.withStorageUnsafeRawPointer(to: method) { (__ptr_method) in
                 withUnsafeArgumentPackPointer(__ptr_group, __ptr_method, varargs: repeat each rest) { (packCount, __accessPtr) in
@@ -752,7 +752,7 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func setGroup<Value: VariantEncodable>(_ group: Godot.GodotStringName, property: Godot.GodotString, value: Value) {
+    public func setGroup<Value: VariantStorableIn>(_ group: Godot.GodotStringName, property: Godot.GodotString, value: Value) {
         group.withUnsafeRawPointer { (__ptr_group) in
             property.withUnsafeRawPointer { (__ptr_property) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in

@@ -3695,7 +3695,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextSetBidiOverride<Value: VariantEncodable & VariantDecodable>(shaped: Godot.RID, override: Godot.GodotArray<Value>) {
+    public func shapedTextSetBidiOverride<Value: VariantStorable>(shaped: Godot.RID, override: Godot.GodotArray<Value>) {
         shaped.withUnsafeRawPointer { (__ptr_shaped) in
             override.withUnsafeRawPointer { (__ptr_override) in
                 withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_override) { (__accessPtr) in
@@ -3973,7 +3973,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextAddString<Value: VariantEncodable>(shaped: Godot.RID, text: Godot.GodotString, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.GodotDictionary = [:], language: Godot.GodotString = "", meta: Value = Variant()) -> Bool {
+    public func shapedTextAddString<Value: VariantStorableIn>(shaped: Godot.RID, text: Godot.GodotString, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.GodotDictionary = [:], language: Godot.GodotString = "", meta: Value = Variant()) -> Bool {
         var __temporary = Bool()
         shaped.withUnsafeRawPointer { (__ptr_shaped) in
             text.withUnsafeRawPointer { (__ptr_text) in
@@ -4011,7 +4011,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextAddObject<Value: VariantEncodable>(shaped: Godot.RID, key: Value, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, length: Int64 = 1, baseline: Double = 0.0) -> Bool {
+    public func shapedTextAddObject<Value: VariantStorableIn>(shaped: Godot.RID, key: Value, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, length: Int64 = 1, baseline: Double = 0.0) -> Bool {
         var __temporary = Bool()
         shaped.withUnsafeRawPointer { (__ptr_shaped) in
             Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
@@ -4047,7 +4047,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextResizeObject<Value: VariantEncodable>(shaped: Godot.RID, key: Value, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, baseline: Double = 0.0) -> Bool {
+    public func shapedTextResizeObject<Value: VariantStorableIn>(shaped: Godot.RID, key: Value, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, baseline: Double = 0.0) -> Bool {
         var __temporary = Bool()
         shaped.withUnsafeRawPointer { (__ptr_shaped) in
             Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
@@ -4711,7 +4711,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextGetObjectRect<Value: VariantEncodable>(shaped: Godot.RID, key: Value) -> Godot.Rect2 {
+    public func shapedTextGetObjectRect<Value: VariantStorableIn>(shaped: Godot.RID, key: Value) -> Godot.Rect2 {
         var __temporary = Godot.Rect2()
         shaped.withUnsafeRawPointer { (__ptr_shaped) in
             Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
@@ -5463,7 +5463,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func parseStructuredText<Value: VariantEncodable & VariantDecodable>(parserType: Godot.TextServer.StructuredTextParser, args: Godot.GodotArray<Value>, text: Godot.GodotString) -> Godot.GodotArray<Godot.Vector3i> {
+    public func parseStructuredText<Value: VariantStorable>(parserType: Godot.TextServer.StructuredTextParser, args: Godot.GodotArray<Value>, text: Godot.GodotString) -> Godot.GodotArray<Godot.Vector3i> {
         let __temporary = Godot.GodotArray<Godot.Vector3i>()
         withUnsafePointer(to: parserType) { (__ptr_parserType) in
             args.withUnsafeRawPointer { (__ptr_args) in

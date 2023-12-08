@@ -112,7 +112,7 @@ open class Performance: Object {
         }
         }
     }()
-    public func addCustomMonitor<Value: VariantEncodable & VariantDecodable>(id: Godot.GodotStringName, callable: Godot.Callable, arguments: Godot.GodotArray<Value> = []) {
+    public func addCustomMonitor<Value: VariantStorable>(id: Godot.GodotStringName, callable: Godot.Callable, arguments: Godot.GodotArray<Value> = []) {
         id.withUnsafeRawPointer { (__ptr_id) in
             callable.withUnsafeRawPointer { (__ptr_callable) in
                 arguments.withUnsafeRawPointer { (__ptr_arguments) in

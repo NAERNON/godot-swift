@@ -188,7 +188,7 @@ extension Callable {
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _operatorEqual<Value: VariantEncodable>(_ lhs: Godot.Callable, _ rhs: Value) -> Bool {
+    static internal func _operatorEqual<Value: VariantStorableIn>(_ lhs: Godot.Callable, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -200,7 +200,7 @@ extension Callable {
         return __temporary
     }
 
-    static internal func _operatorNotEqual<Value: VariantEncodable>(_ lhs: Godot.Callable, _ rhs: Value) -> Bool {
+    static internal func _operatorNotEqual<Value: VariantStorableIn>(_ lhs: Godot.Callable, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -258,7 +258,7 @@ extension Callable {
         return __temporary
     }
 
-    static internal func _operatorIn<Value: VariantEncodable & VariantDecodable>(_ lhs: Godot.Callable, _ rhs: Godot.GodotArray<Value>) -> Bool {
+    static internal func _operatorIn<Value: VariantStorable>(_ lhs: Godot.Callable, _ rhs: Godot.GodotArray<Value>) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in
@@ -270,7 +270,7 @@ extension Callable {
         return __temporary
     }
 
-    internal func _callv<Value: VariantEncodable & VariantDecodable>(arguments: Godot.GodotArray<Value>) -> Godot.Variant.Storage {
+    internal func _callv<Value: VariantStorable>(arguments: Godot.GodotArray<Value>) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
         arguments.withUnsafeRawPointer { (__ptr_arguments) in
             withUnsafeArgumentPackPointer(__ptr_arguments) { (__accessPtr) in
@@ -384,7 +384,7 @@ extension Callable {
         return __temporary
     }
 
-    @discardableResult mutating internal func _bindv<Value: VariantEncodable & VariantDecodable>(arguments: Godot.GodotArray<Value>) -> Godot.Callable {
+    @discardableResult mutating internal func _bindv<Value: VariantStorable>(arguments: Godot.GodotArray<Value>) -> Godot.Callable {
         replaceOpaqueValueIfNecessary()
         let __temporary = Godot.Callable()
         arguments.withUnsafeRawPointer { (__ptr_arguments) in
@@ -413,7 +413,7 @@ extension Callable {
         return __temporary
     }
 
-    internal func _call<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) -> Godot.Variant.Storage {
+    internal func _call<each VariantRest : VariantStorableIn>(_ rest: repeat each VariantRest) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { (packCount, __accessPtr) in
             __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -425,7 +425,7 @@ extension Callable {
         return __temporary
     }
 
-    internal func _callDeferred<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) {
+    internal func _callDeferred<each VariantRest : VariantStorableIn>(_ rest: repeat each VariantRest) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { (packCount, __accessPtr) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 __method_binding_call_deferred(__ptr_self, __accessPtr, nil, Int32(packCount))
@@ -433,7 +433,7 @@ extension Callable {
         }
     }
 
-    internal func _rpc<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) {
+    internal func _rpc<each VariantRest : VariantStorableIn>(_ rest: repeat each VariantRest) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { (packCount, __accessPtr) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 __method_binding_rpc(__ptr_self, __accessPtr, nil, Int32(packCount))
@@ -441,7 +441,7 @@ extension Callable {
         }
     }
 
-    internal func _rpcId<each VariantRest : VariantEncodable>(peerId: Int, _ rest: repeat each VariantRest) {
+    internal func _rpcId<each VariantRest : VariantStorableIn>(peerId: Int, _ rest: repeat each VariantRest) {
         withUnsafePointer(to: peerId) { (__ptr_peerId) in
             withUnsafeArgumentPackPointer(__ptr_peerId, varargs: repeat each rest) { (packCount, __accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -451,7 +451,7 @@ extension Callable {
         }
     }
 
-    internal func _bind<each VariantRest : VariantEncodable>(_ rest: repeat each VariantRest) -> Godot.Callable {
+    internal func _bind<each VariantRest : VariantStorableIn>(_ rest: repeat each VariantRest) -> Godot.Callable {
         let __temporary = Godot.Callable()
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { (packCount, __accessPtr) in
             __temporary.withUnsafeRawPointer { (__ptr___temporary) in

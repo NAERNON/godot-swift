@@ -100,7 +100,7 @@ open class RegExMatch: RefCounted {
         }
         }
     }()
-    public func string<Value: VariantEncodable>(name: Value = 0) -> Godot.GodotString {
+    public func string<Value: VariantStorableIn>(name: Value = 0) -> Godot.GodotString {
         let __temporary = Godot.GodotString()
         Godot.Variant.withStorageUnsafeRawPointer(to: name) { (__ptr_name) in
             withUnsafeArgumentPackPointer(__ptr_name) { (__accessPtr) in
@@ -126,7 +126,7 @@ open class RegExMatch: RefCounted {
         }
         }
     }()
-    public func start<Value: VariantEncodable>(name: Value = 0) -> Int32 {
+    public func start<Value: VariantStorableIn>(name: Value = 0) -> Int32 {
         var __temporary = Int32()
         Godot.Variant.withStorageUnsafeRawPointer(to: name) { (__ptr_name) in
             withUnsafeArgumentPackPointer(__ptr_name) { (__accessPtr) in
@@ -152,7 +152,7 @@ open class RegExMatch: RefCounted {
         }
         }
     }()
-    public func end<Value: VariantEncodable>(name: Value = 0) -> Int32 {
+    public func end<Value: VariantStorableIn>(name: Value = 0) -> Int32 {
         var __temporary = Int32()
         Godot.Variant.withStorageUnsafeRawPointer(to: name) { (__ptr_name) in
             withUnsafeArgumentPackPointer(__ptr_name) { (__accessPtr) in

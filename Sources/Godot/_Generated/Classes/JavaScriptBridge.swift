@@ -96,7 +96,7 @@ open class JavaScriptBridge: Object {
         }
         }
     }()
-    public func createObject<each VariantRest : VariantEncodable>(_ object: Godot.GodotString, _ rest: repeat each VariantRest) -> Godot.Variant {
+    public func createObject<each VariantRest : VariantStorableIn>(_ object: Godot.GodotString, _ rest: repeat each VariantRest) -> Godot.Variant {
         let __temporary = Godot.Variant()
         Godot.Variant.withStorageUnsafeRawPointer(to: object) { (__ptr_object) in
             withUnsafeArgumentPackPointer(__ptr_object, varargs: repeat each rest) { (packCount, __accessPtr) in

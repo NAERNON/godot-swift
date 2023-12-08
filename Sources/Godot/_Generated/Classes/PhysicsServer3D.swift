@@ -604,7 +604,7 @@ open class PhysicsServer3D: Object {
         }
         }
     }()
-    public func shapeSetData<Value: VariantEncodable>(shape: Godot.RID, data: Value) {
+    public func shapeSetData<Value: VariantStorableIn>(shape: Godot.RID, data: Value) {
         shape.withUnsafeRawPointer { (__ptr_shape) in
             Godot.Variant.withStorageUnsafeRawPointer(to: data) { (__ptr_data) in
                 withUnsafeArgumentPackPointer(__ptr_shape, __ptr_data) { (__accessPtr) in
@@ -1238,7 +1238,7 @@ open class PhysicsServer3D: Object {
         }
         }
     }()
-    public func areaSetParam<Value: VariantEncodable>(area: Godot.RID, param: Godot.PhysicsServer3D.AreaParameter, value: Value) {
+    public func areaSetParam<Value: VariantStorableIn>(area: Godot.RID, param: Godot.PhysicsServer3D.AreaParameter, value: Value) {
         area.withUnsafeRawPointer { (__ptr_area) in
             withUnsafePointer(to: param) { (__ptr_param) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
@@ -2094,7 +2094,7 @@ open class PhysicsServer3D: Object {
         }
         }
     }()
-    public func bodySetParam<Value: VariantEncodable>(body: Godot.RID, param: Godot.PhysicsServer3D.BodyParameter, value: Value) {
+    public func bodySetParam<Value: VariantStorableIn>(body: Godot.RID, param: Godot.PhysicsServer3D.BodyParameter, value: Value) {
         body.withUnsafeRawPointer { (__ptr_body) in
             withUnsafePointer(to: param) { (__ptr_param) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
@@ -2170,7 +2170,7 @@ open class PhysicsServer3D: Object {
         }
         }
     }()
-    public func bodySetState<Value: VariantEncodable>(body: Godot.RID, state: Godot.PhysicsServer3D.BodyState, value: Value) {
+    public func bodySetState<Value: VariantStorableIn>(body: Godot.RID, state: Godot.PhysicsServer3D.BodyState, value: Value) {
         body.withUnsafeRawPointer { (__ptr_body) in
             withUnsafePointer(to: state) { (__ptr_state) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
@@ -2772,7 +2772,7 @@ open class PhysicsServer3D: Object {
         }
         }
     }()
-    public func bodySetForceIntegrationCallback<Value: VariantEncodable>(body: Godot.RID, callable: Godot.Callable, userdata: Value = Variant()) {
+    public func bodySetForceIntegrationCallback<Value: VariantStorableIn>(body: Godot.RID, callable: Godot.Callable, userdata: Value = Variant()) {
         body.withUnsafeRawPointer { (__ptr_body) in
             callable.withUnsafeRawPointer { (__ptr_callable) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: userdata) { (__ptr_userdata) in

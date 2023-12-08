@@ -290,7 +290,7 @@ extension Projection {
         return __temporary
     }
 
-    static internal func _operatorEqual<Value: VariantEncodable>(_ lhs: Godot.Projection, _ rhs: Value) -> Bool {
+    static internal func _operatorEqual<Value: VariantStorableIn>(_ lhs: Godot.Projection, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -302,7 +302,7 @@ extension Projection {
         return __temporary
     }
 
-    static internal func _operatorNotEqual<Value: VariantEncodable>(_ lhs: Godot.Projection, _ rhs: Value) -> Bool {
+    static internal func _operatorNotEqual<Value: VariantStorableIn>(_ lhs: Godot.Projection, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -384,7 +384,7 @@ extension Projection {
         return __temporary
     }
 
-    static internal func _operatorIn<Value: VariantEncodable & VariantDecodable>(_ lhs: Godot.Projection, _ rhs: Godot.GodotArray<Value>) -> Bool {
+    static internal func _operatorIn<Value: VariantStorable>(_ lhs: Godot.Projection, _ rhs: Godot.GodotArray<Value>) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in

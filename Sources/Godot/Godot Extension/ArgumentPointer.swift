@@ -22,7 +22,7 @@ func withUnsafeArgumentPackPointer(
 
 /// Calls the given closure with the number of arguments and a pointer
 /// to the contiguous given pointers and variants.
-func withUnsafeArgumentPackPointer<each VariantRest : VariantEncodable>(
+func withUnsafeArgumentPackPointer<each VariantRest : VariantStorableIn>(
     _ pointers: GDExtensionConstTypePtr?...,
     varargs: repeat each VariantRest,
     body: (Int, UnsafeMutablePointer<GDExtensionConstTypePtr?>) -> Void

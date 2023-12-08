@@ -27,7 +27,7 @@ extension Callable {
     // MARK: Methods & variables
     
     public func callv<Value>(arguments: GodotArray<Value>) -> Variant
-    where Value : VariantEncodable & VariantDecodable {
+    where Value : VariantStorable {
         Variant(storage: _callv(arguments: arguments))
     }
     
@@ -68,7 +68,7 @@ extension Callable {
     }
     
     mutating public func bindv<Value>(arguments: GodotArray<Value>) -> Callable
-    where Value : VariantEncodable & VariantDecodable {
+    where Value : VariantStorable {
         _bindv(arguments: arguments)
     }
     
@@ -76,32 +76,32 @@ extension Callable {
         _unbind(argcount: argcount)
     }
     
-    public func call<each VariantRest : VariantEncodable>(
+    public func call<each VariantRest : VariantStorableIn>(
         _ rest: repeat each VariantRest
     ) -> Variant {
         Variant(storage: _call(repeat each rest))
     }
     
-    public func callDeferred<each VariantRest : VariantEncodable>(
+    public func callDeferred<each VariantRest : VariantStorableIn>(
         _ rest: repeat each VariantRest
     ) {
         _callDeferred(repeat each rest)
     }
     
-    public func rpc<each VariantRest : VariantEncodable>(
+    public func rpc<each VariantRest : VariantStorableIn>(
         _ rest: repeat each VariantRest
     ) {
         _rpc(repeat each rest)
     }
     
-    public func rpcId<each VariantRest : VariantEncodable>(
+    public func rpcId<each VariantRest : VariantStorableIn>(
         peerId: Int,
         _ rest: repeat each VariantRest
     ) {
         _rpcId(peerId: peerId, repeat each rest)
     }
     
-    public func bind<each VariantRest : VariantEncodable>(
+    public func bind<each VariantRest : VariantStorableIn>(
         _ rest: repeat each VariantRest
     ) -> Callable {
         _bind(repeat each rest)

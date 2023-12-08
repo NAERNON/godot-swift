@@ -83,7 +83,7 @@ extension RID {
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _operatorEqual<Value: VariantEncodable>(_ lhs: Godot.RID, _ rhs: Value) -> Bool {
+    static internal func _operatorEqual<Value: VariantStorableIn>(_ lhs: Godot.RID, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -95,7 +95,7 @@ extension RID {
         return __temporary
     }
 
-    static internal func _operatorNotEqual<Value: VariantEncodable>(_ lhs: Godot.RID, _ rhs: Value) -> Bool {
+    static internal func _operatorNotEqual<Value: VariantStorableIn>(_ lhs: Godot.RID, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in

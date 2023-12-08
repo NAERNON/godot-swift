@@ -30,10 +30,6 @@ extension Vector2i {
     
     // MARK: Operators
     
-    public static func == (lhs: Vector2i, rhs: some VariantEncodable) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
-    
     public static prefix func - (vector2i: Vector2i) -> Vector2i {
         Self._operatorNegate(vector2i)
     }

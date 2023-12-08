@@ -585,7 +585,7 @@ open class TabBar: Control {
         }
         }
     }()
-    public func setTabMetadata<Value: VariantEncodable>(tabIdx: Int32, metadata: Value) {
+    public func setTabMetadata<Value: VariantStorableIn>(tabIdx: Int32, metadata: Value) {
         withUnsafePointer(to: tabIdx) { (__ptr_tabIdx) in
             Godot.Variant.withStorageUnsafeRawPointer(to: metadata) { (__ptr_metadata) in
                 withUnsafeArgumentPackPointer(__ptr_tabIdx, __ptr_metadata) { (__accessPtr) in

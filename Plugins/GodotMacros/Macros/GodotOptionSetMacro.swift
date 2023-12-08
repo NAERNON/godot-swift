@@ -23,20 +23,20 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         let cases = optionSetCases(for: structDecl, in: context)
         
         let accessModifier = structDecl.effectiveAccessModifier(minimum: .fileprivate)
-        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.GodotOptionSet, Godot.VariantCodable") {
+        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.GodotOptionSet, Godot.ExposableValue") {
             """
             \(accessModifier) static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
             
-            \(accessModifier) static func encodeVariantStorage(_ value: Self) -> Godot.Variant.Storage {
-                RawValue.encodeVariantStorage(value.rawValue)
+            \(accessModifier) static func convertToStorage(_ value: Self) -> Godot.Variant.Storage {
+                RawValue.convertToStorage(value.rawValue)
             }
             
-            \(accessModifier) static func decodeCompatibleVariantStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
-                Self(rawValue: RawValue.decodeCompatibleVariantStorage(storage))
+            \(accessModifier) static func convertFromCheckedStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
+                Self(rawValue: RawValue.convertFromCheckedStorage(storage))
             }
             
-            \(accessModifier) static func decodeVariantStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
-                Self(rawValue: try RawValue.decodeVariantStorage(storage))
+            \(accessModifier) static func convertFromStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
+                Self(rawValue: try RawValue.convertFromStorage(storage))
             }
             """
             

@@ -12,7 +12,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func createServer<Value: VariantEncodable & VariantDecodable>(channelsConfig: Godot.GodotArray<Value> = []) -> Godot.ErrorType {
+    public func createServer<Value: VariantStorable>(channelsConfig: Godot.GodotArray<Value> = []) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         channelsConfig.withUnsafeRawPointer { (__ptr_channelsConfig) in
             withUnsafeArgumentPackPointer(__ptr_channelsConfig) { (__accessPtr) in
@@ -38,7 +38,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func createClient<Value: VariantEncodable & VariantDecodable>(peerId: Int32, channelsConfig: Godot.GodotArray<Value> = []) -> Godot.ErrorType {
+    public func createClient<Value: VariantStorable>(peerId: Int32, channelsConfig: Godot.GodotArray<Value> = []) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         withUnsafePointer(to: peerId) { (__ptr_peerId) in
             channelsConfig.withUnsafeRawPointer { (__ptr_channelsConfig) in
@@ -66,7 +66,7 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func createMesh<Value: VariantEncodable & VariantDecodable>(peerId: Int32, channelsConfig: Godot.GodotArray<Value> = []) -> Godot.ErrorType {
+    public func createMesh<Value: VariantStorable>(peerId: Int32, channelsConfig: Godot.GodotArray<Value> = []) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         withUnsafePointer(to: peerId) { (__ptr_peerId) in
             channelsConfig.withUnsafeRawPointer { (__ptr_channelsConfig) in

@@ -12,7 +12,7 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    private func __setActionSets<Value: VariantEncodable & VariantDecodable>(_ actionSets: Godot.GodotArray<Value>) {
+    private func __setActionSets<Value: VariantStorable>(_ actionSets: Godot.GodotArray<Value>) {
         actionSets.withUnsafeRawPointer { (__ptr_actionSets) in
             withUnsafeArgumentPackPointer(__ptr_actionSets) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -178,7 +178,7 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    private func __setInteractionProfiles<Value: VariantEncodable & VariantDecodable>(_ interactionProfiles: Godot.GodotArray<Value>) {
+    private func __setInteractionProfiles<Value: VariantStorable>(_ interactionProfiles: Godot.GodotArray<Value>) {
         interactionProfiles.withUnsafeRawPointer { (__ptr_interactionProfiles) in
             withUnsafeArgumentPackPointer(__ptr_interactionProfiles) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

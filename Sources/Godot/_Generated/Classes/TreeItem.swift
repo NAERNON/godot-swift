@@ -502,7 +502,7 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setStructuredTextBidiOverrideOptions<Value: VariantEncodable & VariantDecodable>(column: Int32, args: Godot.GodotArray<Value>) {
+    public func setStructuredTextBidiOverrideOptions<Value: VariantStorable>(column: Int32, args: Godot.GodotArray<Value>) {
         withUnsafePointer(to: column) { (__ptr_column) in
             args.withUnsafeRawPointer { (__ptr_args) in
                 withUnsafeArgumentPackPointer(__ptr_column, __ptr_args) { (__accessPtr) in
@@ -960,7 +960,7 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setMetadata<Value: VariantEncodable>(column: Int32, meta: Value) {
+    public func setMetadata<Value: VariantStorableIn>(column: Int32, meta: Value) {
         withUnsafePointer(to: column) { (__ptr_column) in
             Godot.Variant.withStorageUnsafeRawPointer(to: meta) { (__ptr_meta) in
                 withUnsafeArgumentPackPointer(__ptr_column, __ptr_meta) { (__accessPtr) in
@@ -2628,7 +2628,7 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func callRecursive<each VariantRest : VariantEncodable>(method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+    public func callRecursive<each VariantRest : VariantStorableIn>(method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { (__ptr_method) in
             withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { (packCount, __accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

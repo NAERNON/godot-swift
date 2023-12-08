@@ -122,7 +122,7 @@ struct VariableMember: ExposableMember {
         """
         
         let setterExprSyntax: ExprSyntax = """
-        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName) = .decodeCompatibleVariantStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName) = .convertFromCheckedStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
         """
         
         let variableName = variableBinding.pattern.trimmedDescription.translated(from: .camel, to: .snake)

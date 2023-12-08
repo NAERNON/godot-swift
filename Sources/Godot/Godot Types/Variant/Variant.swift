@@ -17,8 +17,8 @@ public final class Variant {
     }
     
     /// Creates a variant containing the given value.
-    public init<T>(_ value: consuming T) where T : VariantEncodable {
-        self.storage = T.encodeVariantStorage(value)
+    public init<T>(_ value: consuming T) where T : VariantStorableIn {
+        self.storage = T.convertToStorage(value)
     }
     
     public init(godotExtensionPointer: GDExtensionConstVariantPtr) {
@@ -30,8 +30,8 @@ public final class Variant {
     /// Returns the value contained inside the `Variant`.
     ///
     /// - Parameter type: The type stored in the `Variant`.
-    public func unwrap<T>(_ type: T.Type) throws -> T where T : VariantDecodable {
-        try type.decodeVariantStorage(storage)
+    public func unwrap<T>(_ type: T.Type) throws -> T where T : VariantStorableOut {
+        try type.convertFromStorage(storage)
     }
     
     /// Returns the value contained inside the `Variant`.
@@ -45,8 +45,8 @@ public final class Variant {
     /// Use ``unwrap(_:)`` for a throwing version of this function.
     ///
     /// - Parameter type: The type stored in the `Variant`.
-    public func unwrap<T>(assuming type: T.Type) -> T where T : VariantDecodable {
-        type.decodeCompatibleVariantStorage(storage)
+    public func unwrap<T>(assuming type: T.Type) -> T where T : VariantStorableOut {
+        type.convertFromCheckedStorage(storage)
     }
     
     // MARK: Handle data
@@ -67,8 +67,8 @@ public final class Variant {
     public static func withStorage<Value, Result>(
         of value: Value,
         _ body: (borrowing Storage) throws -> Result
-    ) rethrows -> Result where Value : VariantEncodable {
-        try Value.withEncodedVariantStorage(value) { storage in
+    ) rethrows -> Result where Value : VariantStorableIn {
+        try Value.withValueStorage(value) { storage in
             try body(storage)
         }
     }
@@ -77,8 +77,8 @@ public final class Variant {
     public static func withStorageUnsafeRawPointer<Value, Result>(
         to value: Value,
         _ body: (GDExtensionVariantPtr) throws -> Result
-    ) rethrows -> Result where Value : VariantEncodable {
-        try Value.withEncodedVariantStorage(value) { storage in
+    ) rethrows -> Result where Value : VariantStorableIn {
+        try Value.withValueStorage(value) { storage in
             try storage.withUnsafeRawPointer { rawPointer in
                 try body(rawPointer)
             }
@@ -117,26 +117,30 @@ extension Variant: Equatable {
     }
 }
 
-extension Variant: VariantEncodable, VariantDecodable {
-    public static var encodedVariantStorageType: StorageType? { nil }
+extension Variant: VariantStorable {
+    public static var variantStorageType: StorageType? { nil }
     
-    public static func encodeVariantStorage(_ value: consuming Variant) -> Storage {
+    public static func convertToStorage(_ value: consuming Variant) -> Storage {
         value.storage.copy()
     }
     
-    public static func withEncodedVariantStorage<Result>(
+    public static func withValueStorage<Result>(
         _ value: consuming Variant,
-        body: (borrowing Variant.Storage) throws -> Result
+        body: (borrowing Storage) throws -> Result
     ) rethrows -> Result {
         try body(value.storage)
     }
     
-    public static func decodeVariantStorage(_ storage: borrowing Storage) throws -> Variant {
+    public static func convertFromStorage(_ storage: borrowing Storage) throws -> Variant {
         Variant(storage: storage.copy())
     }
     
-    public static func decodeCompatibleVariantStorage(_ storage: borrowing Storage) -> Variant {
+    public static func convertFromCheckedStorage(_ storage: borrowing Storage) -> Variant {
         Variant(storage: storage.copy())
+    }
+    
+    public static func convertFromCheckedStorage(consuming storage: consuming Storage) -> Variant {
+        Variant(storage: storage)
     }
 }
 

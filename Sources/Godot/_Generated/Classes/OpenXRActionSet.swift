@@ -122,7 +122,7 @@ open class OpenXRActionSet: Resource {
         }
         }
     }()
-    private func __setActions<Value: VariantEncodable & VariantDecodable>(_ actions: Godot.GodotArray<Value>) {
+    private func __setActions<Value: VariantStorable>(_ actions: Godot.GodotArray<Value>) {
         actions.withUnsafeRawPointer { (__ptr_actions) in
             withUnsafeArgumentPackPointer(__ptr_actions) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

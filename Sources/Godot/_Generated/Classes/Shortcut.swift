@@ -12,7 +12,7 @@ open class Shortcut: Resource {
         }
         }
     }()
-    private func __setEvents<Value: VariantEncodable & VariantDecodable>(_ events: Godot.GodotArray<Value>) {
+    private func __setEvents<Value: VariantStorable>(_ events: Godot.GodotArray<Value>) {
         events.withUnsafeRawPointer { (__ptr_events) in
             withUnsafeArgumentPackPointer(__ptr_events) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

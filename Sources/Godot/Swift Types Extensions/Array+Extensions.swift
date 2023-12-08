@@ -1,22 +1,28 @@
 
-extension Array: VariantDecodable where Element : VariantCodable {
-    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Array<Element> {
-        try .init(GodotArray<Element>.decodeVariantStorage(storage))
+extension Array: VariantStorableOut where Element : VariantStorable {
+    public static func convertFromStorage(_ storage: borrowing Variant.Storage) throws -> Array<Element> {
+        try .init(GodotArray<Element>.convertFromStorage(storage))
     }
     
-    public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Array<Element> {
-        .init(GodotArray<Element>.decodeCompatibleVariantStorage(storage))
+    public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Array<Element> {
+        .init(GodotArray<Element>.convertFromCheckedStorage(storage))
     }
 }
 
-extension Array: VariantEncodable where Element : VariantCodable {
-    public static func encodeVariantStorage(_ value: consuming Self) -> Variant.Storage {
-        GodotArray.encodeVariantStorage(GodotArray(value))
+extension Array: VariantStorableIn where Element : VariantStorable {
+    public static func convertToStorage(_ value: consuming Array<Element>) -> Variant.Storage {
+        GodotArray.convertToStorage(GodotArray(value))
     }
 }
 
-extension Array: VariantCodable where Element : VariantCodable {
+extension Array: VariantStorable where Element : VariantStorable {
+    public static var variantStorageType: Variant.StorageType? { 
+        .array
+    }
+}
+
+extension Array: ExposableValue where Element : ExposableValue {
     public static var variantRepresentationType: Variant.RepresentationType {
-        GodotArray<Element>.variantRepresentationType
+        .array
     }
 }

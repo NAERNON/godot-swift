@@ -31,7 +31,7 @@ extension ClassRegistrar {
             name: GodotStringName,
             defaultValue: Value?,
             className: GodotStringName
-        ) where Value : VariantCodable {
+        ) where Value : ExposableValue {
             self.variantRepresentationType = type.variantRepresentationType
             self.name = name
             if let defaultValue {
@@ -54,7 +54,7 @@ extension ClassRegistrar {
             name: GodotStringName,
             defaultValue: Value? = nil
         ) -> FunctionParameter
-        where Value : VariantCodable {
+        where Value : ExposableValue {
             FunctionParameter(
                 type: type,
                 name: name,
@@ -67,7 +67,7 @@ extension ClassRegistrar {
         ///
         /// - Parameter type: The type of the parameter.
         public static func returnParameter<Value>(_ type: Value.Type) -> FunctionParameter
-        where Value : VariantCodable {
+        where Value : ExposableValue {
             FunctionParameter(
                 type: type,
                 name: .init(),

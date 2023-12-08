@@ -12,7 +12,7 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func setValue<Value: VariantEncodable>(section: Godot.GodotString, key: Godot.GodotString, value: Value) {
+    public func setValue<Value: VariantStorableIn>(section: Godot.GodotString, key: Godot.GodotString, value: Value) {
         section.withUnsafeRawPointer { (__ptr_section) in
             key.withUnsafeRawPointer { (__ptr_key) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
@@ -38,7 +38,7 @@ open class ConfigFile: RefCounted {
         }
         }
     }()
-    public func value<Value: VariantEncodable>(section: Godot.GodotString, key: Godot.GodotString, `default`: Value = Variant()) -> Godot.Variant {
+    public func value<Value: VariantStorableIn>(section: Godot.GodotString, key: Godot.GodotString, `default`: Value = Variant()) -> Godot.Variant {
         let __temporary = Godot.Variant()
         section.withUnsafeRawPointer { (__ptr_section) in
             key.withUnsafeRawPointer { (__ptr_key) in

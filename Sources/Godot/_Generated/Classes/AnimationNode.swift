@@ -432,7 +432,7 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func setParameter<Value: VariantEncodable>(name: Godot.GodotStringName, value: Value) {
+    public func setParameter<Value: VariantStorableIn>(name: Godot.GodotStringName, value: Value) {
         name.withUnsafeRawPointer { (__ptr_name) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in

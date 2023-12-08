@@ -12,7 +12,7 @@ open class JSON: Resource {
         }
         }
     }()
-    static public func stringify<Value: VariantEncodable>(data: Value, indent: Godot.GodotString = "", sortKeys: Bool = true, fullPrecision: Bool = false) -> Godot.GodotString {
+    static public func stringify<Value: VariantStorableIn>(data: Value, indent: Godot.GodotString = "", sortKeys: Bool = true, fullPrecision: Bool = false) -> Godot.GodotString {
         let __temporary = Godot.GodotString()
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { (__ptr_data) in
             indent.withUnsafeRawPointer { (__ptr_indent) in
@@ -116,7 +116,7 @@ open class JSON: Resource {
         }
         }
     }()
-    private func __setData<Value: VariantEncodable>(_ data: Value) {
+    private func __setData<Value: VariantStorableIn>(_ data: Value) {
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { (__ptr_data) in
             withUnsafeArgumentPackPointer(__ptr_data) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

@@ -144,7 +144,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setPolygons<Value: VariantEncodable & VariantDecodable>(_ polygons: Godot.GodotArray<Value>) {
+    private func __setPolygons<Value: VariantStorable>(_ polygons: Godot.GodotArray<Value>) {
         polygons.withUnsafeRawPointer { (__ptr_polygons) in
             withUnsafeArgumentPackPointer(__ptr_polygons) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

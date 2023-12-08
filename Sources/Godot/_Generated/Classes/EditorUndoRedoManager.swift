@@ -106,7 +106,7 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addDoMethod<each VariantRest : VariantEncodable>(object: Godot.Object?, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+    public func addDoMethod<each VariantRest : VariantStorableIn>(object: Godot.Object?, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
         Godot.Variant.withStorageUnsafeRawPointer(to: object) { (__ptr_object) in
             Godot.Variant.withStorageUnsafeRawPointer(to: method) { (__ptr_method) in
                 withUnsafeArgumentPackPointer(__ptr_object, __ptr_method, varargs: repeat each rest) { (packCount, __accessPtr) in
@@ -150,7 +150,7 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addUndoMethod<each VariantRest : VariantEncodable>(object: Godot.Object?, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
+    public func addUndoMethod<each VariantRest : VariantStorableIn>(object: Godot.Object?, method: Godot.GodotStringName, _ rest: repeat each VariantRest) {
         Godot.Variant.withStorageUnsafeRawPointer(to: object) { (__ptr_object) in
             Godot.Variant.withStorageUnsafeRawPointer(to: method) { (__ptr_method) in
                 withUnsafeArgumentPackPointer(__ptr_object, __ptr_method, varargs: repeat each rest) { (packCount, __accessPtr) in
@@ -194,7 +194,7 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addDoProperty<Value: VariantEncodable>(object: Godot.Object?, property: Godot.GodotStringName, value: Value) {
+    public func addDoProperty<Value: VariantStorableIn>(object: Godot.Object?, property: Godot.GodotStringName, value: Value) {
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
                 property.withUnsafeRawPointer { (__ptr_property) in
@@ -222,7 +222,7 @@ open class EditorUndoRedoManager: Object {
         }
         }
     }()
-    public func addUndoProperty<Value: VariantEncodable>(object: Godot.Object?, property: Godot.GodotStringName, value: Value) {
+    public func addUndoProperty<Value: VariantStorableIn>(object: Godot.Object?, property: Godot.GodotStringName, value: Value) {
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
                 property.withUnsafeRawPointer { (__ptr_property) in

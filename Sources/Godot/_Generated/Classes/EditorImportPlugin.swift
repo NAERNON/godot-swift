@@ -60,7 +60,7 @@ open class EditorImportPlugin: ResourceImporter {
         }
         }
     }()
-    public func appendImportExternalResource<Value: VariantEncodable>(path: Godot.GodotString, customOptions: Godot.GodotDictionary = [:], customImporter: Godot.GodotString = "", generatorParameters: Value = Variant()) -> Godot.ErrorType {
+    public func appendImportExternalResource<Value: VariantStorableIn>(path: Godot.GodotString, customOptions: Godot.GodotDictionary = [:], customImporter: Godot.GodotString = "", generatorParameters: Value = Variant()) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         path.withUnsafeRawPointer { (__ptr_path) in
             customOptions.withUnsafeRawPointer { (__ptr_customOptions) in

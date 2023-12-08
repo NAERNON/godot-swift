@@ -39,8 +39,8 @@ extension Variant {
             gdextension_interface_variant_new_copy(rawData, godotExtensionPointer)
         }
         
-        public init<T>(_ value: consuming T) where T : VariantEncodable {
-            self = T.encodeVariantStorage(value)
+        public init<T>(_ value: consuming T) where T : VariantStorableIn {
+            self = T.convertToStorage(value)
         }
         
         deinit {
@@ -154,11 +154,11 @@ extension Variant {
         }
         
         static public func == (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .equal))
+            Bool.convertFromCheckedStorage(lhs.evaluate(other: rhs, operator: .equal))
         }
         
         static public func != (lhs: borrowing Variant.Storage, rhs: borrowing Variant.Storage) -> Bool {
-            Bool.decodeCompatibleVariantStorage(lhs.evaluate(other: rhs, operator: .notEqual))
+            Bool.convertFromCheckedStorage(lhs.evaluate(other: rhs, operator: .notEqual))
         }
     }
 }

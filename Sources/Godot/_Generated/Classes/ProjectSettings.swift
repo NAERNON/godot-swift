@@ -38,7 +38,7 @@ open class ProjectSettings: Object {
         }
         }
     }()
-    public func setSetting<Value: VariantEncodable>(name: Godot.GodotString, value: Value) {
+    public func setSetting<Value: VariantStorableIn>(name: Godot.GodotString, value: Value) {
         name.withUnsafeRawPointer { (__ptr_name) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in
@@ -62,7 +62,7 @@ open class ProjectSettings: Object {
         }
         }
     }()
-    public func setting<Value: VariantEncodable>(name: Godot.GodotString, defaultValue: Value = Variant()) -> Godot.Variant {
+    public func setting<Value: VariantStorableIn>(name: Godot.GodotString, defaultValue: Value = Variant()) -> Godot.Variant {
         let __temporary = Godot.Variant()
         name.withUnsafeRawPointer { (__ptr_name) in
             Godot.Variant.withStorageUnsafeRawPointer(to: defaultValue) { (__ptr_defaultValue) in
@@ -188,7 +188,7 @@ open class ProjectSettings: Object {
         }
         }
     }()
-    public func setInitialValue<Value: VariantEncodable>(name: Godot.GodotString, value: Value) {
+    public func setInitialValue<Value: VariantStorableIn>(name: Godot.GodotString, value: Value) {
         name.withUnsafeRawPointer { (__ptr_name) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in

@@ -22,18 +22,18 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             private enum SomeEnum: Int64 {}
             
-            extension SomeEnum: Godot.VariantCodable, Godot.GodotEnum {
+            extension SomeEnum: Godot.ExposableValue, Godot.GodotEnum {
                 fileprivate static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
             
-                fileprivate static func encodeVariantStorage(_ value: Self) -> Godot.Variant.Storage {
-                    RawValue.encodeVariantStorage(value.rawValue)
+                fileprivate static func convertToStorage(_ value: Self) -> Godot.Variant.Storage {
+                    RawValue.convertToStorage(value.rawValue)
                 }
             
-                fileprivate static func decodeCompatibleVariantStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
-                    Self (rawValue: RawValue.decodeCompatibleVariantStorage(storage))!
+                fileprivate static func convertFromCheckedStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
+                    Self (rawValue: RawValue.convertFromCheckedStorage(storage))!
                 }
             
-                fileprivate static func decodeVariantStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
+                fileprivate static func convertFromStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
                     enum Error: Swift.Error {
                         case incorrectRawValue
             
@@ -42,7 +42,7 @@ final class GodotEnumMacroTests: XCTestCase {
                         }
                     }
             
-                    let rawValue = try RawValue.decodeVariantStorage(storage)
+                    let rawValue = try RawValue.convertFromStorage(storage)
                     guard let value = Self (rawValue: rawValue) else {
                         throw Error.incorrectRawValue
                     }
@@ -75,18 +75,18 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             fileprivate enum SomeEnum: Int64 {}
             
-            extension SomeEnum: Godot.VariantCodable, Godot.GodotEnum {
+            extension SomeEnum: Godot.ExposableValue, Godot.GodotEnum {
                 fileprivate static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
             
-                fileprivate static func encodeVariantStorage(_ value: Self) -> Godot.Variant.Storage {
-                    RawValue.encodeVariantStorage(value.rawValue)
+                fileprivate static func convertToStorage(_ value: Self) -> Godot.Variant.Storage {
+                    RawValue.convertToStorage(value.rawValue)
                 }
             
-                fileprivate static func decodeCompatibleVariantStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
-                    Self (rawValue: RawValue.decodeCompatibleVariantStorage(storage))!
+                fileprivate static func convertFromCheckedStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
+                    Self (rawValue: RawValue.convertFromCheckedStorage(storage))!
                 }
             
-                fileprivate static func decodeVariantStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
+                fileprivate static func convertFromStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
                     enum Error: Swift.Error {
                         case incorrectRawValue
             
@@ -95,7 +95,7 @@ final class GodotEnumMacroTests: XCTestCase {
                         }
                     }
             
-                    let rawValue = try RawValue.decodeVariantStorage(storage)
+                    let rawValue = try RawValue.convertFromStorage(storage)
                     guard let value = Self (rawValue: rawValue) else {
                         throw Error.incorrectRawValue
                     }
@@ -128,18 +128,18 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             enum SomeEnum: Int64 {}
             
-            extension SomeEnum: Godot.VariantCodable, Godot.GodotEnum {
+            extension SomeEnum: Godot.ExposableValue, Godot.GodotEnum {
                 internal static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
             
-                internal static func encodeVariantStorage(_ value: Self) -> Godot.Variant.Storage {
-                    RawValue.encodeVariantStorage(value.rawValue)
+                internal static func convertToStorage(_ value: Self) -> Godot.Variant.Storage {
+                    RawValue.convertToStorage(value.rawValue)
                 }
             
-                internal static func decodeCompatibleVariantStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
-                    Self (rawValue: RawValue.decodeCompatibleVariantStorage(storage))!
+                internal static func convertFromCheckedStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
+                    Self (rawValue: RawValue.convertFromCheckedStorage(storage))!
                 }
             
-                internal static func decodeVariantStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
+                internal static func convertFromStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
                     enum Error: Swift.Error {
                         case incorrectRawValue
             
@@ -148,7 +148,7 @@ final class GodotEnumMacroTests: XCTestCase {
                         }
                     }
             
-                    let rawValue = try RawValue.decodeVariantStorage(storage)
+                    let rawValue = try RawValue.convertFromStorage(storage)
                     guard let value = Self (rawValue: rawValue) else {
                         throw Error.incorrectRawValue
                     }
@@ -181,18 +181,18 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             internal enum SomeEnum: Int64 {}
             
-            extension SomeEnum: Godot.VariantCodable, Godot.GodotEnum {
+            extension SomeEnum: Godot.ExposableValue, Godot.GodotEnum {
                 internal static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
             
-                internal static func encodeVariantStorage(_ value: Self) -> Godot.Variant.Storage {
-                    RawValue.encodeVariantStorage(value.rawValue)
+                internal static func convertToStorage(_ value: Self) -> Godot.Variant.Storage {
+                    RawValue.convertToStorage(value.rawValue)
                 }
             
-                internal static func decodeCompatibleVariantStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
-                    Self (rawValue: RawValue.decodeCompatibleVariantStorage(storage))!
+                internal static func convertFromCheckedStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
+                    Self (rawValue: RawValue.convertFromCheckedStorage(storage))!
                 }
             
-                internal static func decodeVariantStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
+                internal static func convertFromStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
                     enum Error: Swift.Error {
                         case incorrectRawValue
             
@@ -201,7 +201,7 @@ final class GodotEnumMacroTests: XCTestCase {
                         }
                     }
             
-                    let rawValue = try RawValue.decodeVariantStorage(storage)
+                    let rawValue = try RawValue.convertFromStorage(storage)
                     guard let value = Self (rawValue: rawValue) else {
                         throw Error.incorrectRawValue
                     }
@@ -234,18 +234,18 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             public enum SomeEnum: Int64 {}
             
-            extension SomeEnum: Godot.VariantCodable, Godot.GodotEnum {
+            extension SomeEnum: Godot.ExposableValue, Godot.GodotEnum {
                 public static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
             
-                public static func encodeVariantStorage(_ value: Self) -> Godot.Variant.Storage {
-                    RawValue.encodeVariantStorage(value.rawValue)
+                public static func convertToStorage(_ value: Self) -> Godot.Variant.Storage {
+                    RawValue.convertToStorage(value.rawValue)
                 }
             
-                public static func decodeCompatibleVariantStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
-                    Self (rawValue: RawValue.decodeCompatibleVariantStorage(storage))!
+                public static func convertFromCheckedStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
+                    Self (rawValue: RawValue.convertFromCheckedStorage(storage))!
                 }
             
-                public static func decodeVariantStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
+                public static func convertFromStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
                     enum Error: Swift.Error {
                         case incorrectRawValue
             
@@ -254,7 +254,7 @@ final class GodotEnumMacroTests: XCTestCase {
                         }
                     }
             
-                    let rawValue = try RawValue.decodeVariantStorage(storage)
+                    let rawValue = try RawValue.convertFromStorage(storage)
                     guard let value = Self (rawValue: rawValue) else {
                         throw Error.incorrectRawValue
                     }
@@ -297,18 +297,18 @@ final class GodotEnumMacroTests: XCTestCase {
                 case anotherGOODValue
             }
             
-            extension SomeEnum: Godot.VariantCodable, Godot.GodotEnum {
+            extension SomeEnum: Godot.ExposableValue, Godot.GodotEnum {
                 public static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
             
-                public static func encodeVariantStorage(_ value: Self) -> Godot.Variant.Storage {
-                    RawValue.encodeVariantStorage(value.rawValue)
+                public static func convertToStorage(_ value: Self) -> Godot.Variant.Storage {
+                    RawValue.convertToStorage(value.rawValue)
                 }
             
-                public static func decodeCompatibleVariantStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
-                    Self (rawValue: RawValue.decodeCompatibleVariantStorage(storage))!
+                public static func convertFromCheckedStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
+                    Self (rawValue: RawValue.convertFromCheckedStorage(storage))!
                 }
             
-                public static func decodeVariantStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
+                public static func convertFromStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
                     enum Error: Swift.Error {
                         case incorrectRawValue
             
@@ -317,7 +317,7 @@ final class GodotEnumMacroTests: XCTestCase {
                         }
                     }
             
-                    let rawValue = try RawValue.decodeVariantStorage(storage)
+                    let rawValue = try RawValue.convertFromStorage(storage)
                     guard let value = Self (rawValue: rawValue) else {
                         throw Error.incorrectRawValue
                     }
@@ -362,18 +362,18 @@ final class GodotEnumMacroTests: XCTestCase {
             expandedSource: """
             public enum `SomeEnum`: Int64 {}
             
-            extension `SomeEnum`: Godot.VariantCodable, Godot.GodotEnum {
+            extension `SomeEnum`: Godot.ExposableValue, Godot.GodotEnum {
                 public static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
             
-                public static func encodeVariantStorage(_ value: Self) -> Godot.Variant.Storage {
-                    RawValue.encodeVariantStorage(value.rawValue)
+                public static func convertToStorage(_ value: Self) -> Godot.Variant.Storage {
+                    RawValue.convertToStorage(value.rawValue)
                 }
             
-                public static func decodeCompatibleVariantStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
-                    Self (rawValue: RawValue.decodeCompatibleVariantStorage(storage))!
+                public static func convertFromCheckedStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
+                    Self (rawValue: RawValue.convertFromCheckedStorage(storage))!
                 }
             
-                public static func decodeVariantStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
+                public static func convertFromStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
                     enum Error: Swift.Error {
                         case incorrectRawValue
             
@@ -382,7 +382,7 @@ final class GodotEnumMacroTests: XCTestCase {
                         }
                     }
             
-                    let rawValue = try RawValue.decodeVariantStorage(storage)
+                    let rawValue = try RawValue.convertFromStorage(storage)
                     guard let value = Self (rawValue: rawValue) else {
                         throw Error.incorrectRawValue
                     }

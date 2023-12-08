@@ -12,7 +12,7 @@ open class Marshalls: Object {
         }
         }
     }()
-    public func variantToBase64<Value: VariantEncodable>(variant: Value, fullObjects: Bool = false) -> Godot.GodotString {
+    public func variantToBase64<Value: VariantStorableIn>(variant: Value, fullObjects: Bool = false) -> Godot.GodotString {
         let __temporary = Godot.GodotString()
         Godot.Variant.withStorageUnsafeRawPointer(to: variant) { (__ptr_variant) in
             withUnsafePointer(to: fullObjects) { (__ptr_fullObjects) in

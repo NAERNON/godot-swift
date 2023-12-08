@@ -16,7 +16,7 @@ open class EditorResourcePreview: Node {
         }
         }
     }()
-    public func queueResourcePreview<Value: VariantEncodable>(path: Godot.GodotString, receiver: Godot.Object?, receiverFunc: Godot.GodotStringName, userdata: Value) {
+    public func queueResourcePreview<Value: VariantStorableIn>(path: Godot.GodotString, receiver: Godot.Object?, receiverFunc: Godot.GodotStringName, userdata: Value) {
         path.withUnsafeRawPointer { (__ptr_path) in
             receiver.withUnsafeRawPointer { (__ptr_receiver) in
                 withUnsafePointer(to: __ptr_receiver) { (_ptr___ptr_receiver) in
@@ -46,7 +46,7 @@ open class EditorResourcePreview: Node {
         }
         }
     }()
-    public func queueEditedResourcePreview<Value: VariantEncodable>(resource: Godot.Resource?, receiver: Godot.Object?, receiverFunc: Godot.GodotStringName, userdata: Value) {
+    public func queueEditedResourcePreview<Value: VariantStorableIn>(resource: Godot.Resource?, receiver: Godot.Object?, receiverFunc: Godot.GodotStringName, userdata: Value) {
         resource.withUnsafeRawPointer { (__ptr_resource) in
             withUnsafePointer(to: __ptr_resource) { (_ptr___ptr_resource) in
                 receiver.withUnsafeRawPointer { (__ptr_receiver) in

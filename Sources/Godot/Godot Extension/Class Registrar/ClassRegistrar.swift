@@ -390,7 +390,7 @@ public final class ClassRegistrar {
         setterCall: GDExtensionClassMethodCall? = nil
     ) -> VariableBinding?
     where Class : Object,
-          Variable : VariantCodable
+          Variable : ExposableValue
     {
         let className = classType._$className
         

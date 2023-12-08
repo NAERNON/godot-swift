@@ -182,7 +182,7 @@ open class MeshLibrary: Resource {
         }
         }
     }()
-    public func setItemShapes<Value: VariantEncodable & VariantDecodable>(id: Int32, shapes: Godot.GodotArray<Value>) {
+    public func setItemShapes<Value: VariantStorable>(id: Int32, shapes: Godot.GodotArray<Value>) {
         withUnsafePointer(to: id) { (__ptr_id) in
             shapes.withUnsafeRawPointer { (__ptr_shapes) in
                 withUnsafeArgumentPackPointer(__ptr_id, __ptr_shapes) { (__accessPtr) in

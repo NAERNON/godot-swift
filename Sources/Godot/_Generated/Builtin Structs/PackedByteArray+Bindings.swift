@@ -377,7 +377,7 @@ extension PackedByteArray {
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _constructor_godotarray<Value: VariantEncodable & VariantDecodable>(from: Godot.GodotArray<Value>) -> Self {
+    static internal func _constructor_godotarray<Value: VariantStorable>(from: Godot.GodotArray<Value>) -> Self {
         let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
         from.withUnsafeRawPointer { (__ptr_from) in
             withUnsafeArgumentPackPointer(__ptr_from) { (__accessPtr) in
@@ -398,7 +398,7 @@ extension PackedByteArray {
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _operatorEqual<Value: VariantEncodable>(_ lhs: Godot.PackedByteArray, _ rhs: Value) -> Bool {
+    static internal func _operatorEqual<Value: VariantStorableIn>(_ lhs: Godot.PackedByteArray, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -410,7 +410,7 @@ extension PackedByteArray {
         return __temporary
     }
 
-    static internal func _operatorNotEqual<Value: VariantEncodable>(_ lhs: Godot.PackedByteArray, _ rhs: Value) -> Bool {
+    static internal func _operatorNotEqual<Value: VariantStorableIn>(_ lhs: Godot.PackedByteArray, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -444,7 +444,7 @@ extension PackedByteArray {
         return __temporary
     }
 
-    static internal func _operatorIn<Value: VariantEncodable & VariantDecodable>(_ lhs: Godot.PackedByteArray, _ rhs: Godot.GodotArray<Value>) -> Bool {
+    static internal func _operatorIn<Value: VariantStorable>(_ lhs: Godot.PackedByteArray, _ rhs: Godot.GodotArray<Value>) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in
@@ -1253,7 +1253,7 @@ extension PackedByteArray {
         }
     }
 
-    @discardableResult mutating internal func _encodeVar<Value: VariantEncodable>(byteOffset: Int, value: Value, allowObjects: Bool = false) -> Int {
+    @discardableResult mutating internal func _encodeVar<Value: VariantStorableIn>(byteOffset: Int, value: Value, allowObjects: Bool = false) -> Int {
         replaceOpaqueValueIfNecessary()
         var __temporary = Int()
         withUnsafePointer(to: byteOffset) { (__ptr_byteOffset) in

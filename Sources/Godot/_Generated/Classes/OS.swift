@@ -459,7 +459,7 @@ open class OS: Object {
         }
         }
     }()
-    public func execute<Value: VariantEncodable & VariantDecodable>(path: Godot.GodotString, arguments: Godot.PackedStringArray, output: Godot.GodotArray<Value> = [], readStderr: Bool = false, openConsole: Bool = false) -> Int32 {
+    public func execute<Value: VariantStorable>(path: Godot.GodotString, arguments: Godot.PackedStringArray, output: Godot.GodotArray<Value> = [], readStderr: Bool = false, openConsole: Bool = false) -> Int32 {
         var __temporary = Int32()
         path.withUnsafeRawPointer { (__ptr_path) in
             arguments.withUnsafeRawPointer { (__ptr_arguments) in

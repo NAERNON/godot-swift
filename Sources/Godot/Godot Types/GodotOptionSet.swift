@@ -12,11 +12,11 @@ public protocol GodotOptionSet: OptionSet where RawValue : FixedWidthInteger {
 // MARK: - Macro
 
 /// Converts a Swift struct into an option set usable by Godot.
-@attached(extension, conformances: GodotOptionSet, VariantCodable, names:
+@attached(extension, conformances: GodotOptionSet, ExposableValue, names:
     named(variantRepresentationType),
-    named(encodeVariantStorage),
-    named(decodeCompatibleVariantStorage),
-    named(decodeVariantStorage),
+    named(convertToStorage),
+    named(convertFromCheckedStorage),
+    named(convertFromStorage),
     named(godotExposableValues),
     named(hintValues)
 )

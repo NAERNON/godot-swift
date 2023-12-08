@@ -40,7 +40,7 @@ open class Expression: RefCounted {
         }
         }
     }()
-    public func execute<Value: VariantEncodable & VariantDecodable>(inputs: Godot.GodotArray<Value> = [], baseInstance: Godot.Object? = nil, showError: Bool = true, constCallsOnly: Bool = false) -> Godot.Variant {
+    public func execute<Value: VariantStorable>(inputs: Godot.GodotArray<Value> = [], baseInstance: Godot.Object? = nil, showError: Bool = true, constCallsOnly: Bool = false) -> Godot.Variant {
         let __temporary = Godot.Variant()
         inputs.withUnsafeRawPointer { (__ptr_inputs) in
             baseInstance.withUnsafeRawPointer { (__ptr_baseInstance) in

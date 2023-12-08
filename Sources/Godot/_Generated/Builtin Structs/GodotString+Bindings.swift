@@ -786,7 +786,7 @@ extension GodotString {
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _operatorEqual<Value: VariantEncodable>(_ lhs: Godot.GodotString, _ rhs: Value) -> Bool {
+    static internal func _operatorEqual<Value: VariantStorableIn>(_ lhs: Godot.GodotString, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -798,7 +798,7 @@ extension GodotString {
         return __temporary
     }
 
-    static internal func _operatorNotEqual<Value: VariantEncodable>(_ lhs: Godot.GodotString, _ rhs: Value) -> Bool {
+    static internal func _operatorNotEqual<Value: VariantStorableIn>(_ lhs: Godot.GodotString, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -810,7 +810,7 @@ extension GodotString {
         return __temporary
     }
 
-    static internal func _operatorModule<Value: VariantEncodable>(_ lhs: Godot.GodotString, _ rhs: Value) -> Godot.GodotString {
+    static internal func _operatorModule<Value: VariantStorableIn>(_ lhs: Godot.GodotString, _ rhs: Value) -> Godot.GodotString {
         let __temporary = GodotString()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
@@ -1316,7 +1316,7 @@ extension GodotString {
         return __temporary
     }
 
-    static internal func _operatorModule<Value: VariantEncodable & VariantDecodable>(_ lhs: Godot.GodotString, _ rhs: Godot.GodotArray<Value>) -> Godot.GodotString {
+    static internal func _operatorModule<Value: VariantStorable>(_ lhs: Godot.GodotString, _ rhs: Godot.GodotArray<Value>) -> Godot.GodotString {
         let __temporary = GodotString()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in
@@ -1328,7 +1328,7 @@ extension GodotString {
         return __temporary
     }
 
-    static internal func _operatorIn<Value: VariantEncodable & VariantDecodable>(_ lhs: Godot.GodotString, _ rhs: Godot.GodotArray<Value>) -> Bool {
+    static internal func _operatorIn<Value: VariantStorable>(_ lhs: Godot.GodotString, _ rhs: Godot.GodotArray<Value>) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in
@@ -1814,7 +1814,7 @@ extension GodotString {
         return __temporary
     }
 
-    internal func _format<Value: VariantEncodable>(values: Value, placeholder: Godot.GodotString = "{_}") -> Godot.GodotString {
+    internal func _format<Value: VariantStorableIn>(values: Value, placeholder: Godot.GodotString = "{_}") -> Godot.GodotString {
         let __temporary = Godot.GodotString()
         Godot.Variant.withStorageUnsafeRawPointer(to: values) { (__ptr_values) in
             placeholder.withUnsafeRawPointer { (__ptr_placeholder) in

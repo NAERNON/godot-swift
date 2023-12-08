@@ -695,7 +695,7 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackInsertKey<Value: VariantEncodable>(trackIdx: Int32, time: Double, key: Value, transition: Double = 1) -> Int32 {
+    public func trackInsertKey<Value: VariantStorableIn>(trackIdx: Int32, time: Double, key: Value, transition: Double = 1) -> Int32 {
         var __temporary = Int32()
         withUnsafePointer(to: trackIdx) { (__ptr_trackIdx) in
             withUnsafePointer(to: time) { (__ptr_time) in
@@ -775,7 +775,7 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackSetKeyValue<Value: VariantEncodable>(trackIdx: Int32, key: Int32, value: Value) {
+    public func trackSetKeyValue<Value: VariantStorableIn>(trackIdx: Int32, key: Int32, value: Value) {
         withUnsafePointer(to: trackIdx) { (__ptr_trackIdx) in
             withUnsafePointer(to: key) { (__ptr_key) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in

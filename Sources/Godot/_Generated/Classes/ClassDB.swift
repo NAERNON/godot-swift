@@ -334,7 +334,7 @@ open class ClassDB: Object {
         }
         }
     }()
-    public func classSetProperty<Value: VariantEncodable>(object: Godot.Object?, property: Godot.GodotStringName, value: Value) -> Godot.ErrorType {
+    public func classSetProperty<Value: VariantStorableIn>(object: Godot.Object?, property: Godot.GodotStringName, value: Value) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in

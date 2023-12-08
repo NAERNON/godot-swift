@@ -1,7 +1,7 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct GodotArray<Element> where Element : VariantEncodable & VariantDecodable {}
+public struct GodotArray<Element> where Element : VariantStorable {}
 
 extension GodotArray {
     // MARK: Constructors
@@ -24,7 +24,7 @@ extension GodotArray {
     // MARK: Type
     
     private func setTypedIfApplicable() {
-        guard let storageType = Element.encodedVariantStorageType else {
+        guard let storageType = Element.variantStorageType else {
             return
         }
         
@@ -71,10 +71,10 @@ extension GodotArray: RandomAccessCollection {}
 extension GodotArray: RangeReplaceableCollection {
     public subscript(index: Int) -> Element {
         get {
-            Element.decodeCompatibleVariantStorage(self._getValue(at: Int64(index)))
+            Element.convertFromCheckedStorage(consuming: self._getValue(at: Int64(index)))
         }
         set(newValue) {
-            Element.withEncodedVariantStorage(newValue) { storage in
+            Element.withValueStorage(newValue) { storage in
                 self._setValue(storage, at: Int64(index))
             }
         }

@@ -166,7 +166,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
         }
     }()
-    public func addMeshArray<Value: VariantEncodable & VariantDecodable>(_ meshArray: Godot.GodotArray<Value>, xform: Godot.Transform3D) {
+    public func addMeshArray<Value: VariantStorable>(_ meshArray: Godot.GodotArray<Value>, xform: Godot.Transform3D) {
         meshArray.withUnsafeRawPointer { (__ptr_meshArray) in
             withUnsafePointer(to: xform) { (__ptr_xform) in
                 withUnsafeArgumentPackPointer(__ptr_meshArray, __ptr_xform) { (__accessPtr) in

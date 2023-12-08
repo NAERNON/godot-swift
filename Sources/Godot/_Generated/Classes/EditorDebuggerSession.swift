@@ -28,7 +28,7 @@ open class EditorDebuggerSession: RefCounted {
         }
         }
     }()
-    public func sendMessage<Value: VariantEncodable & VariantDecodable>(_ message: Godot.GodotString, data: Godot.GodotArray<Value> = []) {
+    public func sendMessage<Value: VariantStorable>(_ message: Godot.GodotString, data: Godot.GodotArray<Value> = []) {
         message.withUnsafeRawPointer { (__ptr_message) in
             data.withUnsafeRawPointer { (__ptr_data) in
                 withUnsafeArgumentPackPointer(__ptr_message, __ptr_data) { (__accessPtr) in
@@ -52,7 +52,7 @@ open class EditorDebuggerSession: RefCounted {
         }
         }
     }()
-    public func toggleProfiler<Value: VariantEncodable & VariantDecodable>(_ profiler: Godot.GodotString, enable: Bool, data: Godot.GodotArray<Value> = []) {
+    public func toggleProfiler<Value: VariantStorable>(_ profiler: Godot.GodotString, enable: Bool, data: Godot.GodotArray<Value> = []) {
         profiler.withUnsafeRawPointer { (__ptr_profiler) in
             withUnsafePointer(to: enable) { (__ptr_enable) in
                 data.withUnsafeRawPointer { (__ptr_data) in

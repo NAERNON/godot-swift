@@ -483,7 +483,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func pushMeta<Value: VariantEncodable>(data: Value) {
+    public func pushMeta<Value: VariantStorableIn>(data: Value) {
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { (__ptr_data) in
             withUnsafeArgumentPackPointer(__ptr_data) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -911,7 +911,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantEncodable & VariantDecodable>(args: Godot.GodotArray<Value>) {
+    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(args: Godot.GodotArray<Value>) {
         args.withUnsafeRawPointer { (__ptr_args) in
             withUnsafeArgumentPackPointer(__ptr_args) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -2349,7 +2349,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    private func __setEffects<Value: VariantEncodable & VariantDecodable>(_ effects: Godot.GodotArray<Value>) {
+    private func __setEffects<Value: VariantStorable>(_ effects: Godot.GodotArray<Value>) {
         effects.withUnsafeRawPointer { (__ptr_effects) in
             withUnsafeArgumentPackPointer(__ptr_effects) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -2393,7 +2393,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func installEffect<Value: VariantEncodable>(_ effect: Value) {
+    public func installEffect<Value: VariantStorableIn>(_ effect: Value) {
         Godot.Variant.withStorageUnsafeRawPointer(to: effect) { (__ptr_effect) in
             withUnsafeArgumentPackPointer(__ptr_effect) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

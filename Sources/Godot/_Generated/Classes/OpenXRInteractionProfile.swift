@@ -104,7 +104,7 @@ open class OpenXRInteractionProfile: Resource {
         }
         }
     }()
-    private func __setBindings<Value: VariantEncodable & VariantDecodable>(_ bindings: Godot.GodotArray<Value>) {
+    private func __setBindings<Value: VariantStorable>(_ bindings: Godot.GodotArray<Value>) {
         bindings.withUnsafeRawPointer { (__ptr_bindings) in
             withUnsafeArgumentPackPointer(__ptr_bindings) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

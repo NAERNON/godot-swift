@@ -392,7 +392,7 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setStructuredTextBidiOverrideOptions<Value: VariantEncodable & VariantDecodable>(args: Godot.GodotArray<Value>) {
+    private func __setStructuredTextBidiOverrideOptions<Value: VariantStorable>(args: Godot.GodotArray<Value>) {
         args.withUnsafeRawPointer { (__ptr_args) in
             withUnsafeArgumentPackPointer(__ptr_args) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -4366,7 +4366,7 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLineGutterMetadata<Value: VariantEncodable>(line: Int32, gutter: Int32, metadata: Value) {
+    public func setLineGutterMetadata<Value: VariantStorableIn>(line: Int32, gutter: Int32, metadata: Value) {
         withUnsafePointer(to: line) { (__ptr_line) in
             withUnsafePointer(to: gutter) { (__ptr_gutter) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: metadata) { (__ptr_metadata) in

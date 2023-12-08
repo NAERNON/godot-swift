@@ -2016,7 +2016,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func materialSetParam<Value: VariantEncodable>(material: Godot.RID, parameter: Godot.GodotStringName, value: Value) {
+    public func materialSetParam<Value: VariantStorableIn>(material: Godot.RID, parameter: Godot.GodotStringName, value: Value) {
         material.withUnsafeRawPointer { (__ptr_material) in
             parameter.withUnsafeRawPointer { (__ptr_parameter) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
@@ -2306,7 +2306,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshAddSurfaceFromArrays<Value3: VariantEncodable & VariantDecodable, Value4: VariantEncodable & VariantDecodable>(mesh: Godot.RID, primitive: Godot.RenderingServer.PrimitiveType, arrays: Godot.GodotArray<Value3>, blendShapes: Godot.GodotArray<Value4> = [], lods: Godot.GodotDictionary = [:], compressFormat: Godot.RenderingServer.ArrayFormat = RenderingServer.ArrayFormat(rawValue: 0)) {
+    public func meshAddSurfaceFromArrays<Value3: VariantStorable, Value4: VariantStorable>(mesh: Godot.RID, primitive: Godot.RenderingServer.PrimitiveType, arrays: Godot.GodotArray<Value3>, blendShapes: Godot.GodotArray<Value4> = [], lods: Godot.GodotDictionary = [:], compressFormat: Godot.RenderingServer.ArrayFormat = RenderingServer.ArrayFormat(rawValue: 0)) {
         mesh.withUnsafeRawPointer { (__ptr_mesh) in
             withUnsafePointer(to: primitive) { (__ptr_primitive) in
                 arrays.withUnsafeRawPointer { (__ptr_arrays) in
@@ -9780,7 +9780,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func instanceGeometrySetShaderParameter<Value: VariantEncodable>(instance: Godot.RID, parameter: Godot.GodotStringName, value: Value) {
+    public func instanceGeometrySetShaderParameter<Value: VariantStorableIn>(instance: Godot.RID, parameter: Godot.GodotStringName, value: Value) {
         instance.withUnsafeRawPointer { (__ptr_instance) in
             parameter.withUnsafeRawPointer { (__ptr_parameter) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
@@ -12126,7 +12126,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func globalShaderParameterAdd<Value: VariantEncodable>(name: Godot.GodotStringName, type: Godot.RenderingServer.GlobalShaderParameterType, defaultValue: Value) {
+    public func globalShaderParameterAdd<Value: VariantStorableIn>(name: Godot.GodotStringName, type: Godot.RenderingServer.GlobalShaderParameterType, defaultValue: Value) {
         name.withUnsafeRawPointer { (__ptr_name) in
             withUnsafePointer(to: type) { (__ptr_type) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: defaultValue) { (__ptr_defaultValue) in
@@ -12196,7 +12196,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func globalShaderParameterSet<Value: VariantEncodable>(name: Godot.GodotStringName, value: Value) {
+    public func globalShaderParameterSet<Value: VariantStorableIn>(name: Godot.GodotStringName, value: Value) {
         name.withUnsafeRawPointer { (__ptr_name) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in
@@ -12220,7 +12220,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func globalShaderParameterSetOverride<Value: VariantEncodable>(name: Godot.GodotStringName, value: Value) {
+    public func globalShaderParameterSetOverride<Value: VariantStorableIn>(name: Godot.GodotStringName, value: Value) {
         name.withUnsafeRawPointer { (__ptr_name) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in

@@ -58,7 +58,7 @@ open class ShaderMaterial: Material {
         }
         }
     }()
-    public func setShaderParameter<Value: VariantEncodable>(param: Godot.GodotStringName, value: Value) {
+    public func setShaderParameter<Value: VariantStorableIn>(param: Godot.GodotStringName, value: Value) {
         param.withUnsafeRawPointer { (__ptr_param) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_param, __ptr_value) { (__accessPtr) in

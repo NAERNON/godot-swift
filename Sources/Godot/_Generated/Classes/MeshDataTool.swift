@@ -576,7 +576,7 @@ open class MeshDataTool: RefCounted {
         }
         }
     }()
-    public func setVertexMeta<Value: VariantEncodable>(idx: Int32, meta: Value) {
+    public func setVertexMeta<Value: VariantStorableIn>(idx: Int32, meta: Value) {
         withUnsafePointer(to: idx) { (__ptr_idx) in
             Godot.Variant.withStorageUnsafeRawPointer(to: meta) { (__ptr_meta) in
                 withUnsafeArgumentPackPointer(__ptr_idx, __ptr_meta) { (__accessPtr) in
@@ -732,7 +732,7 @@ open class MeshDataTool: RefCounted {
         }
         }
     }()
-    public func setEdgeMeta<Value: VariantEncodable>(idx: Int32, meta: Value) {
+    public func setEdgeMeta<Value: VariantStorableIn>(idx: Int32, meta: Value) {
         withUnsafePointer(to: idx) { (__ptr_idx) in
             Godot.Variant.withStorageUnsafeRawPointer(to: meta) { (__ptr_meta) in
                 withUnsafeArgumentPackPointer(__ptr_idx, __ptr_meta) { (__accessPtr) in
@@ -838,7 +838,7 @@ open class MeshDataTool: RefCounted {
         }
         }
     }()
-    public func setFaceMeta<Value: VariantEncodable>(idx: Int32, meta: Value) {
+    public func setFaceMeta<Value: VariantStorableIn>(idx: Int32, meta: Value) {
         withUnsafePointer(to: idx) { (__ptr_idx) in
             Godot.Variant.withStorageUnsafeRawPointer(to: meta) { (__ptr_meta) in
                 withUnsafeArgumentPackPointer(__ptr_idx, __ptr_meta) { (__accessPtr) in
