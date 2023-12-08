@@ -315,8 +315,8 @@ open class XRServer: Object {
         }
         }
     }()
-    public func interfaces() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func interfaces() -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

@@ -122,8 +122,8 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
-    private func __getUniqueNames() -> Godot.GodotTypedArray<Godot.GodotString> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotString>()
+    private func __getUniqueNames() -> Godot.GodotArray<Godot.GodotString> {
+        let __temporary = Godot.GodotArray<Godot.GodotString>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -144,7 +144,7 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
-    private func __setUniqueNames(_ uniqueNames: Godot.GodotTypedArray<Godot.GodotString>) {
+    private func __setUniqueNames(_ uniqueNames: Godot.GodotArray<Godot.GodotString>) {
         uniqueNames.withUnsafeRawPointer { (__ptr_uniqueNames) in
             withUnsafeArgumentPackPointer(__ptr_uniqueNames) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -273,7 +273,7 @@ open class GLTFSkeleton: Resource {
         }
     }
 
-    public var uniqueNames: Godot.GodotTypedArray<Godot.GodotString> {
+    public var uniqueNames: Godot.GodotArray<Godot.GodotString> {
         get {
             __getUniqueNames()
         }

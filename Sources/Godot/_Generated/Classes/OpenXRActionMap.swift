@@ -12,7 +12,7 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    private func __setActionSets(_ actionSets: Godot.GodotArray) {
+    private func __setActionSets<Value: VariantEncodable & VariantDecodable>(_ actionSets: Godot.GodotArray<Value>) {
         actionSets.withUnsafeRawPointer { (__ptr_actionSets) in
             withUnsafeArgumentPackPointer(__ptr_actionSets) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -34,8 +34,8 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    private func __getActionSets() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    private func __getActionSets() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -178,7 +178,7 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    private func __setInteractionProfiles(_ interactionProfiles: Godot.GodotArray) {
+    private func __setInteractionProfiles<Value: VariantEncodable & VariantDecodable>(_ interactionProfiles: Godot.GodotArray<Value>) {
         interactionProfiles.withUnsafeRawPointer { (__ptr_interactionProfiles) in
             withUnsafeArgumentPackPointer(__ptr_interactionProfiles) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -200,8 +200,8 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    private func __getInteractionProfiles() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    private func __getInteractionProfiles() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -355,7 +355,7 @@ open class OpenXRActionMap: Resource {
         }
     }
 
-    public var actionSets: Godot.GodotArray {
+    public var actionSets: Godot.GodotArray<Variant> {
         get {
             __getActionSets()
         }
@@ -366,7 +366,7 @@ open class OpenXRActionMap: Resource {
         }
     }
 
-    public var interactionProfiles: Godot.GodotArray {
+    public var interactionProfiles: Godot.GodotArray<Variant> {
         get {
             __getInteractionProfiles()
         }

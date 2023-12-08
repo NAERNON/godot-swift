@@ -1,11 +1,12 @@
 import GodotExtensionHeaders
 
 extension Variant {
-    /// The storage type  of a variant.
+    /// The storage type of a variant.
     ///
     /// Representation and storage types are different.
-    /// For instance, a variant storage type of `int`
-    /// can store several types of integers.
+    /// For instance, `int8`, `int16` and `int32`
+    /// have different `RepresentationType`,
+    /// but the same `StorageType`: `int`.
     public enum StorageType: UInt32 {
         case `nil`
         
@@ -56,6 +57,11 @@ extension Variant {
     }
     
     /// The representation type of a variant.
+    ///
+    /// Representation and storage types are different.
+    /// For instance, `int8`, `int16` and `int32`
+    /// have different `RepresentationType`,
+    /// but the same `StorageType`: `int`.
     public enum RepresentationType: UInt32 {
         case `nil`
         case bool
@@ -105,10 +111,6 @@ extension Variant {
         case packedColorArray
         
         /// Returns the storage type associated with the representation type.
-        ///
-        /// For example, the representation type `uint8` will
-        /// be stored inside a variant as an `Int`, so
-        /// its storage type will be `int`.
         public var storageType: StorageType {
             switch self {
             case .nil: .nil

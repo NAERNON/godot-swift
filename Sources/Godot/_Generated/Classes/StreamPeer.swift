@@ -38,8 +38,8 @@ open class StreamPeer: RefCounted {
         }
         }
     }()
-    public func putPartialData(_ data: Godot.PackedByteArray) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func putPartialData(_ data: Godot.PackedByteArray) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         data.withUnsafeRawPointer { (__ptr_data) in
             withUnsafeArgumentPackPointer(__ptr_data) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -64,8 +64,8 @@ open class StreamPeer: RefCounted {
         }
         }
     }()
-    public func data(bytes: Int32) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func data(bytes: Int32) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         withUnsafePointer(to: bytes) { (__ptr_bytes) in
             withUnsafeArgumentPackPointer(__ptr_bytes) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -90,8 +90,8 @@ open class StreamPeer: RefCounted {
         }
         }
     }()
-    public func partialData(bytes: Int32) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func partialData(bytes: Int32) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         withUnsafePointer(to: bytes) { (__ptr_bytes) in
             withUnsafeArgumentPackPointer(__ptr_bytes) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -446,7 +446,7 @@ open class StreamPeer: RefCounted {
         }
         }
     }()
-    public func putVar<Variant1 : VariantEncodable>(value: Variant1, fullObjects: Bool = false) {
+    public func putVar<Value: VariantEncodable>(value: Value, fullObjects: Bool = false) {
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafePointer(to: fullObjects) { (__ptr_fullObjects) in
                 withUnsafeArgumentPackPointer(__ptr_value, __ptr_fullObjects) { (__accessPtr) in

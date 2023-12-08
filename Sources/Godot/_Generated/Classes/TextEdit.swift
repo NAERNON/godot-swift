@@ -392,7 +392,7 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __setStructuredTextBidiOverrideOptions(args: Godot.GodotArray) {
+    private func __setStructuredTextBidiOverrideOptions<Value: VariantEncodable & VariantDecodable>(args: Godot.GodotArray<Value>) {
         args.withUnsafeRawPointer { (__ptr_args) in
             withUnsafeArgumentPackPointer(__ptr_args) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -414,8 +414,8 @@ open class TextEdit: Control {
         }
         }
     }()
-    private func __getStructuredTextBidiOverrideOptions() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    private func __getStructuredTextBidiOverrideOptions() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -4366,7 +4366,7 @@ open class TextEdit: Control {
         }
         }
     }()
-    public func setLineGutterMetadata<Variant1 : VariantEncodable>(line: Int32, gutter: Int32, metadata: Variant1) {
+    public func setLineGutterMetadata<Value: VariantEncodable>(line: Int32, gutter: Int32, metadata: Value) {
         withUnsafePointer(to: line) { (__ptr_line) in
             withUnsafePointer(to: gutter) { (__ptr_gutter) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: metadata) { (__ptr_metadata) in
@@ -5409,7 +5409,7 @@ open class TextEdit: Control {
         }
     }
 
-    public var structuredTextBidiOverrideOptions: Godot.GodotArray {
+    public var structuredTextBidiOverrideOptions: Godot.GodotArray<Variant> {
         get {
             __getStructuredTextBidiOverrideOptions()
         }

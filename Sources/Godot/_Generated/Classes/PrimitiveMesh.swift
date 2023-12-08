@@ -5,8 +5,8 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class PrimitiveMesh: Mesh {
-    open func _createMeshArray() -> Godot.GodotArray {
-        Godot.GodotArray()
+    open func _createMeshArray() -> Godot.GodotArray<Variant> {
+        Godot.GodotArray<Variant>()
     }
 
     private static var __method_binding_set_material: GDExtensionMethodBindPtr = {
@@ -62,8 +62,8 @@ open class PrimitiveMesh: Mesh {
         }
         }
     }()
-    public func meshArrays() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func meshArrays() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

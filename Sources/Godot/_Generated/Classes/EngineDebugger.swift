@@ -134,7 +134,7 @@ open class EngineDebugger: Object {
         }
         }
     }()
-    public func profilerAddFrameData(name: Godot.GodotStringName, data: Godot.GodotArray) {
+    public func profilerAddFrameData<Value: VariantEncodable & VariantDecodable>(name: Godot.GodotStringName, data: Godot.GodotArray<Value>) {
         name.withUnsafeRawPointer { (__ptr_name) in
             data.withUnsafeRawPointer { (__ptr_data) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_data) { (__accessPtr) in
@@ -158,7 +158,7 @@ open class EngineDebugger: Object {
         }
         }
     }()
-    public func profilerEnable(name: Godot.GodotStringName, enable: Bool, arguments: Godot.GodotArray = []) {
+    public func profilerEnable<Value: VariantEncodable & VariantDecodable>(name: Godot.GodotStringName, enable: Bool, arguments: Godot.GodotArray<Value> = []) {
         name.withUnsafeRawPointer { (__ptr_name) in
             withUnsafePointer(to: enable) { (__ptr_enable) in
                 arguments.withUnsafeRawPointer { (__ptr_arguments) in
@@ -256,7 +256,7 @@ open class EngineDebugger: Object {
         }
         }
     }()
-    public func sendMessage(_ message: Godot.GodotString, data: Godot.GodotArray) {
+    public func sendMessage<Value: VariantEncodable & VariantDecodable>(_ message: Godot.GodotString, data: Godot.GodotArray<Value>) {
         message.withUnsafeRawPointer { (__ptr_message) in
             data.withUnsafeRawPointer { (__ptr_data) in
                 withUnsafeArgumentPackPointer(__ptr_message, __ptr_data) { (__accessPtr) in

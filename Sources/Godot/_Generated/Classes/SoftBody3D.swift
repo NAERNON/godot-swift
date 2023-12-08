@@ -320,8 +320,8 @@ open class SoftBody3D: MeshInstance3D {
         }
         }
     }()
-    public func collisionExceptions() -> Godot.GodotTypedArray<Godot.PhysicsBody3D?> {
-        let __temporary = Godot.GodotTypedArray<Godot.PhysicsBody3D?>()
+    public func collisionExceptions() -> Godot.GodotArray<Godot.PhysicsBody3D?> {
+        let __temporary = Godot.GodotArray<Godot.PhysicsBody3D?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

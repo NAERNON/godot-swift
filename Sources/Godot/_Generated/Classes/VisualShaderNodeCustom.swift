@@ -45,7 +45,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
         Godot.GodotString()
     }
 
-    open func _getCode(inputVars: Godot.GodotTypedArray<Godot.GodotString>, outputVars: Godot.GodotTypedArray<Godot.GodotString>, mode: Godot.Shader.Mode, type: Godot.VisualShader.GodotType) -> Godot.GodotString {
+    open func _getCode(inputVars: Godot.GodotArray<Godot.GodotString>, outputVars: Godot.GodotArray<Godot.GodotString>, mode: Godot.Shader.Mode, type: Godot.VisualShader.GodotType) -> Godot.GodotString {
         Godot.GodotString()
     }
 
@@ -165,8 +165,8 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
             var returnValue = instance
         ._getCode(
-            inputVars: Godot.GodotTypedArray<Godot.GodotString>(godotExtensionPointer: args[0]!),
-            outputVars: Godot.GodotTypedArray<Godot.GodotString>(godotExtensionPointer: args[1]!),
+            inputVars: Godot.GodotArray<Godot.GodotString>(godotExtensionPointer: args[0]!),
+            outputVars: Godot.GodotArray<Godot.GodotString>(godotExtensionPointer: args[1]!),
             mode: args[2]!.load(as: Godot.Shader.Mode.self),
             type: args[3]!.load(as: Godot.VisualShader.GodotType.self)
         )

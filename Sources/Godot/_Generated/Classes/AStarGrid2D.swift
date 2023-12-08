@@ -669,8 +669,8 @@ open class AStarGrid2D: RefCounted {
         }
         }
     }()
-    public func idPath(fromId: Godot.Vector2i, toId: Godot.Vector2i) -> Godot.GodotTypedArray<Godot.Vector2i> {
-        let __temporary = Godot.GodotTypedArray<Godot.Vector2i>()
+    public func idPath(fromId: Godot.Vector2i, toId: Godot.Vector2i) -> Godot.GodotArray<Godot.Vector2i> {
+        let __temporary = Godot.GodotArray<Godot.Vector2i>()
         withUnsafePointer(to: fromId) { (__ptr_fromId) in
             withUnsafePointer(to: toId) { (__ptr_toId) in
                 withUnsafeArgumentPackPointer(__ptr_fromId, __ptr_toId) { (__accessPtr) in

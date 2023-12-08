@@ -118,6 +118,8 @@ extension Variant: Equatable {
 }
 
 extension Variant: VariantEncodable, VariantDecodable {
+    public static var encodedVariantStorageType: StorageType? { nil }
+    
     public static func encodeVariantStorage(_ value: consuming Variant) -> Storage {
         value.storage.copy()
     }

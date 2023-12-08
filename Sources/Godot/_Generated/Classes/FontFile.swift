@@ -764,8 +764,8 @@ open class FontFile: Font {
         }
         }
     }()
-    public func sizeCacheList(cacheIndex: Int32) -> Godot.GodotTypedArray<Godot.Vector2i> {
-        let __temporary = Godot.GodotTypedArray<Godot.Vector2i>()
+    public func sizeCacheList(cacheIndex: Int32) -> Godot.GodotArray<Godot.Vector2i> {
+        let __temporary = Godot.GodotArray<Godot.Vector2i>()
         withUnsafePointer(to: cacheIndex) { (__ptr_cacheIndex) in
             withUnsafeArgumentPackPointer(__ptr_cacheIndex) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -1870,8 +1870,8 @@ open class FontFile: Font {
         }
         }
     }()
-    public func kerningList(cacheIndex: Int32, size: Int32) -> Godot.GodotTypedArray<Godot.Vector2i> {
-        let __temporary = Godot.GodotTypedArray<Godot.Vector2i>()
+    public func kerningList(cacheIndex: Int32, size: Int32) -> Godot.GodotArray<Godot.Vector2i> {
+        let __temporary = Godot.GodotArray<Godot.Vector2i>()
         withUnsafePointer(to: cacheIndex) { (__ptr_cacheIndex) in
             withUnsafePointer(to: size) { (__ptr_size) in
                 withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_size) { (__accessPtr) in

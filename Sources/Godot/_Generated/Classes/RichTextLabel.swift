@@ -483,7 +483,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func pushMeta<Variant1 : VariantEncodable>(data: Variant1) {
+    public func pushMeta<Value: VariantEncodable>(data: Value) {
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { (__ptr_data) in
             withUnsafeArgumentPackPointer(__ptr_data) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -911,7 +911,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    private func __setStructuredTextBidiOverrideOptions(args: Godot.GodotArray) {
+    private func __setStructuredTextBidiOverrideOptions<Value: VariantEncodable & VariantDecodable>(args: Godot.GodotArray<Value>) {
         args.withUnsafeRawPointer { (__ptr_args) in
             withUnsafeArgumentPackPointer(__ptr_args) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -933,8 +933,8 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    private func __getStructuredTextBidiOverrideOptions() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    private func __getStructuredTextBidiOverrideOptions() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -2349,7 +2349,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    private func __setEffects(_ effects: Godot.GodotArray) {
+    private func __setEffects<Value: VariantEncodable & VariantDecodable>(_ effects: Godot.GodotArray<Value>) {
         effects.withUnsafeRawPointer { (__ptr_effects) in
             withUnsafeArgumentPackPointer(__ptr_effects) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -2371,8 +2371,8 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    private func __getEffects() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    private func __getEffects() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -2393,7 +2393,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func installEffect<Variant1 : VariantEncodable>(_ effect: Variant1) {
+    public func installEffect<Value: VariantEncodable>(_ effect: Value) {
         Godot.Variant.withStorageUnsafeRawPointer(to: effect) { (__ptr_effect) in
             withUnsafeArgumentPackPointer(__ptr_effect) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -2573,7 +2573,7 @@ open class RichTextLabel: Control {
         }
     }
 
-    public var effects: Godot.GodotArray {
+    public var effects: Godot.GodotArray<Variant> {
         get {
             __getEffects()
         }
@@ -2716,7 +2716,7 @@ open class RichTextLabel: Control {
         }
     }
 
-    public var structuredTextBidiOverrideOptions: Godot.GodotArray {
+    public var structuredTextBidiOverrideOptions: Godot.GodotArray<Variant> {
         get {
             __getStructuredTextBidiOverrideOptions()
         }

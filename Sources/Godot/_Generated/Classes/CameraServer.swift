@@ -80,8 +80,8 @@ open class CameraServer: Object {
         }
         }
     }()
-    public func feeds() -> Godot.GodotTypedArray<Godot.CameraFeed?> {
-        let __temporary = Godot.GodotTypedArray<Godot.CameraFeed?>()
+    public func feeds() -> Godot.GodotArray<Godot.CameraFeed?> {
+        let __temporary = Godot.GodotArray<Godot.CameraFeed?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

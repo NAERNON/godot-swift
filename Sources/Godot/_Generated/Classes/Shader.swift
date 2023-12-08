@@ -150,8 +150,8 @@ open class Shader: Resource {
         }
         }
     }()
-    public func shaderUniformList(getGroups: Bool = false) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func shaderUniformList(getGroups: Bool = false) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         withUnsafePointer(to: getGroups) { (__ptr_getGroups) in
             withUnsafeArgumentPackPointer(__ptr_getGroups) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

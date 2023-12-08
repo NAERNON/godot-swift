@@ -858,8 +858,8 @@ open class Node3D: Node {
         }
         }
     }()
-    public func gizmos() -> Godot.GodotTypedArray<Godot.Node3DGizmo?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Node3DGizmo?>()
+    public func gizmos() -> Godot.GodotArray<Godot.Node3DGizmo?> {
+        let __temporary = Godot.GodotArray<Godot.Node3DGizmo?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

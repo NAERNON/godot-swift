@@ -250,7 +250,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func setBidiOverride(_ override: Godot.GodotArray) {
+    public func setBidiOverride<Value: VariantEncodable & VariantDecodable>(_ override: Godot.GodotArray<Value>) {
         override.withUnsafeRawPointer { (__ptr_override) in
             withUnsafeArgumentPackPointer(__ptr_override) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -326,7 +326,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func addString<Variant1 : VariantEncodable>(text: Godot.GodotString, font: Godot.Font?, fontSize: Int32, language: Godot.GodotString = "", meta: Variant1 = Variant()) -> Bool {
+    public func addString<Value: VariantEncodable>(text: Godot.GodotString, font: Godot.Font?, fontSize: Int32, language: Godot.GodotString = "", meta: Value = Variant()) -> Bool {
         var __temporary = Bool()
         text.withUnsafeRawPointer { (__ptr_text) in
             font.withUnsafeRawPointer { (__ptr_font) in
@@ -362,7 +362,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func addObject<Variant1 : VariantEncodable>(key: Variant1, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, length: Int32 = 1, baseline: Double = 0.0) -> Bool {
+    public func addObject<Value: VariantEncodable>(key: Value, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, length: Int32 = 1, baseline: Double = 0.0) -> Bool {
         var __temporary = Bool()
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
             withUnsafePointer(to: size) { (__ptr_size) in
@@ -396,7 +396,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func resizeObject<Variant1 : VariantEncodable>(key: Variant1, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, baseline: Double = 0.0) -> Bool {
+    public func resizeObject<Value: VariantEncodable>(key: Value, size: Godot.Vector2, inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!, baseline: Double = 0.0) -> Bool {
         var __temporary = Bool()
         Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
             withUnsafePointer(to: size) { (__ptr_size) in
@@ -850,8 +850,8 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineObjects(line: Int32) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func lineObjects(line: Int32) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         withUnsafePointer(to: line) { (__ptr_line) in
             withUnsafeArgumentPackPointer(__ptr_line) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -876,7 +876,7 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineObjectRect<Variant1 : VariantEncodable>(line: Int32, key: Variant1) -> Godot.Rect2 {
+    public func lineObjectRect<Value: VariantEncodable>(line: Int32, key: Value) -> Godot.Rect2 {
         var __temporary = Godot.Rect2()
         withUnsafePointer(to: line) { (__ptr_line) in
             Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in

@@ -12,7 +12,7 @@ open class RDPipelineSpecializationConstant: RefCounted {
         }
         }
     }()
-    private func __setValue<Variant1 : VariantEncodable>(_ value: Variant1) {
+    private func __setValue<Value: VariantEncodable>(_ value: Value) {
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

@@ -355,8 +355,8 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     open func _bodyRemoveCollisionException(body: Godot.RID, exceptedBody: Godot.RID) {
     }
 
-    open func _bodyGetCollisionExceptions(body: Godot.RID) -> Godot.GodotTypedArray<Godot.RID> {
-        Godot.GodotTypedArray<Godot.RID>()
+    open func _bodyGetCollisionExceptions(body: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+        Godot.GodotArray<Godot.RID>()
     }
 
     open func _bodySetMaxContactsReported(body: Godot.RID, amount: Int32) {
@@ -434,8 +434,8 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     open func _softBodyRemoveCollisionException(body: Godot.RID, bodyB: Godot.RID) {
     }
 
-    open func _softBodyGetCollisionExceptions(body: Godot.RID) -> Godot.GodotTypedArray<Godot.RID> {
-        Godot.GodotTypedArray<Godot.RID>()
+    open func _softBodyGetCollisionExceptions(body: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+        Godot.GodotArray<Godot.RID>()
     }
 
     open func _softBodySetState(body: Godot.RID, state: Godot.PhysicsServer3D.BodyState, variant: Godot.Variant) {

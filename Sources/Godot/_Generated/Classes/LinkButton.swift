@@ -288,7 +288,7 @@ open class LinkButton: BaseButton {
         }
         }
     }()
-    private func __setStructuredTextBidiOverrideOptions(args: Godot.GodotArray) {
+    private func __setStructuredTextBidiOverrideOptions<Value: VariantEncodable & VariantDecodable>(args: Godot.GodotArray<Value>) {
         args.withUnsafeRawPointer { (__ptr_args) in
             withUnsafeArgumentPackPointer(__ptr_args) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -310,8 +310,8 @@ open class LinkButton: BaseButton {
         }
         }
     }()
-    private func __getStructuredTextBidiOverrideOptions() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    private func __getStructuredTextBidiOverrideOptions() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -391,7 +391,7 @@ open class LinkButton: BaseButton {
         }
     }
 
-    public var structuredTextBidiOverrideOptions: Godot.GodotArray {
+    public var structuredTextBidiOverrideOptions: Godot.GodotArray<Variant> {
         get {
             __getStructuredTextBidiOverrideOptions()
         }

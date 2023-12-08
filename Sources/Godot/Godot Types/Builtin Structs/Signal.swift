@@ -55,7 +55,7 @@ extension Signal {
         _isConnected(callable: callable)
     }
     
-    public func connections() -> GodotArray {
+    public func connections() -> GodotArray<Variant> {
         _connections()
     }
     

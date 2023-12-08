@@ -110,7 +110,7 @@ open class NavigationPathQueryResult3D: RefCounted {
         }
         }
     }()
-    private func __setPathRids(_ pathRids: Godot.GodotTypedArray<Godot.RID>) {
+    private func __setPathRids(_ pathRids: Godot.GodotArray<Godot.RID>) {
         pathRids.withUnsafeRawPointer { (__ptr_pathRids) in
             withUnsafeArgumentPackPointer(__ptr_pathRids) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -132,8 +132,8 @@ open class NavigationPathQueryResult3D: RefCounted {
         }
         }
     }()
-    private func __getPathRids() -> Godot.GodotTypedArray<Godot.RID> {
-        let __temporary = Godot.GodotTypedArray<Godot.RID>()
+    private func __getPathRids() -> Godot.GodotArray<Godot.RID> {
+        let __temporary = Godot.GodotArray<Godot.RID>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -231,7 +231,7 @@ open class NavigationPathQueryResult3D: RefCounted {
         }
     }
 
-    public var pathRids: Godot.GodotTypedArray<Godot.RID> {
+    public var pathRids: Godot.GodotArray<Godot.RID> {
         get {
             __getPathRids()
         }

@@ -41,8 +41,8 @@ open class EditorVCSInterface: Object {
     open func _setCredentials(username: Godot.GodotString, password: Godot.GodotString, sshPublicKeyPath: Godot.GodotString, sshPrivateKeyPath: Godot.GodotString, sshPassphrase: Godot.GodotString) {
     }
 
-    open func _getModifiedFilesData() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getModifiedFilesData() -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     open func _stageFile(filePath: Godot.GodotString) {
@@ -57,8 +57,8 @@ open class EditorVCSInterface: Object {
     open func _commit(msg: Godot.GodotString) {
     }
 
-    open func _getDiff(identifier: Godot.GodotString, area: Int32) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getDiff(identifier: Godot.GodotString, area: Int32) -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     open func _shutDown() -> Bool {
@@ -69,16 +69,16 @@ open class EditorVCSInterface: Object {
         Godot.GodotString()
     }
 
-    open func _getPreviousCommits(maxCommits: Int32) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getPreviousCommits(maxCommits: Int32) -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
-    open func _getBranchList() -> Godot.GodotTypedArray<Godot.GodotString> {
-        Godot.GodotTypedArray<Godot.GodotString>()
+    open func _getBranchList() -> Godot.GodotArray<Godot.GodotString> {
+        Godot.GodotArray<Godot.GodotString>()
     }
 
-    open func _getRemotes() -> Godot.GodotTypedArray<Godot.GodotString> {
-        Godot.GodotTypedArray<Godot.GodotString>()
+    open func _getRemotes() -> Godot.GodotArray<Godot.GodotString> {
+        Godot.GodotArray<Godot.GodotString>()
     }
 
     open func _createBranch(branchName: Godot.GodotString) {
@@ -110,8 +110,8 @@ open class EditorVCSInterface: Object {
     open func _fetch(remote: Godot.GodotString) {
     }
 
-    open func _getLineDiff(filePath: Godot.GodotString, text: Godot.GodotString) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getLineDiff(filePath: Godot.GodotString, text: Godot.GodotString) -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     private static var __method_binding_create_diff_line: GDExtensionMethodBindPtr = {
@@ -277,7 +277,7 @@ open class EditorVCSInterface: Object {
         }
         }
     }()
-    public func addDiffHunksIntoDiffFile(_ diffFile: Godot.GodotDictionary, diffHunks: Godot.GodotTypedArray<Godot.GodotDictionary>) -> Godot.GodotDictionary {
+    public func addDiffHunksIntoDiffFile(_ diffFile: Godot.GodotDictionary, diffHunks: Godot.GodotArray<Godot.GodotDictionary>) -> Godot.GodotDictionary {
         let __temporary = Godot.GodotDictionary()
         diffFile.withUnsafeRawPointer { (__ptr_diffFile) in
             diffHunks.withUnsafeRawPointer { (__ptr_diffHunks) in
@@ -305,7 +305,7 @@ open class EditorVCSInterface: Object {
         }
         }
     }()
-    public func addLineDiffsIntoDiffHunk(_ diffHunk: Godot.GodotDictionary, lineDiffs: Godot.GodotTypedArray<Godot.GodotDictionary>) -> Godot.GodotDictionary {
+    public func addLineDiffsIntoDiffHunk(_ diffHunk: Godot.GodotDictionary, lineDiffs: Godot.GodotArray<Godot.GodotDictionary>) -> Godot.GodotDictionary {
         let __temporary = Godot.GodotDictionary()
         diffHunk.withUnsafeRawPointer { (__ptr_diffHunk) in
             lineDiffs.withUnsafeRawPointer { (__ptr_lineDiffs) in

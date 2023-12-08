@@ -650,7 +650,7 @@ open class PopupMenu: Popup {
         }
         }
     }()
-    public func setItemMetadata<Variant1 : VariantEncodable>(index: Int32, metadata: Variant1) {
+    public func setItemMetadata<Value: VariantEncodable>(index: Int32, metadata: Value) {
         withUnsafePointer(to: index) { (__ptr_index) in
             Godot.Variant.withStorageUnsafeRawPointer(to: metadata) { (__ptr_metadata) in
                 withUnsafeArgumentPackPointer(__ptr_index, __ptr_metadata) { (__accessPtr) in

@@ -188,7 +188,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     }
     
     static let variant: GodotType = "Variant"
-    static let variantStorage: GodotType = GodotType.scope(scopeType: .variant, type: "Storage")
+    static let variantStorage: GodotType = .scope(scopeType: .variant, type: "Storage")
+    static let array: GodotType = "Array"
     
     /// Returns `Variant.Storage` if the type is a `Variant`, or the current type otherwise.
     var storage: GodotType {
@@ -462,12 +463,20 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             case "uint32_t": return "UInt32"
             case "uint64_t": return "UInt64"
             case "bool": return "Bool"
-            case "Array": return "GodotArray"
+            case "Array":
+                return if options.contains(.genericArrayOnVariant) {
+                    "GodotArray<Variant>"
+                } else if options.contains(.genericArrayOnElement) {
+                    "GodotArray<Element>"
+                } else {
+                    "GodotArray"
+                }
             case "Dictionary": return "GodotDictionary"
             case "String": return "GodotString"
             case "StringName": return "GodotStringName"
             case "Error": return "ErrorType"
-            case "Type": return options.contains(.typeIsStorageType) ? "StorageType" : "GodotType"
+            case "Type": return options.contains(.typeIsStorageType) ?
+                "StorageType" : "GodotType"
             default:
                 if options.contains(.optionalClasses) && isGodotClass {
                     return string + "?"
@@ -493,8 +502,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             return type._syntax(options: options.subtracting(.optionalClasses), scopeIndex: scopeIndex) + "<"
                 + genericType._syntax(options: options, scopeIndex: 0) + ">"
         case .typedArray(let type):
-            return "GodotTypedArray" + "<"
-            + type._syntax(options: options, scopeIndex: 0) + ">"
+            return "GodotArray" +
+                "<" + type._syntax(options: options, scopeIndex: 0) + ">"
         case .optional(let instanceType):
             return instanceType._syntax(options: options, scopeIndex: scopeIndex) + "?"
         case .varargs(let type):

@@ -109,8 +109,8 @@ open class ScriptLanguageExtension: ScriptLanguage {
         nil
     }
 
-    open func _getBuiltInTemplates(object: Godot.GodotStringName) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getBuiltInTemplates(object: Godot.GodotStringName) -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     open func _isUsingTemplates() -> Bool {
@@ -224,8 +224,8 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Godot.GodotString()
     }
 
-    open func _debugGetCurrentStackInfo() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _debugGetCurrentStackInfo() -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     open func _reloadAllScripts() {
@@ -238,16 +238,16 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Godot.PackedStringArray()
     }
 
-    open func _getPublicFunctions() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getPublicFunctions() -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     open func _getPublicConstants() -> Godot.GodotDictionary {
         Godot.GodotDictionary()
     }
 
-    open func _getPublicAnnotations() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getPublicAnnotations() -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     open func _profilingStart() {

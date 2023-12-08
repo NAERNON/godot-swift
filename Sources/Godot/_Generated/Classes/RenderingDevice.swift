@@ -1120,7 +1120,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func textureCreate(format: Godot.RDTextureFormat?, view: Godot.RDTextureView?, data: Godot.GodotTypedArray<Godot.PackedByteArray> = []) -> Godot.RID {
+    public func textureCreate(format: Godot.RDTextureFormat?, view: Godot.RDTextureView?, data: Godot.GodotArray<Godot.PackedByteArray> = []) -> Godot.RID {
         let __temporary = Godot.RID()
         format.withUnsafeRawPointer { (__ptr_format) in
             withUnsafePointer(to: __ptr_format) { (_ptr___ptr_format) in
@@ -1500,7 +1500,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferFormatCreate(attachments: Godot.GodotTypedArray<Godot.RDAttachmentFormat?>, viewCount: UInt32 = 1) -> Int64 {
+    public func framebufferFormatCreate(attachments: Godot.GodotArray<Godot.RDAttachmentFormat?>, viewCount: UInt32 = 1) -> Int64 {
         var __temporary = Int64()
         attachments.withUnsafeRawPointer { (__ptr_attachments) in
             withUnsafePointer(to: viewCount) { (__ptr_viewCount) in
@@ -1528,7 +1528,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferFormatCreateMultipass(attachments: Godot.GodotTypedArray<Godot.RDAttachmentFormat?>, passes: Godot.GodotTypedArray<Godot.RDFramebufferPass?>, viewCount: UInt32 = 1) -> Int64 {
+    public func framebufferFormatCreateMultipass(attachments: Godot.GodotArray<Godot.RDAttachmentFormat?>, passes: Godot.GodotArray<Godot.RDFramebufferPass?>, viewCount: UInt32 = 1) -> Int64 {
         var __temporary = Int64()
         attachments.withUnsafeRawPointer { (__ptr_attachments) in
             passes.withUnsafeRawPointer { (__ptr_passes) in
@@ -1612,7 +1612,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferCreate(textures: Godot.GodotTypedArray<Godot.RID>, validateWithFormat: Int64 = -1, viewCount: UInt32 = 1) -> Godot.RID {
+    public func framebufferCreate(textures: Godot.GodotArray<Godot.RID>, validateWithFormat: Int64 = -1, viewCount: UInt32 = 1) -> Godot.RID {
         let __temporary = Godot.RID()
         textures.withUnsafeRawPointer { (__ptr_textures) in
             withUnsafePointer(to: validateWithFormat) { (__ptr_validateWithFormat) in
@@ -1642,7 +1642,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func framebufferCreateMultipass(textures: Godot.GodotTypedArray<Godot.RID>, passes: Godot.GodotTypedArray<Godot.RDFramebufferPass?>, validateWithFormat: Int64 = -1, viewCount: UInt32 = 1) -> Godot.RID {
+    public func framebufferCreateMultipass(textures: Godot.GodotArray<Godot.RID>, passes: Godot.GodotArray<Godot.RDFramebufferPass?>, validateWithFormat: Int64 = -1, viewCount: UInt32 = 1) -> Godot.RID {
         let __temporary = Godot.RID()
         textures.withUnsafeRawPointer { (__ptr_textures) in
             passes.withUnsafeRawPointer { (__ptr_passes) in
@@ -1842,7 +1842,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func vertexFormatCreate(vertexDescriptions: Godot.GodotTypedArray<Godot.RDVertexAttribute?>) -> Int64 {
+    public func vertexFormatCreate(vertexDescriptions: Godot.GodotArray<Godot.RDVertexAttribute?>) -> Int64 {
         var __temporary = Int64()
         vertexDescriptions.withUnsafeRawPointer { (__ptr_vertexDescriptions) in
             withUnsafeArgumentPackPointer(__ptr_vertexDescriptions) { (__accessPtr) in
@@ -1868,7 +1868,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func vertexArrayCreate(vertexCount: UInt32, vertexFormat: Int64, srcBuffers: Godot.GodotTypedArray<Godot.RID>, offsets: Godot.PackedInt64Array = PackedInt64Array()) -> Godot.RID {
+    public func vertexArrayCreate(vertexCount: UInt32, vertexFormat: Int64, srcBuffers: Godot.GodotArray<Godot.RID>, offsets: Godot.PackedInt64Array = PackedInt64Array()) -> Godot.RID {
         let __temporary = Godot.RID()
         withUnsafePointer(to: vertexCount) { (__ptr_vertexCount) in
             withUnsafePointer(to: vertexFormat) { (__ptr_vertexFormat) in
@@ -2192,7 +2192,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func uniformSetCreate(uniforms: Godot.GodotTypedArray<Godot.RDUniform?>, shader: Godot.RID, shaderSet: UInt32) -> Godot.RID {
+    public func uniformSetCreate(uniforms: Godot.GodotArray<Godot.RDUniform?>, shader: Godot.RID, shaderSet: UInt32) -> Godot.RID {
         let __temporary = Godot.RID()
         uniforms.withUnsafeRawPointer { (__ptr_uniforms) in
             shader.withUnsafeRawPointer { (__ptr_shader) in
@@ -2344,7 +2344,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func renderPipelineCreate(shader: Godot.RID, framebufferFormat: Int64, vertexFormat: Int64, primitive: Godot.RenderingDevice.RenderPrimitive, rasterizationState: Godot.RDPipelineRasterizationState?, multisampleState: Godot.RDPipelineMultisampleState?, stencilState: Godot.RDPipelineDepthStencilState?, colorBlendState: Godot.RDPipelineColorBlendState?, dynamicStateFlags: Godot.RenderingDevice.PipelineDynamicStateFlags = RenderingDevice.PipelineDynamicStateFlags(rawValue: 0), forRenderPass renderPass: UInt32 = 0, specializationConstants: Godot.GodotTypedArray<Godot.RDPipelineSpecializationConstant?> = []) -> Godot.RID {
+    public func renderPipelineCreate(shader: Godot.RID, framebufferFormat: Int64, vertexFormat: Int64, primitive: Godot.RenderingDevice.RenderPrimitive, rasterizationState: Godot.RDPipelineRasterizationState?, multisampleState: Godot.RDPipelineMultisampleState?, stencilState: Godot.RDPipelineDepthStencilState?, colorBlendState: Godot.RDPipelineColorBlendState?, dynamicStateFlags: Godot.RenderingDevice.PipelineDynamicStateFlags = RenderingDevice.PipelineDynamicStateFlags(rawValue: 0), forRenderPass renderPass: UInt32 = 0, specializationConstants: Godot.GodotArray<Godot.RDPipelineSpecializationConstant?> = []) -> Godot.RID {
         let __temporary = Godot.RID()
         shader.withUnsafeRawPointer { (__ptr_shader) in
             withUnsafePointer(to: framebufferFormat) { (__ptr_framebufferFormat) in
@@ -2424,7 +2424,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func computePipelineCreate(shader: Godot.RID, specializationConstants: Godot.GodotTypedArray<Godot.RDPipelineSpecializationConstant?> = []) -> Godot.RID {
+    public func computePipelineCreate(shader: Godot.RID, specializationConstants: Godot.GodotArray<Godot.RDPipelineSpecializationConstant?> = []) -> Godot.RID {
         let __temporary = Godot.RID()
         shader.withUnsafeRawPointer { (__ptr_shader) in
             specializationConstants.withUnsafeRawPointer { (__ptr_specializationConstants) in
@@ -2580,7 +2580,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListBegin(framebuffer: Godot.RID, initialColorAction: Godot.RenderingDevice.InitialAction, finalColorAction: Godot.RenderingDevice.FinalAction, initialDepthAction: Godot.RenderingDevice.InitialAction, finalDepthAction: Godot.RenderingDevice.FinalAction, clearColorValues: Godot.PackedColorArray = PackedColorArray(), clearDepth: Double = 1.0, clearStencil: UInt32 = 0, region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), storageTextures: Godot.GodotTypedArray<Godot.RID> = []) -> Int64 {
+    public func drawListBegin(framebuffer: Godot.RID, initialColorAction: Godot.RenderingDevice.InitialAction, finalColorAction: Godot.RenderingDevice.FinalAction, initialDepthAction: Godot.RenderingDevice.InitialAction, finalDepthAction: Godot.RenderingDevice.FinalAction, clearColorValues: Godot.PackedColorArray = PackedColorArray(), clearDepth: Double = 1.0, clearStencil: UInt32 = 0, region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), storageTextures: Godot.GodotArray<Godot.RID> = []) -> Int64 {
         var __temporary = Int64()
         framebuffer.withUnsafeRawPointer { (__ptr_framebuffer) in
             withUnsafePointer(to: initialColorAction) { (__ptr_initialColorAction) in
@@ -2624,7 +2624,7 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func drawListBeginSplit(framebuffer: Godot.RID, splits: UInt32, initialColorAction: Godot.RenderingDevice.InitialAction, finalColorAction: Godot.RenderingDevice.FinalAction, initialDepthAction: Godot.RenderingDevice.InitialAction, finalDepthAction: Godot.RenderingDevice.FinalAction, clearColorValues: Godot.PackedColorArray = PackedColorArray(), clearDepth: Double = 1.0, clearStencil: UInt32 = 0, region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), storageTextures: Godot.GodotTypedArray<Godot.RID> = []) -> Godot.PackedInt64Array {
+    public func drawListBeginSplit(framebuffer: Godot.RID, splits: UInt32, initialColorAction: Godot.RenderingDevice.InitialAction, finalColorAction: Godot.RenderingDevice.FinalAction, initialDepthAction: Godot.RenderingDevice.InitialAction, finalDepthAction: Godot.RenderingDevice.FinalAction, clearColorValues: Godot.PackedColorArray = PackedColorArray(), clearDepth: Double = 1.0, clearStencil: UInt32 = 0, region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0), storageTextures: Godot.GodotArray<Godot.RID> = []) -> Godot.PackedInt64Array {
         let __temporary = Godot.PackedInt64Array()
         framebuffer.withUnsafeRawPointer { (__ptr_framebuffer) in
             withUnsafePointer(to: splits) { (__ptr_splits) in

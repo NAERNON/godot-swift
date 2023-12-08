@@ -72,7 +72,6 @@ Godot Swift is a set of tools enabling Swift code to be accessible from the Godo
 ### Builtin collections
 
 - ``GodotArray``
-- ``GodotTypedArray``
 - ``GodotDictionary``
 - ``PackedByteArray``
 - ``PackedColorArray``

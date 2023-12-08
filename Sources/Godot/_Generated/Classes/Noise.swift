@@ -218,8 +218,8 @@ open class Noise: Resource {
         }
         }
     }()
-    public func image3D(width: Int32, height: Int32, depth: Int32, invert: Bool = false, normalize: Bool = true) -> Godot.GodotTypedArray<Godot.Image?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Image?>()
+    public func image3D(width: Int32, height: Int32, depth: Int32, invert: Bool = false, normalize: Bool = true) -> Godot.GodotArray<Godot.Image?> {
+        let __temporary = Godot.GodotArray<Godot.Image?>()
         withUnsafePointer(to: width) { (__ptr_width) in
             withUnsafePointer(to: height) { (__ptr_height) in
                 withUnsafePointer(to: depth) { (__ptr_depth) in
@@ -252,8 +252,8 @@ open class Noise: Resource {
         }
         }
     }()
-    public func seamlessImage3D(width: Int32, height: Int32, depth: Int32, invert: Bool = false, skirt: Double = 0.1, normalize: Bool = true) -> Godot.GodotTypedArray<Godot.Image?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Image?>()
+    public func seamlessImage3D(width: Int32, height: Int32, depth: Int32, invert: Bool = false, skirt: Double = 0.1, normalize: Bool = true) -> Godot.GodotArray<Godot.Image?> {
+        let __temporary = Godot.GodotArray<Godot.Image?>()
         withUnsafePointer(to: width) { (__ptr_width) in
             withUnsafePointer(to: height) { (__ptr_height) in
                 withUnsafePointer(to: depth) { (__ptr_depth) in

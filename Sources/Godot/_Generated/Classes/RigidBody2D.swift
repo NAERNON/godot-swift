@@ -1336,8 +1336,8 @@ open class RigidBody2D: PhysicsBody2D {
         }
         }
     }()
-    public func collidingBodies() -> Godot.GodotTypedArray<Godot.Node2D?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Node2D?>()
+    public func collidingBodies() -> Godot.GodotArray<Godot.Node2D?> {
+        let __temporary = Godot.GodotArray<Godot.Node2D?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

@@ -54,7 +54,7 @@ open class JSONRPC: Object {
         }
         }
     }()
-    public func processAction<Variant1 : VariantEncodable>(_ action: Variant1, recurse: Bool = false) -> Godot.Variant {
+    public func processAction<Value: VariantEncodable>(_ action: Value, recurse: Bool = false) -> Godot.Variant {
         let __temporary = Godot.Variant()
         Godot.Variant.withStorageUnsafeRawPointer(to: action) { (__ptr_action) in
             withUnsafePointer(to: recurse) { (__ptr_recurse) in
@@ -108,7 +108,7 @@ open class JSONRPC: Object {
         }
         }
     }()
-    public func makeRequest<Variant1 : VariantEncodable, Variant2 : VariantEncodable>(method: Godot.GodotString, params: Variant1, id: Variant2) -> Godot.GodotDictionary {
+    public func makeRequest<Value2: VariantEncodable, Value3: VariantEncodable>(method: Godot.GodotString, params: Value2, id: Value3) -> Godot.GodotDictionary {
         let __temporary = Godot.GodotDictionary()
         method.withUnsafeRawPointer { (__ptr_method) in
             Godot.Variant.withStorageUnsafeRawPointer(to: params) { (__ptr_params) in
@@ -138,7 +138,7 @@ open class JSONRPC: Object {
         }
         }
     }()
-    public func makeResponse<Variant1 : VariantEncodable, Variant2 : VariantEncodable>(result: Variant1, id: Variant2) -> Godot.GodotDictionary {
+    public func makeResponse<Value1: VariantEncodable, Value2: VariantEncodable>(result: Value1, id: Value2) -> Godot.GodotDictionary {
         let __temporary = Godot.GodotDictionary()
         Godot.Variant.withStorageUnsafeRawPointer(to: result) { (__ptr_result) in
             Godot.Variant.withStorageUnsafeRawPointer(to: id) { (__ptr_id) in
@@ -166,7 +166,7 @@ open class JSONRPC: Object {
         }
         }
     }()
-    public func makeNotification<Variant1 : VariantEncodable>(method: Godot.GodotString, params: Variant1) -> Godot.GodotDictionary {
+    public func makeNotification<Value: VariantEncodable>(method: Godot.GodotString, params: Value) -> Godot.GodotDictionary {
         let __temporary = Godot.GodotDictionary()
         method.withUnsafeRawPointer { (__ptr_method) in
             Godot.Variant.withStorageUnsafeRawPointer(to: params) { (__ptr_params) in
@@ -194,7 +194,7 @@ open class JSONRPC: Object {
         }
         }
     }()
-    public func makeResponseError<Variant1 : VariantEncodable>(code: Int32, message: Godot.GodotString, id: Variant1 = Variant()) -> Godot.GodotDictionary {
+    public func makeResponseError<Value: VariantEncodable>(code: Int32, message: Godot.GodotString, id: Value = Variant()) -> Godot.GodotDictionary {
         let __temporary = Godot.GodotDictionary()
         withUnsafePointer(to: code) { (__ptr_code) in
             message.withUnsafeRawPointer { (__ptr_message) in

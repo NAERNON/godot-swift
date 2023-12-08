@@ -607,8 +607,8 @@ open class Input: Object {
         }
         }
     }()
-    public func connectedJoypads() -> Godot.GodotTypedArray<Int> {
-        let __temporary = Godot.GodotTypedArray<Int>()
+    public func connectedJoypads() -> Godot.GodotArray<Int> {
+        let __temporary = Godot.GodotArray<Int>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

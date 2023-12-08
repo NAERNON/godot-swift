@@ -140,8 +140,8 @@ open class RDUniform: RefCounted {
         }
         }
     }()
-    public func ids() -> Godot.GodotTypedArray<Godot.RID> {
-        let __temporary = Godot.GodotTypedArray<Godot.RID>()
+    public func ids() -> Godot.GodotArray<Godot.RID> {
+        let __temporary = Godot.GodotArray<Godot.RID>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

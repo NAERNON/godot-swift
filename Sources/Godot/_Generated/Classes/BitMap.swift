@@ -300,8 +300,8 @@ open class BitMap: Resource {
         }
         }
     }()
-    public func opaqueToPolygons(rect: Godot.Rect2i, epsilon: Double = 2.0) -> Godot.GodotTypedArray<Godot.PackedVector2Array> {
-        let __temporary = Godot.GodotTypedArray<Godot.PackedVector2Array>()
+    public func opaqueToPolygons(rect: Godot.Rect2i, epsilon: Double = 2.0) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        let __temporary = Godot.GodotArray<Godot.PackedVector2Array>()
         withUnsafePointer(to: rect) { (__ptr_rect) in
             withUnsafePointer(to: epsilon) { (__ptr_epsilon) in
                 withUnsafeArgumentPackPointer(__ptr_rect, __ptr_epsilon) { (__accessPtr) in

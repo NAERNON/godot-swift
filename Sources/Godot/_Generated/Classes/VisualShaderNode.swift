@@ -82,7 +82,7 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
-    public func setInputPortDefaultValue<Variant1 : VariantEncodable, Variant2 : VariantEncodable>(port: Int32, value: Variant1, prevValue: Variant2 = Variant()) {
+    public func setInputPortDefaultValue<Value2: VariantEncodable, Value3: VariantEncodable>(port: Int32, value: Value2, prevValue: Value3 = Variant()) {
         withUnsafePointer(to: port) { (__ptr_port) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: prevValue) { (__ptr_prevValue) in
@@ -174,7 +174,7 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
-    private func __setDefaultInputValues(_ values: Godot.GodotArray) {
+    private func __setDefaultInputValues<Value: VariantEncodable & VariantDecodable>(_ values: Godot.GodotArray<Value>) {
         values.withUnsafeRawPointer { (__ptr_values) in
             withUnsafeArgumentPackPointer(__ptr_values) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -196,8 +196,8 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
-    private func __getDefaultInputValues() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    private func __getDefaultInputValues() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -222,7 +222,7 @@ open class VisualShaderNode: Resource {
         }
     }
 
-    public var defaultInputValues: Godot.GodotArray {
+    public var defaultInputValues: Godot.GodotArray<Variant> {
         get {
             __getDefaultInputValues()
         }

@@ -9,7 +9,7 @@ open class EditorProperty: Container {
     public struct PropertyChanged {
     }
 
-    @Emitter(signal: "multiple_properties_changed", args: ("properties", Godot.PackedStringArray), ("value", Godot.GodotArray))
+    @Emitter(signal: "multiple_properties_changed", args: ("properties", Godot.PackedStringArray), ("value", Godot.GodotArray<Variant>))
     public struct MultiplePropertiesChanged {
     }
 
@@ -480,7 +480,7 @@ open class EditorProperty: Container {
         }
         }
     }()
-    public func emitChanged<Variant1 : VariantEncodable>(property: Godot.GodotStringName, value: Variant1, field: Godot.GodotStringName = "", changing: Bool = false) {
+    public func emitChanged<Value: VariantEncodable>(property: Godot.GodotStringName, value: Value, field: Godot.GodotStringName = "", changing: Bool = false) {
         property.withUnsafeRawPointer { (__ptr_property) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 field.withUnsafeRawPointer { (__ptr_field) in

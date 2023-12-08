@@ -25,8 +25,8 @@ open class Texture3D: Texture {
         Bool()
     }
 
-    open func _getData() -> Godot.GodotTypedArray<Godot.Image?> {
-        Godot.GodotTypedArray<Godot.Image?>()
+    open func _getData() -> Godot.GodotArray<Godot.Image?> {
+        Godot.GodotArray<Godot.Image?>()
     }
 
     private static var __method_binding_get_format: GDExtensionMethodBindPtr = {
@@ -146,8 +146,8 @@ open class Texture3D: Texture {
         }
         }
     }()
-    public func data() -> Godot.GodotTypedArray<Godot.Image?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Image?>()
+    public func data() -> Godot.GodotArray<Godot.Image?> {
+        let __temporary = Godot.GodotArray<Godot.Image?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

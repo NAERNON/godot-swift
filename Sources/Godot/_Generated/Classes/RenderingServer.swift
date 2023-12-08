@@ -1266,7 +1266,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func texture2DLayeredCreate(layers: Godot.GodotTypedArray<Godot.Image?>, layeredType: Godot.RenderingServer.TextureLayeredType) -> Godot.RID {
+    public func texture2DLayeredCreate(layers: Godot.GodotArray<Godot.Image?>, layeredType: Godot.RenderingServer.TextureLayeredType) -> Godot.RID {
         let __temporary = Godot.RID()
         layers.withUnsafeRawPointer { (__ptr_layers) in
             withUnsafePointer(to: layeredType) { (__ptr_layeredType) in
@@ -1294,7 +1294,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func texture3DCreate(format: Godot.Image.Format, width: Int32, height: Int32, depth: Int32, mipmaps: Bool, data: Godot.GodotTypedArray<Godot.Image?>) -> Godot.RID {
+    public func texture3DCreate(format: Godot.Image.Format, width: Int32, height: Int32, depth: Int32, mipmaps: Bool, data: Godot.GodotArray<Godot.Image?>) -> Godot.RID {
         let __temporary = Godot.RID()
         withUnsafePointer(to: format) { (__ptr_format) in
             withUnsafePointer(to: width) { (__ptr_width) in
@@ -1384,7 +1384,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func texture3DUpdate(texture: Godot.RID, data: Godot.GodotTypedArray<Godot.Image?>) {
+    public func texture3DUpdate(texture: Godot.RID, data: Godot.GodotArray<Godot.Image?>) {
         texture.withUnsafeRawPointer { (__ptr_texture) in
             data.withUnsafeRawPointer { (__ptr_data) in
                 withUnsafeArgumentPackPointer(__ptr_texture, __ptr_data) { (__accessPtr) in
@@ -1556,8 +1556,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func texture3DGet(texture: Godot.RID) -> Godot.GodotTypedArray<Godot.Image?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Image?>()
+    public func texture3DGet(texture: Godot.RID) -> Godot.GodotArray<Godot.Image?> {
+        let __temporary = Godot.GodotArray<Godot.Image?>()
         texture.withUnsafeRawPointer { (__ptr_texture) in
             withUnsafeArgumentPackPointer(__ptr_texture) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -1858,8 +1858,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func shaderParameterList(shader: Godot.RID) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func shaderParameterList(shader: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         shader.withUnsafeRawPointer { (__ptr_shader) in
             withUnsafeArgumentPackPointer(__ptr_shader) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -2016,7 +2016,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func materialSetParam<Variant1 : VariantEncodable>(material: Godot.RID, parameter: Godot.GodotStringName, value: Variant1) {
+    public func materialSetParam<Value: VariantEncodable>(material: Godot.RID, parameter: Godot.GodotStringName, value: Value) {
         material.withUnsafeRawPointer { (__ptr_material) in
             parameter.withUnsafeRawPointer { (__ptr_parameter) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
@@ -2118,7 +2118,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshCreateFromSurfaces(_ surfaces: Godot.GodotTypedArray<Godot.GodotDictionary>, blendShapeCount: Int32 = 0) -> Godot.RID {
+    public func meshCreateFromSurfaces(_ surfaces: Godot.GodotArray<Godot.GodotDictionary>, blendShapeCount: Int32 = 0) -> Godot.RID {
         let __temporary = Godot.RID()
         surfaces.withUnsafeRawPointer { (__ptr_surfaces) in
             withUnsafePointer(to: blendShapeCount) { (__ptr_blendShapeCount) in
@@ -2306,7 +2306,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshAddSurfaceFromArrays(mesh: Godot.RID, primitive: Godot.RenderingServer.PrimitiveType, arrays: Godot.GodotArray, blendShapes: Godot.GodotArray = [], lods: Godot.GodotDictionary = [:], compressFormat: Godot.RenderingServer.ArrayFormat = RenderingServer.ArrayFormat(rawValue: 0)) {
+    public func meshAddSurfaceFromArrays<Value3: VariantEncodable & VariantDecodable, Value4: VariantEncodable & VariantDecodable>(mesh: Godot.RID, primitive: Godot.RenderingServer.PrimitiveType, arrays: Godot.GodotArray<Value3>, blendShapes: Godot.GodotArray<Value4> = [], lods: Godot.GodotDictionary = [:], compressFormat: Godot.RenderingServer.ArrayFormat = RenderingServer.ArrayFormat(rawValue: 0)) {
         mesh.withUnsafeRawPointer { (__ptr_mesh) in
             withUnsafePointer(to: primitive) { (__ptr_primitive) in
                 arrays.withUnsafeRawPointer { (__ptr_arrays) in
@@ -2496,8 +2496,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshSurfaceGetArrays(mesh: Godot.RID, surface: Int32) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func meshSurfaceGetArrays(mesh: Godot.RID, surface: Int32) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         mesh.withUnsafeRawPointer { (__ptr_mesh) in
             withUnsafePointer(to: surface) { (__ptr_surface) in
                 withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { (__accessPtr) in
@@ -2524,8 +2524,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshSurfaceGetBlendShapeArrays(mesh: Godot.RID, surface: Int32) -> Godot.GodotTypedArray<Godot.GodotArray> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotArray>()
+    public func meshSurfaceGetBlendShapeArrays(mesh: Godot.RID, surface: Int32) -> Godot.GodotArray<Godot.GodotArray<Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotArray<Variant>>()
         mesh.withUnsafeRawPointer { (__ptr_mesh) in
             withUnsafePointer(to: surface) { (__ptr_surface) in
                 withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { (__accessPtr) in
@@ -5768,7 +5768,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func particlesSetTrailBindPoses(particles: Godot.RID, bindPoses: Godot.GodotTypedArray<Godot.Transform3D>) {
+    public func particlesSetTrailBindPoses(particles: Godot.RID, bindPoses: Godot.GodotArray<Godot.Transform3D>) {
         particles.withUnsafeRawPointer { (__ptr_particles) in
             bindPoses.withUnsafeRawPointer { (__ptr_bindPoses) in
                 withUnsafeArgumentPackPointer(__ptr_particles, __ptr_bindPoses) { (__accessPtr) in
@@ -9780,7 +9780,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func instanceGeometrySetShaderParameter<Variant1 : VariantEncodable>(instance: Godot.RID, parameter: Godot.GodotStringName, value: Variant1) {
+    public func instanceGeometrySetShaderParameter<Value: VariantEncodable>(instance: Godot.RID, parameter: Godot.GodotStringName, value: Value) {
         instance.withUnsafeRawPointer { (__ptr_instance) in
             parameter.withUnsafeRawPointer { (__ptr_parameter) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
@@ -9862,8 +9862,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func instanceGeometryGetShaderParameterList(instance: Godot.RID) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func instanceGeometryGetShaderParameterList(instance: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         instance.withUnsafeRawPointer { (__ptr_instance) in
             withUnsafeArgumentPackPointer(__ptr_instance) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -9946,7 +9946,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func instancesCullConvex(_ convex: Godot.GodotTypedArray<Godot.Plane>, scenario: Godot.RID = RID()) -> Godot.PackedInt64Array {
+    public func instancesCullConvex(_ convex: Godot.GodotArray<Godot.Plane>, scenario: Godot.RID = RID()) -> Godot.PackedInt64Array {
         let __temporary = Godot.PackedInt64Array()
         convex.withUnsafeRawPointer { (__ptr_convex) in
             scenario.withUnsafeRawPointer { (__ptr_scenario) in
@@ -9974,8 +9974,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func bakeRenderUv2(base: Godot.RID, materialOverrides: Godot.GodotTypedArray<Godot.RID>, imageSize: Godot.Vector2i) -> Godot.GodotTypedArray<Godot.Image?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Image?>()
+    public func bakeRenderUv2(base: Godot.RID, materialOverrides: Godot.GodotArray<Godot.RID>, imageSize: Godot.Vector2i) -> Godot.GodotArray<Godot.Image?> {
+        let __temporary = Godot.GodotArray<Godot.Image?>()
         base.withUnsafeRawPointer { (__ptr_base) in
             materialOverrides.withUnsafeRawPointer { (__ptr_materialOverrides) in
                 withUnsafePointer(to: imageSize) { (__ptr_imageSize) in
@@ -12126,7 +12126,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func globalShaderParameterAdd<Variant1 : VariantEncodable>(name: Godot.GodotStringName, type: Godot.RenderingServer.GlobalShaderParameterType, defaultValue: Variant1) {
+    public func globalShaderParameterAdd<Value: VariantEncodable>(name: Godot.GodotStringName, type: Godot.RenderingServer.GlobalShaderParameterType, defaultValue: Value) {
         name.withUnsafeRawPointer { (__ptr_name) in
             withUnsafePointer(to: type) { (__ptr_type) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: defaultValue) { (__ptr_defaultValue) in
@@ -12174,8 +12174,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func globalShaderParameterGetList() -> Godot.GodotTypedArray<Godot.GodotStringName> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotStringName>()
+    public func globalShaderParameterGetList() -> Godot.GodotArray<Godot.GodotStringName> {
+        let __temporary = Godot.GodotArray<Godot.GodotStringName>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -12196,7 +12196,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func globalShaderParameterSet<Variant1 : VariantEncodable>(name: Godot.GodotStringName, value: Variant1) {
+    public func globalShaderParameterSet<Value: VariantEncodable>(name: Godot.GodotStringName, value: Value) {
         name.withUnsafeRawPointer { (__ptr_name) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in
@@ -12220,7 +12220,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func globalShaderParameterSetOverride<Variant1 : VariantEncodable>(name: Godot.GodotStringName, value: Variant1) {
+    public func globalShaderParameterSetOverride<Value: VariantEncodable>(name: Godot.GodotStringName, value: Value) {
         name.withUnsafeRawPointer { (__ptr_name) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in

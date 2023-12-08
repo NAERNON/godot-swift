@@ -256,8 +256,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getNodes() -> Godot.GodotTypedArray<Godot.GLTFNode?> {
-        let __temporary = Godot.GodotTypedArray<Godot.GLTFNode?>()
+    private func __getNodes() -> Godot.GodotArray<Godot.GLTFNode?> {
+        let __temporary = Godot.GodotArray<Godot.GLTFNode?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -278,7 +278,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setNodes(_ nodes: Godot.GodotTypedArray<Godot.GLTFNode?>) {
+    private func __setNodes(_ nodes: Godot.GodotArray<Godot.GLTFNode?>) {
         nodes.withUnsafeRawPointer { (__ptr_nodes) in
             withUnsafeArgumentPackPointer(__ptr_nodes) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -300,8 +300,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getBuffers() -> Godot.GodotTypedArray<Godot.PackedByteArray> {
-        let __temporary = Godot.GodotTypedArray<Godot.PackedByteArray>()
+    private func __getBuffers() -> Godot.GodotArray<Godot.PackedByteArray> {
+        let __temporary = Godot.GodotArray<Godot.PackedByteArray>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -322,7 +322,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setBuffers(_ buffers: Godot.GodotTypedArray<Godot.PackedByteArray>) {
+    private func __setBuffers(_ buffers: Godot.GodotArray<Godot.PackedByteArray>) {
         buffers.withUnsafeRawPointer { (__ptr_buffers) in
             withUnsafeArgumentPackPointer(__ptr_buffers) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -344,8 +344,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getBufferViews() -> Godot.GodotTypedArray<Godot.GLTFBufferView?> {
-        let __temporary = Godot.GodotTypedArray<Godot.GLTFBufferView?>()
+    private func __getBufferViews() -> Godot.GodotArray<Godot.GLTFBufferView?> {
+        let __temporary = Godot.GodotArray<Godot.GLTFBufferView?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -366,7 +366,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setBufferViews(_ bufferViews: Godot.GodotTypedArray<Godot.GLTFBufferView?>) {
+    private func __setBufferViews(_ bufferViews: Godot.GodotArray<Godot.GLTFBufferView?>) {
         bufferViews.withUnsafeRawPointer { (__ptr_bufferViews) in
             withUnsafeArgumentPackPointer(__ptr_bufferViews) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -388,8 +388,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getAccessors() -> Godot.GodotTypedArray<Godot.GLTFAccessor?> {
-        let __temporary = Godot.GodotTypedArray<Godot.GLTFAccessor?>()
+    private func __getAccessors() -> Godot.GodotArray<Godot.GLTFAccessor?> {
+        let __temporary = Godot.GodotArray<Godot.GLTFAccessor?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -410,7 +410,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setAccessors(_ accessors: Godot.GodotTypedArray<Godot.GLTFAccessor?>) {
+    private func __setAccessors(_ accessors: Godot.GodotArray<Godot.GLTFAccessor?>) {
         accessors.withUnsafeRawPointer { (__ptr_accessors) in
             withUnsafeArgumentPackPointer(__ptr_accessors) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -432,8 +432,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getMeshes() -> Godot.GodotTypedArray<Godot.GLTFMesh?> {
-        let __temporary = Godot.GodotTypedArray<Godot.GLTFMesh?>()
+    private func __getMeshes() -> Godot.GodotArray<Godot.GLTFMesh?> {
+        let __temporary = Godot.GodotArray<Godot.GLTFMesh?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -454,7 +454,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setMeshes(_ meshes: Godot.GodotTypedArray<Godot.GLTFMesh?>) {
+    private func __setMeshes(_ meshes: Godot.GodotArray<Godot.GLTFMesh?>) {
         meshes.withUnsafeRawPointer { (__ptr_meshes) in
             withUnsafeArgumentPackPointer(__ptr_meshes) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -528,8 +528,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getMaterials() -> Godot.GodotTypedArray<Godot.Material?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Material?>()
+    private func __getMaterials() -> Godot.GodotArray<Godot.Material?> {
+        let __temporary = Godot.GodotArray<Godot.Material?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -550,7 +550,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setMaterials(_ materials: Godot.GodotTypedArray<Godot.Material?>) {
+    private func __setMaterials(_ materials: Godot.GodotArray<Godot.Material?>) {
         materials.withUnsafeRawPointer { (__ptr_materials) in
             withUnsafeArgumentPackPointer(__ptr_materials) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -704,8 +704,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getTextures() -> Godot.GodotTypedArray<Godot.GLTFTexture?> {
-        let __temporary = Godot.GodotTypedArray<Godot.GLTFTexture?>()
+    private func __getTextures() -> Godot.GodotArray<Godot.GLTFTexture?> {
+        let __temporary = Godot.GodotArray<Godot.GLTFTexture?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -726,7 +726,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setTextures(_ textures: Godot.GodotTypedArray<Godot.GLTFTexture?>) {
+    private func __setTextures(_ textures: Godot.GodotArray<Godot.GLTFTexture?>) {
         textures.withUnsafeRawPointer { (__ptr_textures) in
             withUnsafeArgumentPackPointer(__ptr_textures) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -748,8 +748,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getTextureSamplers() -> Godot.GodotTypedArray<Godot.GLTFTextureSampler?> {
-        let __temporary = Godot.GodotTypedArray<Godot.GLTFTextureSampler?>()
+    private func __getTextureSamplers() -> Godot.GodotArray<Godot.GLTFTextureSampler?> {
+        let __temporary = Godot.GodotArray<Godot.GLTFTextureSampler?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -770,7 +770,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setTextureSamplers(_ textureSamplers: Godot.GodotTypedArray<Godot.GLTFTextureSampler?>) {
+    private func __setTextureSamplers(_ textureSamplers: Godot.GodotArray<Godot.GLTFTextureSampler?>) {
         textureSamplers.withUnsafeRawPointer { (__ptr_textureSamplers) in
             withUnsafeArgumentPackPointer(__ptr_textureSamplers) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -792,8 +792,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getImages() -> Godot.GodotTypedArray<Godot.Texture2D?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Texture2D?>()
+    private func __getImages() -> Godot.GodotArray<Godot.Texture2D?> {
+        let __temporary = Godot.GodotArray<Godot.Texture2D?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -814,7 +814,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setImages(_ images: Godot.GodotTypedArray<Godot.Texture2D?>) {
+    private func __setImages(_ images: Godot.GodotArray<Godot.Texture2D?>) {
         images.withUnsafeRawPointer { (__ptr_images) in
             withUnsafeArgumentPackPointer(__ptr_images) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -836,8 +836,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getSkins() -> Godot.GodotTypedArray<Godot.GLTFSkin?> {
-        let __temporary = Godot.GodotTypedArray<Godot.GLTFSkin?>()
+    private func __getSkins() -> Godot.GodotArray<Godot.GLTFSkin?> {
+        let __temporary = Godot.GodotArray<Godot.GLTFSkin?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -858,7 +858,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setSkins(_ skins: Godot.GodotTypedArray<Godot.GLTFSkin?>) {
+    private func __setSkins(_ skins: Godot.GodotArray<Godot.GLTFSkin?>) {
         skins.withUnsafeRawPointer { (__ptr_skins) in
             withUnsafeArgumentPackPointer(__ptr_skins) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -880,8 +880,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getCameras() -> Godot.GodotTypedArray<Godot.GLTFCamera?> {
-        let __temporary = Godot.GodotTypedArray<Godot.GLTFCamera?>()
+    private func __getCameras() -> Godot.GodotArray<Godot.GLTFCamera?> {
+        let __temporary = Godot.GodotArray<Godot.GLTFCamera?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -902,7 +902,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setCameras(_ cameras: Godot.GodotTypedArray<Godot.GLTFCamera?>) {
+    private func __setCameras(_ cameras: Godot.GodotArray<Godot.GLTFCamera?>) {
         cameras.withUnsafeRawPointer { (__ptr_cameras) in
             withUnsafeArgumentPackPointer(__ptr_cameras) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -924,8 +924,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getLights() -> Godot.GodotTypedArray<Godot.GLTFLight?> {
-        let __temporary = Godot.GodotTypedArray<Godot.GLTFLight?>()
+    private func __getLights() -> Godot.GodotArray<Godot.GLTFLight?> {
+        let __temporary = Godot.GodotArray<Godot.GLTFLight?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -946,7 +946,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setLights(_ lights: Godot.GodotTypedArray<Godot.GLTFLight?>) {
+    private func __setLights(_ lights: Godot.GodotArray<Godot.GLTFLight?>) {
         lights.withUnsafeRawPointer { (__ptr_lights) in
             withUnsafeArgumentPackPointer(__ptr_lights) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -968,8 +968,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getUniqueNames() -> Godot.GodotTypedArray<Godot.GodotString> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotString>()
+    private func __getUniqueNames() -> Godot.GodotArray<Godot.GodotString> {
+        let __temporary = Godot.GodotArray<Godot.GodotString>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -990,7 +990,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setUniqueNames(_ uniqueNames: Godot.GodotTypedArray<Godot.GodotString>) {
+    private func __setUniqueNames(_ uniqueNames: Godot.GodotArray<Godot.GodotString>) {
         uniqueNames.withUnsafeRawPointer { (__ptr_uniqueNames) in
             withUnsafeArgumentPackPointer(__ptr_uniqueNames) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -1012,8 +1012,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getUniqueAnimationNames() -> Godot.GodotTypedArray<Godot.GodotString> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotString>()
+    private func __getUniqueAnimationNames() -> Godot.GodotArray<Godot.GodotString> {
+        let __temporary = Godot.GodotArray<Godot.GodotString>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -1034,7 +1034,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setUniqueAnimationNames(_ uniqueAnimationNames: Godot.GodotTypedArray<Godot.GodotString>) {
+    private func __setUniqueAnimationNames(_ uniqueAnimationNames: Godot.GodotArray<Godot.GodotString>) {
         uniqueAnimationNames.withUnsafeRawPointer { (__ptr_uniqueAnimationNames) in
             withUnsafeArgumentPackPointer(__ptr_uniqueAnimationNames) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -1056,8 +1056,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getSkeletons() -> Godot.GodotTypedArray<Godot.GLTFSkeleton?> {
-        let __temporary = Godot.GodotTypedArray<Godot.GLTFSkeleton?>()
+    private func __getSkeletons() -> Godot.GodotArray<Godot.GLTFSkeleton?> {
+        let __temporary = Godot.GodotArray<Godot.GLTFSkeleton?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -1078,7 +1078,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setSkeletons(_ skeletons: Godot.GodotTypedArray<Godot.GLTFSkeleton?>) {
+    private func __setSkeletons(_ skeletons: Godot.GodotArray<Godot.GLTFSkeleton?>) {
         skeletons.withUnsafeRawPointer { (__ptr_skeletons) in
             withUnsafeArgumentPackPointer(__ptr_skeletons) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -1144,8 +1144,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getAnimations() -> Godot.GodotTypedArray<Godot.GLTFAnimation?> {
-        let __temporary = Godot.GodotTypedArray<Godot.GLTFAnimation?>()
+    private func __getAnimations() -> Godot.GodotArray<Godot.GLTFAnimation?> {
+        let __temporary = Godot.GodotArray<Godot.GLTFAnimation?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -1166,7 +1166,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setAnimations(_ animations: Godot.GodotTypedArray<Godot.GLTFAnimation?>) {
+    private func __setAnimations(_ animations: Godot.GodotArray<Godot.GLTFAnimation?>) {
         animations.withUnsafeRawPointer { (__ptr_animations) in
             withUnsafeArgumentPackPointer(__ptr_animations) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -1268,7 +1268,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    public func setAdditionalData<Variant1 : VariantEncodable>(extensionName: Godot.GodotStringName, additionalData: Variant1) {
+    public func setAdditionalData<Value: VariantEncodable>(extensionName: Godot.GodotStringName, additionalData: Value) {
         extensionName.withUnsafeRawPointer { (__ptr_extensionName) in
             Godot.Variant.withStorageUnsafeRawPointer(to: additionalData) { (__ptr_additionalData) in
                 withUnsafeArgumentPackPointer(__ptr_extensionName, __ptr_additionalData) { (__accessPtr) in
@@ -1384,7 +1384,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var nodes: Godot.GodotTypedArray<Godot.GLTFNode?> {
+    public var nodes: Godot.GodotArray<Godot.GLTFNode?> {
         get {
             __getNodes()
         }
@@ -1395,7 +1395,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var buffers: Godot.GodotTypedArray<Godot.PackedByteArray> {
+    public var buffers: Godot.GodotArray<Godot.PackedByteArray> {
         get {
             __getBuffers()
         }
@@ -1406,7 +1406,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var bufferViews: Godot.GodotTypedArray<Godot.GLTFBufferView?> {
+    public var bufferViews: Godot.GodotArray<Godot.GLTFBufferView?> {
         get {
             __getBufferViews()
         }
@@ -1417,7 +1417,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var accessors: Godot.GodotTypedArray<Godot.GLTFAccessor?> {
+    public var accessors: Godot.GodotArray<Godot.GLTFAccessor?> {
         get {
             __getAccessors()
         }
@@ -1428,7 +1428,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var meshes: Godot.GodotTypedArray<Godot.GLTFMesh?> {
+    public var meshes: Godot.GodotArray<Godot.GLTFMesh?> {
         get {
             __getMeshes()
         }
@@ -1439,7 +1439,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var materials: Godot.GodotTypedArray<Godot.Material?> {
+    public var materials: Godot.GodotArray<Godot.Material?> {
         get {
             __getMaterials()
         }
@@ -1483,7 +1483,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var textures: Godot.GodotTypedArray<Godot.GLTFTexture?> {
+    public var textures: Godot.GodotArray<Godot.GLTFTexture?> {
         get {
             __getTextures()
         }
@@ -1494,7 +1494,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var textureSamplers: Godot.GodotTypedArray<Godot.GLTFTextureSampler?> {
+    public var textureSamplers: Godot.GodotArray<Godot.GLTFTextureSampler?> {
         get {
             __getTextureSamplers()
         }
@@ -1505,7 +1505,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var images: Godot.GodotTypedArray<Godot.Texture2D?> {
+    public var images: Godot.GodotArray<Godot.Texture2D?> {
         get {
             __getImages()
         }
@@ -1516,7 +1516,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var skins: Godot.GodotTypedArray<Godot.GLTFSkin?> {
+    public var skins: Godot.GodotArray<Godot.GLTFSkin?> {
         get {
             __getSkins()
         }
@@ -1527,7 +1527,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var cameras: Godot.GodotTypedArray<Godot.GLTFCamera?> {
+    public var cameras: Godot.GodotArray<Godot.GLTFCamera?> {
         get {
             __getCameras()
         }
@@ -1538,7 +1538,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var lights: Godot.GodotTypedArray<Godot.GLTFLight?> {
+    public var lights: Godot.GodotArray<Godot.GLTFLight?> {
         get {
             __getLights()
         }
@@ -1549,7 +1549,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var uniqueNames: Godot.GodotTypedArray<Godot.GodotString> {
+    public var uniqueNames: Godot.GodotArray<Godot.GodotString> {
         get {
             __getUniqueNames()
         }
@@ -1560,7 +1560,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var uniqueAnimationNames: Godot.GodotTypedArray<Godot.GodotString> {
+    public var uniqueAnimationNames: Godot.GodotArray<Godot.GodotString> {
         get {
             __getUniqueAnimationNames()
         }
@@ -1571,7 +1571,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var skeletons: Godot.GodotTypedArray<Godot.GLTFSkeleton?> {
+    public var skeletons: Godot.GodotArray<Godot.GLTFSkeleton?> {
         get {
             __getSkeletons()
         }
@@ -1593,7 +1593,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var animations: Godot.GodotTypedArray<Godot.GLTFAnimation?> {
+    public var animations: Godot.GodotArray<Godot.GLTFAnimation?> {
         get {
             __getAnimations()
         }

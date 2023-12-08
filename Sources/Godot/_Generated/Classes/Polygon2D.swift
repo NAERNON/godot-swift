@@ -144,7 +144,7 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __setPolygons(_ polygons: Godot.GodotArray) {
+    private func __setPolygons<Value: VariantEncodable & VariantDecodable>(_ polygons: Godot.GodotArray<Value>) {
         polygons.withUnsafeRawPointer { (__ptr_polygons) in
             withUnsafeArgumentPackPointer(__ptr_polygons) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -166,8 +166,8 @@ open class Polygon2D: Node2D {
         }
         }
     }()
-    private func __getPolygons() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    private func __getPolygons() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -996,7 +996,7 @@ open class Polygon2D: Node2D {
         }
     }
 
-    public var polygons: Godot.GodotArray {
+    public var polygons: Godot.GodotArray<Variant> {
         get {
             __getPolygons()
         }

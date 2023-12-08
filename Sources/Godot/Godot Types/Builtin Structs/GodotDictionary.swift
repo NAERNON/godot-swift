@@ -31,11 +31,11 @@ extension GodotDictionary {
         }
     }
     
-    public func keys() -> GodotArray {
+    public func keys() -> GodotArray<Variant> {
         self._keys()
     }
     
-    public func values() -> GodotArray {
+    public func values() -> GodotArray<Variant> {
         self._values()
     }
 }
@@ -49,7 +49,7 @@ extension GodotDictionary: Equatable {
 extension GodotDictionary: Sequence {
     public struct Iterator: IteratorProtocol {
         private let dictionary: GodotDictionary
-        private let keys: GodotArray
+        private let keys: GodotArray<Variant>
         private var index = 0
         
         fileprivate init(dictionary: GodotDictionary) {

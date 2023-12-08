@@ -12,8 +12,8 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func buildBoxPlanes(extents: Godot.Vector3) -> Godot.GodotTypedArray<Godot.Plane> {
-        let __temporary = Godot.GodotTypedArray<Godot.Plane>()
+    public func buildBoxPlanes(extents: Godot.Vector3) -> Godot.GodotArray<Godot.Plane> {
+        let __temporary = Godot.GodotArray<Godot.Plane>()
         withUnsafePointer(to: extents) { (__ptr_extents) in
             withUnsafeArgumentPackPointer(__ptr_extents) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -38,8 +38,8 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func buildCylinderPlanes(radius: Double, height: Double, sides: Int32, axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!) -> Godot.GodotTypedArray<Godot.Plane> {
-        let __temporary = Godot.GodotTypedArray<Godot.Plane>()
+    public func buildCylinderPlanes(radius: Double, height: Double, sides: Int32, axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!) -> Godot.GodotArray<Godot.Plane> {
+        let __temporary = Godot.GodotArray<Godot.Plane>()
         withUnsafePointer(to: radius) { (__ptr_radius) in
             withUnsafePointer(to: height) { (__ptr_height) in
                 withUnsafePointer(to: sides) { (__ptr_sides) in
@@ -70,8 +70,8 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func buildCapsulePlanes(radius: Double, height: Double, sides: Int32, lats: Int32, axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!) -> Godot.GodotTypedArray<Godot.Plane> {
-        let __temporary = Godot.GodotTypedArray<Godot.Plane>()
+    public func buildCapsulePlanes(radius: Double, height: Double, sides: Int32, lats: Int32, axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!) -> Godot.GodotArray<Godot.Plane> {
+        let __temporary = Godot.GodotArray<Godot.Plane>()
         withUnsafePointer(to: radius) { (__ptr_radius) in
             withUnsafePointer(to: height) { (__ptr_height) in
                 withUnsafePointer(to: sides) { (__ptr_sides) in
@@ -328,7 +328,7 @@ open class Geometry3D: Object {
         }
         }
     }()
-    public func segmentIntersectsConvex(from: Godot.Vector3, to: Godot.Vector3, planes: Godot.GodotTypedArray<Godot.Plane>) -> Godot.PackedVector3Array {
+    public func segmentIntersectsConvex(from: Godot.Vector3, to: Godot.Vector3, planes: Godot.GodotArray<Godot.Plane>) -> Godot.PackedVector3Array {
         let __temporary = Godot.PackedVector3Array()
         withUnsafePointer(to: from) { (__ptr_from) in
             withUnsafePointer(to: to) { (__ptr_to) in

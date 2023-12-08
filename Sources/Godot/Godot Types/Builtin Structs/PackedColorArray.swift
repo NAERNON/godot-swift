@@ -10,7 +10,7 @@ extension PackedColorArray {
         self = Self._constructor()
     }
     
-    public init(array: GodotArray) {
+    public init(array: GodotArray<Element>) {
         self = Self._constructor_godotarray(from: array)
     }
     

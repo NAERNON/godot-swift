@@ -30,7 +30,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
         Int32()
     }
 
-    open func _subgizmosIntersectFrustum(camera: Godot.Camera3D?, frustum: Godot.GodotTypedArray<Godot.Plane>) -> Godot.PackedInt32Array {
+    open func _subgizmosIntersectFrustum(camera: Godot.Camera3D?, frustum: Godot.GodotArray<Godot.Plane>) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
@@ -41,7 +41,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
         Godot.Transform3D()
     }
 
-    open func _commitSubgizmos(ids: Godot.PackedInt32Array, restores: Godot.GodotTypedArray<Godot.Transform3D>, cancel: Bool) {
+    open func _commitSubgizmos(ids: Godot.PackedInt32Array, restores: Godot.GodotArray<Godot.Transform3D>, cancel: Bool) {
     }
 
     private static var __method_binding_add_lines: GDExtensionMethodBindPtr = {
@@ -458,7 +458,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
             var returnValue = instance
         ._subgizmosIntersectFrustum(
             camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            frustum: Godot.GodotTypedArray<Godot.Plane>(godotExtensionPointer: args[1]!)
+            frustum: Godot.GodotArray<Godot.Plane>(godotExtensionPointer: args[1]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _set_subgizmo_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -489,7 +489,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
             let _ = instance
         ._commitSubgizmos(
             ids: Godot.PackedInt32Array(godotExtensionPointer: args[0]!),
-            restores: Godot.GodotTypedArray<Godot.Transform3D>(godotExtensionPointer: args[1]!),
+            restores: Godot.GodotArray<Godot.Transform3D>(godotExtensionPointer: args[1]!),
             cancel: args[2]!.load(as: Bool.self)
         )}
         _virtualFunctions = [

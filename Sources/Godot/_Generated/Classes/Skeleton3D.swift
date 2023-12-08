@@ -1032,7 +1032,7 @@ open class Skeleton3D: Node3D {
         }
         }
     }()
-    public func physicalBonesStartSimulation(bones: Godot.GodotTypedArray<Godot.GodotStringName> = []) {
+    public func physicalBonesStartSimulation(bones: Godot.GodotArray<Godot.GodotStringName> = []) {
         bones.withUnsafeRawPointer { (__ptr_bones) in
             withUnsafeArgumentPackPointer(__ptr_bones) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

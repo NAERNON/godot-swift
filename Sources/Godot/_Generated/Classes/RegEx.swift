@@ -110,8 +110,8 @@ open class RegEx: RefCounted {
         }
         }
     }()
-    public func searchAll(subject: Godot.GodotString, offset: Int32 = 0, end: Int32 = -1) -> Godot.GodotTypedArray<Godot.RegExMatch?> {
-        let __temporary = Godot.GodotTypedArray<Godot.RegExMatch?>()
+    public func searchAll(subject: Godot.GodotString, offset: Int32 = 0, end: Int32 = -1) -> Godot.GodotArray<Godot.RegExMatch?> {
+        let __temporary = Godot.GodotArray<Godot.RegExMatch?>()
         subject.withUnsafeRawPointer { (__ptr_subject) in
             withUnsafePointer(to: offset) { (__ptr_offset) in
                 withUnsafePointer(to: end) { (__ptr_end) in

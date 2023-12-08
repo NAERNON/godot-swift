@@ -36,11 +36,6 @@ print(strings)
 // Prints "["index 4", "index 5"]"
 ```
 
-#### GodotArray and GodotTypedArray
-
-``GodotArray`` is a collection type holding ``Variant`` values. Variants can hold many types of values, thus making `GodotArray` a collection with undefined elements.
-Use ``GodotTypedArray`` to bound the elements to a given type.
-
 ### Signals and Callables
 
 In Swift, signals and callables are handled through the concept of emitters and receivers. An emitter emits a signal and a receiver, acting as a callable, receives the signal. See ``Emitter(signal:args:)`` and ``Receiver()`` to learn more.

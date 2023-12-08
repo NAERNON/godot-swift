@@ -55,7 +55,7 @@ open class GraphEdit: Control {
     public struct ConnectionFromEmpty {
     }
 
-    @Emitter(signal: "delete_nodes_request", args: ("nodes", Godot.GodotTypedArray<Godot.GodotStringName>))
+    @Emitter(signal: "delete_nodes_request", args: ("nodes", Godot.GodotArray<Godot.GodotStringName>))
     public struct DeleteNodesRequest {
     }
 
@@ -224,8 +224,8 @@ open class GraphEdit: Control {
         }
         }
     }()
-    public func connectionList() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func connectionList() -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

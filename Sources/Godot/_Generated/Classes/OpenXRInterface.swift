@@ -170,8 +170,8 @@ open class OpenXRInterface: XRInterface {
         }
         }
     }()
-    public func actionSets() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func actionSets() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -192,8 +192,8 @@ open class OpenXRInterface: XRInterface {
         }
         }
     }()
-    public func availableDisplayRefreshRates() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func availableDisplayRefreshRates() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

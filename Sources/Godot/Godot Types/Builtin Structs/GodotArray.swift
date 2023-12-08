@@ -1,49 +1,14 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct GodotArray {}
+public struct GodotArray<Element> where Element : VariantEncodable & VariantDecodable {}
 
 extension GodotArray {
     // MARK: Constructors
     
     public init() {
         self = Self._constructor()
-    }
-    
-    public init(byteArray: PackedByteArray) {
-        self = Self._constructor_packedbytearray(from: byteArray)
-    }
-    
-    public init(int32Array: PackedInt32Array) {
-        self = Self._constructor_packedint32array(from: int32Array)
-    }
-    
-    public init(int64Array: PackedInt64Array) {
-        self = Self._constructor_packedint64array(from: int64Array)
-    }
-    
-    public init(float32Array: PackedFloat32Array) {
-        self = Self._constructor_packedfloat32array(from: float32Array)
-    }
-    
-    public init(float64Array: PackedFloat64Array) {
-        self = Self._constructor_packedfloat64array(from: float64Array)
-    }
-    
-    public init(stringArray: PackedStringArray) {
-        self = Self._constructor_packedstringarray(from: stringArray)
-    }
-    
-    public init(vector2Array: PackedVector2Array) {
-        self = Self._constructor_packedvector2array(from: vector2Array)
-    }
-    
-    public init(vector3Array: PackedVector3Array) {
-        self = Self._constructor_packedvector3array(from: vector3Array)
-    }
-    
-    public init(colorArray: PackedColorArray) {
-        self = Self._constructor_packedcolorarray(from: colorArray)
+        setTypedIfApplicable()
     }
     
     public init(godotExtensionPointer: GDExtensionConstTypePtr) {
@@ -54,6 +19,28 @@ extension GodotArray {
     
     internal mutating func withCopiedOpaque() -> Self {
         self._duplicate(deep: true)
+    }
+    
+    // MARK: Type
+    
+    private func setTypedIfApplicable() {
+        guard let storageType = Element.encodedVariantStorageType else {
+            return
+        }
+        
+        withUnsafeRawPointer { ptr in
+            Element._$className.withUnsafeRawPointer { classNamePtr in
+                Variant().withUnsafeRawPointer { scriptPtr in
+                    // TODO: Check script (last parameter)
+                    gdextension_interface_array_set_typed(
+                        ptr,
+                        storageType.extensionType,
+                        classNamePtr,
+                        scriptPtr
+                    )
+                }
+            }
+        }
     }
 }
 
@@ -82,17 +69,19 @@ extension GodotArray: BidirectionalCollection {
 extension GodotArray: RandomAccessCollection {}
 
 extension GodotArray: RangeReplaceableCollection {
-    public subscript(index: Int) -> Variant {
+    public subscript(index: Int) -> Element {
         get {
-            Variant(storage: self._getValue(at: Int64(index)))
+            Element.decodeCompatibleVariantStorage(self._getValue(at: Int64(index)))
         }
         set(newValue) {
-            self._setValue(newValue.storage, at: Int64(index))
+            Element.withEncodedVariantStorage(newValue) { storage in
+                self._setValue(storage, at: Int64(index))
+            }
         }
     }
     
     public mutating func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
-    where C : Collection, Variant == C.Element {
+    where C : Collection, Element == C.Element {
         var rangeIndex = subrange.lowerBound
         for (collectionIndex, element) in newElements.enumerated() {
             if collectionIndex + subrange.lowerBound < subrange.upperBound {
@@ -114,7 +103,7 @@ extension GodotArray: RangeReplaceableCollection {
 extension GodotArray: MutableCollection {}
 
 extension GodotArray: ExpressibleByArrayLiteral {
-    public init(arrayLiteral elements: Variant...) {
+    public init(arrayLiteral elements: Element...) {
         self.init(elements)
     }
 }

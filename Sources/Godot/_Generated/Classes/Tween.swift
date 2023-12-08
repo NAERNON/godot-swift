@@ -87,7 +87,7 @@ open class Tween: RefCounted {
         }
         }
     }()
-    public func tweenProperty<Variant1 : VariantEncodable>(object: Godot.Object?, property: Godot.NodePath, finalVal: Variant1, duration: Double) -> Godot.PropertyTweener? {
+    public func tweenProperty<Value: VariantEncodable>(object: Godot.Object?, property: Godot.NodePath, finalVal: Value, duration: Double) -> Godot.PropertyTweener? {
         var __temporary: GDExtensionObjectPtr!
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
@@ -173,7 +173,7 @@ open class Tween: RefCounted {
         }
         }
     }()
-    public func tweenMethod<Variant1 : VariantEncodable, Variant2 : VariantEncodable>(_ method: Godot.Callable, from: Variant1, to: Variant2, duration: Double) -> Godot.MethodTweener? {
+    public func tweenMethod<Value2: VariantEncodable, Value3: VariantEncodable>(_ method: Godot.Callable, from: Value2, to: Value3, duration: Double) -> Godot.MethodTweener? {
         var __temporary: GDExtensionObjectPtr!
         method.withUnsafeRawPointer { (__ptr_method) in
             Godot.Variant.withStorageUnsafeRawPointer(to: from) { (__ptr_from) in
@@ -645,7 +645,7 @@ open class Tween: RefCounted {
         }
         }
     }()
-    static public func interpolateValue<Variant1 : VariantEncodable, Variant2 : VariantEncodable>(initialValue: Variant1, deltaValue: Variant2, elapsedTime: Double, duration: Double, transType: Godot.Tween.TransitionType, easeType: Godot.Tween.EaseType) -> Godot.Variant {
+    static public func interpolateValue<Value1: VariantEncodable, Value2: VariantEncodable>(initialValue: Value1, deltaValue: Value2, elapsedTime: Double, duration: Double, transType: Godot.Tween.TransitionType, easeType: Godot.Tween.EaseType) -> Godot.Variant {
         let __temporary = Godot.Variant()
         Godot.Variant.withStorageUnsafeRawPointer(to: initialValue) { (__ptr_initialValue) in
             Godot.Variant.withStorageUnsafeRawPointer(to: deltaValue) { (__ptr_deltaValue) in

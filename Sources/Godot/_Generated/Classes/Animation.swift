@@ -695,7 +695,7 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackInsertKey<Variant1 : VariantEncodable>(trackIdx: Int32, time: Double, key: Variant1, transition: Double = 1) -> Int32 {
+    public func trackInsertKey<Value: VariantEncodable>(trackIdx: Int32, time: Double, key: Value, transition: Double = 1) -> Int32 {
         var __temporary = Int32()
         withUnsafePointer(to: trackIdx) { (__ptr_trackIdx) in
             withUnsafePointer(to: time) { (__ptr_time) in
@@ -775,7 +775,7 @@ open class Animation: Resource {
         }
         }
     }()
-    public func trackSetKeyValue<Variant1 : VariantEncodable>(trackIdx: Int32, key: Int32, value: Variant1) {
+    public func trackSetKeyValue<Value: VariantEncodable>(trackIdx: Int32, key: Int32, value: Value) {
         withUnsafePointer(to: trackIdx) { (__ptr_trackIdx) in
             withUnsafePointer(to: key) { (__ptr_key) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
@@ -1225,8 +1225,8 @@ open class Animation: Resource {
         }
         }
     }()
-    public func methodTrackGetParams(trackIdx: Int32, keyIdx: Int32) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func methodTrackGetParams(trackIdx: Int32, keyIdx: Int32) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         withUnsafePointer(to: trackIdx) { (__ptr_trackIdx) in
             withUnsafePointer(to: keyIdx) { (__ptr_keyIdx) in
                 withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_keyIdx) { (__accessPtr) in

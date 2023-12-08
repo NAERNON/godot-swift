@@ -986,8 +986,8 @@ open class Camera3D: Node3D {
         }
         }
     }()
-    public func frustum() -> Godot.GodotTypedArray<Godot.Plane> {
-        let __temporary = Godot.GodotTypedArray<Godot.Plane>()
+    public func frustum() -> Godot.GodotArray<Godot.Plane> {
+        let __temporary = Godot.GodotArray<Godot.Plane>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

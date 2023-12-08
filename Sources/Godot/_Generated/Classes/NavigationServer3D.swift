@@ -48,8 +48,8 @@ open class NavigationServer3D: Object {
         }
         }
     }()
-    public func maps() -> Godot.GodotTypedArray<Godot.RID> {
-        let __temporary = Godot.GodotTypedArray<Godot.RID>()
+    public func maps() -> Godot.GodotArray<Godot.RID> {
+        let __temporary = Godot.GodotArray<Godot.RID>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -592,8 +592,8 @@ open class NavigationServer3D: Object {
         }
         }
     }()
-    public func mapGetLinks(map: Godot.RID) -> Godot.GodotTypedArray<Godot.RID> {
-        let __temporary = Godot.GodotTypedArray<Godot.RID>()
+    public func mapGetLinks(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+        let __temporary = Godot.GodotArray<Godot.RID>()
         map.withUnsafeRawPointer { (__ptr_map) in
             withUnsafeArgumentPackPointer(__ptr_map) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -618,8 +618,8 @@ open class NavigationServer3D: Object {
         }
         }
     }()
-    public func mapGetRegions(map: Godot.RID) -> Godot.GodotTypedArray<Godot.RID> {
-        let __temporary = Godot.GodotTypedArray<Godot.RID>()
+    public func mapGetRegions(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+        let __temporary = Godot.GodotArray<Godot.RID>()
         map.withUnsafeRawPointer { (__ptr_map) in
             withUnsafeArgumentPackPointer(__ptr_map) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -644,8 +644,8 @@ open class NavigationServer3D: Object {
         }
         }
     }()
-    public func mapGetAgents(map: Godot.RID) -> Godot.GodotTypedArray<Godot.RID> {
-        let __temporary = Godot.GodotTypedArray<Godot.RID>()
+    public func mapGetAgents(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+        let __temporary = Godot.GodotArray<Godot.RID>()
         map.withUnsafeRawPointer { (__ptr_map) in
             withUnsafeArgumentPackPointer(__ptr_map) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -670,8 +670,8 @@ open class NavigationServer3D: Object {
         }
         }
     }()
-    public func mapGetObstacles(map: Godot.RID) -> Godot.GodotTypedArray<Godot.RID> {
-        let __temporary = Godot.GodotTypedArray<Godot.RID>()
+    public func mapGetObstacles(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+        let __temporary = Godot.GodotArray<Godot.RID>()
         map.withUnsafeRawPointer { (__ptr_map) in
             withUnsafeArgumentPackPointer(__ptr_map) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

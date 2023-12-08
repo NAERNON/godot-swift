@@ -24,7 +24,7 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
         Godot.PackedInt32Array()
     }
 
-    open func _rpc(peer: Int32, object: Godot.Object?, method: Godot.GodotStringName, args: Godot.GodotArray) -> Godot.ErrorType {
+    open func _rpc(peer: Int32, object: Godot.Object?, method: Godot.GodotStringName, args: Godot.GodotArray<Variant>) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -96,7 +96,7 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
             peer: args[0]!.load(as: Int32.self),
             object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
             method: Godot.GodotStringName(godotExtensionPointer: args[2]!),
-            args: Godot.GodotArray(godotExtensionPointer: args[3]!)
+            args: Godot.GodotArray<Variant>(godotExtensionPointer: args[3]!)
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         let _get_remote_sender_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

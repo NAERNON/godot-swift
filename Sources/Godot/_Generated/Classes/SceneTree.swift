@@ -470,8 +470,8 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func processedTweens() -> Godot.GodotTypedArray<Godot.Tween?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Tween?>()
+    public func processedTweens() -> Godot.GodotArray<Godot.Tween?> {
+        let __temporary = Godot.GodotArray<Godot.Tween?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -656,7 +656,7 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func setGroupFlags<Variant1 : VariantEncodable>(callFlags: UInt32, group: Godot.GodotStringName, property: Godot.GodotString, value: Variant1) {
+    public func setGroupFlags<Value: VariantEncodable>(callFlags: UInt32, group: Godot.GodotStringName, property: Godot.GodotString, value: Value) {
         withUnsafePointer(to: callFlags) { (__ptr_callFlags) in
             group.withUnsafeRawPointer { (__ptr_group) in
                 property.withUnsafeRawPointer { (__ptr_property) in
@@ -752,7 +752,7 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func setGroup<Variant1 : VariantEncodable>(_ group: Godot.GodotStringName, property: Godot.GodotString, value: Variant1) {
+    public func setGroup<Value: VariantEncodable>(_ group: Godot.GodotStringName, property: Godot.GodotString, value: Value) {
         group.withUnsafeRawPointer { (__ptr_group) in
             property.withUnsafeRawPointer { (__ptr_property) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
@@ -778,8 +778,8 @@ open class SceneTree: MainLoop {
         }
         }
     }()
-    public func nodesInGroup(_ group: Godot.GodotStringName) -> Godot.GodotTypedArray<Godot.Node?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Node?>()
+    public func nodesInGroup(_ group: Godot.GodotStringName) -> Godot.GodotArray<Godot.Node?> {
+        let __temporary = Godot.GodotArray<Godot.Node?>()
         group.withUnsafeRawPointer { (__ptr_group) in
             withUnsafeArgumentPackPointer(__ptr_group) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

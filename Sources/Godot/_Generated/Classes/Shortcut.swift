@@ -12,7 +12,7 @@ open class Shortcut: Resource {
         }
         }
     }()
-    private func __setEvents(_ events: Godot.GodotArray) {
+    private func __setEvents<Value: VariantEncodable & VariantDecodable>(_ events: Godot.GodotArray<Value>) {
         events.withUnsafeRawPointer { (__ptr_events) in
             withUnsafeArgumentPackPointer(__ptr_events) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -34,8 +34,8 @@ open class Shortcut: Resource {
         }
         }
     }()
-    private func __getEvents() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    private func __getEvents() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -121,7 +121,7 @@ open class Shortcut: Resource {
         return __temporary
     }
 
-    public var events: Godot.GodotArray {
+    public var events: Godot.GodotArray<Variant> {
         get {
             __getEvents()
         }

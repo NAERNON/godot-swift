@@ -112,7 +112,7 @@ open class Performance: Object {
         }
         }
     }()
-    public func addCustomMonitor(id: Godot.GodotStringName, callable: Godot.Callable, arguments: Godot.GodotArray = []) {
+    public func addCustomMonitor<Value: VariantEncodable & VariantDecodable>(id: Godot.GodotStringName, callable: Godot.Callable, arguments: Godot.GodotArray<Value> = []) {
         id.withUnsafeRawPointer { (__ptr_id) in
             callable.withUnsafeRawPointer { (__ptr_callable) in
                 arguments.withUnsafeRawPointer { (__ptr_arguments) in
@@ -234,8 +234,8 @@ open class Performance: Object {
         }
         }
     }()
-    public func customMonitorNames() -> Godot.GodotTypedArray<Godot.GodotStringName> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotStringName>()
+    public func customMonitorNames() -> Godot.GodotArray<Godot.GodotStringName> {
+        let __temporary = Godot.GodotArray<Godot.GodotStringName>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

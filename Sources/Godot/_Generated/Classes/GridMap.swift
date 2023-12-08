@@ -942,8 +942,8 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func usedCells() -> Godot.GodotTypedArray<Godot.Vector3i> {
-        let __temporary = Godot.GodotTypedArray<Godot.Vector3i>()
+    public func usedCells() -> Godot.GodotArray<Godot.Vector3i> {
+        let __temporary = Godot.GodotArray<Godot.Vector3i>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -964,8 +964,8 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func usedCellsByItem(_ item: Int32) -> Godot.GodotTypedArray<Godot.Vector3i> {
-        let __temporary = Godot.GodotTypedArray<Godot.Vector3i>()
+    public func usedCellsByItem(_ item: Int32) -> Godot.GodotArray<Godot.Vector3i> {
+        let __temporary = Godot.GodotArray<Godot.Vector3i>()
         withUnsafePointer(to: item) { (__ptr_item) in
             withUnsafeArgumentPackPointer(__ptr_item) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -990,8 +990,8 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func meshes() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func meshes() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -1012,8 +1012,8 @@ open class GridMap: Node3D {
         }
         }
     }()
-    public func bakeMeshes() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func bakeMeshes() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

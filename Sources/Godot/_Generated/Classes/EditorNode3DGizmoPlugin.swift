@@ -54,7 +54,7 @@ open class EditorNode3DGizmoPlugin: Resource {
         Int32()
     }
 
-    open func _subgizmosIntersectFrustum(gizmo: Godot.EditorNode3DGizmo?, camera: Godot.Camera3D?, frustumPlanes: Godot.GodotTypedArray<Godot.Plane>) -> Godot.PackedInt32Array {
+    open func _subgizmosIntersectFrustum(gizmo: Godot.EditorNode3DGizmo?, camera: Godot.Camera3D?, frustumPlanes: Godot.GodotArray<Godot.Plane>) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
@@ -65,7 +65,7 @@ open class EditorNode3DGizmoPlugin: Resource {
     open func _setSubgizmoTransform(gizmo: Godot.EditorNode3DGizmo?, subgizmoId: Int32, transform: Godot.Transform3D) {
     }
 
-    open func _commitSubgizmos(gizmo: Godot.EditorNode3DGizmo?, ids: Godot.PackedInt32Array, restores: Godot.GodotTypedArray<Godot.Transform3D>, cancel: Bool) {
+    open func _commitSubgizmos(gizmo: Godot.EditorNode3DGizmo?, ids: Godot.PackedInt32Array, restores: Godot.GodotArray<Godot.Transform3D>, cancel: Bool) {
     }
 
     private static var __method_binding_create_material: GDExtensionMethodBindPtr = {
@@ -361,7 +361,7 @@ open class EditorNode3DGizmoPlugin: Resource {
         ._subgizmosIntersectFrustum(
             gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
-            frustumPlanes: Godot.GodotTypedArray<Godot.Plane>(godotExtensionPointer: args[2]!)
+            frustumPlanes: Godot.GodotArray<Godot.Plane>(godotExtensionPointer: args[2]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _get_subgizmo_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -395,7 +395,7 @@ open class EditorNode3DGizmoPlugin: Resource {
         ._commitSubgizmos(
             gizmo: Godot.EditorNode3DGizmo.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             ids: Godot.PackedInt32Array(godotExtensionPointer: args[1]!),
-            restores: Godot.GodotTypedArray<Godot.Transform3D>(godotExtensionPointer: args[2]!),
+            restores: Godot.GodotArray<Godot.Transform3D>(godotExtensionPointer: args[2]!),
             cancel: args[3]!.load(as: Bool.self)
         )}
         _virtualFunctions = [

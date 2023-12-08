@@ -139,6 +139,10 @@ struct GodotBuiltinClass: Decodable {
         var ptrIdentifier: String {
             "_" + name
         }
+        
+        var usesVariantGeneric: Bool {
+            true
+        }
     }
     
     /// A constructor that takes raw pointers as input.
@@ -191,11 +195,95 @@ struct GodotBuiltinClass: Decodable {
     
     var syntaxOptions: GodotTypeSyntaxOptions {
         if name == "Color" {
-            [.optionalClasses, .prefixByGodot]
+            [
+                .optionalClasses,
+                .prefixByGodot,
+                .genericArrayOnVariant
+            ]
+        } else if name == .array {
+            [
+                .optionalClasses,
+                .prefixByGodot,
+                .floatAsDouble,
+                .genericArrayOnElement
+            ]
         } else if useOpaque {
-            [.optionalClasses, .prefixByGodot, .floatAsDouble]
+            [
+                .optionalClasses,
+                .prefixByGodot,
+                .floatAsDouble,
+                .genericArrayOnVariant
+            ]
         } else {
-            [.optionalClasses, .prefixByGodot, .floatAsReal]
+            [
+                .optionalClasses, .prefixByGodot,
+                .floatAsReal,
+                .genericArrayOnVariant
+            ]
+        }
+    }
+    
+    @CodeBlockItemListBuilder
+    func lazyVariablesSyntax() -> CodeBlockItemListSyntax {
+        if hasDestructor {
+            """
+            private var __destructor: GDExtensionPtrDestructor = {
+                return gdextension_interface_variant_get_ptr_destructor(\(raw: name.variantRepresentationType!))!
+            }()
+            """
+        }
+        
+        for constructor in constructors {
+            """
+            private var \(raw: constructor.ptrIdentifier): GDExtensionPtrConstructor = {
+                return gdextension_interface_variant_get_ptr_constructor(\(raw: name.variantRepresentationType!), \(literal: constructor.index))!
+            }()
+            """
+        }
+        
+        for `operator` in operators {
+            """
+            private var \(raw: `operator`.ptrIdentifier): GDExtensionPtrOperatorEvaluator = {
+                return gdextension_interface_variant_get_ptr_operator_evaluator(\(raw: `operator`.extensionSyntax), \(raw: name.variantRepresentationType!), \(raw: `operator`.rightType?.variantRepresentationType ?? "GDEXTENSION_VARIANT_TYPE_NIL"))!
+            }()
+            """
+        }
+        
+        if indexingReturnType != nil, !isKeyed {
+            """
+            private var __indexed_setter: GDExtensionPtrIndexedSetter = {
+                return gdextension_interface_variant_get_ptr_indexed_setter(\(raw: name.variantRepresentationType!))!
+            }()
+            private var __indexed_getter: GDExtensionPtrIndexedGetter = {
+                return gdextension_interface_variant_get_ptr_indexed_getter(\(raw: name.variantRepresentationType!))!
+            }()
+            """
+        }
+        
+        if isKeyed {
+            """
+            private var __keyed_setter: GDExtensionPtrKeyedSetter = {
+                return gdextension_interface_variant_get_ptr_keyed_setter(\(raw: name.variantRepresentationType!))!
+            }()
+            private var __keyed_getter: GDExtensionPtrKeyedGetter = {
+                return gdextension_interface_variant_get_ptr_keyed_getter(\(raw: name.variantRepresentationType!))!
+            }()
+            private var __keyed_checker: GDExtensionPtrKeyedChecker = {
+                return gdextension_interface_variant_get_ptr_keyed_checker(\(raw: name.variantRepresentationType!))!
+            }()
+            """
+        }
+        
+        if let methods {
+            for method in methods {
+                """
+                private var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod = {
+                    GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
+                    return gdextension_interface_variant_get_ptr_builtin_method(\(raw: name.variantRepresentationType!), __ptr__method_name, \(literal: method.hash))!
+                    }
+                }()
+                """
+            }
         }
     }
     
@@ -221,14 +309,6 @@ struct GodotBuiltinClass: Decodable {
     
     @MemberBlockItemListBuilder
     func constructorsSyntax(classSize: Int) throws -> MemberBlockItemListSyntax {
-        if hasDestructor {
-            """
-            private static var __destructor: GDExtensionPtrDestructor = {
-                return gdextension_interface_variant_get_ptr_destructor(\(raw: name.variantRepresentationType!))!
-            }()
-            """
-        }
-        
         for constructor in constructors {
             try constructorSyntax(constructor, classSize: classSize)
                 .with(\.trailingTrivia, .newlines(2))
@@ -240,17 +320,11 @@ struct GodotBuiltinClass: Decodable {
         _ constructor: Constructor,
         classSize: Int
     ) throws -> MemberBlockItemListSyntax {
-        """
-        private static var \(raw: constructor.ptrIdentifier): GDExtensionPtrConstructor = {
-            return gdextension_interface_variant_get_ptr_constructor(\(raw: name.variantRepresentationType!), \(literal: constructor.index))!
-        }()
-        """
-        
         try constructor.translatedArguments.declSyntax(
             options: syntaxOptions,
             keywords: .internal
         ) {
-            let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
+            let destructorPtr = hasDestructor ? "__destructor" : "nil"
             
             if useOpaque {
                 "let __temporary: Opaque = .init(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))"
@@ -262,13 +336,13 @@ struct GodotBuiltinClass: Decodable {
                 if name.isBuiltinGodotClassWithOpaque {
                     """
                     __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                        Self.\(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
+                        \(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
                     }
                     """
                 } else {
                     """
                     withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                        Self.\(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
+                        \(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
                     }
                     """
                 }
@@ -287,7 +361,7 @@ struct GodotBuiltinClass: Decodable {
             options: syntaxOptions,
             keywords: .internal
         ) {
-            let destructorPtr = hasDestructor ? "Self.__destructor" : "nil"
+            let destructorPtr = hasDestructor ? "__destructor" : "nil"
             
             if useOpaque {
                 "let __temporary: Opaque = .init(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))"
@@ -299,13 +373,13 @@ struct GodotBuiltinClass: Decodable {
                 if name.isBuiltinGodotClassWithOpaque {
                     """
                     __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                        Self.\(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
+                        \(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
                     }
                     """
                 } else {
                     """
                     withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                        Self.\(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
+                        \(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
                     }
                     """
                 }
@@ -333,12 +407,6 @@ struct GodotBuiltinClass: Decodable {
             .withVariantStorageReturnType
             .translated
         
-        """
-        private static var \(raw: `operator`.ptrIdentifier): GDExtensionPtrOperatorEvaluator = {
-            return gdextension_interface_variant_get_ptr_operator_evaluator(\(raw: `operator`.extensionSyntax), \(raw: name.variantRepresentationType!), \(raw: `operator`.rightType?.variantRepresentationType ?? "GDEXTENSION_VARIANT_TYPE_NIL"))!
-        }()
-        """
-        
         try operatorFunction.declSyntax(
             hideAllLabels: true,
             options: syntaxOptions,
@@ -355,7 +423,7 @@ struct GodotBuiltinClass: Decodable {
                         let rhsPointer = `operator`.rightType == nil ? "nil" : pointerNames[1]
                         
                         """
-                        Self.\(raw: `operator`.ptrIdentifier)(\(raw: lhsPointer), \(raw: rhsPointer), \(raw: instancePtrName))
+                        \(raw: `operator`.ptrIdentifier)(\(raw: lhsPointer), \(raw: rhsPointer), \(raw: instancePtrName))
                         """
                     }
                 }
@@ -369,15 +437,6 @@ struct GodotBuiltinClass: Decodable {
             let borrows = indexingReturnType == .variant
             let indexingReturnType = indexingReturnType.storage
             
-            """
-            private static var __indexed_setter: GDExtensionPtrIndexedSetter = {
-                return gdextension_interface_variant_get_ptr_indexed_setter(\(raw: name.variantRepresentationType!))!
-            }()
-            private static var __indexed_getter: GDExtensionPtrIndexedGetter = {
-                return gdextension_interface_variant_get_ptr_indexed_getter(\(raw: name.variantRepresentationType!))!
-            }()
-            """
-            
             try FunctionDeclSyntax("internal func _getValue(at index: GDExtensionInt) -> \(raw: indexingReturnType.syntax(options: syntaxOptions))") {
                 try indexingReturnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
                     try instanceType.pointerAccessSyntax(
@@ -386,7 +445,7 @@ struct GodotBuiltinClass: Decodable {
                         mutability: .mutable
                     ) { instancePtr in
                         try name.pointerAccessSyntax(instanceName: "self", options: syntaxOptions) { selfPtr in
-                            "Self.__indexed_getter(\(raw: selfPtr), index, \(raw: instancePtr))"
+                            "__indexed_getter(\(raw: selfPtr), index, \(raw: instancePtr))"
                         }
                     }
                 }
@@ -406,7 +465,7 @@ struct GodotBuiltinClass: Decodable {
                         options: syntaxOptions,
                         mutability: .mutable
                     ) { selfPtr in
-                        "Self.__indexed_setter(\(raw: selfPtr), index, \(raw: valuePtr))"
+                        "__indexed_setter(\(raw: selfPtr), index, \(raw: valuePtr))"
                     }
                 }
             }
@@ -417,16 +476,13 @@ struct GodotBuiltinClass: Decodable {
     func keyGetterSetterSyntax() -> MemberBlockItemListSyntax {
         if isKeyed {
             """
-            private static var __keyed_setter: GDExtensionPtrKeyedSetter = {
-                return gdextension_interface_variant_get_ptr_keyed_setter(\(raw: name.variantRepresentationType!))!
-            }()
             internal func _getValue(forKey key: borrowing Variant.Storage) -> Variant.Storage {
                 let __returnValue = Variant.Storage()
                 
                 __returnValue.withUnsafeRawPointer { __ptr___returnValue in
                     key.withUnsafeRawPointer { __ptr_key in
                         self.withUnsafeRawPointer { __ptr_self in
-                            Self.__keyed_getter(__ptr_self, __ptr_key, __ptr___returnValue)
+                            __keyed_getter(__ptr_self, __ptr_key, __ptr___returnValue)
                         }
                     }
                 }
@@ -434,30 +490,24 @@ struct GodotBuiltinClass: Decodable {
                 return __returnValue
             }
             
-            private static var __keyed_getter: GDExtensionPtrKeyedGetter = {
-                return gdextension_interface_variant_get_ptr_keyed_getter(\(raw: name.variantRepresentationType!))!
-            }()
             internal mutating func _set(value: borrowing Variant.Storage, forKey key: borrowing Variant.Storage) {
                 replaceOpaqueValueIfNecessary()
                 
                 value.withUnsafeRawPointer { __ptr_value in
                     key.withUnsafeRawPointer { __ptr_key in
                         self.withUnsafeRawPointer { __ptr_self in
-                            Self.__keyed_setter(__ptr_self, __ptr_key, __ptr_value)
+                            __keyed_setter(__ptr_self, __ptr_key, __ptr_value)
                         }
                     }
                 }
             }
             
-            private static var __keyed_checker: GDExtensionPtrKeyedChecker = {
-                return gdextension_interface_variant_get_ptr_keyed_checker(\(raw: name.variantRepresentationType!))!
-            }()
             internal func _check(key: borrowing Variant.Storage) -> Bool {
                 var keyCheck = UInt32()
                 
                 key.withUnsafeRawPointer { __ptr_key in
                     self.withUnsafeRawPointer { __ptr_self in
-                        keyCheck = Self.__keyed_checker(__ptr_self, __ptr_key)
+                        keyCheck = __keyed_checker(__ptr_self, __ptr_key)
                     }
                 }
                 
@@ -479,14 +529,6 @@ struct GodotBuiltinClass: Decodable {
     
     @MemberBlockItemListBuilder
     private func methodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
-        """
-        private static var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod = {
-            GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
-            return gdextension_interface_variant_get_ptr_builtin_method(\(raw: name.variantRepresentationType!), __ptr__method_name, \(literal: method.hash))!
-            }
-        }()
-        """
-        
         let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
         let translatedMethod = method.withVariantStorageReturnType.translated
         let functionDecl = try translatedMethod.withNamePrefixed(by: "_").declSyntax(
@@ -506,14 +548,14 @@ struct GodotBuiltinClass: Decodable {
                             mutability: .mutable
                         ) { instancePtr in
                             if method.isStatic {
-                                "Self.\(raw: method.ptrIdentifier)(nil, \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
+                                "\(raw: method.ptrIdentifier)(nil, \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
                             } else {
                                 try name.pointerAccessSyntax(
                                     instanceName: "self",
                                     options: syntaxOptions,
                                     mutability: mutability
                                 ) { selfPtr in
-                                    "Self.\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
+                                    "\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
                                 }
                             }
                         }
@@ -522,14 +564,14 @@ struct GodotBuiltinClass: Decodable {
             } else {
                 try translatedMethod.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
                     if method.isStatic {
-                        "Self.\(raw: method.ptrIdentifier)(nil, \(raw: packName), nil, \(raw: method.argumentsCountSyntax(type: Int32.self)))"
+                        "\(raw: method.ptrIdentifier)(nil, \(raw: packName), nil, \(raw: method.argumentsCountSyntax(type: Int32.self)))"
                     } else {
                         try name.pointerAccessSyntax(
                             instanceName: "self",
                             options: syntaxOptions,
                             mutability: mutability
                         ) { selfPtr in
-                            "Self.\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), nil, \(raw: method.argumentsCountSyntax(type: Int32.self)))"
+                            "\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), nil, \(raw: method.argumentsCountSyntax(type: Int32.self)))"
                         }
                     }
                 }

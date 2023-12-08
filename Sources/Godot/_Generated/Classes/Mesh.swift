@@ -158,12 +158,12 @@ open class Mesh: Resource {
         Int32()
     }
 
-    open func _surfaceGetArrays(index: Int32) -> Godot.GodotArray {
-        Godot.GodotArray()
+    open func _surfaceGetArrays(index: Int32) -> Godot.GodotArray<Variant> {
+        Godot.GodotArray<Variant>()
     }
 
-    open func _surfaceGetBlendShapeArrays(index: Int32) -> Godot.GodotTypedArray<Godot.GodotArray> {
-        Godot.GodotTypedArray<Godot.GodotArray>()
+    open func _surfaceGetBlendShapeArrays(index: Int32) -> Godot.GodotArray<Godot.GodotArray<Variant>> {
+        Godot.GodotArray<Godot.GodotArray<Variant>>()
     }
 
     open func _surfaceGetLods(index: Int32) -> Godot.GodotDictionary {
@@ -317,8 +317,8 @@ open class Mesh: Resource {
         }
         }
     }()
-    public func surfaceGetArrays(surfIdx: Int32) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func surfaceGetArrays(surfIdx: Int32) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         withUnsafePointer(to: surfIdx) { (__ptr_surfIdx) in
             withUnsafeArgumentPackPointer(__ptr_surfIdx) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -343,8 +343,8 @@ open class Mesh: Resource {
         }
         }
     }()
-    public func surfaceGetBlendShapeArrays(surfIdx: Int32) -> Godot.GodotTypedArray<Godot.GodotArray> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotArray>()
+    public func surfaceGetBlendShapeArrays(surfIdx: Int32) -> Godot.GodotArray<Godot.GodotArray<Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotArray<Variant>>()
         withUnsafePointer(to: surfIdx) { (__ptr_surfIdx) in
             withUnsafeArgumentPackPointer(__ptr_surfIdx) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

@@ -38,7 +38,7 @@ open class PacketPeer: RefCounted {
         }
         }
     }()
-    public func putVar<Variant1 : VariantEncodable>(_ `var`: Variant1, fullObjects: Bool = false) -> Godot.ErrorType {
+    public func putVar<Value: VariantEncodable>(_ `var`: Value, fullObjects: Bool = false) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         Godot.Variant.withStorageUnsafeRawPointer(to: `var`) { (__ptr_var) in
             withUnsafePointer(to: fullObjects) { (__ptr_fullObjects) in

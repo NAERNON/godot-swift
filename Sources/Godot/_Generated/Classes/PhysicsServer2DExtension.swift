@@ -347,8 +347,8 @@ open class PhysicsServer2DExtension: PhysicsServer2D {
     open func _bodyRemoveCollisionException(body: Godot.RID, exceptedBody: Godot.RID) {
     }
 
-    open func _bodyGetCollisionExceptions(body: Godot.RID) -> Godot.GodotTypedArray<Godot.RID> {
-        Godot.GodotTypedArray<Godot.RID>()
+    open func _bodyGetCollisionExceptions(body: Godot.RID) -> Godot.GodotArray<Godot.RID> {
+        Godot.GodotArray<Godot.RID>()
     }
 
     open func _bodySetMaxContactsReported(body: Godot.RID, amount: Int32) {

@@ -334,7 +334,7 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddItem<Variant1 : VariantEncodable>(menuRoot: Godot.GodotString, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Variant1 = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+    public func globalMenuAddItem<Value: VariantEncodable>(menuRoot: Godot.GodotString, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
         var __temporary = Int32()
         menuRoot.withUnsafeRawPointer { (__ptr_menuRoot) in
             label.withUnsafeRawPointer { (__ptr_label) in
@@ -372,7 +372,7 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddCheckItem<Variant1 : VariantEncodable>(menuRoot: Godot.GodotString, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Variant1 = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+    public func globalMenuAddCheckItem<Value: VariantEncodable>(menuRoot: Godot.GodotString, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
         var __temporary = Int32()
         menuRoot.withUnsafeRawPointer { (__ptr_menuRoot) in
             label.withUnsafeRawPointer { (__ptr_label) in
@@ -410,7 +410,7 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddIconItem<Variant1 : VariantEncodable>(menuRoot: Godot.GodotString, icon: Godot.Texture2D?, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Variant1 = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+    public func globalMenuAddIconItem<Value: VariantEncodable>(menuRoot: Godot.GodotString, icon: Godot.Texture2D?, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
         var __temporary = Int32()
         menuRoot.withUnsafeRawPointer { (__ptr_menuRoot) in
             icon.withUnsafeRawPointer { (__ptr_icon) in
@@ -452,7 +452,7 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddIconCheckItem<Variant1 : VariantEncodable>(menuRoot: Godot.GodotString, icon: Godot.Texture2D?, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Variant1 = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+    public func globalMenuAddIconCheckItem<Value: VariantEncodable>(menuRoot: Godot.GodotString, icon: Godot.Texture2D?, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
         var __temporary = Int32()
         menuRoot.withUnsafeRawPointer { (__ptr_menuRoot) in
             icon.withUnsafeRawPointer { (__ptr_icon) in
@@ -494,7 +494,7 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddRadioCheckItem<Variant1 : VariantEncodable>(menuRoot: Godot.GodotString, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Variant1 = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+    public func globalMenuAddRadioCheckItem<Value: VariantEncodable>(menuRoot: Godot.GodotString, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
         var __temporary = Int32()
         menuRoot.withUnsafeRawPointer { (__ptr_menuRoot) in
             label.withUnsafeRawPointer { (__ptr_label) in
@@ -532,7 +532,7 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddIconRadioCheckItem<Variant1 : VariantEncodable>(menuRoot: Godot.GodotString, icon: Godot.Texture2D?, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Variant1 = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+    public func globalMenuAddIconRadioCheckItem<Value: VariantEncodable>(menuRoot: Godot.GodotString, icon: Godot.Texture2D?, label: Godot.GodotString, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
         var __temporary = Int32()
         menuRoot.withUnsafeRawPointer { (__ptr_menuRoot) in
             icon.withUnsafeRawPointer { (__ptr_icon) in
@@ -574,7 +574,7 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuAddMultistateItem<Variant1 : VariantEncodable>(menuRoot: Godot.GodotString, label: Godot.GodotString, maxStates: Int32, defaultState: Int32, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Variant1 = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
+    public func globalMenuAddMultistateItem<Value: VariantEncodable>(menuRoot: Godot.GodotString, label: Godot.GodotString, maxStates: Int32, defaultState: Int32, callback: Godot.Callable = Callable(), keyCallback: Godot.Callable = Callable(), tag: Value = Variant(), accelerator: Godot.Key = Key(rawValue: 0)!, index: Int32 = -1) -> Int32 {
         var __temporary = Int32()
         menuRoot.withUnsafeRawPointer { (__ptr_menuRoot) in
             label.withUnsafeRawPointer { (__ptr_label) in
@@ -672,7 +672,7 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuGetItemIndexFromTag<Variant1 : VariantEncodable>(menuRoot: Godot.GodotString, tag: Variant1) -> Int32 {
+    public func globalMenuGetItemIndexFromTag<Value: VariantEncodable>(menuRoot: Godot.GodotString, tag: Value) -> Int32 {
         var __temporary = Int32()
         menuRoot.withUnsafeRawPointer { (__ptr_menuRoot) in
             Godot.Variant.withStorageUnsafeRawPointer(to: tag) { (__ptr_tag) in
@@ -1250,7 +1250,7 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func globalMenuSetItemTag<Variant1 : VariantEncodable>(menuRoot: Godot.GodotString, idx: Int32, tag: Variant1) {
+    public func globalMenuSetItemTag<Value: VariantEncodable>(menuRoot: Godot.GodotString, idx: Int32, tag: Value) {
         menuRoot.withUnsafeRawPointer { (__ptr_menuRoot) in
             withUnsafePointer(to: idx) { (__ptr_idx) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: tag) { (__ptr_tag) in
@@ -1628,8 +1628,8 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func ttsGetVoices() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func ttsGetVoices() -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -2074,8 +2074,8 @@ open class DisplayServer: Object {
         }
         }
     }()
-    public func displayCutouts() -> Godot.GodotTypedArray<Godot.Rect2> {
-        let __temporary = Godot.GodotTypedArray<Godot.Rect2>()
+    public func displayCutouts() -> Godot.GodotArray<Godot.Rect2> {
+        let __temporary = Godot.GodotArray<Godot.Rect2>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

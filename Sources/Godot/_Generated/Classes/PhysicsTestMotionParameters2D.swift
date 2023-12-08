@@ -188,8 +188,8 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
-    private func __getExcludeBodies() -> Godot.GodotTypedArray<Godot.RID> {
-        let __temporary = Godot.GodotTypedArray<Godot.RID>()
+    private func __getExcludeBodies() -> Godot.GodotArray<Godot.RID> {
+        let __temporary = Godot.GodotArray<Godot.RID>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -210,7 +210,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
-    private func __setExcludeBodies(excludeList: Godot.GodotTypedArray<Godot.RID>) {
+    private func __setExcludeBodies(excludeList: Godot.GodotArray<Godot.RID>) {
         excludeList.withUnsafeRawPointer { (__ptr_excludeList) in
             withUnsafeArgumentPackPointer(__ptr_excludeList) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -232,8 +232,8 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
-    private func __getExcludeObjects() -> Godot.GodotTypedArray<Int> {
-        let __temporary = Godot.GodotTypedArray<Int>()
+    private func __getExcludeObjects() -> Godot.GodotArray<Int> {
+        let __temporary = Godot.GodotArray<Int>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -254,7 +254,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
         }
     }()
-    private func __setExcludeObjects(excludeList: Godot.GodotTypedArray<Int>) {
+    private func __setExcludeObjects(excludeList: Godot.GodotArray<Int>) {
         excludeList.withUnsafeRawPointer { (__ptr_excludeList) in
             withUnsafeArgumentPackPointer(__ptr_excludeList) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -357,7 +357,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
     }
 
-    public var excludeBodies: Godot.GodotTypedArray<Godot.RID> {
+    public var excludeBodies: Godot.GodotArray<Godot.RID> {
         get {
             __getExcludeBodies()
         }
@@ -368,7 +368,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
     }
 
-    public var excludeObjects: Godot.GodotTypedArray<Int> {
+    public var excludeObjects: Godot.GodotArray<Int> {
         get {
             __getExcludeObjects()
         }

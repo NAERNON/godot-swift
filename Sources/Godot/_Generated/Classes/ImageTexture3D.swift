@@ -12,7 +12,7 @@ open class ImageTexture3D: Texture3D {
         }
         }
     }()
-    public func create(format: Godot.Image.Format, width: Int32, height: Int32, depth: Int32, useMipmaps: Bool, data: Godot.GodotTypedArray<Godot.Image?>) -> Godot.ErrorType {
+    public func create(format: Godot.Image.Format, width: Int32, height: Int32, depth: Int32, useMipmaps: Bool, data: Godot.GodotArray<Godot.Image?>) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         withUnsafePointer(to: format) { (__ptr_format) in
             withUnsafePointer(to: width) { (__ptr_width) in
@@ -48,7 +48,7 @@ open class ImageTexture3D: Texture3D {
         }
         }
     }()
-    public func update(data: Godot.GodotTypedArray<Godot.Image?>) {
+    public func update(data: Godot.GodotArray<Godot.Image?>) {
         data.withUnsafeRawPointer { (__ptr_data) in
             withUnsafeArgumentPackPointer(__ptr_data) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

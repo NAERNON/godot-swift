@@ -232,7 +232,7 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
-    private func __setSampleMasks(_ masks: Godot.GodotTypedArray<Int>) {
+    private func __setSampleMasks(_ masks: Godot.GodotArray<Int>) {
         masks.withUnsafeRawPointer { (__ptr_masks) in
             withUnsafeArgumentPackPointer(__ptr_masks) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -254,8 +254,8 @@ open class RDPipelineMultisampleState: RefCounted {
         }
         }
     }()
-    private func __getSampleMasks() -> Godot.GodotTypedArray<Int> {
-        let __temporary = Godot.GodotTypedArray<Int>()
+    private func __getSampleMasks() -> Godot.GodotArray<Int> {
+        let __temporary = Godot.GodotArray<Int>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -324,7 +324,7 @@ open class RDPipelineMultisampleState: RefCounted {
         }
     }
 
-    public var sampleMasks: Godot.GodotTypedArray<Int> {
+    public var sampleMasks: Godot.GodotArray<Int> {
         get {
             __getSampleMasks()
         }

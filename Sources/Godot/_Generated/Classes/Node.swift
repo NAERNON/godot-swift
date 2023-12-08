@@ -337,8 +337,8 @@ open class Node: Object {
         }
         }
     }()
-    public func children(includeInternal: Bool = false) -> Godot.GodotTypedArray<Godot.Node?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Node?>()
+    public func children(includeInternal: Bool = false) -> Godot.GodotArray<Godot.Node?> {
+        let __temporary = Godot.GodotArray<Godot.Node?>()
         withUnsafePointer(to: includeInternal) { (__ptr_includeInternal) in
             withUnsafeArgumentPackPointer(__ptr_includeInternal) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -521,8 +521,8 @@ open class Node: Object {
         }
         }
     }()
-    public func findChildren(pattern: Godot.GodotString, type: Godot.GodotString = "", recursive: Bool = true, owned: Bool = true) -> Godot.GodotTypedArray<Godot.Node?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Node?>()
+    public func findChildren(pattern: Godot.GodotString, type: Godot.GodotString = "", recursive: Bool = true, owned: Bool = true) -> Godot.GodotArray<Godot.Node?> {
+        let __temporary = Godot.GodotArray<Godot.Node?>()
         pattern.withUnsafeRawPointer { (__ptr_pattern) in
             type.withUnsafeRawPointer { (__ptr_type) in
                 withUnsafePointer(to: recursive) { (__ptr_recursive) in
@@ -605,8 +605,8 @@ open class Node: Object {
         }
         }
     }()
-    public func nodeAndResource(path: Godot.NodePath) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func nodeAndResource(path: Godot.NodePath) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         path.withUnsafeRawPointer { (__ptr_path) in
             withUnsafeArgumentPackPointer(__ptr_path) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -859,8 +859,8 @@ open class Node: Object {
         }
         }
     }()
-    public func groups() -> Godot.GodotTypedArray<Godot.GodotStringName> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotStringName>()
+    public func groups() -> Godot.GodotArray<Godot.GodotStringName> {
+        let __temporary = Godot.GodotArray<Godot.GodotStringName>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -1055,7 +1055,7 @@ open class Node: Object {
         }
         }
     }()
-    public func propagateCall(method: Godot.GodotStringName, args: Godot.GodotArray = [], parentFirst: Bool = false) {
+    public func propagateCall<Value: VariantEncodable & VariantDecodable>(method: Godot.GodotStringName, args: Godot.GodotArray<Value> = [], parentFirst: Bool = false) {
         method.withUnsafeRawPointer { (__ptr_method) in
             args.withUnsafeRawPointer { (__ptr_args) in
                 withUnsafePointer(to: parentFirst) { (__ptr_parentFirst) in
@@ -2215,7 +2215,7 @@ open class Node: Object {
         }
         }
     }()
-    public func rpcConfig<Variant1 : VariantEncodable>(method: Godot.GodotStringName, config: Variant1) {
+    public func rpcConfig<Value: VariantEncodable>(method: Godot.GodotStringName, config: Value) {
         method.withUnsafeRawPointer { (__ptr_method) in
             Godot.Variant.withStorageUnsafeRawPointer(to: config) { (__ptr_config) in
                 withUnsafeArgumentPackPointer(__ptr_method, __ptr_config) { (__accessPtr) in
@@ -2493,7 +2493,7 @@ open class Node: Object {
         }
         }
     }()
-    public func setDeferredThreadGroup<Variant1 : VariantEncodable>(property: Godot.GodotStringName, value: Variant1) {
+    public func setDeferredThreadGroup<Value: VariantEncodable>(property: Godot.GodotStringName, value: Value) {
         property.withUnsafeRawPointer { (__ptr_property) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_property, __ptr_value) { (__accessPtr) in
@@ -2587,7 +2587,7 @@ open class Node: Object {
         }
         }
     }()
-    public func setThreadSafe<Variant1 : VariantEncodable>(property: Godot.GodotStringName, value: Variant1) {
+    public func setThreadSafe<Value: VariantEncodable>(property: Godot.GodotStringName, value: Value) {
         property.withUnsafeRawPointer { (__ptr_property) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_property, __ptr_value) { (__accessPtr) in

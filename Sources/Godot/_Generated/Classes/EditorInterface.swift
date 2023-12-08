@@ -166,8 +166,8 @@ open class EditorInterface: Object {
         }
         }
     }()
-    public func makeMeshPreviews(meshes: Godot.GodotTypedArray<Godot.Mesh?>, previewSize: Int32) -> Godot.GodotTypedArray<Godot.Texture2D?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Texture2D?>()
+    public func makeMeshPreviews(meshes: Godot.GodotArray<Godot.Mesh?>, previewSize: Int32) -> Godot.GodotArray<Godot.Texture2D?> {
+        let __temporary = Godot.GodotArray<Godot.Texture2D?>()
         meshes.withUnsafeRawPointer { (__ptr_meshes) in
             withUnsafePointer(to: previewSize) { (__ptr_previewSize) in
                 withUnsafeArgumentPackPointer(__ptr_meshes, __ptr_previewSize) { (__accessPtr) in

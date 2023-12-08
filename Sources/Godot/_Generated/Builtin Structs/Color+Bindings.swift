@@ -3,6 +3,212 @@
 //
 
 import GodotExtensionHeaders
+private var __constructor: GDExtensionPtrConstructor = {
+    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 0)!
+}()
+private var __constructor_color: GDExtensionPtrConstructor = {
+    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 1)!
+}()
+private var __constructor_color_float: GDExtensionPtrConstructor = {
+    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 2)!
+}()
+private var __constructor_float_float_float: GDExtensionPtrConstructor = {
+    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 3)!
+}()
+private var __constructor_float_float_float_float: GDExtensionPtrConstructor = {
+    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 4)!
+}()
+private var __constructor_godotstring: GDExtensionPtrConstructor = {
+    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 5)!
+}()
+private var __constructor_godotstring_float: GDExtensionPtrConstructor = {
+    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 6)!
+}()
+private var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
+}()
+private var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
+}()
+private var __operator_binding_negate: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NEGATE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
+}()
+private var __operator_binding_positive: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_POSITIVE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
+}()
+private var __operator_binding_not: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
+}()
+private var __operator_binding_multiply_int: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_INT)!
+}()
+private var __operator_binding_divide_int: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_INT)!
+}()
+private var __operator_binding_multiply_double: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_FLOAT)!
+}()
+private var __operator_binding_divide_double: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_FLOAT)!
+}()
+private var __operator_binding_equal_color: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+}()
+private var __operator_binding_not_equal_color: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+}()
+private var __operator_binding_add_color: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+}()
+private var __operator_binding_subtract_color: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_SUBTRACT, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+}()
+private var __operator_binding_multiply_color: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+}()
+private var __operator_binding_divide_color: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+}()
+private var __operator_binding_in_godotdictionary: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
+}()
+private var __operator_binding_in_godotarray: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+}()
+private var __operator_binding_in_packedcolorarray: GDExtensionPtrOperatorEvaluator = {
+    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
+}()
+private var __indexed_setter: GDExtensionPtrIndexedSetter = {
+    return gdextension_interface_variant_get_ptr_indexed_setter(GDEXTENSION_VARIANT_TYPE_COLOR)!
+}()
+private var __indexed_getter: GDExtensionPtrIndexedGetter = {
+    return gdextension_interface_variant_get_ptr_indexed_getter(GDEXTENSION_VARIANT_TYPE_COLOR)!
+}()
+private var __method_binding_to_argb32: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "to_argb32").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    }
+}()
+private var __method_binding_to_abgr32: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "to_abgr32").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    }
+}()
+private var __method_binding_to_rgba32: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "to_rgba32").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    }
+}()
+private var __method_binding_to_argb64: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "to_argb64").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    }
+}()
+private var __method_binding_to_abgr64: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "to_abgr64").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    }
+}()
+private var __method_binding_to_rgba64: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "to_rgba64").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    }
+}()
+private var __method_binding_to_html: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "to_html").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3429816538)!
+    }
+}()
+private var __method_binding_clamp: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "clamp").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 105651410)!
+    }
+}()
+private var __method_binding_inverted: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "inverted").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
+    }
+}()
+private var __method_binding_lerp: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "lerp").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 402949615)!
+    }
+}()
+private var __method_binding_lightened: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "lightened").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1466039168)!
+    }
+}()
+private var __method_binding_darkened: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "darkened").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1466039168)!
+    }
+}()
+private var __method_binding_blend: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "blend").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3803690977)!
+    }
+}()
+private var __method_binding_get_luminance: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "get_luminance").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 466405837)!
+    }
+}()
+private var __method_binding_srgb_to_linear: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "srgb_to_linear").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
+    }
+}()
+private var __method_binding_linear_to_srgb: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "linear_to_srgb").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
+    }
+}()
+private var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3167426256)!
+    }
+}()
+private var __method_binding_hex: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "hex").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
+    }
+}()
+private var __method_binding_hex64: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "hex64").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
+    }
+}()
+private var __method_binding_html: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "html").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 2500054655)!
+    }
+}()
+private var __method_binding_html_is_valid: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "html_is_valid").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 2942997125)!
+    }
+}()
+private var __method_binding_from_string: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "from_string").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3755044230)!
+    }
+}()
+private var __method_binding_from_hsv: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "from_hsv").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1573799446)!
+    }
+}()
+private var __method_binding_from_ok_hsl: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "from_ok_hsl").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1573799446)!
+    }
+}()
+private var __method_binding_from_rgbe9995: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "from_rgbe9995").withUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
+    }
+}()
 extension Color {
     public static let aliceBlue: Color = Color(r: 0.941176, g: 0.972549, b: 1, a: 1)
     public static let antiqueWhite: Color = Color(r: 0.980392, g: 0.921569, b: 0.843137, a: 1)
@@ -151,33 +357,27 @@ extension Color {
     public static let yellow: Color = Color(r: 1, g: 1, b: 0, a: 1)
     public static let yellowGreen: Color = Color(r: 0.603922, g: 0.803922, b: 0.196078, a: 1)
 
-    private static var __constructor: GDExtensionPtrConstructor = {
-        return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 0)!
-    }()
     static internal func _constructor() -> Self {
         var __temporary = Color()
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-            Self.__constructor(__ptr___temporary, nil)
+            __constructor(__ptr___temporary, nil)
         }
         return __temporary
     }
     static internal func _ptr_constructor() -> Self {
         var __temporary = Color()
         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-            Self.__constructor(__ptr___temporary, nil)
+            __constructor(__ptr___temporary, nil)
         }
         return __temporary
     }
 
-    private static var __constructor_color: GDExtensionPtrConstructor = {
-        return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 1)!
-    }()
     static internal func _constructor_color(from: Godot.Color) -> Self {
         var __temporary = Color()
         withUnsafePointer(to: from) { (__ptr_from) in
             withUnsafeArgumentPackPointer(__ptr_from) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                    Self.__constructor_color(__ptr___temporary, __accessPtr)
+                    __constructor_color(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -187,22 +387,19 @@ extension Color {
         var __temporary = Color()
         withUnsafeArgumentPackPointer(from) { (__accessPtr) in
             withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                Self.__constructor_color(__ptr___temporary, __accessPtr)
+                __constructor_color(__ptr___temporary, __accessPtr)
             }
         }
         return __temporary
     }
 
-    private static var __constructor_color_float: GDExtensionPtrConstructor = {
-        return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 2)!
-    }()
     static internal func _constructor_color_float(from: Godot.Color, alpha: Float) -> Self {
         var __temporary = Color()
         withUnsafePointer(to: from) { (__ptr_from) in
             withUnsafePointer(to: alpha) { (__ptr_alpha) in
                 withUnsafeArgumentPackPointer(__ptr_from, __ptr_alpha) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                        Self.__constructor_color_float(__ptr___temporary, __accessPtr)
+                        __constructor_color_float(__ptr___temporary, __accessPtr)
                     }
                 }
             }
@@ -213,15 +410,12 @@ extension Color {
         var __temporary = Color()
         withUnsafeArgumentPackPointer(from, alpha) { (__accessPtr) in
             withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                Self.__constructor_color_float(__ptr___temporary, __accessPtr)
+                __constructor_color_float(__ptr___temporary, __accessPtr)
             }
         }
         return __temporary
     }
 
-    private static var __constructor_float_float_float: GDExtensionPtrConstructor = {
-        return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 3)!
-    }()
     static internal func _constructor_float_float_float(r: Float, g: Float, b: Float) -> Self {
         var __temporary = Color()
         withUnsafePointer(to: r) { (__ptr_r) in
@@ -229,7 +423,7 @@ extension Color {
                 withUnsafePointer(to: b) { (__ptr_b) in
                     withUnsafeArgumentPackPointer(__ptr_r, __ptr_g, __ptr_b) { (__accessPtr) in
                         withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                            Self.__constructor_float_float_float(__ptr___temporary, __accessPtr)
+                            __constructor_float_float_float(__ptr___temporary, __accessPtr)
                         }
                     }
                 }
@@ -241,15 +435,12 @@ extension Color {
         var __temporary = Color()
         withUnsafeArgumentPackPointer(r, g, b) { (__accessPtr) in
             withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                Self.__constructor_float_float_float(__ptr___temporary, __accessPtr)
+                __constructor_float_float_float(__ptr___temporary, __accessPtr)
             }
         }
         return __temporary
     }
 
-    private static var __constructor_float_float_float_float: GDExtensionPtrConstructor = {
-        return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 4)!
-    }()
     static internal func _constructor_float_float_float_float(r: Float, g: Float, b: Float, a: Float) -> Self {
         var __temporary = Color()
         withUnsafePointer(to: r) { (__ptr_r) in
@@ -258,7 +449,7 @@ extension Color {
                     withUnsafePointer(to: a) { (__ptr_a) in
                         withUnsafeArgumentPackPointer(__ptr_r, __ptr_g, __ptr_b, __ptr_a) { (__accessPtr) in
                             withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                                Self.__constructor_float_float_float_float(__ptr___temporary, __accessPtr)
+                                __constructor_float_float_float_float(__ptr___temporary, __accessPtr)
                             }
                         }
                     }
@@ -271,21 +462,18 @@ extension Color {
         var __temporary = Color()
         withUnsafeArgumentPackPointer(r, g, b, a) { (__accessPtr) in
             withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                Self.__constructor_float_float_float_float(__ptr___temporary, __accessPtr)
+                __constructor_float_float_float_float(__ptr___temporary, __accessPtr)
             }
         }
         return __temporary
     }
 
-    private static var __constructor_godotstring: GDExtensionPtrConstructor = {
-        return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 5)!
-    }()
     static internal func _constructor_godotstring(code: Godot.GodotString) -> Self {
         var __temporary = Color()
         code.withUnsafeRawPointer { (__ptr_code) in
             withUnsafeArgumentPackPointer(__ptr_code) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                    Self.__constructor_godotstring(__ptr___temporary, __accessPtr)
+                    __constructor_godotstring(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -295,22 +483,19 @@ extension Color {
         var __temporary = Color()
         withUnsafeArgumentPackPointer(code) { (__accessPtr) in
             withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                Self.__constructor_godotstring(__ptr___temporary, __accessPtr)
+                __constructor_godotstring(__ptr___temporary, __accessPtr)
             }
         }
         return __temporary
     }
 
-    private static var __constructor_godotstring_float: GDExtensionPtrConstructor = {
-        return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 6)!
-    }()
     static internal func _constructor_godotstring_float(code: Godot.GodotString, alpha: Float) -> Self {
         var __temporary = Color()
         code.withUnsafeRawPointer { (__ptr_code) in
             withUnsafePointer(to: alpha) { (__ptr_alpha) in
                 withUnsafeArgumentPackPointer(__ptr_code, __ptr_alpha) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                        Self.__constructor_godotstring_float(__ptr___temporary, __accessPtr)
+                        __constructor_godotstring_float(__ptr___temporary, __accessPtr)
                     }
                 }
             }
@@ -321,287 +506,227 @@ extension Color {
         var __temporary = Color()
         withUnsafeArgumentPackPointer(code, alpha) { (__accessPtr) in
             withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                Self.__constructor_godotstring_float(__ptr___temporary, __accessPtr)
+                __constructor_godotstring_float(__ptr___temporary, __accessPtr)
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
-    }()
-    static internal func _operatorEqual<Variant1 : VariantEncodable>(_ lhs: Godot.Color, _ rhs: Variant1) -> Bool {
+    static internal func _operatorEqual<Value: VariantEncodable>(_ lhs: Godot.Color, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
-    }()
-    static internal func _operatorNotEqual<Variant1 : VariantEncodable>(_ lhs: Godot.Color, _ rhs: Variant1) -> Bool {
+    static internal func _operatorNotEqual<Value: VariantEncodable>(_ lhs: Godot.Color, _ rhs: Value) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_negate: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NEGATE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
-    }()
     static internal func _operatorNegate(_ lhs: Godot.Color) -> Godot.Color {
         var __temporary = Color()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                Self.__operator_binding_negate(__ptr_lhs, nil, __ptr___temporary)
+                __operator_binding_negate(__ptr_lhs, nil, __ptr___temporary)
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_positive: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_POSITIVE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
-    }()
     static internal func _operatorPositive(_ lhs: Godot.Color) -> Godot.Color {
         var __temporary = Color()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                Self.__operator_binding_positive(__ptr_lhs, nil, __ptr___temporary)
+                __operator_binding_positive(__ptr_lhs, nil, __ptr___temporary)
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_not: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
-    }()
     static internal func _operatorNot(_ lhs: Godot.Color) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                Self.__operator_binding_not(__ptr_lhs, nil, __ptr___temporary)
+                __operator_binding_not(__ptr_lhs, nil, __ptr___temporary)
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_multiply_int: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_INT)!
-    }()
     static internal func _operatorMultiply(_ lhs: Godot.Color, _ rhs: Int) -> Godot.Color {
         var __temporary = Color()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafePointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_multiply_int(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_multiply_int(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_divide_int: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_INT)!
-    }()
     static internal func _operatorDivide(_ lhs: Godot.Color, _ rhs: Int) -> Godot.Color {
         var __temporary = Color()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafePointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_divide_int(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_divide_int(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_multiply_double: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_FLOAT)!
-    }()
     static internal func _operatorMultiply(_ lhs: Godot.Color, _ rhs: Float) -> Godot.Color {
         var __temporary = Color()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafePointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_multiply_double(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_multiply_double(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_divide_double: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_FLOAT)!
-    }()
     static internal func _operatorDivide(_ lhs: Godot.Color, _ rhs: Float) -> Godot.Color {
         var __temporary = Color()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafePointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_divide_double(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_divide_double(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_equal_color: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
-    }()
     static internal func _operatorEqual(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafePointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_equal_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_equal_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_not_equal_color: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
-    }()
     static internal func _operatorNotEqual(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafePointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_not_equal_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_not_equal_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_add_color: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
-    }()
     static internal func _operatorAdd(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Godot.Color {
         var __temporary = Color()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafePointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_add_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_add_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_subtract_color: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_SUBTRACT, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
-    }()
     static internal func _operatorSubtract(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Godot.Color {
         var __temporary = Color()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafePointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_subtract_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_subtract_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_multiply_color: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
-    }()
     static internal func _operatorMultiply(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Godot.Color {
         var __temporary = Color()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafePointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_multiply_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_multiply_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_divide_color: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
-    }()
     static internal func _operatorDivide(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Godot.Color {
         var __temporary = Color()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             withUnsafePointer(to: rhs) { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_divide_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_divide_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_in_godotdictionary: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
-    }()
     static internal func _operatorIn(_ lhs: Godot.Color, _ rhs: Godot.GodotDictionary) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_in_godotarray: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-    }()
-    static internal func _operatorIn(_ lhs: Godot.Color, _ rhs: Godot.GodotArray) -> Bool {
+    static internal func _operatorIn<Value: VariantEncodable & VariantDecodable>(_ lhs: Godot.Color, _ rhs: Godot.GodotArray<Value>) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __operator_binding_in_packedcolorarray: GDExtensionPtrOperatorEvaluator = {
-        return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
-    }()
     static internal func _operatorIn(_ lhs: Godot.Color, _ rhs: Godot.PackedColorArray) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__operator_binding_in_packedcolorarray(__ptr_lhs, __ptr_rhs, __ptr___temporary)
+                    __operator_binding_in_packedcolorarray(__ptr_lhs, __ptr_rhs, __ptr___temporary)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __indexed_setter: GDExtensionPtrIndexedSetter = {
-        return gdextension_interface_variant_get_ptr_indexed_setter(GDEXTENSION_VARIANT_TYPE_COLOR)!
-    }()
-    private static var __indexed_getter: GDExtensionPtrIndexedGetter = {
-        return gdextension_interface_variant_get_ptr_indexed_getter(GDEXTENSION_VARIANT_TYPE_COLOR)!
-    }()
     internal func _getValue(at index: GDExtensionInt) -> Float {
         var __temporary = Float()
         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
             withUnsafePointer(to: `self`) { (__ptr_self) in
-                Self.__indexed_getter(__ptr_self, index, __ptr___temporary)
+                __indexed_getter(__ptr_self, index, __ptr___temporary)
             }
         }
         return __temporary
@@ -609,112 +734,77 @@ extension Color {
     mutating internal func _setValue(_ value: Float, at index: GDExtensionInt) {
         withUnsafePointer(to: value) { (__ptr_value) in
             withUnsafeMutablePointer(to: &`self`) { (__ptr_self) in
-                Self.__indexed_setter(__ptr_self, index, __ptr_value)
+                __indexed_setter(__ptr_self, index, __ptr_value)
             }
         }
     }
 
-    private static var __method_binding_to_argb32: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "to_argb32").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
-        }
-    }()
     internal func _toArgb32() -> Int {
         var __temporary = Int()
         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
             withUnsafePointer(to: `self`) { (___ptr_self) in
                 let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                Self.__method_binding_to_argb32(__ptr_self, nil, __ptr___temporary, 0)
+                __method_binding_to_argb32(__ptr_self, nil, __ptr___temporary, 0)
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_to_abgr32: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "to_abgr32").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
-        }
-    }()
     internal func _toAbgr32() -> Int {
         var __temporary = Int()
         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
             withUnsafePointer(to: `self`) { (___ptr_self) in
                 let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                Self.__method_binding_to_abgr32(__ptr_self, nil, __ptr___temporary, 0)
+                __method_binding_to_abgr32(__ptr_self, nil, __ptr___temporary, 0)
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_to_rgba32: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "to_rgba32").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
-        }
-    }()
     internal func _toRgba32() -> Int {
         var __temporary = Int()
         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
             withUnsafePointer(to: `self`) { (___ptr_self) in
                 let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                Self.__method_binding_to_rgba32(__ptr_self, nil, __ptr___temporary, 0)
+                __method_binding_to_rgba32(__ptr_self, nil, __ptr___temporary, 0)
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_to_argb64: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "to_argb64").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
-        }
-    }()
     internal func _toArgb64() -> Int {
         var __temporary = Int()
         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
             withUnsafePointer(to: `self`) { (___ptr_self) in
                 let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                Self.__method_binding_to_argb64(__ptr_self, nil, __ptr___temporary, 0)
+                __method_binding_to_argb64(__ptr_self, nil, __ptr___temporary, 0)
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_to_abgr64: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "to_abgr64").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
-        }
-    }()
     internal func _toAbgr64() -> Int {
         var __temporary = Int()
         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
             withUnsafePointer(to: `self`) { (___ptr_self) in
                 let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                Self.__method_binding_to_abgr64(__ptr_self, nil, __ptr___temporary, 0)
+                __method_binding_to_abgr64(__ptr_self, nil, __ptr___temporary, 0)
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_to_rgba64: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "to_rgba64").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
-        }
-    }()
     internal func _toRgba64() -> Int {
         var __temporary = Int()
         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
             withUnsafePointer(to: `self`) { (___ptr_self) in
                 let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                Self.__method_binding_to_rgba64(__ptr_self, nil, __ptr___temporary, 0)
+                __method_binding_to_rgba64(__ptr_self, nil, __ptr___temporary, 0)
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_to_html: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "to_html").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3429816538)!
-        }
-    }()
     internal func _toHtml(withAlpha alpha: Bool = true) -> Godot.GodotString {
         let __temporary = Godot.GodotString()
         withUnsafePointer(to: alpha) { (__ptr_alpha) in
@@ -722,7 +812,7 @@ extension Color {
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                     withUnsafePointer(to: `self`) { (___ptr_self) in
                         let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        Self.__method_binding_to_html(__ptr_self, __accessPtr, __ptr___temporary, 1)
+                        __method_binding_to_html(__ptr_self, __accessPtr, __ptr___temporary, 1)
                     }
                 }
             }
@@ -730,11 +820,6 @@ extension Color {
         return __temporary
     }
 
-    private static var __method_binding_clamp: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "clamp").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 105651410)!
-        }
-    }()
     internal func _clamp(min: Godot.Color = Color(r: 0, g: 0, b: 0, a: 0), max: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafePointer(to: min) { (__ptr_min) in
@@ -743,7 +828,7 @@ extension Color {
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                         withUnsafePointer(to: `self`) { (___ptr_self) in
                             let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                            Self.__method_binding_clamp(__ptr_self, __accessPtr, __ptr___temporary, 2)
+                            __method_binding_clamp(__ptr_self, __accessPtr, __ptr___temporary, 2)
                         }
                     }
                 }
@@ -752,27 +837,17 @@ extension Color {
         return __temporary
     }
 
-    private static var __method_binding_inverted: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "inverted").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
-        }
-    }()
     internal func _inverted() -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
             withUnsafePointer(to: `self`) { (___ptr_self) in
                 let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                Self.__method_binding_inverted(__ptr_self, nil, __ptr___temporary, 0)
+                __method_binding_inverted(__ptr_self, nil, __ptr___temporary, 0)
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_lerp: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "lerp").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 402949615)!
-        }
-    }()
     internal func _lerp(to: Godot.Color, weight: Float) -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafePointer(to: to) { (__ptr_to) in
@@ -781,7 +856,7 @@ extension Color {
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                         withUnsafePointer(to: `self`) { (___ptr_self) in
                             let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                            Self.__method_binding_lerp(__ptr_self, __accessPtr, __ptr___temporary, 2)
+                            __method_binding_lerp(__ptr_self, __accessPtr, __ptr___temporary, 2)
                         }
                     }
                 }
@@ -790,11 +865,6 @@ extension Color {
         return __temporary
     }
 
-    private static var __method_binding_lightened: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "lightened").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1466039168)!
-        }
-    }()
     internal func _lightened(amount: Float) -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafePointer(to: amount) { (__ptr_amount) in
@@ -802,7 +872,7 @@ extension Color {
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     withUnsafePointer(to: `self`) { (___ptr_self) in
                         let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        Self.__method_binding_lightened(__ptr_self, __accessPtr, __ptr___temporary, 1)
+                        __method_binding_lightened(__ptr_self, __accessPtr, __ptr___temporary, 1)
                     }
                 }
             }
@@ -810,11 +880,6 @@ extension Color {
         return __temporary
     }
 
-    private static var __method_binding_darkened: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "darkened").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1466039168)!
-        }
-    }()
     internal func _darkened(amount: Float) -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafePointer(to: amount) { (__ptr_amount) in
@@ -822,7 +887,7 @@ extension Color {
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     withUnsafePointer(to: `self`) { (___ptr_self) in
                         let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        Self.__method_binding_darkened(__ptr_self, __accessPtr, __ptr___temporary, 1)
+                        __method_binding_darkened(__ptr_self, __accessPtr, __ptr___temporary, 1)
                     }
                 }
             }
@@ -830,11 +895,6 @@ extension Color {
         return __temporary
     }
 
-    private static var __method_binding_blend: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "blend").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3803690977)!
-        }
-    }()
     internal func _blend(over: Godot.Color) -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafePointer(to: over) { (__ptr_over) in
@@ -842,7 +902,7 @@ extension Color {
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     withUnsafePointer(to: `self`) { (___ptr_self) in
                         let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        Self.__method_binding_blend(__ptr_self, __accessPtr, __ptr___temporary, 1)
+                        __method_binding_blend(__ptr_self, __accessPtr, __ptr___temporary, 1)
                     }
                 }
             }
@@ -850,59 +910,39 @@ extension Color {
         return __temporary
     }
 
-    private static var __method_binding_get_luminance: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "get_luminance").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 466405837)!
-        }
-    }()
     internal func _luminance() -> Float {
         var __temporary = Float()
         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
             withUnsafePointer(to: `self`) { (___ptr_self) in
                 let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                Self.__method_binding_get_luminance(__ptr_self, nil, __ptr___temporary, 0)
+                __method_binding_get_luminance(__ptr_self, nil, __ptr___temporary, 0)
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_srgb_to_linear: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "srgb_to_linear").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
-        }
-    }()
     internal func _srgbToLinear() -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
             withUnsafePointer(to: `self`) { (___ptr_self) in
                 let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                Self.__method_binding_srgb_to_linear(__ptr_self, nil, __ptr___temporary, 0)
+                __method_binding_srgb_to_linear(__ptr_self, nil, __ptr___temporary, 0)
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_linear_to_srgb: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "linear_to_srgb").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
-        }
-    }()
     internal func _linearToSrgb() -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
             withUnsafePointer(to: `self`) { (___ptr_self) in
                 let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                Self.__method_binding_linear_to_srgb(__ptr_self, nil, __ptr___temporary, 0)
+                __method_binding_linear_to_srgb(__ptr_self, nil, __ptr___temporary, 0)
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3167426256)!
-        }
-    }()
     internal func _isEqualApprox(to: Godot.Color) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: to) { (__ptr_to) in
@@ -910,7 +950,7 @@ extension Color {
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     withUnsafePointer(to: `self`) { (___ptr_self) in
                         let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        Self.__method_binding_is_equal_approx(__ptr_self, __accessPtr, __ptr___temporary, 1)
+                        __method_binding_is_equal_approx(__ptr_self, __accessPtr, __ptr___temporary, 1)
                     }
                 }
             }
@@ -918,86 +958,61 @@ extension Color {
         return __temporary
     }
 
-    private static var __method_binding_hex: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "hex").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
-        }
-    }()
     static internal func _hex(_ hex: Int) -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafePointer(to: hex) { (__ptr_hex) in
             withUnsafeArgumentPackPointer(__ptr_hex) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__method_binding_hex(nil, __accessPtr, __ptr___temporary, 1)
+                    __method_binding_hex(nil, __accessPtr, __ptr___temporary, 1)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_hex64: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "hex64").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
-        }
-    }()
     static internal func _hex64(hex: Int) -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafePointer(to: hex) { (__ptr_hex) in
             withUnsafeArgumentPackPointer(__ptr_hex) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__method_binding_hex64(nil, __accessPtr, __ptr___temporary, 1)
+                    __method_binding_hex64(nil, __accessPtr, __ptr___temporary, 1)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_html: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "html").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 2500054655)!
-        }
-    }()
     static internal func _html(rgba: Godot.GodotString) -> Godot.Color {
         var __temporary = Godot.Color()
         rgba.withUnsafeRawPointer { (__ptr_rgba) in
             withUnsafeArgumentPackPointer(__ptr_rgba) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__method_binding_html(nil, __accessPtr, __ptr___temporary, 1)
+                    __method_binding_html(nil, __accessPtr, __ptr___temporary, 1)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_html_is_valid: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "html_is_valid").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 2942997125)!
-        }
-    }()
     static internal func _htmlIsValid(color: Godot.GodotString) -> Bool {
         var __temporary = Bool()
         color.withUnsafeRawPointer { (__ptr_color) in
             withUnsafeArgumentPackPointer(__ptr_color) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__method_binding_html_is_valid(nil, __accessPtr, __ptr___temporary, 1)
+                    __method_binding_html_is_valid(nil, __accessPtr, __ptr___temporary, 1)
                 }
             }
         }
         return __temporary
     }
 
-    private static var __method_binding_from_string: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "from_string").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3755044230)!
-        }
-    }()
     static internal func _fromString(str: Godot.GodotString, `default`: Godot.Color) -> Godot.Color {
         var __temporary = Godot.Color()
         str.withUnsafeRawPointer { (__ptr_str) in
             withUnsafePointer(to: `default`) { (__ptr_default) in
                 withUnsafeArgumentPackPointer(__ptr_str, __ptr_default) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                        Self.__method_binding_from_string(nil, __accessPtr, __ptr___temporary, 2)
+                        __method_binding_from_string(nil, __accessPtr, __ptr___temporary, 2)
                     }
                 }
             }
@@ -1005,11 +1020,6 @@ extension Color {
         return __temporary
     }
 
-    private static var __method_binding_from_hsv: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "from_hsv").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1573799446)!
-        }
-    }()
     static internal func _fromHsv(h: Float, s: Float, v: Float, alpha: Float = 1.0) -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafePointer(to: h) { (__ptr_h) in
@@ -1018,7 +1028,7 @@ extension Color {
                     withUnsafePointer(to: alpha) { (__ptr_alpha) in
                         withUnsafeArgumentPackPointer(__ptr_h, __ptr_s, __ptr_v, __ptr_alpha) { (__accessPtr) in
                             withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                                Self.__method_binding_from_hsv(nil, __accessPtr, __ptr___temporary, 4)
+                                __method_binding_from_hsv(nil, __accessPtr, __ptr___temporary, 4)
                             }
                         }
                     }
@@ -1028,11 +1038,6 @@ extension Color {
         return __temporary
     }
 
-    private static var __method_binding_from_ok_hsl: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "from_ok_hsl").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1573799446)!
-        }
-    }()
     static internal func _fromOkHsl(h: Float, s: Float, l: Float, alpha: Float = 1.0) -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafePointer(to: h) { (__ptr_h) in
@@ -1041,7 +1046,7 @@ extension Color {
                     withUnsafePointer(to: alpha) { (__ptr_alpha) in
                         withUnsafeArgumentPackPointer(__ptr_h, __ptr_s, __ptr_l, __ptr_alpha) { (__accessPtr) in
                             withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                                Self.__method_binding_from_ok_hsl(nil, __accessPtr, __ptr___temporary, 4)
+                                __method_binding_from_ok_hsl(nil, __accessPtr, __ptr___temporary, 4)
                             }
                         }
                     }
@@ -1051,17 +1056,12 @@ extension Color {
         return __temporary
     }
 
-    private static var __method_binding_from_rgbe9995: GDExtensionPtrBuiltInMethod = {
-        GodotStringName(swiftStaticString: "from_rgbe9995").withUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
-        }
-    }()
     static internal func _fromRgbe9995(rgbe: Int) -> Godot.Color {
         var __temporary = Godot.Color()
         withUnsafePointer(to: rgbe) { (__ptr_rgbe) in
             withUnsafeArgumentPackPointer(__ptr_rgbe) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    Self.__method_binding_from_rgbe9995(nil, __accessPtr, __ptr___temporary, 1)
+                    __method_binding_from_rgbe9995(nil, __accessPtr, __ptr___temporary, 1)
                 }
             }
         }

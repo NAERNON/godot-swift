@@ -38,8 +38,8 @@ open class InputMap: Object {
         }
         }
     }()
-    public func actions() -> Godot.GodotTypedArray<Godot.GodotStringName> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotStringName>()
+    public func actions() -> Godot.GodotArray<Godot.GodotStringName> {
+        let __temporary = Godot.GodotArray<Godot.GodotStringName>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -260,8 +260,8 @@ open class InputMap: Object {
         }
         }
     }()
-    public func actionGetEvents(action: Godot.GodotStringName) -> Godot.GodotTypedArray<Godot.InputEvent?> {
-        let __temporary = Godot.GodotTypedArray<Godot.InputEvent?>()
+    public func actionGetEvents(action: Godot.GodotStringName) -> Godot.GodotArray<Godot.InputEvent?> {
+        let __temporary = Godot.GodotArray<Godot.InputEvent?>()
         action.withUnsafeRawPointer { (__ptr_action) in
             withUnsafeArgumentPackPointer(__ptr_action) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

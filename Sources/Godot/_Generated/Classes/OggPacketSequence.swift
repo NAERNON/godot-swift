@@ -12,7 +12,7 @@ open class OggPacketSequence: Resource {
         }
         }
     }()
-    private func __setPacketData(_ packetData: Godot.GodotTypedArray<Godot.GodotArray>) {
+    private func __setPacketData(_ packetData: Godot.GodotArray<Godot.GodotArray<Variant>>) {
         packetData.withUnsafeRawPointer { (__ptr_packetData) in
             withUnsafeArgumentPackPointer(__ptr_packetData) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -34,8 +34,8 @@ open class OggPacketSequence: Resource {
         }
         }
     }()
-    private func __getPacketData() -> Godot.GodotTypedArray<Godot.GodotArray> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotArray>()
+    private func __getPacketData() -> Godot.GodotArray<Godot.GodotArray<Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotArray<Variant>>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -159,7 +159,7 @@ open class OggPacketSequence: Resource {
         return __temporary
     }
 
-    public var packetData: Godot.GodotTypedArray<Godot.GodotArray> {
+    public var packetData: Godot.GodotArray<Godot.GodotArray<Variant>> {
         get {
             __getPacketData()
         }

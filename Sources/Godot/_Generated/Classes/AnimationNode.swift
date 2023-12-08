@@ -35,8 +35,8 @@ open class AnimationNode: Resource {
         Godot.GodotDictionary()
     }
 
-    open func _getParameterList() -> Godot.GodotArray {
-        Godot.GodotArray()
+    open func _getParameterList() -> Godot.GodotArray<Variant> {
+        Godot.GodotArray<Variant>()
     }
 
     open func _getChildByName(_ name: Godot.GodotStringName) -> Godot.AnimationNode? {
@@ -432,7 +432,7 @@ open class AnimationNode: Resource {
         }
         }
     }()
-    public func setParameter<Variant1 : VariantEncodable>(name: Godot.GodotStringName, value: Variant1) {
+    public func setParameter<Value: VariantEncodable>(name: Godot.GodotStringName, value: Value) {
         name.withUnsafeRawPointer { (__ptr_name) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in

@@ -174,8 +174,8 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func service(timeout: Int32 = 0) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func service(timeout: Int32 = 0) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         withUnsafePointer(to: timeout) { (__ptr_timeout) in
             withUnsafeArgumentPackPointer(__ptr_timeout) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -462,8 +462,8 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func peers() -> Godot.GodotTypedArray<Godot.ENetPacketPeer?> {
-        let __temporary = Godot.GodotTypedArray<Godot.ENetPacketPeer?>()
+    public func peers() -> Godot.GodotArray<Godot.ENetPacketPeer?> {
+        let __temporary = Godot.GodotArray<Godot.ENetPacketPeer?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

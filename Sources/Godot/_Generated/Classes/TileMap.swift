@@ -923,7 +923,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func pattern(layer: Int32, coordsArray: Godot.GodotTypedArray<Godot.Vector2i>) -> Godot.TileMapPattern? {
+    public func pattern(layer: Int32, coordsArray: Godot.GodotArray<Godot.Vector2i>) -> Godot.TileMapPattern? {
         var __temporary: GDExtensionObjectPtr!
         withUnsafePointer(to: layer) { (__ptr_layer) in
             coordsArray.withUnsafeRawPointer { (__ptr_coordsArray) in
@@ -1011,7 +1011,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func setCellsTerrainConnect(layer: Int32, cells: Godot.GodotTypedArray<Godot.Vector2i>, terrainSet: Int32, terrain: Int32, ignoreEmptyTerrains: Bool = true) {
+    public func setCellsTerrainConnect(layer: Int32, cells: Godot.GodotArray<Godot.Vector2i>, terrainSet: Int32, terrain: Int32, ignoreEmptyTerrains: Bool = true) {
         withUnsafePointer(to: layer) { (__ptr_layer) in
             cells.withUnsafeRawPointer { (__ptr_cells) in
                 withUnsafePointer(to: terrainSet) { (__ptr_terrainSet) in
@@ -1041,7 +1041,7 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func setCellsTerrainPath(layer: Int32, path: Godot.GodotTypedArray<Godot.Vector2i>, terrainSet: Int32, terrain: Int32, ignoreEmptyTerrains: Bool = true) {
+    public func setCellsTerrainPath(layer: Int32, path: Godot.GodotArray<Godot.Vector2i>, terrainSet: Int32, terrain: Int32, ignoreEmptyTerrains: Bool = true) {
         withUnsafePointer(to: layer) { (__ptr_layer) in
             path.withUnsafeRawPointer { (__ptr_path) in
                 withUnsafePointer(to: terrainSet) { (__ptr_terrainSet) in
@@ -1151,8 +1151,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func surroundingCells(coords: Godot.Vector2i) -> Godot.GodotTypedArray<Godot.Vector2i> {
-        let __temporary = Godot.GodotTypedArray<Godot.Vector2i>()
+    public func surroundingCells(coords: Godot.Vector2i) -> Godot.GodotArray<Godot.Vector2i> {
+        let __temporary = Godot.GodotArray<Godot.Vector2i>()
         withUnsafePointer(to: coords) { (__ptr_coords) in
             withUnsafeArgumentPackPointer(__ptr_coords) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -1177,8 +1177,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func usedCells(layer: Int32) -> Godot.GodotTypedArray<Godot.Vector2i> {
-        let __temporary = Godot.GodotTypedArray<Godot.Vector2i>()
+    public func usedCells(layer: Int32) -> Godot.GodotArray<Godot.Vector2i> {
+        let __temporary = Godot.GodotArray<Godot.Vector2i>()
         withUnsafePointer(to: layer) { (__ptr_layer) in
             withUnsafeArgumentPackPointer(__ptr_layer) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -1203,8 +1203,8 @@ open class TileMap: Node2D {
         }
         }
     }()
-    public func usedCellsById(layer: Int32, sourceId: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) -> Godot.GodotTypedArray<Godot.Vector2i> {
-        let __temporary = Godot.GodotTypedArray<Godot.Vector2i>()
+    public func usedCellsById(layer: Int32, sourceId: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) -> Godot.GodotArray<Godot.Vector2i> {
+        let __temporary = Godot.GodotArray<Godot.Vector2i>()
         withUnsafePointer(to: layer) { (__ptr_layer) in
             withUnsafePointer(to: sourceId) { (__ptr_sourceId) in
                 withUnsafePointer(to: atlasCoords) { (__ptr_atlasCoords) in

@@ -12,8 +12,8 @@ open class PhysicsDirectSpaceState3D: Object {
         }
         }
     }()
-    public func intersectPoint(parameters: Godot.PhysicsPointQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func intersectPoint(parameters: Godot.PhysicsPointQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         parameters.withUnsafeRawPointer { (__ptr_parameters) in
             withUnsafePointer(to: __ptr_parameters) { (_ptr___ptr_parameters) in
                 withUnsafePointer(to: maxResults) { (__ptr_maxResults) in
@@ -70,8 +70,8 @@ open class PhysicsDirectSpaceState3D: Object {
         }
         }
     }()
-    public func intersectShape(parameters: Godot.PhysicsShapeQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func intersectShape(parameters: Godot.PhysicsShapeQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         parameters.withUnsafeRawPointer { (__ptr_parameters) in
             withUnsafePointer(to: __ptr_parameters) { (_ptr___ptr_parameters) in
                 withUnsafePointer(to: maxResults) { (__ptr_maxResults) in
@@ -128,8 +128,8 @@ open class PhysicsDirectSpaceState3D: Object {
         }
         }
     }()
-    public func collideShape(parameters: Godot.PhysicsShapeQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotTypedArray<Godot.Vector3> {
-        let __temporary = Godot.GodotTypedArray<Godot.Vector3>()
+    public func collideShape(parameters: Godot.PhysicsShapeQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.Vector3> {
+        let __temporary = Godot.GodotArray<Godot.Vector3>()
         parameters.withUnsafeRawPointer { (__ptr_parameters) in
             withUnsafePointer(to: __ptr_parameters) { (_ptr___ptr_parameters) in
                 withUnsafePointer(to: maxResults) { (__ptr_maxResults) in

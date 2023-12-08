@@ -8,8 +8,15 @@ extension Variant {
     /// a function parameter is passed between Godot and Swift,
     /// the use of a non copyable structure makes for a great optimization.
     public struct Storage: ~Copyable {
-        public enum Error: Swift.Error {
+        public enum Error: Swift.Error, CustomStringConvertible {
             case cannotConvertType(from: StorageType, to: StorageType)
+            
+            public var description: String {
+                switch self {
+                case .cannotConvertType(let from, let to):
+                    "Attempting to convert a variant typed \(from) to a variant typed \(to)."
+                }
+            }
         }
         
         private let rawData: UnsafeMutablePointer<UInt8>

@@ -69,7 +69,7 @@ open class ResourceLoader: Object {
         }
         }
     }()
-    public func loadThreadedGetStatus(path: Godot.GodotString, progress: Godot.GodotArray = []) -> Godot.ResourceLoader.ThreadLoadStatus {
+    public func loadThreadedGetStatus<Value: VariantEncodable & VariantDecodable>(path: Godot.GodotString, progress: Godot.GodotArray<Value> = []) -> Godot.ResourceLoader.ThreadLoadStatus {
         var __temporary = Godot.ResourceLoader.ThreadLoadStatus.RawValue(0)
         path.withUnsafeRawPointer { (__ptr_path) in
             progress.withUnsafeRawPointer { (__ptr_progress) in

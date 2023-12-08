@@ -26,7 +26,8 @@ extension Callable {
     
     // MARK: Methods & variables
     
-    public func callv(arguments: GodotArray) -> Variant {
+    public func callv<Value>(arguments: GodotArray<Value>) -> Variant
+    where Value : VariantEncodable & VariantDecodable {
         Variant(storage: _callv(arguments: arguments))
     }
     
@@ -62,11 +63,12 @@ extension Callable {
         _boundArgumentsCount()
     }
     
-    public func boundArguments() -> GodotArray {
+    public func boundArguments() -> GodotArray<Variant> {
         _boundArguments()
     }
     
-    mutating public func bindv(arguments: GodotArray) -> Callable {
+    mutating public func bindv<Value>(arguments: GodotArray<Value>) -> Callable
+    where Value : VariantEncodable & VariantDecodable {
         _bindv(arguments: arguments)
     }
     

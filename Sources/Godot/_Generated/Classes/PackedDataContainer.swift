@@ -12,7 +12,7 @@ open class PackedDataContainer: Resource {
         }
         }
     }()
-    public func pack<Variant1 : VariantEncodable>(value: Variant1) -> Godot.ErrorType {
+    public func pack<Value: VariantEncodable>(value: Value) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in

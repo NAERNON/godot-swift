@@ -3,7 +3,25 @@
 Types that conform to the `VariantDecodable` protocol can be converted from a variant.
 Use the `Variant` ``Variant/unwrap(_:)`` or ``Variant/unwrap(assuming:)`` methods to retrieve an instance from a variant.
 
-For example, in the following code, the `Level` struct can be decoded from a variant storage, using the `index` value as its representation:
+Retrieve instances like so:
+
+```swift
+let variant: Variant = //...
+
+// Use the `unwrap(_:)` method that may throw
+let index1 = try variant.unwrap(Int.self)
+
+// Use the `unwrap(assuming:_)` method that doesn't throw
+let index2 = variant.unwrap(assuming: Int.self)
+```
+
+## Conforming to the VariantDecodable protocol
+
+To add `VariantDecodable` conformance to your type, you must declare the following requirements:
+- The `decodeVariantStorage(_:)` static method that decodes a variant storage to your own type
+- The `decodeCompatibleVariantStorage(_:)` static method that decodes a variant storage to your own type, assuming the given variant is convertible to your type
+
+For example, in the following code, the `Level` struct can be decoded from a variant storage:
 
 ```swift
 struct Level: VariantDecodable {
@@ -19,30 +37,25 @@ struct Level: VariantDecodable {
 }
 ```
 
-For a given variant, retrieve an instance like so:
+You can perform additional checks in the `decodeVariantStorage` static method.
+For example, in the following code, an additional check is performed:
 
 ```swift
-let variant: Variant = //...
+struct Level: VariantDecodable {
+    enum ConversionError: Error {
+        case negative
+    }
 
-// Use the `unwrap(_:)` method that may throw
-let level = try variant.unwrap(Level.self)
+    let index: Int
 
-// Use the `unwrap(assuming:_)` method that doesn't throw
-let level = variant.unwrap(assuming: Level.self)
-```
+    static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Level {
+        let index = try Int.decodeVariantStorage(storage)
 
-Use the ``Variant/Storage/checkIsConvertible(to:)`` method to check that a storage can be converted to a given type and throw an error if not:
+        guard index >= 0 else {
+            throw ConversionError.negative
+        }
 
-```swift
-static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Level {
-    try storage.checkIsConvertible(to: Int.variantRepresentationType)
-
-    //...
+        return Level(index: index)
+    }
 }
 ```
-
-## Conforming to the VariantDecodable protocol
-
-To add `VariantDecodable` conformance to your type, you must declare the following requirements:
-- The `decodeVariantStorage(_:)` static method that decodes a variant storage to your own type
-- The `decodeCompatibleVariantStorage(_:)` static method that decodes a variant storage to your own type, assuming the given variant is convertible to your type

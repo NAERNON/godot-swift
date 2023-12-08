@@ -1051,7 +1051,7 @@ open class FileAccess: RefCounted {
         }
         }
     }()
-    public func storeVar<Variant1 : VariantEncodable>(value: Variant1, fullObjects: Bool = false) {
+    public func storeVar<Value: VariantEncodable>(value: Value, fullObjects: Bool = false) {
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
             withUnsafePointer(to: fullObjects) { (__ptr_fullObjects) in
                 withUnsafeArgumentPackPointer(__ptr_value, __ptr_fullObjects) { (__accessPtr) in

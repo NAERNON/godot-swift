@@ -40,8 +40,8 @@ open class EditorExportPlugin: RefCounted {
     open func _endCustomizeResources() {
     }
 
-    open func _getExportOptions(platform: Godot.EditorExportPlatform?) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getExportOptions(platform: Godot.EditorExportPlatform?) -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     open func _shouldUpdateExportOptions(platform: Godot.EditorExportPlatform?) -> Bool {

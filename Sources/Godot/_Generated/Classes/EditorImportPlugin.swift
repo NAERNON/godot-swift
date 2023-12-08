@@ -25,8 +25,8 @@ open class EditorImportPlugin: ResourceImporter {
         Godot.PackedStringArray()
     }
 
-    open func _getImportOptions(path: Godot.GodotString, presetIndex: Int32) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getImportOptions(path: Godot.GodotString, presetIndex: Int32) -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     open func _getSaveExtension() -> Godot.GodotString {
@@ -49,7 +49,7 @@ open class EditorImportPlugin: ResourceImporter {
         Bool()
     }
 
-    open func _import(sourceFile: Godot.GodotString, savePath: Godot.GodotString, options: Godot.GodotDictionary, platformVariants: Godot.GodotTypedArray<Godot.GodotString>, genFiles: Godot.GodotTypedArray<Godot.GodotString>) -> Godot.ErrorType {
+    open func _import(sourceFile: Godot.GodotString, savePath: Godot.GodotString, options: Godot.GodotDictionary, platformVariants: Godot.GodotArray<Godot.GodotString>, genFiles: Godot.GodotArray<Godot.GodotString>) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -60,7 +60,7 @@ open class EditorImportPlugin: ResourceImporter {
         }
         }
     }()
-    public func appendImportExternalResource<Variant1 : VariantEncodable>(path: Godot.GodotString, customOptions: Godot.GodotDictionary = [:], customImporter: Godot.GodotString = "", generatorParameters: Variant1 = Variant()) -> Godot.ErrorType {
+    public func appendImportExternalResource<Value: VariantEncodable>(path: Godot.GodotString, customOptions: Godot.GodotDictionary = [:], customImporter: Godot.GodotString = "", generatorParameters: Value = Variant()) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         path.withUnsafeRawPointer { (__ptr_path) in
             customOptions.withUnsafeRawPointer { (__ptr_customOptions) in
@@ -197,8 +197,8 @@ open class EditorImportPlugin: ResourceImporter {
             sourceFile: Godot.GodotString(godotExtensionPointer: args[0]!),
             savePath: Godot.GodotString(godotExtensionPointer: args[1]!),
             options: Godot.GodotDictionary(godotExtensionPointer: args[2]!),
-            platformVariants: Godot.GodotTypedArray<Godot.GodotString>(godotExtensionPointer: args[3]!),
-            genFiles: Godot.GodotTypedArray<Godot.GodotString>(godotExtensionPointer: args[4]!)
+            platformVariants: Godot.GodotArray<Godot.GodotString>(godotExtensionPointer: args[3]!),
+            genFiles: Godot.GodotArray<Godot.GodotString>(godotExtensionPointer: args[4]!)
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         _virtualFunctions = [

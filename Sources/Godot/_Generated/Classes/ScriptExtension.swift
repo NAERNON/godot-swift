@@ -59,8 +59,8 @@ open class ScriptExtension: Script {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _getDocumentation() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getDocumentation() -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     open func _hasMethod(_ method: Godot.GodotStringName) -> Bool {
@@ -87,8 +87,8 @@ open class ScriptExtension: Script {
         Bool()
     }
 
-    open func _getScriptSignalList() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getScriptSignalList() -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     open func _hasPropertyDefaultValue(property: Godot.GodotStringName) -> Bool {
@@ -102,12 +102,12 @@ open class ScriptExtension: Script {
     open func _updateExports() {
     }
 
-    open func _getScriptMethodList() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getScriptMethodList() -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
-    open func _getScriptPropertyList() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _getScriptPropertyList() -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     open func _getMemberLine(member: Godot.GodotStringName) -> Int32 {
@@ -118,8 +118,8 @@ open class ScriptExtension: Script {
         Godot.GodotDictionary()
     }
 
-    open func _getMembers() -> Godot.GodotTypedArray<Godot.GodotStringName> {
-        Godot.GodotTypedArray<Godot.GodotStringName>()
+    open func _getMembers() -> Godot.GodotArray<Godot.GodotStringName> {
+        Godot.GodotArray<Godot.GodotStringName>()
     }
 
     open func _isPlaceholderFallbackEnabled() -> Bool {

@@ -502,7 +502,7 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setStructuredTextBidiOverrideOptions(column: Int32, args: Godot.GodotArray) {
+    public func setStructuredTextBidiOverrideOptions<Value: VariantEncodable & VariantDecodable>(column: Int32, args: Godot.GodotArray<Value>) {
         withUnsafePointer(to: column) { (__ptr_column) in
             args.withUnsafeRawPointer { (__ptr_args) in
                 withUnsafeArgumentPackPointer(__ptr_column, __ptr_args) { (__accessPtr) in
@@ -526,8 +526,8 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func structuredTextBidiOverrideOptions(column: Int32) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func structuredTextBidiOverrideOptions(column: Int32) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         withUnsafePointer(to: column) { (__ptr_column) in
             withUnsafeArgumentPackPointer(__ptr_column) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -960,7 +960,7 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func setMetadata<Variant1 : VariantEncodable>(column: Int32, meta: Variant1) {
+    public func setMetadata<Value: VariantEncodable>(column: Int32, meta: Value) {
         withUnsafePointer(to: column) { (__ptr_column) in
             Godot.Variant.withStorageUnsafeRawPointer(to: meta) { (__ptr_meta) in
                 withUnsafeArgumentPackPointer(__ptr_column, __ptr_meta) { (__accessPtr) in
@@ -2536,8 +2536,8 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func children() -> Godot.GodotTypedArray<Godot.TreeItem?> {
-        let __temporary = Godot.GodotTypedArray<Godot.TreeItem?>()
+    public func children() -> Godot.GodotArray<Godot.TreeItem?> {
+        let __temporary = Godot.GodotArray<Godot.TreeItem?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

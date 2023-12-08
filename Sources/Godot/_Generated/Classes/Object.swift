@@ -82,7 +82,7 @@ open class Object {
         }
         }
     }()
-    public func set<Variant1 : VariantEncodable>(property: Godot.GodotStringName, value: Variant1) {
+    public func set<Value: VariantEncodable>(property: Godot.GodotStringName, value: Value) {
         property.withUnsafeRawPointer { (__ptr_property) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_property, __ptr_value) { (__accessPtr) in
@@ -132,7 +132,7 @@ open class Object {
         }
         }
     }()
-    public func setIndexed<Variant1 : VariantEncodable>(propertyPath: Godot.NodePath, value: Variant1) {
+    public func setIndexed<Value: VariantEncodable>(propertyPath: Godot.NodePath, value: Value) {
         propertyPath.withUnsafeRawPointer { (__ptr_propertyPath) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_propertyPath, __ptr_value) { (__accessPtr) in
@@ -182,8 +182,8 @@ open class Object {
         }
         }
     }()
-    public func propertyList() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func propertyList() -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -204,8 +204,8 @@ open class Object {
         }
         }
     }()
-    public func methodList() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func methodList() -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -346,7 +346,7 @@ open class Object {
         }
         }
     }()
-    public func setScript<Variant1 : VariantEncodable>(_ script: Variant1) {
+    public func setScript<Value: VariantEncodable>(_ script: Value) {
         Godot.Variant.withStorageUnsafeRawPointer(to: script) { (__ptr_script) in
             withUnsafeArgumentPackPointer(__ptr_script) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -390,7 +390,7 @@ open class Object {
         }
         }
     }()
-    public func setMeta<Variant1 : VariantEncodable>(name: Godot.GodotStringName, value: Variant1) {
+    public func setMeta<Value: VariantEncodable>(name: Godot.GodotStringName, value: Value) {
         name.withUnsafeRawPointer { (__ptr_name) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { (__accessPtr) in
@@ -436,7 +436,7 @@ open class Object {
         }
         }
     }()
-    public func meta<Variant1 : VariantEncodable>(name: Godot.GodotStringName, `default`: Variant1 = Variant()) -> Godot.Variant {
+    public func meta<Value: VariantEncodable>(name: Godot.GodotStringName, `default`: Value = Variant()) -> Godot.Variant {
         let __temporary = Godot.Variant()
         name.withUnsafeRawPointer { (__ptr_name) in
             Godot.Variant.withStorageUnsafeRawPointer(to: `default`) { (__ptr_default) in
@@ -490,8 +490,8 @@ open class Object {
         }
         }
     }()
-    public func metaList() -> Godot.GodotTypedArray<Godot.GodotStringName> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotStringName>()
+    public func metaList() -> Godot.GodotArray<Godot.GodotStringName> {
+        let __temporary = Godot.GodotArray<Godot.GodotStringName>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -512,7 +512,7 @@ open class Object {
         }
         }
     }()
-    public func addUserSignal(_ signal: Godot.GodotString, arguments: Godot.GodotArray = []) {
+    public func addUserSignal<Value: VariantEncodable & VariantDecodable>(_ signal: Godot.GodotString, arguments: Godot.GodotArray<Value> = []) {
         signal.withUnsafeRawPointer { (__ptr_signal) in
             arguments.withUnsafeRawPointer { (__ptr_arguments) in
                 withUnsafeArgumentPackPointer(__ptr_signal, __ptr_arguments) { (__accessPtr) in
@@ -706,7 +706,7 @@ open class Object {
         }
         }
     }()
-    public func setDeferred<Variant1 : VariantEncodable>(property: Godot.GodotStringName, value: Variant1) {
+    public func setDeferred<Value: VariantEncodable>(property: Godot.GodotStringName, value: Value) {
         property.withUnsafeRawPointer { (__ptr_property) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_property, __ptr_value) { (__accessPtr) in
@@ -730,7 +730,7 @@ open class Object {
         }
         }
     }()
-    public func callv(method: Godot.GodotStringName, argArray: Godot.GodotArray) -> Godot.Variant {
+    public func callv<Value: VariantEncodable & VariantDecodable>(method: Godot.GodotStringName, argArray: Godot.GodotArray<Value>) -> Godot.Variant {
         let __temporary = Godot.Variant()
         method.withUnsafeRawPointer { (__ptr_method) in
             argArray.withUnsafeRawPointer { (__ptr_argArray) in
@@ -810,8 +810,8 @@ open class Object {
         }
         }
     }()
-    public func signalList() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func signalList() -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -832,8 +832,8 @@ open class Object {
         }
         }
     }()
-    public func signalConnectionList(signal: Godot.GodotStringName) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func signalConnectionList(signal: Godot.GodotStringName) -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         signal.withUnsafeRawPointer { (__ptr_signal) in
             withUnsafeArgumentPackPointer(__ptr_signal) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -858,8 +858,8 @@ open class Object {
         }
         }
     }()
-    public func incomingConnections() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func incomingConnections() -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

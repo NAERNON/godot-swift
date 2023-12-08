@@ -434,8 +434,8 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func decomposePolygonInConvex(polygon: Godot.PackedVector2Array) -> Godot.GodotTypedArray<Godot.PackedVector2Array> {
-        let __temporary = Godot.GodotTypedArray<Godot.PackedVector2Array>()
+    public func decomposePolygonInConvex(polygon: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        let __temporary = Godot.GodotArray<Godot.PackedVector2Array>()
         polygon.withUnsafeRawPointer { (__ptr_polygon) in
             withUnsafeArgumentPackPointer(__ptr_polygon) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -460,8 +460,8 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func mergePolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotTypedArray<Godot.PackedVector2Array> {
-        let __temporary = Godot.GodotTypedArray<Godot.PackedVector2Array>()
+    public func mergePolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        let __temporary = Godot.GodotArray<Godot.PackedVector2Array>()
         polygonA.withUnsafeRawPointer { (__ptr_polygonA) in
             polygonB.withUnsafeRawPointer { (__ptr_polygonB) in
                 withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { (__accessPtr) in
@@ -488,8 +488,8 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func clipPolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotTypedArray<Godot.PackedVector2Array> {
-        let __temporary = Godot.GodotTypedArray<Godot.PackedVector2Array>()
+    public func clipPolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        let __temporary = Godot.GodotArray<Godot.PackedVector2Array>()
         polygonA.withUnsafeRawPointer { (__ptr_polygonA) in
             polygonB.withUnsafeRawPointer { (__ptr_polygonB) in
                 withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { (__accessPtr) in
@@ -516,8 +516,8 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func intersectPolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotTypedArray<Godot.PackedVector2Array> {
-        let __temporary = Godot.GodotTypedArray<Godot.PackedVector2Array>()
+    public func intersectPolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        let __temporary = Godot.GodotArray<Godot.PackedVector2Array>()
         polygonA.withUnsafeRawPointer { (__ptr_polygonA) in
             polygonB.withUnsafeRawPointer { (__ptr_polygonB) in
                 withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { (__accessPtr) in
@@ -544,8 +544,8 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func excludePolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotTypedArray<Godot.PackedVector2Array> {
-        let __temporary = Godot.GodotTypedArray<Godot.PackedVector2Array>()
+    public func excludePolygons(polygonA: Godot.PackedVector2Array, polygonB: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        let __temporary = Godot.GodotArray<Godot.PackedVector2Array>()
         polygonA.withUnsafeRawPointer { (__ptr_polygonA) in
             polygonB.withUnsafeRawPointer { (__ptr_polygonB) in
                 withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { (__accessPtr) in
@@ -572,8 +572,8 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func clipPolylineWithPolygon(polyline: Godot.PackedVector2Array, polygon: Godot.PackedVector2Array) -> Godot.GodotTypedArray<Godot.PackedVector2Array> {
-        let __temporary = Godot.GodotTypedArray<Godot.PackedVector2Array>()
+    public func clipPolylineWithPolygon(polyline: Godot.PackedVector2Array, polygon: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        let __temporary = Godot.GodotArray<Godot.PackedVector2Array>()
         polyline.withUnsafeRawPointer { (__ptr_polyline) in
             polygon.withUnsafeRawPointer { (__ptr_polygon) in
                 withUnsafeArgumentPackPointer(__ptr_polyline, __ptr_polygon) { (__accessPtr) in
@@ -600,8 +600,8 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func intersectPolylineWithPolygon(polyline: Godot.PackedVector2Array, polygon: Godot.PackedVector2Array) -> Godot.GodotTypedArray<Godot.PackedVector2Array> {
-        let __temporary = Godot.GodotTypedArray<Godot.PackedVector2Array>()
+    public func intersectPolylineWithPolygon(polyline: Godot.PackedVector2Array, polygon: Godot.PackedVector2Array) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        let __temporary = Godot.GodotArray<Godot.PackedVector2Array>()
         polyline.withUnsafeRawPointer { (__ptr_polyline) in
             polygon.withUnsafeRawPointer { (__ptr_polygon) in
                 withUnsafeArgumentPackPointer(__ptr_polyline, __ptr_polygon) { (__accessPtr) in
@@ -628,8 +628,8 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func offsetPolygon(_ polygon: Godot.PackedVector2Array, delta: Double, joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!) -> Godot.GodotTypedArray<Godot.PackedVector2Array> {
-        let __temporary = Godot.GodotTypedArray<Godot.PackedVector2Array>()
+    public func offsetPolygon(_ polygon: Godot.PackedVector2Array, delta: Double, joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        let __temporary = Godot.GodotArray<Godot.PackedVector2Array>()
         polygon.withUnsafeRawPointer { (__ptr_polygon) in
             withUnsafePointer(to: delta) { (__ptr_delta) in
                 withUnsafePointer(to: joinType) { (__ptr_joinType) in
@@ -658,8 +658,8 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func offsetPolyline(_ polyline: Godot.PackedVector2Array, delta: Double, joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!, endType: Godot.Geometry2D.PolyEndType = Geometry2D.PolyEndType(rawValue: 3)!) -> Godot.GodotTypedArray<Godot.PackedVector2Array> {
-        let __temporary = Godot.GodotTypedArray<Godot.PackedVector2Array>()
+    public func offsetPolyline(_ polyline: Godot.PackedVector2Array, delta: Double, joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!, endType: Godot.Geometry2D.PolyEndType = Geometry2D.PolyEndType(rawValue: 3)!) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        let __temporary = Godot.GodotArray<Godot.PackedVector2Array>()
         polyline.withUnsafeRawPointer { (__ptr_polyline) in
             withUnsafePointer(to: delta) { (__ptr_delta) in
                 withUnsafePointer(to: joinType) { (__ptr_joinType) in

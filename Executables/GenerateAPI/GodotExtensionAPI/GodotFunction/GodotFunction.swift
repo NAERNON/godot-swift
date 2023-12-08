@@ -26,6 +26,11 @@ protocol GodotFunction {
     var convertsAllParameterToVariant: Bool { get }
 }
 
+private struct GenericType {
+    let name: String
+    let constraint: String
+}
+
 // MARK: - Default behavior
 
 extension GodotFunction {
@@ -45,16 +50,54 @@ extension GodotFunction {
         "rest"
     }
     
+    private func genericTypeConstraints(for argument: GodotArgument) -> [String] {
+        if argument.type == .variant {
+            return ["VariantEncodable"]
+        } else if argument.type == .array {
+            return ["VariantEncodable & VariantDecodable"]
+        } else {
+            return []
+        }
+    }
+    
+    private func genericTypesCount() -> Int {
+        guard let arguments else { return 0 }
+        
+        return arguments.reduce(0) { partialResult, argument in
+            return partialResult + genericTypeConstraints(for: argument).count
+        }
+    }
+    
+    private func genericTypes(forArgumentAt index: Int) -> [GenericType] {
+        var previousGenericTypesCount = 0
+        if index > 0 {
+            for i in 0..<index {
+                previousGenericTypesCount += genericTypes(forArgumentAt: i).count
+            }
+        }
+        
+        guard let argument = arguments?[index] else {
+            return []
+        }
+        let genericCount = genericTypesCount()
+        
+        return genericTypeConstraints(for: argument).enumerated()
+            .map { (enumeratedIndex, constraint) in
+                if genericCount == 1 {
+                    .init(name: "Value", constraint: constraint)
+                } else {
+                    .init(name: "Value\(index + enumeratedIndex + 1)", constraint: constraint)
+                }
+            }
+    }
+    
     /// Returns the syntax to place inside the generic function signature.
     private func genericSyntax() -> String? {
         var genericArguments = [String]()
-        
         if let arguments {
-            var index = 1
-            for argument in arguments {
-                if argument.type == .variant {
-                    genericArguments.append("Variant\(index) : VariantEncodable")
-                    index += 1
+            for index in 0..<arguments.count {
+                for genericType in genericTypes(forArgumentAt: index) {
+                    genericArguments.append("\(genericType.name): \(genericType.constraint)")
                 }
             }
         }
@@ -107,9 +150,9 @@ extension GodotFunction {
             functionHeader.append("<\(genericSyntax)>")
         }
         
-        var variantArgumentIndex = 1
+        var variantArgumentIndex = 0
         functionHeader.append("(")
-        functionHeader.append(arguments.map { argument in
+        functionHeader.append(arguments.enumerated().map { (index, argument) in
             var parameterString = ""
             
             if argument.isLabelHidden || hideAllLabels {
@@ -121,10 +164,24 @@ extension GodotFunction {
             parameterString.append(backticksKeyword(argument.name))
             parameterString.append(": ")
             
+            let genericNames = genericTypes(forArgumentAt: index).map { $0.name }
+            
             if usesVariantGeneric,
                argument.type == .variant
             {
-                parameterString.append("Variant\(variantArgumentIndex)")
+                parameterString.append(genericNames[0])
+                variantArgumentIndex += 1
+            } else if usesVariantGeneric,
+               argument.type == .array
+            {
+                let typeSyntax = GodotType.generic(
+                    type: argument.type,
+                    genericType: .base(genericNames[0])
+                ).syntax(options: options.subtracting([
+                    .genericArrayOnVariant,
+                    .genericArrayOnElement
+                ]))
+                parameterString.append(typeSyntax)
                 variantArgumentIndex += 1
             } else {
                 parameterString.append(argument.type.syntax(options: options))

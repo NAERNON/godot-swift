@@ -977,8 +977,15 @@ private var fromTypeConstructor_object = gdextension_interface_get_variant_from_
 private var toTypeConstructor_object = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
 
 extension Object: VariantCodable {
-    private enum VariantConversionError: Error {
+    private enum VariantConversionError: Error, CustomStringConvertible {
         case cannotConvertToObject(type: Object.Type)
+        
+        var description: String {
+            switch self {
+            case .cannotConvertToObject(let type):
+                "Error while retrieving an instance of type \(type._$className)."
+            }
+        }
     }
     
     public static let variantRepresentationType: Variant.RepresentationType = .object
@@ -1161,7 +1168,27 @@ private var fromTypeConstructor_array = gdextension_interface_get_variant_from_t
 private var toTypeConstructor_array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 
 extension GodotArray: VariantCodable {
-    public static let variantRepresentationType: Variant.RepresentationType = .array
+    private enum VariantConversionError: Error, CustomStringConvertible {
+        case typedArray
+        case untypedArray
+        case incorrectType(expected: Variant.StorageType, found: Variant.StorageType)
+        case incorrectClassName(expected: GodotStringName, found: GodotStringName)
+        
+        var description: String {
+            switch self {
+            case .typedArray:
+                "Attempting to decode an untyped array from a typed array."
+            case .untypedArray:
+                "Attempting to decode a typed array from an untyped array."
+            case .incorrectType(let expected, let found):
+                "Attempting to decode an array typed on \(expected) from an array typed on \(found)."
+            case .incorrectClassName(let expected, let found):
+                "Attempting to decode an array typed on class \(expected) from an array typed on class \(found)."
+            }
+        }
+    }
+    
+    public static var variantRepresentationType: Variant.RepresentationType { .array }
     
     public static func encodeVariantStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
@@ -1171,6 +1198,46 @@ extension GodotArray: VariantCodable {
             }
         }
         return variant
+    }
+    
+    public static func decodeVariantStorage(_ storage: borrowing Variant.Storage) throws -> Self {
+        try storage.checkIsConvertible(to: .array)
+        
+        let array = GodotArray.decodeCompatibleVariantStorage(storage)
+        
+        if let type = Element.encodedVariantStorageType {
+            guard array._isTyped() else {
+                throw VariantConversionError.untypedArray
+            }
+            
+            let foundType = Variant.StorageType(rawValue: UInt32(array._typedBuiltin()))!
+            guard foundType == type else {
+                throw VariantConversionError.incorrectType(
+                    expected: type,
+                    found: foundType
+                )
+            }
+            
+            // If the class name is not empty, we must check against
+            // the underlying array.
+            if !Element._$className._isEmpty() {
+                let foundClassName = array._typedClassName()
+                guard foundClassName == Element._$className else {
+                    throw VariantConversionError.incorrectClassName(
+                        expected: Element._$className,
+                        found: foundClassName
+                    )
+                }
+            }
+            
+            return array
+        } else {
+            guard !array._isTyped() else {
+                throw VariantConversionError.typedArray
+            }
+            
+            return array
+        }
     }
     
     public static func decodeCompatibleVariantStorage(_ storage: borrowing Variant.Storage) -> Self {

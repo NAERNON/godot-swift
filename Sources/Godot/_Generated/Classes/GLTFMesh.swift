@@ -102,8 +102,8 @@ open class GLTFMesh: Resource {
         }
         }
     }()
-    private func __getInstanceMaterials() -> Godot.GodotTypedArray<Godot.Material?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Material?>()
+    private func __getInstanceMaterials() -> Godot.GodotArray<Godot.Material?> {
+        let __temporary = Godot.GodotArray<Godot.Material?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -124,7 +124,7 @@ open class GLTFMesh: Resource {
         }
         }
     }()
-    private func __setInstanceMaterials(_ instanceMaterials: Godot.GodotTypedArray<Godot.Material?>) {
+    private func __setInstanceMaterials(_ instanceMaterials: Godot.GodotArray<Godot.Material?>) {
         instanceMaterials.withUnsafeRawPointer { (__ptr_instanceMaterials) in
             withUnsafeArgumentPackPointer(__ptr_instanceMaterials) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -161,7 +161,7 @@ open class GLTFMesh: Resource {
         }
     }
 
-    public var instanceMaterials: Godot.GodotTypedArray<Godot.Material?> {
+    public var instanceMaterials: Godot.GodotArray<Godot.Material?> {
         get {
             __getInstanceMaterials()
         }

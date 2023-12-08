@@ -126,7 +126,7 @@ open class ImporterMesh: Resource {
         }
         }
     }()
-    public func addSurface(primitive: Godot.Mesh.PrimitiveType, arrays: Godot.GodotArray, blendShapes: Godot.GodotTypedArray<Godot.GodotArray> = [], lods: Godot.GodotDictionary = [:], material: Godot.Material? = nil, name: Godot.GodotString = "", flags: UInt32 = 0) {
+    public func addSurface<Value: VariantEncodable & VariantDecodable>(primitive: Godot.Mesh.PrimitiveType, arrays: Godot.GodotArray<Value>, blendShapes: Godot.GodotArray<Godot.GodotArray<Variant>> = [], lods: Godot.GodotDictionary = [:], material: Godot.Material? = nil, name: Godot.GodotString = "", flags: UInt32 = 0) {
         withUnsafePointer(to: primitive) { (__ptr_primitive) in
             arrays.withUnsafeRawPointer { (__ptr_arrays) in
                 blendShapes.withUnsafeRawPointer { (__ptr_blendShapes) in
@@ -236,8 +236,8 @@ open class ImporterMesh: Resource {
         }
         }
     }()
-    public func surfaceArrays(surfaceIdx: Int32) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func surfaceArrays(surfaceIdx: Int32) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         withUnsafePointer(to: surfaceIdx) { (__ptr_surfaceIdx) in
             withUnsafeArgumentPackPointer(__ptr_surfaceIdx) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -262,8 +262,8 @@ open class ImporterMesh: Resource {
         }
         }
     }()
-    public func surfaceBlendShapeArrays(surfaceIdx: Int32, blendShapeIdx: Int32) -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func surfaceBlendShapeArrays(surfaceIdx: Int32, blendShapeIdx: Int32) -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         withUnsafePointer(to: surfaceIdx) { (__ptr_surfaceIdx) in
             withUnsafePointer(to: blendShapeIdx) { (__ptr_blendShapeIdx) in
                 withUnsafeArgumentPackPointer(__ptr_surfaceIdx, __ptr_blendShapeIdx) { (__accessPtr) in
@@ -474,7 +474,7 @@ open class ImporterMesh: Resource {
         }
         }
     }()
-    public func generateLods(normalMergeAngle: Double, normalSplitAngle: Double, boneTransformArray: Godot.GodotArray) {
+    public func generateLods<Value: VariantEncodable & VariantDecodable>(normalMergeAngle: Double, normalSplitAngle: Double, boneTransformArray: Godot.GodotArray<Value>) {
         withUnsafePointer(to: normalMergeAngle) { (__ptr_normalMergeAngle) in
             withUnsafePointer(to: normalSplitAngle) { (__ptr_normalSplitAngle) in
                 boneTransformArray.withUnsafeRawPointer { (__ptr_boneTransformArray) in

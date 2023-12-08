@@ -12,7 +12,7 @@ open class ImageTextureLayered: TextureLayered {
         }
         }
     }()
-    public func createFromImages(_ images: Godot.GodotTypedArray<Godot.Image?>) -> Godot.ErrorType {
+    public func createFromImages(_ images: Godot.GodotArray<Godot.Image?>) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         images.withUnsafeRawPointer { (__ptr_images) in
             withUnsafeArgumentPackPointer(__ptr_images) { (__accessPtr) in

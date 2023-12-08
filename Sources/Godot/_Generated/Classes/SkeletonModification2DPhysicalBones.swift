@@ -124,7 +124,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         }
         }
     }()
-    public func startSimulation(bones: Godot.GodotTypedArray<Godot.GodotStringName> = []) {
+    public func startSimulation(bones: Godot.GodotArray<Godot.GodotStringName> = []) {
         bones.withUnsafeRawPointer { (__ptr_bones) in
             withUnsafeArgumentPackPointer(__ptr_bones) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -146,7 +146,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         }
         }
     }()
-    public func stopSimulation(bones: Godot.GodotTypedArray<Godot.GodotStringName> = []) {
+    public func stopSimulation(bones: Godot.GodotArray<Godot.GodotStringName> = []) {
         bones.withUnsafeRawPointer { (__ptr_bones) in
             withUnsafeArgumentPackPointer(__ptr_bones) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

@@ -142,7 +142,7 @@ open class UndoRedo: Object {
         }
         }
     }()
-    public func addDoProperty<Variant1 : VariantEncodable>(object: Godot.Object?, property: Godot.GodotStringName, value: Variant1) {
+    public func addDoProperty<Value: VariantEncodable>(object: Godot.Object?, property: Godot.GodotStringName, value: Value) {
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
                 property.withUnsafeRawPointer { (__ptr_property) in
@@ -170,7 +170,7 @@ open class UndoRedo: Object {
         }
         }
     }()
-    public func addUndoProperty<Variant1 : VariantEncodable>(object: Godot.Object?, property: Godot.GodotStringName, value: Variant1) {
+    public func addUndoProperty<Value: VariantEncodable>(object: Godot.Object?, property: Godot.GodotStringName, value: Value) {
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
                 property.withUnsafeRawPointer { (__ptr_property) in

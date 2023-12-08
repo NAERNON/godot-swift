@@ -1318,7 +1318,7 @@ open class Theme: Resource {
         }
         }
     }()
-    public func setThemeItem<Variant1 : VariantEncodable>(dataType: Godot.Theme.DataType, name: Godot.GodotStringName, themeType: Godot.GodotStringName, value: Variant1) {
+    public func setThemeItem<Value: VariantEncodable>(dataType: Godot.Theme.DataType, name: Godot.GodotStringName, themeType: Godot.GodotStringName, value: Value) {
         withUnsafePointer(to: dataType) { (__ptr_dataType) in
             name.withUnsafeRawPointer { (__ptr_name) in
                 themeType.withUnsafeRawPointer { (__ptr_themeType) in

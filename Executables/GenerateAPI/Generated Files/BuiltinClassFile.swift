@@ -12,6 +12,8 @@ extension GeneratedFile {
             
             "import GodotExtensionHeaders"
             
+            builtinClass.lazyVariablesSyntax()
+            
             try ExtensionDeclSyntax("extension \(raw: builtinClass.identifier)") {
                 builtinClass.constantsSyntax()
                     .with(\.trailingTrivia, .newlines(2))

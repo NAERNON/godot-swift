@@ -12,7 +12,7 @@ open class Font: Resource {
         }
         }
     }()
-    public func setFallbacks(_ fallbacks: Godot.GodotTypedArray<Godot.Font?>) {
+    public func setFallbacks(_ fallbacks: Godot.GodotArray<Godot.Font?>) {
         fallbacks.withUnsafeRawPointer { (__ptr_fallbacks) in
             withUnsafeArgumentPackPointer(__ptr_fallbacks) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -34,8 +34,8 @@ open class Font: Resource {
         }
         }
     }()
-    public func fallbacks() -> Godot.GodotTypedArray<Godot.Font?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Font?>()
+    public func fallbacks() -> Godot.GodotArray<Godot.Font?> {
+        let __temporary = Godot.GodotArray<Godot.Font?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -88,8 +88,8 @@ open class Font: Resource {
         }
         }
     }()
-    public func rids() -> Godot.GodotTypedArray<Godot.RID> {
-        let __temporary = Godot.GodotTypedArray<Godot.RID>()
+    public func rids() -> Godot.GodotArray<Godot.RID> {
+        let __temporary = Godot.GodotArray<Godot.RID>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

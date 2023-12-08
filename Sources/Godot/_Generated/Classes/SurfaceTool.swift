@@ -383,7 +383,7 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func addTriangleFan(vertices: Godot.PackedVector3Array, uvs: Godot.PackedVector2Array = PackedVector2Array(), colors: Godot.PackedColorArray = PackedColorArray(), uv2s: Godot.PackedVector2Array = PackedVector2Array(), normals: Godot.PackedVector3Array = PackedVector3Array(), tangents: Godot.GodotTypedArray<Godot.Plane> = []) {
+    public func addTriangleFan(vertices: Godot.PackedVector3Array, uvs: Godot.PackedVector2Array = PackedVector2Array(), colors: Godot.PackedColorArray = PackedColorArray(), uv2s: Godot.PackedVector2Array = PackedVector2Array(), normals: Godot.PackedVector3Array = PackedVector3Array(), tangents: Godot.GodotArray<Godot.Plane> = []) {
         vertices.withUnsafeRawPointer { (__ptr_vertices) in
             uvs.withUnsafeRawPointer { (__ptr_uvs) in
                 colors.withUnsafeRawPointer { (__ptr_colors) in
@@ -757,8 +757,8 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func commitToArrays() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func commitToArrays() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

@@ -200,7 +200,7 @@ open class MultiplayerAPI: RefCounted {
         }
         }
     }()
-    public func rpc(peer: Int32, object: Godot.Object?, method: Godot.GodotStringName, arguments: Godot.GodotArray = []) -> Godot.ErrorType {
+    public func rpc<Value: VariantEncodable & VariantDecodable>(peer: Int32, object: Godot.Object?, method: Godot.GodotStringName, arguments: Godot.GodotArray<Value> = []) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         withUnsafePointer(to: peer) { (__ptr_peer) in
             object.withUnsafeRawPointer { (__ptr_object) in
@@ -234,7 +234,7 @@ open class MultiplayerAPI: RefCounted {
         }
         }
     }()
-    public func objectConfigurationAdd<Variant1 : VariantEncodable>(object: Godot.Object?, configuration: Variant1) -> Godot.ErrorType {
+    public func objectConfigurationAdd<Value: VariantEncodable>(object: Godot.Object?, configuration: Value) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in
@@ -264,7 +264,7 @@ open class MultiplayerAPI: RefCounted {
         }
         }
     }()
-    public func objectConfigurationRemove<Variant1 : VariantEncodable>(object: Godot.Object?, configuration: Variant1) -> Godot.ErrorType {
+    public func objectConfigurationRemove<Value: VariantEncodable>(object: Godot.Object?, configuration: Value) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         object.withUnsafeRawPointer { (__ptr_object) in
             withUnsafePointer(to: __ptr_object) { (_ptr___ptr_object) in

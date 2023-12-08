@@ -226,8 +226,8 @@ open class Control: CanvasItem {
         Bool()
     }
 
-    open func _structuredTextParser(args: Godot.GodotArray, text: Godot.GodotString) -> Godot.GodotTypedArray<Godot.Vector3i> {
-        Godot.GodotTypedArray<Godot.Vector3i>()
+    open func _structuredTextParser(args: Godot.GodotArray<Variant>, text: Godot.GodotString) -> Godot.GodotArray<Godot.Vector3i> {
+        Godot.GodotArray<Godot.Vector3i>()
     }
 
     open func _getMinimumSize() -> Godot.Vector2 {
@@ -2717,7 +2717,7 @@ open class Control: CanvasItem {
         }
         }
     }()
-    public func forceDrag<Variant1 : VariantEncodable>(data: Variant1, preview: Godot.Control?) {
+    public func forceDrag<Value: VariantEncodable>(data: Value, preview: Godot.Control?) {
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { (__ptr_data) in
             preview.withUnsafeRawPointer { (__ptr_preview) in
                 withUnsafePointer(to: __ptr_preview) { (_ptr___ptr_preview) in
@@ -3598,7 +3598,7 @@ open class Control: CanvasItem {
             let instance = Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
             var returnValue = instance
         ._structuredTextParser(
-            args: Godot.GodotArray(godotExtensionPointer: args[0]!),
+            args: Godot.GodotArray<Variant>(godotExtensionPointer: args[0]!),
             text: Godot.GodotString(godotExtensionPointer: args[1]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}

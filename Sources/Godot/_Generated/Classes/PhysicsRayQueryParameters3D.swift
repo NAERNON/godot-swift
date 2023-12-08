@@ -12,7 +12,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    static public func create(from: Godot.Vector3, to: Godot.Vector3, collisionMask: UInt32 = 4294967295, exclude: Godot.GodotTypedArray<Godot.RID> = []) -> Godot.PhysicsRayQueryParameters3D? {
+    static public func create(from: Godot.Vector3, to: Godot.Vector3, collisionMask: UInt32 = 4294967295, exclude: Godot.GodotArray<Godot.RID> = []) -> Godot.PhysicsRayQueryParameters3D? {
         var __temporary: GDExtensionObjectPtr!
         withUnsafePointer(to: from) { (__ptr_from) in
             withUnsafePointer(to: to) { (__ptr_to) in
@@ -174,7 +174,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setExclude(_ exclude: Godot.GodotTypedArray<Godot.RID>) {
+    private func __setExclude(_ exclude: Godot.GodotArray<Godot.RID>) {
         exclude.withUnsafeRawPointer { (__ptr_exclude) in
             withUnsafeArgumentPackPointer(__ptr_exclude) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -196,8 +196,8 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __getExclude() -> Godot.GodotTypedArray<Godot.RID> {
-        let __temporary = Godot.GodotTypedArray<Godot.RID>()
+    private func __getExclude() -> Godot.GodotArray<Godot.RID> {
+        let __temporary = Godot.GodotArray<Godot.RID>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -420,7 +420,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
     }
 
-    public var exclude: Godot.GodotTypedArray<Godot.RID> {
+    public var exclude: Godot.GodotArray<Godot.RID> {
         get {
             __getExclude()
         }

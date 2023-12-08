@@ -42,12 +42,7 @@ extension ClassRegistrar {
             self.defaultValue = defaultValue
             self.hint = hint
             self.hintString = hintString
-            
-            if hint == .resourceType {
-                self.className = GodotStringName(string: hintString)
-            } else {
-                self.className = className
-            }
+            self.className = className
             
             self.usage = usageFlags.reduce(0, { $0 | $1.rawValue })
         }

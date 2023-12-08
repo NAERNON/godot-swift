@@ -566,7 +566,7 @@ open class GLTFNode: Resource {
         }
         }
     }()
-    public func setAdditionalData<Variant1 : VariantEncodable>(extensionName: Godot.GodotStringName, additionalData: Variant1) {
+    public func setAdditionalData<Value: VariantEncodable>(extensionName: Godot.GodotStringName, additionalData: Value) {
         extensionName.withUnsafeRawPointer { (__ptr_extensionName) in
             Godot.Variant.withStorageUnsafeRawPointer(to: additionalData) { (__ptr_additionalData) in
                 withUnsafeArgumentPackPointer(__ptr_extensionName, __ptr_additionalData) { (__accessPtr) in

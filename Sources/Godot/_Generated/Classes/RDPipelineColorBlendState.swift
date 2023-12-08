@@ -144,7 +144,7 @@ open class RDPipelineColorBlendState: RefCounted {
         }
         }
     }()
-    private func __setAttachments(_ attachments: Godot.GodotTypedArray<Godot.RDPipelineColorBlendStateAttachment?>) {
+    private func __setAttachments(_ attachments: Godot.GodotArray<Godot.RDPipelineColorBlendStateAttachment?>) {
         attachments.withUnsafeRawPointer { (__ptr_attachments) in
             withUnsafeArgumentPackPointer(__ptr_attachments) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -166,8 +166,8 @@ open class RDPipelineColorBlendState: RefCounted {
         }
         }
     }()
-    private func __getAttachments() -> Godot.GodotTypedArray<Godot.RDPipelineColorBlendStateAttachment?> {
-        let __temporary = Godot.GodotTypedArray<Godot.RDPipelineColorBlendStateAttachment?>()
+    private func __getAttachments() -> Godot.GodotArray<Godot.RDPipelineColorBlendStateAttachment?> {
+        let __temporary = Godot.GodotArray<Godot.RDPipelineColorBlendStateAttachment?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -214,7 +214,7 @@ open class RDPipelineColorBlendState: RefCounted {
         }
     }
 
-    public var attachments: Godot.GodotTypedArray<Godot.RDPipelineColorBlendStateAttachment?> {
+    public var attachments: Godot.GodotArray<Godot.RDPipelineColorBlendStateAttachment?> {
         get {
             __getAttachments()
         }

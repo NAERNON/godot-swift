@@ -12,7 +12,7 @@ open class EditorDebuggerPlugin: RefCounted {
         Bool()
     }
 
-    open func _capture(message: Godot.GodotString, data: Godot.GodotArray, sessionId: Int32) -> Bool {
+    open func _capture(message: Godot.GodotString, data: Godot.GodotArray<Variant>, sessionId: Int32) -> Bool {
         Bool()
     }
 
@@ -49,8 +49,8 @@ open class EditorDebuggerPlugin: RefCounted {
         }
         }
     }()
-    public func sessions() -> Godot.GodotArray {
-        let __temporary = Godot.GodotArray()
+    public func sessions() -> Godot.GodotArray<Variant> {
+        let __temporary = Godot.GodotArray<Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -96,7 +96,7 @@ open class EditorDebuggerPlugin: RefCounted {
             let returnValue = instance
         ._capture(
             message: Godot.GodotString(godotExtensionPointer: args[0]!),
-            data: Godot.GodotArray(godotExtensionPointer: args[1]!),
+            data: Godot.GodotArray<Variant>(godotExtensionPointer: args[1]!),
             sessionId: args[2]!.load(as: Int32.self)
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}

@@ -66,8 +66,8 @@ open class CodeEdit: TextEdit {
     open func _requestCodeCompletion(force: Bool) {
     }
 
-    open func _filterCodeCompletionCandidates(_ candidates: Godot.GodotTypedArray<Godot.GodotDictionary>) -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        Godot.GodotTypedArray<Godot.GodotDictionary>()
+    open func _filterCodeCompletionCandidates(_ candidates: Godot.GodotArray<Godot.GodotDictionary>) -> Godot.GodotArray<Godot.GodotDictionary> {
+        Godot.GodotArray<Godot.GodotDictionary>()
     }
 
     private static var __method_binding_set_indent_size: GDExtensionMethodBindPtr = {
@@ -209,7 +209,7 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    private func __setAutoIndentPrefixes(_ prefixes: Godot.GodotTypedArray<Godot.GodotString>) {
+    private func __setAutoIndentPrefixes(_ prefixes: Godot.GodotArray<Godot.GodotString>) {
         prefixes.withUnsafeRawPointer { (__ptr_prefixes) in
             withUnsafeArgumentPackPointer(__ptr_prefixes) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -231,8 +231,8 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    private func __getAutoIndentPrefixes() -> Godot.GodotTypedArray<Godot.GodotString> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotString>()
+    private func __getAutoIndentPrefixes() -> Godot.GodotArray<Godot.GodotString> {
+        let __temporary = Godot.GodotArray<Godot.GodotString>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -1297,8 +1297,8 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    public func foldedLines() -> Godot.GodotTypedArray<Int> {
-        let __temporary = Godot.GodotTypedArray<Int>()
+    public func foldedLines() -> Godot.GodotArray<Int> {
+        let __temporary = Godot.GodotArray<Int>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -1393,7 +1393,7 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    private func __setStringDelimiters(_ stringDelimiters: Godot.GodotTypedArray<Godot.GodotString>) {
+    private func __setStringDelimiters(_ stringDelimiters: Godot.GodotArray<Godot.GodotString>) {
         stringDelimiters.withUnsafeRawPointer { (__ptr_stringDelimiters) in
             withUnsafeArgumentPackPointer(__ptr_stringDelimiters) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -1433,8 +1433,8 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    private func __getStringDelimiters() -> Godot.GodotTypedArray<Godot.GodotString> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotString>()
+    private func __getStringDelimiters() -> Godot.GodotArray<Godot.GodotString> {
+        let __temporary = Godot.GodotArray<Godot.GodotString>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -1557,7 +1557,7 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    private func __setCommentDelimiters(_ commentDelimiters: Godot.GodotTypedArray<Godot.GodotString>) {
+    private func __setCommentDelimiters(_ commentDelimiters: Godot.GodotArray<Godot.GodotString>) {
         commentDelimiters.withUnsafeRawPointer { (__ptr_commentDelimiters) in
             withUnsafeArgumentPackPointer(__ptr_commentDelimiters) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -1597,8 +1597,8 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    private func __getCommentDelimiters() -> Godot.GodotTypedArray<Godot.GodotString> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotString>()
+    private func __getCommentDelimiters() -> Godot.GodotArray<Godot.GodotString> {
+        let __temporary = Godot.GodotArray<Godot.GodotString>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -1843,7 +1843,7 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    public func addCodeCompletionOption<Variant1 : VariantEncodable>(type: Godot.CodeEdit.CodeCompletionKind, displayText: Godot.GodotString, insertText: Godot.GodotString, textColor: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), icon: Godot.Resource? = nil, value: Variant1 = 0, location: Int32 = 1024) {
+    public func addCodeCompletionOption<Value: VariantEncodable>(type: Godot.CodeEdit.CodeCompletionKind, displayText: Godot.GodotString, insertText: Godot.GodotString, textColor: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1), icon: Godot.Resource? = nil, value: Value = 0, location: Int32 = 1024) {
         withUnsafePointer(to: type) { (__ptr_type) in
             displayText.withUnsafeRawPointer { (__ptr_displayText) in
                 insertText.withUnsafeRawPointer { (__ptr_insertText) in
@@ -1901,8 +1901,8 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    public func codeCompletionOptions() -> Godot.GodotTypedArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotDictionary>()
+    public func codeCompletionOptions() -> Godot.GodotArray<Godot.GodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -2077,7 +2077,7 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    private func __setCodeCompletionPrefixes(_ prefixes: Godot.GodotTypedArray<Godot.GodotString>) {
+    private func __setCodeCompletionPrefixes(_ prefixes: Godot.GodotArray<Godot.GodotString>) {
         prefixes.withUnsafeRawPointer { (__ptr_prefixes) in
             withUnsafeArgumentPackPointer(__ptr_prefixes) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -2099,8 +2099,8 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    private func __getCodeCompletionPrefixes() -> Godot.GodotTypedArray<Godot.GodotString> {
-        let __temporary = Godot.GodotTypedArray<Godot.GodotString>()
+    private func __getCodeCompletionPrefixes() -> Godot.GodotArray<Godot.GodotString> {
+        let __temporary = Godot.GodotArray<Godot.GodotString>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -2121,7 +2121,7 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    private func __setLineLengthGuidelines(guidelineColumns: Godot.GodotTypedArray<Int>) {
+    private func __setLineLengthGuidelines(guidelineColumns: Godot.GodotArray<Int>) {
         guidelineColumns.withUnsafeRawPointer { (__ptr_guidelineColumns) in
             withUnsafeArgumentPackPointer(__ptr_guidelineColumns) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -2143,8 +2143,8 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    private func __getLineLengthGuidelines() -> Godot.GodotTypedArray<Int> {
-        let __temporary = Godot.GodotTypedArray<Int>()
+    private func __getLineLengthGuidelines() -> Godot.GodotArray<Int> {
+        let __temporary = Godot.GodotArray<Int>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -2268,7 +2268,7 @@ open class CodeEdit: TextEdit {
         }
     }
 
-    public var lineLengthGuidelines: Godot.GodotTypedArray<Int> {
+    public var lineLengthGuidelines: Godot.GodotArray<Int> {
         get {
             __getLineLengthGuidelines()
         }
@@ -2345,7 +2345,7 @@ open class CodeEdit: TextEdit {
         }
     }
 
-    public var stringDelimiters: Godot.GodotTypedArray<Godot.GodotString> {
+    public var stringDelimiters: Godot.GodotArray<Godot.GodotString> {
         get {
             __getStringDelimiters()
         }
@@ -2356,7 +2356,7 @@ open class CodeEdit: TextEdit {
         }
     }
 
-    public var commentDelimiters: Godot.GodotTypedArray<Godot.GodotString> {
+    public var commentDelimiters: Godot.GodotArray<Godot.GodotString> {
         get {
             __getCommentDelimiters()
         }
@@ -2378,7 +2378,7 @@ open class CodeEdit: TextEdit {
         }
     }
 
-    public var codeCompletionPrefixes: Godot.GodotTypedArray<Godot.GodotString> {
+    public var codeCompletionPrefixes: Godot.GodotArray<Godot.GodotString> {
         get {
             __getCodeCompletionPrefixes()
         }
@@ -2422,7 +2422,7 @@ open class CodeEdit: TextEdit {
         }
     }
 
-    public var autoIndentPrefixes: Godot.GodotTypedArray<Godot.GodotString> {
+    public var autoIndentPrefixes: Godot.GodotArray<Godot.GodotString> {
         get {
             __getAutoIndentPrefixes()
         }
@@ -2496,7 +2496,7 @@ open class CodeEdit: TextEdit {
             let instance = Unmanaged<CodeEdit> .fromOpaque(instancePtr).takeUnretainedValue()
             var returnValue = instance
         ._filterCodeCompletionCandidates(
-            Godot.GodotTypedArray<Godot.GodotDictionary>(godotExtensionPointer: args[0]!)
+            Godot.GodotArray<Godot.GodotDictionary>(godotExtensionPointer: args[0]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         _virtualFunctions = [

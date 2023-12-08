@@ -100,8 +100,8 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __getInverseBinds() -> Godot.GodotTypedArray<Godot.Transform3D> {
-        let __temporary = Godot.GodotTypedArray<Godot.Transform3D>()
+    private func __getInverseBinds() -> Godot.GodotArray<Godot.Transform3D> {
+        let __temporary = Godot.GodotArray<Godot.Transform3D>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -122,7 +122,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setInverseBinds(_ inverseBinds: Godot.GodotTypedArray<Godot.Transform3D>) {
+    private func __setInverseBinds(_ inverseBinds: Godot.GodotArray<Godot.Transform3D>) {
         inverseBinds.withUnsafeRawPointer { (__ptr_inverseBinds) in
             withUnsafeArgumentPackPointer(__ptr_inverseBinds) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -469,7 +469,7 @@ open class GLTFSkin: Resource {
         }
     }
 
-    public var inverseBinds: Godot.GodotTypedArray<Godot.Transform3D> {
+    public var inverseBinds: Godot.GodotArray<Godot.Transform3D> {
         get {
             __getInverseBinds()
         }

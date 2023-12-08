@@ -42,8 +42,8 @@ open class ScriptEditor: PanelContainer {
         }
         }
     }()
-    public func openScriptEditors() -> Godot.GodotTypedArray<Godot.ScriptEditorBase?> {
-        let __temporary = Godot.GodotTypedArray<Godot.ScriptEditorBase?>()
+    public func openScriptEditors() -> Godot.GodotArray<Godot.ScriptEditorBase?> {
+        let __temporary = Godot.GodotArray<Godot.ScriptEditorBase?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -156,8 +156,8 @@ open class ScriptEditor: PanelContainer {
         }
         }
     }()
-    public func openScripts() -> Godot.GodotTypedArray<Godot.Script?> {
-        let __temporary = Godot.GodotTypedArray<Godot.Script?>()
+    public func openScripts() -> Godot.GodotArray<Godot.Script?> {
+        let __temporary = Godot.GodotArray<Godot.Script?>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
