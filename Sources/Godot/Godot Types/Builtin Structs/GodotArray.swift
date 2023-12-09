@@ -168,6 +168,10 @@ extension GodotArray: Equatable {
     public static func == (lhs: GodotArray, rhs: GodotArray) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
+    
+    public static func != (lhs: GodotArray, rhs: GodotArray) -> Bool {
+        Self._operatorNotEqual(lhs, rhs)
+    }
 }
 
 extension GodotArray: Hashable {

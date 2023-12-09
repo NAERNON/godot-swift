@@ -364,6 +364,10 @@ extension GodotStringName: Equatable {
     public static func == (lhs: GodotStringName, rhs: GodotStringName) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
+    
+    public static func != (lhs: GodotStringName, rhs: GodotStringName) -> Bool {
+        Self._operatorNotEqual(lhs, rhs)
+    }
 }
 
 extension GodotStringName: Hashable {

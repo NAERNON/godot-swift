@@ -118,6 +118,10 @@ extension GodotDictionary: Equatable {
     public static func == (lhs: GodotDictionary, rhs: GodotDictionary) -> Bool {
         Self._operatorEqual(lhs, rhs)
     }
+    
+    public static func != (lhs: GodotDictionary, rhs: GodotDictionary) -> Bool {
+        Self._operatorNotEqual(lhs, rhs)
+    }
 }
 
 extension GodotDictionary: Sequence {

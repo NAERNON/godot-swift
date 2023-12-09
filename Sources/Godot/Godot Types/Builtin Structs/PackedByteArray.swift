@@ -1,9 +1,12 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
+@GodotPackedArray
 public struct PackedByteArray {}
 
 extension PackedByteArray {
+    public typealias Element = UInt8
+    
     // MARK: Constructors
     
     public init() {
@@ -194,100 +197,23 @@ extension PackedByteArray {
             _encodeVar(byteOffset: byteOffset, value: storage, allowObjects: allowObjects)
         }
     }
-}
-
-extension PackedByteArray: Sequence {}
-
-extension PackedByteArray: Collection {
-    public var startIndex: Int {
-        0
+    
+    // MARK: Collection
+    
+    public mutating func append(_ newElement: Element) {
+        _append(value: Int(newElement))
     }
     
-    public var endIndex: Int {
-        self._size()
+    public mutating func insert(_ newElement: Element, at i: Int) {
+        _ = _insert(atIndex: i, value: Int(newElement))
     }
     
-    public func index(after i: Int) -> Int {
-        i+1
-    }
-}
-
-extension PackedByteArray: BidirectionalCollection {
-    public func index(before i: Int) -> Int {
-        i-1
-    }
-}
-
-extension PackedByteArray: RandomAccessCollection {}
-
-extension PackedByteArray: RangeReplaceableCollection {
-    public subscript(index: Int) -> UInt8 {
+    public subscript(index: Int) -> Element {
         get {
             UInt8(self._getValue(at: Int64(index)))
         }
         set(newValue) {
             self._setValue(Int(newValue), at: Int64(index))
         }
-    }
-    
-    public mutating func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
-    where C : Collection, UInt8 == C.Element {
-        var rangeIndex = subrange.lowerBound
-        for (collectionIndex, element) in newElements.enumerated() {
-            if collectionIndex + subrange.lowerBound < subrange.upperBound {
-                self[rangeIndex] = element
-            } else {
-                self._insert(atIndex: rangeIndex, value: Int(element))
-            }
-            rangeIndex += 1
-        }
-        
-        let removeIndex = subrange.lowerBound + newElements.count
-        while rangeIndex < subrange.upperBound {
-            self._removeAt(index: removeIndex)
-            rangeIndex += 1
-        }
-    }
-}
-
-extension PackedByteArray: MutableCollection {}
-
-extension PackedByteArray: ExpressibleByArrayLiteral {
-    public init(arrayLiteral elements: UInt8...) {
-        self.init(elements)
-    }
-}
-
-extension PackedByteArray: Equatable {
-    public static func == (lhs: PackedByteArray, rhs: PackedByteArray) -> Bool {
-        Self._operatorEqual(lhs, rhs)
-    }
-}
-
-extension PackedByteArray: Codable {
-    public func encode(to encoder: Encoder) throws {
-        var unkeyedContainer = encoder.unkeyedContainer()
-        try unkeyedContainer.encode(contentsOf: self)
-    }
-    
-    public init(from decoder: Decoder) throws {
-        var container = try decoder.unkeyedContainer()
-        var array = Self()
-        while let element = try container.decodeIfPresent(Self.Element.self) {
-            array.append(element)
-        }
-        self = array
-    }
-}
-
-extension PackedByteArray: CustomStringConvertible {
-    public var description: String {
-        "[\(self.map { String(reflecting: $0) }.joined(separator: ", "))]"
-    }
-}
-
-extension PackedByteArray: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        "[\(self.map { String(reflecting: $0) }.joined(separator: ", "))]"
     }
 }

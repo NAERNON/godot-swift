@@ -72,6 +72,14 @@ extension GodotString {
         lhs == GodotString(swiftString: rhs)
     }
     
+    public static func != (lhs: GodotString, rhs: GodotStringName) -> Bool {
+        Self._operatorNotEqual(lhs, rhs)
+    }
+    
+    public static func != (lhs: GodotString, rhs: String) -> Bool {
+        lhs != GodotString(swiftString: rhs)
+    }
+    
     // MARK: Methods & variables
     
     public func caseCompare(to other: GodotString) -> Int {
@@ -454,6 +462,10 @@ extension GodotString: MutableCollection {}
 extension GodotString: Equatable {
     public static func == (lhs: GodotString, rhs: GodotString) -> Bool {
         Self._operatorEqual(lhs, rhs)
+    }
+    
+    public static func != (lhs: GodotString, rhs: GodotString) -> Bool {
+        Self._operatorNotEqual(lhs, rhs)
     }
 }
 

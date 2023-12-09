@@ -13,3 +13,16 @@ internal macro GodotRefCountedRootClass() = #externalMacro(module: "GodotMacros"
 
 @attached(member, names: arbitrary)
 internal macro GodotOpaqueBuiltinClass() = #externalMacro(module: "GodotMacros", type: "GodotOpaqueBuiltinClassMacro")
+
+@attached(extension, conformances:
+    RandomAccessCollection,
+    RangeReplaceableCollection,
+    ExpressibleByArrayLiteral,
+    MutableCollection,
+    Equatable,
+    Codable,
+    CustomStringConvertible,
+    CustomDebugStringConvertible,
+    names: arbitrary
+)
+internal macro GodotPackedArray() = #externalMacro(module: "GodotMacros", type: "GodotPackedArrayMacro")
