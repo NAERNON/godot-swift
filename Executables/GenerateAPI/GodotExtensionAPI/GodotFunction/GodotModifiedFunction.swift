@@ -80,7 +80,29 @@ extension GodotFunction {
         GodotModifiedFunction(self, modifiedElement: .returnType(returnType))
     }
     
-    var withVariantStorageReturnType: GodotModifiedFunction<Self> {
+    func withVariantStorageReturnType() -> GodotModifiedFunction<Self> {
         GodotModifiedFunction(self, modifiedElement: .returnType(returnType?.storage))
+    }
+    
+    func withVariantStorageArguments() -> GodotModifiedFunction<Self> {
+        guard var arguments = self.arguments else {
+            return GodotModifiedFunction(self, modifiedElement: .none)
+        }
+        
+        for index in 0..<arguments.count {
+            var argument = arguments[index]
+            if argument.type == .variant {
+                argument.type = .variantStorage
+                argument.attributes.append("borrowing")
+                argument.defaultValue = nil
+            }
+            arguments[index] = argument
+        }
+        
+        return GodotModifiedFunction(self, modifiedElement: .arguments(arguments))
+    }
+    
+    func withVariantStorageParameters() -> some GodotFunction {
+        withVariantStorageReturnType().withVariantStorageArguments()
     }
 }

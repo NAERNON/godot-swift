@@ -1814,9 +1814,9 @@ extension GodotString {
         return __temporary
     }
 
-    internal func _format<Value: VariantStorableIn>(values: Value, placeholder: Godot.GodotString = "{_}") -> Godot.GodotString {
+    internal func _format(values: borrowing Godot.Variant.Storage, placeholder: Godot.GodotString = "{_}") -> Godot.GodotString {
         let __temporary = Godot.GodotString()
-        Godot.Variant.withStorageUnsafeRawPointer(to: values) { (__ptr_values) in
+        values.withUnsafeRawPointer { (__ptr_values) in
             placeholder.withUnsafeRawPointer { (__ptr_placeholder) in
                 withUnsafeArgumentPackPointer(__ptr_values, __ptr_placeholder) { (__accessPtr) in
                     __temporary.withUnsafeRawPointer { (__ptr___temporary) in

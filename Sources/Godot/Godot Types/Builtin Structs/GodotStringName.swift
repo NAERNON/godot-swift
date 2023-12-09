@@ -137,8 +137,12 @@ extension GodotStringName {
         _similarity(text: other)
     }
     
-    public func formated(values: Variant, placeholder: GodotString = "{_}") -> GodotString {
-        _format(values: values, placeholder: placeholder)
+    public func formated<Value : VariantStorableIn>(
+        values: Value, placeholder: GodotString = "{_}"
+    ) -> GodotString {
+        Value.withValueStorage(values) { storage in
+            _format(values: storage, placeholder: placeholder)
+        }
     }
     
     public func capitalized() -> GodotString {

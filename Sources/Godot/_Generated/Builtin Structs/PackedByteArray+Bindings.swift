@@ -1253,11 +1253,11 @@ extension PackedByteArray {
         }
     }
 
-    @discardableResult mutating internal func _encodeVar<Value: VariantStorableIn>(byteOffset: Int, value: Value, allowObjects: Bool = false) -> Int {
+    @discardableResult mutating internal func _encodeVar(byteOffset: Int, value: borrowing Godot.Variant.Storage, allowObjects: Bool = false) -> Int {
         replaceOpaqueValueIfNecessary()
         var __temporary = Int()
         withUnsafePointer(to: byteOffset) { (__ptr_byteOffset) in
-            Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+            value.withUnsafeRawPointer { (__ptr_value) in
                 withUnsafePointer(to: allowObjects) { (__ptr_allowObjects) in
                     withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value, __ptr_allowObjects) { (__accessPtr) in
                         withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in

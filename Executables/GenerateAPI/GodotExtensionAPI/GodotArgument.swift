@@ -8,6 +8,7 @@ struct GodotArgument: Decodable {
     var defaultValue: GodotConstant?
     var label: String?
     var isLabelHidden: Bool
+    var attributes: [String] = []
     
     init(
         name: String,

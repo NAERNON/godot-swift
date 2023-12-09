@@ -27,31 +27,30 @@ extension GodotDictionary {
     
     public subscript(key: Key) -> AssociatedValue? {
         get {
-            guard _has(key: key) else {
-                return nil
-            }
-            
-            return Key.withValueStorage(key) { keyStorage in
-                AssociatedValue.convertFromCheckedStorage(consuming: self._getValue(forKey: keyStorage))
+            Key.withValueStorage(key) { keyStorage in
+                guard _has(key: keyStorage) else {
+                    return nil
+                }
+                
+                return AssociatedValue.convertFromCheckedStorage(consuming: self._getValue(forKey: keyStorage))
             }
         }
         set(newValue) {
-            guard let newValue else {
-                self._erase(key: key)
-                return
-            }
-            
             Key.withValueStorage(key) { keyStorage in
+                guard let newValue else {
+                    self._erase(key: keyStorage)
+                    return
+                }
+                
                 AssociatedValue.withValueStorage(newValue) { newValueStorage in
                     self._set(value: newValueStorage, forKey: keyStorage)
                 }
             }
         }
         _modify {
-            var newValue: AssociatedValue? = if _has(key: key) {
-                Key.withValueStorage(key) { keyStorage in
-                    AssociatedValue.convertFromCheckedStorage(consuming: self._getValue(forKey: keyStorage))
-                }
+            let keyStorage = Key.convertToStorage(key)
+            var newValue: AssociatedValue? = if _has(key: keyStorage) {
+                AssociatedValue.convertFromCheckedStorage(consuming: self._getValue(forKey: keyStorage))
             } else {
                 nil
             }
@@ -59,14 +58,12 @@ extension GodotDictionary {
             yield &newValue
             
             guard let newValue else {
-                self._erase(key: key)
+                self._erase(key: keyStorage)
                 return
             }
             
-            Key.withValueStorage(key) { keyStorage in
-                AssociatedValue.withValueStorage(newValue) { newValueStorage in
-                    self._set(value: newValueStorage, forKey: keyStorage)
-                }
+            AssociatedValue.withValueStorage(newValue) { newValueStorage in
+                self._set(value: newValueStorage, forKey: keyStorage)
             }
         }
     }
@@ -76,12 +73,13 @@ extension GodotDictionary {
         default defaultValue: @autoclosure () -> AssociatedValue
     ) -> AssociatedValue {
         get {
-            guard _has(key: key) else {
-                return defaultValue()
-            }
-            
-            return Key.withValueStorage(key) { keyStorage in
-                AssociatedValue.convertFromCheckedStorage(consuming: self._getValue(forKey: keyStorage))
+            Key.withValueStorage(key) { keyStorage in
+                guard _has(key: keyStorage) else {
+                    return defaultValue()
+                }
+                
+                return AssociatedValue.convertFromCheckedStorage(
+                    consuming: self._getValue(forKey: keyStorage))
             }
         }
         set(newValue) {
@@ -92,20 +90,17 @@ extension GodotDictionary {
             }
         }
         _modify {
-            var newValue: AssociatedValue = if _has(key: key) {
-                Key.withValueStorage(key) { keyStorage in
-                    AssociatedValue.convertFromCheckedStorage(consuming: self._getValue(forKey: keyStorage))
-                }
+            let keyStorage = Key.convertToStorage(key)
+            var newValue: AssociatedValue = if _has(key: keyStorage) {
+                AssociatedValue.convertFromCheckedStorage(consuming: self._getValue(forKey: keyStorage))
             } else {
                 defaultValue()
             }
             
             yield &newValue
             
-            Key.withValueStorage(key) { keyStorage in
-                AssociatedValue.withValueStorage(newValue) { newValueStorage in
-                    self._set(value: newValueStorage, forKey: keyStorage)
-                }
+            AssociatedValue.withValueStorage(newValue) { newValueStorage in
+                self._set(value: newValueStorage, forKey: keyStorage)
             }
         }
     }

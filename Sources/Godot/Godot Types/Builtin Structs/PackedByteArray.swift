@@ -185,12 +185,14 @@ extension PackedByteArray {
     }
     
     @discardableResult
-    mutating public func encodeVar(
-        _ value: Variant,
+    mutating public func encodeVar<Value : VariantStorableIn>(
+        _ value: Value,
         at byteOffset: Int,
         allowObjects: Bool = false
     ) -> Int {
-        _encodeVar(byteOffset: byteOffset, value: value, allowObjects: allowObjects)
+        Value.withValueStorage(value) { storage in
+            _encodeVar(byteOffset: byteOffset, value: storage, allowObjects: allowObjects)
+        }
     }
 }
 

@@ -400,7 +400,7 @@ struct GodotBuiltinClass: Decodable {
     @MemberBlockItemListBuilder
     private func operatorSyntax(_ `operator`: Operator) throws -> MemberBlockItemListSyntax {
         let operatorFunction = OperatorFunction(operator: `operator`, type: name)
-            .withVariantStorageReturnType
+            .withVariantStorageReturnType()
             .translated
         
         try operatorFunction.declSyntax(
@@ -526,7 +526,7 @@ struct GodotBuiltinClass: Decodable {
     @MemberBlockItemListBuilder
     private func methodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
         let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
-        let translatedMethod = method.withVariantStorageReturnType.translated
+        let translatedMethod = method.withVariantStorageParameters().translated
         let functionDecl = try translatedMethod.withNamePrefixed(by: "_").declSyntax(
             options: syntaxOptions,
             keywords: .internal

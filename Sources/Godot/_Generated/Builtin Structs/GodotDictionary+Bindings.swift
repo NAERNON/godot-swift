@@ -314,9 +314,9 @@ extension GodotDictionary {
         }
     }
 
-    internal func _has<Value: VariantStorableIn>(key: Value) -> Bool {
+    internal func _has(key: borrowing Godot.Variant.Storage) -> Bool {
         var __temporary = Bool()
-        Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
+        key.withUnsafeRawPointer { (__ptr_key) in
             withUnsafeArgumentPackPointer(__ptr_key) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -342,9 +342,9 @@ extension GodotDictionary {
         return __temporary
     }
 
-    internal func _findKey<Value: VariantStorableIn>(value: Value) -> Godot.Variant.Storage {
+    internal func _findKey(value: borrowing Godot.Variant.Storage) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+        value.withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -356,10 +356,10 @@ extension GodotDictionary {
         return __temporary
     }
 
-    @discardableResult mutating internal func _erase<Value: VariantStorableIn>(key: Value) -> Bool {
+    @discardableResult mutating internal func _erase(key: borrowing Godot.Variant.Storage) -> Bool {
         replaceOpaqueValueIfNecessary()
         var __temporary = Bool()
-        Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
+        key.withUnsafeRawPointer { (__ptr_key) in
             withUnsafeArgumentPackPointer(__ptr_key) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -415,10 +415,10 @@ extension GodotDictionary {
         return __temporary
     }
 
-    internal func _get<Value1: VariantStorableIn, Value2: VariantStorableIn>(key: Value1, `default`: Value2 = Variant()) -> Godot.Variant.Storage {
+    internal func _get(key: borrowing Godot.Variant.Storage, `default`: borrowing Godot.Variant.Storage) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
-        Godot.Variant.withStorageUnsafeRawPointer(to: key) { (__ptr_key) in
-            Godot.Variant.withStorageUnsafeRawPointer(to: `default`) { (__ptr_default) in
+        key.withUnsafeRawPointer { (__ptr_key) in
+            `default`.withUnsafeRawPointer { (__ptr_default) in
                 withUnsafeArgumentPackPointer(__ptr_key, __ptr_default) { (__accessPtr) in
                     __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in

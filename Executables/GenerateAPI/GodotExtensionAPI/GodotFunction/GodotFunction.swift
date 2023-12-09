@@ -170,6 +170,10 @@ extension GodotFunction {
             
             let genericNames = genericTypes(forArgumentAt: index).map { $0.name }
             
+            for attribute in argument.attributes {
+                parameterString.append("\(attribute) ")
+            }
+            
             if usesVariantGeneric, argument.type == .variant {
                 parameterString.append(genericNames[0])
                 variantArgumentIndex += 1

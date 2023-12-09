@@ -100,7 +100,9 @@ extension GodotArray: RangeReplaceableCollection {
             if collectionIndex + subrange.lowerBound < subrange.upperBound {
                 self[rangeIndex] = element
             } else {
-                self._insert(position: rangeIndex, value: element)
+                Element.withValueStorage(element) { elementStorage in
+                    _ = self._insert(position: rangeIndex, value: elementStorage)
+                }
             }
             rangeIndex += 1
         }

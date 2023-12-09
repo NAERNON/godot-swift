@@ -775,9 +775,9 @@ extension GodotArray {
         }
     }
 
-    mutating internal func _pushBack<Value: VariantStorableIn>(value: Value) {
+    mutating internal func _pushBack(value: borrowing Godot.Variant.Storage) {
         replaceOpaqueValueIfNecessary()
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+        value.withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     __method_binding_push_back(__ptr_self, __accessPtr, nil, 1)
@@ -786,9 +786,9 @@ extension GodotArray {
         }
     }
 
-    mutating internal func _pushFront<Value: VariantStorableIn>(value: Value) {
+    mutating internal func _pushFront(value: borrowing Godot.Variant.Storage) {
         replaceOpaqueValueIfNecessary()
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+        value.withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     __method_binding_push_front(__ptr_self, __accessPtr, nil, 1)
@@ -797,9 +797,9 @@ extension GodotArray {
         }
     }
 
-    mutating internal func _append<Value: VariantStorableIn>(value: Value) {
+    mutating internal func _append(value: borrowing Godot.Variant.Storage) {
         replaceOpaqueValueIfNecessary()
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+        value.withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     __method_binding_append(__ptr_self, __accessPtr, nil, 1)
@@ -834,11 +834,11 @@ extension GodotArray {
         return __temporary
     }
 
-    @discardableResult mutating internal func _insert<Value: VariantStorableIn>(position: Int, value: Value) -> Int {
+    @discardableResult mutating internal func _insert(position: Int, value: borrowing Godot.Variant.Storage) -> Int {
         replaceOpaqueValueIfNecessary()
         var __temporary = Int()
         withUnsafePointer(to: position) { (__ptr_position) in
-            Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+            value.withUnsafeRawPointer { (__ptr_value) in
                 withUnsafeArgumentPackPointer(__ptr_position, __ptr_value) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -862,9 +862,9 @@ extension GodotArray {
         }
     }
 
-    mutating internal func _fill<Value: VariantStorableIn>(value: Value) {
+    mutating internal func _fill(value: borrowing Godot.Variant.Storage) {
         replaceOpaqueValueIfNecessary()
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+        value.withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     __method_binding_fill(__ptr_self, __accessPtr, nil, 1)
@@ -873,9 +873,9 @@ extension GodotArray {
         }
     }
 
-    mutating internal func _erase<Value: VariantStorableIn>(value: Value) {
+    mutating internal func _erase(value: borrowing Godot.Variant.Storage) {
         replaceOpaqueValueIfNecessary()
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+        value.withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
                     __method_binding_erase(__ptr_self, __accessPtr, nil, 1)
@@ -914,9 +914,9 @@ extension GodotArray {
         return __temporary
     }
 
-    internal func _find<Value: VariantStorableIn>(what: Value, from: Int = 0) -> Int {
+    internal func _find(what: borrowing Godot.Variant.Storage, from: Int = 0) -> Int {
         var __temporary = Int()
-        Godot.Variant.withStorageUnsafeRawPointer(to: what) { (__ptr_what) in
+        what.withUnsafeRawPointer { (__ptr_what) in
             withUnsafePointer(to: from) { (__ptr_from) in
                 withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -930,9 +930,9 @@ extension GodotArray {
         return __temporary
     }
 
-    internal func _rfind<Value: VariantStorableIn>(what: Value, from: Int = -1) -> Int {
+    internal func _rfind(what: borrowing Godot.Variant.Storage, from: Int = -1) -> Int {
         var __temporary = Int()
-        Godot.Variant.withStorageUnsafeRawPointer(to: what) { (__ptr_what) in
+        what.withUnsafeRawPointer { (__ptr_what) in
             withUnsafePointer(to: from) { (__ptr_from) in
                 withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -946,9 +946,9 @@ extension GodotArray {
         return __temporary
     }
 
-    internal func _count<Value: VariantStorableIn>(value: Value) -> Int {
+    internal func _count(value: borrowing Godot.Variant.Storage) -> Int {
         var __temporary = Int()
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+        value.withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -960,9 +960,9 @@ extension GodotArray {
         return __temporary
     }
 
-    internal func _has<Value: VariantStorableIn>(value: Value) -> Bool {
+    internal func _has(value: borrowing Godot.Variant.Storage) -> Bool {
         var __temporary = Bool()
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+        value.withUnsafeRawPointer { (__ptr_value) in
             withUnsafeArgumentPackPointer(__ptr_value) { (__accessPtr) in
                 withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
                     `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -1036,9 +1036,9 @@ extension GodotArray {
         }
     }
 
-    internal func _bsearch<Value: VariantStorableIn>(value: Value, before: Bool = true) -> Int {
+    internal func _bsearch(value: borrowing Godot.Variant.Storage, before: Bool = true) -> Int {
         var __temporary = Int()
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+        value.withUnsafeRawPointer { (__ptr_value) in
             withUnsafePointer(to: before) { (__ptr_before) in
                 withUnsafeArgumentPackPointer(__ptr_value, __ptr_before) { (__accessPtr) in
                     withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
@@ -1052,9 +1052,9 @@ extension GodotArray {
         return __temporary
     }
 
-    internal func _bsearchCustom<Value: VariantStorableIn>(value: Value, `func`: Godot.Callable, before: Bool = true) -> Int {
+    internal func _bsearchCustom(value: borrowing Godot.Variant.Storage, `func`: Godot.Callable, before: Bool = true) -> Int {
         var __temporary = Int()
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
+        value.withUnsafeRawPointer { (__ptr_value) in
             `func`.withUnsafeRawPointer { (__ptr_func) in
                 withUnsafePointer(to: before) { (__ptr_before) in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_func, __ptr_before) { (__accessPtr) in
@@ -1139,10 +1139,10 @@ extension GodotArray {
         return __temporary
     }
 
-    internal func _reduce<Value: VariantStorableIn>(method: Godot.Callable, accum: Value = Variant()) -> Godot.Variant.Storage {
+    internal func _reduce(method: Godot.Callable, accum: borrowing Godot.Variant.Storage) -> Godot.Variant.Storage {
         let __temporary = Godot.Variant.Storage()
         method.withUnsafeRawPointer { (__ptr_method) in
-            Godot.Variant.withStorageUnsafeRawPointer(to: accum) { (__ptr_accum) in
+            accum.withUnsafeRawPointer { (__ptr_accum) in
                 withUnsafeArgumentPackPointer(__ptr_method, __ptr_accum) { (__accessPtr) in
                     __temporary.withUnsafeRawPointer { (__ptr___temporary) in
                         `self`.withUnsafeRawPointer { (__ptr_self) in
