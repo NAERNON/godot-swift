@@ -126,8 +126,8 @@ open class OpenXRInteractionProfile: Resource {
         }
         }
     }()
-    private func __getBindings() -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    private func __getBindings() -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -152,7 +152,7 @@ open class OpenXRInteractionProfile: Resource {
         }
     }
 
-    public var bindings: Godot.GodotArray<Variant> {
+    public var bindings: Godot.AnyGodotArray {
         get {
             __getBindings()
         }

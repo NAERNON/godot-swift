@@ -9,11 +9,11 @@ open class EditorResourcePreviewGenerator: RefCounted {
         Bool()
     }
 
-    open func _generate(resource: Godot.Resource?, size: Godot.Vector2i, metadata: Godot.GodotDictionary<Variant, Variant>) -> Godot.Texture2D? {
+    open func _generate(resource: Godot.Resource?, size: Godot.Vector2i, metadata: Godot.AnyGodotDictionary) -> Godot.Texture2D? {
         nil
     }
 
-    open func _generateFromPath(_ path: Godot.GodotString, size: Godot.Vector2i, metadata: Godot.GodotDictionary<Variant, Variant>) -> Godot.Texture2D? {
+    open func _generateFromPath(_ path: Godot.GodotString, size: Godot.Vector2i, metadata: Godot.AnyGodotDictionary) -> Godot.Texture2D? {
         nil
     }
 
@@ -49,7 +49,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
         ._generate(
             resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
             size: args[1]!.load(as: Godot.Vector2i.self),
-            metadata: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[2]!)
+            metadata: Godot.AnyGodotDictionary(godotExtensionPointer: args[2]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _generate_from_path_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -61,7 +61,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
         ._generateFromPath(
             Godot.GodotString(godotExtensionPointer: args[0]!),
             size: args[1]!.load(as: Godot.Vector2i.self),
-            metadata: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[2]!)
+            metadata: Godot.AnyGodotDictionary(godotExtensionPointer: args[2]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _generate_small_preview_automatically_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

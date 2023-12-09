@@ -388,8 +388,8 @@ open class MeshLibrary: Resource {
         }
         }
     }()
-    public func itemShapes(id: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func itemShapes(id: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: id) { (__ptr_id) in
             withUnsafeArgumentPackPointer(__ptr_id) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

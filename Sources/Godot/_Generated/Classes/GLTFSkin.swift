@@ -320,8 +320,8 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __getJointIToBoneI() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    private func __getJointIToBoneI() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -364,8 +364,8 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __getJointIToName() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    private func __getJointIToName() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -524,7 +524,7 @@ open class GLTFSkin: Resource {
         }
     }
 
-    public var jointIToBoneI: Godot.GodotDictionary<Variant, Variant> {
+    public var jointIToBoneI: Godot.AnyGodotDictionary {
         get {
             __getJointIToBoneI()
         }
@@ -535,7 +535,7 @@ open class GLTFSkin: Resource {
         }
     }
 
-    public var jointIToName: Godot.GodotDictionary<Variant, Variant> {
+    public var jointIToName: Godot.AnyGodotDictionary {
         get {
             __getJointIToName()
         }

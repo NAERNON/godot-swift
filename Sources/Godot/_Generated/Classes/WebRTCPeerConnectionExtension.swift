@@ -17,11 +17,11 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
         Godot.WebRTCPeerConnection.SignalingState(rawValue: 0)!
     }
 
-    open func _initialize(pConfig: Godot.GodotDictionary<Variant, Variant>) -> Godot.ErrorType {
+    open func _initialize(pConfig: Godot.AnyGodotDictionary) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _createDataChannel(pLabel: Godot.GodotString, pConfig: Godot.GodotDictionary<Variant, Variant>) -> Godot.WebRTCDataChannel? {
+    open func _createDataChannel(pLabel: Godot.GodotString, pConfig: Godot.AnyGodotDictionary) -> Godot.WebRTCDataChannel? {
         nil
     }
 
@@ -84,7 +84,7 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
             let instance = Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
             let returnValue = instance
         ._initialize(
-            pConfig: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[0]!)
+            pConfig: Godot.AnyGodotDictionary(godotExtensionPointer: args[0]!)
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         let _create_data_channel_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -95,7 +95,7 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
             let returnValue = instance
         ._createDataChannel(
             pLabel: Godot.GodotString(godotExtensionPointer: args[0]!),
-            pConfig: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[1]!)
+            pConfig: Godot.AnyGodotDictionary(godotExtensionPointer: args[1]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _create_offer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

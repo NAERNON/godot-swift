@@ -144,8 +144,8 @@ open class OpenXRActionSet: Resource {
         }
         }
     }()
-    private func __getActions() -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    private func __getActions() -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -229,7 +229,7 @@ open class OpenXRActionSet: Resource {
         }
     }
 
-    public var actions: Godot.GodotArray<Variant> {
+    public var actions: Godot.AnyGodotArray {
         get {
             __getActions()
         }

@@ -12,8 +12,8 @@ open class InstancePlaceholder: Node {
         }
         }
     }()
-    public func storedValues(withOrder order: Bool = false) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func storedValues(withOrder order: Bool = false) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: order) { (__ptr_order) in
             withUnsafeArgumentPackPointer(__ptr_order) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

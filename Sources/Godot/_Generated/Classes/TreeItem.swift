@@ -526,8 +526,8 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func structuredTextBidiOverrideOptions(column: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func structuredTextBidiOverrideOptions(column: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: column) { (__ptr_column) in
             withUnsafeArgumentPackPointer(__ptr_column) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -934,8 +934,8 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func rangeConfig(column: Int32) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func rangeConfig(column: Int32) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: column) { (__ptr_column) in
             withUnsafeArgumentPackPointer(__ptr_column) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

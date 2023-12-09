@@ -284,8 +284,8 @@ open class Font: Resource {
         }
         }
     }()
-    public func otNameStrings() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func otNameStrings() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -398,8 +398,8 @@ open class Font: Resource {
         }
         }
     }()
-    public func opentypeFeatures() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func opentypeFeatures() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -894,8 +894,8 @@ open class Font: Resource {
         }
         }
     }()
-    public func supportedFeatureList() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func supportedFeatureList() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -916,8 +916,8 @@ open class Font: Resource {
         }
         }
     }()
-    public func supportedVariationList() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func supportedVariationList() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

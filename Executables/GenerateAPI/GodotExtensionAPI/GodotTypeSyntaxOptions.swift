@@ -30,7 +30,7 @@ struct GodotTypeSyntaxOptions: OptionSet {
     static let typeIsStorageType =
         GodotTypeSyntaxOptions(rawValue: 1 << 5)
     
-    /// GodotArray is suffixed by `<Variant>`.
+    /// GodotArray is replaced by "AnyGodotArray".
     static let genericArrayOnVariant =
         GodotTypeSyntaxOptions(rawValue: 1 << 6)
     
@@ -38,7 +38,7 @@ struct GodotTypeSyntaxOptions: OptionSet {
     static let genericArrayOnElement =
         GodotTypeSyntaxOptions(rawValue: 1 << 7)
     
-    /// GodotDictionary is suffixed by `<Variant, Variant>`.
+    /// GodotDictionary is replaced by "AnyGodotDictionary".
     static let genericDictionaryOnVariant =
         GodotTypeSyntaxOptions(rawValue: 1 << 8)
     

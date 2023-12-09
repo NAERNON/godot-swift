@@ -850,8 +850,8 @@ open class TextParagraph: RefCounted {
         }
         }
     }()
-    public func lineObjects(line: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func lineObjects(line: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: line) { (__ptr_line) in
             withUnsafeArgumentPackPointer(__ptr_line) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

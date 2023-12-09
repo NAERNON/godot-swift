@@ -66,8 +66,8 @@ open class CodeEdit: TextEdit {
     open func _requestCodeCompletion(force: Bool) {
     }
 
-    open func _filterCodeCompletionCandidates(_ candidates: Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    open func _filterCodeCompletionCandidates(_ candidates: Godot.GodotArray<Godot.AnyGodotDictionary>) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
     private static var __method_binding_set_indent_size: GDExtensionMethodBindPtr = {
@@ -465,8 +465,8 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    private func __getAutoBraceCompletionPairs() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    private func __getAutoBraceCompletionPairs() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -1901,8 +1901,8 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    public func codeCompletionOptions() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    public func codeCompletionOptions() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.AnyGodotDictionary>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -1923,8 +1923,8 @@ open class CodeEdit: TextEdit {
         }
         }
     }()
-    public func codeCompletionOption(index: Int32) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func codeCompletionOption(index: Int32) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: index) { (__ptr_index) in
             withUnsafeArgumentPackPointer(__ptr_index) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -2455,7 +2455,7 @@ open class CodeEdit: TextEdit {
         }
     }
 
-    public var autoBraceCompletionPairs: Godot.GodotDictionary<Variant, Variant> {
+    public var autoBraceCompletionPairs: Godot.AnyGodotDictionary {
         get {
             __getAutoBraceCompletionPairs()
         }
@@ -2496,7 +2496,7 @@ open class CodeEdit: TextEdit {
             let instance = Unmanaged<CodeEdit> .fromOpaque(instancePtr).takeUnretainedValue()
             var returnValue = instance
         ._filterCodeCompletionCandidates(
-            Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>(godotExtensionPointer: args[0]!)
+            Godot.GodotArray<Godot.AnyGodotDictionary>(godotExtensionPointer: args[0]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         _virtualFunctions = [

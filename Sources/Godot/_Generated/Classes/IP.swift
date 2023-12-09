@@ -175,8 +175,8 @@ open class IP: Object {
         }
         }
     }()
-    public func resolveItemAddresses(id: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func resolveItemAddresses(id: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: id) { (__ptr_id) in
             withUnsafeArgumentPackPointer(__ptr_id) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -245,8 +245,8 @@ open class IP: Object {
         }
         }
     }()
-    public func localInterfaces() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    public func localInterfaces() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.AnyGodotDictionary>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

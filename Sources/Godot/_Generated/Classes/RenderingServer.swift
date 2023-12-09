@@ -1858,8 +1858,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func shaderParameterList(shader: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    public func shaderParameterList(shader: Godot.RID) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.AnyGodotDictionary>()
         shader.withUnsafeRawPointer { (__ptr_shader) in
             withUnsafeArgumentPackPointer(__ptr_shader) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -2118,7 +2118,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshCreateFromSurfaces(_ surfaces: Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>, blendShapeCount: Int32 = 0) -> Godot.RID {
+    public func meshCreateFromSurfaces(_ surfaces: Godot.GodotArray<Godot.AnyGodotDictionary>, blendShapeCount: Int32 = 0) -> Godot.RID {
         let __temporary = Godot.RID()
         surfaces.withUnsafeRawPointer { (__ptr_surfaces) in
             withUnsafePointer(to: blendShapeCount) { (__ptr_blendShapeCount) in
@@ -2468,8 +2468,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshGetSurface(mesh: Godot.RID, surface: Int32) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func meshGetSurface(mesh: Godot.RID, surface: Int32) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         mesh.withUnsafeRawPointer { (__ptr_mesh) in
             withUnsafePointer(to: surface) { (__ptr_surface) in
                 withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { (__accessPtr) in
@@ -2496,8 +2496,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshSurfaceGetArrays(mesh: Godot.RID, surface: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func meshSurfaceGetArrays(mesh: Godot.RID, surface: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         mesh.withUnsafeRawPointer { (__ptr_mesh) in
             withUnsafePointer(to: surface) { (__ptr_surface) in
                 withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { (__accessPtr) in
@@ -2524,8 +2524,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshSurfaceGetBlendShapeArrays(mesh: Godot.RID, surface: Int32) -> Godot.GodotArray<Godot.GodotArray<Variant>> {
-        let __temporary = Godot.GodotArray<Godot.GodotArray<Variant>>()
+    public func meshSurfaceGetBlendShapeArrays(mesh: Godot.RID, surface: Int32) -> Godot.GodotArray<Godot.AnyGodotArray> {
+        let __temporary = Godot.GodotArray<Godot.AnyGodotArray>()
         mesh.withUnsafeRawPointer { (__ptr_mesh) in
             withUnsafePointer(to: surface) { (__ptr_surface) in
                 withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { (__accessPtr) in
@@ -9862,8 +9862,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func instanceGeometryGetShaderParameterList(instance: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    public func instanceGeometryGetShaderParameterList(instance: Godot.RID) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.AnyGodotDictionary>()
         instance.withUnsafeRawPointer { (__ptr_instance) in
             withUnsafeArgumentPackPointer(__ptr_instance) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

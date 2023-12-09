@@ -31,12 +31,12 @@ open class AnimationNode: Resource {
     public struct AnimationNodeRemoved {
     }
 
-    open func _getChildNodes() -> Godot.GodotDictionary<Variant, Variant> {
-        Godot.GodotDictionary<Variant, Variant>()
+    open func _getChildNodes() -> Godot.AnyGodotDictionary {
+        Godot.AnyGodotDictionary()
     }
 
-    open func _getParameterList() -> Godot.GodotArray<Variant> {
-        Godot.GodotArray<Variant>()
+    open func _getParameterList() -> Godot.AnyGodotArray {
+        Godot.AnyGodotArray()
     }
 
     open func _getChildByName(_ name: Godot.GodotStringName) -> Godot.AnimationNode? {

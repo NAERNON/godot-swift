@@ -1834,8 +1834,8 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func coordsLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func coordsLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: sourceFrom) { (__ptr_sourceFrom) in
             withUnsafePointer(to: coordsFrom) { (__ptr_coordsFrom) in
                 withUnsafeArgumentPackPointer(__ptr_sourceFrom, __ptr_coordsFrom) { (__accessPtr) in
@@ -1946,8 +1946,8 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func alternativeLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i, alternativeFrom: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func alternativeLevelTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i, alternativeFrom: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: sourceFrom) { (__ptr_sourceFrom) in
             withUnsafePointer(to: coordsFrom) { (__ptr_coordsFrom) in
                 withUnsafePointer(to: alternativeFrom) { (__ptr_alternativeFrom) in
@@ -2032,8 +2032,8 @@ open class TileSet: Resource {
         }
         }
     }()
-    public func mapTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i, alternativeFrom: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func mapTileProxy(sourceFrom: Int32, coordsFrom: Godot.Vector2i, alternativeFrom: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: sourceFrom) { (__ptr_sourceFrom) in
             withUnsafePointer(to: coordsFrom) { (__ptr_coordsFrom) in
                 withUnsafePointer(to: alternativeFrom) { (__ptr_alternativeFrom) in

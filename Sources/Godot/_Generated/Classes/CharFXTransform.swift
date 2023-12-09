@@ -276,8 +276,8 @@ open class CharFXTransform: RefCounted {
         }
         }
     }()
-    private func __getEnvironment() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    private func __getEnvironment() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -599,7 +599,7 @@ open class CharFXTransform: RefCounted {
         }
     }
 
-    public var environment: Godot.GodotDictionary<Variant, Variant> {
+    public var environment: Godot.AnyGodotDictionary {
         get {
             __getEnvironment()
         }

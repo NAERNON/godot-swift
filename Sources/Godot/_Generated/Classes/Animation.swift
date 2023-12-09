@@ -1225,8 +1225,8 @@ open class Animation: Resource {
         }
         }
     }()
-    public func methodTrackGetParams(trackIdx: Int32, keyIdx: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func methodTrackGetParams(trackIdx: Int32, keyIdx: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: trackIdx) { (__ptr_trackIdx) in
             withUnsafePointer(to: keyIdx) { (__ptr_keyIdx) in
                 withUnsafeArgumentPackPointer(__ptr_trackIdx, __ptr_keyIdx) { (__accessPtr) in

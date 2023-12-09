@@ -9,7 +9,7 @@ open class EditorProperty: Container {
     public struct PropertyChanged {
     }
 
-    @Emitter(signal: "multiple_properties_changed", args: ("properties", Godot.PackedStringArray), ("value", Godot.GodotArray<Variant>))
+    @Emitter(signal: "multiple_properties_changed", args: ("properties", Godot.PackedStringArray), ("value", Godot.AnyGodotArray))
     public struct MultiplePropertiesChanged {
     }
 

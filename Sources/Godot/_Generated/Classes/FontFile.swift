@@ -860,8 +860,8 @@ open class FontFile: Font {
         }
         }
     }()
-    public func variationCoordinates(cacheIndex: Int32) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func variationCoordinates(cacheIndex: Int32) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: cacheIndex) { (__ptr_cacheIndex) in
             withUnsafeArgumentPackPointer(__ptr_cacheIndex) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -2270,8 +2270,8 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __getOpentypeFeatureOverrides() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    private func __getOpentypeFeatureOverrides() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -2475,7 +2475,7 @@ open class FontFile: Font {
         }
     }
 
-    public var opentypeFeatureOverrides: Godot.GodotDictionary<Variant, Variant> {
+    public var opentypeFeatureOverrides: Godot.AnyGodotDictionary {
         get {
             __getOpentypeFeatureOverrides()
         }

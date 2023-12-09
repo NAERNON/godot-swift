@@ -381,8 +381,8 @@ extension GodotDictionary {
         return __temporary
     }
 
-    internal func _keys() -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    internal func _keys() -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 __method_binding_keys(__ptr_self, nil, __ptr___temporary, 0)
@@ -391,8 +391,8 @@ extension GodotDictionary {
         return __temporary
     }
 
-    internal func _values() -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    internal func _values() -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 __method_binding_values(__ptr_self, nil, __ptr___temporary, 0)

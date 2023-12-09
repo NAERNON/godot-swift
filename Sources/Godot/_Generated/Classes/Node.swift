@@ -605,8 +605,8 @@ open class Node: Object {
         }
         }
     }()
-    public func nodeAndResource(path: Godot.NodePath) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func nodeAndResource(path: Godot.NodePath) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         path.withUnsafeRawPointer { (__ptr_path) in
             withUnsafeArgumentPackPointer(__ptr_path) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

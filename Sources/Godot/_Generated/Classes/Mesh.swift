@@ -158,16 +158,16 @@ open class Mesh: Resource {
         Int32()
     }
 
-    open func _surfaceGetArrays(index: Int32) -> Godot.GodotArray<Variant> {
-        Godot.GodotArray<Variant>()
+    open func _surfaceGetArrays(index: Int32) -> Godot.AnyGodotArray {
+        Godot.AnyGodotArray()
     }
 
-    open func _surfaceGetBlendShapeArrays(index: Int32) -> Godot.GodotArray<Godot.GodotArray<Variant>> {
-        Godot.GodotArray<Godot.GodotArray<Variant>>()
+    open func _surfaceGetBlendShapeArrays(index: Int32) -> Godot.GodotArray<Godot.AnyGodotArray> {
+        Godot.GodotArray<Godot.AnyGodotArray>()
     }
 
-    open func _surfaceGetLods(index: Int32) -> Godot.GodotDictionary<Variant, Variant> {
-        Godot.GodotDictionary<Variant, Variant>()
+    open func _surfaceGetLods(index: Int32) -> Godot.AnyGodotDictionary {
+        Godot.AnyGodotDictionary()
     }
 
     open func _surfaceGetFormat(index: Int32) -> UInt32 {
@@ -317,8 +317,8 @@ open class Mesh: Resource {
         }
         }
     }()
-    public func surfaceGetArrays(surfIdx: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func surfaceGetArrays(surfIdx: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: surfIdx) { (__ptr_surfIdx) in
             withUnsafeArgumentPackPointer(__ptr_surfIdx) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -343,8 +343,8 @@ open class Mesh: Resource {
         }
         }
     }()
-    public func surfaceGetBlendShapeArrays(surfIdx: Int32) -> Godot.GodotArray<Godot.GodotArray<Variant>> {
-        let __temporary = Godot.GodotArray<Godot.GodotArray<Variant>>()
+    public func surfaceGetBlendShapeArrays(surfIdx: Int32) -> Godot.GodotArray<Godot.AnyGodotArray> {
+        let __temporary = Godot.GodotArray<Godot.AnyGodotArray>()
         withUnsafePointer(to: surfIdx) { (__ptr_surfIdx) in
             withUnsafeArgumentPackPointer(__ptr_surfIdx) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

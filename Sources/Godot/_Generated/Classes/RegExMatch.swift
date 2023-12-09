@@ -56,8 +56,8 @@ open class RegExMatch: RefCounted {
         }
         }
     }()
-    private func __getNames() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    private func __getNames() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -177,7 +177,7 @@ open class RegExMatch: RefCounted {
         }
     }
 
-    public var names: Godot.GodotDictionary<Variant, Variant> {
+    public var names: Godot.AnyGodotDictionary {
         get {
             __getNames()
         }

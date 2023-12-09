@@ -13,7 +13,7 @@ open class EditorSceneFormatImporter: RefCounted {
         Godot.PackedStringArray()
     }
 
-    open func _importScene(path: Godot.GodotString, flags: UInt32, options: Godot.GodotDictionary<Variant, Variant>) -> Godot.Object? {
+    open func _importScene(path: Godot.GodotString, flags: UInt32, options: Godot.AnyGodotDictionary) -> Godot.Object? {
         nil
     }
 
@@ -54,7 +54,7 @@ open class EditorSceneFormatImporter: RefCounted {
         ._importScene(
             path: Godot.GodotString(godotExtensionPointer: args[0]!),
             flags: args[1]!.load(as: UInt32.self),
-            options: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[2]!)
+            options: Godot.AnyGodotDictionary(godotExtensionPointer: args[2]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
         let _get_import_options_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

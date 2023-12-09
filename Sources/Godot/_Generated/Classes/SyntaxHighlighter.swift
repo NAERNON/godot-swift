@@ -5,8 +5,8 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SyntaxHighlighter: Resource {
-    open func _getLineSyntaxHighlighting(line: Int32) -> Godot.GodotDictionary<Variant, Variant> {
-        Godot.GodotDictionary<Variant, Variant>()
+    open func _getLineSyntaxHighlighting(line: Int32) -> Godot.AnyGodotDictionary {
+        Godot.AnyGodotDictionary()
     }
 
     open func _clearHighlightingCache() {
@@ -22,8 +22,8 @@ open class SyntaxHighlighter: Resource {
         }
         }
     }()
-    public func lineSyntaxHighlighting(line: Int32) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func lineSyntaxHighlighting(line: Int32) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: line) { (__ptr_line) in
             withUnsafeArgumentPackPointer(__ptr_line) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

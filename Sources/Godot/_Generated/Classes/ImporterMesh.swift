@@ -126,7 +126,7 @@ open class ImporterMesh: Resource {
         }
         }
     }()
-    public func addSurface<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorable>(primitive: Godot.Mesh.PrimitiveType, arrays: Godot.GodotArray<Value1>, blendShapes: Godot.GodotArray<Godot.GodotArray<Variant>> = [], lods: Godot.GodotDictionary<Value2, Value3> = [:], material: Godot.Material? = nil, name: Godot.GodotString = "", flags: UInt32 = 0) {
+    public func addSurface<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorable>(primitive: Godot.Mesh.PrimitiveType, arrays: Godot.GodotArray<Value1>, blendShapes: Godot.GodotArray<Godot.AnyGodotArray> = [], lods: Godot.GodotDictionary<Value2, Value3> = [:], material: Godot.Material? = nil, name: Godot.GodotString = "", flags: UInt32 = 0) {
         withUnsafePointer(to: primitive) { (__ptr_primitive) in
             arrays.withUnsafeRawPointer { (__ptr_arrays) in
                 blendShapes.withUnsafeRawPointer { (__ptr_blendShapes) in
@@ -236,8 +236,8 @@ open class ImporterMesh: Resource {
         }
         }
     }()
-    public func surfaceArrays(surfaceIdx: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func surfaceArrays(surfaceIdx: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: surfaceIdx) { (__ptr_surfaceIdx) in
             withUnsafeArgumentPackPointer(__ptr_surfaceIdx) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -262,8 +262,8 @@ open class ImporterMesh: Resource {
         }
         }
     }()
-    public func surfaceBlendShapeArrays(surfaceIdx: Int32, blendShapeIdx: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func surfaceBlendShapeArrays(surfaceIdx: Int32, blendShapeIdx: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: surfaceIdx) { (__ptr_surfaceIdx) in
             withUnsafePointer(to: blendShapeIdx) { (__ptr_blendShapeIdx) in
                 withUnsafeArgumentPackPointer(__ptr_surfaceIdx, __ptr_blendShapeIdx) { (__accessPtr) in

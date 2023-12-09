@@ -518,8 +518,8 @@ open class SceneState: RefCounted {
         }
         }
     }()
-    public func connectionBinds(idx: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func connectionBinds(idx: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: idx) { (__ptr_idx) in
             withUnsafeArgumentPackPointer(__ptr_idx) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

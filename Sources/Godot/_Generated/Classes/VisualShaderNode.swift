@@ -196,8 +196,8 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
-    private func __getDefaultInputValues() -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    private func __getDefaultInputValues() -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -222,7 +222,7 @@ open class VisualShaderNode: Resource {
         }
     }
 
-    public var defaultInputValues: Godot.GodotArray<Variant> {
+    public var defaultInputValues: Godot.AnyGodotArray {
         get {
             __getDefaultInputValues()
         }

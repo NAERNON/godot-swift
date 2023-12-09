@@ -174,8 +174,8 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func peer(peerId: Int32) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func peer(peerId: Int32) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: peerId) { (__ptr_peerId) in
             withUnsafeArgumentPackPointer(__ptr_peerId) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -200,8 +200,8 @@ open class WebRTCMultiplayerPeer: MultiplayerPeer {
         }
         }
     }()
-    public func peers() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func peers() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

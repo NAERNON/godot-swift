@@ -41,8 +41,8 @@ open class EditorVCSInterface: Object {
     open func _setCredentials(username: Godot.GodotString, password: Godot.GodotString, sshPublicKeyPath: Godot.GodotString, sshPrivateKeyPath: Godot.GodotString, sshPassphrase: Godot.GodotString) {
     }
 
-    open func _getModifiedFilesData() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    open func _getModifiedFilesData() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
     open func _stageFile(filePath: Godot.GodotString) {
@@ -57,8 +57,8 @@ open class EditorVCSInterface: Object {
     open func _commit(msg: Godot.GodotString) {
     }
 
-    open func _getDiff(identifier: Godot.GodotString, area: Int32) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    open func _getDiff(identifier: Godot.GodotString, area: Int32) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
     open func _shutDown() -> Bool {
@@ -69,8 +69,8 @@ open class EditorVCSInterface: Object {
         Godot.GodotString()
     }
 
-    open func _getPreviousCommits(maxCommits: Int32) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    open func _getPreviousCommits(maxCommits: Int32) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
     open func _getBranchList() -> Godot.GodotArray<Godot.GodotString> {
@@ -110,8 +110,8 @@ open class EditorVCSInterface: Object {
     open func _fetch(remote: Godot.GodotString) {
     }
 
-    open func _getLineDiff(filePath: Godot.GodotString, text: Godot.GodotString) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    open func _getLineDiff(filePath: Godot.GodotString, text: Godot.GodotString) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
     private static var __method_binding_create_diff_line: GDExtensionMethodBindPtr = {
@@ -121,8 +121,8 @@ open class EditorVCSInterface: Object {
         }
         }
     }()
-    public func createDiffLine(newLineNo: Int32, oldLineNo: Int32, content: Godot.GodotString, status: Godot.GodotString) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func createDiffLine(newLineNo: Int32, oldLineNo: Int32, content: Godot.GodotString, status: Godot.GodotString) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: newLineNo) { (__ptr_newLineNo) in
             withUnsafePointer(to: oldLineNo) { (__ptr_oldLineNo) in
                 content.withUnsafeRawPointer { (__ptr_content) in
@@ -153,8 +153,8 @@ open class EditorVCSInterface: Object {
         }
         }
     }()
-    public func createDiffHunk(oldStart: Int32, newStart: Int32, oldLines: Int32, newLines: Int32) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func createDiffHunk(oldStart: Int32, newStart: Int32, oldLines: Int32, newLines: Int32) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: oldStart) { (__ptr_oldStart) in
             withUnsafePointer(to: newStart) { (__ptr_newStart) in
                 withUnsafePointer(to: oldLines) { (__ptr_oldLines) in
@@ -185,8 +185,8 @@ open class EditorVCSInterface: Object {
         }
         }
     }()
-    public func createDiffFile(newFile: Godot.GodotString, oldFile: Godot.GodotString) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func createDiffFile(newFile: Godot.GodotString, oldFile: Godot.GodotString) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         newFile.withUnsafeRawPointer { (__ptr_newFile) in
             oldFile.withUnsafeRawPointer { (__ptr_oldFile) in
                 withUnsafeArgumentPackPointer(__ptr_newFile, __ptr_oldFile) { (__accessPtr) in
@@ -213,8 +213,8 @@ open class EditorVCSInterface: Object {
         }
         }
     }()
-    public func createCommit(msg: Godot.GodotString, author: Godot.GodotString, id: Godot.GodotString, unixTimestamp: Int64, offsetMinutes: Int64) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func createCommit(msg: Godot.GodotString, author: Godot.GodotString, id: Godot.GodotString, unixTimestamp: Int64, offsetMinutes: Int64) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         msg.withUnsafeRawPointer { (__ptr_msg) in
             author.withUnsafeRawPointer { (__ptr_author) in
                 id.withUnsafeRawPointer { (__ptr_id) in
@@ -247,8 +247,8 @@ open class EditorVCSInterface: Object {
         }
         }
     }()
-    public func createStatusFile(filePath: Godot.GodotString, changeType: Godot.EditorVCSInterface.ChangeType, area: Godot.EditorVCSInterface.TreeArea) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func createStatusFile(filePath: Godot.GodotString, changeType: Godot.EditorVCSInterface.ChangeType, area: Godot.EditorVCSInterface.TreeArea) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         filePath.withUnsafeRawPointer { (__ptr_filePath) in
             withUnsafePointer(to: changeType) { (__ptr_changeType) in
                 withUnsafePointer(to: area) { (__ptr_area) in
@@ -277,8 +277,8 @@ open class EditorVCSInterface: Object {
         }
         }
     }()
-    public func addDiffHunksIntoDiffFile<Value1: VariantStorable, Value2: VariantStorable>(_ diffFile: Godot.GodotDictionary<Value1, Value2>, diffHunks: Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func addDiffHunksIntoDiffFile<Value1: VariantStorable, Value2: VariantStorable>(_ diffFile: Godot.GodotDictionary<Value1, Value2>, diffHunks: Godot.GodotArray<Godot.AnyGodotDictionary>) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         diffFile.withUnsafeRawPointer { (__ptr_diffFile) in
             diffHunks.withUnsafeRawPointer { (__ptr_diffHunks) in
                 withUnsafeArgumentPackPointer(__ptr_diffFile, __ptr_diffHunks) { (__accessPtr) in
@@ -305,8 +305,8 @@ open class EditorVCSInterface: Object {
         }
         }
     }()
-    public func addLineDiffsIntoDiffHunk<Value1: VariantStorable, Value2: VariantStorable>(_ diffHunk: Godot.GodotDictionary<Value1, Value2>, lineDiffs: Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func addLineDiffsIntoDiffHunk<Value1: VariantStorable, Value2: VariantStorable>(_ diffHunk: Godot.GodotDictionary<Value1, Value2>, lineDiffs: Godot.GodotArray<Godot.AnyGodotDictionary>) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         diffHunk.withUnsafeRawPointer { (__ptr_diffHunk) in
             lineDiffs.withUnsafeRawPointer { (__ptr_lineDiffs) in
                 withUnsafeArgumentPackPointer(__ptr_diffHunk, __ptr_lineDiffs) { (__accessPtr) in

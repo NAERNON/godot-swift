@@ -1,7 +1,10 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct GodotArray<Element> where Element : VariantStorable {}
+public struct GodotArray<Element>
+where Element : VariantStorable {}
+
+public typealias AnyGodotArray = GodotArray<Variant>
 
 extension GodotArray {
     // MARK: Constructors

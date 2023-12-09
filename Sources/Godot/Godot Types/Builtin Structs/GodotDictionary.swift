@@ -4,6 +4,8 @@ import GodotExtensionHeaders
 public struct GodotDictionary<Key, AssociatedValue>
 where Key : VariantStorable, AssociatedValue : VariantStorable {}
 
+public typealias AnyGodotDictionary = GodotDictionary<Variant, Variant>
+
 extension GodotDictionary {
     // MARK: Constructors
     

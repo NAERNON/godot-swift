@@ -150,8 +150,8 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
         }
     }()
-    private func __getKeywordColors() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    private func __getKeywordColors() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -310,8 +310,8 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
         }
     }()
-    private func __getMemberKeywordColors() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    private func __getMemberKeywordColors() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -448,8 +448,8 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
         }
     }()
-    private func __getColorRegions() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    private func __getColorRegions() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -683,7 +683,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
     }
 
-    public var keywordColors: Godot.GodotDictionary<Variant, Variant> {
+    public var keywordColors: Godot.AnyGodotDictionary {
         get {
             __getKeywordColors()
         }
@@ -694,7 +694,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
     }
 
-    public var memberKeywordColors: Godot.GodotDictionary<Variant, Variant> {
+    public var memberKeywordColors: Godot.AnyGodotDictionary {
         get {
             __getMemberKeywordColors()
         }
@@ -705,7 +705,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
     }
 
-    public var colorRegions: Godot.GodotDictionary<Variant, Variant> {
+    public var colorRegions: Godot.AnyGodotDictionary {
         get {
             __getColorRegions()
         }

@@ -174,8 +174,8 @@ open class ENetConnection: RefCounted {
         }
         }
     }()
-    public func service(timeout: Int32 = 0) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func service(timeout: Int32 = 0) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: timeout) { (__ptr_timeout) in
             withUnsafeArgumentPackPointer(__ptr_timeout) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

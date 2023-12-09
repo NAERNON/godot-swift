@@ -61,8 +61,8 @@ open class Time: Object {
         }
         }
     }()
-    public func datetimeDictFromUnixTime(unixTimeVal: Int64) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func datetimeDictFromUnixTime(unixTimeVal: Int64) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: unixTimeVal) { (__ptr_unixTimeVal) in
             withUnsafeArgumentPackPointer(__ptr_unixTimeVal) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -87,8 +87,8 @@ open class Time: Object {
         }
         }
     }()
-    public func dateDictFromUnixTime(unixTimeVal: Int64) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func dateDictFromUnixTime(unixTimeVal: Int64) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: unixTimeVal) { (__ptr_unixTimeVal) in
             withUnsafeArgumentPackPointer(__ptr_unixTimeVal) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -113,8 +113,8 @@ open class Time: Object {
         }
         }
     }()
-    public func timeDictFromUnixTime(unixTimeVal: Int64) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func timeDictFromUnixTime(unixTimeVal: Int64) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: unixTimeVal) { (__ptr_unixTimeVal) in
             withUnsafeArgumentPackPointer(__ptr_unixTimeVal) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -219,8 +219,8 @@ open class Time: Object {
         }
         }
     }()
-    public func datetimeDictFromDatetimeString(datetime: Godot.GodotString, weekday: Bool) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func datetimeDictFromDatetimeString(datetime: Godot.GodotString, weekday: Bool) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         datetime.withUnsafeRawPointer { (__ptr_datetime) in
             withUnsafePointer(to: weekday) { (__ptr_weekday) in
                 withUnsafeArgumentPackPointer(__ptr_datetime, __ptr_weekday) { (__accessPtr) in
@@ -353,8 +353,8 @@ open class Time: Object {
         }
         }
     }()
-    public func datetimeDictFromSystem(utc: Bool = false) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func datetimeDictFromSystem(utc: Bool = false) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: utc) { (__ptr_utc) in
             withUnsafeArgumentPackPointer(__ptr_utc) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -379,8 +379,8 @@ open class Time: Object {
         }
         }
     }()
-    public func dateDictFromSystem(utc: Bool = false) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func dateDictFromSystem(utc: Bool = false) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: utc) { (__ptr_utc) in
             withUnsafeArgumentPackPointer(__ptr_utc) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -405,8 +405,8 @@ open class Time: Object {
         }
         }
     }()
-    public func timeDictFromSystem(utc: Bool = false) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func timeDictFromSystem(utc: Bool = false) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         withUnsafePointer(to: utc) { (__ptr_utc) in
             withUnsafeArgumentPackPointer(__ptr_utc) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -511,8 +511,8 @@ open class Time: Object {
         }
         }
     }()
-    public func timeZoneFromSystem() -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func timeZoneFromSystem() -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

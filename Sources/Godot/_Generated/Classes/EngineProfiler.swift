@@ -5,10 +5,10 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class EngineProfiler: RefCounted {
-    open func _toggle(enable: Bool, options: Godot.GodotArray<Variant>) {
+    open func _toggle(enable: Bool, options: Godot.AnyGodotArray) {
     }
 
-    open func _addFrame(data: Godot.GodotArray<Variant>) {
+    open func _addFrame(data: Godot.AnyGodotArray) {
     }
 
     open func _tick(frameTime: Double, processTime: Double, physicsTime: Double, physicsFrameTime: Double) {
@@ -27,7 +27,7 @@ open class EngineProfiler: RefCounted {
             let _ = instance
         ._toggle(
             enable: args[0]!.load(as: Bool.self),
-            options: Godot.GodotArray<Variant>(godotExtensionPointer: args[1]!)
+            options: Godot.AnyGodotArray(godotExtensionPointer: args[1]!)
         )}
         let _add_frame_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -36,7 +36,7 @@ open class EngineProfiler: RefCounted {
             let instance = Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._addFrame(
-            data: Godot.GodotArray<Variant>(godotExtensionPointer: args[0]!)
+            data: Godot.AnyGodotArray(godotExtensionPointer: args[0]!)
         )}
         let _tick_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {

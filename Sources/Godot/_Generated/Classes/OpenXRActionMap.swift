@@ -34,8 +34,8 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    private func __getActionSets() -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    private func __getActionSets() -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -200,8 +200,8 @@ open class OpenXRActionMap: Resource {
         }
         }
     }()
-    private func __getInteractionProfiles() -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    private func __getInteractionProfiles() -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -355,7 +355,7 @@ open class OpenXRActionMap: Resource {
         }
     }
 
-    public var actionSets: Godot.GodotArray<Variant> {
+    public var actionSets: Godot.AnyGodotArray {
         get {
             __getActionSets()
         }
@@ -366,7 +366,7 @@ open class OpenXRActionMap: Resource {
         }
     }
 
-    public var interactionProfiles: Godot.GodotArray<Variant> {
+    public var interactionProfiles: Godot.AnyGodotArray {
         get {
             __getInteractionProfiles()
         }

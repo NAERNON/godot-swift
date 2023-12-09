@@ -38,8 +38,8 @@ open class StreamPeer: RefCounted {
         }
         }
     }()
-    public func putPartialData(_ data: Godot.PackedByteArray) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func putPartialData(_ data: Godot.PackedByteArray) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         data.withUnsafeRawPointer { (__ptr_data) in
             withUnsafeArgumentPackPointer(__ptr_data) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -64,8 +64,8 @@ open class StreamPeer: RefCounted {
         }
         }
     }()
-    public func data(bytes: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func data(bytes: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: bytes) { (__ptr_bytes) in
             withUnsafeArgumentPackPointer(__ptr_bytes) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -90,8 +90,8 @@ open class StreamPeer: RefCounted {
         }
         }
     }()
-    public func partialData(bytes: Int32) -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    public func partialData(bytes: Int32) -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         withUnsafePointer(to: bytes) { (__ptr_bytes) in
             withUnsafeArgumentPackPointer(__ptr_bytes) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

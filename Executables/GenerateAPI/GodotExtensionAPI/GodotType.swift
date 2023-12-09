@@ -466,7 +466,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             case "bool": return "Bool"
             case "Array":
                 return if options.contains(.genericArrayOnVariant) {
-                    "GodotArray<Variant>"
+                    "AnyGodotArray"
                 } else if options.contains(.genericArrayOnElement) {
                     "GodotArray<Element>"
                 } else {
@@ -474,7 +474,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
                 }
             case "Dictionary": 
                 return if options.contains(.genericDictionaryOnVariant) {
-                    "GodotDictionary<Variant, Variant>"
+                    "AnyGodotDictionary"
                 } else if options.contains(.genericDictionaryOnKeyValue) {
                     "GodotDictionary<Key, AssociatedValue>"
                 } else {

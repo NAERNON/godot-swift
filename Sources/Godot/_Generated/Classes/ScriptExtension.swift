@@ -59,16 +59,16 @@ open class ScriptExtension: Script {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _getDocumentation() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    open func _getDocumentation() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
     open func _hasMethod(_ method: Godot.GodotStringName) -> Bool {
         Bool()
     }
 
-    open func _getMethodInfo(method: Godot.GodotStringName) -> Godot.GodotDictionary<Variant, Variant> {
-        Godot.GodotDictionary<Variant, Variant>()
+    open func _getMethodInfo(method: Godot.GodotStringName) -> Godot.AnyGodotDictionary {
+        Godot.AnyGodotDictionary()
     }
 
     open func _isTool() -> Bool {
@@ -87,8 +87,8 @@ open class ScriptExtension: Script {
         Bool()
     }
 
-    open func _getScriptSignalList() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    open func _getScriptSignalList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
     open func _hasPropertyDefaultValue(property: Godot.GodotStringName) -> Bool {
@@ -102,20 +102,20 @@ open class ScriptExtension: Script {
     open func _updateExports() {
     }
 
-    open func _getScriptMethodList() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    open func _getScriptMethodList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
-    open func _getScriptPropertyList() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    open func _getScriptPropertyList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        Godot.GodotArray<Godot.AnyGodotDictionary>()
     }
 
     open func _getMemberLine(member: Godot.GodotStringName) -> Int32 {
         Int32()
     }
 
-    open func _getConstants() -> Godot.GodotDictionary<Variant, Variant> {
-        Godot.GodotDictionary<Variant, Variant>()
+    open func _getConstants() -> Godot.AnyGodotDictionary {
+        Godot.AnyGodotDictionary()
     }
 
     open func _getMembers() -> Godot.GodotArray<Godot.GodotStringName> {

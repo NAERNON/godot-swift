@@ -131,11 +131,11 @@ open class EditorPlugin: Node {
         Bool()
     }
 
-    open func _getState() -> Godot.GodotDictionary<Variant, Variant> {
-        Godot.GodotDictionary<Variant, Variant>()
+    open func _getState() -> Godot.AnyGodotDictionary {
+        Godot.AnyGodotDictionary()
     }
 
-    open func _setState(_ state: Godot.GodotDictionary<Variant, Variant>) {
+    open func _setState(_ state: Godot.AnyGodotDictionary) {
     }
 
     open func _clear() {
@@ -1312,7 +1312,7 @@ open class EditorPlugin: Node {
             let instance = Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
             let _ = instance
         ._setState(
-            Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[0]!)
+            Godot.AnyGodotDictionary(godotExtensionPointer: args[0]!)
         )}
         let _clear_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {

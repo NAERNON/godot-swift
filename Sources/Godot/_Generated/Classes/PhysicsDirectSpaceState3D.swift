@@ -12,8 +12,8 @@ open class PhysicsDirectSpaceState3D: Object {
         }
         }
     }()
-    public func intersectPoint(parameters: Godot.PhysicsPointQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    public func intersectPoint(parameters: Godot.PhysicsPointQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.AnyGodotDictionary>()
         parameters.withUnsafeRawPointer { (__ptr_parameters) in
             withUnsafePointer(to: __ptr_parameters) { (_ptr___ptr_parameters) in
                 withUnsafePointer(to: maxResults) { (__ptr_maxResults) in
@@ -42,8 +42,8 @@ open class PhysicsDirectSpaceState3D: Object {
         }
         }
     }()
-    public func intersectRay(parameters: Godot.PhysicsRayQueryParameters3D?) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func intersectRay(parameters: Godot.PhysicsRayQueryParameters3D?) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         parameters.withUnsafeRawPointer { (__ptr_parameters) in
             withUnsafePointer(to: __ptr_parameters) { (_ptr___ptr_parameters) in
                 withUnsafeArgumentPackPointer(_ptr___ptr_parameters) { (__accessPtr) in
@@ -70,8 +70,8 @@ open class PhysicsDirectSpaceState3D: Object {
         }
         }
     }()
-    public func intersectShape(parameters: Godot.PhysicsShapeQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
+    public func intersectShape(parameters: Godot.PhysicsShapeQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
+        let __temporary = Godot.GodotArray<Godot.AnyGodotDictionary>()
         parameters.withUnsafeRawPointer { (__ptr_parameters) in
             withUnsafePointer(to: __ptr_parameters) { (_ptr___ptr_parameters) in
                 withUnsafePointer(to: maxResults) { (__ptr_maxResults) in
@@ -158,8 +158,8 @@ open class PhysicsDirectSpaceState3D: Object {
         }
         }
     }()
-    public func restInfo(parameters: Godot.PhysicsShapeQueryParameters3D?) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func restInfo(parameters: Godot.PhysicsShapeQueryParameters3D?) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         parameters.withUnsafeRawPointer { (__ptr_parameters) in
             withUnsafePointer(to: __ptr_parameters) { (_ptr___ptr_parameters) in
                 withUnsafeArgumentPackPointer(_ptr___ptr_parameters) { (__accessPtr) in

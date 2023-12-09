@@ -933,8 +933,8 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    private func __getStructuredTextBidiOverrideOptions() -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -2323,8 +2323,8 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func parseExpressionsForValues(expressions: Godot.PackedStringArray) -> Godot.GodotDictionary<Variant, Variant> {
-        let __temporary = Godot.GodotDictionary<Variant, Variant>()
+    public func parseExpressionsForValues(expressions: Godot.PackedStringArray) -> Godot.AnyGodotDictionary {
+        let __temporary = Godot.AnyGodotDictionary()
         expressions.withUnsafeRawPointer { (__ptr_expressions) in
             withUnsafeArgumentPackPointer(__ptr_expressions) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -2371,8 +2371,8 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    private func __getEffects() -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    private func __getEffects() -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -2573,7 +2573,7 @@ open class RichTextLabel: Control {
         }
     }
 
-    public var effects: Godot.GodotArray<Variant> {
+    public var effects: Godot.AnyGodotArray {
         get {
             __getEffects()
         }
@@ -2716,7 +2716,7 @@ open class RichTextLabel: Control {
         }
     }
 
-    public var structuredTextBidiOverrideOptions: Godot.GodotArray<Variant> {
+    public var structuredTextBidiOverrideOptions: Godot.AnyGodotArray {
         get {
             __getStructuredTextBidiOverrideOptions()
         }

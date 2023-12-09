@@ -226,7 +226,7 @@ open class Control: CanvasItem {
         Bool()
     }
 
-    open func _structuredTextParser(args: Godot.GodotArray<Variant>, text: Godot.GodotString) -> Godot.GodotArray<Godot.Vector3i> {
+    open func _structuredTextParser(args: Godot.AnyGodotArray, text: Godot.GodotString) -> Godot.GodotArray<Godot.Vector3i> {
         Godot.GodotArray<Godot.Vector3i>()
     }
 
@@ -3598,7 +3598,7 @@ open class Control: CanvasItem {
             let instance = Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
             var returnValue = instance
         ._structuredTextParser(
-            args: Godot.GodotArray<Variant>(godotExtensionPointer: args[0]!),
+            args: Godot.AnyGodotArray(godotExtensionPointer: args[0]!),
             text: Godot.GodotString(godotExtensionPointer: args[1]!)
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}

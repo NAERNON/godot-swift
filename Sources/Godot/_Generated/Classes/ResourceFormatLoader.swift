@@ -45,7 +45,7 @@ open class ResourceFormatLoader: RefCounted {
         Godot.PackedStringArray()
     }
 
-    open func _renameDependencies(path: Godot.GodotString, renames: Godot.GodotDictionary<Variant, Variant>) -> Godot.ErrorType {
+    open func _renameDependencies(path: Godot.GodotString, renames: Godot.AnyGodotDictionary) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -144,7 +144,7 @@ open class ResourceFormatLoader: RefCounted {
             let returnValue = instance
         ._renameDependencies(
             path: Godot.GodotString(godotExtensionPointer: args[0]!),
-            renames: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[1]!)
+            renames: Godot.AnyGodotDictionary(godotExtensionPointer: args[1]!)
         )
         returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
         let _exists_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

@@ -364,8 +364,8 @@ extension Callable {
         return __temporary
     }
 
-    internal func _boundArguments() -> Godot.GodotArray<Variant> {
-        let __temporary = Godot.GodotArray<Variant>()
+    internal func _boundArguments() -> Godot.AnyGodotArray {
+        let __temporary = Godot.AnyGodotArray()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 __method_binding_get_bound_arguments(__ptr_self, nil, __ptr___temporary, 0)
