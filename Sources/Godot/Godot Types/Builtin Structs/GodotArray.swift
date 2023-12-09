@@ -81,6 +81,16 @@ extension GodotArray: RangeReplaceableCollection {
                 self._setValue(storage, at: Int64(index))
             }
         }
+        _modify {
+            let index = Int64(index)
+            var newValue = Element.convertFromCheckedStorage(consuming: self._getValue(at: index))
+            
+            yield &newValue
+            
+            Element.withValueStorage(newValue) { storage in
+                self._setValue(storage, at: index)
+            }
+        }
     }
     
     public mutating func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)

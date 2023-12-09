@@ -47,6 +47,28 @@ extension GodotDictionary {
                 }
             }
         }
+        _modify {
+            var newValue: AssociatedValue? = if _has(key: key) {
+                Key.withValueStorage(key) { keyStorage in
+                    AssociatedValue.convertFromCheckedStorage(consuming: self._getValue(forKey: keyStorage))
+                }
+            } else {
+                nil
+            }
+            
+            yield &newValue
+            
+            guard let newValue else {
+                self._erase(key: key)
+                return
+            }
+            
+            Key.withValueStorage(key) { keyStorage in
+                AssociatedValue.withValueStorage(newValue) { newValueStorage in
+                    self._set(value: newValueStorage, forKey: keyStorage)
+                }
+            }
+        }
     }
     
     public subscript(
@@ -63,6 +85,23 @@ extension GodotDictionary {
             }
         }
         set(newValue) {
+            Key.withValueStorage(key) { keyStorage in
+                AssociatedValue.withValueStorage(newValue) { newValueStorage in
+                    self._set(value: newValueStorage, forKey: keyStorage)
+                }
+            }
+        }
+        _modify {
+            var newValue: AssociatedValue = if _has(key: key) {
+                Key.withValueStorage(key) { keyStorage in
+                    AssociatedValue.convertFromCheckedStorage(consuming: self._getValue(forKey: keyStorage))
+                }
+            } else {
+                defaultValue()
+            }
+            
+            yield &newValue
+            
             Key.withValueStorage(key) { keyStorage in
                 AssociatedValue.withValueStorage(newValue) { newValueStorage in
                     self._set(value: newValueStorage, forKey: keyStorage)
