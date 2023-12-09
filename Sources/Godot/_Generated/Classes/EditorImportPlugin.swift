@@ -25,8 +25,8 @@ open class EditorImportPlugin: ResourceImporter {
         Godot.PackedStringArray()
     }
 
-    open func _getImportOptions(path: Godot.GodotString, presetIndex: Int32) -> Godot.GodotArray<Godot.GodotDictionary> {
-        Godot.GodotArray<Godot.GodotDictionary>()
+    open func _getImportOptions(path: Godot.GodotString, presetIndex: Int32) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
     }
 
     open func _getSaveExtension() -> Godot.GodotString {
@@ -45,11 +45,11 @@ open class EditorImportPlugin: ResourceImporter {
         Int32()
     }
 
-    open func _getOptionVisibility(path: Godot.GodotString, optionName: Godot.GodotStringName, options: Godot.GodotDictionary) -> Bool {
+    open func _getOptionVisibility(path: Godot.GodotString, optionName: Godot.GodotStringName, options: Godot.GodotDictionary<Variant, Variant>) -> Bool {
         Bool()
     }
 
-    open func _import(sourceFile: Godot.GodotString, savePath: Godot.GodotString, options: Godot.GodotDictionary, platformVariants: Godot.GodotArray<Godot.GodotString>, genFiles: Godot.GodotArray<Godot.GodotString>) -> Godot.ErrorType {
+    open func _import(sourceFile: Godot.GodotString, savePath: Godot.GodotString, options: Godot.GodotDictionary<Variant, Variant>, platformVariants: Godot.GodotArray<Godot.GodotString>, genFiles: Godot.GodotArray<Godot.GodotString>) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
@@ -60,7 +60,7 @@ open class EditorImportPlugin: ResourceImporter {
         }
         }
     }()
-    public func appendImportExternalResource<Value: VariantStorableIn>(path: Godot.GodotString, customOptions: Godot.GodotDictionary = [:], customImporter: Godot.GodotString = "", generatorParameters: Value = Variant()) -> Godot.ErrorType {
+    public func appendImportExternalResource<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorableIn>(path: Godot.GodotString, customOptions: Godot.GodotDictionary<Value1, Value2> = [:], customImporter: Godot.GodotString = "", generatorParameters: Value3 = Variant()) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         path.withUnsafeRawPointer { (__ptr_path) in
             customOptions.withUnsafeRawPointer { (__ptr_customOptions) in
@@ -184,7 +184,7 @@ open class EditorImportPlugin: ResourceImporter {
         ._getOptionVisibility(
             path: Godot.GodotString(godotExtensionPointer: args[0]!),
             optionName: Godot.GodotStringName(godotExtensionPointer: args[1]!),
-            options: Godot.GodotDictionary(godotExtensionPointer: args[2]!)
+            options: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[2]!)
         )
         returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
         let _import_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -196,7 +196,7 @@ open class EditorImportPlugin: ResourceImporter {
         ._import(
             sourceFile: Godot.GodotString(godotExtensionPointer: args[0]!),
             savePath: Godot.GodotString(godotExtensionPointer: args[1]!),
-            options: Godot.GodotDictionary(godotExtensionPointer: args[2]!),
+            options: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[2]!),
             platformVariants: Godot.GodotArray<Godot.GodotString>(godotExtensionPointer: args[3]!),
             genFiles: Godot.GodotArray<Godot.GodotString>(godotExtensionPointer: args[4]!)
         )

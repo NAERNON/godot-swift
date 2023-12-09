@@ -1858,8 +1858,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func shaderParameterList(shader: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
+    public func shaderParameterList(shader: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
         shader.withUnsafeRawPointer { (__ptr_shader) in
             withUnsafeArgumentPackPointer(__ptr_shader) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -2118,7 +2118,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshCreateFromSurfaces(_ surfaces: Godot.GodotArray<Godot.GodotDictionary>, blendShapeCount: Int32 = 0) -> Godot.RID {
+    public func meshCreateFromSurfaces(_ surfaces: Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>, blendShapeCount: Int32 = 0) -> Godot.RID {
         let __temporary = Godot.RID()
         surfaces.withUnsafeRawPointer { (__ptr_surfaces) in
             withUnsafePointer(to: blendShapeCount) { (__ptr_blendShapeCount) in
@@ -2282,7 +2282,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshAddSurface(mesh: Godot.RID, surface: Godot.GodotDictionary) {
+    public func meshAddSurface<Value1: VariantStorable, Value2: VariantStorable>(mesh: Godot.RID, surface: Godot.GodotDictionary<Value1, Value2>) {
         mesh.withUnsafeRawPointer { (__ptr_mesh) in
             surface.withUnsafeRawPointer { (__ptr_surface) in
                 withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { (__accessPtr) in
@@ -2306,7 +2306,7 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshAddSurfaceFromArrays<Value3: VariantStorable, Value4: VariantStorable>(mesh: Godot.RID, primitive: Godot.RenderingServer.PrimitiveType, arrays: Godot.GodotArray<Value3>, blendShapes: Godot.GodotArray<Value4> = [], lods: Godot.GodotDictionary = [:], compressFormat: Godot.RenderingServer.ArrayFormat = RenderingServer.ArrayFormat(rawValue: 0)) {
+    public func meshAddSurfaceFromArrays<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorable, Value4: VariantStorable>(mesh: Godot.RID, primitive: Godot.RenderingServer.PrimitiveType, arrays: Godot.GodotArray<Value1>, blendShapes: Godot.GodotArray<Value2> = [], lods: Godot.GodotDictionary<Value3, Value4> = [:], compressFormat: Godot.RenderingServer.ArrayFormat = RenderingServer.ArrayFormat(rawValue: 0)) {
         mesh.withUnsafeRawPointer { (__ptr_mesh) in
             withUnsafePointer(to: primitive) { (__ptr_primitive) in
                 arrays.withUnsafeRawPointer { (__ptr_arrays) in
@@ -2468,8 +2468,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func meshGetSurface(mesh: Godot.RID, surface: Int32) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func meshGetSurface(mesh: Godot.RID, surface: Int32) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         mesh.withUnsafeRawPointer { (__ptr_mesh) in
             withUnsafePointer(to: surface) { (__ptr_surface) in
                 withUnsafeArgumentPackPointer(__ptr_mesh, __ptr_surface) { (__accessPtr) in
@@ -9862,8 +9862,8 @@ open class RenderingServer: Object {
         }
         }
     }()
-    public func instanceGeometryGetShaderParameterList(instance: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
+    public func instanceGeometryGetShaderParameterList(instance: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
         instance.withUnsafeRawPointer { (__ptr_instance) in
             withUnsafeArgumentPackPointer(__ptr_instance) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

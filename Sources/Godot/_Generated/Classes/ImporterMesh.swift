@@ -126,7 +126,7 @@ open class ImporterMesh: Resource {
         }
         }
     }()
-    public func addSurface<Value: VariantStorable>(primitive: Godot.Mesh.PrimitiveType, arrays: Godot.GodotArray<Value>, blendShapes: Godot.GodotArray<Godot.GodotArray<Variant>> = [], lods: Godot.GodotDictionary = [:], material: Godot.Material? = nil, name: Godot.GodotString = "", flags: UInt32 = 0) {
+    public func addSurface<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorable>(primitive: Godot.Mesh.PrimitiveType, arrays: Godot.GodotArray<Value1>, blendShapes: Godot.GodotArray<Godot.GodotArray<Variant>> = [], lods: Godot.GodotDictionary<Value2, Value3> = [:], material: Godot.Material? = nil, name: Godot.GodotString = "", flags: UInt32 = 0) {
         withUnsafePointer(to: primitive) { (__ptr_primitive) in
             arrays.withUnsafeRawPointer { (__ptr_arrays) in
                 blendShapes.withUnsafeRawPointer { (__ptr_blendShapes) in

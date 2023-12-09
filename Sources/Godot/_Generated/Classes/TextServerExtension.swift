@@ -87,8 +87,8 @@ open class TextServerExtension: TextServer {
         Godot.GodotString()
     }
 
-    open func _fontGetOtNameStrings(fontRid: Godot.RID) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _fontGetOtNameStrings(fontRid: Godot.RID) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
     open func _fontSetStyleName(fontRid: Godot.RID, nameStyle: Godot.GodotString) {
@@ -196,11 +196,11 @@ open class TextServerExtension: TextServer {
         Godot.Transform2D()
     }
 
-    open func _fontSetVariationCoordinates(fontRid: Godot.RID, variationCoordinates: Godot.GodotDictionary) {
+    open func _fontSetVariationCoordinates(fontRid: Godot.RID, variationCoordinates: Godot.GodotDictionary<Variant, Variant>) {
     }
 
-    open func _fontGetVariationCoordinates(fontRid: Godot.RID) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _fontGetVariationCoordinates(fontRid: Godot.RID) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
     open func _fontSetOversampling(fontRid: Godot.RID, oversampling: Double) {
@@ -332,8 +332,8 @@ open class TextServerExtension: TextServer {
         Godot.Vector2()
     }
 
-    open func _fontGetGlyphContours(fontRid: Godot.RID, size: Int64, index: Int64) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _fontGetGlyphContours(fontRid: Godot.RID, size: Int64, index: Int64) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
     open func _fontGetKerningList(fontRid: Godot.RID, size: Int64) -> Godot.GodotArray<Godot.Vector2i> {
@@ -417,19 +417,19 @@ open class TextServerExtension: TextServer {
         Godot.PackedStringArray()
     }
 
-    open func _fontSetOpentypeFeatureOverrides(fontRid: Godot.RID, overrides: Godot.GodotDictionary) {
+    open func _fontSetOpentypeFeatureOverrides(fontRid: Godot.RID, overrides: Godot.GodotDictionary<Variant, Variant>) {
     }
 
-    open func _fontGetOpentypeFeatureOverrides(fontRid: Godot.RID) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _fontGetOpentypeFeatureOverrides(fontRid: Godot.RID) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
-    open func _fontSupportedFeatureList(fontRid: Godot.RID) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _fontSupportedFeatureList(fontRid: Godot.RID) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
-    open func _fontSupportedVariationList(fontRid: Godot.RID) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _fontSupportedVariationList(fontRid: Godot.RID) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
     open func _fontGetGlobalOversampling() -> Double {
@@ -502,7 +502,7 @@ open class TextServerExtension: TextServer {
         Int64()
     }
 
-    open func _shapedTextAddString(shaped: Godot.RID, text: Godot.GodotString, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.GodotDictionary, language: Godot.GodotString, meta: Godot.Variant) -> Bool {
+    open func _shapedTextAddString(shaped: Godot.RID, text: Godot.GodotString, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.GodotDictionary<Variant, Variant>, language: Godot.GodotString, meta: Godot.Variant) -> Bool {
         Bool()
     }
 
@@ -522,7 +522,7 @@ open class TextServerExtension: TextServer {
         Variant()
     }
 
-    open func _shapedSetSpanUpdateFont(shaped: Godot.RID, index: Int64, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.GodotDictionary) {
+    open func _shapedSetSpanUpdateFont(shaped: Godot.RID, index: Int64, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.GodotDictionary<Variant, Variant>) {
     }
 
     open func _shapedTextSubstr(shaped: Godot.RID, start: Int64, length: Int64) -> Godot.RID {
@@ -1253,7 +1253,7 @@ open class TextServerExtension: TextServer {
             let _ = instance
         ._fontSetVariationCoordinates(
             fontRid: Godot.RID(godotExtensionPointer: args[0]!),
-            variationCoordinates: Godot.GodotDictionary(godotExtensionPointer: args[1]!)
+            variationCoordinates: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[1]!)
         )}
         let _font_get_variation_coordinates_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -1960,7 +1960,7 @@ open class TextServerExtension: TextServer {
             let _ = instance
         ._fontSetOpentypeFeatureOverrides(
             fontRid: Godot.RID(godotExtensionPointer: args[0]!),
-            overrides: Godot.GodotDictionary(godotExtensionPointer: args[1]!)
+            overrides: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[1]!)
         )}
         let _font_get_opentype_feature_overrides_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2206,7 +2206,7 @@ open class TextServerExtension: TextServer {
             text: Godot.GodotString(godotExtensionPointer: args[1]!),
             fonts: Godot.GodotArray<Godot.RID>(godotExtensionPointer: args[2]!),
             size: args[3]!.load(as: Int64.self),
-            opentypeFeatures: Godot.GodotDictionary(godotExtensionPointer: args[4]!),
+            opentypeFeatures: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[4]!),
             language: Godot.GodotString(godotExtensionPointer: args[5]!),
             meta: Godot.Variant(godotExtensionPointer: args[6]!)
         )
@@ -2272,7 +2272,7 @@ open class TextServerExtension: TextServer {
             index: args[1]!.load(as: Int64.self),
             fonts: Godot.GodotArray<Godot.RID>(godotExtensionPointer: args[2]!),
             size: args[3]!.load(as: Int64.self),
-            opentypeFeatures: Godot.GodotDictionary(godotExtensionPointer: args[4]!)
+            opentypeFeatures: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[4]!)
         )}
         let _shaped_text_substr_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {

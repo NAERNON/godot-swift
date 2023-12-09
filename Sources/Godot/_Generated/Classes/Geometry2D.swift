@@ -690,8 +690,8 @@ open class Geometry2D: Object {
         }
         }
     }()
-    public func makeAtlas(sizes: Godot.PackedVector2Array) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func makeAtlas(sizes: Godot.PackedVector2Array) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         sizes.withUnsafeRawPointer { (__ptr_sizes) in
             withUnsafeArgumentPackPointer(__ptr_sizes) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

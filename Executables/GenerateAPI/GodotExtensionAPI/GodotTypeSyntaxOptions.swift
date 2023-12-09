@@ -37,4 +37,12 @@ struct GodotTypeSyntaxOptions: OptionSet {
     /// GodotArray is suffixed by `<Element>`.
     static let genericArrayOnElement =
         GodotTypeSyntaxOptions(rawValue: 1 << 7)
+    
+    /// GodotDictionary is suffixed by `<Variant, Variant>`.
+    static let genericDictionaryOnVariant =
+        GodotTypeSyntaxOptions(rawValue: 1 << 8)
+    
+    /// GodotDictionary is suffixed by `<Key, AssociatedValue>`.
+    static let genericDictionaryOnKeyValue =
+        GodotTypeSyntaxOptions(rawValue: 1 << 9)
 }

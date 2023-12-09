@@ -198,27 +198,23 @@ struct GodotBuiltinClass: Decodable {
             [
                 .optionalClasses,
                 .prefixByGodot,
-                .genericArrayOnVariant
-            ]
-        } else if name == .array {
-            [
-                .optionalClasses,
-                .prefixByGodot,
-                .floatAsDouble,
-                .genericArrayOnElement
+                .genericArrayOnVariant,
+                .genericDictionaryOnVariant
             ]
         } else if useOpaque {
             [
                 .optionalClasses,
                 .prefixByGodot,
                 .floatAsDouble,
-                .genericArrayOnVariant
+                name == .array ? .genericArrayOnElement : .genericArrayOnVariant,
+                name == .dictionary ? .genericDictionaryOnKeyValue : .genericDictionaryOnVariant
             ]
         } else {
             [
                 .optionalClasses, .prefixByGodot,
                 .floatAsReal,
-                .genericArrayOnVariant
+                .genericArrayOnVariant,
+                .genericDictionaryOnVariant
             ]
         }
     }

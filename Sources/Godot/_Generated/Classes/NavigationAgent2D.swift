@@ -13,11 +13,11 @@ open class NavigationAgent2D: Node {
     public struct TargetReached {
     }
 
-    @Emitter(signal: "waypoint_reached", args: ("details", Godot.GodotDictionary))
+    @Emitter(signal: "waypoint_reached", args: ("details", Godot.GodotDictionary<Variant, Variant>))
     public struct WaypointReached {
     }
 
-    @Emitter(signal: "link_reached", args: ("details", Godot.GodotDictionary))
+    @Emitter(signal: "link_reached", args: ("details", Godot.GodotDictionary<Variant, Variant>))
     public struct LinkReached {
     }
 

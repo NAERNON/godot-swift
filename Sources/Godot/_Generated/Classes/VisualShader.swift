@@ -472,8 +472,8 @@ open class VisualShader: Shader {
         }
         }
     }()
-    public func nodeConnections(type: Godot.VisualShader.GodotType) -> Godot.GodotArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
+    public func nodeConnections(type: Godot.VisualShader.GodotType) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
         withUnsafePointer(to: type) { (__ptr_type) in
             withUnsafeArgumentPackPointer(__ptr_type) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

@@ -1,7 +1,8 @@
 import GodotExtensionHeaders
 
 @GodotOpaqueBuiltinClass
-public struct GodotDictionary {}
+public struct GodotDictionary<Key, AssociatedValue>
+where Key : VariantStorable, AssociatedValue : VariantStorable {}
 
 extension GodotDictionary {
     // MARK: Constructors
@@ -22,12 +23,49 @@ extension GodotDictionary {
     
     // MARK: Operators
     
-    public subscript(key: Variant) -> Variant {
+    public subscript(key: Key) -> AssociatedValue? {
         get {
-            Variant(storage: self._getValue(forKey: key.storage))
+            guard _has(key: key) else {
+                return nil
+            }
+            
+            return Key.withValueStorage(key) { keyStorage in
+                AssociatedValue.convertFromCheckedStorage(consuming: self._getValue(forKey: keyStorage))
+            }
         }
         set(newValue) {
-            self._set(value: newValue.storage, forKey: key.storage)
+            guard let newValue else {
+                self._erase(key: key)
+                return
+            }
+            
+            Key.withValueStorage(key) { keyStorage in
+                AssociatedValue.withValueStorage(newValue) { newValueStorage in
+                    self._set(value: newValueStorage, forKey: keyStorage)
+                }
+            }
+        }
+    }
+    
+    subscript(
+        key: Key,
+        default defaultValue: @autoclosure () -> AssociatedValue
+    ) -> AssociatedValue {
+        get {
+            guard _has(key: key) else {
+                return defaultValue()
+            }
+            
+            return Key.withValueStorage(key) { keyStorage in
+                AssociatedValue.convertFromCheckedStorage(consuming: self._getValue(forKey: keyStorage))
+            }
+        }
+        set(newValue) {
+            Key.withValueStorage(key) { keyStorage in
+                AssociatedValue.withValueStorage(newValue) { newValueStorage in
+                    self._set(value: newValueStorage, forKey: keyStorage)
+                }
+            }
         }
     }
     
@@ -50,21 +88,25 @@ extension GodotDictionary: Sequence {
     public struct Iterator: IteratorProtocol {
         private let dictionary: GodotDictionary
         private let keys: GodotArray<Variant>
-        private var index = 0
+        private var index: Int64 = 0
         
         fileprivate init(dictionary: GodotDictionary) {
             self.dictionary = dictionary
             self.keys = dictionary._keys()
         }
         
-        public mutating func next() -> (Variant, Variant)? {
+        public mutating func next() -> (Key, AssociatedValue)? {
             guard index < keys.count else {
                 return nil
             }
             
-            let key = keys[index]
+            let keyStorage = keys._getValue(at: index)
             index += 1
-            return (key, dictionary[key])
+            
+            let key = Key.convertFromCheckedStorage(keyStorage)
+            let element = AssociatedValue.convertFromCheckedStorage(
+                consuming: dictionary._getValue(forKey: keyStorage))
+            return (key, element)
         }
     }
     
@@ -77,7 +119,7 @@ extension GodotDictionary: Sequence {
 }
 
 extension GodotDictionary: ExpressibleByDictionaryLiteral {
-    public init(dictionaryLiteral elements: (Variant, Variant)...) {
+    public init(dictionaryLiteral elements: (Key, AssociatedValue)...) {
         var newDictionary = GodotDictionary()
         for (key, value) in elements {
             newDictionary[key] = value

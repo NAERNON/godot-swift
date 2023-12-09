@@ -934,8 +934,8 @@ open class TreeItem: Object {
         }
         }
     }()
-    public func rangeConfig(column: Int32) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func rangeConfig(column: Int32) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         withUnsafePointer(to: column) { (__ptr_column) in
             withUnsafeArgumentPackPointer(__ptr_column) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

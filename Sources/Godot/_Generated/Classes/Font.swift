@@ -56,7 +56,7 @@ open class Font: Resource {
         }
         }
     }()
-    public func findVariation(variationCoordinates: Godot.GodotDictionary, faceIndex: Int32 = 0, strength: Double = 0.0, transform: Godot.Transform2D = Transform2D(xAxisX: 1, xAxisY: 0, yAxisX: 0, yAxisY: 1, originX: 0, originY: 0)) -> Godot.RID {
+    public func findVariation<Value1: VariantStorable, Value2: VariantStorable>(variationCoordinates: Godot.GodotDictionary<Value1, Value2>, faceIndex: Int32 = 0, strength: Double = 0.0, transform: Godot.Transform2D = Transform2D(xAxisX: 1, xAxisY: 0, yAxisX: 0, yAxisY: 1, originX: 0, originY: 0)) -> Godot.RID {
         let __temporary = Godot.RID()
         variationCoordinates.withUnsafeRawPointer { (__ptr_variationCoordinates) in
             withUnsafePointer(to: faceIndex) { (__ptr_faceIndex) in
@@ -284,8 +284,8 @@ open class Font: Resource {
         }
         }
     }()
-    public func otNameStrings() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func otNameStrings() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -398,8 +398,8 @@ open class Font: Resource {
         }
         }
     }()
-    public func opentypeFeatures() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func opentypeFeatures() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -894,8 +894,8 @@ open class Font: Resource {
         }
         }
     }()
-    public func supportedFeatureList() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func supportedFeatureList() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -916,8 +916,8 @@ open class Font: Resource {
         }
         }
     }()
-    public func supportedVariationList() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func supportedVariationList() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

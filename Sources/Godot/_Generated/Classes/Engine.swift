@@ -364,8 +364,8 @@ open class Engine: Object {
         }
         }
     }()
-    public func versionInfo() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func versionInfo() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -386,8 +386,8 @@ open class Engine: Object {
         }
         }
     }()
-    public func authorInfo() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func authorInfo() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -408,8 +408,8 @@ open class Engine: Object {
         }
         }
     }()
-    public func copyrightInfo() -> Godot.GodotArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
+    public func copyrightInfo() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -430,8 +430,8 @@ open class Engine: Object {
         }
         }
     }()
-    public func donorInfo() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func donorInfo() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -452,8 +452,8 @@ open class Engine: Object {
         }
         }
     }()
-    public func licenseInfo() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func licenseInfo() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

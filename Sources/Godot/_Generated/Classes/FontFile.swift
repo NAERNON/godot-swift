@@ -836,7 +836,7 @@ open class FontFile: Font {
         }
         }
     }()
-    public func setVariationCoordinates(cacheIndex: Int32, variationCoordinates: Godot.GodotDictionary) {
+    public func setVariationCoordinates<Value1: VariantStorable, Value2: VariantStorable>(cacheIndex: Int32, variationCoordinates: Godot.GodotDictionary<Value1, Value2>) {
         withUnsafePointer(to: cacheIndex) { (__ptr_cacheIndex) in
             variationCoordinates.withUnsafeRawPointer { (__ptr_variationCoordinates) in
                 withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_variationCoordinates) { (__accessPtr) in
@@ -860,8 +860,8 @@ open class FontFile: Font {
         }
         }
     }()
-    public func variationCoordinates(cacheIndex: Int32) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func variationCoordinates(cacheIndex: Int32) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         withUnsafePointer(to: cacheIndex) { (__ptr_cacheIndex) in
             withUnsafeArgumentPackPointer(__ptr_cacheIndex) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -2248,7 +2248,7 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __setOpentypeFeatureOverrides(_ overrides: Godot.GodotDictionary) {
+    private func __setOpentypeFeatureOverrides<Value1: VariantStorable, Value2: VariantStorable>(_ overrides: Godot.GodotDictionary<Value1, Value2>) {
         overrides.withUnsafeRawPointer { (__ptr_overrides) in
             withUnsafeArgumentPackPointer(__ptr_overrides) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -2270,8 +2270,8 @@ open class FontFile: Font {
         }
         }
     }()
-    private func __getOpentypeFeatureOverrides() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    private func __getOpentypeFeatureOverrides() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -2475,7 +2475,7 @@ open class FontFile: Font {
         }
     }
 
-    public var opentypeFeatureOverrides: Godot.GodotDictionary {
+    public var opentypeFeatureOverrides: Godot.GodotDictionary<Variant, Variant> {
         get {
             __getOpentypeFeatureOverrides()
         }

@@ -90,7 +90,7 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
-    public func initialize(configuration: Godot.GodotDictionary = [:]) -> Godot.ErrorType {
+    public func initialize<Value1: VariantStorable, Value2: VariantStorable>(configuration: Godot.GodotDictionary<Value1, Value2> = [:]) -> Godot.ErrorType {
         var __temporary = Godot.ErrorType.RawValue(0)
         configuration.withUnsafeRawPointer { (__ptr_configuration) in
             withUnsafeArgumentPackPointer(__ptr_configuration) { (__accessPtr) in
@@ -116,7 +116,7 @@ open class WebRTCPeerConnection: RefCounted {
         }
         }
     }()
-    public func createDataChannel(label: Godot.GodotString, options: Godot.GodotDictionary = [:]) -> Godot.WebRTCDataChannel? {
+    public func createDataChannel<Value1: VariantStorable, Value2: VariantStorable>(label: Godot.GodotString, options: Godot.GodotDictionary<Value1, Value2> = [:]) -> Godot.WebRTCDataChannel? {
         var __temporary: GDExtensionObjectPtr!
         label.withUnsafeRawPointer { (__ptr_label) in
             options.withUnsafeRawPointer { (__ptr_options) in

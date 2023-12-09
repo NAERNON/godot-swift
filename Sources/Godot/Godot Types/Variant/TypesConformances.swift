@@ -1111,9 +1111,7 @@ extension Signal: ExposableValue {
 private var fromTypeConstructor_dictionary = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 private var toTypeConstructor_dictionary = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 
-extension GodotDictionary: ExposableValue {
-    public static let variantRepresentationType: Variant.RepresentationType = .dictionary
-    
+extension GodotDictionary: VariantStorableIn {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
         variant.withUnsafeRawPointer { extensionTypePtr in
@@ -1123,7 +1121,11 @@ extension GodotDictionary: ExposableValue {
         }
         return variant
     }
-    
+}
+
+extension GodotDictionary: VariantStorableOut
+where Key == Variant, AssociatedValue == Variant
+{
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         let newValue = GodotDictionary()
         
@@ -1135,6 +1137,18 @@ extension GodotDictionary: ExposableValue {
         
         return newValue
     }
+}
+
+extension GodotDictionary: VariantStorable
+where Key == Variant, AssociatedValue == Variant
+{
+    public static var variantStorageType: Variant.StorageType? { .dictionary }
+}
+
+extension GodotDictionary: ExposableValue
+where Key == Variant, AssociatedValue == Variant
+{
+    public static var variantRepresentationType: Variant.RepresentationType { .dictionary }
 }
 
 // MARK: - GodotArray

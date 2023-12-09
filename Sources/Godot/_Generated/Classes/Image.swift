@@ -1238,8 +1238,8 @@ open class Image: Resource {
         }
         }
     }()
-    public func computeImageMetrics(comparedImage: Godot.Image?, useLuma: Bool) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func computeImageMetrics(comparedImage: Godot.Image?, useLuma: Bool) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         comparedImage.withUnsafeRawPointer { (__ptr_comparedImage) in
             withUnsafePointer(to: __ptr_comparedImage) { (_ptr___ptr_comparedImage) in
                 withUnsafePointer(to: useLuma) { (__ptr_useLuma) in

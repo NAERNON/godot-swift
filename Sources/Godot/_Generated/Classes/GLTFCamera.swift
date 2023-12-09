@@ -60,7 +60,7 @@ open class GLTFCamera: Resource {
         }
         }
     }()
-    static public func fromDictionary(_ dictionary: Godot.GodotDictionary) -> Godot.GLTFCamera? {
+    static public func fromDictionary<Value1: VariantStorable, Value2: VariantStorable>(_ dictionary: Godot.GodotDictionary<Value1, Value2>) -> Godot.GLTFCamera? {
         var __temporary: GDExtensionObjectPtr!
         dictionary.withUnsafeRawPointer { (__ptr_dictionary) in
             withUnsafeArgumentPackPointer(__ptr_dictionary) { (__accessPtr) in
@@ -84,8 +84,8 @@ open class GLTFCamera: Resource {
         }
         }
     }()
-    public func toDictionary() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func toDictionary() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

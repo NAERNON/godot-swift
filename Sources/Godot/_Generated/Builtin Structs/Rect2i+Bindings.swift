@@ -270,7 +270,7 @@ extension Rect2i {
         return __temporary
     }
 
-    static internal func _operatorIn(_ lhs: Godot.Rect2i, _ rhs: Godot.GodotDictionary) -> Bool {
+    static internal func _operatorIn<Value1: VariantStorable, Value2: VariantStorable>(_ lhs: Godot.Rect2i, _ rhs: Godot.GodotDictionary<Value1, Value2>) -> Bool {
         var __temporary = Bool()
         withUnsafePointer(to: lhs) { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in

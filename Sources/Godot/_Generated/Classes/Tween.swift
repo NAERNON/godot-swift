@@ -173,7 +173,7 @@ open class Tween: RefCounted {
         }
         }
     }()
-    public func tweenMethod<Value2: VariantStorableIn, Value3: VariantStorableIn>(_ method: Godot.Callable, from: Value2, to: Value3, duration: Double) -> Godot.MethodTweener? {
+    public func tweenMethod<Value1: VariantStorableIn, Value2: VariantStorableIn>(_ method: Godot.Callable, from: Value1, to: Value2, duration: Double) -> Godot.MethodTweener? {
         var __temporary: GDExtensionObjectPtr!
         method.withUnsafeRawPointer { (__ptr_method) in
             Godot.Variant.withStorageUnsafeRawPointer(to: from) { (__ptr_from) in

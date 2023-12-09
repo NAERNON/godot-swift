@@ -166,8 +166,8 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
-    private func __getGodotBoneNode() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    private func __getGodotBoneNode() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -188,7 +188,7 @@ open class GLTFSkeleton: Resource {
         }
         }
     }()
-    private func __setGodotBoneNode(_ godotBoneNode: Godot.GodotDictionary) {
+    private func __setGodotBoneNode<Value1: VariantStorable, Value2: VariantStorable>(_ godotBoneNode: Godot.GodotDictionary<Value1, Value2>) {
         godotBoneNode.withUnsafeRawPointer { (__ptr_godotBoneNode) in
             withUnsafeArgumentPackPointer(__ptr_godotBoneNode) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -284,7 +284,7 @@ open class GLTFSkeleton: Resource {
         }
     }
 
-    public var godotBoneNode: Godot.GodotDictionary {
+    public var godotBoneNode: Godot.GodotDictionary<Variant, Variant> {
         get {
             __getGodotBoneNode()
         }

@@ -109,16 +109,16 @@ open class ScriptLanguageExtension: ScriptLanguage {
         nil
     }
 
-    open func _getBuiltInTemplates(object: Godot.GodotStringName) -> Godot.GodotArray<Godot.GodotDictionary> {
-        Godot.GodotArray<Godot.GodotDictionary>()
+    open func _getBuiltInTemplates(object: Godot.GodotStringName) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
     }
 
     open func _isUsingTemplates() -> Bool {
         Bool()
     }
 
-    open func _validate(script: Godot.GodotString, path: Godot.GodotString, validateFunctions: Bool, validateErrors: Bool, validateWarnings: Bool, validateSafeLines: Bool) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _validate(script: Godot.GodotString, path: Godot.GodotString, validateFunctions: Bool, validateErrors: Bool, validateWarnings: Bool, validateSafeLines: Bool) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
     open func _validatePath(_ path: Godot.GodotString) -> Godot.GodotString {
@@ -161,12 +161,12 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Bool()
     }
 
-    open func _completeCode(_ code: Godot.GodotString, path: Godot.GodotString, owner: Godot.Object?) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _completeCode(_ code: Godot.GodotString, path: Godot.GodotString, owner: Godot.Object?) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
-    open func _lookupCode(_ code: Godot.GodotString, symbol: Godot.GodotString, path: Godot.GodotString, owner: Godot.Object?) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _lookupCode(_ code: Godot.GodotString, symbol: Godot.GodotString, path: Godot.GodotString, owner: Godot.Object?) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
     open func _autoIndentCode(_ code: Godot.GodotString, fromLine: Int32, toLine: Int32) -> Godot.GodotString {
@@ -204,28 +204,28 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Godot.GodotString()
     }
 
-    open func _debugGetStackLevelLocals(level: Int32, maxSubitems: Int32, maxDepth: Int32) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _debugGetStackLevelLocals(level: Int32, maxSubitems: Int32, maxDepth: Int32) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
-    open func _debugGetStackLevelMembers(level: Int32, maxSubitems: Int32, maxDepth: Int32) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _debugGetStackLevelMembers(level: Int32, maxSubitems: Int32, maxDepth: Int32) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
     open func _debugGetStackLevelInstance(level: Int32) -> UnsafeMutableRawPointer {
         fatalError("No default value provided for pointers.")
     }
 
-    open func _debugGetGlobals(maxSubitems: Int32, maxDepth: Int32) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _debugGetGlobals(maxSubitems: Int32, maxDepth: Int32) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
     open func _debugParseStackLevelExpression(level: Int32, expression: Godot.GodotString, maxSubitems: Int32, maxDepth: Int32) -> Godot.GodotString {
         Godot.GodotString()
     }
 
-    open func _debugGetCurrentStackInfo() -> Godot.GodotArray<Godot.GodotDictionary> {
-        Godot.GodotArray<Godot.GodotDictionary>()
+    open func _debugGetCurrentStackInfo() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
     }
 
     open func _reloadAllScripts() {
@@ -238,16 +238,16 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Godot.PackedStringArray()
     }
 
-    open func _getPublicFunctions() -> Godot.GodotArray<Godot.GodotDictionary> {
-        Godot.GodotArray<Godot.GodotDictionary>()
+    open func _getPublicFunctions() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
     }
 
-    open func _getPublicConstants() -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _getPublicConstants() -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
-    open func _getPublicAnnotations() -> Godot.GodotArray<Godot.GodotDictionary> {
-        Godot.GodotArray<Godot.GodotDictionary>()
+    open func _getPublicAnnotations() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
     }
 
     open func _profilingStart() {
@@ -271,8 +271,8 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Bool()
     }
 
-    open func _getGlobalClassName(path: Godot.GodotString) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _getGlobalClassName(path: Godot.GodotString) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

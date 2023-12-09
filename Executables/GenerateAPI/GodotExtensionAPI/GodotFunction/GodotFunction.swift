@@ -55,6 +55,8 @@ extension GodotFunction {
             return ["VariantStorableIn"]
         } else if argument.type == .array {
             return ["VariantStorable"]
+        } else if argument.type == .dictionary {
+            return ["VariantStorable", "VariantStorable"]
         } else {
             return []
         }
@@ -84,9 +86,11 @@ extension GodotFunction {
         return genericTypeConstraints(for: argument).enumerated()
             .map { (enumeratedIndex, constraint) in
                 if genericCount == 1 {
-                    .init(name: "Value", constraint: constraint)
+                    .init(name: "Value", 
+                          constraint: constraint)
                 } else {
-                    .init(name: "Value\(index + enumeratedIndex + 1)", constraint: constraint)
+                    .init(name: "Value\(previousGenericTypesCount + enumeratedIndex + 1)",
+                          constraint: constraint)
                 }
             }
     }
@@ -166,14 +170,10 @@ extension GodotFunction {
             
             let genericNames = genericTypes(forArgumentAt: index).map { $0.name }
             
-            if usesVariantGeneric,
-               argument.type == .variant
-            {
+            if usesVariantGeneric, argument.type == .variant {
                 parameterString.append(genericNames[0])
                 variantArgumentIndex += 1
-            } else if usesVariantGeneric,
-               argument.type == .array
-            {
+            } else if usesVariantGeneric, argument.type == .array {
                 let typeSyntax = GodotType.generic(
                     type: argument.type,
                     genericType: .base(genericNames[0])
@@ -183,6 +183,16 @@ extension GodotFunction {
                 ]))
                 parameterString.append(typeSyntax)
                 variantArgumentIndex += 1
+            } else if usesVariantGeneric, argument.type == .dictionary {
+                let typeSyntax = GodotType.generic(
+                    type: argument.type,
+                    genericType: .base(genericNames[0] + ", " + genericNames[1])
+                ).syntax(options: options.subtracting([
+                    .genericDictionaryOnVariant,
+                    .genericDictionaryOnKeyValue
+                ]))
+                parameterString.append(typeSyntax)
+                variantArgumentIndex += 2
             } else {
                 parameterString.append(argument.type.syntax(options: options))
             }

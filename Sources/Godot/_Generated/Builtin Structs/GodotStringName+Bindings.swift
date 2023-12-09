@@ -1232,7 +1232,7 @@ extension GodotStringName {
         return __temporary
     }
 
-    static internal func _operatorModule(_ lhs: Godot.GodotStringName, _ rhs: Godot.GodotDictionary) -> Godot.GodotString {
+    static internal func _operatorModule<Value1: VariantStorable, Value2: VariantStorable>(_ lhs: Godot.GodotStringName, _ rhs: Godot.GodotDictionary<Value1, Value2>) -> Godot.GodotString {
         let __temporary = GodotString()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in
@@ -1244,7 +1244,7 @@ extension GodotStringName {
         return __temporary
     }
 
-    static internal func _operatorIn(_ lhs: Godot.GodotStringName, _ rhs: Godot.GodotDictionary) -> Bool {
+    static internal func _operatorIn<Value1: VariantStorable, Value2: VariantStorable>(_ lhs: Godot.GodotStringName, _ rhs: Godot.GodotDictionary<Value1, Value2>) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in

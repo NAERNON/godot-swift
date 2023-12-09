@@ -805,7 +805,7 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func pushCustomfx(effect: Godot.RichTextEffect?, env: Godot.GodotDictionary) {
+    public func pushCustomfx<Value1: VariantStorable, Value2: VariantStorable>(effect: Godot.RichTextEffect?, env: Godot.GodotDictionary<Value1, Value2>) {
         effect.withUnsafeRawPointer { (__ptr_effect) in
             withUnsafePointer(to: __ptr_effect) { (_ptr___ptr_effect) in
                 env.withUnsafeRawPointer { (__ptr_env) in
@@ -2323,8 +2323,8 @@ open class RichTextLabel: Control {
         }
         }
     }()
-    public func parseExpressionsForValues(expressions: Godot.PackedStringArray) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func parseExpressionsForValues(expressions: Godot.PackedStringArray) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         expressions.withUnsafeRawPointer { (__ptr_expressions) in
             withUnsafeArgumentPackPointer(__ptr_expressions) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

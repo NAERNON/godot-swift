@@ -166,8 +166,8 @@ open class Mesh: Resource {
         Godot.GodotArray<Godot.GodotArray<Variant>>()
     }
 
-    open func _surfaceGetLods(index: Int32) -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _surfaceGetLods(index: Int32) -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
     open func _surfaceGetFormat(index: Int32) -> UInt32 {

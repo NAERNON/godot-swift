@@ -320,8 +320,8 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __getJointIToBoneI() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    private func __getJointIToBoneI() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -342,7 +342,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setJointIToBoneI(_ jointIToBoneI: Godot.GodotDictionary) {
+    private func __setJointIToBoneI<Value1: VariantStorable, Value2: VariantStorable>(_ jointIToBoneI: Godot.GodotDictionary<Value1, Value2>) {
         jointIToBoneI.withUnsafeRawPointer { (__ptr_jointIToBoneI) in
             withUnsafeArgumentPackPointer(__ptr_jointIToBoneI) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -364,8 +364,8 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __getJointIToName() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    private func __getJointIToName() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -386,7 +386,7 @@ open class GLTFSkin: Resource {
         }
         }
     }()
-    private func __setJointIToName(_ jointIToName: Godot.GodotDictionary) {
+    private func __setJointIToName<Value1: VariantStorable, Value2: VariantStorable>(_ jointIToName: Godot.GodotDictionary<Value1, Value2>) {
         jointIToName.withUnsafeRawPointer { (__ptr_jointIToName) in
             withUnsafeArgumentPackPointer(__ptr_jointIToName) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -524,7 +524,7 @@ open class GLTFSkin: Resource {
         }
     }
 
-    public var jointIToBoneI: Godot.GodotDictionary {
+    public var jointIToBoneI: Godot.GodotDictionary<Variant, Variant> {
         get {
             __getJointIToBoneI()
         }
@@ -535,7 +535,7 @@ open class GLTFSkin: Resource {
         }
     }
 
-    public var jointIToName: Godot.GodotDictionary {
+    public var jointIToName: Godot.GodotDictionary<Variant, Variant> {
         get {
             __getJointIToName()
         }

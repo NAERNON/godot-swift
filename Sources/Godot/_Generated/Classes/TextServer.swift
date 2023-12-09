@@ -857,8 +857,8 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func fontGetOtNameStrings(fontRid: Godot.RID) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func fontGetOtNameStrings(fontRid: Godot.RID) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         fontRid.withUnsafeRawPointer { (__ptr_fontRid) in
             withUnsafeArgumentPackPointer(__ptr_fontRid) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -1633,7 +1633,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func fontSetVariationCoordinates(fontRid: Godot.RID, variationCoordinates: Godot.GodotDictionary) {
+    public func fontSetVariationCoordinates<Value1: VariantStorable, Value2: VariantStorable>(fontRid: Godot.RID, variationCoordinates: Godot.GodotDictionary<Value1, Value2>) {
         fontRid.withUnsafeRawPointer { (__ptr_fontRid) in
             variationCoordinates.withUnsafeRawPointer { (__ptr_variationCoordinates) in
                 withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_variationCoordinates) { (__accessPtr) in
@@ -1657,8 +1657,8 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func fontGetVariationCoordinates(fontRid: Godot.RID) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func fontGetVariationCoordinates(fontRid: Godot.RID) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         fontRid.withUnsafeRawPointer { (__ptr_fontRid) in
             withUnsafeArgumentPackPointer(__ptr_fontRid) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -2699,8 +2699,8 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func fontGetGlyphContours(font: Godot.RID, size: Int64, index: Int64) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func fontGetGlyphContours(font: Godot.RID, size: Int64, index: Int64) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         font.withUnsafeRawPointer { (__ptr_font) in
             withUnsafePointer(to: size) { (__ptr_size) in
                 withUnsafePointer(to: index) { (__ptr_index) in
@@ -3365,7 +3365,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func fontSetOpentypeFeatureOverrides(fontRid: Godot.RID, overrides: Godot.GodotDictionary) {
+    public func fontSetOpentypeFeatureOverrides<Value1: VariantStorable, Value2: VariantStorable>(fontRid: Godot.RID, overrides: Godot.GodotDictionary<Value1, Value2>) {
         fontRid.withUnsafeRawPointer { (__ptr_fontRid) in
             overrides.withUnsafeRawPointer { (__ptr_overrides) in
                 withUnsafeArgumentPackPointer(__ptr_fontRid, __ptr_overrides) { (__accessPtr) in
@@ -3389,8 +3389,8 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func fontGetOpentypeFeatureOverrides(fontRid: Godot.RID) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func fontGetOpentypeFeatureOverrides(fontRid: Godot.RID) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         fontRid.withUnsafeRawPointer { (__ptr_fontRid) in
             withUnsafeArgumentPackPointer(__ptr_fontRid) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -3415,8 +3415,8 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func fontSupportedFeatureList(fontRid: Godot.RID) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func fontSupportedFeatureList(fontRid: Godot.RID) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         fontRid.withUnsafeRawPointer { (__ptr_fontRid) in
             withUnsafeArgumentPackPointer(__ptr_fontRid) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -3441,8 +3441,8 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func fontSupportedVariationList(fontRid: Godot.RID) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func fontSupportedVariationList(fontRid: Godot.RID) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         fontRid.withUnsafeRawPointer { (__ptr_fontRid) in
             withUnsafeArgumentPackPointer(__ptr_fontRid) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -3973,7 +3973,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextAddString<Value: VariantStorableIn>(shaped: Godot.RID, text: Godot.GodotString, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.GodotDictionary = [:], language: Godot.GodotString = "", meta: Value = Variant()) -> Bool {
+    public func shapedTextAddString<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorableIn>(shaped: Godot.RID, text: Godot.GodotString, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.GodotDictionary<Value1, Value2> = [:], language: Godot.GodotString = "", meta: Value3 = Variant()) -> Bool {
         var __temporary = Bool()
         shaped.withUnsafeRawPointer { (__ptr_shaped) in
             text.withUnsafeRawPointer { (__ptr_text) in
@@ -4135,7 +4135,7 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedSetSpanUpdateFont(shaped: Godot.RID, index: Int64, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.GodotDictionary = [:]) {
+    public func shapedSetSpanUpdateFont<Value1: VariantStorable, Value2: VariantStorable>(shaped: Godot.RID, index: Int64, fonts: Godot.GodotArray<Godot.RID>, size: Int64, opentypeFeatures: Godot.GodotDictionary<Value1, Value2> = [:]) {
         shaped.withUnsafeRawPointer { (__ptr_shaped) in
             withUnsafePointer(to: index) { (__ptr_index) in
                 fonts.withUnsafeRawPointer { (__ptr_fonts) in
@@ -4357,8 +4357,8 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextGetGlyphs(shaped: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
+    public func shapedTextGetGlyphs(shaped: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
         shaped.withUnsafeRawPointer { (__ptr_shaped) in
             withUnsafeArgumentPackPointer(__ptr_shaped) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -4383,8 +4383,8 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextSortLogical(shaped: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
+    public func shapedTextSortLogical(shaped: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
         shaped.withUnsafeRawPointer { (__ptr_shaped) in
             withUnsafeArgumentPackPointer(__ptr_shaped) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -4607,8 +4607,8 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextGetEllipsisGlyphs(shaped: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
+    public func shapedTextGetEllipsisGlyphs(shaped: Godot.RID) -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
         shaped.withUnsafeRawPointer { (__ptr_shaped) in
             withUnsafeArgumentPackPointer(__ptr_shaped) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in
@@ -4895,8 +4895,8 @@ open class TextServer: RefCounted {
         }
         }
     }()
-    public func shapedTextGetCarets(shaped: Godot.RID, position: Int64) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func shapedTextGetCarets(shaped: Godot.RID, position: Int64) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         shaped.withUnsafeRawPointer { (__ptr_shaped) in
             withUnsafePointer(to: position) { (__ptr_position) in
                 withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_position) { (__accessPtr) in

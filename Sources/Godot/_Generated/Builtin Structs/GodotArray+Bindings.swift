@@ -351,7 +351,7 @@ extension GodotArray {
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _constructor_godotarray_int_godotstringname_variant<Value1: VariantStorable, Value4: VariantStorableIn>(base: Godot.GodotArray<Value1>, type: Int, className: Godot.GodotStringName, script: Value4) -> Self {
+    static internal func _constructor_godotarray_int_godotstringname_variant<Value1: VariantStorable, Value2: VariantStorableIn>(base: Godot.GodotArray<Value1>, type: Int, className: Godot.GodotStringName, script: Value2) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         base.withUnsafeRawPointer { (__ptr_base) in
             withUnsafePointer(to: type) { (__ptr_type) in
@@ -601,7 +601,7 @@ extension GodotArray {
         return __temporary
     }
 
-    static internal func _operatorIn<Value: VariantStorable>(_ lhs: Godot.GodotArray<Value>, _ rhs: Godot.GodotDictionary) -> Bool {
+    static internal func _operatorIn<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorable>(_ lhs: Godot.GodotArray<Value1>, _ rhs: Godot.GodotDictionary<Value2, Value3>) -> Bool {
         var __temporary = Bool()
         lhs.withUnsafeRawPointer { (__ptr_lhs) in
             rhs.withUnsafeRawPointer { (__ptr_rhs) in

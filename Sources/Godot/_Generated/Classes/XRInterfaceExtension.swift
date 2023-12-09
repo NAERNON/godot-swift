@@ -24,8 +24,8 @@ open class XRInterfaceExtension: XRInterface {
     open func _uninitialize() {
     }
 
-    open func _getSystemInfo() -> Godot.GodotDictionary {
-        Godot.GodotDictionary()
+    open func _getSystemInfo() -> Godot.GodotDictionary<Variant, Variant> {
+        Godot.GodotDictionary<Variant, Variant>()
     }
 
     open func _supportsPlayAreaMode(_ mode: Godot.XRInterface.PlayAreaMode) -> Bool {

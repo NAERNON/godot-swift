@@ -315,8 +315,8 @@ open class XRServer: Object {
         }
         }
     }()
-    public func interfaces() -> Godot.GodotArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
+    public func interfaces() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -411,8 +411,8 @@ open class XRServer: Object {
         }
         }
     }()
-    public func trackers(trackerTypes: Int32) -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func trackers(trackerTypes: Int32) -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         withUnsafePointer(to: trackerTypes) { (__ptr_trackerTypes) in
             withUnsafeArgumentPackPointer(__ptr_trackerTypes) { (__accessPtr) in
                 __temporary.withUnsafeRawPointer { (__ptr___temporary) in

@@ -140,7 +140,7 @@ open class EditorSettings: Resource {
         }
         }
     }()
-    public func addPropertyInfo(_ info: Godot.GodotDictionary) {
+    public func addPropertyInfo<Value1: VariantStorable, Value2: VariantStorable>(_ info: Godot.GodotDictionary<Value1, Value2>) {
         info.withUnsafeRawPointer { (__ptr_info) in
             withUnsafeArgumentPackPointer(__ptr_info) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

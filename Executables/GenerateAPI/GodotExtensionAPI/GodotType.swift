@@ -190,6 +190,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     static let variant: GodotType = "Variant"
     static let variantStorage: GodotType = .scope(scopeType: .variant, type: "Storage")
     static let array: GodotType = "Array"
+    static let dictionary: GodotType = "Dictionary"
     
     /// Returns `Variant.Storage` if the type is a `Variant`, or the current type otherwise.
     var storage: GodotType {
@@ -471,7 +472,14 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
                 } else {
                     "GodotArray"
                 }
-            case "Dictionary": return "GodotDictionary"
+            case "Dictionary": 
+                return if options.contains(.genericDictionaryOnVariant) {
+                    "GodotDictionary<Variant, Variant>"
+                } else if options.contains(.genericDictionaryOnKeyValue) {
+                    "GodotDictionary<Key, AssociatedValue>"
+                } else {
+                    "GodotDictionary"
+                }
             case "String": return "GodotString"
             case "StringName": return "GodotStringName"
             case "Error": return "ErrorType"

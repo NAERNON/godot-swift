@@ -1195,8 +1195,8 @@ open class OS: Object {
         }
         }
     }()
-    public func memoryInfo() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func memoryInfo() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(

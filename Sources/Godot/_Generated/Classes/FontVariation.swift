@@ -58,7 +58,7 @@ open class FontVariation: Font {
         }
         }
     }()
-    private func __setVariationOpentype(coords: Godot.GodotDictionary) {
+    private func __setVariationOpentype<Value1: VariantStorable, Value2: VariantStorable>(coords: Godot.GodotDictionary<Value1, Value2>) {
         coords.withUnsafeRawPointer { (__ptr_coords) in
             withUnsafeArgumentPackPointer(__ptr_coords) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -80,8 +80,8 @@ open class FontVariation: Font {
         }
         }
     }()
-    private func __getVariationOpentype() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    private func __getVariationOpentype() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -234,7 +234,7 @@ open class FontVariation: Font {
         }
         }
     }()
-    public func setOpentypeFeatures(_ features: Godot.GodotDictionary) {
+    public func setOpentypeFeatures<Value1: VariantStorable, Value2: VariantStorable>(_ features: Godot.GodotDictionary<Value1, Value2>) {
         features.withUnsafeRawPointer { (__ptr_features) in
             withUnsafeArgumentPackPointer(__ptr_features) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -284,7 +284,7 @@ open class FontVariation: Font {
         }
     }
 
-    public var variationOpentype: Godot.GodotDictionary {
+    public var variationOpentype: Godot.GodotDictionary<Variant, Variant> {
         get {
             __getVariationOpentype()
         }

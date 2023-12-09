@@ -36,8 +36,8 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __getJson() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    private func __getJson() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -58,7 +58,7 @@ open class GLTFState: Resource {
         }
         }
     }()
-    private func __setJson(_ json: Godot.GodotDictionary) {
+    private func __setJson<Value1: VariantStorable, Value2: VariantStorable>(_ json: Godot.GodotDictionary<Value1, Value2>) {
         json.withUnsafeRawPointer { (__ptr_json) in
             withUnsafeArgumentPackPointer(__ptr_json) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -1329,7 +1329,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var json: Godot.GodotDictionary {
+    public var json: Godot.GodotDictionary<Variant, Variant> {
         get {
             __getJson()
         }

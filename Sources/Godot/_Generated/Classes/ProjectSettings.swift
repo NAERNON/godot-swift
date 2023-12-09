@@ -116,8 +116,8 @@ open class ProjectSettings: Object {
         }
         }
     }()
-    public func globalClassList() -> Godot.GodotArray<Godot.GodotDictionary> {
-        let __temporary = Godot.GodotArray<Godot.GodotDictionary>()
+    public func globalClassList() -> Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>> {
+        let __temporary = Godot.GodotArray<Godot.GodotDictionary<Variant, Variant>>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -260,7 +260,7 @@ open class ProjectSettings: Object {
         }
         }
     }()
-    public func addPropertyInfo(hint: Godot.GodotDictionary) {
+    public func addPropertyInfo<Value1: VariantStorable, Value2: VariantStorable>(hint: Godot.GodotDictionary<Value1, Value2>) {
         hint.withUnsafeRawPointer { (__ptr_hint) in
             withUnsafeArgumentPackPointer(__ptr_hint) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in

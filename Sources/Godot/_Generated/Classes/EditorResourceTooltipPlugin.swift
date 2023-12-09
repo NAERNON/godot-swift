@@ -9,7 +9,7 @@ open class EditorResourceTooltipPlugin: RefCounted {
         Bool()
     }
 
-    open func _makeTooltipForPath(_ path: Godot.GodotString, metadata: Godot.GodotDictionary, base: Godot.Control?) -> Godot.Control? {
+    open func _makeTooltipForPath(_ path: Godot.GodotString, metadata: Godot.GodotDictionary<Variant, Variant>, base: Godot.Control?) -> Godot.Control? {
         nil
     }
 
@@ -62,7 +62,7 @@ open class EditorResourceTooltipPlugin: RefCounted {
             let returnValue = instance
         ._makeTooltipForPath(
             Godot.GodotString(godotExtensionPointer: args[0]!),
-            metadata: Godot.GodotDictionary(godotExtensionPointer: args[1]!),
+            metadata: Godot.GodotDictionary<Variant, Variant>(godotExtensionPointer: args[1]!),
             base: Godot.Control.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!))
         )
         returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}

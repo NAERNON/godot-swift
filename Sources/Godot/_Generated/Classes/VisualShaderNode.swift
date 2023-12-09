@@ -82,7 +82,7 @@ open class VisualShaderNode: Resource {
         }
         }
     }()
-    public func setInputPortDefaultValue<Value2: VariantStorableIn, Value3: VariantStorableIn>(port: Int32, value: Value2, prevValue: Value3 = Variant()) {
+    public func setInputPortDefaultValue<Value1: VariantStorableIn, Value2: VariantStorableIn>(port: Int32, value: Value1, prevValue: Value2 = Variant()) {
         withUnsafePointer(to: port) { (__ptr_port) in
             Godot.Variant.withStorageUnsafeRawPointer(to: value) { (__ptr_value) in
                 Godot.Variant.withStorageUnsafeRawPointer(to: prevValue) { (__ptr_prevValue) in

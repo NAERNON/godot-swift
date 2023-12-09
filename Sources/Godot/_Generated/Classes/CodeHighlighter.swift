@@ -110,7 +110,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
         }
     }()
-    private func __setKeywordColors(keywords: Godot.GodotDictionary) {
+    private func __setKeywordColors<Value1: VariantStorable, Value2: VariantStorable>(keywords: Godot.GodotDictionary<Value1, Value2>) {
         keywords.withUnsafeRawPointer { (__ptr_keywords) in
             withUnsafeArgumentPackPointer(__ptr_keywords) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -150,8 +150,8 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
         }
     }()
-    private func __getKeywordColors() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    private func __getKeywordColors() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -270,7 +270,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
         }
     }()
-    private func __setMemberKeywordColors(memberKeyword: Godot.GodotDictionary) {
+    private func __setMemberKeywordColors<Value1: VariantStorable, Value2: VariantStorable>(memberKeyword: Godot.GodotDictionary<Value1, Value2>) {
         memberKeyword.withUnsafeRawPointer { (__ptr_memberKeyword) in
             withUnsafeArgumentPackPointer(__ptr_memberKeyword) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -310,8 +310,8 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
         }
     }()
-    private func __getMemberKeywordColors() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    private func __getMemberKeywordColors() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -408,7 +408,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
         }
     }()
-    private func __setColorRegions(_ colorRegions: Godot.GodotDictionary) {
+    private func __setColorRegions<Value1: VariantStorable, Value2: VariantStorable>(_ colorRegions: Godot.GodotDictionary<Value1, Value2>) {
         colorRegions.withUnsafeRawPointer { (__ptr_colorRegions) in
             withUnsafeArgumentPackPointer(__ptr_colorRegions) { (__accessPtr) in
                 `self`.withUnsafeRawPointer { (__ptr_self) in
@@ -448,8 +448,8 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
         }
     }()
-    private func __getColorRegions() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    private func __getColorRegions() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -683,7 +683,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
     }
 
-    public var keywordColors: Godot.GodotDictionary {
+    public var keywordColors: Godot.GodotDictionary<Variant, Variant> {
         get {
             __getKeywordColors()
         }
@@ -694,7 +694,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
     }
 
-    public var memberKeywordColors: Godot.GodotDictionary {
+    public var memberKeywordColors: Godot.GodotDictionary<Variant, Variant> {
         get {
             __getMemberKeywordColors()
         }
@@ -705,7 +705,7 @@ open class CodeHighlighter: SyntaxHighlighter {
         }
     }
 
-    public var colorRegions: Godot.GodotDictionary {
+    public var colorRegions: Godot.GodotDictionary<Variant, Variant> {
         get {
             __getColorRegions()
         }

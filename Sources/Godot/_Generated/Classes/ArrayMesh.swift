@@ -168,7 +168,7 @@ open class ArrayMesh: Mesh {
         }
         }
     }()
-    public func addSurfaceFromArrays<Value: VariantStorable>(primitive: Godot.Mesh.PrimitiveType, arrays: Godot.GodotArray<Value>, blendShapes: Godot.GodotArray<Godot.GodotArray<Variant>> = [], lods: Godot.GodotDictionary = [:], flags: Godot.Mesh.ArrayFormat = Mesh.ArrayFormat(rawValue: 0)) {
+    public func addSurfaceFromArrays<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorable>(primitive: Godot.Mesh.PrimitiveType, arrays: Godot.GodotArray<Value1>, blendShapes: Godot.GodotArray<Godot.GodotArray<Variant>> = [], lods: Godot.GodotDictionary<Value2, Value3> = [:], flags: Godot.Mesh.ArrayFormat = Mesh.ArrayFormat(rawValue: 0)) {
         withUnsafePointer(to: primitive) { (__ptr_primitive) in
             arrays.withUnsafeRawPointer { (__ptr_arrays) in
                 blendShapes.withUnsafeRawPointer { (__ptr_blendShapes) in

@@ -169,7 +169,13 @@ struct GodotClass: Decodable {
     }
     
     var syntaxOptions: GodotTypeSyntaxOptions {
-        [.optionalClasses, .prefixByGodot, .floatAsDouble, .genericArrayOnVariant]
+        [
+            .optionalClasses,
+            .prefixByGodot,
+            .floatAsDouble,
+            .genericArrayOnVariant,
+            .genericDictionaryOnVariant
+        ]
     }
     
     var methodPrefixIfPrivate: String {

@@ -438,8 +438,8 @@ open class HTTPClient: RefCounted {
         }
         }
     }()
-    public func responseHeadersAsDictionary() -> Godot.GodotDictionary {
-        let __temporary = Godot.GodotDictionary()
+    public func responseHeadersAsDictionary() -> Godot.GodotDictionary<Variant, Variant> {
+        let __temporary = Godot.GodotDictionary<Variant, Variant>()
         __temporary.withUnsafeRawPointer { (__ptr___temporary) in
             `self`.withUnsafeRawPointer { (__ptr_self) in
                 gdextension_interface_object_method_bind_ptrcall(
@@ -684,7 +684,7 @@ open class HTTPClient: RefCounted {
         }
         }
     }()
-    public func queryStringFromDict(fields: Godot.GodotDictionary) -> Godot.GodotString {
+    public func queryStringFromDict<Value1: VariantStorable, Value2: VariantStorable>(fields: Godot.GodotDictionary<Value1, Value2>) -> Godot.GodotString {
         let __temporary = Godot.GodotString()
         fields.withUnsafeRawPointer { (__ptr_fields) in
             withUnsafeArgumentPackPointer(__ptr_fields) { (__accessPtr) in
