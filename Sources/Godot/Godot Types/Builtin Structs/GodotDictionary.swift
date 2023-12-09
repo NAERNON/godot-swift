@@ -152,6 +152,10 @@ extension GodotDictionary: Sequence {
     public func makeIterator() -> Iterator {
         Iterator(dictionary: self)
     }
+    
+    public var isEmpty: Bool {
+        _isEmpty()
+    }
 }
 
 extension GodotDictionary: ExpressibleByDictionaryLiteral {

@@ -61,6 +61,10 @@ extension GodotArray: Collection {
     public func index(after i: Int) -> Int {
         i+1
     }
+    
+    public var isEmpty: Bool {
+        _isEmpty()
+    }
 }
 
 extension GodotArray: BidirectionalCollection {
@@ -112,6 +116,43 @@ extension GodotArray: RangeReplaceableCollection {
             self._removeAt(position: removeIndex)
             rangeIndex += 1
         }
+    }
+    
+    public mutating func append(_ newElement: Element) {
+        Element.withValueStorage(newElement) { storage in
+            _append(value: storage)
+        }
+    }
+    
+    public mutating func insert(_ newElement: Element, at i: Int) {
+        Element.withValueStorage(newElement) { storage in
+            _ = _insert(position: i, value: storage)
+        }
+    }
+    
+    public mutating func popLast() -> Element? {
+        Optional<Element>.convertFromCheckedStorage(consuming: _popBack())
+    }
+    
+    @discardableResult
+    public mutating func remove(at i: Int) -> Element {
+        let element = self[i]
+        _removeAt(position: i)
+        return element
+    }
+    
+    public mutating func removeAll(keepingCapacity keepCapacity: Bool) {
+        _clear()
+    }
+    
+    @discardableResult
+    public mutating func removeFirst() -> Element {
+        Element.convertFromCheckedStorage(consuming: _popFront())
+    }
+    
+    @discardableResult
+    public mutating func removeLast() -> Element {
+        Element.convertFromCheckedStorage(consuming: _popBack())
     }
 }
 
