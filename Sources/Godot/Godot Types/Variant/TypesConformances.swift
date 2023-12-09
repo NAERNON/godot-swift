@@ -1142,7 +1142,7 @@ extension GodotDictionary: ExposableValue {
 private var fromTypeConstructor_array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 private var toTypeConstructor_array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 
-extension GodotArray: VariantStorable {
+extension GodotArray: ExposableValue {
     private enum VariantConversionError: Error, CustomStringConvertible {
         case typedArray
         case untypedArray
@@ -1164,6 +1164,7 @@ extension GodotArray: VariantStorable {
     }
     
     public static var variantStorageType: Variant.StorageType? { .array }
+    public static var variantRepresentationType: Variant.RepresentationType { .array }
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
@@ -1226,10 +1227,6 @@ extension GodotArray: VariantStorable {
         
         return newValue
     }
-}
-
-extension GodotArray: ExposableValue where Element : ExposableValue {
-    public static var variantRepresentationType: Variant.RepresentationType { .array }
 }
 
 // MARK: - PackedByteArray

@@ -21,7 +21,7 @@ extension ContiguousArray: VariantStorable where Element : VariantStorable {
     }
 }
 
-extension ContiguousArray: ExposableValue where Element : ExposableValue {
+extension ContiguousArray: ExposableValue where Element : VariantStorable {
     public static var variantRepresentationType: Variant.RepresentationType {
         .array
     }

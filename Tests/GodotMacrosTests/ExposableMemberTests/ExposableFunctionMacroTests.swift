@@ -70,7 +70,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue()
                     .myFunction(
                     a:
-                    Int.fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)))
+                    Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)))
                 }
             }
             """,
@@ -105,7 +105,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
                     _, instancePtr, args, argsCount, returnPtr, error in
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue()
                     .myFunction(
-                    Int.fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)))
+                    Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)))
                 }
             }
             """,
@@ -141,7 +141,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue()
                     .myFunction(
                     with:
-                    Int.fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)))
+                    Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)))
                 }
             }
             """,
@@ -254,7 +254,7 @@ final class ExposableFunctionMacroTests: XCTestCase {
                     Unmanaged<MyClass> .fromOpaque(instancePtr!).takeUnretainedValue()
                     .myFunction(
                     a:
-                    Int.fromCompatibleVariant(Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)))
+                    Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)))
                 }
             }
             """,
