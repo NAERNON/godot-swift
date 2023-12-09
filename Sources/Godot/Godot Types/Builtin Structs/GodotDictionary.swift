@@ -47,7 +47,7 @@ extension GodotDictionary {
         }
     }
     
-    subscript(
+    public subscript(
         key: Key,
         default defaultValue: @autoclosure () -> AssociatedValue
     ) -> AssociatedValue {
