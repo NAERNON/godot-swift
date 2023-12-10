@@ -32,7 +32,7 @@ extension GeneratedFile {
             return "break"
         } else {
             return filteredClasses
-                .map { $0.identifier + "._$exposeToGodot()" }
+                .map { $0.identifier + ".registerClassToGodot()" }
                 .joined(separator: "\n")
         }
     }

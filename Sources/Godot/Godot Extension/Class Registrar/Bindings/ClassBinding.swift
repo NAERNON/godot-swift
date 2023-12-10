@@ -9,10 +9,6 @@ extension ClassRegistrar {
         
         let callbacks: GodotInstanceBindingCallbacks
         
-        var isCustomClass: Bool {
-            type._$isCustomGodotClass
-        }
-        
         // MARK: Init
         
         init(
@@ -22,9 +18,9 @@ extension ClassRegistrar {
             self.level = level
             
             self.type = type
-            self.name = type._$className
+            self.name = type.exposedClassName
             
-            self.callbacks = type._$instanceBindingCallbacks()
+            self.callbacks = type.instanceBindingCallbacks()
         }
     }
 }

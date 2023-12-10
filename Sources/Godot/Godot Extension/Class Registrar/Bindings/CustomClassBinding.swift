@@ -28,7 +28,7 @@ extension ClassRegistrar {
             freeInstanceFunction: GDExtensionClassFreeInstance
         ) {
             self.superclassType = superclassType
-            self.superclassName = superclassType._$className
+            self.superclassName = superclassType.exposedClassName
             
             self.toStringFunction = toStringFunction
             self.createInstanceFunction = createInstanceFunction

@@ -11,7 +11,7 @@ public protocol Bridge {
     ///
     /// Only expose ``Object`` classes that are defined using
     /// the ``Exposable()`` macro.
-    static var exposedClasses: [Object.Type] { get }
+    static var exposedClasses: [Exposable.Type] { get }
     
     /// Minimum initialization level required.
     ///

@@ -1,7 +1,6 @@
 import GodotExtensionHeaders
 
 public typealias GodotInstanceBindingCallbacks = GDExtensionInstanceBindingCallbacks
-public typealias GodotObjectPointer = GDExtensionObjectPtr
 
 // MARK: - GodotExtension
 
@@ -93,7 +92,7 @@ private func initializeLevel(userData: UnsafeMutableRawPointer?, level: GDExtens
     
     if level == .scene {
         for object in GodotExtension.bridge.exposedClasses {
-            object.self._$exposeToGodot()
+            object.self.registerClassToGodot()
         }
     }
     

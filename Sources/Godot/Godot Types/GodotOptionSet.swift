@@ -2,7 +2,7 @@
 /// An option set usable by Godot.
 ///
 /// Do not declare `GodotOptionSet` conformances yourself.
-/// Use ``GodotOptionSet()`` macro instead.
+/// Use the ``GodotOptionSet()`` macro instead.
 public protocol GodotOptionSet: OptionSet where RawValue : FixedWidthInteger {
     /// Returns the name and values used for hinting
     /// in the Godot editor.

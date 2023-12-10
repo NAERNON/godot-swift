@@ -983,7 +983,7 @@ extension Object: VariantStorable {
         var description: String {
             switch self {
             case .cannotConvertToObject(let type):
-                "Error while retrieving an instance of type \(type._$className)."
+                "Error while retrieving an instance of type \(type.exposedClassName)."
             }
         }
     }
@@ -1041,7 +1041,7 @@ extension Optional: VariantStorable where Wrapped : Object {
 
 extension Optional: ExposableValue where Wrapped : Object {
     public static var variantRepresentationType: Variant.RepresentationType { .object }
-    public static var _$className: GodotStringName { Wrapped._$className }
+    public static var exposedClassName: GodotStringName { Wrapped.exposedClassName }
 }
 
 // MARK: - Callable
@@ -1210,11 +1210,11 @@ extension GodotArray: ExposableValue {
             
             // If the class name is not empty, we must check against
             // the underlying array.
-            if !Element._$className._isEmpty() {
+            if !Element.exposedClassName._isEmpty() {
                 let foundClassName = array._typedClassName()
-                guard foundClassName == Element._$className else {
+                guard foundClassName == Element.exposedClassName else {
                     throw VariantConversionError.incorrectClassName(
-                        expected: Element._$className,
+                        expected: Element.exposedClassName,
                         found: foundClassName
                     )
                 }

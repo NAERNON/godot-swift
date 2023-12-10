@@ -2,7 +2,7 @@
 /// An enum usable by Godot.
 ///
 /// Do not declare `GodotEnum` conformances yourself.
-/// Use ``GodotEnum()`` macro instead.
+/// Use the ``GodotEnum()`` macro instead.
 public protocol GodotEnum: RawRepresentable where RawValue : FixedWidthInteger {
     /// Returns the name and values used for hinting
     /// in the Godot editor.

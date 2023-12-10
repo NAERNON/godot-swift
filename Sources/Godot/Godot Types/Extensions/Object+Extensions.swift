@@ -23,14 +23,8 @@ extension Object {
                 callbacksPointer
             )
             
-            if binding.isCustomClass {
-                return Unmanaged<Object>.fromOpaque(opaque!).takeUnretainedValue()
-            } else {
-                return binding.type.init(objectPointer: opaque!)
-            }
+            return Self.retrieveObjectInstance(fromUnsafePointer: opaque!)
         }
-        
-        (instance as? RefCounted)?.initGodotRef()
         
         return instance as? Self
     }

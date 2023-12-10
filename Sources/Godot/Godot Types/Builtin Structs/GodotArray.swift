@@ -32,7 +32,7 @@ extension GodotArray {
         }
         
         withUnsafeRawPointer { ptr in
-            Element._$className.withUnsafeRawPointer { classNamePtr in
+            Element.exposedClassName.withUnsafeRawPointer { classNamePtr in
                 Variant().withUnsafeRawPointer { scriptPtr in
                     // TODO: Check script (last parameter)
                     gdextension_interface_array_set_typed(

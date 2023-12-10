@@ -4,7 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
 
-public enum ExposableMacro: MemberMacro, MemberAttributeMacro {
+public enum ExposableMacro: MemberMacro, MemberAttributeMacro, ExtensionMacro {
     public static func expansion(
         of attribute: AttributeSyntax,
         providingMembersOf declaration: some DeclGroupSyntax,
@@ -71,5 +71,17 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro {
         }
         
         return [AttributeSyntax("@ExpositionAvailable(\(classDecl.name))")]
+    }
+    
+    public static func expansion(
+        of node: AttributeSyntax,
+        attachedTo declaration: some DeclGroupSyntax,
+        providingExtensionsOf type: some TypeSyntaxProtocol,
+        conformingTo protocols: [TypeSyntax],
+        in context: some MacroExpansionContext
+    ) throws -> [ExtensionDeclSyntax] {
+        let extensionSyntax = try ExtensionDeclSyntax("extension \(type): Godot.Exposable") {}
+        
+        return [extensionSyntax]
     }
 }
