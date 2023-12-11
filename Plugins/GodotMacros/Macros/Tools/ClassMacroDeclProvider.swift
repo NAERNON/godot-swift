@@ -160,14 +160,14 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 super.init()
             
                 if !(self is Exposable) {
-                    __reference()
+                    _ = __reference()
                 }
             }
             
             internal override init(objectPointer: UnsafeMutableRawPointer) {
                 super.init(objectPointer: objectPointer)
             
-                __reference()
+                _ = __reference()
             }
             
             deinit {
