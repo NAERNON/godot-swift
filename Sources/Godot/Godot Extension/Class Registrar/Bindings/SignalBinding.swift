@@ -44,7 +44,8 @@ extension ClassRegistrar {
                 return
             }
             
-            properties[index].withGodotExtensionPropertyInfo { propertyInfo in
+            var propertyInfo = properties[index]
+            propertyInfo.withGodotExtensionPropertyInfo { propertyInfo in
                 withGodotExtensionPropertiesInfo(properties: properties, index: index + 1) { propertiesInfo in
                     body([propertyInfo] + propertiesInfo)
                 }

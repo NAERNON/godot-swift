@@ -83,7 +83,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
         }
         
         return """
-        private let extensionObjectPtr: UnsafeMutableRawPointer
+        internal let extensionObjectPtr: UnsafeMutableRawPointer
         """
     }
     
@@ -122,7 +122,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                     "Trying to instantiate a class not marked '@Exposable'")
                 
                 if self is Exposable {
-                    Self.exposedClassName.withUnsafeRawPointer { classNamePtr in
+                    Self.exposedClassName.withGodotUnsafeRawPointer { classNamePtr in
                         gdextension_interface_object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
                     }
                 }
@@ -143,15 +143,9 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             }
             
             private class func makeNewExtensionObjectPtr() -> UnsafeMutableRawPointer {
-                Self.lastDerivedExposedClassName.withUnsafeRawPointer { namePtr in
+                Self.lastDerivedExposedClassName.withGodotUnsafeRawPointer { namePtr in
                     gdextension_interface_classdb_construct_object(namePtr)!
                 }
-            }
-            
-            public func withUnsafeRawPointer<Result>(
-                _ body: (GDExtensionObjectPtr) throws -> Result
-            ) rethrows -> Result {
-                try body(extensionObjectPtr)
             }
             """
         case .refCountedRoot:
@@ -173,14 +167,10 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             deinit {
                 if self is Exposable {
                     if !isPointerFreed {
-                        self.withUnsafeRawPointer { __ptr_self in
-                            gdextension_interface_mem_free(__ptr_self)
-                        }
+                        gdextension_interface_mem_free(extensionObjectPtr)
                     }
                 } else if __unreference() {
-                    self.withUnsafeRawPointer { __ptr_self in
-                        gdextension_interface_mem_free(__ptr_self)
-                    }
+                    gdextension_interface_mem_free(extensionObjectPtr)
                 }
             }
             

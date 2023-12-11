@@ -12,10 +12,10 @@ extension GodotExtension {
         guard let instancePtr else { return }
         
         let instance = Unmanaged<Value>.fromOpaque(instancePtr).takeUnretainedValue()
-        var godotStringDescription = GodotString(describing: instance)
+        let godotStringDescription = GodotString(describing: instance)
         
         isValid?.pointee = 1
-        godotStringDescription.consumeByGodot(ontoUnsafePointer: out!)
+        godotStringDescription.consumeByGodot(onto: out!)
     }
     
     // MARK: Make new instance
@@ -24,7 +24,7 @@ extension GodotExtension {
         of _: Value.Type
     ) -> UnsafeMutableRawPointer
     where Value : Exposable {
-        Value().withUnsafeRawPointer { $0 }
+        Value().withGodotUnsafeMutableRawPointer { $0 }
     }
     
     public static func makeNewInstanceManagedByGodot<Value>(
@@ -35,7 +35,7 @@ extension GodotExtension {
         
         _ = Unmanaged.passRetained(instance)
         
-        return instance.withUnsafeRawPointer { $0 }
+        return instance.withGodotUnsafeMutableRawPointer { $0 }
     }
     
     // MARK: Free instance

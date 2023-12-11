@@ -27,6 +27,20 @@ public struct EditorHint {
     /// Removes any Godot editor hint.
     public static let none: EditorHint = .init(hint: .none, string: .init())
     
+    // MARK: Type
+    
+    /// Hints that a property is of a given type.
+    ///
+    /// This can be used to specify the type of elements in an array.
+    public static func valueType<Value>(
+        _ type: Value.Type
+    ) -> EditorHint where Value : ExposableValue {
+        self.init(
+            hint: .typeString,
+            string: "\(Value.variantRepresentationType.storageType.rawValue)/\(Value.variantRepresentationType.storageType.rawValue):\(Value.exposedClassName)"
+        )
+    }
+    
     // MARK: Range
     
     /// A set of options for range hinting.
@@ -353,7 +367,7 @@ public struct EditorHint {
     public static func resource(_ type: Resource.Type) -> EditorHint {
         .init(
             hint: .resourceType,
-            string: GodotString(stringName: type._$lastDerivedClassName)
+            string: GodotString(stringName: type.lastDerivedExposedClassName)
         )
     }
     
@@ -406,6 +420,15 @@ extension EditorHint {
         at _: KeyPath<Class, Variable>
     ) -> EditorHint where Variable : GodotOptionSet {
         return .optionSet(Variable.self)
+    }
+    
+    public static func _defaultForValue<Class, Variable>(
+        at _: KeyPath<Class, Variable>
+    ) -> EditorHint
+    where Variable : Collection,
+          Variable.Element : ExposableValue
+    {
+        return .valueType(Variable.Element.self)
     }
     
     public static func _defaultForValue<Class, Variable>(

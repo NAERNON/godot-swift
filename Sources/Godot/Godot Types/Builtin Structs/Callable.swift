@@ -14,10 +14,6 @@ extension Callable {
         self = Self._constructor_object_godotstringname(object: object, method: method)
     }
     
-    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_callable(from: godotExtensionPointer)
-    }
-    
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {

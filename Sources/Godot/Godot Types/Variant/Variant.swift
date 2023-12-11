@@ -52,15 +52,26 @@ public final class Variant {
     // MARK: Handle data
     
     /// Copies the variant to the given destination.
-    public func consumeByGodot(ontoUnsafePointer destination: GDExtensionVariantPtr) {
+    public func consumeByGodot(onto destination: GDExtensionVariantPtr) {
         storage.consumeByGodot(ontoUnsafePointer: destination)
     }
     
     /// Calls a closure with an extension type pointer of the underlying object.
-    public func withUnsafeRawPointer<Result>(
-        _ body: (GDExtensionVariantPtr) throws -> Result
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
     ) rethrows -> Result {
-        try storage.withUnsafeRawPointer(body)
+        try storage.withGodotUnsafeRawPointer {
+            try body($0)
+        }
+    }
+    
+    /// Calls a closure with an extension type pointer of the underlying object.
+    func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withGodotUnsafeMutableRawPointer {
+            try body($0)
+        }
     }
     
     /// Calls a closure with a storage of the given value.
@@ -79,10 +90,20 @@ public final class Variant {
         _ body: (GDExtensionVariantPtr) throws -> Result
     ) rethrows -> Result where Value : VariantStorableIn {
         try Value.withValueStorage(value) { storage in
-            try storage.withUnsafeRawPointer { rawPointer in
+            try storage.withGodotUnsafeMutableRawPointer { rawPointer in
                 try body(rawPointer)
             }
         }
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        let value = Self()
+        value.withGodotUnsafeMutableRawPointer(body)
+        return value
+    }
+    
+    static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self(godotExtensionPointer: unsafePointer!)
     }
     
     // MARK: Tools

@@ -14,10 +14,6 @@ extension Signal {
         self = Self._constructor_object_godotstringname(object: object, signal: signal)
     }
     
-    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_signal(from: godotExtensionPointer)
-    }
-    
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {

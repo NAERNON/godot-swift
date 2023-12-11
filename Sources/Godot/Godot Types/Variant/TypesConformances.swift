@@ -10,7 +10,7 @@ extension Bool: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_bool(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -21,13 +21,39 @@ extension Bool: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = UInt8()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_bool(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue != 0
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -39,7 +65,7 @@ private var toTypeConstructor_int = gdextension_interface_get_variant_to_type_co
 extension Int: ExposableValue {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -50,13 +76,39 @@ extension Int: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -65,7 +117,7 @@ extension Int8: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -76,13 +128,39 @@ extension Int8: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -91,7 +169,7 @@ extension Int16: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -102,13 +180,39 @@ extension Int16: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -117,7 +221,7 @@ extension Int32: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -128,13 +232,39 @@ extension Int32: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -143,7 +273,7 @@ extension Int64: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -154,13 +284,39 @@ extension Int64: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -169,7 +325,7 @@ extension UInt8: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -180,20 +336,46 @@ extension UInt8: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
 extension UInt: ExposableValue {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -204,13 +386,39 @@ extension UInt: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -219,7 +427,7 @@ extension UInt16: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -230,13 +438,39 @@ extension UInt16: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -245,7 +479,7 @@ extension UInt32: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -256,13 +490,39 @@ extension UInt32: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -271,7 +531,7 @@ extension UInt64: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_int(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -282,13 +542,39 @@ extension UInt64: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_int(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -302,7 +588,7 @@ extension Double: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -313,13 +599,39 @@ extension Double: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Self()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -330,7 +642,7 @@ extension Float: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: Double(value)) { otherNativeTypePtr in
                 fromTypeConstructor_float(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -341,13 +653,39 @@ extension Float: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Double()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_float(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return Float(newValue)
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -361,8 +699,8 @@ extension GodotString: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_string(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -370,15 +708,19 @@ extension GodotString: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = GodotString()
+        var newValue = GodotString()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_string(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_godotstring(from: unsafePointer!)
     }
 }
 
@@ -392,7 +734,7 @@ extension Vector2: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -403,13 +745,39 @@ extension Vector2: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector2()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -423,7 +791,7 @@ extension Vector2i: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -434,13 +802,39 @@ extension Vector2i: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector2i()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -454,7 +848,7 @@ extension Rect2: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_rect2(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -465,13 +859,39 @@ extension Rect2: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Rect2()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_rect2(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -485,7 +905,7 @@ extension Rect2i: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_rect2i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -496,13 +916,39 @@ extension Rect2i: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Rect2i()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_rect2i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -516,7 +962,7 @@ extension Vector3: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector3(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -527,13 +973,39 @@ extension Vector3: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector3()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector3(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -547,7 +1019,7 @@ extension Vector3i: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector3i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -558,13 +1030,39 @@ extension Vector3i: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector3i()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector3i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -578,7 +1076,7 @@ extension Transform2D: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_transform2D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -589,13 +1087,39 @@ extension Transform2D: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Transform2D()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_transform2D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -609,7 +1133,7 @@ extension Vector4: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector4(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -620,13 +1144,39 @@ extension Vector4: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector4()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector4(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -640,7 +1190,7 @@ extension Vector4i: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_vector4i(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -651,13 +1201,39 @@ extension Vector4i: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Vector4i()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_vector4i(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -671,7 +1247,7 @@ extension Plane: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_plane(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -682,13 +1258,39 @@ extension Plane: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Plane()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_plane(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -702,7 +1304,7 @@ extension Quaternion: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_quaternion(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -713,13 +1315,39 @@ extension Quaternion: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Quaternion()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_quaternion(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -733,7 +1361,7 @@ extension AABB: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_aabb(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -744,13 +1372,39 @@ extension AABB: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = AABB()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_aabb(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -764,7 +1418,7 @@ extension Basis: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_basis(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -775,13 +1429,39 @@ extension Basis: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Basis()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_basis(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -795,7 +1475,7 @@ extension Transform3D: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_transform3D(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -806,13 +1486,39 @@ extension Transform3D: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Transform3D()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_transform3D(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -826,7 +1532,7 @@ extension Projection: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_projection(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -837,13 +1543,39 @@ extension Projection: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Projection()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_projection(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -857,7 +1589,7 @@ extension Color: ExposableValue {
     
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafePointer(to: value) { otherNativeTypePtr in
                 fromTypeConstructor_color(extensionTypePtr, UnsafeMutableRawPointer(mutating: otherNativeTypePtr))
             }
@@ -868,13 +1600,39 @@ extension Color: ExposableValue {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var newValue = Color()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             withUnsafeMutablePointer(to: &newValue) { otherNativeTypePtr in
                 toTypeConstructor_color(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        unsafePointer!.load(as: Self.self)
+    }
+    
+    func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafePointer(to: self) { try body($0) }
+    }
+    
+    mutating func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try withUnsafeMutablePointer(to: &self) { try body($0) }
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        destinationUnsafePointer.storeBytes(of: self, as: Self.self)
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var value = Self()
+        withUnsafeMutablePointer(to: &value) { body($0) }
+        return value
     }
 }
 
@@ -888,8 +1646,8 @@ extension GodotStringName: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_stringName(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -897,15 +1655,19 @@ extension GodotStringName: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = GodotStringName()
+        var newValue = GodotStringName()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_stringName(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_godotstringname(from: unsafePointer!)
     }
 }
 
@@ -919,8 +1681,8 @@ extension NodePath: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_nodePath(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -928,15 +1690,19 @@ extension NodePath: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = NodePath()
+        var newValue = NodePath()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_nodePath(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_nodepath(from: unsafePointer!)
     }
 }
 
@@ -950,8 +1716,8 @@ extension RID: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_rid(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -959,15 +1725,19 @@ extension RID: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = RID()
+        var newValue = RID()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_rid(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_rid(from: unsafePointer!)
     }
 }
 
@@ -992,8 +1762,8 @@ extension Object: VariantStorable {
     
     public final class func convertToStorage(_ value: consuming Object) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeRawPointer { otherNativeTypePtr in
                 withUnsafePointer(to: otherNativeTypePtr) { pointer in
                     fromTypeConstructor_object(extensionTypePtr, UnsafeMutableRawPointer(mutating: pointer))
                 }
@@ -1005,7 +1775,7 @@ extension Object: VariantStorable {
     public final class func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
         var instancePtr = UnsafeMutableRawPointer(bitPattern: 0)
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             toTypeConstructor_object(&instancePtr, extensionTypePtr)
         }
         
@@ -1021,7 +1791,7 @@ extension Object: VariantStorable {
         
         var instancePtr = UnsafeMutableRawPointer(bitPattern: 0)
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             toTypeConstructor_object(&instancePtr, extensionTypePtr)
         }
         
@@ -1030,6 +1800,24 @@ extension Object: VariantStorable {
         }
         
         return instance
+    }
+    
+    public func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try body(extensionObjectPtr)
+    }
+    
+    public func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try body(extensionObjectPtr)
+    }
+    
+    public consuming func consumeByGodot(
+        onto destinationUnsafePointer: UnsafeMutableRawPointer
+    ) {
+        gdextension_interface_ref_set_object(destinationUnsafePointer, extensionObjectPtr)
     }
 }
 
@@ -1042,6 +1830,55 @@ extension Optional: VariantStorable where Wrapped : Object {
 extension Optional: ExposableValue where Wrapped : Object {
     public static var variantRepresentationType: Variant.RepresentationType { .object }
     public static var exposedClassName: GodotStringName { Wrapped.exposedClassName }
+    
+    public func withGodotUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer?) throws -> Result
+    ) rethrows -> Result {
+        switch self {
+        case .none:
+            try body(nil)
+        case .some(let wrapped):
+            try wrapped.withGodotUnsafeRawPointer(body)
+        }
+    }
+    
+    public func withGodotUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer?) throws -> Result
+    ) rethrows -> Result {
+        switch self {
+        case .none:
+            try body(nil)
+        case .some(let wrapped):
+            try wrapped.withGodotUnsafeMutableRawPointer(body)
+        }
+    }
+    
+    public consuming func consumeByGodot(
+        onto destinationUnsafePointer: UnsafeMutableRawPointer
+    ) {
+        switch self {
+        case .none:
+            gdextension_interface_ref_set_object(destinationUnsafePointer, nil)
+        case .some(let wrapped):
+            wrapped.consumeByGodot(onto: destinationUnsafePointer)
+        }
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        if let unsafePointer {
+            Wrapped.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(unsafePointer))
+        } else {
+            Wrapped.retrievedInstanceManagedByGodot(nil)
+        }
+    }
+    
+    static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        var objectPointer: UnsafeMutableRawPointer!
+        withUnsafeMutablePointer(to: &objectPointer) { pointer in
+            body(pointer)
+        }
+        return Wrapped.retrievedInstanceManagedByGodot(objectPointer)
+    }
 }
 
 // MARK: - Callable
@@ -1054,8 +1891,8 @@ extension Callable: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_callable(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1063,15 +1900,19 @@ extension Callable: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = Callable()
+        var newValue = Callable()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_callable(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_callable(from: unsafePointer!)
     }
 }
 
@@ -1085,8 +1926,8 @@ extension Signal: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_signal(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1094,15 +1935,19 @@ extension Signal: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = Signal()
+        var newValue = Signal()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_signal(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_signal(from: unsafePointer!)
     }
 }
 
@@ -1114,8 +1959,8 @@ private var toTypeConstructor_dictionary = gdextension_interface_get_variant_to_
 extension GodotDictionary: VariantStorableIn {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_dictionary(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1127,10 +1972,10 @@ extension GodotDictionary: VariantStorableOut
 where Key == Variant, AssociatedValue == Variant
 {
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = GodotDictionary()
+        var newValue = GodotDictionary()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_dictionary(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
@@ -1149,6 +1994,10 @@ extension GodotDictionary: ExposableValue
 where Key == Variant, AssociatedValue == Variant
 {
     public static var variantRepresentationType: Variant.RepresentationType { .dictionary }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_godotdictionary(from: unsafePointer!)
+    }
 }
 
 // MARK: - GodotArray
@@ -1182,8 +2031,8 @@ extension GodotArray: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1231,15 +2080,19 @@ extension GodotArray: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = GodotArray()
+        var newValue = GodotArray()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_godotarray(from: unsafePointer!)
     }
 }
 
@@ -1253,8 +2106,8 @@ extension PackedByteArray: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedByteArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1262,15 +2115,19 @@ extension PackedByteArray: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = PackedByteArray()
+        var newValue = PackedByteArray()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedByteArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_packedbytearray(from: unsafePointer!)
     }
 }
 
@@ -1284,8 +2141,8 @@ extension PackedInt32Array: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedInt32Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1293,15 +2150,19 @@ extension PackedInt32Array: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = PackedInt32Array()
+        var newValue = PackedInt32Array()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedInt32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_packedint32array(from: unsafePointer!)
     }
 }
 
@@ -1315,8 +2176,8 @@ extension PackedInt64Array: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedInt64Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1324,15 +2185,19 @@ extension PackedInt64Array: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = PackedInt64Array()
+        var newValue = PackedInt64Array()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedInt64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_packedint64array(from: unsafePointer!)
     }
 }
 
@@ -1346,8 +2211,8 @@ extension PackedFloat32Array: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedFloat32Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1355,15 +2220,19 @@ extension PackedFloat32Array: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = PackedFloat32Array()
+        var newValue = PackedFloat32Array()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedFloat32Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_packedfloat32array(from: unsafePointer!)
     }
 }
 
@@ -1377,8 +2246,8 @@ extension PackedFloat64Array: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedFloat64Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1386,15 +2255,19 @@ extension PackedFloat64Array: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = PackedFloat64Array()
+        var newValue = PackedFloat64Array()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedFloat64Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_packedfloat64array(from: unsafePointer!)
     }
 }
 
@@ -1408,8 +2281,8 @@ extension PackedStringArray: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedStringArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1417,15 +2290,19 @@ extension PackedStringArray: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = PackedStringArray()
+        var newValue = PackedStringArray()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedStringArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_packedstringarray(from: unsafePointer!)
     }
 }
 
@@ -1439,8 +2316,8 @@ extension PackedVector2Array: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedVector2Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1448,15 +2325,19 @@ extension PackedVector2Array: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = PackedVector2Array()
+        var newValue = PackedVector2Array()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedVector2Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_packedvector2array(from: unsafePointer!)
     }
 }
 
@@ -1470,8 +2351,8 @@ extension PackedVector3Array: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedVector3Array(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1479,15 +2360,19 @@ extension PackedVector3Array: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = PackedVector3Array()
+        var newValue = PackedVector3Array()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedVector3Array(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_packedvector3array(from: unsafePointer!)
     }
 }
 
@@ -1501,8 +2386,8 @@ extension PackedColorArray: ExposableValue {
     
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
         let variant = Variant.Storage()
-        variant.withUnsafeRawPointer { extensionTypePtr in
-            value.withUnsafeRawPointer { otherNativeTypePtr in
+        variant.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            value.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 fromTypeConstructor_packedColorArray(extensionTypePtr, otherNativeTypePtr)
             }
         }
@@ -1510,15 +2395,19 @@ extension PackedColorArray: ExposableValue {
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Self {
-        let newValue = PackedColorArray()
+        var newValue = PackedColorArray()
         
-        storage.withUnsafeRawPointer { extensionTypePtr in
-            newValue.withUnsafeRawPointer { otherNativeTypePtr in
+        storage.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+            newValue.withGodotUnsafeMutableRawPointer { otherNativeTypePtr in
                 toTypeConstructor_packedColorArray(UnsafeMutableRawPointer(otherNativeTypePtr), extensionTypePtr)
             }
         }
         
         return newValue
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self._ptr_constructor_packedcolorarray(from: unsafePointer!)
     }
 }
 

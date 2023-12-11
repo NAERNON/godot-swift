@@ -17,10 +17,6 @@ extension PackedVector3Array {
         self = Self._constructor_godotarray(from: array)
     }
     
-    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_packedvector3array(from: godotExtensionPointer)
-    }
-    
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {

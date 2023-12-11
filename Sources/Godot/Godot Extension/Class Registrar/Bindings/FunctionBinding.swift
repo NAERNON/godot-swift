@@ -114,7 +114,8 @@ extension ClassRegistrar {
                 return
             }
             
-            properties[index].withGodotExtensionPropertyInfo { propertyInfo in
+            var propertyInfo = properties[index]
+            propertyInfo.withGodotExtensionPropertyInfo { propertyInfo in
                 withGodotExtensionPropertiesInfo(properties: properties, index: index + 1) { propertiesInfo in
                     body([propertyInfo] + propertiesInfo)
                 }
@@ -160,7 +161,7 @@ extension ClassRegistrar {
                 return
             }
             
-            arguments[index].withUnsafeRawPointer { variantPtr in
+            arguments[index].withGodotUnsafeMutableRawPointer { variantPtr in
                 withLastDefaultArguments(arguments, index: index + 1) { variantPtrs in
                     body([variantPtr] + variantPtrs)
                 }

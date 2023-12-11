@@ -38,21 +38,31 @@ public enum GodotOpaqueBuiltinClassMacro: MemberMacro {
             self.opaque = self.withCopiedOpaque().opaque
         }
         
-        public func withUnsafeRawPointer < Result > (
-            _ body: (GDExtensionTypePtr) throws -> Result
+        public consuming func consumeByGodot(
+            onto destinationUnsafePointer: UnsafeMutableRawPointer
+        ) {
+            opaque.withUnsafeMutableRawPointer { ptr in
+                destinationUnsafePointer.copyMemory(from: ptr, byteCount: opaque.size)
+            }
+            opaque.destructorPtr = nil
+        }
+        
+        public func withGodotUnsafeRawPointer<Result>(
+            _ body: (UnsafeRawPointer) throws -> Result
+        ) rethrows -> Result {
+            try opaque.withUnsafeMutableRawPointer { try body($0) }
+        }
+        
+        public mutating func withGodotUnsafeMutableRawPointer<Result>(
+            _ body: (UnsafeMutableRawPointer) throws -> Result
         ) rethrows -> Result {
             try opaque.withUnsafeMutableRawPointer(body)
         }
         
-        /// Passes the memory management of this instance onto Godot.
-        ///
-        /// There is a risk of memory leaking if not correctly used.
-        internal mutating func consumeByGodot(ontoUnsafePointer destination: UnsafeMutableRawPointer) {
-            replaceOpaqueValueIfNecessary()
-            opaque.withUnsafeMutableRawPointer { ptr in
-                destination.copyMemory(from: ptr, byteCount: opaque.size)
-            }
-            opaque.destructorPtr = nil
+        static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+            let value = Self()
+            value.opaque.withUnsafeMutableRawPointer(body)
+            return value
         }
         """)
         

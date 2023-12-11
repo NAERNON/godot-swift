@@ -65,10 +65,23 @@ extension Variant {
         }
         
         /// Calls a closure with an extension type pointer of the underlying object.
-        public func withUnsafeRawPointer<Result>(
-            _ body: (GDExtensionVariantPtr) throws -> Result
+        public func withGodotUnsafeRawPointer<Result>(
+            _ body: (UnsafeRawPointer) throws -> Result
         ) rethrows -> Result {
             try body(rawData)
+        }
+        
+        /// Calls a closure with an extension type pointer of the underlying object.
+        public func withGodotUnsafeMutableRawPointer<Result>(
+            _ body: (UnsafeMutableRawPointer) throws -> Result
+        ) rethrows -> Result {
+            try body(rawData)
+        }
+        
+        static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+            let value = Self()
+            value.withGodotUnsafeMutableRawPointer(body)
+            return value
         }
         
         // MARK: Tools
@@ -93,9 +106,9 @@ extension Variant {
         }
         
         public var description: String {
-            let string = GodotString()
+            var string = GodotString()
             
-            string.withUnsafeRawPointer { stringNativeTypePtr in
+            string.withGodotUnsafeMutableRawPointer { stringNativeTypePtr in
                 gdextension_interface_variant_stringify(rawData, stringNativeTypePtr)
             }
             
@@ -134,9 +147,9 @@ extension Variant {
             var isValid: GDExtensionBool = 0
             let returnVariant = Variant.Storage()
             
-            self.withUnsafeRawPointer { extensionTypePtr in
-                other.withUnsafeRawPointer { otherNativeTypePtr in
-                    returnVariant.withUnsafeRawPointer { returnNativeTypePtr in
+            self.withGodotUnsafeRawPointer { extensionTypePtr in
+                other.withGodotUnsafeRawPointer { otherNativeTypePtr in
+                    returnVariant.withGodotUnsafeMutableRawPointer { returnNativeTypePtr in
                         gdextension_interface_variant_evaluate(
                             `operator`.godotOperator,
                             extensionTypePtr,

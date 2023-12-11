@@ -17,10 +17,6 @@ extension PackedFloat64Array {
         self = Self._constructor_godotarray(from: array)
     }
     
-    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_packedfloat64array(from: godotExtensionPointer)
-    }
-    
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {

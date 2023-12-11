@@ -14,10 +14,6 @@ extension NodePath {
         self = Self._constructor_godotstring(from: string)
     }
     
-    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_nodepath(from: godotExtensionPointer)
-    }
-        
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {

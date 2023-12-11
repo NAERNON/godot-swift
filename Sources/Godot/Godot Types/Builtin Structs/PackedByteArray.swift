@@ -17,12 +17,8 @@ extension PackedByteArray {
         self = Self._constructor_godotarray(from: array)
     }
     
-    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_packedbytearray(from: godotExtensionPointer)
-    }
-    
-    public func withUnsafeBytesArray(_ body: (UnsafeMutablePointer<UInt8>?) -> Void) {
-        self.withUnsafeRawPointer { extensionTypePtr in
+    public mutating func withUnsafeBytesArray(_ body: (UnsafeMutablePointer<UInt8>?) -> Void) {
+        self.withGodotUnsafeMutableRawPointer { extensionTypePtr in
             body(gdextension_interface_packed_byte_array_operator_index(extensionTypePtr, 0))
         }
     }

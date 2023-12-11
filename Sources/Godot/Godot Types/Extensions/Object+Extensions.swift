@@ -28,40 +28,6 @@ extension Object {
         
         return instance as? Self
     }
-    
-    /// Passes the memory management of this instance onto Godot.
-    ///
-    /// There is a risk of memory leaking if not correctly used.
-    internal func consumeByGodot(ontoUnsafePointer destination: UnsafeMutableRawPointer) {
-        withUnsafeRawPointer { selfPtr in
-            gdextension_interface_ref_set_object(destination, selfPtr)
-        }
-    }
-}
-
-extension Optional where Wrapped : Object {
-    public func withUnsafeRawPointer<Result>(
-        _ body: (GDExtensionObjectPtr?) throws -> Result
-    ) rethrows -> Result {
-        switch self {
-        case .none:
-            try body(nil)
-        case .some(let wrapped):
-            try wrapped.withUnsafeRawPointer { try body($0) }
-        }
-    }
-    
-    /// Passes the memory management of this instance onto Godot.
-    ///
-    /// There is a risk of memory leaking if not correctly used.
-    internal func consumeByGodot(ontoUnsafePointer destination: UnsafeMutableRawPointer) {
-        switch self {
-        case .none:
-            gdextension_interface_ref_set_object(destination, nil)
-        case .some(let wrapped):
-            wrapped.consumeByGodot(ontoUnsafePointer: destination)
-        }
-    }
 }
 
 extension Object: Equatable {

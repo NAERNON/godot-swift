@@ -72,7 +72,7 @@ private func withUnsafeVarargArgumentPointers(
         return
     }
     
-    first.withUnsafeRawPointer { ptr in
+    first.withGodotUnsafeMutableRawPointer { ptr in
         withUnsafeVarargArgumentPointers(to: arguments.dropFirst()) { pointers in
             body([ptr] + pointers)
         }

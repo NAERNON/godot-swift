@@ -17,10 +17,6 @@ extension PackedInt32Array {
         self = Self._constructor_godotarray(from: array)
     }
     
-    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_packedint32array(from: godotExtensionPointer)
-    }
-    
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {

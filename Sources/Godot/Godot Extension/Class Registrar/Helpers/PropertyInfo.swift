@@ -2,12 +2,12 @@ import GodotExtensionHeaders
 
 extension ClassRegistrar {
     struct PropertyInfo {
-        let variantRepresentationType: Variant.RepresentationType
-        let name: GodotStringName
-        let className: GodotStringName
-        let hint: PropertyHint
-        let hintString: GodotString
-        let defaultValue: Variant?
+        var variantRepresentationType: Variant.RepresentationType
+        var name: GodotStringName
+        var className: GodotStringName
+        var hint: PropertyHint
+        var hintString: GodotString
+        var defaultValue: Variant?
         private let usage: UInt32
         
         static let none = PropertyInfo(
@@ -47,10 +47,10 @@ extension ClassRegistrar {
             self.usage = usageFlags.reduce(0, { $0 | $1.rawValue })
         }
         
-        func withGodotExtensionPropertyInfo(_ body: (GDExtensionPropertyInfo) -> Void) {
-            name.withUnsafeRawPointer { namePtr in
-                className.withUnsafeRawPointer { classNamePtr in
-                    hintString.withUnsafeRawPointer { hintStringPtr in
+        mutating func withGodotExtensionPropertyInfo(_ body: (GDExtensionPropertyInfo) -> Void) {
+            name.withGodotUnsafeMutableRawPointer { namePtr in
+                className.withGodotUnsafeMutableRawPointer { classNamePtr in
+                    hintString.withGodotUnsafeMutableRawPointer { hintStringPtr in
                         let info = GDExtensionPropertyInfo(
                             type: variantRepresentationType.storageType.extensionType,
                             name: namePtr,

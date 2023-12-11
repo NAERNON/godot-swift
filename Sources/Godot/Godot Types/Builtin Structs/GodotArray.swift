@@ -14,10 +14,6 @@ extension GodotArray {
         setTypedIfApplicable()
     }
     
-    public init(godotExtensionPointer: GDExtensionConstTypePtr) {
-        self = Self._ptr_constructor_godotarray(from: godotExtensionPointer)
-    }
-    
     // MARK: Copy
     
     internal mutating func withCopiedOpaque() -> Self {
@@ -26,14 +22,14 @@ extension GodotArray {
     
     // MARK: Type
     
-    private func setTypedIfApplicable() {
+    private mutating func setTypedIfApplicable() {
         guard let storageType = Element.variantStorageType else {
             return
         }
         
-        withUnsafeRawPointer { ptr in
-            Element.exposedClassName.withUnsafeRawPointer { classNamePtr in
-                Variant().withUnsafeRawPointer { scriptPtr in
+        withGodotUnsafeMutableRawPointer { ptr in
+            Element.exposedClassName.withGodotUnsafeRawPointer { classNamePtr in
+                Variant().withGodotUnsafeRawPointer { scriptPtr in
                     // TODO: Check script (last parameter)
                     gdextension_interface_array_set_typed(
                         ptr,

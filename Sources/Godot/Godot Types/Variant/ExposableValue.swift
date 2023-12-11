@@ -7,7 +7,17 @@ public protocol ExposableValue: VariantStorable {
     /// The variant representation type this type
     /// is converted to.
     static var variantRepresentationType: Variant.RepresentationType { get }
+    
+    /// TODO: this
+    consuming func consumeByGodot(
+        onto destinationUnsafePointer: UnsafeMutableRawPointer
+    )
+    
+    /// Creates or retrieves an instance from a given Godot pointer.
+    static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self
 }
+
+// MARK: - Default implementation
 
 public extension ExposableValue {
     static var variantStorageType: Variant.StorageType? {
