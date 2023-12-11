@@ -51,7 +51,7 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
     func extensionFunctionPointerSyntax() -> DeclSyntax {
         """
         private var \(raw: ptrIdentifier): GDExtensionPtrUtilityFunction = {
-            GodotStringName(swiftStaticString: \(literal: baseName)).withUnsafeRawPointer { __ptr__method_name in
+            GodotStringName(swiftStaticString: \(literal: baseName)).withGodotUnsafeRawPointer { __ptr__method_name in
             return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, \(literal: hash))!
             }
         }()
@@ -63,15 +63,9 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
         
         return try withNamePrefixed(by: "_").translated.declSyntax(options: options, keywords: .internal) {
             if let returnType = returnType {
-                try returnType.instantiationSyntax(options: options) { instanceType, instanceName in
+                try returnType.instantiationSyntax(options: options) { instancePtr in
                     try translated.argumentsPackPointerAccessSyntax(options: options) { packName in
-                        try instanceType.pointerAccessSyntax(
-                            instanceName: instanceName,
-                            options: options,
-                            mutability: .mutable
-                        ) { instancePointerName in
-                            "\(raw: ptrIdentifier)(\(raw: instancePointerName), \(raw: packName), \(raw: argumentsCountSyntax(type: Int32.self)))"
-                        }
+                        "\(raw: ptrIdentifier)(\(raw: instancePtr), \(raw: packName), \(raw: argumentsCountSyntax(type: Int32.self)))"
                     }
                 }
             } else {

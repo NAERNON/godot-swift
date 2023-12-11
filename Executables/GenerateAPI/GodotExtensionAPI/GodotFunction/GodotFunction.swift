@@ -276,7 +276,7 @@ extension GodotFunction {
     /// - Parameters:
     ///   - options: The options for type syntax.
     ///   - forcePackCreation: A Boolean value indicating whether the
-    ///   pack sould be created,
+    ///   pack should be created,
     ///   even if no argument is inside the pack.
     ///   - bodyBuilder: The content syntax.
     ///
@@ -312,41 +312,21 @@ extension GodotFunction {
         
         return try argumentsPointerAccessSyntax(options: options) { pointerNames in
             if isVararg {
-                let closure = try ClosureExprSyntax(
-                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
-                        "packCount, \(raw: packName)"
-                    ])))
-                ) {
-                    try bodyBuilder(packName)
-                }
-                
-                let functionName = if pointerNames.isEmpty {
-                    "withUnsafeArgumentPackPointer(varargs: repeat each \(varargArgumentIdentifier))"
+                if pointerNames.isEmpty {
+                    "withUnsafeArgumentPackPointer(varargs: repeat each \(raw: varargArgumentIdentifier)) { packCount, \(raw: packName) in"
                 } else {
-                    "withUnsafeArgumentPackPointer(\(pointerNames.joined(separator: ", ")), varargs: repeat each \(varargArgumentIdentifier))"
+                    "withUnsafeArgumentPackPointer(\(raw: pointerNames.joined(separator: ", ")), varargs: repeat each \(raw: varargArgumentIdentifier)) { packCount, \(raw: packName) in"
                 }
                 
-                FunctionCallExprSyntax(
-                    calledExpression: DeclReferenceExprSyntax(baseName: "\(raw: functionName)"),
-                    arguments: [],
-                    trailingClosure: closure
-                )
+                try bodyBuilder(packName)
+                
+                "}"
             } else {
-                let closure = try ClosureExprSyntax(
-                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
-                        "\(raw: packName)"
-                    ])))
-                ) {
-                    try bodyBuilder(packName)
-                }
+                "withUnsafeArgumentPackPointer(\(raw: pointerNames.joined(separator: ", "))) { \(raw: packName) in"
                 
-                let functionName = "withUnsafeArgumentPackPointer(\(pointerNames.joined(separator: ", ")))"
+                try bodyBuilder(packName)
                 
-                FunctionCallExprSyntax(
-                    calledExpression: DeclReferenceExprSyntax(baseName: "\(raw: functionName)"),
-                    arguments: [],
-                    trailingClosure: closure
-                )
+                "}"
             }
         }
     }
@@ -365,15 +345,13 @@ extension GodotFunction {
     ) throws -> CodeBlockItemListSyntax {
         if let index = indexes.first {
             let argument = arguments![index]
-            let argumentType = argument.type
-            let caller = backticksKeyword(argument.name)
             let accessThroughVariantStorage = convertsAllParameterToVariant ||
                 (usesVariantGeneric && argument.type == .variant)
             
-            try argumentType.argumentPointerAccessSyntax(
-                caller: caller,
-                instanceName: argument.name,
+            try argument.type.argumentPointerAccessSyntax(
+                instanceName: backticksKeyword(argument.name),
                 options: options,
+                mutability: .const,
                 accessThroughVariantStorage: accessThroughVariantStorage
             ) { pointerName in
                 try argumentsPointerAccessSyntax(options: options, indexes: indexes.dropFirst()) { pointerNames in

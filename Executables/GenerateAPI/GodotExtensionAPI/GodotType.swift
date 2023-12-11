@@ -535,112 +535,22 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         }
     }
     
-    /// Returns the type used for instantiating this type.
-    ///
-    /// An enum, for instance, will have an instantiation type
-    /// different from the type itself.
-    /// Instead of using the enum type, the `RawValue`
-    /// type is used.
-    func instantiationType() -> GodotType {
-        if isGodotClass {
-            return "GDExtensionObjectPtr"
-        } else if isEnum {
-            return .scope(scopeType: self, type: "RawValue")
-        } else {
-            return self
-        }
-    }
-    
     /// Returns the syntax for instantiating the type and returning it.
     ///
-    /// Use the `bodyBuilder` parameter to use the instantiated variable type and name.
-    /// For example:
-    /// ```swift
-    /// let type: GodotType = ...
-    ///
-    /// type.instantiationSyntax { instanceType, name in
-    ///     "print(\(raw: name), \(raw: instanceType.self))"
-    /// }
-    /// ```
-    ///
-    /// Returns for an `Int` type:
-    ///
-    /// ```swift
-    /// var __temporary = Int()
-    /// print(__temporary, Int.self)
-    /// return __temporary
-    /// ```
+    /// Use the `bodyBuilder` parameter to use the instantiated variable name.
     @CodeBlockItemListBuilder
     func instantiationSyntax(
         options: GodotTypeSyntaxOptions = [],
-        @CodeBlockItemListBuilder bodyBuilder: (GodotType, String) throws -> CodeBlockItemListSyntax
+        prefix: String = "",
+        @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         let variableName = "__temporary"
         
-        if isGodotClass {
-            "var \(raw: variableName): GDExtensionObjectPtr!"
-        } else if isEnum {
-            "var \(raw: variableName) = \(raw: syntax(options: options)).RawValue(0)"
-        } else if isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
-            "let \(raw: variableName) = \(raw: syntax(options: options))()"
-        } else {
-            "var \(raw: variableName) = \(raw: syntax(options: options))()"
-        }
+        "\(raw: prefix)\(raw: syntax(options: options)).fromMutatingGodotUnsafePointer { \(raw: variableName) in"
         
-        try bodyBuilder(instantiationType(), variableName)
+        try bodyBuilder(variableName)
         
-        if isGodotClass {
-            "return \(raw: syntax(options: options.subtracting(.optionalClasses))).retrievedInstanceManagedByGodot(\(raw: variableName))"
-        } else if isEnum {
-            "return \(raw: syntax(options: options))(rawValue: \(raw: variableName))!"
-        } else {
-            "return \(raw: variableName)"
-        }
-    }
-    
-    /// Returns the syntax for instantiating the type from a pointer.
-    ///
-    /// For example:
-    ///
-    /// ```swift
-    /// let intType: GodotType = ...
-    /// let syntax = intType.instantiationFromPointerSyntax(pointerName: "aPointer")
-    /// print(syntax)
-    /// // Prints "aPointer.load(as: Int.self)".
-    /// ```
-    func instantiationFromPointerSyntax(
-        pointerName: String,
-        options: GodotTypeSyntaxOptions = []
-    ) -> String {
-        if isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
-            return "\(syntax(options: options))(godotExtensionPointer: \(pointerName))"
-        } else if isGodotClass {
-            return "\(syntax(options: options.subtracting(.optionalClasses))).retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(\(pointerName)))"
-        } else {
-            return "\(pointerName).load(as: \(syntax(options: options)).self)"
-        }
-    }
-    
-    /// Returns the syntax for setting a value onto a pointer.
-    ///
-    /// For example:
-    ///
-    /// ```swift
-    /// let intType: GodotType = ...
-    /// let syntax = intType.sendToPointerSyntax(instanceName: "anInstance", pointerName: "aPointer")
-    /// print(syntax)
-    /// // Prints "aPointer.assumingMemoryBound(to: Int.self).pointee = anInstance".
-    /// ```
-    func sendToPointerSyntax(
-        instanceName: String,
-        pointerName: String,
-        options: GodotTypeSyntaxOptions = []
-    ) -> String {
-        if isBuiltinGodotClassWithOpaque || isGodotClass || self == .variant || self == .variantStorage {
-            return "\(instanceName).consumeByGodot(ontoUnsafePointer: \(pointerName))"
-        } else {
-            return "\(pointerName).assumingMemoryBound(to: \(syntax(options: options)).self).pointee = \(instanceName)"
-        }
+        "}"
     }
     
     /// The mutability of a type.
@@ -649,39 +559,15 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         case const
         /// The parameter is mutable.
         case mutable
-        /// The parameter is not mutable, but its pointer is mutable.
+        /// The parameter is not mutable, but its pointer is.
         case constMutablePointer
-    }
-    
-    /// Returns the pointer type used when accessing the pointer.
-    private func pointerAccessTypeSyntax(
-        options: GodotTypeSyntaxOptions,
-        mutability: Mutability
-    ) -> String {
-        if isGodotClass {
-            if options.contains(.optionalClasses) {
-                return "UnsafeMutableRawPointer?"
-            } else {
-                return "UnsafeMutableRawPointer"
-            }
-        } else if isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
-            return "UnsafeMutableRawPointer"
-        } else {
-            switch mutability {
-            case .const, .constMutablePointer:
-                return "UnsafePointer<\(syntax(options: options))>"
-            case .mutable:
-                return "UnsafeMutablePointer<\(syntax(options: options))>"
-            }
-        }
     }
     
     /// Returns a syntax for accessing the pointer of an instance of the type.
     ///
     /// - Parameters:
-    ///   - caller: The syntax calling the pointer.
-    ///   If nil, the `instanceName` is used as the caller.
     ///   - instanceName: The name of the instance.
+    ///   - options: The options to define how to translate the type.
     ///   - mutability: The mutability of the instance.
     ///   - accessThroughVariantStorage: A Boolean value indicating whether
     ///   the pointer is accessed through a variant storage.
@@ -689,99 +575,36 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ///   Use the value provided inside the closure to retrieve the pointer name.
     @CodeBlockItemListBuilder
     func pointerAccessSyntax(
-        caller: String? = nil,
         instanceName: String,
         options: GodotTypeSyntaxOptions,
-        mutability: Mutability = .const,
+        mutability: Mutability,
         accessThroughVariantStorage: Bool = false,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
-        let pointerName = "__ptr_" + instanceName
-        let instanceName = caller ?? backticksKeyword(instanceName)
+        var pointerName = "__ptr_" + removeBackticks(instanceName)
+        let newInstanceName = backticksKeyword(instanceName)
         
-        if accessThroughVariantStorage {
-            let closure = try ClosureExprSyntax(
-                signature: .init(parameterClause: .parameterClause(.init(parameters: [
-                    "\(raw: pointerName)"
-                ])))
-            ) {
-                try bodyBuilder(pointerName)
-            }
-            
-            FunctionCallExprSyntax(
-                calledExpression: DeclReferenceExprSyntax(baseName: "Godot.Variant.withStorageUnsafeRawPointer(to: \(raw: instanceName))"),
-                arguments: [],
-                trailingClosure: closure
-            )
-        } else if isGodotClass || isBuiltinGodotClassWithOpaque || self == .variant || self == .variantStorage {
-            let closure = try ClosureExprSyntax(
-                signature: .init(parameterClause: .parameterClause(.init(parameters: [
-                    "\(raw: pointerName)"
-                ])))
-            ) {
-                try bodyBuilder(pointerName)
-            }
-            
-            FunctionCallExprSyntax(
-                calledExpression: DeclReferenceExprSyntax(baseName: "\(raw: instanceName).withUnsafeRawPointer"),
-                arguments: [],
-                trailingClosure: closure
-            )
-        } else if isPointer {
-            try bodyBuilder(instanceName)
+        if isPointer {
+            try bodyBuilder(newInstanceName)
         } else {
-            switch mutability {
-            case .const:
-                let closure = try ClosureExprSyntax(
-                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
-                        "\(raw: pointerName)"
-                    ])))
-                ) {
-                    try bodyBuilder(pointerName)
-                }
-                
-                FunctionCallExprSyntax(
-                    calledExpression: DeclReferenceExprSyntax(
-                        baseName: "withUnsafePointer(to: \(raw: instanceName))"
-                    ),
-                    arguments: [],
-                    trailingClosure: closure
-                )
-            case .mutable:
-                let closure = try ClosureExprSyntax(
-                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
-                        "\(raw: pointerName)"
-                    ])))
-                ) {
-                    try bodyBuilder(pointerName)
-                }
-                
-                FunctionCallExprSyntax(
-                    calledExpression: DeclReferenceExprSyntax(
-                        baseName: "withUnsafeMutablePointer(to: &\(raw: instanceName))"
-                    ),
-                    arguments: [],
-                    trailingClosure: closure
-                )
-            case .constMutablePointer:
-                let closure = try ClosureExprSyntax(
-                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
-                        "_\(raw: pointerName)"
-                    ])))
-                ) {
-                    "let \(raw: pointerName) = UnsafeMutableRawPointer(mutating: _\(raw: pointerName))"
+            if accessThroughVariantStorage {
+                "Godot.Variant.withStorageUnsafeRawPointer(to: \(raw: newInstanceName)) { \(raw: pointerName) in"
+            } else {
+                switch mutability {
+                case .const:
+                    "\(raw: newInstanceName).withGodotUnsafeRawPointer { \(raw: pointerName) in"
+                case .mutable:
+                    "\(raw: newInstanceName).withGodotUnsafeMutableRawPointer { \(raw: pointerName) in"
+                case .constMutablePointer:
+                    "\(raw: newInstanceName).withGodotUnsafeRawPointer { \(raw: pointerName) in"
                     
-                    try bodyBuilder(pointerName)
+                    let _ = pointerName = "UnsafeMutableRawPointer(mutating: \(pointerName))"
                 }
-                
-                FunctionCallExprSyntax(
-                    calledExpression: DeclReferenceExprSyntax(
-                        baseName: "withUnsafePointer(to: \(raw: instanceName))"
-                    ),
-                    arguments: [],
-                    trailingClosure: closure
-                )
             }
+            
+            try bodyBuilder(pointerName)
+            
+            "}"
         }
     }
     
@@ -799,15 +622,13 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ///   Use the value provided inside the closure to retrieve the pointer name.
     @CodeBlockItemListBuilder
     func argumentPointerAccessSyntax(
-        caller: String? = nil,
         instanceName: String,
         options: GodotTypeSyntaxOptions,
-        mutability: Mutability = .const,
+        mutability: Mutability,
         accessThroughVariantStorage: Bool = false,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         try pointerAccessSyntax(
-            caller: caller,
             instanceName: instanceName,
             options: options,
             mutability: mutability,
@@ -815,21 +636,12 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         ) { pointerName in
             if isGodotClass && !accessThroughVariantStorage {
                 let newPointerName = "_ptr_" + pointerName
-                let closure = try ClosureExprSyntax(
-                    signature: .init(parameterClause: .parameterClause(.init(parameters: [
-                        "\(raw: newPointerName)"
-                    ])))
-                ) {
-                    try bodyBuilder(newPointerName)
-                }
                 
-                FunctionCallExprSyntax(
-                    calledExpression: DeclReferenceExprSyntax(
-                        baseName: "withUnsafePointer(to: \(raw: pointerName))"
-                    ),
-                    arguments: [],
-                    trailingClosure: closure
-                )
+                "withUnsafePointer(to: \(raw: pointerName)) { \(raw: newPointerName) in"
+                
+                try bodyBuilder(newPointerName)
+                
+                "}"
             } else {
                 try bodyBuilder(pointerName)
             }

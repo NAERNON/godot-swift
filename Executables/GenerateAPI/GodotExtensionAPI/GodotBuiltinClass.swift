@@ -274,7 +274,7 @@ struct GodotBuiltinClass: Decodable {
             for method in methods {
                 """
                 private var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod = {
-                    GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
+                    GodotStringName(swiftStaticString: \(literal: method.name)).withGodotUnsafeRawPointer { __ptr__method_name in
                     return gdextension_interface_variant_get_ptr_builtin_method(\(raw: name.variantRepresentationType!), __ptr__method_name, \(literal: method.hash))!
                     }
                 }()
@@ -408,20 +408,14 @@ struct GodotBuiltinClass: Decodable {
             options: syntaxOptions,
             keywords: .internal
         ) {
-            try `operator`.returnType.instantiationSyntax { instanceType, instanceName in
+            try `operator`.returnType.instantiationSyntax { instancePtr in
                 try operatorFunction.argumentsPointerAccessSyntax(options: syntaxOptions) { pointerNames in
-                    try instanceType.pointerAccessSyntax(
-                        instanceName: instanceName,
-                        options: syntaxOptions,
-                        mutability: .mutable
-                    ) { instancePtrName in
-                        let lhsPointer = pointerNames[0]
-                        let rhsPointer = `operator`.rightType == nil ? "nil" : pointerNames[1]
-                        
-                        """
-                        \(raw: `operator`.ptrIdentifier)(\(raw: lhsPointer), \(raw: rhsPointer), \(raw: instancePtrName))
-                        """
-                    }
+                    let lhsPointer = pointerNames[0]
+                    let rhsPointer = `operator`.rightType == nil ? "nil" : pointerNames[1]
+                    
+                    """
+                    \(raw: `operator`.ptrIdentifier)(\(raw: lhsPointer), \(raw: rhsPointer), \(raw: instancePtr))
+                    """
                 }
             }
         }
@@ -434,15 +428,13 @@ struct GodotBuiltinClass: Decodable {
             let indexingReturnType = indexingReturnType.storage
             
             try FunctionDeclSyntax("internal func _getValue(at index: GDExtensionInt) -> \(raw: indexingReturnType.syntax(options: syntaxOptions))") {
-                try indexingReturnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
-                    try instanceType.pointerAccessSyntax(
-                        instanceName: instanceName,
+                try indexingReturnType.instantiationSyntax(options: syntaxOptions) { instancePtr in
+                    try name.pointerAccessSyntax(
+                        instanceName: "self",
                         options: syntaxOptions,
-                        mutability: .mutable
-                    ) { instancePtr in
-                        try name.pointerAccessSyntax(instanceName: "self", options: syntaxOptions) { selfPtr in
-                            "__indexed_getter(\(raw: selfPtr), index, \(raw: instancePtr))"
-                        }
+                        mutability: .const
+                    ) { selfPtr in
+                        "__indexed_getter(\(raw: selfPtr), index, \(raw: instancePtr))"
                     }
                 }
             }
@@ -454,7 +446,8 @@ struct GodotBuiltinClass: Decodable {
                 
                 try indexingReturnType.pointerAccessSyntax(
                     instanceName: "value",
-                    options: syntaxOptions
+                    options: syntaxOptions,
+                    mutability: .const
                 ) { valuePtr in
                     try name.pointerAccessSyntax(
                         instanceName: "self",
@@ -475,9 +468,9 @@ struct GodotBuiltinClass: Decodable {
             internal func _getValue(forKey key: borrowing Variant.Storage) -> Variant.Storage {
                 let __returnValue = Variant.Storage()
                 
-                __returnValue.withUnsafeRawPointer { __ptr___returnValue in
-                    key.withUnsafeRawPointer { __ptr_key in
-                        self.withUnsafeRawPointer { __ptr_self in
+                __returnValue.withGodotUnsafeMutableRawPointer { __ptr___returnValue in
+                    key.withGodotUnsafeRawPointer { __ptr_key in
+                        self.withGodotUnsafeRawPointer { __ptr_self in
                             __keyed_getter(__ptr_self, __ptr_key, __ptr___returnValue)
                         }
                     }
@@ -489,9 +482,9 @@ struct GodotBuiltinClass: Decodable {
             internal mutating func _set(value: borrowing Variant.Storage, forKey key: borrowing Variant.Storage) {
                 replaceOpaqueValueIfNecessary()
                 
-                value.withUnsafeRawPointer { __ptr_value in
-                    key.withUnsafeRawPointer { __ptr_key in
-                        self.withUnsafeRawPointer { __ptr_self in
+                value.withGodotUnsafeRawPointer { __ptr_value in
+                    key.withGodotUnsafeRawPointer { __ptr_key in
+                        self.withGodotUnsafeMutableRawPointer { __ptr_self in
                             __keyed_setter(__ptr_self, __ptr_key, __ptr_value)
                         }
                     }
@@ -501,8 +494,8 @@ struct GodotBuiltinClass: Decodable {
             internal func _check(key: borrowing Variant.Storage) -> Bool {
                 var keyCheck = UInt32()
                 
-                key.withUnsafeRawPointer { __ptr_key in
-                    self.withUnsafeRawPointer { __ptr_self in
+                key.withGodotUnsafeRawPointer { __ptr_key in
+                    self.withGodotUnsafeRawPointer { __ptr_self in
                         keyCheck = __keyed_checker(__ptr_self, __ptr_key)
                     }
                 }
@@ -536,23 +529,17 @@ struct GodotBuiltinClass: Decodable {
             }
             
             if let returnType = translatedMethod.returnType {
-                try returnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
+                try returnType.instantiationSyntax(options: syntaxOptions, prefix: "return ") { instancePtr in
                     try translatedMethod.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
-                        try instanceType.pointerAccessSyntax(
-                            instanceName: instanceName,
-                            options: syntaxOptions,
-                            mutability: .mutable
-                        ) { instancePtr in
-                            if method.isStatic {
-                                "\(raw: method.ptrIdentifier)(nil, \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
-                            } else {
-                                try name.pointerAccessSyntax(
-                                    instanceName: "self",
-                                    options: syntaxOptions,
-                                    mutability: mutability
-                                ) { selfPtr in
-                                    "\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
-                                }
+                        if method.isStatic {
+                            "\(raw: method.ptrIdentifier)(nil, \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
+                        } else {
+                            try name.pointerAccessSyntax(
+                                instanceName: "self",
+                                options: syntaxOptions,
+                                mutability: mutability
+                            ) { selfPtr in
+                                "\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
                             }
                         }
                     }

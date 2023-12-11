@@ -290,8 +290,8 @@ struct GodotClass: Decodable {
         if generateBinding {
             """
             private static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
-                _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-                GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
+                _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+                GodotStringName(swiftStaticString: \(literal: method.name)).withGodotUnsafeRawPointer { __ptr__method_name in
                 return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))!
                 }
                 }
@@ -304,31 +304,25 @@ struct GodotClass: Decodable {
             keywords: methodIsPrivate(method) ? .private : .public
         ) {
             if let returnType = method.returnType {
-                try returnType.instantiationSyntax(options: syntaxOptions) { instanceType, instanceName in
+                try returnType.instantiationSyntax(options: syntaxOptions) { instancePtr in
                     try method.translated.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
-                        try instanceType.pointerAccessSyntax(
-                            instanceName: instanceName,
-                            options: syntaxOptions,
-                            mutability: .mutable
-                        ) { instancePtr in
-                            if method.isStatic {
+                        if method.isStatic {
+                            method.bindCall(
+                                selfExpression: "nil",
+                                argsExpression: packName,
+                                returnExpression: instancePtr
+                            )
+                        } else {
+                            try name.pointerAccessSyntax(
+                                instanceName: "self",
+                                options: syntaxOptions,
+                                mutability: .mutable
+                            ) { selfPtr in
                                 method.bindCall(
-                                    selfExpression: "nil",
+                                    selfExpression: selfPtr,
                                     argsExpression: packName,
                                     returnExpression: instancePtr
                                 )
-                            } else {
-                                try name.pointerAccessSyntax(
-                                    instanceName: "self",
-                                    options: syntaxOptions,
-                                    mutability: .constMutablePointer
-                                ) { selfPtr in
-                                    method.bindCall(
-                                        selfExpression: selfPtr,
-                                        argsExpression: packName,
-                                        returnExpression: instancePtr
-                                    )
-                                }
                             }
                         }
                     }
@@ -345,7 +339,7 @@ struct GodotClass: Decodable {
                         try name.pointerAccessSyntax(
                             instanceName: "self",
                             options: syntaxOptions,
-                            mutability: .constMutablePointer
+                            mutability: .mutable
                         ) { selfPtr in
                             method.bindCall(
                                 selfExpression: selfPtr,
@@ -490,25 +484,23 @@ struct GodotClass: Decodable {
                 for method in methodsToRegister {
                     let arguments = method.arguments ?? []
                     
-                    let isVar = method.returnValue?.type.isBuiltinGodotClassWithOpaque ?? false
-                    
                     let virtualFuncVarName = "\(method.name)_call"
                     
                     """
                     let \(raw: virtualFuncVarName): GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
                     guard let instancePtr\(raw: arguments.isEmpty ? "" : ", let args") else { return }
                     let instance = Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
-                    \(raw: isVar ? "var" : "let") \(raw: method.returnValue == nil ? "_" : "returnValue") = instance
+                    let \(raw: method.returnValue == nil ? "_" : "returnValue") = instance
                     """
                     
                     let parameters: [String] = arguments.enumerated().map { (index, argument) in
-                        argument.type.instantiationFromPointerSyntax(pointerName: "args[\(index)]!", options: syntaxOptions)
+                        "\(argument.type.syntax(options: syntaxOptions)).fromGodotUnsafePointer(args[\(index)]!)"
                     }
                     
                     ".\(method.translated.callSyntax(withParameters: parameters))"
                     
-                    if let returnType = method.returnValue?.type {
-                        "\(raw: returnType.sendToPointerSyntax(instanceName: "returnValue", pointerName: "returnPtr!", options: syntaxOptions))"
+                    if method.returnValue != nil {
+                        "returnValue.consumeByGodot(onto: returnPtr!)"
                     }
                     
                     "}"
