@@ -25,4 +25,12 @@ extension ArraySlice: ExposableValue where Element : VariantStorable {
     public static var variantRepresentationType: Variant.RepresentationType {
         .array
     }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        GodotArray(self).consumeByGodot(onto: destinationUnsafePointer)
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self(GodotArray.fromGodotUnsafePointer(unsafePointer))
+    }
 }

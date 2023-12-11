@@ -1,11 +1,11 @@
 
 extension Array: VariantStorableOut where Element : VariantStorable {
     public static func convertFromStorage(_ storage: borrowing Variant.Storage) throws -> Array<Element> {
-        try .init(GodotArray<Element>.convertFromStorage(storage))
+        try Self(GodotArray.convertFromStorage(storage))
     }
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> Array<Element> {
-        .init(GodotArray<Element>.convertFromCheckedStorage(storage))
+        Self(GodotArray.convertFromCheckedStorage(storage))
     }
 }
 
@@ -24,5 +24,13 @@ extension Array: VariantStorable where Element : VariantStorable {
 extension Array: ExposableValue where Element : VariantStorable {
     public static var variantRepresentationType: Variant.RepresentationType {
         .array
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        GodotArray(self).consumeByGodot(onto: destinationUnsafePointer)
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self(GodotArray.fromGodotUnsafePointer(unsafePointer))
     }
 }

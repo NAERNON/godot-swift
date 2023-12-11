@@ -3,7 +3,8 @@ import GodotExtensionHeaders
 extension String {
     public init(godotString: GodotString) {
         var string = ""
-        godotString._toUtf8Buffer().withUnsafeBytesArray { bytesPtr in
+        var buffer = godotString._toUtf8Buffer()
+        buffer.withUnsafeBytesArray { bytesPtr in
             if let bytesPtr {
                 string = .init(cString: bytesPtr)
             }
@@ -33,5 +34,13 @@ extension String: ExposableValue {
     
     public static func convertFromCheckedStorage(_ storage: borrowing Variant.Storage) -> String {
         String(godotString: GodotString.convertFromCheckedStorage(storage))
+    }
+    
+    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+        GodotString(swiftString: self).consumeByGodot(onto: destinationUnsafePointer)
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> String {
+        String(godotString: GodotString.fromGodotUnsafePointer(unsafePointer))
     }
 }
