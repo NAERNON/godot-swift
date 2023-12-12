@@ -60,135 +60,114 @@ open class VisualShaderNodeCompare: VisualShaderNode {
     }
 
     private static var __method_binding_set_comparison_type: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_comparison_type").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_comparison_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 516558320)!
         }
         }
     }()
     private func __setComparisonType(_ type: Godot.VisualShaderNodeCompare.ComparisonType) {
-        withUnsafePointer(to: type) { (__ptr_type) in
-            withUnsafeArgumentPackPointer(__ptr_type) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_set_comparison_type,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        type.withGodotUnsafeRawPointer { __ptr_type in
+        withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_comparison_type,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_get_comparison_type: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_comparison_type").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_comparison_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3495315961)!
         }
         }
     }()
     private func __getComparisonType() -> Godot.VisualShaderNodeCompare.ComparisonType {
-        var __temporary = Godot.VisualShaderNodeCompare.ComparisonType.RawValue(0)
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_comparison_type,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.VisualShaderNodeCompare.ComparisonType(rawValue: __temporary)!
+        Godot.VisualShaderNodeCompare.ComparisonType.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_comparison_type,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_set_function: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_function").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_function").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2370951349)!
         }
         }
     }()
     private func __setFunction(`func`: Godot.VisualShaderNodeCompare.Function) {
-        withUnsafePointer(to: `func`) { (__ptr_func) in
-            withUnsafeArgumentPackPointer(__ptr_func) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_set_function,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        `func`.withGodotUnsafeRawPointer { __ptr_func in
+        withUnsafeArgumentPackPointer(__ptr_func) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_function,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_get_function: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_function").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_function").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4089164265)!
         }
         }
     }()
     private func __getFunction() -> Godot.VisualShaderNodeCompare.Function {
-        var __temporary = Godot.VisualShaderNodeCompare.Function.RawValue(0)
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_function,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.VisualShaderNodeCompare.Function(rawValue: __temporary)!
+        Godot.VisualShaderNodeCompare.Function.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_function,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_set_condition: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_condition").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_condition").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 918742392)!
         }
         }
     }()
     private func __setCondition(_ condition: Godot.VisualShaderNodeCompare.Condition) {
-        withUnsafePointer(to: condition) { (__ptr_condition) in
-            withUnsafeArgumentPackPointer(__ptr_condition) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_set_condition,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        condition.withGodotUnsafeRawPointer { __ptr_condition in
+        withUnsafeArgumentPackPointer(__ptr_condition) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_condition,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_get_condition: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_condition").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_condition").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3281078941)!
         }
         }
     }()
     private func __getCondition() -> Godot.VisualShaderNodeCompare.Condition {
-        var __temporary = Godot.VisualShaderNodeCompare.Condition.RawValue(0)
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_condition,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.VisualShaderNodeCompare.Condition(rawValue: __temporary)!
+        Godot.VisualShaderNodeCompare.Condition.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_condition,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     public var comparisonType: Godot.VisualShaderNodeCompare.ComparisonType {

@@ -6,259 +6,214 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNodeTransition: AnimationNodeSync {
     private static var __method_binding_set_input_count: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_input_count").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_input_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
     }()
     public func setInputCount(_ inputCount: Int32) {
-        withUnsafePointer(to: inputCount) { (__ptr_inputCount) in
-            withUnsafeArgumentPackPointer(__ptr_inputCount) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_set_input_count,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        inputCount.withGodotUnsafeRawPointer { __ptr_inputCount in
+        withUnsafeArgumentPackPointer(__ptr_inputCount) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_input_count,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_set_input_as_auto_advance: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_input_as_auto_advance").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_input_as_auto_advance").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
     }()
     public func setInputAsAutoAdvance(input: Int32, enable: Bool) {
-        withUnsafePointer(to: input) { (__ptr_input) in
-            withUnsafePointer(to: enable) { (__ptr_enable) in
-                withUnsafeArgumentPackPointer(__ptr_input, __ptr_enable) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_input_as_auto_advance,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        input.withGodotUnsafeRawPointer { __ptr_input in
+        enable.withGodotUnsafeRawPointer { __ptr_enable in
+        withUnsafeArgumentPackPointer(__ptr_input, __ptr_enable) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_input_as_auto_advance,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_is_input_set_as_auto_advance: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_input_set_as_auto_advance").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_input_set_as_auto_advance").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
     }()
     public func isInputSetAsAutoAdvance(input: Int32) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: input) { (__ptr_input) in
-            withUnsafeArgumentPackPointer(__ptr_input) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_is_input_set_as_auto_advance,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        input.withGodotUnsafeRawPointer { __ptr_input in
+        withUnsafeArgumentPackPointer(__ptr_input) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_input_set_as_auto_advance,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_set_input_reset: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_input_reset").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_input_reset").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
     }()
     public func setInputReset(input: Int32, enable: Bool) {
-        withUnsafePointer(to: input) { (__ptr_input) in
-            withUnsafePointer(to: enable) { (__ptr_enable) in
-                withUnsafeArgumentPackPointer(__ptr_input, __ptr_enable) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_input_reset,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        input.withGodotUnsafeRawPointer { __ptr_input in
+        enable.withGodotUnsafeRawPointer { __ptr_enable in
+        withUnsafeArgumentPackPointer(__ptr_input, __ptr_enable) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_input_reset,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_is_input_reset: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_input_reset").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_input_reset").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
     }()
     public func isInputReset(input: Int32) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: input) { (__ptr_input) in
-            withUnsafeArgumentPackPointer(__ptr_input) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_is_input_reset,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        input.withGodotUnsafeRawPointer { __ptr_input in
+        withUnsafeArgumentPackPointer(__ptr_input) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_input_reset,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_set_xfade_time: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_xfade_time").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_xfade_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
     }()
     private func __setXfadeTime(_ time: Double) {
-        withUnsafePointer(to: time) { (__ptr_time) in
-            withUnsafeArgumentPackPointer(__ptr_time) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_set_xfade_time,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        time.withGodotUnsafeRawPointer { __ptr_time in
+        withUnsafeArgumentPackPointer(__ptr_time) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_xfade_time,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_get_xfade_time: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_xfade_time").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_xfade_time").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
     }()
     private func __getXfadeTime() -> Double {
-        var __temporary = Double()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_xfade_time,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_xfade_time,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_set_xfade_curve: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_xfade_curve").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_xfade_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 270443179)!
         }
         }
     }()
     private func __setXfadeCurve(_ curve: Godot.Curve?) {
-        curve.withUnsafeRawPointer { (__ptr_curve) in
-            withUnsafePointer(to: __ptr_curve) { (_ptr___ptr_curve) in
-                withUnsafeArgumentPackPointer(_ptr___ptr_curve) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_xfade_curve,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        curve.withGodotUnsafeRawPointer { __ptr_curve in
+        withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
+        withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_xfade_curve,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_get_xfade_curve: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_xfade_curve").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_xfade_curve").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2460114913)!
         }
         }
     }()
     private func __getXfadeCurve() -> Godot.Curve? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_xfade_curve,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.Curve.retrievedInstanceManagedByGodot(__temporary)
+        Godot.Curve?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_xfade_curve,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_set_allow_transition_to_self: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_allow_transition_to_self").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_allow_transition_to_self").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
     }()
     private func __setAllowTransitionToSelf(enable: Bool) {
-        withUnsafePointer(to: enable) { (__ptr_enable) in
-            withUnsafeArgumentPackPointer(__ptr_enable) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_set_allow_transition_to_self,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        enable.withGodotUnsafeRawPointer { __ptr_enable in
+        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_allow_transition_to_self,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_is_allow_transition_to_self: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_allow_transition_to_self").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_allow_transition_to_self").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
     private func __isAllowTransitionToSelf() -> Bool {
-        var __temporary = Bool()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_is_allow_transition_to_self,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_allow_transition_to_self,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     public var xfadeTime: Double {

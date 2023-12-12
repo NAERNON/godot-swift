@@ -32,35 +32,31 @@ open class MainLoop: Object {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
         ._initialize()}
         let _physics_process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
         ._physicsProcess(
-            delta: args[0]!.load(as: Double.self)
+            delta: Double.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
         ._process(
-            delta: args[0]!.load(as: Double.self)
+            delta: Double.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _finalize_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
         ._finalize()}
         _virtualFunctions = [
             "_initialize" : ("_initialize", _initialize_call),

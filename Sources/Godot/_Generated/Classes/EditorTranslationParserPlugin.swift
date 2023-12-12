@@ -21,21 +21,19 @@ open class EditorTranslationParserPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorTranslationParserPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorTranslationParserPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseFile(
-            path: Godot.GodotString(godotExtensionPointer: args[0]!),
-            msgids: Godot.GodotArray<Godot.GodotString>(godotExtensionPointer: args[1]!),
-            msgidsContextPlural: Godot.GodotArray<Godot.AnyGodotArray>(godotExtensionPointer: args[2]!)
+            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
+            msgids: Godot.GodotArray<Godot.GodotString> .fromGodotUnsafePointer(args[1]!),
+            msgidsContextPlural: Godot.GodotArray<Godot.AnyGodotArray> .fromGodotUnsafePointer(args[2]!)
         )}
         let _get_recognized_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorTranslationParserPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorTranslationParserPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_parseFile" : ("_parse_file", _parse_file_call),
             "_getRecognizedExtensions" : ("_get_recognized_extensions", _get_recognized_extensions_call)

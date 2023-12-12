@@ -84,6 +84,12 @@ extension Variant {
             return value
         }
         
+        static func fromGodotUnsafePointer(
+            _ unsafePointer: UnsafeRawPointer?
+        ) -> Self {
+            Self(godotExtensionPointer: unsafePointer!)
+        }
+        
         // MARK: Tools
         
         /// Returns the variant type.

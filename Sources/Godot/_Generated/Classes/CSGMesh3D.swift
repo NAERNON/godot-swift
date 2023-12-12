@@ -6,95 +6,79 @@ import GodotExtensionHeaders
 @GodotClass
 open class CSGMesh3D: CSGPrimitive3D {
     private static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mesh").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 194775623)!
         }
         }
     }()
     private func __setMesh(_ mesh: Godot.Mesh?) {
-        mesh.withUnsafeRawPointer { (__ptr_mesh) in
-            withUnsafePointer(to: __ptr_mesh) { (_ptr___ptr_mesh) in
-                withUnsafeArgumentPackPointer(_ptr___ptr_mesh) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_mesh,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        mesh.withGodotUnsafeRawPointer { __ptr_mesh in
+        withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
+        withUnsafeArgumentPackPointer(_ptr___ptr_mesh) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_mesh,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mesh").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4081188045)!
         }
         }
     }()
     private func __getMesh() -> Godot.Mesh? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_mesh,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.Mesh.retrievedInstanceManagedByGodot(__temporary)
+        Godot.Mesh?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_mesh,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_set_material: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_material").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2757459619)!
         }
         }
     }()
     private func __setMaterial(_ material: Godot.Material?) {
-        material.withUnsafeRawPointer { (__ptr_material) in
-            withUnsafePointer(to: __ptr_material) { (_ptr___ptr_material) in
-                withUnsafeArgumentPackPointer(_ptr___ptr_material) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_material,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        material.withGodotUnsafeRawPointer { __ptr_material in
+        withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
+        withUnsafeArgumentPackPointer(_ptr___ptr_material) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_material,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_get_material: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_material").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 5934680)!
         }
         }
     }()
     private func __getMaterial() -> Godot.Material? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_material,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
+        Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_material,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     public var mesh: Godot.Mesh? {

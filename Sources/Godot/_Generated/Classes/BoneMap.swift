@@ -14,125 +14,101 @@ open class BoneMap: Resource {
     }
 
     private static var __method_binding_get_profile: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_profile").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_profile").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4291782652)!
         }
         }
     }()
     private func __getProfile() -> Godot.SkeletonProfile? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_profile,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.SkeletonProfile.retrievedInstanceManagedByGodot(__temporary)
+        Godot.SkeletonProfile?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_profile,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_set_profile: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_profile").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_profile").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3870374136)!
         }
         }
     }()
     private func __setProfile(_ profile: Godot.SkeletonProfile?) {
-        profile.withUnsafeRawPointer { (__ptr_profile) in
-            withUnsafePointer(to: __ptr_profile) { (_ptr___ptr_profile) in
-                withUnsafeArgumentPackPointer(_ptr___ptr_profile) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_profile,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        profile.withGodotUnsafeRawPointer { __ptr_profile in
+        withUnsafePointer(to: __ptr_profile) { _ptr___ptr_profile in
+        withUnsafeArgumentPackPointer(_ptr___ptr_profile) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_profile,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_get_skeleton_bone_name: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_skeleton_bone_name").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_skeleton_bone_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1965194235)!
         }
         }
     }()
     public func skeletonBoneName(profileBoneName: Godot.GodotStringName) -> Godot.GodotStringName {
-        let __temporary = Godot.GodotStringName()
-        profileBoneName.withUnsafeRawPointer { (__ptr_profileBoneName) in
-            withUnsafeArgumentPackPointer(__ptr_profileBoneName) { (__accessPtr) in
-                __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_get_skeleton_bone_name,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        profileBoneName.withGodotUnsafeRawPointer { __ptr_profileBoneName in
+        withUnsafeArgumentPackPointer(__ptr_profileBoneName) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_skeleton_bone_name,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_set_skeleton_bone_name: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_skeleton_bone_name").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_skeleton_bone_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
     }()
     public func setSkeletonBoneName(profileBoneName: Godot.GodotStringName, skeletonBoneName: Godot.GodotStringName) {
-        profileBoneName.withUnsafeRawPointer { (__ptr_profileBoneName) in
-            skeletonBoneName.withUnsafeRawPointer { (__ptr_skeletonBoneName) in
-                withUnsafeArgumentPackPointer(__ptr_profileBoneName, __ptr_skeletonBoneName) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_skeleton_bone_name,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        profileBoneName.withGodotUnsafeRawPointer { __ptr_profileBoneName in
+        skeletonBoneName.withGodotUnsafeRawPointer { __ptr_skeletonBoneName in
+        withUnsafeArgumentPackPointer(__ptr_profileBoneName, __ptr_skeletonBoneName) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_skeleton_bone_name,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_find_profile_bone_name: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_profile_bone_name").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "find_profile_bone_name").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1965194235)!
         }
         }
     }()
     public func findProfileBoneName(skeletonBoneName: Godot.GodotStringName) -> Godot.GodotStringName {
-        let __temporary = Godot.GodotStringName()
-        skeletonBoneName.withUnsafeRawPointer { (__ptr_skeletonBoneName) in
-            withUnsafeArgumentPackPointer(__ptr_skeletonBoneName) { (__accessPtr) in
-                __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_find_profile_bone_name,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        skeletonBoneName.withGodotUnsafeRawPointer { __ptr_skeletonBoneName in
+        withUnsafeArgumentPackPointer(__ptr_skeletonBoneName) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_find_profile_bone_name,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     public var profile: Godot.SkeletonProfile? {

@@ -18,12 +18,11 @@ open class RichTextEffect: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<RichTextEffect> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<RichTextEffect> .fromOpaque(instancePtr).takeUnretainedValue()
         ._processCustomFx(
-            charFx: Godot.CharFXTransform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            charFx: Godot.CharFXTransform?.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_processCustomFx" : ("_process_custom_fx", _process_custom_fx_call)
         ]

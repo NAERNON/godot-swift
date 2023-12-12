@@ -45,329 +45,266 @@ open class EditorNode3DGizmo: Node3DGizmo {
     }
 
     private static var __method_binding_add_lines: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_lines").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_lines").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 302451090)!
         }
         }
     }()
     public func addLines(_ lines: Godot.PackedVector3Array, material: Godot.Material?, billboard: Bool = false, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
-        lines.withUnsafeRawPointer { (__ptr_lines) in
-            material.withUnsafeRawPointer { (__ptr_material) in
-                withUnsafePointer(to: __ptr_material) { (_ptr___ptr_material) in
-                    withUnsafePointer(to: billboard) { (__ptr_billboard) in
-                        withUnsafePointer(to: modulate) { (__ptr_modulate) in
-                            withUnsafeArgumentPackPointer(__ptr_lines, _ptr___ptr_material, __ptr_billboard, __ptr_modulate) { (__accessPtr) in
-                                `self`.withUnsafeRawPointer { (__ptr_self) in
-                                    gdextension_interface_object_method_bind_ptrcall(
-                                        Self.__method_binding_add_lines,
-                                        __ptr_self,
-                                        __accessPtr,
-                                        nil
-                                    )
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        lines.withGodotUnsafeRawPointer { __ptr_lines in
+        material.withGodotUnsafeRawPointer { __ptr_material in
+        withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
+        billboard.withGodotUnsafeRawPointer { __ptr_billboard in
+        modulate.withGodotUnsafeRawPointer { __ptr_modulate in
+        withUnsafeArgumentPackPointer(__ptr_lines, _ptr___ptr_material, __ptr_billboard, __ptr_modulate) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_lines,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}}}
     }
 
     private static var __method_binding_add_mesh: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_mesh").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1868867708)!
         }
         }
     }()
     public func addMesh(_ mesh: Godot.Mesh?, material: Godot.Material? = nil, transform: Godot.Transform3D = Transform3D(xAxisX: 1, xAxisY: 0, xAxisZ: 0, yAxisX: 0, yAxisY: 1, yAxisZ: 0, zAxisX: 0, zAxisY: 0, zAxisZ: 1, originX: 0, originY: 0, originZ: 0), skeleton: Godot.SkinReference? = nil) {
-        mesh.withUnsafeRawPointer { (__ptr_mesh) in
-            withUnsafePointer(to: __ptr_mesh) { (_ptr___ptr_mesh) in
-                material.withUnsafeRawPointer { (__ptr_material) in
-                    withUnsafePointer(to: __ptr_material) { (_ptr___ptr_material) in
-                        withUnsafePointer(to: transform) { (__ptr_transform) in
-                            skeleton.withUnsafeRawPointer { (__ptr_skeleton) in
-                                withUnsafePointer(to: __ptr_skeleton) { (_ptr___ptr_skeleton) in
-                                    withUnsafeArgumentPackPointer(_ptr___ptr_mesh, _ptr___ptr_material, __ptr_transform, _ptr___ptr_skeleton) { (__accessPtr) in
-                                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                                            gdextension_interface_object_method_bind_ptrcall(
-                                                Self.__method_binding_add_mesh,
-                                                __ptr_self,
-                                                __accessPtr,
-                                                nil
-                                            )
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        mesh.withGodotUnsafeRawPointer { __ptr_mesh in
+        withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
+        material.withGodotUnsafeRawPointer { __ptr_material in
+        withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
+        transform.withGodotUnsafeRawPointer { __ptr_transform in
+        skeleton.withGodotUnsafeRawPointer { __ptr_skeleton in
+        withUnsafePointer(to: __ptr_skeleton) { _ptr___ptr_skeleton in
+        withUnsafeArgumentPackPointer(_ptr___ptr_mesh, _ptr___ptr_material, __ptr_transform, _ptr___ptr_skeleton) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_mesh,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}}}}}
     }
 
     private static var __method_binding_add_collision_segments: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_collision_segments").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_collision_segments").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 334873810)!
         }
         }
     }()
     public func addCollisionSegments(_ segments: Godot.PackedVector3Array) {
-        segments.withUnsafeRawPointer { (__ptr_segments) in
-            withUnsafeArgumentPackPointer(__ptr_segments) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_add_collision_segments,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        segments.withGodotUnsafeRawPointer { __ptr_segments in
+        withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_collision_segments,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_add_collision_triangles: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_collision_triangles").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_collision_triangles").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 54901064)!
         }
         }
     }()
     public func addCollisionTriangles(_ triangles: Godot.TriangleMesh?) {
-        triangles.withUnsafeRawPointer { (__ptr_triangles) in
-            withUnsafePointer(to: __ptr_triangles) { (_ptr___ptr_triangles) in
-                withUnsafeArgumentPackPointer(_ptr___ptr_triangles) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_add_collision_triangles,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        triangles.withGodotUnsafeRawPointer { __ptr_triangles in
+        withUnsafePointer(to: __ptr_triangles) { _ptr___ptr_triangles in
+        withUnsafeArgumentPackPointer(_ptr___ptr_triangles) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_collision_triangles,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_add_unscaled_billboard: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_unscaled_billboard").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_unscaled_billboard").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3719733075)!
         }
         }
     }()
     public func addUnscaledBillboard(material: Godot.Material?, defaultScale: Double = 1, modulate: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) {
-        material.withUnsafeRawPointer { (__ptr_material) in
-            withUnsafePointer(to: __ptr_material) { (_ptr___ptr_material) in
-                withUnsafePointer(to: defaultScale) { (__ptr_defaultScale) in
-                    withUnsafePointer(to: modulate) { (__ptr_modulate) in
-                        withUnsafeArgumentPackPointer(_ptr___ptr_material, __ptr_defaultScale, __ptr_modulate) { (__accessPtr) in
-                            `self`.withUnsafeRawPointer { (__ptr_self) in
-                                gdextension_interface_object_method_bind_ptrcall(
-                                    Self.__method_binding_add_unscaled_billboard,
-                                    __ptr_self,
-                                    __accessPtr,
-                                    nil
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        material.withGodotUnsafeRawPointer { __ptr_material in
+        withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
+        defaultScale.withGodotUnsafeRawPointer { __ptr_defaultScale in
+        modulate.withGodotUnsafeRawPointer { __ptr_modulate in
+        withUnsafeArgumentPackPointer(_ptr___ptr_material, __ptr_defaultScale, __ptr_modulate) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_unscaled_billboard,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}}
     }
 
     private static var __method_binding_add_handles: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_handles").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_handles").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2254560097)!
         }
         }
     }()
     public func addHandles(_ handles: Godot.PackedVector3Array, material: Godot.Material?, ids: Godot.PackedInt32Array, billboard: Bool = false, secondary: Bool = false) {
-        handles.withUnsafeRawPointer { (__ptr_handles) in
-            material.withUnsafeRawPointer { (__ptr_material) in
-                withUnsafePointer(to: __ptr_material) { (_ptr___ptr_material) in
-                    ids.withUnsafeRawPointer { (__ptr_ids) in
-                        withUnsafePointer(to: billboard) { (__ptr_billboard) in
-                            withUnsafePointer(to: secondary) { (__ptr_secondary) in
-                                withUnsafeArgumentPackPointer(__ptr_handles, _ptr___ptr_material, __ptr_ids, __ptr_billboard, __ptr_secondary) { (__accessPtr) in
-                                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                                        gdextension_interface_object_method_bind_ptrcall(
-                                            Self.__method_binding_add_handles,
-                                            __ptr_self,
-                                            __accessPtr,
-                                            nil
-                                        )
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        handles.withGodotUnsafeRawPointer { __ptr_handles in
+        material.withGodotUnsafeRawPointer { __ptr_material in
+        withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
+        ids.withGodotUnsafeRawPointer { __ptr_ids in
+        billboard.withGodotUnsafeRawPointer { __ptr_billboard in
+        secondary.withGodotUnsafeRawPointer { __ptr_secondary in
+        withUnsafeArgumentPackPointer(__ptr_handles, _ptr___ptr_material, __ptr_ids, __ptr_billboard, __ptr_secondary) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_handles,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}}}}
     }
 
     private static var __method_binding_set_node_3d: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_node_3d").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_node_3d").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1078189570)!
         }
         }
     }()
     public func setNode3D(node: Godot.Node?) {
-        node.withUnsafeRawPointer { (__ptr_node) in
-            withUnsafePointer(to: __ptr_node) { (_ptr___ptr_node) in
-                withUnsafeArgumentPackPointer(_ptr___ptr_node) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_node_3d,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        node.withGodotUnsafeRawPointer { __ptr_node in
+        withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
+        withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_node_3d,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_get_node_3d: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_node_3d").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_node_3d").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 151077316)!
         }
         }
     }()
     public func node3D() -> Godot.Node3D? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_node_3d,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.Node3D.retrievedInstanceManagedByGodot(__temporary)
+        Godot.Node3D?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_node_3d,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_get_plugin: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_plugin").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4250544552)!
         }
         }
     }()
     public func plugin() -> Godot.EditorNode3DGizmoPlugin? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_plugin,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.EditorNode3DGizmoPlugin.retrievedInstanceManagedByGodot(__temporary)
+        Godot.EditorNode3DGizmoPlugin?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_plugin,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func clear() {
-        `self`.withUnsafeRawPointer { (__ptr_self) in
-            gdextension_interface_object_method_bind_ptrcall(
-                Self.__method_binding_clear,
-                __ptr_self,
-                nil,
-                nil
-            )
-        }
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_clear,
+            __ptr_self,
+            nil,
+            nil
+        )}
     }
 
     private static var __method_binding_set_hidden: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_hidden").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_hidden").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
     }()
     public func setHidden(_ hidden: Bool) {
-        withUnsafePointer(to: hidden) { (__ptr_hidden) in
-            withUnsafeArgumentPackPointer(__ptr_hidden) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_set_hidden,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        hidden.withGodotUnsafeRawPointer { __ptr_hidden in
+        withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_hidden,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_is_subgizmo_selected: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_subgizmo_selected").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_subgizmo_selected").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
     }()
     public func isSubgizmoSelected(id: Int32) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafeArgumentPackPointer(__ptr_id) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_is_subgizmo_selected,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_subgizmo_selected,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_get_subgizmo_selection: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_subgizmo_selection").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_subgizmo_selection").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1930428628)!
         }
         }
     }()
     public func subgizmoSelection() -> Godot.PackedInt32Array {
-        let __temporary = Godot.PackedInt32Array()
-        __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_subgizmo_selection,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.PackedInt32Array.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_subgizmo_selection,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -379,118 +316,107 @@ open class EditorNode3DGizmo: Node3DGizmo {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._redraw()}
         let _get_handle_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getHandleName(
-            id: args[0]!.load(as: Int32.self),
-            secondary: args[1]!.load(as: Bool.self)
+            id: Int32.fromGodotUnsafePointer(args[0]!),
+            secondary: Bool.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_handle_highlighted_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isHandleHighlighted(
-            id: args[0]!.load(as: Int32.self),
-            secondary: args[1]!.load(as: Bool.self)
+            id: Int32.fromGodotUnsafePointer(args[0]!),
+            secondary: Bool.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_handle_value_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getHandleValue(
-            id: args[0]!.load(as: Int32.self),
-            secondary: args[1]!.load(as: Bool.self)
+            id: Int32.fromGodotUnsafePointer(args[0]!),
+            secondary: Bool.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_handle_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setHandle(
-            id: args[0]!.load(as: Int32.self),
-            secondary: args[1]!.load(as: Bool.self),
-            camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[2]!)),
-            point: args[3]!.load(as: Godot.Vector2.self)
+            id: Int32.fromGodotUnsafePointer(args[0]!),
+            secondary: Bool.fromGodotUnsafePointer(args[1]!),
+            camera: Godot.Camera3D?.fromGodotUnsafePointer(args[2]!),
+            point: Godot.Vector2.fromGodotUnsafePointer(args[3]!)
         )}
         let _commit_handle_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._commitHandle(
-            id: args[0]!.load(as: Int32.self),
-            secondary: args[1]!.load(as: Bool.self),
-            restore: Godot.Variant(godotExtensionPointer: args[2]!),
-            cancel: args[3]!.load(as: Bool.self)
+            id: Int32.fromGodotUnsafePointer(args[0]!),
+            secondary: Bool.fromGodotUnsafePointer(args[1]!),
+            restore: Godot.Variant.fromGodotUnsafePointer(args[2]!),
+            cancel: Bool.fromGodotUnsafePointer(args[3]!)
         )}
         let _subgizmos_intersect_ray_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._subgizmosIntersectRay(
-            camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            point: args[1]!.load(as: Godot.Vector2.self)
+            camera: Godot.Camera3D?.fromGodotUnsafePointer(args[0]!),
+            point: Godot.Vector2.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _subgizmos_intersect_frustum_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._subgizmosIntersectFrustum(
-            camera: Godot.Camera3D.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            frustum: Godot.GodotArray<Godot.Plane>(godotExtensionPointer: args[1]!)
+            camera: Godot.Camera3D?.fromGodotUnsafePointer(args[0]!),
+            frustum: Godot.GodotArray<Godot.Plane> .fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_subgizmo_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setSubgizmoTransform(
-            id: args[0]!.load(as: Int32.self),
-            transform: args[1]!.load(as: Godot.Transform3D.self)
+            id: Int32.fromGodotUnsafePointer(args[0]!),
+            transform: Godot.Transform3D.fromGodotUnsafePointer(args[1]!)
         )}
         let _get_subgizmo_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSubgizmoTransform(
-            id: args[0]!.load(as: Int32.self)
+            id: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.Transform3D.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _commit_subgizmos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._commitSubgizmos(
-            ids: Godot.PackedInt32Array(godotExtensionPointer: args[0]!),
-            restores: Godot.GodotArray<Godot.Transform3D>(godotExtensionPointer: args[1]!),
-            cancel: args[2]!.load(as: Bool.self)
+            ids: Godot.PackedInt32Array.fromGodotUnsafePointer(args[0]!),
+            restores: Godot.GodotArray<Godot.Transform3D> .fromGodotUnsafePointer(args[1]!),
+            cancel: Bool.fromGodotUnsafePointer(args[2]!)
         )}
         _virtualFunctions = [
             "_redraw" : ("_redraw", _redraw_call),

@@ -37,127 +37,127 @@ private var __operator_binding_in_godotarray: GDExtensionPtrOperatorEvaluator = 
     return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_AABB, GDEXTENSION_VARIANT_TYPE_ARRAY)!
 }()
 private var __method_binding_abs: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "abs").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "abs").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 1576868580)!
     }
 }()
 private var __method_binding_get_center: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_center").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_center").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 1776574132)!
     }
 }()
 private var __method_binding_get_volume: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_volume").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_volume").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 466405837)!
     }
 }()
 private var __method_binding_has_volume: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "has_volume").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "has_volume").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 3918633141)!
     }
 }()
 private var __method_binding_has_surface: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "has_surface").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "has_surface").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 3918633141)!
     }
 }()
 private var __method_binding_has_point: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "has_point").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "has_point").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 1749054343)!
     }
 }()
 private var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_equal_approx").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 299946684)!
     }
 }()
 private var __method_binding_is_finite: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_finite").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 3918633141)!
     }
 }()
 private var __method_binding_intersects: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "intersects").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "intersects").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 299946684)!
     }
 }()
 private var __method_binding_encloses: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encloses").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "encloses").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 299946684)!
     }
 }()
 private var __method_binding_intersects_plane: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "intersects_plane").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "intersects_plane").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 1150170233)!
     }
 }()
 private var __method_binding_intersection: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "intersection").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "intersection").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 1271470306)!
     }
 }()
 private var __method_binding_merge: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "merge").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "merge").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 1271470306)!
     }
 }()
 private var __method_binding_expand: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "expand").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "expand").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 2851643018)!
     }
 }()
 private var __method_binding_grow: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "grow").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "grow").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 239217291)!
     }
 }()
 private var __method_binding_get_support: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_support").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_support").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 2923479887)!
     }
 }()
 private var __method_binding_get_longest_axis: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_longest_axis").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_longest_axis").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 1776574132)!
     }
 }()
 private var __method_binding_get_longest_axis_index: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_longest_axis_index").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_longest_axis_index").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_get_longest_axis_size: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_longest_axis_size").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_longest_axis_size").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 466405837)!
     }
 }()
 private var __method_binding_get_shortest_axis: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_shortest_axis").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_shortest_axis").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 1776574132)!
     }
 }()
 private var __method_binding_get_shortest_axis_index: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_shortest_axis_index").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_shortest_axis_index").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_get_shortest_axis_size: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_shortest_axis_size").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_shortest_axis_size").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 466405837)!
     }
 }()
 private var __method_binding_get_endpoint: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_endpoint").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_endpoint").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 1394941017)!
     }
 }()
 private var __method_binding_intersects_segment: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "intersects_segment").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "intersects_segment").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 2048133369)!
     }
 }()
 private var __method_binding_intersects_ray: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "intersects_ray").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "intersects_ray").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_AABB, __ptr__method_name, 2048133369)!
     }
 }()
@@ -179,471 +179,272 @@ extension AABB {
 
     static internal func _constructor_aabb(from: Godot.AABB) -> Self {
         var __temporary = AABB()
-        withUnsafePointer(to: from) { (__ptr_from) in
-            withUnsafeArgumentPackPointer(__ptr_from) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                    __constructor_aabb(__ptr___temporary, __accessPtr)
-                }
-            }
-        }
+        from.withGodotUnsafeRawPointer { __ptr_from in
+        withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_aabb(__ptr___temporary, __accessPtr)
+        }}}
         return __temporary
     }
     static internal func _ptr_constructor_aabb(from: UnsafeRawPointer) -> Self {
         var __temporary = AABB()
-        withUnsafeArgumentPackPointer(from) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_aabb(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(from) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_aabb(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _constructor_vector3_vector3(position: Godot.Vector3, size: Godot.Vector3) -> Self {
         var __temporary = AABB()
-        withUnsafePointer(to: position) { (__ptr_position) in
-            withUnsafePointer(to: size) { (__ptr_size) in
-                withUnsafeArgumentPackPointer(__ptr_position, __ptr_size) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                        __constructor_vector3_vector3(__ptr___temporary, __accessPtr)
-                    }
-                }
-            }
-        }
+        position.withGodotUnsafeRawPointer { __ptr_position in
+        size.withGodotUnsafeRawPointer { __ptr_size in
+        withUnsafeArgumentPackPointer(__ptr_position, __ptr_size) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_vector3_vector3(__ptr___temporary, __accessPtr)
+        }}}}
         return __temporary
     }
     static internal func _ptr_constructor_vector3_vector3(position: UnsafeRawPointer, size: UnsafeRawPointer) -> Self {
         var __temporary = AABB()
-        withUnsafeArgumentPackPointer(position, size) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_vector3_vector3(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(position, size) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_vector3_vector3(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _operatorEqual<Value: VariantStorableIn>(_ lhs: Godot.AABB, _ rhs: Value) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
+        __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorNotEqual<Value: VariantStorableIn>(_ lhs: Godot.AABB, _ rhs: Value) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
+        __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorNot(_ lhs: Godot.AABB) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                __operator_binding_not(__ptr_lhs, nil, __ptr___temporary)
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        __operator_binding_not(__ptr_lhs, nil, __temporary)}}
     }
 
     static internal func _operatorEqual(_ lhs: Godot.AABB, _ rhs: Godot.AABB) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_equal_aabb(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_equal_aabb(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorNotEqual(_ lhs: Godot.AABB, _ rhs: Godot.AABB) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_not_equal_aabb(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_not_equal_aabb(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorMultiply(_ lhs: Godot.AABB, _ rhs: Godot.Transform3D) -> Godot.AABB {
-        var __temporary = AABB()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_multiply_transform3d(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        AABB.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_multiply_transform3d(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorIn<Value1: VariantStorable, Value2: VariantStorable>(_ lhs: Godot.AABB, _ rhs: Godot.GodotDictionary<Value1, Value2>) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            rhs.withUnsafeRawPointer { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorIn<Value: VariantStorable>(_ lhs: Godot.AABB, _ rhs: Godot.GodotArray<Value>) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            rhs.withUnsafeRawPointer { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     internal func _abs() -> Godot.AABB {
-        var __temporary = Godot.AABB()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_abs(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_abs(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _center() -> Godot.Vector3 {
-        var __temporary = Godot.Vector3()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_get_center(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_get_center(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _volume() -> Real {
-        var __temporary = Real()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_get_volume(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Real.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_get_volume(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _hasVolume() -> Bool {
-        var __temporary = Bool()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_has_volume(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_has_volume(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _hasSurface() -> Bool {
-        var __temporary = Bool()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_has_surface(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_has_surface(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _hasPoint(_ point: Godot.Vector3) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: point) { (__ptr_point) in
-            withUnsafeArgumentPackPointer(__ptr_point) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_has_point(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        point.withGodotUnsafeRawPointer { __ptr_point in
+        withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_has_point(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _isEqualApprox(aabb: Godot.AABB) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: aabb) { (__ptr_aabb) in
-            withUnsafeArgumentPackPointer(__ptr_aabb) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_is_equal_approx(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        aabb.withGodotUnsafeRawPointer { __ptr_aabb in
+        withUnsafeArgumentPackPointer(__ptr_aabb) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_is_equal_approx(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _isFinite() -> Bool {
-        var __temporary = Bool()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_is_finite(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_is_finite(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _intersects(with: Godot.AABB) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: with) { (__ptr_with) in
-            withUnsafeArgumentPackPointer(__ptr_with) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_intersects(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        with.withGodotUnsafeRawPointer { __ptr_with in
+        withUnsafeArgumentPackPointer(__ptr_with) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_intersects(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _encloses(with: Godot.AABB) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: with) { (__ptr_with) in
-            withUnsafeArgumentPackPointer(__ptr_with) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_encloses(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        with.withGodotUnsafeRawPointer { __ptr_with in
+        withUnsafeArgumentPackPointer(__ptr_with) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_encloses(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _intersectsPlane(_ plane: Godot.Plane) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: plane) { (__ptr_plane) in
-            withUnsafeArgumentPackPointer(__ptr_plane) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_intersects_plane(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        plane.withGodotUnsafeRawPointer { __ptr_plane in
+        withUnsafeArgumentPackPointer(__ptr_plane) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_intersects_plane(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _intersection(with: Godot.AABB) -> Godot.AABB {
-        var __temporary = Godot.AABB()
-        withUnsafePointer(to: with) { (__ptr_with) in
-            withUnsafeArgumentPackPointer(__ptr_with) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_intersection(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        with.withGodotUnsafeRawPointer { __ptr_with in
+        withUnsafeArgumentPackPointer(__ptr_with) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_intersection(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _merge(with: Godot.AABB) -> Godot.AABB {
-        var __temporary = Godot.AABB()
-        withUnsafePointer(to: with) { (__ptr_with) in
-            withUnsafeArgumentPackPointer(__ptr_with) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_merge(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        with.withGodotUnsafeRawPointer { __ptr_with in
+        withUnsafeArgumentPackPointer(__ptr_with) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_merge(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _expand(toPoint point: Godot.Vector3) -> Godot.AABB {
-        var __temporary = Godot.AABB()
-        withUnsafePointer(to: point) { (__ptr_point) in
-            withUnsafeArgumentPackPointer(__ptr_point) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_expand(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        point.withGodotUnsafeRawPointer { __ptr_point in
+        withUnsafeArgumentPackPointer(__ptr_point) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_expand(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _grow(by: Real) -> Godot.AABB {
-        var __temporary = Godot.AABB()
-        withUnsafePointer(to: by) { (__ptr_by) in
-            withUnsafeArgumentPackPointer(__ptr_by) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_grow(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        by.withGodotUnsafeRawPointer { __ptr_by in
+        withUnsafeArgumentPackPointer(__ptr_by) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_grow(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _support(dir: Godot.Vector3) -> Godot.Vector3 {
-        var __temporary = Godot.Vector3()
-        withUnsafePointer(to: dir) { (__ptr_dir) in
-            withUnsafeArgumentPackPointer(__ptr_dir) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_get_support(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        dir.withGodotUnsafeRawPointer { __ptr_dir in
+        withUnsafeArgumentPackPointer(__ptr_dir) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_get_support(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _longestAxis() -> Godot.Vector3 {
-        var __temporary = Godot.Vector3()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_get_longest_axis(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_get_longest_axis(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _longestAxisIndex() -> Int {
-        var __temporary = Int()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_get_longest_axis_index(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_get_longest_axis_index(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _longestAxisSize() -> Real {
-        var __temporary = Real()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_get_longest_axis_size(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Real.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_get_longest_axis_size(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _shortestAxis() -> Godot.Vector3 {
-        var __temporary = Godot.Vector3()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_get_shortest_axis(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_get_shortest_axis(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _shortestAxisIndex() -> Int {
-        var __temporary = Int()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_get_shortest_axis_index(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_get_shortest_axis_index(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _shortestAxisSize() -> Real {
-        var __temporary = Real()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_get_shortest_axis_size(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Real.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_get_shortest_axis_size(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _endpoint(idx: Int) -> Godot.Vector3 {
-        var __temporary = Godot.Vector3()
-        withUnsafePointer(to: idx) { (__ptr_idx) in
-            withUnsafeArgumentPackPointer(__ptr_idx) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_get_endpoint(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        idx.withGodotUnsafeRawPointer { __ptr_idx in
+        withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_get_endpoint(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _intersectsSegment(from: Godot.Vector3, to: Godot.Vector3) -> Godot.Variant.Storage {
-        let __temporary = Godot.Variant.Storage()
-        withUnsafePointer(to: from) { (__ptr_from) in
-            withUnsafePointer(to: to) { (__ptr_to) in
-                withUnsafeArgumentPackPointer(__ptr_from, __ptr_to) { (__accessPtr) in
-                    __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                        withUnsafePointer(to: `self`) { (___ptr_self) in
-                            let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                            __method_binding_intersects_segment(__ptr_self, __accessPtr, __ptr___temporary, 2)
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Variant.Storage.fromMutatingGodotUnsafePointer { __temporary in
+        from.withGodotUnsafeRawPointer { __ptr_from in
+        to.withGodotUnsafeRawPointer { __ptr_to in
+        withUnsafeArgumentPackPointer(__ptr_from, __ptr_to) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_intersects_segment(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
     internal func _intersectsRay(from: Godot.Vector3, dir: Godot.Vector3) -> Godot.Variant.Storage {
-        let __temporary = Godot.Variant.Storage()
-        withUnsafePointer(to: from) { (__ptr_from) in
-            withUnsafePointer(to: dir) { (__ptr_dir) in
-                withUnsafeArgumentPackPointer(__ptr_from, __ptr_dir) { (__accessPtr) in
-                    __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                        withUnsafePointer(to: `self`) { (___ptr_self) in
-                            let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                            __method_binding_intersects_ray(__ptr_self, __accessPtr, __ptr___temporary, 2)
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Variant.Storage.fromMutatingGodotUnsafePointer { __temporary in
+        from.withGodotUnsafeRawPointer { __ptr_from in
+        dir.withGodotUnsafeRawPointer { __ptr_dir in
+        withUnsafeArgumentPackPointer(__ptr_from, __ptr_dir) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_intersects_ray(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
     }

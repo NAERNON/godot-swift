@@ -22,18 +22,16 @@ open class EditorSyntaxHighlighter: SyntaxHighlighter {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorSyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorSyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getName()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_supported_languages_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorSyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorSyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSupportedLanguages()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getName" : ("_get_name", _get_name_call),
             "_getSupportedLanguages" : ("_get_supported_languages", _get_supported_languages_call)

@@ -21,219 +21,177 @@ open class StyleBox: Resource {
     }
 
     private static var __method_binding_get_minimum_size: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_minimum_size").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_minimum_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
     }()
     public func minimumSize() -> Godot.Vector2 {
-        var __temporary = Godot.Vector2()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_minimum_size,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_minimum_size,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_set_content_margin: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_content_margin").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_content_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4290182280)!
         }
         }
     }()
     public func setContentMargin(_ margin: Godot.Side, offset: Double) {
-        withUnsafePointer(to: margin) { (__ptr_margin) in
-            withUnsafePointer(to: offset) { (__ptr_offset) in
-                withUnsafeArgumentPackPointer(__ptr_margin, __ptr_offset) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_content_margin,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        margin.withGodotUnsafeRawPointer { __ptr_margin in
+        offset.withGodotUnsafeRawPointer { __ptr_offset in
+        withUnsafeArgumentPackPointer(__ptr_margin, __ptr_offset) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_content_margin,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_set_content_margin_all: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_content_margin_all").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_content_margin_all").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
     }()
     public func setContentMarginAll(offset: Double) {
-        withUnsafePointer(to: offset) { (__ptr_offset) in
-            withUnsafeArgumentPackPointer(__ptr_offset) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_set_content_margin_all,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        offset.withGodotUnsafeRawPointer { __ptr_offset in
+        withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_content_margin_all,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_get_content_margin: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_content_margin").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_content_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2869120046)!
         }
         }
     }()
     private func __getContentMargin(_ margin: Godot.Side) -> Double {
-        var __temporary = Double()
-        withUnsafePointer(to: margin) { (__ptr_margin) in
-            withUnsafeArgumentPackPointer(__ptr_margin) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_get_content_margin,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        margin.withGodotUnsafeRawPointer { __ptr_margin in
+        withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_content_margin,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_get_margin: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_margin").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_margin").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2869120046)!
         }
         }
     }()
     public func margin(_ margin: Godot.Side) -> Double {
-        var __temporary = Double()
-        withUnsafePointer(to: margin) { (__ptr_margin) in
-            withUnsafeArgumentPackPointer(__ptr_margin) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_get_margin,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        margin.withGodotUnsafeRawPointer { __ptr_margin in
+        withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_margin,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_offset").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
     }()
     public func offset() -> Godot.Vector2 {
-        var __temporary = Godot.Vector2()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_offset,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_offset,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_draw: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "draw").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2275962004)!
         }
         }
     }()
     public func draw(canvasItem: Godot.RID, rect: Godot.Rect2) {
-        canvasItem.withUnsafeRawPointer { (__ptr_canvasItem) in
-            withUnsafePointer(to: rect) { (__ptr_rect) in
-                withUnsafeArgumentPackPointer(__ptr_canvasItem, __ptr_rect) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_draw,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
+        rect.withGodotUnsafeRawPointer { __ptr_rect in
+        withUnsafeArgumentPackPointer(__ptr_canvasItem, __ptr_rect) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_draw,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_get_current_item_drawn: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_item_drawn").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_current_item_drawn").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3213695180)!
         }
         }
     }()
     public func currentItemDrawn() -> Godot.CanvasItem? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_current_item_drawn,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.CanvasItem.retrievedInstanceManagedByGodot(__temporary)
+        Godot.CanvasItem?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_current_item_drawn,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_test_mask: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "test_mask").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "test_mask").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3735564539)!
         }
         }
     }()
     public func testMask(point: Godot.Vector2, rect: Godot.Rect2) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: point) { (__ptr_point) in
-            withUnsafePointer(to: rect) { (__ptr_rect) in
-                withUnsafeArgumentPackPointer(__ptr_point, __ptr_rect) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_test_mask,
-                                __ptr_self,
-                                __accessPtr,
-                                __ptr___temporary
-                            )
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        point.withGodotUnsafeRawPointer { __ptr_point in
+        rect.withGodotUnsafeRawPointer { __ptr_rect in
+        withUnsafeArgumentPackPointer(__ptr_point, __ptr_rect) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_test_mask,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
     }
 
     public var contentMarginLeft: Double {
@@ -277,41 +235,37 @@ open class StyleBox: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._draw(
-            toCanvasItem: Godot.RID(godotExtensionPointer: args[0]!),
-            rect: args[1]!.load(as: Godot.Rect2.self)
+            toCanvasItem: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            rect: Godot.Rect2.fromGodotUnsafePointer(args[1]!)
         )}
         let _get_draw_rect_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDrawRect(
-            args[0]!.load(as: Godot.Rect2.self)
+            Godot.Rect2.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.Rect2.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_minimum_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMinimumSize()
-        returnPtr!.assumingMemoryBound(to: Godot.Vector2.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _test_mask_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
         ._testMask(
-            point: args[0]!.load(as: Godot.Vector2.self),
-            rect: args[1]!.load(as: Godot.Rect2.self)
+            point: Godot.Vector2.fromGodotUnsafePointer(args[0]!),
+            rect: Godot.Rect2.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_draw" : ("_draw", _draw_call),
             "_getDrawRect" : ("_get_draw_rect", _get_draw_rect_call),

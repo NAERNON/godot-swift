@@ -201,337 +201,270 @@ open class Mesh: Resource {
     }
 
     private static var __method_binding_set_lightmap_size_hint: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_lightmap_size_hint").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_lightmap_size_hint").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }
     }()
     private func __setLightmapSizeHint(size: Godot.Vector2i) {
-        withUnsafePointer(to: size) { (__ptr_size) in
-            withUnsafeArgumentPackPointer(__ptr_size) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_set_lightmap_size_hint,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        size.withGodotUnsafeRawPointer { __ptr_size in
+        withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_lightmap_size_hint,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_get_lightmap_size_hint: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_lightmap_size_hint").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_lightmap_size_hint").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3690982128)!
         }
         }
     }()
     private func __getLightmapSizeHint() -> Godot.Vector2i {
-        var __temporary = Godot.Vector2i()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_lightmap_size_hint,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_lightmap_size_hint,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_get_aabb: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_aabb").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_aabb").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1068685055)!
         }
         }
     }()
     public func aabb() -> Godot.AABB {
-        var __temporary = Godot.AABB()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_aabb,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.AABB.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_aabb,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_get_faces: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_faces").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_faces").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 497664490)!
         }
         }
     }()
     public func faces() -> Godot.PackedVector3Array {
-        let __temporary = Godot.PackedVector3Array()
-        __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_faces,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_faces,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_get_surface_count: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_surface_count").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_surface_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
     public func surfaceCount() -> Int32 {
-        var __temporary = Int32()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_surface_count,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_surface_count,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_surface_get_arrays: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "surface_get_arrays").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "surface_get_arrays").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 663333327)!
         }
         }
     }()
     public func surfaceGetArrays(surfIdx: Int32) -> Godot.AnyGodotArray {
-        let __temporary = Godot.AnyGodotArray()
-        withUnsafePointer(to: surfIdx) { (__ptr_surfIdx) in
-            withUnsafeArgumentPackPointer(__ptr_surfIdx) { (__accessPtr) in
-                __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_surface_get_arrays,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
+        withUnsafeArgumentPackPointer(__ptr_surfIdx) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_surface_get_arrays,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_surface_get_blend_shape_arrays: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "surface_get_blend_shape_arrays").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "surface_get_blend_shape_arrays").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 663333327)!
         }
         }
     }()
     public func surfaceGetBlendShapeArrays(surfIdx: Int32) -> Godot.GodotArray<Godot.AnyGodotArray> {
-        let __temporary = Godot.GodotArray<Godot.AnyGodotArray>()
-        withUnsafePointer(to: surfIdx) { (__ptr_surfIdx) in
-            withUnsafeArgumentPackPointer(__ptr_surfIdx) { (__accessPtr) in
-                __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_surface_get_blend_shape_arrays,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.GodotArray<Godot.AnyGodotArray> .fromMutatingGodotUnsafePointer { __temporary in
+        surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
+        withUnsafeArgumentPackPointer(__ptr_surfIdx) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_surface_get_blend_shape_arrays,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_surface_set_material: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "surface_set_material").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "surface_set_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3671737478)!
         }
         }
     }()
     public func surfaceSetMaterial(surfIdx: Int32, material: Godot.Material?) {
-        withUnsafePointer(to: surfIdx) { (__ptr_surfIdx) in
-            material.withUnsafeRawPointer { (__ptr_material) in
-                withUnsafePointer(to: __ptr_material) { (_ptr___ptr_material) in
-                    withUnsafeArgumentPackPointer(__ptr_surfIdx, _ptr___ptr_material) { (__accessPtr) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_surface_set_material,
-                                __ptr_self,
-                                __accessPtr,
-                                nil
-                            )
-                        }
-                    }
-                }
-            }
-        }
+        surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
+        material.withGodotUnsafeRawPointer { __ptr_material in
+        withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
+        withUnsafeArgumentPackPointer(__ptr_surfIdx, _ptr___ptr_material) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_surface_set_material,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
     }
 
     private static var __method_binding_surface_get_material: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "surface_get_material").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "surface_get_material").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2897466400)!
         }
         }
     }()
     public func surfaceGetMaterial(surfIdx: Int32) -> Godot.Material? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafePointer(to: surfIdx) { (__ptr_surfIdx) in
-            withUnsafeArgumentPackPointer(__ptr_surfIdx) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_surface_get_material,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return Godot.Material.retrievedInstanceManagedByGodot(__temporary)
+        Godot.Material?.fromMutatingGodotUnsafePointer { __temporary in
+        surfIdx.withGodotUnsafeRawPointer { __ptr_surfIdx in
+        withUnsafeArgumentPackPointer(__ptr_surfIdx) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_surface_get_material,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_create_placeholder: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_placeholder").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_placeholder").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 121922552)!
         }
         }
     }()
     public func createPlaceholder() -> Godot.Resource? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_create_placeholder,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.Resource.retrievedInstanceManagedByGodot(__temporary)
+        Godot.Resource?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_create_placeholder,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_create_trimesh_shape: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_trimesh_shape").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_trimesh_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4160111210)!
         }
         }
     }()
     public func createTrimeshShape() -> Godot.ConcavePolygonShape3D? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_create_trimesh_shape,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.ConcavePolygonShape3D.retrievedInstanceManagedByGodot(__temporary)
+        Godot.ConcavePolygonShape3D?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_create_trimesh_shape,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_create_convex_shape: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_convex_shape").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_convex_shape").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2529984628)!
         }
         }
     }()
     public func createConvexShape(clean: Bool = true, simplify: Bool = false) -> Godot.ConvexPolygonShape3D? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafePointer(to: clean) { (__ptr_clean) in
-            withUnsafePointer(to: simplify) { (__ptr_simplify) in
-                withUnsafeArgumentPackPointer(__ptr_clean, __ptr_simplify) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_create_convex_shape,
-                                __ptr_self,
-                                __accessPtr,
-                                __ptr___temporary
-                            )
-                        }
-                    }
-                }
-            }
-        }
-        return Godot.ConvexPolygonShape3D.retrievedInstanceManagedByGodot(__temporary)
+        Godot.ConvexPolygonShape3D?.fromMutatingGodotUnsafePointer { __temporary in
+        clean.withGodotUnsafeRawPointer { __ptr_clean in
+        simplify.withGodotUnsafeRawPointer { __ptr_simplify in
+        withUnsafeArgumentPackPointer(__ptr_clean, __ptr_simplify) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_create_convex_shape,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
     }
 
     private static var __method_binding_create_outline: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_outline").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_outline").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1208642001)!
         }
         }
     }()
     public func createOutline(margin: Double) -> Godot.Mesh? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafePointer(to: margin) { (__ptr_margin) in
-            withUnsafeArgumentPackPointer(__ptr_margin) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_create_outline,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return Godot.Mesh.retrievedInstanceManagedByGodot(__temporary)
+        Godot.Mesh?.fromMutatingGodotUnsafePointer { __temporary in
+        margin.withGodotUnsafeRawPointer { __ptr_margin in
+        withUnsafeArgumentPackPointer(__ptr_margin) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_create_outline,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_generate_triangle_mesh: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_triangle_mesh").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "generate_triangle_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3476533166)!
         }
         }
     }()
     public func generateTriangleMesh() -> Godot.TriangleMesh? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_generate_triangle_mesh,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.TriangleMesh.retrievedInstanceManagedByGodot(__temporary)
+        Godot.TriangleMesh?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_generate_triangle_mesh,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     public var lightmapSizeHint: Godot.Vector2i {
@@ -554,136 +487,122 @@ open class Mesh: Resource {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSurfaceCount()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _surface_get_array_len_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetArrayLen(
-            index: args[0]!.load(as: Int32.self)
+            index: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _surface_get_array_index_len_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetArrayIndexLen(
-            index: args[0]!.load(as: Int32.self)
+            index: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _surface_get_arrays_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetArrays(
-            index: args[0]!.load(as: Int32.self)
+            index: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _surface_get_blend_shape_arrays_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetBlendShapeArrays(
-            index: args[0]!.load(as: Int32.self)
+            index: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _surface_get_lods_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetLods(
-            index: args[0]!.load(as: Int32.self)
+            index: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _surface_get_format_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetFormat(
-            index: args[0]!.load(as: Int32.self)
+            index: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UInt32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _surface_get_primitive_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetPrimitiveType(
-            index: args[0]!.load(as: Int32.self)
+            index: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UInt32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _surface_set_material_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceSetMaterial(
-            index: args[0]!.load(as: Int32.self),
-            material: Godot.Material.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
+            index: Int32.fromGodotUnsafePointer(args[0]!),
+            material: Godot.Material?.fromGodotUnsafePointer(args[1]!)
         )}
         let _surface_get_material_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._surfaceGetMaterial(
-            index: args[0]!.load(as: Int32.self)
+            index: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_blend_shape_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getBlendShapeCount()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_blend_shape_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getBlendShapeName(
-            index: args[0]!.load(as: Int32.self)
+            index: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_blend_shape_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setBlendShapeName(
-            index: args[0]!.load(as: Int32.self),
-            name: Godot.GodotStringName(godotExtensionPointer: args[1]!)
+            index: Int32.fromGodotUnsafePointer(args[0]!),
+            name: Godot.GodotStringName.fromGodotUnsafePointer(args[1]!)
         )}
         let _get_aabb_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<Mesh> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAabb()
-        returnPtr!.assumingMemoryBound(to: Godot.AABB.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getSurfaceCount" : ("_get_surface_count", _get_surface_count_call),
             "_surfaceGetArrayLen" : ("_surface_get_array_len", _surface_get_array_len_call),

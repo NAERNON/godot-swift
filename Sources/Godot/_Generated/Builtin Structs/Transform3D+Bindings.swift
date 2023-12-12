@@ -61,67 +61,67 @@ private var __operator_binding_multiply_packedvector3array: GDExtensionPtrOperat
     return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
 }()
 private var __method_binding_inverse: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "inverse").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "inverse").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 3816817146)!
     }
 }()
 private var __method_binding_affine_inverse: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "affine_inverse").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "affine_inverse").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 3816817146)!
     }
 }()
 private var __method_binding_orthonormalized: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "orthonormalized").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "orthonormalized").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 3816817146)!
     }
 }()
 private var __method_binding_rotated: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "rotated").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "rotated").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1563203923)!
     }
 }()
 private var __method_binding_rotated_local: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "rotated_local").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "rotated_local").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1563203923)!
     }
 }()
 private var __method_binding_scaled: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "scaled").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "scaled").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1405596198)!
     }
 }()
 private var __method_binding_scaled_local: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "scaled_local").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "scaled_local").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1405596198)!
     }
 }()
 private var __method_binding_translated: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "translated").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "translated").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1405596198)!
     }
 }()
 private var __method_binding_translated_local: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "translated_local").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "translated_local").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1405596198)!
     }
 }()
 private var __method_binding_looking_at: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "looking_at").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "looking_at").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 90889270)!
     }
 }()
 private var __method_binding_interpolate_with: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "interpolate_with").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "interpolate_with").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 1786453358)!
     }
 }()
 private var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_equal_approx").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 696001652)!
     }
 }()
 private var __method_binding_is_finite: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_finite").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D, __ptr__method_name, 3918633141)!
     }
 }()
@@ -148,449 +148,276 @@ extension Transform3D {
 
     static internal func _constructor_transform3d(from: Godot.Transform3D) -> Self {
         var __temporary = Transform3D()
-        withUnsafePointer(to: from) { (__ptr_from) in
-            withUnsafeArgumentPackPointer(__ptr_from) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                    __constructor_transform3d(__ptr___temporary, __accessPtr)
-                }
-            }
-        }
+        from.withGodotUnsafeRawPointer { __ptr_from in
+        withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_transform3d(__ptr___temporary, __accessPtr)
+        }}}
         return __temporary
     }
     static internal func _ptr_constructor_transform3d(from: UnsafeRawPointer) -> Self {
         var __temporary = Transform3D()
-        withUnsafeArgumentPackPointer(from) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_transform3d(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(from) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_transform3d(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _constructor_basis_vector3(basis: Godot.Basis, origin: Godot.Vector3) -> Self {
         var __temporary = Transform3D()
-        withUnsafePointer(to: basis) { (__ptr_basis) in
-            withUnsafePointer(to: origin) { (__ptr_origin) in
-                withUnsafeArgumentPackPointer(__ptr_basis, __ptr_origin) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                        __constructor_basis_vector3(__ptr___temporary, __accessPtr)
-                    }
-                }
-            }
-        }
+        basis.withGodotUnsafeRawPointer { __ptr_basis in
+        origin.withGodotUnsafeRawPointer { __ptr_origin in
+        withUnsafeArgumentPackPointer(__ptr_basis, __ptr_origin) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_basis_vector3(__ptr___temporary, __accessPtr)
+        }}}}
         return __temporary
     }
     static internal func _ptr_constructor_basis_vector3(basis: UnsafeRawPointer, origin: UnsafeRawPointer) -> Self {
         var __temporary = Transform3D()
-        withUnsafeArgumentPackPointer(basis, origin) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_basis_vector3(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(basis, origin) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_basis_vector3(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _constructor_vector3_vector3_vector3_vector3(xAxis: Godot.Vector3, yAxis: Godot.Vector3, zAxis: Godot.Vector3, origin: Godot.Vector3) -> Self {
         var __temporary = Transform3D()
-        withUnsafePointer(to: xAxis) { (__ptr_xAxis) in
-            withUnsafePointer(to: yAxis) { (__ptr_yAxis) in
-                withUnsafePointer(to: zAxis) { (__ptr_zAxis) in
-                    withUnsafePointer(to: origin) { (__ptr_origin) in
-                        withUnsafeArgumentPackPointer(__ptr_xAxis, __ptr_yAxis, __ptr_zAxis, __ptr_origin) { (__accessPtr) in
-                            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                                __constructor_vector3_vector3_vector3_vector3(__ptr___temporary, __accessPtr)
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        xAxis.withGodotUnsafeRawPointer { __ptr_xAxis in
+        yAxis.withGodotUnsafeRawPointer { __ptr_yAxis in
+        zAxis.withGodotUnsafeRawPointer { __ptr_zAxis in
+        origin.withGodotUnsafeRawPointer { __ptr_origin in
+        withUnsafeArgumentPackPointer(__ptr_xAxis, __ptr_yAxis, __ptr_zAxis, __ptr_origin) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_vector3_vector3_vector3_vector3(__ptr___temporary, __accessPtr)
+        }}}}}}
         return __temporary
     }
     static internal func _ptr_constructor_vector3_vector3_vector3_vector3(xAxis: UnsafeRawPointer, yAxis: UnsafeRawPointer, zAxis: UnsafeRawPointer, origin: UnsafeRawPointer) -> Self {
         var __temporary = Transform3D()
-        withUnsafeArgumentPackPointer(xAxis, yAxis, zAxis, origin) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_vector3_vector3_vector3_vector3(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(xAxis, yAxis, zAxis, origin) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_vector3_vector3_vector3_vector3(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _constructor_projection(from: Godot.Projection) -> Self {
         var __temporary = Transform3D()
-        withUnsafePointer(to: from) { (__ptr_from) in
-            withUnsafeArgumentPackPointer(__ptr_from) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                    __constructor_projection(__ptr___temporary, __accessPtr)
-                }
-            }
-        }
+        from.withGodotUnsafeRawPointer { __ptr_from in
+        withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_projection(__ptr___temporary, __accessPtr)
+        }}}
         return __temporary
     }
     static internal func _ptr_constructor_projection(from: UnsafeRawPointer) -> Self {
         var __temporary = Transform3D()
-        withUnsafeArgumentPackPointer(from) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_projection(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(from) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_projection(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _operatorEqual<Value: VariantStorableIn>(_ lhs: Godot.Transform3D, _ rhs: Value) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
+        __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorNotEqual<Value: VariantStorableIn>(_ lhs: Godot.Transform3D, _ rhs: Value) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
+        __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorNot(_ lhs: Godot.Transform3D) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                __operator_binding_not(__ptr_lhs, nil, __ptr___temporary)
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        __operator_binding_not(__ptr_lhs, nil, __temporary)}}
     }
 
     static internal func _operatorMultiply(_ lhs: Godot.Transform3D, _ rhs: Int) -> Godot.Transform3D {
-        var __temporary = Transform3D()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_multiply_int(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_multiply_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorMultiply(_ lhs: Godot.Transform3D, _ rhs: Real) -> Godot.Transform3D {
-        var __temporary = Transform3D()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_multiply_double(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_multiply_double(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorMultiply(_ lhs: Godot.Transform3D, _ rhs: Godot.Vector3) -> Godot.Vector3 {
-        var __temporary = Vector3()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_multiply_vector3(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_multiply_vector3(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorMultiply(_ lhs: Godot.Transform3D, _ rhs: Godot.Plane) -> Godot.Plane {
-        var __temporary = Plane()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_multiply_plane(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Plane.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_multiply_plane(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorMultiply(_ lhs: Godot.Transform3D, _ rhs: Godot.AABB) -> Godot.AABB {
-        var __temporary = AABB()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_multiply_aabb(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        AABB.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_multiply_aabb(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorEqual(_ lhs: Godot.Transform3D, _ rhs: Godot.Transform3D) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_equal_transform3d(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_equal_transform3d(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorNotEqual(_ lhs: Godot.Transform3D, _ rhs: Godot.Transform3D) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_not_equal_transform3d(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_not_equal_transform3d(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorMultiply(_ lhs: Godot.Transform3D, _ rhs: Godot.Transform3D) -> Godot.Transform3D {
-        var __temporary = Transform3D()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_multiply_transform3d(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_multiply_transform3d(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorIn<Value1: VariantStorable, Value2: VariantStorable>(_ lhs: Godot.Transform3D, _ rhs: Godot.GodotDictionary<Value1, Value2>) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            rhs.withUnsafeRawPointer { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorIn<Value: VariantStorable>(_ lhs: Godot.Transform3D, _ rhs: Godot.GodotArray<Value>) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            rhs.withUnsafeRawPointer { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorMultiply(_ lhs: Godot.Transform3D, _ rhs: Godot.PackedVector3Array) -> Godot.PackedVector3Array {
-        let __temporary = PackedVector3Array()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            rhs.withUnsafeRawPointer { (__ptr_rhs) in
-                __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                    __operator_binding_multiply_packedvector3array(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_multiply_packedvector3array(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     internal func _inverse() -> Godot.Transform3D {
-        var __temporary = Godot.Transform3D()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_inverse(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_inverse(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _affineInverse() -> Godot.Transform3D {
-        var __temporary = Godot.Transform3D()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_affine_inverse(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_affine_inverse(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _orthonormalized() -> Godot.Transform3D {
-        var __temporary = Godot.Transform3D()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_orthonormalized(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_orthonormalized(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _rotated(axis: Godot.Vector3, angle: Real) -> Godot.Transform3D {
-        var __temporary = Godot.Transform3D()
-        withUnsafePointer(to: axis) { (__ptr_axis) in
-            withUnsafePointer(to: angle) { (__ptr_angle) in
-                withUnsafeArgumentPackPointer(__ptr_axis, __ptr_angle) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                        withUnsafePointer(to: `self`) { (___ptr_self) in
-                            let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                            __method_binding_rotated(__ptr_self, __accessPtr, __ptr___temporary, 2)
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        axis.withGodotUnsafeRawPointer { __ptr_axis in
+        angle.withGodotUnsafeRawPointer { __ptr_angle in
+        withUnsafeArgumentPackPointer(__ptr_axis, __ptr_angle) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_rotated(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
     internal func _rotatedLocal(axis: Godot.Vector3, angle: Real) -> Godot.Transform3D {
-        var __temporary = Godot.Transform3D()
-        withUnsafePointer(to: axis) { (__ptr_axis) in
-            withUnsafePointer(to: angle) { (__ptr_angle) in
-                withUnsafeArgumentPackPointer(__ptr_axis, __ptr_angle) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                        withUnsafePointer(to: `self`) { (___ptr_self) in
-                            let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                            __method_binding_rotated_local(__ptr_self, __accessPtr, __ptr___temporary, 2)
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        axis.withGodotUnsafeRawPointer { __ptr_axis in
+        angle.withGodotUnsafeRawPointer { __ptr_angle in
+        withUnsafeArgumentPackPointer(__ptr_axis, __ptr_angle) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_rotated_local(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
     internal func _scaled(scale: Godot.Vector3) -> Godot.Transform3D {
-        var __temporary = Godot.Transform3D()
-        withUnsafePointer(to: scale) { (__ptr_scale) in
-            withUnsafeArgumentPackPointer(__ptr_scale) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_scaled(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        scale.withGodotUnsafeRawPointer { __ptr_scale in
+        withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_scaled(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _scaledLocal(scale: Godot.Vector3) -> Godot.Transform3D {
-        var __temporary = Godot.Transform3D()
-        withUnsafePointer(to: scale) { (__ptr_scale) in
-            withUnsafeArgumentPackPointer(__ptr_scale) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_scaled_local(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        scale.withGodotUnsafeRawPointer { __ptr_scale in
+        withUnsafeArgumentPackPointer(__ptr_scale) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_scaled_local(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _translated(offset: Godot.Vector3) -> Godot.Transform3D {
-        var __temporary = Godot.Transform3D()
-        withUnsafePointer(to: offset) { (__ptr_offset) in
-            withUnsafeArgumentPackPointer(__ptr_offset) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_translated(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        offset.withGodotUnsafeRawPointer { __ptr_offset in
+        withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_translated(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _translatedLocal(offset: Godot.Vector3) -> Godot.Transform3D {
-        var __temporary = Godot.Transform3D()
-        withUnsafePointer(to: offset) { (__ptr_offset) in
-            withUnsafeArgumentPackPointer(__ptr_offset) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_translated_local(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        offset.withGodotUnsafeRawPointer { __ptr_offset in
+        withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_translated_local(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _lookingAt(target: Godot.Vector3, up: Godot.Vector3 = Vector3(x: 0, y: 1, z: 0), useModelFront: Bool = false) -> Godot.Transform3D {
-        var __temporary = Godot.Transform3D()
-        withUnsafePointer(to: target) { (__ptr_target) in
-            withUnsafePointer(to: up) { (__ptr_up) in
-                withUnsafePointer(to: useModelFront) { (__ptr_useModelFront) in
-                    withUnsafeArgumentPackPointer(__ptr_target, __ptr_up, __ptr_useModelFront) { (__accessPtr) in
-                        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                            withUnsafePointer(to: `self`) { (___ptr_self) in
-                                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                                __method_binding_looking_at(__ptr_self, __accessPtr, __ptr___temporary, 3)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        target.withGodotUnsafeRawPointer { __ptr_target in
+        up.withGodotUnsafeRawPointer { __ptr_up in
+        useModelFront.withGodotUnsafeRawPointer { __ptr_useModelFront in
+        withUnsafeArgumentPackPointer(__ptr_target, __ptr_up, __ptr_useModelFront) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_looking_at(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 3)}}}}}}
     }
 
     internal func _interpolateWith(xform: Godot.Transform3D, weight: Real) -> Godot.Transform3D {
-        var __temporary = Godot.Transform3D()
-        withUnsafePointer(to: xform) { (__ptr_xform) in
-            withUnsafePointer(to: weight) { (__ptr_weight) in
-                withUnsafeArgumentPackPointer(__ptr_xform, __ptr_weight) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                        withUnsafePointer(to: `self`) { (___ptr_self) in
-                            let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                            __method_binding_interpolate_with(__ptr_self, __accessPtr, __ptr___temporary, 2)
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
+        xform.withGodotUnsafeRawPointer { __ptr_xform in
+        weight.withGodotUnsafeRawPointer { __ptr_weight in
+        withUnsafeArgumentPackPointer(__ptr_xform, __ptr_weight) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_interpolate_with(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
     internal func _isEqualApprox(xform: Godot.Transform3D) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: xform) { (__ptr_xform) in
-            withUnsafeArgumentPackPointer(__ptr_xform) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_is_equal_approx(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        xform.withGodotUnsafeRawPointer { __ptr_xform in
+        withUnsafeArgumentPackPointer(__ptr_xform) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_is_equal_approx(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _isFinite() -> Bool {
-        var __temporary = Bool()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_is_finite(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_is_finite(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     }

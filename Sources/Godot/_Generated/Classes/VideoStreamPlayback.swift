@@ -52,33 +52,25 @@ open class VideoStreamPlayback: Resource {
     }
 
     private static var __method_binding_mix_audio: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "mix_audio").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "mix_audio").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1369271885)!
         }
         }
     }()
     public func mixAudio(numFrames: Int32, buffer: Godot.PackedFloat32Array = PackedFloat32Array(), offset: Int32 = 0) -> Int32 {
-        var __temporary = Int32()
-        withUnsafePointer(to: numFrames) { (__ptr_numFrames) in
-            buffer.withUnsafeRawPointer { (__ptr_buffer) in
-                withUnsafePointer(to: offset) { (__ptr_offset) in
-                    withUnsafeArgumentPackPointer(__ptr_numFrames, __ptr_buffer, __ptr_offset) { (__accessPtr) in
-                        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                            `self`.withUnsafeRawPointer { (__ptr_self) in
-                                gdextension_interface_object_method_bind_ptrcall(
-                                    Self.__method_binding_mix_audio,
-                                    __ptr_self,
-                                    __accessPtr,
-                                    __ptr___temporary
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        numFrames.withGodotUnsafeRawPointer { __ptr_numFrames in
+        buffer.withGodotUnsafeRawPointer { __ptr_buffer in
+        offset.withGodotUnsafeRawPointer { __ptr_offset in
+        withUnsafeArgumentPackPointer(__ptr_numFrames, __ptr_buffer, __ptr_offset) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_mix_audio,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -90,108 +82,95 @@ open class VideoStreamPlayback: Resource {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._stop()}
         let _play_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._play()}
         let _is_playing_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isPlaying()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_paused_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setPaused(
-            args[0]!.load(as: Bool.self)
+            Bool.fromGodotUnsafePointer(args[0]!)
         )}
         let _is_paused_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isPaused()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_length_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getLength()
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_playback_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPlaybackPosition()
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _seek_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._seek(
-            time: args[0]!.load(as: Double.self)
+            time: Double.fromGodotUnsafePointer(args[0]!)
         )}
         let _set_audio_track_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setAudioTrack(
-            idx: args[0]!.load(as: Int32.self)
+            idx: Int32.fromGodotUnsafePointer(args[0]!)
         )}
         let _get_texture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getTexture()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _update_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._update(
-            delta: args[0]!.load(as: Double.self)
+            delta: Double.fromGodotUnsafePointer(args[0]!)
         )}
         let _get_channels_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getChannels()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_mix_rate_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VideoStreamPlayback> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMixRate()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_stop" : ("_stop", _stop_call),
             "_play" : ("_play", _play_call),

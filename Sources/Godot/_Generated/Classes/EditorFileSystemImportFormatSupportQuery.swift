@@ -26,26 +26,23 @@ open class EditorFileSystemImportFormatSupportQuery: RefCounted {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorFileSystemImportFormatSupportQuery> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorFileSystemImportFormatSupportQuery> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isActive()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_file_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorFileSystemImportFormatSupportQuery> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorFileSystemImportFormatSupportQuery> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getFileExtensions()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _query_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorFileSystemImportFormatSupportQuery> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorFileSystemImportFormatSupportQuery> .fromOpaque(instancePtr).takeUnretainedValue()
         ._query()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_isActive" : ("_is_active", _is_active_call),
             "_getFileExtensions" : ("_get_file_extensions", _get_file_extensions_call),

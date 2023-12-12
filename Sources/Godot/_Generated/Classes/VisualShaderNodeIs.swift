@@ -18,47 +18,40 @@ open class VisualShaderNodeIs: VisualShaderNode {
     }
 
     private static var __method_binding_set_function: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_function").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_function").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1438374690)!
         }
         }
     }()
     private func __setFunction(`func`: Godot.VisualShaderNodeIs.Function) {
-        withUnsafePointer(to: `func`) { (__ptr_func) in
-            withUnsafeArgumentPackPointer(__ptr_func) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_set_function,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        `func`.withGodotUnsafeRawPointer { __ptr_func in
+        withUnsafeArgumentPackPointer(__ptr_func) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_function,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_get_function: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_function").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_function").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 580678557)!
         }
         }
     }()
     private func __getFunction() -> Godot.VisualShaderNodeIs.Function {
-        var __temporary = Godot.VisualShaderNodeIs.Function.RawValue(0)
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_function,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.VisualShaderNodeIs.Function(rawValue: __temporary)!
+        Godot.VisualShaderNodeIs.Function.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_function,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     public var function: Godot.VisualShaderNodeIs.Function {

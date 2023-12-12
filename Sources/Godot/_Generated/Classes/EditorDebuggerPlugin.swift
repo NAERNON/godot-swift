@@ -17,51 +17,41 @@ open class EditorDebuggerPlugin: RefCounted {
     }
 
     private static var __method_binding_get_session: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_session").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_session").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3061968499)!
         }
         }
     }()
     public func session(id: Int32) -> Godot.EditorDebuggerSession? {
-        var __temporary: GDExtensionObjectPtr!
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafeArgumentPackPointer(__ptr_id) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_get_session,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return Godot.EditorDebuggerSession.retrievedInstanceManagedByGodot(__temporary)
+        Godot.EditorDebuggerSession?.fromMutatingGodotUnsafePointer { __temporary in
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_session,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_get_sessions: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_sessions").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_sessions").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
     }()
     public func sessions() -> Godot.AnyGodotArray {
-        let __temporary = Godot.AnyGodotArray()
-        __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_sessions,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.AnyGodotArray.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_sessions,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -73,33 +63,30 @@ open class EditorDebuggerPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setupSession(
-            sessionId: args[0]!.load(as: Int32.self)
+            sessionId: Int32.fromGodotUnsafePointer(args[0]!)
         )}
         let _has_capture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasCapture(
-            Godot.GodotString(godotExtensionPointer: args[0]!)
+            Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _capture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._capture(
-            message: Godot.GodotString(godotExtensionPointer: args[0]!),
-            data: Godot.AnyGodotArray(godotExtensionPointer: args[1]!),
-            sessionId: args[2]!.load(as: Int32.self)
+            message: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
+            data: Godot.AnyGodotArray.fromGodotUnsafePointer(args[1]!),
+            sessionId: Int32.fromGodotUnsafePointer(args[2]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_setupSession" : ("_setup_session", _setup_session_call),
             "_hasCapture" : ("_has_capture", _has_capture_call),

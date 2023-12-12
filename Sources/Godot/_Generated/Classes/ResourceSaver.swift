@@ -34,113 +34,88 @@ open class ResourceSaver: Object {
     }
 
     private static var __method_binding_save: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "save").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "save").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2303056517)!
         }
         }
     }()
     public func save(resource: Godot.Resource?, path: Godot.GodotString = "", flags: Godot.ResourceSaver.SaverFlags = ResourceSaver.SaverFlags(rawValue: 0)) -> Godot.ErrorType {
-        var __temporary = Godot.ErrorType.RawValue(0)
-        resource.withUnsafeRawPointer { (__ptr_resource) in
-            withUnsafePointer(to: __ptr_resource) { (_ptr___ptr_resource) in
-                path.withUnsafeRawPointer { (__ptr_path) in
-                    withUnsafePointer(to: flags) { (__ptr_flags) in
-                        withUnsafeArgumentPackPointer(_ptr___ptr_resource, __ptr_path, __ptr_flags) { (__accessPtr) in
-                            withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                                `self`.withUnsafeRawPointer { (__ptr_self) in
-                                    gdextension_interface_object_method_bind_ptrcall(
-                                        Self.__method_binding_save,
-                                        __ptr_self,
-                                        __accessPtr,
-                                        __ptr___temporary
-                                    )
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return Godot.ErrorType(rawValue: __temporary)!
+        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        resource.withGodotUnsafeRawPointer { __ptr_resource in
+        withUnsafePointer(to: __ptr_resource) { _ptr___ptr_resource in
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        flags.withGodotUnsafeRawPointer { __ptr_flags in
+        withUnsafeArgumentPackPointer(_ptr___ptr_resource, __ptr_path, __ptr_flags) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_save,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}}}
     }
 
     private static var __method_binding_get_recognized_extensions: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_recognized_extensions").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_recognized_extensions").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4223597960)!
         }
         }
     }()
     public func recognizedExtensions(type: Godot.Resource?) -> Godot.PackedStringArray {
-        let __temporary = Godot.PackedStringArray()
-        type.withUnsafeRawPointer { (__ptr_type) in
-            withUnsafePointer(to: __ptr_type) { (_ptr___ptr_type) in
-                withUnsafeArgumentPackPointer(_ptr___ptr_type) { (__accessPtr) in
-                    __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_get_recognized_extensions,
-                                __ptr_self,
-                                __accessPtr,
-                                __ptr___temporary
-                            )
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        type.withGodotUnsafeRawPointer { __ptr_type in
+        withUnsafePointer(to: __ptr_type) { _ptr___ptr_type in
+        withUnsafeArgumentPackPointer(_ptr___ptr_type) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_recognized_extensions,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
     }
 
     private static var __method_binding_add_resource_format_saver: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_resource_format_saver").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_resource_format_saver").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 362894272)!
         }
         }
     }()
     public func addResourceFormatSaver(_ formatSaver: Godot.ResourceFormatSaver?, atFront front: Bool = false) {
-        formatSaver.withUnsafeRawPointer { (__ptr_formatSaver) in
-            withUnsafePointer(to: __ptr_formatSaver) { (_ptr___ptr_formatSaver) in
-                withUnsafePointer(to: front) { (__ptr_front) in
-                    withUnsafeArgumentPackPointer(_ptr___ptr_formatSaver, __ptr_front) { (__accessPtr) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_add_resource_format_saver,
-                                __ptr_self,
-                                __accessPtr,
-                                nil
-                            )
-                        }
-                    }
-                }
-            }
-        }
+        formatSaver.withGodotUnsafeRawPointer { __ptr_formatSaver in
+        withUnsafePointer(to: __ptr_formatSaver) { _ptr___ptr_formatSaver in
+        front.withGodotUnsafeRawPointer { __ptr_front in
+        withUnsafeArgumentPackPointer(_ptr___ptr_formatSaver, __ptr_front) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_resource_format_saver,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
     }
 
     private static var __method_binding_remove_resource_format_saver: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_resource_format_saver").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_resource_format_saver").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3373026878)!
         }
         }
     }()
     public func removeResourceFormatSaver(_ formatSaver: Godot.ResourceFormatSaver?) {
-        formatSaver.withUnsafeRawPointer { (__ptr_formatSaver) in
-            withUnsafePointer(to: __ptr_formatSaver) { (_ptr___ptr_formatSaver) in
-                withUnsafeArgumentPackPointer(_ptr___ptr_formatSaver) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_remove_resource_format_saver,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        formatSaver.withGodotUnsafeRawPointer { __ptr_formatSaver in
+        withUnsafePointer(to: __ptr_formatSaver) { _ptr___ptr_formatSaver in
+        withUnsafeArgumentPackPointer(_ptr___ptr_formatSaver) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_remove_resource_format_saver,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

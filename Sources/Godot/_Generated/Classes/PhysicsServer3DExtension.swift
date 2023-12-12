@@ -653,55 +653,43 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     }
 
     private static var __method_binding_body_test_motion_is_excluding_body: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_test_motion_is_excluding_body").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "body_test_motion_is_excluding_body").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
     }()
     public func bodyTestMotionIsExcludingBody(_ body: Godot.RID) -> Bool {
-        var __temporary = Bool()
-        body.withUnsafeRawPointer { (__ptr_body) in
-            withUnsafeArgumentPackPointer(__ptr_body) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_body_test_motion_is_excluding_body,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        body.withGodotUnsafeRawPointer { __ptr_body in
+        withUnsafeArgumentPackPointer(__ptr_body) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_body_test_motion_is_excluding_body,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_body_test_motion_is_excluding_object: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_test_motion_is_excluding_object").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "body_test_motion_is_excluding_object").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
     }()
     public func bodyTestMotionIsExcludingObject(_ object: UInt64) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: object) { (__ptr_object) in
-            withUnsafeArgumentPackPointer(__ptr_object) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_body_test_motion_is_excluding_object,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        object.withGodotUnsafeRawPointer { __ptr_object in
+        withUnsafeArgumentPackPointer(__ptr_object) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_body_test_motion_is_excluding_object,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -713,1906 +701,1718 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._worldBoundaryShapeCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _separation_ray_shape_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._separationRayShapeCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _sphere_shape_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._sphereShapeCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _box_shape_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._boxShapeCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _capsule_shape_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._capsuleShapeCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _cylinder_shape_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._cylinderShapeCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _convex_polygon_shape_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._convexPolygonShapeCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _concave_polygon_shape_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._concavePolygonShapeCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _heightmap_shape_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._heightmapShapeCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _custom_shape_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._customShapeCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _shape_set_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shapeSetData(
-            shape: Godot.RID(godotExtensionPointer: args[0]!),
-            data: Godot.Variant(godotExtensionPointer: args[1]!)
+            shape: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            data: Godot.Variant.fromGodotUnsafePointer(args[1]!)
         )}
         let _shape_set_custom_solver_bias_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shapeSetCustomSolverBias(
-            shape: Godot.RID(godotExtensionPointer: args[0]!),
-            bias: args[1]!.load(as: Double.self)
+            shape: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            bias: Double.fromGodotUnsafePointer(args[1]!)
         )}
         let _shape_set_margin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shapeSetMargin(
-            shape: Godot.RID(godotExtensionPointer: args[0]!),
-            margin: args[1]!.load(as: Double.self)
+            shape: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            margin: Double.fromGodotUnsafePointer(args[1]!)
         )}
         let _shape_get_margin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shapeGetMargin(
-            shape: Godot.RID(godotExtensionPointer: args[0]!)
+            shape: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _shape_get_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shapeGetType(
-            shape: Godot.RID(godotExtensionPointer: args[0]!)
+            shape: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.PhysicsServer3D.ShapeType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _shape_get_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shapeGetData(
-            shape: Godot.RID(godotExtensionPointer: args[0]!)
+            shape: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _shape_get_custom_solver_bias_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shapeGetCustomSolverBias(
-            shape: Godot.RID(godotExtensionPointer: args[0]!)
+            shape: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _space_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._spaceCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _space_set_active_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._spaceSetActive(
-            space: Godot.RID(godotExtensionPointer: args[0]!),
-            active: args[1]!.load(as: Bool.self)
+            space: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            active: Bool.fromGodotUnsafePointer(args[1]!)
         )}
         let _space_is_active_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._spaceIsActive(
-            space: Godot.RID(godotExtensionPointer: args[0]!)
+            space: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _space_set_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._spaceSetParam(
-            space: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.SpaceParameter.self),
-            value: args[2]!.load(as: Double.self)
+            space: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.SpaceParameter.fromGodotUnsafePointer(args[1]!),
+            value: Double.fromGodotUnsafePointer(args[2]!)
         )}
         let _space_get_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._spaceGetParam(
-            space: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.SpaceParameter.self)
+            space: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.SpaceParameter.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _space_get_direct_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._spaceGetDirectState(
-            space: Godot.RID(godotExtensionPointer: args[0]!)
+            space: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _space_set_debug_contacts_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._spaceSetDebugContacts(
-            space: Godot.RID(godotExtensionPointer: args[0]!),
-            maxContacts: args[1]!.load(as: Int32.self)
+            space: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            maxContacts: Int32.fromGodotUnsafePointer(args[1]!)
         )}
         let _space_get_contacts_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._spaceGetContacts(
-            space: Godot.RID(godotExtensionPointer: args[0]!)
+            space: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _space_get_contact_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._spaceGetContactCount(
-            space: Godot.RID(godotExtensionPointer: args[0]!)
+            space: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _area_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _area_set_space_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetSpace(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            space: Godot.RID(godotExtensionPointer: args[1]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            space: Godot.RID.fromGodotUnsafePointer(args[1]!)
         )}
         let _area_get_space_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaGetSpace(
-            area: Godot.RID(godotExtensionPointer: args[0]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _area_add_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaAddShape(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            shape: Godot.RID(godotExtensionPointer: args[1]!),
-            transform: args[2]!.load(as: Godot.Transform3D.self),
-            disabled: args[3]!.load(as: Bool.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shape: Godot.RID.fromGodotUnsafePointer(args[1]!),
+            transform: Godot.Transform3D.fromGodotUnsafePointer(args[2]!),
+            disabled: Bool.fromGodotUnsafePointer(args[3]!)
         )}
         let _area_set_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetShape(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self),
-            shape: Godot.RID(godotExtensionPointer: args[2]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!),
+            shape: Godot.RID.fromGodotUnsafePointer(args[2]!)
         )}
         let _area_set_shape_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetShapeTransform(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self),
-            transform: args[2]!.load(as: Godot.Transform3D.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!),
+            transform: Godot.Transform3D.fromGodotUnsafePointer(args[2]!)
         )}
         let _area_set_shape_disabled_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetShapeDisabled(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self),
-            disabled: args[2]!.load(as: Bool.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!),
+            disabled: Bool.fromGodotUnsafePointer(args[2]!)
         )}
         let _area_get_shape_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaGetShapeCount(
-            area: Godot.RID(godotExtensionPointer: args[0]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _area_get_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaGetShape(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _area_get_shape_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaGetShapeTransform(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.Transform3D.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _area_remove_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaRemoveShape(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!)
         )}
         let _area_clear_shapes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaClearShapes(
-            area: Godot.RID(godotExtensionPointer: args[0]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )}
         let _area_attach_object_instance_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaAttachObjectInstanceId(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            id: args[1]!.load(as: UInt64.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            id: UInt64.fromGodotUnsafePointer(args[1]!)
         )}
         let _area_get_object_instance_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaGetObjectInstanceId(
-            area: Godot.RID(godotExtensionPointer: args[0]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UInt64.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _area_set_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetParam(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.AreaParameter.self),
-            value: Godot.Variant(godotExtensionPointer: args[2]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.AreaParameter.fromGodotUnsafePointer(args[1]!),
+            value: Godot.Variant.fromGodotUnsafePointer(args[2]!)
         )}
         let _area_set_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetTransform(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            transform: args[1]!.load(as: Godot.Transform3D.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            transform: Godot.Transform3D.fromGodotUnsafePointer(args[1]!)
         )}
         let _area_get_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaGetParam(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.AreaParameter.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.AreaParameter.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _area_get_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaGetTransform(
-            area: Godot.RID(godotExtensionPointer: args[0]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.Transform3D.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _area_set_collision_layer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetCollisionLayer(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            layer: args[1]!.load(as: UInt32.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            layer: UInt32.fromGodotUnsafePointer(args[1]!)
         )}
         let _area_get_collision_layer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaGetCollisionLayer(
-            area: Godot.RID(godotExtensionPointer: args[0]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UInt32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _area_set_collision_mask_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetCollisionMask(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            mask: args[1]!.load(as: UInt32.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            mask: UInt32.fromGodotUnsafePointer(args[1]!)
         )}
         let _area_get_collision_mask_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaGetCollisionMask(
-            area: Godot.RID(godotExtensionPointer: args[0]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UInt32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _area_set_monitorable_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetMonitorable(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            monitorable: args[1]!.load(as: Bool.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            monitorable: Bool.fromGodotUnsafePointer(args[1]!)
         )}
         let _area_set_ray_pickable_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetRayPickable(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            enable: args[1]!.load(as: Bool.self)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            enable: Bool.fromGodotUnsafePointer(args[1]!)
         )}
         let _area_set_monitor_callback_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetMonitorCallback(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            callback: Godot.Callable(godotExtensionPointer: args[1]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            callback: Godot.Callable.fromGodotUnsafePointer(args[1]!)
         )}
         let _area_set_area_monitor_callback_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._areaSetAreaMonitorCallback(
-            area: Godot.RID(godotExtensionPointer: args[0]!),
-            callback: Godot.Callable(godotExtensionPointer: args[1]!)
+            area: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            callback: Godot.Callable.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_space_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetSpace(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            space: Godot.RID(godotExtensionPointer: args[1]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            space: Godot.RID.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_space_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetSpace(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetMode(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            mode: args[1]!.load(as: Godot.PhysicsServer3D.BodyMode.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            mode: Godot.PhysicsServer3D.BodyMode.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetMode(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.PhysicsServer3D.BodyMode.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_add_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyAddShape(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            shape: Godot.RID(godotExtensionPointer: args[1]!),
-            transform: args[2]!.load(as: Godot.Transform3D.self),
-            disabled: args[3]!.load(as: Bool.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shape: Godot.RID.fromGodotUnsafePointer(args[1]!),
+            transform: Godot.Transform3D.fromGodotUnsafePointer(args[2]!),
+            disabled: Bool.fromGodotUnsafePointer(args[3]!)
         )}
         let _body_set_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetShape(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self),
-            shape: Godot.RID(godotExtensionPointer: args[2]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!),
+            shape: Godot.RID.fromGodotUnsafePointer(args[2]!)
         )}
         let _body_set_shape_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetShapeTransform(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self),
-            transform: args[2]!.load(as: Godot.Transform3D.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!),
+            transform: Godot.Transform3D.fromGodotUnsafePointer(args[2]!)
         )}
         let _body_set_shape_disabled_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetShapeDisabled(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self),
-            disabled: args[2]!.load(as: Bool.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!),
+            disabled: Bool.fromGodotUnsafePointer(args[2]!)
         )}
         let _body_get_shape_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetShapeCount(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_get_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetShape(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_get_shape_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetShapeTransform(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.Transform3D.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_remove_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyRemoveShape(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            shapeIdx: args[1]!.load(as: Int32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            shapeIdx: Int32.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_clear_shapes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyClearShapes(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )}
         let _body_attach_object_instance_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyAttachObjectInstanceId(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            id: args[1]!.load(as: UInt64.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            id: UInt64.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_object_instance_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetObjectInstanceId(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UInt64.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_enable_continuous_collision_detection_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetEnableContinuousCollisionDetection(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            enable: args[1]!.load(as: Bool.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            enable: Bool.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_is_continuous_collision_detection_enabled_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyIsContinuousCollisionDetectionEnabled(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_collision_layer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetCollisionLayer(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            layer: args[1]!.load(as: UInt32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            layer: UInt32.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_collision_layer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetCollisionLayer(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UInt32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_collision_mask_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetCollisionMask(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            mask: args[1]!.load(as: UInt32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            mask: UInt32.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_collision_mask_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetCollisionMask(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UInt32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_collision_priority_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetCollisionPriority(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            priority: args[1]!.load(as: Double.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            priority: Double.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_collision_priority_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetCollisionPriority(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_user_flags_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetUserFlags(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            flags: args[1]!.load(as: UInt32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            flags: UInt32.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_user_flags_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetUserFlags(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UInt32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetParam(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.BodyParameter.self),
-            value: Godot.Variant(godotExtensionPointer: args[2]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.BodyParameter.fromGodotUnsafePointer(args[1]!),
+            value: Godot.Variant.fromGodotUnsafePointer(args[2]!)
         )}
         let _body_get_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetParam(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.BodyParameter.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.BodyParameter.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_reset_mass_properties_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyResetMassProperties(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )}
         let _body_set_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetState(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            state: args[1]!.load(as: Godot.PhysicsServer3D.BodyState.self),
-            value: Godot.Variant(godotExtensionPointer: args[2]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            state: Godot.PhysicsServer3D.BodyState.fromGodotUnsafePointer(args[1]!),
+            value: Godot.Variant.fromGodotUnsafePointer(args[2]!)
         )}
         let _body_get_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetState(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            state: args[1]!.load(as: Godot.PhysicsServer3D.BodyState.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            state: Godot.PhysicsServer3D.BodyState.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_apply_central_impulse_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyApplyCentralImpulse(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            impulse: args[1]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            impulse: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_apply_impulse_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyApplyImpulse(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            impulse: args[1]!.load(as: Godot.Vector3.self),
-            position: args[2]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            impulse: Godot.Vector3.fromGodotUnsafePointer(args[1]!),
+            position: Godot.Vector3.fromGodotUnsafePointer(args[2]!)
         )}
         let _body_apply_torque_impulse_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyApplyTorqueImpulse(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            impulse: args[1]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            impulse: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_apply_central_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyApplyCentralForce(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            force: args[1]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            force: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_apply_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyApplyForce(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            force: args[1]!.load(as: Godot.Vector3.self),
-            position: args[2]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            force: Godot.Vector3.fromGodotUnsafePointer(args[1]!),
+            position: Godot.Vector3.fromGodotUnsafePointer(args[2]!)
         )}
         let _body_apply_torque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyApplyTorque(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            torque: args[1]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            torque: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_add_constant_central_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyAddConstantCentralForce(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            force: args[1]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            force: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_add_constant_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyAddConstantForce(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            force: args[1]!.load(as: Godot.Vector3.self),
-            position: args[2]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            force: Godot.Vector3.fromGodotUnsafePointer(args[1]!),
+            position: Godot.Vector3.fromGodotUnsafePointer(args[2]!)
         )}
         let _body_add_constant_torque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyAddConstantTorque(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            torque: args[1]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            torque: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_set_constant_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetConstantForce(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            force: args[1]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            force: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_constant_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetConstantForce(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.Vector3.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_constant_torque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetConstantTorque(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            torque: args[1]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            torque: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_constant_torque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetConstantTorque(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.Vector3.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_axis_velocity_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetAxisVelocity(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            axisVelocity: args[1]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            axisVelocity: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_set_axis_lock_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetAxisLock(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            axis: args[1]!.load(as: Godot.PhysicsServer3D.BodyAxis.self),
-            lock: args[2]!.load(as: Bool.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            axis: Godot.PhysicsServer3D.BodyAxis.fromGodotUnsafePointer(args[1]!),
+            lock: Bool.fromGodotUnsafePointer(args[2]!)
         )}
         let _body_is_axis_locked_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyIsAxisLocked(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            axis: args[1]!.load(as: Godot.PhysicsServer3D.BodyAxis.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            axis: Godot.PhysicsServer3D.BodyAxis.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_add_collision_exception_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyAddCollisionException(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            exceptedBody: Godot.RID(godotExtensionPointer: args[1]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            exceptedBody: Godot.RID.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_remove_collision_exception_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyRemoveCollisionException(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            exceptedBody: Godot.RID(godotExtensionPointer: args[1]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            exceptedBody: Godot.RID.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_collision_exceptions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetCollisionExceptions(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_max_contacts_reported_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetMaxContactsReported(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            amount: args[1]!.load(as: Int32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            amount: Int32.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_max_contacts_reported_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetMaxContactsReported(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_contacts_reported_depth_threshold_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetContactsReportedDepthThreshold(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            threshold: args[1]!.load(as: Double.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            threshold: Double.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_get_contacts_reported_depth_threshold_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetContactsReportedDepthThreshold(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_omit_force_integration_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetOmitForceIntegration(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            enable: args[1]!.load(as: Bool.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            enable: Bool.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_is_omitting_force_integration_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyIsOmittingForceIntegration(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_set_state_sync_callback_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetStateSyncCallback(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            callable: Godot.Callable(godotExtensionPointer: args[1]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            callable: Godot.Callable.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_set_force_integration_callback_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetForceIntegrationCallback(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            callable: Godot.Callable(godotExtensionPointer: args[1]!),
-            userdata: Godot.Variant(godotExtensionPointer: args[2]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            callable: Godot.Callable.fromGodotUnsafePointer(args[1]!),
+            userdata: Godot.Variant.fromGodotUnsafePointer(args[2]!)
         )}
         let _body_set_ray_pickable_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodySetRayPickable(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            enable: args[1]!.load(as: Bool.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            enable: Bool.fromGodotUnsafePointer(args[1]!)
         )}
         let _body_test_motion_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyTestMotion(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            from: args[1]!.load(as: Godot.Transform3D.self),
-            motion: args[2]!.load(as: Godot.Vector3.self),
-            margin: args[3]!.load(as: Double.self),
-            maxCollisions: args[4]!.load(as: Int32.self),
-            collideSeparationRay: args[5]!.load(as: Bool.self),
-            recoveryAsCollision: args[6]!.load(as: Bool.self),
-            result: args[7]!.load(as: UnsafeMutablePointer<PhysicsServer3DExtensionMotionResult> .self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            from: Godot.Transform3D.fromGodotUnsafePointer(args[1]!),
+            motion: Godot.Vector3.fromGodotUnsafePointer(args[2]!),
+            margin: Double.fromGodotUnsafePointer(args[3]!),
+            maxCollisions: Int32.fromGodotUnsafePointer(args[4]!),
+            collideSeparationRay: Bool.fromGodotUnsafePointer(args[5]!),
+            recoveryAsCollision: Bool.fromGodotUnsafePointer(args[6]!),
+            result: UnsafeMutablePointer<PhysicsServer3DExtensionMotionResult> .fromGodotUnsafePointer(args[7]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _body_get_direct_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._bodyGetDirectState(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_update_rendering_server_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyUpdateRenderingServer(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            renderingServerHandler: Godot.PhysicsServer3DRenderingServerHandler.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!))
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            renderingServerHandler: Godot.PhysicsServer3DRenderingServerHandler?.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_set_space_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetSpace(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            space: Godot.RID(godotExtensionPointer: args[1]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            space: Godot.RID.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_get_space_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetSpace(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_set_ray_pickable_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetRayPickable(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            enable: args[1]!.load(as: Bool.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            enable: Bool.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_set_collision_layer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetCollisionLayer(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            layer: args[1]!.load(as: UInt32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            layer: UInt32.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_get_collision_layer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetCollisionLayer(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UInt32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_set_collision_mask_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetCollisionMask(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            mask: args[1]!.load(as: UInt32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            mask: UInt32.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_get_collision_mask_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetCollisionMask(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UInt32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_add_collision_exception_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyAddCollisionException(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            bodyB: Godot.RID(godotExtensionPointer: args[1]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            bodyB: Godot.RID.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_remove_collision_exception_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyRemoveCollisionException(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            bodyB: Godot.RID(godotExtensionPointer: args[1]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            bodyB: Godot.RID.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_get_collision_exceptions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetCollisionExceptions(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_set_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetState(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            state: args[1]!.load(as: Godot.PhysicsServer3D.BodyState.self),
-            variant: Godot.Variant(godotExtensionPointer: args[2]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            state: Godot.PhysicsServer3D.BodyState.fromGodotUnsafePointer(args[1]!),
+            variant: Godot.Variant.fromGodotUnsafePointer(args[2]!)
         )}
         let _soft_body_get_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetState(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            state: args[1]!.load(as: Godot.PhysicsServer3D.BodyState.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            state: Godot.PhysicsServer3D.BodyState.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_set_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetTransform(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            transform: args[1]!.load(as: Godot.Transform3D.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            transform: Godot.Transform3D.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_set_simulation_precision_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetSimulationPrecision(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            simulationPrecision: args[1]!.load(as: Int32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            simulationPrecision: Int32.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_get_simulation_precision_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetSimulationPrecision(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_set_total_mass_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetTotalMass(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            totalMass: args[1]!.load(as: Double.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            totalMass: Double.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_get_total_mass_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetTotalMass(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_set_linear_stiffness_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetLinearStiffness(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            linearStiffness: args[1]!.load(as: Double.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            linearStiffness: Double.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_get_linear_stiffness_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetLinearStiffness(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_set_pressure_coefficient_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetPressureCoefficient(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            pressureCoefficient: args[1]!.load(as: Double.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            pressureCoefficient: Double.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_get_pressure_coefficient_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetPressureCoefficient(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_set_damping_coefficient_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetDampingCoefficient(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            dampingCoefficient: args[1]!.load(as: Double.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            dampingCoefficient: Double.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_get_damping_coefficient_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetDampingCoefficient(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_set_drag_coefficient_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetDragCoefficient(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            dragCoefficient: args[1]!.load(as: Double.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            dragCoefficient: Double.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_get_drag_coefficient_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetDragCoefficient(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_set_mesh_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodySetMesh(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            mesh: Godot.RID(godotExtensionPointer: args[1]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            mesh: Godot.RID.fromGodotUnsafePointer(args[1]!)
         )}
         let _soft_body_get_bounds_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetBounds(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.AABB.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_move_point_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyMovePoint(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            pointIndex: args[1]!.load(as: Int32.self),
-            globalPosition: args[2]!.load(as: Godot.Vector3.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            pointIndex: Int32.fromGodotUnsafePointer(args[1]!),
+            globalPosition: Godot.Vector3.fromGodotUnsafePointer(args[2]!)
         )}
         let _soft_body_get_point_global_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyGetPointGlobalPosition(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            pointIndex: args[1]!.load(as: Int32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            pointIndex: Int32.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.Vector3.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _soft_body_remove_all_pinned_points_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyRemoveAllPinnedPoints(
-            body: Godot.RID(godotExtensionPointer: args[0]!)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )}
         let _soft_body_pin_point_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyPinPoint(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            pointIndex: args[1]!.load(as: Int32.self),
-            pin: args[2]!.load(as: Bool.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            pointIndex: Int32.fromGodotUnsafePointer(args[1]!),
+            pin: Bool.fromGodotUnsafePointer(args[2]!)
         )}
         let _soft_body_is_point_pinned_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._softBodyIsPointPinned(
-            body: Godot.RID(godotExtensionPointer: args[0]!),
-            pointIndex: args[1]!.load(as: Int32.self)
+            body: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            pointIndex: Int32.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _joint_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointCreate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _joint_clear_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointClear(
-            joint: Godot.RID(godotExtensionPointer: args[0]!)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )}
         let _joint_make_pin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointMakePin(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            bodyA: Godot.RID(godotExtensionPointer: args[1]!),
-            localA: args[2]!.load(as: Godot.Vector3.self),
-            bodyB: Godot.RID(godotExtensionPointer: args[3]!),
-            localB: args[4]!.load(as: Godot.Vector3.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            bodyA: Godot.RID.fromGodotUnsafePointer(args[1]!),
+            localA: Godot.Vector3.fromGodotUnsafePointer(args[2]!),
+            bodyB: Godot.RID.fromGodotUnsafePointer(args[3]!),
+            localB: Godot.Vector3.fromGodotUnsafePointer(args[4]!)
         )}
         let _pin_joint_set_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._pinJointSetParam(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.PinJointParam.self),
-            value: args[2]!.load(as: Double.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.PinJointParam.fromGodotUnsafePointer(args[1]!),
+            value: Double.fromGodotUnsafePointer(args[2]!)
         )}
         let _pin_joint_get_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._pinJointGetParam(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.PinJointParam.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.PinJointParam.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _pin_joint_set_local_a_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._pinJointSetLocalA(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            localA: args[1]!.load(as: Godot.Vector3.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            localA: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
         )}
         let _pin_joint_get_local_a_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._pinJointGetLocalA(
-            joint: Godot.RID(godotExtensionPointer: args[0]!)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.Vector3.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _pin_joint_set_local_b_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._pinJointSetLocalB(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            localB: args[1]!.load(as: Godot.Vector3.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            localB: Godot.Vector3.fromGodotUnsafePointer(args[1]!)
         )}
         let _pin_joint_get_local_b_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._pinJointGetLocalB(
-            joint: Godot.RID(godotExtensionPointer: args[0]!)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.Vector3.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _joint_make_hinge_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointMakeHinge(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            bodyA: Godot.RID(godotExtensionPointer: args[1]!),
-            hingeA: args[2]!.load(as: Godot.Transform3D.self),
-            bodyB: Godot.RID(godotExtensionPointer: args[3]!),
-            hingeB: args[4]!.load(as: Godot.Transform3D.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            bodyA: Godot.RID.fromGodotUnsafePointer(args[1]!),
+            hingeA: Godot.Transform3D.fromGodotUnsafePointer(args[2]!),
+            bodyB: Godot.RID.fromGodotUnsafePointer(args[3]!),
+            hingeB: Godot.Transform3D.fromGodotUnsafePointer(args[4]!)
         )}
         let _joint_make_hinge_simple_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointMakeHingeSimple(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            bodyA: Godot.RID(godotExtensionPointer: args[1]!),
-            pivotA: args[2]!.load(as: Godot.Vector3.self),
-            axisA: args[3]!.load(as: Godot.Vector3.self),
-            bodyB: Godot.RID(godotExtensionPointer: args[4]!),
-            pivotB: args[5]!.load(as: Godot.Vector3.self),
-            axisB: args[6]!.load(as: Godot.Vector3.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            bodyA: Godot.RID.fromGodotUnsafePointer(args[1]!),
+            pivotA: Godot.Vector3.fromGodotUnsafePointer(args[2]!),
+            axisA: Godot.Vector3.fromGodotUnsafePointer(args[3]!),
+            bodyB: Godot.RID.fromGodotUnsafePointer(args[4]!),
+            pivotB: Godot.Vector3.fromGodotUnsafePointer(args[5]!),
+            axisB: Godot.Vector3.fromGodotUnsafePointer(args[6]!)
         )}
         let _hinge_joint_set_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hingeJointSetParam(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.HingeJointParam.self),
-            value: args[2]!.load(as: Double.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.HingeJointParam.fromGodotUnsafePointer(args[1]!),
+            value: Double.fromGodotUnsafePointer(args[2]!)
         )}
         let _hinge_joint_get_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hingeJointGetParam(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.HingeJointParam.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.HingeJointParam.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _hinge_joint_set_flag_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hingeJointSetFlag(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            flag: args[1]!.load(as: Godot.PhysicsServer3D.HingeJointFlag.self),
-            enabled: args[2]!.load(as: Bool.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            flag: Godot.PhysicsServer3D.HingeJointFlag.fromGodotUnsafePointer(args[1]!),
+            enabled: Bool.fromGodotUnsafePointer(args[2]!)
         )}
         let _hinge_joint_get_flag_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hingeJointGetFlag(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            flag: args[1]!.load(as: Godot.PhysicsServer3D.HingeJointFlag.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            flag: Godot.PhysicsServer3D.HingeJointFlag.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _joint_make_slider_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointMakeSlider(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            bodyA: Godot.RID(godotExtensionPointer: args[1]!),
-            localRefA: args[2]!.load(as: Godot.Transform3D.self),
-            bodyB: Godot.RID(godotExtensionPointer: args[3]!),
-            localRefB: args[4]!.load(as: Godot.Transform3D.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            bodyA: Godot.RID.fromGodotUnsafePointer(args[1]!),
+            localRefA: Godot.Transform3D.fromGodotUnsafePointer(args[2]!),
+            bodyB: Godot.RID.fromGodotUnsafePointer(args[3]!),
+            localRefB: Godot.Transform3D.fromGodotUnsafePointer(args[4]!)
         )}
         let _slider_joint_set_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._sliderJointSetParam(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.SliderJointParam.self),
-            value: args[2]!.load(as: Double.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.SliderJointParam.fromGodotUnsafePointer(args[1]!),
+            value: Double.fromGodotUnsafePointer(args[2]!)
         )}
         let _slider_joint_get_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._sliderJointGetParam(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.SliderJointParam.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.SliderJointParam.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _joint_make_cone_twist_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointMakeConeTwist(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            bodyA: Godot.RID(godotExtensionPointer: args[1]!),
-            localRefA: args[2]!.load(as: Godot.Transform3D.self),
-            bodyB: Godot.RID(godotExtensionPointer: args[3]!),
-            localRefB: args[4]!.load(as: Godot.Transform3D.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            bodyA: Godot.RID.fromGodotUnsafePointer(args[1]!),
+            localRefA: Godot.Transform3D.fromGodotUnsafePointer(args[2]!),
+            bodyB: Godot.RID.fromGodotUnsafePointer(args[3]!),
+            localRefB: Godot.Transform3D.fromGodotUnsafePointer(args[4]!)
         )}
         let _cone_twist_joint_set_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._coneTwistJointSetParam(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.ConeTwistJointParam.self),
-            value: args[2]!.load(as: Double.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.ConeTwistJointParam.fromGodotUnsafePointer(args[1]!),
+            value: Double.fromGodotUnsafePointer(args[2]!)
         )}
         let _cone_twist_joint_get_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._coneTwistJointGetParam(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            param: args[1]!.load(as: Godot.PhysicsServer3D.ConeTwistJointParam.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            param: Godot.PhysicsServer3D.ConeTwistJointParam.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _joint_make_generic_6dof_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointMakeGeneric6dof(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            bodyA: Godot.RID(godotExtensionPointer: args[1]!),
-            localRefA: args[2]!.load(as: Godot.Transform3D.self),
-            bodyB: Godot.RID(godotExtensionPointer: args[3]!),
-            localRefB: args[4]!.load(as: Godot.Transform3D.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            bodyA: Godot.RID.fromGodotUnsafePointer(args[1]!),
+            localRefA: Godot.Transform3D.fromGodotUnsafePointer(args[2]!),
+            bodyB: Godot.RID.fromGodotUnsafePointer(args[3]!),
+            localRefB: Godot.Transform3D.fromGodotUnsafePointer(args[4]!)
         )}
         let _generic_6dof_joint_set_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._generic6dofJointSetParam(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            axis: args[1]!.load(as: Godot.Vector3.Axis.self),
-            param: args[2]!.load(as: Godot.PhysicsServer3D.G6DOFJointAxisParam.self),
-            value: args[3]!.load(as: Double.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            axis: Godot.Vector3.Axis.fromGodotUnsafePointer(args[1]!),
+            param: Godot.PhysicsServer3D.G6DOFJointAxisParam.fromGodotUnsafePointer(args[2]!),
+            value: Double.fromGodotUnsafePointer(args[3]!)
         )}
         let _generic_6dof_joint_get_param_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._generic6dofJointGetParam(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            axis: args[1]!.load(as: Godot.Vector3.Axis.self),
-            param: args[2]!.load(as: Godot.PhysicsServer3D.G6DOFJointAxisParam.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            axis: Godot.Vector3.Axis.fromGodotUnsafePointer(args[1]!),
+            param: Godot.PhysicsServer3D.G6DOFJointAxisParam.fromGodotUnsafePointer(args[2]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _generic_6dof_joint_set_flag_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._generic6dofJointSetFlag(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            axis: args[1]!.load(as: Godot.Vector3.Axis.self),
-            flag: args[2]!.load(as: Godot.PhysicsServer3D.G6DOFJointAxisFlag.self),
-            enable: args[3]!.load(as: Bool.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            axis: Godot.Vector3.Axis.fromGodotUnsafePointer(args[1]!),
+            flag: Godot.PhysicsServer3D.G6DOFJointAxisFlag.fromGodotUnsafePointer(args[2]!),
+            enable: Bool.fromGodotUnsafePointer(args[3]!)
         )}
         let _generic_6dof_joint_get_flag_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._generic6dofJointGetFlag(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            axis: args[1]!.load(as: Godot.Vector3.Axis.self),
-            flag: args[2]!.load(as: Godot.PhysicsServer3D.G6DOFJointAxisFlag.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            axis: Godot.Vector3.Axis.fromGodotUnsafePointer(args[1]!),
+            flag: Godot.PhysicsServer3D.G6DOFJointAxisFlag.fromGodotUnsafePointer(args[2]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _joint_get_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointGetType(
-            joint: Godot.RID(godotExtensionPointer: args[0]!)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.PhysicsServer3D.JointType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _joint_set_solver_priority_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointSetSolverPriority(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            priority: args[1]!.load(as: Int32.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            priority: Int32.fromGodotUnsafePointer(args[1]!)
         )}
         let _joint_get_solver_priority_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointGetSolverPriority(
-            joint: Godot.RID(godotExtensionPointer: args[0]!)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _joint_disable_collisions_between_bodies_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointDisableCollisionsBetweenBodies(
-            joint: Godot.RID(godotExtensionPointer: args[0]!),
-            disable: args[1]!.load(as: Bool.self)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            disable: Bool.fromGodotUnsafePointer(args[1]!)
         )}
         let _joint_is_disabled_collisions_between_bodies_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._jointIsDisabledCollisionsBetweenBodies(
-            joint: Godot.RID(godotExtensionPointer: args[0]!)
+            joint: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _free_rid_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._freeRid(
-            Godot.RID(godotExtensionPointer: args[0]!)
+            Godot.RID.fromGodotUnsafePointer(args[0]!)
         )}
         let _set_active_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setActive(
-            args[0]!.load(as: Bool.self)
+            Bool.fromGodotUnsafePointer(args[0]!)
         )}
         let _init_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._init()}
         let _step_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._step(
-            args[0]!.load(as: Double.self)
+            Double.fromGodotUnsafePointer(args[0]!)
         )}
         let _sync_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._sync()}
         let _flush_queries_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._flushQueries()}
         let _end_sync_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._endSync()}
         let _finish_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._finish()}
         let _is_flushing_queries_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isFlushingQueries()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_process_info_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<PhysicsServer3DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getProcessInfo(
-            args[0]!.load(as: Godot.PhysicsServer3D.ProcessInfo.self)
+            Godot.PhysicsServer3D.ProcessInfo.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_worldBoundaryShapeCreate" : ("_world_boundary_shape_create", _world_boundary_shape_create_call),
             "_separationRayShapeCreate" : ("_separation_ray_shape_create", _separation_ray_shape_create_call),

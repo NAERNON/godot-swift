@@ -26,83 +26,67 @@ open class EditorInspectorPlugin: RefCounted {
     }
 
     private static var __method_binding_add_custom_control: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_custom_control").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_custom_control").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
     }()
     public func addCustomControl(_ control: Godot.Control?) {
-        control.withUnsafeRawPointer { (__ptr_control) in
-            withUnsafePointer(to: __ptr_control) { (_ptr___ptr_control) in
-                withUnsafeArgumentPackPointer(_ptr___ptr_control) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_add_custom_control,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        control.withGodotUnsafeRawPointer { __ptr_control in
+        withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
+        withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_custom_control,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_add_property_editor: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_property_editor").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_property_editor").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3406284123)!
         }
         }
     }()
     public func addPropertyEditor(property: Godot.GodotString, editor: Godot.Control?, addToEnd: Bool = false) {
-        property.withUnsafeRawPointer { (__ptr_property) in
-            editor.withUnsafeRawPointer { (__ptr_editor) in
-                withUnsafePointer(to: __ptr_editor) { (_ptr___ptr_editor) in
-                    withUnsafePointer(to: addToEnd) { (__ptr_addToEnd) in
-                        withUnsafeArgumentPackPointer(__ptr_property, _ptr___ptr_editor, __ptr_addToEnd) { (__accessPtr) in
-                            `self`.withUnsafeRawPointer { (__ptr_self) in
-                                gdextension_interface_object_method_bind_ptrcall(
-                                    Self.__method_binding_add_property_editor,
-                                    __ptr_self,
-                                    __accessPtr,
-                                    nil
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        property.withGodotUnsafeRawPointer { __ptr_property in
+        editor.withGodotUnsafeRawPointer { __ptr_editor in
+        withUnsafePointer(to: __ptr_editor) { _ptr___ptr_editor in
+        addToEnd.withGodotUnsafeRawPointer { __ptr_addToEnd in
+        withUnsafeArgumentPackPointer(__ptr_property, _ptr___ptr_editor, __ptr_addToEnd) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_property_editor,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}}
     }
 
     private static var __method_binding_add_property_editor_for_multiple_properties: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_property_editor_for_multiple_properties").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_property_editor_for_multiple_properties").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 788598683)!
         }
         }
     }()
     public func addPropertyEditorForMultipleProperties(label: Godot.GodotString, properties: Godot.PackedStringArray, editor: Godot.Control?) {
-        label.withUnsafeRawPointer { (__ptr_label) in
-            properties.withUnsafeRawPointer { (__ptr_properties) in
-                editor.withUnsafeRawPointer { (__ptr_editor) in
-                    withUnsafePointer(to: __ptr_editor) { (_ptr___ptr_editor) in
-                        withUnsafeArgumentPackPointer(__ptr_label, __ptr_properties, _ptr___ptr_editor) { (__accessPtr) in
-                            `self`.withUnsafeRawPointer { (__ptr_self) in
-                                gdextension_interface_object_method_bind_ptrcall(
-                                    Self.__method_binding_add_property_editor_for_multiple_properties,
-                                    __ptr_self,
-                                    __accessPtr,
-                                    nil
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        label.withGodotUnsafeRawPointer { __ptr_label in
+        properties.withGodotUnsafeRawPointer { __ptr_properties in
+        editor.withGodotUnsafeRawPointer { __ptr_editor in
+        withUnsafePointer(to: __ptr_editor) { _ptr___ptr_editor in
+        withUnsafeArgumentPackPointer(__ptr_label, __ptr_properties, _ptr___ptr_editor) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_property_editor_for_multiple_properties,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -114,65 +98,59 @@ open class EditorInspectorPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._canHandle(
-            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            object: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _parse_begin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseBegin(
-            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            object: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )}
         let _parse_category_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseCategory(
-            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            category: Godot.GodotString(godotExtensionPointer: args[1]!)
+            object: Godot.Object?.fromGodotUnsafePointer(args[0]!),
+            category: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
         )}
         let _parse_group_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseGroup(
-            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            group: Godot.GodotString(godotExtensionPointer: args[1]!)
+            object: Godot.Object?.fromGodotUnsafePointer(args[0]!),
+            group: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
         )}
         let _parse_property_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseProperty(
-            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            type: args[1]!.load(as: Godot.Variant.StorageType.self),
-            name: Godot.GodotString(godotExtensionPointer: args[2]!),
-            hintType: args[3]!.load(as: Godot.PropertyHint.self),
-            hintString: Godot.GodotString(godotExtensionPointer: args[4]!),
-            usageFlags: args[5]!.load(as: Godot.PropertyUsageFlags.self),
-            wide: args[6]!.load(as: Bool.self)
+            object: Godot.Object?.fromGodotUnsafePointer(args[0]!),
+            type: Godot.Variant.StorageType.fromGodotUnsafePointer(args[1]!),
+            name: Godot.GodotString.fromGodotUnsafePointer(args[2]!),
+            hintType: Godot.PropertyHint.fromGodotUnsafePointer(args[3]!),
+            hintString: Godot.GodotString.fromGodotUnsafePointer(args[4]!),
+            usageFlags: Godot.PropertyUsageFlags.fromGodotUnsafePointer(args[5]!),
+            wide: Bool.fromGodotUnsafePointer(args[6]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _parse_end_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseEnd(
-            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            object: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )}
         _virtualFunctions = [
             "_canHandle" : ("_can_handle", _can_handle_call),

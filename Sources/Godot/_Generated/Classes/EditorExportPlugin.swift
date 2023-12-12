@@ -57,275 +57,234 @@ open class EditorExportPlugin: RefCounted {
     }
 
     private static var __method_binding_add_shared_object: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_shared_object").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_shared_object").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3098291045)!
         }
         }
     }()
     public func addSharedObject(path: Godot.GodotString, tags: Godot.PackedStringArray, target: Godot.GodotString) {
-        path.withUnsafeRawPointer { (__ptr_path) in
-            tags.withUnsafeRawPointer { (__ptr_tags) in
-                target.withUnsafeRawPointer { (__ptr_target) in
-                    withUnsafeArgumentPackPointer(__ptr_path, __ptr_tags, __ptr_target) { (__accessPtr) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_add_shared_object,
-                                __ptr_self,
-                                __accessPtr,
-                                nil
-                            )
-                        }
-                    }
-                }
-            }
-        }
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        tags.withGodotUnsafeRawPointer { __ptr_tags in
+        target.withGodotUnsafeRawPointer { __ptr_target in
+        withUnsafeArgumentPackPointer(__ptr_path, __ptr_tags, __ptr_target) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_shared_object,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
     }
 
     private static var __method_binding_add_ios_project_static_lib: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_ios_project_static_lib").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_ios_project_static_lib").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
     public func addIosProjectStaticLib(path: Godot.GodotString) {
-        path.withUnsafeRawPointer { (__ptr_path) in
-            withUnsafeArgumentPackPointer(__ptr_path) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_add_ios_project_static_lib,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_ios_project_static_lib,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_add_file: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_file").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 527928637)!
         }
         }
     }()
     public func addFile(path: Godot.GodotString, file: Godot.PackedByteArray, remap: Bool) {
-        path.withUnsafeRawPointer { (__ptr_path) in
-            file.withUnsafeRawPointer { (__ptr_file) in
-                withUnsafePointer(to: remap) { (__ptr_remap) in
-                    withUnsafeArgumentPackPointer(__ptr_path, __ptr_file, __ptr_remap) { (__accessPtr) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_add_file,
-                                __ptr_self,
-                                __accessPtr,
-                                nil
-                            )
-                        }
-                    }
-                }
-            }
-        }
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        file.withGodotUnsafeRawPointer { __ptr_file in
+        remap.withGodotUnsafeRawPointer { __ptr_remap in
+        withUnsafeArgumentPackPointer(__ptr_path, __ptr_file, __ptr_remap) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_file,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
     }
 
     private static var __method_binding_add_ios_framework: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_ios_framework").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_ios_framework").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
     public func addIosFramework(path: Godot.GodotString) {
-        path.withUnsafeRawPointer { (__ptr_path) in
-            withUnsafeArgumentPackPointer(__ptr_path) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_add_ios_framework,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_ios_framework,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_add_ios_embedded_framework: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_ios_embedded_framework").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_ios_embedded_framework").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
     public func addIosEmbeddedFramework(path: Godot.GodotString) {
-        path.withUnsafeRawPointer { (__ptr_path) in
-            withUnsafeArgumentPackPointer(__ptr_path) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_add_ios_embedded_framework,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_ios_embedded_framework,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_add_ios_plist_content: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_ios_plist_content").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_ios_plist_content").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
     public func addIosPlistContent(_ plistContent: Godot.GodotString) {
-        plistContent.withUnsafeRawPointer { (__ptr_plistContent) in
-            withUnsafeArgumentPackPointer(__ptr_plistContent) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_add_ios_plist_content,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        plistContent.withGodotUnsafeRawPointer { __ptr_plistContent in
+        withUnsafeArgumentPackPointer(__ptr_plistContent) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_ios_plist_content,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_add_ios_linker_flags: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_ios_linker_flags").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_ios_linker_flags").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
     public func addIosLinkerFlags(_ flags: Godot.GodotString) {
-        flags.withUnsafeRawPointer { (__ptr_flags) in
-            withUnsafeArgumentPackPointer(__ptr_flags) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_add_ios_linker_flags,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        flags.withGodotUnsafeRawPointer { __ptr_flags in
+        withUnsafeArgumentPackPointer(__ptr_flags) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_ios_linker_flags,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_add_ios_bundle_file: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_ios_bundle_file").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_ios_bundle_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
     public func addIosBundleFile(path: Godot.GodotString) {
-        path.withUnsafeRawPointer { (__ptr_path) in
-            withUnsafeArgumentPackPointer(__ptr_path) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_add_ios_bundle_file,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_ios_bundle_file,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_add_ios_cpp_code: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_ios_cpp_code").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_ios_cpp_code").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
     public func addIosCppCode(_ code: Godot.GodotString) {
-        code.withUnsafeRawPointer { (__ptr_code) in
-            withUnsafeArgumentPackPointer(__ptr_code) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_add_ios_cpp_code,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        code.withGodotUnsafeRawPointer { __ptr_code in
+        withUnsafeArgumentPackPointer(__ptr_code) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_ios_cpp_code,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_add_macos_plugin_file: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_macos_plugin_file").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_macos_plugin_file").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
     public func addMacosPluginFile(path: Godot.GodotString) {
-        path.withUnsafeRawPointer { (__ptr_path) in
-            withUnsafeArgumentPackPointer(__ptr_path) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_add_macos_plugin_file,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_macos_plugin_file,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_skip: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "skip").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "skip").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func skip() {
-        `self`.withUnsafeRawPointer { (__ptr_self) in
-            gdextension_interface_object_method_bind_ptrcall(
-                Self.__method_binding_skip,
-                __ptr_self,
-                nil,
-                nil
-            )
-        }
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_skip,
+            __ptr_self,
+            nil,
+            nil
+        )}
     }
 
     private static var __method_binding_get_option: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_option").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_option").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2760726917)!
         }
         }
     }()
     public func option(name: Godot.GodotStringName) -> Godot.Variant {
-        let __temporary = Godot.Variant()
-        name.withUnsafeRawPointer { (__ptr_name) in
-            withUnsafeArgumentPackPointer(__ptr_name) { (__accessPtr) in
-                __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_get_option,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
+        name.withGodotUnsafeRawPointer { __ptr_name in
+        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_option,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -337,137 +296,123 @@ open class EditorExportPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exportFile(
-            path: Godot.GodotString(godotExtensionPointer: args[0]!),
-            type: Godot.GodotString(godotExtensionPointer: args[1]!),
-            features: Godot.PackedStringArray(godotExtensionPointer: args[2]!)
+            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
+            type: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
+            features: Godot.PackedStringArray.fromGodotUnsafePointer(args[2]!)
         )}
         let _export_begin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exportBegin(
-            features: Godot.PackedStringArray(godotExtensionPointer: args[0]!),
-            isDebug: args[1]!.load(as: Bool.self),
-            path: Godot.GodotString(godotExtensionPointer: args[2]!),
-            flags: args[3]!.load(as: UInt32.self)
+            features: Godot.PackedStringArray.fromGodotUnsafePointer(args[0]!),
+            isDebug: Bool.fromGodotUnsafePointer(args[1]!),
+            path: Godot.GodotString.fromGodotUnsafePointer(args[2]!),
+            flags: UInt32.fromGodotUnsafePointer(args[3]!)
         )}
         let _export_end_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exportEnd()}
         let _begin_customize_resources_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._beginCustomizeResources(
-            platform: Godot.EditorExportPlatform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            features: Godot.PackedStringArray(godotExtensionPointer: args[1]!)
+            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
+            features: Godot.PackedStringArray.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _customize_resource_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._customizeResource(
-            Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            path: Godot.GodotString(godotExtensionPointer: args[1]!)
+            Godot.Resource?.fromGodotUnsafePointer(args[0]!),
+            path: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _begin_customize_scenes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._beginCustomizeScenes(
-            platform: Godot.EditorExportPlatform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            features: Godot.PackedStringArray(godotExtensionPointer: args[1]!)
+            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
+            features: Godot.PackedStringArray.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _customize_scene_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._customizeScene(
-            Godot.Node.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            path: Godot.GodotString(godotExtensionPointer: args[1]!)
+            Godot.Node?.fromGodotUnsafePointer(args[0]!),
+            path: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_customization_configuration_hash_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCustomizationConfigurationHash()
-        returnPtr!.assumingMemoryBound(to: UInt64.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _end_customize_scenes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._endCustomizeScenes()}
         let _end_customize_resources_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._endCustomizeResources()}
         let _get_export_options_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getExportOptions(
-            platform: Godot.EditorExportPlatform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _should_update_export_options_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shouldUpdateExportOptions(
-            platform: Godot.EditorExportPlatform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_export_features_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getExportFeatures(
-            platform: Godot.EditorExportPlatform.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            debug: args[1]!.load(as: Bool.self)
+            platform: Godot.EditorExportPlatform?.fromGodotUnsafePointer(args[0]!),
+            debug: Bool.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getName()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_exportFile" : ("_export_file", _export_file_call),
             "_exportBegin" : ("_export_begin", _export_begin_call),

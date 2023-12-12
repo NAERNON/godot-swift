@@ -139,281 +139,249 @@ open class ScriptExtension: Script {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._editorCanReloadFromFile()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _placeholder_erased_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._placeholderErased(
-            placeholder: args[0]!.load(as: UnsafeMutableRawPointer.self)
+            placeholder: UnsafeMutableRawPointer.fromGodotUnsafePointer(args[0]!)
         )}
         let _can_instantiate_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._canInstantiate()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_base_script_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getBaseScript()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_global_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getGlobalName()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _inherits_script_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._inheritsScript(
-            Godot.Script.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            Godot.Script?.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_instance_base_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInstanceBaseType()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _instance_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._instanceCreate(
-            forObject: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            forObject: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UnsafeMutableRawPointer.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _placeholder_instance_create_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._placeholderInstanceCreate(
-            forObject: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            forObject: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: UnsafeMutableRawPointer.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _instance_has_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._instanceHas(
-            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            object: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _has_source_code_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasSourceCode()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_source_code_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSourceCode()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_source_code_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setSourceCode(
-            Godot.GodotString(godotExtensionPointer: args[0]!)
+            Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )}
         let _reload_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._reload(
-            keepState: args[0]!.load(as: Bool.self)
+            keepState: Bool.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_documentation_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDocumentation()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _has_method_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasMethod(
-            Godot.GodotStringName(godotExtensionPointer: args[0]!)
+            Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_method_info_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMethodInfo(
-            method: Godot.GodotStringName(godotExtensionPointer: args[0]!)
+            method: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_tool_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isTool()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_valid_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isValid()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_language_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getLanguage()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _has_script_signal_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasScriptSignal(
-            Godot.GodotStringName(godotExtensionPointer: args[0]!)
+            Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_script_signal_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getScriptSignalList()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _has_property_default_value_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._hasPropertyDefaultValue(
-            property: Godot.GodotStringName(godotExtensionPointer: args[0]!)
+            property: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_property_default_value_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPropertyDefaultValue(
-            property: Godot.GodotStringName(godotExtensionPointer: args[0]!)
+            property: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _update_exports_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._updateExports()}
         let _get_script_method_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getScriptMethodList()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_script_property_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getScriptPropertyList()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_member_line_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMemberLine(
-            member: Godot.GodotStringName(godotExtensionPointer: args[0]!)
+            member: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_constants_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getConstants()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_members_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMembers()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_placeholder_fallback_enabled_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isPlaceholderFallbackEnabled()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_rpc_config_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ScriptExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRpcConfig()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_editorCanReloadFromFile" : ("_editor_can_reload_from_file", _editor_can_reload_from_file_call),
             "_placeholderErased" : ("_placeholder_erased", _placeholder_erased_call),

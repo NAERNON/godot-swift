@@ -18,10 +18,9 @@ open class AudioEffect: Resource {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<AudioEffect> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<AudioEffect> .fromOpaque(instancePtr).takeUnretainedValue()
         ._instantiate()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_instantiate" : ("_instantiate", _instantiate_call)
         ]

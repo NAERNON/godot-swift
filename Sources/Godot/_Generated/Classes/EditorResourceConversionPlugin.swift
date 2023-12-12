@@ -26,30 +26,27 @@ open class EditorResourceConversionPlugin: RefCounted {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._convertsTo()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _handles_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._handles(
-            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _convert_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._convert(
-            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_convertsTo" : ("_converts_to", _converts_to_call),
             "_handles" : ("_handles", _handles_call),

@@ -14,573 +14,458 @@ open class AStar3D: RefCounted {
     }
 
     private static var __method_binding_get_available_point_id: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_available_point_id").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_available_point_id").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
     public func availablePointId() -> Int64 {
-        var __temporary = Int64()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_available_point_id,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_available_point_id,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_add_point: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_point").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920922839)!
         }
         }
     }()
     public func addPoint(id: Int64, position: Godot.Vector3, weightScale: Double = 1.0) {
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafePointer(to: position) { (__ptr_position) in
-                withUnsafePointer(to: weightScale) { (__ptr_weightScale) in
-                    withUnsafeArgumentPackPointer(__ptr_id, __ptr_position, __ptr_weightScale) { (__accessPtr) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_add_point,
-                                __ptr_self,
-                                __accessPtr,
-                                nil
-                            )
-                        }
-                    }
-                }
-            }
-        }
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        position.withGodotUnsafeRawPointer { __ptr_position in
+        weightScale.withGodotUnsafeRawPointer { __ptr_weightScale in
+        withUnsafeArgumentPackPointer(__ptr_id, __ptr_position, __ptr_weightScale) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_point,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
     }
 
     private static var __method_binding_get_point_position: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_position").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_point_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 711720468)!
         }
         }
     }()
     public func pointPosition(id: Int64) -> Godot.Vector3 {
-        var __temporary = Godot.Vector3()
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafeArgumentPackPointer(__ptr_id) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_get_point_position,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_point_position,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_set_point_position: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_position").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_point_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1530502735)!
         }
         }
     }()
     public func setPointPosition(id: Int64, position: Godot.Vector3) {
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafePointer(to: position) { (__ptr_position) in
-                withUnsafeArgumentPackPointer(__ptr_id, __ptr_position) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_point_position,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        position.withGodotUnsafeRawPointer { __ptr_position in
+        withUnsafeArgumentPackPointer(__ptr_id, __ptr_position) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_point_position,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_get_point_weight_scale: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_weight_scale").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_point_weight_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
     }()
     public func pointWeightScale(id: Int64) -> Double {
-        var __temporary = Double()
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafeArgumentPackPointer(__ptr_id) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_get_point_weight_scale,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_point_weight_scale,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_set_point_weight_scale: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_weight_scale").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_point_weight_scale").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
     }()
     public func setPointWeightScale(id: Int64, weightScale: Double) {
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafePointer(to: weightScale) { (__ptr_weightScale) in
-                withUnsafeArgumentPackPointer(__ptr_id, __ptr_weightScale) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_point_weight_scale,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        weightScale.withGodotUnsafeRawPointer { __ptr_weightScale in
+        withUnsafeArgumentPackPointer(__ptr_id, __ptr_weightScale) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_point_weight_scale,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_remove_point: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_point").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
     }()
     public func removePoint(id: Int64) {
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafeArgumentPackPointer(__ptr_id) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_remove_point,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_remove_point,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_has_point: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_point").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
     }()
     public func hasPoint(id: Int64) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafeArgumentPackPointer(__ptr_id) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_has_point,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_has_point,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_get_point_connections: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_connections").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_point_connections").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2865087369)!
         }
         }
     }()
     public func pointConnections(id: Int64) -> Godot.PackedInt64Array {
-        let __temporary = Godot.PackedInt64Array()
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafeArgumentPackPointer(__ptr_id) { (__accessPtr) in
-                __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_get_point_connections,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_point_connections,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_get_point_ids: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_ids").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_point_ids").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3851388692)!
         }
         }
     }()
     public func pointIds() -> Godot.PackedInt64Array {
-        let __temporary = Godot.PackedInt64Array()
-        __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_point_ids,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_point_ids,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_set_point_disabled: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_disabled").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_point_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4023243586)!
         }
         }
     }()
     public func setPointDisabled(id: Int64, disabled: Bool = true) {
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafePointer(to: disabled) { (__ptr_disabled) in
-                withUnsafeArgumentPackPointer(__ptr_id, __ptr_disabled) { (__accessPtr) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_set_point_disabled,
-                            __ptr_self,
-                            __accessPtr,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        disabled.withGodotUnsafeRawPointer { __ptr_disabled in
+        withUnsafeArgumentPackPointer(__ptr_id, __ptr_disabled) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_point_disabled,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
     }
 
     private static var __method_binding_is_point_disabled: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_point_disabled").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_point_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
     }()
     public func isPointDisabled(id: Int64) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafeArgumentPackPointer(__ptr_id) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_is_point_disabled,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_point_disabled,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_connect_points: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "connect_points").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "connect_points").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3785370599)!
         }
         }
     }()
     public func connectPoints(id: Int64, toId: Int64, bidirectional: Bool = true) {
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafePointer(to: toId) { (__ptr_toId) in
-                withUnsafePointer(to: bidirectional) { (__ptr_bidirectional) in
-                    withUnsafeArgumentPackPointer(__ptr_id, __ptr_toId, __ptr_bidirectional) { (__accessPtr) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_connect_points,
-                                __ptr_self,
-                                __accessPtr,
-                                nil
-                            )
-                        }
-                    }
-                }
-            }
-        }
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        toId.withGodotUnsafeRawPointer { __ptr_toId in
+        bidirectional.withGodotUnsafeRawPointer { __ptr_bidirectional in
+        withUnsafeArgumentPackPointer(__ptr_id, __ptr_toId, __ptr_bidirectional) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_connect_points,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
     }
 
     private static var __method_binding_disconnect_points: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "disconnect_points").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "disconnect_points").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3785370599)!
         }
         }
     }()
     public func disconnectPoints(id: Int64, toId: Int64, bidirectional: Bool = true) {
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafePointer(to: toId) { (__ptr_toId) in
-                withUnsafePointer(to: bidirectional) { (__ptr_bidirectional) in
-                    withUnsafeArgumentPackPointer(__ptr_id, __ptr_toId, __ptr_bidirectional) { (__accessPtr) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_disconnect_points,
-                                __ptr_self,
-                                __accessPtr,
-                                nil
-                            )
-                        }
-                    }
-                }
-            }
-        }
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        toId.withGodotUnsafeRawPointer { __ptr_toId in
+        bidirectional.withGodotUnsafeRawPointer { __ptr_bidirectional in
+        withUnsafeArgumentPackPointer(__ptr_id, __ptr_toId, __ptr_bidirectional) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_disconnect_points,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
     }
 
     private static var __method_binding_are_points_connected: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "are_points_connected").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "are_points_connected").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4063588998)!
         }
         }
     }()
     public func arePointsConnected(id: Int64, toId: Int64, bidirectional: Bool = true) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: id) { (__ptr_id) in
-            withUnsafePointer(to: toId) { (__ptr_toId) in
-                withUnsafePointer(to: bidirectional) { (__ptr_bidirectional) in
-                    withUnsafeArgumentPackPointer(__ptr_id, __ptr_toId, __ptr_bidirectional) { (__accessPtr) in
-                        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                            `self`.withUnsafeRawPointer { (__ptr_self) in
-                                gdextension_interface_object_method_bind_ptrcall(
-                                    Self.__method_binding_are_points_connected,
-                                    __ptr_self,
-                                    __accessPtr,
-                                    __ptr___temporary
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        id.withGodotUnsafeRawPointer { __ptr_id in
+        toId.withGodotUnsafeRawPointer { __ptr_toId in
+        bidirectional.withGodotUnsafeRawPointer { __ptr_bidirectional in
+        withUnsafeArgumentPackPointer(__ptr_id, __ptr_toId, __ptr_bidirectional) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_are_points_connected,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}}
     }
 
     private static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_count").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_point_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
     public func pointCount() -> Int64 {
-        var __temporary = Int64()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_point_count,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_point_count,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_get_point_capacity: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_capacity").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_point_capacity").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
     public func pointCapacity() -> Int64 {
-        var __temporary = Int64()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_point_capacity,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_point_capacity,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_reserve_space: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "reserve_space").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "reserve_space").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
     }()
     public func reserveSpace(numNodes: Int64) {
-        withUnsafePointer(to: numNodes) { (__ptr_numNodes) in
-            withUnsafeArgumentPackPointer(__ptr_numNodes) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_reserve_space,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        numNodes.withGodotUnsafeRawPointer { __ptr_numNodes in
+        withUnsafeArgumentPackPointer(__ptr_numNodes) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_reserve_space,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func clear() {
-        `self`.withUnsafeRawPointer { (__ptr_self) in
-            gdextension_interface_object_method_bind_ptrcall(
-                Self.__method_binding_clear,
-                __ptr_self,
-                nil,
-                nil
-            )
-        }
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_clear,
+            __ptr_self,
+            nil,
+            nil
+        )}
     }
 
     private static var __method_binding_get_closest_point: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_closest_point").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_closest_point").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3241074317)!
         }
         }
     }()
     public func closestPoint(toPosition position: Godot.Vector3, includeDisabled: Bool = false) -> Int64 {
-        var __temporary = Int64()
-        withUnsafePointer(to: position) { (__ptr_position) in
-            withUnsafePointer(to: includeDisabled) { (__ptr_includeDisabled) in
-                withUnsafeArgumentPackPointer(__ptr_position, __ptr_includeDisabled) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_get_closest_point,
-                                __ptr_self,
-                                __accessPtr,
-                                __ptr___temporary
-                            )
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        position.withGodotUnsafeRawPointer { __ptr_position in
+        includeDisabled.withGodotUnsafeRawPointer { __ptr_includeDisabled in
+        withUnsafeArgumentPackPointer(__ptr_position, __ptr_includeDisabled) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_closest_point,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
     }
 
     private static var __method_binding_get_closest_position_in_segment: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_closest_position_in_segment").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_closest_position_in_segment").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 192990374)!
         }
         }
     }()
     public func closestPositionInSegment(toPosition position: Godot.Vector3) -> Godot.Vector3 {
-        var __temporary = Godot.Vector3()
-        withUnsafePointer(to: position) { (__ptr_position) in
-            withUnsafeArgumentPackPointer(__ptr_position) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_get_closest_position_in_segment,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        position.withGodotUnsafeRawPointer { __ptr_position in
+        withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_closest_position_in_segment,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_get_point_path: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_path").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_point_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 880819742)!
         }
         }
     }()
     public func pointPath(fromId: Int64, toId: Int64) -> Godot.PackedVector3Array {
-        let __temporary = Godot.PackedVector3Array()
-        withUnsafePointer(to: fromId) { (__ptr_fromId) in
-            withUnsafePointer(to: toId) { (__ptr_toId) in
-                withUnsafeArgumentPackPointer(__ptr_fromId, __ptr_toId) { (__accessPtr) in
-                    __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_get_point_path,
-                                __ptr_self,
-                                __accessPtr,
-                                __ptr___temporary
-                            )
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        fromId.withGodotUnsafeRawPointer { __ptr_fromId in
+        toId.withGodotUnsafeRawPointer { __ptr_toId in
+        withUnsafeArgumentPackPointer(__ptr_fromId, __ptr_toId) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_point_path,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
     }
 
     private static var __method_binding_get_id_path: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_id_path").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_id_path").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3404614526)!
         }
         }
     }()
     public func idPath(fromId: Int64, toId: Int64) -> Godot.PackedInt64Array {
-        let __temporary = Godot.PackedInt64Array()
-        withUnsafePointer(to: fromId) { (__ptr_fromId) in
-            withUnsafePointer(to: toId) { (__ptr_toId) in
-                withUnsafeArgumentPackPointer(__ptr_fromId, __ptr_toId) { (__accessPtr) in
-                    __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                            gdextension_interface_object_method_bind_ptrcall(
-                                Self.__method_binding_get_id_path,
-                                __ptr_self,
-                                __accessPtr,
-                                __ptr___temporary
-                            )
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.PackedInt64Array.fromMutatingGodotUnsafePointer { __temporary in
+        fromId.withGodotUnsafeRawPointer { __ptr_fromId in
+        toId.withGodotUnsafeRawPointer { __ptr_toId in
+        withUnsafeArgumentPackPointer(__ptr_fromId, __ptr_toId) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_id_path,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -592,24 +477,22 @@ open class AStar3D: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<AStar3D> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<AStar3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._estimateCost(
-            fromId: args[0]!.load(as: Int64.self),
-            toId: args[1]!.load(as: Int64.self)
+            fromId: Int64.fromGodotUnsafePointer(args[0]!),
+            toId: Int64.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _compute_cost_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<AStar3D> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<AStar3D> .fromOpaque(instancePtr).takeUnretainedValue()
         ._computeCost(
-            fromId: args[0]!.load(as: Int64.self),
-            toId: args[1]!.load(as: Int64.self)
+            fromId: Int64.fromGodotUnsafePointer(args[0]!),
+            toId: Int64.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_estimateCost" : ("_estimate_cost", _estimate_cost_call),
             "_computeCost" : ("_compute_cost", _compute_cost_call)

@@ -34,56 +34,51 @@ open class ResourceFormatSaver: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
         ._save(
-            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            path: Godot.GodotString(godotExtensionPointer: args[1]!),
-            flags: args[2]!.load(as: UInt32.self)
+            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!),
+            path: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
+            flags: UInt32.fromGodotUnsafePointer(args[2]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_uid_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setUid(
-            path: Godot.GodotString(godotExtensionPointer: args[0]!),
-            uid: args[1]!.load(as: Int64.self)
+            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
+            uid: Int64.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _recognize_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
         ._recognize(
-            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_recognized_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions(
-            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _recognize_path_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
         ._recognizePath(
-            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            path: Godot.GodotString(godotExtensionPointer: args[1]!)
+            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!),
+            path: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_save" : ("_save", _save_call),
             "_setUid" : ("_set_uid", _set_uid_call),

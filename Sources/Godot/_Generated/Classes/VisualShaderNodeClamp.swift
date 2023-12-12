@@ -26,47 +26,40 @@ open class VisualShaderNodeClamp: VisualShaderNode {
     }
 
     private static var __method_binding_set_op_type: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_op_type").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_op_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 405010749)!
         }
         }
     }()
     private func __setOpType(_ opType: Godot.VisualShaderNodeClamp.OpType) {
-        withUnsafePointer(to: opType) { (__ptr_opType) in
-            withUnsafeArgumentPackPointer(__ptr_opType) { (__accessPtr) in
-                `self`.withUnsafeRawPointer { (__ptr_self) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_set_op_type,
-                        __ptr_self,
-                        __accessPtr,
-                        nil
-                    )
-                }
-            }
-        }
+        opType.withGodotUnsafeRawPointer { __ptr_opType in
+        withUnsafeArgumentPackPointer(__ptr_opType) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_op_type,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_get_op_type: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_op_type").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_op_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 233276050)!
         }
         }
     }()
     private func __getOpType() -> Godot.VisualShaderNodeClamp.OpType {
-        var __temporary = Godot.VisualShaderNodeClamp.OpType.RawValue(0)
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_op_type,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return Godot.VisualShaderNodeClamp.OpType(rawValue: __temporary)!
+        Godot.VisualShaderNodeClamp.OpType.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_op_type,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     public var opType: Godot.VisualShaderNodeClamp.OpType {

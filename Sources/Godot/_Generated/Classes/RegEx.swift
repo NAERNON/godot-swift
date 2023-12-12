@@ -6,253 +6,199 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class RegEx: RefCounted {
     private static var __method_binding_create_from_string: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_from_string").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_from_string").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2150300909)!
         }
         }
     }()
     static public func createFromString(pattern: Godot.GodotString) -> Godot.RegEx? {
-        var __temporary: GDExtensionObjectPtr!
-        pattern.withUnsafeRawPointer { (__ptr_pattern) in
-            withUnsafeArgumentPackPointer(__ptr_pattern) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    gdextension_interface_object_method_bind_ptrcall(
-                        Self.__method_binding_create_from_string,
-                        nil,
-                        __accessPtr,
-                        __ptr___temporary
-                    )
-                }
-            }
-        }
-        return Godot.RegEx.retrievedInstanceManagedByGodot(__temporary)
+        Godot.RegEx?.fromMutatingGodotUnsafePointer { __temporary in
+        pattern.withGodotUnsafeRawPointer { __ptr_pattern in
+        withUnsafeArgumentPackPointer(__ptr_pattern) { __accessPtr in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_create_from_string,
+            nil,
+            __accessPtr,
+            __temporary
+        )}}}
     }
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func clear() {
-        `self`.withUnsafeRawPointer { (__ptr_self) in
-            gdextension_interface_object_method_bind_ptrcall(
-                Self.__method_binding_clear,
-                __ptr_self,
-                nil,
-                nil
-            )
-        }
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_clear,
+            __ptr_self,
+            nil,
+            nil
+        )}
     }
 
     private static var __method_binding_compile: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "compile").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "compile").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166001499)!
         }
         }
     }()
     public func compile(pattern: Godot.GodotString) -> Godot.ErrorType {
-        var __temporary = Godot.ErrorType.RawValue(0)
-        pattern.withUnsafeRawPointer { (__ptr_pattern) in
-            withUnsafeArgumentPackPointer(__ptr_pattern) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_compile,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return Godot.ErrorType(rawValue: __temporary)!
+        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        pattern.withGodotUnsafeRawPointer { __ptr_pattern in
+        withUnsafeArgumentPackPointer(__ptr_pattern) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_compile,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_search: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "search").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "search").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4087180739)!
         }
         }
     }()
     public func search(subject: Godot.GodotString, offset: Int32 = 0, end: Int32 = -1) -> Godot.RegExMatch? {
-        var __temporary: GDExtensionObjectPtr!
-        subject.withUnsafeRawPointer { (__ptr_subject) in
-            withUnsafePointer(to: offset) { (__ptr_offset) in
-                withUnsafePointer(to: end) { (__ptr_end) in
-                    withUnsafeArgumentPackPointer(__ptr_subject, __ptr_offset, __ptr_end) { (__accessPtr) in
-                        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                            `self`.withUnsafeRawPointer { (__ptr_self) in
-                                gdextension_interface_object_method_bind_ptrcall(
-                                    Self.__method_binding_search,
-                                    __ptr_self,
-                                    __accessPtr,
-                                    __ptr___temporary
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return Godot.RegExMatch.retrievedInstanceManagedByGodot(__temporary)
+        Godot.RegExMatch?.fromMutatingGodotUnsafePointer { __temporary in
+        subject.withGodotUnsafeRawPointer { __ptr_subject in
+        offset.withGodotUnsafeRawPointer { __ptr_offset in
+        end.withGodotUnsafeRawPointer { __ptr_end in
+        withUnsafeArgumentPackPointer(__ptr_subject, __ptr_offset, __ptr_end) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_search,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}}
     }
 
     private static var __method_binding_search_all: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "search_all").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "search_all").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3354100289)!
         }
         }
     }()
     public func searchAll(subject: Godot.GodotString, offset: Int32 = 0, end: Int32 = -1) -> Godot.GodotArray<Godot.RegExMatch?> {
-        let __temporary = Godot.GodotArray<Godot.RegExMatch?>()
-        subject.withUnsafeRawPointer { (__ptr_subject) in
-            withUnsafePointer(to: offset) { (__ptr_offset) in
-                withUnsafePointer(to: end) { (__ptr_end) in
-                    withUnsafeArgumentPackPointer(__ptr_subject, __ptr_offset, __ptr_end) { (__accessPtr) in
-                        __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                            `self`.withUnsafeRawPointer { (__ptr_self) in
-                                gdextension_interface_object_method_bind_ptrcall(
-                                    Self.__method_binding_search_all,
-                                    __ptr_self,
-                                    __accessPtr,
-                                    __ptr___temporary
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.GodotArray<Godot.RegExMatch?> .fromMutatingGodotUnsafePointer { __temporary in
+        subject.withGodotUnsafeRawPointer { __ptr_subject in
+        offset.withGodotUnsafeRawPointer { __ptr_offset in
+        end.withGodotUnsafeRawPointer { __ptr_end in
+        withUnsafeArgumentPackPointer(__ptr_subject, __ptr_offset, __ptr_end) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_search_all,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}}
     }
 
     private static var __method_binding_sub: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "sub").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "sub").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 758293621)!
         }
         }
     }()
     public func sub(subject: Godot.GodotString, replacement: Godot.GodotString, all: Bool = false, offset: Int32 = 0, end: Int32 = -1) -> Godot.GodotString {
-        let __temporary = Godot.GodotString()
-        subject.withUnsafeRawPointer { (__ptr_subject) in
-            replacement.withUnsafeRawPointer { (__ptr_replacement) in
-                withUnsafePointer(to: all) { (__ptr_all) in
-                    withUnsafePointer(to: offset) { (__ptr_offset) in
-                        withUnsafePointer(to: end) { (__ptr_end) in
-                            withUnsafeArgumentPackPointer(__ptr_subject, __ptr_replacement, __ptr_all, __ptr_offset, __ptr_end) { (__accessPtr) in
-                                __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                                        gdextension_interface_object_method_bind_ptrcall(
-                                            Self.__method_binding_sub,
-                                            __ptr_self,
-                                            __accessPtr,
-                                            __ptr___temporary
-                                        )
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        subject.withGodotUnsafeRawPointer { __ptr_subject in
+        replacement.withGodotUnsafeRawPointer { __ptr_replacement in
+        all.withGodotUnsafeRawPointer { __ptr_all in
+        offset.withGodotUnsafeRawPointer { __ptr_offset in
+        end.withGodotUnsafeRawPointer { __ptr_end in
+        withUnsafeArgumentPackPointer(__ptr_subject, __ptr_replacement, __ptr_all, __ptr_offset, __ptr_end) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_sub,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}}}}
     }
 
     private static var __method_binding_is_valid: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_valid").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_valid").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
     public func isValid() -> Bool {
-        var __temporary = Bool()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_is_valid,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_valid,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_get_pattern: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_pattern").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_pattern").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
     }()
     public func pattern() -> Godot.GodotString {
-        let __temporary = Godot.GodotString()
-        __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_pattern,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_pattern,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_get_group_count: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_group_count").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_group_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
     public func groupCount() -> Int32 {
-        var __temporary = Int32()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_group_count,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_group_count,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_get_names: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_names").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_names").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
     public func names() -> Godot.PackedStringArray {
-        let __temporary = Godot.PackedStringArray()
-        __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_names,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_names,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

@@ -14,21 +14,20 @@ open class AudioStreamPlaybackResampled: AudioStreamPlayback {
     }
 
     private static var __method_binding_begin_resample: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "begin_resample").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "begin_resample").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func beginResample() {
-        `self`.withUnsafeRawPointer { (__ptr_self) in
-            gdextension_interface_object_method_bind_ptrcall(
-                Self.__method_binding_begin_resample,
-                __ptr_self,
-                nil,
-                nil
-            )
-        }
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_begin_resample,
+            __ptr_self,
+            nil,
+            nil
+        )}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -40,21 +39,19 @@ open class AudioStreamPlaybackResampled: AudioStreamPlayback {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<AudioStreamPlaybackResampled> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<AudioStreamPlaybackResampled> .fromOpaque(instancePtr).takeUnretainedValue()
         ._mixResampled(
-            dstBuffer: args[0]!.load(as: UnsafeMutablePointer<AudioFrame> .self),
-            frameCount: args[1]!.load(as: Int32.self)
+            dstBuffer: UnsafeMutablePointer<AudioFrame> .fromGodotUnsafePointer(args[0]!),
+            frameCount: Int32.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_stream_sampling_rate_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<AudioStreamPlaybackResampled> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<AudioStreamPlaybackResampled> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getStreamSamplingRate()
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_mixResampled" : ("_mix_resampled", _mix_resampled_call),
             "_getStreamSamplingRate" : ("_get_stream_sampling_rate", _get_stream_sampling_rate_call)

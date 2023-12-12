@@ -23,30 +23,27 @@ open class PhysicsServer3DRenderingServerHandler: Object {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setVertex(
-            vertexId: args[0]!.load(as: Int32.self),
-            vertices: args[1]!.load(as: UnsafeRawPointer.self)
+            vertexId: Int32.fromGodotUnsafePointer(args[0]!),
+            vertices: UnsafeRawPointer.fromGodotUnsafePointer(args[1]!)
         )}
         let _set_normal_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setNormal(
-            vertexId: args[0]!.load(as: Int32.self),
-            normals: args[1]!.load(as: UnsafeRawPointer.self)
+            vertexId: Int32.fromGodotUnsafePointer(args[0]!),
+            normals: UnsafeRawPointer.fromGodotUnsafePointer(args[1]!)
         )}
         let _set_aabb_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<PhysicsServer3DRenderingServerHandler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setAabb(
-            args[0]!.load(as: Godot.AABB.self)
+            Godot.AABB.fromGodotUnsafePointer(args[0]!)
         )}
         _virtualFunctions = [
             "_setVertex" : ("_set_vertex", _set_vertex_call),

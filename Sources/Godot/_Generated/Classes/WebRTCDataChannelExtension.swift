@@ -84,152 +84,134 @@ open class WebRTCDataChannelExtension: WebRTCDataChannel {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPacket(
-            rBuffer: args[0]!.load(as: UnsafePointer<UnsafePointer<UInt8>> .self),
-            rBufferSize: args[1]!.load(as: UnsafeMutablePointer<Int32> .self)
+            rBuffer: UnsafePointer<UnsafePointer<UInt8>> .fromGodotUnsafePointer(args[0]!),
+            rBufferSize: UnsafeMutablePointer<Int32> .fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _put_packet_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._putPacket(
-            pBuffer: args[0]!.load(as: UnsafePointer<UInt8> .self),
-            pBufferSize: args[1]!.load(as: Int32.self)
+            pBuffer: UnsafePointer<UInt8> .fromGodotUnsafePointer(args[0]!),
+            pBufferSize: Int32.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_available_packet_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAvailablePacketCount()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_max_packet_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMaxPacketSize()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _poll_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._poll()
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _close_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._close()}
         let _set_write_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setWriteMode(
-            pWriteMode: args[0]!.load(as: Godot.WebRTCDataChannel.WriteMode.self)
+            pWriteMode: Godot.WebRTCDataChannel.WriteMode.fromGodotUnsafePointer(args[0]!)
         )}
         let _get_write_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getWriteMode()
-        returnPtr!.assumingMemoryBound(to: Godot.WebRTCDataChannel.WriteMode.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _was_string_packet_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._wasStringPacket()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_ready_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getReadyState()
-        returnPtr!.assumingMemoryBound(to: Godot.WebRTCDataChannel.ChannelState.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_label_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getLabel()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_ordered_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isOrdered()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getId()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_max_packet_life_time_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMaxPacketLifeTime()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_max_retransmits_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMaxRetransmits()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_protocol_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getProtocol()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_negotiated_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isNegotiated()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_buffered_amount_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<WebRTCDataChannelExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getBufferedAmount()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getPacket" : ("_get_packet", _get_packet_call),
             "_putPacket" : ("_put_packet", _put_packet_call),

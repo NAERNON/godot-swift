@@ -123,137 +123,106 @@ open class XRInterfaceExtension: XRInterface {
     }
 
     private static var __method_binding_get_color_texture: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color_texture").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_color_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
     }()
     public func colorTexture() -> Godot.RID {
-        let __temporary = Godot.RID()
-        __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_color_texture,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_color_texture,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_get_depth_texture: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_depth_texture").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_depth_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
     }()
     public func depthTexture() -> Godot.RID {
-        let __temporary = Godot.RID()
-        __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_depth_texture,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_depth_texture,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_get_velocity_texture: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_velocity_texture").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_velocity_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
     }()
     public func velocityTexture() -> Godot.RID {
-        let __temporary = Godot.RID()
-        __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-            `self`.withUnsafeRawPointer { (__ptr_self) in
-                gdextension_interface_object_method_bind_ptrcall(
-                    Self.__method_binding_get_velocity_texture,
-                    __ptr_self,
-                    nil,
-                    __ptr___temporary
-                )
-            }
-        }
-        return __temporary
+        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_velocity_texture,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_add_blit: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_blit").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_blit").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 258596971)!
         }
         }
     }()
     public func addBlit(renderTarget: Godot.RID, srcRect: Godot.Rect2, dstRect: Godot.Rect2i, useLayer: Bool, layer: UInt32, applyLensDistortion: Bool, eyeCenter: Godot.Vector2, k1: Double, k2: Double, upscale: Double, aspectRatio: Double) {
-        renderTarget.withUnsafeRawPointer { (__ptr_renderTarget) in
-            withUnsafePointer(to: srcRect) { (__ptr_srcRect) in
-                withUnsafePointer(to: dstRect) { (__ptr_dstRect) in
-                    withUnsafePointer(to: useLayer) { (__ptr_useLayer) in
-                        withUnsafePointer(to: layer) { (__ptr_layer) in
-                            withUnsafePointer(to: applyLensDistortion) { (__ptr_applyLensDistortion) in
-                                withUnsafePointer(to: eyeCenter) { (__ptr_eyeCenter) in
-                                    withUnsafePointer(to: k1) { (__ptr_k1) in
-                                        withUnsafePointer(to: k2) { (__ptr_k2) in
-                                            withUnsafePointer(to: upscale) { (__ptr_upscale) in
-                                                withUnsafePointer(to: aspectRatio) { (__ptr_aspectRatio) in
-                                                    withUnsafeArgumentPackPointer(__ptr_renderTarget, __ptr_srcRect, __ptr_dstRect, __ptr_useLayer, __ptr_layer, __ptr_applyLensDistortion, __ptr_eyeCenter, __ptr_k1, __ptr_k2, __ptr_upscale, __ptr_aspectRatio) { (__accessPtr) in
-                                                        `self`.withUnsafeRawPointer { (__ptr_self) in
-                                                            gdextension_interface_object_method_bind_ptrcall(
-                                                                Self.__method_binding_add_blit,
-                                                                __ptr_self,
-                                                                __accessPtr,
-                                                                nil
-                                                            )
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        renderTarget.withGodotUnsafeRawPointer { __ptr_renderTarget in
+        srcRect.withGodotUnsafeRawPointer { __ptr_srcRect in
+        dstRect.withGodotUnsafeRawPointer { __ptr_dstRect in
+        useLayer.withGodotUnsafeRawPointer { __ptr_useLayer in
+        layer.withGodotUnsafeRawPointer { __ptr_layer in
+        applyLensDistortion.withGodotUnsafeRawPointer { __ptr_applyLensDistortion in
+        eyeCenter.withGodotUnsafeRawPointer { __ptr_eyeCenter in
+        k1.withGodotUnsafeRawPointer { __ptr_k1 in
+        k2.withGodotUnsafeRawPointer { __ptr_k2 in
+        upscale.withGodotUnsafeRawPointer { __ptr_upscale in
+        aspectRatio.withGodotUnsafeRawPointer { __ptr_aspectRatio in
+        withUnsafeArgumentPackPointer(__ptr_renderTarget, __ptr_srcRect, __ptr_dstRect, __ptr_useLayer, __ptr_layer, __ptr_applyLensDistortion, __ptr_eyeCenter, __ptr_k1, __ptr_k2, __ptr_upscale, __ptr_aspectRatio) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_blit,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}}}}}}}}}
     }
 
     private static var __method_binding_get_render_target_texture: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_render_target_texture").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_render_target_texture").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 41030802)!
         }
         }
     }()
     public func renderTargetTexture(renderTarget: Godot.RID) -> Godot.RID {
-        let __temporary = Godot.RID()
-        renderTarget.withUnsafeRawPointer { (__ptr_renderTarget) in
-            withUnsafeArgumentPackPointer(__ptr_renderTarget) { (__accessPtr) in
-                __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                    `self`.withUnsafeRawPointer { (__ptr_self) in
-                        gdextension_interface_object_method_bind_ptrcall(
-                            Self.__method_binding_get_render_target_texture,
-                            __ptr_self,
-                            __accessPtr,
-                            __ptr___temporary
-                        )
-                    }
-                }
-            }
-        }
-        return __temporary
+        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        renderTarget.withGodotUnsafeRawPointer { __ptr_renderTarget in
+        withUnsafeArgumentPackPointer(__ptr_renderTarget) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_render_target_texture,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -265,271 +234,240 @@ open class XRInterfaceExtension: XRInterface {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getName()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_capabilities_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCapabilities()
-        returnPtr!.assumingMemoryBound(to: UInt32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_initialized_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isInitialized()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _initialize_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._initialize()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _uninitialize_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._uninitialize()}
         let _get_system_info_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSystemInfo()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _supports_play_area_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._supportsPlayAreaMode(
-            args[0]!.load(as: Godot.XRInterface.PlayAreaMode.self)
+            Godot.XRInterface.PlayAreaMode.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_play_area_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPlayAreaMode()
-        returnPtr!.assumingMemoryBound(to: Godot.XRInterface.PlayAreaMode.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_play_area_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setPlayAreaMode(
-            args[0]!.load(as: Godot.XRInterface.PlayAreaMode.self)
+            Godot.XRInterface.PlayAreaMode.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_play_area_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPlayArea()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_render_target_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRenderTargetSize()
-        returnPtr!.assumingMemoryBound(to: Godot.Vector2.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_view_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getViewCount()
-        returnPtr!.assumingMemoryBound(to: UInt32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_camera_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCameraTransform()
-        returnPtr!.assumingMemoryBound(to: Godot.Transform3D.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_transform_for_view_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getTransformForView(
-            args[0]!.load(as: UInt32.self),
-            camTransform: args[1]!.load(as: Godot.Transform3D.self)
+            UInt32.fromGodotUnsafePointer(args[0]!),
+            camTransform: Godot.Transform3D.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.Transform3D.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_projection_for_view_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getProjectionForView(
-            args[0]!.load(as: UInt32.self),
-            aspect: args[1]!.load(as: Double.self),
-            zNear: args[2]!.load(as: Double.self),
-            zFar: args[3]!.load(as: Double.self)
+            UInt32.fromGodotUnsafePointer(args[0]!),
+            aspect: Double.fromGodotUnsafePointer(args[1]!),
+            zNear: Double.fromGodotUnsafePointer(args[2]!),
+            zFar: Double.fromGodotUnsafePointer(args[3]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_vrs_texture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getVrsTexture()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._process()}
         let _pre_render_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._preRender()}
         let _pre_draw_viewport_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._preDrawViewport(
-            renderTarget: Godot.RID(godotExtensionPointer: args[0]!)
+            renderTarget: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _post_draw_viewport_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._postDrawViewport(
-            renderTarget: Godot.RID(godotExtensionPointer: args[0]!),
-            screenRect: args[1]!.load(as: Godot.Rect2.self)
+            renderTarget: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            screenRect: Godot.Rect2.fromGodotUnsafePointer(args[1]!)
         )}
         let _end_frame_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._endFrame()}
         let _get_suggested_tracker_names_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSuggestedTrackerNames()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_suggested_pose_names_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSuggestedPoseNames(
-            trackerName: Godot.GodotStringName(godotExtensionPointer: args[0]!)
+            trackerName: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_tracking_status_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getTrackingStatus()
-        returnPtr!.assumingMemoryBound(to: Godot.XRInterface.TrackingStatus.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _trigger_haptic_pulse_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._triggerHapticPulse(
-            actionName: Godot.GodotString(godotExtensionPointer: args[0]!),
-            trackerName: Godot.GodotStringName(godotExtensionPointer: args[1]!),
-            frequency: args[2]!.load(as: Double.self),
-            amplitude: args[3]!.load(as: Double.self),
-            durationSec: args[4]!.load(as: Double.self),
-            delaySec: args[5]!.load(as: Double.self)
+            actionName: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
+            trackerName: Godot.GodotStringName.fromGodotUnsafePointer(args[1]!),
+            frequency: Double.fromGodotUnsafePointer(args[2]!),
+            amplitude: Double.fromGodotUnsafePointer(args[3]!),
+            durationSec: Double.fromGodotUnsafePointer(args[4]!),
+            delaySec: Double.fromGodotUnsafePointer(args[5]!)
         )}
         let _get_anchor_detection_is_enabled_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAnchorDetectionIsEnabled()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_anchor_detection_is_enabled_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setAnchorDetectionIsEnabled(
-            args[0]!.load(as: Bool.self)
+            Bool.fromGodotUnsafePointer(args[0]!)
         )}
         let _get_camera_feed_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCameraFeedId()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_color_texture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getColorTexture()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_depth_texture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDepthTexture()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_velocity_texture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getVelocityTexture()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getName" : ("_get_name", _get_name_call),
             "_getCapabilities" : ("_get_capabilities", _get_capabilities_call),

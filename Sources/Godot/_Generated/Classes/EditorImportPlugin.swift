@@ -54,35 +54,26 @@ open class EditorImportPlugin: ResourceImporter {
     }
 
     private static var __method_binding_append_import_external_resource: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "append_import_external_resource").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "append_import_external_resource").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3645925746)!
         }
         }
     }()
     public func appendImportExternalResource<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorableIn>(path: Godot.GodotString, customOptions: Godot.GodotDictionary<Value1, Value2> = [:], customImporter: Godot.GodotString = "", generatorParameters: Value3 = Variant()) -> Godot.ErrorType {
-        var __temporary = Godot.ErrorType.RawValue(0)
-        path.withUnsafeRawPointer { (__ptr_path) in
-            customOptions.withUnsafeRawPointer { (__ptr_customOptions) in
-                customImporter.withUnsafeRawPointer { (__ptr_customImporter) in
-                    Godot.Variant.withStorageUnsafeRawPointer(to: generatorParameters) { (__ptr_generatorParameters) in
-                        withUnsafeArgumentPackPointer(__ptr_path, __ptr_customOptions, __ptr_customImporter, __ptr_generatorParameters) { (__accessPtr) in
-                            withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                                `self`.withUnsafeRawPointer { (__ptr_self) in
-                                    gdextension_interface_object_method_bind_ptrcall(
-                                        Self.__method_binding_append_import_external_resource,
-                                        __ptr_self,
-                                        __accessPtr,
-                                        __ptr___temporary
-                                    )
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return Godot.ErrorType(rawValue: __temporary)!
+        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        customOptions.withGodotUnsafeRawPointer { __ptr_customOptions in
+        customImporter.withGodotUnsafeRawPointer { __ptr_customImporter in
+        Godot.Variant.withStorageUnsafeRawPointer(to: generatorParameters) { __ptr_generatorParameters in
+        withUnsafeArgumentPackPointer(__ptr_path, __ptr_customOptions, __ptr_customImporter, __ptr_generatorParameters) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_append_import_external_resource,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -94,113 +85,101 @@ open class EditorImportPlugin: ResourceImporter {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getImporterName()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_visible_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getVisibleName()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_preset_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPresetCount()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_preset_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPresetName(
-            presetIndex: args[0]!.load(as: Int32.self)
+            presetIndex: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_recognized_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_import_options_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getImportOptions(
-            path: Godot.GodotString(godotExtensionPointer: args[0]!),
-            presetIndex: args[1]!.load(as: Int32.self)
+            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
+            presetIndex: Int32.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_save_extension_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getSaveExtension()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_resource_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getResourceType()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_priority_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPriority()
-        returnPtr!.assumingMemoryBound(to: Double.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_import_order_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getImportOrder()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_option_visibility_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getOptionVisibility(
-            path: Godot.GodotString(godotExtensionPointer: args[0]!),
-            optionName: Godot.GodotStringName(godotExtensionPointer: args[1]!),
-            options: Godot.AnyGodotDictionary(godotExtensionPointer: args[2]!)
+            path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
+            optionName: Godot.GodotStringName.fromGodotUnsafePointer(args[1]!),
+            options: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[2]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _import_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._import(
-            sourceFile: Godot.GodotString(godotExtensionPointer: args[0]!),
-            savePath: Godot.GodotString(godotExtensionPointer: args[1]!),
-            options: Godot.AnyGodotDictionary(godotExtensionPointer: args[2]!),
-            platformVariants: Godot.GodotArray<Godot.GodotString>(godotExtensionPointer: args[3]!),
-            genFiles: Godot.GodotArray<Godot.GodotString>(godotExtensionPointer: args[4]!)
+            sourceFile: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
+            savePath: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
+            options: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[2]!),
+            platformVariants: Godot.GodotArray<Godot.GodotString> .fromGodotUnsafePointer(args[3]!),
+            genFiles: Godot.GodotArray<Godot.GodotString> .fromGodotUnsafePointer(args[4]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getImporterName" : ("_get_importer_name", _get_importer_name_call),
             "_getVisibleName" : ("_get_visible_name", _get_visible_name_call),

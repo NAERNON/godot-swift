@@ -23,32 +23,29 @@ open class EngineProfiler: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._toggle(
-            enable: args[0]!.load(as: Bool.self),
-            options: Godot.AnyGodotArray(godotExtensionPointer: args[1]!)
+            enable: Bool.fromGodotUnsafePointer(args[0]!),
+            options: Godot.AnyGodotArray.fromGodotUnsafePointer(args[1]!)
         )}
         let _add_frame_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._addFrame(
-            data: Godot.AnyGodotArray(godotExtensionPointer: args[0]!)
+            data: Godot.AnyGodotArray.fromGodotUnsafePointer(args[0]!)
         )}
         let _tick_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
         ._tick(
-            frameTime: args[0]!.load(as: Double.self),
-            processTime: args[1]!.load(as: Double.self),
-            physicsTime: args[2]!.load(as: Double.self),
-            physicsFrameTime: args[3]!.load(as: Double.self)
+            frameTime: Double.fromGodotUnsafePointer(args[0]!),
+            processTime: Double.fromGodotUnsafePointer(args[1]!),
+            physicsTime: Double.fromGodotUnsafePointer(args[2]!),
+            physicsFrameTime: Double.fromGodotUnsafePointer(args[3]!)
         )}
         _virtualFunctions = [
             "_toggle" : ("_toggle", _toggle_call),

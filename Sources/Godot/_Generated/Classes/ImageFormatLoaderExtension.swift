@@ -14,39 +14,37 @@ open class ImageFormatLoaderExtension: ImageFormatLoader {
     }
 
     private static var __method_binding_add_format_loader: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_format_loader").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_format_loader").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func addFormatLoader() {
-        `self`.withUnsafeRawPointer { (__ptr_self) in
-            gdextension_interface_object_method_bind_ptrcall(
-                Self.__method_binding_add_format_loader,
-                __ptr_self,
-                nil,
-                nil
-            )
-        }
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_format_loader,
+            __ptr_self,
+            nil,
+            nil
+        )}
     }
 
     private static var __method_binding_remove_format_loader: GDExtensionMethodBindPtr = {
-        _$staticClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_format_loader").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_format_loader").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func removeFormatLoader() {
-        `self`.withUnsafeRawPointer { (__ptr_self) in
-            gdextension_interface_object_method_bind_ptrcall(
-                Self.__method_binding_remove_format_loader,
-                __ptr_self,
-                nil,
-                nil
-            )
-        }
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_remove_format_loader,
+            __ptr_self,
+            nil,
+            nil
+        )}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
@@ -58,23 +56,21 @@ open class ImageFormatLoaderExtension: ImageFormatLoader {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<ImageFormatLoaderExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<ImageFormatLoaderExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _load_image_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<ImageFormatLoaderExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<ImageFormatLoaderExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._loadImage(
-            Godot.Image.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            fileaccess: Godot.FileAccess.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
-            flags: args[2]!.load(as: Godot.ImageFormatLoader.LoaderFlags.self),
-            scale: args[3]!.load(as: Double.self)
+            Godot.Image?.fromGodotUnsafePointer(args[0]!),
+            fileaccess: Godot.FileAccess?.fromGodotUnsafePointer(args[1]!),
+            flags: Godot.ImageFormatLoader.LoaderFlags.fromGodotUnsafePointer(args[2]!),
+            scale: Double.fromGodotUnsafePointer(args[3]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getRecognizedExtensions" : ("_get_recognized_extensions", _get_recognized_extensions_call),
             "_loadImage" : ("_load_image", _load_image_call)

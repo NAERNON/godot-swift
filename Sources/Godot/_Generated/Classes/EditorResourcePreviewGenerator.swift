@@ -34,52 +34,47 @@ open class EditorResourcePreviewGenerator: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
         ._handles(
-            type: Godot.GodotString(godotExtensionPointer: args[0]!)
+            type: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _generate_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
         ._generate(
-            resource: Godot.Resource.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            size: args[1]!.load(as: Godot.Vector2i.self),
-            metadata: Godot.AnyGodotDictionary(godotExtensionPointer: args[2]!)
+            resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!),
+            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            metadata: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[2]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _generate_from_path_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
         ._generateFromPath(
-            Godot.GodotString(godotExtensionPointer: args[0]!),
-            size: args[1]!.load(as: Godot.Vector2i.self),
-            metadata: Godot.AnyGodotDictionary(godotExtensionPointer: args[2]!)
+            Godot.GodotString.fromGodotUnsafePointer(args[0]!),
+            size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            metadata: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[2]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _generate_small_preview_automatically_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
         ._generateSmallPreviewAutomatically()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _can_generate_small_preview_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
         ._canGenerateSmallPreview()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_handles" : ("_handles", _handles_call),
             "_generate" : ("_generate", _generate_call),

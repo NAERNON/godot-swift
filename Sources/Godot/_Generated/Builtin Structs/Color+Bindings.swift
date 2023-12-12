@@ -85,127 +85,127 @@ private var __indexed_getter: GDExtensionPtrIndexedGetter = {
     return gdextension_interface_variant_get_ptr_indexed_getter(GDEXTENSION_VARIANT_TYPE_COLOR)!
 }()
 private var __method_binding_to_argb32: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "to_argb32").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "to_argb32").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_abgr32: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "to_abgr32").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "to_abgr32").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_rgba32: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "to_rgba32").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "to_rgba32").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_argb64: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "to_argb64").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "to_argb64").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_abgr64: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "to_abgr64").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "to_abgr64").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_rgba64: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "to_rgba64").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "to_rgba64").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_html: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "to_html").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "to_html").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3429816538)!
     }
 }()
 private var __method_binding_clamp: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "clamp").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "clamp").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 105651410)!
     }
 }()
 private var __method_binding_inverted: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "inverted").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "inverted").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
     }
 }()
 private var __method_binding_lerp: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "lerp").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "lerp").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 402949615)!
     }
 }()
 private var __method_binding_lightened: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "lightened").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "lightened").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1466039168)!
     }
 }()
 private var __method_binding_darkened: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "darkened").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "darkened").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1466039168)!
     }
 }()
 private var __method_binding_blend: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "blend").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "blend").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3803690977)!
     }
 }()
 private var __method_binding_get_luminance: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_luminance").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_luminance").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 466405837)!
     }
 }()
 private var __method_binding_srgb_to_linear: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "srgb_to_linear").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "srgb_to_linear").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
     }
 }()
 private var __method_binding_linear_to_srgb: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "linear_to_srgb").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "linear_to_srgb").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
     }
 }()
 private var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_equal_approx").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3167426256)!
     }
 }()
 private var __method_binding_hex: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "hex").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "hex").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
     }
 }()
 private var __method_binding_hex64: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "hex64").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "hex64").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
     }
 }()
 private var __method_binding_html: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "html").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "html").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 2500054655)!
     }
 }()
 private var __method_binding_html_is_valid: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "html_is_valid").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "html_is_valid").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 2942997125)!
     }
 }()
 private var __method_binding_from_string: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "from_string").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "from_string").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3755044230)!
     }
 }()
 private var __method_binding_from_hsv: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "from_hsv").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "from_hsv").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1573799446)!
     }
 }()
 private var __method_binding_from_ok_hsl: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "from_ok_hsl").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "from_ok_hsl").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1573799446)!
     }
 }()
 private var __method_binding_from_rgbe9995: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "from_rgbe9995").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "from_rgbe9995").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
     }
 }()
@@ -374,698 +374,432 @@ extension Color {
 
     static internal func _constructor_color(from: Godot.Color) -> Self {
         var __temporary = Color()
-        withUnsafePointer(to: from) { (__ptr_from) in
-            withUnsafeArgumentPackPointer(__ptr_from) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                    __constructor_color(__ptr___temporary, __accessPtr)
-                }
-            }
-        }
+        from.withGodotUnsafeRawPointer { __ptr_from in
+        withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_color(__ptr___temporary, __accessPtr)
+        }}}
         return __temporary
     }
     static internal func _ptr_constructor_color(from: UnsafeRawPointer) -> Self {
         var __temporary = Color()
-        withUnsafeArgumentPackPointer(from) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_color(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(from) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_color(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _constructor_color_float(from: Godot.Color, alpha: Float) -> Self {
         var __temporary = Color()
-        withUnsafePointer(to: from) { (__ptr_from) in
-            withUnsafePointer(to: alpha) { (__ptr_alpha) in
-                withUnsafeArgumentPackPointer(__ptr_from, __ptr_alpha) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                        __constructor_color_float(__ptr___temporary, __accessPtr)
-                    }
-                }
-            }
-        }
+        from.withGodotUnsafeRawPointer { __ptr_from in
+        alpha.withGodotUnsafeRawPointer { __ptr_alpha in
+        withUnsafeArgumentPackPointer(__ptr_from, __ptr_alpha) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_color_float(__ptr___temporary, __accessPtr)
+        }}}}
         return __temporary
     }
     static internal func _ptr_constructor_color_float(from: UnsafeRawPointer, alpha: UnsafeRawPointer) -> Self {
         var __temporary = Color()
-        withUnsafeArgumentPackPointer(from, alpha) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_color_float(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(from, alpha) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_color_float(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _constructor_float_float_float(r: Float, g: Float, b: Float) -> Self {
         var __temporary = Color()
-        withUnsafePointer(to: r) { (__ptr_r) in
-            withUnsafePointer(to: g) { (__ptr_g) in
-                withUnsafePointer(to: b) { (__ptr_b) in
-                    withUnsafeArgumentPackPointer(__ptr_r, __ptr_g, __ptr_b) { (__accessPtr) in
-                        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                            __constructor_float_float_float(__ptr___temporary, __accessPtr)
-                        }
-                    }
-                }
-            }
-        }
+        r.withGodotUnsafeRawPointer { __ptr_r in
+        g.withGodotUnsafeRawPointer { __ptr_g in
+        b.withGodotUnsafeRawPointer { __ptr_b in
+        withUnsafeArgumentPackPointer(__ptr_r, __ptr_g, __ptr_b) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_float_float_float(__ptr___temporary, __accessPtr)
+        }}}}}
         return __temporary
     }
     static internal func _ptr_constructor_float_float_float(r: UnsafeRawPointer, g: UnsafeRawPointer, b: UnsafeRawPointer) -> Self {
         var __temporary = Color()
-        withUnsafeArgumentPackPointer(r, g, b) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_float_float_float(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(r, g, b) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_float_float_float(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _constructor_float_float_float_float(r: Float, g: Float, b: Float, a: Float) -> Self {
         var __temporary = Color()
-        withUnsafePointer(to: r) { (__ptr_r) in
-            withUnsafePointer(to: g) { (__ptr_g) in
-                withUnsafePointer(to: b) { (__ptr_b) in
-                    withUnsafePointer(to: a) { (__ptr_a) in
-                        withUnsafeArgumentPackPointer(__ptr_r, __ptr_g, __ptr_b, __ptr_a) { (__accessPtr) in
-                            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                                __constructor_float_float_float_float(__ptr___temporary, __accessPtr)
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        r.withGodotUnsafeRawPointer { __ptr_r in
+        g.withGodotUnsafeRawPointer { __ptr_g in
+        b.withGodotUnsafeRawPointer { __ptr_b in
+        a.withGodotUnsafeRawPointer { __ptr_a in
+        withUnsafeArgumentPackPointer(__ptr_r, __ptr_g, __ptr_b, __ptr_a) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_float_float_float_float(__ptr___temporary, __accessPtr)
+        }}}}}}
         return __temporary
     }
     static internal func _ptr_constructor_float_float_float_float(r: UnsafeRawPointer, g: UnsafeRawPointer, b: UnsafeRawPointer, a: UnsafeRawPointer) -> Self {
         var __temporary = Color()
-        withUnsafeArgumentPackPointer(r, g, b, a) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_float_float_float_float(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(r, g, b, a) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_float_float_float_float(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _constructor_godotstring(code: Godot.GodotString) -> Self {
         var __temporary = Color()
-        code.withUnsafeRawPointer { (__ptr_code) in
-            withUnsafeArgumentPackPointer(__ptr_code) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                    __constructor_godotstring(__ptr___temporary, __accessPtr)
-                }
-            }
-        }
+        code.withGodotUnsafeRawPointer { __ptr_code in
+        withUnsafeArgumentPackPointer(__ptr_code) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_godotstring(__ptr___temporary, __accessPtr)
+        }}}
         return __temporary
     }
     static internal func _ptr_constructor_godotstring(code: UnsafeRawPointer) -> Self {
         var __temporary = Color()
-        withUnsafeArgumentPackPointer(code) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_godotstring(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(code) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_godotstring(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _constructor_godotstring_float(code: Godot.GodotString, alpha: Float) -> Self {
         var __temporary = Color()
-        code.withUnsafeRawPointer { (__ptr_code) in
-            withUnsafePointer(to: alpha) { (__ptr_alpha) in
-                withUnsafeArgumentPackPointer(__ptr_code, __ptr_alpha) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                        __constructor_godotstring_float(__ptr___temporary, __accessPtr)
-                    }
-                }
-            }
-        }
+        code.withGodotUnsafeRawPointer { __ptr_code in
+        alpha.withGodotUnsafeRawPointer { __ptr_alpha in
+        withUnsafeArgumentPackPointer(__ptr_code, __ptr_alpha) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_godotstring_float(__ptr___temporary, __accessPtr)
+        }}}}
         return __temporary
     }
     static internal func _ptr_constructor_godotstring_float(code: UnsafeRawPointer, alpha: UnsafeRawPointer) -> Self {
         var __temporary = Color()
-        withUnsafeArgumentPackPointer(code, alpha) { (__accessPtr) in
-            withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                __constructor_godotstring_float(__ptr___temporary, __accessPtr)
-            }
-        }
+        withUnsafeArgumentPackPointer(code, alpha) { __accessPtr in
+        withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
+            __constructor_godotstring_float(__ptr___temporary, __accessPtr)
+        }}
         return __temporary
     }
 
     static internal func _operatorEqual<Value: VariantStorableIn>(_ lhs: Godot.Color, _ rhs: Value) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
+        __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorNotEqual<Value: VariantStorableIn>(_ lhs: Godot.Color, _ rhs: Value) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
+        __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorNegate(_ lhs: Godot.Color) -> Godot.Color {
-        var __temporary = Color()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                __operator_binding_negate(__ptr_lhs, nil, __ptr___temporary)
-            }
-        }
-        return __temporary
+        Color.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        __operator_binding_negate(__ptr_lhs, nil, __temporary)}}
     }
 
     static internal func _operatorPositive(_ lhs: Godot.Color) -> Godot.Color {
-        var __temporary = Color()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                __operator_binding_positive(__ptr_lhs, nil, __ptr___temporary)
-            }
-        }
-        return __temporary
+        Color.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        __operator_binding_positive(__ptr_lhs, nil, __temporary)}}
     }
 
     static internal func _operatorNot(_ lhs: Godot.Color) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                __operator_binding_not(__ptr_lhs, nil, __ptr___temporary)
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        __operator_binding_not(__ptr_lhs, nil, __temporary)}}
     }
 
     static internal func _operatorMultiply(_ lhs: Godot.Color, _ rhs: Int) -> Godot.Color {
-        var __temporary = Color()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_multiply_int(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Color.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_multiply_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorDivide(_ lhs: Godot.Color, _ rhs: Int) -> Godot.Color {
-        var __temporary = Color()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_divide_int(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Color.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_divide_int(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorMultiply(_ lhs: Godot.Color, _ rhs: Float) -> Godot.Color {
-        var __temporary = Color()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_multiply_double(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Color.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_multiply_double(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorDivide(_ lhs: Godot.Color, _ rhs: Float) -> Godot.Color {
-        var __temporary = Color()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_divide_double(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Color.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_divide_double(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorEqual(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_equal_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_equal_color(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorNotEqual(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_not_equal_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_not_equal_color(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorAdd(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Godot.Color {
-        var __temporary = Color()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_add_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Color.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_add_color(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorSubtract(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Godot.Color {
-        var __temporary = Color()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_subtract_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Color.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_subtract_color(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorMultiply(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Godot.Color {
-        var __temporary = Color()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_multiply_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Color.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_multiply_color(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorDivide(_ lhs: Godot.Color, _ rhs: Godot.Color) -> Godot.Color {
-        var __temporary = Color()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            withUnsafePointer(to: rhs) { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_divide_color(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Color.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_divide_color(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorIn<Value1: VariantStorable, Value2: VariantStorable>(_ lhs: Godot.Color, _ rhs: Godot.GodotDictionary<Value1, Value2>) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            rhs.withUnsafeRawPointer { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorIn<Value: VariantStorable>(_ lhs: Godot.Color, _ rhs: Godot.GodotArray<Value>) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            rhs.withUnsafeRawPointer { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     static internal func _operatorIn(_ lhs: Godot.Color, _ rhs: Godot.PackedColorArray) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: lhs) { (__ptr_lhs) in
-            rhs.withUnsafeRawPointer { (__ptr_rhs) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __operator_binding_in_packedcolorarray(__ptr_lhs, __ptr_rhs, __ptr___temporary)
-                }
-            }
-        }
-        return __temporary
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
+        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
+        __operator_binding_in_packedcolorarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
     }
 
     internal func _getValue(at index: GDExtensionInt) -> Float {
-        var __temporary = Float()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (__ptr_self) in
-                __indexed_getter(__ptr_self, index, __ptr___temporary)
-            }
-        }
-        return __temporary
+        Float.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __indexed_getter(__ptr_self, index, __temporary)}}
     }
     mutating internal func _setValue(_ value: Float, at index: GDExtensionInt) {
-        withUnsafePointer(to: value) { (__ptr_value) in
-            withUnsafeMutablePointer(to: &`self`) { (__ptr_self) in
-                __indexed_setter(__ptr_self, index, __ptr_value)
-            }
-        }
+        value.withGodotUnsafeRawPointer { __ptr_value in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        __indexed_setter(__ptr_self, index, __ptr_value)}}
     }
 
     internal func _toArgb32() -> Int {
-        var __temporary = Int()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_to_argb32(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_to_argb32(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toAbgr32() -> Int {
-        var __temporary = Int()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_to_abgr32(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_to_abgr32(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toRgba32() -> Int {
-        var __temporary = Int()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_to_rgba32(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_to_rgba32(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toArgb64() -> Int {
-        var __temporary = Int()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_to_argb64(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_to_argb64(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toAbgr64() -> Int {
-        var __temporary = Int()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_to_abgr64(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_to_abgr64(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toRgba64() -> Int {
-        var __temporary = Int()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_to_rgba64(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Int.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_to_rgba64(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _toHtml(withAlpha alpha: Bool = true) -> Godot.GodotString {
-        let __temporary = Godot.GodotString()
-        withUnsafePointer(to: alpha) { (__ptr_alpha) in
-            withUnsafeArgumentPackPointer(__ptr_alpha) { (__accessPtr) in
-                __temporary.withUnsafeRawPointer { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_to_html(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        alpha.withGodotUnsafeRawPointer { __ptr_alpha in
+        withUnsafeArgumentPackPointer(__ptr_alpha) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_to_html(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _clamp(min: Godot.Color = Color(r: 0, g: 0, b: 0, a: 0), max: Godot.Color = Color(r: 1, g: 1, b: 1, a: 1)) -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafePointer(to: min) { (__ptr_min) in
-            withUnsafePointer(to: max) { (__ptr_max) in
-                withUnsafeArgumentPackPointer(__ptr_min, __ptr_max) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                        withUnsafePointer(to: `self`) { (___ptr_self) in
-                            let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                            __method_binding_clamp(__ptr_self, __accessPtr, __ptr___temporary, 2)
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        min.withGodotUnsafeRawPointer { __ptr_min in
+        max.withGodotUnsafeRawPointer { __ptr_max in
+        withUnsafeArgumentPackPointer(__ptr_min, __ptr_max) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_clamp(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
     internal func _inverted() -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_inverted(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_inverted(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _lerp(to: Godot.Color, weight: Float) -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafePointer(to: to) { (__ptr_to) in
-            withUnsafePointer(to: weight) { (__ptr_weight) in
-                withUnsafeArgumentPackPointer(__ptr_to, __ptr_weight) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                        withUnsafePointer(to: `self`) { (___ptr_self) in
-                            let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                            __method_binding_lerp(__ptr_self, __accessPtr, __ptr___temporary, 2)
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        to.withGodotUnsafeRawPointer { __ptr_to in
+        weight.withGodotUnsafeRawPointer { __ptr_weight in
+        withUnsafeArgumentPackPointer(__ptr_to, __ptr_weight) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_lerp(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
     internal func _lightened(amount: Float) -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafePointer(to: amount) { (__ptr_amount) in
-            withUnsafeArgumentPackPointer(__ptr_amount) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_lightened(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        amount.withGodotUnsafeRawPointer { __ptr_amount in
+        withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_lightened(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _darkened(amount: Float) -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafePointer(to: amount) { (__ptr_amount) in
-            withUnsafeArgumentPackPointer(__ptr_amount) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_darkened(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        amount.withGodotUnsafeRawPointer { __ptr_amount in
+        withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_darkened(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _blend(over: Godot.Color) -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafePointer(to: over) { (__ptr_over) in
-            withUnsafeArgumentPackPointer(__ptr_over) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_blend(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        over.withGodotUnsafeRawPointer { __ptr_over in
+        withUnsafeArgumentPackPointer(__ptr_over) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_blend(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     internal func _luminance() -> Float {
-        var __temporary = Float()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_get_luminance(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Float.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_get_luminance(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _srgbToLinear() -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_srgb_to_linear(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_srgb_to_linear(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _linearToSrgb() -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-            withUnsafePointer(to: `self`) { (___ptr_self) in
-                let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                __method_binding_linear_to_srgb(__ptr_self, nil, __ptr___temporary, 0)
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_linear_to_srgb(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isEqualApprox(to: Godot.Color) -> Bool {
-        var __temporary = Bool()
-        withUnsafePointer(to: to) { (__ptr_to) in
-            withUnsafeArgumentPackPointer(__ptr_to) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    withUnsafePointer(to: `self`) { (___ptr_self) in
-                        let __ptr_self = UnsafeMutableRawPointer(mutating: ___ptr_self)
-                        __method_binding_is_equal_approx(__ptr_self, __accessPtr, __ptr___temporary, 1)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        to.withGodotUnsafeRawPointer { __ptr_to in
+        withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_is_equal_approx(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
     static internal func _hex(_ hex: Int) -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafePointer(to: hex) { (__ptr_hex) in
-            withUnsafeArgumentPackPointer(__ptr_hex) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __method_binding_hex(nil, __accessPtr, __ptr___temporary, 1)
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        hex.withGodotUnsafeRawPointer { __ptr_hex in
+        withUnsafeArgumentPackPointer(__ptr_hex) { __accessPtr in
+        __method_binding_hex(nil, __accessPtr, __temporary, 1)}}}
     }
 
     static internal func _hex64(hex: Int) -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafePointer(to: hex) { (__ptr_hex) in
-            withUnsafeArgumentPackPointer(__ptr_hex) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __method_binding_hex64(nil, __accessPtr, __ptr___temporary, 1)
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        hex.withGodotUnsafeRawPointer { __ptr_hex in
+        withUnsafeArgumentPackPointer(__ptr_hex) { __accessPtr in
+        __method_binding_hex64(nil, __accessPtr, __temporary, 1)}}}
     }
 
     static internal func _html(rgba: Godot.GodotString) -> Godot.Color {
-        var __temporary = Godot.Color()
-        rgba.withUnsafeRawPointer { (__ptr_rgba) in
-            withUnsafeArgumentPackPointer(__ptr_rgba) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __method_binding_html(nil, __accessPtr, __ptr___temporary, 1)
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        rgba.withGodotUnsafeRawPointer { __ptr_rgba in
+        withUnsafeArgumentPackPointer(__ptr_rgba) { __accessPtr in
+        __method_binding_html(nil, __accessPtr, __temporary, 1)}}}
     }
 
     static internal func _htmlIsValid(color: Godot.GodotString) -> Bool {
-        var __temporary = Bool()
-        color.withUnsafeRawPointer { (__ptr_color) in
-            withUnsafeArgumentPackPointer(__ptr_color) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __method_binding_html_is_valid(nil, __accessPtr, __ptr___temporary, 1)
-                }
-            }
-        }
-        return __temporary
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        color.withGodotUnsafeRawPointer { __ptr_color in
+        withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
+        __method_binding_html_is_valid(nil, __accessPtr, __temporary, 1)}}}
     }
 
     static internal func _fromString(str: Godot.GodotString, `default`: Godot.Color) -> Godot.Color {
-        var __temporary = Godot.Color()
-        str.withUnsafeRawPointer { (__ptr_str) in
-            withUnsafePointer(to: `default`) { (__ptr_default) in
-                withUnsafeArgumentPackPointer(__ptr_str, __ptr_default) { (__accessPtr) in
-                    withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                        __method_binding_from_string(nil, __accessPtr, __ptr___temporary, 2)
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        str.withGodotUnsafeRawPointer { __ptr_str in
+        `default`.withGodotUnsafeRawPointer { __ptr_default in
+        withUnsafeArgumentPackPointer(__ptr_str, __ptr_default) { __accessPtr in
+        __method_binding_from_string(nil, __accessPtr, __temporary, 2)}}}}
     }
 
     static internal func _fromHsv(h: Float, s: Float, v: Float, alpha: Float = 1.0) -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafePointer(to: h) { (__ptr_h) in
-            withUnsafePointer(to: s) { (__ptr_s) in
-                withUnsafePointer(to: v) { (__ptr_v) in
-                    withUnsafePointer(to: alpha) { (__ptr_alpha) in
-                        withUnsafeArgumentPackPointer(__ptr_h, __ptr_s, __ptr_v, __ptr_alpha) { (__accessPtr) in
-                            withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                                __method_binding_from_hsv(nil, __accessPtr, __ptr___temporary, 4)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        h.withGodotUnsafeRawPointer { __ptr_h in
+        s.withGodotUnsafeRawPointer { __ptr_s in
+        v.withGodotUnsafeRawPointer { __ptr_v in
+        alpha.withGodotUnsafeRawPointer { __ptr_alpha in
+        withUnsafeArgumentPackPointer(__ptr_h, __ptr_s, __ptr_v, __ptr_alpha) { __accessPtr in
+        __method_binding_from_hsv(nil, __accessPtr, __temporary, 4)}}}}}}
     }
 
     static internal func _fromOkHsl(h: Float, s: Float, l: Float, alpha: Float = 1.0) -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafePointer(to: h) { (__ptr_h) in
-            withUnsafePointer(to: s) { (__ptr_s) in
-                withUnsafePointer(to: l) { (__ptr_l) in
-                    withUnsafePointer(to: alpha) { (__ptr_alpha) in
-                        withUnsafeArgumentPackPointer(__ptr_h, __ptr_s, __ptr_l, __ptr_alpha) { (__accessPtr) in
-                            withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                                __method_binding_from_ok_hsl(nil, __accessPtr, __ptr___temporary, 4)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        h.withGodotUnsafeRawPointer { __ptr_h in
+        s.withGodotUnsafeRawPointer { __ptr_s in
+        l.withGodotUnsafeRawPointer { __ptr_l in
+        alpha.withGodotUnsafeRawPointer { __ptr_alpha in
+        withUnsafeArgumentPackPointer(__ptr_h, __ptr_s, __ptr_l, __ptr_alpha) { __accessPtr in
+        __method_binding_from_ok_hsl(nil, __accessPtr, __temporary, 4)}}}}}}
     }
 
     static internal func _fromRgbe9995(rgbe: Int) -> Godot.Color {
-        var __temporary = Godot.Color()
-        withUnsafePointer(to: rgbe) { (__ptr_rgbe) in
-            withUnsafeArgumentPackPointer(__ptr_rgbe) { (__accessPtr) in
-                withUnsafeMutablePointer(to: &__temporary) { (__ptr___temporary) in
-                    __method_binding_from_rgbe9995(nil, __accessPtr, __ptr___temporary, 1)
-                }
-            }
-        }
-        return __temporary
+        return Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
+        rgbe.withGodotUnsafeRawPointer { __ptr_rgbe in
+        withUnsafeArgumentPackPointer(__ptr_rgbe) { __accessPtr in
+        __method_binding_from_rgbe9995(nil, __accessPtr, __temporary, 1)}}}
     }
 
     }

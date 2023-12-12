@@ -99,198 +99,175 @@ open class MultiplayerPeerExtension: MultiplayerPeer {
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPacket(
-            rBuffer: args[0]!.load(as: UnsafePointer<UnsafePointer<UInt8>> .self),
-            rBufferSize: args[1]!.load(as: UnsafeMutablePointer<Int32> .self)
+            rBuffer: UnsafePointer<UnsafePointer<UInt8>> .fromGodotUnsafePointer(args[0]!),
+            rBufferSize: UnsafeMutablePointer<Int32> .fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _put_packet_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._putPacket(
-            pBuffer: args[0]!.load(as: UnsafePointer<UInt8> .self),
-            pBufferSize: args[1]!.load(as: Int32.self)
+            pBuffer: UnsafePointer<UInt8> .fromGodotUnsafePointer(args[0]!),
+            pBufferSize: Int32.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_available_packet_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getAvailablePacketCount()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_max_packet_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMaxPacketSize()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_packet_script_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPacketScript()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _put_packet_script_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._putPacketScript(
-            pBuffer: Godot.PackedByteArray(godotExtensionPointer: args[0]!)
+            pBuffer: Godot.PackedByteArray.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_packet_channel_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPacketChannel()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_packet_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPacketMode()
-        returnPtr!.assumingMemoryBound(to: Godot.MultiplayerPeer.TransferMode.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_transfer_channel_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setTransferChannel(
-            pChannel: args[0]!.load(as: Int32.self)
+            pChannel: Int32.fromGodotUnsafePointer(args[0]!)
         )}
         let _get_transfer_channel_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getTransferChannel()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_transfer_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setTransferMode(
-            pMode: args[0]!.load(as: Godot.MultiplayerPeer.TransferMode.self)
+            pMode: Godot.MultiplayerPeer.TransferMode.fromGodotUnsafePointer(args[0]!)
         )}
         let _get_transfer_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getTransferMode()
-        returnPtr!.assumingMemoryBound(to: Godot.MultiplayerPeer.TransferMode.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_target_peer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setTargetPeer(
-            pPeer: args[0]!.load(as: Int32.self)
+            pPeer: Int32.fromGodotUnsafePointer(args[0]!)
         )}
         let _get_packet_peer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPacketPeer()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_server_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isServer()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _poll_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._poll()}
         let _close_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._close()}
         let _disconnect_peer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._disconnectPeer(
-            pPeer: args[0]!.load(as: Int32.self),
-            pForce: args[1]!.load(as: Bool.self)
+            pPeer: Int32.fromGodotUnsafePointer(args[0]!),
+            pForce: Bool.fromGodotUnsafePointer(args[1]!)
         )}
         let _get_unique_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getUniqueId()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_refuse_new_connections_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setRefuseNewConnections(
-            pEnable: args[0]!.load(as: Bool.self)
+            pEnable: Bool.fromGodotUnsafePointer(args[0]!)
         )}
         let _is_refusing_new_connections_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isRefusingNewConnections()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_server_relay_supported_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isServerRelaySupported()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_connection_status_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getConnectionStatus()
-        returnPtr!.assumingMemoryBound(to: Godot.MultiplayerPeer.ConnectionStatus.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getPacket" : ("_get_packet", _get_packet_call),
             "_putPacket" : ("_put_packet", _put_packet_call),

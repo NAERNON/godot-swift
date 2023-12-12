@@ -7,7 +7,7 @@ extension Variant {
     /// For instance, `int8`, `int16` and `int32`
     /// have different `RepresentationType`,
     /// but the same `StorageType`: `int`.
-    public enum StorageType: UInt32 {
+    public enum StorageType: UInt32, ExposableRawRepresentableValue {
         case `nil`
         
         case bool
@@ -54,6 +54,20 @@ extension Variant {
         internal var extensionType: GDExtensionVariantType {
             .init(rawValue)
         }
+        
+        func withGodotUnsafeRawPointer<Result>(
+            _ body: (UnsafeRawPointer) throws -> Result
+        ) rethrows -> Result {
+            try withUnsafePointer(to: rawValue) { try body($0) }
+        }
+        
+        static func fromMutatingGodotUnsafePointer(
+            _ body: (UnsafeMutableRawPointer) -> Void
+        ) -> Self {
+            var value = RawValue()
+            withUnsafeMutablePointer(to: &value) { body($0) }
+            return Self(rawValue: value)!
+        }
     }
     
     /// The representation type of a variant.
@@ -62,7 +76,7 @@ extension Variant {
     /// For instance, `int8`, `int16` and `int32`
     /// have different `RepresentationType`,
     /// but the same `StorageType`: `int`.
-    public enum RepresentationType: UInt32 {
+    public enum RepresentationType: UInt32, ExposableRawRepresentableValue {
         case `nil`
         case bool
         case uint8

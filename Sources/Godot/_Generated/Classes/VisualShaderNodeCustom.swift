@@ -74,143 +74,128 @@ open class VisualShaderNodeCustom: VisualShaderNode {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getName()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_description_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getDescription()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_category_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCategory()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_return_icon_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getReturnIconType()
-        returnPtr!.assumingMemoryBound(to: Godot.VisualShaderNode.PortType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_input_port_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInputPortCount()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_input_port_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInputPortType(
-            port: args[0]!.load(as: Int32.self)
+            port: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.VisualShaderNode.PortType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_input_port_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getInputPortName(
-            port: args[0]!.load(as: Int32.self)
+            port: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_output_port_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getOutputPortCount()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_output_port_type_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getOutputPortType(
-            port: args[0]!.load(as: Int32.self)
+            port: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.VisualShaderNode.PortType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_output_port_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getOutputPortName(
-            port: args[0]!.load(as: Int32.self)
+            port: Int32.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_code_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getCode(
-            inputVars: Godot.GodotArray<Godot.GodotString>(godotExtensionPointer: args[0]!),
-            outputVars: Godot.GodotArray<Godot.GodotString>(godotExtensionPointer: args[1]!),
-            mode: args[2]!.load(as: Godot.Shader.Mode.self),
-            type: args[3]!.load(as: Godot.VisualShader.GodotType.self)
+            inputVars: Godot.GodotArray<Godot.GodotString> .fromGodotUnsafePointer(args[0]!),
+            outputVars: Godot.GodotArray<Godot.GodotString> .fromGodotUnsafePointer(args[1]!),
+            mode: Godot.Shader.Mode.fromGodotUnsafePointer(args[2]!),
+            type: Godot.VisualShader.GodotType.fromGodotUnsafePointer(args[3]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_func_code_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getFuncCode(
-            mode: args[0]!.load(as: Godot.Shader.Mode.self),
-            type: args[1]!.load(as: Godot.VisualShader.GodotType.self)
+            mode: Godot.Shader.Mode.fromGodotUnsafePointer(args[0]!),
+            type: Godot.VisualShader.GodotType.fromGodotUnsafePointer(args[1]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_global_code_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getGlobalCode(
-            mode: args[0]!.load(as: Godot.Shader.Mode.self)
+            mode: Godot.Shader.Mode.fromGodotUnsafePointer(args[0]!)
         )
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_highend_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isHighend()
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_available_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<VisualShaderNodeCustom> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isAvailable(
-            mode: args[0]!.load(as: Godot.Shader.Mode.self),
-            type: args[1]!.load(as: Godot.VisualShader.GodotType.self)
+            mode: Godot.Shader.Mode.fromGodotUnsafePointer(args[0]!),
+            type: Godot.VisualShader.GodotType.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Bool.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_getName" : ("_get_name", _get_name_call),
             "_getDescription" : ("_get_description", _get_description_call),

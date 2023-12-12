@@ -49,86 +49,77 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._poll()
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _set_multiplayer_peer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let _ = instance
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._setMultiplayerPeer(
-            Godot.MultiplayerPeer.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!))
+            Godot.MultiplayerPeer?.fromGodotUnsafePointer(args[0]!)
         )}
         let _get_multiplayer_peer_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getMultiplayerPeer()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_unique_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getUniqueId()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_peer_ids_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            var returnValue = instance
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getPeerIds()
-        returnValue.consumeByGodot(ontoUnsafePointer: returnPtr!)}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _rpc_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._rpc(
-            peer: args[0]!.load(as: Int32.self),
-            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[1]!)),
-            method: Godot.GodotStringName(godotExtensionPointer: args[2]!),
-            args: Godot.AnyGodotArray(godotExtensionPointer: args[3]!)
+            peer: Int32.fromGodotUnsafePointer(args[0]!),
+            object: Godot.Object?.fromGodotUnsafePointer(args[1]!),
+            method: Godot.GodotStringName.fromGodotUnsafePointer(args[2]!),
+            args: Godot.AnyGodotArray.fromGodotUnsafePointer(args[3]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _get_remote_sender_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._getRemoteSenderId()
-        returnPtr!.assumingMemoryBound(to: Int32.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _object_configuration_add_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._objectConfigurationAdd(
-            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            configuration: Godot.Variant(godotExtensionPointer: args[1]!)
+            object: Godot.Object?.fromGodotUnsafePointer(args[0]!),
+            configuration: Godot.Variant.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _object_configuration_remove_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            let instance = Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-            let returnValue = instance
+            Unmanaged<MultiplayerAPIExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._objectConfigurationRemove(
-            object: Godot.Object.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(args[0]!)),
-            configuration: Godot.Variant(godotExtensionPointer: args[1]!)
+            object: Godot.Object?.fromGodotUnsafePointer(args[0]!),
+            configuration: Godot.Variant.fromGodotUnsafePointer(args[1]!)
         )
-        returnPtr!.assumingMemoryBound(to: Godot.ErrorType.self).pointee = returnValue}
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
             "_poll" : ("_poll", _poll_call),
             "_setMultiplayerPeer" : ("_set_multiplayer_peer", _set_multiplayer_peer_call),
