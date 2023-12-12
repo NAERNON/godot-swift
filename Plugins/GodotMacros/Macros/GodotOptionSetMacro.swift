@@ -4,7 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Utils
 
-public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
+public enum GodotOptionSetMacro: ExtensionMacro {
     public static func expansion(
         of node: AttributeSyntax,
         attachedTo declaration: some DeclGroupSyntax,
@@ -23,22 +23,8 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         let cases = optionSetCases(for: structDecl, in: context)
         
         let accessModifier = structDecl.effectiveAccessModifier(minimum: .fileprivate)
-        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.GodotOptionSet, Godot.ExposableValue") {
-            """
-            \(accessModifier) static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
-            
-            \(accessModifier) static func convertToStorage(_ value: Self) -> Godot.Variant.Storage {
-                RawValue.convertToStorage(value.rawValue)
-            }
-            
-            \(accessModifier) static func convertFromCheckedStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
-                Self(rawValue: RawValue.convertFromCheckedStorage(storage))
-            }
-            
-            \(accessModifier) static func convertFromStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
-                Self(rawValue: try RawValue.convertFromStorage(storage))
-            }
-            """
+        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.GodotOptionSet") {
+            "\(accessModifier) typealias RawValue = Int64"
             
             try FunctionDeclSyntax("\(accessModifier) static func hintValues() -> [(name: Swift.String, value: RawValue)]") {
                 "["
@@ -50,7 +36,7 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
                 "]"
             }
             
-            try FunctionDeclSyntax("fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)]") {
+            try FunctionDeclSyntax("fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, RawValue)]") {
                 "["
                 let snakeOptionSetName = structDecl.name.trimmedDescription
                     .translated(from: .pascal, to: .snake)
@@ -68,23 +54,6 @@ public enum GodotOptionSetMacro: ExtensionMacro, MemberMacro {
         }
         
         return [extensionDeclSyntax]
-    }
-    
-    public static func expansion(
-        of attribute: AttributeSyntax,
-        providingMembersOf declaration: some DeclGroupSyntax,
-        in context: some MacroExpansionContext
-    ) throws -> [DeclSyntax] {
-        guard let structDecl = declaration.as(StructDeclSyntax.self) else {
-            return []
-        }
-        
-        let accessModifier = structDecl.effectiveAccessModifier(minimum: .fileprivate)
-        return [
-        """
-        \(accessModifier) typealias RawValue = Int64
-        """
-        ]
     }
     
     private static func optionSetCases(

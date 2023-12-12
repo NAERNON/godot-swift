@@ -60,35 +60,8 @@ public enum GodotEnumMacro: ExtensionMacro {
         let cases = enumCases(for: enumDecl)
         
         let accessModifier = enumDecl.effectiveAccessModifier(minimum: .fileprivate)
-        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.ExposableValue, Godot.GodotEnum") {
-            """
-            \(accessModifier) static let variantRepresentationType: Godot.Variant.RepresentationType = RawValue.variantRepresentationType
-            
-            \(accessModifier) static func convertToStorage(_ value: Self) -> Godot.Variant.Storage {
-                RawValue.convertToStorage(value.rawValue)
-            }
-            
-            \(accessModifier) static func convertFromCheckedStorage(_ storage: borrowing Godot.Variant.Storage) -> Self {
-                Self(rawValue: RawValue.convertFromCheckedStorage(storage))!
-            }
-            
-            \(accessModifier) static func convertFromStorage(_ storage: borrowing Godot.Variant.Storage) throws -> Self {
-                enum Error: Swift.Error {
-                    case incorrectRawValue
-                    
-                    var errorDescription: Swift.String {
-                        "Incorrect raw value"
-                    }
-                }
-                
-                let rawValue = try RawValue.convertFromStorage(storage)
-                guard let value = Self(rawValue: rawValue) else {
-                    throw Error.incorrectRawValue
-                }
-                
-                return value
-            }
-            """
+        let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.GodotEnum") {
+            "\(accessModifier) typealias RawValue = Int64"
             
             try FunctionDeclSyntax("\(accessModifier) static func hintValues() -> [(name: Swift.String, value: RawValue)]") {
                 "["
@@ -100,7 +73,7 @@ public enum GodotEnumMacro: ExtensionMacro {
                 "]"
             }
             
-            try FunctionDeclSyntax("fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, Int64)]") {
+            try FunctionDeclSyntax("fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, RawValue)]") {
                 "["
                 let snakeEnumName = enumDecl.name.trimmedDescription
                     .translated(from: .pascal, to: .snake)

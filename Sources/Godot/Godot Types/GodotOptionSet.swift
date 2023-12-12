@@ -3,7 +3,7 @@
 ///
 /// Do not declare `GodotOptionSet` conformances yourself.
 /// Use the ``GodotOptionSet()`` macro instead.
-public protocol GodotOptionSet: ExposableRawRepresentableValue where RawValue : FixedWidthInteger {
+public protocol GodotOptionSet: ExposableRawRepresentableValue, OptionSet where RawValue : FixedWidthInteger {
     /// Returns the name and values used for hinting
     /// in the Godot editor.
     static func hintValues() -> [(name: String, value: RawValue)]
@@ -12,16 +12,10 @@ public protocol GodotOptionSet: ExposableRawRepresentableValue where RawValue : 
 // MARK: - Macro
 
 /// Converts a Swift struct into an option set usable by Godot.
-@attached(extension, conformances: GodotOptionSet, ExposableValue, names:
-    named(variantRepresentationType),
-    named(convertToStorage),
-    named(convertFromCheckedStorage),
-    named(convertFromStorage),
+@attached(extension, conformances: GodotOptionSet, names:
+    named(RawValue),
     named(godotExposableValues),
     named(hintValues)
-)
-@attached(member, names:
-    named(RawValue)
 )
 public macro GodotOptionSet() = #externalMacro(module: "GodotMacros", type: "GodotOptionSetMacro")
 
@@ -41,6 +35,6 @@ internal extension GodotOptionSet {
     static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
         var value = RawValue()
         withUnsafeMutablePointer(to: &value) { body($0) }
-        return .init(rawValue: value)!
+        return .init(rawValue: value)
     }
 }

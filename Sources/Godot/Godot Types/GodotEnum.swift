@@ -12,11 +12,8 @@ public protocol GodotEnum: ExposableRawRepresentableValue where RawValue : Fixed
 // MARK: - Macro
 
 /// Converts a Swift enum into an enum usable by Godot.
-@attached(extension, conformances: GodotEnum, ExposableValue, names:
-    named(variantRepresentationType),
-    named(convertToStorage),
-    named(convertFromCheckedStorage),
-    named(convertFromStorage),
+@attached(extension, conformances: GodotEnum, names:
+    named(RawValue),
     named(godotExposableValues),
     named(hintValues)
 )
