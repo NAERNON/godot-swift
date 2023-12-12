@@ -46,7 +46,7 @@ extension Bool: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -101,7 +101,7 @@ extension Int: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -153,7 +153,7 @@ extension Int8: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -205,7 +205,7 @@ extension Int16: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -257,7 +257,7 @@ extension Int32: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -309,7 +309,7 @@ extension Int64: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -361,7 +361,7 @@ extension UInt8: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -411,7 +411,7 @@ extension UInt: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -463,7 +463,7 @@ extension UInt16: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -515,7 +515,7 @@ extension UInt32: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -567,7 +567,7 @@ extension UInt64: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -624,7 +624,7 @@ extension Double: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -678,7 +678,7 @@ extension Float: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -770,7 +770,7 @@ extension Vector2: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -827,7 +827,7 @@ extension Vector2i: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -884,7 +884,7 @@ extension Rect2: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -941,7 +941,7 @@ extension Rect2i: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -998,7 +998,7 @@ extension Vector3: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1055,7 +1055,7 @@ extension Vector3i: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1112,7 +1112,7 @@ extension Transform2D: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1169,7 +1169,7 @@ extension Vector4: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1226,7 +1226,7 @@ extension Vector4i: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1283,7 +1283,7 @@ extension Plane: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1340,7 +1340,7 @@ extension Quaternion: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1397,7 +1397,7 @@ extension AABB: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1454,7 +1454,7 @@ extension Basis: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1511,7 +1511,7 @@ extension Transform3D: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1568,7 +1568,7 @@ extension Projection: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1625,7 +1625,7 @@ extension Color: ExposableValue {
         try withUnsafeMutablePointer(to: &self) { try body($0) }
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
     
@@ -1813,12 +1813,6 @@ extension Object: VariantStorable {
     ) rethrows -> Result {
         try body(extensionObjectPtr)
     }
-    
-    public consuming func consumeByGodot(
-        onto destinationUnsafePointer: UnsafeMutableRawPointer
-    ) {
-        gdextension_interface_ref_set_object(destinationUnsafePointer, extensionObjectPtr)
-    }
 }
 
 // MARK: - Optional<Object>
@@ -1853,14 +1847,14 @@ extension Optional: ExposableValue where Wrapped : Object {
         }
     }
     
-    public consuming func consumeByGodot(
-        onto destinationUnsafePointer: UnsafeMutableRawPointer
+    public consuming func copyToGodot(
+        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         switch self {
         case .none:
-            gdextension_interface_ref_set_object(destinationUnsafePointer, nil)
+            return
         case .some(let wrapped):
-            wrapped.consumeByGodot(onto: destinationUnsafePointer)
+            wrapped.copyToGodot(unsafePointer: destinationUnsafePointer)
         }
     }
     

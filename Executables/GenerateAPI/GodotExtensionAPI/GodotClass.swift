@@ -489,8 +489,7 @@ struct GodotClass: Decodable {
                     """
                     let \(raw: virtualFuncVarName): GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
                     guard let instancePtr\(raw: arguments.isEmpty ? "" : ", let args") else { return }
-                    let instance = Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
-                    let \(raw: method.returnValue == nil ? "_" : "returnValue") = instance
+                    Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
                     """
                     
                     let parameters: [String] = arguments.enumerated().map { (index, argument) in
@@ -500,7 +499,7 @@ struct GodotClass: Decodable {
                     ".\(method.translated.callSyntax(withParameters: parameters))"
                     
                     if method.returnValue != nil {
-                        "returnValue.consumeByGodot(onto: returnPtr!)"
+                        ".copyToGodot(unsafePointer: returnPtr!)"
                     }
                     
                     "}"

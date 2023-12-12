@@ -53,7 +53,7 @@ extension Variant {
         // MARK: Consume & copy
         
         /// Copies the variant to the given destination.
-        public func consumeByGodot(ontoUnsafePointer destination: GDExtensionVariantPtr) {
+        public func copyToGodot(unsafePointer destination: GDExtensionVariantPtr) {
             gdextension_interface_variant_new_copy(destination, rawData)
         }
         

@@ -117,12 +117,20 @@ struct VariableMember: ExposableMember {
         
         let getterExprSyntax: ExprSyntax = """
         Godot.Variant.withStorage(of: Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName)) { storage in
-            storage.consumeByGodot(ontoUnsafePointer: returnPtr!)
+            storage.copyToGodot(unsafePointer: returnPtr!)
         }
+        """
+        
+        let getterPointerExprSyntax: ExprSyntax = """
+        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName).copyToGodot(unsafePointer: returnPtr!)
         """
         
         let setterExprSyntax: ExprSyntax = """
         Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName) = .convertFromCheckedStorage(.init(godotExtensionPointer: args!.advanced(by: 0).pointee!))
+        """
+        
+        let setterPointerExprSyntax: ExprSyntax = """
+        Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName) = .fromGodotUnsafePointer(args!.advanced(by: 0).pointee!)
         """
         
         let variableName = variableBinding.pattern.trimmedDescription.translated(from: .camel, to: .snake)
@@ -140,8 +148,12 @@ struct VariableMember: ExposableMember {
                 setterName: \(literal: setterName)
             ) { _, instancePtr, args, argsCount, returnPtr, error in
                 \(getterExprSyntax)
+            } getterPointerCall: { _, instancePtr, args, returnPtr in
+                \(getterPointerExprSyntax)
             } setterCall: { _, instancePtr, args, argsCount, returnPtr, error in
                 \(setterExprSyntax)
+            } setterPointerCall: { _, instancePtr, args, returnPtr in
+                \(setterPointerExprSyntax)
             }
             """
         } else {
@@ -154,6 +166,8 @@ struct VariableMember: ExposableMember {
                 getterName: \(literal: getterName)
             ) { _, instancePtr, args, argsCount, returnPtr, error in
                 \(getterExprSyntax)
+            } getterPointerCall: { _, instancePtr, args, returnPtr in
+                \(getterPointerExprSyntax)
             }
             """
         }

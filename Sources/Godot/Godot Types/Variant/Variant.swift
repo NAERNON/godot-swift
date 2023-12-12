@@ -52,8 +52,8 @@ public final class Variant {
     // MARK: Handle data
     
     /// Copies the variant to the given destination.
-    public func consumeByGodot(onto destination: GDExtensionVariantPtr) {
-        storage.consumeByGodot(ontoUnsafePointer: destination)
+    public func copyToGodot(unsafePointer destination: GDExtensionVariantPtr) {
+        storage.copyToGodot(unsafePointer: destination)
     }
     
     /// Calls a closure with an extension type pointer of the underlying object.

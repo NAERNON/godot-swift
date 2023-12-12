@@ -227,7 +227,8 @@ public final class ClassRegistrar {
     ///   - argumentParameters: The arguments of the function.
     ///   - returnParameter: The return parameter of the function, if any.
     ///   - isStatic: A Boolean value indicating whether the function is static.
-    ///   - call: A C closure used by Godot to call the function.
+    ///   - call: A C closure used by Godot to call the function, using Variant arguments.
+    ///   - pointerCall: A C closure used by Godot to call the function, using pointers arguments.
     /// - Returns: The newly created function binding, or `nil` if the function wasn't registered.
     @discardableResult
     public func registerFunction<Class>(
@@ -236,7 +237,8 @@ public final class ClassRegistrar {
         argumentParameters: [FunctionParameter],
         returnParameter: FunctionParameter?,
         isStatic: Bool,
-        call: GDExtensionClassMethodCall
+        call: GDExtensionClassMethodCall,
+        pointerCall: GDExtensionClassMethodPtrCall
     ) -> FunctionBinding? where Class : Object {
         let className = classType.exposedClassName
         
@@ -272,7 +274,7 @@ public final class ClassRegistrar {
                             name: UnsafeMutableRawPointer(mutating: functionNamePtr),
                             method_userdata: Unmanaged.passUnretained(functionBinding).toOpaque(),
                             call_func: call,
-                            ptrcall_func: { _, _, _, _ in },
+                            ptrcall_func: pointerCall,
                             method_flags: functionBinding.flag,
                             has_return_value: functionBinding.hasReturnValue ? 1 : 0,
                             return_value_info: propertiesInfo.returnValue,
@@ -375,8 +377,14 @@ public final class ClassRegistrar {
     ///   - classType: The type of the class the variable is part of.
     ///   - getterName: The name of the getter function.
     ///   - setterName: The name of the setter function, if a setter is available.
-    ///   - getterCall: A C closure used by Godot to call the getter function.
-    ///   - setterCall: A C closure used by Godot to call the setter function, if a setter is available.
+    ///   - getterCall: A C closure used by Godot to call the getter function,
+    ///   using Variant arguments.
+    ///   - getterPointerCall: A C closure used by Godot to call the getter function,
+    ///   using pointer arguments.
+    ///   - setterCall: A C closure used by Godot to call the setter function,
+    ///   if a setter is available, using Variant arguments.
+    ///   - setterPointerCall: A C closure used by Godot to call the setter function,
+    ///   if a setter is available, using pointer arguments.
     /// - Returns: The newly created variable binding, or `nil` if the variable wasn't registered.
     @discardableResult
     public func registerVariable<Class, Variable>(
@@ -387,7 +395,9 @@ public final class ClassRegistrar {
         getterName: GodotStringName,
         setterName: GodotStringName? = nil,
         getterCall: GDExtensionClassMethodCall,
-        setterCall: GDExtensionClassMethodCall? = nil
+        getterPointerCall: GDExtensionClassMethodPtrCall,
+        setterCall: GDExtensionClassMethodCall? = nil,
+        setterPointerCall: GDExtensionClassMethodPtrCall? = nil
     ) -> VariableBinding?
     where Class : Object,
           Variable : ExposableValue
@@ -413,20 +423,22 @@ public final class ClassRegistrar {
             argumentParameters: [], 
             returnParameter: parameter,
             isStatic: false,
-            call: getterCall
+            call: getterCall,
+            pointerCall: getterPointerCall
         ) else {
             return nil
         }
         
         var setterBinding: FunctionBinding?
-        if let setterName, let setterCall {
+        if let setterName, let setterCall, let setterPointerCall {
             guard let binding = registerFunction(
                 named: setterName,
                 insideType: classType,
                 argumentParameters: [parameter],
                 returnParameter: .returnParameter(Variable.self),
                 isStatic: false,
-                call: setterCall
+                call: setterCall,
+                pointerCall: setterPointerCall
             ) else {
                 return nil
             }

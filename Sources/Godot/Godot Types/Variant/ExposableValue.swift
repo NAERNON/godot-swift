@@ -9,8 +9,8 @@ public protocol ExposableValue: VariantStorable {
     static var variantRepresentationType: Variant.RepresentationType { get }
     
     /// TODO: this
-    consuming func consumeByGodot(
-        onto destinationUnsafePointer: UnsafeMutableRawPointer
+    consuming func copyToGodot(
+        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     )
     
     /// Creates or retrieves an instance from a given Godot pointer.

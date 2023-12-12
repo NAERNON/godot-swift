@@ -147,9 +147,17 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                     gdextension_interface_classdb_construct_object(namePtr)!
                 }
             }
+            
+            public consuming func copyToGodot(
+                unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
+            ) {
+                destinationUnsafePointer.storeBytes(of: extensionObjectPtr, as: UnsafeMutableRawPointer.self)
+            }
             """
         case .refCountedRoot:
             """
+            internal var isPointerFreed = false
+            
             public required init() {
                 super.init()
             
@@ -174,7 +182,11 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 }
             }
             
-            internal var isPointerFreed = false
+            public override consuming func copyToGodot(
+                unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
+            ) {
+                gdextension_interface_ref_set_object(destinationUnsafePointer, extensionObjectPtr)
+            }
             """
         case .refCounted, .standard:
             """

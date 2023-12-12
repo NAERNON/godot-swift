@@ -23,7 +23,7 @@ extension Object {
                 callbacksPointer
             )
             
-            return Self.retrieveObjectInstance(fromUnsafePointer: opaque!)
+            return binding.type.retrieveObjectInstance(fromUnsafePointer: opaque!)
         }
         
         return instance as? Self

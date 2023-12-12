@@ -51,10 +51,10 @@ public extension ExposableRawRepresentableValue {
         RawValue.variantRepresentationType
     }
     
-    consuming func consumeByGodot(
-        onto destinationUnsafePointer: UnsafeMutableRawPointer
+    consuming func copyToGodot(
+        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
-        rawValue.consumeByGodot(onto: destinationUnsafePointer)
+        rawValue.copyToGodot(unsafePointer: destinationUnsafePointer)
     }
     
     static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {

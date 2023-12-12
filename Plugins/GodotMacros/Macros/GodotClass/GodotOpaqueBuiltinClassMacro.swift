@@ -38,13 +38,22 @@ public enum GodotOpaqueBuiltinClassMacro: MemberMacro {
             self.opaque = self.withCopiedOpaque().opaque
         }
         
-        public consuming func consumeByGodot(
-            onto destinationUnsafePointer: UnsafeMutableRawPointer
+        public consuming func copyToGodot(
+            unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
         ) {
-            opaque.withUnsafeMutableRawPointer { ptr in
-                destinationUnsafePointer.copyMemory(from: ptr, byteCount: opaque.size)
+            var copy = consume self
+            if isKnownUniquelyReferenced(&copy.opaque) {
+                copy.opaque.withUnsafeMutableRawPointer { ptr in
+                    destinationUnsafePointer.copyMemory(from: ptr, byteCount: copy.opaque.size)
+                }
+                copy.opaque.destructorPtr = nil
+            } else {
+                let newOpaque = copy.withCopiedOpaque().opaque
+                newOpaque.withUnsafeMutableRawPointer { ptr in
+                    destinationUnsafePointer.copyMemory(from: ptr, byteCount: newOpaque.size)
+                }
+                newOpaque.destructorPtr = nil
             }
-            opaque.destructorPtr = nil
         }
         
         public func withGodotUnsafeRawPointer<Result>(

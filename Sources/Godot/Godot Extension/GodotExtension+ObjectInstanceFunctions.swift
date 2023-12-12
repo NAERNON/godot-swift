@@ -11,11 +11,9 @@ extension GodotExtension {
     ) where Value : Exposable {
         guard let instancePtr else { return }
         
-        let instance = Unmanaged<Value>.fromOpaque(instancePtr).takeUnretainedValue()
-        let godotStringDescription = GodotString(describing: instance)
-        
         isValid?.pointee = 1
-        godotStringDescription.consumeByGodot(onto: out!)
+        let instance = Unmanaged<Value>.fromOpaque(instancePtr).takeUnretainedValue()
+        GodotString(describing: instance).copyToGodot(unsafePointer: out!)
     }
     
     // MARK: Make new instance

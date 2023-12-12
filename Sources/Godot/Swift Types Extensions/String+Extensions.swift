@@ -36,8 +36,8 @@ extension String: ExposableValue {
         String(godotString: GodotString.convertFromCheckedStorage(storage))
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
-        GodotString(swiftString: self).consumeByGodot(onto: destinationUnsafePointer)
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
+        GodotString(swiftString: self).copyToGodot(unsafePointer: destinationUnsafePointer)
     }
     
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> String {

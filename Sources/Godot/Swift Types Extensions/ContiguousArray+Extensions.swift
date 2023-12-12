@@ -26,8 +26,8 @@ extension ContiguousArray: ExposableValue where Element : VariantStorable {
         .array
     }
     
-    public func consumeByGodot(onto destinationUnsafePointer: UnsafeMutableRawPointer) {
-        GodotArray(self).consumeByGodot(onto: destinationUnsafePointer)
+    public func copyToGodot(unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer) {
+        GodotArray(self).copyToGodot(unsafePointer: destinationUnsafePointer)
     }
     
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {

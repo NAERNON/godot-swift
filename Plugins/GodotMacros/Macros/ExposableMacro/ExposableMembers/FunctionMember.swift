@@ -1,6 +1,7 @@
 import SwiftSyntax
 import SwiftDiagnostics
 import SwiftSyntaxMacros
+import SwiftSyntaxBuilder
 import Utils
 
 struct FunctionMember: ExposableMember {
@@ -130,79 +131,124 @@ struct FunctionMember: ExposableMember {
             returnParameter = "nil"
         }
         
-        let functionCallSyntax = ExprSyntax("""
-        Godot.GodotExtension.classRegistrar.registerFunction(
-            named: \(literal: functionName),
-            insideType: self,
-            argumentParameters: [
-                \(raw: parameters.joined(separator: "\n"))
-            ],
-            returnParameter: \(raw: returnParameter),
-            isStatic: \(literal: isStatic)
-        )
-        """).as(FunctionCallExprSyntax.self)!
-        
-        let functionCallClosureSyntax = try? ClosureExprSyntax {
-            "_, instancePtr, args, argsCount, returnPtr, error in"
-            
-            let parameters = functionDeclSyntax.signature.parameterClause.parameters
-            
-            // For every default value, we check the argCount
-            // to know if we need to call the function with less parameters
-            for count in (0..<consecutiveLastDefaultValues.count+1).reversed() {
-                let parameterList = parameters.dropLast(count)
-                
-                let call = CodeBlockItemListSyntax {
-                    if hasReturnType {
-                        "let returnValue ="
-                    }
-                    
-                    if isStatic {
-                        "\(classContext.trimmed)"
-                    } else {
-                        "Unmanaged<\(classContext.trimmed)>.fromOpaque(instancePtr!).takeUnretainedValue()"
-                    }
-                    
-                    ".\(functionDeclSyntax.name)("
-                    
-                    for (index, parameter) in parameterList.enumerated() {
-                        if parameter.firstName.tokenKind != .wildcard {
-                            "\(parameter.firstName.trimmed):"
-                        }
-                        
-                        "\(parameter.type.trimmed).convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: \(literal: index)).pointee!))"
-                        
-                        if index < parameterList.count - 1 {
-                            ","
-                        }
-                    }
-                    ")"
-                    
-                    if hasReturnType {
-                        """
-                        Godot.Variant.withStorage(of: returnValue) { storage in
-                            storage.consumeByGodot(ontoUnsafePointer: returnPtr!)
-                        }
-                        """
-                    }
-                }
-                
-                if count > 0 {
-                    try IfExprSyntax("if argsCount == \(literal: parameters.count - count)") {
-                        call
-                        "return"
-                    }
-                } else {
-                    call
-                }
+        do {
+            let exprSyntax: ExprSyntax = try """
+            Godot.GodotExtension.classRegistrar.registerFunction(
+                named: \(literal: functionName),
+                insideType: self,
+                argumentParameters: [
+                    \(raw: parameters.joined(separator: "\n"))
+                ],
+                returnParameter: \(raw: returnParameter),
+                isStatic: \(literal: isStatic)
+            ) { _, instancePtr, args, argsCount, returnPtr, error in
+                \(functionCallSyntax(classContext: classContext, hasReturnType: hasReturnType, isStatic: isStatic, consecutiveLastDefaultValues: consecutiveLastDefaultValues))
+            } pointerCall: { _, instancePtr, args, returnPtr in
+                \(functionPointerCallSyntax(classContext: classContext, hasReturnType: hasReturnType, isStatic: isStatic))
             }
-        }
-        
-        guard let functionCallClosureSyntax else {
+            """
+            return exprSyntax
+        } catch {
             return nil
         }
+    }
+    
+    @CodeBlockItemListBuilder
+    private func functionCallSyntax(
+        classContext: TokenSyntax,
+        hasReturnType: Bool,
+        isStatic: Bool,
+        consecutiveLastDefaultValues: [TokenSyntax]
+    ) throws -> CodeBlockItemListSyntax {
+        let parameters = functionDeclSyntax.signature.parameterClause.parameters
+        "gdPrint(\"normal call\")"
         
-        return ExprSyntax(functionCallSyntax.with(\.trailingClosure, functionCallClosureSyntax))
+        // For every default value, we check the argCount
+        // to know if we need to call the function with less parameters
+        for count in (0..<consecutiveLastDefaultValues.count+1).reversed() {
+            let parameterList = parameters.dropLast(count)
+            
+            let call = CodeBlockItemListSyntax {
+                if hasReturnType {
+                    "let returnValue ="
+                }
+                
+                if isStatic {
+                    "\(classContext.trimmed)"
+                } else {
+                    "Unmanaged<\(classContext.trimmed)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+                }
+                
+                ".\(functionDeclSyntax.name)("
+                
+                for (index, parameter) in parameterList.enumerated() {
+                    if parameter.firstName.tokenKind != .wildcard {
+                        "\(parameter.firstName.trimmed):"
+                    }
+                    
+                    "\(parameter.type.trimmed).convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: \(literal: index)).pointee!))"
+                    
+                    if index < parameterList.count - 1 {
+                        ","
+                    }
+                }
+                ")"
+                
+                if hasReturnType {
+                    """
+                    Godot.Variant.withStorage(of: returnValue) { storage in
+                        storage.copyToGodot(unsafePointer: returnPtr!)
+                    }
+                    """
+                }
+            }
+            
+            if count > 0 {
+                try IfExprSyntax("if argsCount == \(literal: parameters.count - count)") {
+                    call
+                    "return"
+                }
+            } else {
+                call
+            }
+        }
+    }
+    
+    @CodeBlockItemListBuilder
+    private func functionPointerCallSyntax(
+        classContext: TokenSyntax,
+        hasReturnType: Bool,
+        isStatic: Bool
+    ) throws -> CodeBlockItemListSyntax {
+        let parameters = functionDeclSyntax.signature.parameterClause.parameters
+        "gdPrint(\"pointer call\")"
+        
+        if isStatic {
+            "\(classContext.trimmed)"
+        } else {
+            "Unmanaged<\(classContext.trimmed)>.fromOpaque(instancePtr!).takeUnretainedValue()"
+        }
+        
+        ".\(functionDeclSyntax.name)("
+        
+        for (index, parameter) in parameters.enumerated() {
+            if parameter.firstName.tokenKind != .wildcard {
+                "\(parameter.firstName.trimmed):"
+            }
+            
+            "\(parameter.type.trimmed).fromGodotUnsafePointer(args!.advanced(by: \(literal: index)).pointee!)"
+            
+            if index < parameters.count - 1 {
+                ","
+            }
+        }
+        ")"
+        
+        if hasReturnType {
+            """
+            .copyToGodot(unsafePointer: returnPtr!)
+            """
+        }
     }
     
     private func consecutiveLastDefaultValues(
