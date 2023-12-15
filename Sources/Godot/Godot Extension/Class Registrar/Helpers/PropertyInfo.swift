@@ -16,7 +16,7 @@ extension ClassRegistrar {
             defaultValue: .none,
             hint: .none,
             hintString: .init(),
-            usageFlags: .default, .nilIsVariant,
+            usageFlags: [.default, .nilIsVariant],
             className: .init()
         )
         
@@ -26,7 +26,7 @@ extension ClassRegistrar {
             defaultValue: .none,
             hint: .none,
             hintString: .init(),
-            usageFlags: .default, .nilIsVariant,
+            usageFlags: [.default, .nilIsVariant],
             className: .init()
         )
         
@@ -35,7 +35,7 @@ extension ClassRegistrar {
              defaultValue: Variant? = nil,
              hint: PropertyHint = .none,
              hintString: GodotString = .init(),
-             usageFlags: PropertyUsageFlags...,
+             usageFlags: PropertyUsageFlags,
              className: GodotStringName) {
             self.variantRepresentationType = variantRepresentationType
             self.name = name
@@ -44,7 +44,7 @@ extension ClassRegistrar {
             self.hintString = hintString
             self.className = className
             
-            self.usage = usageFlags.reduce(0, { $0 | $1.rawValue })
+            self.usage = usageFlags.rawValue
         }
         
         mutating func withGodotExtensionPropertyInfo(_ body: (GDExtensionPropertyInfo) -> Void) {
