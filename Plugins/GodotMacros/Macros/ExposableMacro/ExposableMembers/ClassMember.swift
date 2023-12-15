@@ -3,6 +3,17 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 
 struct ClassMember: ExposableMember {
+    enum ExpositionError: Error, CustomStringConvertible {
+        case isNotPublic
+        
+        var description: String {
+            switch self {
+            case .isNotPublic:
+                "The class is not public"
+            }
+        }
+    }
+    
     let classDeclSyntax: ClassDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
@@ -23,13 +34,19 @@ struct ClassMember: ExposableMember {
         classDeclSyntax.attributes
     }
     
+    func checkShouldBeExposed() throws {
+        if !classDeclSyntax.isPublic() {
+            throw ExpositionError.isNotPublic
+        }
+    }
+    
     func expositionSyntax(
         classContext: TokenSyntax,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         context.diagnose(Diagnostic(
             node: Syntax(classDeclSyntax.name),
-            message: GodotDiagnostic("'@ExpositionAvailable' cannot be applied to a class")
+            message: GodotDiagnostic("Classes are not exposable")
         ))
         
         return nil

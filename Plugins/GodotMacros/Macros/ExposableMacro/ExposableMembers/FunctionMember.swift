@@ -5,6 +5,17 @@ import SwiftSyntaxBuilder
 import Utils
 
 struct FunctionMember: ExposableMember {
+    enum ExpositionError: Error, CustomStringConvertible {
+        case isNotPublic
+        
+        var description: String {
+            switch self {
+            case .isNotPublic:
+                "The function is not public"
+            }
+        }
+    }
+    
     let functionDeclSyntax: FunctionDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
@@ -13,7 +24,7 @@ struct FunctionMember: ExposableMember {
         }
         
         let tokens = functionDeclSyntax.modifiers.map(\.name.tokenKind)
-        guard functionDeclSyntax.isPublic() && !tokens.contains(where: { $0 == .keyword(.override) })
+        guard !tokens.contains(where: { $0 == .keyword(.override) })
         else {
             return nil
         }
@@ -29,6 +40,12 @@ struct FunctionMember: ExposableMember {
         functionDeclSyntax.attributes
     }
     
+    func checkShouldBeExposed() throws {
+        if !functionDeclSyntax.isPublic() {
+            throw ExpositionError.isNotPublic
+        }
+    }
+    
     func expositionSyntax(
         classContext: TokenSyntax,
         in context: some MacroExpansionContext
@@ -40,7 +57,7 @@ struct FunctionMember: ExposableMember {
             if let throwsSpecifier = specifiers.throwsSpecifier {
                 context.diagnose(Diagnostic(
                     node: Syntax(throwsSpecifier),
-                    message: GodotDiagnostic("Exposable functions cannot be marked 'throws'")
+                    message: GodotDiagnostic("Exposed functions cannot be marked 'throws'")
                 ))
                 isExposable = false
             }
@@ -48,7 +65,7 @@ struct FunctionMember: ExposableMember {
             if let asyncSpecifier = specifiers.asyncSpecifier {
                 context.diagnose(Diagnostic(
                     node: Syntax(asyncSpecifier),
-                    message: GodotDiagnostic("Exposable functions cannot be marked 'async'")
+                    message: GodotDiagnostic("Exposed functions cannot be marked 'async'")
                 ))
                 isExposable = false
             }
@@ -58,7 +75,7 @@ struct FunctionMember: ExposableMember {
         if let generic = functionDeclSyntax.genericParameterClause {
             context.diagnose(Diagnostic(
                 node: Syntax(generic),
-                message: GodotDiagnostic("Exposable functions cannot be generic")
+                message: GodotDiagnostic("Exposed functions cannot be generic")
             ))
             isExposable = false
         }
@@ -68,7 +85,7 @@ struct FunctionMember: ExposableMember {
             if let someOrAnyTypeSyntax = parameter.type.as(SomeOrAnyTypeSyntax.self) {
                 context.diagnose(Diagnostic(
                     node: Syntax(someOrAnyTypeSyntax),
-                    message: GodotDiagnostic("Exposable functions cannot have parameters marked 'some' or 'any'")
+                    message: GodotDiagnostic("Exposed functions cannot have parameters marked 'some' or 'any'")
                 ))
                 isExposable = false
             }
@@ -76,7 +93,7 @@ struct FunctionMember: ExposableMember {
             if let ellipsis = parameter.ellipsis {
                 context.diagnose(Diagnostic(
                     node: Syntax(ellipsis),
-                    message: GodotDiagnostic("Exposable functions cannot have variadic parameters")
+                    message: GodotDiagnostic("Exposed functions cannot have variadic parameters")
                 ))
                 isExposable = false
             }
@@ -86,7 +103,7 @@ struct FunctionMember: ExposableMember {
         if let someOrAnyTypeSyntax = functionDeclSyntax.signature.returnClause?.type.as(SomeOrAnyTypeSyntax.self) {
             context.diagnose(Diagnostic(
                 node: Syntax(someOrAnyTypeSyntax),
-                message: GodotDiagnostic("Exposable functions cannot return a type marked 'some' or 'any'")
+                message: GodotDiagnostic("Exposed functions cannot return a type marked 'some' or 'any'")
             ))
             isExposable = false
         }

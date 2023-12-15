@@ -4,6 +4,17 @@ import SwiftSyntaxMacros
 import Utils
 
 struct FunctionOverrideMember: ExposableMember {
+    enum ExpositionError: Error, CustomStringConvertible {
+        case isNotPublic
+        
+        var description: String {
+            switch self {
+            case .isNotPublic:
+                "The function override is not public"
+            }
+        }
+    }
+    
     let functionDeclSyntax: FunctionDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
@@ -12,7 +23,7 @@ struct FunctionOverrideMember: ExposableMember {
         }
         
         let tokens = functionDeclSyntax.modifiers.map(\.name.tokenKind)
-        guard functionDeclSyntax.isPublic() && tokens.contains(where: { $0 == .keyword(.override) })
+        guard tokens.contains(where: { $0 == .keyword(.override) })
         else {
             return nil
         }
@@ -26,6 +37,12 @@ struct FunctionOverrideMember: ExposableMember {
     
     var attributes: AttributeListSyntax? {
         functionDeclSyntax.attributes
+    }
+    
+    func checkShouldBeExposed() throws {
+        if !functionDeclSyntax.isPublic() {
+            throw ExpositionError.isNotPublic
+        }
     }
     
     func expositionSyntax(

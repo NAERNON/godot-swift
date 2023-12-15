@@ -3,10 +3,17 @@ import SwiftSyntaxMacros
 import Utils
 
 /// A type that can be exposed inside an exposable class.
+///
+/// Sometimes, a member should be exposed, but the syntax in it prevents it.
+/// In this case, `checkShouldBeExposable()` doesn't throw,
+/// but `expositionSyntax` returns nil.
+///
+/// If the member should not even be considered for exposition,
+/// `checkShouldBeExposable()` throws an error.
 protocol ExposableMember {
     /// Creates a new instance of the exposable member.
     ///
-    /// If returns nil, the member should not be considered for exposition.
+    /// Returns nil if the member doesn't match.
     init?(declSyntax: some DeclSyntaxProtocol)
     
     /// An identifier used to identify the member exposition.
@@ -14,6 +21,9 @@ protocol ExposableMember {
     
     /// A list of all the attached attributes.
     var attributes: AttributeListSyntax? { get }
+    
+    /// This function throws if the exposition should not be registered.
+    func checkShouldBeExposed() throws
     
     /// Returns the syntax for exposing the member to Godot.
     ///
@@ -26,20 +36,6 @@ protocol ExposableMember {
 }
 
 extension ExposableMember {
-    var classExpositionFunctionIdentifier: String {
-        "_$godotRegister_" + removeBackticks(exposableMemberIdentifier)
-    }
-    
-    var hasExpositionAvailableAttribute: Bool {
-        guard let attributes else {
-            return false
-        }
-        
-        return attributes.contains(
-            where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "ExpositionAvailable" }
-        )
-    }
-    
     var hasExpositionIgnoredAttribute: Bool {
         guard let attributes else {
             return false

@@ -4,11 +4,21 @@ import SwiftSyntaxMacros
 import Utils
 
 struct OptionSetMember: ExposableMember {
+    enum ExpositionError: Error, CustomStringConvertible {
+        case isNotPublic
+        
+        var description: String {
+            switch self {
+            case .isNotPublic:
+                "The option set is not public"
+            }
+        }
+    }
+    
     let structDeclSyntax: StructDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
         guard let structDeclSyntax = declSyntax.as(StructDeclSyntax.self),
-              structDeclSyntax.isPublic(),
               structDeclSyntax.attributes.contains(
                 where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "GodotOptionSet" }
               )
@@ -25,6 +35,12 @@ struct OptionSetMember: ExposableMember {
     
     var attributes: AttributeListSyntax? {
         structDeclSyntax.attributes
+    }
+    
+    func checkShouldBeExposed() throws {
+        if !structDeclSyntax.isPublic() {
+            throw ExpositionError.isNotPublic
+        }
     }
     
     func expositionSyntax(

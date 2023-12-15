@@ -5,7 +5,7 @@ import SwiftSyntaxMacros
 struct GodotMacrosPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
         ExposableMacro.self,
-        ExpositionAvailableMacro.self,
+        ExpositionTestMacro.self,
         ExpositionIgnoredMacro.self,
         BridgeMacro.self,
         GodotEnumMacro.self,

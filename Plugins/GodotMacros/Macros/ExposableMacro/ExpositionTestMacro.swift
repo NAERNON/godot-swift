@@ -4,7 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
 
-public enum ExpositionAvailableMacro: PeerMacro {
+public enum ExpositionTestMacro: PeerMacro {
     public static func expansion(
         of node: AttributeSyntax,
         providingPeersOf declaration: some DeclSyntaxProtocol,
@@ -13,7 +13,24 @@ public enum ExpositionAvailableMacro: PeerMacro {
         guard let exposableMember = declaration.exposableMember() else {
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
-                message: GodotDiagnostic("Declaration is not exposable")
+                message: GodotDiagnostic(
+                    "Declaration is not handled by the '@Exposable' macro (Unknown declaration)",
+                    severity: .warning
+                )
+            ))
+            
+            return []
+        }
+        
+        do {
+            try exposableMember.checkShouldBeExposed()
+        } catch {
+            context.diagnose(Diagnostic(
+                node: Syntax(declaration),
+                message: GodotDiagnostic(
+                    "Declaration is not handled by the '@Exposable' macro (\(error))",
+                    severity: .warning
+                )
             ))
             
             return []
@@ -33,8 +50,9 @@ public enum ExpositionAvailableMacro: PeerMacro {
             return []
         }
         
-        let functionDecl = try FunctionDeclSyntax("private static func \(raw: exposableMember.classExpositionFunctionIdentifier)()") 
-        {
+        let functionDecl = try FunctionDeclSyntax(
+            "private static func testExposition()"
+        ) {
             exposableSyntax
         }
         

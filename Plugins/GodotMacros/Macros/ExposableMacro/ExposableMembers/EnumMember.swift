@@ -4,12 +4,21 @@ import SwiftSyntaxMacros
 import Utils
 
 struct EnumMember: ExposableMember {
+    enum ExpositionError: Error, CustomStringConvertible {
+        case isNotPublic
+        
+        var description: String {
+            switch self {
+            case .isNotPublic:
+                "The enum is not public"
+            }
+        }
+    }
+    
     let enumDeclSyntax: EnumDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
-        guard let enumDeclSyntax = declSyntax.as(EnumDeclSyntax.self),
-              enumDeclSyntax.isPublic()
-        else {
+        guard let enumDeclSyntax = declSyntax.as(EnumDeclSyntax.self) else {
             return nil
         }
         
@@ -22,6 +31,12 @@ struct EnumMember: ExposableMember {
     
     var attributes: AttributeListSyntax? {
         enumDeclSyntax.attributes
+    }
+    
+    func checkShouldBeExposed() throws {
+        if !enumDeclSyntax.isPublic() {
+            throw ExpositionError.isNotPublic
+        }
     }
     
     func expositionSyntax(

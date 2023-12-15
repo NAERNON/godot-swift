@@ -4,11 +4,21 @@ import SwiftSyntaxMacros
 import Utils
 
 struct EmitterMember: ExposableMember {
+    enum ExpositionError: Error, CustomStringConvertible {
+        case isNotPublic
+        
+        var description: String {
+            switch self {
+            case .isNotPublic:
+                "The emitter is not public"
+            }
+        }
+    }
+    
     let structDeclSyntax: StructDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
         guard let structDeclSyntax = declSyntax.as(StructDeclSyntax.self),
-              structDeclSyntax.isPublic(),
               structDeclSyntax.attributes.contains(
                 where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Emitter" }
               )
@@ -25,6 +35,12 @@ struct EmitterMember: ExposableMember {
     
     var attributes: AttributeListSyntax? {
         structDeclSyntax.attributes
+    }
+    
+    func checkShouldBeExposed() throws {
+        if !structDeclSyntax.isPublic() {
+            throw ExpositionError.isNotPublic
+        }
     }
     
     func expositionSyntax(

@@ -4,7 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
 
-public enum ExposableMacro: MemberMacro, MemberAttributeMacro, ExtensionMacro {
+public enum ExposableMacro: MemberMacro, ExtensionMacro {
     public static func expansion(
         of attribute: AttributeSyntax,
         providingMembersOf declaration: some DeclGroupSyntax,
@@ -46,31 +46,14 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro, ExtensionMacro {
             isFinal: isFinal,
             in: context
         ) {
-            for member in classDecl.memberBlock.members {
-                if let exposableMember = member.decl.exposableMember(),
-                   !exposableMember.hasExpositionIgnoredAttribute {
-                    "\(raw: exposableMember.classExpositionFunctionIdentifier)()"
-                }
+            let memberExpositions = membersExpositions(of: classDecl, in: context)
+            
+            for memberExposition in memberExpositions {
+                memberExposition
             }
         }
         
         return try provider.decls()
-    }
-    
-    public static func expansion(
-        of node: AttributeSyntax,
-        attachedTo declaration: some DeclGroupSyntax,
-        providingAttributesFor member: some DeclSyntaxProtocol,
-        in context: some MacroExpansionContext
-    ) throws -> [AttributeSyntax] {
-        guard let classDecl = declaration.as(ClassDeclSyntax.self),
-              let exposableMember = member.exposableMember(),
-              !exposableMember.hasExpositionAvailableAttribute,
-              !exposableMember.hasExpositionIgnoredAttribute else {
-            return []
-        }
-        
-        return [AttributeSyntax("@ExpositionAvailable(\(classDecl.name))")]
     }
     
     public static func expansion(
@@ -83,5 +66,29 @@ public enum ExposableMacro: MemberMacro, MemberAttributeMacro, ExtensionMacro {
         let extensionSyntax = try ExtensionDeclSyntax("extension \(type): Godot.Exposable") {}
         
         return [extensionSyntax]
+    }
+    
+    private static func membersExpositions(
+        of classDecl: ClassDeclSyntax,
+        in context: some MacroExpansionContext
+    ) -> [ExprSyntax] {
+        classDecl.memberBlock.members.compactMap { member in
+            guard let exposableMember = member.decl.exposableMember(),
+                  !exposableMember.hasExpositionIgnoredAttribute
+            else {
+                return nil
+            }
+            
+            do {
+                try exposableMember.checkShouldBeExposed()
+            } catch {
+                return nil
+            }
+            
+            return exposableMember.expositionSyntax(
+                classContext: classDecl.name,
+                in: context
+            )
+        }
     }
 }

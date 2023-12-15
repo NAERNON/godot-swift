@@ -4,16 +4,24 @@ import SwiftSyntaxMacros
 import Utils
 
 struct VariableMember: ExposableMember {
+    enum ExpositionError: Error, CustomStringConvertible {
+        case isNotPublic
+        case isAnOverride
+        
+        var description: String {
+            switch self {
+            case .isNotPublic:
+                "The property is not public"
+            case .isAnOverride:
+                "The property is an override"
+            }
+        }
+    }
+    
     let variableDeclSyntax: VariableDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
         guard let variableDeclSyntax = declSyntax.as(VariableDeclSyntax.self) else {
-            return nil
-        }
-        
-        let tokens = variableDeclSyntax.modifiers.map(\.name.tokenKind)
-        guard variableDeclSyntax.isPublic() && !tokens.contains(where: { $0 == .keyword(.override) })
-        else {
             return nil
         }
         
@@ -26,6 +34,17 @@ struct VariableMember: ExposableMember {
     
     var attributes: AttributeListSyntax? {
         variableDeclSyntax.attributes
+    }
+    
+    func checkShouldBeExposed() throws {
+        if !variableDeclSyntax.isPublic() {
+            throw ExpositionError.isNotPublic
+        }
+        
+        let tokens = variableDeclSyntax.modifiers.map(\.name.tokenKind)
+        if tokens.contains(where: { $0 == .keyword(.override) }) {
+            throw ExpositionError.isAnOverride
+        }
     }
     
     func expositionSyntax(
@@ -45,7 +64,7 @@ struct VariableMember: ExposableMember {
                     if let throwsSpecifier = specifiers.throwsSpecifier {
                         context.diagnose(Diagnostic(
                             node: Syntax(throwsSpecifier),
-                            message: GodotDiagnostic("Exposable variables cannot be marked 'throws'")
+                            message: GodotDiagnostic("Exposed variables cannot be marked 'throws'")
                         ))
                         isExposable = false
                     }
@@ -53,7 +72,7 @@ struct VariableMember: ExposableMember {
                     if let asyncSpecifier = specifiers.asyncSpecifier {
                         context.diagnose(Diagnostic(
                             node: Syntax(asyncSpecifier),
-                            message: GodotDiagnostic("Exposable variables cannot be marked 'async'")
+                            message: GodotDiagnostic("Exposed variables cannot be marked 'async'")
                         ))
                         isExposable = false
                     }
@@ -62,7 +81,7 @@ struct VariableMember: ExposableMember {
         }
         
         // Check static or class
-        let staticClassDiagnostic = GodotDiagnostic("Exposable variables cannot be marked 'static' or 'class'")
+        let staticClassDiagnostic = GodotDiagnostic("Exposed variables cannot be marked 'static' or 'class'")
         if let modifier = variableDeclSyntax.modifiers.first(where: { $0.name.tokenKind == .keyword(.static) }) {
             context.diagnose(Diagnostic(
                 node: Syntax(modifier),
