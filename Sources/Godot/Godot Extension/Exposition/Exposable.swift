@@ -19,9 +19,11 @@ public protocol Exposable: Object {}
 @attached(extension, conformances: Exposable)
 public macro Exposable() = #externalMacro(module: "GodotMacros", type: "ExposableMacro")
 
-@attached(peer, names: named(testExposition))
-public macro _ExpositionTest(_: Object.Type) = #externalMacro(module: "GodotMacros", type: "ExpositionTestMacro")
-
 /// Prevents a member from being exposed to the Godot editor.
 @attached(peer)
 public macro ExpositionIgnored() = #externalMacro(module: "GodotMacros", type: "ExpositionIgnoredMacro")
+
+#if DEBUG
+@attached(peer, names: named(testExposition))
+public macro _ExpositionTest(_: Object.Type) = #externalMacro(module: "GodotMacros", type: "ExpositionTestMacro")
+#endif
