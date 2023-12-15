@@ -21,8 +21,14 @@ extension ClassRegistrar {
         /// If the parameter is *not* a class, the string is empty.
         public var className: GodotStringName
         
+        /// A Boolean value indicating whether the variable is
+        /// exported via the `@Export` property wrapper.
+        public var isExported: Bool
+        
         /// The parameter editor hint.
-        public var editorHint: EditorHint
+        public var hint: PropertyHint
+        /// The parameter editor hint string.
+        public var hintString: GodotString
         
         // MARK: Init
         
@@ -40,7 +46,9 @@ extension ClassRegistrar {
                 self.defaultValue = nil
             }
             self.className = className
-            self.editorHint = .none
+            self.hint = .none
+            self.hintString = .init()
+            self.isExported = false
         }
         
         /// Creates a new FunctionParameter used as a function argument.
@@ -84,9 +92,9 @@ extension ClassRegistrar {
                 variantRepresentationType: variantRepresentationType,
                 name: name,
                 defaultValue: defaultValue,
-                hint: editorHint.hint,
-                hintString: editorHint.string,
-                usageFlags: .default,
+                hint: hint,
+                hintString: hintString,
+                usageFlags: isExported ? .editor : .noEditor,
                 className: className
             )
         }

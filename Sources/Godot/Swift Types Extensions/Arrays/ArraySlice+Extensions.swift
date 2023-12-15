@@ -21,7 +21,7 @@ extension ArraySlice: VariantStorable where Element : VariantStorable {
     }
 }
 
-extension ArraySlice: ExposableValue where Element : VariantStorable {
+extension ArraySlice: ExposableValue where Element : ExposableValue {
     public static var variantRepresentationType: Variant.RepresentationType {
         .array
     }
@@ -33,4 +33,9 @@ extension ArraySlice: ExposableValue where Element : VariantStorable {
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
         Self(GodotArray.fromGodotUnsafePointer(unsafePointer))
     }
+}
+
+extension ArraySlice: HintableValue where Element : ExportableValue {
+    public typealias HintingValue = Self
+    public static var defaultHint: Hint<Self> { .elements(Element.defaultHint) }
 }

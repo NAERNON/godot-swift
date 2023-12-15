@@ -3,10 +3,19 @@
 ///
 /// Do not declare `GodotOptionSet` conformances yourself.
 /// Use the ``GodotOptionSet()`` macro instead.
-public protocol GodotOptionSet: ExposableRawRepresentableValue, OptionSet where RawValue : FixedWidthInteger {
+public protocol GodotOptionSet: HintableValue, ExposableRawRepresentableValue, OptionSet
+where RawValue : FixedWidthInteger
+{
     /// Returns the name and values used for hinting
     /// in the Godot editor.
     static func hintValues() -> [(name: String, value: RawValue)]
+}
+
+
+extension GodotOptionSet {
+    public static var defaultHint: Hint<Self> {
+        .optionSet
+    }
 }
 
 // MARK: - Macro

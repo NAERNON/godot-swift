@@ -137,13 +137,25 @@ struct VariableMember: ExposableMember {
         let getterName = "get_" + variableName
         let setterName = "set_" + variableName
         
+        let hintSyntax = hintSyntax(classContext: classContext, swiftVariableName: swiftVariableName)
+        
+        let functionName: String
+        let hintLineSyntax: String
+        
+        if let hintSyntax {
+            functionName = "registerExportedVariable"
+            hintLineSyntax = "\nhint: \(hintSyntax),"
+        } else {
+            functionName = "registerVariable"
+            hintLineSyntax = ""
+        }
+        
         if hasSetter {
             return """
-            Godot.GodotExtension.classRegistrar.registerVariable(
+            Godot.GodotExtension.classRegistrar.\(raw: functionName)(
                 named: \(literal: variableName),
                 keyPath: \\.\(raw: swiftVariableName),
-                insideType: self,
-                hint: \(raw: hintSyntax(classContext: classContext, swiftVariableName: swiftVariableName)),
+                insideType: self, \(raw: hintLineSyntax)
                 getterName: \(literal: getterName),
                 setterName: \(literal: setterName)
             ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -158,11 +170,10 @@ struct VariableMember: ExposableMember {
             """
         } else {
             return """
-            Godot.GodotExtension.classRegistrar.registerVariable(
+            Godot.GodotExtension.classRegistrar.\(raw: functionName)(
                 named: \(literal: variableName),
                 keyPath: \\.\(raw: swiftVariableName),
-                insideType: self,
-                hint: \(raw: hintSyntax(classContext: classContext, swiftVariableName: swiftVariableName)),
+                insideType: self, \(raw: hintLineSyntax)
                 getterName: \(literal: getterName)
             ) { _, instancePtr, args, argsCount, returnPtr, error in
                 \(getterExprSyntax)
@@ -190,19 +201,24 @@ struct VariableMember: ExposableMember {
     private func hintSyntax(
         classContext: TokenSyntax,
         swiftVariableName: PatternSyntax
-    ) -> String {
-        guard let hintContent = attributes?
+    ) -> String? {
+        guard let attributeSyntax = attributes?
             .first(where: {
-                $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Hint"
+                $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Export"
             })?
-            .as(AttributeSyntax.self)?
-            .arguments?
-            .as(LabeledExprListSyntax.self)?
-            .first
-        else {
-            return "._defaultForValue(at: \\\(classContext).\(swiftVariableName))"
+            .as(AttributeSyntax.self) else {
+            return nil
         }
         
-        return hintContent.trimmedDescription
+        if let hintContent = attributeSyntax
+            .arguments?
+            .as(LabeledExprListSyntax.self)?
+            .first?
+            .as(LabeledExprSyntax.self)?
+            .expression {
+            return hintContent.trimmedDescription
+        } else {
+            return "._defaultForValue(at: \\\(classContext).\(swiftVariableName))"
+        }
     }
 }

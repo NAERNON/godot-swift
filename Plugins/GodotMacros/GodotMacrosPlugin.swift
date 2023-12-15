@@ -12,7 +12,6 @@ struct GodotMacrosPlugin: CompilerPlugin {
         GodotOptionSetMacro.self,
         EmitterMacro.self,
         ReceiverMacro.self,
-        HintMacro.self,
         
         GodotClassMacro.self,
         GodotRefCountedClassMacro.self,

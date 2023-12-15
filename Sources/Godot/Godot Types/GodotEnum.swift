@@ -3,10 +3,18 @@
 ///
 /// Do not declare `GodotEnum` conformances yourself.
 /// Use the ``GodotEnum()`` macro instead.
-public protocol GodotEnum: ExposableRawRepresentableValue where RawValue : FixedWidthInteger {
+public protocol GodotEnum: HintableValue, ExposableRawRepresentableValue
+where RawValue : FixedWidthInteger
+{
     /// Returns the name and values used for hinting
     /// in the Godot editor.
     static func hintValues() -> [(name: String, value: RawValue)]
+}
+
+extension GodotEnum {
+    public static var defaultHint: Hint<Self> {
+        .enum
+    }
 }
 
 // MARK: - Macro

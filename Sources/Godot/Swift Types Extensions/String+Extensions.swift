@@ -44,3 +44,9 @@ extension String: ExposableValue {
         String(godotString: GodotString.fromGodotUnsafePointer(unsafePointer))
     }
 }
+
+extension String: HintableValue {
+    public typealias HintingValue = Self
+    public static var defaultHint: Hint<Self> { .typed }
+}
+

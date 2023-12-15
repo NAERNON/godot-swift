@@ -375,6 +375,57 @@ public final class ClassRegistrar {
     ///   - variableName: The variable name.
     ///   - keyPath: The key path to the variable.
     ///   - classType: The type of the class the variable is part of.
+    ///   - hint: The editor hint.
+    ///   - getterName: The name of the getter function.
+    ///   - setterName: The name of the setter function, if a setter is available.
+    ///   - getterCall: A C closure used by Godot to call the getter function,
+    ///   using Variant arguments.
+    ///   - getterPointerCall: A C closure used by Godot to call the getter function,
+    ///   using pointer arguments.
+    ///   - setterCall: A C closure used by Godot to call the setter function,
+    ///   if a setter is available, using Variant arguments.
+    ///   - setterPointerCall: A C closure used by Godot to call the setter function,
+    ///   if a setter is available, using pointer arguments.
+    /// - Returns: The newly created variable binding, or `nil` if the variable wasn't registered.
+    @discardableResult
+    public func registerExportedVariable<Class, Variable>(
+        named variableName: GodotStringName,
+        keyPath: KeyPath<Class, Variable>,
+        insideType classType: Class.Type,
+        hint: Hint<Variable.HintingValue>,
+        getterName: GodotStringName,
+        setterName: GodotStringName? = nil,
+        getterCall: GDExtensionClassMethodCall,
+        getterPointerCall: GDExtensionClassMethodPtrCall,
+        setterCall: GDExtensionClassMethodCall? = nil,
+        setterPointerCall: GDExtensionClassMethodPtrCall? = nil
+    ) -> VariableBinding?
+    where Class : Object,
+          Variable : ExportableValue
+    {
+        registerVariable(
+            named: variableName,
+            keyPath: keyPath,
+            insideType: classType,
+            isExported: true,
+            hint: hint.propertyHint,
+            hintString: hint.string,
+            getterName: getterName,
+            setterName: setterName,
+            getterCall: getterCall,
+            getterPointerCall: getterPointerCall,
+            setterCall: setterCall,
+            setterPointerCall: setterPointerCall
+        )
+    }
+    
+    /// Registers a given variable from an already registered
+    /// custom class to expose it to the Godot editor.
+    ///
+    /// - Parameters:
+    ///   - variableName: The variable name.
+    ///   - keyPath: The key path to the variable.
+    ///   - classType: The type of the class the variable is part of.
     ///   - getterName: The name of the getter function.
     ///   - setterName: The name of the setter function, if a setter is available.
     ///   - getterCall: A C closure used by Godot to call the getter function,
@@ -391,13 +442,45 @@ public final class ClassRegistrar {
         named variableName: GodotStringName,
         keyPath: KeyPath<Class, Variable>,
         insideType classType: Class.Type,
-        hint: EditorHint,
         getterName: GodotStringName,
         setterName: GodotStringName? = nil,
         getterCall: GDExtensionClassMethodCall,
         getterPointerCall: GDExtensionClassMethodPtrCall,
         setterCall: GDExtensionClassMethodCall? = nil,
         setterPointerCall: GDExtensionClassMethodPtrCall? = nil
+    ) -> VariableBinding?
+    where Class : Object,
+          Variable : ExposableValue
+    {
+        registerVariable(
+            named: variableName,
+            keyPath: keyPath,
+            insideType: classType,
+            isExported: false,
+            hint: .none,
+            hintString: GodotString(),
+            getterName: getterName,
+            setterName: setterName,
+            getterCall: getterCall,
+            getterPointerCall: getterPointerCall,
+            setterCall: setterCall,
+            setterPointerCall: setterPointerCall
+        )
+    }
+    
+    private func registerVariable<Class, Variable>(
+        named variableName: GodotStringName,
+        keyPath: KeyPath<Class, Variable>,
+        insideType classType: Class.Type,
+        isExported: Bool,
+        hint: PropertyHint,
+        hintString: GodotString,
+        getterName: GodotStringName,
+        setterName: GodotStringName?,
+        getterCall: GDExtensionClassMethodCall,
+        getterPointerCall: GDExtensionClassMethodPtrCall,
+        setterCall: GDExtensionClassMethodCall?,
+        setterPointerCall: GDExtensionClassMethodPtrCall?
     ) -> VariableBinding?
     where Class : Object,
           Variable : ExposableValue
@@ -453,7 +536,11 @@ public final class ClassRegistrar {
         )
         classBinding.appendVariable(variableBinding)
         
-        parameter.editorHint = hint
+        if isExported {
+            parameter.hint = hint
+            parameter.hintString = hintString
+            parameter.isExported = true
+        }
         
         getterName.withGodotUnsafeRawPointer { getterPtr in
             (setterName ?? GodotStringName()).withGodotUnsafeRawPointer { setterPtr in

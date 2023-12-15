@@ -21,7 +21,7 @@ extension Array: VariantStorable where Element : VariantStorable {
     }
 }
 
-extension Array: ExposableValue where Element : VariantStorable {
+extension Array: ExposableValue where Element : ExposableValue {
     public static var variantRepresentationType: Variant.RepresentationType {
         .array
     }
@@ -33,4 +33,9 @@ extension Array: ExposableValue where Element : VariantStorable {
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
         Self(GodotArray.fromGodotUnsafePointer(unsafePointer))
     }
+}
+
+extension Array: HintableValue where Element : ExportableValue {
+    public typealias HintingValue = Self
+    public static var defaultHint: Hint<Self> { .elements(Element.defaultHint) }
 }
