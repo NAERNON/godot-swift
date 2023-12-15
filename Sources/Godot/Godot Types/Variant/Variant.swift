@@ -51,11 +51,6 @@ public final class Variant {
     
     // MARK: Handle data
     
-    /// Copies the variant to the given destination.
-    public func copyToGodot(unsafePointer destination: GDExtensionVariantPtr) {
-        storage.copyToGodot(unsafePointer: destination)
-    }
-    
     /// Calls a closure with an extension type pointer of the underlying object.
     func withGodotUnsafeRawPointer<Result>(
         _ body: (UnsafeRawPointer) throws -> Result
@@ -100,10 +95,6 @@ public final class Variant {
         let value = Self()
         value.withGodotUnsafeMutableRawPointer(body)
         return value
-    }
-    
-    static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
-        Self(godotExtensionPointer: unsafePointer!)
     }
     
     // MARK: Tools
@@ -163,6 +154,26 @@ extension Variant: VariantStorable {
     public static func convertFromCheckedStorage(consuming storage: consuming Storage) -> Variant {
         Variant(storage: storage)
     }
+}
+
+extension Variant: ExposableValue {
+    public static var variantRepresentationType: RepresentationType {
+        .int64
+    }
+    
+    /// Copies the variant to the given destination.
+    public func copyToGodot(unsafePointer destination: GDExtensionVariantPtr) {
+        storage.copyToGodot(unsafePointer: destination)
+    }
+    
+    public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
+        Self(godotExtensionPointer: unsafePointer!)
+    }
+}
+
+extension Variant: HintableValue {
+    public typealias HintingValue = Variant
+    public static var defaultHint: Hint<Variant> { .none }
 }
 
 extension Variant: Hashable {
