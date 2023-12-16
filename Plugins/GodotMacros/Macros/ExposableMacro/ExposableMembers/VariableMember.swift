@@ -37,6 +37,10 @@ struct VariableMember: ExposableMember {
     }
     
     func checkShouldBeExposed() throws {
+        if isExported {
+            return
+        }
+        
         if !variableDeclSyntax.isPublic() {
             throw ExpositionError.isNotPublic
         }
@@ -53,6 +57,11 @@ struct VariableMember: ExposableMember {
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         guard let variableBinding = variableDeclSyntax.bindings.first else {
+            return nil
+        }
+        
+        guard variableDeclSyntax.isPublic() else {
+            context.diagnose(variableDeclSyntax.notPublicDiagnostic(description: "Exported variable must be public"))
             return nil
         }
         
@@ -216,6 +225,12 @@ struct VariableMember: ExposableMember {
         }
         
         return detail.detail.tokenKind == .identifier("set")
+    }
+    
+    private var isExported: Bool {
+        attributes?.contains(where: {
+            $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Export"
+        }) == true
     }
     
     private func hintSyntax(

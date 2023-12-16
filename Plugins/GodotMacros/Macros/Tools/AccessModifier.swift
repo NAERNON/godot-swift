@@ -196,9 +196,15 @@ extension FunctionDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKe
     }
 }
 
-extension VariableDeclSyntax: DeclSyntaxWithAccessModifier {
+extension VariableDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKeyword {
+    var typeKeyword: TokenSyntax { self.bindingSpecifier }
+    
     func withModifiers(_ modifiers: DeclModifierListSyntax) -> VariableDeclSyntax {
         self.with(\.modifiers, modifiers)
+    }
+    
+    func withTypeKeyword(_ tokenSyntax: TokenSyntax) -> VariableDeclSyntax {
+        self.with(\.bindingSpecifier, tokenSyntax)
     }
 }
 
