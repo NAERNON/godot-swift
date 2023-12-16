@@ -48,6 +48,7 @@ struct FunctionMember: ExposableMember {
     
     func expositionSyntax(
         classContext: TokenSyntax,
+        namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         var isExposable = true

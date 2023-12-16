@@ -41,6 +41,7 @@ struct EnumMember: ExposableMember {
     
     func expositionSyntax(
         classContext: TokenSyntax,
+        namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         let attributeSyntax = AttributeSyntax(attributeName: IdentifierTypeSyntax(name: "GodotEnum"))

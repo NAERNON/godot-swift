@@ -45,6 +45,7 @@ public enum ExpositionTestMacro: PeerMacro {
         
         guard let exposableSyntax = exposableMember.expositionSyntax(
             classContext: className,
+            namePrefix: String(),
             in: context
         ) else {
             return []

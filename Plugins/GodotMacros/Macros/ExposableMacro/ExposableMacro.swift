@@ -3,6 +3,7 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
+import RegexBuilder
 
 public enum ExposableMacro: MemberMacro, ExtensionMacro {
     public static func expansion(
@@ -72,23 +73,143 @@ public enum ExposableMacro: MemberMacro, ExtensionMacro {
         of classDecl: ClassDeclSyntax,
         in context: some MacroExpansionContext
     ) -> [ExprSyntax] {
-        classDecl.memberBlock.members.compactMap { member in
+        var groupStructure = GroupStructure()
+        var expressions = [ExprSyntax]()
+        
+        for member in classDecl.memberBlock.members {
+            for trivia in member.leadingTrivia {
+                guard case let .lineComment(commentString) = trivia,
+                   let groupTrivia = GroupTrivia(commentLine: commentString)
+                else {
+                    continue
+                }
+                
+                let groupExprSyntax: ExprSyntax
+                switch groupTrivia {
+                case .group(let string):
+                    groupStructure.groupName = string
+                    groupStructure.subgroupName = nil
+                    groupExprSyntax = """
+                    Godot.GodotExtension.classRegistrar.registerGroup(
+                        named: \(literal: string),
+                        prefix: \(literal: groupStructure.groupPrefix),
+                        insideType: self
+                    )
+                    """
+                case .subgroup(let string):
+                    groupStructure.subgroupName = string
+                    groupExprSyntax = """
+                    Godot.GodotExtension.classRegistrar.registerSubgroup(
+                        named: \(literal: string),
+                        prefix: \(literal: groupStructure.subgroupPrefix),
+                        insideType: self
+                    )
+                    """
+                }
+                
+                expressions.append(groupExprSyntax)
+            }
+            
             guard let exposableMember = member.decl.exposableMember(),
                   !exposableMember.hasExpositionIgnoredAttribute
             else {
-                return nil
+                continue
             }
             
             do {
                 try exposableMember.checkShouldBeExposed()
             } catch {
-                return nil
+                continue
             }
             
-            return exposableMember.expositionSyntax(
+            guard let expositionSyntax = exposableMember.expositionSyntax(
                 classContext: classDecl.name,
+                namePrefix: groupStructure.memberPrefix,
                 in: context
-            )
+            ) else {
+                continue
+            }
+            
+            expressions.append(expositionSyntax)
+        }
+        
+        return expressions
+    }
+}
+
+// MARK: - Group
+
+private struct GroupStructure {
+    var groupName: String?
+    var subgroupName: String?
+    
+    var groupPrefix: String {
+        if let groupName {
+            "_" + transformToPrefix(groupName) + "_"
+        } else {
+            ""
+        }
+    }
+    
+    var subgroupPrefix: String {
+        if let subgroupName {
+            groupPrefix + transformToPrefix(subgroupName) + "_"
+        } else {
+            groupPrefix
+        }
+    }
+    
+    var memberPrefix: String {
+        subgroupPrefix
+    }
+    
+    private func transformToPrefix(_ string: String) -> String {
+        String(format:"%02X", string.hashValue).lowercased()
+    }
+}
+
+private enum GroupTrivia {
+    case group(String)
+    case subgroup(String)
+    
+    static let groupString = "EXPORT: -"
+    static let subgroupString = "EXPORT: --"
+    
+    init?(commentLine: String) {
+        let regex = Regex {
+            "//"
+            ZeroOrMore(.whitespace)
+            "EXPORT: "
+            ZeroOrMore(.whitespace)
+            Capture {
+                ChoiceOf {
+                    "--"
+                    "-"
+                }
+            }
+            ZeroOrMore(.whitespace)
+            Capture(ZeroOrMore(.anyNonNewline))
+        }
+        
+        guard let match = commentLine.firstMatch(of: regex) else {
+            return nil
+        }
+        
+        let groupName = match.output.2.trimmingCharacters(in: .whitespaces)
+        
+        switch match.output.1 {
+        case "-": self = .group(groupName)
+        case "--": self = .subgroup(groupName)
+        default: return nil
+        }
+    }
+    
+    var name: String {
+        switch self {
+        case .group(let string):
+            string
+        case .subgroup(let string):
+            string
         }
     }
 }

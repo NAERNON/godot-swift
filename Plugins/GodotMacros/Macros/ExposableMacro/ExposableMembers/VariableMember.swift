@@ -49,6 +49,7 @@ struct VariableMember: ExposableMember {
     
     func expositionSyntax(
         classContext: TokenSyntax,
+        namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         guard let variableBinding = variableDeclSyntax.bindings.first else {
@@ -172,7 +173,7 @@ struct VariableMember: ExposableMember {
         if hasSetter {
             return """
             Godot.GodotExtension.classRegistrar.\(raw: functionName)(
-                named: \(literal: variableName),
+                named: \(literal: namePrefix + variableName),
                 keyPath: \\.\(raw: swiftVariableName),
                 insideType: self, \(raw: hintLineSyntax)
                 getterName: \(literal: getterName),

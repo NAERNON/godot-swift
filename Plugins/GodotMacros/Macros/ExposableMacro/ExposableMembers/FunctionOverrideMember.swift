@@ -47,6 +47,7 @@ struct FunctionOverrideMember: ExposableMember {
     
     func expositionSyntax(
         classContext: TokenSyntax,
+        namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         let functionName = removeBackticks(functionDeclSyntax.name.trimmedDescription)

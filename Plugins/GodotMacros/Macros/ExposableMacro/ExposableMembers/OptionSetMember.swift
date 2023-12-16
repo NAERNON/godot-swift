@@ -45,6 +45,7 @@ struct OptionSetMember: ExposableMember {
     
     func expositionSyntax(
         classContext: TokenSyntax,
+        namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         let optionSetName = removeBackticks(structDeclSyntax.name.trimmedDescription)

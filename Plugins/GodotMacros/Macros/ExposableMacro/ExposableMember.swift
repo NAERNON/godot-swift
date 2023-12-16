@@ -31,6 +31,7 @@ protocol ExposableMember {
     /// using the provided context, and return `nil` in that case.
     func expositionSyntax(
         classContext: TokenSyntax,
+        namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax?
 }

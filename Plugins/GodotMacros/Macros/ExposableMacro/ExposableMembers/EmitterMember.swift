@@ -45,6 +45,7 @@ struct EmitterMember: ExposableMember {
     
     func expositionSyntax(
         classContext: TokenSyntax,
+        namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         guard let emitterAttribute = structDeclSyntax.attributes.first(

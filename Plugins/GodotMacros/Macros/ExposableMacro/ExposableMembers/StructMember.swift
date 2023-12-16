@@ -40,6 +40,7 @@ struct StructMember: ExposableMember {
     
     func expositionSyntax(
         classContext: TokenSyntax,
+        namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         context.diagnose(Diagnostic(

@@ -207,7 +207,10 @@ public final class ClassRegistrar {
             superclassName.withGodotUnsafeRawPointer { superclassNamePtr in
                 withUnsafePointer(to: godotClassInfo) { classInfoPtr in
                     gdextension_interface_classdb_register_extension_class(
-                        GodotExtension.libraryPtr, namePtr, superclassNamePtr, classInfoPtr
+                        GodotExtension.libraryPtr, 
+                        namePtr,
+                        superclassNamePtr,
+                        classInfoPtr
                     )
                 }
             }
@@ -288,7 +291,9 @@ public final class ClassRegistrar {
                         className.withGodotUnsafeRawPointer { namePtr in
                             withUnsafePointer(to: godotMethodInfo) { methodInfoPtr in
                                 gdextension_interface_classdb_register_extension_class_method(
-                                    GodotExtension.libraryPtr, namePtr, methodInfoPtr
+                                    GodotExtension.libraryPtr, 
+                                    namePtr,
+                                    methodInfoPtr
                                 )
                             }
                         }
@@ -549,7 +554,11 @@ public final class ClassRegistrar {
                     withUnsafePointer(to: propertyInfo) { propertyInfoPtr in
                         className.withGodotUnsafeRawPointer { namePtr in
                             gdextension_interface_classdb_register_extension_class_property(
-                                GodotExtension.libraryPtr, namePtr, propertyInfoPtr, setterPtr, getterPtr
+                                GodotExtension.libraryPtr, 
+                                namePtr,
+                                propertyInfoPtr,
+                                setterPtr,
+                                getterPtr
                             )
                         }
                     }
@@ -558,6 +567,84 @@ public final class ClassRegistrar {
         }
         
         return variableBinding
+    }
+    
+    // MARK: Group registration
+    
+    /// Registers a given property group.
+    ///
+    /// - Parameters:
+    ///   - groupName: The group name.
+    ///   - prefix: The group prefix. Every property inside the group
+    ///   should be prefixed by this string.
+    ///   - classType: The type of the class.
+    /// - Returns: A Boolean value indicating whether the registration succeeded.
+    @discardableResult
+    public func registerGroup<Class>(
+        named groupName: GodotString,
+        prefix: GodotString,
+        insideType classType: Class.Type
+    ) -> Bool where Class : Object {
+        let className = classType.exposedClassName
+        
+        guard let classBinding = customClassNameToClassBinding[className],
+              classBinding.type == classType else {
+            gdDebugPrintError("Cannot register group \(groupName) because the class \(className) is not registered.")
+            return false
+        }
+        
+        prefix.withGodotUnsafeRawPointer { prefixPtr in
+            groupName.withGodotUnsafeRawPointer { groupNamePtr in
+                className.withGodotUnsafeRawPointer { namePtr in
+                    gdextension_interface_classdb_register_extension_class_property_group(
+                        GodotExtension.libraryPtr,
+                        namePtr,
+                        groupNamePtr,
+                        prefixPtr
+                    )
+                }
+            }
+        }
+        
+        return true
+    }
+    
+    /// Registers a given property subgroup.
+    ///
+    /// - Parameters:
+    ///   - subgroupName: The subgroup name.
+    ///   - prefix: The subgroup prefix. Every property inside the subgroup
+    ///   should be prefixed by this string.
+    ///   - classType: The type of the class.
+    /// - Returns: A Boolean value indicating whether the registration succeeded.
+    @discardableResult
+    public func registerSubgroup<Class>(
+        named subgroupName: GodotString,
+        prefix: GodotString,
+        insideType classType: Class.Type
+    ) -> Bool where Class : Object {
+        let className = classType.exposedClassName
+        
+        guard let classBinding = customClassNameToClassBinding[className],
+              classBinding.type == classType else {
+            gdDebugPrintError("Cannot register subgroup \(subgroupName) because the class \(className) is not registered.")
+            return false
+        }
+        
+        prefix.withGodotUnsafeRawPointer { prefixPtr in
+            subgroupName.withGodotUnsafeRawPointer { subgroupNamePtr in
+                className.withGodotUnsafeRawPointer { namePtr in
+                    gdextension_interface_classdb_register_extension_class_property_subgroup(
+                        GodotExtension.libraryPtr,
+                        namePtr,
+                        subgroupNamePtr,
+                        prefixPtr
+                    )
+                }
+            }
+        }
+        
+        return true
     }
     
     // MARK: Enum & OptionSet registration
@@ -603,7 +690,12 @@ public final class ClassRegistrar {
                 for (caseName, value) in values {
                     caseName.withGodotUnsafeRawPointer { caseNamePtr in
                         gdextension_interface_classdb_register_extension_class_integer_constant(
-                            GodotExtension.libraryPtr, classNamePtr, namePtr, caseNamePtr, value, isOptionSet ? 1 : 0
+                            GodotExtension.libraryPtr, 
+                            classNamePtr,
+                            namePtr,
+                            caseNamePtr,
+                            value,
+                            isOptionSet ? 1 : 0
                         )
                     }
                 }
@@ -654,7 +746,11 @@ public final class ClassRegistrar {
             signalBinding.withGodotExtensionPropertiesInfo { propertiesInfo in
                 className.withGodotUnsafeRawPointer { namePtr in
                     gdextension_interface_classdb_register_extension_class_signal(
-                        GodotExtension.libraryPtr, namePtr, signalNamePtr, propertiesInfo, Int64(signalBinding.arguments.count)
+                        GodotExtension.libraryPtr, 
+                        namePtr,
+                        signalNamePtr,
+                        propertiesInfo,
+                        Int64(signalBinding.arguments.count)
                     )
                 }
             }
