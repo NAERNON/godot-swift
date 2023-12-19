@@ -21,6 +21,10 @@ open class GDExtensionManager: Object {
         }
     }
 
+    @Emitter(signal: "extensions_reloaded")
+    public struct ExtensionsReloaded {
+    }
+
     private static var __method_binding_load_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load_extension").withGodotUnsafeRawPointer { __ptr__method_name in

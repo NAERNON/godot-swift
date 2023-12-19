@@ -327,6 +327,11 @@ private var __method_binding_repeat: GDExtensionPtrBuiltInMethod = {
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_STRING, __ptr__method_name, 2162347432)!
     }
 }()
+private var __method_binding_reverse: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "reverse").withGodotUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_STRING, __ptr__method_name, 3942272618)!
+    }
+}()
 private var __method_binding_insert: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "insert").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_STRING, __ptr__method_name, 248737229)!
@@ -1406,6 +1411,12 @@ extension GodotString {
         withUnsafeArgumentPackPointer(__ptr_count) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_repeat(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
+    }
+
+    internal func _reverse() -> Godot.GodotString {
+        return Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_reverse(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _insert(position: Int, what: Godot.GodotString) -> Godot.GodotString {

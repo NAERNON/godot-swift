@@ -56,6 +56,10 @@ open class TextServerExtension: TextServer {
         Godot.RID()
     }
 
+    open func _createFontLinkedVariation(fontRid: Godot.RID) -> Godot.RID {
+        Godot.RID()
+    }
+
     open func _fontSetData(fontRid: Godot.RID, data: Godot.PackedByteArray) {
     }
 
@@ -154,6 +158,13 @@ open class TextServerExtension: TextServer {
         Int64()
     }
 
+    open func _fontSetFixedSizeScaleMode(fontRid: Godot.RID, fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode) {
+    }
+
+    open func _fontGetFixedSizeScaleMode(fontRid: Godot.RID) -> Godot.TextServer.FixedSizeScaleMode {
+        Godot.TextServer.FixedSizeScaleMode(rawValue: 0)!
+    }
+
     open func _fontSetAllowSystemFallback(fontRid: Godot.RID, allowSystemFallback: Bool) {
     }
 
@@ -187,6 +198,13 @@ open class TextServerExtension: TextServer {
 
     open func _fontGetEmbolden(fontRid: Godot.RID) -> Double {
         Double()
+    }
+
+    open func _fontSetSpacing(fontRid: Godot.RID, spacing: Godot.TextServer.SpacingType, value: Int64) {
+    }
+
+    open func _fontGetSpacing(fontRid: Godot.RID, spacing: Godot.TextServer.SpacingType) -> Int64 {
+        Int64()
     }
 
     open func _fontSetTransform(fontRid: Godot.RID, transform: Godot.Transform2D) {
@@ -673,6 +691,22 @@ open class TextServerExtension: TextServer {
         Int64()
     }
 
+    open func _shapedTextGetCharacterBreaks(shaped: Godot.RID) -> Godot.PackedInt32Array {
+        Godot.PackedInt32Array()
+    }
+
+    open func _shapedTextNextCharacterPos(shaped: Godot.RID, pos: Int64) -> Int64 {
+        Int64()
+    }
+
+    open func _shapedTextPrevCharacterPos(shaped: Godot.RID, pos: Int64) -> Int64 {
+        Int64()
+    }
+
+    open func _shapedTextClosestCharacterPos(shaped: Godot.RID, pos: Int64) -> Int64 {
+        Int64()
+    }
+
     open func _formatNumber(string: Godot.GodotString, language: Godot.GodotString) -> Godot.GodotString {
         Godot.GodotString()
     }
@@ -694,6 +728,10 @@ open class TextServerExtension: TextServer {
     }
 
     open func _stringGetWordBreaks(string: Godot.GodotString, language: Godot.GodotString, charsPerLine: Int64) -> Godot.PackedInt32Array {
+        Godot.PackedInt32Array()
+    }
+
+    open func _stringGetCharacterBreaks(string: Godot.GodotString, language: Godot.GodotString) -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()
     }
 
@@ -729,7 +767,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._hasFeature(
             Godot.TextServer.Feature.fromGodotUnsafePointer(args[0]!)
         )
@@ -738,21 +776,21 @@ open class TextServerExtension: TextServer {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getName()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_features_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getFeatures()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _free_rid_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._freeRid(
             Godot.RID.fromGodotUnsafePointer(args[0]!)
         )}
@@ -760,7 +798,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._has(
             rid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -769,7 +807,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._loadSupportData(
             filename: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -778,21 +816,21 @@ open class TextServerExtension: TextServer {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getSupportDataFilename()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_support_data_info_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getSupportDataInfo()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _save_support_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._saveSupportData(
             filename: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -801,7 +839,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._isLocaleRightToLeft(
             locale: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -810,7 +848,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._nameToTag(
             name: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -819,7 +857,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._tagToName(
             tag: Int64.fromGodotUnsafePointer(args[0]!)
         )
@@ -828,14 +866,23 @@ open class TextServerExtension: TextServer {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._createFont()
+        .copyToGodot(unsafePointer: returnPtr!)}
+        let _create_font_linked_variation_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._createFontLinkedVariation(
+            fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
+        )
         .copyToGodot(unsafePointer: returnPtr!)}
         let _font_set_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetData(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             data: Godot.PackedByteArray.fromGodotUnsafePointer(args[1]!)
@@ -844,17 +891,17 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetDataPtr(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
-            dataPtr: UnsafePointer<UInt8> .fromGodotUnsafePointer(args[1]!),
+            dataPtr: UnsafePointer<UInt8>.fromGodotUnsafePointer(args[1]!),
             dataSize: Int64.fromGodotUnsafePointer(args[2]!)
         )}
         let _font_set_face_index_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetFaceIndex(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             faceIndex: Int64.fromGodotUnsafePointer(args[1]!)
@@ -863,7 +910,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetFaceIndex(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -872,7 +919,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetFaceCount(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -881,7 +928,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetStyle(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             style: Godot.TextServer.FontStyle.fromGodotUnsafePointer(args[1]!)
@@ -890,7 +937,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetStyle(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -899,7 +946,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetName(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             name: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -908,7 +955,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetName(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -917,7 +964,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetOtNameStrings(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -926,7 +973,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetStyleName(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             nameStyle: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -935,7 +982,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetStyleName(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -944,7 +991,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetWeight(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             weight: Int64.fromGodotUnsafePointer(args[1]!)
@@ -953,7 +1000,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetWeight(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -962,7 +1009,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetStretch(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             stretch: Int64.fromGodotUnsafePointer(args[1]!)
@@ -971,7 +1018,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetStretch(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -980,7 +1027,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetAntialiasing(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             antialiasing: Godot.TextServer.FontAntialiasing.fromGodotUnsafePointer(args[1]!)
@@ -989,7 +1036,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetAntialiasing(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -998,7 +1045,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetGenerateMipmaps(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             generateMipmaps: Bool.fromGodotUnsafePointer(args[1]!)
@@ -1007,7 +1054,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGenerateMipmaps(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1016,7 +1063,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetMultichannelSignedDistanceField(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             msdf: Bool.fromGodotUnsafePointer(args[1]!)
@@ -1025,7 +1072,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontIsMultichannelSignedDistanceField(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1034,7 +1081,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetMsdfPixelRange(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             msdfPixelRange: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1043,7 +1090,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetMsdfPixelRange(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1052,7 +1099,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetMsdfSize(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             msdfSize: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1061,7 +1108,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetMsdfSize(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1070,7 +1117,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetFixedSize(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             fixedSize: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1079,8 +1126,26 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetFixedSize(
+            fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
+        )
+        .copyToGodot(unsafePointer: returnPtr!)}
+        let _font_set_fixed_size_scale_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._fontSetFixedSizeScaleMode(
+            fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode.fromGodotUnsafePointer(args[1]!)
+        )}
+        let _font_get_fixed_size_scale_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._fontGetFixedSizeScaleMode(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -1088,7 +1153,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetAllowSystemFallback(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             allowSystemFallback: Bool.fromGodotUnsafePointer(args[1]!)
@@ -1097,7 +1162,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontIsAllowSystemFallback(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1106,7 +1171,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetForceAutohinter(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             forceAutohinter: Bool.fromGodotUnsafePointer(args[1]!)
@@ -1115,7 +1180,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontIsForceAutohinter(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1124,7 +1189,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetHinting(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             hinting: Godot.TextServer.Hinting.fromGodotUnsafePointer(args[1]!)
@@ -1133,7 +1198,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetHinting(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1142,7 +1207,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetSubpixelPositioning(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             subpixelPositioning: Godot.TextServer.SubpixelPositioning.fromGodotUnsafePointer(args[1]!)
@@ -1151,7 +1216,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetSubpixelPositioning(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1160,7 +1225,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetEmbolden(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             strength: Double.fromGodotUnsafePointer(args[1]!)
@@ -1169,16 +1234,36 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetEmbolden(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
+        )
+        .copyToGodot(unsafePointer: returnPtr!)}
+        let _font_set_spacing_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._fontSetSpacing(
+            fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            spacing: Godot.TextServer.SpacingType.fromGodotUnsafePointer(args[1]!),
+            value: Int64.fromGodotUnsafePointer(args[2]!)
+        )}
+        let _font_get_spacing_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._fontGetSpacing(
+            fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            spacing: Godot.TextServer.SpacingType.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         let _font_set_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetTransform(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             transform: Godot.Transform2D.fromGodotUnsafePointer(args[1]!)
@@ -1187,7 +1272,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetTransform(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1196,7 +1281,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetVariationCoordinates(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             variationCoordinates: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[1]!)
@@ -1205,7 +1290,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetVariationCoordinates(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1214,7 +1299,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetOversampling(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             oversampling: Double.fromGodotUnsafePointer(args[1]!)
@@ -1223,7 +1308,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetOversampling(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1232,7 +1317,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetSizeCacheList(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1241,7 +1326,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontClearSizeCache(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1249,7 +1334,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRemoveSizeCache(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
@@ -1258,7 +1343,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetAscent(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1268,7 +1353,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetAscent(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1278,7 +1363,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetDescent(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1288,7 +1373,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetDescent(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1298,7 +1383,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetUnderlinePosition(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1308,7 +1393,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetUnderlinePosition(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1318,7 +1403,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetUnderlineThickness(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1328,7 +1413,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetUnderlineThickness(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1338,7 +1423,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetScale(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1348,7 +1433,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetScale(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1358,7 +1443,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetTextureCount(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
@@ -1368,7 +1453,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontClearTextures(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
@@ -1377,7 +1462,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRemoveTexture(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1387,7 +1472,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetTextureImage(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1398,7 +1483,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetTextureImage(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1409,7 +1494,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetTextureOffsets(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1420,7 +1505,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetTextureOffsets(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1431,7 +1516,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphList(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
@@ -1441,7 +1526,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontClearGlyphs(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
@@ -1450,7 +1535,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRemoveGlyph(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1460,7 +1545,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphAdvance(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1471,7 +1556,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetGlyphAdvance(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1482,7 +1567,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphOffset(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1493,7 +1578,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetGlyphOffset(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1504,7 +1589,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphSize(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1515,7 +1600,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetGlyphSize(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1526,7 +1611,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphUvRect(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1537,7 +1622,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetGlyphUvRect(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1548,7 +1633,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphTextureIdx(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1559,7 +1644,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetGlyphTextureIdx(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1570,7 +1655,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphTextureRid(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1581,7 +1666,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphTextureSize(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1592,7 +1677,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphContours(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1603,7 +1688,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetKerningList(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1613,7 +1698,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontClearKerningMap(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1622,7 +1707,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRemoveKerning(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1632,7 +1717,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetKerning(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1643,7 +1728,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetKerning(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1654,7 +1739,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlyphIndex(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1666,7 +1751,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetCharFromGlyphIndex(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1677,7 +1762,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontHasChar(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             char: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1687,7 +1772,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetSupportedChars(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1696,7 +1781,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRenderRange(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1707,7 +1792,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRenderGlyph(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -1717,7 +1802,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontDrawGlyph(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             canvas: Godot.RID.fromGodotUnsafePointer(args[1]!),
@@ -1730,7 +1815,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontDrawGlyphOutline(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             canvas: Godot.RID.fromGodotUnsafePointer(args[1]!),
@@ -1744,7 +1829,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontIsLanguageSupported(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             language: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -1754,7 +1839,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetLanguageSupportOverride(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             language: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
@@ -1764,7 +1849,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetLanguageSupportOverride(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             language: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -1774,7 +1859,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRemoveLanguageSupportOverride(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             language: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -1783,7 +1868,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetLanguageSupportOverrides(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1792,7 +1877,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontIsScriptSupported(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             script: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -1802,7 +1887,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetScriptSupportOverride(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             script: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
@@ -1812,7 +1897,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetScriptSupportOverride(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             script: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -1822,7 +1907,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontRemoveScriptSupportOverride(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             script: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -1831,7 +1916,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetScriptSupportOverrides(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1840,7 +1925,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetOpentypeFeatureOverrides(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!),
             overrides: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[1]!)
@@ -1849,7 +1934,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetOpentypeFeatureOverrides(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1858,7 +1943,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSupportedFeatureList(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1867,7 +1952,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSupportedVariationList(
             fontRid: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1876,14 +1961,14 @@ open class TextServerExtension: TextServer {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontGetGlobalOversampling()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _font_set_global_oversampling_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetGlobalOversampling(
             Double.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1891,7 +1976,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getHexCodeBoxSize(
             Int64.fromGodotUnsafePointer(args[0]!),
             index: Int64.fromGodotUnsafePointer(args[1]!)
@@ -1901,7 +1986,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._drawHexCodeBox(
             canvas: Godot.RID.fromGodotUnsafePointer(args[0]!),
             size: Int64.fromGodotUnsafePointer(args[1]!),
@@ -1913,7 +1998,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._createShapedText(
             direction: Godot.TextServer.Direction.fromGodotUnsafePointer(args[0]!),
             orientation: Godot.TextServer.Orientation.fromGodotUnsafePointer(args[1]!)
@@ -1923,7 +2008,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextClear(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1931,7 +2016,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextSetDirection(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             direction: Godot.TextServer.Direction.fromGodotUnsafePointer(args[1]!)
@@ -1940,7 +2025,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetDirection(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1949,7 +2034,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetInferredDirection(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1958,7 +2043,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextSetBidiOverride(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             override: Godot.AnyGodotArray.fromGodotUnsafePointer(args[1]!)
@@ -1967,7 +2052,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextSetCustomPunctuation(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             punct: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -1976,7 +2061,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetCustomPunctuation(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -1985,7 +2070,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextSetOrientation(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             orientation: Godot.TextServer.Orientation.fromGodotUnsafePointer(args[1]!)
@@ -1994,7 +2079,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetOrientation(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2003,7 +2088,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextSetPreserveInvalid(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             enabled: Bool.fromGodotUnsafePointer(args[1]!)
@@ -2012,7 +2097,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetPreserveInvalid(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2021,7 +2106,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextSetPreserveControl(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             enabled: Bool.fromGodotUnsafePointer(args[1]!)
@@ -2030,7 +2115,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetPreserveControl(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2039,7 +2124,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextSetSpacing(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             spacing: Godot.TextServer.SpacingType.fromGodotUnsafePointer(args[1]!),
@@ -2049,7 +2134,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetSpacing(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             spacing: Godot.TextServer.SpacingType.fromGodotUnsafePointer(args[1]!)
@@ -2059,11 +2144,11 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextAddString(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             text: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
-            fonts: Godot.GodotArray<Godot.RID> .fromGodotUnsafePointer(args[2]!),
+            fonts: Godot.GodotArray<Godot.RID>.fromGodotUnsafePointer(args[2]!),
             size: Int64.fromGodotUnsafePointer(args[3]!),
             opentypeFeatures: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[4]!),
             language: Godot.GodotString.fromGodotUnsafePointer(args[5]!),
@@ -2074,7 +2159,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextAddObject(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             key: Godot.Variant.fromGodotUnsafePointer(args[1]!),
@@ -2088,7 +2173,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextResizeObject(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             key: Godot.Variant.fromGodotUnsafePointer(args[1]!),
@@ -2101,7 +2186,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedGetSpanCount(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2110,7 +2195,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedGetSpanMeta(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             index: Int64.fromGodotUnsafePointer(args[1]!)
@@ -2120,11 +2205,11 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedSetSpanUpdateFont(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             index: Int64.fromGodotUnsafePointer(args[1]!),
-            fonts: Godot.GodotArray<Godot.RID> .fromGodotUnsafePointer(args[2]!),
+            fonts: Godot.GodotArray<Godot.RID>.fromGodotUnsafePointer(args[2]!),
             size: Int64.fromGodotUnsafePointer(args[3]!),
             opentypeFeatures: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[4]!)
         )}
@@ -2132,7 +2217,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextSubstr(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             start: Int64.fromGodotUnsafePointer(args[1]!),
@@ -2143,7 +2228,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetParent(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2152,7 +2237,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextFitToWidth(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             width: Double.fromGodotUnsafePointer(args[1]!),
@@ -2163,7 +2248,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextTabAlign(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             tabStops: Godot.PackedFloat32Array.fromGodotUnsafePointer(args[1]!)
@@ -2173,7 +2258,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextShape(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2182,7 +2267,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextUpdateBreaks(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2191,7 +2276,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextUpdateJustificationOps(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2200,7 +2285,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextIsReady(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2209,7 +2294,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetGlyphs(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2218,7 +2303,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextSortLogical(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2227,7 +2312,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetGlyphCount(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2236,7 +2321,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetRange(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2245,7 +2330,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetLineBreaksAdv(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             width: Godot.PackedFloat32Array.fromGodotUnsafePointer(args[1]!),
@@ -2258,7 +2343,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetLineBreaks(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             width: Double.fromGodotUnsafePointer(args[1]!),
@@ -2270,7 +2355,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetWordBreaks(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             graphemeFlags: Godot.TextServer.GraphemeFlag.fromGodotUnsafePointer(args[1]!)
@@ -2280,7 +2365,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetTrimPos(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2289,7 +2374,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetEllipsisPos(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2298,7 +2383,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetEllipsisGlyphCount(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2307,7 +2392,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetEllipsisGlyphs(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2316,7 +2401,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextOverrunTrimToWidth(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             width: Double.fromGodotUnsafePointer(args[1]!),
@@ -2326,7 +2411,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetObjects(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2335,7 +2420,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetObjectRect(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             key: Godot.Variant.fromGodotUnsafePointer(args[1]!)
@@ -2345,7 +2430,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetSize(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2354,7 +2439,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetAscent(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2363,7 +2448,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetDescent(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2372,7 +2457,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetWidth(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2381,7 +2466,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetUnderlinePosition(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2390,7 +2475,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetUnderlineThickness(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -2399,7 +2484,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetDominantDirectionInRange(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             start: Int64.fromGodotUnsafePointer(args[1]!),
@@ -2410,17 +2495,17 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetCarets(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             position: Int64.fromGodotUnsafePointer(args[1]!),
-            caret: UnsafeMutablePointer<CaretInfo> .fromGodotUnsafePointer(args[2]!)
+            caret: UnsafeMutablePointer<CaretInfo>.fromGodotUnsafePointer(args[2]!)
         )}
         let _shaped_text_get_selection_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetSelection(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             start: Int64.fromGodotUnsafePointer(args[1]!),
@@ -2431,7 +2516,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextHitTestGrapheme(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             coord: Double.fromGodotUnsafePointer(args[1]!)
@@ -2441,7 +2526,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextHitTestPosition(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             coord: Double.fromGodotUnsafePointer(args[1]!)
@@ -2451,7 +2536,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextDraw(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             canvas: Godot.RID.fromGodotUnsafePointer(args[1]!),
@@ -2464,7 +2549,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextDrawOutline(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             canvas: Godot.RID.fromGodotUnsafePointer(args[1]!),
@@ -2478,7 +2563,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetGraphemeBounds(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             pos: Int64.fromGodotUnsafePointer(args[1]!)
@@ -2488,7 +2573,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextNextGraphemePos(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             pos: Int64.fromGodotUnsafePointer(args[1]!)
@@ -2498,8 +2583,47 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextPrevGraphemePos(
+            shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            pos: Int64.fromGodotUnsafePointer(args[1]!)
+        )
+        .copyToGodot(unsafePointer: returnPtr!)}
+        let _shaped_text_get_character_breaks_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._shapedTextGetCharacterBreaks(
+            shaped: Godot.RID.fromGodotUnsafePointer(args[0]!)
+        )
+        .copyToGodot(unsafePointer: returnPtr!)}
+        let _shaped_text_next_character_pos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._shapedTextNextCharacterPos(
+            shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            pos: Int64.fromGodotUnsafePointer(args[1]!)
+        )
+        .copyToGodot(unsafePointer: returnPtr!)}
+        let _shaped_text_prev_character_pos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._shapedTextPrevCharacterPos(
+            shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
+            pos: Int64.fromGodotUnsafePointer(args[1]!)
+        )
+        .copyToGodot(unsafePointer: returnPtr!)}
+        let _shaped_text_closest_character_pos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._shapedTextClosestCharacterPos(
             shaped: Godot.RID.fromGodotUnsafePointer(args[0]!),
             pos: Int64.fromGodotUnsafePointer(args[1]!)
         )
@@ -2508,7 +2632,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._formatNumber(
             string: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             language: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -2518,7 +2642,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._parseNumber(
             string: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             language: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -2528,7 +2652,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._percentSign(
             language: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -2537,7 +2661,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._stripDiacritics(
             string: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -2546,7 +2670,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._isValidIdentifier(
             string: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -2555,18 +2679,28 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._stringGetWordBreaks(
             string: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             language: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
             charsPerLine: Int64.fromGodotUnsafePointer(args[2]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
+        let _string_get_character_breaks_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._stringGetCharacterBreaks(
+            string: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
+            language: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
+        )
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _is_confusable_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._isConfusable(
             string: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             dict: Godot.PackedStringArray.fromGodotUnsafePointer(args[1]!)
@@ -2576,7 +2710,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._spoofCheck(
             string: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -2585,7 +2719,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._stringToUpper(
             string: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             language: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -2595,7 +2729,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._stringToLower(
             string: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             language: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -2605,7 +2739,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._parseStructuredText(
             parserType: Godot.TextServer.StructuredTextParser.fromGodotUnsafePointer(args[0]!),
             args: Godot.AnyGodotArray.fromGodotUnsafePointer(args[1]!),
@@ -2616,7 +2750,7 @@ open class TextServerExtension: TextServer {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._cleanup()}
         _virtualFunctions = [
             "_hasFeature" : ("_has_feature", _has_feature_call),
@@ -2632,6 +2766,7 @@ open class TextServerExtension: TextServer {
             "_nameToTag" : ("_name_to_tag", _name_to_tag_call),
             "_tagToName" : ("_tag_to_name", _tag_to_name_call),
             "_createFont" : ("_create_font", _create_font_call),
+            "_createFontLinkedVariation" : ("_create_font_linked_variation", _create_font_linked_variation_call),
             "_fontSetData" : ("_font_set_data", _font_set_data_call),
             "_fontSetDataPtr" : ("_font_set_data_ptr", _font_set_data_ptr_call),
             "_fontSetFaceIndex" : ("_font_set_face_index", _font_set_face_index_call),
@@ -2660,6 +2795,8 @@ open class TextServerExtension: TextServer {
             "_fontGetMsdfSize" : ("_font_get_msdf_size", _font_get_msdf_size_call),
             "_fontSetFixedSize" : ("_font_set_fixed_size", _font_set_fixed_size_call),
             "_fontGetFixedSize" : ("_font_get_fixed_size", _font_get_fixed_size_call),
+            "_fontSetFixedSizeScaleMode" : ("_font_set_fixed_size_scale_mode", _font_set_fixed_size_scale_mode_call),
+            "_fontGetFixedSizeScaleMode" : ("_font_get_fixed_size_scale_mode", _font_get_fixed_size_scale_mode_call),
             "_fontSetAllowSystemFallback" : ("_font_set_allow_system_fallback", _font_set_allow_system_fallback_call),
             "_fontIsAllowSystemFallback" : ("_font_is_allow_system_fallback", _font_is_allow_system_fallback_call),
             "_fontSetForceAutohinter" : ("_font_set_force_autohinter", _font_set_force_autohinter_call),
@@ -2670,6 +2807,8 @@ open class TextServerExtension: TextServer {
             "_fontGetSubpixelPositioning" : ("_font_get_subpixel_positioning", _font_get_subpixel_positioning_call),
             "_fontSetEmbolden" : ("_font_set_embolden", _font_set_embolden_call),
             "_fontGetEmbolden" : ("_font_get_embolden", _font_get_embolden_call),
+            "_fontSetSpacing" : ("_font_set_spacing", _font_set_spacing_call),
+            "_fontGetSpacing" : ("_font_get_spacing", _font_get_spacing_call),
             "_fontSetTransform" : ("_font_set_transform", _font_set_transform_call),
             "_fontGetTransform" : ("_font_get_transform", _font_get_transform_call),
             "_fontSetVariationCoordinates" : ("_font_set_variation_coordinates", _font_set_variation_coordinates_call),
@@ -2803,12 +2942,17 @@ open class TextServerExtension: TextServer {
             "_shapedTextGetGraphemeBounds" : ("_shaped_text_get_grapheme_bounds", _shaped_text_get_grapheme_bounds_call),
             "_shapedTextNextGraphemePos" : ("_shaped_text_next_grapheme_pos", _shaped_text_next_grapheme_pos_call),
             "_shapedTextPrevGraphemePos" : ("_shaped_text_prev_grapheme_pos", _shaped_text_prev_grapheme_pos_call),
+            "_shapedTextGetCharacterBreaks" : ("_shaped_text_get_character_breaks", _shaped_text_get_character_breaks_call),
+            "_shapedTextNextCharacterPos" : ("_shaped_text_next_character_pos", _shaped_text_next_character_pos_call),
+            "_shapedTextPrevCharacterPos" : ("_shaped_text_prev_character_pos", _shaped_text_prev_character_pos_call),
+            "_shapedTextClosestCharacterPos" : ("_shaped_text_closest_character_pos", _shaped_text_closest_character_pos_call),
             "_formatNumber" : ("_format_number", _format_number_call),
             "_parseNumber" : ("_parse_number", _parse_number_call),
             "_percentSign" : ("_percent_sign", _percent_sign_call),
             "_stripDiacritics" : ("_strip_diacritics", _strip_diacritics_call),
             "_isValidIdentifier" : ("_is_valid_identifier", _is_valid_identifier_call),
             "_stringGetWordBreaks" : ("_string_get_word_breaks", _string_get_word_breaks_call),
+            "_stringGetCharacterBreaks" : ("_string_get_character_breaks", _string_get_character_breaks_call),
             "_isConfusable" : ("_is_confusable", _is_confusable_call),
             "_spoofCheck" : ("_spoof_check", _spoof_check_call),
             "_stringToUpper" : ("_string_to_upper", _string_to_upper_call),

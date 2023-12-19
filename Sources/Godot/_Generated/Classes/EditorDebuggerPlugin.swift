@@ -63,7 +63,7 @@ open class EditorDebuggerPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorDebuggerPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setupSession(
             sessionId: Int32.fromGodotUnsafePointer(args[0]!)
         )}
@@ -71,7 +71,7 @@ open class EditorDebuggerPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorDebuggerPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._hasCapture(
             Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -80,7 +80,7 @@ open class EditorDebuggerPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorDebuggerPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorDebuggerPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._capture(
             message: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             data: Godot.AnyGodotArray.fromGodotUnsafePointer(args[1]!),

@@ -379,7 +379,7 @@ open class VisualShader: Shader {
         }
     }()
     public func nodeConnections(type: Godot.VisualShader.GodotType) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

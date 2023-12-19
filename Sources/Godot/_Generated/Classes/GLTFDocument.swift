@@ -5,10 +5,22 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class GLTFDocument: Resource {
+    public enum RootNodeMode: UInt32, GodotEnum {
+        case singleRoot = 0
+        case keepRoot = 1
+        case multiRoot = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Single Root", 0),
+            ("Keep Root", 1),
+            ("Multi Root", 2),]
+        }
+    }
+
     private static var __method_binding_append_from_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "append_from_file").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1862991421)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 866380864)!
         }
         }
     }()
@@ -32,7 +44,7 @@ open class GLTFDocument: Resource {
     private static var __method_binding_append_from_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "append_from_buffer").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2818062664)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1616081266)!
         }
         }
     }()
@@ -56,7 +68,7 @@ open class GLTFDocument: Resource {
     private static var __method_binding_append_from_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "append_from_scene").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 374125375)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1622574258)!
         }
         }
     }()
@@ -80,7 +92,7 @@ open class GLTFDocument: Resource {
     private static var __method_binding_generate_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "generate_scene").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2770277081)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 596118388)!
         }
         }
     }()
@@ -144,6 +156,117 @@ open class GLTFDocument: Resource {
         )}}}}}}
     }
 
+    private static var __method_binding_set_image_format: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_image_format").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
+        }
+        }
+    }()
+    private func __setImageFormat(_ imageFormat: Godot.GodotString) {
+        imageFormat.withGodotUnsafeRawPointer { __ptr_imageFormat in
+        withUnsafeArgumentPackPointer(__ptr_imageFormat) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_image_format,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_image_format: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_image_format").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
+        }
+        }
+    }()
+    private func __getImageFormat() -> Godot.GodotString {
+        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_image_format,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_lossy_quality: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_lossy_quality").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        }
+        }
+    }()
+    private func __setLossyQuality(_ lossyQuality: Double) {
+        lossyQuality.withGodotUnsafeRawPointer { __ptr_lossyQuality in
+        withUnsafeArgumentPackPointer(__ptr_lossyQuality) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_lossy_quality,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_lossy_quality: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_lossy_quality").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        }
+        }
+    }()
+    private func __getLossyQuality() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_lossy_quality,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_root_node_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_root_node_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 463633402)!
+        }
+        }
+    }()
+    private func __setRootNodeMode(_ rootNodeMode: Godot.GLTFDocument.RootNodeMode) {
+        rootNodeMode.withGodotUnsafeRawPointer { __ptr_rootNodeMode in
+        withUnsafeArgumentPackPointer(__ptr_rootNodeMode) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_root_node_mode,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_root_node_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_root_node_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 948057992)!
+        }
+        }
+    }()
+    private func __getRootNodeMode() -> Godot.GLTFDocument.RootNodeMode {
+        Godot.GLTFDocument.RootNodeMode.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_root_node_mode,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_register_gltf_document_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "register_gltf_document_extension").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -181,6 +304,39 @@ open class GLTFDocument: Resource {
             __accessPtr,
             nil
         )}}}
+    }
+
+    public var imageFormat: Godot.GodotString {
+        get {
+            __getImageFormat()
+        }
+        set {
+            __setImageFormat(
+                newValue
+            )
+        }
+    }
+
+    public var lossyQuality: Double {
+        get {
+            __getLossyQuality()
+        }
+        set {
+            __setLossyQuality(
+                newValue
+            )
+        }
+    }
+
+    public var rootNodeMode: Godot.GLTFDocument.RootNodeMode {
+        get {
+            __getRootNodeMode()
+        }
+        set {
+            __setRootNodeMode(
+                newValue
+            )
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

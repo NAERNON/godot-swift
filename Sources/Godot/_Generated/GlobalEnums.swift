@@ -242,6 +242,10 @@ public enum Key: UInt32, GodotEnum {
     case launchd = 4194413
     case launche = 4194414
     case launchf = 4194415
+    case globe = 4194416
+    case keyboard = 4194417
+    case jisEisu = 4194418
+    case jisKana = 4194419
     case unknown = 8388607
     case space = 32
     case exclam = 33
@@ -314,10 +318,6 @@ public enum Key: UInt32, GodotEnum {
     case asciitilde = 126
     case yen = 165
     case section = 167
-    case globe = 4194416
-    case keyboard = 4194417
-    case jisEisu = 4194418
-    case jisKana = 4194419
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
         ("None", 0),
@@ -517,9 +517,9 @@ public enum Key: UInt32, GodotEnum {
 }
 
 public struct KeyModifierMask: GodotOptionSet {
-    public let rawValue: UInt32
+    public let rawValue: Int64
 
-    public init(rawValue: UInt32) {
+    public init(rawValue: Int64) {
         self.rawValue = rawValue
     }
 
@@ -573,9 +573,9 @@ public enum MouseButton: UInt32, GodotEnum {
 }
 
 public struct MouseButtonMask: GodotOptionSet {
-    public let rawValue: UInt32
+    public let rawValue: Int64
 
-    public init(rawValue: UInt32) {
+    public init(rawValue: Int64) {
         self.rawValue = rawValue
     }
 
@@ -905,9 +905,9 @@ public enum PropertyHint: UInt32, GodotEnum {
 }
 
 public struct PropertyUsageFlags: GodotOptionSet {
-    public let rawValue: UInt32
+    public let rawValue: Int64
 
-    public init(rawValue: UInt32) {
+    public init(rawValue: Int64) {
         self.rawValue = rawValue
     }
 
@@ -980,9 +980,9 @@ public struct PropertyUsageFlags: GodotOptionSet {
 }
 
 public struct MethodFlags: GodotOptionSet {
-    public let rawValue: UInt32
+    public let rawValue: Int64
 
-    public init(rawValue: UInt32) {
+    public init(rawValue: Int64) {
         self.rawValue = rawValue
     }
 

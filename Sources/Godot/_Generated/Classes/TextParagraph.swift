@@ -229,7 +229,7 @@ open class TextParagraph: RefCounted {
     private static var __method_binding_set_dropcap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dropcap").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2613124475)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2498990330)!
         }
         }
     }()
@@ -271,7 +271,7 @@ open class TextParagraph: RefCounted {
     private static var __method_binding_add_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_string").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 867188035)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 621426851)!
         }
         }
     }()
@@ -296,7 +296,7 @@ open class TextParagraph: RefCounted {
     private static var __method_binding_add_object: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_object").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 735420116)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1316529304)!
         }
         }
     }()
@@ -320,7 +320,7 @@ open class TextParagraph: RefCounted {
     private static var __method_binding_resize_object: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "resize_object").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 960819067)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2095776372)!
         }
         }
     }()
@@ -911,7 +911,7 @@ open class TextParagraph: RefCounted {
     private static var __method_binding_draw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 367324453)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1567802413)!
         }
         }
     }()
@@ -933,7 +933,7 @@ open class TextParagraph: RefCounted {
     private static var __method_binding_draw_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw_outline").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2159523405)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1893131224)!
         }
         }
     }()
@@ -956,7 +956,7 @@ open class TextParagraph: RefCounted {
     private static var __method_binding_draw_line: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw_line").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3963848920)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1242169894)!
         }
         }
     }()
@@ -978,7 +978,7 @@ open class TextParagraph: RefCounted {
     private static var __method_binding_draw_line_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw_line_outline").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1814903311)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2664926980)!
         }
         }
     }()
@@ -1001,7 +1001,7 @@ open class TextParagraph: RefCounted {
     private static var __method_binding_draw_dropcap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw_dropcap").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1164457837)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 856975658)!
         }
         }
     }()
@@ -1022,7 +1022,7 @@ open class TextParagraph: RefCounted {
     private static var __method_binding_draw_dropcap_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw_dropcap_outline").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1364491366)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1343401456)!
         }
         }
     }()

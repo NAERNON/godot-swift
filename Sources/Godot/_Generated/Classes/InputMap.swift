@@ -33,7 +33,7 @@ open class InputMap: Object {
         }
     }()
     public func actions() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_actions,
@@ -46,7 +46,7 @@ open class InputMap: Object {
     private static var __method_binding_add_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_action").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 573731101)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4100757082)!
         }
         }
     }()
@@ -213,7 +213,7 @@ open class InputMap: Object {
         }
     }()
     public func actionGetEvents(action: Godot.GodotStringName) -> Godot.GodotArray<Godot.InputEvent?> {
-        Godot.GodotArray<Godot.InputEvent?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.InputEvent?>.fromMutatingGodotUnsafePointer { __temporary in
         action.withGodotUnsafeRawPointer { __ptr_action in
         withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

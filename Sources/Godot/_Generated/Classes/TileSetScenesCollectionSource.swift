@@ -66,7 +66,7 @@ open class TileSetScenesCollectionSource: TileSetSource {
     private static var __method_binding_create_scene_tile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_scene_tile").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2633389122)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1117465415)!
         }
         }
     }()

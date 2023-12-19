@@ -561,7 +561,7 @@ open class Range: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Range> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Range>.fromOpaque(instancePtr).takeUnretainedValue()
         ._valueChanged(
             newValue: Double.fromGodotUnsafePointer(args[0]!)
         )}

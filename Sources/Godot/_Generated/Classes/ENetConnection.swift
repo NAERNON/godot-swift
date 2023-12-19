@@ -52,7 +52,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_create_host_bound: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_host_bound").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 866250949)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1515002313)!
         }
         }
     }()
@@ -117,7 +117,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_connect_to_host: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "connect_to_host").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 385984708)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2171300490)!
         }
         }
     }()
@@ -277,7 +277,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_dtls_client_setup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "dtls_client_setup").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3097527179)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1966198364)!
         }
         }
     }()
@@ -379,7 +379,7 @@ open class ENetConnection: RefCounted {
         }
     }()
     public func peers() -> Godot.GodotArray<Godot.ENetPacketPeer?> {
-        Godot.GodotArray<Godot.ENetPacketPeer?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.ENetPacketPeer?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_peers,

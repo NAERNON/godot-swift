@@ -96,7 +96,7 @@ open class SyntaxHighlighter: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<SyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<SyntaxHighlighter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getLineSyntaxHighlighting(
             line: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -105,13 +105,13 @@ open class SyntaxHighlighter: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<SyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<SyntaxHighlighter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._clearHighlightingCache()}
         let _update_cache_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<SyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<SyntaxHighlighter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._updateCache()}
         _virtualFunctions = [
             "_getLineSyntaxHighlighting" : ("_get_line_syntax_highlighting", _get_line_syntax_highlighting_call),

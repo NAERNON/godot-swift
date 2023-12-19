@@ -24,7 +24,7 @@ open class AESContext: RefCounted {
     private static var __method_binding_start: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "start").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3167574919)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3122411423)!
         }
         }
     }()

@@ -46,7 +46,7 @@ open class HTTPRequest: Node {
     private static var __method_binding_request: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "request").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2720304520)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3215244323)!
         }
         }
     }()
@@ -69,7 +69,7 @@ open class HTTPRequest: Node {
     private static var __method_binding_request_raw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "request_raw").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4282724657)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2714829993)!
         }
         }
     }()

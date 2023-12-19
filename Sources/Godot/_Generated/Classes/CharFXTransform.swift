@@ -5,6 +5,43 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class CharFXTransform: RefCounted {
+    private static var __method_binding_get_transform: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_transform").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3761352769)!
+        }
+        }
+    }()
+    private func __getTransform() -> Godot.Transform2D {
+        Godot.Transform2D.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_transform,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_transform").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2761652528)!
+        }
+        }
+    }()
+    private func __setTransform(_ transform: Godot.Transform2D) {
+        transform.withGodotUnsafeRawPointer { __ptr_transform in
+        withUnsafeArgumentPackPointer(__ptr_transform) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_transform,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
     private static var __method_binding_get_range: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_range").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -447,6 +484,17 @@ open class CharFXTransform: RefCounted {
             __accessPtr,
             nil
         )}}}
+    }
+
+    public var transform: Godot.Transform2D {
+        get {
+            __getTransform()
+        }
+        set {
+            __setTransform(
+                newValue
+            )
+        }
     }
 
     public var range: Godot.Vector2i {

@@ -316,7 +316,7 @@ extension GodotDictionary {
     }
 
     internal func _duplicate(deep: Bool = false) -> Godot.GodotDictionary<Key, AssociatedValue> {
-        return Godot.GodotDictionary<Key, AssociatedValue> .fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotDictionary<Key, AssociatedValue>.fromMutatingGodotUnsafePointer { __temporary in
         deep.withGodotUnsafeRawPointer { __ptr_deep in
         withUnsafeArgumentPackPointer(__ptr_deep) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in

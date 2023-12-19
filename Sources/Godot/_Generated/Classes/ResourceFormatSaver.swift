@@ -34,7 +34,7 @@ open class ResourceFormatSaver: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatSaver>.fromOpaque(instancePtr).takeUnretainedValue()
         ._save(
             resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!),
             path: Godot.GodotString.fromGodotUnsafePointer(args[1]!),
@@ -45,7 +45,7 @@ open class ResourceFormatSaver: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatSaver>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setUid(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             uid: Int64.fromGodotUnsafePointer(args[1]!)
@@ -55,7 +55,7 @@ open class ResourceFormatSaver: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatSaver>.fromOpaque(instancePtr).takeUnretainedValue()
         ._recognize(
             resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
         )
@@ -64,7 +64,7 @@ open class ResourceFormatSaver: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatSaver>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions(
             resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
         )
@@ -73,7 +73,7 @@ open class ResourceFormatSaver: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatSaver> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatSaver>.fromOpaque(instancePtr).takeUnretainedValue()
         ._recognizePath(
             resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!),
             path: Godot.GodotString.fromGodotUnsafePointer(args[1]!)

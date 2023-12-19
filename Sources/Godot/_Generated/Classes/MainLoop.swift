@@ -32,13 +32,13 @@ open class MainLoop: Object {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MainLoop>.fromOpaque(instancePtr).takeUnretainedValue()
         ._initialize()}
         let _physics_process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MainLoop>.fromOpaque(instancePtr).takeUnretainedValue()
         ._physicsProcess(
             delta: Double.fromGodotUnsafePointer(args[0]!)
         )
@@ -47,7 +47,7 @@ open class MainLoop: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MainLoop>.fromOpaque(instancePtr).takeUnretainedValue()
         ._process(
             delta: Double.fromGodotUnsafePointer(args[0]!)
         )
@@ -56,7 +56,7 @@ open class MainLoop: Object {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<MainLoop> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MainLoop>.fromOpaque(instancePtr).takeUnretainedValue()
         ._finalize()}
         _virtualFunctions = [
             "_initialize" : ("_initialize", _initialize_call),

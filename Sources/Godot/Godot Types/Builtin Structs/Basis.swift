@@ -98,6 +98,10 @@ extension Basis {
         _scale()
     }
     
+    public var isConformal: Bool {
+        _isConformal()
+    }
+    
     public func euler(order: Int = 2) -> Vector3 {
         _euler(order: order)
     }

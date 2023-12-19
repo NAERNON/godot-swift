@@ -21,17 +21,17 @@ open class EditorTranslationParserPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorTranslationParserPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorTranslationParserPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._parseFile(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
-            msgids: Godot.GodotArray<Godot.GodotString> .fromGodotUnsafePointer(args[1]!),
-            msgidsContextPlural: Godot.GodotArray<Godot.AnyGodotArray> .fromGodotUnsafePointer(args[2]!)
+            msgids: Godot.GodotArray<Godot.GodotString>.fromGodotUnsafePointer(args[1]!),
+            msgidsContextPlural: Godot.GodotArray<Godot.AnyGodotArray>.fromGodotUnsafePointer(args[2]!)
         )}
         let _get_recognized_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorTranslationParserPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorTranslationParserPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

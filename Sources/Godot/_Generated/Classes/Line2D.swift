@@ -137,7 +137,7 @@ open class Line2D: Node2D {
     private static var __method_binding_add_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_point").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 468506575)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2654014372)!
         }
         }
     }()
@@ -188,6 +188,43 @@ open class Line2D: Node2D {
             nil,
             nil
         )}
+    }
+
+    private static var __method_binding_set_closed: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_closed").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setClosed(_ closed: Bool) {
+        closed.withGodotUnsafeRawPointer { __ptr_closed in
+        withUnsafeArgumentPackPointer(__ptr_closed) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_closed,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_is_closed: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_closed").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __isClosed() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_closed,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_set_width: GDExtensionMethodBindPtr = {
@@ -643,6 +680,17 @@ open class Line2D: Node2D {
         }
         set {
             __setPoints(
+                newValue
+            )
+        }
+    }
+
+    public var isClosed: Bool {
+        get {
+            __isClosed()
+        }
+        set {
+            __setClosed(
                 newValue
             )
         }

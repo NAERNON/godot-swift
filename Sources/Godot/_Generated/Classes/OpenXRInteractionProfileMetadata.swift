@@ -5,6 +5,26 @@
 import GodotExtensionHeaders
 @GodotClass
 open class OpenXRInteractionProfileMetadata: Object {
+    private static var __method_binding_register_profile_rename: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "register_profile_rename").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3186203200)!
+        }
+        }
+    }()
+    public func registerProfileRename(oldName: Godot.GodotString, newName: Godot.GodotString) {
+        oldName.withGodotUnsafeRawPointer { __ptr_oldName in
+        newName.withGodotUnsafeRawPointer { __ptr_newName in
+        withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_newName) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_register_profile_rename,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
     private static var __method_binding_register_top_level_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "register_top_level_path").withGodotUnsafeRawPointer { __ptr__method_name in

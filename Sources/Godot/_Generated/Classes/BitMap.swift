@@ -27,7 +27,7 @@ open class BitMap: Resource {
     private static var __method_binding_create_from_image_alpha: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_from_image_alpha").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 505265891)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 106271684)!
         }
         }
     }()
@@ -243,12 +243,12 @@ open class BitMap: Resource {
     private static var __method_binding_opaque_to_polygons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "opaque_to_polygons").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 876132484)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 48478126)!
         }
         }
     }()
     public func opaqueToPolygons(rect: Godot.Rect2i, epsilon: Double = 2.0) -> Godot.GodotArray<Godot.PackedVector2Array> {
-        Godot.GodotArray<Godot.PackedVector2Array> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PackedVector2Array>.fromMutatingGodotUnsafePointer { __temporary in
         rect.withGodotUnsafeRawPointer { __ptr_rect in
         epsilon.withGodotUnsafeRawPointer { __ptr_epsilon in
         withUnsafeArgumentPackPointer(__ptr_rect, __ptr_epsilon) { __accessPtr in

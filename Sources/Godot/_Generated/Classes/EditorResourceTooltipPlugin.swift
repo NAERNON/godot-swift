@@ -43,7 +43,7 @@ open class EditorResourceTooltipPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorResourceTooltipPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourceTooltipPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._handles(
             type: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -52,7 +52,7 @@ open class EditorResourceTooltipPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorResourceTooltipPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourceTooltipPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._makeTooltipForPath(
             Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             metadata: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[1]!),

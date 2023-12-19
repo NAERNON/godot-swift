@@ -23,9 +23,11 @@ struct GodotTranslatedFunction<Source>: GodotFunction where Source : GodotFuncti
         
         return generate_api.translatedFunction(
             name: functionName,
-            parameters: (source.arguments ?? []).map { .init(name: $0.name,
-                                                             label: nil,
-                                                             isLabelHidden: $0.isLabelHidden) }
+            parameters: (source.arguments ?? []).map { .init(
+                name: $0.name,
+                label: nil,
+                isLabelHidden: $0.isLabelHidden
+            )}
         )
     }
     

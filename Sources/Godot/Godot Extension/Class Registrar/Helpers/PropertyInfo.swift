@@ -44,7 +44,7 @@ extension ClassRegistrar {
             self.hintString = hintString
             self.className = className
             
-            self.usage = usageFlags.rawValue
+            self.usage = UInt32(usageFlags.rawValue)
         }
         
         mutating func withGodotExtensionPropertyInfo(_ body: (GDExtensionPropertyInfo) -> Void) {
@@ -55,7 +55,7 @@ extension ClassRegistrar {
                             type: variantRepresentationType.storageType.extensionType,
                             name: namePtr,
                             class_name: classNamePtr,
-                            hint: hint.rawValue,
+                            hint: UInt32(hint.rawValue),
                             hint_string: hintStringPtr,
                             usage: usage
                         )

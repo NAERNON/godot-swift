@@ -6,9 +6,9 @@ import GodotExtensionHeaders
 @GodotClass
 open class ResourceSaver: Object {
     public struct SaverFlags: GodotOptionSet {
-        public let rawValue: UInt32
+        public let rawValue: Int64
 
-        public init(rawValue: UInt32) {
+        public init(rawValue: Int64) {
             self.rawValue = rawValue
         }
 
@@ -36,7 +36,7 @@ open class ResourceSaver: Object {
     private static var __method_binding_save: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2303056517)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2983274697)!
         }
         }
     }()

@@ -70,14 +70,14 @@ open class ResourceFormatLoader: RefCounted {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatLoader>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _recognize_path_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatLoader>.fromOpaque(instancePtr).takeUnretainedValue()
         ._recognizePath(
             Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             type: Godot.GodotStringName.fromGodotUnsafePointer(args[1]!)
@@ -87,7 +87,7 @@ open class ResourceFormatLoader: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatLoader>.fromOpaque(instancePtr).takeUnretainedValue()
         ._handlesType(
             Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
@@ -96,7 +96,7 @@ open class ResourceFormatLoader: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatLoader>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getResourceType(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -105,7 +105,7 @@ open class ResourceFormatLoader: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatLoader>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getResourceScriptClass(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -114,7 +114,7 @@ open class ResourceFormatLoader: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatLoader>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getResourceUid(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -123,7 +123,7 @@ open class ResourceFormatLoader: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatLoader>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getDependencies(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             addTypes: Bool.fromGodotUnsafePointer(args[1]!)
@@ -133,7 +133,7 @@ open class ResourceFormatLoader: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatLoader>.fromOpaque(instancePtr).takeUnretainedValue()
         ._renameDependencies(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             renames: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[1]!)
@@ -143,7 +143,7 @@ open class ResourceFormatLoader: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatLoader>.fromOpaque(instancePtr).takeUnretainedValue()
         ._exists(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -152,7 +152,7 @@ open class ResourceFormatLoader: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatLoader>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getClassesUsed(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -161,7 +161,7 @@ open class ResourceFormatLoader: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ResourceFormatLoader> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ResourceFormatLoader>.fromOpaque(instancePtr).takeUnretainedValue()
         ._load(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             originalPath: Godot.GodotString.fromGodotUnsafePointer(args[1]!),

@@ -328,7 +328,7 @@ open class SurfaceTool: RefCounted {
     private static var __method_binding_add_triangle_fan: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_triangle_fan").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 297960074)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2235017613)!
         }
         }
     }()
@@ -476,7 +476,7 @@ open class SurfaceTool: RefCounted {
     private static var __method_binding_generate_lod: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "generate_lod").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1894448909)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1938056459)!
         }
         }
     }()
@@ -621,7 +621,7 @@ open class SurfaceTool: RefCounted {
         }
         }
     }()
-    public func commit(existing: Godot.ArrayMesh? = nil, flags: UInt32 = 0) -> Godot.ArrayMesh? {
+    public func commit(existing: Godot.ArrayMesh? = nil, flags: UInt64 = 0) -> Godot.ArrayMesh? {
         Godot.ArrayMesh?.fromMutatingGodotUnsafePointer { __temporary in
         existing.withGodotUnsafeRawPointer { __ptr_existing in
         withUnsafePointer(to: __ptr_existing) { _ptr___ptr_existing in

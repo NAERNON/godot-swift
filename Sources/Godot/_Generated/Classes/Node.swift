@@ -32,9 +32,9 @@ open class Node: Object {
         }
     }
     public struct ProcessThreadMessages: GodotOptionSet {
-        public let rawValue: UInt32
+        public let rawValue: Int64
 
-        public init(rawValue: UInt32) {
+        public init(rawValue: Int64) {
             self.rawValue = rawValue
         }
 
@@ -217,11 +217,11 @@ open class Node: Object {
     private static var __method_binding_add_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_child").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3070154285)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3863233950)!
         }
         }
     }()
-    public func addChild(_ node: Godot.Node?, forceReadableName: Bool = false, `internal`: Godot.Node.InternalMode = Node.InternalMode(rawValue: 0)!) {
+    public func addChild(node: Godot.Node?, forceReadableName: Bool = false, `internal`: Godot.Node.InternalMode = Node.InternalMode(rawValue: 0)!) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         forceReadableName.withGodotUnsafeRawPointer { __ptr_forceReadableName in
@@ -243,7 +243,7 @@ open class Node: Object {
         }
         }
     }()
-    public func removeChild(_ node: Godot.Node?) {
+    public func removeChild(node: Godot.Node?) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -259,7 +259,7 @@ open class Node: Object {
     private static var __method_binding_reparent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "reparent").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2570952461)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3685795103)!
         }
         }
     }()
@@ -305,7 +305,7 @@ open class Node: Object {
         }
     }()
     public func children(includeInternal: Bool = false) -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?>.fromMutatingGodotUnsafePointer { __temporary in
         includeInternal.withGodotUnsafeRawPointer { __ptr_includeInternal in
         withUnsafeArgumentPackPointer(__ptr_includeInternal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -419,7 +419,7 @@ open class Node: Object {
     private static var __method_binding_find_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "find_child").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4253159453)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2008217037)!
         }
         }
     }()
@@ -441,12 +441,12 @@ open class Node: Object {
     private static var __method_binding_find_children: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "find_children").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1585018254)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2560337219)!
         }
         }
     }()
     public func findChildren(pattern: Godot.GodotString, type: Godot.GodotString = "", recursive: Bool = true, owned: Bool = true) -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?>.fromMutatingGodotUnsafePointer { __temporary in
         pattern.withGodotUnsafeRawPointer { __ptr_pattern in
         type.withGodotUnsafeRawPointer { __ptr_type in
         recursive.withGodotUnsafeRawPointer { __ptr_recursive in
@@ -709,7 +709,7 @@ open class Node: Object {
         }
     }()
     public func groups() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_groups,
@@ -811,6 +811,42 @@ open class Node: Object {
         )}
     }
 
+    private static var __method_binding_get_tree_string: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_tree_string").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2841200299)!
+        }
+        }
+    }()
+    public func treeString() -> Godot.GodotString {
+        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_tree_string,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_get_tree_string_pretty: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_tree_string_pretty").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2841200299)!
+        }
+        }
+    }()
+    public func treeStringPretty() -> Godot.GodotString {
+        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_tree_string_pretty,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_scene_file_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_scene_file_path").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -870,7 +906,7 @@ open class Node: Object {
     private static var __method_binding_propagate_call: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "propagate_call").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1667910434)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1871007965)!
         }
         }
     }()
@@ -1762,7 +1798,7 @@ open class Node: Object {
     private static var __method_binding_set_multiplayer_authority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_multiplayer_authority").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4023243586)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 972357352)!
         }
         }
     }()
@@ -2299,7 +2335,7 @@ open class Node: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
         ._process(
             delta: Double.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2307,7 +2343,7 @@ open class Node: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
         ._physicsProcess(
             delta: Double.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2315,32 +2351,32 @@ open class Node: Object {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
         ._enterTree()}
         let _exit_tree_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
         ._exitTree()}
         let _ready_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
         ._ready()}
         let _get_configuration_warnings_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getConfigurationWarnings()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
         ._input(
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2348,7 +2384,7 @@ open class Node: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
         ._shortcutInput(
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2356,7 +2392,7 @@ open class Node: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
         ._unhandledInput(
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2364,7 +2400,7 @@ open class Node: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Node> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Node>.fromOpaque(instancePtr).takeUnretainedValue()
         ._unhandledKeyInput(
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )}

@@ -91,7 +91,7 @@ open class Animation: Resource {
     private static var __method_binding_add_track: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_track").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2393815928)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3843682357)!
         }
         }
     }()
@@ -560,7 +560,7 @@ open class Animation: Resource {
     private static var __method_binding_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_insert_key").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1985425300)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 808952278)!
         }
         }
     }()
@@ -769,7 +769,7 @@ open class Animation: Resource {
     private static var __method_binding_track_find_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "track_find_key").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3898229885)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3245197284)!
         }
         }
     }()
@@ -994,7 +994,7 @@ open class Animation: Resource {
     private static var __method_binding_bezier_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bezier_track_insert_key").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1057544502)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3656773645)!
         }
         }
     }()
@@ -1039,7 +1039,7 @@ open class Animation: Resource {
     private static var __method_binding_bezier_track_set_key_in_handle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bezier_track_set_key_in_handle").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1028302688)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1719223284)!
         }
         }
     }()
@@ -1061,7 +1061,7 @@ open class Animation: Resource {
     private static var __method_binding_bezier_track_set_key_out_handle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bezier_track_set_key_out_handle").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1028302688)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1719223284)!
         }
         }
     }()
@@ -1167,7 +1167,7 @@ open class Animation: Resource {
     private static var __method_binding_audio_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "audio_track_insert_key").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3489962123)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4021027286)!
         }
         }
     }()

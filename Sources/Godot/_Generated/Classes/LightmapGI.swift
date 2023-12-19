@@ -184,6 +184,43 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
+    private static var __method_binding_set_bounce_indirect_energy: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_bounce_indirect_energy").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        }
+        }
+    }()
+    private func __setBounceIndirectEnergy(_ bounceIndirectEnergy: Double) {
+        bounceIndirectEnergy.withGodotUnsafeRawPointer { __ptr_bounceIndirectEnergy in
+        withUnsafeArgumentPackPointer(__ptr_bounceIndirectEnergy) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_bounce_indirect_energy,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_bounce_indirect_energy: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_bounce_indirect_energy").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        }
+        }
+    }()
+    private func __getBounceIndirectEnergy() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_bounce_indirect_energy,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_generate_probes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_generate_probes").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -481,6 +518,43 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
+    private static var __method_binding_set_denoiser_strength: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_denoiser_strength").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        }
+        }
+    }()
+    private func __setDenoiserStrength(_ denoiserStrength: Double) {
+        denoiserStrength.withGodotUnsafeRawPointer { __ptr_denoiserStrength in
+        withUnsafeArgumentPackPointer(__ptr_denoiserStrength) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_denoiser_strength,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_denoiser_strength: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_denoiser_strength").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        }
+        }
+    }()
+    private func __getDenoiserStrength() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_denoiser_strength,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_interior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_interior").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -555,6 +629,43 @@ open class LightmapGI: VisualInstance3D {
         )}}
     }
 
+    private static var __method_binding_set_use_texture_for_bounces: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_use_texture_for_bounces").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setUseTextureForBounces(_ useTextureForBounces: Bool) {
+        useTextureForBounces.withGodotUnsafeRawPointer { __ptr_useTextureForBounces in
+        withUnsafeArgumentPackPointer(__ptr_useTextureForBounces) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_use_texture_for_bounces,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_is_using_texture_for_bounces: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_using_texture_for_bounces").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __isUsingTextureForBounces() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_using_texture_for_bounces,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_camera_attributes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_camera_attributes").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -615,12 +726,34 @@ open class LightmapGI: VisualInstance3D {
         }
     }
 
+    public var bounceIndirectEnergy: Double {
+        get {
+            __getBounceIndirectEnergy()
+        }
+        set {
+            __setBounceIndirectEnergy(
+                newValue
+            )
+        }
+    }
+
     public var isDirectional: Bool {
         get {
             __isDirectional()
         }
         set {
             __setDirectional(
+                newValue
+            )
+        }
+    }
+
+    public var isUsingTextureForBounces: Bool {
+        get {
+            __isUsingTextureForBounces()
+        }
+        set {
+            __setUseTextureForBounces(
                 newValue
             )
         }
@@ -643,6 +776,17 @@ open class LightmapGI: VisualInstance3D {
         }
         set {
             __setUseDenoiser(
+                newValue
+            )
+        }
+    }
+
+    public var denoiserStrength: Double {
+        get {
+            __getDenoiserStrength()
+        }
+        set {
+            __setDenoiserStrength(
                 newValue
             )
         }

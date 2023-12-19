@@ -9,4 +9,5 @@ public struct PhysicsServer3DExtensionRayResult {
     public var colliderId: ObjectID
     public var collider: Object
     public var shape: Int
+    public var faceIndex: Int
 }

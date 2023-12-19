@@ -16,7 +16,7 @@ open class OptionButton: Button {
     private static var __method_binding_add_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3043792800)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2697778442)!
         }
         }
     }()
@@ -36,7 +36,7 @@ open class OptionButton: Button {
     private static var __method_binding_add_icon_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_icon_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3944051090)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3781678508)!
         }
         }
     }()
@@ -646,6 +646,25 @@ open class OptionButton: Button {
             nil,
             __temporary
         )}}
+    }
+
+    private static var __method_binding_set_disable_shortcuts: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_disable_shortcuts").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    public func setDisableShortcuts(disabled: Bool) {
+        disabled.withGodotUnsafeRawPointer { __ptr_disabled in
+        withUnsafeArgumentPackPointer(__ptr_disabled) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_disable_shortcuts,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     public var itemCount: Int32 {

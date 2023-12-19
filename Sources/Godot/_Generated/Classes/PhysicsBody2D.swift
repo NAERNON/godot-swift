@@ -8,7 +8,7 @@ open class PhysicsBody2D: CollisionObject2D {
     private static var __method_binding_move_and_collide: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "move_and_collide").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1529961754)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3681923724)!
         }
         }
     }()
@@ -31,7 +31,7 @@ open class PhysicsBody2D: CollisionObject2D {
     private static var __method_binding_test_move: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "test_move").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1369208982)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3324464701)!
         }
         }
     }()
@@ -61,7 +61,7 @@ open class PhysicsBody2D: CollisionObject2D {
         }
     }()
     public func collisionExceptions() -> Godot.GodotArray<Godot.PhysicsBody2D?> {
-        Godot.GodotArray<Godot.PhysicsBody2D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.PhysicsBody2D?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_collision_exceptions,

@@ -118,6 +118,265 @@ open class ImporterMeshInstance3D: Node3D {
         )}}
     }
 
+    private static var __method_binding_set_layer_mask: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_layer_mask").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
+        }
+        }
+    }()
+    private func __setLayerMask(_ layerMask: UInt32) {
+        layerMask.withGodotUnsafeRawPointer { __ptr_layerMask in
+        withUnsafeArgumentPackPointer(__ptr_layerMask) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_layer_mask,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_layer_mask: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_layer_mask").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
+        }
+        }
+    }()
+    private func __getLayerMask() -> UInt32 {
+        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_layer_mask,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_cast_shadows_setting: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_cast_shadows_setting").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 856677339)!
+        }
+        }
+    }()
+    private func __setCastShadowsSetting(shadowCastingSetting: Godot.GeometryInstance3D.ShadowCastingSetting) {
+        shadowCastingSetting.withGodotUnsafeRawPointer { __ptr_shadowCastingSetting in
+        withUnsafeArgumentPackPointer(__ptr_shadowCastingSetting) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_cast_shadows_setting,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_cast_shadows_setting: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_cast_shadows_setting").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3383019359)!
+        }
+        }
+    }()
+    private func __getCastShadowsSetting() -> Godot.GeometryInstance3D.ShadowCastingSetting {
+        Godot.GeometryInstance3D.ShadowCastingSetting.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_cast_shadows_setting,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_visibility_range_end_margin: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_visibility_range_end_margin").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        }
+        }
+    }()
+    private func __setVisibilityRangeEndMargin(distance: Double) {
+        distance.withGodotUnsafeRawPointer { __ptr_distance in
+        withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_visibility_range_end_margin,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_visibility_range_end_margin: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_visibility_range_end_margin").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        }
+        }
+    }()
+    private func __getVisibilityRangeEndMargin() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_visibility_range_end_margin,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_visibility_range_end: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_visibility_range_end").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        }
+        }
+    }()
+    private func __setVisibilityRangeEnd(distance: Double) {
+        distance.withGodotUnsafeRawPointer { __ptr_distance in
+        withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_visibility_range_end,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_visibility_range_end: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_visibility_range_end").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        }
+        }
+    }()
+    private func __getVisibilityRangeEnd() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_visibility_range_end,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_visibility_range_begin_margin: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_visibility_range_begin_margin").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        }
+        }
+    }()
+    private func __setVisibilityRangeBeginMargin(distance: Double) {
+        distance.withGodotUnsafeRawPointer { __ptr_distance in
+        withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_visibility_range_begin_margin,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_visibility_range_begin_margin: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_visibility_range_begin_margin").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        }
+        }
+    }()
+    private func __getVisibilityRangeBeginMargin() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_visibility_range_begin_margin,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_visibility_range_begin: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_visibility_range_begin").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        }
+        }
+    }()
+    private func __setVisibilityRangeBegin(distance: Double) {
+        distance.withGodotUnsafeRawPointer { __ptr_distance in
+        withUnsafeArgumentPackPointer(__ptr_distance) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_visibility_range_begin,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_visibility_range_begin: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_visibility_range_begin").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        }
+        }
+    }()
+    private func __getVisibilityRangeBegin() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_visibility_range_begin,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_visibility_range_fade_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_visibility_range_fade_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1440117808)!
+        }
+        }
+    }()
+    private func __setVisibilityRangeFadeMode(_ mode: Godot.GeometryInstance3D.VisibilityRangeFadeMode) {
+        mode.withGodotUnsafeRawPointer { __ptr_mode in
+        withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_visibility_range_fade_mode,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_visibility_range_fade_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_visibility_range_fade_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2067221882)!
+        }
+        }
+    }()
+    private func __getVisibilityRangeFadeMode() -> Godot.GeometryInstance3D.VisibilityRangeFadeMode {
+        Godot.GeometryInstance3D.VisibilityRangeFadeMode.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_visibility_range_fade_mode,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     public var mesh: Godot.ImporterMesh? {
         get {
             __getMesh()
@@ -146,6 +405,83 @@ open class ImporterMeshInstance3D: Node3D {
         }
         set {
             __setSkeletonPath(
+                newValue
+            )
+        }
+    }
+
+    public var layerMask: UInt32 {
+        get {
+            __getLayerMask()
+        }
+        set {
+            __setLayerMask(
+                newValue
+            )
+        }
+    }
+
+    public var castShadowsSetting: Godot.GeometryInstance3D.ShadowCastingSetting {
+        get {
+            __getCastShadowsSetting()
+        }
+        set {
+            __setCastShadowsSetting(
+                shadowCastingSetting: newValue
+            )
+        }
+    }
+
+    public var visibilityRangeBegin: Double {
+        get {
+            __getVisibilityRangeBegin()
+        }
+        set {
+            __setVisibilityRangeBegin(
+                distance: newValue
+            )
+        }
+    }
+
+    public var visibilityRangeBeginMargin: Double {
+        get {
+            __getVisibilityRangeBeginMargin()
+        }
+        set {
+            __setVisibilityRangeBeginMargin(
+                distance: newValue
+            )
+        }
+    }
+
+    public var visibilityRangeEnd: Double {
+        get {
+            __getVisibilityRangeEnd()
+        }
+        set {
+            __setVisibilityRangeEnd(
+                distance: newValue
+            )
+        }
+    }
+
+    public var visibilityRangeEndMargin: Double {
+        get {
+            __getVisibilityRangeEndMargin()
+        }
+        set {
+            __setVisibilityRangeEndMargin(
+                distance: newValue
+            )
+        }
+    }
+
+    public var visibilityRangeFadeMode: Godot.GeometryInstance3D.VisibilityRangeFadeMode {
+        get {
+            __getVisibilityRangeFadeMode()
+        }
+        set {
+            __setVisibilityRangeFadeMode(
                 newValue
             )
         }

@@ -8,7 +8,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
     private static var __method_binding_play_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "play_stream").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3792189967)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 604492179)!
         }
         }
     }()

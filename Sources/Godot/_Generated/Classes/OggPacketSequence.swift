@@ -32,7 +32,7 @@ open class OggPacketSequence: Resource {
         }
     }()
     private func __getPacketData() -> Godot.GodotArray<Godot.AnyGodotArray> {
-        Godot.GodotArray<Godot.AnyGodotArray> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotArray>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_packet_data,

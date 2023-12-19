@@ -208,7 +208,7 @@ open class CodeEdit: TextEdit {
         }
     }()
     private func __getAutoIndentPrefixes() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_auto_indent_prefixes,
@@ -1103,7 +1103,7 @@ open class CodeEdit: TextEdit {
         }
     }()
     public func foldedLines() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_folded_lines,
@@ -1111,6 +1111,119 @@ open class CodeEdit: TextEdit {
             nil,
             __temporary
         )}}
+    }
+
+    private static var __method_binding_create_code_region: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_code_region").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        }
+        }
+    }()
+    public func createCodeRegion() {
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_create_code_region,
+            __ptr_self,
+            nil,
+            nil
+        )}
+    }
+
+    private static var __method_binding_get_code_region_start_tag: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_code_region_start_tag").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
+        }
+        }
+    }()
+    public func codeRegionStartTag() -> Godot.GodotString {
+        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_code_region_start_tag,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_get_code_region_end_tag: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_code_region_end_tag").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
+        }
+        }
+    }()
+    public func codeRegionEndTag() -> Godot.GodotString {
+        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_code_region_end_tag,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_code_region_tags: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_code_region_tags").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 708800718)!
+        }
+        }
+    }()
+    public func setCodeRegionTags(start: Godot.GodotString = "region", end: Godot.GodotString = "endregion") {
+        start.withGodotUnsafeRawPointer { __ptr_start in
+        end.withGodotUnsafeRawPointer { __ptr_end in
+        withUnsafeArgumentPackPointer(__ptr_start, __ptr_end) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_code_region_tags,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_is_line_code_region_start: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_line_code_region_start").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
+        }
+        }
+    }()
+    public func isLineCodeRegionStart(line: Int32) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        line.withGodotUnsafeRawPointer { __ptr_line in
+        withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_line_code_region_start,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_is_line_code_region_end: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_line_code_region_end").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
+        }
+        }
+    }()
+    public func isLineCodeRegionEnd(line: Int32) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        line.withGodotUnsafeRawPointer { __ptr_line in
+        withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_line_code_region_end,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_add_string_delimiter: GDExtensionMethodBindPtr = {
@@ -1217,7 +1330,7 @@ open class CodeEdit: TextEdit {
         }
     }()
     private func __getStringDelimiters() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_string_delimiters,
@@ -1230,7 +1343,7 @@ open class CodeEdit: TextEdit {
     private static var __method_binding_is_in_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_in_string").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3294126239)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 688195400)!
         }
         }
     }()
@@ -1352,7 +1465,7 @@ open class CodeEdit: TextEdit {
         }
     }()
     private func __getCommentDelimiters() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_comment_delimiters,
@@ -1365,7 +1478,7 @@ open class CodeEdit: TextEdit {
     private static var __method_binding_is_in_comment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_in_comment").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3294126239)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 688195400)!
         }
         }
     }()
@@ -1543,7 +1656,7 @@ open class CodeEdit: TextEdit {
     private static var __method_binding_add_code_completion_option: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_code_completion_option").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1629240608)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 947964390)!
         }
         }
     }()
@@ -1593,7 +1706,7 @@ open class CodeEdit: TextEdit {
         }
     }()
     public func codeCompletionOptions() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_code_completion_options,
@@ -1760,7 +1873,7 @@ open class CodeEdit: TextEdit {
         }
     }()
     private func __getCodeCompletionPrefixes() -> Godot.GodotArray<Godot.GodotString> {
-        Godot.GodotArray<Godot.GodotString> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotString>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_code_completion_prefixes,
@@ -1797,7 +1910,7 @@ open class CodeEdit: TextEdit {
         }
     }()
     private func __getLineLengthGuidelines() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_line_length_guidelines,
@@ -1847,7 +1960,7 @@ open class CodeEdit: TextEdit {
     private static var __method_binding_get_text_for_symbol_lookup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_text_for_symbol_lookup").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2841200299)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
     }()
@@ -1860,6 +1973,27 @@ open class CodeEdit: TextEdit {
             nil,
             __temporary
         )}}
+    }
+
+    private static var __method_binding_get_text_with_cursor_char: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_text_with_cursor_char").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1391810591)!
+        }
+        }
+    }()
+    public func textWithCursorChar(line: Int32, column: Int32) -> Godot.GodotString {
+        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        line.withGodotUnsafeRawPointer { __ptr_line in
+        column.withGodotUnsafeRawPointer { __ptr_column in
+        withUnsafeArgumentPackPointer(__ptr_line, __ptr_column) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_text_with_cursor_char,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
     }
 
     private static var __method_binding_set_symbol_lookup_word_as_valid: GDExtensionMethodBindPtr = {
@@ -1879,6 +2013,23 @@ open class CodeEdit: TextEdit {
             __accessPtr,
             nil
         )}}}
+    }
+
+    private static var __method_binding_duplicate_lines: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "duplicate_lines").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        }
+        }
+    }()
+    public func duplicateLines() {
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_duplicate_lines,
+            __ptr_self,
+            nil,
+            nil
+        )}
     }
 
     public var isSymbolLookupOnClickEnabled: Bool {
@@ -2110,7 +2261,7 @@ open class CodeEdit: TextEdit {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<CodeEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CodeEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._confirmCodeCompletion(
             replace: Bool.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2118,7 +2269,7 @@ open class CodeEdit: TextEdit {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<CodeEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CodeEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._requestCodeCompletion(
             force: Bool.fromGodotUnsafePointer(args[0]!)
         )}
@@ -2126,9 +2277,9 @@ open class CodeEdit: TextEdit {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<CodeEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CodeEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._filterCodeCompletionCandidates(
-            Godot.GodotArray<Godot.AnyGodotDictionary> .fromGodotUnsafePointer(args[0]!)
+            Godot.GodotArray<Godot.AnyGodotDictionary>.fromGodotUnsafePointer(args[0]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

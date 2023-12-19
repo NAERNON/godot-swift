@@ -6,9 +6,9 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ImageFormatLoader: RefCounted {
     public struct LoaderFlags: GodotOptionSet {
-        public let rawValue: UInt32
+        public let rawValue: Int64
 
-        public init(rawValue: UInt32) {
+        public init(rawValue: Int64) {
             self.rawValue = rawValue
         }
 

@@ -140,6 +140,8 @@ extension Vector2i {
     public static let axisY: Int = 1
     public static let zero: Vector2i = Vector2i(x: 0, y: 0)
     public static let one: Vector2i = Vector2i(x: 1, y: 1)
+    public static let min: Vector2i = Vector2i(x: -2147483648, y: -2147483648)
+    public static let max: Vector2i = Vector2i(x: 2147483647, y: 2147483647)
     public static let left: Vector2i = Vector2i(x: -1, y: 0)
     public static let right: Vector2i = Vector2i(x: 1, y: 0)
     public static let up: Vector2i = Vector2i(x: 0, y: -1)

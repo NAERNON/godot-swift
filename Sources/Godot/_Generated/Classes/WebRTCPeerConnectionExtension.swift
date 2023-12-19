@@ -57,28 +57,28 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<WebRTCPeerConnectionExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getConnectionState()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_gathering_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<WebRTCPeerConnectionExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getGatheringState()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_signaling_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<WebRTCPeerConnectionExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getSignalingState()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _initialize_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<WebRTCPeerConnectionExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._initialize(
             pConfig: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[0]!)
         )
@@ -87,7 +87,7 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<WebRTCPeerConnectionExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._createDataChannel(
             pLabel: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             pConfig: Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[1]!)
@@ -97,14 +97,14 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<WebRTCPeerConnectionExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._createOffer()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_remote_description_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<WebRTCPeerConnectionExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setRemoteDescription(
             pType: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             pSdp: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -114,7 +114,7 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<WebRTCPeerConnectionExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setLocalDescription(
             pType: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             pSdp: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -124,7 +124,7 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<WebRTCPeerConnectionExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._addIceCandidate(
             pSdpMidName: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             pSdpMlineIndex: Int32.fromGodotUnsafePointer(args[1]!),
@@ -135,14 +135,14 @@ open class WebRTCPeerConnectionExtension: WebRTCPeerConnection {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<WebRTCPeerConnectionExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._poll()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _close_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<WebRTCPeerConnectionExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<WebRTCPeerConnectionExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._close()}
         _virtualFunctions = [
             "_getConnectionState" : ("_get_connection_state", _get_connection_state_call),

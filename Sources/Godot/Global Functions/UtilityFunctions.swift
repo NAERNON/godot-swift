@@ -41,6 +41,18 @@ public func atan2(y: Double, x: Double) -> Double {
     _atan2(y: y, x: x)
 }
 
+public func asinh(_ x: Double) -> Double {
+    _asinh(x)
+}
+
+public func acosh(_ x: Double) -> Double {
+    _acosh(x)
+}
+
+public func atanh(_ x: Double) -> Double {
+    _atanh(x)
+}
+
 public func fmod(x: Double, y: Double) -> Double {
     _fmod(x: x, y: y)
 }

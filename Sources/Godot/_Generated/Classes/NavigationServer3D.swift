@@ -49,7 +49,7 @@ open class NavigationServer3D: Object {
         }
     }()
     public func maps() -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_maps,
@@ -360,7 +360,7 @@ open class NavigationServer3D: Object {
     private static var __method_binding_map_get_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "map_get_path").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2121045993)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1187418690)!
         }
         }
     }()
@@ -475,7 +475,7 @@ open class NavigationServer3D: Object {
         }
     }()
     public func mapGetLinks(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -495,7 +495,7 @@ open class NavigationServer3D: Object {
         }
     }()
     public func mapGetRegions(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -515,7 +515,7 @@ open class NavigationServer3D: Object {
         }
     }()
     public func mapGetAgents(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -535,7 +535,7 @@ open class NavigationServer3D: Object {
         }
     }()
     public func mapGetObstacles(map: Godot.RID) -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         map.withGodotUnsafeRawPointer { __ptr_map in
         withUnsafeArgumentPackPointer(__ptr_map) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -604,6 +604,46 @@ open class NavigationServer3D: Object {
             nil,
             __temporary
         )}}
+    }
+
+    private static var __method_binding_region_set_enabled: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "region_set_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1265174801)!
+        }
+        }
+    }()
+    public func regionSetEnabled(region: Godot.RID, enabled: Bool) {
+        region.withGodotUnsafeRawPointer { __ptr_region in
+        enabled.withGodotUnsafeRawPointer { __ptr_enabled in
+        withUnsafeArgumentPackPointer(__ptr_region, __ptr_enabled) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_region_set_enabled,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_region_get_enabled: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "region_get_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155700596)!
+        }
+        }
+    }()
+    public func regionGetEnabled(region: Godot.RID) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        region.withGodotUnsafeRawPointer { __ptr_region in
+        withUnsafeArgumentPackPointer(__ptr_region) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_region_get_enabled,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_region_set_use_edge_connections: GDExtensionMethodBindPtr = {
@@ -1044,6 +1084,46 @@ open class NavigationServer3D: Object {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_link_get_map,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_link_set_enabled: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "link_set_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1265174801)!
+        }
+        }
+    }()
+    public func linkSetEnabled(link: Godot.RID, enabled: Bool) {
+        link.withGodotUnsafeRawPointer { __ptr_link in
+        enabled.withGodotUnsafeRawPointer { __ptr_enabled in
+        withUnsafeArgumentPackPointer(__ptr_link, __ptr_enabled) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_link_set_enabled,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_link_get_enabled: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "link_get_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155700596)!
+        }
+        }
+    }()
+    public func linkGetEnabled(link: Godot.RID) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        link.withGodotUnsafeRawPointer { __ptr_link in
+        withUnsafeArgumentPackPointer(__ptr_link) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_link_get_enabled,
             __ptr_self,
             __accessPtr,
             __temporary
@@ -2109,7 +2189,7 @@ open class NavigationServer3D: Object {
     private static var __method_binding_parse_source_geometry_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "parse_source_geometry_data").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3703028813)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 685862123)!
         }
         }
     }()
@@ -2134,7 +2214,7 @@ open class NavigationServer3D: Object {
     private static var __method_binding_bake_from_source_geometry_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bake_from_source_geometry_data").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3669016597)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2469318639)!
         }
         }
     }()
@@ -2148,6 +2228,29 @@ open class NavigationServer3D: Object {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_bake_from_source_geometry_data,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}}}
+    }
+
+    private static var __method_binding_bake_from_source_geometry_data_async: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "bake_from_source_geometry_data_async").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2469318639)!
+        }
+        }
+    }()
+    public func bakeFromSourceGeometryDataAsync(navigationMesh: Godot.NavigationMesh?, sourceGeometryData: Godot.NavigationMeshSourceGeometryData3D?, callback: Godot.Callable = Callable()) {
+        navigationMesh.withGodotUnsafeRawPointer { __ptr_navigationMesh in
+        withUnsafePointer(to: __ptr_navigationMesh) { _ptr___ptr_navigationMesh in
+        sourceGeometryData.withGodotUnsafeRawPointer { __ptr_sourceGeometryData in
+        withUnsafePointer(to: __ptr_sourceGeometryData) { _ptr___ptr_sourceGeometryData in
+        callback.withGodotUnsafeRawPointer { __ptr_callback in
+        withUnsafeArgumentPackPointer(_ptr___ptr_navigationMesh, _ptr___ptr_sourceGeometryData, __ptr_callback) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_bake_from_source_geometry_data_async,
             __ptr_self,
             __accessPtr,
             nil

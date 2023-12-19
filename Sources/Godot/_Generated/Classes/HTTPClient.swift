@@ -186,7 +186,7 @@ open class HTTPClient: RefCounted {
     private static var __method_binding_connect_to_host: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "connect_to_host").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1970282951)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 504540374)!
         }
         }
     }()
@@ -270,7 +270,7 @@ open class HTTPClient: RefCounted {
     private static var __method_binding_request: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "request").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3249905507)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3778990155)!
         }
         }
     }()

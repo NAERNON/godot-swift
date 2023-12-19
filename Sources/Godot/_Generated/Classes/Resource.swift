@@ -13,6 +13,9 @@ open class Resource: RefCounted {
     public struct SetupLocalToSceneRequested {
     }
 
+    open func _setupLocalToScene() {
+    }
+
     private static var __method_binding_set_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_path").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -271,8 +274,14 @@ open class Resource: RefCounted {
         if let _virtualFunctions {
             return _virtualFunctions
         }
+        let _setup_local_to_scene_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr else {
+                return
+            }
+            Unmanaged<Resource>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._setupLocalToScene()}
         _virtualFunctions = [
-            :
+            "_setupLocalToScene" : ("_setup_local_to_scene", _setup_local_to_scene_call)
         ]
         for (key, value) in super.virtualFunctions() {
             _virtualFunctions! [key] = value

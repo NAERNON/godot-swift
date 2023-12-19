@@ -136,6 +136,43 @@ open class VideoStreamPlayer: Control {
         )}}
     }
 
+    private static var __method_binding_set_loop: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_loop").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setLoop(_ loop: Bool) {
+        loop.withGodotUnsafeRawPointer { __ptr_loop in
+        withUnsafeArgumentPackPointer(__ptr_loop) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_loop,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_has_loop: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_loop").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __hasLoop() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_has_loop,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_volume: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_volume").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -259,6 +296,24 @@ open class VideoStreamPlayer: Control {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_stream_name,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_get_stream_length: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_stream_length").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        }
+        }
+    }()
+    public func streamLength() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_stream_length,
             __ptr_self,
             nil,
             __temporary
@@ -541,6 +596,17 @@ open class VideoStreamPlayer: Control {
         set {
             __setExpand(
                 enable: newValue
+            )
+        }
+    }
+
+    public var hasLoop: Bool {
+        get {
+            __hasLoop()
+        }
+        set {
+            __setLoop(
+                newValue
             )
         }
     }

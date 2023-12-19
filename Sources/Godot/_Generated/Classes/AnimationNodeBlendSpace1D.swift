@@ -20,7 +20,7 @@ open class AnimationNodeBlendSpace1D: AnimationRootNode {
     private static var __method_binding_add_blend_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_blend_point").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4069484420)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 285050433)!
         }
         }
     }()

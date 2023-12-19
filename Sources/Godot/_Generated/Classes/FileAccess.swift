@@ -33,6 +33,41 @@ open class FileAccess: RefCounted {
             ("Brotli", 4),]
         }
     }
+    public struct UnixPermissionFlags: GodotOptionSet {
+        public let rawValue: Int64
+
+        public init(rawValue: Int64) {
+            self.rawValue = rawValue
+        }
+
+        public static let readOwner: Self = .init(rawValue: 256)
+        public static let writeOwner: Self = .init(rawValue: 128)
+        public static let executeOwner: Self = .init(rawValue: 64)
+        public static let readGroup: Self = .init(rawValue: 32)
+        public static let writeGroup: Self = .init(rawValue: 16)
+        public static let executeGroup: Self = .init(rawValue: 8)
+        public static let readOther: Self = .init(rawValue: 4)
+        public static let writeOther: Self = .init(rawValue: 2)
+        public static let executeOther: Self = .init(rawValue: 1)
+        public static let setUserId: Self = .init(rawValue: 2048)
+        public static let setGroupId: Self = .init(rawValue: 1024)
+        public static let restrictedDelete: Self = .init(rawValue: 512)
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Execute Other", 1),
+            ("Write Other", 2),
+            ("Read Other", 4),
+            ("Execute Group", 8),
+            ("Write Group", 16),
+            ("Read Group", 32),
+            ("Execute Owner", 64),
+            ("Write Owner", 128),
+            ("Read Owner", 256),
+            ("Restricted Delete", 512),
+            ("Set Group Id", 1024),
+            ("Set User Id", 2048),]
+        }
+    }
 
     private static var __method_binding_open: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
@@ -99,7 +134,7 @@ open class FileAccess: RefCounted {
     private static var __method_binding_open_compressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "open_compressed").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2874458257)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3686439335)!
         }
         }
     }()
@@ -826,7 +861,7 @@ open class FileAccess: RefCounted {
     private static var __method_binding_store_csv_line: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "store_csv_line").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2217842308)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2173791505)!
         }
         }
     }()
@@ -968,6 +1003,123 @@ open class FileAccess: RefCounted {
         withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_modified_time,
+            nil,
+            __accessPtr,
+            __temporary
+        )}}}
+    }
+
+    private static var __method_binding_get_unix_permissions: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_unix_permissions").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 524341837)!
+        }
+        }
+    }()
+    static public func unixPermissions(file: Godot.GodotString) -> Godot.FileAccess.UnixPermissionFlags {
+        Godot.FileAccess.UnixPermissionFlags.fromMutatingGodotUnsafePointer { __temporary in
+        file.withGodotUnsafeRawPointer { __ptr_file in
+        withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_unix_permissions,
+            nil,
+            __accessPtr,
+            __temporary
+        )}}}
+    }
+
+    private static var __method_binding_set_unix_permissions: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_unix_permissions").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 846038644)!
+        }
+        }
+    }()
+    static public func setUnixPermissions(file: Godot.GodotString, permissions: Godot.FileAccess.UnixPermissionFlags) -> Godot.ErrorType {
+        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        file.withGodotUnsafeRawPointer { __ptr_file in
+        permissions.withGodotUnsafeRawPointer { __ptr_permissions in
+        withUnsafeArgumentPackPointer(__ptr_file, __ptr_permissions) { __accessPtr in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_unix_permissions,
+            nil,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_get_hidden_attribute: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_hidden_attribute").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2323990056)!
+        }
+        }
+    }()
+    static public func hiddenAttribute(file: Godot.GodotString) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        file.withGodotUnsafeRawPointer { __ptr_file in
+        withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_hidden_attribute,
+            nil,
+            __accessPtr,
+            __temporary
+        )}}}
+    }
+
+    private static var __method_binding_set_hidden_attribute: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_hidden_attribute").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2892558115)!
+        }
+        }
+    }()
+    static public func setHiddenAttribute(file: Godot.GodotString, hidden: Bool) -> Godot.ErrorType {
+        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        file.withGodotUnsafeRawPointer { __ptr_file in
+        hidden.withGodotUnsafeRawPointer { __ptr_hidden in
+        withUnsafeArgumentPackPointer(__ptr_file, __ptr_hidden) { __accessPtr in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_hidden_attribute,
+            nil,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_set_read_only_attribute: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_read_only_attribute").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2892558115)!
+        }
+        }
+    }()
+    static public func setReadOnlyAttribute(file: Godot.GodotString, ro: Bool) -> Godot.ErrorType {
+        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        file.withGodotUnsafeRawPointer { __ptr_file in
+        ro.withGodotUnsafeRawPointer { __ptr_ro in
+        withUnsafeArgumentPackPointer(__ptr_file, __ptr_ro) { __accessPtr in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_read_only_attribute,
+            nil,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_get_read_only_attribute: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_read_only_attribute").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2323990056)!
+        }
+        }
+    }()
+    static public func readOnlyAttribute(file: Godot.GodotString) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        file.withGodotUnsafeRawPointer { __ptr_file in
+        withUnsafeArgumentPackPointer(__ptr_file) { __accessPtr in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_read_only_attribute,
             nil,
             __accessPtr,
             __temporary

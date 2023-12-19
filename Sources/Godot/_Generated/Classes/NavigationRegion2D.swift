@@ -5,6 +5,32 @@
 import GodotExtensionHeaders
 @GodotClass
 open class NavigationRegion2D: Node2D {
+    @Emitter(signal: "navigation_polygon_changed")
+    public struct NavigationPolygonChanged {
+    }
+
+    @Emitter(signal: "bake_finished")
+    public struct BakeFinished {
+    }
+
+    private static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_rid").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2944877500)!
+        }
+        }
+    }()
+    public func rid() -> Godot.RID {
+        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_rid,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_navigation_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_navigation_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -74,6 +100,43 @@ open class NavigationRegion2D: Node2D {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_is_enabled,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_navigation_map: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2722037293)!
+        }
+        }
+    }()
+    public func setNavigationMap(_ navigationMap: Godot.RID) {
+        navigationMap.withGodotUnsafeRawPointer { __ptr_navigationMap in
+        withUnsafeArgumentPackPointer(__ptr_navigationMap) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_navigation_map,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_navigation_map: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2944877500)!
+        }
+        }
+    }()
+    public func navigationMap() -> Godot.RID {
+        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_navigation_map,
             __ptr_self,
             nil,
             __temporary
@@ -398,6 +461,25 @@ open class NavigationRegion2D: Node2D {
             nil,
             __temporary
         )}}
+    }
+
+    private static var __method_binding_bake_navigation_polygon: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "bake_navigation_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3216645846)!
+        }
+        }
+    }()
+    public func bakeNavigationPolygon(onThread: Bool = true) {
+        onThread.withGodotUnsafeRawPointer { __ptr_onThread in
+        withUnsafeArgumentPackPointer(__ptr_onThread) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_bake_navigation_polygon,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     public var navigationPolygon: Godot.NavigationPolygon? {

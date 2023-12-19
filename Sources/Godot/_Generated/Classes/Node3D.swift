@@ -428,6 +428,43 @@ open class Node3D: Node {
         )}}
     }
 
+    private static var __method_binding_set_global_basis: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_global_basis").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1055510324)!
+        }
+        }
+    }()
+    private func __setGlobalBasis(_ basis: Godot.Basis) {
+        basis.withGodotUnsafeRawPointer { __ptr_basis in
+        withUnsafeArgumentPackPointer(__ptr_basis) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_global_basis,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_global_basis: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_global_basis").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2716978435)!
+        }
+        }
+    }()
+    private func __getGlobalBasis() -> Godot.Basis {
+        Godot.Basis.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_global_basis,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_global_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_global_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -730,7 +767,7 @@ open class Node3D: Node {
         }
     }()
     public func gizmos() -> Godot.GodotArray<Godot.Node3DGizmo?> {
-        Godot.GodotArray<Godot.Node3DGizmo?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node3DGizmo?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_gizmos,
@@ -1208,7 +1245,7 @@ open class Node3D: Node {
     private static var __method_binding_look_at: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "look_at").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3123400617)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2882425029)!
         }
         }
     }()
@@ -1229,7 +1266,7 @@ open class Node3D: Node {
     private static var __method_binding_look_at_from_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "look_at_from_position").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4067663783)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2086826090)!
         }
         }
     }()
@@ -1415,6 +1452,17 @@ open class Node3D: Node {
         }
         set {
             __setGlobalPosition(
+                newValue
+            )
+        }
+    }
+
+    public var globalBasis: Godot.Basis {
+        get {
+            __getGlobalBasis()
+        }
+        set {
+            __setGlobalBasis(
                 newValue
             )
         }

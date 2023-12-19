@@ -26,21 +26,21 @@ open class EditorFileSystemImportFormatSupportQuery: RefCounted {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorFileSystemImportFormatSupportQuery> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorFileSystemImportFormatSupportQuery>.fromOpaque(instancePtr).takeUnretainedValue()
         ._isActive()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_file_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorFileSystemImportFormatSupportQuery> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorFileSystemImportFormatSupportQuery>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getFileExtensions()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _query_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorFileSystemImportFormatSupportQuery> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorFileSystemImportFormatSupportQuery>.fromOpaque(instancePtr).takeUnretainedValue()
         ._query()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

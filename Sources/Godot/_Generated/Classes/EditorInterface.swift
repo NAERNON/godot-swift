@@ -140,7 +140,7 @@ open class EditorInterface: Object {
         }
     }()
     public func makeMeshPreviews(meshes: Godot.GodotArray<Godot.Mesh?>, previewSize: Int32) -> Godot.GodotArray<Godot.Texture2D?> {
-        Godot.GodotArray<Godot.Texture2D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Texture2D?>.fromMutatingGodotUnsafePointer { __temporary in
         meshes.withGodotUnsafeRawPointer { __ptr_meshes in
         previewSize.withGodotUnsafeRawPointer { __ptr_previewSize in
         withUnsafeArgumentPackPointer(__ptr_meshes, __ptr_previewSize) { __accessPtr in
@@ -191,6 +191,24 @@ open class EditorInterface: Object {
             __accessPtr,
             __temporary
         )}}}}
+    }
+
+    private static var __method_binding_get_editor_theme: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_editor_theme").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3846893731)!
+        }
+        }
+    }()
+    public func editorTheme() -> Godot.Theme? {
+        Godot.Theme?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_editor_theme,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_get_base_control: GDExtensionMethodBindPtr = {
@@ -245,6 +263,44 @@ open class EditorInterface: Object {
             nil,
             __temporary
         )}}
+    }
+
+    private static var __method_binding_get_editor_viewport_2d: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_editor_viewport_2d").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3750751911)!
+        }
+        }
+    }()
+    public func editorViewport2D() -> Godot.SubViewport? {
+        Godot.SubViewport?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_editor_viewport_2d,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_get_editor_viewport_3d: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_editor_viewport_3d").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1970834490)!
+        }
+        }
+    }()
+    public func editorViewport3D(idx: Int32 = 0) -> Godot.SubViewport? {
+        Godot.SubViewport?.fromMutatingGodotUnsafePointer { __temporary in
+        idx.withGodotUnsafeRawPointer { __ptr_idx in
+        withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_editor_viewport_3d,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_set_main_screen_editor: GDExtensionMethodBindPtr = {
@@ -324,7 +380,7 @@ open class EditorInterface: Object {
     private static var __method_binding_popup_dialog: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_dialog").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2478844058)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2015770942)!
         }
         }
     }()
@@ -345,7 +401,7 @@ open class EditorInterface: Object {
     private static var __method_binding_popup_dialog_centered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_dialog_centered").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1723337679)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 346557367)!
         }
         }
     }()
@@ -366,7 +422,7 @@ open class EditorInterface: Object {
     private static var __method_binding_popup_dialog_centered_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_dialog_centered_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1310934579)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2093669136)!
         }
         }
     }()
@@ -387,7 +443,7 @@ open class EditorInterface: Object {
     private static var __method_binding_popup_dialog_centered_clamped: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "popup_dialog_centered_clamped").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3433759678)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3763385571)!
         }
         }
     }()
@@ -404,6 +460,43 @@ open class EditorInterface: Object {
             __accessPtr,
             nil
         )}}}}}}
+    }
+
+    private static var __method_binding_get_current_feature_profile: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_current_feature_profile").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
+        }
+        }
+    }()
+    public func currentFeatureProfile() -> Godot.GodotString {
+        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_current_feature_profile,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_current_feature_profile: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_current_feature_profile").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
+        }
+        }
+    }()
+    public func setCurrentFeatureProfile(profileName: Godot.GodotString) {
+        profileName.withGodotUnsafeRawPointer { __ptr_profileName in
+        withUnsafeArgumentPackPointer(__ptr_profileName) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_current_feature_profile,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
     }
 
     private static var __method_binding_get_file_system_dock: GDExtensionMethodBindPtr = {
@@ -518,7 +611,7 @@ open class EditorInterface: Object {
     private static var __method_binding_inspect_object: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "inspect_object").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2564140749)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 127962172)!
         }
         }
     }()
@@ -580,7 +673,7 @@ open class EditorInterface: Object {
     private static var __method_binding_edit_script: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "edit_script").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3664508569)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 219829402)!
         }
         }
     }()
@@ -695,7 +788,7 @@ open class EditorInterface: Object {
     private static var __method_binding_save_scene_as: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save_scene_as").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1168363258)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3647332257)!
         }
         }
     }()
@@ -710,6 +803,23 @@ open class EditorInterface: Object {
             __accessPtr,
             nil
         )}}}}
+    }
+
+    private static var __method_binding_save_all_scenes: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "save_all_scenes").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        }
+        }
+    }()
+    public func saveAllScenes() {
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_save_all_scenes,
+            __ptr_self,
+            nil,
+            nil
+        )}
     }
 
     private static var __method_binding_mark_scene_as_unsaved: GDExtensionMethodBindPtr = {

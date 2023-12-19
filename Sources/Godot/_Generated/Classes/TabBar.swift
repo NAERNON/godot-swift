@@ -156,6 +156,42 @@ open class TabBar: Control {
         )}}
     }
 
+    private static var __method_binding_select_previous_available: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "select_previous_available").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
+        }
+        }
+    }()
+    public func selectPreviousAvailable() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_select_previous_available,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_select_next_available: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "select_next_available").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
+        }
+        }
+    }()
+    public func selectNextAvailable() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_select_next_available,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_tab_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tab_title").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -1023,6 +1059,17 @@ open class TabBar: Control {
         )}
     }
 
+    public var tabCount: Int32 {
+        get {
+            __getTabCount()
+        }
+        set {
+            __setTabCount(
+                newValue
+            )
+        }
+    }
+
     public var currentTab: Int32 {
         get {
             __getCurrentTab()
@@ -1129,17 +1176,6 @@ open class TabBar: Control {
         set {
             __setSelectWithRmb(
                 enabled: newValue
-            )
-        }
-    }
-
-    public var tabCount: Int32 {
-        get {
-            __getTabCount()
-        }
-        set {
-            __setTabCount(
-                newValue
             )
         }
     }

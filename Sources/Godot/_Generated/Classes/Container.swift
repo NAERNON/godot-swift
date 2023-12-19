@@ -68,14 +68,14 @@ open class Container: Control {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Container> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Container>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getAllowedSizeFlagsHorizontal()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_allowed_size_flags_vertical_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Container> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Container>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getAllowedSizeFlagsVertical()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

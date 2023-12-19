@@ -21,17 +21,17 @@ open class AudioEffectInstance: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AudioEffectInstance> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioEffectInstance>.fromOpaque(instancePtr).takeUnretainedValue()
         ._process(
             srcBuffer: UnsafeRawPointer.fromGodotUnsafePointer(args[0]!),
-            dstBuffer: UnsafeMutablePointer<AudioFrame> .fromGodotUnsafePointer(args[1]!),
+            dstBuffer: UnsafeMutablePointer<AudioFrame>.fromGodotUnsafePointer(args[1]!),
             frameCount: Int32.fromGodotUnsafePointer(args[2]!)
         )}
         let _process_silence_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioEffectInstance> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioEffectInstance>.fromOpaque(instancePtr).takeUnretainedValue()
         ._processSilence()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

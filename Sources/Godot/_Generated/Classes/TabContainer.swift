@@ -106,6 +106,42 @@ open class TabContainer: Container {
         )}}
     }
 
+    private static var __method_binding_select_previous_available: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "select_previous_available").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
+        }
+        }
+    }()
+    public func selectPreviousAvailable() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_select_previous_available,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_select_next_available: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "select_next_available").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
+        }
+        }
+    }()
+    public func selectNextAvailable() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_select_next_available,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_get_current_tab_control: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_current_tab_control").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -118,6 +154,24 @@ open class TabContainer: Container {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_current_tab_control,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_get_tab_bar: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_tab_bar").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1865451809)!
+        }
+        }
+    }()
+    public func tabBar() -> Godot.TabBar? {
+        Godot.TabBar?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_tab_bar,
             __ptr_self,
             nil,
             __temporary
@@ -724,6 +778,43 @@ open class TabContainer: Container {
         )}}
     }
 
+    private static var __method_binding_set_tab_focus_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_tab_focus_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3232914922)!
+        }
+        }
+    }()
+    private func __setTabFocusMode(_ focusMode: Godot.Control.FocusMode) {
+        focusMode.withGodotUnsafeRawPointer { __ptr_focusMode in
+        withUnsafeArgumentPackPointer(__ptr_focusMode) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_tab_focus_mode,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_tab_focus_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_tab_focus_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2132829277)!
+        }
+        }
+    }()
+    private func __getTabFocusMode() -> Godot.Control.FocusMode {
+        Godot.Control.FocusMode.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_tab_focus_mode,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     public var tabAlignment: Godot.TabBar.AlignmentMode {
         get {
             __getTabAlignment()
@@ -808,6 +899,17 @@ open class TabContainer: Container {
         set {
             __setUseHiddenTabsForMinSize(
                 enabled: newValue
+            )
+        }
+    }
+
+    public var tabFocusMode: Godot.Control.FocusMode {
+        get {
+            __getTabFocusMode()
+        }
+        set {
+            __setTabFocusMode(
+                newValue
             )
         }
     }

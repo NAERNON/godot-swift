@@ -31,6 +31,26 @@ open class VisualShaderNode: Resource {
         }
     }
 
+    private static var __method_binding_get_default_input_port: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_default_input_port").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1894493699)!
+        }
+        }
+    }()
+    public func defaultInputPort(type: Godot.VisualShaderNode.PortType) -> Int32 {
+        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        type.withGodotUnsafeRawPointer { __ptr_type in
+        withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_default_input_port,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
     private static var __method_binding_set_output_port_for_preview: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_output_port_for_preview").withGodotUnsafeRawPointer { __ptr__method_name in

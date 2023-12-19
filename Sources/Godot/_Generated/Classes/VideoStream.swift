@@ -66,7 +66,7 @@ open class VideoStream: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<VideoStream> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<VideoStream>.fromOpaque(instancePtr).takeUnretainedValue()
         ._instantiatePlayback()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

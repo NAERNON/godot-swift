@@ -9,6 +9,10 @@ open class GridMap: Node3D {
     public struct CellSizeChanged {
     }
 
+    @Emitter(signal: "changed")
+    public struct Changed {
+    }
+
     private static var __method_binding_set_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_layer").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -464,7 +468,7 @@ open class GridMap: Node3D {
     private static var __method_binding_set_cell_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cell_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4177201334)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3449088946)!
         }
         }
     }()
@@ -778,7 +782,7 @@ open class GridMap: Node3D {
         }
     }()
     public func usedCells() -> Godot.GodotArray<Godot.Vector3i> {
-        Godot.GodotArray<Godot.Vector3i> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector3i>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_used_cells,
@@ -796,7 +800,7 @@ open class GridMap: Node3D {
         }
     }()
     public func usedCellsByItem(_ item: Int32) -> Godot.GodotArray<Godot.Vector3i> {
-        Godot.GodotArray<Godot.Vector3i> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector3i>.fromMutatingGodotUnsafePointer { __temporary in
         item.withGodotUnsafeRawPointer { __ptr_item in
         withUnsafeArgumentPackPointer(__ptr_item) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

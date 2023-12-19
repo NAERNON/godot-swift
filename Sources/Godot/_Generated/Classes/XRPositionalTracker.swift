@@ -21,6 +21,10 @@ open class XRPositionalTracker: RefCounted {
     public struct PoseChanged {
     }
 
+    @Emitter(signal: "pose_lost_tracking", args: ("pose", Godot.XRPose?))
+    public struct PoseLostTracking {
+    }
+
     @Emitter(signal: "button_pressed", args: ("name", Godot.GodotString))
     public struct ButtonPressed {
     }

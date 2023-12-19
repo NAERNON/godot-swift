@@ -229,7 +229,7 @@ extension Vector4 {
         _dot(with: other)
     }
     
-    public var inversed: Vector4 {
+    public var inverted: Vector4 {
         _inverse()
     }
     

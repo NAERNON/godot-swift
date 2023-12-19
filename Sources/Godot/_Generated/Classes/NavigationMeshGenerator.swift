@@ -50,7 +50,7 @@ open class NavigationMeshGenerator: Object {
     private static var __method_binding_parse_source_geometry_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "parse_source_geometry_data").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3703028813)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 685862123)!
         }
         }
     }()
@@ -75,7 +75,7 @@ open class NavigationMeshGenerator: Object {
     private static var __method_binding_bake_from_source_geometry_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bake_from_source_geometry_data").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3669016597)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2469318639)!
         }
         }
     }()

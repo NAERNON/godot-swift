@@ -31,7 +31,7 @@ public extension Emitter {
             return emitterObject.connect(
                 signal: Self.signalName,
                 callable: Callable(object: receiverObject, method: Input.receiverName),
-                flags: flags.rawValue
+                flags: UInt32(flags.rawValue)
             )
         } else {
             return emitterObject.connect(

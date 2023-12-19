@@ -47,7 +47,7 @@ open class ItemList: Control {
     private static var __method_binding_add_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4086250691)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 359861678)!
         }
         }
     }()
@@ -70,7 +70,7 @@ open class ItemList: Control {
     private static var __method_binding_add_icon_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_icon_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3332687421)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4256579627)!
         }
         }
     }()
@@ -573,7 +573,7 @@ open class ItemList: Control {
     private static var __method_binding_get_item_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_item_rect").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1501513492)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 159227807)!
         }
         }
     }()
@@ -674,7 +674,7 @@ open class ItemList: Control {
     private static var __method_binding_select: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "select").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4023243586)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 972357352)!
         }
         }
     }()
@@ -1428,6 +1428,23 @@ open class ItemList: Control {
             nil,
             __temporary
         )}}
+    }
+
+    private static var __method_binding_force_update_list_size: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "force_update_list_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        }
+        }
+    }()
+    public func forceUpdateListSize() {
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_force_update_list_size,
+            __ptr_self,
+            nil,
+            nil
+        )}
     }
 
     public var selectMode: Godot.ItemList.SelectMode {

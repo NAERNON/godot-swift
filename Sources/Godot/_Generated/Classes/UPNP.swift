@@ -245,7 +245,7 @@ open class UPNP: RefCounted {
     private static var __method_binding_add_port_mapping: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_port_mapping").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3358934458)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 818314583)!
         }
         }
     }()
@@ -269,7 +269,7 @@ open class UPNP: RefCounted {
     private static var __method_binding_delete_port_mapping: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "delete_port_mapping").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 760296170)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3444187325)!
         }
         }
     }()

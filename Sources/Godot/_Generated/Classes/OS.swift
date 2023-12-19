@@ -91,7 +91,7 @@ open class OS: Object {
     private static var __method_binding_alert: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "alert").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 233059325)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1783970740)!
         }
         }
     }()
@@ -295,7 +295,7 @@ open class OS: Object {
     private static var __method_binding_get_system_font_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_system_font_path").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2262142305)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 626580860)!
         }
         }
     }()
@@ -318,7 +318,7 @@ open class OS: Object {
     private static var __method_binding_get_system_font_path_for_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_system_font_path_for_text").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3824042574)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 197317981)!
         }
         }
     }()
@@ -380,7 +380,7 @@ open class OS: Object {
     private static var __method_binding_execute: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "execute").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2881709059)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1488299882)!
         }
         }
     }()
@@ -486,7 +486,7 @@ open class OS: Object {
     private static var __method_binding_shell_show_in_file_manager: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shell_show_in_file_manager").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 885841341)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3565188097)!
         }
         }
     }()
@@ -732,7 +732,7 @@ open class OS: Object {
     private static var __method_binding_set_restart_on_exit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_restart_on_exit").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 611198603)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3331453935)!
         }
         }
     }()
@@ -1026,7 +1026,7 @@ open class OS: Object {
     private static var __method_binding_get_system_dir: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_system_dir").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1965199849)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3073895123)!
         }
         }
     }()
@@ -1271,6 +1271,24 @@ open class OS: Object {
         )}}}}
     }
 
+    private static var __method_binding_is_sandboxed: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_sandboxed").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    public func isSandboxed() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_sandboxed,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_request_permission: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "request_permission").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -1325,6 +1343,23 @@ open class OS: Object {
             nil,
             __temporary
         )}}
+    }
+
+    private static var __method_binding_revoke_granted_permissions: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "revoke_granted_permissions").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        }
+        }
+    }()
+    public func revokeGrantedPermissions() {
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_revoke_granted_permissions,
+            __ptr_self,
+            nil,
+            nil
+        )}
     }
 
     public var isInLowProcessorUsageMode: Bool {

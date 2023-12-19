@@ -606,7 +606,7 @@ open class Tree: Control {
     private static var __method_binding_get_item_area_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_item_area_rect").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1235226180)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 47968679)!
         }
         }
     }()

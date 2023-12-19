@@ -136,6 +136,8 @@ extension Vector3i {
     public static let axisZ: Int = 2
     public static let zero: Vector3i = Vector3i(x: 0, y: 0, z: 0)
     public static let one: Vector3i = Vector3i(x: 1, y: 1, z: 1)
+    public static let min: Vector3i = Vector3i(x: -2147483648, y: -2147483648, z: -2147483648)
+    public static let max: Vector3i = Vector3i(x: 2147483647, y: 2147483647, z: 2147483647)
     public static let left: Vector3i = Vector3i(x: -1, y: 0, z: 0)
     public static let right: Vector3i = Vector3i(x: 1, y: 0, z: 0)
     public static let up: Vector3i = Vector3i(x: 0, y: 1, z: 0)

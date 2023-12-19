@@ -184,7 +184,7 @@ open class TreeItem: Object {
     private static var __method_binding_propagate_check: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "propagate_check").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4023243586)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 972357352)!
         }
         }
     }()
@@ -1375,7 +1375,7 @@ open class TreeItem: Object {
     private static var __method_binding_add_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_button").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1507727907)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1688223362)!
         }
         }
     }()
@@ -1497,6 +1497,27 @@ open class TreeItem: Object {
             __ptr_self,
             __accessPtr,
             __temporary
+        )}}}}}
+    }
+
+    private static var __method_binding_set_button_tooltip_text: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_button_tooltip_text").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2285447957)!
+        }
+        }
+    }()
+    public func setButtonTooltipText(column: Int32, buttonIndex: Int32, tooltip: Godot.GodotString) {
+        column.withGodotUnsafeRawPointer { __ptr_column in
+        buttonIndex.withGodotUnsafeRawPointer { __ptr_buttonIndex in
+        tooltip.withGodotUnsafeRawPointer { __ptr_tooltip in
+        withUnsafeArgumentPackPointer(__ptr_column, __ptr_buttonIndex, __ptr_tooltip) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_button_tooltip_text,
+            __ptr_self,
+            __accessPtr,
+            nil
         )}}}}}
     }
 
@@ -2038,7 +2059,7 @@ open class TreeItem: Object {
         }
     }()
     public func children() -> Godot.GodotArray<Godot.TreeItem?> {
-        Godot.GodotArray<Godot.TreeItem?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.TreeItem?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_children,

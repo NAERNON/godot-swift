@@ -124,7 +124,7 @@ extension Quaternion {
         _isFinite()
     }
     
-    public var inversed: Quaternion {
+    public var inverted: Quaternion {
         _inverse()
     }
     

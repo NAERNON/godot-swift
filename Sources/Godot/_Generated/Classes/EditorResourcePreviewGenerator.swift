@@ -34,7 +34,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr).takeUnretainedValue()
         ._handles(
             type: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -43,7 +43,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr).takeUnretainedValue()
         ._generate(
             resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -54,7 +54,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr).takeUnretainedValue()
         ._generateFromPath(
             Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             size: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
@@ -65,14 +65,14 @@ open class EditorResourcePreviewGenerator: RefCounted {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr).takeUnretainedValue()
         ._generateSmallPreviewAutomatically()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _can_generate_small_preview_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr).takeUnretainedValue()
         ._canGenerateSmallPreview()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

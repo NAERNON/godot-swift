@@ -399,6 +399,43 @@ open class FontFile: Font {
         )}}
     }
 
+    private static var __method_binding_set_fixed_size_scale_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_fixed_size_scale_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1660989956)!
+        }
+        }
+    }()
+    private func __setFixedSizeScaleMode(_ fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode) {
+        fixedSizeScaleMode.withGodotUnsafeRawPointer { __ptr_fixedSizeScaleMode in
+        withUnsafeArgumentPackPointer(__ptr_fixedSizeScaleMode) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_fixed_size_scale_mode,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_fixed_size_scale_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_fixed_size_scale_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 753873478)!
+        }
+        }
+    }()
+    private func __getFixedSizeScaleMode() -> Godot.TextServer.FixedSizeScaleMode {
+        Godot.TextServer.FixedSizeScaleMode.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_fixed_size_scale_mode,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_allow_system_fallback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_allow_system_fallback").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -646,7 +683,7 @@ open class FontFile: Font {
         }
     }()
     public func sizeCacheList(cacheIndex: Int32) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -815,6 +852,48 @@ open class FontFile: Font {
             __accessPtr,
             __temporary
         )}}}}
+    }
+
+    private static var __method_binding_set_extra_spacing: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_extra_spacing").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 62942285)!
+        }
+        }
+    }()
+    public func setExtraSpacing(cacheIndex: Int32, spacing: Godot.TextServer.SpacingType, value: Int64) {
+        cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
+        spacing.withGodotUnsafeRawPointer { __ptr_spacing in
+        value.withGodotUnsafeRawPointer { __ptr_value in
+        withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_spacing, __ptr_value) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_extra_spacing,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
+    }
+
+    private static var __method_binding_get_extra_spacing: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_extra_spacing").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1924257185)!
+        }
+        }
+    }()
+    public func extraSpacing(cacheIndex: Int32, spacing: Godot.TextServer.SpacingType) -> Int64 {
+        Int64.fromMutatingGodotUnsafePointer { __temporary in
+        cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
+        spacing.withGodotUnsafeRawPointer { __ptr_spacing in
+        withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_spacing) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_extra_spacing,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
     }
 
     private static var __method_binding_set_face_index: GDExtensionMethodBindPtr = {
@@ -1508,7 +1587,7 @@ open class FontFile: Font {
         }
     }()
     public func kerningList(cacheIndex: Int32, size: Int32) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
         cacheIndex.withGodotUnsafeRawPointer { __ptr_cacheIndex in
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_cacheIndex, __ptr_size) { __accessPtr in
@@ -2010,6 +2089,17 @@ open class FontFile: Font {
         }
         set {
             __setFixedSize(
+                newValue
+            )
+        }
+    }
+
+    public var fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode {
+        get {
+            __getFixedSizeScaleMode()
+        }
+        set {
+            __setFixedSizeScaleMode(
                 newValue
             )
         }

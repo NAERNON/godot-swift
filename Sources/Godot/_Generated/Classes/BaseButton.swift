@@ -42,14 +42,14 @@ open class BaseButton: Control {
     public struct ButtonDown {
     }
 
-    @Emitter(signal: "toggled", args: ("buttonPressed", Bool))
+    @Emitter(signal: "toggled", args: ("toggledOn", Bool))
     public struct Toggled {
     }
 
     open func _pressed() {
     }
 
-    open func _toggled(buttonPressed: Bool) {
+    open func _toggled(toggledOn: Bool) {
     }
 
     private static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
@@ -598,15 +598,15 @@ open class BaseButton: Control {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<BaseButton> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<BaseButton>.fromOpaque(instancePtr).takeUnretainedValue()
         ._pressed()}
         let _toggled_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<BaseButton> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<BaseButton>.fromOpaque(instancePtr).takeUnretainedValue()
         ._toggled(
-            buttonPressed: Bool.fromGodotUnsafePointer(args[0]!)
+            toggledOn: Bool.fromGodotUnsafePointer(args[0]!)
         )}
         _virtualFunctions = [
             "_pressed" : ("_pressed", _pressed_call),

@@ -277,7 +277,7 @@ open class PrimitiveMesh: Mesh {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PrimitiveMesh> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PrimitiveMesh>.fromOpaque(instancePtr).takeUnretainedValue()
         ._createMeshArray()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

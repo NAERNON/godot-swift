@@ -4,7 +4,7 @@
 
 import GodotExtensionHeaders
 @GodotRefCountedClass
-open class GLTFDocumentExtensionTextureWebP: GLTFDocumentExtension {
+open class ResourceImporterShaderFile: ResourceImporter {
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {

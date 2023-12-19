@@ -125,11 +125,11 @@ extension Transform2D {
         Self._operatorMultiply(self, vector2Array)
     }
     
-    public var inversed: Transform2D {
+    public var inverted: Transform2D {
         _inverse()
     }
     
-    public var affineInversed: Transform2D {
+    public var affineInverted: Transform2D {
         _affineInverse()
     }
     
@@ -139,6 +139,10 @@ extension Transform2D {
     
     public var scale: Vector2 {
         _scale()
+    }
+    
+    public var isConformal: Bool {
+        _isConformal()
     }
     
     public var skew: Real {

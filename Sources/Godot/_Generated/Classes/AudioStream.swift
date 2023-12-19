@@ -92,42 +92,42 @@ open class AudioStream: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStream>.fromOpaque(instancePtr).takeUnretainedValue()
         ._instantiatePlayback()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_stream_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStream>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getStreamName()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_length_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStream>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getLength()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _is_monophonic_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStream>.fromOpaque(instancePtr).takeUnretainedValue()
         ._isMonophonic()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_bpm_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStream>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getBpm()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_beat_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStream> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStream>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getBeatCount()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

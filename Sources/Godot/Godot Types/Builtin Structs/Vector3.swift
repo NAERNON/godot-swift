@@ -194,7 +194,7 @@ extension Vector3 {
         _isFinite()
     }
     
-    public var inversed: Vector3 {
+    public var inverted: Vector3 {
         _inverse()
     }
     

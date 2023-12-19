@@ -73,7 +73,7 @@ open class EditorScript: RefCounted {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorScript> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorScript>.fromOpaque(instancePtr).takeUnretainedValue()
         ._run()}
         _virtualFunctions = [
             "_run" : ("_run", _run_call)

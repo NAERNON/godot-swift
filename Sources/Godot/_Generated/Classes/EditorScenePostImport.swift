@@ -36,7 +36,7 @@ open class EditorScenePostImport: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorScenePostImport> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorScenePostImport>.fromOpaque(instancePtr).takeUnretainedValue()
         ._postImport(
             scene: Godot.Node?.fromGodotUnsafePointer(args[0]!)
         )

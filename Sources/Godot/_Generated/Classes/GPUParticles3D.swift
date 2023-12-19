@@ -47,6 +47,10 @@ open class GPUParticles3D: GeometryInstance3D {
         }
     }
 
+    @Emitter(signal: "finished")
+    public struct Finished {
+    }
+
     private static var __method_binding_set_emitting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emitting").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -333,6 +337,25 @@ open class GPUParticles3D: GeometryInstance3D {
         )}}}
     }
 
+    private static var __method_binding_set_interp_to_end: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_interp_to_end").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        }
+        }
+    }()
+    private func __setInterpToEnd(interp: Double) {
+        interp.withGodotUnsafeRawPointer { __ptr_interp in
+        withUnsafeArgumentPackPointer(__ptr_interp) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_interp_to_end,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
     private static var __method_binding_is_emitting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_emitting").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -597,6 +620,24 @@ open class GPUParticles3D: GeometryInstance3D {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_collision_base_size,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_get_interp_to_end: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_interp_to_end").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        }
+        }
+    }()
+    private func __getInterpToEnd() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_interp_to_end,
             __ptr_self,
             nil,
             __temporary
@@ -962,6 +1003,63 @@ open class GPUParticles3D: GeometryInstance3D {
         )}}
     }
 
+    private static var __method_binding_convert_from_particles: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "convert_from_particles").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1078189570)!
+        }
+        }
+    }()
+    public func convertFromParticles(_ particles: Godot.Node?) {
+        particles.withGodotUnsafeRawPointer { __ptr_particles in
+        withUnsafePointer(to: __ptr_particles) { _ptr___ptr_particles in
+        withUnsafeArgumentPackPointer(_ptr___ptr_particles) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_convert_from_particles,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_set_amount_ratio: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_amount_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        }
+        }
+    }()
+    private func __setAmountRatio(_ ratio: Double) {
+        ratio.withGodotUnsafeRawPointer { __ptr_ratio in
+        withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_amount_ratio,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_amount_ratio: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_amount_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        }
+        }
+    }()
+    private func __getAmountRatio() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_amount_ratio,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     public var isEmitting: Bool {
         get {
             __isEmitting()
@@ -979,6 +1077,17 @@ open class GPUParticles3D: GeometryInstance3D {
         }
         set {
             __setAmount(
+                newValue
+            )
+        }
+    }
+
+    public var amountRatio: Double {
+        get {
+            __getAmountRatio()
+        }
+        set {
+            __setAmountRatio(
                 newValue
             )
         }
@@ -1002,6 +1111,17 @@ open class GPUParticles3D: GeometryInstance3D {
         set {
             __setLifetime(
                 secs: newValue
+            )
+        }
+    }
+
+    public var interpToEnd: Double {
+        get {
+            __getInterpToEnd()
+        }
+        set {
+            __setInterpToEnd(
+                interp: newValue
             )
         }
     }

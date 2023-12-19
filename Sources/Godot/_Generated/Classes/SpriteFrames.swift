@@ -184,7 +184,7 @@ open class SpriteFrames: Resource {
     private static var __method_binding_add_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_frame").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 407562921)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1351332740)!
         }
         }
     }()
@@ -207,7 +207,7 @@ open class SpriteFrames: Resource {
     private static var __method_binding_set_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_frame").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3155743884)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 56804795)!
         }
         }
     }()

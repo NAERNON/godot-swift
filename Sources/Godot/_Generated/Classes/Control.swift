@@ -106,9 +106,9 @@ open class Control: CanvasItem {
         }
     }
     public struct SizeFlags: GodotOptionSet {
-        public let rawValue: UInt32
+        public let rawValue: Int64
 
-        public init(rawValue: UInt32) {
+        public init(rawValue: Int64) {
             self.rawValue = rawValue
         }
 
@@ -332,7 +332,7 @@ open class Control: CanvasItem {
     private static var __method_binding_set_offsets_preset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_offsets_preset").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3651818904)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3724524307)!
         }
         }
     }()
@@ -353,7 +353,7 @@ open class Control: CanvasItem {
     private static var __method_binding_set_anchors_and_offsets_preset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_anchors_and_offsets_preset").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3651818904)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3724524307)!
         }
         }
     }()
@@ -374,7 +374,7 @@ open class Control: CanvasItem {
     private static var __method_binding_set_anchor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_anchor").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2589937826)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2302782885)!
         }
         }
     }()
@@ -1062,6 +1062,26 @@ open class Control: CanvasItem {
         )}}
     }
 
+    private static var __method_binding_find_valid_focus_neighbor: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "find_valid_focus_neighbor").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1543910170)!
+        }
+        }
+    }()
+    public func findValidFocusNeighbor(side: Godot.Side) -> Godot.Control? {
+        Godot.Control?.fromMutatingGodotUnsafePointer { __temporary in
+        side.withGodotUnsafeRawPointer { __ptr_side in
+        withUnsafeArgumentPackPointer(__ptr_side) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_find_valid_focus_neighbor,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
     private static var __method_binding_set_h_size_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_h_size_flags").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -1522,7 +1542,7 @@ open class Control: CanvasItem {
     private static var __method_binding_get_theme_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_icon").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2336455395)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3163973443)!
         }
         }
     }()
@@ -1543,7 +1563,7 @@ open class Control: CanvasItem {
     private static var __method_binding_get_theme_stylebox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2759935355)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 604739069)!
         }
         }
     }()
@@ -1564,7 +1584,7 @@ open class Control: CanvasItem {
     private static var __method_binding_get_theme_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_font").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 387378635)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2826986490)!
         }
         }
     }()
@@ -1585,7 +1605,7 @@ open class Control: CanvasItem {
     private static var __method_binding_get_theme_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 229578101)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1327056374)!
         }
         }
     }()
@@ -1606,7 +1626,7 @@ open class Control: CanvasItem {
     private static var __method_binding_get_theme_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_color").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2377051548)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2798751242)!
         }
         }
     }()
@@ -1627,7 +1647,7 @@ open class Control: CanvasItem {
     private static var __method_binding_get_theme_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_theme_constant").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 229578101)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1327056374)!
         }
         }
     }()
@@ -1768,7 +1788,7 @@ open class Control: CanvasItem {
     private static var __method_binding_has_theme_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_icon").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1187511791)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
     }()
@@ -1789,7 +1809,7 @@ open class Control: CanvasItem {
     private static var __method_binding_has_theme_stylebox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1187511791)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
     }()
@@ -1810,7 +1830,7 @@ open class Control: CanvasItem {
     private static var __method_binding_has_theme_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_font").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1187511791)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
     }()
@@ -1831,7 +1851,7 @@ open class Control: CanvasItem {
     private static var __method_binding_has_theme_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1187511791)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
     }()
@@ -1852,7 +1872,7 @@ open class Control: CanvasItem {
     private static var __method_binding_has_theme_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_color").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1187511791)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
     }()
@@ -1873,7 +1893,7 @@ open class Control: CanvasItem {
     private static var __method_binding_has_theme_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_theme_constant").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1187511791)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
     }()
@@ -3063,7 +3083,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
         ._hasPoint(
             Godot.Vector2.fromGodotUnsafePointer(args[0]!)
         )
@@ -3072,7 +3092,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
         ._structuredTextParser(
             args: Godot.AnyGodotArray.fromGodotUnsafePointer(args[0]!),
             text: Godot.GodotString.fromGodotUnsafePointer(args[1]!)
@@ -3082,14 +3102,14 @@ open class Control: CanvasItem {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getMinimumSize()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_tooltip_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getTooltip(
             atPosition: Godot.Vector2.fromGodotUnsafePointer(args[0]!)
         )
@@ -3098,7 +3118,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getDragData(
             atPosition: Godot.Vector2.fromGodotUnsafePointer(args[0]!)
         )
@@ -3107,7 +3127,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
         ._canDropData(
             atPosition: Godot.Vector2.fromGodotUnsafePointer(args[0]!),
             data: Godot.Variant.fromGodotUnsafePointer(args[1]!)
@@ -3117,7 +3137,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
         ._dropData(
             atPosition: Godot.Vector2.fromGodotUnsafePointer(args[0]!),
             data: Godot.Variant.fromGodotUnsafePointer(args[1]!)
@@ -3126,7 +3146,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
         ._makeCustomTooltip(
             forText: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -3135,7 +3155,7 @@ open class Control: CanvasItem {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Control>.fromOpaque(instancePtr).takeUnretainedValue()
         ._guiInput(
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )}

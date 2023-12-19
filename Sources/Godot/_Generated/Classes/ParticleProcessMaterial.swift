@@ -18,7 +18,10 @@ open class ParticleProcessMaterial: Material {
         case hueVariation = 9
         case animSpeed = 10
         case animOffset = 11
-        case max = 15
+        case radialVelocity = 15
+        case directionalVelocity = 16
+        case scaleOverVelocity = 17
+        case max = 18
         case turbVelInfluence = 13
         case turbInitDisplacement = 14
         case turbInfluenceOverLife = 12
@@ -39,20 +42,25 @@ open class ParticleProcessMaterial: Material {
             ("Turb Influence Over Life", 12),
             ("Turb Vel Influence", 13),
             ("Turb Init Displacement", 14),
-            ("Max", 15),]
+            ("Radial Velocity", 15),
+            ("Directional Velocity", 16),
+            ("Scale Over Velocity", 17),
+            ("Max", 18),]
         }
     }
     public enum ParticleFlags: UInt32, GodotEnum {
         case alignYToVelocity = 0
         case rotateY = 1
         case disableZ = 2
-        case max = 3
+        case dampingAsFriction = 3
+        case max = 4
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Align Y To Velocity", 0),
             ("Rotate Y", 1),
             ("Disable Z", 2),
-            ("Max", 3),]
+            ("Damping As Friction", 3),
+            ("Max", 4),]
         }
     }
     public enum EmissionShape: UInt32, GodotEnum {
@@ -136,6 +144,43 @@ open class ParticleProcessMaterial: Material {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_direction,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_inherit_velocity_ratio: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_inherit_velocity_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        }
+        }
+    }()
+    private func __setInheritVelocityRatio(_ ratio: Double) {
+        ratio.withGodotUnsafeRawPointer { __ptr_ratio in
+        withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_inherit_velocity_ratio,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_inherit_velocity_ratio: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_inherit_velocity_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 191475506)!
+        }
+        }
+    }()
+    private func __getInheritVelocityRatio() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_inherit_velocity_ratio,
             __ptr_self,
             nil,
             __temporary
@@ -412,6 +457,82 @@ open class ParticleProcessMaterial: Material {
         )}}
     }
 
+    private static var __method_binding_set_alpha_curve: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_alpha_curve").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4051416890)!
+        }
+        }
+    }()
+    private func __setAlphaCurve(_ curve: Godot.Texture2D?) {
+        curve.withGodotUnsafeRawPointer { __ptr_curve in
+        withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
+        withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_alpha_curve,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_get_alpha_curve: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_alpha_curve").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3635182373)!
+        }
+        }
+    }()
+    private func __getAlphaCurve() -> Godot.Texture2D? {
+        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_alpha_curve,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_emission_curve: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_emission_curve").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4051416890)!
+        }
+        }
+    }()
+    private func __setEmissionCurve(_ curve: Godot.Texture2D?) {
+        curve.withGodotUnsafeRawPointer { __ptr_curve in
+        withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
+        withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_emission_curve,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_get_emission_curve: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_emission_curve").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3635182373)!
+        }
+        }
+    }()
+    private func __getEmissionCurve() -> Godot.Texture2D? {
+        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_emission_curve,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_color_initial_ramp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color_initial_ramp").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -444,6 +565,44 @@ open class ParticleProcessMaterial: Material {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_color_initial_ramp,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_velocity_limit_curve: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_velocity_limit_curve").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4051416890)!
+        }
+        }
+    }()
+    private func __setVelocityLimitCurve(_ curve: Godot.Texture2D?) {
+        curve.withGodotUnsafeRawPointer { __ptr_curve in
+        withUnsafePointer(to: __ptr_curve) { _ptr___ptr_curve in
+        withUnsafeArgumentPackPointer(_ptr___ptr_curve) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_velocity_limit_curve,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_get_velocity_limit_curve: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_velocity_limit_curve").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3635182373)!
+        }
+        }
+    }()
+    private func __getVelocityLimitCurve() -> Godot.Texture2D? {
+        Godot.Texture2D?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_velocity_limit_curve,
             __ptr_self,
             nil,
             __temporary
@@ -488,6 +647,43 @@ open class ParticleProcessMaterial: Material {
             __accessPtr,
             __temporary
         )}}}}
+    }
+
+    private static var __method_binding_set_velocity_pivot: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_velocity_pivot").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
+        }
+        }
+    }()
+    private func __setVelocityPivot(_ pivot: Godot.Vector3) {
+        pivot.withGodotUnsafeRawPointer { __ptr_pivot in
+        withUnsafeArgumentPackPointer(__ptr_pivot) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_velocity_pivot,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_velocity_pivot: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_velocity_pivot").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3783033775)!
+        }
+        }
+    }()
+    private func __getVelocityPivot() -> Godot.Vector3 {
+        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_velocity_pivot,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_set_emission_shape: GDExtensionMethodBindPtr = {
@@ -894,6 +1090,80 @@ open class ParticleProcessMaterial: Material {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_emission_ring_inner_radius,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_emission_shape_offset: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_emission_shape_offset").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
+        }
+        }
+    }()
+    private func __setEmissionShapeOffset(_ emissionShapeOffset: Godot.Vector3) {
+        emissionShapeOffset.withGodotUnsafeRawPointer { __ptr_emissionShapeOffset in
+        withUnsafeArgumentPackPointer(__ptr_emissionShapeOffset) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_emission_shape_offset,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_emission_shape_offset: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_emission_shape_offset").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
+        }
+        }
+    }()
+    private func __getEmissionShapeOffset() -> Godot.Vector3 {
+        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_emission_shape_offset,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_emission_shape_scale: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_emission_shape_scale").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
+        }
+        }
+    }()
+    private func __setEmissionShapeScale(_ emissionShapeScale: Godot.Vector3) {
+        emissionShapeScale.withGodotUnsafeRawPointer { __ptr_emissionShapeScale in
+        withUnsafeArgumentPackPointer(__ptr_emissionShapeScale) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_emission_shape_scale,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_emission_shape_scale: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_emission_shape_scale").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
+        }
+        }
+    }()
+    private func __getEmissionShapeScale() -> Godot.Vector3 {
+        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_emission_shape_scale,
             __ptr_self,
             nil,
             __temporary
@@ -1540,6 +1810,60 @@ open class ParticleProcessMaterial: Material {
         }
     }
 
+    public var particleFlagAlignY: Bool {
+        get {
+            __getParticleFlag(
+                .init(rawValue: 0)!
+            )
+        }
+    }
+
+    public var particleFlagRotateY: Bool {
+        get {
+            __getParticleFlag(
+                .init(rawValue: 1)!
+            )
+        }
+    }
+
+    public var particleFlagDisableZ: Bool {
+        get {
+            __getParticleFlag(
+                .init(rawValue: 2)!
+            )
+        }
+    }
+
+    public var particleFlagDampingAsFriction: Bool {
+        get {
+            __getParticleFlag(
+                .init(rawValue: 3)!
+            )
+        }
+    }
+
+    public var emissionShapeOffset: Godot.Vector3 {
+        get {
+            __getEmissionShapeOffset()
+        }
+        set {
+            __setEmissionShapeOffset(
+                newValue
+            )
+        }
+    }
+
+    public var emissionShapeScale: Godot.Vector3 {
+        get {
+            __getEmissionShapeScale()
+        }
+        set {
+            __setEmissionShapeScale(
+                newValue
+            )
+        }
+    }
+
     public var emissionShape: Godot.ParticleProcessMaterial.EmissionShape {
         get {
             __getEmissionShape()
@@ -1661,26 +1985,48 @@ open class ParticleProcessMaterial: Material {
         }
     }
 
-    public var particleFlagAlignY: Bool {
+    public var angleMin: Double {
         get {
-            __getParticleFlag(
-                .init(rawValue: 0)!
+            __getParamMin(
+                param: .init(rawValue: 7)!
             )
         }
     }
 
-    public var particleFlagRotateY: Bool {
+    public var angleMax: Double {
         get {
-            __getParticleFlag(
-                .init(rawValue: 1)!
+            __getParamMax(
+                param: .init(rawValue: 7)!
             )
         }
     }
 
-    public var particleFlagDisableZ: Bool {
+    public var angleCurve: Godot.Texture2D? {
         get {
-            __getParticleFlag(
-                .init(rawValue: 2)!
+            __getParamTexture(
+                param: .init(rawValue: 7)!
+            )
+        }
+    }
+
+    public var inheritVelocityRatio: Double {
+        get {
+            __getInheritVelocityRatio()
+        }
+        set {
+            __setInheritVelocityRatio(
+                newValue
+            )
+        }
+    }
+
+    public var velocityPivot: Godot.Vector3 {
+        get {
+            __getVelocityPivot()
+        }
+        set {
+            __setVelocityPivot(
+                newValue
             )
         }
     }
@@ -1714,17 +2060,6 @@ open class ParticleProcessMaterial: Material {
         set {
             __setFlatness(
                 amount: newValue
-            )
-        }
-    }
-
-    public var gravity: Godot.Vector3 {
-        get {
-            __getGravity()
-        }
-        set {
-            __setGravity(
-                accelVec: newValue
             )
         }
     }
@@ -1769,6 +2104,30 @@ open class ParticleProcessMaterial: Material {
         }
     }
 
+    public var directionalVelocityMin: Double {
+        get {
+            __getParamMin(
+                param: .init(rawValue: 16)!
+            )
+        }
+    }
+
+    public var directionalVelocityMax: Double {
+        get {
+            __getParamMax(
+                param: .init(rawValue: 16)!
+            )
+        }
+    }
+
+    public var directionalVelocityCurve: Godot.Texture2D? {
+        get {
+            __getParamTexture(
+                param: .init(rawValue: 16)!
+            )
+        }
+    }
+
     public var orbitVelocityMin: Double {
         get {
             __getParamMin(
@@ -1789,6 +2148,52 @@ open class ParticleProcessMaterial: Material {
         get {
             __getParamTexture(
                 param: .init(rawValue: 2)!
+            )
+        }
+    }
+
+    public var radialVelocityMin: Double {
+        get {
+            __getParamMin(
+                param: .init(rawValue: 15)!
+            )
+        }
+    }
+
+    public var radialVelocityMax: Double {
+        get {
+            __getParamMax(
+                param: .init(rawValue: 15)!
+            )
+        }
+    }
+
+    public var radialVelocityCurve: Godot.Texture2D? {
+        get {
+            __getParamTexture(
+                param: .init(rawValue: 15)!
+            )
+        }
+    }
+
+    public var velocityLimitCurve: Godot.Texture2D? {
+        get {
+            __getVelocityLimitCurve()
+        }
+        set {
+            __setVelocityLimitCurve(
+                newValue
+            )
+        }
+    }
+
+    public var gravity: Godot.Vector3 {
+        get {
+            __getGravity()
+        }
+        set {
+            __setGravity(
+                accelVec: newValue
             )
         }
     }
@@ -1889,26 +2294,13 @@ open class ParticleProcessMaterial: Material {
         }
     }
 
-    public var angleMin: Double {
+    public var isAttractorInteractionEnabled: Bool {
         get {
-            __getParamMin(
-                param: .init(rawValue: 7)!
-            )
+            __isAttractorInteractionEnabled()
         }
-    }
-
-    public var angleMax: Double {
-        get {
-            __getParamMax(
-                param: .init(rawValue: 7)!
-            )
-        }
-    }
-
-    public var angleCurve: Godot.Texture2D? {
-        get {
-            __getParamTexture(
-                param: .init(rawValue: 7)!
+        set {
+            __setAttractorInteractionEnabled(
+                newValue
             )
         }
     }
@@ -1933,6 +2325,30 @@ open class ParticleProcessMaterial: Material {
         get {
             __getParamTexture(
                 param: .init(rawValue: 8)!
+            )
+        }
+    }
+
+    public var scaleOverVelocityMin: Double {
+        get {
+            __getParamMin(
+                param: .init(rawValue: 17)!
+            )
+        }
+    }
+
+    public var scaleOverVelocityMax: Double {
+        get {
+            __getParamMax(
+                param: .init(rawValue: 17)!
+            )
+        }
+    }
+
+    public var scaleOverVelocityCurve: Godot.Texture2D? {
+        get {
+            __getParamTexture(
+                param: .init(rawValue: 17)!
             )
         }
     }
@@ -1970,6 +2386,28 @@ open class ParticleProcessMaterial: Material {
         }
     }
 
+    public var alphaCurve: Godot.Texture2D? {
+        get {
+            __getAlphaCurve()
+        }
+        set {
+            __setAlphaCurve(
+                newValue
+            )
+        }
+    }
+
+    public var emissionCurve: Godot.Texture2D? {
+        get {
+            __getEmissionCurve()
+        }
+        set {
+            __setEmissionCurve(
+                newValue
+            )
+        }
+    }
+
     public var hueVariationMin: Double {
         get {
             __getParamMin(
@@ -1990,6 +2428,54 @@ open class ParticleProcessMaterial: Material {
         get {
             __getParamTexture(
                 param: .init(rawValue: 9)!
+            )
+        }
+    }
+
+    public var animSpeedMin: Double {
+        get {
+            __getParamMin(
+                param: .init(rawValue: 10)!
+            )
+        }
+    }
+
+    public var animSpeedMax: Double {
+        get {
+            __getParamMax(
+                param: .init(rawValue: 10)!
+            )
+        }
+    }
+
+    public var animSpeedCurve: Godot.Texture2D? {
+        get {
+            __getParamTexture(
+                param: .init(rawValue: 10)!
+            )
+        }
+    }
+
+    public var animOffsetMin: Double {
+        get {
+            __getParamMin(
+                param: .init(rawValue: 11)!
+            )
+        }
+    }
+
+    public var animOffsetMax: Double {
+        get {
+            __getParamMax(
+                param: .init(rawValue: 11)!
+            )
+        }
+    }
+
+    public var animOffsetCurve: Godot.Texture2D? {
+        get {
+            __getParamTexture(
+                param: .init(rawValue: 11)!
             )
         }
     }
@@ -2089,50 +2575,46 @@ open class ParticleProcessMaterial: Material {
         }
     }
 
-    public var animSpeedMin: Double {
+    public var collisionMode: Godot.ParticleProcessMaterial.CollisionMode {
         get {
-            __getParamMin(
-                param: .init(rawValue: 10)!
+            __getCollisionMode()
+        }
+        set {
+            __setCollisionMode(
+                newValue
             )
         }
     }
 
-    public var animSpeedMax: Double {
+    public var collisionFriction: Double {
         get {
-            __getParamMax(
-                param: .init(rawValue: 10)!
+            __getCollisionFriction()
+        }
+        set {
+            __setCollisionFriction(
+                newValue
             )
         }
     }
 
-    public var animSpeedCurve: Godot.Texture2D? {
+    public var collisionBounce: Double {
         get {
-            __getParamTexture(
-                param: .init(rawValue: 10)!
+            __getCollisionBounce()
+        }
+        set {
+            __setCollisionBounce(
+                newValue
             )
         }
     }
 
-    public var animOffsetMin: Double {
+    public var isCollisionUsingScale: Bool {
         get {
-            __getParamMin(
-                param: .init(rawValue: 11)!
-            )
+            __isCollisionUsingScale()
         }
-    }
-
-    public var animOffsetMax: Double {
-        get {
-            __getParamMax(
-                param: .init(rawValue: 11)!
-            )
-        }
-    }
-
-    public var animOffsetCurve: Godot.Texture2D? {
-        get {
-            __getParamTexture(
-                param: .init(rawValue: 11)!
+        set {
+            __setCollisionUseScale(
+                radius: newValue
             )
         }
     }
@@ -2188,61 +2670,6 @@ open class ParticleProcessMaterial: Material {
         set {
             __setSubEmitterKeepVelocity(
                 enable: newValue
-            )
-        }
-    }
-
-    public var isAttractorInteractionEnabled: Bool {
-        get {
-            __isAttractorInteractionEnabled()
-        }
-        set {
-            __setAttractorInteractionEnabled(
-                newValue
-            )
-        }
-    }
-
-    public var collisionMode: Godot.ParticleProcessMaterial.CollisionMode {
-        get {
-            __getCollisionMode()
-        }
-        set {
-            __setCollisionMode(
-                newValue
-            )
-        }
-    }
-
-    public var collisionFriction: Double {
-        get {
-            __getCollisionFriction()
-        }
-        set {
-            __setCollisionFriction(
-                newValue
-            )
-        }
-    }
-
-    public var collisionBounce: Double {
-        get {
-            __getCollisionBounce()
-        }
-        set {
-            __setCollisionBounce(
-                newValue
-            )
-        }
-    }
-
-    public var isCollisionUsingScale: Bool {
-        get {
-            __isCollisionUsingScale()
-        }
-        set {
-            __setCollisionUseScale(
-                radius: newValue
             )
         }
     }

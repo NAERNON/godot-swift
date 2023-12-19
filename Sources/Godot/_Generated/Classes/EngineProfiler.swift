@@ -23,7 +23,7 @@ open class EngineProfiler: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EngineProfiler>.fromOpaque(instancePtr).takeUnretainedValue()
         ._toggle(
             enable: Bool.fromGodotUnsafePointer(args[0]!),
             options: Godot.AnyGodotArray.fromGodotUnsafePointer(args[1]!)
@@ -32,7 +32,7 @@ open class EngineProfiler: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EngineProfiler>.fromOpaque(instancePtr).takeUnretainedValue()
         ._addFrame(
             data: Godot.AnyGodotArray.fromGodotUnsafePointer(args[0]!)
         )}
@@ -40,7 +40,7 @@ open class EngineProfiler: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EngineProfiler> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EngineProfiler>.fromOpaque(instancePtr).takeUnretainedValue()
         ._tick(
             frameTime: Double.fromGodotUnsafePointer(args[0]!),
             processTime: Double.fromGodotUnsafePointer(args[1]!),

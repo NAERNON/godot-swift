@@ -261,7 +261,7 @@ open class AnimationNode: Resource {
     private static var __method_binding_blend_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "blend_animation").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 11797022)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1630801826)!
         }
         }
     }()
@@ -286,7 +286,7 @@ open class AnimationNode: Resource {
     private static var __method_binding_blend_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "blend_node").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 263389446)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1746075988)!
         }
         }
     }()
@@ -315,7 +315,7 @@ open class AnimationNode: Resource {
     private static var __method_binding_blend_input: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "blend_input").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2709059328)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1361527350)!
         }
         }
     }()
@@ -399,21 +399,21 @@ open class AnimationNode: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getChildNodes()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_parameter_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getParameterList()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_child_by_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getChildByName(
             Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
@@ -422,7 +422,7 @@ open class AnimationNode: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getParameterDefaultValue(
             parameter: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
@@ -431,7 +431,7 @@ open class AnimationNode: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
         ._isParameterReadOnly(
             parameter: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
@@ -440,7 +440,7 @@ open class AnimationNode: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
         ._process(
             time: Double.fromGodotUnsafePointer(args[0]!),
             seek: Bool.fromGodotUnsafePointer(args[1]!),
@@ -452,14 +452,14 @@ open class AnimationNode: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getCaption()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _has_filter_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AnimationNode> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AnimationNode>.fromOpaque(instancePtr).takeUnretainedValue()
         ._hasFilter()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

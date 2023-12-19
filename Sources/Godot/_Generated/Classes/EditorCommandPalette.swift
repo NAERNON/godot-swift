@@ -8,7 +8,7 @@ open class EditorCommandPalette: ConfirmationDialog {
     private static var __method_binding_add_command: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_command").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3664614892)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 864043298)!
         }
         }
     }()

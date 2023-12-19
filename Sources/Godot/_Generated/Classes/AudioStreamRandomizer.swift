@@ -20,7 +20,7 @@ open class AudioStreamRandomizer: AudioStream {
     private static var __method_binding_add_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_stream").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3197802065)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1892018854)!
         }
         }
     }()
@@ -307,17 +307,6 @@ open class AudioStreamRandomizer: AudioStream {
         )}}
     }
 
-    public var streamsCount: Int32 {
-        get {
-            __getStreamsCount()
-        }
-        set {
-            __setStreamsCount(
-                newValue
-            )
-        }
-    }
-
     public var playbackMode: Godot.AudioStreamRandomizer.PlaybackMode {
         get {
             __getPlaybackMode()
@@ -347,6 +336,17 @@ open class AudioStreamRandomizer: AudioStream {
         set {
             __setRandomVolumeOffsetDb(
                 dbOffset: newValue
+            )
+        }
+    }
+
+    public var streamsCount: Int32 {
+        get {
+            __getStreamsCount()
+        }
+        set {
+            __setStreamsCount(
+                newValue
             )
         }
     }

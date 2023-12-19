@@ -234,48 +234,48 @@ open class XRInterfaceExtension: XRInterface {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getName()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_capabilities_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getCapabilities()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _is_initialized_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._isInitialized()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _initialize_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._initialize()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _uninitialize_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._uninitialize()}
         let _get_system_info_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getSystemInfo()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _supports_play_area_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._supportsPlayAreaMode(
             Godot.XRInterface.PlayAreaMode.fromGodotUnsafePointer(args[0]!)
         )
@@ -284,14 +284,14 @@ open class XRInterfaceExtension: XRInterface {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getPlayAreaMode()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_play_area_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setPlayAreaMode(
             Godot.XRInterface.PlayAreaMode.fromGodotUnsafePointer(args[0]!)
         )
@@ -300,35 +300,35 @@ open class XRInterfaceExtension: XRInterface {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getPlayArea()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_render_target_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getRenderTargetSize()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_view_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getViewCount()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_camera_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getCameraTransform()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_transform_for_view_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getTransformForView(
             UInt32.fromGodotUnsafePointer(args[0]!),
             camTransform: Godot.Transform3D.fromGodotUnsafePointer(args[1]!)
@@ -338,7 +338,7 @@ open class XRInterfaceExtension: XRInterface {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getProjectionForView(
             UInt32.fromGodotUnsafePointer(args[0]!),
             aspect: Double.fromGodotUnsafePointer(args[1]!),
@@ -350,26 +350,26 @@ open class XRInterfaceExtension: XRInterface {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getVrsTexture()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._process()}
         let _pre_render_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._preRender()}
         let _pre_draw_viewport_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._preDrawViewport(
             renderTarget: Godot.RID.fromGodotUnsafePointer(args[0]!)
         )
@@ -378,7 +378,7 @@ open class XRInterfaceExtension: XRInterface {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._postDrawViewport(
             renderTarget: Godot.RID.fromGodotUnsafePointer(args[0]!),
             screenRect: Godot.Rect2.fromGodotUnsafePointer(args[1]!)
@@ -387,20 +387,20 @@ open class XRInterfaceExtension: XRInterface {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._endFrame()}
         let _get_suggested_tracker_names_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getSuggestedTrackerNames()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_suggested_pose_names_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getSuggestedPoseNames(
             trackerName: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!)
         )
@@ -409,14 +409,14 @@ open class XRInterfaceExtension: XRInterface {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getTrackingStatus()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _trigger_haptic_pulse_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._triggerHapticPulse(
             actionName: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             trackerName: Godot.GodotStringName.fromGodotUnsafePointer(args[1]!),
@@ -429,14 +429,14 @@ open class XRInterfaceExtension: XRInterface {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getAnchorDetectionIsEnabled()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_anchor_detection_is_enabled_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setAnchorDetectionIsEnabled(
             Bool.fromGodotUnsafePointer(args[0]!)
         )}
@@ -444,28 +444,28 @@ open class XRInterfaceExtension: XRInterface {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getCameraFeedId()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_color_texture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getColorTexture()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_depth_texture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getDepthTexture()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_velocity_texture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<XRInterfaceExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<XRInterfaceExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getVelocityTexture()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

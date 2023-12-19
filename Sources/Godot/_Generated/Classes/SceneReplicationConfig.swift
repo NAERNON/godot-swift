@@ -5,6 +5,18 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SceneReplicationConfig: Resource {
+    public enum ReplicationMode: UInt32, GodotEnum {
+        case never = 0
+        case always = 1
+        case onChange = 2
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Never", 0),
+            ("Always", 1),
+            ("On Change", 2),]
+        }
+    }
+
     private static var __method_binding_get_properties: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_properties").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -13,7 +25,7 @@ open class SceneReplicationConfig: Resource {
         }
     }()
     public func properties() -> Godot.GodotArray<Godot.NodePath> {
-        Godot.GodotArray<Godot.NodePath> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.NodePath>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_properties,
@@ -26,7 +38,7 @@ open class SceneReplicationConfig: Resource {
     private static var __method_binding_add_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_property").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3818401521)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4094619021)!
         }
         }
     }()
@@ -136,6 +148,46 @@ open class SceneReplicationConfig: Resource {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_property_set_spawn,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_property_get_replication_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "property_get_replication_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2870606336)!
+        }
+        }
+    }()
+    public func propertyGetReplicationMode(path: Godot.NodePath) -> Godot.SceneReplicationConfig.ReplicationMode {
+        Godot.SceneReplicationConfig.ReplicationMode.fromMutatingGodotUnsafePointer { __temporary in
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_property_get_replication_mode,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_property_set_replication_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "property_set_replication_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3200083865)!
+        }
+        }
+    }()
+    public func propertySetReplicationMode(path: Godot.NodePath, mode: Godot.SceneReplicationConfig.ReplicationMode) {
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        mode.withGodotUnsafeRawPointer { __ptr_mode in
+        withUnsafeArgumentPackPointer(__ptr_path, __ptr_mode) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_property_set_replication_mode,
             __ptr_self,
             __accessPtr,
             nil

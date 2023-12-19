@@ -161,7 +161,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
     }()
     private func __getExcludeBodies() -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_exclude_bodies,
@@ -198,7 +198,7 @@ open class PhysicsTestMotionParameters2D: RefCounted {
         }
     }()
     private func __getExcludeObjects() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_exclude_objects,

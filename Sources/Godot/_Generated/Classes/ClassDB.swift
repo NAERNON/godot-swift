@@ -194,7 +194,7 @@ open class ClassDB: Object {
         }
     }()
     public func classGetSignalList(`class`: Godot.GodotStringName, noInheritance: Bool = false) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
@@ -215,7 +215,7 @@ open class ClassDB: Object {
         }
     }()
     public func classGetPropertyList(`class`: Godot.GodotStringName, noInheritance: Bool = false) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
@@ -303,7 +303,7 @@ open class ClassDB: Object {
         }
     }()
     public func classGetMethodList(`class`: Godot.GodotStringName, noInheritance: Bool = false) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in

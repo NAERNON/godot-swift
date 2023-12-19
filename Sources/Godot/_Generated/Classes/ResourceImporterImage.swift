@@ -4,7 +4,7 @@
 
 import GodotExtensionHeaders
 @GodotRefCountedClass
-open class GDScriptEditorTranslationParserPlugin: EditorTranslationParserPlugin {
+open class ResourceImporterImage: ResourceImporter {
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {

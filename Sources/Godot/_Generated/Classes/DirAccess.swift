@@ -44,7 +44,7 @@ open class DirAccess: RefCounted {
     private static var __method_binding_list_dir_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "list_dir_begin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2018049411)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2610976713)!
         }
         }
     }()
@@ -438,7 +438,7 @@ open class DirAccess: RefCounted {
     private static var __method_binding_copy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "copy").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 198434953)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1063198817)!
         }
         }
     }()
@@ -460,7 +460,7 @@ open class DirAccess: RefCounted {
     private static var __method_binding_copy_absolute: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "copy_absolute").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 198434953)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1063198817)!
         }
         }
     }()
@@ -630,6 +630,26 @@ open class DirAccess: RefCounted {
             nil,
             __temporary
         )}}
+    }
+
+    private static var __method_binding_is_case_sensitive: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_case_sensitive").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
+        }
+        }
+    }()
+    public func isCaseSensitive(path: Godot.GodotString) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_case_sensitive,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     public var includeNavigational: Bool {

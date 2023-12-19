@@ -298,6 +298,24 @@ open class Image: Resource {
         )}}}
     }
 
+    private static var __method_binding_get_mipmap_count: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_mipmap_count").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
+        }
+        }
+    }()
+    public func mipmapCount() -> Int32 {
+        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_mipmap_count,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_get_mipmap_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_mipmap_offset").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -341,7 +359,7 @@ open class Image: Resource {
     private static var __method_binding_resize: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "resize").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2461393748)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 994498151)!
         }
         }
     }()
@@ -633,7 +651,7 @@ open class Image: Resource {
     private static var __method_binding_save_jpg: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save_jpg").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 578836491)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2800019068)!
         }
         }
     }()
@@ -715,7 +733,7 @@ open class Image: Resource {
     private static var __method_binding_save_webp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save_webp").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3594949219)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2781156876)!
         }
         }
     }()
@@ -814,7 +832,7 @@ open class Image: Resource {
     private static var __method_binding_compress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "compress").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4094210332)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2975424957)!
         }
         }
     }()
@@ -836,7 +854,7 @@ open class Image: Resource {
     private static var __method_binding_compress_from_channels: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "compress_from_channels").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 279105990)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4212890953)!
         }
         }
     }()
@@ -1444,6 +1462,68 @@ open class Image: Resource {
             __accessPtr,
             __temporary
         )}}}}
+    }
+
+    private static var __method_binding_load_ktx_from_buffer: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "load_ktx_from_buffer").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 680677267)!
+        }
+        }
+    }()
+    public func loadKtxFromBuffer(_ buffer: Godot.PackedByteArray) -> Godot.ErrorType {
+        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        buffer.withGodotUnsafeRawPointer { __ptr_buffer in
+        withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_load_ktx_from_buffer,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_load_svg_from_buffer: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "load_svg_from_buffer").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 311853421)!
+        }
+        }
+    }()
+    public func loadSvgFromBuffer(_ buffer: Godot.PackedByteArray, scale: Double = 1.0) -> Godot.ErrorType {
+        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        buffer.withGodotUnsafeRawPointer { __ptr_buffer in
+        scale.withGodotUnsafeRawPointer { __ptr_scale in
+        withUnsafeArgumentPackPointer(__ptr_buffer, __ptr_scale) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_load_svg_from_buffer,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
+    }
+
+    private static var __method_binding_load_svg_from_string: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "load_svg_from_string").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3254053600)!
+        }
+        }
+    }()
+    public func loadSvgFromString(svgStr: Godot.GodotString, scale: Double = 1.0) -> Godot.ErrorType {
+        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        svgStr.withGodotUnsafeRawPointer { __ptr_svgStr in
+        scale.withGodotUnsafeRawPointer { __ptr_scale in
+        withUnsafeArgumentPackPointer(__ptr_svgStr, __ptr_scale) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_load_svg_from_string,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

@@ -54,7 +54,7 @@ open class RDShaderFile: Resource {
         }
     }()
     public func versionList() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_version_list,

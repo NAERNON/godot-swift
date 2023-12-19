@@ -30,19 +30,19 @@ open class PacketPeerExtension: PacketPeer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PacketPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PacketPeerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getPacket(
-            rBuffer: UnsafePointer<UnsafePointer<UInt8>> .fromGodotUnsafePointer(args[0]!),
-            rBufferSize: UnsafeMutablePointer<Int32> .fromGodotUnsafePointer(args[1]!)
+            rBuffer: UnsafePointer<UnsafePointer<UInt8>>.fromGodotUnsafePointer(args[0]!),
+            rBufferSize: UnsafeMutablePointer<Int32>.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         let _put_packet_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PacketPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PacketPeerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._putPacket(
-            pBuffer: UnsafePointer<UInt8> .fromGodotUnsafePointer(args[0]!),
+            pBuffer: UnsafePointer<UInt8>.fromGodotUnsafePointer(args[0]!),
             pBufferSize: Int32.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -50,14 +50,14 @@ open class PacketPeerExtension: PacketPeer {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PacketPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PacketPeerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getAvailablePacketCount()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_max_packet_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<PacketPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PacketPeerExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getMaxPacketSize()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

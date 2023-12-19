@@ -5,6 +5,26 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Geometry3D: Object {
+    private static var __method_binding_compute_convex_mesh_points: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "compute_convex_mesh_points").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1936902142)!
+        }
+        }
+    }()
+    public func computeConvexMeshPoints(planes: Godot.GodotArray<Godot.Plane>) -> Godot.PackedVector3Array {
+        Godot.PackedVector3Array.fromMutatingGodotUnsafePointer { __temporary in
+        planes.withGodotUnsafeRawPointer { __ptr_planes in
+        withUnsafeArgumentPackPointer(__ptr_planes) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_compute_convex_mesh_points,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
     private static var __method_binding_build_box_planes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "build_box_planes").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -13,7 +33,7 @@ open class Geometry3D: Object {
         }
     }()
     public func buildBoxPlanes(extents: Godot.Vector3) -> Godot.GodotArray<Godot.Plane> {
-        Godot.GodotArray<Godot.Plane> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Plane>.fromMutatingGodotUnsafePointer { __temporary in
         extents.withGodotUnsafeRawPointer { __ptr_extents in
         withUnsafeArgumentPackPointer(__ptr_extents) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -28,12 +48,12 @@ open class Geometry3D: Object {
     private static var __method_binding_build_cylinder_planes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "build_cylinder_planes").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3142160516)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 449920067)!
         }
         }
     }()
     public func buildCylinderPlanes(radius: Double, height: Double, sides: Int32, axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!) -> Godot.GodotArray<Godot.Plane> {
-        Godot.GodotArray<Godot.Plane> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Plane>.fromMutatingGodotUnsafePointer { __temporary in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         height.withGodotUnsafeRawPointer { __ptr_height in
         sides.withGodotUnsafeRawPointer { __ptr_sides in
@@ -51,12 +71,12 @@ open class Geometry3D: Object {
     private static var __method_binding_build_capsule_planes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "build_capsule_planes").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 410870045)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2113592876)!
         }
         }
     }()
     public func buildCapsulePlanes(radius: Double, height: Double, sides: Int32, lats: Int32, axis: Godot.Vector3.Axis = Vector3.Axis(rawValue: 2)!) -> Godot.GodotArray<Godot.Plane> {
-        Godot.GodotArray<Godot.Plane> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Plane>.fromMutatingGodotUnsafePointer { __temporary in
         radius.withGodotUnsafeRawPointer { __ptr_radius in
         height.withGodotUnsafeRawPointer { __ptr_height in
         sides.withGodotUnsafeRawPointer { __ptr_sides in
@@ -137,6 +157,29 @@ open class Geometry3D: Object {
             __accessPtr,
             __temporary
         )}}}}}}
+    }
+
+    private static var __method_binding_get_triangle_barycentric_coords: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_triangle_barycentric_coords").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1362048029)!
+        }
+        }
+    }()
+    public func triangleBarycentricCoords(point: Godot.Vector3, a: Godot.Vector3, b: Godot.Vector3, c: Godot.Vector3) -> Godot.Vector3 {
+        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        point.withGodotUnsafeRawPointer { __ptr_point in
+        a.withGodotUnsafeRawPointer { __ptr_a in
+        b.withGodotUnsafeRawPointer { __ptr_b in
+        c.withGodotUnsafeRawPointer { __ptr_c in
+        withUnsafeArgumentPackPointer(__ptr_point, __ptr_a, __ptr_b, __ptr_c) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_triangle_barycentric_coords,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}}}
     }
 
     private static var __method_binding_ray_intersects_triangle: GDExtensionMethodBindPtr = {

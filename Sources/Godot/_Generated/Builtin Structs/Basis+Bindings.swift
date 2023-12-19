@@ -117,6 +117,11 @@ private var __method_binding_slerp: GDExtensionPtrBuiltInMethod = {
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 3118673011)!
     }
 }()
+private var __method_binding_is_conformal: GDExtensionPtrBuiltInMethod = {
+    GodotStringName(swiftStaticString: "is_conformal").withGodotUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 3918633141)!
+    }
+}()
 private var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "is_equal_approx").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_BASIS, __ptr__method_name, 3165333982)!
@@ -416,6 +421,12 @@ extension Basis {
         withUnsafeArgumentPackPointer(__ptr_to, __ptr_weight) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
         __method_binding_slerp(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
+    }
+
+    internal func _isConformal() -> Bool {
+        return Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeRawPointer { __ptr_self in
+        __method_binding_is_conformal(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
     internal func _isEqualApprox(_ b: Godot.Basis) -> Bool {

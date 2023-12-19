@@ -24,7 +24,7 @@ open class EditorDebuggerSession: RefCounted {
     private static var __method_binding_send_message: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "send_message").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3780025912)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 85656714)!
         }
         }
     }()
@@ -44,7 +44,7 @@ open class EditorDebuggerSession: RefCounted {
     private static var __method_binding_toggle_profiler: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "toggle_profiler").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 35674246)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1198443697)!
         }
         }
     }()

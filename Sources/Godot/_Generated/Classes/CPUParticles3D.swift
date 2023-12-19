@@ -82,6 +82,10 @@ open class CPUParticles3D: GeometryInstance3D {
         }
     }
 
+    @Emitter(signal: "finished")
+    public struct Finished {
+    }
+
     private static var __method_binding_set_emitting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_emitting").withGodotUnsafeRawPointer { __ptr__method_name in

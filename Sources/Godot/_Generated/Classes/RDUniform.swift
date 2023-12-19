@@ -123,7 +123,7 @@ open class RDUniform: RefCounted {
         }
     }()
     public func ids() -> Godot.GodotArray<Godot.RID> {
-        Godot.GodotArray<Godot.RID> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RID>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_ids,

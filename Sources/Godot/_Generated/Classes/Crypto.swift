@@ -48,7 +48,7 @@ open class Crypto: RefCounted {
     private static var __method_binding_generate_self_signed_certificate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "generate_self_signed_certificate").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 947314696)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 492266173)!
         }
         }
     }()

@@ -5,6 +5,10 @@
 import GodotExtensionHeaders
 @GodotClass
 open class SubViewportContainer: Container {
+    open func _propagateInputEvent(_ event: Godot.InputEvent?) -> Bool {
+        Bool()
+    }
+
     private static var __method_binding_set_stretch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stretch").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -106,8 +110,17 @@ open class SubViewportContainer: Container {
         if let _virtualFunctions {
             return _virtualFunctions
         }
+        let _propagate_input_event_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<SubViewportContainer>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._propagateInputEvent(
+            Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
+        )
+        .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [
-            :
+            "_propagateInputEvent" : ("_propagate_input_event", _propagate_input_event_call)
         ]
         for (key, value) in super.virtualFunctions() {
             _virtualFunctions! [key] = value

@@ -71,7 +71,7 @@ open class CameraServer: Object {
         }
     }()
     public func feeds() -> Godot.GodotArray<Godot.CameraFeed?> {
-        Godot.GodotArray<Godot.CameraFeed?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.CameraFeed?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_feeds,

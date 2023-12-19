@@ -28,6 +28,65 @@ open class TileMap: Node2D {
     open func _tileDataRuntimeUpdate(layer: Int32, coords: Godot.Vector2i, tileData: Godot.TileData?) {
     }
 
+    private static var __method_binding_set_navigation_map: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4040184819)!
+        }
+        }
+    }()
+    public func setNavigationMap(layer: Int32, map: Godot.RID) {
+        layer.withGodotUnsafeRawPointer { __ptr_layer in
+        map.withGodotUnsafeRawPointer { __ptr_map in
+        withUnsafeArgumentPackPointer(__ptr_layer, __ptr_map) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_navigation_map,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_get_navigation_map: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 495598643)!
+        }
+        }
+    }()
+    public func navigationMap(layer: Int32) -> Godot.RID {
+        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        layer.withGodotUnsafeRawPointer { __ptr_layer in
+        withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_navigation_map,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_force_update: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "force_update").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1025054187)!
+        }
+        }
+    }()
+    public func forceUpdate(layer: Int32 = -1) {
+        layer.withGodotUnsafeRawPointer { __ptr_layer in
+        withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_force_update,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
     private static var __method_binding_set_tileset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tileset").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -66,37 +125,37 @@ open class TileMap: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_quadrant_size: GDExtensionMethodBindPtr = {
+    private static var __method_binding_set_rendering_quadrant_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_quadrant_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_rendering_quadrant_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
     }()
-    private func __setQuadrantSize(_ size: Int32) {
+    private func __setRenderingQuadrantSize(_ size: Int32) {
         size.withGodotUnsafeRawPointer { __ptr_size in
         withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_quadrant_size,
+            Self.__method_binding_set_rendering_quadrant_size,
             __ptr_self,
             __accessPtr,
             nil
         )}}}
     }
 
-    private static var __method_binding_get_quadrant_size: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_rendering_quadrant_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_quadrant_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_rendering_quadrant_size").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
-    private func __getQuadrantSize() -> Int32 {
+    private func __getRenderingQuadrantSize() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_quadrant_size,
+            Self.__method_binding_get_rendering_quadrant_size,
             __ptr_self,
             nil,
             __temporary
@@ -419,6 +478,86 @@ open class TileMap: Node2D {
         )}}}}
     }
 
+    private static var __method_binding_set_layer_navigation_enabled: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_layer_navigation_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
+        }
+        }
+    }()
+    public func setLayerNavigationEnabled(layer: Int32, enabled: Bool) {
+        layer.withGodotUnsafeRawPointer { __ptr_layer in
+        enabled.withGodotUnsafeRawPointer { __ptr_enabled in
+        withUnsafeArgumentPackPointer(__ptr_layer, __ptr_enabled) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_layer_navigation_enabled,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_is_layer_navigation_enabled: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_layer_navigation_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
+        }
+        }
+    }()
+    public func isLayerNavigationEnabled(layer: Int32) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        layer.withGodotUnsafeRawPointer { __ptr_layer in
+        withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_layer_navigation_enabled,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_set_layer_navigation_map: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_layer_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4040184819)!
+        }
+        }
+    }()
+    public func setLayerNavigationMap(layer: Int32, map: Godot.RID) {
+        layer.withGodotUnsafeRawPointer { __ptr_layer in
+        map.withGodotUnsafeRawPointer { __ptr_map in
+        withUnsafeArgumentPackPointer(__ptr_layer, __ptr_map) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_layer_navigation_map,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_get_layer_navigation_map: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_layer_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 495598643)!
+        }
+        }
+    }()
+    public func layerNavigationMap(layer: Int32) -> Godot.RID {
+        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        layer.withGodotUnsafeRawPointer { __ptr_layer in
+        withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_layer_navigation_map,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
     private static var __method_binding_set_collision_animatable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_collision_animatable").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -530,50 +669,10 @@ open class TileMap: Node2D {
         )}}
     }
 
-    private static var __method_binding_set_navigation_map: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4040184819)!
-        }
-        }
-    }()
-    public func setNavigationMap(layer: Int32, map: Godot.RID) {
-        layer.withGodotUnsafeRawPointer { __ptr_layer in
-        map.withGodotUnsafeRawPointer { __ptr_map in
-        withUnsafeArgumentPackPointer(__ptr_layer, __ptr_map) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_navigation_map,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
-    }
-
-    private static var __method_binding_get_navigation_map: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_navigation_map").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 495598643)!
-        }
-        }
-    }()
-    public func navigationMap(layer: Int32) -> Godot.RID {
-        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
-        layer.withGodotUnsafeRawPointer { __ptr_layer in
-        withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_navigation_map,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
-    }
-
     private static var __method_binding_set_cell: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cell").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1732664643)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 966713560)!
         }
         }
     }()
@@ -810,7 +909,7 @@ open class TileMap: Node2D {
     private static var __method_binding_set_cells_terrain_connect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cells_terrain_connect").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3072115677)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3578627656)!
         }
         }
     }()
@@ -833,7 +932,7 @@ open class TileMap: Node2D {
     private static var __method_binding_set_cells_terrain_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cells_terrain_path").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3072115677)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3578627656)!
         }
         }
     }()
@@ -906,19 +1005,36 @@ open class TileMap: Node2D {
         )}
     }
 
-    private static var __method_binding_force_update: GDExtensionMethodBindPtr = {
+    private static var __method_binding_update_internals: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "force_update").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "update_internals").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        }
+        }
+    }()
+    public func updateInternals() {
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_update_internals,
+            __ptr_self,
+            nil,
+            nil
+        )}
+    }
+
+    private static var __method_binding_notify_runtime_tile_data_update: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "notify_runtime_tile_data_update").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1025054187)!
         }
         }
     }()
-    public func forceUpdate(layer: Int32 = -1) {
+    public func notifyRuntimeTileDataUpdate(layer: Int32 = -1) {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_force_update,
+            Self.__method_binding_notify_runtime_tile_data_update,
             __ptr_self,
             __accessPtr,
             nil
@@ -933,7 +1049,7 @@ open class TileMap: Node2D {
         }
     }()
     public func surroundingCells(coords: Godot.Vector2i) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
         coords.withGodotUnsafeRawPointer { __ptr_coords in
         withUnsafeArgumentPackPointer(__ptr_coords) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -953,7 +1069,7 @@ open class TileMap: Node2D {
         }
     }()
     public func usedCells(layer: Int32) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(__ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -968,12 +1084,12 @@ open class TileMap: Node2D {
     private static var __method_binding_get_used_cells_by_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_used_cells_by_id").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4152068407)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2931012785)!
         }
         }
     }()
     public func usedCellsById(layer: Int32, sourceId: Int32 = -1, atlasCoords: Godot.Vector2i = Vector2i(x: -1, y: -1), alternativeTile: Int32 = -1) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         sourceId.withGodotUnsafeRawPointer { __ptr_sourceId in
         atlasCoords.withGodotUnsafeRawPointer { __ptr_atlasCoords in
@@ -991,7 +1107,7 @@ open class TileMap: Node2D {
     private static var __method_binding_get_used_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_used_rect").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2024035737)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 410525958)!
         }
         }
     }()
@@ -1078,12 +1194,12 @@ open class TileMap: Node2D {
         }
     }
 
-    public var quadrantSize: Int32 {
+    public var renderingQuadrantSize: Int32 {
         get {
-            __getQuadrantSize()
+            __getRenderingQuadrantSize()
         }
         set {
-            __setQuadrantSize(
+            __setRenderingQuadrantSize(
                 newValue
             )
         }
@@ -1131,7 +1247,7 @@ open class TileMap: Node2D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TileMap> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TileMap>.fromOpaque(instancePtr).takeUnretainedValue()
         ._useTileDataRuntimeUpdate(
             layer: Int32.fromGodotUnsafePointer(args[0]!),
             coords: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
@@ -1141,7 +1257,7 @@ open class TileMap: Node2D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TileMap> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TileMap>.fromOpaque(instancePtr).takeUnretainedValue()
         ._tileDataRuntimeUpdate(
             layer: Int32.fromGodotUnsafePointer(args[0]!),
             coords: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),

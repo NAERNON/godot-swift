@@ -180,10 +180,25 @@ open class PhysicsServer2D: Object {
         }
     }
     public enum PinJointParam: UInt32, GodotEnum {
-        case pinJointSoftness = 0
+        case softness = 0
+        case limitUpper = 1
+        case limitLower = 2
+        case motorTargetVelocity = 3
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Pin Joint Softness", 0),]
+            ("Softness", 0),
+            ("Limit Upper", 1),
+            ("Limit Lower", 2),
+            ("Motor Target Velocity", 3),]
+        }
+    }
+    public enum PinJointFlag: UInt32, GodotEnum {
+        case angularLimitEnabled = 0
+        case motorEnabled = 1
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Angular Limit Enabled", 0),
+            ("Motor Enabled", 1),]
         }
     }
     public enum DampedSpringParam: UInt32, GodotEnum {
@@ -614,7 +629,7 @@ open class PhysicsServer2D: Object {
     private static var __method_binding_area_add_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "area_add_shape").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 754862190)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 339056240)!
         }
         }
     }()
@@ -1200,7 +1215,7 @@ open class PhysicsServer2D: Object {
     private static var __method_binding_body_add_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "body_add_shape").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 754862190)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 339056240)!
         }
         }
     }()
@@ -1791,7 +1806,7 @@ open class PhysicsServer2D: Object {
     private static var __method_binding_body_apply_impulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "body_apply_impulse").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 34330743)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 205485391)!
         }
         }
     }()
@@ -1832,7 +1847,7 @@ open class PhysicsServer2D: Object {
     private static var __method_binding_body_apply_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "body_apply_force").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 34330743)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 205485391)!
         }
         }
     }()
@@ -1893,7 +1908,7 @@ open class PhysicsServer2D: Object {
     private static var __method_binding_body_add_constant_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "body_add_constant_force").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 34330743)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 205485391)!
         }
         }
     }()
@@ -2338,7 +2353,7 @@ open class PhysicsServer2D: Object {
     private static var __method_binding_joint_make_pin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "joint_make_pin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2288600450)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1612646186)!
         }
         }
     }()
@@ -2360,7 +2375,7 @@ open class PhysicsServer2D: Object {
     private static var __method_binding_joint_make_groove: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "joint_make_groove").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3573265764)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 481430435)!
         }
         }
     }()
@@ -2384,7 +2399,7 @@ open class PhysicsServer2D: Object {
     private static var __method_binding_joint_make_damped_spring: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "joint_make_damped_spring").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 206603952)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1994657646)!
         }
         }
     }()
@@ -2402,6 +2417,48 @@ open class PhysicsServer2D: Object {
             __accessPtr,
             nil
         )}}}}}}}
+    }
+
+    private static var __method_binding_pin_joint_set_flag: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "pin_joint_set_flag").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3520002352)!
+        }
+        }
+    }()
+    public func pinJointSetFlag(joint: Godot.RID, flag: Godot.PhysicsServer2D.PinJointFlag, enabled: Bool) {
+        joint.withGodotUnsafeRawPointer { __ptr_joint in
+        flag.withGodotUnsafeRawPointer { __ptr_flag in
+        enabled.withGodotUnsafeRawPointer { __ptr_enabled in
+        withUnsafeArgumentPackPointer(__ptr_joint, __ptr_flag, __ptr_enabled) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_pin_joint_set_flag,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
+    }
+
+    private static var __method_binding_pin_joint_get_flag: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "pin_joint_get_flag").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2647867364)!
+        }
+        }
+    }()
+    public func pinJointGetFlag(joint: Godot.RID, flag: Godot.PhysicsServer2D.PinJointFlag) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        joint.withGodotUnsafeRawPointer { __ptr_joint in
+        flag.withGodotUnsafeRawPointer { __ptr_flag in
+        withUnsafeArgumentPackPointer(__ptr_joint, __ptr_flag) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_pin_joint_get_flag,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
     }
 
     private static var __method_binding_pin_joint_set_param: GDExtensionMethodBindPtr = {

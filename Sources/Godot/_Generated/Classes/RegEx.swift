@@ -64,7 +64,7 @@ open class RegEx: RefCounted {
     private static var __method_binding_search: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "search").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4087180739)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3365977994)!
         }
         }
     }()
@@ -86,12 +86,12 @@ open class RegEx: RefCounted {
     private static var __method_binding_search_all: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "search_all").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3354100289)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 849021363)!
         }
         }
     }()
     public func searchAll(subject: Godot.GodotString, offset: Int32 = 0, end: Int32 = -1) -> Godot.GodotArray<Godot.RegExMatch?> {
-        Godot.GodotArray<Godot.RegExMatch?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.RegExMatch?>.fromMutatingGodotUnsafePointer { __temporary in
         subject.withGodotUnsafeRawPointer { __ptr_subject in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         end.withGodotUnsafeRawPointer { __ptr_end in
@@ -108,7 +108,7 @@ open class RegEx: RefCounted {
     private static var __method_binding_sub: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "sub").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 758293621)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 54019702)!
         }
         }
     }()

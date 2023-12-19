@@ -12,7 +12,7 @@ open class ScriptCreateDialog: ConfirmationDialog {
     private static var __method_binding_config: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "config").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4210001628)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 869314288)!
         }
         }
     }()

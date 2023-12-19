@@ -726,7 +726,7 @@ open class RigidBody3D: PhysicsBody3D {
     private static var __method_binding_apply_impulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_impulse").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1002852006)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2754756483)!
         }
         }
     }()
@@ -784,7 +784,7 @@ open class RigidBody3D: PhysicsBody3D {
     private static var __method_binding_apply_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_force").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1002852006)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2754756483)!
         }
         }
     }()
@@ -842,7 +842,7 @@ open class RigidBody3D: PhysicsBody3D {
     private static var __method_binding_add_constant_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_constant_force").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1002852006)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2754756483)!
         }
         }
     }()
@@ -1145,7 +1145,7 @@ open class RigidBody3D: PhysicsBody3D {
         }
     }()
     public func collidingBodies() -> Godot.GodotArray<Godot.Node3D?> {
-        Godot.GodotArray<Godot.Node3D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node3D?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_colliding_bodies,
@@ -1161,39 +1161,6 @@ open class RigidBody3D: PhysicsBody3D {
         }
         set {
             __setMass(
-                newValue
-            )
-        }
-    }
-
-    public var inertia: Godot.Vector3 {
-        get {
-            __getInertia()
-        }
-        set {
-            __setInertia(
-                newValue
-            )
-        }
-    }
-
-    public var centerOfMassMode: Godot.RigidBody3D.CenterOfMassMode {
-        get {
-            __getCenterOfMassMode()
-        }
-        set {
-            __setCenterOfMassMode(
-                newValue
-            )
-        }
-    }
-
-    public var centerOfMass: Godot.Vector3 {
-        get {
-            __getCenterOfMass()
-        }
-        set {
-            __setCenterOfMass(
                 newValue
             )
         }
@@ -1221,46 +1188,35 @@ open class RigidBody3D: PhysicsBody3D {
         }
     }
 
-    public var isUsingCustomIntegrator: Bool {
+    public var centerOfMassMode: Godot.RigidBody3D.CenterOfMassMode {
         get {
-            __isUsingCustomIntegrator()
+            __getCenterOfMassMode()
         }
         set {
-            __setUseCustomIntegrator(
-                enable: newValue
+            __setCenterOfMassMode(
+                newValue
             )
         }
     }
 
-    public var isUsingContinuousCollisionDetection: Bool {
+    public var centerOfMass: Godot.Vector3 {
         get {
-            __isUsingContinuousCollisionDetection()
+            __getCenterOfMass()
         }
         set {
-            __setUseContinuousCollisionDetection(
-                enable: newValue
+            __setCenterOfMass(
+                newValue
             )
         }
     }
 
-    public var maxContactsReported: Int32 {
+    public var inertia: Godot.Vector3 {
         get {
-            __getMaxContactsReported()
+            __getInertia()
         }
         set {
-            __setMaxContactsReported(
-                amount: newValue
-            )
-        }
-    }
-
-    public var isContactMonitorEnabled: Bool {
-        get {
-            __isContactMonitorEnabled()
-        }
-        set {
-            __setContactMonitor(
-                enabled: newValue
+            __setInertia(
+                newValue
             )
         }
     }
@@ -1316,6 +1272,50 @@ open class RigidBody3D: PhysicsBody3D {
         set {
             __setFreezeMode(
                 newValue
+            )
+        }
+    }
+
+    public var isUsingCustomIntegrator: Bool {
+        get {
+            __isUsingCustomIntegrator()
+        }
+        set {
+            __setUseCustomIntegrator(
+                enable: newValue
+            )
+        }
+    }
+
+    public var isUsingContinuousCollisionDetection: Bool {
+        get {
+            __isUsingContinuousCollisionDetection()
+        }
+        set {
+            __setUseContinuousCollisionDetection(
+                enable: newValue
+            )
+        }
+    }
+
+    public var maxContactsReported: Int32 {
+        get {
+            __getMaxContactsReported()
+        }
+        set {
+            __setMaxContactsReported(
+                amount: newValue
+            )
+        }
+    }
+
+    public var isContactMonitorEnabled: Bool {
+        get {
+            __isContactMonitorEnabled()
+        }
+        set {
+            __setContactMonitor(
+                enabled: newValue
             )
         }
     }
@@ -1417,7 +1417,7 @@ open class RigidBody3D: PhysicsBody3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<RigidBody3D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<RigidBody3D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._integrateForces(
             state: Godot.PhysicsDirectBodyState3D?.fromGodotUnsafePointer(args[0]!)
         )}

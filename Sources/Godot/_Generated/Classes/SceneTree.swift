@@ -352,7 +352,7 @@ open class SceneTree: MainLoop {
     private static var __method_binding_create_timer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_timer").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1780978058)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2709170273)!
         }
         }
     }()
@@ -398,7 +398,7 @@ open class SceneTree: MainLoop {
         }
     }()
     public func processedTweens() -> Godot.GodotArray<Godot.Tween?> {
-        Godot.GodotArray<Godot.Tween?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Tween?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_processed_tweens,
@@ -649,7 +649,7 @@ open class SceneTree: MainLoop {
         }
     }()
     public func nodesInGroup(_ group: Godot.GodotStringName) -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?>.fromMutatingGodotUnsafePointer { __temporary in
         group.withGodotUnsafeRawPointer { __ptr_group in
         withUnsafeArgumentPackPointer(__ptr_group) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

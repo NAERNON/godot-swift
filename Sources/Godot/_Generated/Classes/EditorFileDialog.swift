@@ -73,7 +73,7 @@ open class EditorFileDialog: ConfirmationDialog {
     private static var __method_binding_add_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_filter").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 233059325)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3388804757)!
         }
         }
     }()
@@ -457,6 +457,27 @@ open class EditorFileDialog: ConfirmationDialog {
             nil,
             __temporary
         )}}
+    }
+
+    private static var __method_binding_add_side_menu: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_side_menu").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 402368861)!
+        }
+        }
+    }()
+    public func addSideMenu(_ menu: Godot.Control?, title: Godot.GodotString = "") {
+        menu.withGodotUnsafeRawPointer { __ptr_menu in
+        withUnsafePointer(to: __ptr_menu) { _ptr___ptr_menu in
+        title.withGodotUnsafeRawPointer { __ptr_title in
+        withUnsafeArgumentPackPointer(_ptr___ptr_menu, __ptr_title) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_add_side_menu,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
     }
 
     private static var __method_binding_invalidate: GDExtensionMethodBindPtr = {

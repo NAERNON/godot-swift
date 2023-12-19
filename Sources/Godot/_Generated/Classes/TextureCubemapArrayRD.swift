@@ -3,8 +3,8 @@
 //
 
 import GodotExtensionHeaders
-@GodotClass
-open class MovieWriterPNGWAV: MovieWriter {
+@GodotRefCountedClass
+open class TextureCubemapArrayRD: TextureLayeredRD {
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {

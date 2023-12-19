@@ -114,7 +114,7 @@ open class TileSet: Resource {
     private static var __method_binding_add_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_source").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 276991387)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1059186179)!
         }
         }
     }()
@@ -927,7 +927,7 @@ open class TileSet: Resource {
     private static var __method_binding_add_terrain: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_terrain").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3023605688)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1230568737)!
         }
         }
     }()
@@ -1714,7 +1714,7 @@ open class TileSet: Resource {
     private static var __method_binding_add_pattern: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_pattern").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3009264082)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 763712015)!
         }
         }
     }()

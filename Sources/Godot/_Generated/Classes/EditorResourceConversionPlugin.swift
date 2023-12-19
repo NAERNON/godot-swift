@@ -26,14 +26,14 @@ open class EditorResourceConversionPlugin: RefCounted {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourceConversionPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._convertsTo()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _handles_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourceConversionPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._handles(
             resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
         )
@@ -42,7 +42,7 @@ open class EditorResourceConversionPlugin: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorResourceConversionPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourceConversionPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._convert(
             resource: Godot.Resource?.fromGodotUnsafePointer(args[0]!)
         )

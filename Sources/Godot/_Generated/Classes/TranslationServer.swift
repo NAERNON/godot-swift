@@ -238,7 +238,7 @@ open class TranslationServer: Object {
     private static var __method_binding_translate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "translate").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 58037827)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1829228469)!
         }
         }
     }()
@@ -259,7 +259,7 @@ open class TranslationServer: Object {
     private static var __method_binding_translate_plural: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "translate_plural").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1333931916)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 229954002)!
         }
         }
     }()

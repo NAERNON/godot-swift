@@ -515,13 +515,13 @@ open class EditorProperty: Container {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorProperty> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorProperty>.fromOpaque(instancePtr).takeUnretainedValue()
         ._updateProperty()}
         let _set_read_only_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorProperty> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorProperty>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setReadOnly(
             Bool.fromGodotUnsafePointer(args[0]!)
         )}

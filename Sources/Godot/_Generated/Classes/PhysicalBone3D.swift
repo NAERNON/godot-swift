@@ -57,7 +57,7 @@ open class PhysicalBone3D: PhysicsBody3D {
     private static var __method_binding_apply_impulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_impulse").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1002852006)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2754756483)!
         }
         }
     }()
@@ -905,7 +905,7 @@ open class PhysicalBone3D: PhysicsBody3D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<PhysicalBone3D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<PhysicalBone3D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._integrateForces(
             state: Godot.PhysicsDirectBodyState3D?.fromGodotUnsafePointer(args[0]!)
         )}

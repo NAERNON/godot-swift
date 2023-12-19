@@ -279,6 +279,30 @@ public extension WorkerThreadPool {
 }
 
 
+private var _sharedThemeDB = {
+    ThemeDB.exposedClassName.withGodotUnsafeRawPointer { namePtr in
+        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        return ThemeDB.retrievedInstanceManagedByGodot(instancePointer)!
+    }
+}()
+
+public extension ThemeDB {
+    static var shared: ThemeDB { _sharedThemeDB }
+}
+
+
+private var _sharedEditorInterface = {
+    EditorInterface.exposedClassName.withGodotUnsafeRawPointer { namePtr in
+        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        return EditorInterface.retrievedInstanceManagedByGodot(instancePointer)!
+    }
+}()
+
+public extension EditorInterface {
+    static var shared: EditorInterface { _sharedEditorInterface }
+}
+
+
 private var _sharedJavaClassWrapper = {
     JavaClassWrapper.exposedClassName.withGodotUnsafeRawPointer { namePtr in
         let instancePointer = gdextension_interface_global_get_singleton(namePtr)
@@ -300,18 +324,6 @@ private var _sharedJavaScriptBridge = {
 
 public extension JavaScriptBridge {
     static var shared: JavaScriptBridge { _sharedJavaScriptBridge }
-}
-
-
-private var _sharedThemeDB = {
-    ThemeDB.exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
-        return ThemeDB.retrievedInstanceManagedByGodot(instancePointer)!
-    }
-}()
-
-public extension ThemeDB {
-    static var shared: ThemeDB { _sharedThemeDB }
 }
 
 

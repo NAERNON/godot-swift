@@ -5,7 +5,7 @@ import Utils
 /// A protocol representing a Godot function.
 ///
 /// Conform your type to the protocol to gain access
-/// to usefull syntax declarations.
+/// to useful syntax declarations.
 protocol GodotFunction {
     var name: String { get }
     var arguments: [GodotArgument]? { get }

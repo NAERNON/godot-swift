@@ -34,7 +34,7 @@ open class AStar2D: RefCounted {
     private static var __method_binding_add_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_point").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3370185124)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4074201818)!
         }
         }
     }()
@@ -212,7 +212,7 @@ open class AStar2D: RefCounted {
     private static var __method_binding_set_point_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_point_disabled").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4023243586)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 972357352)!
         }
         }
     }()
@@ -252,7 +252,7 @@ open class AStar2D: RefCounted {
     private static var __method_binding_connect_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "connect_points").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3785370599)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3710494224)!
         }
         }
     }()
@@ -273,7 +273,7 @@ open class AStar2D: RefCounted {
     private static var __method_binding_disconnect_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "disconnect_points").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3785370599)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3710494224)!
         }
         }
     }()
@@ -294,7 +294,7 @@ open class AStar2D: RefCounted {
     private static var __method_binding_are_points_connected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "are_points_connected").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4063588998)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2288175859)!
         }
         }
     }()
@@ -477,7 +477,7 @@ open class AStar2D: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AStar2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AStar2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._estimateCost(
             fromId: Int64.fromGodotUnsafePointer(args[0]!),
             toId: Int64.fromGodotUnsafePointer(args[1]!)
@@ -487,7 +487,7 @@ open class AStar2D: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AStar2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AStar2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._computeCost(
             fromId: Int64.fromGodotUnsafePointer(args[0]!),
             toId: Int64.fromGodotUnsafePointer(args[1]!)

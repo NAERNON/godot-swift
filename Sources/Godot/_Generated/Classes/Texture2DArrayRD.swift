@@ -3,8 +3,8 @@
 //
 
 import GodotExtensionHeaders
-@GodotClass
-open class GodotPhysicsServer3D: PhysicsServer3D {
+@GodotRefCountedClass
+open class Texture2DArrayRD: TextureLayeredRD {
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {

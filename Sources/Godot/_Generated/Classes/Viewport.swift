@@ -29,12 +29,14 @@ open class Viewport: Node {
     public enum Scaling3DMode: UInt32, GodotEnum {
         case bilinear = 0
         case fsr = 1
-        case max = 2
+        case fsr2 = 2
+        case max = 3
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Bilinear", 0),
             ("Fsr", 1),
-            ("Max", 2),]
+            ("Fsr2", 2),
+            ("Max", 3),]
         }
     }
     public enum MSAA: UInt32, GodotEnum {
@@ -114,6 +116,7 @@ open class Viewport: Node {
         case clusterReflectionProbes = 23
         case occluders = 24
         case motionVectors = 25
+        case internalBuffer = 26
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disabled", 0),
@@ -141,7 +144,8 @@ open class Viewport: Node {
             ("Cluster Decals", 22),
             ("Cluster Reflection Probes", 23),
             ("Occluders", 24),
-            ("Motion Vectors", 25),]
+            ("Motion Vectors", 25),
+            ("Internal Buffer", 26),]
         }
     }
     public enum DefaultCanvasItemTextureFilter: UInt32, GodotEnum {
@@ -437,6 +441,43 @@ open class Viewport: Node {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_has_transparent_background,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_use_hdr_2d: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_use_hdr_2d").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setUseHdr2D(enable: Bool) {
+        enable.withGodotUnsafeRawPointer { __ptr_enable in
+        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_use_hdr_2d,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_is_using_hdr_2d: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_using_hdr_2d").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __isUsingHdr2D() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_using_hdr_2d,
             __ptr_self,
             nil,
             __temporary
@@ -1500,6 +1541,24 @@ open class Viewport: Node {
         )}}
     }
 
+    private static var __method_binding_get_embedded_subwindows: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_embedded_subwindows").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
+        }
+        }
+    }()
+    public func embeddedSubwindows() -> Godot.GodotArray<Godot.Window?> {
+        Godot.GodotArray<Godot.Window?>.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_embedded_subwindows,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_canvas_cull_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_canvas_cull_mask").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -2353,6 +2412,17 @@ open class Viewport: Node {
         set {
             __setDebugDraw(
                 newValue
+            )
+        }
+    }
+
+    public var isUsingHdr2D: Bool {
+        get {
+            __isUsingHdr2D()
+        }
+        set {
+            __setUseHdr2D(
+                enable: newValue
             )
         }
     }

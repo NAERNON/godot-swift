@@ -100,11 +100,11 @@ extension Transform3D {
         Self._operatorMultiply(self, vector3Array)
     }
     
-    public var inversed: Transform3D {
+    public var inverted: Transform3D {
         _inverse()
     }
     
-    public var affineInversed: Transform3D {
+    public var affineInverted: Transform3D {
         _affineInverse()
     }
     

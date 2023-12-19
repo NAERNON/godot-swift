@@ -102,11 +102,11 @@ open class ImporterMesh: Resource {
     private static var __method_binding_add_surface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_surface").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4122361985)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740448849)!
         }
         }
     }()
-    public func addSurface<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorable>(primitive: Godot.Mesh.PrimitiveType, arrays: Godot.GodotArray<Value1>, blendShapes: Godot.GodotArray<Godot.AnyGodotArray> = [], lods: Godot.GodotDictionary<Value2, Value3> = [:], material: Godot.Material? = nil, name: Godot.GodotString = "", flags: UInt32 = 0) {
+    public func addSurface<Value1: VariantStorable, Value2: VariantStorable, Value3: VariantStorable>(primitive: Godot.Mesh.PrimitiveType, arrays: Godot.GodotArray<Value1>, blendShapes: Godot.GodotArray<Godot.AnyGodotArray> = [], lods: Godot.GodotDictionary<Value2, Value3> = [:], material: Godot.Material? = nil, name: Godot.GodotString = "", flags: UInt64 = 0) {
         primitive.withGodotUnsafeRawPointer { __ptr_primitive in
         arrays.withGodotUnsafeRawPointer { __ptr_arrays in
         blendShapes.withGodotUnsafeRawPointer { __ptr_blendShapes in
@@ -313,8 +313,8 @@ open class ImporterMesh: Resource {
         }
         }
     }()
-    public func surfaceFormat(surfaceIdx: Int32) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+    public func surfaceFormat(surfaceIdx: Int32) -> UInt64 {
+        UInt64.fromMutatingGodotUnsafePointer { __temporary in
         surfaceIdx.withGodotUnsafeRawPointer { __ptr_surfaceIdx in
         withUnsafeArgumentPackPointer(__ptr_surfaceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in

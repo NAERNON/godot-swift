@@ -8,12 +8,12 @@ open class PhysicsDirectSpaceState3D: Object {
     private static var __method_binding_intersect_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "intersect_point").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 45993382)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 975173756)!
         }
         }
     }()
     public func intersectPoint(parameters: Godot.PhysicsPointQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         parameters.withGodotUnsafeRawPointer { __ptr_parameters in
         withUnsafePointer(to: __ptr_parameters) { _ptr___ptr_parameters in
         maxResults.withGodotUnsafeRawPointer { __ptr_maxResults in
@@ -51,12 +51,12 @@ open class PhysicsDirectSpaceState3D: Object {
     private static var __method_binding_intersect_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "intersect_shape").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 550215980)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3762137681)!
         }
         }
     }()
     public func intersectShape(parameters: Godot.PhysicsShapeQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         parameters.withGodotUnsafeRawPointer { __ptr_parameters in
         withUnsafePointer(to: __ptr_parameters) { _ptr___ptr_parameters in
         maxResults.withGodotUnsafeRawPointer { __ptr_maxResults in
@@ -94,12 +94,12 @@ open class PhysicsDirectSpaceState3D: Object {
     private static var __method_binding_collide_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "collide_shape").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 550215980)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3762137681)!
         }
         }
     }()
     public func collideShape(parameters: Godot.PhysicsShapeQueryParameters3D?, maxResults: Int32 = 32) -> Godot.GodotArray<Godot.Vector3> {
-        Godot.GodotArray<Godot.Vector3> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector3>.fromMutatingGodotUnsafePointer { __temporary in
         parameters.withGodotUnsafeRawPointer { __ptr_parameters in
         withUnsafePointer(to: __ptr_parameters) { _ptr___ptr_parameters in
         maxResults.withGodotUnsafeRawPointer { __ptr_maxResults in

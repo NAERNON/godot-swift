@@ -3,8 +3,8 @@
 //
 
 import GodotExtensionHeaders
-@GodotClass
-open class IPUnix: IP {
+@GodotRefCountedClass
+open class VisualShaderNodeScreenNormalWorldSpace: VisualShaderNode {
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {

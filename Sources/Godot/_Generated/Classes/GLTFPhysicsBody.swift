@@ -228,6 +228,43 @@ open class GLTFPhysicsBody: Resource {
         )}}}
     }
 
+    private static var __method_binding_get_center_of_mass: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_center_of_mass").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3360562783)!
+        }
+        }
+    }()
+    private func __getCenterOfMass() -> Godot.Vector3 {
+        Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_center_of_mass,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_center_of_mass: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_center_of_mass").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3460891852)!
+        }
+        }
+    }()
+    private func __setCenterOfMass(_ centerOfMass: Godot.Vector3) {
+        centerOfMass.withGodotUnsafeRawPointer { __ptr_centerOfMass in
+        withUnsafeArgumentPackPointer(__ptr_centerOfMass) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_center_of_mass,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
     private static var __method_binding_get_inertia_tensor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_inertia_tensor").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -304,6 +341,17 @@ open class GLTFPhysicsBody: Resource {
         }
         set {
             __setAngularVelocity(
+                newValue
+            )
+        }
+    }
+
+    public var centerOfMass: Godot.Vector3 {
+        get {
+            __getCenterOfMass()
+        }
+        set {
+            __setCenterOfMass(
                 newValue
             )
         }

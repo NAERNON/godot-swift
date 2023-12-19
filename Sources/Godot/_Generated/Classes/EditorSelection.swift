@@ -74,7 +74,7 @@ open class EditorSelection: Object {
         }
     }()
     public func selectedNodes() -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_selected_nodes,
@@ -92,7 +92,7 @@ open class EditorSelection: Object {
         }
     }()
     public func transformableSelectedNodes() -> Godot.GodotArray<Godot.Node?> {
-        Godot.GodotArray<Godot.Node?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_transformable_selected_nodes,

@@ -24,7 +24,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
     private static var __method_binding_add_blend_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_blend_point").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1533588937)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 402261981)!
         }
         }
     }()
@@ -164,7 +164,7 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
     private static var __method_binding_add_triangle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_triangle").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 642454959)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 753017335)!
         }
         }
     }()

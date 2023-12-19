@@ -33,21 +33,21 @@ open class EditorSceneFormatImporter: RefCounted {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorSceneFormatImporter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorSceneFormatImporter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getImportFlags()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorSceneFormatImporter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorSceneFormatImporter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getExtensions()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _import_scene_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorSceneFormatImporter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorSceneFormatImporter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._importScene(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             flags: UInt32.fromGodotUnsafePointer(args[1]!),
@@ -58,7 +58,7 @@ open class EditorSceneFormatImporter: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorSceneFormatImporter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorSceneFormatImporter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getImportOptions(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )}
@@ -66,7 +66,7 @@ open class EditorSceneFormatImporter: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorSceneFormatImporter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorSceneFormatImporter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getOptionVisibility(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!),
             forAnimation: Bool.fromGodotUnsafePointer(args[1]!),

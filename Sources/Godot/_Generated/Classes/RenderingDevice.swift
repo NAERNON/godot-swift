@@ -497,24 +497,28 @@ open class RenderingDevice: Object {
         }
     }
     public struct BarrierMask: GodotOptionSet {
-        public let rawValue: UInt32
+        public let rawValue: Int64
 
-        public init(rawValue: UInt32) {
+        public init(rawValue: Int64) {
             self.rawValue = rawValue
         }
 
-        public static let raster: Self = .init(rawValue: 1)
+        public static let vertex: Self = .init(rawValue: 1)
+        public static let fragment: Self = .init(rawValue: 8)
         public static let compute: Self = .init(rawValue: 2)
         public static let transfer: Self = .init(rawValue: 4)
-        public static let allBarriers: Self = .init(rawValue: 7)
-        public static let noBarrier: Self = .init(rawValue: 8)
+        public static let raster: Self = .init(rawValue: 9)
+        public static let allBarriers: Self = .init(rawValue: 32767)
+        public static let noBarrier: Self = .init(rawValue: 32768)
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Raster", 1),
+            ("Vertex", 1),
             ("Compute", 2),
             ("Transfer", 4),
-            ("All Barriers", 7),
-            ("No Barrier", 8),]
+            ("Fragment", 8),
+            ("Raster", 9),
+            ("All Barriers", 32767),
+            ("No Barrier", 32768),]
         }
     }
     public enum TextureType: UInt32, GodotEnum {
@@ -560,9 +564,9 @@ open class RenderingDevice: Object {
         }
     }
     public struct TextureUsageBits: GodotOptionSet {
-        public let rawValue: UInt32
+        public let rawValue: Int64
 
-        public init(rawValue: UInt32) {
+        public init(rawValue: Int64) {
             self.rawValue = rawValue
         }
 
@@ -686,9 +690,9 @@ open class RenderingDevice: Object {
         }
     }
     public struct StorageBufferUsage: GodotOptionSet {
-        public let rawValue: UInt32
+        public let rawValue: Int64
 
-        public init(rawValue: UInt32) {
+        public init(rawValue: Int64) {
             self.rawValue = rawValue
         }
 
@@ -922,9 +926,9 @@ open class RenderingDevice: Object {
         }
     }
     public struct PipelineDynamicStateFlags: GodotOptionSet {
-        public let rawValue: UInt32
+        public let rawValue: Int64
 
-        public init(rawValue: UInt32) {
+        public init(rawValue: Int64) {
             self.rawValue = rawValue
         }
 
@@ -1116,7 +1120,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_texture_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "texture_create").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3011278298)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3709173589)!
         }
         }
     }()
@@ -1162,7 +1166,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_texture_create_shared_from_slice: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "texture_create_shared_from_slice").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 864132525)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1808971279)!
         }
         }
     }()
@@ -1185,14 +1189,42 @@ open class RenderingDevice: Object {
         )}}}}}}}}}}
     }
 
-    private static var __method_binding_texture_update: GDExtensionMethodBindPtr = {
+    private static var __method_binding_texture_create_from_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "texture_update").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2736912341)!
+        GodotStringName(swiftStaticString: "texture_create_from_extension").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1397171480)!
         }
         }
     }()
-    public func textureUpdate(texture: Godot.RID, layer: UInt32, data: Godot.PackedByteArray, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 7)) -> Godot.ErrorType {
+    public func textureCreateFromExtension(type: Godot.RenderingDevice.TextureType, format: Godot.RenderingDevice.DataFormat, samples: Godot.RenderingDevice.TextureSamples, usageFlags: Godot.RenderingDevice.TextureUsageBits, image: UInt64, width: UInt64, height: UInt64, depth: UInt64, layers: UInt64) -> Godot.RID {
+        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        type.withGodotUnsafeRawPointer { __ptr_type in
+        format.withGodotUnsafeRawPointer { __ptr_format in
+        samples.withGodotUnsafeRawPointer { __ptr_samples in
+        usageFlags.withGodotUnsafeRawPointer { __ptr_usageFlags in
+        image.withGodotUnsafeRawPointer { __ptr_image in
+        width.withGodotUnsafeRawPointer { __ptr_width in
+        height.withGodotUnsafeRawPointer { __ptr_height in
+        depth.withGodotUnsafeRawPointer { __ptr_depth in
+        layers.withGodotUnsafeRawPointer { __ptr_layers in
+        withUnsafeArgumentPackPointer(__ptr_type, __ptr_format, __ptr_samples, __ptr_usageFlags, __ptr_image, __ptr_width, __ptr_height, __ptr_depth, __ptr_layers) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_texture_create_from_extension,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}}}}}}}}
+    }
+
+    private static var __method_binding_texture_update: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "texture_update").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2096463824)!
+        }
+        }
+    }()
+    public func textureUpdate(texture: Godot.RID, layer: UInt32, data: Godot.PackedByteArray, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         layer.withGodotUnsafeRawPointer { __ptr_layer in
@@ -1293,11 +1325,11 @@ open class RenderingDevice: Object {
     private static var __method_binding_texture_copy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "texture_copy").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3741367532)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339493201)!
         }
         }
     }()
-    public func textureCopy(fromTexture: Godot.RID, toTexture: Godot.RID, fromPos: Godot.Vector3, toPos: Godot.Vector3, size: Godot.Vector3, srcMipmap: UInt32, dstMipmap: UInt32, srcLayer: UInt32, dstLayer: UInt32, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 7)) -> Godot.ErrorType {
+    public func textureCopy(fromTexture: Godot.RID, toTexture: Godot.RID, fromPos: Godot.Vector3, toPos: Godot.Vector3, size: Godot.Vector3, srcMipmap: UInt32, dstMipmap: UInt32, srcLayer: UInt32, dstLayer: UInt32, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         fromTexture.withGodotUnsafeRawPointer { __ptr_fromTexture in
         toTexture.withGodotUnsafeRawPointer { __ptr_toTexture in
@@ -1322,11 +1354,11 @@ open class RenderingDevice: Object {
     private static var __method_binding_texture_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "texture_clear").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3423681478)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3396867530)!
         }
         }
     }()
-    public func textureClear(texture: Godot.RID, color: Godot.Color, baseMipmap: UInt32, mipmapCount: UInt32, baseLayer: UInt32, layerCount: UInt32, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 7)) -> Godot.ErrorType {
+    public func textureClear(texture: Godot.RID, color: Godot.Color, baseMipmap: UInt32, mipmapCount: UInt32, baseLayer: UInt32, layerCount: UInt32, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         color.withGodotUnsafeRawPointer { __ptr_color in
@@ -1348,11 +1380,11 @@ open class RenderingDevice: Object {
     private static var __method_binding_texture_resolve_multisample: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "texture_resolve_multisample").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2126834943)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 594679454)!
         }
         }
     }()
-    public func textureResolveMultisample(fromTexture: Godot.RID, toTexture: Godot.RID, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 7)) -> Godot.ErrorType {
+    public func textureResolveMultisample(fromTexture: Godot.RID, toTexture: Godot.RID, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         fromTexture.withGodotUnsafeRawPointer { __ptr_fromTexture in
         toTexture.withGodotUnsafeRawPointer { __ptr_toTexture in
@@ -1365,6 +1397,26 @@ open class RenderingDevice: Object {
             __accessPtr,
             __temporary
         )}}}}}}
+    }
+
+    private static var __method_binding_texture_get_format: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "texture_get_format").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1374471690)!
+        }
+        }
+    }()
+    public func textureGetFormat(texture: Godot.RID) -> Godot.RDTextureFormat? {
+        Godot.RDTextureFormat?.fromMutatingGodotUnsafePointer { __temporary in
+        texture.withGodotUnsafeRawPointer { __ptr_texture in
+        withUnsafeArgumentPackPointer(__ptr_texture) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_texture_get_format,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
     }
 
     private static var __method_binding_texture_get_native_handle: GDExtensionMethodBindPtr = {
@@ -1390,7 +1442,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_framebuffer_format_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "framebuffer_format_create").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2635475316)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 697032759)!
         }
         }
     }()
@@ -1411,7 +1463,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_framebuffer_format_create_multipass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "framebuffer_format_create_multipass").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1992489524)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2647479094)!
         }
         }
     }()
@@ -1453,7 +1505,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_framebuffer_format_get_texture_samples: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "framebuffer_format_get_texture_samples").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1036806638)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4223391010)!
         }
         }
     }()
@@ -1474,7 +1526,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_framebuffer_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "framebuffer_create").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1884747791)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3284231055)!
         }
         }
     }()
@@ -1496,7 +1548,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_framebuffer_create_multipass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "framebuffer_create_multipass").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 452534725)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1750306695)!
         }
         }
     }()
@@ -1519,7 +1571,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_framebuffer_create_empty: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "framebuffer_create_empty").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 382373098)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3058360618)!
         }
         }
     }()
@@ -1623,7 +1675,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_vertex_buffer_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "vertex_buffer_create").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3491282828)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3410049843)!
         }
         }
     }()
@@ -1665,7 +1717,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_vertex_array_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "vertex_array_create").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3137892244)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3799816279)!
         }
         }
     }()
@@ -1688,7 +1740,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_index_buffer_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "index_buffer_create").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 975915977)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3935920523)!
         }
         }
     }()
@@ -1733,7 +1785,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_shader_compile_spirv_from_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shader_compile_spirv_from_source").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3459523685)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1178973306)!
         }
         }
     }()
@@ -1755,7 +1807,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_shader_compile_binary_from_spirv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shader_compile_binary_from_spirv").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1395027180)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 134910450)!
         }
         }
     }()
@@ -1777,7 +1829,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_shader_create_from_spirv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shader_create_from_spirv").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3297482566)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 342949005)!
         }
         }
     }()
@@ -1799,21 +1851,40 @@ open class RenderingDevice: Object {
     private static var __method_binding_shader_create_from_bytecode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "shader_create_from_bytecode").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3049171473)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1687031350)!
         }
         }
     }()
-    public func shaderCreateFromBytecode(binaryData: Godot.PackedByteArray) -> Godot.RID {
+    public func shaderCreateFromBytecode(binaryData: Godot.PackedByteArray, placeholderRid: Godot.RID = RID()) -> Godot.RID {
         Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
         binaryData.withGodotUnsafeRawPointer { __ptr_binaryData in
-        withUnsafeArgumentPackPointer(__ptr_binaryData) { __accessPtr in
+        placeholderRid.withGodotUnsafeRawPointer { __ptr_placeholderRid in
+        withUnsafeArgumentPackPointer(__ptr_binaryData, __ptr_placeholderRid) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_shader_create_from_bytecode,
             __ptr_self,
             __accessPtr,
             __temporary
-        )}}}}
+        )}}}}}
+    }
+
+    private static var __method_binding_shader_create_placeholder: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shader_create_placeholder").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 529393457)!
+        }
+        }
+    }()
+    public func shaderCreatePlaceholder() -> Godot.RID {
+        Godot.RID.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_shader_create_placeholder,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
     }
 
     private static var __method_binding_shader_get_vertex_input_attribute_mask: GDExtensionMethodBindPtr = {
@@ -1823,8 +1894,8 @@ open class RenderingDevice: Object {
         }
         }
     }()
-    public func shaderGetVertexInputAttributeMask(shader: Godot.RID) -> UInt32 {
-        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+    public func shaderGetVertexInputAttributeMask(shader: Godot.RID) -> UInt64 {
+        UInt64.fromMutatingGodotUnsafePointer { __temporary in
         shader.withGodotUnsafeRawPointer { __ptr_shader in
         withUnsafeArgumentPackPointer(__ptr_shader) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -1839,7 +1910,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_uniform_buffer_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "uniform_buffer_create").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1453158401)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 34556762)!
         }
         }
     }()
@@ -1860,7 +1931,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_storage_buffer_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "storage_buffer_create").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1173156076)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2316365934)!
         }
         }
     }()
@@ -1882,7 +1953,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_texture_buffer_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "texture_buffer_create").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2344087557)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1470338698)!
         }
         }
     }()
@@ -1946,11 +2017,11 @@ open class RenderingDevice: Object {
     private static var __method_binding_buffer_update: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "buffer_update").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 652628289)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3793150683)!
         }
         }
     }()
-    public func bufferUpdate(buffer: Godot.RID, offset: UInt32, sizeBytes: UInt32, data: Godot.PackedByteArray, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 7)) -> Godot.ErrorType {
+    public func bufferUpdate(buffer: Godot.RID, offset: UInt32, sizeBytes: UInt32, data: Godot.PackedByteArray, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
@@ -1970,11 +2041,11 @@ open class RenderingDevice: Object {
     private static var __method_binding_buffer_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "buffer_clear").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1645170096)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2797041220)!
         }
         }
     }()
-    public func bufferClear(buffer: Godot.RID, offset: UInt32, sizeBytes: UInt32, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 7)) -> Godot.ErrorType {
+    public func bufferClear(buffer: Godot.RID, offset: UInt32, sizeBytes: UInt32, postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         buffer.withGodotUnsafeRawPointer { __ptr_buffer in
         offset.withGodotUnsafeRawPointer { __ptr_offset in
@@ -1993,7 +2064,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_buffer_get_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "buffer_get_data").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 125363422)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3101830688)!
         }
         }
     }()
@@ -2015,7 +2086,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_render_pipeline_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "render_pipeline_create").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2911419500)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2385451958)!
         }
         }
     }()
@@ -2069,7 +2140,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_compute_pipeline_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "compute_pipeline_create").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 403593840)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1448838280)!
         }
         }
     }()
@@ -2189,7 +2260,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_draw_list_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw_list_begin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4252992020)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2468082605)!
         }
         }
     }()
@@ -2218,7 +2289,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_draw_list_begin_split: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw_list_begin_split").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 832527510)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2406300660)!
         }
         }
     }()
@@ -2370,7 +2441,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_draw_list_draw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw_list_draw").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3710874499)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4230067973)!
         }
         }
     }()
@@ -2392,7 +2463,7 @@ open class RenderingDevice: Object {
     private static var __method_binding_draw_list_enable_scissor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw_list_enable_scissor").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 338791288)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 244650101)!
         }
         }
     }()
@@ -2469,11 +2540,11 @@ open class RenderingDevice: Object {
     private static var __method_binding_draw_list_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw_list_end").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 422991495)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3920951950)!
         }
         }
     }()
-    public func drawListEnd(postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 7)) {
+    public func drawListEnd(postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) {
         postBarrier.withGodotUnsafeRawPointer { __ptr_postBarrier in
         withUnsafeArgumentPackPointer(__ptr_postBarrier) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2611,11 +2682,11 @@ open class RenderingDevice: Object {
     private static var __method_binding_compute_list_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "compute_list_end").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 422991495)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3920951950)!
         }
         }
     }()
-    public func computeListEnd(postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 7)) {
+    public func computeListEnd(postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) {
         postBarrier.withGodotUnsafeRawPointer { __ptr_postBarrier in
         withUnsafeArgumentPackPointer(__ptr_postBarrier) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -2836,11 +2907,11 @@ open class RenderingDevice: Object {
     private static var __method_binding_barrier: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "barrier").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 266666049)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3718155691)!
         }
         }
     }()
-    public func barrier(from: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 7), to: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 7)) {
+    public func barrier(from: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767), to: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)) {
         from.withGodotUnsafeRawPointer { __ptr_from in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_from, __ptr_to) { __accessPtr in

@@ -29,11 +29,7 @@ struct GodotEnum: Decodable {
     
     func syntax() throws -> DeclSyntax {
         if isBitfield == true {
-            if values.contains(where: { $0.value < 0 }) {
-                try DeclSyntax(optionSetSyntax(forType: Int32.self))
-            } else {
-                try DeclSyntax(optionSetSyntax(forType: UInt32.self))
-            }
+            try DeclSyntax(optionSetSyntax(forType: Int64.self))
         } else {
             if values.contains(where: { $0.value < 0 }) {
                 try DeclSyntax(enumSyntax(forType: Int32.self))

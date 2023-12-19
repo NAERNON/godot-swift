@@ -18,7 +18,7 @@ open class RichTextEffect: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<RichTextEffect> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<RichTextEffect>.fromOpaque(instancePtr).takeUnretainedValue()
         ._processCustomFx(
             charFx: Godot.CharFXTransform?.fromGodotUnsafePointer(args[0]!)
         )

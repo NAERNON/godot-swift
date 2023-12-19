@@ -234,7 +234,7 @@ open class SkeletonModification2D: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<SkeletonModification2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<SkeletonModification2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._execute(
             delta: Double.fromGodotUnsafePointer(args[0]!)
         )}
@@ -242,7 +242,7 @@ open class SkeletonModification2D: Resource {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<SkeletonModification2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<SkeletonModification2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setupModification(
             modificationStack: Godot.SkeletonModificationStack2D?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -250,7 +250,7 @@ open class SkeletonModification2D: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<SkeletonModification2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<SkeletonModification2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._drawEditorGizmo()}
         _virtualFunctions = [
             "_execute" : ("_execute", _execute_call),

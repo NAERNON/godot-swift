@@ -5,6 +5,10 @@
 import GodotExtensionHeaders
 @GodotClass
 open class XRNode3D: Node3D {
+    @Emitter(signal: "tracking_changed", args: ("tracking", Bool))
+    public struct TrackingChanged {
+    }
+
     private static var __method_binding_set_tracker: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_tracker").withGodotUnsafeRawPointer { __ptr__method_name in

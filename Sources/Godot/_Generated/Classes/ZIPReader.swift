@@ -64,7 +64,7 @@ open class ZIPReader: RefCounted {
     private static var __method_binding_read_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "read_file").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 156385007)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 740857591)!
         }
         }
     }()
@@ -76,6 +76,27 @@ open class ZIPReader: RefCounted {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_read_file,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
+    }
+
+    private static var __method_binding_file_exists: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "file_exists").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 35364943)!
+        }
+        }
+    }()
+    public func fileExists(path: Godot.GodotString, caseSensitive: Bool = true) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        path.withGodotUnsafeRawPointer { __ptr_path in
+        caseSensitive.withGodotUnsafeRawPointer { __ptr_caseSensitive in
+        withUnsafeArgumentPackPointer(__ptr_path, __ptr_caseSensitive) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_file_exists,
             __ptr_self,
             __accessPtr,
             __temporary

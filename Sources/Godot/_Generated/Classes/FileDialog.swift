@@ -64,7 +64,7 @@ open class FileDialog: ConfirmationDialog {
     private static var __method_binding_add_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_filter").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 233059325)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3388804757)!
         }
         }
     }()
@@ -450,6 +450,43 @@ open class FileDialog: ConfirmationDialog {
         )}}
     }
 
+    private static var __method_binding_set_use_native_dialog: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_use_native_dialog").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setUseNativeDialog(native: Bool) {
+        native.withGodotUnsafeRawPointer { __ptr_native in
+        withUnsafeArgumentPackPointer(__ptr_native) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_use_native_dialog,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_use_native_dialog: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_use_native_dialog").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __getUseNativeDialog() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_use_native_dialog,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_deselect_all: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "deselect_all").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -546,6 +583,17 @@ open class FileDialog: ConfirmationDialog {
         set {
             __setShowHiddenFiles(
                 show: newValue
+            )
+        }
+    }
+
+    public var useNativeDialog: Bool {
+        get {
+            __getUseNativeDialog()
+        }
+        set {
+            __setUseNativeDialog(
+                native: newValue
             )
         }
     }

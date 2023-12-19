@@ -141,6 +141,10 @@ open class EditorPlugin: Node {
     open func _clear() {
     }
 
+    open func _getUnsavedStatus(forScene scene: Godot.GodotString) -> Godot.GodotString {
+        Godot.GodotString()
+    }
+
     open func _saveExternalData() {
     }
 
@@ -1013,6 +1017,24 @@ open class EditorPlugin: Node {
         )}}}}
     }
 
+    private static var __method_binding_get_plugin_version: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_plugin_version").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
+        }
+        }
+    }()
+    public func pluginVersion() -> Godot.GodotString {
+        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_plugin_version,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
@@ -1022,7 +1044,7 @@ open class EditorPlugin: Node {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._forwardCanvasGuiInput(
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[0]!)
         )
@@ -1031,7 +1053,7 @@ open class EditorPlugin: Node {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._forwardCanvasDrawOverViewport(
             viewportControl: Godot.Control?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1039,7 +1061,7 @@ open class EditorPlugin: Node {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._forwardCanvasForceDrawOverViewport(
             viewportControl: Godot.Control?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1047,7 +1069,7 @@ open class EditorPlugin: Node {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._forward3DGuiInput(
             viewportCamera: Godot.Camera3D?.fromGodotUnsafePointer(args[0]!),
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[1]!)
@@ -1057,7 +1079,7 @@ open class EditorPlugin: Node {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._forward3DDrawOverViewport(
             viewportControl: Godot.Control?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1065,7 +1087,7 @@ open class EditorPlugin: Node {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._forward3DForceDrawOverViewport(
             viewportControl: Godot.Control?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1073,28 +1095,28 @@ open class EditorPlugin: Node {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getPluginName()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_plugin_icon_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getPluginIcon()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _has_main_screen_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._hasMainScreen()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _make_visible_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._makeVisible(
             Bool.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1102,7 +1124,7 @@ open class EditorPlugin: Node {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._edit(
             object: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1110,7 +1132,7 @@ open class EditorPlugin: Node {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._handles(
             object: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )
@@ -1119,14 +1141,14 @@ open class EditorPlugin: Node {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getState()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setState(
             Godot.AnyGodotDictionary.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1134,32 +1156,41 @@ open class EditorPlugin: Node {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._clear()}
+        let _get_unsaved_status_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._getUnsavedStatus(
+            forScene: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
+        )
+        .copyToGodot(unsafePointer: returnPtr!)}
         let _save_external_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._saveExternalData()}
         let _apply_changes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._applyChanges()}
         let _get_breakpoints_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getBreakpoints()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_window_layout_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setWindowLayout(
             configuration: Godot.ConfigFile?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1167,7 +1198,7 @@ open class EditorPlugin: Node {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getWindowLayout(
             configuration: Godot.ConfigFile?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -1175,20 +1206,20 @@ open class EditorPlugin: Node {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._build()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _enable_plugin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._enablePlugin()}
         let _disable_plugin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr).takeUnretainedValue()
         ._disablePlugin()}
         _virtualFunctions = [
             "_forwardCanvasGuiInput" : ("_forward_canvas_gui_input", _forward_canvas_gui_input_call),
@@ -1206,6 +1237,7 @@ open class EditorPlugin: Node {
             "_getState" : ("_get_state", _get_state_call),
             "_setState" : ("_set_state", _set_state_call),
             "_clear" : ("_clear", _clear_call),
+            "_getUnsavedStatus" : ("_get_unsaved_status", _get_unsaved_status_call),
             "_saveExternalData" : ("_save_external_data", _save_external_data_call),
             "_applyChanges" : ("_apply_changes", _apply_changes_call),
             "_getBreakpoints" : ("_get_breakpoints", _get_breakpoints_call),

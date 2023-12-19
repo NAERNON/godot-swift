@@ -1340,6 +1340,43 @@ open class LineEdit: Control {
         )}}
     }
 
+    private static var __method_binding_set_drag_and_drop_selection_enabled: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_drag_and_drop_selection_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setDragAndDropSelectionEnabled(enable: Bool) {
+        enable.withGodotUnsafeRawPointer { __ptr_enable in
+        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_drag_and_drop_selection_enabled,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_is_drag_and_drop_selection_enabled: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_drag_and_drop_selection_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __isDragAndDropSelectionEnabled() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_drag_and_drop_selection_enabled,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_right_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_right_icon").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -1507,28 +1544,6 @@ open class LineEdit: Control {
         }
     }
 
-    public var isSecret: Bool {
-        get {
-            __isSecret()
-        }
-        set {
-            __setSecret(
-                enabled: newValue
-            )
-        }
-    }
-
-    public var secretCharacter: Godot.GodotString {
-        get {
-            __getSecretCharacter()
-        }
-        set {
-            __setSecretCharacter(
-                newValue
-            )
-        }
-    }
-
     public var isExpandToTextLengthEnabled: Bool {
         get {
             __isExpandToTextLengthEnabled()
@@ -1628,6 +1643,17 @@ open class LineEdit: Control {
         }
     }
 
+    public var isDragAndDropSelectionEnabled: Bool {
+        get {
+            __isDragAndDropSelectionEnabled()
+        }
+        set {
+            __setDragAndDropSelectionEnabled(
+                enable: newValue
+            )
+        }
+    }
+
     public var rightIcon: Godot.Texture2D? {
         get {
             __getRightIcon()
@@ -1722,6 +1748,28 @@ open class LineEdit: Control {
         }
         set {
             __setCaretMidGraphemeEnabled(
+                newValue
+            )
+        }
+    }
+
+    public var isSecret: Bool {
+        get {
+            __isSecret()
+        }
+        set {
+            __setSecret(
+                enabled: newValue
+            )
+        }
+    }
+
+    public var secretCharacter: Godot.GodotString {
+        get {
+            __getSecretCharacter()
+        }
+        set {
+            __setSecretCharacter(
                 newValue
             )
         }

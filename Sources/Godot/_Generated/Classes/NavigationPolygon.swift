@@ -5,6 +5,33 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class NavigationPolygon: Resource {
+    public enum ParsedGeometryType: UInt32, GodotEnum {
+        case meshInstances = 0
+        case staticColliders = 1
+        case both = 2
+        case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Mesh Instances", 0),
+            ("Static Colliders", 1),
+            ("Both", 2),
+            ("Max", 3),]
+        }
+    }
+    public enum SourceGeometryMode: UInt32, GodotEnum {
+        case rootNodeChildren = 0
+        case groupsWithChildren = 1
+        case groupsExplicit = 2
+        case max = 3
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Root Node Children", 0),
+            ("Groups With Children", 1),
+            ("Groups Explicit", 2),
+            ("Max", 3),]
+        }
+    }
+
     private static var __method_binding_set_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_vertices").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -321,6 +348,248 @@ open class NavigationPolygon: Resource {
         )}}
     }
 
+    private static var __method_binding_set_parsed_geometry_type: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_parsed_geometry_type").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2507971764)!
+        }
+        }
+    }()
+    private func __setParsedGeometryType(_ geometryType: Godot.NavigationPolygon.ParsedGeometryType) {
+        geometryType.withGodotUnsafeRawPointer { __ptr_geometryType in
+        withUnsafeArgumentPackPointer(__ptr_geometryType) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_parsed_geometry_type,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_parsed_geometry_type: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_parsed_geometry_type").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1073219508)!
+        }
+        }
+    }()
+    private func __getParsedGeometryType() -> Godot.NavigationPolygon.ParsedGeometryType {
+        Godot.NavigationPolygon.ParsedGeometryType.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_parsed_geometry_type,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_parsed_collision_mask: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_parsed_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
+        }
+        }
+    }()
+    private func __setParsedCollisionMask(_ mask: UInt32) {
+        mask.withGodotUnsafeRawPointer { __ptr_mask in
+        withUnsafeArgumentPackPointer(__ptr_mask) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_parsed_collision_mask,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_parsed_collision_mask: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_parsed_collision_mask").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
+        }
+        }
+    }()
+    private func __getParsedCollisionMask() -> UInt32 {
+        UInt32.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_parsed_collision_mask,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_parsed_collision_mask_value: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_parsed_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
+        }
+        }
+    }()
+    public func setParsedCollisionMaskValue(layerNumber: Int32, value: Bool) {
+        layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
+        value.withGodotUnsafeRawPointer { __ptr_value in
+        withUnsafeArgumentPackPointer(__ptr_layerNumber, __ptr_value) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_parsed_collision_mask_value,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_get_parsed_collision_mask_value: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_parsed_collision_mask_value").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
+        }
+        }
+    }()
+    public func parsedCollisionMaskValue(layerNumber: Int32) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        layerNumber.withGodotUnsafeRawPointer { __ptr_layerNumber in
+        withUnsafeArgumentPackPointer(__ptr_layerNumber) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_parsed_collision_mask_value,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_set_source_geometry_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_source_geometry_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4002316705)!
+        }
+        }
+    }()
+    private func __setSourceGeometryMode(_ geometryMode: Godot.NavigationPolygon.SourceGeometryMode) {
+        geometryMode.withGodotUnsafeRawPointer { __ptr_geometryMode in
+        withUnsafeArgumentPackPointer(__ptr_geometryMode) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_source_geometry_mode,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_source_geometry_mode: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_source_geometry_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 459686762)!
+        }
+        }
+    }()
+    private func __getSourceGeometryMode() -> Godot.NavigationPolygon.SourceGeometryMode {
+        Godot.NavigationPolygon.SourceGeometryMode.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_source_geometry_mode,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_source_geometry_group_name: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_source_geometry_group_name").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
+        }
+        }
+    }()
+    private func __setSourceGeometryGroupName(_ groupName: Godot.GodotStringName) {
+        groupName.withGodotUnsafeRawPointer { __ptr_groupName in
+        withUnsafeArgumentPackPointer(__ptr_groupName) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_source_geometry_group_name,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_source_geometry_group_name: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_source_geometry_group_name").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2002593661)!
+        }
+        }
+    }()
+    private func __getSourceGeometryGroupName() -> Godot.GodotStringName {
+        Godot.GodotStringName.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_source_geometry_group_name,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_agent_radius: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_agent_radius").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        }
+        }
+    }()
+    private func __setAgentRadius(_ agentRadius: Double) {
+        agentRadius.withGodotUnsafeRawPointer { __ptr_agentRadius in
+        withUnsafeArgumentPackPointer(__ptr_agentRadius) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_agent_radius,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_agent_radius: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_agent_radius").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        }
+        }
+    }()
+    private func __getAgentRadius() -> Double {
+        Double.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_agent_radius,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_clear: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        }
+        }
+    }()
+    public func clear() {
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_clear,
+            __ptr_self,
+            nil,
+            nil
+        )}
+    }
+
     public var vertices: Godot.PackedVector2Array {
         get {
             __getVertices()
@@ -332,12 +601,67 @@ open class NavigationPolygon: Resource {
         }
     }
 
+    public var parsedGeometryType: Godot.NavigationPolygon.ParsedGeometryType {
+        get {
+            __getParsedGeometryType()
+        }
+        set {
+            __setParsedGeometryType(
+                newValue
+            )
+        }
+    }
+
+    public var parsedCollisionMask: UInt32 {
+        get {
+            __getParsedCollisionMask()
+        }
+        set {
+            __setParsedCollisionMask(
+                newValue
+            )
+        }
+    }
+
+    public var sourceGeometryMode: Godot.NavigationPolygon.SourceGeometryMode {
+        get {
+            __getSourceGeometryMode()
+        }
+        set {
+            __setSourceGeometryMode(
+                newValue
+            )
+        }
+    }
+
+    public var sourceGeometryGroupName: Godot.GodotStringName {
+        get {
+            __getSourceGeometryGroupName()
+        }
+        set {
+            __setSourceGeometryGroupName(
+                newValue
+            )
+        }
+    }
+
     public var cellSize: Double {
         get {
             __getCellSize()
         }
         set {
             __setCellSize(
+                newValue
+            )
+        }
+    }
+
+    public var agentRadius: Double {
+        get {
+            __getAgentRadius()
+        }
+        set {
+            __setAgentRadius(
                 newValue
             )
         }

@@ -8,7 +8,7 @@ open class JSON: Resource {
     private static var __method_binding_stringify: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "stringify").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2656701787)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 462733549)!
         }
         }
     }()

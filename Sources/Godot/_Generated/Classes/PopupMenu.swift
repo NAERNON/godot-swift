@@ -21,10 +21,32 @@ open class PopupMenu: Popup {
     public struct MenuChanged {
     }
 
+    private static var __method_binding_activate_item_by_event: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "activate_item_by_event").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3716412023)!
+        }
+        }
+    }()
+    public func activateItemByEvent(_ event: Godot.InputEvent?, forGlobalOnly globalOnly: Bool = false) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        event.withGodotUnsafeRawPointer { __ptr_event in
+        withUnsafePointer(to: __ptr_event) { _ptr___ptr_event in
+        globalOnly.withGodotUnsafeRawPointer { __ptr_globalOnly in
+        withUnsafeArgumentPackPointer(_ptr___ptr_event, __ptr_globalOnly) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_activate_item_by_event,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}}
+    }
+
     private static var __method_binding_add_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3224536192)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3674230041)!
         }
         }
     }()
@@ -45,7 +67,7 @@ open class PopupMenu: Popup {
     private static var __method_binding_add_icon_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_icon_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1200674553)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1086190128)!
         }
         }
     }()
@@ -68,7 +90,7 @@ open class PopupMenu: Popup {
     private static var __method_binding_add_check_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_check_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3224536192)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3674230041)!
         }
         }
     }()
@@ -89,7 +111,7 @@ open class PopupMenu: Popup {
     private static var __method_binding_add_icon_check_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_icon_check_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1200674553)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1086190128)!
         }
         }
     }()
@@ -112,7 +134,7 @@ open class PopupMenu: Popup {
     private static var __method_binding_add_radio_check_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_radio_check_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3224536192)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3674230041)!
         }
         }
     }()
@@ -133,7 +155,7 @@ open class PopupMenu: Popup {
     private static var __method_binding_add_icon_radio_check_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_icon_radio_check_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1200674553)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1086190128)!
         }
         }
     }()
@@ -156,7 +178,7 @@ open class PopupMenu: Popup {
     private static var __method_binding_add_multistate_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_multistate_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1585218420)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 150780458)!
         }
         }
     }()
@@ -179,53 +201,55 @@ open class PopupMenu: Popup {
     private static var __method_binding_add_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_shortcut").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2168272394)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3451850107)!
         }
         }
     }()
-    public func addShortcut(_ shortcut: Godot.Shortcut?, id: Int32 = -1, global: Bool = false) {
+    public func addShortcut(_ shortcut: Godot.Shortcut?, id: Int32 = -1, global: Bool = false, allowEcho: Bool = false) {
         shortcut.withGodotUnsafeRawPointer { __ptr_shortcut in
         withUnsafePointer(to: __ptr_shortcut) { _ptr___ptr_shortcut in
         id.withGodotUnsafeRawPointer { __ptr_id in
         global.withGodotUnsafeRawPointer { __ptr_global in
-        withUnsafeArgumentPackPointer(_ptr___ptr_shortcut, __ptr_id, __ptr_global) { __accessPtr in
+        allowEcho.withGodotUnsafeRawPointer { __ptr_allowEcho in
+        withUnsafeArgumentPackPointer(_ptr___ptr_shortcut, __ptr_id, __ptr_global, __ptr_allowEcho) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_add_shortcut,
             __ptr_self,
             __accessPtr,
             nil
-        )}}}}}}
+        )}}}}}}}
     }
 
     private static var __method_binding_add_icon_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_icon_shortcut").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 68101841)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2997871092)!
         }
         }
     }()
-    public func addIconShortcut(texture: Godot.Texture2D?, shortcut: Godot.Shortcut?, id: Int32 = -1, global: Bool = false) {
+    public func addIconShortcut(texture: Godot.Texture2D?, shortcut: Godot.Shortcut?, id: Int32 = -1, global: Bool = false, allowEcho: Bool = false) {
         texture.withGodotUnsafeRawPointer { __ptr_texture in
         withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
         shortcut.withGodotUnsafeRawPointer { __ptr_shortcut in
         withUnsafePointer(to: __ptr_shortcut) { _ptr___ptr_shortcut in
         id.withGodotUnsafeRawPointer { __ptr_id in
         global.withGodotUnsafeRawPointer { __ptr_global in
-        withUnsafeArgumentPackPointer(_ptr___ptr_texture, _ptr___ptr_shortcut, __ptr_id, __ptr_global) { __accessPtr in
+        allowEcho.withGodotUnsafeRawPointer { __ptr_allowEcho in
+        withUnsafeArgumentPackPointer(_ptr___ptr_texture, _ptr___ptr_shortcut, __ptr_id, __ptr_global, __ptr_allowEcho) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_add_icon_shortcut,
             __ptr_self,
             __accessPtr,
             nil
-        )}}}}}}}}
+        )}}}}}}}}}
     }
 
     private static var __method_binding_add_check_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_check_shortcut").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2168272394)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1642193386)!
         }
         }
     }()
@@ -247,7 +271,7 @@ open class PopupMenu: Popup {
     private static var __method_binding_add_icon_check_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_icon_check_shortcut").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 68101841)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3856247530)!
         }
         }
     }()
@@ -271,7 +295,7 @@ open class PopupMenu: Popup {
     private static var __method_binding_add_radio_check_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_radio_check_shortcut").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2168272394)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1642193386)!
         }
         }
     }()
@@ -293,7 +317,7 @@ open class PopupMenu: Popup {
     private static var __method_binding_add_icon_radio_check_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_icon_radio_check_shortcut").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 68101841)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3856247530)!
         }
         }
     }()
@@ -317,7 +341,7 @@ open class PopupMenu: Popup {
     private static var __method_binding_add_submenu_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_submenu_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3728518296)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2979222410)!
         }
         }
     }()
@@ -1311,18 +1335,20 @@ open class PopupMenu: Popup {
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 107499316)!
         }
         }
     }()
-    public func clear() {
+    public func clear(freeSubmenus: Bool = false) {
+        freeSubmenus.withGodotUnsafeRawPointer { __ptr_freeSubmenus in
+        withUnsafeArgumentPackPointer(__ptr_freeSubmenus) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_clear,
             __ptr_self,
-            nil,
+            __accessPtr,
             nil
-        )}
+        )}}}
     }
 
     private static var __method_binding_set_hide_on_item_selection: GDExtensionMethodBindPtr = {

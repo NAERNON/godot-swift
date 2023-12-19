@@ -56,21 +56,21 @@ open class MovieWriter: Object {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getAudioMixRate()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_audio_speaker_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getAudioSpeakerMode()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _handles_file_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._handlesFile(
             path: Godot.GodotString.fromGodotUnsafePointer(args[0]!)
         )
@@ -79,7 +79,7 @@ open class MovieWriter: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._writeBegin(
             movieSize: Godot.Vector2i.fromGodotUnsafePointer(args[0]!),
             fps: UInt32.fromGodotUnsafePointer(args[1]!),
@@ -90,7 +90,7 @@ open class MovieWriter: Object {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._writeFrame(
             frameImage: Godot.Image?.fromGodotUnsafePointer(args[0]!),
             audioFrameBlock: UnsafeRawPointer.fromGodotUnsafePointer(args[1]!)
@@ -100,7 +100,7 @@ open class MovieWriter: Object {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._writeEnd()}
         _virtualFunctions = [
             "_getAudioMixRate" : ("_get_audio_mix_rate", _get_audio_mix_rate_call),

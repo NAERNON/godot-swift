@@ -306,6 +306,43 @@ open class NavigationAgent3D: Node {
         )}}
     }
 
+    private static var __method_binding_set_keep_y_velocity: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_keep_y_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setKeepYVelocity(enabled: Bool) {
+        enabled.withGodotUnsafeRawPointer { __ptr_enabled in
+        withUnsafeArgumentPackPointer(__ptr_enabled) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_keep_y_velocity,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_get_keep_y_velocity: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_keep_y_velocity").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __getKeepYVelocity() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_keep_y_velocity,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_neighbor_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_neighbor_distance").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -1551,6 +1588,17 @@ open class NavigationAgent3D: Node {
         }
         set {
             __setUse3DAvoidance(
+                enabled: newValue
+            )
+        }
+    }
+
+    public var keepYVelocity: Bool {
+        get {
+            __getKeepYVelocity()
+        }
+        set {
+            __setKeepYVelocity(
                 enabled: newValue
             )
         }

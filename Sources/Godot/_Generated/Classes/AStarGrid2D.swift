@@ -419,7 +419,7 @@ open class AStarGrid2D: RefCounted {
     private static var __method_binding_set_point_solid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_point_solid").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2825551965)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1765703753)!
         }
         }
     }()
@@ -496,6 +496,46 @@ open class AStarGrid2D: RefCounted {
         )}}}}
     }
 
+    private static var __method_binding_fill_solid_region: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "fill_solid_region").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2261970063)!
+        }
+        }
+    }()
+    public func fillSolidRegion(_ region: Godot.Rect2i, solid: Bool = true) {
+        region.withGodotUnsafeRawPointer { __ptr_region in
+        solid.withGodotUnsafeRawPointer { __ptr_solid in
+        withUnsafeArgumentPackPointer(__ptr_region, __ptr_solid) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_fill_solid_region,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_fill_weight_scale_region: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "fill_weight_scale_region").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2793244083)!
+        }
+        }
+    }()
+    public func fillWeightScaleRegion(_ region: Godot.Rect2i, weightScale: Double) {
+        region.withGodotUnsafeRawPointer { __ptr_region in
+        weightScale.withGodotUnsafeRawPointer { __ptr_weightScale in
+        withUnsafeArgumentPackPointer(__ptr_region, __ptr_weightScale) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_fill_weight_scale_region,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -562,7 +602,7 @@ open class AStarGrid2D: RefCounted {
         }
     }()
     public func idPath(fromId: Godot.Vector2i, toId: Godot.Vector2i) -> Godot.GodotArray<Godot.Vector2i> {
-        Godot.GodotArray<Godot.Vector2i> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Vector2i>.fromMutatingGodotUnsafePointer { __temporary in
         fromId.withGodotUnsafeRawPointer { __ptr_fromId in
         toId.withGodotUnsafeRawPointer { __ptr_toId in
         withUnsafeArgumentPackPointer(__ptr_fromId, __ptr_toId) { __accessPtr in
@@ -672,7 +712,7 @@ open class AStarGrid2D: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AStarGrid2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AStarGrid2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._estimateCost(
             fromId: Godot.Vector2i.fromGodotUnsafePointer(args[0]!),
             toId: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)
@@ -682,7 +722,7 @@ open class AStarGrid2D: RefCounted {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AStarGrid2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AStarGrid2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._computeCost(
             fromId: Godot.Vector2i.fromGodotUnsafePointer(args[0]!),
             toId: Godot.Vector2i.fromGodotUnsafePointer(args[1]!)

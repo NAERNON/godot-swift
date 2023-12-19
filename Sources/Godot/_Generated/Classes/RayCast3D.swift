@@ -204,6 +204,24 @@ open class RayCast3D: Node3D {
         )}}
     }
 
+    private static var __method_binding_get_collision_face_index: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_collision_face_index").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
+        }
+        }
+    }()
+    public func collisionFaceIndex() -> Int32 {
+        Int32.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_collision_face_index,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_add_exception_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_exception_rid").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -524,6 +542,43 @@ open class RayCast3D: Node3D {
         )}}
     }
 
+    private static var __method_binding_set_hit_back_faces: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_hit_back_faces").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setHitBackFaces(enable: Bool) {
+        enable.withGodotUnsafeRawPointer { __ptr_enable in
+        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_hit_back_faces,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_is_hit_back_faces_enabled: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_hit_back_faces_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __isHitBackFacesEnabled() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_hit_back_faces_enabled,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_set_debug_shape_custom_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_debug_shape_custom_color").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -648,6 +703,17 @@ open class RayCast3D: Node3D {
         }
         set {
             __setHitFromInside(
+                enable: newValue
+            )
+        }
+    }
+
+    public var isHitBackFacesEnabled: Bool {
+        get {
+            __isHitBackFacesEnabled()
+        }
+        set {
+            __setHitBackFaces(
                 enable: newValue
             )
         }

@@ -854,7 +854,7 @@ extension GodotArray {
     }
 
     internal func _duplicate(deep: Bool = false) -> Godot.GodotArray<Element> {
-        return Godot.GodotArray<Element> .fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotArray<Element>.fromMutatingGodotUnsafePointer { __temporary in
         deep.withGodotUnsafeRawPointer { __ptr_deep in
         withUnsafeArgumentPackPointer(__ptr_deep) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -862,7 +862,7 @@ extension GodotArray {
     }
 
     internal func _slice(begin: Int, end: Int = 2147483647, step: Int = 1, deep: Bool = false) -> Godot.GodotArray<Element> {
-        return Godot.GodotArray<Element> .fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotArray<Element>.fromMutatingGodotUnsafePointer { __temporary in
         begin.withGodotUnsafeRawPointer { __ptr_begin in
         end.withGodotUnsafeRawPointer { __ptr_end in
         step.withGodotUnsafeRawPointer { __ptr_step in
@@ -873,7 +873,7 @@ extension GodotArray {
     }
 
     internal func _filter(method: Godot.Callable) -> Godot.GodotArray<Element> {
-        return Godot.GodotArray<Element> .fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotArray<Element>.fromMutatingGodotUnsafePointer { __temporary in
         method.withGodotUnsafeRawPointer { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in
@@ -881,7 +881,7 @@ extension GodotArray {
     }
 
     internal func _map(method: Godot.Callable) -> Godot.GodotArray<Element> {
-        return Godot.GodotArray<Element> .fromMutatingGodotUnsafePointer { __temporary in
+        return Godot.GodotArray<Element>.fromMutatingGodotUnsafePointer { __temporary in
         method.withGodotUnsafeRawPointer { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
         `self`.withGodotUnsafeRawPointer { __ptr_self in

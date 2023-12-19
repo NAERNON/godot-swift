@@ -719,7 +719,7 @@ open class RigidBody2D: PhysicsBody2D {
     private static var __method_binding_apply_impulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_impulse").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 496058220)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4288681949)!
         }
         }
     }()
@@ -777,7 +777,7 @@ open class RigidBody2D: PhysicsBody2D {
     private static var __method_binding_apply_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "apply_force").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 496058220)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4288681949)!
         }
         }
     }()
@@ -835,7 +835,7 @@ open class RigidBody2D: PhysicsBody2D {
     private static var __method_binding_add_constant_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_constant_force").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 496058220)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4288681949)!
         }
         }
     }()
@@ -1138,7 +1138,7 @@ open class RigidBody2D: PhysicsBody2D {
         }
     }()
     public func collidingBodies() -> Godot.GodotArray<Godot.Node2D?> {
-        Godot.GodotArray<Godot.Node2D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node2D?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_colliding_bodies,
@@ -1154,39 +1154,6 @@ open class RigidBody2D: PhysicsBody2D {
         }
         set {
             __setMass(
-                newValue
-            )
-        }
-    }
-
-    public var inertia: Double {
-        get {
-            __getInertia()
-        }
-        set {
-            __setInertia(
-                newValue
-            )
-        }
-    }
-
-    public var centerOfMassMode: Godot.RigidBody2D.CenterOfMassMode {
-        get {
-            __getCenterOfMassMode()
-        }
-        set {
-            __setCenterOfMassMode(
-                newValue
-            )
-        }
-    }
-
-    public var centerOfMass: Godot.Vector2 {
-        get {
-            __getCenterOfMass()
-        }
-        set {
-            __setCenterOfMass(
                 newValue
             )
         }
@@ -1214,46 +1181,35 @@ open class RigidBody2D: PhysicsBody2D {
         }
     }
 
-    public var isUsingCustomIntegrator: Bool {
+    public var centerOfMassMode: Godot.RigidBody2D.CenterOfMassMode {
         get {
-            __isUsingCustomIntegrator()
+            __getCenterOfMassMode()
         }
         set {
-            __setUseCustomIntegrator(
-                enable: newValue
-            )
-        }
-    }
-
-    public var continuousCollisionDetectionMode: Godot.RigidBody2D.CCDMode {
-        get {
-            __getContinuousCollisionDetectionMode()
-        }
-        set {
-            __setContinuousCollisionDetectionMode(
+            __setCenterOfMassMode(
                 newValue
             )
         }
     }
 
-    public var maxContactsReported: Int32 {
+    public var centerOfMass: Godot.Vector2 {
         get {
-            __getMaxContactsReported()
+            __getCenterOfMass()
         }
         set {
-            __setMaxContactsReported(
-                amount: newValue
+            __setCenterOfMass(
+                newValue
             )
         }
     }
 
-    public var isContactMonitorEnabled: Bool {
+    public var inertia: Double {
         get {
-            __isContactMonitorEnabled()
+            __getInertia()
         }
         set {
-            __setContactMonitor(
-                enabled: newValue
+            __setInertia(
+                newValue
             )
         }
     }
@@ -1309,6 +1265,50 @@ open class RigidBody2D: PhysicsBody2D {
         set {
             __setFreezeMode(
                 newValue
+            )
+        }
+    }
+
+    public var isUsingCustomIntegrator: Bool {
+        get {
+            __isUsingCustomIntegrator()
+        }
+        set {
+            __setUseCustomIntegrator(
+                enable: newValue
+            )
+        }
+    }
+
+    public var continuousCollisionDetectionMode: Godot.RigidBody2D.CCDMode {
+        get {
+            __getContinuousCollisionDetectionMode()
+        }
+        set {
+            __setContinuousCollisionDetectionMode(
+                newValue
+            )
+        }
+    }
+
+    public var maxContactsReported: Int32 {
+        get {
+            __getMaxContactsReported()
+        }
+        set {
+            __setMaxContactsReported(
+                amount: newValue
+            )
+        }
+    }
+
+    public var isContactMonitorEnabled: Bool {
+        get {
+            __isContactMonitorEnabled()
+        }
+        set {
+            __setContactMonitor(
+                enabled: newValue
             )
         }
     }
@@ -1410,7 +1410,7 @@ open class RigidBody2D: PhysicsBody2D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<RigidBody2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<RigidBody2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._integrateForces(
             state: Godot.PhysicsDirectBodyState2D?.fromGodotUnsafePointer(args[0]!)
         )}

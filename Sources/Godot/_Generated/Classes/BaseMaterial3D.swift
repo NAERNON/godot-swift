@@ -205,7 +205,8 @@ open class BaseMaterial3D: Material {
         case subsurfaceModeSkin = 18
         case particleTrailsMode = 19
         case albedoTextureMsdf = 20
-        case max = 21
+        case disableFog = 21
+        case max = 22
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Disable Depth Test", 0),
@@ -229,7 +230,8 @@ open class BaseMaterial3D: Material {
             ("Subsurface Mode Skin", 18),
             ("Particle Trails Mode", 19),
             ("Albedo Texture Msdf", 20),
-            ("Max", 21),]
+            ("Disable Fog", 21),
+            ("Max", 22),]
         }
     }
     public enum DiffuseMode: UInt32, GodotEnum {
@@ -2966,6 +2968,14 @@ open class BaseMaterial3D: Material {
         get {
             __getFlag(
                 .init(rawValue: 14)!
+            )
+        }
+    }
+
+    public var disableFog: Bool {
+        get {
+            __getFlag(
+                .init(rawValue: 21)!
             )
         }
     }

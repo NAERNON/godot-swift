@@ -102,7 +102,7 @@ open class Performance: Object {
     private static var __method_binding_add_custom_monitor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_custom_monitor").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2865980031)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4099036814)!
         }
         }
     }()
@@ -205,7 +205,7 @@ open class Performance: Object {
         }
     }()
     public func customMonitorNames() -> Godot.GodotArray<Godot.GodotStringName> {
-        Godot.GodotArray<Godot.GodotStringName> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.GodotStringName>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_custom_monitor_names,

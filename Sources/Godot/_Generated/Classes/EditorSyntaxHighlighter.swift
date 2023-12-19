@@ -22,14 +22,14 @@ open class EditorSyntaxHighlighter: SyntaxHighlighter {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorSyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorSyntaxHighlighter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getName()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_supported_languages_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorSyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorSyntaxHighlighter>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getSupportedLanguages()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

@@ -259,7 +259,7 @@ open class EditorResourcePicker: HBoxContainer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorResourcePicker> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourcePicker>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setCreateOptions(
             menuNode: Godot.Object?.fromGodotUnsafePointer(args[0]!)
         )}
@@ -267,7 +267,7 @@ open class EditorResourcePicker: HBoxContainer {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorResourcePicker> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorResourcePicker>.fromOpaque(instancePtr).takeUnretainedValue()
         ._handleMenuSelected(
             id: Int32.fromGodotUnsafePointer(args[0]!)
         )

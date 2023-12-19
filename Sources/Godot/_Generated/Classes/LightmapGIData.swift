@@ -5,38 +5,37 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class LightmapGIData: Resource {
-    private static var __method_binding_set_light_texture: GDExtensionMethodBindPtr = {
+    private static var __method_binding_set_lightmap_textures: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_light_texture").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1278366092)!
+        GodotStringName(swiftStaticString: "set_lightmap_textures").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
     }()
-    private func __setLightTexture(_ lightTexture: Godot.TextureLayered?) {
-        lightTexture.withGodotUnsafeRawPointer { __ptr_lightTexture in
-        withUnsafePointer(to: __ptr_lightTexture) { _ptr___ptr_lightTexture in
-        withUnsafeArgumentPackPointer(_ptr___ptr_lightTexture) { __accessPtr in
+    private func __setLightmapTextures(lightTextures: Godot.GodotArray<Godot.TextureLayered?>) {
+        lightTextures.withGodotUnsafeRawPointer { __ptr_lightTextures in
+        withUnsafeArgumentPackPointer(__ptr_lightTextures) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_light_texture,
+            Self.__method_binding_set_lightmap_textures,
             __ptr_self,
             __accessPtr,
             nil
-        )}}}}
+        )}}}
     }
 
-    private static var __method_binding_get_light_texture: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_lightmap_textures: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_light_texture").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3984243839)!
+        GodotStringName(swiftStaticString: "get_lightmap_textures").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
     }()
-    private func __getLightTexture() -> Godot.TextureLayered? {
-        Godot.TextureLayered?.fromMutatingGodotUnsafePointer { __temporary in
+    private func __getLightmapTextures() -> Godot.GodotArray<Godot.TextureLayered?> {
+        Godot.GodotArray<Godot.TextureLayered?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_light_texture,
+            Self.__method_binding_get_lightmap_textures,
             __ptr_self,
             nil,
             __temporary
@@ -157,13 +156,51 @@ open class LightmapGIData: Resource {
         )}
     }
 
-    public var lightTexture: Godot.TextureLayered? {
+    private static var __method_binding_set_light_texture: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_light_texture").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1278366092)!
+        }
+        }
+    }()
+    private func __setLightTexture(_ lightTexture: Godot.TextureLayered?) {
+        lightTexture.withGodotUnsafeRawPointer { __ptr_lightTexture in
+        withUnsafePointer(to: __ptr_lightTexture) { _ptr___ptr_lightTexture in
+        withUnsafeArgumentPackPointer(_ptr___ptr_lightTexture) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_light_texture,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}
+    }
+
+    private static var __method_binding_get_light_texture: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_light_texture").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3984243839)!
+        }
+        }
+    }()
+    private func __getLightTexture() -> Godot.TextureLayered? {
+        Godot.TextureLayered?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_light_texture,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    public var lightmapTextures: Godot.GodotArray<Godot.TextureLayered?> {
         get {
-            __getLightTexture()
+            __getLightmapTextures()
         }
         set {
-            __setLightTexture(
-                newValue
+            __setLightmapTextures(
+                lightTextures: newValue
             )
         }
     }
@@ -174,6 +211,17 @@ open class LightmapGIData: Resource {
         }
         set {
             __setUsesSphericalHarmonics(
+                newValue
+            )
+        }
+    }
+
+    public var lightTexture: Godot.TextureLayered? {
+        get {
+            __getLightTexture()
+        }
+        set {
+            __setLightTexture(
                 newValue
             )
         }

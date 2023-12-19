@@ -23,12 +23,20 @@ open class GraphEdit: Control {
     public struct DisconnectionRequest {
     }
 
-    @Emitter(signal: "popup_request", args: ("position", Godot.Vector2))
-    public struct PopupRequest {
+    @Emitter(signal: "connection_to_empty", args: ("fromNode", Godot.GodotStringName), ("fromPort", Int), ("releasePosition", Godot.Vector2))
+    public struct ConnectionToEmpty {
     }
 
-    @Emitter(signal: "duplicate_nodes_request")
-    public struct DuplicateNodesRequest {
+    @Emitter(signal: "connection_from_empty", args: ("toNode", Godot.GodotStringName), ("toPort", Int), ("releasePosition", Godot.Vector2))
+    public struct ConnectionFromEmpty {
+    }
+
+    @Emitter(signal: "connection_drag_started", args: ("fromNode", Godot.GodotStringName), ("fromPort", Int), ("isOutput", Bool))
+    public struct ConnectionDragStarted {
+    }
+
+    @Emitter(signal: "connection_drag_ended")
+    public struct ConnectionDragEnded {
     }
 
     @Emitter(signal: "copy_nodes_request")
@@ -39,6 +47,14 @@ open class GraphEdit: Control {
     public struct PasteNodesRequest {
     }
 
+    @Emitter(signal: "duplicate_nodes_request")
+    public struct DuplicateNodesRequest {
+    }
+
+    @Emitter(signal: "delete_nodes_request", args: ("nodes", Godot.GodotArray<Godot.GodotStringName>))
+    public struct DeleteNodesRequest {
+    }
+
     @Emitter(signal: "node_selected", args: ("node", Godot.Node?))
     public struct NodeSelected {
     }
@@ -47,16 +63,8 @@ open class GraphEdit: Control {
     public struct NodeDeselected {
     }
 
-    @Emitter(signal: "connection_to_empty", args: ("fromNode", Godot.GodotStringName), ("fromPort", Int), ("releasePosition", Godot.Vector2))
-    public struct ConnectionToEmpty {
-    }
-
-    @Emitter(signal: "connection_from_empty", args: ("toNode", Godot.GodotStringName), ("toPort", Int), ("releasePosition", Godot.Vector2))
-    public struct ConnectionFromEmpty {
-    }
-
-    @Emitter(signal: "delete_nodes_request", args: ("nodes", Godot.GodotArray<Godot.GodotStringName>))
-    public struct DeleteNodesRequest {
+    @Emitter(signal: "popup_request", args: ("position", Godot.Vector2))
+    public struct PopupRequest {
     }
 
     @Emitter(signal: "begin_node_move")
@@ -69,14 +77,6 @@ open class GraphEdit: Control {
 
     @Emitter(signal: "scroll_offset_changed", args: ("offset", Godot.Vector2))
     public struct ScrollOffsetChanged {
-    }
-
-    @Emitter(signal: "connection_drag_started", args: ("fromNode", Godot.GodotStringName), ("fromPort", Int), ("isOutput", Bool))
-    public struct ConnectionDragStarted {
-    }
-
-    @Emitter(signal: "connection_drag_ended")
-    public struct ConnectionDragEnded {
     }
 
     open func _isInInputHotzone(inNode node: Godot.Object?, inPort port: Int32, mousePosition: Godot.Vector2) -> Bool {
@@ -194,7 +194,7 @@ open class GraphEdit: Control {
         }
     }()
     public func connectionList() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_connection_list,
@@ -238,37 +238,37 @@ open class GraphEdit: Control {
         )}
     }
 
-    private static var __method_binding_get_scroll_ofs: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_scroll_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_scroll_ofs").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_scroll_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
     }()
-    private func __getScrollOfs() -> Godot.Vector2 {
+    private func __getScrollOffset() -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_scroll_ofs,
+            Self.__method_binding_get_scroll_offset,
             __ptr_self,
             nil,
             __temporary
         )}}
     }
 
-    private static var __method_binding_set_scroll_ofs: GDExtensionMethodBindPtr = {
+    private static var __method_binding_set_scroll_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_scroll_ofs").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_scroll_offset").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
     }()
-    private func __setScrollOfs(offset: Godot.Vector2) {
+    private func __setScrollOffset(_ offset: Godot.Vector2) {
         offset.withGodotUnsafeRawPointer { __ptr_offset in
         withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_scroll_ofs,
+            Self.__method_binding_set_scroll_offset,
             __ptr_self,
             __accessPtr,
             nil
@@ -618,111 +618,111 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_show_zoom_label: GDExtensionMethodBindPtr = {
+    private static var __method_binding_set_show_grid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_show_zoom_label").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_show_grid").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
     }()
-    private func __setShowZoomLabel(enable: Bool) {
+    private func __setShowGrid(enable: Bool) {
         enable.withGodotUnsafeRawPointer { __ptr_enable in
         withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_show_zoom_label,
+            Self.__method_binding_set_show_grid,
             __ptr_self,
             __accessPtr,
             nil
         )}}}
     }
 
-    private static var __method_binding_is_showing_zoom_label: GDExtensionMethodBindPtr = {
+    private static var __method_binding_is_showing_grid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_showing_zoom_label").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_showing_grid").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
-    private func __isShowingZoomLabel() -> Bool {
+    private func __isShowingGrid() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_is_showing_zoom_label,
+            Self.__method_binding_is_showing_grid,
             __ptr_self,
             nil,
             __temporary
         )}}
     }
 
-    private static var __method_binding_set_snap: GDExtensionMethodBindPtr = {
+    private static var __method_binding_set_snapping_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_snap").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_snapping_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setSnappingEnabled(enable: Bool) {
+        enable.withGodotUnsafeRawPointer { __ptr_enable in
+        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_snapping_enabled,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_is_snapping_enabled: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_snapping_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __isSnappingEnabled() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_snapping_enabled,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_snapping_distance: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_snapping_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
     }()
-    private func __setSnap(pixels: Int32) {
+    private func __setSnappingDistance(pixels: Int32) {
         pixels.withGodotUnsafeRawPointer { __ptr_pixels in
         withUnsafeArgumentPackPointer(__ptr_pixels) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_snap,
+            Self.__method_binding_set_snapping_distance,
             __ptr_self,
             __accessPtr,
             nil
         )}}}
     }
 
-    private static var __method_binding_get_snap: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_snapping_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_snap").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_snapping_distance").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
-    private func __getSnap() -> Int32 {
+    private func __getSnappingDistance() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_snap,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
-    }
-
-    private static var __method_binding_set_use_snap: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_use_snap").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
-        }
-    }()
-    private func __setUseSnap(enable: Bool) {
-        enable.withGodotUnsafeRawPointer { __ptr_enable in
-        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_use_snap,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
-    }
-
-    private static var __method_binding_is_using_snap: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_using_snap").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
-        }
-    }()
-    private func __isUsingSnap() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_is_using_snap,
+            Self.__method_binding_get_snapping_distance,
             __ptr_self,
             nil,
             __temporary
@@ -951,37 +951,222 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_set_arrange_nodes_button_hidden: GDExtensionMethodBindPtr = {
+    private static var __method_binding_set_show_menu: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_arrange_nodes_button_hidden").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "set_show_menu").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
     }()
-    private func __setArrangeNodesButtonHidden(enable: Bool) {
-        enable.withGodotUnsafeRawPointer { __ptr_enable in
-        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
+    private func __setShowMenu(hidden: Bool) {
+        hidden.withGodotUnsafeRawPointer { __ptr_hidden in
+        withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_arrange_nodes_button_hidden,
+            Self.__method_binding_set_show_menu,
             __ptr_self,
             __accessPtr,
             nil
         )}}}
     }
 
-    private static var __method_binding_is_arrange_nodes_button_hidden: GDExtensionMethodBindPtr = {
+    private static var __method_binding_is_showing_menu: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_arrange_nodes_button_hidden").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "is_showing_menu").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
-    private func __isArrangeNodesButtonHidden() -> Bool {
+    private func __isShowingMenu() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_is_arrange_nodes_button_hidden,
+            Self.__method_binding_is_showing_menu,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_show_zoom_label: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_show_zoom_label").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setShowZoomLabel(enable: Bool) {
+        enable.withGodotUnsafeRawPointer { __ptr_enable in
+        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_show_zoom_label,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_is_showing_zoom_label: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_showing_zoom_label").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __isShowingZoomLabel() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_showing_zoom_label,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_show_grid_buttons: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_show_grid_buttons").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setShowGridButtons(hidden: Bool) {
+        hidden.withGodotUnsafeRawPointer { __ptr_hidden in
+        withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_show_grid_buttons,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_is_showing_grid_buttons: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_showing_grid_buttons").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __isShowingGridButtons() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_showing_grid_buttons,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_show_zoom_buttons: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_show_zoom_buttons").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setShowZoomButtons(hidden: Bool) {
+        hidden.withGodotUnsafeRawPointer { __ptr_hidden in
+        withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_show_zoom_buttons,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_is_showing_zoom_buttons: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_showing_zoom_buttons").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __isShowingZoomButtons() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_showing_zoom_buttons,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_show_minimap_button: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_show_minimap_button").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setShowMinimapButton(hidden: Bool) {
+        hidden.withGodotUnsafeRawPointer { __ptr_hidden in
+        withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_show_minimap_button,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_is_showing_minimap_button: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_showing_minimap_button").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __isShowingMinimapButton() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_showing_minimap_button,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_set_show_arrange_button: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_show_arrange_button").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        }
+        }
+    }()
+    private func __setShowArrangeButton(hidden: Bool) {
+        hidden.withGodotUnsafeRawPointer { __ptr_hidden in
+        withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_show_arrange_button,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}
+    }
+
+    private static var __method_binding_is_showing_arrange_button: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_showing_arrange_button").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    private func __isShowingArrangeButton() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_is_showing_arrange_button,
             __ptr_self,
             nil,
             __temporary
@@ -1025,18 +1210,18 @@ open class GraphEdit: Control {
         )}}
     }
 
-    private static var __method_binding_get_zoom_hbox: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_menu_hbox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_zoom_hbox").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_menu_hbox").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3590609951)!
         }
         }
     }()
-    public func zoomHbox() -> Godot.HBoxContainer? {
+    public func menuHbox() -> Godot.HBoxContainer? {
         Godot.HBoxContainer?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_zoom_hbox,
+            Self.__method_binding_get_menu_hbox,
             __ptr_self,
             nil,
             __temporary
@@ -1080,46 +1265,46 @@ open class GraphEdit: Control {
         )}}}}
     }
 
-    public var isRightDisconnectsEnabled: Bool {
+    public var scrollOffset: Godot.Vector2 {
         get {
-            __isRightDisconnectsEnabled()
+            __getScrollOffset()
         }
         set {
-            __setRightDisconnects(
+            __setScrollOffset(
+                newValue
+            )
+        }
+    }
+
+    public var isShowingGrid: Bool {
+        get {
+            __isShowingGrid()
+        }
+        set {
+            __setShowGrid(
                 enable: newValue
             )
         }
     }
 
-    public var scrollOfs: Godot.Vector2 {
+    public var isSnappingEnabled: Bool {
         get {
-            __getScrollOfs()
+            __isSnappingEnabled()
         }
         set {
-            __setScrollOfs(
-                offset: newValue
+            __setSnappingEnabled(
+                enable: newValue
             )
         }
     }
 
-    public var snap: Int32 {
+    public var snappingDistance: Int32 {
         get {
-            __getSnap()
+            __getSnappingDistance()
         }
         set {
-            __setSnap(
+            __setSnappingDistance(
                 pixels: newValue
-            )
-        }
-    }
-
-    public var isUsingSnap: Bool {
-        get {
-            __isUsingSnap()
-        }
-        set {
-            __setUseSnap(
-                enable: newValue
             )
         }
     }
@@ -1131,6 +1316,17 @@ open class GraphEdit: Control {
         set {
             __setPanningScheme(
                 newValue
+            )
+        }
+    }
+
+    public var isRightDisconnectsEnabled: Bool {
+        get {
+            __isRightDisconnectsEnabled()
+        }
+        set {
+            __setRightDisconnects(
+                enable: newValue
             )
         }
     }
@@ -1212,17 +1408,6 @@ open class GraphEdit: Control {
         }
     }
 
-    public var isShowingZoomLabel: Bool {
-        get {
-            __isShowingZoomLabel()
-        }
-        set {
-            __setShowZoomLabel(
-                enable: newValue
-            )
-        }
-    }
-
     public var isMinimapEnabled: Bool {
         get {
             __isMinimapEnabled()
@@ -1256,13 +1441,68 @@ open class GraphEdit: Control {
         }
     }
 
-    public var isArrangeNodesButtonHidden: Bool {
+    public var isShowingMenu: Bool {
         get {
-            __isArrangeNodesButtonHidden()
+            __isShowingMenu()
         }
         set {
-            __setArrangeNodesButtonHidden(
+            __setShowMenu(
+                hidden: newValue
+            )
+        }
+    }
+
+    public var isShowingZoomLabel: Bool {
+        get {
+            __isShowingZoomLabel()
+        }
+        set {
+            __setShowZoomLabel(
                 enable: newValue
+            )
+        }
+    }
+
+    public var isShowingZoomButtons: Bool {
+        get {
+            __isShowingZoomButtons()
+        }
+        set {
+            __setShowZoomButtons(
+                hidden: newValue
+            )
+        }
+    }
+
+    public var isShowingGridButtons: Bool {
+        get {
+            __isShowingGridButtons()
+        }
+        set {
+            __setShowGridButtons(
+                hidden: newValue
+            )
+        }
+    }
+
+    public var isShowingMinimapButton: Bool {
+        get {
+            __isShowingMinimapButton()
+        }
+        set {
+            __setShowMinimapButton(
+                hidden: newValue
+            )
+        }
+    }
+
+    public var isShowingArrangeButton: Bool {
+        get {
+            __isShowingArrangeButton()
+        }
+        set {
+            __setShowArrangeButton(
+                hidden: newValue
             )
         }
     }
@@ -1276,7 +1516,7 @@ open class GraphEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GraphEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GraphEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._isInInputHotzone(
             inNode: Godot.Object?.fromGodotUnsafePointer(args[0]!),
             inPort: Int32.fromGodotUnsafePointer(args[1]!),
@@ -1287,7 +1527,7 @@ open class GraphEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GraphEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GraphEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._isInOutputHotzone(
             inNode: Godot.Object?.fromGodotUnsafePointer(args[0]!),
             inPort: Int32.fromGodotUnsafePointer(args[1]!),
@@ -1298,7 +1538,7 @@ open class GraphEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GraphEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GraphEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getConnectionLine(
             fromPosition: Godot.Vector2.fromGodotUnsafePointer(args[0]!),
             toPosition: Godot.Vector2.fromGodotUnsafePointer(args[1]!)
@@ -1308,7 +1548,7 @@ open class GraphEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<GraphEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<GraphEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._isNodeHoverValid(
             fromNode: Godot.GodotStringName.fromGodotUnsafePointer(args[0]!),
             fromPort: Int32.fromGodotUnsafePointer(args[1]!),

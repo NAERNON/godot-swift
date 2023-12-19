@@ -312,7 +312,7 @@ open class Input: Object {
     private static var __method_binding_get_vector: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_vector").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1517139831)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2479607902)!
         }
         }
     }()
@@ -453,6 +453,26 @@ open class Input: Object {
         )}}}}
     }
 
+    private static var __method_binding_get_joy_info: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_joy_info").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3485342025)!
+        }
+        }
+    }()
+    public func joyInfo(device: Int32) -> Godot.AnyGodotDictionary {
+        Godot.AnyGodotDictionary.fromMutatingGodotUnsafePointer { __temporary in
+        device.withGodotUnsafeRawPointer { __ptr_device in
+        withUnsafeArgumentPackPointer(__ptr_device) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_get_joy_info,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
     private static var __method_binding_should_ignore_device: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "should_ignore_device").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -482,7 +502,7 @@ open class Input: Object {
         }
     }()
     public func connectedJoypads() -> Godot.GodotArray<Int> {
-        Godot.GodotArray<Int> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Int>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_connected_joypads,
@@ -535,7 +555,7 @@ open class Input: Object {
     private static var __method_binding_start_joy_vibration: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "start_joy_vibration").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1890603622)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2576575033)!
         }
         }
     }()
@@ -835,7 +855,7 @@ open class Input: Object {
     private static var __method_binding_action_press: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "action_press").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 573731101)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1713091165)!
         }
         }
     }()
@@ -911,7 +931,7 @@ open class Input: Object {
     private static var __method_binding_set_custom_mouse_cursor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_custom_mouse_cursor").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3489634142)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 703945977)!
         }
         }
     }()

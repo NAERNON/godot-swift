@@ -779,7 +779,7 @@ open class CollisionObject2D: Node2D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<CollisionObject2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CollisionObject2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._inputEvent(
             viewport: Godot.Viewport?.fromGodotUnsafePointer(args[0]!),
             event: Godot.InputEvent?.fromGodotUnsafePointer(args[1]!),
@@ -789,19 +789,19 @@ open class CollisionObject2D: Node2D {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<CollisionObject2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CollisionObject2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._mouseEnter()}
         let _mouse_exit_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<CollisionObject2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CollisionObject2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._mouseExit()}
         let _mouse_shape_enter_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<CollisionObject2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CollisionObject2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._mouseShapeEnter(
             shapeIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )}
@@ -809,7 +809,7 @@ open class CollisionObject2D: Node2D {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<CollisionObject2D> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<CollisionObject2D>.fromOpaque(instancePtr).takeUnretainedValue()
         ._mouseShapeExit(
             shapeIdx: Int32.fromGodotUnsafePointer(args[0]!)
         )}

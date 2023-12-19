@@ -39,9 +39,9 @@ open class AudioStreamPlaybackResampled: AudioStreamPlayback {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<AudioStreamPlaybackResampled> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStreamPlaybackResampled>.fromOpaque(instancePtr).takeUnretainedValue()
         ._mixResampled(
-            dstBuffer: UnsafeMutablePointer<AudioFrame> .fromGodotUnsafePointer(args[0]!),
+            dstBuffer: UnsafeMutablePointer<AudioFrame>.fromGodotUnsafePointer(args[0]!),
             frameCount: Int32.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
@@ -49,7 +49,7 @@ open class AudioStreamPlaybackResampled: AudioStreamPlayback {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<AudioStreamPlaybackResampled> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<AudioStreamPlaybackResampled>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getStreamSamplingRate()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

@@ -4,49 +4,12 @@
 
 import GodotExtensionHeaders
 @GodotClass
-open class GraphNode: Container {
-    public enum Overlay: UInt32, GodotEnum {
-        case disabled = 0
-        case breakpoint = 1
-        case position = 2
-        public static func hintValues() -> [(name: String, value: RawValue)] {
-            [
-            ("Disabled", 0),
-            ("Breakpoint", 1),
-            ("Position", 2),]
-        }
-    }
-
-    @Emitter(signal: "position_offset_changed")
-    public struct PositionOffsetChanged {
-    }
-
-    @Emitter(signal: "node_selected")
-    public struct NodeSelected {
-    }
-
-    @Emitter(signal: "node_deselected")
-    public struct NodeDeselected {
-    }
-
-    @Emitter(signal: "slot_updated", args: ("idx", Int))
+open class GraphNode: GraphElement {
+    @Emitter(signal: "slot_updated", args: ("slotIndex", Int))
     public struct SlotUpdated {
     }
 
-    @Emitter(signal: "dragged", args: ("from", Godot.Vector2), ("to", Godot.Vector2))
-    public struct Dragged {
-    }
-
-    @Emitter(signal: "raise_request")
-    public struct RaiseRequest {
-    }
-
-    @Emitter(signal: "close_request")
-    public struct CloseRequest {
-    }
-
-    @Emitter(signal: "resize_request", args: ("newMinsize", Godot.Vector2))
-    public struct ResizeRequest {
+    open func _drawPort(slotIndex: Int32, position: Godot.Vector2i, left: Bool, color: Godot.Color) {
     }
 
     private static var __method_binding_set_title: GDExtensionMethodBindPtr = {
@@ -86,74 +49,18 @@ open class GraphNode: Container {
         )}}
     }
 
-    private static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_titlebar_hbox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 119160795)!
+        GodotStringName(swiftStaticString: "get_titlebar_hbox").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3590609951)!
         }
         }
     }()
-    private func __setTextDirection(_ direction: Godot.Control.TextDirection) {
-        direction.withGodotUnsafeRawPointer { __ptr_direction in
-        withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
+    public func titlebarHbox() -> Godot.HBoxContainer? {
+        Godot.HBoxContainer?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_text_direction,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
-    }
-
-    private static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text_direction").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 797257663)!
-        }
-        }
-    }()
-    private func __getTextDirection() -> Godot.Control.TextDirection {
-        Godot.Control.TextDirection.fromMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_text_direction,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
-    }
-
-    private static var __method_binding_set_language: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_language").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
-        }
-    }()
-    private func __setLanguage(_ language: Godot.GodotString) {
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_language,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
-    }
-
-    private static var __method_binding_get_language: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_language").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
-        }
-    }()
-    private func __getLanguage() -> Godot.GodotString {
-        Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_language,
+            Self.__method_binding_get_titlebar_hbox,
             __ptr_self,
             nil,
             __temporary
@@ -163,7 +70,7 @@ open class GraphNode: Container {
     private static var __method_binding_set_slot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_slot").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 902131739)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2873310869)!
         }
         }
     }()
@@ -226,26 +133,6 @@ open class GraphNode: Container {
         )}
     }
 
-    private static var __method_binding_set_slot_enabled_left: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_slot_enabled_left").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
-        }
-    }()
-    public func setSlotEnabledLeft(slotIndex: Int32, enable: Bool) {
-        slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
-        enable.withGodotUnsafeRawPointer { __ptr_enable in
-        withUnsafeArgumentPackPointer(__ptr_slotIndex, __ptr_enable) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_slot_enabled_left,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
-    }
-
     private static var __method_binding_is_slot_enabled_left: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_slot_enabled_left").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -263,6 +150,26 @@ open class GraphNode: Container {
             __ptr_self,
             __accessPtr,
             __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_set_slot_enabled_left: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_slot_enabled_left").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
+        }
+        }
+    }()
+    public func setSlotEnabledLeft(slotIndex: Int32, enable: Bool) {
+        slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
+        enable.withGodotUnsafeRawPointer { __ptr_enable in
+        withUnsafeArgumentPackPointer(__ptr_slotIndex, __ptr_enable) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_slot_enabled_left,
+            __ptr_self,
+            __accessPtr,
+            nil
         )}}}}
     }
 
@@ -346,26 +253,6 @@ open class GraphNode: Container {
         )}}}}
     }
 
-    private static var __method_binding_set_slot_enabled_right: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_slot_enabled_right").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
-        }
-    }()
-    public func setSlotEnabledRight(slotIndex: Int32, enable: Bool) {
-        slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
-        enable.withGodotUnsafeRawPointer { __ptr_enable in
-        withUnsafeArgumentPackPointer(__ptr_slotIndex, __ptr_enable) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_slot_enabled_right,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
-    }
-
     private static var __method_binding_is_slot_enabled_right: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_slot_enabled_right").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -383,6 +270,26 @@ open class GraphNode: Container {
             __ptr_self,
             __accessPtr,
             __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_set_slot_enabled_right: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_slot_enabled_right").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
+        }
+        }
+    }()
+    public func setSlotEnabledRight(slotIndex: Int32, enable: Bool) {
+        slotIndex.withGodotUnsafeRawPointer { __ptr_slotIndex in
+        enable.withGodotUnsafeRawPointer { __ptr_enable in
+        withUnsafeArgumentPackPointer(__ptr_slotIndex, __ptr_enable) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_set_slot_enabled_right,
+            __ptr_self,
+            __accessPtr,
+            nil
         )}}}}
     }
 
@@ -506,536 +413,200 @@ open class GraphNode: Container {
         )}}}}
     }
 
-    private static var __method_binding_set_position_offset: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_input_port_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_position_offset").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
-        }
-    }()
-    private func __setPositionOffset(_ offset: Godot.Vector2) {
-        offset.withGodotUnsafeRawPointer { __ptr_offset in
-        withUnsafeArgumentPackPointer(__ptr_offset) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_position_offset,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
-    }
-
-    private static var __method_binding_get_position_offset: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_position_offset").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
-        }
-    }()
-    private func __getPositionOffset() -> Godot.Vector2 {
-        Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_position_offset,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
-    }
-
-    private static var __method_binding_set_comment: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_comment").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
-        }
-    }()
-    private func __setComment(_ comment: Bool) {
-        comment.withGodotUnsafeRawPointer { __ptr_comment in
-        withUnsafeArgumentPackPointer(__ptr_comment) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_comment,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
-    }
-
-    private static var __method_binding_is_comment: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_comment").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
-        }
-    }()
-    private func __isComment() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_is_comment,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
-    }
-
-    private static var __method_binding_set_resizable: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_resizable").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
-        }
-    }()
-    private func __setResizable(_ resizable: Bool) {
-        resizable.withGodotUnsafeRawPointer { __ptr_resizable in
-        withUnsafeArgumentPackPointer(__ptr_resizable) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_resizable,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
-    }
-
-    private static var __method_binding_is_resizable: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_resizable").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
-        }
-    }()
-    private func __isResizable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_is_resizable,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
-    }
-
-    private static var __method_binding_set_draggable: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_draggable").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
-        }
-    }()
-    private func __setDraggable(_ draggable: Bool) {
-        draggable.withGodotUnsafeRawPointer { __ptr_draggable in
-        withUnsafeArgumentPackPointer(__ptr_draggable) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_draggable,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
-    }
-
-    private static var __method_binding_is_draggable: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_draggable").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
-        }
-    }()
-    private func __isDraggable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_is_draggable,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
-    }
-
-    private static var __method_binding_set_selectable: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_selectable").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
-        }
-    }()
-    private func __setSelectable(_ selectable: Bool) {
-        selectable.withGodotUnsafeRawPointer { __ptr_selectable in
-        withUnsafeArgumentPackPointer(__ptr_selectable) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_selectable,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
-    }
-
-    private static var __method_binding_is_selectable: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_selectable").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
-        }
-    }()
-    private func __isSelectable() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_is_selectable,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
-    }
-
-    private static var __method_binding_set_selected: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_selected").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
-        }
-    }()
-    private func __setSelected(_ selected: Bool) {
-        selected.withGodotUnsafeRawPointer { __ptr_selected in
-        withUnsafeArgumentPackPointer(__ptr_selected) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_selected,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
-    }
-
-    private static var __method_binding_is_selected: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_selected").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
-        }
-    }()
-    private func __isSelected() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_is_selected,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
-    }
-
-    private static var __method_binding_get_connection_input_count: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_input_count").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_port_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
     }()
-    public func connectionInputCount() -> Int32 {
+    public func inputPortCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_input_count,
+            Self.__method_binding_get_input_port_count,
             __ptr_self,
             nil,
             __temporary
         )}}
     }
 
-    private static var __method_binding_get_connection_input_height: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_input_port_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_input_height").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3744713108)!
-        }
-        }
-    }()
-    public func connectionInputHeight(port: Int32) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
-        port.withGodotUnsafeRawPointer { __ptr_port in
-        withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_input_height,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
-    }
-
-    private static var __method_binding_get_connection_input_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_input_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_port_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3114997196)!
         }
         }
     }()
-    public func connectionInputPosition(port: Int32) -> Godot.Vector2 {
+    public func inputPortPosition(portIdx: Int32) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
-        port.withGodotUnsafeRawPointer { __ptr_port in
-        withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
+        portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
+        withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_input_position,
+            Self.__method_binding_get_input_port_position,
             __ptr_self,
             __accessPtr,
             __temporary
         )}}}}
     }
 
-    private static var __method_binding_get_connection_input_type: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_input_port_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_input_type").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_port_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3744713108)!
         }
         }
     }()
-    public func connectionInputType(port: Int32) -> Int32 {
+    public func inputPortType(portIdx: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
-        port.withGodotUnsafeRawPointer { __ptr_port in
-        withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
+        portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
+        withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_input_type,
+            Self.__method_binding_get_input_port_type,
             __ptr_self,
             __accessPtr,
             __temporary
         )}}}}
     }
 
-    private static var __method_binding_get_connection_input_color: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_input_port_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_input_color").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_port_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2624840992)!
         }
         }
     }()
-    public func connectionInputColor(port: Int32) -> Godot.Color {
+    public func inputPortColor(portIdx: Int32) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
-        port.withGodotUnsafeRawPointer { __ptr_port in
-        withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
+        portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
+        withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_input_color,
+            Self.__method_binding_get_input_port_color,
             __ptr_self,
             __accessPtr,
             __temporary
         )}}}}
     }
 
-    private static var __method_binding_get_connection_input_slot: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_input_port_slot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_input_slot").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_input_port_slot").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3744713108)!
         }
         }
     }()
-    public func connectionInputSlot(port: Int32) -> Int32 {
+    public func inputPortSlot(portIdx: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
-        port.withGodotUnsafeRawPointer { __ptr_port in
-        withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
+        portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
+        withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_input_slot,
+            Self.__method_binding_get_input_port_slot,
             __ptr_self,
             __accessPtr,
             __temporary
         )}}}}
     }
 
-    private static var __method_binding_get_connection_output_count: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_output_port_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_output_count").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_output_port_count").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
     }()
-    public func connectionOutputCount() -> Int32 {
+    public func outputPortCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_output_count,
+            Self.__method_binding_get_output_port_count,
             __ptr_self,
             nil,
             __temporary
         )}}
     }
 
-    private static var __method_binding_get_connection_output_height: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_output_port_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_output_height").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3744713108)!
-        }
-        }
-    }()
-    public func connectionOutputHeight(port: Int32) -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
-        port.withGodotUnsafeRawPointer { __ptr_port in
-        withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_output_height,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
-    }
-
-    private static var __method_binding_get_connection_output_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_output_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_output_port_position").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3114997196)!
         }
         }
     }()
-    public func connectionOutputPosition(port: Int32) -> Godot.Vector2 {
+    public func outputPortPosition(portIdx: Int32) -> Godot.Vector2 {
         Godot.Vector2.fromMutatingGodotUnsafePointer { __temporary in
-        port.withGodotUnsafeRawPointer { __ptr_port in
-        withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
+        portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
+        withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_output_position,
+            Self.__method_binding_get_output_port_position,
             __ptr_self,
             __accessPtr,
             __temporary
         )}}}}
     }
 
-    private static var __method_binding_get_connection_output_type: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_output_port_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_output_type").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_output_port_type").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3744713108)!
         }
         }
     }()
-    public func connectionOutputType(port: Int32) -> Int32 {
+    public func outputPortType(portIdx: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
-        port.withGodotUnsafeRawPointer { __ptr_port in
-        withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
+        portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
+        withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_output_type,
+            Self.__method_binding_get_output_port_type,
             __ptr_self,
             __accessPtr,
             __temporary
         )}}}}
     }
 
-    private static var __method_binding_get_connection_output_color: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_output_port_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_output_color").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_output_port_color").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2624840992)!
         }
         }
     }()
-    public func connectionOutputColor(port: Int32) -> Godot.Color {
+    public func outputPortColor(portIdx: Int32) -> Godot.Color {
         Godot.Color.fromMutatingGodotUnsafePointer { __temporary in
-        port.withGodotUnsafeRawPointer { __ptr_port in
-        withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
+        portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
+        withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_output_color,
+            Self.__method_binding_get_output_port_color,
             __ptr_self,
             __accessPtr,
             __temporary
         )}}}}
     }
 
-    private static var __method_binding_get_connection_output_slot: GDExtensionMethodBindPtr = {
+    private static var __method_binding_get_output_port_slot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection_output_slot").withGodotUnsafeRawPointer { __ptr__method_name in
+        GodotStringName(swiftStaticString: "get_output_port_slot").withGodotUnsafeRawPointer { __ptr__method_name in
         return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3744713108)!
         }
         }
     }()
-    public func connectionOutputSlot(port: Int32) -> Int32 {
+    public func outputPortSlot(portIdx: Int32) -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
-        port.withGodotUnsafeRawPointer { __ptr_port in
-        withUnsafeArgumentPackPointer(__ptr_port) { __accessPtr in
+        portIdx.withGodotUnsafeRawPointer { __ptr_portIdx in
+        withUnsafeArgumentPackPointer(__ptr_portIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_connection_output_slot,
+            Self.__method_binding_get_output_port_slot,
             __ptr_self,
             __accessPtr,
             __temporary
         )}}}}
-    }
-
-    private static var __method_binding_set_show_close_button: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_show_close_button").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
-        }
-    }()
-    private func __setShowCloseButton(show: Bool) {
-        show.withGodotUnsafeRawPointer { __ptr_show in
-        withUnsafeArgumentPackPointer(__ptr_show) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_show_close_button,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
-    }
-
-    private static var __method_binding_is_close_button_visible: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_close_button_visible").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
-        }
-    }()
-    private func __isCloseButtonVisible() -> Bool {
-        Bool.fromMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_is_close_button_visible,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
-    }
-
-    private static var __method_binding_set_overlay: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_overlay").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3144190109)!
-        }
-        }
-    }()
-    private func __setOverlay(_ overlay: Godot.GraphNode.Overlay) {
-        overlay.withGodotUnsafeRawPointer { __ptr_overlay in
-        withUnsafeArgumentPackPointer(__ptr_overlay) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_set_overlay,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
-    }
-
-    private static var __method_binding_get_overlay: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_overlay").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2854257040)!
-        }
-        }
-    }()
-    private func __getOverlay() -> Godot.GraphNode.Overlay {
-        Godot.GraphNode.Overlay.fromMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
-            Self.__method_binding_get_overlay,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
     }
 
     public var title: Godot.GodotString {
@@ -1049,123 +620,24 @@ open class GraphNode: Container {
         }
     }
 
-    public var positionOffset: Godot.Vector2 {
-        get {
-            __getPositionOffset()
-        }
-        set {
-            __setPositionOffset(
-                newValue
-            )
-        }
-    }
-
-    public var isCloseButtonVisible: Bool {
-        get {
-            __isCloseButtonVisible()
-        }
-        set {
-            __setShowCloseButton(
-                show: newValue
-            )
-        }
-    }
-
-    public var isResizable: Bool {
-        get {
-            __isResizable()
-        }
-        set {
-            __setResizable(
-                newValue
-            )
-        }
-    }
-
-    public var isDraggable: Bool {
-        get {
-            __isDraggable()
-        }
-        set {
-            __setDraggable(
-                newValue
-            )
-        }
-    }
-
-    public var isSelectable: Bool {
-        get {
-            __isSelectable()
-        }
-        set {
-            __setSelectable(
-                newValue
-            )
-        }
-    }
-
-    public var isSelected: Bool {
-        get {
-            __isSelected()
-        }
-        set {
-            __setSelected(
-                newValue
-            )
-        }
-    }
-
-    public var isComment: Bool {
-        get {
-            __isComment()
-        }
-        set {
-            __setComment(
-                newValue
-            )
-        }
-    }
-
-    public var overlay: Godot.GraphNode.Overlay {
-        get {
-            __getOverlay()
-        }
-        set {
-            __setOverlay(
-                newValue
-            )
-        }
-    }
-
-    public var textDirection: Godot.Control.TextDirection {
-        get {
-            __getTextDirection()
-        }
-        set {
-            __setTextDirection(
-                newValue
-            )
-        }
-    }
-
-    public var language: Godot.GodotString {
-        get {
-            __getLanguage()
-        }
-        set {
-            __setLanguage(
-                newValue
-            )
-        }
-    }
-
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
+        let _draw_port_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+            guard let instancePtr, let args else {
+                return
+            }
+            Unmanaged<GraphNode>.fromOpaque(instancePtr).takeUnretainedValue()
+        ._drawPort(
+            slotIndex: Int32.fromGodotUnsafePointer(args[0]!),
+            position: Godot.Vector2i.fromGodotUnsafePointer(args[1]!),
+            left: Bool.fromGodotUnsafePointer(args[2]!),
+            color: Godot.Color.fromGodotUnsafePointer(args[3]!)
+        )}
         _virtualFunctions = [
-            :
+            "_drawPort" : ("_draw_port", _draw_port_call)
         ]
         for (key, value) in super.virtualFunctions() {
             _virtualFunctions! [key] = value

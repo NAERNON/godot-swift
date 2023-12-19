@@ -23,6 +23,10 @@ open class AudioServer: Object {
     public struct BusLayoutChanged {
     }
 
+    @Emitter(signal: "bus_renamed", args: ("busIndex", Int), ("oldName", Godot.GodotStringName), ("newName", Godot.GodotStringName))
+    public struct BusRenamed {
+    }
+
     private static var __method_binding_set_bus_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_bus_count").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -401,7 +405,7 @@ open class AudioServer: Object {
     private static var __method_binding_add_bus_effect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_bus_effect").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4147765248)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4068819785)!
         }
         }
     }()
@@ -484,7 +488,7 @@ open class AudioServer: Object {
     private static var __method_binding_get_bus_effect_instance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_bus_effect_instance").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2887144608)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1829771234)!
         }
         }
     }()

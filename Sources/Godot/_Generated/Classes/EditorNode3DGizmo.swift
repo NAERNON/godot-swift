@@ -47,7 +47,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
     private static var __method_binding_add_lines: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_lines").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 302451090)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2910971437)!
         }
         }
     }()
@@ -70,7 +70,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
     private static var __method_binding_add_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1868867708)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1579955111)!
         }
         }
     }()
@@ -134,7 +134,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
     private static var __method_binding_add_unscaled_billboard: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_unscaled_billboard").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3719733075)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 520007164)!
         }
         }
     }()
@@ -316,13 +316,13 @@ open class EditorNode3DGizmo: Node3DGizmo {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorNode3DGizmo>.fromOpaque(instancePtr).takeUnretainedValue()
         ._redraw()}
         let _get_handle_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorNode3DGizmo>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getHandleName(
             id: Int32.fromGodotUnsafePointer(args[0]!),
             secondary: Bool.fromGodotUnsafePointer(args[1]!)
@@ -332,7 +332,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorNode3DGizmo>.fromOpaque(instancePtr).takeUnretainedValue()
         ._isHandleHighlighted(
             id: Int32.fromGodotUnsafePointer(args[0]!),
             secondary: Bool.fromGodotUnsafePointer(args[1]!)
@@ -342,7 +342,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorNode3DGizmo>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getHandleValue(
             id: Int32.fromGodotUnsafePointer(args[0]!),
             secondary: Bool.fromGodotUnsafePointer(args[1]!)
@@ -352,7 +352,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorNode3DGizmo>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setHandle(
             id: Int32.fromGodotUnsafePointer(args[0]!),
             secondary: Bool.fromGodotUnsafePointer(args[1]!),
@@ -363,7 +363,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorNode3DGizmo>.fromOpaque(instancePtr).takeUnretainedValue()
         ._commitHandle(
             id: Int32.fromGodotUnsafePointer(args[0]!),
             secondary: Bool.fromGodotUnsafePointer(args[1]!),
@@ -374,7 +374,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorNode3DGizmo>.fromOpaque(instancePtr).takeUnretainedValue()
         ._subgizmosIntersectRay(
             camera: Godot.Camera3D?.fromGodotUnsafePointer(args[0]!),
             point: Godot.Vector2.fromGodotUnsafePointer(args[1]!)
@@ -384,17 +384,17 @@ open class EditorNode3DGizmo: Node3DGizmo {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorNode3DGizmo>.fromOpaque(instancePtr).takeUnretainedValue()
         ._subgizmosIntersectFrustum(
             camera: Godot.Camera3D?.fromGodotUnsafePointer(args[0]!),
-            frustum: Godot.GodotArray<Godot.Plane> .fromGodotUnsafePointer(args[1]!)
+            frustum: Godot.GodotArray<Godot.Plane>.fromGodotUnsafePointer(args[1]!)
         )
         .copyToGodot(unsafePointer: returnPtr!)}
         let _set_subgizmo_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorNode3DGizmo>.fromOpaque(instancePtr).takeUnretainedValue()
         ._setSubgizmoTransform(
             id: Int32.fromGodotUnsafePointer(args[0]!),
             transform: Godot.Transform3D.fromGodotUnsafePointer(args[1]!)
@@ -403,7 +403,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorNode3DGizmo>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getSubgizmoTransform(
             id: Int32.fromGodotUnsafePointer(args[0]!)
         )
@@ -412,10 +412,10 @@ open class EditorNode3DGizmo: Node3DGizmo {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<EditorNode3DGizmo>.fromOpaque(instancePtr).takeUnretainedValue()
         ._commitSubgizmos(
             ids: Godot.PackedInt32Array.fromGodotUnsafePointer(args[0]!),
-            restores: Godot.GodotArray<Godot.Transform3D> .fromGodotUnsafePointer(args[1]!),
+            restores: Godot.GodotArray<Godot.Transform3D>.fromGodotUnsafePointer(args[1]!),
             cancel: Bool.fromGodotUnsafePointer(args[2]!)
         )}
         _virtualFunctions = [

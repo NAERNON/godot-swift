@@ -162,28 +162,28 @@ open class Material: Resource {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Material>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getShaderRid()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _get_shader_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Material>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getShaderMode()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _can_do_next_pass_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Material>.fromOpaque(instancePtr).takeUnretainedValue()
         ._canDoNextPass()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _can_use_render_priority_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr else {
                 return
             }
-            Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<Material>.fromOpaque(instancePtr).takeUnretainedValue()
         ._canUseRenderPriority()
         .copyToGodot(unsafePointer: returnPtr!)}
         _virtualFunctions = [

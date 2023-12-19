@@ -56,14 +56,14 @@ open class ImageFormatLoaderExtension: ImageFormatLoader {
             guard let instancePtr else {
                 return
             }
-            Unmanaged<ImageFormatLoaderExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ImageFormatLoaderExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._getRecognizedExtensions()
         .copyToGodot(unsafePointer: returnPtr!)}
         let _load_image_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<ImageFormatLoaderExtension> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<ImageFormatLoaderExtension>.fromOpaque(instancePtr).takeUnretainedValue()
         ._loadImage(
             Godot.Image?.fromGodotUnsafePointer(args[0]!),
             fileaccess: Godot.FileAccess?.fromGodotUnsafePointer(args[1]!),

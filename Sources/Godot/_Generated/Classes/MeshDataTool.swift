@@ -47,22 +47,23 @@ open class MeshDataTool: RefCounted {
     private static var __method_binding_commit_to_surface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "commit_to_surface").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3521099812)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2021686445)!
         }
         }
     }()
-    public func commitToSurface(mesh: Godot.ArrayMesh?) -> Godot.ErrorType {
+    public func commitToSurface(mesh: Godot.ArrayMesh?, compressionFlags: UInt64 = 0) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         mesh.withGodotUnsafeRawPointer { __ptr_mesh in
         withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
-        withUnsafeArgumentPackPointer(_ptr___ptr_mesh) { __accessPtr in
+        compressionFlags.withGodotUnsafeRawPointer { __ptr_compressionFlags in
+        withUnsafeArgumentPackPointer(_ptr___ptr_mesh, __ptr_compressionFlags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_commit_to_surface,
             __ptr_self,
             __accessPtr,
             __temporary
-        )}}}}}
+        )}}}}}}
     }
 
     private static var __method_binding_get_format: GDExtensionMethodBindPtr = {
@@ -72,8 +73,8 @@ open class MeshDataTool: RefCounted {
         }
         }
     }()
-    public func format() -> Int32 {
-        Int32.fromMutatingGodotUnsafePointer { __temporary in
+    public func format() -> UInt64 {
+        UInt64.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_format,

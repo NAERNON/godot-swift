@@ -199,7 +199,7 @@ extension Projection {
         _farPlaneHalfExtents()
     }
     
-    public var inversed: Projection {
+    public var inverted: Projection {
         _inverse()
     }
     

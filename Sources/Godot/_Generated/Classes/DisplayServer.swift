@@ -148,6 +148,21 @@ open class DisplayServer: Object {
             ("Max", 17),]
         }
     }
+    public enum FileDialogMode: UInt32, GodotEnum {
+        case openFile = 0
+        case openFiles = 1
+        case openDir = 2
+        case openAny = 3
+        case saveFile = 4
+        public static func hintValues() -> [(name: String, value: RawValue)] {
+            [
+            ("Open File", 0),
+            ("Open Files", 1),
+            ("Open Dir", 2),
+            ("Open Any", 3),
+            ("Save File", 4),]
+        }
+    }
     public enum WindowMode: UInt32, GodotEnum {
         case windowed = 0
         case minimized = 1
@@ -285,10 +300,31 @@ open class DisplayServer: Object {
         )}}
     }
 
+    private static var __method_binding_global_menu_set_popup_callbacks: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "global_menu_set_popup_callbacks").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3893727526)!
+        }
+        }
+    }()
+    public func globalMenuSetPopupCallbacks(menuRoot: Godot.GodotString, openCallback: Godot.Callable, closeCallback: Godot.Callable) {
+        menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
+        openCallback.withGodotUnsafeRawPointer { __ptr_openCallback in
+        closeCallback.withGodotUnsafeRawPointer { __ptr_closeCallback in
+        withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_openCallback, __ptr_closeCallback) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_global_menu_set_popup_callbacks,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
+    }
+
     private static var __method_binding_global_menu_add_submenu_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_menu_add_submenu_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3806306913)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2828985934)!
         }
         }
     }()
@@ -311,7 +347,7 @@ open class DisplayServer: Object {
     private static var __method_binding_global_menu_add_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_menu_add_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3415468211)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3401266716)!
         }
         }
     }()
@@ -337,7 +373,7 @@ open class DisplayServer: Object {
     private static var __method_binding_global_menu_add_check_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_menu_add_check_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3415468211)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3401266716)!
         }
         }
     }()
@@ -363,7 +399,7 @@ open class DisplayServer: Object {
     private static var __method_binding_global_menu_add_icon_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_menu_add_icon_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1700867534)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4245856523)!
         }
         }
     }()
@@ -391,7 +427,7 @@ open class DisplayServer: Object {
     private static var __method_binding_global_menu_add_icon_check_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_menu_add_icon_check_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1700867534)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4245856523)!
         }
         }
     }()
@@ -419,7 +455,7 @@ open class DisplayServer: Object {
     private static var __method_binding_global_menu_add_radio_check_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_menu_add_radio_check_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3415468211)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3401266716)!
         }
         }
     }()
@@ -445,7 +481,7 @@ open class DisplayServer: Object {
     private static var __method_binding_global_menu_add_icon_radio_check_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_menu_add_icon_radio_check_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1700867534)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4245856523)!
         }
         }
     }()
@@ -473,7 +509,7 @@ open class DisplayServer: Object {
     private static var __method_binding_global_menu_add_multistate_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_menu_add_multistate_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 635750054)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3431222859)!
         }
         }
     }()
@@ -501,7 +537,7 @@ open class DisplayServer: Object {
     private static var __method_binding_global_menu_add_separator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_menu_add_separator").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1041533178)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3214812433)!
         }
         }
     }()
@@ -771,6 +807,27 @@ open class DisplayServer: Object {
         )}}}}}
     }
 
+    private static var __method_binding_global_menu_is_item_hidden: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "global_menu_is_item_hidden").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3511468594)!
+        }
+        }
+    }()
+    public func globalMenuIsItemHidden(menuRoot: Godot.GodotString, idx: Int32) -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
+        idx.withGodotUnsafeRawPointer { __ptr_idx in
+        withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_global_menu_is_item_hidden,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
+    }
+
     private static var __method_binding_global_menu_get_item_tooltip: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_menu_get_item_tooltip").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -960,6 +1017,27 @@ open class DisplayServer: Object {
         )}}}}}
     }
 
+    private static var __method_binding_global_menu_set_item_hover_callbacks: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "global_menu_set_item_hover_callbacks").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3809915389)!
+        }
+        }
+    }()
+    public func globalMenuSetItemHoverCallbacks(menuRoot: Godot.GodotString, idx: Int32, callback: Godot.Callable) {
+        menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
+        idx.withGodotUnsafeRawPointer { __ptr_idx in
+        callback.withGodotUnsafeRawPointer { __ptr_callback in
+        withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx, __ptr_callback) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_global_menu_set_item_hover_callbacks,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
+    }
+
     private static var __method_binding_global_menu_set_item_key_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "global_menu_set_item_key_callback").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -1080,6 +1158,27 @@ open class DisplayServer: Object {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_global_menu_set_item_disabled,
+            __ptr_self,
+            __accessPtr,
+            nil
+        )}}}}}
+    }
+
+    private static var __method_binding_global_menu_set_item_hidden: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "global_menu_set_item_hidden").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4108344793)!
+        }
+        }
+    }()
+    public func globalMenuSetItemHidden(menuRoot: Godot.GodotString, idx: Int32, hidden: Bool) {
+        menuRoot.withGodotUnsafeRawPointer { __ptr_menuRoot in
+        idx.withGodotUnsafeRawPointer { __ptr_idx in
+        hidden.withGodotUnsafeRawPointer { __ptr_hidden in
+        withUnsafeArgumentPackPointer(__ptr_menuRoot, __ptr_idx, __ptr_hidden) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_global_menu_set_item_hidden,
             __ptr_self,
             __accessPtr,
             nil
@@ -1295,7 +1394,7 @@ open class DisplayServer: Object {
         }
     }()
     public func ttsGetVoices() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.AnyGodotDictionary>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_tts_get_voices,
@@ -1328,7 +1427,7 @@ open class DisplayServer: Object {
     private static var __method_binding_tts_speak: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "tts_speak").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3741216677)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 903992738)!
         }
         }
     }()
@@ -1604,6 +1703,24 @@ open class DisplayServer: Object {
         )}}
     }
 
+    private static var __method_binding_clipboard_get_image: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clipboard_get_image").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4190603485)!
+        }
+        }
+    }()
+    public func clipboardGetImage() -> Godot.Image? {
+        Godot.Image?.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_clipboard_get_image,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
     private static var __method_binding_clipboard_has: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clipboard_has").withGodotUnsafeRawPointer { __ptr__method_name in
@@ -1616,6 +1733,24 @@ open class DisplayServer: Object {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_clipboard_has,
+            __ptr_self,
+            nil,
+            __temporary
+        )}}
+    }
+
+    private static var __method_binding_clipboard_has_image: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clipboard_has_image").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        }
+        }
+    }()
+    public func clipboardHasImage() -> Bool {
+        Bool.fromMutatingGodotUnsafePointer { __temporary in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_clipboard_has_image,
             __ptr_self,
             nil,
             __temporary
@@ -1667,7 +1802,7 @@ open class DisplayServer: Object {
         }
     }()
     public func displayCutouts() -> Godot.GodotArray<Godot.Rect2> {
-        Godot.GodotArray<Godot.Rect2> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Rect2>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_display_cutouts,
@@ -1872,7 +2007,7 @@ open class DisplayServer: Object {
     private static var __method_binding_is_touchscreen_available: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_touchscreen_available").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4162880507)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3323674545)!
         }
         }
     }()
@@ -1968,7 +2103,7 @@ open class DisplayServer: Object {
     private static var __method_binding_screen_set_orientation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "screen_set_orientation").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2629526904)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2211511631)!
         }
         }
     }()
@@ -2083,7 +2218,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_get_native_handle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_get_native_handle").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2709193271)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1096425680)!
         }
         }
     }()
@@ -2162,7 +2297,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_title").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3043792800)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 441246282)!
         }
         }
     }()
@@ -2179,10 +2314,31 @@ open class DisplayServer: Object {
         )}}}}
     }
 
+    private static var __method_binding_window_get_title_size: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "window_get_title_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2925301799)!
+        }
+        }
+    }()
+    public func windowGetTitleSize(title: Godot.GodotString, windowId: Int32 = 0) -> Godot.Vector2i {
+        Godot.Vector2i.fromMutatingGodotUnsafePointer { __temporary in
+        title.withGodotUnsafeRawPointer { __ptr_title in
+        windowId.withGodotUnsafeRawPointer { __ptr_windowId in
+        withUnsafeArgumentPackPointer(__ptr_title, __ptr_windowId) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_window_get_title_size,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}
+    }
+
     private static var __method_binding_window_set_mouse_passthrough: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_mouse_passthrough").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3958815166)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1993637420)!
         }
         }
     }()
@@ -2222,7 +2378,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_current_screen: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_current_screen").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3023605688)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2230941749)!
         }
         }
     }()
@@ -2282,7 +2438,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_position").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614040015)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2019273902)!
         }
         }
     }()
@@ -2322,7 +2478,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_size").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614040015)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2019273902)!
         }
         }
     }()
@@ -2342,7 +2498,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_rect_changed_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_rect_changed_callback").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3653650673)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1091192925)!
         }
         }
     }()
@@ -2362,7 +2518,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_window_event_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_window_event_callback").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3653650673)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1091192925)!
         }
         }
     }()
@@ -2382,7 +2538,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_input_event_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_input_event_callback").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3653650673)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1091192925)!
         }
         }
     }()
@@ -2402,7 +2558,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_input_text_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_input_text_callback").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3653650673)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1091192925)!
         }
         }
     }()
@@ -2422,7 +2578,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_drop_files_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_drop_files_callback").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3653650673)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1091192925)!
         }
         }
     }()
@@ -2482,7 +2638,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_max_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_max_size").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614040015)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2019273902)!
         }
         }
     }()
@@ -2522,7 +2678,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_min_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_min_size").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614040015)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2019273902)!
         }
         }
     }()
@@ -2582,7 +2738,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_mode").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2942569511)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1319965401)!
         }
         }
     }()
@@ -2602,7 +2758,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_flag").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3971592565)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 254894155)!
         }
         }
     }()
@@ -2623,7 +2779,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_get_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_get_flag").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2662949986)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 802816991)!
         }
         }
     }()
@@ -2644,7 +2800,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_window_buttons_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_window_buttons_offset").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614040015)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2019273902)!
         }
         }
     }()
@@ -2802,7 +2958,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_ime_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_ime_active").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 450484987)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1661950165)!
         }
         }
     }()
@@ -2822,7 +2978,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_ime_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_ime_position").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614040015)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2019273902)!
         }
         }
     }()
@@ -2842,7 +2998,7 @@ open class DisplayServer: Object {
     private static var __method_binding_window_set_vsync_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "window_set_vsync_mode").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1708924624)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2179333492)!
         }
         }
     }()
@@ -2974,7 +3130,7 @@ open class DisplayServer: Object {
     private static var __method_binding_virtual_keyboard_show: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "virtual_keyboard_show").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 860410478)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3042891259)!
         }
         }
     }()
@@ -3070,7 +3226,7 @@ open class DisplayServer: Object {
     private static var __method_binding_cursor_set_custom_image: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "cursor_set_custom_image").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1358907026)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1816663697)!
         }
         }
     }()
@@ -3170,6 +3326,32 @@ open class DisplayServer: Object {
             __accessPtr,
             __temporary
         )}}}}}}}
+    }
+
+    private static var __method_binding_file_dialog_show: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "file_dialog_show").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1531299078)!
+        }
+        }
+    }()
+    public func fileDialogShow(title: Godot.GodotString, currentDirectory: Godot.GodotString, filename: Godot.GodotString, showHidden: Bool, mode: Godot.DisplayServer.FileDialogMode, filters: Godot.PackedStringArray, callback: Godot.Callable) -> Godot.ErrorType {
+        Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
+        title.withGodotUnsafeRawPointer { __ptr_title in
+        currentDirectory.withGodotUnsafeRawPointer { __ptr_currentDirectory in
+        filename.withGodotUnsafeRawPointer { __ptr_filename in
+        showHidden.withGodotUnsafeRawPointer { __ptr_showHidden in
+        mode.withGodotUnsafeRawPointer { __ptr_mode in
+        filters.withGodotUnsafeRawPointer { __ptr_filters in
+        callback.withGodotUnsafeRawPointer { __ptr_callback in
+        withUnsafeArgumentPackPointer(__ptr_title, __ptr_currentDirectory, __ptr_filename, __ptr_showHidden, __ptr_mode, __ptr_filters, __ptr_callback) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_file_dialog_show,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}}}}}}}
     }
 
     private static var __method_binding_keyboard_get_layout_count: GDExtensionMethodBindPtr = {
@@ -3281,6 +3463,26 @@ open class DisplayServer: Object {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_keyboard_get_keycode_from_physical,
+            __ptr_self,
+            __accessPtr,
+            __temporary
+        )}}}}
+    }
+
+    private static var __method_binding_keyboard_get_label_from_physical: GDExtensionMethodBindPtr = {
+        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "keyboard_get_label_from_physical").withGodotUnsafeRawPointer { __ptr__method_name in
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3447613187)!
+        }
+        }
+    }()
+    public func keyboardGetLabelFromPhysical(keycode: Godot.Key) -> Godot.Key {
+        Godot.Key.fromMutatingGodotUnsafePointer { __temporary in
+        keycode.withGodotUnsafeRawPointer { __ptr_keycode in
+        withUnsafeArgumentPackPointer(__ptr_keycode) { __accessPtr in
+        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+        gdextension_interface_object_method_bind_ptrcall(
+            Self.__method_binding_keyboard_get_label_from_physical,
             __ptr_self,
             __accessPtr,
             __temporary

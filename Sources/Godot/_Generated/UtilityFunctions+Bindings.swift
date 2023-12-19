@@ -124,6 +124,42 @@ internal func _atan2(y: Double, x: Double) -> Double {
     __function_binding_atan2(__temporary, __accessPtr, 2)}}}}
 }
 
+private var __function_binding_asinh: GDExtensionPtrUtilityFunction = {
+    GodotStringName(swiftStaticString: "asinh").withGodotUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, 2140049587)!
+    }
+}()
+internal func _asinh(_ x: Double) -> Double {
+    Double.fromMutatingGodotUnsafePointer { __temporary in
+    x.withGodotUnsafeRawPointer { __ptr_x in
+    withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
+    __function_binding_asinh(__temporary, __accessPtr, 1)}}}
+}
+
+private var __function_binding_acosh: GDExtensionPtrUtilityFunction = {
+    GodotStringName(swiftStaticString: "acosh").withGodotUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, 2140049587)!
+    }
+}()
+internal func _acosh(_ x: Double) -> Double {
+    Double.fromMutatingGodotUnsafePointer { __temporary in
+    x.withGodotUnsafeRawPointer { __ptr_x in
+    withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
+    __function_binding_acosh(__temporary, __accessPtr, 1)}}}
+}
+
+private var __function_binding_atanh: GDExtensionPtrUtilityFunction = {
+    GodotStringName(swiftStaticString: "atanh").withGodotUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, 2140049587)!
+    }
+}()
+internal func _atanh(_ x: Double) -> Double {
+    Double.fromMutatingGodotUnsafePointer { __temporary in
+    x.withGodotUnsafeRawPointer { __ptr_x in
+    withUnsafeArgumentPackPointer(__ptr_x) { __accessPtr in
+    __function_binding_atanh(__temporary, __accessPtr, 1)}}}
+}
+
 private var __function_binding_sqrt: GDExtensionPtrUtilityFunction = {
     GodotStringName(swiftStaticString: "sqrt").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, 2140049587)!
@@ -647,6 +683,19 @@ internal func _bezierDerivative(start: Double, control1: Double, control2: Doubl
     __function_binding_bezier_derivative(__temporary, __accessPtr, 5)}}}}}}}
 }
 
+private var __function_binding_angle_difference: GDExtensionPtrUtilityFunction = {
+    GodotStringName(swiftStaticString: "angle_difference").withGodotUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, 92296394)!
+    }
+}()
+internal func _angleDifference(from: Double, to: Double) -> Double {
+    Double.fromMutatingGodotUnsafePointer { __temporary in
+    from.withGodotUnsafeRawPointer { __ptr_from in
+    to.withGodotUnsafeRawPointer { __ptr_to in
+    withUnsafeArgumentPackPointer(__ptr_from, __ptr_to) { __accessPtr in
+    __function_binding_angle_difference(__temporary, __accessPtr, 2)}}}}
+}
+
 private var __function_binding_lerp_angle: GDExtensionPtrUtilityFunction = {
     GodotStringName(swiftStaticString: "lerp_angle").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, 998901048)!
@@ -717,6 +766,20 @@ internal func _moveToward(from: Double, to: Double, delta: Double) -> Double {
     delta.withGodotUnsafeRawPointer { __ptr_delta in
     withUnsafeArgumentPackPointer(__ptr_from, __ptr_to, __ptr_delta) { __accessPtr in
     __function_binding_move_toward(__temporary, __accessPtr, 3)}}}}}
+}
+
+private var __function_binding_rotate_toward: GDExtensionPtrUtilityFunction = {
+    GodotStringName(swiftStaticString: "rotate_toward").withGodotUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, 998901048)!
+    }
+}()
+internal func _rotateToward(from: Double, to: Double, delta: Double) -> Double {
+    Double.fromMutatingGodotUnsafePointer { __temporary in
+    from.withGodotUnsafeRawPointer { __ptr_from in
+    to.withGodotUnsafeRawPointer { __ptr_to in
+    delta.withGodotUnsafeRawPointer { __ptr_delta in
+    withUnsafeArgumentPackPointer(__ptr_from, __ptr_to, __ptr_delta) { __accessPtr in
+    __function_binding_rotate_toward(__temporary, __accessPtr, 3)}}}}}
 }
 
 private var __function_binding_deg_to_rad: GDExtensionPtrUtilityFunction = {
@@ -1069,6 +1132,19 @@ internal func _typeof<Value: VariantStorableIn>(variable: Value) -> Int {
     __function_binding_typeof(__temporary, __accessPtr, 1)}}}
 }
 
+private var __function_binding_type_convert: GDExtensionPtrUtilityFunction = {
+    GodotStringName(swiftStaticString: "type_convert").withGodotUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, 2453062746)!
+    }
+}()
+internal func _typeConvert<Value: VariantStorableIn>(variant: Value, type: Int) -> Variant {
+    Variant.fromMutatingGodotUnsafePointer { __temporary in
+    Godot.Variant.withStorageUnsafeRawPointer(to: variant) { __ptr_variant in
+    type.withGodotUnsafeRawPointer { __ptr_type in
+    withUnsafeArgumentPackPointer(__ptr_variant, __ptr_type) { __accessPtr in
+    __function_binding_type_convert(__temporary, __accessPtr, 2)}}}}
+}
+
 private var __function_binding_str: GDExtensionPtrUtilityFunction = {
     GodotStringName(swiftStaticString: "str").withGodotUnsafeRawPointer { __ptr__method_name in
     return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, 32569176)!
@@ -1091,6 +1167,18 @@ internal func _errorString(error: Int) -> GodotString {
     error.withGodotUnsafeRawPointer { __ptr_error in
     withUnsafeArgumentPackPointer(__ptr_error) { __accessPtr in
     __function_binding_error_string(__temporary, __accessPtr, 1)}}}
+}
+
+private var __function_binding_type_string: GDExtensionPtrUtilityFunction = {
+    GodotStringName(swiftStaticString: "type_string").withGodotUnsafeRawPointer { __ptr__method_name in
+    return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, 942708242)!
+    }
+}()
+internal func _typeString(type: Int) -> GodotString {
+    GodotString.fromMutatingGodotUnsafePointer { __temporary in
+    type.withGodotUnsafeRawPointer { __ptr_type in
+    withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
+    __function_binding_type_string(__temporary, __accessPtr, 1)}}}
 }
 
 private var __function_binding_print: GDExtensionPtrUtilityFunction = {

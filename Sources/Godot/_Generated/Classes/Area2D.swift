@@ -542,7 +542,7 @@ open class Area2D: CollisionObject2D {
         }
     }()
     public func overlappingBodies() -> Godot.GodotArray<Godot.Node2D?> {
-        Godot.GodotArray<Godot.Node2D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Node2D?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_overlapping_bodies,
@@ -560,7 +560,7 @@ open class Area2D: CollisionObject2D {
         }
     }()
     public func overlappingAreas() -> Godot.GodotArray<Godot.Area2D?> {
-        Godot.GodotArray<Godot.Area2D?> .fromMutatingGodotUnsafePointer { __temporary in
+        Godot.GodotArray<Godot.Area2D?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
         gdextension_interface_object_method_bind_ptrcall(
             Self.__method_binding_get_overlapping_areas,

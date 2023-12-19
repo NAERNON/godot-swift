@@ -764,7 +764,7 @@ open class TextEdit: Control {
     private static var __method_binding_get_line_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_line_width").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3294126239)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 688195400)!
         }
         }
     }()
@@ -883,7 +883,7 @@ open class TextEdit: Control {
     private static var __method_binding_insert_text_at_caret: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "insert_text_at_caret").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3043792800)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2697778442)!
         }
         }
     }()
@@ -1409,7 +1409,7 @@ open class TextEdit: Control {
     private static var __method_binding_get_line_column_at_pos: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_line_column_at_pos").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 850652858)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 239517838)!
         }
         }
     }()
@@ -1510,7 +1510,7 @@ open class TextEdit: Control {
     private static var __method_binding_is_mouse_over_selection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_mouse_over_selection").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1099474134)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1840282309)!
         }
         }
     }()
@@ -1982,7 +1982,7 @@ open class TextEdit: Control {
     private static var __method_binding_set_caret_line: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_caret_line").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1413195636)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1302582944)!
         }
         }
     }()
@@ -2025,7 +2025,7 @@ open class TextEdit: Control {
     private static var __method_binding_set_caret_column: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_caret_column").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1071284433)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3796796178)!
         }
         }
     }()
@@ -2217,7 +2217,7 @@ open class TextEdit: Control {
     private static var __method_binding_set_selection_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_selection_mode").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2920622473)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1443345937)!
         }
         }
     }()
@@ -2310,7 +2310,7 @@ open class TextEdit: Control {
     private static var __method_binding_select: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "select").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4269665324)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2560984452)!
         }
         }
     }()
@@ -2944,7 +2944,7 @@ open class TextEdit: Control {
     private static var __method_binding_get_scroll_pos_for_line: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_scroll_pos_for_line").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3274652423)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3929084198)!
         }
         }
     }()
@@ -2965,7 +2965,7 @@ open class TextEdit: Control {
     private static var __method_binding_set_line_as_first_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_line_as_first_visible").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3023605688)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2230941749)!
         }
         }
     }()
@@ -3003,7 +3003,7 @@ open class TextEdit: Control {
     private static var __method_binding_set_line_as_center_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_line_as_center_visible").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3023605688)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2230941749)!
         }
         }
     }()
@@ -3023,7 +3023,7 @@ open class TextEdit: Control {
     private static var __method_binding_set_line_as_last_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_line_as_last_visible").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3023605688)!
+        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2230941749)!
         }
         }
     }()
@@ -4278,72 +4278,6 @@ open class TextEdit: Control {
         }
     }
 
-    public var isHighlightAllOccurrencesEnabled: Bool {
-        get {
-            __isHighlightAllOccurrencesEnabled()
-        }
-        set {
-            __setHighlightAllOccurrences(
-                enabled: newValue
-            )
-        }
-    }
-
-    public var isHighlightCurrentLineEnabled: Bool {
-        get {
-            __isHighlightCurrentLineEnabled()
-        }
-        set {
-            __setHighlightCurrentLine(
-                enabled: newValue
-            )
-        }
-    }
-
-    public var drawControlChars: Bool {
-        get {
-            __getDrawControlChars()
-        }
-        set {
-            __setDrawControlChars(
-                enabled: newValue
-            )
-        }
-    }
-
-    public var isDrawingTabs: Bool {
-        get {
-            __isDrawingTabs()
-        }
-        set {
-            __setDrawTabs(
-                enabled: newValue
-            )
-        }
-    }
-
-    public var isDrawingSpaces: Bool {
-        get {
-            __isDrawingSpaces()
-        }
-        set {
-            __setDrawSpaces(
-                enabled: newValue
-            )
-        }
-    }
-
-    public var syntaxHighlighter: Godot.SyntaxHighlighter? {
-        get {
-            __getSyntaxHighlighter()
-        }
-        set {
-            __setSyntaxHighlighter(
-                newValue
-            )
-        }
-    }
-
     public var isSmoothScrollEnabled: Bool {
         get {
             __isSmoothScrollEnabled()
@@ -4509,6 +4443,72 @@ open class TextEdit: Control {
         }
     }
 
+    public var syntaxHighlighter: Godot.SyntaxHighlighter? {
+        get {
+            __getSyntaxHighlighter()
+        }
+        set {
+            __setSyntaxHighlighter(
+                newValue
+            )
+        }
+    }
+
+    public var isHighlightAllOccurrencesEnabled: Bool {
+        get {
+            __isHighlightAllOccurrencesEnabled()
+        }
+        set {
+            __setHighlightAllOccurrences(
+                enabled: newValue
+            )
+        }
+    }
+
+    public var isHighlightCurrentLineEnabled: Bool {
+        get {
+            __isHighlightCurrentLineEnabled()
+        }
+        set {
+            __setHighlightCurrentLine(
+                enabled: newValue
+            )
+        }
+    }
+
+    public var drawControlChars: Bool {
+        get {
+            __getDrawControlChars()
+        }
+        set {
+            __setDrawControlChars(
+                enabled: newValue
+            )
+        }
+    }
+
+    public var isDrawingTabs: Bool {
+        get {
+            __isDrawingTabs()
+        }
+        set {
+            __setDrawTabs(
+                enabled: newValue
+            )
+        }
+    }
+
+    public var isDrawingSpaces: Bool {
+        get {
+            __isDrawingSpaces()
+        }
+        set {
+            __setDrawSpaces(
+                enabled: newValue
+            )
+        }
+    }
+
     public var textDirection: Godot.Control.TextDirection {
         get {
             __getTextDirection()
@@ -4562,7 +4562,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._handleUnicodeInput(
             unicodeChar: Int32.fromGodotUnsafePointer(args[0]!),
             caretIndex: Int32.fromGodotUnsafePointer(args[1]!)
@@ -4571,7 +4571,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._backspace(
             caretIndex: Int32.fromGodotUnsafePointer(args[0]!)
         )}
@@ -4579,7 +4579,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._cut(
             caretIndex: Int32.fromGodotUnsafePointer(args[0]!)
         )}
@@ -4587,7 +4587,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._copy(
             caretIndex: Int32.fromGodotUnsafePointer(args[0]!)
         )}
@@ -4595,7 +4595,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._paste(
             caretIndex: Int32.fromGodotUnsafePointer(args[0]!)
         )}
@@ -4603,7 +4603,7 @@ open class TextEdit: Control {
             guard let instancePtr, let args else {
                 return
             }
-            Unmanaged<TextEdit> .fromOpaque(instancePtr).takeUnretainedValue()
+            Unmanaged<TextEdit>.fromOpaque(instancePtr).takeUnretainedValue()
         ._pastePrimaryClipboard(
             caretIndex: Int32.fromGodotUnsafePointer(args[0]!)
         )}
