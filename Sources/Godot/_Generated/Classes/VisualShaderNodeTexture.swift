@@ -19,11 +19,11 @@ open class VisualShaderNodeTexture: VisualShaderNode {
             [
             ("Texture", 0),
             ("Screen", 1),
-            ("Source2 D Texture", 2),
-            ("Source2 D Normal", 3),
+            ("Source2D Texture", 2),
+            ("Source2D Normal", 3),
             ("Depth", 4),
             ("Port", 5),
-            ("Source3 D Normal", 6),
+            ("Source3D Normal", 6),
             ("Roughness", 7),
             ("Max", 8),]
         }

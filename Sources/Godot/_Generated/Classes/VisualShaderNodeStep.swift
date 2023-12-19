@@ -17,10 +17,10 @@ open class VisualShaderNodeStep: VisualShaderNode {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Scalar", 0),
-            ("Vector2 D", 1),
-            ("Vector2 D Scalar", 2),
-            ("Vector3 D", 3),
-            ("Vector3 D Scalar", 4),
+            ("Vector2D", 1),
+            ("Vector2D Scalar", 2),
+            ("Vector3D", 3),
+            ("Vector3D Scalar", 4),
             ("Vector4d", 5),
             ("Vector4d Scalar", 6),
             ("Max", 7),]

@@ -18,9 +18,9 @@ open class Animation: Resource {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Value", 0),
-            ("Position3 D", 1),
-            ("Rotation3 D", 2),
-            ("Scale3 D", 3),
+            ("Position3D", 1),
+            ("Rotation3D", 2),
+            ("Scale3D", 3),
             ("Blend Shape", 4),
             ("Method", 5),
             ("Bezier", 6),

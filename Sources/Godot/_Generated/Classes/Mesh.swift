@@ -131,7 +131,7 @@ open class Mesh: Resource {
             ("Format Bones", 1024),
             ("Format Weights", 2048),
             ("Format Index", 4096),
-            ("Flag Use2 D Vertices", 33554432),
+            ("Flag Use2D Vertices", 33554432),
             ("Flag Use Dynamic Update", 67108864),
             ("Flag Use8 Bone Weights", 134217728),
             ("Flag Uses Empty Vertex Array", 268435456),

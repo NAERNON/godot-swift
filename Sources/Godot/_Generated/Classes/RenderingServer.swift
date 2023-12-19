@@ -11,7 +11,7 @@ open class RenderingServer: Object {
         case cubemapArray = 2
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Texture Layered2 D Array", 0),
+            ("Texture Layered2D Array", 0),
             ("Cubemap", 1),
             ("Cubemap Array", 2),]
         }
@@ -170,7 +170,7 @@ open class RenderingServer: Object {
             ("Format Bones", 1024),
             ("Format Weights", 2048),
             ("Format Index", 4096),
-            ("Flag Use2 D Vertices", 33554432),
+            ("Flag Use2D Vertices", 33554432),
             ("Flag Use Dynamic Update", 67108864),
             ("Flag Use8 Bone Weights", 134217728),
             ("Flag Uses Empty Vertex Array", 268435456),
@@ -209,8 +209,8 @@ open class RenderingServer: Object {
         case multimeshTransform3D = 1
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Multimesh Transform2 D", 0),
-            ("Multimesh Transform3 D", 1),]
+            ("Multimesh Transform2D", 0),
+            ("Multimesh Transform3D", 1),]
         }
     }
     public enum LightProjectorFilter: UInt32, GodotEnum {
@@ -417,8 +417,8 @@ open class RenderingServer: Object {
         case particlesMode3D = 1
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Particles Mode2 D", 0),
-            ("Particles Mode3 D", 1),]
+            ("Particles Mode2D", 0),
+            ("Particles Mode3D", 1),]
         }
     }
     public enum ParticlesTransformAlign: UInt32, GodotEnum {
@@ -1203,7 +1203,7 @@ open class RenderingServer: Object {
             ("Mat2", 19),
             ("Mat3", 20),
             ("Mat4", 21),
-            ("Transform2 D", 22),
+            ("Transform2D", 22),
             ("Transform", 23),
             ("Sampler2d", 24),
             ("Sampler2darray", 25),

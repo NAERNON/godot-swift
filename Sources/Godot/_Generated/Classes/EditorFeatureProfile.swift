@@ -17,7 +17,7 @@ open class EditorFeatureProfile: RefCounted {
         case max = 8
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Feature3 D", 0),
+            ("Feature3D", 0),
             ("Script", 1),
             ("Asset Lib", 2),
             ("Scene Tree", 3),

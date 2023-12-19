@@ -132,14 +132,10 @@ private func translatedFunction(
             decomposedParameterLabel[0].caseInsensitiveCompare(keyword) == .orderedSame
         }
         
-        let decomposedParameterName: [String]
+        let decomposedParameterName: Decomposition
         if firstParameterComponentIsKeyword {
-            decomposedParameterName = Array(decomposedParameterLabel.dropFirst())
-            let sameTypeName = isDecomposition(
-                decomposedParameterName,
-                caseInsensitiveSameAs: decomposedTypeName
-            )
-            if sameTypeName {
+            decomposedParameterName = Decomposition(decomposedParameterLabel.dropFirst())
+            if decomposedParameterName.isCaseInsensitiveEqual(to: decomposedTypeName) {
                 decomposedParameterLabel.removeLast(decomposedParameterLabel.count - 1)
             }
         } else {
@@ -173,7 +169,7 @@ private func translatedFunction(
         
         // Check that the label is not the same as the optional typeName
         if index == 0,
-            isDecomposition(decomposedParameterLabel, caseInsensitiveSameAs: decomposedTypeName)
+           decomposedParameterLabel.isCaseInsensitiveEqual(to: decomposedTypeName)
         {
             isLabelHidden = true
         }
@@ -239,18 +235,4 @@ private func translatedFunction(
     let translatedName = NamingConvention.camel.recompose(decomposedFunctionName)
     
     return (translatedName, translatedParameters)
-}
-
-private func isDecomposition(_ lhs: [String], caseInsensitiveSameAs rhs: [String]) -> Bool {
-    guard lhs.count == rhs.count else {
-        return false
-    }
-    
-    for index in 0..<lhs.count {
-        if lhs[index].caseInsensitiveCompare(rhs[index]) != .orderedSame {
-            return false
-        }
-    }
-    
-    return true
 }

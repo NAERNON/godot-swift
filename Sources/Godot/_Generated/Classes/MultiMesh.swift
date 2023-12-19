@@ -10,8 +10,8 @@ open class MultiMesh: Resource {
         case transform3D = 1
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Transform2 D", 0),
-            ("Transform3 D", 1),]
+            ("Transform2D", 0),
+            ("Transform3D", 1),]
         }
     }
 

@@ -143,7 +143,9 @@ private func translatedEnum(
         return (name, cases)
     }
     
-    let casesComponents = cases.map { NamingConvention.snake.decompose(string: $0).map { $0.lowercased() } }
+    let casesComponents = cases.map {
+        NamingConvention.snake.decompose(string: $0).lowercased()
+    }
     
     // We count the number of same components on the left side on all the enums.
     // They will be removed.

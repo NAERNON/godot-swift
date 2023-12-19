@@ -11,7 +11,7 @@ open class TextureLayered: Texture {
         case cubemapArray = 2
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Layered Type2 D Array", 0),
+            ("Layered Type2D Array", 0),
             ("Cubemap", 1),
             ("Cubemap Array", 2),]
         }

@@ -533,11 +533,11 @@ open class RenderingDevice: Object {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Texture Type1d", 0),
-            ("Texture Type2 D", 1),
-            ("Texture Type3 D", 2),
+            ("Texture Type2D", 1),
+            ("Texture Type3D", 2),
             ("Cube", 3),
             ("Texture Type1d Array", 4),
-            ("Texture Type2 D Array", 5),
+            ("Texture Type2D Array", 5),
             ("Cube Array", 6),
             ("Max", 7),]
         }
@@ -621,9 +621,9 @@ open class RenderingDevice: Object {
         case textureSlice3D = 2
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Texture Slice2 D", 0),
+            ("Texture Slice2D", 0),
             ("Cubemap", 1),
-            ("Texture Slice3 D", 2),]
+            ("Texture Slice3D", 2),]
         }
     }
     public enum SamplerFilter: UInt32, GodotEnum {
@@ -1078,8 +1078,8 @@ open class RenderingDevice: Object {
             ("Max Framebuffer Width", 9),
             ("Max Texture Array Layers", 10),
             ("Max Texture Size1d", 11),
-            ("Max Texture Size2 D", 12),
-            ("Max Texture Size3 D", 13),
+            ("Max Texture Size2D", 12),
+            ("Max Texture Size3D", 13),
             ("Max Texture Size Cube", 14),
             ("Max Textures Per Shader Stage", 15),
             ("Max Samplers Per Shader Stage", 16),

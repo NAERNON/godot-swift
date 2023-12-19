@@ -1,8 +1,6 @@
 import Foundation
 
 public extension NamingConvention {
-    typealias Decomposition = [String]
-    
     func decompose(string: String) -> Decomposition {
         switch self {
         case .camel:
@@ -19,8 +17,9 @@ public extension NamingConvention {
         
         var component = ""
         var previousCharacterIsUppercase = true
+        var previousCharacterIsNumber = true
         for char in string {
-            if char.isUppercase && !previousCharacterIsUppercase {
+            if char.isUppercase && !previousCharacterIsUppercase && !previousCharacterIsNumber {
                 stringComponents.append(component)
                 component = ""
             } else if !char.isUppercase && previousCharacterIsUppercase {
@@ -39,13 +38,14 @@ public extension NamingConvention {
             
             component.append(char)
             previousCharacterIsUppercase = char.isUppercase
+            previousCharacterIsNumber = char.isNumber
         }
         
         if !component.isEmpty {
             stringComponents.append(component)
         }
         
-        return stringComponents
+        return Decomposition(stringComponents)
     }
     
     static func decomposeSnakeCase(string: String) -> Decomposition {
@@ -73,6 +73,6 @@ public extension NamingConvention {
             stringComponents.append(component)
         }
         
-        return stringComponents
+        return Decomposition(stringComponents)
     }
 }

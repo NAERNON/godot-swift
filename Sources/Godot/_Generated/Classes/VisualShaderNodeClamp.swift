@@ -18,8 +18,8 @@ open class VisualShaderNodeClamp: VisualShaderNode {
             ("Float", 0),
             ("Int", 1),
             ("Uint", 2),
-            ("Vector2 D", 3),
-            ("Vector3 D", 4),
+            ("Vector2D", 3),
+            ("Vector3D", 4),
             ("Vector4d", 5),
             ("Max", 6),]
         }

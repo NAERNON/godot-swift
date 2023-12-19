@@ -12,8 +12,8 @@ open class VisualShaderNodeVectorBase: VisualShaderNode {
         case max = 3
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Vector2 D", 0),
-            ("Vector3 D", 1),
+            ("Vector2D", 0),
+            ("Vector3D", 1),
             ("Vector4d", 2),
             ("Max", 3),]
         }

@@ -17,12 +17,12 @@ open class EditorScenePostImportPlugin: RefCounted {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Node", 0),
-            ("Mesh3 D Node", 1),
+            ("Mesh3D Node", 1),
             ("Mesh", 2),
             ("Material", 3),
             ("Animation", 4),
             ("Animation Node", 5),
-            ("Skeleton3 D Node", 6),
+            ("Skeleton3D Node", 6),
             ("Max", 7),]
         }
     }

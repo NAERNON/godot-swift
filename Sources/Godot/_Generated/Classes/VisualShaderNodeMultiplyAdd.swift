@@ -14,8 +14,8 @@ open class VisualShaderNodeMultiplyAdd: VisualShaderNode {
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
             ("Scalar", 0),
-            ("Vector2 D", 1),
-            ("Vector3 D", 2),
+            ("Vector2D", 1),
+            ("Vector3D", 2),
             ("Vector4d", 3),
             ("Max", 4),]
         }
