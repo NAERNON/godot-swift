@@ -469,7 +469,7 @@ extension Quaternion {
         __method_binding_exp(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _angleTo(_ to: Godot.Quaternion) -> Real {
+    internal func _angle(to: Godot.Quaternion) -> Real {
         return Real.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in

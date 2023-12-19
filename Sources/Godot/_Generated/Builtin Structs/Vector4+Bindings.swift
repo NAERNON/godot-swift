@@ -607,7 +607,7 @@ extension Vector4 {
         __method_binding_is_normalized(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _directionTo(_ to: Godot.Vector4) -> Godot.Vector4 {
+    internal func _direction(to: Godot.Vector4) -> Godot.Vector4 {
         return Godot.Vector4.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
@@ -615,7 +615,7 @@ extension Vector4 {
         __method_binding_direction_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _distanceTo(_ to: Godot.Vector4) -> Real {
+    internal func _distance(to: Godot.Vector4) -> Real {
         return Real.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
@@ -623,7 +623,7 @@ extension Vector4 {
         __method_binding_distance_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _distanceSquaredTo(_ to: Godot.Vector4) -> Real {
+    internal func _distanceSquared(to: Godot.Vector4) -> Real {
         return Real.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in

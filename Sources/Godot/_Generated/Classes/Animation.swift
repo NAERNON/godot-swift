@@ -1555,7 +1555,7 @@ open class Animation: Resource {
         }
         }
     }()
-    public func copyTrack(trackIdx: Int32, toAnimation animation: Godot.Animation?) {
+    public func copyTrack(trackIdx: Int32, to animation: Godot.Animation?) {
         trackIdx.withGodotUnsafeRawPointer { __ptr_trackIdx in
         animation.withGodotUnsafeRawPointer { __ptr_animation in
         withUnsafePointer(to: __ptr_animation) { _ptr___ptr_animation in

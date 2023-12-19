@@ -34,7 +34,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setFrom(_ from: Godot.Vector3) {
+    private func __set(from: Godot.Vector3) {
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -71,7 +71,7 @@ open class PhysicsRayQueryParameters3D: RefCounted {
         }
         }
     }()
-    private func __setTo(_ to: Godot.Vector3) {
+    private func __set(to: Godot.Vector3) {
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -328,8 +328,8 @@ open class PhysicsRayQueryParameters3D: RefCounted {
             __getFrom()
         }
         set {
-            __setFrom(
-                newValue
+            __set(
+                from: newValue
             )
         }
     }
@@ -339,8 +339,8 @@ open class PhysicsRayQueryParameters3D: RefCounted {
             __getTo()
         }
         set {
-            __setTo(
-                newValue
+            __set(
+                to: newValue
             )
         }
     }

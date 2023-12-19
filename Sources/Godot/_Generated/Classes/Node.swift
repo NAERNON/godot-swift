@@ -221,7 +221,7 @@ open class Node: Object {
         }
         }
     }()
-    public func addChild(node: Godot.Node?, forceReadableName: Bool = false, `internal`: Godot.Node.InternalMode = Node.InternalMode(rawValue: 0)!) {
+    public func addChild(_ node: Godot.Node?, forceReadableName: Bool = false, `internal`: Godot.Node.InternalMode = Node.InternalMode(rawValue: 0)!) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         forceReadableName.withGodotUnsafeRawPointer { __ptr_forceReadableName in
@@ -243,7 +243,7 @@ open class Node: Object {
         }
         }
     }()
-    public func removeChild(node: Godot.Node?) {
+    public func removeChild(_ node: Godot.Node?) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
@@ -546,7 +546,7 @@ open class Node: Object {
         }
         }
     }()
-    public func isAncestorOf(node: Godot.Node?) -> Bool {
+    public func isAncestor(of node: Godot.Node?) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -567,7 +567,7 @@ open class Node: Object {
         }
         }
     }()
-    public func isGreaterThan(node: Godot.Node?) -> Bool {
+    public func isGreaterThan(_ node: Godot.Node?) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -606,7 +606,7 @@ open class Node: Object {
         }
         }
     }()
-    public func pathTo(node: Godot.Node?, useUniquePath: Bool = false) -> Godot.NodePath {
+    public func path(to node: Godot.Node?, useUniquePath: Bool = false) -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
@@ -1632,7 +1632,7 @@ open class Node: Object {
         }
         }
     }()
-    public func replaceBy(node: Godot.Node?, keepGroups: Bool = false) {
+    public func replace(by node: Godot.Node?, keepGroups: Bool = false) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         keepGroups.withGodotUnsafeRawPointer { __ptr_keepGroups in
@@ -1690,7 +1690,7 @@ open class Node: Object {
         }
         }
     }()
-    public func setEditableInstance(node: Godot.Node?, isEditable: Bool) {
+    public func setEditableInstance(_ node: Godot.Node?, isEditable: Bool) {
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
         isEditable.withGodotUnsafeRawPointer { __ptr_isEditable in
@@ -1711,7 +1711,7 @@ open class Node: Object {
         }
         }
     }()
-    public func isEditableInstance(node: Godot.Node?) -> Bool {
+    public func isEditableInstance(_ node: Godot.Node?) -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         node.withGodotUnsafeRawPointer { __ptr_node in
         withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in

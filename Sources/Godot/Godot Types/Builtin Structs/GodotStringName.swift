@@ -58,19 +58,19 @@ extension GodotStringName {
     // MARK: Methods & variables
     
     public func caseCompare(to other: GodotString) -> Int {
-        _casecmpTo(other)
+        _casecmp(to: other)
     }
     
     public func noCaseCompare(to other: GodotString) -> Int {
-        _nocasecmpTo(other)
+        _nocasecmp(to: other)
     }
     
     public func naturalCaseCompare(to other: GodotString) -> Int {
-        _naturalcasecmpTo(other)
+        _naturalcasecmp(to: other)
     }
     
     public func naturalNoCaseCompare(to other: GodotString) -> Int {
-        _naturalnocasecmpTo(other)
+        _naturalnocasecmp(to: other)
     }
     
     public func slice(delimiter: GodotString, sliceIndex: Int) -> GodotString {
@@ -182,7 +182,7 @@ extension GodotStringName {
     }
     
     public func unicode(at index: Int) -> Int {
-        _unicodeAt(index)
+        _unicode(at: index)
     }
     
     public func indented(with prefix: GodotString) -> GodotString {

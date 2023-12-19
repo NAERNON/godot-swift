@@ -1187,7 +1187,7 @@ extension GodotString {
         __indexed_setter(__ptr_self, index, __ptr_value)}}
     }
 
-    internal func _casecmpTo(_ to: Godot.GodotString) -> Int {
+    internal func _casecmp(to: Godot.GodotString) -> Int {
         return Int.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
@@ -1195,7 +1195,7 @@ extension GodotString {
         __method_binding_casecmp_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _nocasecmpTo(_ to: Godot.GodotString) -> Int {
+    internal func _nocasecmp(to: Godot.GodotString) -> Int {
         return Int.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
@@ -1203,7 +1203,7 @@ extension GodotString {
         __method_binding_nocasecmp_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _naturalcasecmpTo(_ to: Godot.GodotString) -> Int {
+    internal func _naturalcasecmp(to: Godot.GodotString) -> Int {
         return Int.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
@@ -1211,7 +1211,7 @@ extension GodotString {
         __method_binding_naturalcasecmp_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _naturalnocasecmpTo(_ to: Godot.GodotString) -> Int {
+    internal func _naturalnocasecmp(to: Godot.GodotString) -> Int {
         return Int.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
@@ -1577,7 +1577,7 @@ extension GodotString {
         __method_binding_path_join(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _unicodeAt(_ at: Int) -> Int {
+    internal func _unicode(at: Int) -> Int {
         return Int.fromMutatingGodotUnsafePointer { __temporary in
         at.withGodotUnsafeRawPointer { __ptr_at in
         withUnsafeArgumentPackPointer(__ptr_at) { __accessPtr in

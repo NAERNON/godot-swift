@@ -299,7 +299,10 @@ struct GodotClass: Decodable {
             """
         }
         
-        try method.withNamePrefixed(by: methodPrefix(method)).translated.declSyntax(
+        try method
+            .withNamePrefixed(by: methodPrefix(method))
+            .translated(typeName: name.syntax())
+            .declSyntax(
             options: syntaxOptions,
             keywords: methodIsPrivate(method) ? .private : .public
         ) {

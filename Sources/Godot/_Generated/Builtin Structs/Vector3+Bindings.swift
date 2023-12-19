@@ -604,7 +604,7 @@ extension Vector3 {
         __method_binding_max_axis_index(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
     }
 
-    internal func _angleTo(_ to: Godot.Vector3) -> Real {
+    internal func _angle(to: Godot.Vector3) -> Real {
         return Real.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
@@ -612,7 +612,7 @@ extension Vector3 {
         __method_binding_angle_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _signedAngleTo(_ to: Godot.Vector3, axis: Godot.Vector3) -> Real {
+    internal func _signedAngle(to: Godot.Vector3, axis: Godot.Vector3) -> Real {
         return Real.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         axis.withGodotUnsafeRawPointer { __ptr_axis in
@@ -621,7 +621,7 @@ extension Vector3 {
         __method_binding_signed_angle_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)}}}}}
     }
 
-    internal func _directionTo(_ to: Godot.Vector3) -> Godot.Vector3 {
+    internal func _direction(to: Godot.Vector3) -> Godot.Vector3 {
         return Godot.Vector3.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
@@ -629,7 +629,7 @@ extension Vector3 {
         __method_binding_direction_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _distanceTo(_ to: Godot.Vector3) -> Real {
+    internal func _distance(to: Godot.Vector3) -> Real {
         return Real.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in
@@ -637,7 +637,7 @@ extension Vector3 {
         __method_binding_distance_to(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
     }
 
-    internal func _distanceSquaredTo(_ to: Godot.Vector3) -> Real {
+    internal func _distanceSquared(to: Godot.Vector3) -> Real {
         return Real.fromMutatingGodotUnsafePointer { __temporary in
         to.withGodotUnsafeRawPointer { __ptr_to in
         withUnsafeArgumentPackPointer(__ptr_to) { __accessPtr in

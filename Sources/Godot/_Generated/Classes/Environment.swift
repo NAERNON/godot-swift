@@ -799,7 +799,7 @@ open class Environment: Resource {
         }
         }
     }()
-    private func __setSsrFadeIn(_ fadeIn: Double) {
+    private func __setSsrFade(in fadeIn: Double) {
         fadeIn.withGodotUnsafeRawPointer { __ptr_fadeIn in
         withUnsafeArgumentPackPointer(__ptr_fadeIn) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -3564,8 +3564,8 @@ open class Environment: Resource {
             __getSsrFadeIn()
         }
         set {
-            __setSsrFadeIn(
-                newValue
+            __setSsrFade(
+                in: newValue
             )
         }
     }

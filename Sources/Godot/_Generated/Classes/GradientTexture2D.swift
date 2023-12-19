@@ -185,7 +185,7 @@ open class GradientTexture2D: Texture2D {
         }
         }
     }()
-    private func __setFillFrom(_ fillFrom: Godot.Vector2) {
+    private func __setFill(from fillFrom: Godot.Vector2) {
         fillFrom.withGodotUnsafeRawPointer { __ptr_fillFrom in
         withUnsafeArgumentPackPointer(__ptr_fillFrom) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -222,7 +222,7 @@ open class GradientTexture2D: Texture2D {
         }
         }
     }()
-    private func __setFillTo(_ fillTo: Godot.Vector2) {
+    private func __setFill(to fillTo: Godot.Vector2) {
         fillTo.withGodotUnsafeRawPointer { __ptr_fillTo in
         withUnsafeArgumentPackPointer(__ptr_fillTo) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -327,8 +327,8 @@ open class GradientTexture2D: Texture2D {
             __getFillFrom()
         }
         set {
-            __setFillFrom(
-                newValue
+            __setFill(
+                from: newValue
             )
         }
     }
@@ -338,8 +338,8 @@ open class GradientTexture2D: Texture2D {
             __getFillTo()
         }
         set {
-            __setFillTo(
-                newValue
+            __setFill(
+                to: newValue
             )
         }
     }

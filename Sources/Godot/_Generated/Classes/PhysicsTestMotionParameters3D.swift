@@ -30,7 +30,7 @@ open class PhysicsTestMotionParameters3D: RefCounted {
         }
         }
     }()
-    private func __setFrom(_ from: Godot.Transform3D) {
+    private func __set(from: Godot.Transform3D) {
         from.withGodotUnsafeRawPointer { __ptr_from in
         withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
@@ -306,8 +306,8 @@ open class PhysicsTestMotionParameters3D: RefCounted {
             __getFrom()
         }
         set {
-            __setFrom(
-                newValue
+            __set(
+                from: newValue
             )
         }
     }

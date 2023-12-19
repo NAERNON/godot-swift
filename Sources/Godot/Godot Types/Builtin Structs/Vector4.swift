@@ -214,15 +214,15 @@ extension Vector4 {
     }
     
     public func direction(to other: Vector4) -> Vector4 {
-        _directionTo(other)
+        _direction(to: other)
     }
     
     public func distance(to other: Vector4) -> Real {
-        _distanceTo(other)
+        _distance(to: other)
     }
     
     public func distanceSquared(to other: Vector4) -> Real {
-        _distanceSquaredTo(other)
+        _distanceSquared(to: other)
     }
     
     public func dot(_ other: Vector4) -> Real {

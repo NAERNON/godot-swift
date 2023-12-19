@@ -137,7 +137,7 @@ extension Quaternion {
     }
     
     public func angle(to other: Quaternion) -> Real {
-        _angleTo(other)
+        _angle(to: other)
     }
     
     public func dot(_ other: Quaternion) -> Real {

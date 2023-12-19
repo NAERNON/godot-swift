@@ -129,7 +129,7 @@ extension Vector2 {
     }
     
     public func angle(to other: Vector2) -> Real {
-        _angleTo(other)
+        _angle(to: other)
     }
     
     public func angle(toPoint point: Vector2) -> Real {
@@ -137,15 +137,15 @@ extension Vector2 {
     }
     
     public func direction(to other: Vector2) -> Vector2 {
-        _directionTo(other)
+        _direction(to: other)
     }
     
     public func distance(to other: Vector2) -> Real {
-        _distanceTo(other)
+        _distance(to: other)
     }
     
     public func distanceSquared(to other: Vector2) -> Real {
-        _distanceSquaredTo(other)
+        _distanceSquared(to: other)
     }
     
     public var length: Real {

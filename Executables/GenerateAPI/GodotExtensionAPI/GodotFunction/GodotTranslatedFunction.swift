@@ -4,11 +4,18 @@ struct GodotTranslatedFunction<Source>: GodotFunction where Source : GodotFuncti
     let source: Source
     let translateName: Bool
     let translateArguments: Bool
+    let typeName: String?
     
-    init(_ source: Source, translateName: Bool, translateArguments: Bool) {
+    init(
+        _ source: Source,
+        translateName: Bool,
+        translateArguments: Bool,
+        typeName: String? = nil
+    ) {
         self.source = source
         self.translateName = translateName
         self.translateArguments = translateArguments
+        self.typeName = typeName
     }
     
     private func translatedFunction() -> (name: String, parameters: [FunctionParameter]) {
@@ -27,7 +34,8 @@ struct GodotTranslatedFunction<Source>: GodotFunction where Source : GodotFuncti
                 name: $0.name,
                 label: nil,
                 isLabelHidden: $0.isLabelHidden
-            )}
+            )},
+            typeName: typeName
         )
     }
     
@@ -75,6 +83,10 @@ extension GodotFunction {
         GodotTranslatedFunction(self, translateName: true, translateArguments: true)
     }
     
+    func translated(typeName: String) -> GodotTranslatedFunction<Self> {
+        GodotTranslatedFunction(self, translateName: true, translateArguments: true, typeName: typeName)
+    }
+    
     var translatedName: GodotTranslatedFunction<Self> {
         GodotTranslatedFunction(self, translateName: true, translateArguments: false)
     }
@@ -100,31 +112,43 @@ private struct FunctionParameter {
 
 /// Some parameters might start with a special keyword that should not be visible in the parameter name.
 private let preParameterNameKeywords: Set<String> = [
-    "for", "from", "to", "in", "by", "at", "with"
+    "for", "from", "to", "in", "by", "at", "with", "of"
 ]
 
 private func translatedFunction(
     name: String,
-    parameters: [FunctionParameter]
+    parameters: [FunctionParameter],
+    typeName: String?
 ) -> (name: String, parameters: [FunctionParameter]) {
-    let decomposedFunctionName = NamingConvention.snake.decompose(string: name)
-    let translatedName = NamingConvention.camel.recompose(decomposedFunctionName)
+    var decomposedFunctionName = NamingConvention.snake.decompose(string: name)
+    let decomposedTypeName = NamingConvention.pascal.decompose(string: typeName ?? "")
     
     var translatedParameters = [FunctionParameter]()
     for (index, parameter) in parameters.enumerated() {
-        let decomposedParameterLabel = NamingConvention.snake.decompose(string: parameter.name)
+        var decomposedParameterLabel = NamingConvention.snake.decompose(string: parameter.name)
+        
         let firstParameterComponentIsKeyword = decomposedParameterLabel.count > 1
         && preParameterNameKeywords.contains { keyword in
             decomposedParameterLabel[0].caseInsensitiveCompare(keyword) == .orderedSame
         }
-        let decomposedParameterName = firstParameterComponentIsKeyword ? Array(decomposedParameterLabel.dropFirst()) : decomposedParameterLabel
         
-        let translatedLabel = NamingConvention.camel.recompose(decomposedParameterLabel)
-        let translatedName = NamingConvention.camel.recompose(decomposedParameterName)
+        let decomposedParameterName: [String]
+        if firstParameterComponentIsKeyword {
+            decomposedParameterName = Array(decomposedParameterLabel.dropFirst())
+            let sameTypeName = isDecomposition(
+                decomposedParameterName,
+                caseInsensitiveSameAs: decomposedTypeName
+            )
+            if sameTypeName {
+                decomposedParameterLabel.removeLast(decomposedParameterLabel.count - 1)
+            }
+        } else {
+            decomposedParameterName = decomposedParameterLabel
+        }
         
         var isLabelHidden = parameter.isLabelHidden
         
-        // We check that the name of the parameter is not redundant with the function name
+        // Check that the name of the parameter is not redundant with the function name
         if index == 0 {
             var isParameterNameRedundant = true
             for (index, parameterNameComponent) in decomposedParameterName.reversed().enumerated() {
@@ -142,15 +166,41 @@ private func translatedFunction(
             }
         }
         
-        // We check that the name of the parameter is not made of one character
+        // Check that the name of the parameter is not made of one character
         if parameter.name.count == 1 && parameters.count == 1 {
             isLabelHidden = true
         }
         
+        // Check that the label is not the same as the optional typeName
+        if index == 0,
+            isDecomposition(decomposedParameterLabel, caseInsensitiveSameAs: decomposedTypeName)
+        {
+            isLabelHidden = true
+        }
+        
+        if index == 0 {
+            let functionEndsWithKeyword = preParameterNameKeywords.contains { keyword in
+                decomposedFunctionName.last?.caseInsensitiveCompare(keyword) == .orderedSame
+            }
+            
+            if isLabelHidden && functionEndsWithKeyword,
+               let lastKeyword = decomposedFunctionName.popLast()
+            {
+                isLabelHidden = false
+                decomposedParameterLabel = [lastKeyword.lowercased()]
+            }
+        }
+        
+        let translatedLabel = NamingConvention.camel.recompose(decomposedParameterLabel)
+        let translatedName = NamingConvention.camel.recompose(decomposedParameterName)
+        
         translatedParameters.append(
-            FunctionParameter(name: translatedName,
-                              label: translatedLabel,
-                              isLabelHidden: isLabelHidden))
+            FunctionParameter(
+                name: translatedName,
+                label: translatedLabel,
+                isLabelHidden: isLabelHidden
+            )
+        )
     }
     
     // Because we might have removed the pre parameter keyword (such as for or in),
@@ -186,5 +236,21 @@ private func translatedFunction(
         }
     }
     
+    let translatedName = NamingConvention.camel.recompose(decomposedFunctionName)
+    
     return (translatedName, translatedParameters)
+}
+
+private func isDecomposition(_ lhs: [String], caseInsensitiveSameAs rhs: [String]) -> Bool {
+    guard lhs.count == rhs.count else {
+        return false
+    }
+    
+    for index in 0..<lhs.count {
+        if lhs[index].caseInsensitiveCompare(rhs[index]) != .orderedSame {
+            return false
+        }
+    }
+    
+    return true
 }

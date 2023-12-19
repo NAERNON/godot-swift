@@ -12,7 +12,7 @@ open class Expression: RefCounted {
         }
         }
     }()
-    public func parse(expression: Godot.GodotString, inputNames: Godot.PackedStringArray = PackedStringArray()) -> Godot.ErrorType {
+    public func parse(_ expression: Godot.GodotString, inputNames: Godot.PackedStringArray = PackedStringArray()) -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         expression.withGodotUnsafeRawPointer { __ptr_expression in
         inputNames.withGodotUnsafeRawPointer { __ptr_inputNames in

@@ -143,23 +143,23 @@ extension Vector3 {
     }
     
     public func angle(to other: Vector3) -> Real {
-        _angleTo(other)
+        _angle(to: other)
     }
     
     public func signedAngle(to other: Vector3, around axis: Vector3) -> Real {
-        _signedAngleTo(other, axis: axis)
+        _signedAngle(to: other, axis: axis)
     }
     
     public func direction(to other: Vector3) -> Vector3 {
-        _directionTo(other)
+        _direction(to: other)
     }
     
     public func distance(to other: Vector3) -> Real {
-        _distanceTo(other)
+        _distance(to: other)
     }
     
     public func distanceSquared(to other: Vector3) -> Real {
-        _distanceSquaredTo(other)
+        _distanceSquared(to: other)
     }
     
     public var length: Real {

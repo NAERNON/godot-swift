@@ -2462,7 +2462,7 @@ open class Control: CanvasItem {
         }
         }
     }()
-    public func setDragPreview(control: Godot.Control?) {
+    public func setDragPreview(_ control: Godot.Control?) {
         control.withGodotUnsafeRawPointer { __ptr_control in
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
