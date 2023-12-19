@@ -62,15 +62,24 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
             return []
         }
         
-        return [libInitDecl(identifier: declName)]
+        guard let argumentString = node.arguments?.as(LabeledExprListSyntax.self)?
+            .first?.expression.as(StringLiteralExprSyntax.self)?
+            .segments.trimmedDescription else {
+            fatalError("Compiler error")
+        }
+        
+        return [libInitDecl(identifier: declName, cFunctionName: argumentString)]
     }
     
-    private static func libInitDecl(identifier: TokenSyntax) -> DeclSyntax {
-        let functionName = removeBackticks(identifier.trimmedDescription) + "_godot_init"
+    private static func libInitDecl(
+        identifier: TokenSyntax,
+        cFunctionName: String
+    ) -> DeclSyntax {
+        let functionName = "initializeGodotModule" + removeBackticks(identifier.trimmedDescription)
         
         return DeclSyntax(
             """
-            @_cdecl("\(raw: functionName.lowercased())")
+            @_cdecl(\(literal: cFunctionName))
             public func \(raw: functionName)(
                 getProcAddress: Godot.GodotExtension.GetProcAddress,
                 libraryPtr: Godot.GodotExtension.ClassLibraryPointer,

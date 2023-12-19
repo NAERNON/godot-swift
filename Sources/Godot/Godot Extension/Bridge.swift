@@ -56,5 +56,5 @@ public extension Bridge {
 ///
 /// Learn how to create a bridge: <doc:CreatingGodotBridge>.
 @attached(extension, conformances: Bridge)
-@attached(peer, names: suffixed(_godot_init))
-public macro Bridge() = #externalMacro(module: "GodotMacros", type: "BridgeMacro")
+@attached(peer, names: prefixed(initializeGodotModule))
+public macro Bridge(_ extensionFunctionName: StaticString) = #externalMacro(module: "GodotMacros", type: "BridgeMacro")
