@@ -19,7 +19,7 @@ extension Variant {
             }
         }
         
-        private let rawData: UnsafeMutablePointer<UInt8>
+        private var rawData: UnsafeMutablePointer<UInt8>
         
         public init() {
             self.rawData = .allocate(capacity: Variant.opaqueSize)
@@ -72,7 +72,7 @@ extension Variant {
         }
         
         /// Calls a closure with an extension type pointer of the underlying object.
-        public func withGodotUnsafeMutableRawPointer<Result>(
+        func withGodotUnsafeMutableRawPointer<Result>(
             _ body: (UnsafeMutableRawPointer) throws -> Result
         ) rethrows -> Result {
             try body(rawData)
@@ -145,6 +145,13 @@ extension Variant {
                 self.extensionType,
                 type.extensionType
             ) == 0 ? false : true
+        }
+        
+        /// Swaps the two variants raw values.
+        internal mutating func swap(with other: inout Variant.Storage) {
+            let selfRawData = self.rawData
+            self.rawData = other.rawData
+            other.rawData = selfRawData
         }
         
         // MARK: Operators
