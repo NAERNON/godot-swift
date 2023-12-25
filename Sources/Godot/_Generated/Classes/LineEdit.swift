@@ -94,17 +94,29 @@ open class LineEdit: Control {
         }
     }
 
-    @Emitter(signal: "text_changed", args: ("newText", Godot.GodotString))
-    public struct TextChanged {
+    public func textChanged(newText: Godot.GodotString) {
+        textChangedConnector.emit(newText)
     }
 
-    @Emitter(signal: "text_change_rejected", args: ("rejectedSubstring", Godot.GodotString))
-    public struct TextChangeRejected {
+    public private (set) lazy var textChangedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "text_changed")
+    }()
+
+    public func textChangeRejected(rejectedSubstring: Godot.GodotString) {
+        textChangeRejectedConnector.emit(rejectedSubstring)
     }
 
-    @Emitter(signal: "text_submitted", args: ("newText", Godot.GodotString))
-    public struct TextSubmitted {
+    public private (set) lazy var textChangeRejectedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "text_change_rejected")
+    }()
+
+    public func textSubmitted(newText: Godot.GodotString) {
+        textSubmittedConnector.emit(newText)
     }
+
+    public private (set) lazy var textSubmittedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "text_submitted")
+    }()
 
     private static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

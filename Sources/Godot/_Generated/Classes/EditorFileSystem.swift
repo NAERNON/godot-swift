@@ -5,25 +5,49 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorFileSystem: Node {
-    @Emitter(signal: "filesystem_changed")
-    public struct FilesystemChanged {
+    public func filesystemChanged() {
+        filesystemChangedConnector.emit()
     }
 
-    @Emitter(signal: "script_classes_updated")
-    public struct ScriptClassesUpdated {
+    public private (set) lazy var filesystemChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "filesystem_changed")
+    }()
+
+
+    public func scriptClassesUpdated() {
+        scriptClassesUpdatedConnector.emit()
     }
 
-    @Emitter(signal: "sources_changed", args: ("exist", Bool))
-    public struct SourcesChanged {
+    public private (set) lazy var scriptClassesUpdatedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "script_classes_updated")
+    }()
+
+
+    public func sourcesChanged(exist: Bool) {
+        sourcesChangedConnector.emit(exist)
     }
 
-    @Emitter(signal: "resources_reimported", args: ("resources", Godot.PackedStringArray))
-    public struct ResourcesReimported {
+    public private (set) lazy var sourcesChangedConnector: Godot.SignalConnector<Bool> = {
+        .init(self, "sources_changed")
+    }()
+
+    public func resourcesReimported(resources: Godot.PackedStringArray) {
+        resourcesReimportedConnector.emit(resources)
     }
 
-    @Emitter(signal: "resources_reload", args: ("resources", Godot.PackedStringArray))
-    public struct ResourcesReload {
+    public private (set) lazy var resourcesReimportedConnector: Godot.SignalConnector<Godot.PackedStringArray> = {
+        .init(self, "resources_reimported")
+    }()
+
+    public func resourcesReload(resources: Godot.PackedStringArray) {
+        resourcesReloadConnector.emit(resources)
     }
+
+    public private (set) lazy var resourcesReloadConnector: Godot.SignalConnector<Godot.PackedStringArray> = {
+        .init(self, "resources_reload")
+    }()
 
     private static var __method_binding_get_filesystem: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

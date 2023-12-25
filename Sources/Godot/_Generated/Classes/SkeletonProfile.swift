@@ -17,9 +17,15 @@ open class SkeletonProfile: Resource {
         }
     }
 
-    @Emitter(signal: "profile_updated")
-    public struct ProfileUpdated {
+    public func profileUpdated() {
+        profileUpdatedConnector.emit()
     }
+
+    public private (set) lazy var profileUpdatedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "profile_updated")
+    }()
+
 
     private static var __method_binding_set_root_bone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

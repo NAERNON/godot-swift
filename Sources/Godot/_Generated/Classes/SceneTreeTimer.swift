@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SceneTreeTimer: RefCounted {
-    @Emitter(signal: "timeout")
-    public struct Timeout {
+    public func timeout() {
+        timeoutConnector.emit()
     }
+
+    public private (set) lazy var timeoutConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "timeout")
+    }()
+
 
     private static var __method_binding_set_time_left: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ThemeDB: Object {
-    @Emitter(signal: "fallback_changed")
-    public struct FallbackChanged {
+    public func fallbackChanged() {
+        fallbackChangedConnector.emit()
     }
+
+    public private (set) lazy var fallbackChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "fallback_changed")
+    }()
+
 
     private static var __method_binding_get_default_theme: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

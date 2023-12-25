@@ -15,69 +15,145 @@ open class GraphEdit: Control {
         }
     }
 
-    @Emitter(signal: "connection_request", args: ("fromNode", Godot.GodotStringName), ("fromPort", Int), ("toNode", Godot.GodotStringName), ("toPort", Int))
-    public struct ConnectionRequest {
+    public func connectionRequest(fromNode: Godot.GodotStringName, fromPort: Int, toNode: Godot.GodotStringName, toPort: Int) {
+        connectionRequestConnector.emit(fromNode, fromPort, toNode, toPort)
     }
 
-    @Emitter(signal: "disconnection_request", args: ("fromNode", Godot.GodotStringName), ("fromPort", Int), ("toNode", Godot.GodotStringName), ("toPort", Int))
-    public struct DisconnectionRequest {
+    public private (set) lazy var connectionRequestConnector: Godot.SignalConnector<Godot.GodotStringName, Int, Godot.GodotStringName, Int> = {
+        .init(self, "connection_request")
+    }()
+
+    public func disconnectionRequest(fromNode: Godot.GodotStringName, fromPort: Int, toNode: Godot.GodotStringName, toPort: Int) {
+        disconnectionRequestConnector.emit(fromNode, fromPort, toNode, toPort)
     }
 
-    @Emitter(signal: "connection_to_empty", args: ("fromNode", Godot.GodotStringName), ("fromPort", Int), ("releasePosition", Godot.Vector2))
-    public struct ConnectionToEmpty {
+    public private (set) lazy var disconnectionRequestConnector: Godot.SignalConnector<Godot.GodotStringName, Int, Godot.GodotStringName, Int> = {
+        .init(self, "disconnection_request")
+    }()
+
+    public func connectionToEmpty(fromNode: Godot.GodotStringName, fromPort: Int, releasePosition: Godot.Vector2) {
+        connectionToEmptyConnector.emit(fromNode, fromPort, releasePosition)
     }
 
-    @Emitter(signal: "connection_from_empty", args: ("toNode", Godot.GodotStringName), ("toPort", Int), ("releasePosition", Godot.Vector2))
-    public struct ConnectionFromEmpty {
+    public private (set) lazy var connectionToEmptyConnector: Godot.SignalConnector<Godot.GodotStringName, Int, Godot.Vector2> = {
+        .init(self, "connection_to_empty")
+    }()
+
+    public func connectionFromEmpty(toNode: Godot.GodotStringName, toPort: Int, releasePosition: Godot.Vector2) {
+        connectionFromEmptyConnector.emit(toNode, toPort, releasePosition)
     }
 
-    @Emitter(signal: "connection_drag_started", args: ("fromNode", Godot.GodotStringName), ("fromPort", Int), ("isOutput", Bool))
-    public struct ConnectionDragStarted {
+    public private (set) lazy var connectionFromEmptyConnector: Godot.SignalConnector<Godot.GodotStringName, Int, Godot.Vector2> = {
+        .init(self, "connection_from_empty")
+    }()
+
+    public func connectionDragStarted(fromNode: Godot.GodotStringName, fromPort: Int, isOutput: Bool) {
+        connectionDragStartedConnector.emit(fromNode, fromPort, isOutput)
     }
 
-    @Emitter(signal: "connection_drag_ended")
-    public struct ConnectionDragEnded {
+    public private (set) lazy var connectionDragStartedConnector: Godot.SignalConnector<Godot.GodotStringName, Int, Bool> = {
+        .init(self, "connection_drag_started")
+    }()
+
+    public func connectionDragEnded() {
+        connectionDragEndedConnector.emit()
     }
 
-    @Emitter(signal: "copy_nodes_request")
-    public struct CopyNodesRequest {
+    public private (set) lazy var connectionDragEndedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "connection_drag_ended")
+    }()
+
+
+    public func copyNodesRequest() {
+        copyNodesRequestConnector.emit()
     }
 
-    @Emitter(signal: "paste_nodes_request")
-    public struct PasteNodesRequest {
+    public private (set) lazy var copyNodesRequestConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "copy_nodes_request")
+    }()
+
+
+    public func pasteNodesRequest() {
+        pasteNodesRequestConnector.emit()
     }
 
-    @Emitter(signal: "duplicate_nodes_request")
-    public struct DuplicateNodesRequest {
+    public private (set) lazy var pasteNodesRequestConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "paste_nodes_request")
+    }()
+
+
+    public func duplicateNodesRequest() {
+        duplicateNodesRequestConnector.emit()
     }
 
-    @Emitter(signal: "delete_nodes_request", args: ("nodes", Godot.GodotArray<Godot.GodotStringName>))
-    public struct DeleteNodesRequest {
+    public private (set) lazy var duplicateNodesRequestConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "duplicate_nodes_request")
+    }()
+
+
+    public func deleteNodesRequest(nodes: Godot.GodotArray<Godot.GodotStringName>) {
+        deleteNodesRequestConnector.emit(nodes)
     }
 
-    @Emitter(signal: "node_selected", args: ("node", Godot.Node?))
-    public struct NodeSelected {
+    public private (set) lazy var deleteNodesRequestConnector: Godot.SignalConnector<Godot.GodotArray<Godot.GodotStringName>> = {
+        .init(self, "delete_nodes_request")
+    }()
+
+    public func nodeSelected(node: Godot.Node?) {
+        nodeSelectedConnector.emit(node)
     }
 
-    @Emitter(signal: "node_deselected", args: ("node", Godot.Node?))
-    public struct NodeDeselected {
+    public private (set) lazy var nodeSelectedConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "node_selected")
+    }()
+
+    public func nodeDeselected(node: Godot.Node?) {
+        nodeDeselectedConnector.emit(node)
     }
 
-    @Emitter(signal: "popup_request", args: ("position", Godot.Vector2))
-    public struct PopupRequest {
+    public private (set) lazy var nodeDeselectedConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "node_deselected")
+    }()
+
+    public func popupRequest(position: Godot.Vector2) {
+        popupRequestConnector.emit(position)
     }
 
-    @Emitter(signal: "begin_node_move")
-    public struct BeginNodeMove {
+    public private (set) lazy var popupRequestConnector: Godot.SignalConnector<Godot.Vector2> = {
+        .init(self, "popup_request")
+    }()
+
+    public func beginNodeMove() {
+        beginNodeMoveConnector.emit()
     }
 
-    @Emitter(signal: "end_node_move")
-    public struct EndNodeMove {
+    public private (set) lazy var beginNodeMoveConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "begin_node_move")
+    }()
+
+
+    public func endNodeMove() {
+        endNodeMoveConnector.emit()
     }
 
-    @Emitter(signal: "scroll_offset_changed", args: ("offset", Godot.Vector2))
-    public struct ScrollOffsetChanged {
+    public private (set) lazy var endNodeMoveConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "end_node_move")
+    }()
+
+
+    public func scrollOffsetChanged(offset: Godot.Vector2) {
+        scrollOffsetChangedConnector.emit(offset)
     }
+
+    public private (set) lazy var scrollOffsetChangedConnector: Godot.SignalConnector<Godot.Vector2> = {
+        .init(self, "scroll_offset_changed")
+    }()
 
     open func _isInInputHotzone(inNode node: Godot.Object?, inPort port: Int32, mousePosition: Godot.Vector2) -> Bool {
         Bool()

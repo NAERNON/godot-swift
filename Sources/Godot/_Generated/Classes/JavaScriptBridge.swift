@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotClass
 open class JavaScriptBridge: Object {
-    @Emitter(signal: "pwa_update_available")
-    public struct PwaUpdateAvailable {
+    public func pwaUpdateAvailable() {
+        pwaUpdateAvailableConnector.emit()
     }
+
+    public private (set) lazy var pwaUpdateAvailableConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "pwa_update_available")
+    }()
+
 
     private static var __method_binding_eval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

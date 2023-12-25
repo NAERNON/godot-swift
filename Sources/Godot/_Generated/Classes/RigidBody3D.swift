@@ -33,25 +33,47 @@ open class RigidBody3D: PhysicsBody3D {
         }
     }
 
-    @Emitter(signal: "body_shape_entered", args: ("bodyRid", Godot.RID), ("body", Godot.Node?), ("bodyShapeIndex", Int), ("localShapeIndex", Int))
-    public struct BodyShapeEntered {
+    public func bodyShapeEntered(bodyRid: Godot.RID, body: Godot.Node?, bodyShapeIndex: Int, localShapeIndex: Int) {
+        bodyShapeEnteredConnector.emit(bodyRid, body, bodyShapeIndex, localShapeIndex)
     }
 
-    @Emitter(signal: "body_shape_exited", args: ("bodyRid", Godot.RID), ("body", Godot.Node?), ("bodyShapeIndex", Int), ("localShapeIndex", Int))
-    public struct BodyShapeExited {
+    public private (set) lazy var bodyShapeEnteredConnector: Godot.SignalConnector<Godot.RID, Godot.Node?, Int, Int> = {
+        .init(self, "body_shape_entered")
+    }()
+
+    public func bodyShapeExited(bodyRid: Godot.RID, body: Godot.Node?, bodyShapeIndex: Int, localShapeIndex: Int) {
+        bodyShapeExitedConnector.emit(bodyRid, body, bodyShapeIndex, localShapeIndex)
     }
 
-    @Emitter(signal: "body_entered", args: ("body", Godot.Node?))
-    public struct BodyEntered {
+    public private (set) lazy var bodyShapeExitedConnector: Godot.SignalConnector<Godot.RID, Godot.Node?, Int, Int> = {
+        .init(self, "body_shape_exited")
+    }()
+
+    public func bodyEntered(body: Godot.Node?) {
+        bodyEnteredConnector.emit(body)
     }
 
-    @Emitter(signal: "body_exited", args: ("body", Godot.Node?))
-    public struct BodyExited {
+    public private (set) lazy var bodyEnteredConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "body_entered")
+    }()
+
+    public func bodyExited(body: Godot.Node?) {
+        bodyExitedConnector.emit(body)
     }
 
-    @Emitter(signal: "sleeping_state_changed")
-    public struct SleepingStateChanged {
+    public private (set) lazy var bodyExitedConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "body_exited")
+    }()
+
+    public func sleepingStateChanged() {
+        sleepingStateChangedConnector.emit()
     }
+
+    public private (set) lazy var sleepingStateChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "sleeping_state_changed")
+    }()
+
 
     open func _integrateForces(state: Godot.PhysicsDirectBodyState3D?) {
     }

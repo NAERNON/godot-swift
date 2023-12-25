@@ -5,13 +5,25 @@
 import GodotExtensionHeaders
 @GodotClass
 open class VisibleOnScreenNotifier3D: VisualInstance3D {
-    @Emitter(signal: "screen_entered")
-    public struct ScreenEntered {
+    public func screenEntered() {
+        screenEnteredConnector.emit()
     }
 
-    @Emitter(signal: "screen_exited")
-    public struct ScreenExited {
+    public private (set) lazy var screenEnteredConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "screen_entered")
+    }()
+
+
+    public func screenExited() {
+        screenExitedConnector.emit()
     }
+
+    public private (set) lazy var screenExitedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "screen_exited")
+    }()
+
 
     private static var __method_binding_set_aabb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -5,9 +5,13 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ButtonGroup: Resource {
-    @Emitter(signal: "pressed", args: ("button", Godot.BaseButton?))
-    public struct Pressed {
+    public func pressed(button: Godot.BaseButton?) {
+        pressedConnector.emit(button)
     }
+
+    public private (set) lazy var pressedConnector: Godot.SignalConnector<Godot.BaseButton?> = {
+        .init(self, "pressed")
+    }()
 
     private static var __method_binding_get_pressed_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

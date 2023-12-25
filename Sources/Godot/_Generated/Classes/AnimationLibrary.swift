@@ -5,21 +5,37 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationLibrary: Resource {
-    @Emitter(signal: "animation_added", args: ("name", Godot.GodotStringName))
-    public struct AnimationAdded {
+    public func animationAdded(name: Godot.GodotStringName) {
+        animationAddedConnector.emit(name)
     }
 
-    @Emitter(signal: "animation_removed", args: ("name", Godot.GodotStringName))
-    public struct AnimationRemoved {
+    public private (set) lazy var animationAddedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "animation_added")
+    }()
+
+    public func animationRemoved(name: Godot.GodotStringName) {
+        animationRemovedConnector.emit(name)
     }
 
-    @Emitter(signal: "animation_renamed", args: ("name", Godot.GodotStringName), ("toName", Godot.GodotStringName))
-    public struct AnimationRenamed {
+    public private (set) lazy var animationRemovedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "animation_removed")
+    }()
+
+    public func animationRenamed(name: Godot.GodotStringName, toName: Godot.GodotStringName) {
+        animationRenamedConnector.emit(name, toName)
     }
 
-    @Emitter(signal: "animation_changed", args: ("name", Godot.GodotStringName))
-    public struct AnimationChanged {
+    public private (set) lazy var animationRenamedConnector: Godot.SignalConnector<Godot.GodotStringName, Godot.GodotStringName> = {
+        .init(self, "animation_renamed")
+    }()
+
+    public func animationChanged(name: Godot.GodotStringName) {
+        animationChangedConnector.emit(name)
     }
+
+    public private (set) lazy var animationChangedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "animation_changed")
+    }()
 
     private static var __method_binding_add_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

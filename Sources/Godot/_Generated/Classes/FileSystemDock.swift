@@ -5,37 +5,71 @@
 import GodotExtensionHeaders
 @GodotClass
 open class FileSystemDock: VBoxContainer {
-    @Emitter(signal: "inherit", args: ("file", Godot.GodotString))
-    public struct Inherit {
+    public func inherit(file: Godot.GodotString) {
+        inheritConnector.emit(file)
     }
 
-    @Emitter(signal: "instantiate", args: ("files", Godot.PackedStringArray))
-    public struct Instantiate {
+    public private (set) lazy var inheritConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "inherit")
+    }()
+
+    public func instantiate(files: Godot.PackedStringArray) {
+        instantiateConnector.emit(files)
     }
 
-    @Emitter(signal: "resource_removed", args: ("resource", Godot.Resource?))
-    public struct ResourceRemoved {
+    public private (set) lazy var instantiateConnector: Godot.SignalConnector<Godot.PackedStringArray> = {
+        .init(self, "instantiate")
+    }()
+
+    public func resourceRemoved(resource: Godot.Resource?) {
+        resourceRemovedConnector.emit(resource)
     }
 
-    @Emitter(signal: "file_removed", args: ("file", Godot.GodotString))
-    public struct FileRemoved {
+    public private (set) lazy var resourceRemovedConnector: Godot.SignalConnector<Godot.Resource?> = {
+        .init(self, "resource_removed")
+    }()
+
+    public func fileRemoved(file: Godot.GodotString) {
+        fileRemovedConnector.emit(file)
     }
 
-    @Emitter(signal: "folder_removed", args: ("folder", Godot.GodotString))
-    public struct FolderRemoved {
+    public private (set) lazy var fileRemovedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "file_removed")
+    }()
+
+    public func folderRemoved(folder: Godot.GodotString) {
+        folderRemovedConnector.emit(folder)
     }
 
-    @Emitter(signal: "files_moved", args: ("oldFile", Godot.GodotString), ("newFile", Godot.GodotString))
-    public struct FilesMoved {
+    public private (set) lazy var folderRemovedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "folder_removed")
+    }()
+
+    public func filesMoved(oldFile: Godot.GodotString, newFile: Godot.GodotString) {
+        filesMovedConnector.emit(oldFile, newFile)
     }
 
-    @Emitter(signal: "folder_moved", args: ("oldFolder", Godot.GodotString), ("newFolder", Godot.GodotString))
-    public struct FolderMoved {
+    public private (set) lazy var filesMovedConnector: Godot.SignalConnector<Godot.GodotString, Godot.GodotString> = {
+        .init(self, "files_moved")
+    }()
+
+    public func folderMoved(oldFolder: Godot.GodotString, newFolder: Godot.GodotString) {
+        folderMovedConnector.emit(oldFolder, newFolder)
     }
 
-    @Emitter(signal: "display_mode_changed")
-    public struct DisplayModeChanged {
+    public private (set) lazy var folderMovedConnector: Godot.SignalConnector<Godot.GodotString, Godot.GodotString> = {
+        .init(self, "folder_moved")
+    }()
+
+    public func displayModeChanged() {
+        displayModeChangedConnector.emit()
     }
+
+    public private (set) lazy var displayModeChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "display_mode_changed")
+    }()
+
 
     private static var __method_binding_navigate_to_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

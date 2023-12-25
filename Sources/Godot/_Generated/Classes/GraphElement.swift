@@ -5,33 +5,71 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GraphElement: Container {
-    @Emitter(signal: "node_selected")
-    public struct NodeSelected {
+    public func nodeSelected() {
+        nodeSelectedConnector.emit()
     }
 
-    @Emitter(signal: "node_deselected")
-    public struct NodeDeselected {
+    public private (set) lazy var nodeSelectedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "node_selected")
+    }()
+
+
+    public func nodeDeselected() {
+        nodeDeselectedConnector.emit()
     }
 
-    @Emitter(signal: "raise_request")
-    public struct RaiseRequest {
+    public private (set) lazy var nodeDeselectedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "node_deselected")
+    }()
+
+
+    public func raiseRequest() {
+        raiseRequestConnector.emit()
     }
 
-    @Emitter(signal: "delete_request")
-    public struct DeleteRequest {
+    public private (set) lazy var raiseRequestConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "raise_request")
+    }()
+
+
+    public func deleteRequest() {
+        deleteRequestConnector.emit()
     }
 
-    @Emitter(signal: "resize_request", args: ("newMinsize", Godot.Vector2))
-    public struct ResizeRequest {
+    public private (set) lazy var deleteRequestConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "delete_request")
+    }()
+
+
+    public func resizeRequest(newMinsize: Godot.Vector2) {
+        resizeRequestConnector.emit(newMinsize)
     }
 
-    @Emitter(signal: "dragged", args: ("from", Godot.Vector2), ("to", Godot.Vector2))
-    public struct Dragged {
+    public private (set) lazy var resizeRequestConnector: Godot.SignalConnector<Godot.Vector2> = {
+        .init(self, "resize_request")
+    }()
+
+    public func dragged(from: Godot.Vector2, to: Godot.Vector2) {
+        draggedConnector.emit(from, to)
     }
 
-    @Emitter(signal: "position_offset_changed")
-    public struct PositionOffsetChanged {
+    public private (set) lazy var draggedConnector: Godot.SignalConnector<Godot.Vector2, Godot.Vector2> = {
+        .init(self, "dragged")
+    }()
+
+    public func positionOffsetChanged() {
+        positionOffsetChangedConnector.emit()
     }
+
+    public private (set) lazy var positionOffsetChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "position_offset_changed")
+    }()
+
 
     private static var __method_binding_set_resizable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

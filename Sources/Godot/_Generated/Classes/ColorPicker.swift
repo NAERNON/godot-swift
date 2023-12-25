@@ -34,17 +34,29 @@ open class ColorPicker: VBoxContainer {
         }
     }
 
-    @Emitter(signal: "color_changed", args: ("color", Godot.Color))
-    public struct ColorChanged {
+    public func colorChanged(color: Godot.Color) {
+        colorChangedConnector.emit(color)
     }
 
-    @Emitter(signal: "preset_added", args: ("color", Godot.Color))
-    public struct PresetAdded {
+    public private (set) lazy var colorChangedConnector: Godot.SignalConnector<Godot.Color> = {
+        .init(self, "color_changed")
+    }()
+
+    public func presetAdded(color: Godot.Color) {
+        presetAddedConnector.emit(color)
     }
 
-    @Emitter(signal: "preset_removed", args: ("color", Godot.Color))
-    public struct PresetRemoved {
+    public private (set) lazy var presetAddedConnector: Godot.SignalConnector<Godot.Color> = {
+        .init(self, "preset_added")
+    }()
+
+    public func presetRemoved(color: Godot.Color) {
+        presetRemovedConnector.emit(color)
     }
+
+    public private (set) lazy var presetRemovedConnector: Godot.SignalConnector<Godot.Color> = {
+        .init(self, "preset_removed")
+    }()
 
     private static var __method_binding_set_pick_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

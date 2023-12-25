@@ -26,29 +26,61 @@ open class AnimationMixer: Node {
         }
     }
 
-    @Emitter(signal: "mixer_updated")
-    public struct MixerUpdated {
+    public func mixerUpdated() {
+        mixerUpdatedConnector.emit()
     }
 
-    @Emitter(signal: "animation_list_changed")
-    public struct AnimationListChanged {
+    public private (set) lazy var mixerUpdatedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "mixer_updated")
+    }()
+
+
+    public func animationListChanged() {
+        animationListChangedConnector.emit()
     }
 
-    @Emitter(signal: "animation_libraries_updated")
-    public struct AnimationLibrariesUpdated {
+    public private (set) lazy var animationListChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "animation_list_changed")
+    }()
+
+
+    public func animationLibrariesUpdated() {
+        animationLibrariesUpdatedConnector.emit()
     }
 
-    @Emitter(signal: "animation_finished", args: ("animName", Godot.GodotStringName))
-    public struct AnimationFinished {
+    public private (set) lazy var animationLibrariesUpdatedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "animation_libraries_updated")
+    }()
+
+
+    public func animationFinished(animName: Godot.GodotStringName) {
+        animationFinishedConnector.emit(animName)
     }
 
-    @Emitter(signal: "animation_started", args: ("animName", Godot.GodotStringName))
-    public struct AnimationStarted {
+    public private (set) lazy var animationFinishedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "animation_finished")
+    }()
+
+    public func animationStarted(animName: Godot.GodotStringName) {
+        animationStartedConnector.emit(animName)
     }
 
-    @Emitter(signal: "caches_cleared")
-    public struct CachesCleared {
+    public private (set) lazy var animationStartedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "animation_started")
+    }()
+
+    public func cachesCleared() {
+        cachesClearedConnector.emit()
     }
+
+    public private (set) lazy var cachesClearedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "caches_cleared")
+    }()
+
 
     open func _postProcessKeyValue(animation: Godot.Animation?, track: Int32, value: Godot.Variant, object: Godot.Object?, objectIdx: Int32) -> Godot.Variant {
         Variant()

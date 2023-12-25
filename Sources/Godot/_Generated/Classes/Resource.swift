@@ -5,13 +5,25 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Resource: RefCounted {
-    @Emitter(signal: "changed")
-    public struct Changed {
+    public func changed() {
+        changedConnector.emit()
     }
 
-    @Emitter(signal: "setup_local_to_scene_requested")
-    public struct SetupLocalToSceneRequested {
+    public private (set) lazy var changedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "changed")
+    }()
+
+
+    public func setupLocalToSceneRequested() {
+        setupLocalToSceneRequestedConnector.emit()
     }
+
+    public private (set) lazy var setupLocalToSceneRequestedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "setup_local_to_scene_requested")
+    }()
+
 
     open func _setupLocalToScene() {
     }

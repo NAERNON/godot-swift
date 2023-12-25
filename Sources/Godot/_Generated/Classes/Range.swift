@@ -5,13 +5,23 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Range: Control {
-    @Emitter(signal: "value_changed", args: ("value", Double))
-    public struct ValueChanged {
+    public func valueChanged(value: Double) {
+        valueChangedConnector.emit(value)
     }
 
-    @Emitter(signal: "changed")
-    public struct Changed {
+    public private (set) lazy var valueChangedConnector: Godot.SignalConnector<Double> = {
+        .init(self, "value_changed")
+    }()
+
+    public func changed() {
+        changedConnector.emit()
     }
+
+    public private (set) lazy var changedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "changed")
+    }()
+
 
     open func _valueChanged(newValue: Double) {
     }

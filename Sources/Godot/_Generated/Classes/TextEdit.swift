@@ -141,33 +141,71 @@ open class TextEdit: Control {
         }
     }
 
-    @Emitter(signal: "text_set")
-    public struct TextSet {
+    public func textSet() {
+        textSetConnector.emit()
     }
 
-    @Emitter(signal: "text_changed")
-    public struct TextChanged {
+    public private (set) lazy var textSetConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "text_set")
+    }()
+
+
+    public func textChanged() {
+        textChangedConnector.emit()
     }
 
-    @Emitter(signal: "lines_edited_from", args: ("fromLine", Int), ("toLine", Int))
-    public struct LinesEditedFrom {
+    public private (set) lazy var textChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "text_changed")
+    }()
+
+
+    public func linesEditedFrom(fromLine: Int, toLine: Int) {
+        linesEditedFromConnector.emit(fromLine, toLine)
     }
 
-    @Emitter(signal: "caret_changed")
-    public struct CaretChanged {
+    public private (set) lazy var linesEditedFromConnector: Godot.SignalConnector<Int, Int> = {
+        .init(self, "lines_edited_from")
+    }()
+
+    public func caretChanged() {
+        caretChangedConnector.emit()
     }
 
-    @Emitter(signal: "gutter_clicked", args: ("line", Int), ("gutter", Int))
-    public struct GutterClicked {
+    public private (set) lazy var caretChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "caret_changed")
+    }()
+
+
+    public func gutterClicked(line: Int, gutter: Int) {
+        gutterClickedConnector.emit(line, gutter)
     }
 
-    @Emitter(signal: "gutter_added")
-    public struct GutterAdded {
+    public private (set) lazy var gutterClickedConnector: Godot.SignalConnector<Int, Int> = {
+        .init(self, "gutter_clicked")
+    }()
+
+    public func gutterAdded() {
+        gutterAddedConnector.emit()
     }
 
-    @Emitter(signal: "gutter_removed")
-    public struct GutterRemoved {
+    public private (set) lazy var gutterAddedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "gutter_added")
+    }()
+
+
+    public func gutterRemoved() {
+        gutterRemovedConnector.emit()
     }
+
+    public private (set) lazy var gutterRemovedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "gutter_removed")
+    }()
+
 
     open func _handleUnicodeInput(unicodeChar: Int32, caretIndex: Int32) {
     }

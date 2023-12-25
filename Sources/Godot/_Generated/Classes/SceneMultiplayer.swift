@@ -5,17 +5,29 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SceneMultiplayer: MultiplayerAPI {
-    @Emitter(signal: "peer_authenticating", args: ("id", Int))
-    public struct PeerAuthenticating {
+    public func peerAuthenticating(id: Int) {
+        peerAuthenticatingConnector.emit(id)
     }
 
-    @Emitter(signal: "peer_authentication_failed", args: ("id", Int))
-    public struct PeerAuthenticationFailed {
+    public private (set) lazy var peerAuthenticatingConnector: Godot.SignalConnector<Int> = {
+        .init(self, "peer_authenticating")
+    }()
+
+    public func peerAuthenticationFailed(id: Int) {
+        peerAuthenticationFailedConnector.emit(id)
     }
 
-    @Emitter(signal: "peer_packet", args: ("id", Int), ("packet", Godot.PackedByteArray))
-    public struct PeerPacket {
+    public private (set) lazy var peerAuthenticationFailedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "peer_authentication_failed")
+    }()
+
+    public func peerPacket(id: Int, packet: Godot.PackedByteArray) {
+        peerPacketConnector.emit(id, packet)
     }
+
+    public private (set) lazy var peerPacketConnector: Godot.SignalConnector<Int, Godot.PackedByteArray> = {
+        .init(self, "peer_packet")
+    }()
 
     private static var __method_binding_set_root_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

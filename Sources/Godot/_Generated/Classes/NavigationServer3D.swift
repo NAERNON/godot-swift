@@ -29,17 +29,33 @@ open class NavigationServer3D: Object {
         }
     }
 
-    @Emitter(signal: "map_changed", args: ("map", Godot.RID))
-    public struct MapChanged {
+    public func mapChanged(map: Godot.RID) {
+        mapChangedConnector.emit(map)
     }
 
-    @Emitter(signal: "navigation_debug_changed")
-    public struct NavigationDebugChanged {
+    public private (set) lazy var mapChangedConnector: Godot.SignalConnector<Godot.RID> = {
+        .init(self, "map_changed")
+    }()
+
+    public func navigationDebugChanged() {
+        navigationDebugChangedConnector.emit()
     }
 
-    @Emitter(signal: "avoidance_debug_changed")
-    public struct AvoidanceDebugChanged {
+    public private (set) lazy var navigationDebugChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "navigation_debug_changed")
+    }()
+
+
+    public func avoidanceDebugChanged() {
+        avoidanceDebugChangedConnector.emit()
     }
+
+    public private (set) lazy var avoidanceDebugChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "avoidance_debug_changed")
+    }()
+
 
     private static var __method_binding_get_maps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

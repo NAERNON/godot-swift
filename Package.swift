@@ -6,7 +6,7 @@ import CompilerPluginSupport
 
 let package = Package(
     name: "godot-swift",
-    platforms: [.macOS(.v13)], // TODO: Make multiplateform, and check macOS 13
+    platforms: [.macOS(.v14)], // TODO: Make multiplatform
     products: [
         .library(
             name: "Godot",

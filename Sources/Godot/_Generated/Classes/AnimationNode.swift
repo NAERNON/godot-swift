@@ -19,17 +19,31 @@ open class AnimationNode: Resource {
         }
     }
 
-    @Emitter(signal: "tree_changed")
-    public struct TreeChanged {
+    public func treeChanged() {
+        treeChangedConnector.emit()
     }
 
-    @Emitter(signal: "animation_node_renamed", args: ("objectId", Int), ("oldName", Godot.GodotString), ("newName", Godot.GodotString))
-    public struct AnimationNodeRenamed {
+    public private (set) lazy var treeChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "tree_changed")
+    }()
+
+
+    public func animationNodeRenamed(objectId: Int, oldName: Godot.GodotString, newName: Godot.GodotString) {
+        animationNodeRenamedConnector.emit(objectId, oldName, newName)
     }
 
-    @Emitter(signal: "animation_node_removed", args: ("objectId", Int), ("name", Godot.GodotString))
-    public struct AnimationNodeRemoved {
+    public private (set) lazy var animationNodeRenamedConnector: Godot.SignalConnector<Int, Godot.GodotString, Godot.GodotString> = {
+        .init(self, "animation_node_renamed")
+    }()
+
+    public func animationNodeRemoved(objectId: Int, name: Godot.GodotString) {
+        animationNodeRemovedConnector.emit(objectId, name)
     }
+
+    public private (set) lazy var animationNodeRemovedConnector: Godot.SignalConnector<Int, Godot.GodotString> = {
+        .init(self, "animation_node_removed")
+    }()
 
     open func _getChildNodes() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()

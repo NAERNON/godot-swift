@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ProjectSettings: Object {
-    @Emitter(signal: "settings_changed")
-    public struct SettingsChanged {
+    public func settingsChanged() {
+        settingsChangedConnector.emit()
     }
+
+    public private (set) lazy var settingsChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "settings_changed")
+    }()
+
 
     private static var __method_binding_has_setting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

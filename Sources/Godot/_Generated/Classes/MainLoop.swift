@@ -5,9 +5,13 @@
 import GodotExtensionHeaders
 @GodotClass
 open class MainLoop: Object {
-    @Emitter(signal: "on_request_permissions_result", args: ("permission", Godot.GodotString), ("granted", Bool))
-    public struct OnRequestPermissionsResult {
+    public func onRequestPermissionsResult(permission: Godot.GodotString, granted: Bool) {
+        onRequestPermissionsResultConnector.emit(permission, granted)
     }
+
+    public private (set) lazy var onRequestPermissionsResultConnector: Godot.SignalConnector<Godot.GodotString, Bool> = {
+        .init(self, "on_request_permissions_result")
+    }()
 
     open func _initialize() {
     }

@@ -21,37 +21,69 @@ open class Area2D: CollisionObject2D {
         }
     }
 
-    @Emitter(signal: "body_shape_entered", args: ("bodyRid", Godot.RID), ("body", Godot.Node2D?), ("bodyShapeIndex", Int), ("localShapeIndex", Int))
-    public struct BodyShapeEntered {
+    public func bodyShapeEntered(bodyRid: Godot.RID, body: Godot.Node2D?, bodyShapeIndex: Int, localShapeIndex: Int) {
+        bodyShapeEnteredConnector.emit(bodyRid, body, bodyShapeIndex, localShapeIndex)
     }
 
-    @Emitter(signal: "body_shape_exited", args: ("bodyRid", Godot.RID), ("body", Godot.Node2D?), ("bodyShapeIndex", Int), ("localShapeIndex", Int))
-    public struct BodyShapeExited {
+    public private (set) lazy var bodyShapeEnteredConnector: Godot.SignalConnector<Godot.RID, Godot.Node2D?, Int, Int> = {
+        .init(self, "body_shape_entered")
+    }()
+
+    public func bodyShapeExited(bodyRid: Godot.RID, body: Godot.Node2D?, bodyShapeIndex: Int, localShapeIndex: Int) {
+        bodyShapeExitedConnector.emit(bodyRid, body, bodyShapeIndex, localShapeIndex)
     }
 
-    @Emitter(signal: "body_entered", args: ("body", Godot.Node2D?))
-    public struct BodyEntered {
+    public private (set) lazy var bodyShapeExitedConnector: Godot.SignalConnector<Godot.RID, Godot.Node2D?, Int, Int> = {
+        .init(self, "body_shape_exited")
+    }()
+
+    public func bodyEntered(body: Godot.Node2D?) {
+        bodyEnteredConnector.emit(body)
     }
 
-    @Emitter(signal: "body_exited", args: ("body", Godot.Node2D?))
-    public struct BodyExited {
+    public private (set) lazy var bodyEnteredConnector: Godot.SignalConnector<Godot.Node2D?> = {
+        .init(self, "body_entered")
+    }()
+
+    public func bodyExited(body: Godot.Node2D?) {
+        bodyExitedConnector.emit(body)
     }
 
-    @Emitter(signal: "area_shape_entered", args: ("areaRid", Godot.RID), ("area", Godot.Area2D?), ("areaShapeIndex", Int), ("localShapeIndex", Int))
-    public struct AreaShapeEntered {
+    public private (set) lazy var bodyExitedConnector: Godot.SignalConnector<Godot.Node2D?> = {
+        .init(self, "body_exited")
+    }()
+
+    public func areaShapeEntered(areaRid: Godot.RID, area: Godot.Area2D?, areaShapeIndex: Int, localShapeIndex: Int) {
+        areaShapeEnteredConnector.emit(areaRid, area, areaShapeIndex, localShapeIndex)
     }
 
-    @Emitter(signal: "area_shape_exited", args: ("areaRid", Godot.RID), ("area", Godot.Area2D?), ("areaShapeIndex", Int), ("localShapeIndex", Int))
-    public struct AreaShapeExited {
+    public private (set) lazy var areaShapeEnteredConnector: Godot.SignalConnector<Godot.RID, Godot.Area2D?, Int, Int> = {
+        .init(self, "area_shape_entered")
+    }()
+
+    public func areaShapeExited(areaRid: Godot.RID, area: Godot.Area2D?, areaShapeIndex: Int, localShapeIndex: Int) {
+        areaShapeExitedConnector.emit(areaRid, area, areaShapeIndex, localShapeIndex)
     }
 
-    @Emitter(signal: "area_entered", args: ("area", Godot.Area2D?))
-    public struct AreaEntered {
+    public private (set) lazy var areaShapeExitedConnector: Godot.SignalConnector<Godot.RID, Godot.Area2D?, Int, Int> = {
+        .init(self, "area_shape_exited")
+    }()
+
+    public func areaEntered(area: Godot.Area2D?) {
+        areaEnteredConnector.emit(area)
     }
 
-    @Emitter(signal: "area_exited", args: ("area", Godot.Area2D?))
-    public struct AreaExited {
+    public private (set) lazy var areaEnteredConnector: Godot.SignalConnector<Godot.Area2D?> = {
+        .init(self, "area_entered")
+    }()
+
+    public func areaExited(area: Godot.Area2D?) {
+        areaExitedConnector.emit(area)
     }
+
+    public private (set) lazy var areaExitedConnector: Godot.SignalConnector<Godot.Area2D?> = {
+        .init(self, "area_exited")
+    }()
 
     private static var __method_binding_set_gravity_space_override_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

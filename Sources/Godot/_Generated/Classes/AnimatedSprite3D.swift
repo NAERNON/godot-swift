@@ -5,25 +5,55 @@
 import GodotExtensionHeaders
 @GodotClass
 open class AnimatedSprite3D: SpriteBase3D {
-    @Emitter(signal: "sprite_frames_changed")
-    public struct SpriteFramesChanged {
+    public func spriteFramesChanged() {
+        spriteFramesChangedConnector.emit()
     }
 
-    @Emitter(signal: "animation_changed")
-    public struct AnimationChanged {
+    public private (set) lazy var spriteFramesChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "sprite_frames_changed")
+    }()
+
+
+    public func animationChanged() {
+        animationChangedConnector.emit()
     }
 
-    @Emitter(signal: "frame_changed")
-    public struct FrameChanged {
+    public private (set) lazy var animationChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "animation_changed")
+    }()
+
+
+    public func frameChanged() {
+        frameChangedConnector.emit()
     }
 
-    @Emitter(signal: "animation_looped")
-    public struct AnimationLooped {
+    public private (set) lazy var frameChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "frame_changed")
+    }()
+
+
+    public func animationLooped() {
+        animationLoopedConnector.emit()
     }
 
-    @Emitter(signal: "animation_finished")
-    public struct AnimationFinished {
+    public private (set) lazy var animationLoopedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "animation_looped")
+    }()
+
+
+    public func animationFinished() {
+        animationFinishedConnector.emit()
     }
+
+    public private (set) lazy var animationFinishedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "animation_finished")
+    }()
+
 
     private static var __method_binding_set_sprite_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

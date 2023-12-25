@@ -5,9 +5,13 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ScriptCreateDialog: ConfirmationDialog {
-    @Emitter(signal: "script_created", args: ("script", Godot.Script?))
-    public struct ScriptCreated {
+    public func scriptCreated(script: Godot.Script?) {
+        scriptCreatedConnector.emit(script)
     }
+
+    public private (set) lazy var scriptCreatedConnector: Godot.SignalConnector<Godot.Script?> = {
+        .init(self, "script_created")
+    }()
 
     private static var __method_binding_config: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

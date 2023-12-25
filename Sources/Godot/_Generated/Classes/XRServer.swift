@@ -36,25 +36,45 @@ open class XRServer: Object {
         }
     }
 
-    @Emitter(signal: "interface_added", args: ("interfaceName", Godot.GodotStringName))
-    public struct InterfaceAdded {
+    public func interfaceAdded(interfaceName: Godot.GodotStringName) {
+        interfaceAddedConnector.emit(interfaceName)
     }
 
-    @Emitter(signal: "interface_removed", args: ("interfaceName", Godot.GodotStringName))
-    public struct InterfaceRemoved {
+    public private (set) lazy var interfaceAddedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "interface_added")
+    }()
+
+    public func interfaceRemoved(interfaceName: Godot.GodotStringName) {
+        interfaceRemovedConnector.emit(interfaceName)
     }
 
-    @Emitter(signal: "tracker_added", args: ("trackerName", Godot.GodotStringName), ("type", Int))
-    public struct TrackerAdded {
+    public private (set) lazy var interfaceRemovedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "interface_removed")
+    }()
+
+    public func trackerAdded(trackerName: Godot.GodotStringName, type: Int) {
+        trackerAddedConnector.emit(trackerName, type)
     }
 
-    @Emitter(signal: "tracker_updated", args: ("trackerName", Godot.GodotStringName), ("type", Int))
-    public struct TrackerUpdated {
+    public private (set) lazy var trackerAddedConnector: Godot.SignalConnector<Godot.GodotStringName, Int> = {
+        .init(self, "tracker_added")
+    }()
+
+    public func trackerUpdated(trackerName: Godot.GodotStringName, type: Int) {
+        trackerUpdatedConnector.emit(trackerName, type)
     }
 
-    @Emitter(signal: "tracker_removed", args: ("trackerName", Godot.GodotStringName), ("type", Int))
-    public struct TrackerRemoved {
+    public private (set) lazy var trackerUpdatedConnector: Godot.SignalConnector<Godot.GodotStringName, Int> = {
+        .init(self, "tracker_updated")
+    }()
+
+    public func trackerRemoved(trackerName: Godot.GodotStringName, type: Int) {
+        trackerRemovedConnector.emit(trackerName, type)
     }
+
+    public private (set) lazy var trackerRemovedConnector: Godot.SignalConnector<Godot.GodotStringName, Int> = {
+        .init(self, "tracker_removed")
+    }()
 
     private static var __method_binding_get_world_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

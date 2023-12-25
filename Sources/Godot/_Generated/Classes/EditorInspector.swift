@@ -5,41 +5,81 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorInspector: ScrollContainer {
-    @Emitter(signal: "property_selected", args: ("property", Godot.GodotString))
-    public struct PropertySelected {
+    public func propertySelected(property: Godot.GodotString) {
+        propertySelectedConnector.emit(property)
     }
 
-    @Emitter(signal: "property_keyed", args: ("property", Godot.GodotString), ("value", Godot.Variant), ("advance", Bool))
-    public struct PropertyKeyed {
+    public private (set) lazy var propertySelectedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "property_selected")
+    }()
+
+    public func propertyKeyed(property: Godot.GodotString, value: Godot.Variant, advance: Bool) {
+        propertyKeyedConnector.emit(property, value, advance)
     }
 
-    @Emitter(signal: "property_deleted", args: ("property", Godot.GodotString))
-    public struct PropertyDeleted {
+    public private (set) lazy var propertyKeyedConnector: Godot.SignalConnector<Godot.GodotString, Godot.Variant, Bool> = {
+        .init(self, "property_keyed")
+    }()
+
+    public func propertyDeleted(property: Godot.GodotString) {
+        propertyDeletedConnector.emit(property)
     }
 
-    @Emitter(signal: "resource_selected", args: ("resource", Godot.Resource?), ("path", Godot.GodotString))
-    public struct ResourceSelected {
+    public private (set) lazy var propertyDeletedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "property_deleted")
+    }()
+
+    public func resourceSelected(resource: Godot.Resource?, path: Godot.GodotString) {
+        resourceSelectedConnector.emit(resource, path)
     }
 
-    @Emitter(signal: "object_id_selected", args: ("id", Int))
-    public struct ObjectIdSelected {
+    public private (set) lazy var resourceSelectedConnector: Godot.SignalConnector<Godot.Resource?, Godot.GodotString> = {
+        .init(self, "resource_selected")
+    }()
+
+    public func objectIdSelected(id: Int) {
+        objectIdSelectedConnector.emit(id)
     }
 
-    @Emitter(signal: "property_edited", args: ("property", Godot.GodotString))
-    public struct PropertyEdited {
+    public private (set) lazy var objectIdSelectedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "object_id_selected")
+    }()
+
+    public func propertyEdited(property: Godot.GodotString) {
+        propertyEditedConnector.emit(property)
     }
 
-    @Emitter(signal: "property_toggled", args: ("property", Godot.GodotString), ("checked", Bool))
-    public struct PropertyToggled {
+    public private (set) lazy var propertyEditedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "property_edited")
+    }()
+
+    public func propertyToggled(property: Godot.GodotString, checked: Bool) {
+        propertyToggledConnector.emit(property, checked)
     }
 
-    @Emitter(signal: "edited_object_changed")
-    public struct EditedObjectChanged {
+    public private (set) lazy var propertyToggledConnector: Godot.SignalConnector<Godot.GodotString, Bool> = {
+        .init(self, "property_toggled")
+    }()
+
+    public func editedObjectChanged() {
+        editedObjectChangedConnector.emit()
     }
 
-    @Emitter(signal: "restart_requested")
-    public struct RestartRequested {
+    public private (set) lazy var editedObjectChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "edited_object_changed")
+    }()
+
+
+    public func restartRequested() {
+        restartRequestedConnector.emit()
     }
+
+    public private (set) lazy var restartRequestedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "restart_requested")
+    }()
+
 
     private static var __method_binding_get_selected_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

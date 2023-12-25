@@ -28,65 +28,137 @@ open class Tree: Control {
         }
     }
 
-    @Emitter(signal: "item_selected")
-    public struct ItemSelected {
+    public func itemSelected() {
+        itemSelectedConnector.emit()
     }
 
-    @Emitter(signal: "cell_selected")
-    public struct CellSelected {
+    public private (set) lazy var itemSelectedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "item_selected")
+    }()
+
+
+    public func cellSelected() {
+        cellSelectedConnector.emit()
     }
 
-    @Emitter(signal: "multi_selected", args: ("item", Godot.TreeItem?), ("column", Int), ("selected", Bool))
-    public struct MultiSelected {
+    public private (set) lazy var cellSelectedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "cell_selected")
+    }()
+
+
+    public func multiSelected(item: Godot.TreeItem?, column: Int, selected: Bool) {
+        multiSelectedConnector.emit(item, column, selected)
     }
 
-    @Emitter(signal: "item_mouse_selected", args: ("position", Godot.Vector2), ("mouseButtonIndex", Int))
-    public struct ItemMouseSelected {
+    public private (set) lazy var multiSelectedConnector: Godot.SignalConnector<Godot.TreeItem?, Int, Bool> = {
+        .init(self, "multi_selected")
+    }()
+
+    public func itemMouseSelected(position: Godot.Vector2, mouseButtonIndex: Int) {
+        itemMouseSelectedConnector.emit(position, mouseButtonIndex)
     }
 
-    @Emitter(signal: "empty_clicked", args: ("position", Godot.Vector2), ("mouseButtonIndex", Int))
-    public struct EmptyClicked {
+    public private (set) lazy var itemMouseSelectedConnector: Godot.SignalConnector<Godot.Vector2, Int> = {
+        .init(self, "item_mouse_selected")
+    }()
+
+    public func emptyClicked(position: Godot.Vector2, mouseButtonIndex: Int) {
+        emptyClickedConnector.emit(position, mouseButtonIndex)
     }
 
-    @Emitter(signal: "item_edited")
-    public struct ItemEdited {
+    public private (set) lazy var emptyClickedConnector: Godot.SignalConnector<Godot.Vector2, Int> = {
+        .init(self, "empty_clicked")
+    }()
+
+    public func itemEdited() {
+        itemEditedConnector.emit()
     }
 
-    @Emitter(signal: "custom_item_clicked", args: ("mouseButtonIndex", Int))
-    public struct CustomItemClicked {
+    public private (set) lazy var itemEditedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "item_edited")
+    }()
+
+
+    public func customItemClicked(mouseButtonIndex: Int) {
+        customItemClickedConnector.emit(mouseButtonIndex)
     }
 
-    @Emitter(signal: "item_icon_double_clicked")
-    public struct ItemIconDoubleClicked {
+    public private (set) lazy var customItemClickedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "custom_item_clicked")
+    }()
+
+    public func itemIconDoubleClicked() {
+        itemIconDoubleClickedConnector.emit()
     }
 
-    @Emitter(signal: "item_collapsed", args: ("item", Godot.TreeItem?))
-    public struct ItemCollapsed {
+    public private (set) lazy var itemIconDoubleClickedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "item_icon_double_clicked")
+    }()
+
+
+    public func itemCollapsed(item: Godot.TreeItem?) {
+        itemCollapsedConnector.emit(item)
     }
 
-    @Emitter(signal: "check_propagated_to_item", args: ("item", Godot.TreeItem?), ("column", Int))
-    public struct CheckPropagatedToItem {
+    public private (set) lazy var itemCollapsedConnector: Godot.SignalConnector<Godot.TreeItem?> = {
+        .init(self, "item_collapsed")
+    }()
+
+    public func checkPropagatedToItem(item: Godot.TreeItem?, column: Int) {
+        checkPropagatedToItemConnector.emit(item, column)
     }
 
-    @Emitter(signal: "button_clicked", args: ("item", Godot.TreeItem?), ("column", Int), ("id", Int), ("mouseButtonIndex", Int))
-    public struct ButtonClicked {
+    public private (set) lazy var checkPropagatedToItemConnector: Godot.SignalConnector<Godot.TreeItem?, Int> = {
+        .init(self, "check_propagated_to_item")
+    }()
+
+    public func buttonClicked(item: Godot.TreeItem?, column: Int, id: Int, mouseButtonIndex: Int) {
+        buttonClickedConnector.emit(item, column, id, mouseButtonIndex)
     }
 
-    @Emitter(signal: "custom_popup_edited", args: ("arrowClicked", Bool))
-    public struct CustomPopupEdited {
+    public private (set) lazy var buttonClickedConnector: Godot.SignalConnector<Godot.TreeItem?, Int, Int, Int> = {
+        .init(self, "button_clicked")
+    }()
+
+    public func customPopupEdited(arrowClicked: Bool) {
+        customPopupEditedConnector.emit(arrowClicked)
     }
 
-    @Emitter(signal: "item_activated")
-    public struct ItemActivated {
+    public private (set) lazy var customPopupEditedConnector: Godot.SignalConnector<Bool> = {
+        .init(self, "custom_popup_edited")
+    }()
+
+    public func itemActivated() {
+        itemActivatedConnector.emit()
     }
 
-    @Emitter(signal: "column_title_clicked", args: ("column", Int), ("mouseButtonIndex", Int))
-    public struct ColumnTitleClicked {
+    public private (set) lazy var itemActivatedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "item_activated")
+    }()
+
+
+    public func columnTitleClicked(column: Int, mouseButtonIndex: Int) {
+        columnTitleClickedConnector.emit(column, mouseButtonIndex)
     }
 
-    @Emitter(signal: "nothing_selected")
-    public struct NothingSelected {
+    public private (set) lazy var columnTitleClickedConnector: Godot.SignalConnector<Int, Int> = {
+        .init(self, "column_title_clicked")
+    }()
+
+    public func nothingSelected() {
+        nothingSelectedConnector.emit()
     }
+
+    public private (set) lazy var nothingSelectedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "nothing_selected")
+    }()
+
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

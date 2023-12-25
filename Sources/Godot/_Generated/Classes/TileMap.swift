@@ -17,9 +17,15 @@ open class TileMap: Node2D {
         }
     }
 
-    @Emitter(signal: "changed")
-    public struct Changed {
+    public func changed() {
+        changedConnector.emit()
     }
+
+    public private (set) lazy var changedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "changed")
+    }()
+
 
     open func _useTileDataRuntimeUpdate(layer: Int32, coords: Godot.Vector2i) -> Bool {
         Bool()

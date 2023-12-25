@@ -60,9 +60,13 @@ open class Input: Object {
         }
     }
 
-    @Emitter(signal: "joy_connection_changed", args: ("device", Int), ("connected", Bool))
-    public struct JoyConnectionChanged {
+    public func joyConnectionChanged(device: Int, connected: Bool) {
+        joyConnectionChangedConnector.emit(device, connected)
     }
+
+    public private (set) lazy var joyConnectionChangedConnector: Godot.SignalConnector<Int, Bool> = {
+        .init(self, "joy_connection_changed")
+    }()
 
     private static var __method_binding_is_anything_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

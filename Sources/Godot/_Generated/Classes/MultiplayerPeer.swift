@@ -28,13 +28,21 @@ open class MultiplayerPeer: PacketPeer {
         }
     }
 
-    @Emitter(signal: "peer_connected", args: ("id", Int))
-    public struct PeerConnected {
+    public func peerConnected(id: Int) {
+        peerConnectedConnector.emit(id)
     }
 
-    @Emitter(signal: "peer_disconnected", args: ("id", Int))
-    public struct PeerDisconnected {
+    public private (set) lazy var peerConnectedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "peer_connected")
+    }()
+
+    public func peerDisconnected(id: Int) {
+        peerDisconnectedConnector.emit(id)
     }
+
+    public private (set) lazy var peerDisconnectedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "peer_disconnected")
+    }()
 
     private static var __method_binding_set_transfer_channel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -5,13 +5,23 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Slider: Range {
-    @Emitter(signal: "drag_started")
-    public struct DragStarted {
+    public func dragStarted() {
+        dragStartedConnector.emit()
     }
 
-    @Emitter(signal: "drag_ended", args: ("valueChanged", Bool))
-    public struct DragEnded {
+    public private (set) lazy var dragStartedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "drag_started")
+    }()
+
+
+    public func dragEnded(valueChanged: Bool) {
+        dragEndedConnector.emit(valueChanged)
     }
+
+    public private (set) lazy var dragEndedConnector: Godot.SignalConnector<Bool> = {
+        .init(self, "drag_ended")
+    }()
 
     private static var __method_binding_set_ticks: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -5,13 +5,21 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorResourcePicker: HBoxContainer {
-    @Emitter(signal: "resource_selected", args: ("resource", Godot.Resource?), ("inspect", Bool))
-    public struct ResourceSelected {
+    public func resourceSelected(resource: Godot.Resource?, inspect: Bool) {
+        resourceSelectedConnector.emit(resource, inspect)
     }
 
-    @Emitter(signal: "resource_changed", args: ("resource", Godot.Resource?))
-    public struct ResourceChanged {
+    public private (set) lazy var resourceSelectedConnector: Godot.SignalConnector<Godot.Resource?, Bool> = {
+        .init(self, "resource_selected")
+    }()
+
+    public func resourceChanged(resource: Godot.Resource?) {
+        resourceChangedConnector.emit(resource)
     }
+
+    public private (set) lazy var resourceChangedConnector: Godot.SignalConnector<Godot.Resource?> = {
+        .init(self, "resource_changed")
+    }()
 
     open func _setCreateOptions(menuNode: Godot.Object?) {
     }

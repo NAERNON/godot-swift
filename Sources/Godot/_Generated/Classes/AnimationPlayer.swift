@@ -26,13 +26,21 @@ open class AnimationPlayer: AnimationMixer {
         }
     }
 
-    @Emitter(signal: "current_animation_changed", args: ("name", Godot.GodotString))
-    public struct CurrentAnimationChanged {
+    public func currentAnimationChanged(name: Godot.GodotString) {
+        currentAnimationChangedConnector.emit(name)
     }
 
-    @Emitter(signal: "animation_changed", args: ("oldName", Godot.GodotStringName), ("newName", Godot.GodotStringName))
-    public struct AnimationChanged {
+    public private (set) lazy var currentAnimationChangedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "current_animation_changed")
+    }()
+
+    public func animationChanged(oldName: Godot.GodotStringName, newName: Godot.GodotStringName) {
+        animationChangedConnector.emit(oldName, newName)
     }
+
+    public private (set) lazy var animationChangedConnector: Godot.SignalConnector<Godot.GodotStringName, Godot.GodotStringName> = {
+        .init(self, "animation_changed")
+    }()
 
     private static var __method_binding_animation_set_next: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

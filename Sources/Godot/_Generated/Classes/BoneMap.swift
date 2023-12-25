@@ -5,13 +5,25 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class BoneMap: Resource {
-    @Emitter(signal: "bone_map_updated")
-    public struct BoneMapUpdated {
+    public func boneMapUpdated() {
+        boneMapUpdatedConnector.emit()
     }
 
-    @Emitter(signal: "profile_updated")
-    public struct ProfileUpdated {
+    public private (set) lazy var boneMapUpdatedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "bone_map_updated")
+    }()
+
+
+    public func profileUpdated() {
+        profileUpdatedConnector.emit()
     }
+
+    public private (set) lazy var profileUpdatedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "profile_updated")
+    }()
+
 
     private static var __method_binding_get_profile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

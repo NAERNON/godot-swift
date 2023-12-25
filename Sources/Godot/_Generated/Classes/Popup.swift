@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Popup: Window {
-    @Emitter(signal: "popup_hide")
-    public struct PopupHide {
+    public func popupHide() {
+        popupHideConnector.emit()
     }
+
+    public private (set) lazy var popupHideConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "popup_hide")
+    }()
+
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {

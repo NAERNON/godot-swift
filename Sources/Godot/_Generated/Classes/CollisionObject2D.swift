@@ -17,25 +17,49 @@ open class CollisionObject2D: Node2D {
         }
     }
 
-    @Emitter(signal: "input_event", args: ("viewport", Godot.Node?), ("event", Godot.InputEvent?), ("shapeIdx", Int))
-    public struct InputEvent {
+    public func inputEvent(viewport: Godot.Node?, event: Godot.InputEvent?, shapeIdx: Int) {
+        inputEventConnector.emit(viewport, event, shapeIdx)
     }
 
-    @Emitter(signal: "mouse_entered")
-    public struct MouseEntered {
+    public private (set) lazy var inputEventConnector: Godot.SignalConnector<Godot.Node?, Godot.InputEvent?, Int> = {
+        .init(self, "input_event")
+    }()
+
+    public func mouseEntered() {
+        mouseEnteredConnector.emit()
     }
 
-    @Emitter(signal: "mouse_exited")
-    public struct MouseExited {
+    public private (set) lazy var mouseEnteredConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "mouse_entered")
+    }()
+
+
+    public func mouseExited() {
+        mouseExitedConnector.emit()
     }
 
-    @Emitter(signal: "mouse_shape_entered", args: ("shapeIdx", Int))
-    public struct MouseShapeEntered {
+    public private (set) lazy var mouseExitedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "mouse_exited")
+    }()
+
+
+    public func mouseShapeEntered(shapeIdx: Int) {
+        mouseShapeEnteredConnector.emit(shapeIdx)
     }
 
-    @Emitter(signal: "mouse_shape_exited", args: ("shapeIdx", Int))
-    public struct MouseShapeExited {
+    public private (set) lazy var mouseShapeEnteredConnector: Godot.SignalConnector<Int> = {
+        .init(self, "mouse_shape_entered")
+    }()
+
+    public func mouseShapeExited(shapeIdx: Int) {
+        mouseShapeExitedConnector.emit(shapeIdx)
     }
+
+    public private (set) lazy var mouseShapeExitedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "mouse_shape_exited")
+    }()
 
     open func _inputEvent(viewport: Godot.Viewport?, event: Godot.InputEvent?, shapeIdx: Int32) {
     }

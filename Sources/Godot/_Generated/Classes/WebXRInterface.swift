@@ -19,57 +19,119 @@ open class WebXRInterface: XRInterface {
         }
     }
 
-    @Emitter(signal: "session_supported", args: ("sessionMode", Godot.GodotString), ("supported", Bool))
-    public struct SessionSupported {
+    public func sessionSupported(sessionMode: Godot.GodotString, supported: Bool) {
+        sessionSupportedConnector.emit(sessionMode, supported)
     }
 
-    @Emitter(signal: "session_started")
-    public struct SessionStarted {
+    public private (set) lazy var sessionSupportedConnector: Godot.SignalConnector<Godot.GodotString, Bool> = {
+        .init(self, "session_supported")
+    }()
+
+    public func sessionStarted() {
+        sessionStartedConnector.emit()
     }
 
-    @Emitter(signal: "session_ended")
-    public struct SessionEnded {
+    public private (set) lazy var sessionStartedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "session_started")
+    }()
+
+
+    public func sessionEnded() {
+        sessionEndedConnector.emit()
     }
 
-    @Emitter(signal: "session_failed", args: ("message", Godot.GodotString))
-    public struct SessionFailed {
+    public private (set) lazy var sessionEndedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "session_ended")
+    }()
+
+
+    public func sessionFailed(message: Godot.GodotString) {
+        sessionFailedConnector.emit(message)
     }
 
-    @Emitter(signal: "selectstart", args: ("inputSourceId", Int))
-    public struct Selectstart {
+    public private (set) lazy var sessionFailedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "session_failed")
+    }()
+
+    public func selectstart(inputSourceId: Int) {
+        selectstartConnector.emit(inputSourceId)
     }
 
-    @Emitter(signal: "select", args: ("inputSourceId", Int))
-    public struct Select {
+    public private (set) lazy var selectstartConnector: Godot.SignalConnector<Int> = {
+        .init(self, "selectstart")
+    }()
+
+    public func select(inputSourceId: Int) {
+        selectConnector.emit(inputSourceId)
     }
 
-    @Emitter(signal: "selectend", args: ("inputSourceId", Int))
-    public struct Selectend {
+    public private (set) lazy var selectConnector: Godot.SignalConnector<Int> = {
+        .init(self, "select")
+    }()
+
+    public func selectend(inputSourceId: Int) {
+        selectendConnector.emit(inputSourceId)
     }
 
-    @Emitter(signal: "squeezestart", args: ("inputSourceId", Int))
-    public struct Squeezestart {
+    public private (set) lazy var selectendConnector: Godot.SignalConnector<Int> = {
+        .init(self, "selectend")
+    }()
+
+    public func squeezestart(inputSourceId: Int) {
+        squeezestartConnector.emit(inputSourceId)
     }
 
-    @Emitter(signal: "squeeze", args: ("inputSourceId", Int))
-    public struct Squeeze {
+    public private (set) lazy var squeezestartConnector: Godot.SignalConnector<Int> = {
+        .init(self, "squeezestart")
+    }()
+
+    public func squeeze(inputSourceId: Int) {
+        squeezeConnector.emit(inputSourceId)
     }
 
-    @Emitter(signal: "squeezeend", args: ("inputSourceId", Int))
-    public struct Squeezeend {
+    public private (set) lazy var squeezeConnector: Godot.SignalConnector<Int> = {
+        .init(self, "squeeze")
+    }()
+
+    public func squeezeend(inputSourceId: Int) {
+        squeezeendConnector.emit(inputSourceId)
     }
 
-    @Emitter(signal: "visibility_state_changed")
-    public struct VisibilityStateChanged {
+    public private (set) lazy var squeezeendConnector: Godot.SignalConnector<Int> = {
+        .init(self, "squeezeend")
+    }()
+
+    public func visibilityStateChanged() {
+        visibilityStateChangedConnector.emit()
     }
 
-    @Emitter(signal: "reference_space_reset")
-    public struct ReferenceSpaceReset {
+    public private (set) lazy var visibilityStateChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "visibility_state_changed")
+    }()
+
+
+    public func referenceSpaceReset() {
+        referenceSpaceResetConnector.emit()
     }
 
-    @Emitter(signal: "display_refresh_rate_changed")
-    public struct DisplayRefreshRateChanged {
+    public private (set) lazy var referenceSpaceResetConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "reference_space_reset")
+    }()
+
+
+    public func displayRefreshRateChanged() {
+        displayRefreshRateChangedConnector.emit()
     }
+
+    public private (set) lazy var displayRefreshRateChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "display_refresh_rate_changed")
+    }()
+
 
     private static var __method_binding_is_session_supported: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -5,21 +5,41 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Skeleton3D: Node3D {
-    @Emitter(signal: "pose_updated")
-    public struct PoseUpdated {
+    public func poseUpdated() {
+        poseUpdatedConnector.emit()
     }
 
-    @Emitter(signal: "bone_pose_changed", args: ("boneIdx", Int))
-    public struct BonePoseChanged {
+    public private (set) lazy var poseUpdatedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "pose_updated")
+    }()
+
+
+    public func bonePoseChanged(boneIdx: Int) {
+        bonePoseChangedConnector.emit(boneIdx)
     }
 
-    @Emitter(signal: "bone_enabled_changed", args: ("boneIdx", Int))
-    public struct BoneEnabledChanged {
+    public private (set) lazy var bonePoseChangedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "bone_pose_changed")
+    }()
+
+    public func boneEnabledChanged(boneIdx: Int) {
+        boneEnabledChangedConnector.emit(boneIdx)
     }
 
-    @Emitter(signal: "show_rest_only_changed")
-    public struct ShowRestOnlyChanged {
+    public private (set) lazy var boneEnabledChangedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "bone_enabled_changed")
+    }()
+
+    public func showRestOnlyChanged() {
+        showRestOnlyChangedConnector.emit()
     }
+
+    public private (set) lazy var showRestOnlyChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "show_rest_only_changed")
+    }()
+
 
     private static var __method_binding_add_bone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

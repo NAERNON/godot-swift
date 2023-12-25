@@ -55,21 +55,45 @@ open class CanvasItem: Node {
         }
     }
 
-    @Emitter(signal: "draw")
-    public struct Draw {
+    public func draw() {
+        drawConnector.emit()
     }
 
-    @Emitter(signal: "visibility_changed")
-    public struct VisibilityChanged {
+    public private (set) lazy var drawConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "draw")
+    }()
+
+
+    public func visibilityChanged() {
+        visibilityChangedConnector.emit()
     }
 
-    @Emitter(signal: "hidden")
-    public struct Hidden {
+    public private (set) lazy var visibilityChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "visibility_changed")
+    }()
+
+
+    public func hidden() {
+        hiddenConnector.emit()
     }
 
-    @Emitter(signal: "item_rect_changed")
-    public struct ItemRectChanged {
+    public private (set) lazy var hiddenConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "hidden")
+    }()
+
+
+    public func itemRectChanged() {
+        itemRectChangedConnector.emit()
     }
+
+    public private (set) lazy var itemRectChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "item_rect_changed")
+    }()
+
 
     open func _draw() {
     }

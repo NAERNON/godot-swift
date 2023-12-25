@@ -5,9 +5,13 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GraphNode: GraphElement {
-    @Emitter(signal: "slot_updated", args: ("slotIndex", Int))
-    public struct SlotUpdated {
+    public func slotUpdated(slotIndex: Int) {
+        slotUpdatedConnector.emit(slotIndex)
     }
+
+    public private (set) lazy var slotUpdatedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "slot_updated")
+    }()
 
     open func _drawPort(slotIndex: Int32, position: Godot.Vector2i, left: Bool, color: Godot.Color) {
     }

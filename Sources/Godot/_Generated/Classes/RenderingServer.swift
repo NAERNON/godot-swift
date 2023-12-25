@@ -1239,13 +1239,25 @@ open class RenderingServer: Object {
         }
     }
 
-    @Emitter(signal: "frame_pre_draw")
-    public struct FramePreDraw {
+    public func framePreDraw() {
+        framePreDrawConnector.emit()
     }
 
-    @Emitter(signal: "frame_post_draw")
-    public struct FramePostDraw {
+    public private (set) lazy var framePreDrawConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "frame_pre_draw")
+    }()
+
+
+    public func framePostDraw() {
+        framePostDrawConnector.emit()
     }
+
+    public private (set) lazy var framePostDrawConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "frame_post_draw")
+    }()
+
 
     private static var __method_binding_texture_2d_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

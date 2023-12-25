@@ -5,21 +5,39 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PopupMenu: Popup {
-    @Emitter(signal: "id_pressed", args: ("id", Int))
-    public struct IdPressed {
+    public func idPressed(id: Int) {
+        idPressedConnector.emit(id)
     }
 
-    @Emitter(signal: "id_focused", args: ("id", Int))
-    public struct IdFocused {
+    public private (set) lazy var idPressedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "id_pressed")
+    }()
+
+    public func idFocused(id: Int) {
+        idFocusedConnector.emit(id)
     }
 
-    @Emitter(signal: "index_pressed", args: ("index", Int))
-    public struct IndexPressed {
+    public private (set) lazy var idFocusedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "id_focused")
+    }()
+
+    public func indexPressed(index: Int) {
+        indexPressedConnector.emit(index)
     }
 
-    @Emitter(signal: "menu_changed")
-    public struct MenuChanged {
+    public private (set) lazy var indexPressedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "index_pressed")
+    }()
+
+    public func menuChanged() {
+        menuChangedConnector.emit()
     }
+
+    public private (set) lazy var menuChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "menu_changed")
+    }()
+
 
     private static var __method_binding_activate_item_by_event: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

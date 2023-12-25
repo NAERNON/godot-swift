@@ -17,9 +17,15 @@ open class AnimationTree: AnimationMixer {
         }
     }
 
-    @Emitter(signal: "animation_player_changed")
-    public struct AnimationPlayerChanged {
+    public func animationPlayerChanged() {
+        animationPlayerChangedConnector.emit()
     }
+
+    public private (set) lazy var animationPlayerChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "animation_player_changed")
+    }()
+
 
     private static var __method_binding_set_tree_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

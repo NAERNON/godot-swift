@@ -17,33 +17,61 @@ open class XRPositionalTracker: RefCounted {
         }
     }
 
-    @Emitter(signal: "pose_changed", args: ("pose", Godot.XRPose?))
-    public struct PoseChanged {
+    public func poseChanged(pose: Godot.XRPose?) {
+        poseChangedConnector.emit(pose)
     }
 
-    @Emitter(signal: "pose_lost_tracking", args: ("pose", Godot.XRPose?))
-    public struct PoseLostTracking {
+    public private (set) lazy var poseChangedConnector: Godot.SignalConnector<Godot.XRPose?> = {
+        .init(self, "pose_changed")
+    }()
+
+    public func poseLostTracking(pose: Godot.XRPose?) {
+        poseLostTrackingConnector.emit(pose)
     }
 
-    @Emitter(signal: "button_pressed", args: ("name", Godot.GodotString))
-    public struct ButtonPressed {
+    public private (set) lazy var poseLostTrackingConnector: Godot.SignalConnector<Godot.XRPose?> = {
+        .init(self, "pose_lost_tracking")
+    }()
+
+    public func buttonPressed(name: Godot.GodotString) {
+        buttonPressedConnector.emit(name)
     }
 
-    @Emitter(signal: "button_released", args: ("name", Godot.GodotString))
-    public struct ButtonReleased {
+    public private (set) lazy var buttonPressedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "button_pressed")
+    }()
+
+    public func buttonReleased(name: Godot.GodotString) {
+        buttonReleasedConnector.emit(name)
     }
 
-    @Emitter(signal: "input_float_changed", args: ("name", Godot.GodotString), ("value", Double))
-    public struct InputFloatChanged {
+    public private (set) lazy var buttonReleasedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "button_released")
+    }()
+
+    public func inputFloatChanged(name: Godot.GodotString, value: Double) {
+        inputFloatChangedConnector.emit(name, value)
     }
 
-    @Emitter(signal: "input_vector2_changed", args: ("name", Godot.GodotString), ("vector", Godot.Vector2))
-    public struct InputVector2Changed {
+    public private (set) lazy var inputFloatChangedConnector: Godot.SignalConnector<Godot.GodotString, Double> = {
+        .init(self, "input_float_changed")
+    }()
+
+    public func inputVector2Changed(name: Godot.GodotString, vector: Godot.Vector2) {
+        inputVector2ChangedConnector.emit(name, vector)
     }
 
-    @Emitter(signal: "profile_changed", args: ("role", Godot.GodotString))
-    public struct ProfileChanged {
+    public private (set) lazy var inputVector2ChangedConnector: Godot.SignalConnector<Godot.GodotString, Godot.Vector2> = {
+        .init(self, "input_vector2_changed")
+    }()
+
+    public func profileChanged(role: Godot.GodotString) {
+        profileChangedConnector.emit(role)
     }
+
+    public private (set) lazy var profileChangedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "profile_changed")
+    }()
 
     private static var __method_binding_get_tracker_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

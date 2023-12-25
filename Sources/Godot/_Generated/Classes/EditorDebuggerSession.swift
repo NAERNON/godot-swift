@@ -5,21 +5,43 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class EditorDebuggerSession: RefCounted {
-    @Emitter(signal: "started")
-    public struct Started {
+    public func started() {
+        startedConnector.emit()
     }
 
-    @Emitter(signal: "stopped")
-    public struct Stopped {
+    public private (set) lazy var startedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "started")
+    }()
+
+
+    public func stopped() {
+        stoppedConnector.emit()
     }
 
-    @Emitter(signal: "breaked", args: ("canDebug", Bool))
-    public struct Breaked {
+    public private (set) lazy var stoppedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "stopped")
+    }()
+
+
+    public func breaked(canDebug: Bool) {
+        breakedConnector.emit(canDebug)
     }
 
-    @Emitter(signal: "continued")
-    public struct Continued {
+    public private (set) lazy var breakedConnector: Godot.SignalConnector<Bool> = {
+        .init(self, "breaked")
+    }()
+
+    public func continued() {
+        continuedConnector.emit()
     }
+
+    public private (set) lazy var continuedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "continued")
+    }()
+
 
     private static var __method_binding_send_message: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

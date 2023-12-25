@@ -5,17 +5,33 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ColorPickerButton: Button {
-    @Emitter(signal: "color_changed", args: ("color", Godot.Color))
-    public struct ColorChanged {
+    public func colorChanged(color: Godot.Color) {
+        colorChangedConnector.emit(color)
     }
 
-    @Emitter(signal: "popup_closed")
-    public struct PopupClosed {
+    public private (set) lazy var colorChangedConnector: Godot.SignalConnector<Godot.Color> = {
+        .init(self, "color_changed")
+    }()
+
+    public func popupClosed() {
+        popupClosedConnector.emit()
     }
 
-    @Emitter(signal: "picker_created")
-    public struct PickerCreated {
+    public private (set) lazy var popupClosedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "popup_closed")
+    }()
+
+
+    public func pickerCreated() {
+        pickerCreatedConnector.emit()
     }
+
+    public private (set) lazy var pickerCreatedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "picker_created")
+    }()
+
 
     private static var __method_binding_set_pick_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

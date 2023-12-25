@@ -109,57 +109,131 @@ open class Window: Viewport {
         }
     }
 
-    @Emitter(signal: "window_input", args: ("event", Godot.InputEvent?))
-    public struct WindowInput {
+    public func windowInput(event: Godot.InputEvent?) {
+        windowInputConnector.emit(event)
     }
 
-    @Emitter(signal: "files_dropped", args: ("files", Godot.PackedStringArray))
-    public struct FilesDropped {
+    public private (set) lazy var windowInputConnector: Godot.SignalConnector<Godot.InputEvent?> = {
+        .init(self, "window_input")
+    }()
+
+    public func filesDropped(files: Godot.PackedStringArray) {
+        filesDroppedConnector.emit(files)
     }
 
-    @Emitter(signal: "mouse_entered")
-    public struct MouseEntered {
+    public private (set) lazy var filesDroppedConnector: Godot.SignalConnector<Godot.PackedStringArray> = {
+        .init(self, "files_dropped")
+    }()
+
+    public func mouseEntered() {
+        mouseEnteredConnector.emit()
     }
 
-    @Emitter(signal: "mouse_exited")
-    public struct MouseExited {
+    public private (set) lazy var mouseEnteredConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "mouse_entered")
+    }()
+
+
+    public func mouseExited() {
+        mouseExitedConnector.emit()
     }
 
-    @Emitter(signal: "focus_entered")
-    public struct FocusEntered {
+    public private (set) lazy var mouseExitedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "mouse_exited")
+    }()
+
+
+    public func focusEntered() {
+        focusEnteredConnector.emit()
     }
 
-    @Emitter(signal: "focus_exited")
-    public struct FocusExited {
+    public private (set) lazy var focusEnteredConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "focus_entered")
+    }()
+
+
+    public func focusExited() {
+        focusExitedConnector.emit()
     }
 
-    @Emitter(signal: "close_requested")
-    public struct CloseRequested {
+    public private (set) lazy var focusExitedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "focus_exited")
+    }()
+
+
+    public func closeRequested() {
+        closeRequestedConnector.emit()
     }
 
-    @Emitter(signal: "go_back_requested")
-    public struct GoBackRequested {
+    public private (set) lazy var closeRequestedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "close_requested")
+    }()
+
+
+    public func goBackRequested() {
+        goBackRequestedConnector.emit()
     }
 
-    @Emitter(signal: "visibility_changed")
-    public struct VisibilityChanged {
+    public private (set) lazy var goBackRequestedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "go_back_requested")
+    }()
+
+
+    public func visibilityChanged() {
+        visibilityChangedConnector.emit()
     }
 
-    @Emitter(signal: "about_to_popup")
-    public struct AboutToPopup {
+    public private (set) lazy var visibilityChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "visibility_changed")
+    }()
+
+
+    public func aboutToPopup() {
+        aboutToPopupConnector.emit()
     }
 
-    @Emitter(signal: "theme_changed")
-    public struct ThemeChanged {
+    public private (set) lazy var aboutToPopupConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "about_to_popup")
+    }()
+
+
+    public func themeChanged() {
+        themeChangedConnector.emit()
     }
 
-    @Emitter(signal: "dpi_changed")
-    public struct DpiChanged {
+    public private (set) lazy var themeChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "theme_changed")
+    }()
+
+
+    public func dpiChanged() {
+        dpiChangedConnector.emit()
     }
 
-    @Emitter(signal: "titlebar_changed")
-    public struct TitlebarChanged {
+    public private (set) lazy var dpiChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "dpi_changed")
+    }()
+
+
+    public func titlebarChanged() {
+        titlebarChangedConnector.emit()
     }
+
+    public private (set) lazy var titlebarChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "titlebar_changed")
+    }()
+
 
     open func _getContentsMinimumSize() -> Godot.Vector2 {
         Godot.Vector2()

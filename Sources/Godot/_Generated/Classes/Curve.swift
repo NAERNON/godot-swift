@@ -17,9 +17,15 @@ open class Curve: Resource {
         }
     }
 
-    @Emitter(signal: "range_changed")
-    public struct RangeChanged {
+    public func rangeChanged() {
+        rangeChangedConnector.emit()
     }
+
+    public private (set) lazy var rangeChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "range_changed")
+    }()
+
 
     private static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

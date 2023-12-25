@@ -15,13 +15,25 @@ open class TouchScreenButton: Node2D {
         }
     }
 
-    @Emitter(signal: "pressed")
-    public struct Pressed {
+    public func pressed() {
+        pressedConnector.emit()
     }
 
-    @Emitter(signal: "released")
-    public struct Released {
+    public private (set) lazy var pressedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "pressed")
+    }()
+
+
+    public func released() {
+        releasedConnector.emit()
     }
+
+    public private (set) lazy var releasedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "released")
+    }()
+
 
     private static var __method_binding_set_texture_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

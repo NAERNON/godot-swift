@@ -5,13 +5,25 @@
 import GodotExtensionHeaders
 @GodotClass
 open class NavigationRegion2D: Node2D {
-    @Emitter(signal: "navigation_polygon_changed")
-    public struct NavigationPolygonChanged {
+    public func navigationPolygonChanged() {
+        navigationPolygonChangedConnector.emit()
     }
 
-    @Emitter(signal: "bake_finished")
-    public struct BakeFinished {
+    public private (set) lazy var navigationPolygonChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "navigation_polygon_changed")
+    }()
+
+
+    public func bakeFinished() {
+        bakeFinishedConnector.emit()
     }
+
+    public private (set) lazy var bakeFinishedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "bake_finished")
+    }()
+
 
     private static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

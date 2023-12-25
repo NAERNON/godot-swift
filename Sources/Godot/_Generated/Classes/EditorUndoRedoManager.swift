@@ -17,13 +17,25 @@ open class EditorUndoRedoManager: Object {
         }
     }
 
-    @Emitter(signal: "history_changed")
-    public struct HistoryChanged {
+    public func historyChanged() {
+        historyChangedConnector.emit()
     }
 
-    @Emitter(signal: "version_changed")
-    public struct VersionChanged {
+    public private (set) lazy var historyChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "history_changed")
+    }()
+
+
+    public func versionChanged() {
+        versionChangedConnector.emit()
     }
+
+    public private (set) lazy var versionChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "version_changed")
+    }()
+
 
     private static var __method_binding_create_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

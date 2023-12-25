@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ScrollBar: Range {
-    @Emitter(signal: "scrolling")
-    public struct Scrolling {
+    public func scrolling() {
+        scrollingConnector.emit()
     }
+
+    public private (set) lazy var scrollingConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "scrolling")
+    }()
+
 
     private static var __method_binding_set_custom_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

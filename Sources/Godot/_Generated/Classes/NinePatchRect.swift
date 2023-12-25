@@ -17,9 +17,15 @@ open class NinePatchRect: Control {
         }
     }
 
-    @Emitter(signal: "texture_changed")
-    public struct TextureChanged {
+    public func textureChanged() {
+        textureChangedConnector.emit()
     }
+
+    public private (set) lazy var textureChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "texture_changed")
+    }()
+
 
     private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -17,25 +17,51 @@ open class MultiplayerAPI: RefCounted {
         }
     }
 
-    @Emitter(signal: "peer_connected", args: ("id", Int))
-    public struct PeerConnected {
+    public func peerConnected(id: Int) {
+        peerConnectedConnector.emit(id)
     }
 
-    @Emitter(signal: "peer_disconnected", args: ("id", Int))
-    public struct PeerDisconnected {
+    public private (set) lazy var peerConnectedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "peer_connected")
+    }()
+
+    public func peerDisconnected(id: Int) {
+        peerDisconnectedConnector.emit(id)
     }
 
-    @Emitter(signal: "connected_to_server")
-    public struct ConnectedToServer {
+    public private (set) lazy var peerDisconnectedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "peer_disconnected")
+    }()
+
+    public func connectedToServer() {
+        connectedToServerConnector.emit()
     }
 
-    @Emitter(signal: "connection_failed")
-    public struct ConnectionFailed {
+    public private (set) lazy var connectedToServerConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "connected_to_server")
+    }()
+
+
+    public func connectionFailed() {
+        connectionFailedConnector.emit()
     }
 
-    @Emitter(signal: "server_disconnected")
-    public struct ServerDisconnected {
+    public private (set) lazy var connectionFailedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "connection_failed")
+    }()
+
+
+    public func serverDisconnected() {
+        serverDisconnectedConnector.emit()
     }
+
+    public private (set) lazy var serverDisconnectedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "server_disconnected")
+    }()
+
 
     private static var __method_binding_has_multiplayer_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -57,21 +57,39 @@ open class RichTextLabel: Control {
         }
     }
 
-    @Emitter(signal: "meta_clicked", args: ("meta", Godot.Variant))
-    public struct MetaClicked {
+    public func metaClicked(meta: Godot.Variant) {
+        metaClickedConnector.emit(meta)
     }
 
-    @Emitter(signal: "meta_hover_started", args: ("meta", Godot.Variant))
-    public struct MetaHoverStarted {
+    public private (set) lazy var metaClickedConnector: Godot.SignalConnector<Godot.Variant> = {
+        .init(self, "meta_clicked")
+    }()
+
+    public func metaHoverStarted(meta: Godot.Variant) {
+        metaHoverStartedConnector.emit(meta)
     }
 
-    @Emitter(signal: "meta_hover_ended", args: ("meta", Godot.Variant))
-    public struct MetaHoverEnded {
+    public private (set) lazy var metaHoverStartedConnector: Godot.SignalConnector<Godot.Variant> = {
+        .init(self, "meta_hover_started")
+    }()
+
+    public func metaHoverEnded(meta: Godot.Variant) {
+        metaHoverEndedConnector.emit(meta)
     }
 
-    @Emitter(signal: "finished")
-    public struct Finished {
+    public private (set) lazy var metaHoverEndedConnector: Godot.SignalConnector<Godot.Variant> = {
+        .init(self, "meta_hover_ended")
+    }()
+
+    public func finished() {
+        finishedConnector.emit()
     }
+
+    public private (set) lazy var finishedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "finished")
+    }()
+
 
     private static var __method_binding_get_parsed_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

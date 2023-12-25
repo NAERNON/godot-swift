@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeInput: VisualShaderNode {
-    @Emitter(signal: "input_type_changed")
-    public struct InputTypeChanged {
+    public func inputTypeChanged() {
+        inputTypeChangedConnector.emit()
     }
+
+    public private (set) lazy var inputTypeChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "input_type_changed")
+    }()
+
 
     private static var __method_binding_set_input_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

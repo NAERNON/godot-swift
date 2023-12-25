@@ -5,17 +5,33 @@
 import GodotExtensionHeaders
 @GodotClass
 open class AcceptDialog: Window {
-    @Emitter(signal: "confirmed")
-    public struct Confirmed {
+    public func confirmed() {
+        confirmedConnector.emit()
     }
 
-    @Emitter(signal: "canceled")
-    public struct Canceled {
+    public private (set) lazy var confirmedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "confirmed")
+    }()
+
+
+    public func canceled() {
+        canceledConnector.emit()
     }
 
-    @Emitter(signal: "custom_action", args: ("action", Godot.GodotStringName))
-    public struct CustomAction {
+    public private (set) lazy var canceledConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "canceled")
+    }()
+
+
+    public func customAction(action: Godot.GodotStringName) {
+        customActionConnector.emit(action)
     }
+
+    public private (set) lazy var customActionConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "custom_action")
+    }()
 
     private static var __method_binding_get_ok_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

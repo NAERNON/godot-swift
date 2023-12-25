@@ -17,17 +17,33 @@ open class MultiplayerSynchronizer: Node {
         }
     }
 
-    @Emitter(signal: "synchronized")
-    public struct Synchronized {
+    public func synchronized() {
+        synchronizedConnector.emit()
     }
 
-    @Emitter(signal: "delta_synchronized")
-    public struct DeltaSynchronized {
+    public private (set) lazy var synchronizedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "synchronized")
+    }()
+
+
+    public func deltaSynchronized() {
+        deltaSynchronizedConnector.emit()
     }
 
-    @Emitter(signal: "visibility_changed", args: ("forPeer", Int))
-    public struct VisibilityChanged {
+    public private (set) lazy var deltaSynchronizedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "delta_synchronized")
+    }()
+
+
+    public func visibilityChanged(forPeer: Int) {
+        visibilityChangedConnector.emit(forPeer)
     }
+
+    public private (set) lazy var visibilityChangedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "visibility_changed")
+    }()
 
     private static var __method_binding_set_root_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

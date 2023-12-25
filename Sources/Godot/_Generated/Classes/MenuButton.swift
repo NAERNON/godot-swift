@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotClass
 open class MenuButton: Button {
-    @Emitter(signal: "about_to_popup")
-    public struct AboutToPopup {
+    public func aboutToPopup() {
+        aboutToPopupConnector.emit()
     }
+
+    public private (set) lazy var aboutToPopupConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "about_to_popup")
+    }()
+
 
     private static var __method_binding_get_popup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

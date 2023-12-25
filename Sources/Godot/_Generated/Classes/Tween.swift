@@ -68,17 +68,31 @@ open class Tween: RefCounted {
         }
     }
 
-    @Emitter(signal: "step_finished", args: ("idx", Int))
-    public struct StepFinished {
+    public func stepFinished(idx: Int) {
+        stepFinishedConnector.emit(idx)
     }
 
-    @Emitter(signal: "loop_finished", args: ("loopCount", Int))
-    public struct LoopFinished {
+    public private (set) lazy var stepFinishedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "step_finished")
+    }()
+
+    public func loopFinished(loopCount: Int) {
+        loopFinishedConnector.emit(loopCount)
     }
 
-    @Emitter(signal: "finished")
-    public struct Finished {
+    public private (set) lazy var loopFinishedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "loop_finished")
+    }()
+
+    public func finished() {
+        finishedConnector.emit()
     }
+
+    public private (set) lazy var finishedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "finished")
+    }()
+
 
     private static var __method_binding_tween_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

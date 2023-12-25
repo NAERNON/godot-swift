@@ -19,13 +19,23 @@ open class AudioServer: Object {
         }
     }
 
-    @Emitter(signal: "bus_layout_changed")
-    public struct BusLayoutChanged {
+    public func busLayoutChanged() {
+        busLayoutChangedConnector.emit()
     }
 
-    @Emitter(signal: "bus_renamed", args: ("busIndex", Int), ("oldName", Godot.GodotStringName), ("newName", Godot.GodotStringName))
-    public struct BusRenamed {
+    public private (set) lazy var busLayoutChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "bus_layout_changed")
+    }()
+
+
+    public func busRenamed(busIndex: Int, oldName: Godot.GodotStringName, newName: Godot.GodotStringName) {
+        busRenamedConnector.emit(busIndex, oldName, newName)
     }
+
+    public private (set) lazy var busRenamedConnector: Godot.SignalConnector<Int, Godot.GodotStringName, Godot.GodotStringName> = {
+        .init(self, "bus_renamed")
+    }()
 
     private static var __method_binding_set_bus_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

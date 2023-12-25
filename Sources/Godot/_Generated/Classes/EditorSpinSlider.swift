@@ -5,21 +5,45 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorSpinSlider: Range {
-    @Emitter(signal: "grabbed")
-    public struct Grabbed {
+    public func grabbed() {
+        grabbedConnector.emit()
     }
 
-    @Emitter(signal: "ungrabbed")
-    public struct Ungrabbed {
+    public private (set) lazy var grabbedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "grabbed")
+    }()
+
+
+    public func ungrabbed() {
+        ungrabbedConnector.emit()
     }
 
-    @Emitter(signal: "value_focus_entered")
-    public struct ValueFocusEntered {
+    public private (set) lazy var ungrabbedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "ungrabbed")
+    }()
+
+
+    public func valueFocusEntered() {
+        valueFocusEnteredConnector.emit()
     }
 
-    @Emitter(signal: "value_focus_exited")
-    public struct ValueFocusExited {
+    public private (set) lazy var valueFocusEnteredConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "value_focus_entered")
+    }()
+
+
+    public func valueFocusExited() {
+        valueFocusExitedConnector.emit()
     }
+
+    public private (set) lazy var valueFocusExitedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "value_focus_exited")
+    }()
+
 
     private static var __method_binding_set_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

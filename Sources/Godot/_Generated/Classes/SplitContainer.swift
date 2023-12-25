@@ -17,9 +17,13 @@ open class SplitContainer: Container {
         }
     }
 
-    @Emitter(signal: "dragged", args: ("offset", Int))
-    public struct Dragged {
+    public func dragged(offset: Int) {
+        draggedConnector.emit(offset)
     }
+
+    public private (set) lazy var draggedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "dragged")
+    }()
 
     private static var __method_binding_set_split_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -30,21 +30,43 @@ open class BaseButton: Control {
         }
     }
 
-    @Emitter(signal: "pressed")
-    public struct Pressed {
+    public func pressed() {
+        pressedConnector.emit()
     }
 
-    @Emitter(signal: "button_up")
-    public struct ButtonUp {
+    public private (set) lazy var pressedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "pressed")
+    }()
+
+
+    public func buttonUp() {
+        buttonUpConnector.emit()
     }
 
-    @Emitter(signal: "button_down")
-    public struct ButtonDown {
+    public private (set) lazy var buttonUpConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "button_up")
+    }()
+
+
+    public func buttonDown() {
+        buttonDownConnector.emit()
     }
 
-    @Emitter(signal: "toggled", args: ("toggledOn", Bool))
-    public struct Toggled {
+    public private (set) lazy var buttonDownConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "button_down")
+    }()
+
+
+    public func toggled(toggledOn: Bool) {
+        toggledConnector.emit(toggledOn)
     }
+
+    public private (set) lazy var toggledConnector: Godot.SignalConnector<Bool> = {
+        .init(self, "toggled")
+    }()
 
     open func _pressed() {
     }

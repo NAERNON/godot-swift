@@ -5,21 +5,37 @@
 import GodotExtensionHeaders
 @GodotClass
 open class XRController3D: XRNode3D {
-    @Emitter(signal: "button_pressed", args: ("name", Godot.GodotString))
-    public struct ButtonPressed {
+    public func buttonPressed(name: Godot.GodotString) {
+        buttonPressedConnector.emit(name)
     }
 
-    @Emitter(signal: "button_released", args: ("name", Godot.GodotString))
-    public struct ButtonReleased {
+    public private (set) lazy var buttonPressedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "button_pressed")
+    }()
+
+    public func buttonReleased(name: Godot.GodotString) {
+        buttonReleasedConnector.emit(name)
     }
 
-    @Emitter(signal: "input_float_changed", args: ("name", Godot.GodotString), ("value", Double))
-    public struct InputFloatChanged {
+    public private (set) lazy var buttonReleasedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "button_released")
+    }()
+
+    public func inputFloatChanged(name: Godot.GodotString, value: Double) {
+        inputFloatChangedConnector.emit(name, value)
     }
 
-    @Emitter(signal: "input_vector2_changed", args: ("name", Godot.GodotString), ("value", Godot.Vector2))
-    public struct InputVector2Changed {
+    public private (set) lazy var inputFloatChangedConnector: Godot.SignalConnector<Godot.GodotString, Double> = {
+        .init(self, "input_float_changed")
+    }()
+
+    public func inputVector2Changed(name: Godot.GodotString, value: Godot.Vector2) {
+        inputVector2ChangedConnector.emit(name, value)
     }
+
+    public private (set) lazy var inputVector2ChangedConnector: Godot.SignalConnector<Godot.GodotString, Godot.Vector2> = {
+        .init(self, "input_vector2_changed")
+    }()
 
     private static var __method_binding_is_button_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

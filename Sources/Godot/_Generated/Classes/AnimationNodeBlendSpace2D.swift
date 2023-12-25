@@ -17,9 +17,15 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
     }
 
-    @Emitter(signal: "triangles_updated")
-    public struct TrianglesUpdated {
+    public func trianglesUpdated() {
+        trianglesUpdatedConnector.emit()
     }
+
+    public private (set) lazy var trianglesUpdatedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "triangles_updated")
+    }()
+
 
     private static var __method_binding_add_blend_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -17,9 +17,15 @@ open class Node3D: Node {
         }
     }
 
-    @Emitter(signal: "visibility_changed")
-    public struct VisibilityChanged {
+    public func visibilityChanged() {
+        visibilityChangedConnector.emit()
     }
+
+    public private (set) lazy var visibilityChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "visibility_changed")
+    }()
+
 
     private static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

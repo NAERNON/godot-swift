@@ -226,10 +226,9 @@ struct GodotClass: Decodable {
             \(raw: connectorName).emit(\(raw: emitCallSyntax))
         }
         
-        public private(set) lazy var \(raw: connectorName): Godot
-            .SignalConnector<\(raw: genericSyntax)> = {
-                .init(self, \(literal: signal.name))
-            }()
+        public private(set) lazy var \(raw: connectorName): Godot.SignalConnector<\(raw: genericSyntax)> = {
+            .init(self, \(literal: signal.name))
+        }()
         """
     }
     

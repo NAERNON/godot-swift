@@ -5,13 +5,25 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Container: Control {
-    @Emitter(signal: "pre_sort_children")
-    public struct PreSortChildren {
+    public func preSortChildren() {
+        preSortChildrenConnector.emit()
     }
 
-    @Emitter(signal: "sort_children")
-    public struct SortChildren {
+    public private (set) lazy var preSortChildrenConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "pre_sort_children")
+    }()
+
+
+    public func sortChildren() {
+        sortChildrenConnector.emit()
     }
+
+    public private (set) lazy var sortChildrenConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "sort_children")
+    }()
+
 
     open func _getAllowedSizeFlagsHorizontal() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()

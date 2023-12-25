@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Path3D: Node3D {
-    @Emitter(signal: "curve_changed")
-    public struct CurveChanged {
+    public func curveChanged() {
+        curveChangedConnector.emit()
     }
+
+    public private (set) lazy var curveChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "curve_changed")
+    }()
+
 
     private static var __method_binding_set_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

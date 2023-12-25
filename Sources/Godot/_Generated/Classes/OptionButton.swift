@@ -5,13 +5,21 @@
 import GodotExtensionHeaders
 @GodotClass
 open class OptionButton: Button {
-    @Emitter(signal: "item_selected", args: ("index", Int))
-    public struct ItemSelected {
+    public func itemSelected(index: Int) {
+        itemSelectedConnector.emit(index)
     }
 
-    @Emitter(signal: "item_focused", args: ("index", Int))
-    public struct ItemFocused {
+    public private (set) lazy var itemSelectedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "item_selected")
+    }()
+
+    public func itemFocused(index: Int) {
+        itemFocusedConnector.emit(index)
     }
+
+    public private (set) lazy var itemFocusedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "item_focused")
+    }()
 
     private static var __method_binding_add_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

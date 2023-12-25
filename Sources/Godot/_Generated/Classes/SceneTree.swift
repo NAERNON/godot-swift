@@ -19,37 +19,77 @@ open class SceneTree: MainLoop {
         }
     }
 
-    @Emitter(signal: "tree_changed")
-    public struct TreeChanged {
+    public func treeChanged() {
+        treeChangedConnector.emit()
     }
 
-    @Emitter(signal: "tree_process_mode_changed")
-    public struct TreeProcessModeChanged {
+    public private (set) lazy var treeChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "tree_changed")
+    }()
+
+
+    public func treeProcessModeChanged() {
+        treeProcessModeChangedConnector.emit()
     }
 
-    @Emitter(signal: "node_added", args: ("node", Godot.Node?))
-    public struct NodeAdded {
+    public private (set) lazy var treeProcessModeChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "tree_process_mode_changed")
+    }()
+
+
+    public func nodeAdded(node: Godot.Node?) {
+        nodeAddedConnector.emit(node)
     }
 
-    @Emitter(signal: "node_removed", args: ("node", Godot.Node?))
-    public struct NodeRemoved {
+    public private (set) lazy var nodeAddedConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "node_added")
+    }()
+
+    public func nodeRemoved(node: Godot.Node?) {
+        nodeRemovedConnector.emit(node)
     }
 
-    @Emitter(signal: "node_renamed", args: ("node", Godot.Node?))
-    public struct NodeRenamed {
+    public private (set) lazy var nodeRemovedConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "node_removed")
+    }()
+
+    public func nodeRenamed(node: Godot.Node?) {
+        nodeRenamedConnector.emit(node)
     }
 
-    @Emitter(signal: "node_configuration_warning_changed", args: ("node", Godot.Node?))
-    public struct NodeConfigurationWarningChanged {
+    public private (set) lazy var nodeRenamedConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "node_renamed")
+    }()
+
+    public func nodeConfigurationWarningChanged(node: Godot.Node?) {
+        nodeConfigurationWarningChangedConnector.emit(node)
     }
 
-    @Emitter(signal: "process_frame")
-    public struct ProcessFrame {
+    public private (set) lazy var nodeConfigurationWarningChangedConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "node_configuration_warning_changed")
+    }()
+
+    public func processFrame() {
+        processFrameConnector.emit()
     }
 
-    @Emitter(signal: "physics_frame")
-    public struct PhysicsFrame {
+    public private (set) lazy var processFrameConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "process_frame")
+    }()
+
+
+    public func physicsFrame() {
+        physicsFrameConnector.emit()
     }
+
+    public private (set) lazy var physicsFrameConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "physics_frame")
+    }()
+
 
     private static var __method_binding_get_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

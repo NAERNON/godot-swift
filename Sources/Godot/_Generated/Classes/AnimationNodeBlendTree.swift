@@ -5,9 +5,13 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNodeBlendTree: AnimationRootNode {
-    @Emitter(signal: "node_changed", args: ("nodeName", Godot.GodotStringName))
-    public struct NodeChanged {
+    public func nodeChanged(nodeName: Godot.GodotStringName) {
+        nodeChangedConnector.emit(nodeName)
     }
+
+    public private (set) lazy var nodeChangedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "node_changed")
+    }()
 
     private static var __method_binding_add_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

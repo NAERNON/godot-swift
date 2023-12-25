@@ -5,9 +5,13 @@
 import GodotExtensionHeaders
 @GodotClass
 open class XRNode3D: Node3D {
-    @Emitter(signal: "tracking_changed", args: ("tracking", Bool))
-    public struct TrackingChanged {
+    public func trackingChanged(tracking: Bool) {
+        trackingChangedConnector.emit(tracking)
     }
+
+    public private (set) lazy var trackingChangedConnector: Godot.SignalConnector<Bool> = {
+        .init(self, "tracking_changed")
+    }()
 
     private static var __method_binding_set_tracker: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

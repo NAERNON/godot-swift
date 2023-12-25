@@ -82,9 +82,15 @@ open class CPUParticles3D: GeometryInstance3D {
         }
     }
 
-    @Emitter(signal: "finished")
-    public struct Finished {
+    public func finished() {
+        finishedConnector.emit()
     }
+
+    public private (set) lazy var finishedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "finished")
+    }()
+
 
     private static var __method_binding_set_emitting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

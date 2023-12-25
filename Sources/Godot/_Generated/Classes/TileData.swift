@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TileData: Object {
-    @Emitter(signal: "changed")
-    public struct Changed {
+    public func changed() {
+        changedConnector.emit()
     }
+
+    public private (set) lazy var changedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "changed")
+    }()
+
 
     private static var __method_binding_set_flip_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

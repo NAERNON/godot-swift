@@ -44,21 +44,39 @@ open class CodeEdit: TextEdit {
         }
     }
 
-    @Emitter(signal: "breakpoint_toggled", args: ("line", Int))
-    public struct BreakpointToggled {
+    public func breakpointToggled(line: Int) {
+        breakpointToggledConnector.emit(line)
     }
 
-    @Emitter(signal: "code_completion_requested")
-    public struct CodeCompletionRequested {
+    public private (set) lazy var breakpointToggledConnector: Godot.SignalConnector<Int> = {
+        .init(self, "breakpoint_toggled")
+    }()
+
+    public func codeCompletionRequested() {
+        codeCompletionRequestedConnector.emit()
     }
 
-    @Emitter(signal: "symbol_lookup", args: ("symbol", Godot.GodotString), ("line", Int), ("column", Int))
-    public struct SymbolLookup {
+    public private (set) lazy var codeCompletionRequestedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "code_completion_requested")
+    }()
+
+
+    public func symbolLookup(symbol: Godot.GodotString, line: Int, column: Int) {
+        symbolLookupConnector.emit(symbol, line, column)
     }
 
-    @Emitter(signal: "symbol_validate", args: ("symbol", Godot.GodotString))
-    public struct SymbolValidate {
+    public private (set) lazy var symbolLookupConnector: Godot.SignalConnector<Godot.GodotString, Int, Int> = {
+        .init(self, "symbol_lookup")
+    }()
+
+    public func symbolValidate(symbol: Godot.GodotString) {
+        symbolValidateConnector.emit(symbol)
     }
+
+    public private (set) lazy var symbolValidateConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "symbol_validate")
+    }()
 
     open func _confirmCodeCompletion(replace: Bool) {
     }

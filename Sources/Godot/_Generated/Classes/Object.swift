@@ -19,13 +19,25 @@ open class Object {
         }
     }
 
-    @Emitter(signal: "script_changed")
-    public struct ScriptChanged {
+    public func scriptChanged() {
+        scriptChangedConnector.emit()
     }
 
-    @Emitter(signal: "property_list_changed")
-    public struct PropertyListChanged {
+    public private (set) lazy var scriptChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "script_changed")
+    }()
+
+
+    public func propertyListChanged() {
+        propertyListChangedConnector.emit()
     }
+
+    public private (set) lazy var propertyListChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "property_list_changed")
+    }()
+
 
     private static var __method_binding_get_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

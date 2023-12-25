@@ -5,9 +5,13 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorResourcePreview: Node {
-    @Emitter(signal: "preview_invalidated", args: ("path", Godot.GodotString))
-    public struct PreviewInvalidated {
+    public func previewInvalidated(path: Godot.GodotString) {
+        previewInvalidatedConnector.emit(path)
     }
+
+    public private (set) lazy var previewInvalidatedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "preview_invalidated")
+    }()
 
     private static var __method_binding_queue_resource_preview: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

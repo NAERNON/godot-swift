@@ -32,37 +32,69 @@ open class TabBar: Control {
         }
     }
 
-    @Emitter(signal: "tab_selected", args: ("tab", Int))
-    public struct TabSelected {
+    public func tabSelected(tab: Int) {
+        tabSelectedConnector.emit(tab)
     }
 
-    @Emitter(signal: "tab_changed", args: ("tab", Int))
-    public struct TabChanged {
+    public private (set) lazy var tabSelectedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_selected")
+    }()
+
+    public func tabChanged(tab: Int) {
+        tabChangedConnector.emit(tab)
     }
 
-    @Emitter(signal: "tab_clicked", args: ("tab", Int))
-    public struct TabClicked {
+    public private (set) lazy var tabChangedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_changed")
+    }()
+
+    public func tabClicked(tab: Int) {
+        tabClickedConnector.emit(tab)
     }
 
-    @Emitter(signal: "tab_rmb_clicked", args: ("tab", Int))
-    public struct TabRmbClicked {
+    public private (set) lazy var tabClickedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_clicked")
+    }()
+
+    public func tabRmbClicked(tab: Int) {
+        tabRmbClickedConnector.emit(tab)
     }
 
-    @Emitter(signal: "tab_close_pressed", args: ("tab", Int))
-    public struct TabClosePressed {
+    public private (set) lazy var tabRmbClickedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_rmb_clicked")
+    }()
+
+    public func tabClosePressed(tab: Int) {
+        tabClosePressedConnector.emit(tab)
     }
 
-    @Emitter(signal: "tab_button_pressed", args: ("tab", Int))
-    public struct TabButtonPressed {
+    public private (set) lazy var tabClosePressedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_close_pressed")
+    }()
+
+    public func tabButtonPressed(tab: Int) {
+        tabButtonPressedConnector.emit(tab)
     }
 
-    @Emitter(signal: "tab_hovered", args: ("tab", Int))
-    public struct TabHovered {
+    public private (set) lazy var tabButtonPressedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_button_pressed")
+    }()
+
+    public func tabHovered(tab: Int) {
+        tabHoveredConnector.emit(tab)
     }
 
-    @Emitter(signal: "active_tab_rearranged", args: ("idxTo", Int))
-    public struct ActiveTabRearranged {
+    public private (set) lazy var tabHoveredConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_hovered")
+    }()
+
+    public func activeTabRearranged(idxTo: Int) {
+        activeTabRearrangedConnector.emit(idxTo)
     }
+
+    public private (set) lazy var activeTabRearrangedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "active_tab_rearranged")
+    }()
 
     private static var __method_binding_set_tab_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

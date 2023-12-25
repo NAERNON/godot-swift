@@ -15,9 +15,15 @@ open class Timer: Node {
         }
     }
 
-    @Emitter(signal: "timeout")
-    public struct Timeout {
+    public func timeout() {
+        timeoutConnector.emit()
     }
+
+    public private (set) lazy var timeoutConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "timeout")
+    }()
+
 
     private static var __method_binding_set_wait_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

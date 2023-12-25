@@ -5,13 +5,23 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GridMap: Node3D {
-    @Emitter(signal: "cell_size_changed", args: ("cellSize", Godot.Vector3))
-    public struct CellSizeChanged {
+    public func cellSizeChanged(cellSize: Godot.Vector3) {
+        cellSizeChangedConnector.emit(cellSize)
     }
 
-    @Emitter(signal: "changed")
-    public struct Changed {
+    public private (set) lazy var cellSizeChangedConnector: Godot.SignalConnector<Godot.Vector3> = {
+        .init(self, "cell_size_changed")
+    }()
+
+    public func changed() {
+        changedConnector.emit()
     }
+
+    public private (set) lazy var changedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "changed")
+    }()
+
 
     private static var __method_binding_set_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

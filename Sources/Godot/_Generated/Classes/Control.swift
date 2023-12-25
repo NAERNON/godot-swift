@@ -186,41 +186,93 @@ open class Control: CanvasItem {
         }
     }
 
-    @Emitter(signal: "resized")
-    public struct Resized {
+    public func resized() {
+        resizedConnector.emit()
     }
 
-    @Emitter(signal: "gui_input", args: ("event", Godot.InputEvent?))
-    public struct GuiInput {
+    public private (set) lazy var resizedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "resized")
+    }()
+
+
+    public func guiInput(event: Godot.InputEvent?) {
+        guiInputConnector.emit(event)
     }
 
-    @Emitter(signal: "mouse_entered")
-    public struct MouseEntered {
+    public private (set) lazy var guiInputConnector: Godot.SignalConnector<Godot.InputEvent?> = {
+        .init(self, "gui_input")
+    }()
+
+    public func mouseEntered() {
+        mouseEnteredConnector.emit()
     }
 
-    @Emitter(signal: "mouse_exited")
-    public struct MouseExited {
+    public private (set) lazy var mouseEnteredConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "mouse_entered")
+    }()
+
+
+    public func mouseExited() {
+        mouseExitedConnector.emit()
     }
 
-    @Emitter(signal: "focus_entered")
-    public struct FocusEntered {
+    public private (set) lazy var mouseExitedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "mouse_exited")
+    }()
+
+
+    public func focusEntered() {
+        focusEnteredConnector.emit()
     }
 
-    @Emitter(signal: "focus_exited")
-    public struct FocusExited {
+    public private (set) lazy var focusEnteredConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "focus_entered")
+    }()
+
+
+    public func focusExited() {
+        focusExitedConnector.emit()
     }
 
-    @Emitter(signal: "size_flags_changed")
-    public struct SizeFlagsChanged {
+    public private (set) lazy var focusExitedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "focus_exited")
+    }()
+
+
+    public func sizeFlagsChanged() {
+        sizeFlagsChangedConnector.emit()
     }
 
-    @Emitter(signal: "minimum_size_changed")
-    public struct MinimumSizeChanged {
+    public private (set) lazy var sizeFlagsChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "size_flags_changed")
+    }()
+
+
+    public func minimumSizeChanged() {
+        minimumSizeChangedConnector.emit()
     }
 
-    @Emitter(signal: "theme_changed")
-    public struct ThemeChanged {
+    public private (set) lazy var minimumSizeChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "minimum_size_changed")
+    }()
+
+
+    public func themeChanged() {
+        themeChangedConnector.emit()
     }
+
+    public private (set) lazy var themeChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "theme_changed")
+    }()
+
 
     open func _hasPoint(_ point: Godot.Vector2) -> Bool {
         Bool()

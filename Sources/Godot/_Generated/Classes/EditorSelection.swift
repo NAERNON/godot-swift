@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorSelection: Object {
-    @Emitter(signal: "selection_changed")
-    public struct SelectionChanged {
+    public func selectionChanged() {
+        selectionChangedConnector.emit()
     }
+
+    public private (set) lazy var selectionChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "selection_changed")
+    }()
+
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

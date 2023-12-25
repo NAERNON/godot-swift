@@ -5,41 +5,83 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ScriptEditorBase: VBoxContainer {
-    @Emitter(signal: "name_changed")
-    public struct NameChanged {
+    public func nameChanged() {
+        nameChangedConnector.emit()
     }
 
-    @Emitter(signal: "edited_script_changed")
-    public struct EditedScriptChanged {
+    public private (set) lazy var nameChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "name_changed")
+    }()
+
+
+    public func editedScriptChanged() {
+        editedScriptChangedConnector.emit()
     }
 
-    @Emitter(signal: "request_help", args: ("topic", Godot.GodotString))
-    public struct RequestHelp {
+    public private (set) lazy var editedScriptChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "edited_script_changed")
+    }()
+
+
+    public func requestHelp(topic: Godot.GodotString) {
+        requestHelpConnector.emit(topic)
     }
 
-    @Emitter(signal: "request_open_script_at_line", args: ("script", Godot.Object?), ("line", Int))
-    public struct RequestOpenScriptAtLine {
+    public private (set) lazy var requestHelpConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "request_help")
+    }()
+
+    public func requestOpenScriptAtLine(script: Godot.Object?, line: Int) {
+        requestOpenScriptAtLineConnector.emit(script, line)
     }
 
-    @Emitter(signal: "request_save_history")
-    public struct RequestSaveHistory {
+    public private (set) lazy var requestOpenScriptAtLineConnector: Godot.SignalConnector<Godot.Object?, Int> = {
+        .init(self, "request_open_script_at_line")
+    }()
+
+    public func requestSaveHistory() {
+        requestSaveHistoryConnector.emit()
     }
 
-    @Emitter(signal: "go_to_help", args: ("what", Godot.GodotString))
-    public struct GoToHelp {
+    public private (set) lazy var requestSaveHistoryConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "request_save_history")
+    }()
+
+
+    public func goToHelp(what: Godot.GodotString) {
+        goToHelpConnector.emit(what)
     }
 
-    @Emitter(signal: "search_in_files_requested", args: ("text", Godot.GodotString))
-    public struct SearchInFilesRequested {
+    public private (set) lazy var goToHelpConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "go_to_help")
+    }()
+
+    public func searchInFilesRequested(text: Godot.GodotString) {
+        searchInFilesRequestedConnector.emit(text)
     }
 
-    @Emitter(signal: "replace_in_files_requested", args: ("text", Godot.GodotString))
-    public struct ReplaceInFilesRequested {
+    public private (set) lazy var searchInFilesRequestedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "search_in_files_requested")
+    }()
+
+    public func replaceInFilesRequested(text: Godot.GodotString) {
+        replaceInFilesRequestedConnector.emit(text)
     }
 
-    @Emitter(signal: "go_to_method", args: ("script", Godot.Object?), ("method", Godot.GodotString))
-    public struct GoToMethod {
+    public private (set) lazy var replaceInFilesRequestedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "replace_in_files_requested")
+    }()
+
+    public func goToMethod(script: Godot.Object?, method: Godot.GodotString) {
+        goToMethodConnector.emit(script, method)
     }
+
+    public private (set) lazy var goToMethodConnector: Godot.SignalConnector<Godot.Object?, Godot.GodotString> = {
+        .init(self, "go_to_method")
+    }()
 
     private static var __method_binding_get_base_editor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

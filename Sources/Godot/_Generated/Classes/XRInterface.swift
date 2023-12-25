@@ -66,9 +66,13 @@ open class XRInterface: RefCounted {
         }
     }
 
-    @Emitter(signal: "play_area_changed", args: ("mode", Int))
-    public struct PlayAreaChanged {
+    public func playAreaChanged(mode: Int) {
+        playAreaChangedConnector.emit(mode)
     }
+
+    public private (set) lazy var playAreaChangedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "play_area_changed")
+    }()
 
     private static var __method_binding_get_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

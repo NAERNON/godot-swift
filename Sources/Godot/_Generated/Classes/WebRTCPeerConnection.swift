@@ -51,17 +51,29 @@ open class WebRTCPeerConnection: RefCounted {
         }
     }
 
-    @Emitter(signal: "session_description_created", args: ("type", Godot.GodotString), ("sdp", Godot.GodotString))
-    public struct SessionDescriptionCreated {
+    public func sessionDescriptionCreated(type: Godot.GodotString, sdp: Godot.GodotString) {
+        sessionDescriptionCreatedConnector.emit(type, sdp)
     }
 
-    @Emitter(signal: "ice_candidate_created", args: ("media", Godot.GodotString), ("index", Int), ("name", Godot.GodotString))
-    public struct IceCandidateCreated {
+    public private (set) lazy var sessionDescriptionCreatedConnector: Godot.SignalConnector<Godot.GodotString, Godot.GodotString> = {
+        .init(self, "session_description_created")
+    }()
+
+    public func iceCandidateCreated(media: Godot.GodotString, index: Int, name: Godot.GodotString) {
+        iceCandidateCreatedConnector.emit(media, index, name)
     }
 
-    @Emitter(signal: "data_channel_received", args: ("channel", Godot.WebRTCDataChannel?))
-    public struct DataChannelReceived {
+    public private (set) lazy var iceCandidateCreatedConnector: Godot.SignalConnector<Godot.GodotString, Int, Godot.GodotString> = {
+        .init(self, "ice_candidate_created")
+    }()
+
+    public func dataChannelReceived(channel: Godot.WebRTCDataChannel?) {
+        dataChannelReceivedConnector.emit(channel)
     }
+
+    public private (set) lazy var dataChannelReceivedConnector: Godot.SignalConnector<Godot.WebRTCDataChannel?> = {
+        .init(self, "data_channel_received")
+    }()
 
     private static var __method_binding_set_default_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

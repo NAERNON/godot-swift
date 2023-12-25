@@ -5,49 +5,93 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorProperty: Container {
-    @Emitter(signal: "property_changed", args: ("property", Godot.GodotStringName), ("value", Godot.Variant), ("field", Godot.GodotStringName), ("changing", Bool))
-    public struct PropertyChanged {
+    public func propertyChanged(property: Godot.GodotStringName, value: Godot.Variant, field: Godot.GodotStringName, changing: Bool) {
+        propertyChangedConnector.emit(property, value, field, changing)
     }
 
-    @Emitter(signal: "multiple_properties_changed", args: ("properties", Godot.PackedStringArray), ("value", Godot.AnyGodotArray))
-    public struct MultiplePropertiesChanged {
+    public private (set) lazy var propertyChangedConnector: Godot.SignalConnector<Godot.GodotStringName, Godot.Variant, Godot.GodotStringName, Bool> = {
+        .init(self, "property_changed")
+    }()
+
+    public func multiplePropertiesChanged(properties: Godot.PackedStringArray, value: Godot.AnyGodotArray) {
+        multiplePropertiesChangedConnector.emit(properties, value)
     }
 
-    @Emitter(signal: "property_keyed", args: ("property", Godot.GodotStringName))
-    public struct PropertyKeyed {
+    public private (set) lazy var multiplePropertiesChangedConnector: Godot.SignalConnector<Godot.PackedStringArray, Godot.AnyGodotArray> = {
+        .init(self, "multiple_properties_changed")
+    }()
+
+    public func propertyKeyed(property: Godot.GodotStringName) {
+        propertyKeyedConnector.emit(property)
     }
 
-    @Emitter(signal: "property_deleted", args: ("property", Godot.GodotStringName))
-    public struct PropertyDeleted {
+    public private (set) lazy var propertyKeyedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "property_keyed")
+    }()
+
+    public func propertyDeleted(property: Godot.GodotStringName) {
+        propertyDeletedConnector.emit(property)
     }
 
-    @Emitter(signal: "property_keyed_with_value", args: ("property", Godot.GodotStringName), ("value", Godot.Variant))
-    public struct PropertyKeyedWithValue {
+    public private (set) lazy var propertyDeletedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "property_deleted")
+    }()
+
+    public func propertyKeyedWithValue(property: Godot.GodotStringName, value: Godot.Variant) {
+        propertyKeyedWithValueConnector.emit(property, value)
     }
 
-    @Emitter(signal: "property_checked", args: ("property", Godot.GodotStringName), ("checked", Bool))
-    public struct PropertyChecked {
+    public private (set) lazy var propertyKeyedWithValueConnector: Godot.SignalConnector<Godot.GodotStringName, Godot.Variant> = {
+        .init(self, "property_keyed_with_value")
+    }()
+
+    public func propertyChecked(property: Godot.GodotStringName, checked: Bool) {
+        propertyCheckedConnector.emit(property, checked)
     }
 
-    @Emitter(signal: "property_pinned", args: ("property", Godot.GodotStringName), ("pinned", Bool))
-    public struct PropertyPinned {
+    public private (set) lazy var propertyCheckedConnector: Godot.SignalConnector<Godot.GodotStringName, Bool> = {
+        .init(self, "property_checked")
+    }()
+
+    public func propertyPinned(property: Godot.GodotStringName, pinned: Bool) {
+        propertyPinnedConnector.emit(property, pinned)
     }
 
-    @Emitter(signal: "property_can_revert_changed", args: ("property", Godot.GodotStringName), ("canRevert", Bool))
-    public struct PropertyCanRevertChanged {
+    public private (set) lazy var propertyPinnedConnector: Godot.SignalConnector<Godot.GodotStringName, Bool> = {
+        .init(self, "property_pinned")
+    }()
+
+    public func propertyCanRevertChanged(property: Godot.GodotStringName, canRevert: Bool) {
+        propertyCanRevertChangedConnector.emit(property, canRevert)
     }
 
-    @Emitter(signal: "resource_selected", args: ("path", Godot.GodotString), ("resource", Godot.Resource?))
-    public struct ResourceSelected {
+    public private (set) lazy var propertyCanRevertChangedConnector: Godot.SignalConnector<Godot.GodotStringName, Bool> = {
+        .init(self, "property_can_revert_changed")
+    }()
+
+    public func resourceSelected(path: Godot.GodotString, resource: Godot.Resource?) {
+        resourceSelectedConnector.emit(path, resource)
     }
 
-    @Emitter(signal: "object_id_selected", args: ("property", Godot.GodotStringName), ("id", Int))
-    public struct ObjectIdSelected {
+    public private (set) lazy var resourceSelectedConnector: Godot.SignalConnector<Godot.GodotString, Godot.Resource?> = {
+        .init(self, "resource_selected")
+    }()
+
+    public func objectIdSelected(property: Godot.GodotStringName, id: Int) {
+        objectIdSelectedConnector.emit(property, id)
     }
 
-    @Emitter(signal: "selected", args: ("path", Godot.GodotString), ("focusableIdx", Int))
-    public struct Selected {
+    public private (set) lazy var objectIdSelectedConnector: Godot.SignalConnector<Godot.GodotStringName, Int> = {
+        .init(self, "object_id_selected")
+    }()
+
+    public func selected(path: Godot.GodotString, focusableIdx: Int) {
+        selectedConnector.emit(path, focusableIdx)
     }
+
+    public private (set) lazy var selectedConnector: Godot.SignalConnector<Godot.GodotString, Int> = {
+        .init(self, "selected")
+    }()
 
     open func _updateProperty() {
     }

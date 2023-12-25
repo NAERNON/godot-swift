@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Skeleton2D: Node2D {
-    @Emitter(signal: "bone_setup_changed")
-    public struct BoneSetupChanged {
+    public func boneSetupChanged() {
+        boneSetupChangedConnector.emit()
     }
+
+    public private (set) lazy var boneSetupChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "bone_setup_changed")
+    }()
+
 
     private static var __method_binding_get_bone_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

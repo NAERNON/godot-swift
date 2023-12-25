@@ -39,9 +39,13 @@ open class HTTPRequest: Node {
         }
     }
 
-    @Emitter(signal: "request_completed", args: ("result", Int), ("responseCode", Int), ("headers", Godot.PackedStringArray), ("body", Godot.PackedByteArray))
-    public struct RequestCompleted {
+    public func requestCompleted(result: Int, responseCode: Int, headers: Godot.PackedStringArray, body: Godot.PackedByteArray) {
+        requestCompletedConnector.emit(result, responseCode, headers, body)
     }
+
+    public private (set) lazy var requestCompletedConnector: Godot.SignalConnector<Int, Int, Godot.PackedStringArray, Godot.PackedByteArray> = {
+        .init(self, "request_completed")
+    }()
 
     private static var __method_binding_request: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

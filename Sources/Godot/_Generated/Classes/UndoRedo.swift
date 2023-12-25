@@ -17,9 +17,15 @@ open class UndoRedo: Object {
         }
     }
 
-    @Emitter(signal: "version_changed")
-    public struct VersionChanged {
+    public func versionChanged() {
+        versionChangedConnector.emit()
     }
+
+    public private (set) lazy var versionChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "version_changed")
+    }()
+
 
     private static var __method_binding_create_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

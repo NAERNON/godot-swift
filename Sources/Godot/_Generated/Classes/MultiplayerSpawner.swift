@@ -5,13 +5,21 @@
 import GodotExtensionHeaders
 @GodotClass
 open class MultiplayerSpawner: Node {
-    @Emitter(signal: "despawned", args: ("node", Godot.Node?))
-    public struct Despawned {
+    public func despawned(node: Godot.Node?) {
+        despawnedConnector.emit(node)
     }
 
-    @Emitter(signal: "spawned", args: ("node", Godot.Node?))
-    public struct Spawned {
+    public private (set) lazy var despawnedConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "despawned")
+    }()
+
+    public func spawned(node: Godot.Node?) {
+        spawnedConnector.emit(node)
     }
+
+    public private (set) lazy var spawnedConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "spawned")
+    }()
 
     private static var __method_binding_add_spawnable_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

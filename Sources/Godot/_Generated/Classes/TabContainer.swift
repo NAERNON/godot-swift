@@ -5,33 +5,63 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TabContainer: Container {
-    @Emitter(signal: "active_tab_rearranged", args: ("idxTo", Int))
-    public struct ActiveTabRearranged {
+    public func activeTabRearranged(idxTo: Int) {
+        activeTabRearrangedConnector.emit(idxTo)
     }
 
-    @Emitter(signal: "tab_changed", args: ("tab", Int))
-    public struct TabChanged {
+    public private (set) lazy var activeTabRearrangedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "active_tab_rearranged")
+    }()
+
+    public func tabChanged(tab: Int) {
+        tabChangedConnector.emit(tab)
     }
 
-    @Emitter(signal: "tab_clicked", args: ("tab", Int))
-    public struct TabClicked {
+    public private (set) lazy var tabChangedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_changed")
+    }()
+
+    public func tabClicked(tab: Int) {
+        tabClickedConnector.emit(tab)
     }
 
-    @Emitter(signal: "tab_hovered", args: ("tab", Int))
-    public struct TabHovered {
+    public private (set) lazy var tabClickedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_clicked")
+    }()
+
+    public func tabHovered(tab: Int) {
+        tabHoveredConnector.emit(tab)
     }
 
-    @Emitter(signal: "tab_selected", args: ("tab", Int))
-    public struct TabSelected {
+    public private (set) lazy var tabHoveredConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_hovered")
+    }()
+
+    public func tabSelected(tab: Int) {
+        tabSelectedConnector.emit(tab)
     }
 
-    @Emitter(signal: "tab_button_pressed", args: ("tab", Int))
-    public struct TabButtonPressed {
+    public private (set) lazy var tabSelectedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_selected")
+    }()
+
+    public func tabButtonPressed(tab: Int) {
+        tabButtonPressedConnector.emit(tab)
     }
 
-    @Emitter(signal: "pre_popup_pressed")
-    public struct PrePopupPressed {
+    public private (set) lazy var tabButtonPressedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "tab_button_pressed")
+    }()
+
+    public func prePopupPressed() {
+        prePopupPressedConnector.emit()
     }
+
+    public private (set) lazy var prePopupPressedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "pre_popup_pressed")
+    }()
+
 
     private static var __method_binding_get_tab_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -5,13 +5,25 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Sprite3D: SpriteBase3D {
-    @Emitter(signal: "frame_changed")
-    public struct FrameChanged {
+    public func frameChanged() {
+        frameChangedConnector.emit()
     }
 
-    @Emitter(signal: "texture_changed")
-    public struct TextureChanged {
+    public private (set) lazy var frameChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "frame_changed")
+    }()
+
+
+    public func textureChanged() {
+        textureChangedConnector.emit()
     }
+
+    public private (set) lazy var textureChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "texture_changed")
+    }()
+
 
     private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

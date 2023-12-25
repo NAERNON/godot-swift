@@ -17,13 +17,21 @@ open class CameraServer: Object {
         }
     }
 
-    @Emitter(signal: "camera_feed_added", args: ("id", Int))
-    public struct CameraFeedAdded {
+    public func cameraFeedAdded(id: Int) {
+        cameraFeedAddedConnector.emit(id)
     }
 
-    @Emitter(signal: "camera_feed_removed", args: ("id", Int))
-    public struct CameraFeedRemoved {
+    public private (set) lazy var cameraFeedAddedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "camera_feed_added")
+    }()
+
+    public func cameraFeedRemoved(id: Int) {
+        cameraFeedRemovedConnector.emit(id)
     }
+
+    public private (set) lazy var cameraFeedRemovedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "camera_feed_removed")
+    }()
 
     private static var __method_binding_get_feed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -218,13 +218,23 @@ open class Viewport: Node {
         }
     }
 
-    @Emitter(signal: "size_changed")
-    public struct SizeChanged {
+    public func sizeChanged() {
+        sizeChangedConnector.emit()
     }
 
-    @Emitter(signal: "gui_focus_changed", args: ("node", Godot.Control?))
-    public struct GuiFocusChanged {
+    public private (set) lazy var sizeChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "size_changed")
+    }()
+
+
+    public func guiFocusChanged(node: Godot.Control?) {
+        guiFocusChangedConnector.emit(node)
     }
+
+    public private (set) lazy var guiFocusChangedConnector: Godot.SignalConnector<Godot.Control?> = {
+        .init(self, "gui_focus_changed")
+    }()
 
     private static var __method_binding_set_world_2d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

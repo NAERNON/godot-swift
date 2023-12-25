@@ -24,25 +24,45 @@ open class ItemList: Control {
         }
     }
 
-    @Emitter(signal: "item_selected", args: ("index", Int))
-    public struct ItemSelected {
+    public func itemSelected(index: Int) {
+        itemSelectedConnector.emit(index)
     }
 
-    @Emitter(signal: "empty_clicked", args: ("atPosition", Godot.Vector2), ("mouseButtonIndex", Int))
-    public struct EmptyClicked {
+    public private (set) lazy var itemSelectedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "item_selected")
+    }()
+
+    public func emptyClicked(atPosition: Godot.Vector2, mouseButtonIndex: Int) {
+        emptyClickedConnector.emit(atPosition, mouseButtonIndex)
     }
 
-    @Emitter(signal: "item_clicked", args: ("index", Int), ("atPosition", Godot.Vector2), ("mouseButtonIndex", Int))
-    public struct ItemClicked {
+    public private (set) lazy var emptyClickedConnector: Godot.SignalConnector<Godot.Vector2, Int> = {
+        .init(self, "empty_clicked")
+    }()
+
+    public func itemClicked(index: Int, atPosition: Godot.Vector2, mouseButtonIndex: Int) {
+        itemClickedConnector.emit(index, atPosition, mouseButtonIndex)
     }
 
-    @Emitter(signal: "multi_selected", args: ("index", Int), ("selected", Bool))
-    public struct MultiSelected {
+    public private (set) lazy var itemClickedConnector: Godot.SignalConnector<Int, Godot.Vector2, Int> = {
+        .init(self, "item_clicked")
+    }()
+
+    public func multiSelected(index: Int, selected: Bool) {
+        multiSelectedConnector.emit(index, selected)
     }
 
-    @Emitter(signal: "item_activated", args: ("index", Int))
-    public struct ItemActivated {
+    public private (set) lazy var multiSelectedConnector: Godot.SignalConnector<Int, Bool> = {
+        .init(self, "multi_selected")
+    }()
+
+    public func itemActivated(index: Int) {
+        itemActivatedConnector.emit(index)
     }
+
+    public private (set) lazy var itemActivatedConnector: Godot.SignalConnector<Int> = {
+        .init(self, "item_activated")
+    }()
 
     private static var __method_binding_add_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

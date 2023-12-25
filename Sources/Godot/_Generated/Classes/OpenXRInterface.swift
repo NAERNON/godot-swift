@@ -112,25 +112,55 @@ open class OpenXRInterface: XRInterface {
         }
     }
 
-    @Emitter(signal: "session_begun")
-    public struct SessionBegun {
+    public func sessionBegun() {
+        sessionBegunConnector.emit()
     }
 
-    @Emitter(signal: "session_stopping")
-    public struct SessionStopping {
+    public private (set) lazy var sessionBegunConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "session_begun")
+    }()
+
+
+    public func sessionStopping() {
+        sessionStoppingConnector.emit()
     }
 
-    @Emitter(signal: "session_focussed")
-    public struct SessionFocussed {
+    public private (set) lazy var sessionStoppingConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "session_stopping")
+    }()
+
+
+    public func sessionFocussed() {
+        sessionFocussedConnector.emit()
     }
 
-    @Emitter(signal: "session_visible")
-    public struct SessionVisible {
+    public private (set) lazy var sessionFocussedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "session_focussed")
+    }()
+
+
+    public func sessionVisible() {
+        sessionVisibleConnector.emit()
     }
 
-    @Emitter(signal: "pose_recentered")
-    public struct PoseRecentered {
+    public private (set) lazy var sessionVisibleConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "session_visible")
+    }()
+
+
+    public func poseRecentered() {
+        poseRecenteredConnector.emit()
     }
+
+    public private (set) lazy var poseRecenteredConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "pose_recentered")
+    }()
+
 
     private static var __method_binding_get_display_refresh_rate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

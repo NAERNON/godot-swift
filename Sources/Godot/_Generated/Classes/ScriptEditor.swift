@@ -5,13 +5,21 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ScriptEditor: PanelContainer {
-    @Emitter(signal: "editor_script_changed", args: ("script", Godot.Script?))
-    public struct EditorScriptChanged {
+    public func editorScriptChanged(script: Godot.Script?) {
+        editorScriptChangedConnector.emit(script)
     }
 
-    @Emitter(signal: "script_close", args: ("script", Godot.Script?))
-    public struct ScriptClose {
+    public private (set) lazy var editorScriptChangedConnector: Godot.SignalConnector<Godot.Script?> = {
+        .init(self, "editor_script_changed")
+    }()
+
+    public func scriptClose(script: Godot.Script?) {
+        scriptCloseConnector.emit(script)
     }
+
+    public private (set) lazy var scriptCloseConnector: Godot.SignalConnector<Godot.Script?> = {
+        .init(self, "script_close")
+    }()
 
     private static var __method_binding_get_current_editor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

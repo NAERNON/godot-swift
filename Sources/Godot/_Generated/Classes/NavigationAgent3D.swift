@@ -5,29 +5,59 @@
 import GodotExtensionHeaders
 @GodotClass
 open class NavigationAgent3D: Node {
-    @Emitter(signal: "path_changed")
-    public struct PathChanged {
+    public func pathChanged() {
+        pathChangedConnector.emit()
     }
 
-    @Emitter(signal: "target_reached")
-    public struct TargetReached {
+    public private (set) lazy var pathChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "path_changed")
+    }()
+
+
+    public func targetReached() {
+        targetReachedConnector.emit()
     }
 
-    @Emitter(signal: "waypoint_reached", args: ("details", Godot.AnyGodotDictionary))
-    public struct WaypointReached {
+    public private (set) lazy var targetReachedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "target_reached")
+    }()
+
+
+    public func waypointReached(details: Godot.AnyGodotDictionary) {
+        waypointReachedConnector.emit(details)
     }
 
-    @Emitter(signal: "link_reached", args: ("details", Godot.AnyGodotDictionary))
-    public struct LinkReached {
+    public private (set) lazy var waypointReachedConnector: Godot.SignalConnector<Godot.AnyGodotDictionary> = {
+        .init(self, "waypoint_reached")
+    }()
+
+    public func linkReached(details: Godot.AnyGodotDictionary) {
+        linkReachedConnector.emit(details)
     }
 
-    @Emitter(signal: "navigation_finished")
-    public struct NavigationFinished {
+    public private (set) lazy var linkReachedConnector: Godot.SignalConnector<Godot.AnyGodotDictionary> = {
+        .init(self, "link_reached")
+    }()
+
+    public func navigationFinished() {
+        navigationFinishedConnector.emit()
     }
 
-    @Emitter(signal: "velocity_computed", args: ("safeVelocity", Godot.Vector3))
-    public struct VelocityComputed {
+    public private (set) lazy var navigationFinishedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "navigation_finished")
+    }()
+
+
+    public func velocityComputed(safeVelocity: Godot.Vector3) {
+        velocityComputedConnector.emit(safeVelocity)
     }
+
+    public private (set) lazy var velocityComputedConnector: Godot.SignalConnector<Godot.Vector3> = {
+        .init(self, "velocity_computed")
+    }()
 
     private static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -5,9 +5,15 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Tweener: RefCounted {
-    @Emitter(signal: "finished")
-    public struct Finished {
+    public func finished() {
+        finishedConnector.emit()
     }
+
+    public private (set) lazy var finishedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "finished")
+    }()
+
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {

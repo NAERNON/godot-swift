@@ -28,9 +28,15 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
     }
 
-    @Emitter(signal: "advance_condition_changed")
-    public struct AdvanceConditionChanged {
+    public func advanceConditionChanged() {
+        advanceConditionChangedConnector.emit()
     }
+
+    public private (set) lazy var advanceConditionChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "advance_condition_changed")
+    }()
+
 
     private static var __method_binding_set_switch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

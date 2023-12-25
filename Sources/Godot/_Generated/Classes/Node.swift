@@ -73,41 +73,89 @@ open class Node: Object {
         }
     }
 
-    @Emitter(signal: "ready")
-    public struct Ready {
+    public func ready() {
+        readyConnector.emit()
     }
 
-    @Emitter(signal: "renamed")
-    public struct Renamed {
+    public private (set) lazy var readyConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "ready")
+    }()
+
+
+    public func renamed() {
+        renamedConnector.emit()
     }
 
-    @Emitter(signal: "tree_entered")
-    public struct TreeEntered {
+    public private (set) lazy var renamedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "renamed")
+    }()
+
+
+    public func treeEntered() {
+        treeEnteredConnector.emit()
     }
 
-    @Emitter(signal: "tree_exiting")
-    public struct TreeExiting {
+    public private (set) lazy var treeEnteredConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "tree_entered")
+    }()
+
+
+    public func treeExiting() {
+        treeExitingConnector.emit()
     }
 
-    @Emitter(signal: "tree_exited")
-    public struct TreeExited {
+    public private (set) lazy var treeExitingConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "tree_exiting")
+    }()
+
+
+    public func treeExited() {
+        treeExitedConnector.emit()
     }
 
-    @Emitter(signal: "child_entered_tree", args: ("node", Godot.Node?))
-    public struct ChildEnteredTree {
+    public private (set) lazy var treeExitedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "tree_exited")
+    }()
+
+
+    public func childEnteredTree(node: Godot.Node?) {
+        childEnteredTreeConnector.emit(node)
     }
 
-    @Emitter(signal: "child_exiting_tree", args: ("node", Godot.Node?))
-    public struct ChildExitingTree {
+    public private (set) lazy var childEnteredTreeConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "child_entered_tree")
+    }()
+
+    public func childExitingTree(node: Godot.Node?) {
+        childExitingTreeConnector.emit(node)
     }
 
-    @Emitter(signal: "child_order_changed")
-    public struct ChildOrderChanged {
+    public private (set) lazy var childExitingTreeConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "child_exiting_tree")
+    }()
+
+    public func childOrderChanged() {
+        childOrderChangedConnector.emit()
     }
 
-    @Emitter(signal: "replacing_by", args: ("node", Godot.Node?))
-    public struct ReplacingBy {
+    public private (set) lazy var childOrderChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "child_order_changed")
+    }()
+
+
+    public func replacingBy(node: Godot.Node?) {
+        replacingByConnector.emit(node)
     }
+
+    public private (set) lazy var replacingByConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "replacing_by")
+    }()
 
     open func _process(delta: Double) {
     }

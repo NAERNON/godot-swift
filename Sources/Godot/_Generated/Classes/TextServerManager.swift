@@ -5,13 +5,21 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TextServerManager: Object {
-    @Emitter(signal: "interface_added", args: ("interfaceName", Godot.GodotStringName))
-    public struct InterfaceAdded {
+    public func interfaceAdded(interfaceName: Godot.GodotStringName) {
+        interfaceAddedConnector.emit(interfaceName)
     }
 
-    @Emitter(signal: "interface_removed", args: ("interfaceName", Godot.GodotStringName))
-    public struct InterfaceRemoved {
+    public private (set) lazy var interfaceAddedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "interface_added")
+    }()
+
+    public func interfaceRemoved(interfaceName: Godot.GodotStringName) {
+        interfaceRemovedConnector.emit(interfaceName)
     }
+
+    public private (set) lazy var interfaceRemovedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
+        .init(self, "interface_removed")
+    }()
 
     private static var __method_binding_add_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

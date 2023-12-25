@@ -32,17 +32,29 @@ open class FileDialog: ConfirmationDialog {
         }
     }
 
-    @Emitter(signal: "file_selected", args: ("path", Godot.GodotString))
-    public struct FileSelected {
+    public func fileSelected(path: Godot.GodotString) {
+        fileSelectedConnector.emit(path)
     }
 
-    @Emitter(signal: "files_selected", args: ("paths", Godot.PackedStringArray))
-    public struct FilesSelected {
+    public private (set) lazy var fileSelectedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "file_selected")
+    }()
+
+    public func filesSelected(paths: Godot.PackedStringArray) {
+        filesSelectedConnector.emit(paths)
     }
 
-    @Emitter(signal: "dir_selected", args: ("dir", Godot.GodotString))
-    public struct DirSelected {
+    public private (set) lazy var filesSelectedConnector: Godot.SignalConnector<Godot.PackedStringArray> = {
+        .init(self, "files_selected")
+    }()
+
+    public func dirSelected(dir: Godot.GodotString) {
+        dirSelectedConnector.emit(dir)
     }
+
+    public private (set) lazy var dirSelectedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "dir_selected")
+    }()
 
     private static var __method_binding_clear_filters: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

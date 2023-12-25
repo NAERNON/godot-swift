@@ -69,25 +69,47 @@ open class EditorPlugin: Node {
         }
     }
 
-    @Emitter(signal: "scene_changed", args: ("sceneRoot", Godot.Node?))
-    public struct SceneChanged {
+    public func sceneChanged(sceneRoot: Godot.Node?) {
+        sceneChangedConnector.emit(sceneRoot)
     }
 
-    @Emitter(signal: "scene_closed", args: ("filepath", Godot.GodotString))
-    public struct SceneClosed {
+    public private (set) lazy var sceneChangedConnector: Godot.SignalConnector<Godot.Node?> = {
+        .init(self, "scene_changed")
+    }()
+
+    public func sceneClosed(filepath: Godot.GodotString) {
+        sceneClosedConnector.emit(filepath)
     }
 
-    @Emitter(signal: "main_screen_changed", args: ("screenName", Godot.GodotString))
-    public struct MainScreenChanged {
+    public private (set) lazy var sceneClosedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "scene_closed")
+    }()
+
+    public func mainScreenChanged(screenName: Godot.GodotString) {
+        mainScreenChangedConnector.emit(screenName)
     }
 
-    @Emitter(signal: "resource_saved", args: ("resource", Godot.Resource?))
-    public struct ResourceSaved {
+    public private (set) lazy var mainScreenChangedConnector: Godot.SignalConnector<Godot.GodotString> = {
+        .init(self, "main_screen_changed")
+    }()
+
+    public func resourceSaved(resource: Godot.Resource?) {
+        resourceSavedConnector.emit(resource)
     }
 
-    @Emitter(signal: "project_settings_changed")
-    public struct ProjectSettingsChanged {
+    public private (set) lazy var resourceSavedConnector: Godot.SignalConnector<Godot.Resource?> = {
+        .init(self, "resource_saved")
+    }()
+
+    public func projectSettingsChanged() {
+        projectSettingsChangedConnector.emit()
     }
+
+    public private (set) lazy var projectSettingsChangedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "project_settings_changed")
+    }()
+
 
     open func _forwardCanvasGuiInput(event: Godot.InputEvent?) -> Bool {
         Bool()

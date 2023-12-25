@@ -17,17 +17,33 @@ open class CollisionObject3D: Node3D {
         }
     }
 
-    @Emitter(signal: "input_event", args: ("camera", Godot.Node?), ("event", Godot.InputEvent?), ("position", Godot.Vector3), ("normal", Godot.Vector3), ("shapeIdx", Int))
-    public struct InputEvent {
+    public func inputEvent(camera: Godot.Node?, event: Godot.InputEvent?, position: Godot.Vector3, normal: Godot.Vector3, shapeIdx: Int) {
+        inputEventConnector.emit(camera, event, position, normal, shapeIdx)
     }
 
-    @Emitter(signal: "mouse_entered")
-    public struct MouseEntered {
+    public private (set) lazy var inputEventConnector: Godot.SignalConnector<Godot.Node?, Godot.InputEvent?, Godot.Vector3, Godot.Vector3, Int> = {
+        .init(self, "input_event")
+    }()
+
+    public func mouseEntered() {
+        mouseEnteredConnector.emit()
     }
 
-    @Emitter(signal: "mouse_exited")
-    public struct MouseExited {
+    public private (set) lazy var mouseEnteredConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "mouse_entered")
+    }()
+
+
+    public func mouseExited() {
+        mouseExitedConnector.emit()
     }
+
+    public private (set) lazy var mouseExitedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "mouse_exited")
+    }()
+
 
     open func _inputEvent(camera: Godot.Camera3D?, event: Godot.InputEvent?, position: Godot.Vector3, normal: Godot.Vector3, shapeIdx: Int32) {
     }

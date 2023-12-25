@@ -19,13 +19,25 @@ open class ScrollContainer: Container {
         }
     }
 
-    @Emitter(signal: "scroll_started")
-    public struct ScrollStarted {
+    public func scrollStarted() {
+        scrollStartedConnector.emit()
     }
 
-    @Emitter(signal: "scroll_ended")
-    public struct ScrollEnded {
+    public private (set) lazy var scrollStartedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "scroll_started")
+    }()
+
+
+    public func scrollEnded() {
+        scrollEndedConnector.emit()
     }
+
+    public private (set) lazy var scrollEndedConnector: Godot.SignalConnector
+    <> = {
+        .init(self, "scroll_ended")
+    }()
+
 
     private static var __method_binding_set_h_scroll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
