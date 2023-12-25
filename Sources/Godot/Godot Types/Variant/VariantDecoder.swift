@@ -1,13 +1,6 @@
 
-public extension Variant {
-    static func decode<T>(
-        _ type: T.Type,
-        from variant: Variant
-    ) throws -> T where T : Decodable {
-        try decode(type, from: variant, codingPath: [], userInfo: [:])
-    }
-    
-    static func decode<T>(
+extension Variant {
+    internal static func decode<T>(
         _ type: T.Type,
         from variant: Variant,
         codingPath: [CodingKey],
@@ -19,6 +12,14 @@ public extension Variant {
             userInfo: userInfo
         )
         return try T.init(from: decoder)
+    }
+    
+    public static func decode<T>(
+        _ type: T.Type,
+        from variant: Variant,
+        userInfo: [CodingUserInfoKey : Any] = [:]
+    ) throws -> T where T : Decodable {
+        try decode(type, from: variant, codingPath: [], userInfo: userInfo)
     }
 }
 

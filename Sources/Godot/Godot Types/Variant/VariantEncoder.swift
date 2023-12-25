@@ -1,15 +1,21 @@
 
 internal extension Variant.Storage {
-    static func encode(_ value: some Encodable) throws -> Variant.Storage {
-        let encoder = VariantEncoder(codingPath: [], userInfo: [:])
+    static func encode(
+        _ value: some Encodable,
+        userInfo: [CodingUserInfoKey : Any]
+    ) throws -> Variant.Storage {
+        let encoder = VariantEncoder(codingPath: [], userInfo: userInfo)
         try value.encode(to: encoder)
         return encoder.generateVariantStorage()
     }
 }
 
-public extension Variant {
-    static func encode(_ value: some Encodable) throws -> Variant {
-        try Variant(storage: .encode(value))
+extension Variant {
+    public static func encode(
+        _ value: some Encodable,
+        userInfo: [CodingUserInfoKey : Any] = [:]
+    ) throws -> Variant {
+        try Variant(storage: .encode(value, userInfo: userInfo))
     }
 }
 
