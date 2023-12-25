@@ -3,53 +3,54 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 
 struct ClassMember: ExposableMember {
-    enum ExpositionError: Error, CustomStringConvertible {
-        case isNotPublic
-        
-        var description: String {
-            switch self {
-            case .isNotPublic:
-                "The class is not public"
-            }
-        }
-    }
-    
     let classDeclSyntax: ClassDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
-        guard let classDeclSyntax = declSyntax.as(ClassDeclSyntax.self),
-              classDeclSyntax.isPublic()
-        else {
+        guard let classDeclSyntax = declSyntax.as(ClassDeclSyntax.self) else {
             return nil
         }
         
         self.classDeclSyntax = classDeclSyntax
     }
     
-    var exposableMemberIdentifier: String {
-        classDeclSyntax.name.trimmedDescription
-    }
-    
     var attributes: AttributeListSyntax? {
         classDeclSyntax.attributes
     }
     
-    func checkShouldBeExposed() throws {
-        if !classDeclSyntax.isPublic() {
-            throw ExpositionError.isNotPublic
+    func checkExpositionAvailable(
+        classToken: TokenSyntax,
+        isContextPublic: Bool
+    ) -> Result<Void, CheckExpositionError> {
+        if !isContextPublic {
+            return .failure(.init("Class cannot be exposed because '\(classToken.trimmedDescription)' is not public"))
         }
+        
+        if !classDeclSyntax.accessModifierInspector.isPublic() {
+            return .failure(.notPublicMember)
+        }
+        
+        return .success(())
     }
     
     func expositionSyntax(
-        classContext: TokenSyntax,
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
-        context.diagnose(Diagnostic(
-            node: Syntax(classDeclSyntax.name),
-            message: GodotDiagnostic("Classes are not exposable")
-        ))
+        classDeclSyntax.expositionInspector.diagnoseNotExposable(
+            "Classes are not exposable within an exposable class",
+            in: context
+        )
         
         return nil
+    }
+    
+    func expositionPeerSyntax(
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
+        in context: some MacroExpansionContext
+    ) -> [DeclSyntax] {
+        []
     }
 }

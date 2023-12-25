@@ -4,49 +4,31 @@ import SwiftSyntaxMacros
 import Utils
 
 struct FunctionOverrideMember: ExposableMember {
-    enum ExpositionError: Error, CustomStringConvertible {
-        case isNotPublic
-        
-        var description: String {
-            switch self {
-            case .isNotPublic:
-                "The function override is not public"
-            }
-        }
-    }
-    
     let functionDeclSyntax: FunctionDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
-        guard let functionDeclSyntax = declSyntax.as(FunctionDeclSyntax.self) else {
-            return nil
-        }
-        
-        let tokens = functionDeclSyntax.modifiers.map(\.name.tokenKind)
-        guard tokens.contains(where: { $0 == .keyword(.override) })
-        else {
+        guard let functionDeclSyntax = declSyntax.as(FunctionDeclSyntax.self),
+              functionDeclSyntax.inspector.isOverride() else {
             return nil
         }
         
         self.functionDeclSyntax = functionDeclSyntax
     }
     
-    var exposableMemberIdentifier: String {
-        functionDeclSyntax.name.trimmedDescription
-    }
-    
     var attributes: AttributeListSyntax? {
         functionDeclSyntax.attributes
     }
     
-    func checkShouldBeExposed() throws {
-        if !functionDeclSyntax.isPublic() {
-            throw ExpositionError.isNotPublic
-        }
+    func checkExpositionAvailable(
+        classToken: TokenSyntax,
+        isContextPublic: Bool
+    ) -> Result<Void, CheckExpositionError> {
+        .success(())
     }
     
     func expositionSyntax(
-        classContext: TokenSyntax,
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
@@ -58,5 +40,13 @@ struct FunctionOverrideMember: ExposableMember {
             insideType: self
         )
         """)
+    }
+    
+    func expositionPeerSyntax(
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
+        in context: some MacroExpansionContext
+    ) -> [DeclSyntax] {
+        []
     }
 }

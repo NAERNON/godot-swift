@@ -12,19 +12,19 @@ public enum GodotEnumMacro: ExtensionMacro {
         conformingTo protocols: [TypeSyntax],
         in context: some MacroExpansionContext
     ) throws -> [ExtensionDeclSyntax] {
-        guard let enumDecl = declaration.as(EnumDeclSyntax.self) else {
-            context.diagnose(Diagnostic(
-                node: Syntax(declaration),
-                message: GodotDiagnostic("Godot enum must be an 'enum'")
-            ))
+        guard let enumDeclSyntax = declaration.declarationInspector.as(
+            EnumDeclSyntax.self,
+            diagnoseOtherwise: "'@GodotEnum' macro can only be applied to enums",
+            in: context
+        ) else {
             return []
         }
         
         let notInt64Diagnostic = GodotDiagnostic("Godot enum does not have an 'Int64' raw type")
         
-        guard let inheritedType = enumDecl.inheritanceClause?.inheritedTypes.first else {
+        guard let inheritedType = enumDeclSyntax.inheritanceClause?.inheritedTypes.first else {
             // Provide a fixit with the type Int64 explicitly added to the enum
-            let fixedEnumDecl = enumDecl
+            let fixedEnumDecl = enumDeclSyntax
                 .with(
                     \.inheritanceClause,
                      InheritanceClauseSyntax(
@@ -37,7 +37,7 @@ public enum GodotEnumMacro: ExtensionMacro {
                 .with(\.name.trailingTrivia, [])
             let fixIt = FixIt(message: GodotDiagnostic("Insert 'Int64'"), changes: [
                 .replace(
-                    oldNode: Syntax(enumDecl),
+                    oldNode: Syntax(enumDeclSyntax),
                     newNode: Syntax(fixedEnumDecl))
             ])
             
@@ -57,9 +57,10 @@ public enum GodotEnumMacro: ExtensionMacro {
             return []
         }
         
-        let cases = enumCases(for: enumDecl)
+        let cases = enumCases(for: enumDeclSyntax)
         
-        let accessModifier = enumDecl.effectiveAccessModifier(minimum: .fileprivate)
+        let accessModifier = enumDeclSyntax.accessModifierInspector
+            .effectiveAccessModifier(minimum: .fileprivate)
         let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.GodotEnum") {
             "\(accessModifier) typealias RawValue = Int64"
             
@@ -75,7 +76,7 @@ public enum GodotEnumMacro: ExtensionMacro {
             
             try FunctionDeclSyntax("fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, RawValue)]") {
                 "["
-                let snakeEnumName = enumDecl.name.trimmedDescription
+                let snakeEnumName = enumDeclSyntax.name.trimmedDescription
                     .translated(from: .pascal, to: .snake)
                 
                 for caseName in cases {
@@ -93,8 +94,8 @@ public enum GodotEnumMacro: ExtensionMacro {
         return [extensionDeclSyntax]
     }
     
-    private static func enumCases(for enumDecl: EnumDeclSyntax) -> [String] {
-        let memberBlockList = enumDecl.memberBlock.members
+    private static func enumCases(for enumDeclSyntax: EnumDeclSyntax) -> [String] {
+        let memberBlockList = enumDeclSyntax.memberBlock.members
         
         var cases = [String]()
         

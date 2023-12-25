@@ -203,27 +203,34 @@ struct GodotClass: Decodable {
     
     @MemberBlockItemListBuilder
     func signalSyntax(_ signal: Signal) throws -> MemberBlockItemListSyntax {
-        let structName = signal.name.translated(from: .snake, to: .pascal)
+        let functionName = signal.name.translated(from: .snake, to: .camel)
+        let connectorName = functionName + "Connector"
         
-        if let arguments = signal.arguments {
-            let translatedParameters: [GodotArgument] = arguments.map { argument in
-                var new = argument
-                new.name = argument.name.translated(from: .snake, to: .camel)
-                return new
+        let argumentsString = (signal.arguments ?? [])
+            .map { argument -> String in
+                let name = argument.name.translated(from: .snake, to: .camel)
+                return "\(name): \(argument.type.syntax(options: syntaxOptions))"
             }
-            
-            let argumentsString = translatedParameters
-                .map { argument -> String in
-                    "(\"\(argument.name)\", \(argument.type.syntax(options: syntaxOptions)))"
-                }
-                .joined(separator: ", ")
-            
-            "@Emitter(signal: \(literal: signal.name), args: \(raw: argumentsString))"
-        } else {
-            "@Emitter(signal: \(literal: signal.name))"
+            .joined(separator: ", ")
+        
+        let genericSyntax = (signal.arguments ?? [])
+            .map { $0.type.syntax(options: syntaxOptions) }
+            .joined(separator: ", ")
+        
+        let emitCallSyntax = (signal.arguments ?? [])
+            .map { $0.name.translated(from: .snake, to: .camel) }
+            .joined(separator: ", ")
+        
+        """
+        public func \(raw: functionName)(\(raw: argumentsString)) {
+            \(raw: connectorName).emit(\(raw: emitCallSyntax))
         }
         
-        try StructDeclSyntax("public struct \(raw: structName)") {}
+        public private(set) lazy var \(raw: connectorName): Godot
+            .SignalConnector<\(raw: genericSyntax)> = {
+                .init(self, \(literal: signal.name))
+            }()
+        """
     }
     
     @MemberBlockItemListBuilder

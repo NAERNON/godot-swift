@@ -1,23 +1,22 @@
 import SwiftSyntax
+import SwiftSyntaxMacros
 import SwiftDiagnostics
 
-// MARK: DeclSyntaxWithAccessModifier
-
-protocol DeclSyntaxWithAccessModifier: DeclSyntaxProtocol {
-    var modifiers: DeclModifierListSyntax { get }
-    
-    func withModifiers(_ modifiers: DeclModifierListSyntax) -> Self
+extension InspectableDeclSyntax {
+    var accessModifierInspector: AccessModifierInspector<Self> {
+        .init(self)
+    }
 }
 
-protocol DeclSyntaxWithTypeKeyword: DeclSyntaxProtocol {
-    var typeKeyword: TokenSyntax { get }
+struct AccessModifierInspector<Decl> where Decl : InspectableDeclSyntax {
+    let declSyntax: Decl
     
-    func withTypeKeyword(_ tokenSyntax: TokenSyntax) -> Self
-}
-
-extension DeclSyntaxWithAccessModifier {
+    fileprivate init(_ declSyntax: Decl) {
+        self.declSyntax = declSyntax
+    }
+    
     func isPublic() -> Bool {
-        modifiers.map(\.name.tokenKind).contains {
+        declSyntax.modifiers.map(\.name.tokenKind).contains {
             $0 == .keyword(.public) || $0 == .keyword(.open)
         }
     }
@@ -38,7 +37,7 @@ extension DeclSyntaxWithAccessModifier {
     }
     
     func accessModifierKeyword() -> Keyword? {
-        for modifier in modifiers {
+        for modifier in declSyntax.modifiers {
             if case let .keyword(keyword) = modifier.name.tokenKind,
                keyword.isAccessModifier {
                 return keyword
@@ -74,14 +73,24 @@ extension DeclSyntaxWithAccessModifier {
     func effectiveAccessModifier(minimum: Keyword? = nil) -> DeclModifierSyntax {
         .init(name: .keyword(effectiveAccessModifierKeyword(minimum: minimum)))
     }
-}
-
-extension DeclSyntaxWithAccessModifier where Self : DeclSyntaxWithTypeKeyword {
+    
+    func diagnoseIfNotPublic(
+        _ warning: String,
+        in context: some MacroExpansionContext
+    ) -> Bool {
+        if isPublic() {
+            return false
+        }
+        
+        context.diagnose(notPublicDiagnostic(description: warning))
+        return true
+    }
+    
     /// Returns a FixIt that adds a public modifier.
     ///
     /// This fix it doesn't check if the modifiers already contain a public keyword.
-    func notPublicFixIt() -> (fixIt: FixIt, node: Syntax) {
-        var modifiers = self.modifiers
+    private func notPublicFixIt() -> (fixIt: FixIt, node: Syntax) {
+        var modifiers = declSyntax.modifiers
         var modifierIndex = modifiers.startIndex
         while modifierIndex != modifiers.endIndex {
             let modifier = modifiers[modifierIndex]
@@ -108,27 +117,27 @@ extension DeclSyntaxWithAccessModifier where Self : DeclSyntaxWithTypeKeyword {
             
             let fixIt = FixIt(message: GodotDiagnostic("Insert 'public'"), changes: [
                 .replace(
-                    oldNode: Syntax(self),
-                    newNode: Syntax(self
-                        .withModifiers(modifiers.with(\.leadingTrivia, typeKeyword.leadingTrivia))
-                        .withTypeKeyword(typeKeyword.with(\.leadingTrivia, .space))
+                    oldNode: Syntax(declSyntax),
+                    newNode: Syntax(declSyntax
+                        .withModifiers(modifiers.with(\.leadingTrivia, declSyntax.typeKeyword.leadingTrivia))
+                        .withTypeKeyword(declSyntax.typeKeyword.with(\.leadingTrivia, .space))
                     )
                 ),
             ])
-            return (fixIt, Syntax(typeKeyword))
+            return (fixIt, Syntax(declSyntax.typeKeyword))
         } else {
             modifiers.append(.init(name: .keyword(.public)))
             
             let fixIt = FixIt(message: GodotDiagnostic("Insert 'public'"), changes: [
                 .replace(
-                    oldNode: Syntax(self.modifiers),
+                    oldNode: Syntax(declSyntax.modifiers),
                     newNode: Syntax(modifiers)),
             ])
-            return (fixIt, Syntax(typeKeyword))
+            return (fixIt, Syntax(declSyntax.typeKeyword))
         }
     }
     
-    func notPublicDiagnostic(description: String, includeFixit: Bool = true) -> Diagnostic {
+    private func notPublicDiagnostic(description: String, includeFixit: Bool = true) -> Diagnostic {
         let notPublicFixIt = notPublicFixIt()
         
         if includeFixit {
@@ -143,68 +152,6 @@ extension DeclSyntaxWithAccessModifier where Self : DeclSyntaxWithTypeKeyword {
                 message: GodotDiagnostic(description)
             )
         }
-    }
-}
-
-// MARK: Conformances
-
-extension EnumDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKeyword {
-    var typeKeyword: TokenSyntax { enumKeyword }
-    
-    func withModifiers(_ modifiers: DeclModifierListSyntax) -> EnumDeclSyntax {
-        self.with(\.modifiers, modifiers)
-    }
-    
-    func withTypeKeyword(_ tokenSyntax: TokenSyntax) -> EnumDeclSyntax {
-        self.with(\.enumKeyword, tokenSyntax)
-    }
-}
-
-extension StructDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKeyword {
-    var typeKeyword: TokenSyntax { structKeyword }
-    
-    func withModifiers(_ modifiers: DeclModifierListSyntax) -> StructDeclSyntax {
-        self.with(\.modifiers, modifiers)
-    }
-    
-    func withTypeKeyword(_ tokenSyntax: TokenSyntax) -> StructDeclSyntax {
-        self.with(\.structKeyword, tokenSyntax)
-    }
-}
-
-extension ClassDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKeyword {
-    var typeKeyword: TokenSyntax { classKeyword }
-    
-    func withModifiers(_ modifiers: DeclModifierListSyntax) -> ClassDeclSyntax {
-        self.with(\.modifiers, modifiers)
-    }
-    
-    func withTypeKeyword(_ tokenSyntax: TokenSyntax) -> ClassDeclSyntax {
-        self.with(\.classKeyword, tokenSyntax)
-    }
-}
-
-extension FunctionDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKeyword {
-    var typeKeyword: TokenSyntax { funcKeyword }
-    
-    func withModifiers(_ modifiers: DeclModifierListSyntax) -> FunctionDeclSyntax {
-        self.with(\.modifiers, modifiers)
-    }
-    
-    func withTypeKeyword(_ tokenSyntax: TokenSyntax) -> FunctionDeclSyntax {
-        self.with(\.funcKeyword, tokenSyntax)
-    }
-}
-
-extension VariableDeclSyntax: DeclSyntaxWithAccessModifier, DeclSyntaxWithTypeKeyword {
-    var typeKeyword: TokenSyntax { self.bindingSpecifier }
-    
-    func withModifiers(_ modifiers: DeclModifierListSyntax) -> VariableDeclSyntax {
-        self.with(\.modifiers, modifiers)
-    }
-    
-    func withTypeKeyword(_ tokenSyntax: TokenSyntax) -> VariableDeclSyntax {
-        self.with(\.bindingSpecifier, tokenSyntax)
     }
 }
 

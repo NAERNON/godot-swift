@@ -12,17 +12,18 @@ public enum GodotOptionSetMacro: ExtensionMacro {
         conformingTo protocols: [TypeSyntax],
         in context: some MacroExpansionContext
     ) throws -> [ExtensionDeclSyntax] {
-        guard let structDecl = declaration.as(StructDeclSyntax.self) else {
-            context.diagnose(Diagnostic(
-                node: Syntax(declaration),
-                message: GodotDiagnostic("Godot option set must be a 'struct'")
-            ))
+        guard let structDeclSyntax = declaration.declarationInspector.as(
+            StructDeclSyntax.self,
+            diagnoseOtherwise: "'@GodotOptionSet' macro can only be applied to structs",
+            in: context
+        ) else {
             return []
         }
         
-        let cases = optionSetCases(for: structDecl, in: context)
+        let cases = optionSetCases(for: structDeclSyntax, in: context)
         
-        let accessModifier = structDecl.effectiveAccessModifier(minimum: .fileprivate)
+        let accessModifier = structDeclSyntax.accessModifierInspector
+            .effectiveAccessModifier(minimum: .fileprivate)
         let extensionDeclSyntax = try ExtensionDeclSyntax("extension \(type.trimmed): Godot.GodotOptionSet") {
             "\(accessModifier) typealias RawValue = Int64"
             
@@ -38,7 +39,7 @@ public enum GodotOptionSetMacro: ExtensionMacro {
             
             try FunctionDeclSyntax("fileprivate static func godotExposableValues() -> [(Godot.GodotStringName, RawValue)]") {
                 "["
-                let snakeOptionSetName = structDecl.name.trimmedDescription
+                let snakeOptionSetName = structDeclSyntax.name.trimmedDescription
                     .translated(from: .pascal, to: .snake)
                 
                 for caseName in cases {
@@ -57,22 +58,24 @@ public enum GodotOptionSetMacro: ExtensionMacro {
     }
     
     private static func optionSetCases(
-        for structDecl: StructDeclSyntax,
+        for structDeclSyntax: StructDeclSyntax,
         in context: some MacroExpansionContext
     ) -> [String] {
-        let members = structDecl.memberBlock.members
-        let structName = structDecl.name.trimmedDescription
+        let members = structDeclSyntax.memberBlock.members
+        let structName = structDeclSyntax.name.trimmedDescription
         
         var cases = [String]()
         
-        let accessModifierKeyword = structDecl.effectiveAccessModifierKeyword(minimum: .fileprivate)
+        let accessModifierKeyword = structDeclSyntax.accessModifierInspector
+            .effectiveAccessModifierKeyword(minimum: .fileprivate)
         
         for member in members {
             if let variableDecl = member.decl.as(VariableDeclSyntax.self) {
                 let isStatic = variableDecl.modifiers.map(\.name.tokenKind).contains(where: {
                     $0 == .keyword(.static)
                 })
-                let isAccessible = variableDecl.isAccessModifierMoreAccessible(than: accessModifierKeyword)
+                let isAccessible = variableDecl.accessModifierInspector
+                    .isAccessModifierMoreAccessible(than: accessModifierKeyword)
                 let isLet = variableDecl.bindingSpecifier.tokenKind == .keyword(.let)
                 
                 // We only retrieve static, accessible and let variables.

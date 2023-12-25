@@ -5,113 +5,71 @@ import SwiftSyntaxBuilder
 import Utils
 
 struct FunctionMember: ExposableMember {
-    enum ExpositionError: Error, CustomStringConvertible {
-        case isNotPublic
-        
-        var description: String {
-            switch self {
-            case .isNotPublic:
-                "The function is not public"
-            }
-        }
-    }
-    
     let functionDeclSyntax: FunctionDeclSyntax
+    let isReceiver: Bool
     
     init?(declSyntax: some DeclSyntaxProtocol) {
-        guard let functionDeclSyntax = declSyntax.as(FunctionDeclSyntax.self) else {
-            return nil
-        }
-        
-        let tokens = functionDeclSyntax.modifiers.map(\.name.tokenKind)
-        guard !tokens.contains(where: { $0 == .keyword(.override) })
+        guard let functionDeclSyntax = declSyntax.as(FunctionDeclSyntax.self),
+              !functionDeclSyntax.inspector.isOverride(),
+              !functionDeclSyntax.inspector.hasSignalMacro()
         else {
             return nil
         }
         
         self.functionDeclSyntax = functionDeclSyntax
-    }
-    
-    var exposableMemberIdentifier: String {
-        functionDeclSyntax.name.trimmedDescription
+        self.isReceiver = functionDeclSyntax.inspector.hasReceiverMacro()
     }
     
     var attributes: AttributeListSyntax? {
         functionDeclSyntax.attributes
     }
     
-    func checkShouldBeExposed() throws {
-        if !functionDeclSyntax.isPublic() {
-            throw ExpositionError.isNotPublic
+    func checkExpositionAvailable(
+        classToken: TokenSyntax,
+        isContextPublic: Bool
+    ) -> Result<Void, CheckExpositionError> {
+        if isReceiver {
+            return .success(())
+        }
+        
+        if isContextPublic {
+            if functionDeclSyntax.accessModifierInspector.isPublic() {
+                return .success(())
+            } else {
+                return .failure(.notPublicMember)
+            }
+        } else {
+            return .failure(.notPublicMember)
         }
     }
     
     func expositionSyntax(
-        classContext: TokenSyntax,
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
-        var isExposable = true
-        
-        // Check not throw or async
-        if let specifiers = functionDeclSyntax.signature.effectSpecifiers {
-            if let throwsSpecifier = specifiers.throwsSpecifier {
-                context.diagnose(Diagnostic(
-                    node: Syntax(throwsSpecifier),
-                    message: GodotDiagnostic("Exposed functions cannot be marked 'throws'")
-                ))
-                isExposable = false
-            }
-            
-            if let asyncSpecifier = specifiers.asyncSpecifier {
-                context.diagnose(Diagnostic(
-                    node: Syntax(asyncSpecifier),
-                    message: GodotDiagnostic("Exposed functions cannot be marked 'async'")
-                ))
-                isExposable = false
-            }
+        if isReceiver && isContextPublic {
+            if functionDeclSyntax.accessModifierInspector.diagnoseIfNotPublic(
+                "The receiver must be public because '\(classToken.trimmedDescription)' is public",
+                in: context
+            ) { return nil }
         }
         
-        // Check not generic
-        if let generic = functionDeclSyntax.genericParameterClause {
-            context.diagnose(Diagnostic(
-                node: Syntax(generic),
-                message: GodotDiagnostic("Exposed functions cannot be generic")
-            ))
-            isExposable = false
-        }
+        if functionDeclSyntax.inspector.diagnoseIfThrows(
+            "Exposed function cannot throw",
+            in: context
+        ) { return nil }
         
-        // Check no parameter is some, any or variadic
-        for parameter in functionDeclSyntax.signature.parameterClause.parameters {
-            if let someOrAnyTypeSyntax = parameter.type.as(SomeOrAnyTypeSyntax.self) {
-                context.diagnose(Diagnostic(
-                    node: Syntax(someOrAnyTypeSyntax),
-                    message: GodotDiagnostic("Exposed functions cannot have parameters marked 'some' or 'any'")
-                ))
-                isExposable = false
-            }
-            
-            if let ellipsis = parameter.ellipsis {
-                context.diagnose(Diagnostic(
-                    node: Syntax(ellipsis),
-                    message: GodotDiagnostic("Exposed functions cannot have variadic parameters")
-                ))
-                isExposable = false
-            }
-        }
+        if functionDeclSyntax.inspector.diagnoseIfAsync(
+            "Exposed function cannot be async",
+            in: context
+        ) { return nil }
         
-        // Check return type is not some or any
-        if let someOrAnyTypeSyntax = functionDeclSyntax.signature.returnClause?.type.as(SomeOrAnyTypeSyntax.self) {
-            context.diagnose(Diagnostic(
-                node: Syntax(someOrAnyTypeSyntax),
-                message: GodotDiagnostic("Exposed functions cannot return a type marked 'some' or 'any'")
-            ))
-            isExposable = false
-        }
-        
-        guard isExposable else {
-            return nil
-        }
+        if functionDeclSyntax.inspector.diagnoseIfGeneric(
+            "Exposed function cannot use generics",
+            in: context
+        ) { return nil }
         
         let consecutiveLastDefaultValues = consecutiveLastDefaultValues(in: context)
         
@@ -121,6 +79,7 @@ struct FunctionMember: ExposableMember {
         })
         
         let parametersCount = functionDeclSyntax.signature.parameterClause.parameters.count
+        // TODO: Use arguments
         let parameters = functionDeclSyntax.signature.parameterClause.parameters.enumerated().map
         { (index, parameter) in
             let name = parameter.secondName?.trimmedDescription ?? parameter.firstName.trimmedDescription
@@ -137,7 +96,7 @@ struct FunctionMember: ExposableMember {
             }
         }
         
-        let functionName = ReceiverMacro.translatedFunctionName(functionDeclSyntax)
+        let functionName = translatedFunctionName
         let returnParameter: String
         let hasReturnType: Bool
         
@@ -160,15 +119,44 @@ struct FunctionMember: ExposableMember {
                 returnParameter: \(raw: returnParameter),
                 isStatic: \(literal: isStatic)
             ) { _, instancePtr, args, argsCount, returnPtr, error in
-                \(functionCallSyntax(classContext: classContext, hasReturnType: hasReturnType, isStatic: isStatic, consecutiveLastDefaultValues: consecutiveLastDefaultValues))
+                \(functionCallSyntax(classContext: classToken, hasReturnType: hasReturnType, isStatic: isStatic, consecutiveLastDefaultValues: consecutiveLastDefaultValues))
             } pointerCall: { _, instancePtr, args, returnPtr in
-                \(functionPointerCallSyntax(classContext: classContext, hasReturnType: hasReturnType, isStatic: isStatic))
+                \(functionPointerCallSyntax(classContext: classToken, hasReturnType: hasReturnType, isStatic: isStatic))
             }
             """
             return exprSyntax
         } catch {
             return nil
         }
+    }
+    
+    func expositionPeerSyntax(
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
+        in context: some MacroExpansionContext
+    ) -> [DeclSyntax] {
+        guard isReceiver else {
+            return []
+        }
+        
+        let functionName = removeBackticks(functionDeclSyntax.name.trimmedDescription)
+        let variableName = functionName + "Receiver"
+        let receiverName = translatedFunctionName
+        
+        let typesParameterPack = functionDeclSyntax.inspector.arguments()
+            .map { $0.type }.joined(separator: ", ")
+        
+        let varDecl: DeclSyntax = """
+        public private(set) lazy var \(raw: variableName): Godot.SignalReceiver<\(raw: typesParameterPack)> = {
+            .init(self, \(literal: receiverName))
+        }()
+        """
+        
+        return [varDecl]
+    }
+    
+    var translatedFunctionName: String {
+        functionDeclSyntax.name.trimmedDescription.translated(from: .camel, to: .snake)
     }
     
     @CodeBlockItemListBuilder
@@ -179,7 +167,6 @@ struct FunctionMember: ExposableMember {
         consecutiveLastDefaultValues: [TokenSyntax]
     ) throws -> CodeBlockItemListSyntax {
         let parameters = functionDeclSyntax.signature.parameterClause.parameters
-        "gdPrint(\"normal call\")"
         
         // For every default value, we check the argCount
         // to know if we need to call the function with less parameters
@@ -239,7 +226,6 @@ struct FunctionMember: ExposableMember {
         isStatic: Bool
     ) throws -> CodeBlockItemListSyntax {
         let parameters = functionDeclSyntax.signature.parameterClause.parameters
-        "gdPrint(\"pointer call\")"
         
         if isStatic {
             "\(classContext.trimmed)"
@@ -304,15 +290,19 @@ struct FunctionMember: ExposableMember {
                     } else {
                         context.diagnose(Diagnostic(
                             node: Syntax(defaultValue),
-                            message: GodotDiagnostic("Only last consecutive default values are exposed to Godot",
-                                                     severity: .warning)
+                            message: GodotDiagnostic(
+                                "Only last consecutive default values are exposed to Godot",
+                                severity: .warning
+                            )
                         ))
                     }
                 } else if isConsecutive {
                     context.diagnose(Diagnostic(
                         node: Syntax(defaultValue),
-                        message: GodotDiagnostic("Godot cannot expose default value '\(defaultValue.value.trimmedDescription)'",
-                                                 severity: .warning)
+                        message: GodotDiagnostic(
+                            "Godot cannot expose default value '\(defaultValue.value.trimmedDescription)'",
+                            severity: .warning
+                        )
                     ))
                     isConsecutive = false
                 }

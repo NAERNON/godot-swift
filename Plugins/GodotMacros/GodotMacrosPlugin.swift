@@ -4,13 +4,17 @@ import SwiftSyntaxMacros
 @main
 struct GodotMacrosPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
-        ExposableMacro.self,
-        ExpositionTestMacro.self,
-        ExpositionIgnoredMacro.self,
         BridgeMacro.self,
+        
+        ExposableMacro.self,
+        DebugExpositionMacro.self,
+        ExposedMemberMacro.self,
+        ExpositionIgnoredMacro.self,
+        
         GodotEnumMacro.self,
         GodotOptionSetMacro.self,
-        EmitterMacro.self,
+        
+        SignalMacro.self,
         ReceiverMacro.self,
         
         GodotClassMacro.self,

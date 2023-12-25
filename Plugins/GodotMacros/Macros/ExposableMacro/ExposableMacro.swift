@@ -5,56 +5,62 @@ import SwiftDiagnostics
 import Foundation
 import RegexBuilder
 
-public enum ExposableMacro: MemberMacro, ExtensionMacro {
+public enum ExposableMacro: MemberMacro, ExtensionMacro, MemberAttributeMacro {
     public static func expansion(
         of attribute: AttributeSyntax,
         providingMembersOf declaration: some DeclGroupSyntax,
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
-        // Check is class
-        guard let classDecl = declaration.as(ClassDeclSyntax.self) else {
-            context.diagnose(Diagnostic(
-                node: Syntax(attribute),
-                message: GodotDiagnostic("Only classes are exposable")
-            ))
+        guard let classDeclSyntax = declaration.declarationInspector.as(
+            ClassDeclSyntax.self,
+            diagnoseOtherwise: "Only classes are exposable to Godot",
+            in: context
+        ) else {
             return []
         }
         
-        // Check has inheritance
-        guard let inheritedElement = classDecl.inheritanceClause?
+        guard let inheritedElement = classDeclSyntax.inheritanceClause?
             .inheritedTypes.first else {
             context.diagnose(Diagnostic(
-                node: Syntax(classDecl.classKeyword),
-                message: GodotDiagnostic("Exposable class must inherit Godot 'Object' type")
+                node: Syntax(classDeclSyntax.classKeyword),
+                message: GodotDiagnostic("No inheritance found for exposable class")
             ))
             return []
         }
         
-        // Check is public or open
-        guard classDecl.isPublic() else {
-            context.diagnose(classDecl.notPublicDiagnostic(description: "Exposable class is not public"))
-            return []
-        }
-        
-        let isFinal = classDecl.modifiers.map(\.name.tokenKind).contains(where: {
+        let isFinal = classDeclSyntax.modifiers.map(\.name.tokenKind).contains(where: {
             $0 == .keyword(.final)
         })
         
         // Syntax
         let provider = ClassMacroDeclProvider(
-            customClassDecl: classDecl,
+            customClassDecl: classDeclSyntax,
             superclassName: inheritedElement.type.trimmedDescription, 
             isFinal: isFinal,
             in: context
         ) {
-            let memberExpositions = membersExpositions(of: classDecl, in: context)
+            let memberExpositions = membersExpositions(of: classDeclSyntax, in: context)
             
             for memberExposition in memberExpositions {
                 memberExposition
             }
         }
         
-        return try provider.decls()
+        var additionalDecls: [DeclSyntax] = []
+        for member in classDeclSyntax.memberBlock.members {
+            guard let exposableMember = member.decl.exposableMember(),
+                  isMemberExpositionAvailable(exposableMember, classDeclSyntax: classDeclSyntax)
+            else {
+                continue
+            }
+            
+            additionalDecls.append(contentsOf: exposableMember.expositionPeerSyntax(
+                classDeclSyntax: classDeclSyntax,
+                in: context
+            ))
+        }
+        
+        return try provider.decls() + additionalDecls
     }
     
     public static func expansion(
@@ -70,13 +76,13 @@ public enum ExposableMacro: MemberMacro, ExtensionMacro {
     }
     
     private static func membersExpositions(
-        of classDecl: ClassDeclSyntax,
+        of classDeclSyntax: ClassDeclSyntax,
         in context: some MacroExpansionContext
     ) -> [ExprSyntax] {
         var groupStructure = GroupStructure()
         var expressions = [ExprSyntax]()
         
-        for member in classDecl.memberBlock.members {
+        for member in classDeclSyntax.memberBlock.members {
             for trivia in member.leadingTrivia {
                 guard case let .lineComment(commentString) = trivia,
                    let groupTrivia = GroupTrivia(commentLine: commentString)
@@ -111,19 +117,13 @@ public enum ExposableMacro: MemberMacro, ExtensionMacro {
             }
             
             guard let exposableMember = member.decl.exposableMember(),
-                  !exposableMember.hasExpositionIgnoredAttribute
+                  isMemberExpositionAvailable(exposableMember, classDeclSyntax: classDeclSyntax)
             else {
                 continue
             }
             
-            do {
-                try exposableMember.checkShouldBeExposed()
-            } catch {
-                continue
-            }
-            
             guard let expositionSyntax = exposableMember.expositionSyntax(
-                classContext: classDecl.name,
+                classDeclSyntax: classDeclSyntax,
                 namePrefix: groupStructure.memberPrefix,
                 in: context
             ) else {
@@ -134,6 +134,42 @@ public enum ExposableMacro: MemberMacro, ExtensionMacro {
         }
         
         return expressions
+    }
+    
+    public static func expansion(
+        of node: AttributeSyntax,
+        attachedTo declaration: some DeclGroupSyntax,
+        providingAttributesFor member: some DeclSyntaxProtocol,
+        in context: some MacroExpansionContext
+    ) throws -> [AttributeSyntax] {
+        guard let classDeclSyntax = declaration.as(ClassDeclSyntax.self) else {
+            return []
+        }
+        
+        guard let exposableMember = member.exposableMember(),
+              isMemberExpositionAvailable(exposableMember, classDeclSyntax: classDeclSyntax)
+        else {
+            return []
+        }
+        
+        return ["@_ExposedMember"]
+    }
+    
+    private static func isMemberExpositionAvailable(
+        _ member: some ExposableMember,
+        classDeclSyntax: ClassDeclSyntax
+    ) -> Bool {
+        if member.hasExpositionIgnoredAttribute {
+            return false
+        }
+        
+        switch member.checkExpositionAvailable(
+            classToken: classDeclSyntax.name,
+            isContextPublic: classDeclSyntax.accessModifierInspector.isPublic()
+        ) {
+        case .failure(_): return false
+        case .success(_): return true
+        }
     }
 }
 

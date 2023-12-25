@@ -3,40 +3,79 @@ import SwiftSyntaxMacros
 import Utils
 
 /// A type that can be exposed inside an exposable class.
-///
-/// Sometimes, a member should be exposed, but the syntax in it prevents it.
-/// In this case, `checkShouldBeExposable()` doesn't throw,
-/// but `expositionSyntax` returns nil.
-///
-/// If the member should not even be considered for exposition,
-/// `checkShouldBeExposable()` throws an error.
 protocol ExposableMember {
     /// Creates a new instance of the exposable member.
     ///
     /// Returns nil if the member doesn't match.
     init?(declSyntax: some DeclSyntaxProtocol)
     
-    /// An identifier used to identify the member exposition.
-    var exposableMemberIdentifier: String { get }
-    
     /// A list of all the attached attributes.
     var attributes: AttributeListSyntax? { get }
     
-    /// This function throws if the exposition should not be registered.
-    func checkShouldBeExposed() throws
+    /// This returns a result indicating whether the
+    /// exposition is available.
+    ///
+    /// If the exposition is not available, the `@Exposable`
+    /// macro should ignore the member.
+    func checkExpositionAvailable(
+        classToken: TokenSyntax,
+        isContextPublic: Bool
+    ) -> Result<Void, CheckExpositionError>
     
     /// Returns the syntax for exposing the member to Godot.
     ///
     /// This function should diagnose any error that prevents the exposition
     /// using the provided context, and return `nil` in that case.
     func expositionSyntax(
-        classContext: TokenSyntax,
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax?
+    
+    /// Returns an array of decl syntaxes to place inside the class member block.
+    func expositionPeerSyntax(
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
+        in context: some MacroExpansionContext
+    ) -> [DeclSyntax]
+}
+
+struct CheckExpositionError: Error, CustomStringConvertible {
+    let description: String
+    
+    init(_ description: String) {
+        self.description = description
+    }
+    
+    static let notPublicMember: CheckExpositionError = .init("Member is not public")
 }
 
 extension ExposableMember {
+    func expositionSyntax(
+        classDeclSyntax: ClassDeclSyntax,
+        namePrefix: String,
+        in context: some MacroExpansionContext
+    ) -> ExprSyntax? {
+        expositionSyntax(
+            classToken: classDeclSyntax.name,
+            isContextPublic: classDeclSyntax.accessModifierInspector.isPublic(),
+            namePrefix: namePrefix,
+            in: context
+        )
+    }
+    
+    func expositionPeerSyntax(
+        classDeclSyntax: ClassDeclSyntax,
+        in context: some MacroExpansionContext
+    ) -> [DeclSyntax] {
+        expositionPeerSyntax(
+            classToken: classDeclSyntax.name,
+            isContextPublic: classDeclSyntax.accessModifierInspector.isPublic(),
+            in: context
+        )
+    }
+    
     var hasExpositionIgnoredAttribute: Bool {
         guard let attributes else {
             return false
@@ -50,7 +89,7 @@ extension ExposableMember {
 
 extension DeclSyntaxProtocol {
     func exposableMember() -> ExposableMember? {
-        if let member = EmitterMember(declSyntax: self) {
+        if let member = SignalMember(declSyntax: self) {
             return member
         }
         

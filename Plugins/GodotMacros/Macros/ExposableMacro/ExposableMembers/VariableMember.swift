@@ -4,21 +4,8 @@ import SwiftSyntaxMacros
 import Utils
 
 struct VariableMember: ExposableMember {
-    enum ExpositionError: Error, CustomStringConvertible {
-        case isNotPublic
-        case isAnOverride
-        
-        var description: String {
-            switch self {
-            case .isNotPublic:
-                "The property is not public"
-            case .isAnOverride:
-                "The property is an override"
-            }
-        }
-    }
-    
     let variableDeclSyntax: VariableDeclSyntax
+    let isExported: Bool
     
     init?(declSyntax: some DeclSyntaxProtocol) {
         guard let variableDeclSyntax = declSyntax.as(VariableDeclSyntax.self) else {
@@ -26,33 +13,43 @@ struct VariableMember: ExposableMember {
         }
         
         self.variableDeclSyntax = variableDeclSyntax
-    }
-    
-    var exposableMemberIdentifier: String {
-        variableDeclSyntax.bindings.first?.pattern.trimmedDescription ?? ""
+        
+        isExported = variableDeclSyntax.attributes.contains(where: {
+            $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Export"
+        }) == true
     }
     
     var attributes: AttributeListSyntax? {
         variableDeclSyntax.attributes
     }
     
-    func checkShouldBeExposed() throws {
+    func checkExpositionAvailable(
+        classToken: TokenSyntax,
+        isContextPublic: Bool
+    ) -> Result<Void, CheckExpositionError> {
         if isExported {
-            return
+            return .success(())
         }
         
-        if !variableDeclSyntax.isPublic() {
-            throw ExpositionError.isNotPublic
+        if !isContextPublic {
+            return .failure(.init("Property cannot be exposed because '\(classToken.trimmedDescription)' is not public"))
+        }
+        
+        if !variableDeclSyntax.accessModifierInspector.isPublic() {
+            return .failure(.notPublicMember)
         }
         
         let tokens = variableDeclSyntax.modifiers.map(\.name.tokenKind)
         if tokens.contains(where: { $0 == .keyword(.override) }) {
-            throw ExpositionError.isAnOverride
+            return .failure(.init("The property is an override"))
         }
+        
+        return .success(())
     }
     
     func expositionSyntax(
-        classContext: TokenSyntax,
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
@@ -60,10 +57,18 @@ struct VariableMember: ExposableMember {
             return nil
         }
         
-        guard variableDeclSyntax.isPublic() else {
-            context.diagnose(variableDeclSyntax.notPublicDiagnostic(description: "Exported variable must be public"))
+        if !isContextPublic && isExported {
+            context.diagnose(Diagnostic(
+                node: Syntax(variableDeclSyntax),
+                message: GodotDiagnostic("'\(classToken.trimmedDescription)' cannot contain exported properties because the class is not public")
+            ))
             return nil
         }
+        
+        if isExported, variableDeclSyntax.accessModifierInspector.diagnoseIfNotPublic(
+            "Exported property must be public",
+            in: context
+        ) { return nil }
         
         var isExposable = true
         
@@ -142,7 +147,7 @@ struct VariableMember: ExposableMember {
         // Syntax
         
         let swiftVariableName = variableBinding.pattern.trimmed
-        let className = classContext.trimmed
+        let className = classToken.trimmed
         
         let getterExprSyntax: ExprSyntax = """
         Godot.Variant.withStorage(of: Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName)) { storage in
@@ -166,7 +171,7 @@ struct VariableMember: ExposableMember {
         let getterName = "get_" + variableName
         let setterName = "set_" + variableName
         
-        let hintSyntax = hintSyntax(classContext: classContext, swiftVariableName: swiftVariableName)
+        let hintSyntax = hintSyntax(classContext: classToken, swiftVariableName: swiftVariableName)
         
         let functionName: String
         let hintLineSyntax: String
@@ -213,6 +218,14 @@ struct VariableMember: ExposableMember {
         }
     }
     
+    func expositionPeerSyntax(
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
+        in context: some MacroExpansionContext
+    ) -> [DeclSyntax] {
+        []
+    }
+    
     private func isModifierInternalSet(_ modifier: DeclModifierSyntax) -> Bool {
         let tokenKind = modifier.name.tokenKind
         
@@ -225,12 +238,6 @@ struct VariableMember: ExposableMember {
         }
         
         return detail.detail.tokenKind == .identifier("set")
-    }
-    
-    private var isExported: Bool {
-        attributes?.contains(where: {
-            $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Export"
-        }) == true
     }
     
     private func hintSyntax(

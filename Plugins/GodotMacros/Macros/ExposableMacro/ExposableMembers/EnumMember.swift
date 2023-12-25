@@ -4,17 +4,6 @@ import SwiftSyntaxMacros
 import Utils
 
 struct EnumMember: ExposableMember {
-    enum ExpositionError: Error, CustomStringConvertible {
-        case isNotPublic
-        
-        var description: String {
-            switch self {
-            case .isNotPublic:
-                "The enum is not public"
-            }
-        }
-    }
-    
     let enumDeclSyntax: EnumDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
@@ -25,22 +14,28 @@ struct EnumMember: ExposableMember {
         self.enumDeclSyntax = enumDeclSyntax
     }
     
-    var exposableMemberIdentifier: String {
-        enumDeclSyntax.name.trimmedDescription
-    }
-    
     var attributes: AttributeListSyntax? {
         enumDeclSyntax.attributes
     }
     
-    func checkShouldBeExposed() throws {
-        if !enumDeclSyntax.isPublic() {
-            throw ExpositionError.isNotPublic
+    func checkExpositionAvailable(
+        classToken: TokenSyntax,
+        isContextPublic: Bool
+    ) -> Result<Void, CheckExpositionError> {
+        if !isContextPublic {
+            return .failure(.init("Enum cannot be exposed because '\(classToken.trimmedDescription)' is not public"))
         }
+        
+        if !enumDeclSyntax.accessModifierInspector.isPublic() {
+            return .failure(.notPublicMember)
+        }
+        
+        return .success(())
     }
     
     func expositionSyntax(
-        classContext: TokenSyntax,
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
@@ -53,6 +48,7 @@ struct EnumMember: ExposableMember {
             .contains(where: { $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "GodotEnum" })
         else {
             // No @GodotEnum, so provide fixit that inserts @GodotEnum
+            // TODO: Some trivia is not right
             attributes.append(.attribute(attributeSyntax).with(\.leadingTrivia, .newline))
             let fixedDecl = enumDeclSyntax
                 .with(
@@ -83,5 +79,13 @@ struct EnumMember: ExposableMember {
             insideType: self
         )
         """
+    }
+    
+    func expositionPeerSyntax(
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
+        in context: some MacroExpansionContext
+    ) -> [DeclSyntax] {
+        []
     }
 }

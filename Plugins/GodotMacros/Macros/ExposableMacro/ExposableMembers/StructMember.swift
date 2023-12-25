@@ -3,17 +3,6 @@ import SwiftDiagnostics
 import SwiftSyntaxMacros
 
 struct StructMember: ExposableMember {
-    enum ExpositionError: Error, CustomStringConvertible {
-        case isNotPublic
-        
-        var description: String {
-            switch self {
-            case .isNotPublic:
-                "The struct is not public"
-            }
-        }
-    }
-    
     let structDeclSyntax: StructDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
@@ -24,30 +13,44 @@ struct StructMember: ExposableMember {
         self.structDeclSyntax = structDeclSyntax
     }
     
-    var exposableMemberIdentifier: String {
-        structDeclSyntax.name.trimmedDescription
-    }
-    
     var attributes: AttributeListSyntax? {
         structDeclSyntax.attributes
     }
     
-    func checkShouldBeExposed() throws {
-        if !structDeclSyntax.isPublic() {
-            throw ExpositionError.isNotPublic
+    func checkExpositionAvailable(
+        classToken: TokenSyntax,
+        isContextPublic: Bool
+    ) -> Result<Void, CheckExpositionError> {
+        if !isContextPublic {
+            return .failure(.init("Struct cannot be exposed because '\(classToken.trimmedDescription)' is not public"))
         }
+        
+        if !structDeclSyntax.accessModifierInspector.isPublic() {
+            return .failure(.notPublicMember)
+        }
+        
+        return .success(())
     }
     
     func expositionSyntax(
-        classContext: TokenSyntax,
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
-        context.diagnose(Diagnostic(
-            node: Syntax(structDeclSyntax.name),
-            message: GodotDiagnostic("Simple structs are not exposable")
-        ))
+        structDeclSyntax.expositionInspector.diagnoseNotExposable(
+            "Only structs annotated with '@GodotOptionSet' are exposable",
+            in: context
+        )
         
         return nil
+    }
+    
+    func expositionPeerSyntax(
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
+        in context: some MacroExpansionContext
+    ) -> [DeclSyntax] {
+        []
     }
 }

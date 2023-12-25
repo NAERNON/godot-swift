@@ -4,7 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
 
-public enum ExpositionTestMacro: PeerMacro {
+public enum DebugExpositionMacro: PeerMacro {
     public static func expansion(
         of node: AttributeSyntax,
         providingPeersOf declaration: some DeclSyntaxProtocol,
@@ -22,9 +22,21 @@ public enum ExpositionTestMacro: PeerMacro {
             return []
         }
         
-        do {
-            try exposableMember.checkShouldBeExposed()
-        } catch {
+        let arguments = node.arguments?.as(LabeledExprListSyntax.self)!
+        
+        let classToken = arguments!.first { argument in
+            argument.label?.trimmedDescription == "type"
+        }!.expression.as(DeclReferenceExprSyntax.self)!.baseName
+        
+        let isClassPublic = arguments?.first { argument in
+            argument.label?.trimmedDescription == "isClassPublic"
+        }!.expression.as(BooleanLiteralExprSyntax.self)!.literal.tokenKind == .keyword(.true)
+        
+        switch exposableMember.checkExpositionAvailable(
+            classToken: classToken,
+            isContextPublic: isClassPublic
+        ) {
+        case .failure(let error):
             context.diagnose(Diagnostic(
                 node: Syntax(declaration),
                 message: GodotDiagnostic(
@@ -34,17 +46,12 @@ public enum ExpositionTestMacro: PeerMacro {
             ))
             
             return []
+        case .success(_): break
         }
-        
-        guard let argument = node.arguments?.as(LabeledExprListSyntax.self)?
-            .first?.expression.as(DeclReferenceExprSyntax.self) else {
-            return []
-        }
-        
-        let className = argument.baseName
         
         guard let exposableSyntax = exposableMember.expositionSyntax(
-            classContext: className,
+            classToken: classToken,
+            isContextPublic: isClassPublic,
             namePrefix: String(),
             in: context
         ) else {
@@ -52,11 +59,15 @@ public enum ExpositionTestMacro: PeerMacro {
         }
         
         let functionDecl = try FunctionDeclSyntax(
-            "private static func testExposition()"
+            "private static func debugExposeMember()"
         ) {
             exposableSyntax
         }
         
-        return [DeclSyntax(functionDecl)]
+        return [DeclSyntax(functionDecl)] + exposableMember.expositionPeerSyntax(
+            classToken: classToken,
+            isContextPublic: isClassPublic,
+            in: context
+        )
     }
 }

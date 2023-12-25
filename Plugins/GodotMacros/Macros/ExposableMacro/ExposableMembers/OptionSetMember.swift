@@ -4,17 +4,6 @@ import SwiftSyntaxMacros
 import Utils
 
 struct OptionSetMember: ExposableMember {
-    enum ExpositionError: Error, CustomStringConvertible {
-        case isNotPublic
-        
-        var description: String {
-            switch self {
-            case .isNotPublic:
-                "The option set is not public"
-            }
-        }
-    }
-    
     let structDeclSyntax: StructDeclSyntax
     
     init?(declSyntax: some DeclSyntaxProtocol) {
@@ -29,22 +18,28 @@ struct OptionSetMember: ExposableMember {
         self.structDeclSyntax = structDeclSyntax
     }
     
-    var exposableMemberIdentifier: String {
-        structDeclSyntax.name.trimmedDescription
-    }
-    
     var attributes: AttributeListSyntax? {
         structDeclSyntax.attributes
     }
     
-    func checkShouldBeExposed() throws {
-        if !structDeclSyntax.isPublic() {
-            throw ExpositionError.isNotPublic
+    func checkExpositionAvailable(
+        classToken: TokenSyntax,
+        isContextPublic: Bool
+    ) -> Result<Void, CheckExpositionError> {
+        if !isContextPublic {
+            return .failure(.init("OptionSet cannot be exposed because '\(classToken.trimmedDescription)' is not public"))
         }
+        
+        if !structDeclSyntax.accessModifierInspector.isPublic() {
+            return .failure(.notPublicMember)
+        }
+        
+        return .success(())
     }
     
     func expositionSyntax(
-        classContext: TokenSyntax,
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
@@ -58,5 +53,13 @@ struct OptionSetMember: ExposableMember {
             insideType: self
         )
         """
+    }
+    
+    func expositionPeerSyntax(
+        classToken: TokenSyntax,
+        isContextPublic: Bool,
+        in context: some MacroExpansionContext
+    ) -> [DeclSyntax] {
+        []
     }
 }
