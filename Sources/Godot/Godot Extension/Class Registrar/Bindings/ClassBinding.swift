@@ -20,7 +20,7 @@ extension ClassRegistrar {
             self.type = type
             self.name = type.exposedClassName
             
-            self.callbacks = type.instanceBindingCallbacks()
+            self.callbacks = type._instanceBindingCallbacks()
         }
     }
 }

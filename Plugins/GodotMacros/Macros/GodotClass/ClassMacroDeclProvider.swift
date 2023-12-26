@@ -128,11 +128,11 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 }
             
                 if self is RefCounted {
-                    withUnsafePointer(to: Self.instanceBindingCallbacks()) { callbacksPtr in
+                    withUnsafePointer(to: Self._instanceBindingCallbacks()) { callbacksPtr in
                         gdextension_interface_object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passUnretained(self).toOpaque(), callbacksPtr)
                     }
                 } else {
-                    withUnsafePointer(to: Self.instanceBindingCallbacks()) { callbacksPtr in
+                    withUnsafePointer(to: Self._instanceBindingCallbacks()) { callbacksPtr in
                         gdextension_interface_object_set_instance_binding(extensionObjectPtr, GodotExtension.token, Unmanaged.passRetained(self).toOpaque(), callbacksPtr)
                     }
                 }
@@ -203,7 +203,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     }
     
     private func instanceBindingCallbacks() throws -> DeclSyntax {
-        let signature = "\(openKeyword) \(overrideKeyword) class func instanceBindingCallbacks() -> Godot.GodotInstanceBindingCallbacks"
+        let signature = "\(openKeyword) \(overrideKeyword) class func _instanceBindingCallbacks() -> Godot.GodotInstanceBindingCallbacks"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
@@ -237,7 +237,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     }
     
     private func retrieveObjectInstance() throws -> DeclSyntax {
-        let signature = "\(openKeyword) \(overrideKeyword) class func retrieveObjectInstance(fromUnsafePointer pointer: UnsafeMutableRawPointer) -> Godot.Object"
+        let signature = "\(openKeyword) \(overrideKeyword) class func _retrieveObjectInstance(fromUnsafePointer pointer: UnsafeMutableRawPointer) -> Godot.Object"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
@@ -255,7 +255,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     }
     
     private func exposeToGodot() throws -> DeclSyntax {
-        let signature = "\(openKeyword) \(overrideKeyword) class func registerClassToGodot()"
+        let signature = "\(openKeyword) \(overrideKeyword) class func _registerClassToGodot()"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
