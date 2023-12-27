@@ -8,13 +8,13 @@ open class AudioListener3D: Node3D {
     private static var __method_binding_make_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "make_current").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func makeCurrent() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_make_current,
             __ptr_self,
             nil,
@@ -25,13 +25,13 @@ open class AudioListener3D: Node3D {
     private static var __method_binding_clear_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear_current").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func clearCurrent() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_clear_current,
             __ptr_self,
             nil,
@@ -42,14 +42,14 @@ open class AudioListener3D: Node3D {
     private static var __method_binding_is_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_current").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
     public func isCurrent() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_current,
             __ptr_self,
             nil,
@@ -60,14 +60,14 @@ open class AudioListener3D: Node3D {
     private static var __method_binding_get_listener_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_listener_transform").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3229777777)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229777777)!
         }
         }
     }()
     public func listenerTransform() -> Godot.Transform3D {
         Godot.Transform3D.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_listener_transform,
             __ptr_self,
             nil,

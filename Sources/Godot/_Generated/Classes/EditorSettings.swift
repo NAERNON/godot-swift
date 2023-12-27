@@ -18,7 +18,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_has_setting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_setting").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
     }()
@@ -27,7 +27,7 @@ open class EditorSettings: Resource {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_setting,
             __ptr_self,
             __accessPtr,
@@ -38,7 +38,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_set_setting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_setting").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 402577236)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 402577236)!
         }
         }
     }()
@@ -47,7 +47,7 @@ open class EditorSettings: Resource {
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_setting,
             __ptr_self,
             __accessPtr,
@@ -58,7 +58,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_get_setting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_setting").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1868160156)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1868160156)!
         }
         }
     }()
@@ -67,7 +67,7 @@ open class EditorSettings: Resource {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_setting,
             __ptr_self,
             __accessPtr,
@@ -78,7 +78,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_erase: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "erase").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
@@ -86,7 +86,7 @@ open class EditorSettings: Resource {
         property.withGodotUnsafeRawPointer { __ptr_property in
         withUnsafeArgumentPackPointer(__ptr_property) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_erase,
             __ptr_self,
             __accessPtr,
@@ -97,7 +97,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_set_initial_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_initial_value").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1529169264)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1529169264)!
         }
         }
     }()
@@ -107,7 +107,7 @@ open class EditorSettings: Resource {
         updateCurrent.withGodotUnsafeRawPointer { __ptr_updateCurrent in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_value, __ptr_updateCurrent) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_initial_value,
             __ptr_self,
             __accessPtr,
@@ -118,7 +118,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_add_property_info: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_property_info").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4155329257)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
         }
         }
     }()
@@ -126,7 +126,7 @@ open class EditorSettings: Resource {
         info.withGodotUnsafeRawPointer { __ptr_info in
         withUnsafeArgumentPackPointer(__ptr_info) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_property_info,
             __ptr_self,
             __accessPtr,
@@ -137,7 +137,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_set_project_metadata: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_project_metadata").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2504492430)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2504492430)!
         }
         }
     }()
@@ -147,7 +147,7 @@ open class EditorSettings: Resource {
         Godot.Variant.withStorageUnsafeRawPointer(to: data) { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_section, __ptr_key, __ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_project_metadata,
             __ptr_self,
             __accessPtr,
@@ -158,7 +158,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_get_project_metadata: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_project_metadata").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 89809366)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 89809366)!
         }
         }
     }()
@@ -169,7 +169,7 @@ open class EditorSettings: Resource {
         Godot.Variant.withStorageUnsafeRawPointer(to: `default`) { __ptr_default in
         withUnsafeArgumentPackPointer(__ptr_section, __ptr_key, __ptr_default) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_project_metadata,
             __ptr_self,
             __accessPtr,
@@ -180,7 +180,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_set_favorites: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_favorites").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4015028928)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
         }
         }
     }()
@@ -188,7 +188,7 @@ open class EditorSettings: Resource {
         dirs.withGodotUnsafeRawPointer { __ptr_dirs in
         withUnsafeArgumentPackPointer(__ptr_dirs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_favorites,
             __ptr_self,
             __accessPtr,
@@ -199,14 +199,14 @@ open class EditorSettings: Resource {
     private static var __method_binding_get_favorites: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_favorites").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
     public func favorites() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_favorites,
             __ptr_self,
             nil,
@@ -217,7 +217,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_set_recent_dirs: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_recent_dirs").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4015028928)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
         }
         }
     }()
@@ -225,7 +225,7 @@ open class EditorSettings: Resource {
         dirs.withGodotUnsafeRawPointer { __ptr_dirs in
         withUnsafeArgumentPackPointer(__ptr_dirs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_recent_dirs,
             __ptr_self,
             __accessPtr,
@@ -236,14 +236,14 @@ open class EditorSettings: Resource {
     private static var __method_binding_get_recent_dirs: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_recent_dirs").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
     public func recentDirs() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_recent_dirs,
             __ptr_self,
             nil,
@@ -254,7 +254,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_set_builtin_action_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_builtin_action_override").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1209351045)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1209351045)!
         }
         }
     }()
@@ -263,7 +263,7 @@ open class EditorSettings: Resource {
         actionsList.withGodotUnsafeRawPointer { __ptr_actionsList in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_actionsList) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_builtin_action_override,
             __ptr_self,
             __accessPtr,
@@ -274,7 +274,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_check_changed_settings_in_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "check_changed_settings_in_group").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3927539163)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
     }()
@@ -283,7 +283,7 @@ open class EditorSettings: Resource {
         settingPrefix.withGodotUnsafeRawPointer { __ptr_settingPrefix in
         withUnsafeArgumentPackPointer(__ptr_settingPrefix) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_check_changed_settings_in_group,
             __ptr_self,
             __accessPtr,
@@ -294,14 +294,14 @@ open class EditorSettings: Resource {
     private static var __method_binding_get_changed_settings: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_changed_settings").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
     public func changedSettings() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_changed_settings,
             __ptr_self,
             nil,
@@ -312,7 +312,7 @@ open class EditorSettings: Resource {
     private static var __method_binding_mark_setting_changed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "mark_setting_changed").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
@@ -320,7 +320,7 @@ open class EditorSettings: Resource {
         setting.withGodotUnsafeRawPointer { __ptr_setting in
         withUnsafeArgumentPackPointer(__ptr_setting) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_mark_setting_changed,
             __ptr_self,
             __accessPtr,

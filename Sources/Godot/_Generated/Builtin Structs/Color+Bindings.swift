@@ -4,209 +4,209 @@
 
 import GodotExtensionHeaders
 private var __constructor: GDExtensionPtrConstructor = {
-    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 0)!
+    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_COLOR, 0)!
 }()
 private var __constructor_color: GDExtensionPtrConstructor = {
-    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 1)!
+    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_COLOR, 1)!
 }()
 private var __constructor_color_float: GDExtensionPtrConstructor = {
-    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 2)!
+    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_COLOR, 2)!
 }()
 private var __constructor_float_float_float: GDExtensionPtrConstructor = {
-    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 3)!
+    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_COLOR, 3)!
 }()
 private var __constructor_float_float_float_float: GDExtensionPtrConstructor = {
-    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 4)!
+    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_COLOR, 4)!
 }()
 private var __constructor_godotstring: GDExtensionPtrConstructor = {
-    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 5)!
+    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_COLOR, 5)!
 }()
 private var __constructor_godotstring_float: GDExtensionPtrConstructor = {
-    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_COLOR, 6)!
+    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_COLOR, 6)!
 }()
 private var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
 }()
 private var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
 }()
 private var __operator_binding_negate: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NEGATE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NEGATE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
 }()
 private var __operator_binding_positive: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_POSITIVE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_POSITIVE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
 }()
 private var __operator_binding_not: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_NIL)!
 }()
 private var __operator_binding_multiply_int: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_INT)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_INT)!
 }()
 private var __operator_binding_divide_int: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_INT)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_INT)!
 }()
 private var __operator_binding_multiply_double: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_FLOAT)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_FLOAT)!
 }()
 private var __operator_binding_divide_double: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_FLOAT)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_FLOAT)!
 }()
 private var __operator_binding_equal_color: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
 }()
 private var __operator_binding_not_equal_color: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
 }()
 private var __operator_binding_add_color: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
 }()
 private var __operator_binding_subtract_color: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_SUBTRACT, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_SUBTRACT, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
 }()
 private var __operator_binding_multiply_color: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
 }()
 private var __operator_binding_divide_color: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_DIVIDE, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_COLOR)!
 }()
 private var __operator_binding_in_godotdictionary: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 }()
 private var __operator_binding_in_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_ARRAY)!
 }()
 private var __operator_binding_in_packedcolorarray: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_COLOR, GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
 }()
 private var __indexed_setter: GDExtensionPtrIndexedSetter = {
-    return gdextension_interface_variant_get_ptr_indexed_setter(GDEXTENSION_VARIANT_TYPE_COLOR)!
+    return GodotExtension.Interface.variantGetPtrIndexedSetter(GDEXTENSION_VARIANT_TYPE_COLOR)!
 }()
 private var __indexed_getter: GDExtensionPtrIndexedGetter = {
-    return gdextension_interface_variant_get_ptr_indexed_getter(GDEXTENSION_VARIANT_TYPE_COLOR)!
+    return GodotExtension.Interface.variantGetPtrIndexedGetter(GDEXTENSION_VARIANT_TYPE_COLOR)!
 }()
 private var __method_binding_to_argb32: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "to_argb32").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_abgr32: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "to_abgr32").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_rgba32: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "to_rgba32").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_argb64: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "to_argb64").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_abgr64: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "to_abgr64").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_rgba64: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "to_rgba64").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_to_html: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "to_html").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3429816538)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3429816538)!
     }
 }()
 private var __method_binding_clamp: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "clamp").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 105651410)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 105651410)!
     }
 }()
 private var __method_binding_inverted: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "inverted").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
     }
 }()
 private var __method_binding_lerp: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "lerp").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 402949615)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 402949615)!
     }
 }()
 private var __method_binding_lightened: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "lightened").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1466039168)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1466039168)!
     }
 }()
 private var __method_binding_darkened: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "darkened").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1466039168)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1466039168)!
     }
 }()
 private var __method_binding_blend: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "blend").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3803690977)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3803690977)!
     }
 }()
 private var __method_binding_get_luminance: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "get_luminance").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 466405837)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 466405837)!
     }
 }()
 private var __method_binding_srgb_to_linear: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "srgb_to_linear").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
     }
 }()
 private var __method_binding_linear_to_srgb: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "linear_to_srgb").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3334027602)!
     }
 }()
 private var __method_binding_is_equal_approx: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "is_equal_approx").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3167426256)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3167426256)!
     }
 }()
 private var __method_binding_hex: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "hex").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
     }
 }()
 private var __method_binding_hex64: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "hex64").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
     }
 }()
 private var __method_binding_html: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "html").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 2500054655)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 2500054655)!
     }
 }()
 private var __method_binding_html_is_valid: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "html_is_valid").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 2942997125)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 2942997125)!
     }
 }()
 private var __method_binding_from_string: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "from_string").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3755044230)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 3755044230)!
     }
 }()
 private var __method_binding_from_hsv: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "from_hsv").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1573799446)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1573799446)!
     }
 }()
 private var __method_binding_from_ok_hsl: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "from_ok_hsl").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1573799446)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 1573799446)!
     }
 }()
 private var __method_binding_from_rgbe9995: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "from_rgbe9995").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_COLOR, __ptr__method_name, 351421375)!
     }
 }()
 extension Color {

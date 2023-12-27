@@ -8,7 +8,7 @@ open class NavigationMeshGenerator: Object {
     private static var __method_binding_bake: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bake").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1401173477)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1401173477)!
         }
         }
     }()
@@ -19,7 +19,7 @@ open class NavigationMeshGenerator: Object {
         withUnsafePointer(to: __ptr_rootNode) { _ptr___ptr_rootNode in
         withUnsafeArgumentPackPointer(_ptr___ptr_navigationMesh, _ptr___ptr_rootNode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_bake,
             __ptr_self,
             __accessPtr,
@@ -30,7 +30,7 @@ open class NavigationMeshGenerator: Object {
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2923361153)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2923361153)!
         }
         }
     }()
@@ -39,7 +39,7 @@ open class NavigationMeshGenerator: Object {
         withUnsafePointer(to: __ptr_navigationMesh) { _ptr___ptr_navigationMesh in
         withUnsafeArgumentPackPointer(_ptr___ptr_navigationMesh) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_clear,
             __ptr_self,
             __accessPtr,
@@ -50,7 +50,7 @@ open class NavigationMeshGenerator: Object {
     private static var __method_binding_parse_source_geometry_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "parse_source_geometry_data").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 685862123)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 685862123)!
         }
         }
     }()
@@ -64,7 +64,7 @@ open class NavigationMeshGenerator: Object {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         withUnsafeArgumentPackPointer(_ptr___ptr_navigationMesh, _ptr___ptr_sourceGeometryData, _ptr___ptr_rootNode, __ptr_callback) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_parse_source_geometry_data,
             __ptr_self,
             __accessPtr,
@@ -75,7 +75,7 @@ open class NavigationMeshGenerator: Object {
     private static var __method_binding_bake_from_source_geometry_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bake_from_source_geometry_data").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2469318639)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2469318639)!
         }
         }
     }()
@@ -87,7 +87,7 @@ open class NavigationMeshGenerator: Object {
         callback.withGodotUnsafeRawPointer { __ptr_callback in
         withUnsafeArgumentPackPointer(_ptr___ptr_navigationMesh, _ptr___ptr_sourceGeometryData, __ptr_callback) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_bake_from_source_geometry_data,
             __ptr_self,
             __accessPtr,

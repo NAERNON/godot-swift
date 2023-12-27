@@ -30,7 +30,7 @@ open class VisualShaderNodeStep: VisualShaderNode {
     private static var __method_binding_set_op_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_op_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 715172489)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 715172489)!
         }
         }
     }()
@@ -38,7 +38,7 @@ open class VisualShaderNodeStep: VisualShaderNode {
         opType.withGodotUnsafeRawPointer { __ptr_opType in
         withUnsafeArgumentPackPointer(__ptr_opType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_op_type,
             __ptr_self,
             __accessPtr,
@@ -49,14 +49,14 @@ open class VisualShaderNodeStep: VisualShaderNode {
     private static var __method_binding_get_op_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_op_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3274022781)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3274022781)!
         }
         }
     }()
     private func __getOpType() -> Godot.VisualShaderNodeStep.OpType {
         Godot.VisualShaderNodeStep.OpType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_op_type,
             __ptr_self,
             nil,

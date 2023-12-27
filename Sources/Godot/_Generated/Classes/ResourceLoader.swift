@@ -33,7 +33,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_load_threaded_request: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load_threaded_request").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3614384323)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614384323)!
         }
         }
     }()
@@ -45,7 +45,7 @@ open class ResourceLoader: Object {
         cacheMode.withGodotUnsafeRawPointer { __ptr_cacheMode in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_typeHint, __ptr_useSubThreads, __ptr_cacheMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_load_threaded_request,
             __ptr_self,
             __accessPtr,
@@ -56,7 +56,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_load_threaded_get_status: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load_threaded_get_status").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4137685479)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4137685479)!
         }
         }
     }()
@@ -66,7 +66,7 @@ open class ResourceLoader: Object {
         progress.withGodotUnsafeRawPointer { __ptr_progress in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_progress) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_load_threaded_get_status,
             __ptr_self,
             __accessPtr,
@@ -77,7 +77,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_load_threaded_get: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load_threaded_get").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1748875256)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1748875256)!
         }
         }
     }()
@@ -86,7 +86,7 @@ open class ResourceLoader: Object {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_load_threaded_get,
             __ptr_self,
             __accessPtr,
@@ -97,7 +97,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_load: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3358495409)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3358495409)!
         }
         }
     }()
@@ -108,7 +108,7 @@ open class ResourceLoader: Object {
         cacheMode.withGodotUnsafeRawPointer { __ptr_cacheMode in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_typeHint, __ptr_cacheMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_load,
             __ptr_self,
             __accessPtr,
@@ -119,7 +119,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_get_recognized_extensions_for_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_recognized_extensions_for_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3538744774)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3538744774)!
         }
         }
     }()
@@ -128,7 +128,7 @@ open class ResourceLoader: Object {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_recognized_extensions_for_type,
             __ptr_self,
             __accessPtr,
@@ -139,7 +139,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_add_resource_format_loader: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_resource_format_loader").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2896595483)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2896595483)!
         }
         }
     }()
@@ -149,7 +149,7 @@ open class ResourceLoader: Object {
         front.withGodotUnsafeRawPointer { __ptr_front in
         withUnsafeArgumentPackPointer(_ptr___ptr_formatLoader, __ptr_front) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_resource_format_loader,
             __ptr_self,
             __accessPtr,
@@ -160,7 +160,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_remove_resource_format_loader: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_resource_format_loader").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 405397102)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 405397102)!
         }
         }
     }()
@@ -169,7 +169,7 @@ open class ResourceLoader: Object {
         withUnsafePointer(to: __ptr_formatLoader) { _ptr___ptr_formatLoader in
         withUnsafeArgumentPackPointer(_ptr___ptr_formatLoader) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_resource_format_loader,
             __ptr_self,
             __accessPtr,
@@ -180,7 +180,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_set_abort_on_missing_resources: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_abort_on_missing_resources").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
     }()
@@ -188,7 +188,7 @@ open class ResourceLoader: Object {
         abort.withGodotUnsafeRawPointer { __ptr_abort in
         withUnsafeArgumentPackPointer(__ptr_abort) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_abort_on_missing_resources,
             __ptr_self,
             __accessPtr,
@@ -199,7 +199,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_get_dependencies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_dependencies").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3538744774)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3538744774)!
         }
         }
     }()
@@ -208,7 +208,7 @@ open class ResourceLoader: Object {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_dependencies,
             __ptr_self,
             __accessPtr,
@@ -219,7 +219,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_has_cached: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "has_cached").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2323990056)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2323990056)!
         }
         }
     }()
@@ -228,7 +228,7 @@ open class ResourceLoader: Object {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_has_cached,
             __ptr_self,
             __accessPtr,
@@ -239,7 +239,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_exists: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "exists").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4185558881)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4185558881)!
         }
         }
     }()
@@ -249,7 +249,7 @@ open class ResourceLoader: Object {
         typeHint.withGodotUnsafeRawPointer { __ptr_typeHint in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_typeHint) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_exists,
             __ptr_self,
             __accessPtr,
@@ -260,7 +260,7 @@ open class ResourceLoader: Object {
     private static var __method_binding_get_resource_uid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_resource_uid").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1597066294)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1597066294)!
         }
         }
     }()
@@ -269,7 +269,7 @@ open class ResourceLoader: Object {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_resource_uid,
             __ptr_self,
             __accessPtr,

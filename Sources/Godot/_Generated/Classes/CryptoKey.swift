@@ -8,7 +8,7 @@ open class CryptoKey: Resource {
     private static var __method_binding_save: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 885841341)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 885841341)!
         }
         }
     }()
@@ -18,7 +18,7 @@ open class CryptoKey: Resource {
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_publicOnly) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_save,
             __ptr_self,
             __accessPtr,
@@ -29,7 +29,7 @@ open class CryptoKey: Resource {
     private static var __method_binding_load: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 885841341)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 885841341)!
         }
         }
     }()
@@ -39,7 +39,7 @@ open class CryptoKey: Resource {
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_publicOnly) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_load,
             __ptr_self,
             __accessPtr,
@@ -50,14 +50,14 @@ open class CryptoKey: Resource {
     private static var __method_binding_is_public_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_public_only").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
     public func isPublicOnly() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_public_only,
             __ptr_self,
             nil,
@@ -68,7 +68,7 @@ open class CryptoKey: Resource {
     private static var __method_binding_save_to_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "save_to_string").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 32795936)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 32795936)!
         }
         }
     }()
@@ -77,7 +77,7 @@ open class CryptoKey: Resource {
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
         withUnsafeArgumentPackPointer(__ptr_publicOnly) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_save_to_string,
             __ptr_self,
             __accessPtr,
@@ -88,7 +88,7 @@ open class CryptoKey: Resource {
     private static var __method_binding_load_from_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "load_from_string").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 885841341)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 885841341)!
         }
         }
     }()
@@ -98,7 +98,7 @@ open class CryptoKey: Resource {
         publicOnly.withGodotUnsafeRawPointer { __ptr_publicOnly in
         withUnsafeArgumentPackPointer(__ptr_stringKey, __ptr_publicOnly) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_load_from_string,
             __ptr_self,
             __accessPtr,

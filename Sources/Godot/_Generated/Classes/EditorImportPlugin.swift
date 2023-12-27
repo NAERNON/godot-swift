@@ -56,7 +56,7 @@ open class EditorImportPlugin: ResourceImporter {
     private static var __method_binding_append_import_external_resource: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "append_import_external_resource").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 320493106)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 320493106)!
         }
         }
     }()
@@ -68,7 +68,7 @@ open class EditorImportPlugin: ResourceImporter {
         Godot.Variant.withStorageUnsafeRawPointer(to: generatorParameters) { __ptr_generatorParameters in
         withUnsafeArgumentPackPointer(__ptr_path, __ptr_customOptions, __ptr_customImporter, __ptr_generatorParameters) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_append_import_external_resource,
             __ptr_self,
             __accessPtr,

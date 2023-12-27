@@ -33,7 +33,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
     private static var __method_binding_set_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_source").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1625400621)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1625400621)!
         }
         }
     }()
@@ -41,7 +41,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_source,
             __ptr_self,
             __accessPtr,
@@ -52,14 +52,14 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
     private static var __method_binding_get_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_source").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2222048781)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2222048781)!
         }
         }
     }()
     private func __getSource() -> Godot.VisualShaderNodeCubemap.Source {
         Godot.VisualShaderNodeCubemap.Source.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_source,
             __ptr_self,
             nil,
@@ -70,7 +70,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
     private static var __method_binding_set_cube_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_cube_map").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2219800736)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2219800736)!
         }
         }
     }()
@@ -79,7 +79,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
         withUnsafePointer(to: __ptr_value) { _ptr___ptr_value in
         withUnsafeArgumentPackPointer(_ptr___ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_cube_map,
             __ptr_self,
             __accessPtr,
@@ -90,14 +90,14 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
     private static var __method_binding_get_cube_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_cube_map").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1772111058)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1772111058)!
         }
         }
     }()
     private func __getCubeMap() -> Godot.Cubemap? {
         Godot.Cubemap?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_cube_map,
             __ptr_self,
             nil,
@@ -108,7 +108,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
     private static var __method_binding_set_texture_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1899718876)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1899718876)!
         }
         }
     }()
@@ -116,7 +116,7 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
         value.withGodotUnsafeRawPointer { __ptr_value in
         withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_texture_type,
             __ptr_self,
             __accessPtr,
@@ -127,14 +127,14 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
     private static var __method_binding_get_texture_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3356498888)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3356498888)!
         }
         }
     }()
     private func __getTextureType() -> Godot.VisualShaderNodeCubemap.TextureType {
         Godot.VisualShaderNodeCubemap.TextureType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_type,
             __ptr_self,
             nil,

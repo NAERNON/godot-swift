@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 private var _sharedPerformance = {
     Performance._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return Performance.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -17,7 +17,7 @@ public extension Performance {
 
 private var _sharedTextServerManager = {
     TextServerManager._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return TextServerManager.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -29,7 +29,7 @@ public extension TextServerManager {
 
 private var _sharedPhysicsServer2DManager = {
     PhysicsServer2DManager._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return PhysicsServer2DManager.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -41,7 +41,7 @@ public extension PhysicsServer2DManager {
 
 private var _sharedPhysicsServer3DManager = {
     PhysicsServer3DManager._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return PhysicsServer3DManager.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -53,7 +53,7 @@ public extension PhysicsServer3DManager {
 
 private var _sharedNavigationMeshGenerator = {
     NavigationMeshGenerator._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return NavigationMeshGenerator.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -65,7 +65,7 @@ public extension NavigationMeshGenerator {
 
 private var _sharedProjectSettings = {
     ProjectSettings._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return ProjectSettings.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -77,7 +77,7 @@ public extension ProjectSettings {
 
 private var _sharedIP = {
     IP._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return IP.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -89,7 +89,7 @@ public extension IP {
 
 private var _sharedGeometry2D = {
     Geometry2D._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return Geometry2D.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -101,7 +101,7 @@ public extension Geometry2D {
 
 private var _sharedGeometry3D = {
     Geometry3D._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return Geometry3D.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -113,7 +113,7 @@ public extension Geometry3D {
 
 private var _sharedResourceLoader = {
     ResourceLoader._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return ResourceLoader.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -125,7 +125,7 @@ public extension ResourceLoader {
 
 private var _sharedResourceSaver = {
     ResourceSaver._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return ResourceSaver.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -137,7 +137,7 @@ public extension ResourceSaver {
 
 private var _sharedOS = {
     OS._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return OS.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -149,7 +149,7 @@ public extension OS {
 
 private var _sharedEngine = {
     Engine._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return Engine.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -161,7 +161,7 @@ public extension Engine {
 
 private var _sharedClassDB = {
     ClassDB._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return ClassDB.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -173,7 +173,7 @@ public extension ClassDB {
 
 private var _sharedMarshalls = {
     Marshalls._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return Marshalls.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -185,7 +185,7 @@ public extension Marshalls {
 
 private var _sharedTranslationServer = {
     TranslationServer._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return TranslationServer.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -197,7 +197,7 @@ public extension TranslationServer {
 
 private var _sharedInput = {
     Input._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return Input.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -209,7 +209,7 @@ public extension Input {
 
 private var _sharedInputMap = {
     InputMap._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return InputMap.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -221,7 +221,7 @@ public extension InputMap {
 
 private var _sharedEngineDebugger = {
     EngineDebugger._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return EngineDebugger.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -233,7 +233,7 @@ public extension EngineDebugger {
 
 private var _sharedTime = {
     Time._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return Time.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -245,7 +245,7 @@ public extension Time {
 
 private var _sharedGDExtensionManager = {
     GDExtensionManager._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return GDExtensionManager.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -257,7 +257,7 @@ public extension GDExtensionManager {
 
 private var _sharedResourceUID = {
     ResourceUID._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return ResourceUID.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -269,7 +269,7 @@ public extension ResourceUID {
 
 private var _sharedWorkerThreadPool = {
     WorkerThreadPool._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return WorkerThreadPool.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -281,7 +281,7 @@ public extension WorkerThreadPool {
 
 private var _sharedThemeDB = {
     ThemeDB._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return ThemeDB.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -293,7 +293,7 @@ public extension ThemeDB {
 
 private var _sharedEditorInterface = {
     EditorInterface._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return EditorInterface.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -305,7 +305,7 @@ public extension EditorInterface {
 
 private var _sharedJavaClassWrapper = {
     JavaClassWrapper._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return JavaClassWrapper.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -317,7 +317,7 @@ public extension JavaClassWrapper {
 
 private var _sharedJavaScriptBridge = {
     JavaScriptBridge._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return JavaScriptBridge.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -329,7 +329,7 @@ public extension JavaScriptBridge {
 
 private var _sharedDisplayServer = {
     DisplayServer._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return DisplayServer.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -341,7 +341,7 @@ public extension DisplayServer {
 
 private var _sharedRenderingServer = {
     RenderingServer._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return RenderingServer.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -353,7 +353,7 @@ public extension RenderingServer {
 
 private var _sharedAudioServer = {
     AudioServer._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return AudioServer.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -365,7 +365,7 @@ public extension AudioServer {
 
 private var _sharedPhysicsServer2D = {
     PhysicsServer2D._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return PhysicsServer2D.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -377,7 +377,7 @@ public extension PhysicsServer2D {
 
 private var _sharedPhysicsServer3D = {
     PhysicsServer3D._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return PhysicsServer3D.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -389,7 +389,7 @@ public extension PhysicsServer3D {
 
 private var _sharedNavigationServer2D = {
     NavigationServer2D._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return NavigationServer2D.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -401,7 +401,7 @@ public extension NavigationServer2D {
 
 private var _sharedNavigationServer3D = {
     NavigationServer3D._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return NavigationServer3D.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -413,7 +413,7 @@ public extension NavigationServer3D {
 
 private var _sharedXRServer = {
     XRServer._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return XRServer.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()
@@ -425,7 +425,7 @@ public extension XRServer {
 
 private var _sharedCameraServer = {
     CameraServer._exposedClassName.withGodotUnsafeRawPointer { namePtr in
-        let instancePointer = gdextension_interface_global_get_singleton(namePtr)
+        let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
         return CameraServer.retrievedInstanceManagedByGodot(instancePointer)!
     }
 }()

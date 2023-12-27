@@ -8,7 +8,7 @@ open class RDShaderSPIRV: Resource {
     private static var __method_binding_set_stage_bytecode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stage_bytecode").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3514097977)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3514097977)!
         }
         }
     }()
@@ -17,7 +17,7 @@ open class RDShaderSPIRV: Resource {
         bytecode.withGodotUnsafeRawPointer { __ptr_bytecode in
         withUnsafeArgumentPackPointer(__ptr_stage, __ptr_bytecode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_stage_bytecode,
             __ptr_self,
             __accessPtr,
@@ -28,7 +28,7 @@ open class RDShaderSPIRV: Resource {
     private static var __method_binding_get_stage_bytecode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_stage_bytecode").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3816765404)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3816765404)!
         }
         }
     }()
@@ -37,7 +37,7 @@ open class RDShaderSPIRV: Resource {
         stage.withGodotUnsafeRawPointer { __ptr_stage in
         withUnsafeArgumentPackPointer(__ptr_stage) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stage_bytecode,
             __ptr_self,
             __accessPtr,
@@ -48,7 +48,7 @@ open class RDShaderSPIRV: Resource {
     private static var __method_binding_set_stage_compile_error: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stage_compile_error").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 620821314)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 620821314)!
         }
         }
     }()
@@ -57,7 +57,7 @@ open class RDShaderSPIRV: Resource {
         compileError.withGodotUnsafeRawPointer { __ptr_compileError in
         withUnsafeArgumentPackPointer(__ptr_stage, __ptr_compileError) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_stage_compile_error,
             __ptr_self,
             __accessPtr,
@@ -68,7 +68,7 @@ open class RDShaderSPIRV: Resource {
     private static var __method_binding_get_stage_compile_error: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_stage_compile_error").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3354920045)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3354920045)!
         }
         }
     }()
@@ -77,7 +77,7 @@ open class RDShaderSPIRV: Resource {
         stage.withGodotUnsafeRawPointer { __ptr_stage in
         withUnsafeArgumentPackPointer(__ptr_stage) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stage_compile_error,
             __ptr_self,
             __accessPtr,

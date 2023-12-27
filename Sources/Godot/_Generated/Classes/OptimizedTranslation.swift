@@ -8,7 +8,7 @@ open class OptimizedTranslation: Translation {
     private static var __method_binding_generate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "generate").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1466479800)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1466479800)!
         }
         }
     }()
@@ -17,7 +17,7 @@ open class OptimizedTranslation: Translation {
         withUnsafePointer(to: __ptr_from) { _ptr___ptr_from in
         withUnsafeArgumentPackPointer(_ptr___ptr_from) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_generate,
             __ptr_self,
             __accessPtr,

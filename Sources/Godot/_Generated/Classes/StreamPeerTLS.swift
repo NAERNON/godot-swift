@@ -24,13 +24,13 @@ open class StreamPeerTLS: StreamPeer {
     private static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "poll").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func poll() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_poll,
             __ptr_self,
             nil,
@@ -41,7 +41,7 @@ open class StreamPeerTLS: StreamPeer {
     private static var __method_binding_accept_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "accept_stream").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4292689651)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4292689651)!
         }
         }
     }()
@@ -53,7 +53,7 @@ open class StreamPeerTLS: StreamPeer {
         withUnsafePointer(to: __ptr_serverOptions) { _ptr___ptr_serverOptions in
         withUnsafeArgumentPackPointer(_ptr___ptr_stream, _ptr___ptr_serverOptions) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_accept_stream,
             __ptr_self,
             __accessPtr,
@@ -64,7 +64,7 @@ open class StreamPeerTLS: StreamPeer {
     private static var __method_binding_connect_to_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "connect_to_stream").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 57169517)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 57169517)!
         }
         }
     }()
@@ -77,7 +77,7 @@ open class StreamPeerTLS: StreamPeer {
         withUnsafePointer(to: __ptr_clientOptions) { _ptr___ptr_clientOptions in
         withUnsafeArgumentPackPointer(_ptr___ptr_stream, __ptr_commonName, _ptr___ptr_clientOptions) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_connect_to_stream,
             __ptr_self,
             __accessPtr,
@@ -88,14 +88,14 @@ open class StreamPeerTLS: StreamPeer {
     private static var __method_binding_get_status: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_status").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1128380576)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1128380576)!
         }
         }
     }()
     public func status() -> Godot.StreamPeerTLS.Status {
         Godot.StreamPeerTLS.Status.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_status,
             __ptr_self,
             nil,
@@ -106,14 +106,14 @@ open class StreamPeerTLS: StreamPeer {
     private static var __method_binding_get_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_stream").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2741655269)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2741655269)!
         }
         }
     }()
     public func stream() -> Godot.StreamPeer? {
         Godot.StreamPeer?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stream,
             __ptr_self,
             nil,
@@ -124,13 +124,13 @@ open class StreamPeerTLS: StreamPeer {
     private static var __method_binding_disconnect_from_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "disconnect_from_stream").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func disconnectFromStream() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_disconnect_from_stream,
             __ptr_self,
             nil,

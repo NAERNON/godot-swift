@@ -8,7 +8,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_set_target_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_target_node").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1348162250)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
         }
         }
     }()
@@ -16,7 +16,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         targetNodepath.withGodotUnsafeRawPointer { __ptr_targetNodepath in
         withUnsafeArgumentPackPointer(__ptr_targetNodepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_target_node,
             __ptr_self,
             __accessPtr,
@@ -27,14 +27,14 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_get_target_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_target_node").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4075236667)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
         }
         }
     }()
     private func __getTargetNode() -> Godot.NodePath {
         Godot.NodePath.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_target_node,
             __ptr_self,
             nil,
@@ -45,7 +45,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_set_fabrik_data_chain_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fabrik_data_chain_length").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
     }()
@@ -53,7 +53,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_fabrik_data_chain_length,
             __ptr_self,
             __accessPtr,
@@ -64,14 +64,14 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_get_fabrik_data_chain_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fabrik_data_chain_length").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
     }()
     private func __getFabrikDataChainLength() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fabrik_data_chain_length,
             __ptr_self,
             nil,
@@ -82,7 +82,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_set_fabrik_joint_bone2d_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fabrik_joint_bone2d_node").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2761262315)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761262315)!
         }
         }
     }()
@@ -91,7 +91,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         bone2dNodepath.withGodotUnsafeRawPointer { __ptr_bone2dNodepath in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_bone2dNodepath) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_fabrik_joint_bone2d_node,
             __ptr_self,
             __accessPtr,
@@ -102,7 +102,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_get_fabrik_joint_bone2d_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fabrik_joint_bone2d_node").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 408788394)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
         }
         }
     }()
@@ -111,7 +111,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fabrik_joint_bone2d_node,
             __ptr_self,
             __accessPtr,
@@ -122,7 +122,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_set_fabrik_joint_bone_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fabrik_joint_bone_index").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3937882851)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
         }
         }
     }()
@@ -131,7 +131,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         boneIdx.withGodotUnsafeRawPointer { __ptr_boneIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_boneIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_fabrik_joint_bone_index,
             __ptr_self,
             __accessPtr,
@@ -142,7 +142,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_get_fabrik_joint_bone_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fabrik_joint_bone_index").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
     }()
@@ -151,7 +151,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fabrik_joint_bone_index,
             __ptr_self,
             __accessPtr,
@@ -162,7 +162,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_set_fabrik_joint_magnet_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fabrik_joint_magnet_position").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 163021252)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
         }
         }
     }()
@@ -171,7 +171,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         magnetPosition.withGodotUnsafeRawPointer { __ptr_magnetPosition in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_magnetPosition) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_fabrik_joint_magnet_position,
             __ptr_self,
             __accessPtr,
@@ -182,7 +182,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_get_fabrik_joint_magnet_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fabrik_joint_magnet_position").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2299179447)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
         }
         }
     }()
@@ -191,7 +191,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fabrik_joint_magnet_position,
             __ptr_self,
             __accessPtr,
@@ -202,7 +202,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_set_fabrik_joint_use_target_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_fabrik_joint_use_target_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 300928843)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
         }
         }
     }()
@@ -211,7 +211,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         useTargetRotation.withGodotUnsafeRawPointer { __ptr_useTargetRotation in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_useTargetRotation) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_fabrik_joint_use_target_rotation,
             __ptr_self,
             __accessPtr,
@@ -222,7 +222,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
     private static var __method_binding_get_fabrik_joint_use_target_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_fabrik_joint_use_target_rotation").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
     }()
@@ -231,7 +231,7 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_fabrik_joint_use_target_rotation,
             __ptr_self,
             __accessPtr,

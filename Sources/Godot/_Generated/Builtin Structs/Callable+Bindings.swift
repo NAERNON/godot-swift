@@ -4,126 +4,126 @@
 
 import GodotExtensionHeaders
 private var __destructor: GDExtensionPtrDestructor = {
-    return gdextension_interface_variant_get_ptr_destructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
+    return GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
 }()
 private var __constructor: GDExtensionPtrConstructor = {
-    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 0)!
+    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 0)!
 }()
 private var __constructor_callable: GDExtensionPtrConstructor = {
-    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 1)!
+    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 1)!
 }()
 private var __constructor_object_godotstringname: GDExtensionPtrConstructor = {
-    return gdextension_interface_variant_get_ptr_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 2)!
+    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 2)!
 }()
 private var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_NIL)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_NIL)!
 }()
 private var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_NIL)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_NIL)!
 }()
 private var __operator_binding_not: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_NIL)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_NIL)!
 }()
 private var __operator_binding_equal_callable: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_CALLABLE)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_CALLABLE)!
 }()
 private var __operator_binding_not_equal_callable: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_CALLABLE)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_CALLABLE)!
 }()
 private var __operator_binding_in_godotdictionary: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 }()
 private var __operator_binding_in_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return gdextension_interface_variant_get_ptr_operator_evaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_CALLABLE, GDEXTENSION_VARIANT_TYPE_ARRAY)!
 }()
 private var __method_binding_callv: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "callv").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 413578926)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 413578926)!
     }
 }()
 private var __method_binding_is_null: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "is_null").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
     }
 }()
 private var __method_binding_is_custom: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "is_custom").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
     }
 }()
 private var __method_binding_is_standard: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "is_standard").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
     }
 }()
 private var __method_binding_is_valid: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "is_valid").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3918633141)!
     }
 }()
 private var __method_binding_get_object: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "get_object").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 4008621732)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 4008621732)!
     }
 }()
 private var __method_binding_get_object_id: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "get_object_id").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3173160232)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_get_method: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "get_method").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 1825232092)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 1825232092)!
     }
 }()
 private var __method_binding_get_bound_arguments_count: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "get_bound_arguments_count").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3173160232)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_get_bound_arguments: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "get_bound_arguments").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 4144163970)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 4144163970)!
     }
 }()
 private var __method_binding_hash: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "hash").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3173160232)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3173160232)!
     }
 }()
 private var __method_binding_bindv: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "bindv").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3564560322)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3564560322)!
     }
 }()
 private var __method_binding_unbind: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "unbind").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 755001590)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 755001590)!
     }
 }()
 private var __method_binding_call: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "call").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3643564216)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3643564216)!
     }
 }()
 private var __method_binding_call_deferred: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "call_deferred").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3286317445)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3286317445)!
     }
 }()
 private var __method_binding_rpc: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "rpc").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3286317445)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3286317445)!
     }
 }()
 private var __method_binding_rpc_id: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "rpc_id").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 2270047679)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 2270047679)!
     }
 }()
 private var __method_binding_bind: GDExtensionPtrBuiltInMethod = {
     GodotStringName(swiftStaticString: "bind").withGodotUnsafeRawPointer { __ptr__method_name in
-    return gdextension_interface_variant_get_ptr_builtin_method(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3224143119)!
+    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3224143119)!
     }
 }()
 extension Callable {

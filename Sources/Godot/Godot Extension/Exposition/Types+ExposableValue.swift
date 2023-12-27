@@ -443,7 +443,7 @@ extension Optional: ExposableValue where Wrapped : Object {
     
     public static func fromGodotUnsafePointer(_ unsafePointer: UnsafeRawPointer?) -> Self {
         if let unsafePointer {
-            Wrapped.retrievedInstanceManagedByGodot(gdextension_interface_ref_get_object(unsafePointer))
+            Wrapped.retrievedInstanceManagedByGodot(GodotExtension.Interface.refGetObject(unsafePointer))
         } else {
             Wrapped.retrievedInstanceManagedByGodot(nil)
         }

@@ -8,14 +8,14 @@ open class ClassDB: Object {
     private static var __method_binding_get_class_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_class_list").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1139954409)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
     public func classList() -> Godot.PackedStringArray {
         Godot.PackedStringArray.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_class_list,
             __ptr_self,
             nil,
@@ -26,7 +26,7 @@ open class ClassDB: Object {
     private static var __method_binding_get_inheriters_from_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_inheriters_from_class").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1761182771)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1761182771)!
         }
         }
     }()
@@ -35,7 +35,7 @@ open class ClassDB: Object {
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_inheriters_from_class,
             __ptr_self,
             __accessPtr,
@@ -46,7 +46,7 @@ open class ClassDB: Object {
     private static var __method_binding_get_parent_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_parent_class").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1965194235)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1965194235)!
         }
         }
     }()
@@ -55,7 +55,7 @@ open class ClassDB: Object {
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_parent_class,
             __ptr_self,
             __accessPtr,
@@ -66,7 +66,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_exists: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_exists").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2619796661)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
     }()
@@ -75,7 +75,7 @@ open class ClassDB: Object {
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_exists,
             __ptr_self,
             __accessPtr,
@@ -86,7 +86,7 @@ open class ClassDB: Object {
     private static var __method_binding_is_parent_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_parent_class").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 471820014)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
     }()
@@ -96,7 +96,7 @@ open class ClassDB: Object {
         inherits.withGodotUnsafeRawPointer { __ptr_inherits in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_inherits) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_parent_class,
             __ptr_self,
             __accessPtr,
@@ -107,7 +107,7 @@ open class ClassDB: Object {
     private static var __method_binding_can_instantiate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "can_instantiate").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2619796661)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
     }()
@@ -116,7 +116,7 @@ open class ClassDB: Object {
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_can_instantiate,
             __ptr_self,
             __accessPtr,
@@ -127,7 +127,7 @@ open class ClassDB: Object {
     private static var __method_binding_instantiate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "instantiate").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2760726917)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2760726917)!
         }
         }
     }()
@@ -136,7 +136,7 @@ open class ClassDB: Object {
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_instantiate,
             __ptr_self,
             __accessPtr,
@@ -147,7 +147,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_has_signal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_has_signal").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 471820014)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
     }()
@@ -157,7 +157,7 @@ open class ClassDB: Object {
         signal.withGodotUnsafeRawPointer { __ptr_signal in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_signal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_has_signal,
             __ptr_self,
             __accessPtr,
@@ -168,7 +168,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_get_signal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_get_signal").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3061114238)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3061114238)!
         }
         }
     }()
@@ -178,7 +178,7 @@ open class ClassDB: Object {
         signal.withGodotUnsafeRawPointer { __ptr_signal in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_signal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_get_signal,
             __ptr_self,
             __accessPtr,
@@ -189,7 +189,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_get_signal_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_get_signal_list").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3504980660)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3504980660)!
         }
         }
     }()
@@ -199,7 +199,7 @@ open class ClassDB: Object {
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_get_signal_list,
             __ptr_self,
             __accessPtr,
@@ -210,7 +210,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_get_property_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_get_property_list").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3504980660)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3504980660)!
         }
         }
     }()
@@ -220,7 +220,7 @@ open class ClassDB: Object {
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_get_property_list,
             __ptr_self,
             __accessPtr,
@@ -231,7 +231,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_get_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_get_property").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2498641674)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2498641674)!
         }
         }
     }()
@@ -242,7 +242,7 @@ open class ClassDB: Object {
         property.withGodotUnsafeRawPointer { __ptr_property in
         withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_property) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_get_property,
             __ptr_self,
             __accessPtr,
@@ -253,7 +253,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_set_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_set_property").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1690314931)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1690314931)!
         }
         }
     }()
@@ -265,7 +265,7 @@ open class ClassDB: Object {
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_property, __ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_set_property,
             __ptr_self,
             __accessPtr,
@@ -276,7 +276,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_has_method: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_has_method").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3860701026)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3860701026)!
         }
         }
     }()
@@ -287,7 +287,7 @@ open class ClassDB: Object {
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_method, __ptr_noInheritance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_has_method,
             __ptr_self,
             __accessPtr,
@@ -298,7 +298,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_get_method_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_get_method_list").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3504980660)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3504980660)!
         }
         }
     }()
@@ -308,7 +308,7 @@ open class ClassDB: Object {
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_get_method_list,
             __ptr_self,
             __accessPtr,
@@ -319,7 +319,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_get_integer_constant_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_get_integer_constant_list").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3031669221)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3031669221)!
         }
         }
     }()
@@ -329,7 +329,7 @@ open class ClassDB: Object {
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_get_integer_constant_list,
             __ptr_self,
             __accessPtr,
@@ -340,7 +340,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_has_integer_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_has_integer_constant").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 471820014)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
     }()
@@ -350,7 +350,7 @@ open class ClassDB: Object {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_has_integer_constant,
             __ptr_self,
             __accessPtr,
@@ -361,7 +361,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_get_integer_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_get_integer_constant").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2419549490)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2419549490)!
         }
         }
     }()
@@ -371,7 +371,7 @@ open class ClassDB: Object {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_get_integer_constant,
             __ptr_self,
             __accessPtr,
@@ -382,7 +382,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_has_enum: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_has_enum").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3860701026)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3860701026)!
         }
         }
     }()
@@ -393,7 +393,7 @@ open class ClassDB: Object {
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_name, __ptr_noInheritance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_has_enum,
             __ptr_self,
             __accessPtr,
@@ -404,7 +404,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_get_enum_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_get_enum_list").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3031669221)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3031669221)!
         }
         }
     }()
@@ -414,7 +414,7 @@ open class ClassDB: Object {
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_noInheritance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_get_enum_list,
             __ptr_self,
             __accessPtr,
@@ -425,7 +425,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_get_enum_constants: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_get_enum_constants").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 661528303)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 661528303)!
         }
         }
     }()
@@ -436,7 +436,7 @@ open class ClassDB: Object {
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_enum, __ptr_noInheritance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_get_enum_constants,
             __ptr_self,
             __accessPtr,
@@ -447,7 +447,7 @@ open class ClassDB: Object {
     private static var __method_binding_class_get_integer_constant_enum: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "class_get_integer_constant_enum").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2457504236)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2457504236)!
         }
         }
     }()
@@ -458,7 +458,7 @@ open class ClassDB: Object {
         noInheritance.withGodotUnsafeRawPointer { __ptr_noInheritance in
         withUnsafeArgumentPackPointer(__ptr_class, __ptr_name, __ptr_noInheritance) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_class_get_integer_constant_enum,
             __ptr_self,
             __accessPtr,
@@ -469,7 +469,7 @@ open class ClassDB: Object {
     private static var __method_binding_is_class_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_class_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2619796661)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
     }()
@@ -478,7 +478,7 @@ open class ClassDB: Object {
         `class`.withGodotUnsafeRawPointer { __ptr_class in
         withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_class_enabled,
             __ptr_self,
             __accessPtr,

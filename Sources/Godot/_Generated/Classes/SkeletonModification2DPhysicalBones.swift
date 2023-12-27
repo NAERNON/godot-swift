@@ -8,7 +8,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
     private static var __method_binding_set_physical_bone_chain_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physical_bone_chain_length").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
     }()
@@ -16,7 +16,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         length.withGodotUnsafeRawPointer { __ptr_length in
         withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_physical_bone_chain_length,
             __ptr_self,
             __accessPtr,
@@ -27,14 +27,14 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
     private static var __method_binding_get_physical_bone_chain_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physical_bone_chain_length").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2455072627)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
         }
         }
     }()
     private func __getPhysicalBoneChainLength() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physical_bone_chain_length,
             __ptr_self,
             nil,
@@ -45,7 +45,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
     private static var __method_binding_set_physical_bone_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_physical_bone_node").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2761262315)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761262315)!
         }
         }
     }()
@@ -54,7 +54,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         physicalbone2dNode.withGodotUnsafeRawPointer { __ptr_physicalbone2dNode in
         withUnsafeArgumentPackPointer(__ptr_jointIdx, __ptr_physicalbone2dNode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_physical_bone_node,
             __ptr_self,
             __accessPtr,
@@ -65,7 +65,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
     private static var __method_binding_get_physical_bone_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_physical_bone_node").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 408788394)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
         }
         }
     }()
@@ -74,7 +74,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         jointIdx.withGodotUnsafeRawPointer { __ptr_jointIdx in
         withUnsafeArgumentPackPointer(__ptr_jointIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_physical_bone_node,
             __ptr_self,
             __accessPtr,
@@ -85,13 +85,13 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
     private static var __method_binding_fetch_physical_bones: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "fetch_physical_bones").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func fetchPhysicalBones() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_fetch_physical_bones,
             __ptr_self,
             nil,
@@ -102,7 +102,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
     private static var __method_binding_start_simulation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "start_simulation").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2787316981)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2787316981)!
         }
         }
     }()
@@ -110,7 +110,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         bones.withGodotUnsafeRawPointer { __ptr_bones in
         withUnsafeArgumentPackPointer(__ptr_bones) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_start_simulation,
             __ptr_self,
             __accessPtr,
@@ -121,7 +121,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
     private static var __method_binding_stop_simulation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "stop_simulation").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2787316981)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2787316981)!
         }
         }
     }()
@@ -129,7 +129,7 @@ open class SkeletonModification2DPhysicalBones: SkeletonModification2D {
         bones.withGodotUnsafeRawPointer { __ptr_bones in
         withUnsafeArgumentPackPointer(__ptr_bones) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_stop_simulation,
             __ptr_self,
             __accessPtr,

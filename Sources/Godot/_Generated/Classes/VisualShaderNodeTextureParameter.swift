@@ -86,7 +86,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     private static var __method_binding_set_texture_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2227296876)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2227296876)!
         }
         }
     }()
@@ -94,7 +94,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_texture_type,
             __ptr_self,
             __accessPtr,
@@ -105,14 +105,14 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     private static var __method_binding_get_texture_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 367922070)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 367922070)!
         }
         }
     }()
     private func __getTextureType() -> Godot.VisualShaderNodeTextureParameter.TextureType {
         Godot.VisualShaderNodeTextureParameter.TextureType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_type,
             __ptr_self,
             nil,
@@ -123,7 +123,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     private static var __method_binding_set_color_default: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_color_default").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4217624432)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4217624432)!
         }
         }
     }()
@@ -131,7 +131,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_color_default,
             __ptr_self,
             __accessPtr,
@@ -142,14 +142,14 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     private static var __method_binding_get_color_default: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_color_default").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3837060134)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3837060134)!
         }
         }
     }()
     private func __getColorDefault() -> Godot.VisualShaderNodeTextureParameter.ColorDefault {
         Godot.VisualShaderNodeTextureParameter.ColorDefault.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_color_default,
             __ptr_self,
             nil,
@@ -160,7 +160,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     private static var __method_binding_set_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_filter").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2147684752)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2147684752)!
         }
         }
     }()
@@ -168,7 +168,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
         filter.withGodotUnsafeRawPointer { __ptr_filter in
         withUnsafeArgumentPackPointer(__ptr_filter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_texture_filter,
             __ptr_self,
             __accessPtr,
@@ -179,14 +179,14 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     private static var __method_binding_get_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_filter").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4184490817)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4184490817)!
         }
         }
     }()
     private func __getTextureFilter() -> Godot.VisualShaderNodeTextureParameter.TextureFilter {
         Godot.VisualShaderNodeTextureParameter.TextureFilter.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_filter,
             __ptr_self,
             nil,
@@ -197,7 +197,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     private static var __method_binding_set_texture_repeat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_repeat").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2036143070)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2036143070)!
         }
         }
     }()
@@ -205,7 +205,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
         `repeat`.withGodotUnsafeRawPointer { __ptr_repeat in
         withUnsafeArgumentPackPointer(__ptr_repeat) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_texture_repeat,
             __ptr_self,
             __accessPtr,
@@ -216,14 +216,14 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     private static var __method_binding_get_texture_repeat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_repeat").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1690132794)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1690132794)!
         }
         }
     }()
     private func __getTextureRepeat() -> Godot.VisualShaderNodeTextureParameter.TextureRepeat {
         Godot.VisualShaderNodeTextureParameter.TextureRepeat.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_repeat,
             __ptr_self,
             nil,
@@ -234,7 +234,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     private static var __method_binding_set_texture_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_source").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1212687372)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1212687372)!
         }
         }
     }()
@@ -242,7 +242,7 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
         source.withGodotUnsafeRawPointer { __ptr_source in
         withUnsafeArgumentPackPointer(__ptr_source) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_texture_source,
             __ptr_self,
             __accessPtr,
@@ -253,14 +253,14 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
     private static var __method_binding_get_texture_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_source").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2039092262)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2039092262)!
         }
         }
     }()
     private func __getTextureSource() -> Godot.VisualShaderNodeTextureParameter.TextureSource {
         Godot.VisualShaderNodeTextureParameter.TextureSource.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_source,
             __ptr_self,
             nil,

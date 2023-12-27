@@ -17,7 +17,7 @@ public func gdDebugPrintError(
     file: String = #file,
     line: Int32 = #line
 ) {
-    gdextension_interface_print_error(message, function, file, line, notifyEditor ? 1 : 0)
+    GodotExtension.Interface.printError(message, function, file, line, notifyEditor ? 1 : 0)
 }
 
 /// Logs a warning to Godot's built-in debugger and to the OS terminal.
@@ -35,7 +35,7 @@ public func gdDebugPrintWarning(
     file: String = #file,
     line: Int32 = #line
 ) {
-    gdextension_interface_print_warning(message, function, file, line, notifyEditor ? 1 : 0)
+    GodotExtension.Interface.printWarning(message, function, file, line, notifyEditor ? 1 : 0)
 }
 
 // MARK: Print

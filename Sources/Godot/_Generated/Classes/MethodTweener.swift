@@ -8,7 +8,7 @@ open class MethodTweener: Tweener {
     private static var __method_binding_set_delay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_delay").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 266477812)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 266477812)!
         }
         }
     }()
@@ -17,7 +17,7 @@ open class MethodTweener: Tweener {
         delay.withGodotUnsafeRawPointer { __ptr_delay in
         withUnsafeArgumentPackPointer(__ptr_delay) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_delay,
             __ptr_self,
             __accessPtr,
@@ -28,7 +28,7 @@ open class MethodTweener: Tweener {
     private static var __method_binding_set_trans: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_trans").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3740975367)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740975367)!
         }
         }
     }()
@@ -37,7 +37,7 @@ open class MethodTweener: Tweener {
         trans.withGodotUnsafeRawPointer { __ptr_trans in
         withUnsafeArgumentPackPointer(__ptr_trans) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_trans,
             __ptr_self,
             __accessPtr,
@@ -48,7 +48,7 @@ open class MethodTweener: Tweener {
     private static var __method_binding_set_ease: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ease").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 315540545)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 315540545)!
         }
         }
     }()
@@ -57,7 +57,7 @@ open class MethodTweener: Tweener {
         ease.withGodotUnsafeRawPointer { __ptr_ease in
         withUnsafeArgumentPackPointer(__ptr_ease) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_ease,
             __ptr_self,
             __accessPtr,

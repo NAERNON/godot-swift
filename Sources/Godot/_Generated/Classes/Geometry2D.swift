@@ -48,7 +48,7 @@ open class Geometry2D: Object {
     private static var __method_binding_is_point_in_circle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_point_in_circle").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2929491703)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2929491703)!
         }
         }
     }()
@@ -59,7 +59,7 @@ open class Geometry2D: Object {
         circleRadius.withGodotUnsafeRawPointer { __ptr_circleRadius in
         withUnsafeArgumentPackPointer(__ptr_point, __ptr_circlePosition, __ptr_circleRadius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_point_in_circle,
             __ptr_self,
             __accessPtr,
@@ -70,7 +70,7 @@ open class Geometry2D: Object {
     private static var __method_binding_segment_intersects_circle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "segment_intersects_circle").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1356928167)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1356928167)!
         }
         }
     }()
@@ -82,7 +82,7 @@ open class Geometry2D: Object {
         circleRadius.withGodotUnsafeRawPointer { __ptr_circleRadius in
         withUnsafeArgumentPackPointer(__ptr_segmentFrom, __ptr_segmentTo, __ptr_circlePosition, __ptr_circleRadius) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_segment_intersects_circle,
             __ptr_self,
             __accessPtr,
@@ -93,7 +93,7 @@ open class Geometry2D: Object {
     private static var __method_binding_segment_intersects_segment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "segment_intersects_segment").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2058025344)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2058025344)!
         }
         }
     }()
@@ -105,7 +105,7 @@ open class Geometry2D: Object {
         toB.withGodotUnsafeRawPointer { __ptr_toB in
         withUnsafeArgumentPackPointer(__ptr_fromA, __ptr_toA, __ptr_fromB, __ptr_toB) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_segment_intersects_segment,
             __ptr_self,
             __accessPtr,
@@ -116,7 +116,7 @@ open class Geometry2D: Object {
     private static var __method_binding_line_intersects_line: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "line_intersects_line").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2058025344)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2058025344)!
         }
         }
     }()
@@ -128,7 +128,7 @@ open class Geometry2D: Object {
         dirB.withGodotUnsafeRawPointer { __ptr_dirB in
         withUnsafeArgumentPackPointer(__ptr_a, __ptr_dirA, __ptr_b, __ptr_dirB) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_line_intersects_line,
             __ptr_self,
             __accessPtr,
@@ -139,7 +139,7 @@ open class Geometry2D: Object {
     private static var __method_binding_get_closest_points_between_segments: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_closest_points_between_segments").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3344690961)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3344690961)!
         }
         }
     }()
@@ -151,7 +151,7 @@ open class Geometry2D: Object {
         q2.withGodotUnsafeRawPointer { __ptr_q2 in
         withUnsafeArgumentPackPointer(__ptr_p1, __ptr_q1, __ptr_p2, __ptr_q2) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_closest_points_between_segments,
             __ptr_self,
             __accessPtr,
@@ -162,7 +162,7 @@ open class Geometry2D: Object {
     private static var __method_binding_get_closest_point_to_segment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_closest_point_to_segment").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4172901909)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4172901909)!
         }
         }
     }()
@@ -173,7 +173,7 @@ open class Geometry2D: Object {
         s2.withGodotUnsafeRawPointer { __ptr_s2 in
         withUnsafeArgumentPackPointer(__ptr_point, __ptr_s1, __ptr_s2) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_closest_point_to_segment,
             __ptr_self,
             __accessPtr,
@@ -184,7 +184,7 @@ open class Geometry2D: Object {
     private static var __method_binding_get_closest_point_to_segment_uncapped: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_closest_point_to_segment_uncapped").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4172901909)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4172901909)!
         }
         }
     }()
@@ -195,7 +195,7 @@ open class Geometry2D: Object {
         s2.withGodotUnsafeRawPointer { __ptr_s2 in
         withUnsafeArgumentPackPointer(__ptr_point, __ptr_s1, __ptr_s2) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_closest_point_to_segment_uncapped,
             __ptr_self,
             __accessPtr,
@@ -206,7 +206,7 @@ open class Geometry2D: Object {
     private static var __method_binding_point_is_inside_triangle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "point_is_inside_triangle").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1025948137)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1025948137)!
         }
         }
     }()
@@ -218,7 +218,7 @@ open class Geometry2D: Object {
         c.withGodotUnsafeRawPointer { __ptr_c in
         withUnsafeArgumentPackPointer(__ptr_point, __ptr_a, __ptr_b, __ptr_c) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_point_is_inside_triangle,
             __ptr_self,
             __accessPtr,
@@ -229,7 +229,7 @@ open class Geometry2D: Object {
     private static var __method_binding_is_polygon_clockwise: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_polygon_clockwise").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1361156557)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1361156557)!
         }
         }
     }()
@@ -238,7 +238,7 @@ open class Geometry2D: Object {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_polygon_clockwise,
             __ptr_self,
             __accessPtr,
@@ -249,7 +249,7 @@ open class Geometry2D: Object {
     private static var __method_binding_is_point_in_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_point_in_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 738277916)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 738277916)!
         }
         }
     }()
@@ -259,7 +259,7 @@ open class Geometry2D: Object {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_point, __ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_point_in_polygon,
             __ptr_self,
             __accessPtr,
@@ -270,7 +270,7 @@ open class Geometry2D: Object {
     private static var __method_binding_triangulate_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "triangulate_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1389921771)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1389921771)!
         }
         }
     }()
@@ -279,7 +279,7 @@ open class Geometry2D: Object {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_triangulate_polygon,
             __ptr_self,
             __accessPtr,
@@ -290,7 +290,7 @@ open class Geometry2D: Object {
     private static var __method_binding_triangulate_delaunay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "triangulate_delaunay").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1389921771)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1389921771)!
         }
         }
     }()
@@ -299,7 +299,7 @@ open class Geometry2D: Object {
         points.withGodotUnsafeRawPointer { __ptr_points in
         withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_triangulate_delaunay,
             __ptr_self,
             __accessPtr,
@@ -310,7 +310,7 @@ open class Geometry2D: Object {
     private static var __method_binding_convex_hull: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "convex_hull").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2004331998)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2004331998)!
         }
         }
     }()
@@ -319,7 +319,7 @@ open class Geometry2D: Object {
         points.withGodotUnsafeRawPointer { __ptr_points in
         withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_convex_hull,
             __ptr_self,
             __accessPtr,
@@ -330,7 +330,7 @@ open class Geometry2D: Object {
     private static var __method_binding_decompose_polygon_in_convex: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "decompose_polygon_in_convex").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3982393695)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3982393695)!
         }
         }
     }()
@@ -339,7 +339,7 @@ open class Geometry2D: Object {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_decompose_polygon_in_convex,
             __ptr_self,
             __accessPtr,
@@ -350,7 +350,7 @@ open class Geometry2D: Object {
     private static var __method_binding_merge_polygons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "merge_polygons").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3637387053)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3637387053)!
         }
         }
     }()
@@ -360,7 +360,7 @@ open class Geometry2D: Object {
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
         withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_merge_polygons,
             __ptr_self,
             __accessPtr,
@@ -371,7 +371,7 @@ open class Geometry2D: Object {
     private static var __method_binding_clip_polygons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clip_polygons").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3637387053)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3637387053)!
         }
         }
     }()
@@ -381,7 +381,7 @@ open class Geometry2D: Object {
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
         withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_clip_polygons,
             __ptr_self,
             __accessPtr,
@@ -392,7 +392,7 @@ open class Geometry2D: Object {
     private static var __method_binding_intersect_polygons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "intersect_polygons").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3637387053)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3637387053)!
         }
         }
     }()
@@ -402,7 +402,7 @@ open class Geometry2D: Object {
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
         withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_intersect_polygons,
             __ptr_self,
             __accessPtr,
@@ -413,7 +413,7 @@ open class Geometry2D: Object {
     private static var __method_binding_exclude_polygons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "exclude_polygons").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3637387053)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3637387053)!
         }
         }
     }()
@@ -423,7 +423,7 @@ open class Geometry2D: Object {
         polygonB.withGodotUnsafeRawPointer { __ptr_polygonB in
         withUnsafeArgumentPackPointer(__ptr_polygonA, __ptr_polygonB) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_exclude_polygons,
             __ptr_self,
             __accessPtr,
@@ -434,7 +434,7 @@ open class Geometry2D: Object {
     private static var __method_binding_clip_polyline_with_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "clip_polyline_with_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3637387053)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3637387053)!
         }
         }
     }()
@@ -444,7 +444,7 @@ open class Geometry2D: Object {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polyline, __ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_clip_polyline_with_polygon,
             __ptr_self,
             __accessPtr,
@@ -455,7 +455,7 @@ open class Geometry2D: Object {
     private static var __method_binding_intersect_polyline_with_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "intersect_polyline_with_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3637387053)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3637387053)!
         }
         }
     }()
@@ -465,7 +465,7 @@ open class Geometry2D: Object {
         polygon.withGodotUnsafeRawPointer { __ptr_polygon in
         withUnsafeArgumentPackPointer(__ptr_polyline, __ptr_polygon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_intersect_polyline_with_polygon,
             __ptr_self,
             __accessPtr,
@@ -476,7 +476,7 @@ open class Geometry2D: Object {
     private static var __method_binding_offset_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "offset_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1275354010)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1275354010)!
         }
         }
     }()
@@ -487,7 +487,7 @@ open class Geometry2D: Object {
         joinType.withGodotUnsafeRawPointer { __ptr_joinType in
         withUnsafeArgumentPackPointer(__ptr_polygon, __ptr_delta, __ptr_joinType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_offset_polygon,
             __ptr_self,
             __accessPtr,
@@ -498,7 +498,7 @@ open class Geometry2D: Object {
     private static var __method_binding_offset_polyline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "offset_polyline").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2328231778)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2328231778)!
         }
         }
     }()
@@ -510,7 +510,7 @@ open class Geometry2D: Object {
         endType.withGodotUnsafeRawPointer { __ptr_endType in
         withUnsafeArgumentPackPointer(__ptr_polyline, __ptr_delta, __ptr_joinType, __ptr_endType) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_offset_polyline,
             __ptr_self,
             __accessPtr,
@@ -521,7 +521,7 @@ open class Geometry2D: Object {
     private static var __method_binding_make_atlas: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "make_atlas").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1337682371)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1337682371)!
         }
         }
     }()
@@ -530,7 +530,7 @@ open class Geometry2D: Object {
         sizes.withGodotUnsafeRawPointer { __ptr_sizes in
         withUnsafeArgumentPackPointer(__ptr_sizes) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_make_atlas,
             __ptr_self,
             __accessPtr,

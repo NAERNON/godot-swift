@@ -92,7 +92,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
     private static var __method_binding_get_option_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_option_index").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
     }()
@@ -101,7 +101,7 @@ open class VisualShaderNodeCustom: VisualShaderNode {
         option.withGodotUnsafeRawPointer { __ptr_option in
         withUnsafeArgumentPackPointer(__ptr_option) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_option_index,
             __ptr_self,
             __accessPtr,

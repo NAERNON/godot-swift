@@ -8,7 +8,7 @@ open class WorkerThreadPool: Object {
     private static var __method_binding_add_task: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_task").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3745067146)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3745067146)!
         }
         }
     }()
@@ -19,7 +19,7 @@ open class WorkerThreadPool: Object {
         description.withGodotUnsafeRawPointer { __ptr_description in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_highPriority, __ptr_description) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_task,
             __ptr_self,
             __accessPtr,
@@ -30,7 +30,7 @@ open class WorkerThreadPool: Object {
     private static var __method_binding_is_task_completed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_task_completed").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
     }()
@@ -39,7 +39,7 @@ open class WorkerThreadPool: Object {
         taskId.withGodotUnsafeRawPointer { __ptr_taskId in
         withUnsafeArgumentPackPointer(__ptr_taskId) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_task_completed,
             __ptr_self,
             __accessPtr,
@@ -50,7 +50,7 @@ open class WorkerThreadPool: Object {
     private static var __method_binding_wait_for_task_completion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "wait_for_task_completion").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 844576869)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844576869)!
         }
         }
     }()
@@ -59,7 +59,7 @@ open class WorkerThreadPool: Object {
         taskId.withGodotUnsafeRawPointer { __ptr_taskId in
         withUnsafeArgumentPackPointer(__ptr_taskId) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_wait_for_task_completion,
             __ptr_self,
             __accessPtr,
@@ -70,7 +70,7 @@ open class WorkerThreadPool: Object {
     private static var __method_binding_add_group_task: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_group_task").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1801953219)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1801953219)!
         }
         }
     }()
@@ -83,7 +83,7 @@ open class WorkerThreadPool: Object {
         description.withGodotUnsafeRawPointer { __ptr_description in
         withUnsafeArgumentPackPointer(__ptr_action, __ptr_elements, __ptr_tasksNeeded, __ptr_highPriority, __ptr_description) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_group_task,
             __ptr_self,
             __accessPtr,
@@ -94,7 +94,7 @@ open class WorkerThreadPool: Object {
     private static var __method_binding_is_group_task_completed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_group_task_completed").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
     }()
@@ -103,7 +103,7 @@ open class WorkerThreadPool: Object {
         groupId.withGodotUnsafeRawPointer { __ptr_groupId in
         withUnsafeArgumentPackPointer(__ptr_groupId) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_group_task_completed,
             __ptr_self,
             __accessPtr,
@@ -114,7 +114,7 @@ open class WorkerThreadPool: Object {
     private static var __method_binding_get_group_processed_element_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_group_processed_element_count").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 923996154)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
         }
         }
     }()
@@ -123,7 +123,7 @@ open class WorkerThreadPool: Object {
         groupId.withGodotUnsafeRawPointer { __ptr_groupId in
         withUnsafeArgumentPackPointer(__ptr_groupId) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_group_processed_element_count,
             __ptr_self,
             __accessPtr,
@@ -134,7 +134,7 @@ open class WorkerThreadPool: Object {
     private static var __method_binding_wait_for_group_task_completion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "wait_for_group_task_completion").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
     }()
@@ -142,7 +142,7 @@ open class WorkerThreadPool: Object {
         groupId.withGodotUnsafeRawPointer { __ptr_groupId in
         withUnsafeArgumentPackPointer(__ptr_groupId) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_wait_for_group_task_completion,
             __ptr_self,
             __accessPtr,

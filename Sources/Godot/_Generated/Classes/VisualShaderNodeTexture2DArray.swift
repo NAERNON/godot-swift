@@ -8,7 +8,7 @@ open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
     private static var __method_binding_set_texture_array: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_texture_array").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2206200446)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2206200446)!
         }
         }
     }()
@@ -17,7 +17,7 @@ open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
         withUnsafePointer(to: __ptr_value) { _ptr___ptr_value in
         withUnsafeArgumentPackPointer(_ptr___ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_texture_array,
             __ptr_self,
             __accessPtr,
@@ -28,14 +28,14 @@ open class VisualShaderNodeTexture2DArray: VisualShaderNodeSample3D {
     private static var __method_binding_get_texture_array: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_texture_array").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 146117123)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 146117123)!
         }
         }
     }()
     private func __getTextureArray() -> Godot.Texture2DArray? {
         Godot.Texture2DArray?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_texture_array,
             __ptr_self,
             nil,

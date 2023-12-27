@@ -2,8 +2,8 @@ import GodotExtensionHeaders
 
 // MARK: - Bool
 
-private var fromTypeConstructor_bool = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
-private var toTypeConstructor_bool = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
+private var fromTypeConstructor_bool = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
+private var toTypeConstructor_bool = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_BOOL)!
 
 extension Bool: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -49,8 +49,8 @@ extension Bool: VariantStorable {
 
 // MARK: - Int
 
-private var fromTypeConstructor_int = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)!
-private var toTypeConstructor_int = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_INT)!
+private var fromTypeConstructor_int = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_INT)!
+private var toTypeConstructor_int = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_INT)!
 
 extension Int: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -474,8 +474,8 @@ extension UInt64: VariantStorable {
 
 // MARK: - Double
 
-private var fromTypeConstructor_float = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
-private var toTypeConstructor_float = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
+private var fromTypeConstructor_float = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
+private var toTypeConstructor_float = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_FLOAT)!
 
 extension Double: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -565,8 +565,8 @@ extension Float: VariantStorable {
 
 // MARK: - GodotString
 
-private var fromTypeConstructor_string = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)!
-private var toTypeConstructor_string = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING)!
+private var fromTypeConstructor_string = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_STRING)!
+private var toTypeConstructor_string = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_STRING)!
 
 extension GodotString: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -594,8 +594,8 @@ extension GodotString: VariantStorable {
 
 // MARK: - Vector2
 
-private var fromTypeConstructor_vector2 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
-private var toTypeConstructor_vector2 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
+private var fromTypeConstructor_vector2 = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
+private var toTypeConstructor_vector2 = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2)!
 
 extension Vector2: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -641,8 +641,8 @@ extension Vector2: VariantStorable {
 
 // MARK: - Vector2i
 
-private var fromTypeConstructor_vector2i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
-private var toTypeConstructor_vector2i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
+private var fromTypeConstructor_vector2i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
+private var toTypeConstructor_vector2i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR2I)!
 
 extension Vector2i: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -688,8 +688,8 @@ extension Vector2i: VariantStorable {
 
 // MARK: - Rect2
 
-private var fromTypeConstructor_rect2 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)!
-private var toTypeConstructor_rect2 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2)!
+private var fromTypeConstructor_rect2 = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_RECT2)!
+private var toTypeConstructor_rect2 = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_RECT2)!
 
 extension Rect2: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -735,8 +735,8 @@ extension Rect2: VariantStorable {
 
 // MARK: - Rect2i
 
-private var fromTypeConstructor_rect2i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
-private var toTypeConstructor_rect2i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
+private var fromTypeConstructor_rect2i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
+private var toTypeConstructor_rect2i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_RECT2I)!
 
 extension Rect2i: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -782,8 +782,8 @@ extension Rect2i: VariantStorable {
 
 // MARK: - Vector3
 
-private var fromTypeConstructor_vector3 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)!
-private var toTypeConstructor_vector3 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)!
+private var fromTypeConstructor_vector3 = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)!
+private var toTypeConstructor_vector3 = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR3)!
 
 extension Vector3: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -829,8 +829,8 @@ extension Vector3: VariantStorable {
 
 // MARK: - Vector3i
 
-private var fromTypeConstructor_vector3i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
-private var toTypeConstructor_vector3i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
+private var fromTypeConstructor_vector3i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
+private var toTypeConstructor_vector3i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR3I)!
 
 extension Vector3i: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -876,8 +876,8 @@ extension Vector3i: VariantStorable {
 
 // MARK: - Transform2D
 
-private var fromTypeConstructor_transform2D = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)!
-private var toTypeConstructor_transform2D = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)!
+private var fromTypeConstructor_transform2D = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)!
+private var toTypeConstructor_transform2D = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM2D)!
 
 extension Transform2D: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -923,8 +923,8 @@ extension Transform2D: VariantStorable {
 
 // MARK: - Vector4
 
-private var fromTypeConstructor_vector4 = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)!
-private var toTypeConstructor_vector4 = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)!
+private var fromTypeConstructor_vector4 = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)!
+private var toTypeConstructor_vector4 = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR4)!
 
 extension Vector4: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -970,8 +970,8 @@ extension Vector4: VariantStorable {
 
 // MARK: - Vector4i
 
-private var fromTypeConstructor_vector4i = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
-private var toTypeConstructor_vector4i = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
+private var fromTypeConstructor_vector4i = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
+private var toTypeConstructor_vector4i = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_VECTOR4I)!
 
 extension Vector4i: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -1017,8 +1017,8 @@ extension Vector4i: VariantStorable {
 
 // MARK: - Plane
 
-private var fromTypeConstructor_plane = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)!
-private var toTypeConstructor_plane = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PLANE)!
+private var fromTypeConstructor_plane = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PLANE)!
+private var toTypeConstructor_plane = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PLANE)!
 
 extension Plane: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -1064,8 +1064,8 @@ extension Plane: VariantStorable {
 
 // MARK: - Quaternion
 
-private var fromTypeConstructor_quaternion = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)!
-private var toTypeConstructor_quaternion = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)!
+private var fromTypeConstructor_quaternion = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)!
+private var toTypeConstructor_quaternion = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_QUATERNION)!
 
 extension Quaternion: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -1111,8 +1111,8 @@ extension Quaternion: VariantStorable {
 
 // MARK: - AABB
 
-private var fromTypeConstructor_aabb = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)!
-private var toTypeConstructor_aabb = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_AABB)!
+private var fromTypeConstructor_aabb = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_AABB)!
+private var toTypeConstructor_aabb = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_AABB)!
 
 extension AABB: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -1158,8 +1158,8 @@ extension AABB: VariantStorable {
 
 // MARK: - Basis
 
-private var fromTypeConstructor_basis = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)!
-private var toTypeConstructor_basis = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_BASIS)!
+private var fromTypeConstructor_basis = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_BASIS)!
+private var toTypeConstructor_basis = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_BASIS)!
 
 extension Basis: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -1205,8 +1205,8 @@ extension Basis: VariantStorable {
 
 // MARK: - Transform3D
 
-private var fromTypeConstructor_transform3D = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)!
-private var toTypeConstructor_transform3D = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)!
+private var fromTypeConstructor_transform3D = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)!
+private var toTypeConstructor_transform3D = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)!
 
 extension Transform3D: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -1252,8 +1252,8 @@ extension Transform3D: VariantStorable {
 
 // MARK: - Projection
 
-private var fromTypeConstructor_projection = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)!
-private var toTypeConstructor_projection = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)!
+private var fromTypeConstructor_projection = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)!
+private var toTypeConstructor_projection = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PROJECTION)!
 
 extension Projection: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -1299,8 +1299,8 @@ extension Projection: VariantStorable {
 
 // MARK: - Color
 
-private var fromTypeConstructor_color = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)!
-private var toTypeConstructor_color = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_COLOR)!
+private var fromTypeConstructor_color = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_COLOR)!
+private var toTypeConstructor_color = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_COLOR)!
 
 extension Color: VariantStorable {
     public static func convertToStorage(_ value: Self) -> Variant.Storage {
@@ -1346,8 +1346,8 @@ extension Color: VariantStorable {
 
 // MARK: - GodotStringName
 
-private var fromTypeConstructor_stringName = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
-private var toTypeConstructor_stringName = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
+private var fromTypeConstructor_stringName = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
+private var toTypeConstructor_stringName = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME)!
 
 extension GodotStringName: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1375,8 +1375,8 @@ extension GodotStringName: VariantStorable {
 
 // MARK: - NodePath
 
-private var fromTypeConstructor_nodePath = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
-private var toTypeConstructor_nodePath = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
+private var fromTypeConstructor_nodePath = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
+private var toTypeConstructor_nodePath = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
 
 extension NodePath: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1404,8 +1404,8 @@ extension NodePath: VariantStorable {
 
 // MARK: - RID
 
-private var fromTypeConstructor_rid = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)!
-private var toTypeConstructor_rid = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_RID)!
+private var fromTypeConstructor_rid = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_RID)!
+private var toTypeConstructor_rid = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_RID)!
 
 extension RID: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1433,8 +1433,8 @@ extension RID: VariantStorable {
 
 // MARK: - Object
 
-private var fromTypeConstructor_object = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
-private var toTypeConstructor_object = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
+private var fromTypeConstructor_object = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
+private var toTypeConstructor_object = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_OBJECT)!
 
 extension Object: VariantStorable {
     private enum VariantConversionError: Error, CustomStringConvertible {
@@ -1543,8 +1543,8 @@ extension Optional: VariantStorable where Wrapped : Object {
 
 // MARK: - Callable
 
-private var fromTypeConstructor_callable = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
-private var toTypeConstructor_callable = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
+private var fromTypeConstructor_callable = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
+private var toTypeConstructor_callable = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
 
 extension Callable: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1572,8 +1572,8 @@ extension Callable: VariantStorable {
 
 // MARK: - Signal
 
-private var fromTypeConstructor_signal = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
-private var toTypeConstructor_signal = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
+private var fromTypeConstructor_signal = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
+private var toTypeConstructor_signal = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
 
 extension Signal: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1601,8 +1601,8 @@ extension Signal: VariantStorable {
 
 // MARK: - GodotDictionary
 
-private var fromTypeConstructor_dictionary = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
-private var toTypeConstructor_dictionary = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
+private var fromTypeConstructor_dictionary = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
+private var toTypeConstructor_dictionary = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
 
 extension GodotDictionary: VariantStorableIn {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1640,8 +1640,8 @@ where Key == Variant, AssociatedValue == Variant
 
 // MARK: - GodotArray
 
-private var fromTypeConstructor_array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
-private var toTypeConstructor_array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
+private var fromTypeConstructor_array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
+private var toTypeConstructor_array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
 
 extension GodotArray: VariantStorable {
     private enum VariantConversionError: Error, CustomStringConvertible {
@@ -1731,8 +1731,8 @@ extension GodotArray: VariantStorable {
 
 // MARK: - PackedByteArray
 
-private var fromTypeConstructor_packedByteArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
-private var toTypeConstructor_packedByteArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
+private var fromTypeConstructor_packedByteArray = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
+private var toTypeConstructor_packedByteArray = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
 
 extension PackedByteArray: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1760,8 +1760,8 @@ extension PackedByteArray: VariantStorable {
 
 // MARK: - PackedInt32Array
 
-private var fromTypeConstructor_packedInt32Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
-private var toTypeConstructor_packedInt32Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
+private var fromTypeConstructor_packedInt32Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
+private var toTypeConstructor_packedInt32Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
 
 extension PackedInt32Array: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1789,8 +1789,8 @@ extension PackedInt32Array: VariantStorable {
 
 // MARK: - PackedInt64Array
 
-private var fromTypeConstructor_packedInt64Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
-private var toTypeConstructor_packedInt64Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
+private var fromTypeConstructor_packedInt64Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
+private var toTypeConstructor_packedInt64Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
 
 extension PackedInt64Array: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1818,8 +1818,8 @@ extension PackedInt64Array: VariantStorable {
 
 // MARK: - PackedFloat32Array
 
-private var fromTypeConstructor_packedFloat32Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
-private var toTypeConstructor_packedFloat32Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
+private var fromTypeConstructor_packedFloat32Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
+private var toTypeConstructor_packedFloat32Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
 
 extension PackedFloat32Array: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1847,8 +1847,8 @@ extension PackedFloat32Array: VariantStorable {
 
 // MARK: - PackedFloat64Array
 
-private var fromTypeConstructor_packedFloat64Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
-private var toTypeConstructor_packedFloat64Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
+private var fromTypeConstructor_packedFloat64Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
+private var toTypeConstructor_packedFloat64Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
 
 extension PackedFloat64Array: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1876,8 +1876,8 @@ extension PackedFloat64Array: VariantStorable {
 
 // MARK: - PackedStringArray
 
-private var fromTypeConstructor_packedStringArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
-private var toTypeConstructor_packedStringArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
+private var fromTypeConstructor_packedStringArray = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
+private var toTypeConstructor_packedStringArray = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
 
 extension PackedStringArray: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1905,8 +1905,8 @@ extension PackedStringArray: VariantStorable {
 
 // MARK: - PackedVector2Array
 
-private var fromTypeConstructor_packedVector2Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
-private var toTypeConstructor_packedVector2Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
+private var fromTypeConstructor_packedVector2Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
+private var toTypeConstructor_packedVector2Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
 
 extension PackedVector2Array: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1934,8 +1934,8 @@ extension PackedVector2Array: VariantStorable {
 
 // MARK: - PackedVector3Array
 
-private var fromTypeConstructor_packedVector3Array = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
-private var toTypeConstructor_packedVector3Array = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
+private var fromTypeConstructor_packedVector3Array = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
+private var toTypeConstructor_packedVector3Array = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
 
 extension PackedVector3Array: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {
@@ -1963,8 +1963,8 @@ extension PackedVector3Array: VariantStorable {
 
 // MARK: - PackedColorArray
 
-private var fromTypeConstructor_packedColorArray = gdextension_interface_get_variant_from_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
-private var toTypeConstructor_packedColorArray = gdextension_interface_get_variant_to_type_constructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
+private var fromTypeConstructor_packedColorArray = GodotExtension.Interface.getVariantFromTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
+private var toTypeConstructor_packedColorArray = GodotExtension.Interface.getVariantToTypeConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
 
 extension PackedColorArray: VariantStorable {
     public static func convertToStorage(_ value: consuming Self) -> Variant.Storage {

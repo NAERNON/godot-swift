@@ -8,7 +8,7 @@ open class SkeletonModification2DStackHolder: SkeletonModification2D {
     private static var __method_binding_set_held_modification_stack: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_held_modification_stack").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3907307132)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3907307132)!
         }
         }
     }()
@@ -17,7 +17,7 @@ open class SkeletonModification2DStackHolder: SkeletonModification2D {
         withUnsafePointer(to: __ptr_heldModificationStack) { _ptr___ptr_heldModificationStack in
         withUnsafeArgumentPackPointer(_ptr___ptr_heldModificationStack) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_held_modification_stack,
             __ptr_self,
             __accessPtr,
@@ -28,14 +28,14 @@ open class SkeletonModification2DStackHolder: SkeletonModification2D {
     private static var __method_binding_get_held_modification_stack: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_held_modification_stack").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2107508396)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2107508396)!
         }
         }
     }()
     public func heldModificationStack() -> Godot.SkeletonModificationStack2D? {
         Godot.SkeletonModificationStack2D?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_held_modification_stack,
             __ptr_self,
             nil,

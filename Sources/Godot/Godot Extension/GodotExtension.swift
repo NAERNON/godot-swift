@@ -27,7 +27,6 @@ public enum GodotExtension {
     
     private(set) static var bridge: Bridge.Type!
     
-    private(set) static var getProcAddress: GDExtensionInterfaceGetProcAddress!
     private(set) static var libraryPtr: GDExtensionClassLibraryPtr!
     private(set) static var token: GDExtensionClassLibraryPtr!
     private(set) static var initializationPtr: UnsafeMutablePointer<GDExtensionInitialization>!
@@ -60,12 +59,11 @@ public enum GodotExtension {
         
         self.bridge = bridge
         
-        self.getProcAddress = getProcAddress
         self.libraryPtr = libraryPtr
         self.token = libraryPtr
         self.initializationPtr = initializationPtr
         
-        try loadAllInterfaceFunctions()
+        Interface.loadAllFunctions(getProcAddress: getProcAddress)
         loadGodotVersion()
         
         initializationPtr.pointee.initialize = initializeLevel
@@ -77,7 +75,7 @@ public enum GodotExtension {
     
     private static func loadGodotVersion() {
         var version = GDExtensionGodotVersion()
-        gdextension_interface_get_godot_version(&version)
+        GodotExtension.Interface.getGodotVersion(&version)
         self.version = .init(version)
     }
 }

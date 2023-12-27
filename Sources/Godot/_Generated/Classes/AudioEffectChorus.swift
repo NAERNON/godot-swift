@@ -8,7 +8,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_set_voice_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_voice_count").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
     }()
@@ -16,7 +16,7 @@ open class AudioEffectChorus: AudioEffect {
         voices.withGodotUnsafeRawPointer { __ptr_voices in
         withUnsafeArgumentPackPointer(__ptr_voices) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_voice_count,
             __ptr_self,
             __accessPtr,
@@ -27,14 +27,14 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_get_voice_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_voice_count").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
     private func __getVoiceCount() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_voice_count,
             __ptr_self,
             nil,
@@ -45,7 +45,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_set_voice_delay_ms: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_voice_delay_ms").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
     }()
@@ -54,7 +54,7 @@ open class AudioEffectChorus: AudioEffect {
         delayMs.withGodotUnsafeRawPointer { __ptr_delayMs in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_delayMs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_voice_delay_ms,
             __ptr_self,
             __accessPtr,
@@ -65,7 +65,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_get_voice_delay_ms: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_voice_delay_ms").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
     }()
@@ -74,7 +74,7 @@ open class AudioEffectChorus: AudioEffect {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_voice_delay_ms,
             __ptr_self,
             __accessPtr,
@@ -85,7 +85,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_set_voice_rate_hz: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_voice_rate_hz").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
     }()
@@ -94,7 +94,7 @@ open class AudioEffectChorus: AudioEffect {
         rateHz.withGodotUnsafeRawPointer { __ptr_rateHz in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_rateHz) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_voice_rate_hz,
             __ptr_self,
             __accessPtr,
@@ -105,7 +105,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_get_voice_rate_hz: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_voice_rate_hz").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
     }()
@@ -114,7 +114,7 @@ open class AudioEffectChorus: AudioEffect {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_voice_rate_hz,
             __ptr_self,
             __accessPtr,
@@ -125,7 +125,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_set_voice_depth_ms: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_voice_depth_ms").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
     }()
@@ -134,7 +134,7 @@ open class AudioEffectChorus: AudioEffect {
         depthMs.withGodotUnsafeRawPointer { __ptr_depthMs in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_depthMs) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_voice_depth_ms,
             __ptr_self,
             __accessPtr,
@@ -145,7 +145,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_get_voice_depth_ms: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_voice_depth_ms").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
     }()
@@ -154,7 +154,7 @@ open class AudioEffectChorus: AudioEffect {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_voice_depth_ms,
             __ptr_self,
             __accessPtr,
@@ -165,7 +165,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_set_voice_level_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_voice_level_db").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
     }()
@@ -174,7 +174,7 @@ open class AudioEffectChorus: AudioEffect {
         levelDb.withGodotUnsafeRawPointer { __ptr_levelDb in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_levelDb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_voice_level_db,
             __ptr_self,
             __accessPtr,
@@ -185,7 +185,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_get_voice_level_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_voice_level_db").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
     }()
@@ -194,7 +194,7 @@ open class AudioEffectChorus: AudioEffect {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_voice_level_db,
             __ptr_self,
             __accessPtr,
@@ -205,7 +205,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_set_voice_cutoff_hz: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_voice_cutoff_hz").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
     }()
@@ -214,7 +214,7 @@ open class AudioEffectChorus: AudioEffect {
         cutoffHz.withGodotUnsafeRawPointer { __ptr_cutoffHz in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_cutoffHz) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_voice_cutoff_hz,
             __ptr_self,
             __accessPtr,
@@ -225,7 +225,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_get_voice_cutoff_hz: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_voice_cutoff_hz").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
     }()
@@ -234,7 +234,7 @@ open class AudioEffectChorus: AudioEffect {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_voice_cutoff_hz,
             __ptr_self,
             __accessPtr,
@@ -245,7 +245,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_set_voice_pan: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_voice_pan").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
     }()
@@ -254,7 +254,7 @@ open class AudioEffectChorus: AudioEffect {
         pan.withGodotUnsafeRawPointer { __ptr_pan in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx, __ptr_pan) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_voice_pan,
             __ptr_self,
             __accessPtr,
@@ -265,7 +265,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_get_voice_pan: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_voice_pan").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2339986948)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
     }()
@@ -274,7 +274,7 @@ open class AudioEffectChorus: AudioEffect {
         voiceIdx.withGodotUnsafeRawPointer { __ptr_voiceIdx in
         withUnsafeArgumentPackPointer(__ptr_voiceIdx) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_voice_pan,
             __ptr_self,
             __accessPtr,
@@ -285,7 +285,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_set_wet: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_wet").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
     }()
@@ -293,7 +293,7 @@ open class AudioEffectChorus: AudioEffect {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_wet,
             __ptr_self,
             __accessPtr,
@@ -304,14 +304,14 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_get_wet: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_wet").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
     }()
     private func __getWet() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_wet,
             __ptr_self,
             nil,
@@ -322,7 +322,7 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_set_dry: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_dry").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
     }()
@@ -330,7 +330,7 @@ open class AudioEffectChorus: AudioEffect {
         amount.withGodotUnsafeRawPointer { __ptr_amount in
         withUnsafeArgumentPackPointer(__ptr_amount) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_dry,
             __ptr_self,
             __accessPtr,
@@ -341,14 +341,14 @@ open class AudioEffectChorus: AudioEffect {
     private static var __method_binding_get_dry: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_dry").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
     }()
     private func __getDry() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_dry,
             __ptr_self,
             nil,

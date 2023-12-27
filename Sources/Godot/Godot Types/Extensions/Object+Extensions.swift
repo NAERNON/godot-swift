@@ -17,7 +17,7 @@ extension Object {
         }
         
         let instance: Object = withUnsafePointer(to: binding.callbacks) { callbacksPointer in
-            let opaque = gdextension_interface_object_get_instance_binding(
+            let opaque = GodotExtension.Interface.objectGetInstanceBinding(
                 instancePtr,
                 GodotExtension.token,
                 callbacksPointer

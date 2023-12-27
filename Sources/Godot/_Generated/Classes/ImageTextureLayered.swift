@@ -8,7 +8,7 @@ open class ImageTextureLayered: TextureLayered {
     private static var __method_binding_create_from_images: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_from_images").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2785773503)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2785773503)!
         }
         }
     }()
@@ -17,7 +17,7 @@ open class ImageTextureLayered: TextureLayered {
         images.withGodotUnsafeRawPointer { __ptr_images in
         withUnsafeArgumentPackPointer(__ptr_images) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_from_images,
             __ptr_self,
             __accessPtr,
@@ -28,7 +28,7 @@ open class ImageTextureLayered: TextureLayered {
     private static var __method_binding_update_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "update_layer").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3331733361)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3331733361)!
         }
         }
     }()
@@ -38,7 +38,7 @@ open class ImageTextureLayered: TextureLayered {
         layer.withGodotUnsafeRawPointer { __ptr_layer in
         withUnsafeArgumentPackPointer(_ptr___ptr_image, __ptr_layer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_update_layer,
             __ptr_self,
             __accessPtr,

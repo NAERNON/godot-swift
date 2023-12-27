@@ -8,7 +8,7 @@ open class DTLSServer: RefCounted {
     private static var __method_binding_setup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "setup").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1262296096)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1262296096)!
         }
         }
     }()
@@ -18,7 +18,7 @@ open class DTLSServer: RefCounted {
         withUnsafePointer(to: __ptr_serverOptions) { _ptr___ptr_serverOptions in
         withUnsafeArgumentPackPointer(_ptr___ptr_serverOptions) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_setup,
             __ptr_self,
             __accessPtr,
@@ -29,7 +29,7 @@ open class DTLSServer: RefCounted {
     private static var __method_binding_take_connection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "take_connection").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3946580474)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3946580474)!
         }
         }
     }()
@@ -39,7 +39,7 @@ open class DTLSServer: RefCounted {
         withUnsafePointer(to: __ptr_udpPeer) { _ptr___ptr_udpPeer in
         withUnsafeArgumentPackPointer(_ptr___ptr_udpPeer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_take_connection,
             __ptr_self,
             __accessPtr,

@@ -20,7 +20,7 @@ open class VisualShaderNodeTransformFunc: VisualShaderNode {
     private static var __method_binding_set_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_function").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2900990409)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2900990409)!
         }
         }
     }()
@@ -28,7 +28,7 @@ open class VisualShaderNodeTransformFunc: VisualShaderNode {
         `func`.withGodotUnsafeRawPointer { __ptr_func in
         withUnsafeArgumentPackPointer(__ptr_func) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_function,
             __ptr_self,
             __accessPtr,
@@ -39,14 +39,14 @@ open class VisualShaderNodeTransformFunc: VisualShaderNode {
     private static var __method_binding_get_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_function").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2839926569)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2839926569)!
         }
         }
     }()
     private func __getFunction() -> Godot.VisualShaderNodeTransformFunc.Function {
         Godot.VisualShaderNodeTransformFunc.Function.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_function,
             __ptr_self,
             nil,

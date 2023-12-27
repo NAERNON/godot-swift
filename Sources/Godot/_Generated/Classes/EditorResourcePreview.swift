@@ -16,7 +16,7 @@ open class EditorResourcePreview: Node {
     private static var __method_binding_queue_resource_preview: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "queue_resource_preview").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 233177534)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 233177534)!
         }
         }
     }()
@@ -28,7 +28,7 @@ open class EditorResourcePreview: Node {
         Godot.Variant.withStorageUnsafeRawPointer(to: userdata) { __ptr_userdata in
         withUnsafeArgumentPackPointer(__ptr_path, _ptr___ptr_receiver, __ptr_receiverFunc, __ptr_userdata) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_queue_resource_preview,
             __ptr_self,
             __accessPtr,
@@ -39,7 +39,7 @@ open class EditorResourcePreview: Node {
     private static var __method_binding_queue_edited_resource_preview: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "queue_edited_resource_preview").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1608376650)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1608376650)!
         }
         }
     }()
@@ -52,7 +52,7 @@ open class EditorResourcePreview: Node {
         Godot.Variant.withStorageUnsafeRawPointer(to: userdata) { __ptr_userdata in
         withUnsafeArgumentPackPointer(_ptr___ptr_resource, _ptr___ptr_receiver, __ptr_receiverFunc, __ptr_userdata) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_queue_edited_resource_preview,
             __ptr_self,
             __accessPtr,
@@ -63,7 +63,7 @@ open class EditorResourcePreview: Node {
     private static var __method_binding_add_preview_generator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_preview_generator").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 332288124)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 332288124)!
         }
         }
     }()
@@ -72,7 +72,7 @@ open class EditorResourcePreview: Node {
         withUnsafePointer(to: __ptr_generator) { _ptr___ptr_generator in
         withUnsafeArgumentPackPointer(_ptr___ptr_generator) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_preview_generator,
             __ptr_self,
             __accessPtr,
@@ -83,7 +83,7 @@ open class EditorResourcePreview: Node {
     private static var __method_binding_remove_preview_generator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_preview_generator").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 332288124)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 332288124)!
         }
         }
     }()
@@ -92,7 +92,7 @@ open class EditorResourcePreview: Node {
         withUnsafePointer(to: __ptr_generator) { _ptr___ptr_generator in
         withUnsafeArgumentPackPointer(_ptr___ptr_generator) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_preview_generator,
             __ptr_self,
             __accessPtr,
@@ -103,7 +103,7 @@ open class EditorResourcePreview: Node {
     private static var __method_binding_check_for_invalidation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "check_for_invalidation").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
@@ -111,7 +111,7 @@ open class EditorResourcePreview: Node {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_check_for_invalidation,
             __ptr_self,
             __accessPtr,

@@ -15,7 +15,7 @@ extension GodotString {
         
         withGodotUnsafeMutableRawPointer { extensionPtr in
             swiftString.withCString { cString in
-                gdextension_interface_string_new_with_utf8_chars(extensionPtr, cString)
+                GodotExtension.Interface.stringNewWithUtf8Chars(extensionPtr, cString)
             }
         }
     }
@@ -26,7 +26,7 @@ extension GodotString {
         withGodotUnsafeMutableRawPointer { extensionPtr in
             swiftStaticString.withUTF8Buffer { buffer in
                 buffer.baseAddress?.withMemoryRebound(to: Int8.self, capacity: buffer.count) { cString in
-                    gdextension_interface_string_new_with_utf8_chars(extensionPtr, cString)
+                    GodotExtension.Interface.stringNewWithUtf8Chars(extensionPtr, cString)
                 }
             }
         }

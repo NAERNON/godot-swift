@@ -40,7 +40,7 @@ open class EditorUndoRedoManager: Object {
     private static var __method_binding_create_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_action").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2107025470)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2107025470)!
         }
         }
     }()
@@ -52,7 +52,7 @@ open class EditorUndoRedoManager: Object {
         backwardUndoOps.withGodotUnsafeRawPointer { __ptr_backwardUndoOps in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_mergeMode, _ptr___ptr_customContext, __ptr_backwardUndoOps) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_action,
             __ptr_self,
             __accessPtr,
@@ -63,7 +63,7 @@ open class EditorUndoRedoManager: Object {
     private static var __method_binding_commit_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "commit_action").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3216645846)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3216645846)!
         }
         }
     }()
@@ -71,7 +71,7 @@ open class EditorUndoRedoManager: Object {
         execute.withGodotUnsafeRawPointer { __ptr_execute in
         withUnsafeArgumentPackPointer(__ptr_execute) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_commit_action,
             __ptr_self,
             __accessPtr,
@@ -82,14 +82,14 @@ open class EditorUndoRedoManager: Object {
     private static var __method_binding_is_committing_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_committing_action").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 36873697)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
     public func isCommittingAction() -> Bool {
         Bool.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_committing_action,
             __ptr_self,
             nil,
@@ -100,7 +100,7 @@ open class EditorUndoRedoManager: Object {
     private static var __method_binding_add_do_method: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_do_method").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1517810467)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1517810467)!
         }
         }
     }()
@@ -109,7 +109,7 @@ open class EditorUndoRedoManager: Object {
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_object, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_call(
+            GodotExtension.Interface.objectMethodBindCall(
             Self.__method_binding_add_do_method,
             __ptr_self,
             __accessPtr,
@@ -123,7 +123,7 @@ open class EditorUndoRedoManager: Object {
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_object, __ptr_method) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_call(
+            GodotExtension.Interface.objectMethodBindCall(
             Self.__method_binding_add_do_method,
             __ptr_self,
             __accessPtr,
@@ -136,7 +136,7 @@ open class EditorUndoRedoManager: Object {
     private static var __method_binding_add_undo_method: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_undo_method").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1517810467)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1517810467)!
         }
         }
     }()
@@ -145,7 +145,7 @@ open class EditorUndoRedoManager: Object {
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_object, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_call(
+            GodotExtension.Interface.objectMethodBindCall(
             Self.__method_binding_add_undo_method,
             __ptr_self,
             __accessPtr,
@@ -159,7 +159,7 @@ open class EditorUndoRedoManager: Object {
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
         withUnsafeArgumentPackPointer(__ptr_object, __ptr_method) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_call(
+            GodotExtension.Interface.objectMethodBindCall(
             Self.__method_binding_add_undo_method,
             __ptr_self,
             __accessPtr,
@@ -172,7 +172,7 @@ open class EditorUndoRedoManager: Object {
     private static var __method_binding_add_do_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_do_property").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1017172818)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1017172818)!
         }
         }
     }()
@@ -183,7 +183,7 @@ open class EditorUndoRedoManager: Object {
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_property, __ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_do_property,
             __ptr_self,
             __accessPtr,
@@ -194,7 +194,7 @@ open class EditorUndoRedoManager: Object {
     private static var __method_binding_add_undo_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_undo_property").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1017172818)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1017172818)!
         }
         }
     }()
@@ -205,7 +205,7 @@ open class EditorUndoRedoManager: Object {
         Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
         withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_property, __ptr_value) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_undo_property,
             __ptr_self,
             __accessPtr,
@@ -216,7 +216,7 @@ open class EditorUndoRedoManager: Object {
     private static var __method_binding_add_do_reference: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_do_reference").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3975164845)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3975164845)!
         }
         }
     }()
@@ -225,7 +225,7 @@ open class EditorUndoRedoManager: Object {
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         withUnsafeArgumentPackPointer(_ptr___ptr_object) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_do_reference,
             __ptr_self,
             __accessPtr,
@@ -236,7 +236,7 @@ open class EditorUndoRedoManager: Object {
     private static var __method_binding_add_undo_reference: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_undo_reference").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3975164845)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3975164845)!
         }
         }
     }()
@@ -245,7 +245,7 @@ open class EditorUndoRedoManager: Object {
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         withUnsafeArgumentPackPointer(_ptr___ptr_object) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_undo_reference,
             __ptr_self,
             __accessPtr,
@@ -256,7 +256,7 @@ open class EditorUndoRedoManager: Object {
     private static var __method_binding_get_object_history_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_object_history_id").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1107568780)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1107568780)!
         }
         }
     }()
@@ -266,7 +266,7 @@ open class EditorUndoRedoManager: Object {
         withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
         withUnsafeArgumentPackPointer(_ptr___ptr_object) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_object_history_id,
             __ptr_self,
             __accessPtr,
@@ -277,7 +277,7 @@ open class EditorUndoRedoManager: Object {
     private static var __method_binding_get_history_undo_redo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_history_undo_redo").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2417974513)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2417974513)!
         }
         }
     }()
@@ -286,7 +286,7 @@ open class EditorUndoRedoManager: Object {
         id.withGodotUnsafeRawPointer { __ptr_id in
         withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_history_undo_redo,
             __ptr_self,
             __accessPtr,

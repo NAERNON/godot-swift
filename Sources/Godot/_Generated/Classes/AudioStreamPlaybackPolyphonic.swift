@@ -8,7 +8,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
     private static var __method_binding_play_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "play_stream").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 604492179)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 604492179)!
         }
         }
     }()
@@ -21,7 +21,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         pitchScale.withGodotUnsafeRawPointer { __ptr_pitchScale in
         withUnsafeArgumentPackPointer(_ptr___ptr_stream, __ptr_offset, __ptr_volumeDb, __ptr_pitchScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_play_stream,
             __ptr_self,
             __accessPtr,
@@ -32,7 +32,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
     private static var __method_binding_set_stream_volume: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stream_volume").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
     }()
@@ -41,7 +41,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         volumeDb.withGodotUnsafeRawPointer { __ptr_volumeDb in
         withUnsafeArgumentPackPointer(__ptr_stream, __ptr_volumeDb) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_stream_volume,
             __ptr_self,
             __accessPtr,
@@ -52,7 +52,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
     private static var __method_binding_set_stream_pitch_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stream_pitch_scale").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1602489585)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
     }()
@@ -61,7 +61,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         pitchScale.withGodotUnsafeRawPointer { __ptr_pitchScale in
         withUnsafeArgumentPackPointer(__ptr_stream, __ptr_pitchScale) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_stream_pitch_scale,
             __ptr_self,
             __accessPtr,
@@ -72,7 +72,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
     private static var __method_binding_is_stream_playing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "is_stream_playing").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1116898809)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
     }()
@@ -81,7 +81,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafeArgumentPackPointer(__ptr_stream) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_is_stream_playing,
             __ptr_self,
             __accessPtr,
@@ -92,7 +92,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
     private static var __method_binding_stop_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "stop_stream").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
     }()
@@ -100,7 +100,7 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
         stream.withGodotUnsafeRawPointer { __ptr_stream in
         withUnsafeArgumentPackPointer(__ptr_stream) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_stop_stream,
             __ptr_self,
             __accessPtr,

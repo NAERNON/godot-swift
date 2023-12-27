@@ -50,7 +50,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
     private static var __method_binding_set_op_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_op_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 377800221)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 377800221)!
         }
         }
     }()
@@ -58,7 +58,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_op_type,
             __ptr_self,
             __accessPtr,
@@ -69,14 +69,14 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
     private static var __method_binding_get_op_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_op_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3997800514)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3997800514)!
         }
         }
     }()
     private func __getOpType() -> Godot.VisualShaderNodeDerivativeFunc.OpType {
         Godot.VisualShaderNodeDerivativeFunc.OpType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_op_type,
             __ptr_self,
             nil,
@@ -87,7 +87,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
     private static var __method_binding_set_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_function").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1944704156)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1944704156)!
         }
         }
     }()
@@ -95,7 +95,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         `func`.withGodotUnsafeRawPointer { __ptr_func in
         withUnsafeArgumentPackPointer(__ptr_func) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_function,
             __ptr_self,
             __accessPtr,
@@ -106,14 +106,14 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
     private static var __method_binding_get_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_function").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2389093396)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2389093396)!
         }
         }
     }()
     private func __getFunction() -> Godot.VisualShaderNodeDerivativeFunc.Function {
         Godot.VisualShaderNodeDerivativeFunc.Function.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_function,
             __ptr_self,
             nil,
@@ -124,7 +124,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
     private static var __method_binding_set_precision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_precision").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 797270566)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797270566)!
         }
         }
     }()
@@ -132,7 +132,7 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
         precision.withGodotUnsafeRawPointer { __ptr_precision in
         withUnsafeArgumentPackPointer(__ptr_precision) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_precision,
             __ptr_self,
             __accessPtr,
@@ -143,14 +143,14 @@ open class VisualShaderNodeDerivativeFunc: VisualShaderNode {
     private static var __method_binding_get_precision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_precision").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3822547323)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3822547323)!
         }
         }
     }()
     private func __getPrecision() -> Godot.VisualShaderNodeDerivativeFunc.Precision {
         Godot.VisualShaderNodeDerivativeFunc.Precision.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_precision,
             __ptr_self,
             nil,

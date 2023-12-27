@@ -196,7 +196,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_control_to_container: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_control_to_container").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3092750152)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3092750152)!
         }
         }
     }()
@@ -206,7 +206,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(__ptr_container, _ptr___ptr_control) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_control_to_container,
             __ptr_self,
             __accessPtr,
@@ -217,7 +217,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_control_to_bottom_panel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_control_to_bottom_panel").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3526039376)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3526039376)!
         }
         }
     }()
@@ -228,7 +228,7 @@ open class EditorPlugin: Node {
         title.withGodotUnsafeRawPointer { __ptr_title in
         withUnsafeArgumentPackPointer(_ptr___ptr_control, __ptr_title) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_control_to_bottom_panel,
             __ptr_self,
             __accessPtr,
@@ -239,7 +239,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_control_to_dock: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_control_to_dock").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3354871258)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3354871258)!
         }
         }
     }()
@@ -249,7 +249,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(__ptr_slot, _ptr___ptr_control) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_control_to_dock,
             __ptr_self,
             __accessPtr,
@@ -260,7 +260,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_control_from_docks: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_control_from_docks").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
     }()
@@ -269,7 +269,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_control_from_docks,
             __ptr_self,
             __accessPtr,
@@ -280,7 +280,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_control_from_bottom_panel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_control_from_bottom_panel").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
     }()
@@ -289,7 +289,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_control_from_bottom_panel,
             __ptr_self,
             __accessPtr,
@@ -300,7 +300,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_control_from_container: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_control_from_container").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3092750152)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3092750152)!
         }
         }
     }()
@@ -310,7 +310,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(__ptr_container, _ptr___ptr_control) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_control_from_container,
             __ptr_self,
             __accessPtr,
@@ -321,7 +321,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_tool_menu_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_tool_menu_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2137474292)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2137474292)!
         }
         }
     }()
@@ -330,7 +330,7 @@ open class EditorPlugin: Node {
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_callable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_tool_menu_item,
             __ptr_self,
             __accessPtr,
@@ -341,7 +341,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_tool_submenu_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_tool_submenu_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1019428915)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1019428915)!
         }
         }
     }()
@@ -351,7 +351,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_submenu) { _ptr___ptr_submenu in
         withUnsafeArgumentPackPointer(__ptr_name, _ptr___ptr_submenu) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_tool_submenu_item,
             __ptr_self,
             __accessPtr,
@@ -362,7 +362,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_tool_menu_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_tool_menu_item").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
@@ -370,7 +370,7 @@ open class EditorPlugin: Node {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_tool_menu_item,
             __ptr_self,
             __accessPtr,
@@ -381,14 +381,14 @@ open class EditorPlugin: Node {
     private static var __method_binding_get_export_as_menu: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_export_as_menu").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1775878644)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1775878644)!
         }
         }
     }()
     public func exportAsMenu() -> Godot.PopupMenu? {
         Godot.PopupMenu?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_export_as_menu,
             __ptr_self,
             nil,
@@ -399,7 +399,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_custom_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_custom_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1986814599)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1986814599)!
         }
         }
     }()
@@ -412,7 +412,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_icon) { _ptr___ptr_icon in
         withUnsafeArgumentPackPointer(__ptr_type, __ptr_base, _ptr___ptr_script, _ptr___ptr_icon) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_custom_type,
             __ptr_self,
             __accessPtr,
@@ -423,7 +423,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_custom_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_custom_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
@@ -431,7 +431,7 @@ open class EditorPlugin: Node {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_custom_type,
             __ptr_self,
             __accessPtr,
@@ -442,7 +442,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_autoload_singleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_autoload_singleton").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3186203200)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!
         }
         }
     }()
@@ -451,7 +451,7 @@ open class EditorPlugin: Node {
         path.withGodotUnsafeRawPointer { __ptr_path in
         withUnsafeArgumentPackPointer(__ptr_name, __ptr_path) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_autoload_singleton,
             __ptr_self,
             __accessPtr,
@@ -462,7 +462,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_autoload_singleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_autoload_singleton").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 83702148)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
     }()
@@ -470,7 +470,7 @@ open class EditorPlugin: Node {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_autoload_singleton,
             __ptr_self,
             __accessPtr,
@@ -481,14 +481,14 @@ open class EditorPlugin: Node {
     private static var __method_binding_update_overlays: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "update_overlays").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
     public func updateOverlays() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_update_overlays,
             __ptr_self,
             nil,
@@ -499,7 +499,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_make_bottom_panel_item_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "make_bottom_panel_item_visible").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1496901182)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
     }()
@@ -508,7 +508,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_item) { _ptr___ptr_item in
         withUnsafeArgumentPackPointer(_ptr___ptr_item) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_make_bottom_panel_item_visible,
             __ptr_self,
             __accessPtr,
@@ -519,13 +519,13 @@ open class EditorPlugin: Node {
     private static var __method_binding_hide_bottom_panel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "hide_bottom_panel").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func hideBottomPanel() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_hide_bottom_panel,
             __ptr_self,
             nil,
@@ -536,14 +536,14 @@ open class EditorPlugin: Node {
     private static var __method_binding_get_undo_redo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_undo_redo").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 773492341)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 773492341)!
         }
         }
     }()
     public func undoRedo() -> Godot.EditorUndoRedoManager? {
         Godot.EditorUndoRedoManager?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_undo_redo,
             __ptr_self,
             nil,
@@ -554,7 +554,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_undo_redo_inspector_hook_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_undo_redo_inspector_hook_callback").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1611583062)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
         }
         }
     }()
@@ -562,7 +562,7 @@ open class EditorPlugin: Node {
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         withUnsafeArgumentPackPointer(__ptr_callable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_undo_redo_inspector_hook_callback,
             __ptr_self,
             __accessPtr,
@@ -573,7 +573,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_undo_redo_inspector_hook_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_undo_redo_inspector_hook_callback").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1611583062)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
         }
         }
     }()
@@ -581,7 +581,7 @@ open class EditorPlugin: Node {
         callable.withGodotUnsafeRawPointer { __ptr_callable in
         withUnsafeArgumentPackPointer(__ptr_callable) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_undo_redo_inspector_hook_callback,
             __ptr_self,
             __accessPtr,
@@ -592,13 +592,13 @@ open class EditorPlugin: Node {
     private static var __method_binding_queue_save_layout: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "queue_save_layout").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func queueSaveLayout() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_queue_save_layout,
             __ptr_self,
             nil,
@@ -609,7 +609,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_translation_parser_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_translation_parser_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3116463128)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3116463128)!
         }
         }
     }()
@@ -618,7 +618,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_parser) { _ptr___ptr_parser in
         withUnsafeArgumentPackPointer(_ptr___ptr_parser) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_translation_parser_plugin,
             __ptr_self,
             __accessPtr,
@@ -629,7 +629,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_translation_parser_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_translation_parser_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3116463128)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3116463128)!
         }
         }
     }()
@@ -638,7 +638,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_parser) { _ptr___ptr_parser in
         withUnsafeArgumentPackPointer(_ptr___ptr_parser) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_translation_parser_plugin,
             __ptr_self,
             __accessPtr,
@@ -649,7 +649,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_import_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_import_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3113975762)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3113975762)!
         }
         }
     }()
@@ -659,7 +659,7 @@ open class EditorPlugin: Node {
         firstPriority.withGodotUnsafeRawPointer { __ptr_firstPriority in
         withUnsafeArgumentPackPointer(_ptr___ptr_importer, __ptr_firstPriority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_import_plugin,
             __ptr_self,
             __accessPtr,
@@ -670,7 +670,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_import_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_import_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2312482773)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312482773)!
         }
         }
     }()
@@ -679,7 +679,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_importer) { _ptr___ptr_importer in
         withUnsafeArgumentPackPointer(_ptr___ptr_importer) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_import_plugin,
             __ptr_self,
             __accessPtr,
@@ -690,7 +690,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_scene_format_importer_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_scene_format_importer_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2764104752)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2764104752)!
         }
         }
     }()
@@ -700,7 +700,7 @@ open class EditorPlugin: Node {
         firstPriority.withGodotUnsafeRawPointer { __ptr_firstPriority in
         withUnsafeArgumentPackPointer(_ptr___ptr_sceneFormatImporter, __ptr_firstPriority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_scene_format_importer_plugin,
             __ptr_self,
             __accessPtr,
@@ -711,7 +711,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_scene_format_importer_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_scene_format_importer_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2637776123)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2637776123)!
         }
         }
     }()
@@ -720,7 +720,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_sceneFormatImporter) { _ptr___ptr_sceneFormatImporter in
         withUnsafeArgumentPackPointer(_ptr___ptr_sceneFormatImporter) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_scene_format_importer_plugin,
             __ptr_self,
             __accessPtr,
@@ -731,7 +731,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_scene_post_import_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_scene_post_import_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3492436322)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3492436322)!
         }
         }
     }()
@@ -741,7 +741,7 @@ open class EditorPlugin: Node {
         firstPriority.withGodotUnsafeRawPointer { __ptr_firstPriority in
         withUnsafeArgumentPackPointer(_ptr___ptr_sceneImportPlugin, __ptr_firstPriority) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_scene_post_import_plugin,
             __ptr_self,
             __accessPtr,
@@ -752,7 +752,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_scene_post_import_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_scene_post_import_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3045178206)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3045178206)!
         }
         }
     }()
@@ -761,7 +761,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_sceneImportPlugin) { _ptr___ptr_sceneImportPlugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_sceneImportPlugin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_scene_post_import_plugin,
             __ptr_self,
             __accessPtr,
@@ -772,7 +772,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_export_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_export_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4095952207)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4095952207)!
         }
         }
     }()
@@ -781,7 +781,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_export_plugin,
             __ptr_self,
             __accessPtr,
@@ -792,7 +792,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_export_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_export_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4095952207)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4095952207)!
         }
         }
     }()
@@ -801,7 +801,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_export_plugin,
             __ptr_self,
             __accessPtr,
@@ -812,7 +812,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_node_3d_gizmo_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_node_3d_gizmo_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1541015022)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1541015022)!
         }
         }
     }()
@@ -821,7 +821,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_node_3d_gizmo_plugin,
             __ptr_self,
             __accessPtr,
@@ -832,7 +832,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_node_3d_gizmo_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_node_3d_gizmo_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1541015022)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1541015022)!
         }
         }
     }()
@@ -841,7 +841,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_node_3d_gizmo_plugin,
             __ptr_self,
             __accessPtr,
@@ -852,7 +852,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_inspector_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_inspector_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 546395733)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 546395733)!
         }
         }
     }()
@@ -861,7 +861,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_inspector_plugin,
             __ptr_self,
             __accessPtr,
@@ -872,7 +872,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_inspector_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_inspector_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 546395733)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 546395733)!
         }
         }
     }()
@@ -881,7 +881,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_inspector_plugin,
             __ptr_self,
             __accessPtr,
@@ -892,7 +892,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_resource_conversion_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_resource_conversion_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2124849111)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2124849111)!
         }
         }
     }()
@@ -901,7 +901,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_resource_conversion_plugin,
             __ptr_self,
             __accessPtr,
@@ -912,7 +912,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_resource_conversion_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_resource_conversion_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2124849111)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2124849111)!
         }
         }
     }()
@@ -921,7 +921,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
         withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_resource_conversion_plugin,
             __ptr_self,
             __accessPtr,
@@ -932,13 +932,13 @@ open class EditorPlugin: Node {
     private static var __method_binding_set_input_event_forwarding_always_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_input_event_forwarding_always_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func setInputEventForwardingAlwaysEnabled() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_input_event_forwarding_always_enabled,
             __ptr_self,
             nil,
@@ -949,13 +949,13 @@ open class EditorPlugin: Node {
     private static var __method_binding_set_force_draw_over_forwarding_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_force_draw_over_forwarding_enabled").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func setForceDrawOverForwardingEnabled() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_force_draw_over_forwarding_enabled,
             __ptr_self,
             nil,
@@ -966,14 +966,14 @@ open class EditorPlugin: Node {
     private static var __method_binding_get_editor_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_editor_interface").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4223731786)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4223731786)!
         }
         }
     }()
     public func editorInterface() -> Godot.EditorInterface? {
         Godot.EditorInterface?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_editor_interface,
             __ptr_self,
             nil,
@@ -984,14 +984,14 @@ open class EditorPlugin: Node {
     private static var __method_binding_get_script_create_dialog: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_script_create_dialog").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3121871482)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3121871482)!
         }
         }
     }()
     public func scriptCreateDialog() -> Godot.ScriptCreateDialog? {
         Godot.ScriptCreateDialog?.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_script_create_dialog,
             __ptr_self,
             nil,
@@ -1002,7 +1002,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_add_debugger_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_debugger_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3749880309)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3749880309)!
         }
         }
     }()
@@ -1011,7 +1011,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_script) { _ptr___ptr_script in
         withUnsafeArgumentPackPointer(_ptr___ptr_script) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_debugger_plugin,
             __ptr_self,
             __accessPtr,
@@ -1022,7 +1022,7 @@ open class EditorPlugin: Node {
     private static var __method_binding_remove_debugger_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "remove_debugger_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3749880309)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3749880309)!
         }
         }
     }()
@@ -1031,7 +1031,7 @@ open class EditorPlugin: Node {
         withUnsafePointer(to: __ptr_script) { _ptr___ptr_script in
         withUnsafeArgumentPackPointer(_ptr___ptr_script) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_remove_debugger_plugin,
             __ptr_self,
             __accessPtr,
@@ -1042,14 +1042,14 @@ open class EditorPlugin: Node {
     private static var __method_binding_get_plugin_version: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_plugin_version").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 201670096)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
     }()
     public func pluginVersion() -> Godot.GodotString {
         Godot.GodotString.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_plugin_version,
             __ptr_self,
             nil,

@@ -52,7 +52,7 @@ struct GodotUtilityFunction: Decodable, GodotFunction {
         """
         private var \(raw: ptrIdentifier): GDExtensionPtrUtilityFunction = {
             GodotStringName(swiftStaticString: \(literal: baseName)).withGodotUnsafeRawPointer { __ptr__method_name in
-            return gdextension_interface_variant_get_ptr_utility_function(__ptr__method_name, \(literal: hash))!
+            return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, \(literal: hash))!
             }
         }()
         """

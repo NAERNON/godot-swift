@@ -52,7 +52,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_create_host_bound: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_host_bound").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1515002313)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1515002313)!
         }
         }
     }()
@@ -66,7 +66,7 @@ open class ENetConnection: RefCounted {
         outBandwidth.withGodotUnsafeRawPointer { __ptr_outBandwidth in
         withUnsafeArgumentPackPointer(__ptr_bindAddress, __ptr_bindPort, __ptr_maxPeers, __ptr_maxChannels, __ptr_bandwidth, __ptr_outBandwidth) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_host_bound,
             __ptr_self,
             __accessPtr,
@@ -77,7 +77,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_create_host: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_host").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 117198950)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 117198950)!
         }
         }
     }()
@@ -89,7 +89,7 @@ open class ENetConnection: RefCounted {
         outBandwidth.withGodotUnsafeRawPointer { __ptr_outBandwidth in
         withUnsafeArgumentPackPointer(__ptr_maxPeers, __ptr_maxChannels, __ptr_bandwidth, __ptr_outBandwidth) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_host,
             __ptr_self,
             __accessPtr,
@@ -100,13 +100,13 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_destroy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "destroy").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func destroy() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_destroy,
             __ptr_self,
             nil,
@@ -117,7 +117,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_connect_to_host: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "connect_to_host").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2171300490)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2171300490)!
         }
         }
     }()
@@ -129,7 +129,7 @@ open class ENetConnection: RefCounted {
         data.withGodotUnsafeRawPointer { __ptr_data in
         withUnsafeArgumentPackPointer(__ptr_address, __ptr_port, __ptr_channels, __ptr_data) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_connect_to_host,
             __ptr_self,
             __accessPtr,
@@ -140,7 +140,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_service: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "service").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2402345344)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2402345344)!
         }
         }
     }()
@@ -149,7 +149,7 @@ open class ENetConnection: RefCounted {
         timeout.withGodotUnsafeRawPointer { __ptr_timeout in
         withUnsafeArgumentPackPointer(__ptr_timeout) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_service,
             __ptr_self,
             __accessPtr,
@@ -160,13 +160,13 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_flush: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "flush").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func flush() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_flush,
             __ptr_self,
             nil,
@@ -177,7 +177,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_bandwidth_limit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "bandwidth_limit").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2302169788)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2302169788)!
         }
         }
     }()
@@ -186,7 +186,7 @@ open class ENetConnection: RefCounted {
         outBandwidth.withGodotUnsafeRawPointer { __ptr_outBandwidth in
         withUnsafeArgumentPackPointer(__ptr_bandwidth, __ptr_outBandwidth) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_bandwidth_limit,
             __ptr_self,
             __accessPtr,
@@ -197,7 +197,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_channel_limit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "channel_limit").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1286410249)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
     }()
@@ -205,7 +205,7 @@ open class ENetConnection: RefCounted {
         limit.withGodotUnsafeRawPointer { __ptr_limit in
         withUnsafeArgumentPackPointer(__ptr_limit) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_channel_limit,
             __ptr_self,
             __accessPtr,
@@ -216,7 +216,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_broadcast: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "broadcast").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2772371345)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2772371345)!
         }
         }
     }()
@@ -226,7 +226,7 @@ open class ENetConnection: RefCounted {
         flags.withGodotUnsafeRawPointer { __ptr_flags in
         withUnsafeArgumentPackPointer(__ptr_channel, __ptr_packet, __ptr_flags) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_broadcast,
             __ptr_self,
             __accessPtr,
@@ -237,7 +237,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_compress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "compress").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2660215187)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2660215187)!
         }
         }
     }()
@@ -245,7 +245,7 @@ open class ENetConnection: RefCounted {
         mode.withGodotUnsafeRawPointer { __ptr_mode in
         withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_compress,
             __ptr_self,
             __accessPtr,
@@ -256,7 +256,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_dtls_server_setup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "dtls_server_setup").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1262296096)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1262296096)!
         }
         }
     }()
@@ -266,7 +266,7 @@ open class ENetConnection: RefCounted {
         withUnsafePointer(to: __ptr_serverOptions) { _ptr___ptr_serverOptions in
         withUnsafeArgumentPackPointer(_ptr___ptr_serverOptions) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_dtls_server_setup,
             __ptr_self,
             __accessPtr,
@@ -277,7 +277,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_dtls_client_setup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "dtls_client_setup").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1966198364)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1966198364)!
         }
         }
     }()
@@ -288,7 +288,7 @@ open class ENetConnection: RefCounted {
         withUnsafePointer(to: __ptr_clientOptions) { _ptr___ptr_clientOptions in
         withUnsafeArgumentPackPointer(__ptr_hostname, _ptr___ptr_clientOptions) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_dtls_client_setup,
             __ptr_self,
             __accessPtr,
@@ -299,7 +299,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_refuse_new_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "refuse_new_connections").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2586408642)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
     }()
@@ -307,7 +307,7 @@ open class ENetConnection: RefCounted {
         refuse.withGodotUnsafeRawPointer { __ptr_refuse in
         withUnsafeArgumentPackPointer(__ptr_refuse) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_refuse_new_connections,
             __ptr_self,
             __accessPtr,
@@ -318,7 +318,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_pop_statistic: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "pop_statistic").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2166904170)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2166904170)!
         }
         }
     }()
@@ -327,7 +327,7 @@ open class ENetConnection: RefCounted {
         statistic.withGodotUnsafeRawPointer { __ptr_statistic in
         withUnsafeArgumentPackPointer(__ptr_statistic) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_pop_statistic,
             __ptr_self,
             __accessPtr,
@@ -338,14 +338,14 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_get_max_channels: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_max_channels").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
     public func maxChannels() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_max_channels,
             __ptr_self,
             nil,
@@ -356,14 +356,14 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_get_local_port: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_local_port").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3905245786)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
     public func localPort() -> Int32 {
         Int32.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_local_port,
             __ptr_self,
             nil,
@@ -374,14 +374,14 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_get_peers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_peers").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2915620761)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
         }
         }
     }()
     public func peers() -> Godot.GodotArray<Godot.ENetPacketPeer?> {
         Godot.GodotArray<Godot.ENetPacketPeer?>.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_peers,
             __ptr_self,
             nil,
@@ -392,7 +392,7 @@ open class ENetConnection: RefCounted {
     private static var __method_binding_socket_send: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "socket_send").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1100646812)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1100646812)!
         }
         }
     }()
@@ -402,7 +402,7 @@ open class ENetConnection: RefCounted {
         packet.withGodotUnsafeRawPointer { __ptr_packet in
         withUnsafeArgumentPackPointer(__ptr_destinationAddress, __ptr_destinationPort, __ptr_packet) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_socket_send,
             __ptr_self,
             __accessPtr,

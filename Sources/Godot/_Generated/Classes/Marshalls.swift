@@ -8,7 +8,7 @@ open class Marshalls: Object {
     private static var __method_binding_variant_to_base64: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "variant_to_base64").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3876248563)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3876248563)!
         }
         }
     }()
@@ -18,7 +18,7 @@ open class Marshalls: Object {
         fullObjects.withGodotUnsafeRawPointer { __ptr_fullObjects in
         withUnsafeArgumentPackPointer(__ptr_variant, __ptr_fullObjects) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_variant_to_base64,
             __ptr_self,
             __accessPtr,
@@ -29,7 +29,7 @@ open class Marshalls: Object {
     private static var __method_binding_base64_to_variant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "base64_to_variant").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 218087648)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 218087648)!
         }
         }
     }()
@@ -39,7 +39,7 @@ open class Marshalls: Object {
         allowObjects.withGodotUnsafeRawPointer { __ptr_allowObjects in
         withUnsafeArgumentPackPointer(__ptr_base64Str, __ptr_allowObjects) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_base64_to_variant,
             __ptr_self,
             __accessPtr,
@@ -50,7 +50,7 @@ open class Marshalls: Object {
     private static var __method_binding_raw_to_base64: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "raw_to_base64").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3999417757)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3999417757)!
         }
         }
     }()
@@ -59,7 +59,7 @@ open class Marshalls: Object {
         array.withGodotUnsafeRawPointer { __ptr_array in
         withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_raw_to_base64,
             __ptr_self,
             __accessPtr,
@@ -70,7 +70,7 @@ open class Marshalls: Object {
     private static var __method_binding_base64_to_raw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "base64_to_raw").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 659035735)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 659035735)!
         }
         }
     }()
@@ -79,7 +79,7 @@ open class Marshalls: Object {
         base64Str.withGodotUnsafeRawPointer { __ptr_base64Str in
         withUnsafeArgumentPackPointer(__ptr_base64Str) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_base64_to_raw,
             __ptr_self,
             __accessPtr,
@@ -90,7 +90,7 @@ open class Marshalls: Object {
     private static var __method_binding_utf8_to_base64: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "utf8_to_base64").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1703090593)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1703090593)!
         }
         }
     }()
@@ -99,7 +99,7 @@ open class Marshalls: Object {
         utf8Str.withGodotUnsafeRawPointer { __ptr_utf8Str in
         withUnsafeArgumentPackPointer(__ptr_utf8Str) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_utf8_to_base64,
             __ptr_self,
             __accessPtr,
@@ -110,7 +110,7 @@ open class Marshalls: Object {
     private static var __method_binding_base64_to_utf8: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "base64_to_utf8").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1703090593)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1703090593)!
         }
         }
     }()
@@ -119,7 +119,7 @@ open class Marshalls: Object {
         base64Str.withGodotUnsafeRawPointer { __ptr_base64Str in
         withUnsafeArgumentPackPointer(__ptr_base64Str) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_base64_to_utf8,
             __ptr_self,
             __accessPtr,

@@ -78,14 +78,14 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_set_default_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_default_extension").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3304788590)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
     }()
     static public func setDefaultExtension(extensionClass: Godot.GodotStringName) {
         extensionClass.withGodotUnsafeRawPointer { __ptr_extensionClass in
         withUnsafeArgumentPackPointer(__ptr_extensionClass) { __accessPtr in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_default_extension,
             nil,
             __accessPtr,
@@ -96,7 +96,7 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_initialize: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "initialize").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2625064318)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2625064318)!
         }
         }
     }()
@@ -105,7 +105,7 @@ open class WebRTCPeerConnection: RefCounted {
         configuration.withGodotUnsafeRawPointer { __ptr_configuration in
         withUnsafeArgumentPackPointer(__ptr_configuration) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_initialize,
             __ptr_self,
             __accessPtr,
@@ -116,7 +116,7 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_create_data_channel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_data_channel").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1288557393)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1288557393)!
         }
         }
     }()
@@ -126,7 +126,7 @@ open class WebRTCPeerConnection: RefCounted {
         options.withGodotUnsafeRawPointer { __ptr_options in
         withUnsafeArgumentPackPointer(__ptr_label, __ptr_options) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_data_channel,
             __ptr_self,
             __accessPtr,
@@ -137,14 +137,14 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_create_offer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "create_offer").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166280745)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
         }
         }
     }()
     public func createOffer() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_create_offer,
             __ptr_self,
             nil,
@@ -155,7 +155,7 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_set_local_description: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_local_description").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 852856452)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 852856452)!
         }
         }
     }()
@@ -165,7 +165,7 @@ open class WebRTCPeerConnection: RefCounted {
         sdp.withGodotUnsafeRawPointer { __ptr_sdp in
         withUnsafeArgumentPackPointer(__ptr_type, __ptr_sdp) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_local_description,
             __ptr_self,
             __accessPtr,
@@ -176,7 +176,7 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_set_remote_description: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_remote_description").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 852856452)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 852856452)!
         }
         }
     }()
@@ -186,7 +186,7 @@ open class WebRTCPeerConnection: RefCounted {
         sdp.withGodotUnsafeRawPointer { __ptr_sdp in
         withUnsafeArgumentPackPointer(__ptr_type, __ptr_sdp) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_remote_description,
             __ptr_self,
             __accessPtr,
@@ -197,7 +197,7 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_add_ice_candidate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "add_ice_candidate").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3958950400)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3958950400)!
         }
         }
     }()
@@ -208,7 +208,7 @@ open class WebRTCPeerConnection: RefCounted {
         name.withGodotUnsafeRawPointer { __ptr_name in
         withUnsafeArgumentPackPointer(__ptr_media, __ptr_index, __ptr_name) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_add_ice_candidate,
             __ptr_self,
             __accessPtr,
@@ -219,14 +219,14 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "poll").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 166280745)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
         }
         }
     }()
     public func poll() -> Godot.ErrorType {
         Godot.ErrorType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_poll,
             __ptr_self,
             nil,
@@ -237,13 +237,13 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_close: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "close").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3218959716)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
     public func close() {
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_close,
             __ptr_self,
             nil,
@@ -254,14 +254,14 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_get_connection_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_connection_state").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2275710506)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2275710506)!
         }
         }
     }()
     public func connectionState() -> Godot.WebRTCPeerConnection.ConnectionState {
         Godot.WebRTCPeerConnection.ConnectionState.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_connection_state,
             __ptr_self,
             nil,
@@ -272,14 +272,14 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_get_gathering_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_gathering_state").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 4262591401)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4262591401)!
         }
         }
     }()
     public func gatheringState() -> Godot.WebRTCPeerConnection.GatheringState {
         Godot.WebRTCPeerConnection.GatheringState.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_gathering_state,
             __ptr_self,
             nil,
@@ -290,14 +290,14 @@ open class WebRTCPeerConnection: RefCounted {
     private static var __method_binding_get_signaling_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_signaling_state").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3342956226)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3342956226)!
         }
         }
     }()
     public func signalingState() -> Godot.WebRTCPeerConnection.SignalingState {
         Godot.WebRTCPeerConnection.SignalingState.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_signaling_state,
             __ptr_self,
             nil,

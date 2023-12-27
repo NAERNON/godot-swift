@@ -8,7 +8,7 @@ open class Shape2D: Resource {
     private static var __method_binding_set_custom_solver_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_custom_solver_bias").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
     }()
@@ -16,7 +16,7 @@ open class Shape2D: Resource {
         bias.withGodotUnsafeRawPointer { __ptr_bias in
         withUnsafeArgumentPackPointer(__ptr_bias) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_custom_solver_bias,
             __ptr_self,
             __accessPtr,
@@ -27,14 +27,14 @@ open class Shape2D: Resource {
     private static var __method_binding_get_custom_solver_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_custom_solver_bias").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
     }()
     private func __getCustomSolverBias() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_custom_solver_bias,
             __ptr_self,
             nil,
@@ -45,7 +45,7 @@ open class Shape2D: Resource {
     private static var __method_binding_collide: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "collide").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3709843132)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3709843132)!
         }
         }
     }()
@@ -57,7 +57,7 @@ open class Shape2D: Resource {
         shapeXform.withGodotUnsafeRawPointer { __ptr_shapeXform in
         withUnsafeArgumentPackPointer(__ptr_localXform, _ptr___ptr_shape, __ptr_shapeXform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_collide,
             __ptr_self,
             __accessPtr,
@@ -68,7 +68,7 @@ open class Shape2D: Resource {
     private static var __method_binding_collide_with_motion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "collide_with_motion").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2869556801)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869556801)!
         }
         }
     }()
@@ -82,7 +82,7 @@ open class Shape2D: Resource {
         shapeMotion.withGodotUnsafeRawPointer { __ptr_shapeMotion in
         withUnsafeArgumentPackPointer(__ptr_localXform, __ptr_localMotion, _ptr___ptr_shape, __ptr_shapeXform, __ptr_shapeMotion) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_collide_with_motion,
             __ptr_self,
             __accessPtr,
@@ -93,7 +93,7 @@ open class Shape2D: Resource {
     private static var __method_binding_collide_and_get_contacts: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "collide_and_get_contacts").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3056932662)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3056932662)!
         }
         }
     }()
@@ -105,7 +105,7 @@ open class Shape2D: Resource {
         shapeXform.withGodotUnsafeRawPointer { __ptr_shapeXform in
         withUnsafeArgumentPackPointer(__ptr_localXform, _ptr___ptr_shape, __ptr_shapeXform) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_collide_and_get_contacts,
             __ptr_self,
             __accessPtr,
@@ -116,7 +116,7 @@ open class Shape2D: Resource {
     private static var __method_binding_collide_with_motion_and_get_contacts: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "collide_with_motion_and_get_contacts").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3620351573)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3620351573)!
         }
         }
     }()
@@ -130,7 +130,7 @@ open class Shape2D: Resource {
         shapeMotion.withGodotUnsafeRawPointer { __ptr_shapeMotion in
         withUnsafeArgumentPackPointer(__ptr_localXform, __ptr_localMotion, _ptr___ptr_shape, __ptr_shapeXform, __ptr_shapeMotion) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_collide_with_motion_and_get_contacts,
             __ptr_self,
             __accessPtr,
@@ -141,7 +141,7 @@ open class Shape2D: Resource {
     private static var __method_binding_draw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "draw").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2948539648)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2948539648)!
         }
         }
     }()
@@ -150,7 +150,7 @@ open class Shape2D: Resource {
         color.withGodotUnsafeRawPointer { __ptr_color in
         withUnsafeArgumentPackPointer(__ptr_canvasItem, __ptr_color) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_draw,
             __ptr_self,
             __accessPtr,
@@ -161,14 +161,14 @@ open class Shape2D: Resource {
     private static var __method_binding_get_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_rect").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1639390495)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
         }
         }
     }()
     public func rect() -> Godot.Rect2 {
         Godot.Rect2.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_rect,
             __ptr_self,
             nil,

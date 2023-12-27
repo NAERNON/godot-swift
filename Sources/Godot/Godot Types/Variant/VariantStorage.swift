@@ -24,19 +24,19 @@ extension Variant {
         public init() {
             self.rawData = .allocate(capacity: Variant.opaqueSize)
             
-            gdextension_interface_variant_new_nil(rawData)
+            GodotExtension.Interface.variantNewNil(rawData)
         }
         
         public init(godotExtensionPointer: GDExtensionVariantPtr) {
             self.rawData = .allocate(capacity: Variant.opaqueSize)
             
-            gdextension_interface_variant_new_copy(rawData, godotExtensionPointer)
+            GodotExtension.Interface.variantNewCopy(rawData, godotExtensionPointer)
         }
         
         public init(godotExtensionPointer: GDExtensionConstVariantPtr) {
             self.rawData = .allocate(capacity: Variant.opaqueSize)
             
-            gdextension_interface_variant_new_copy(rawData, godotExtensionPointer)
+            GodotExtension.Interface.variantNewCopy(rawData, godotExtensionPointer)
         }
         
         public init<T>(_ value: consuming T) where T : VariantStorableIn {
@@ -44,7 +44,7 @@ extension Variant {
         }
         
         deinit {
-            gdextension_interface_variant_destroy(rawData)
+            GodotExtension.Interface.variantDestroy(rawData)
             
             rawData.deinitialize(count: Variant.opaqueSize)
             rawData.deallocate()
@@ -54,13 +54,13 @@ extension Variant {
         
         /// Copies the variant to the given destination.
         public func copyToGodot(unsafePointer destination: GDExtensionVariantPtr) {
-            gdextension_interface_variant_new_copy(destination, rawData)
+            GodotExtension.Interface.variantNewCopy(destination, rawData)
         }
         
         /// Copies this storage to a newly created storage.
         public func copy() -> Variant.Storage {
             let newStorage = Storage()
-            gdextension_interface_variant_new_copy(newStorage.rawData, rawData)
+            GodotExtension.Interface.variantNewCopy(newStorage.rawData, rawData)
             return newStorage
         }
         
@@ -94,7 +94,7 @@ extension Variant {
         
         /// Returns the variant type.
         private var extensionType: GDExtensionVariantType {
-            gdextension_interface_variant_get_type(rawData)
+            GodotExtension.Interface.variantGetType(rawData)
         }
         
         /// Returns the variant type.
@@ -108,14 +108,14 @@ extension Variant {
         }
         
         public var hashValue: Int {
-            Int(gdextension_interface_variant_hash(rawData))
+            Int(GodotExtension.Interface.variantHash(rawData))
         }
         
         public var description: String {
             var string = GodotString()
             
             string.withGodotUnsafeMutableRawPointer { stringNativeTypePtr in
-                gdextension_interface_variant_stringify(rawData, stringNativeTypePtr)
+                GodotExtension.Interface.variantStringify(rawData, stringNativeTypePtr)
             }
             
             return String(godotString: string)
@@ -132,7 +132,7 @@ extension Variant {
         /// Returns a Boolean value indicating whether the variant can
         /// be converted to a given type.
         public func isConvertible(to type: StorageType) -> Bool {
-            gdextension_interface_variant_can_convert(
+            GodotExtension.Interface.variantCanConvert(
                 self.extensionType,
                 type.extensionType
             ) == 0 ? false : true
@@ -141,7 +141,7 @@ extension Variant {
         /// Returns a Boolean value indicating whether the variant can
         /// be converted to a given type using stricter rules.
         public func isStrictlyConvertible(to type: StorageType) -> Bool {
-            gdextension_interface_variant_can_convert_strict(
+            GodotExtension.Interface.variantCanConvertStrict(
                 self.extensionType,
                 type.extensionType
             ) == 0 ? false : true
@@ -163,7 +163,7 @@ extension Variant {
             self.withGodotUnsafeRawPointer { extensionTypePtr in
                 other.withGodotUnsafeRawPointer { otherNativeTypePtr in
                     returnVariant.withGodotUnsafeMutableRawPointer { returnNativeTypePtr in
-                        gdextension_interface_variant_evaluate(
+                        GodotExtension.Interface.variantEvaluate(
                             `operator`.godotOperator,
                             extensionTypePtr,
                             otherNativeTypePtr,

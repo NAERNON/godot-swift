@@ -22,7 +22,7 @@ open class VisualShaderNodeVectorBase: VisualShaderNode {
     private static var __method_binding_set_op_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_op_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1692596998)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1692596998)!
         }
         }
     }()
@@ -30,7 +30,7 @@ open class VisualShaderNodeVectorBase: VisualShaderNode {
         type.withGodotUnsafeRawPointer { __ptr_type in
         withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_op_type,
             __ptr_self,
             __accessPtr,
@@ -41,14 +41,14 @@ open class VisualShaderNodeVectorBase: VisualShaderNode {
     private static var __method_binding_get_op_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_op_type").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2568738462)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2568738462)!
         }
         }
     }()
     private func __getOpType() -> Godot.VisualShaderNodeVectorBase.OpType {
         Godot.VisualShaderNodeVectorBase.OpType.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_op_type,
             __ptr_self,
             nil,

@@ -33,7 +33,7 @@ open class AspectRatioContainer: Container {
     private static var __method_binding_set_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 373806689)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
     }()
@@ -41,7 +41,7 @@ open class AspectRatioContainer: Container {
         ratio.withGodotUnsafeRawPointer { __ptr_ratio in
         withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_ratio,
             __ptr_self,
             __accessPtr,
@@ -52,14 +52,14 @@ open class AspectRatioContainer: Container {
     private static var __method_binding_get_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1740695150)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
     }()
     private func __getRatio() -> Double {
         Double.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_ratio,
             __ptr_self,
             nil,
@@ -70,7 +70,7 @@ open class AspectRatioContainer: Container {
     private static var __method_binding_set_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1876743467)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1876743467)!
         }
         }
     }()
@@ -78,7 +78,7 @@ open class AspectRatioContainer: Container {
         stretchMode.withGodotUnsafeRawPointer { __ptr_stretchMode in
         withUnsafeArgumentPackPointer(__ptr_stretchMode) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_stretch_mode,
             __ptr_self,
             __accessPtr,
@@ -89,14 +89,14 @@ open class AspectRatioContainer: Container {
     private static var __method_binding_get_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_stretch_mode").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3416449033)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3416449033)!
         }
         }
     }()
     private func __getStretchMode() -> Godot.AspectRatioContainer.StretchMode {
         Godot.AspectRatioContainer.StretchMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_stretch_mode,
             __ptr_self,
             nil,
@@ -107,7 +107,7 @@ open class AspectRatioContainer: Container {
     private static var __method_binding_set_alignment_horizontal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_alignment_horizontal").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2147829016)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2147829016)!
         }
         }
     }()
@@ -115,7 +115,7 @@ open class AspectRatioContainer: Container {
         alignmentHorizontal.withGodotUnsafeRawPointer { __ptr_alignmentHorizontal in
         withUnsafeArgumentPackPointer(__ptr_alignmentHorizontal) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_alignment_horizontal,
             __ptr_self,
             __accessPtr,
@@ -126,14 +126,14 @@ open class AspectRatioContainer: Container {
     private static var __method_binding_get_alignment_horizontal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alignment_horizontal").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3838875429)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3838875429)!
         }
         }
     }()
     private func __getAlignmentHorizontal() -> Godot.AspectRatioContainer.AlignmentMode {
         Godot.AspectRatioContainer.AlignmentMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alignment_horizontal,
             __ptr_self,
             nil,
@@ -144,7 +144,7 @@ open class AspectRatioContainer: Container {
     private static var __method_binding_set_alignment_vertical: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "set_alignment_vertical").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 2147829016)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2147829016)!
         }
         }
     }()
@@ -152,7 +152,7 @@ open class AspectRatioContainer: Container {
         alignmentVertical.withGodotUnsafeRawPointer { __ptr_alignmentVertical in
         withUnsafeArgumentPackPointer(__ptr_alignmentVertical) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_set_alignment_vertical,
             __ptr_self,
             __accessPtr,
@@ -163,14 +163,14 @@ open class AspectRatioContainer: Container {
     private static var __method_binding_get_alignment_vertical: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "get_alignment_vertical").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3838875429)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3838875429)!
         }
         }
     }()
     private func __getAlignmentVertical() -> Godot.AspectRatioContainer.AlignmentMode {
         Godot.AspectRatioContainer.AlignmentMode.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_get_alignment_vertical,
             __ptr_self,
             nil,

@@ -16,7 +16,7 @@ open class EditorResourceTooltipPlugin: RefCounted {
     private static var __method_binding_request_thumbnail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "request_thumbnail").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 3245519720)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3245519720)!
         }
         }
     }()
@@ -26,7 +26,7 @@ open class EditorResourceTooltipPlugin: RefCounted {
         withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
         withUnsafeArgumentPackPointer(__ptr_path, _ptr___ptr_control) { __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_ptrcall(
+        GodotExtension.Interface.objectMethodBindPtrcall(
             Self.__method_binding_request_thumbnail,
             __ptr_self,
             __accessPtr,

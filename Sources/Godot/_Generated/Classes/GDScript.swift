@@ -8,7 +8,7 @@ open class GDScript: Script {
     private static var __method_binding_new: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
         GodotStringName(swiftStaticString: "new").withGodotUnsafeRawPointer { __ptr__method_name in
-        return gdextension_interface_classdb_get_method_bind(__ptr__class_name, __ptr__method_name, 1545262638)!
+        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1545262638)!
         }
         }
     }()
@@ -16,7 +16,7 @@ open class GDScript: Script {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_call(
+            GodotExtension.Interface.objectMethodBindCall(
             Self.__method_binding_new,
             __ptr_self,
             __accessPtr,
@@ -28,7 +28,7 @@ open class GDScript: Script {
     public func new() -> Godot.Variant {
         Godot.Variant.fromMutatingGodotUnsafePointer { __temporary in
         `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        gdextension_interface_object_method_bind_call(
+            GodotExtension.Interface.objectMethodBindCall(
             Self.__method_binding_new,
             __ptr_self,
             nil,

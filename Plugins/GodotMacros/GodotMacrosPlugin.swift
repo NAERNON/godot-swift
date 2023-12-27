@@ -23,5 +23,8 @@ struct GodotMacrosPlugin: CompilerPlugin {
         GodotRefCountedRootClassMacro.self,
         GodotOpaqueBuiltinClassMacro.self,
         GodotPackedArrayMacro.self,
+        
+        InterfaceFunctionMacro.self,
+        InterfaceLoaderMacro.self,
     ]
 }
