@@ -128,6 +128,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             
             open \(raw: overrideKeyword) class var _exposedClassType: Object.Type { Object.self }
             open \(raw: overrideKeyword) class var _exposedClassName: GodotStringName { _$exposedClassName }
+            open \(raw: overrideKeyword) class var _isClassRegistered: Bool { _$isClassRegistered }
             
             internal \(raw: overrideKeyword) class var lastDerivedExposedClassName: GodotStringName { _$exposedClassName }
             """
@@ -138,6 +139,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             
             \(raw: openKeyword) \(raw: overrideKeyword) class var _exposedClassType: Godot.Object.Type { \(className).self }
             \(raw: openKeyword) \(raw: overrideKeyword) class var _exposedClassName: Godot.GodotStringName { _$exposedClassName }
+            \(raw: openKeyword) \(raw: overrideKeyword) class var _isClassRegistered: Bool { _$isClassRegistered }
             """
         }
     }
@@ -152,6 +154,10 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 assert(
                     Self.self._exposedClassType == Self.self,
                     "Trying to instantiate class \\(Self.self) but the class is not marked '@Exposable'."
+                )
+                assert(
+                    Self.self._isClassRegistered,
+                    "Trying to instantiate class \\(Self.self) but the class is not registered."
                 )
                 
                 if self is ExposableObject {
