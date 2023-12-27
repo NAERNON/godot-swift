@@ -18,11 +18,11 @@ struct ClassMember: ExposableMember {
     }
     
     func checkExpositionAvailable(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool
     ) -> Result<Void, CheckExpositionError> {
         if !isContextPublic {
-            return .failure(.init("Class cannot be exposed because '\(classToken.trimmedDescription)' is not public"))
+            return .failure(.init("Class cannot be exposed because '\(className.trimmedDescription)' is not public"))
         }
         
         if !classDeclSyntax.accessModifierInspector.isPublic() {
@@ -33,7 +33,7 @@ struct ClassMember: ExposableMember {
     }
     
     func expositionSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
@@ -47,7 +47,7 @@ struct ClassMember: ExposableMember {
     }
     
     func expositionPeerSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         in context: some MacroExpansionContext
     ) -> [DeclSyntax] {

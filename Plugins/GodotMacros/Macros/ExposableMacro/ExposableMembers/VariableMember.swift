@@ -24,7 +24,7 @@ struct VariableMember: ExposableMember {
     }
     
     func checkExpositionAvailable(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool
     ) -> Result<Void, CheckExpositionError> {
         if isExported {
@@ -32,7 +32,7 @@ struct VariableMember: ExposableMember {
         }
         
         if !isContextPublic {
-            return .failure(.init("Property cannot be exposed because '\(classToken.trimmedDescription)' is not public"))
+            return .failure(.init("Property cannot be exposed because '\(className.trimmedDescription)' is not public"))
         }
         
         if !variableDeclSyntax.accessModifierInspector.isPublic() {
@@ -48,7 +48,7 @@ struct VariableMember: ExposableMember {
     }
     
     func expositionSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
@@ -60,7 +60,7 @@ struct VariableMember: ExposableMember {
         if !isContextPublic && isExported {
             context.diagnose(Diagnostic(
                 node: Syntax(variableDeclSyntax),
-                message: GodotDiagnostic("'\(classToken.trimmedDescription)' cannot contain exported properties because the class is not public")
+                message: GodotDiagnostic("'\(className.trimmedDescription)' cannot contain exported properties because the class is not public")
             ))
             return nil
         }
@@ -147,7 +147,7 @@ struct VariableMember: ExposableMember {
         // Syntax
         
         let swiftVariableName = variableBinding.pattern.trimmed
-        let className = classToken.trimmed
+        let className = className.trimmed
         
         let getterExprSyntax: ExprSyntax = """
         Godot.Variant.withStorage(of: Unmanaged<\(className)>.fromOpaque(instancePtr!).takeUnretainedValue().\(swiftVariableName)) { storage in
@@ -171,7 +171,7 @@ struct VariableMember: ExposableMember {
         let getterName = "get_" + variableName
         let setterName = "set_" + variableName
         
-        let hintSyntax = hintSyntax(classContext: classToken, swiftVariableName: swiftVariableName)
+        let hintSyntax = hintSyntax(classContext: className, swiftVariableName: swiftVariableName)
         
         let functionName: String
         let hintLineSyntax: String
@@ -189,7 +189,7 @@ struct VariableMember: ExposableMember {
             Godot.GodotExtension.classRegistrar.\(raw: functionName)(
                 named: \(literal: namePrefix + variableName),
                 keyPath: \\.\(raw: swiftVariableName),
-                insideType: self, \(raw: hintLineSyntax)
+                insideType: \(className).self, \(raw: hintLineSyntax)
                 getterName: \(literal: getterName),
                 setterName: \(literal: setterName)
             ) { _, instancePtr, args, argsCount, returnPtr, error in
@@ -219,7 +219,7 @@ struct VariableMember: ExposableMember {
     }
     
     func expositionPeerSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         in context: some MacroExpansionContext
     ) -> [DeclSyntax] {

@@ -23,11 +23,11 @@ struct OptionSetMember: ExposableMember {
     }
     
     func checkExpositionAvailable(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool
     ) -> Result<Void, CheckExpositionError> {
         if !isContextPublic {
-            return .failure(.init("OptionSet cannot be exposed because '\(classToken.trimmedDescription)' is not public"))
+            return .failure(.init("OptionSet cannot be exposed because '\(className.trimmedDescription)' is not public"))
         }
         
         if !structDeclSyntax.accessModifierInspector.isPublic() {
@@ -38,7 +38,7 @@ struct OptionSetMember: ExposableMember {
     }
     
     func expositionSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
@@ -50,13 +50,13 @@ struct OptionSetMember: ExposableMember {
             named: \(literal: optionSetName),
             values: \(raw: structDeclSyntax.name.trimmedDescription).godotExposableValues(),
             isOptionSet: true,
-            insideType: self
+            insideType: \(className).self
         )
         """
     }
     
     func expositionPeerSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         in context: some MacroExpansionContext
     ) -> [DeclSyntax] {

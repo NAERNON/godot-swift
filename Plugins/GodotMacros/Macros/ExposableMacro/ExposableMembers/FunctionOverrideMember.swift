@@ -20,14 +20,14 @@ struct FunctionOverrideMember: ExposableMember {
     }
     
     func checkExpositionAvailable(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool
     ) -> Result<Void, CheckExpositionError> {
         .success(())
     }
     
     func expositionSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
@@ -37,13 +37,13 @@ struct FunctionOverrideMember: ExposableMember {
         return ExprSyntax("""
         Godot.GodotExtension.classRegistrar.registerFunctionOverride(
             named: \(literal: functionName),
-            insideType: self
+            insideType: \(className).self
         )
         """)
     }
     
     func expositionPeerSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         in context: some MacroExpansionContext
     ) -> [DeclSyntax] {

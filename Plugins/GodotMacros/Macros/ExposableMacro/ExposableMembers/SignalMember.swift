@@ -53,14 +53,14 @@ struct SignalMember: ExposableMember {
     }
     
     func checkExpositionAvailable(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool
     ) -> Result<Void, CheckExpositionError> {
         .success(())
     }
     
     func expositionSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
@@ -74,7 +74,7 @@ struct SignalMember: ExposableMember {
         return """
         Godot.GodotExtension.classRegistrar.registerSignal(
             named: \(literal: cName),
-            insideType: self,
+            insideType: \(className).self,
             argumentParameters:  [
                 \(raw: arguments.joined(separator: "\n"))
             ]
@@ -83,7 +83,7 @@ struct SignalMember: ExposableMember {
     }
     
     func expositionPeerSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         in context: some MacroExpansionContext
     ) -> [DeclSyntax] {

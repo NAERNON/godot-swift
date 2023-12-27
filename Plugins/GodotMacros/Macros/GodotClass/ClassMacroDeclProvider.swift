@@ -96,17 +96,20 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             private static let _$exposedClassName: GodotStringName = \(literal: className)
             open \(raw: overrideKeyword) class var exposedClassName: GodotStringName { _$exposedClassName }
             internal \(raw: overrideKeyword) class var lastDerivedExposedClassName: GodotStringName { _$exposedClassName }
+            private static var _isClassRegistered: Bool = false
             """
         case .refCountedRoot:
             return """
             private static let _$exposedClassName: GodotStringName = \(literal: className)
             open \(raw: overrideKeyword) class var exposedClassName: GodotStringName { _$exposedClassName }
             internal \(raw: overrideKeyword) class var lastDerivedExposedClassName: GodotStringName { _$exposedClassName }
+            private static var _isClassRegistered: Bool = false
             """
         case .custom:
             return """
             private static let _$exposedClassName: Godot.GodotStringName = \(literal: className)
             \(raw: openKeyword) \(raw: overrideKeyword) class var exposedClassName: Godot.GodotStringName { _$exposedClassName }
+            private static var _isClassRegistered: Bool = false
             """
         }
     }
@@ -257,15 +260,22 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     private func exposeToGodot() throws -> DeclSyntax {
         let signature = "\(openKeyword) \(overrideKeyword) class func _registerClassToGodot()"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
+            "if _isClassRegistered { return }"
+            
+            "_isClassRegistered = true"
+            if classType != .root {
+                "super._registerClassToGodot()"
+            }
+            
             switch classType {
             case .root, .refCountedRoot, .refCounted, .standard:
                 """
-                GodotExtension.classRegistrar.registerBaseGodotClass(ofType: self)
+                GodotExtension.classRegistrar.registerBaseGodotClass(ofType: \(className).self)
                 """
             case .custom:
                 """
                 let classBinding = Godot.GodotExtension.classRegistrar.registerCustomClass(
-                    ofType: self,
+                    ofType: \(className).self,
                     superclassType: \(raw: superclassName ?? "").self
                 ) { instancePtr, isValid, out in
                     Godot.GodotExtension.description(

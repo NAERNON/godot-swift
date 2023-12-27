@@ -33,7 +33,7 @@ public enum DebugExpositionMacro: PeerMacro {
         }!.expression.as(BooleanLiteralExprSyntax.self)!.literal.tokenKind == .keyword(.true)
         
         switch exposableMember.checkExpositionAvailable(
-            classToken: classToken,
+            className: classToken,
             isContextPublic: isClassPublic
         ) {
         case .failure(let error):
@@ -50,7 +50,7 @@ public enum DebugExpositionMacro: PeerMacro {
         }
         
         guard let exposableSyntax = exposableMember.expositionSyntax(
-            classToken: classToken,
+            className: classToken,
             isContextPublic: isClassPublic,
             namePrefix: String(),
             in: context
@@ -65,7 +65,7 @@ public enum DebugExpositionMacro: PeerMacro {
         }
         
         return [DeclSyntax(functionDecl)] + exposableMember.expositionPeerSyntax(
-            classToken: classToken,
+            className: classToken,
             isContextPublic: isClassPublic,
             in: context
         )

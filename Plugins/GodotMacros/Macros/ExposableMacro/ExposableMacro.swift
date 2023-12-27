@@ -99,7 +99,7 @@ public enum ExposableMacro: MemberMacro, ExtensionMacro, MemberAttributeMacro {
                     Godot.GodotExtension.classRegistrar.registerGroup(
                         named: \(literal: string),
                         prefix: \(literal: groupStructure.groupPrefix),
-                        insideType: self
+                        insideType: \(classDeclSyntax.name).self
                     )
                     """
                 case .subgroup(let string):
@@ -108,7 +108,7 @@ public enum ExposableMacro: MemberMacro, ExtensionMacro, MemberAttributeMacro {
                     Godot.GodotExtension.classRegistrar.registerSubgroup(
                         named: \(literal: string),
                         prefix: \(literal: groupStructure.subgroupPrefix),
-                        insideType: self
+                        insideType: \(classDeclSyntax.name).self
                     )
                     """
                 }
@@ -164,7 +164,7 @@ public enum ExposableMacro: MemberMacro, ExtensionMacro, MemberAttributeMacro {
         }
         
         switch member.checkExpositionAvailable(
-            classToken: classDeclSyntax.name,
+            className: classDeclSyntax.name,
             isContextPublic: classDeclSyntax.accessModifierInspector.isPublic()
         ) {
         case .failure(_): return false

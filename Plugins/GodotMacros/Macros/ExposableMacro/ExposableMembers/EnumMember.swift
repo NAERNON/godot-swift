@@ -19,11 +19,11 @@ struct EnumMember: ExposableMember {
     }
     
     func checkExpositionAvailable(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool
     ) -> Result<Void, CheckExpositionError> {
         if !isContextPublic {
-            return .failure(.init("Enum cannot be exposed because '\(classToken.trimmedDescription)' is not public"))
+            return .failure(.init("Enum cannot be exposed because '\(className.trimmedDescription)' is not public"))
         }
         
         if !enumDeclSyntax.accessModifierInspector.isPublic() {
@@ -34,7 +34,7 @@ struct EnumMember: ExposableMember {
     }
     
     func expositionSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
@@ -76,13 +76,13 @@ struct EnumMember: ExposableMember {
             named: \(literal: enumName),
             values: \(raw: enumDeclSyntax.name.trimmedDescription).godotExposableValues(),
             isOptionSet: false,
-            insideType: self
+            insideType: \(className).self
         )
         """
     }
     
     func expositionPeerSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         in context: some MacroExpansionContext
     ) -> [DeclSyntax] {

@@ -18,7 +18,7 @@ protocol ExposableMember {
     /// If the exposition is not available, the `@Exposable`
     /// macro should ignore the member.
     func checkExpositionAvailable(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool
     ) -> Result<Void, CheckExpositionError>
     
@@ -27,7 +27,7 @@ protocol ExposableMember {
     /// This function should diagnose any error that prevents the exposition
     /// using the provided context, and return `nil` in that case.
     func expositionSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
@@ -35,7 +35,7 @@ protocol ExposableMember {
     
     /// Returns an array of decl syntaxes to place inside the class member block.
     func expositionPeerSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         in context: some MacroExpansionContext
     ) -> [DeclSyntax]
@@ -58,7 +58,7 @@ extension ExposableMember {
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         expositionSyntax(
-            classToken: classDeclSyntax.name,
+            className: classDeclSyntax.name,
             isContextPublic: classDeclSyntax.accessModifierInspector.isPublic(),
             namePrefix: namePrefix,
             in: context
@@ -70,7 +70,7 @@ extension ExposableMember {
         in context: some MacroExpansionContext
     ) -> [DeclSyntax] {
         expositionPeerSyntax(
-            classToken: classDeclSyntax.name,
+            className: classDeclSyntax.name,
             isContextPublic: classDeclSyntax.accessModifierInspector.isPublic(),
             in: context
         )

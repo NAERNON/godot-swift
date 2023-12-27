@@ -25,7 +25,7 @@ struct FunctionMember: ExposableMember {
     }
     
     func checkExpositionAvailable(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool
     ) -> Result<Void, CheckExpositionError> {
         if isReceiver {
@@ -44,14 +44,14 @@ struct FunctionMember: ExposableMember {
     }
     
     func expositionSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
         if isReceiver && isContextPublic {
             if functionDeclSyntax.accessModifierInspector.diagnoseIfNotPublic(
-                "The receiver must be public because '\(classToken.trimmedDescription)' is public",
+                "The receiver must be public because '\(className.trimmedDescription)' is public",
                 in: context
             ) { return nil }
         }
@@ -112,16 +112,16 @@ struct FunctionMember: ExposableMember {
             let exprSyntax: ExprSyntax = try """
             Godot.GodotExtension.classRegistrar.registerFunction(
                 named: \(literal: functionName),
-                insideType: self,
+                insideType: \(className).self,
                 argumentParameters: [
                     \(raw: parameters.joined(separator: "\n"))
                 ],
                 returnParameter: \(raw: returnParameter),
                 isStatic: \(literal: isStatic)
             ) { _, instancePtr, args, argsCount, returnPtr, error in
-                \(functionCallSyntax(classContext: classToken, hasReturnType: hasReturnType, isStatic: isStatic, consecutiveLastDefaultValues: consecutiveLastDefaultValues))
+                \(functionCallSyntax(classContext: className, hasReturnType: hasReturnType, isStatic: isStatic, consecutiveLastDefaultValues: consecutiveLastDefaultValues))
             } pointerCall: { _, instancePtr, args, returnPtr in
-                \(functionPointerCallSyntax(classContext: classToken, hasReturnType: hasReturnType, isStatic: isStatic))
+                \(functionPointerCallSyntax(classContext: className, hasReturnType: hasReturnType, isStatic: isStatic))
             }
             """
             return exprSyntax
@@ -131,7 +131,7 @@ struct FunctionMember: ExposableMember {
     }
     
     func expositionPeerSyntax(
-        classToken: TokenSyntax,
+        className: TokenSyntax,
         isContextPublic: Bool,
         in context: some MacroExpansionContext
     ) -> [DeclSyntax] {
