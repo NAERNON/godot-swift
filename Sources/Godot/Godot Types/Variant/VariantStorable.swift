@@ -85,9 +85,9 @@ public protocol VariantStorable: VariantStorableIn, VariantStorableOut {
     /// Do not define this variable in your own types.
     /// Only ``Object`` and its subclasses define
     /// this variable.
-    static var exposedClassName: GodotStringName { get }
+    static var _exposedClassName: GodotStringName { get }
 }
 
 public extension VariantStorable {
-    static var exposedClassName: GodotStringName { GodotStringName() }
+    static var _exposedClassName: GodotStringName { GodotStringName() }
 }

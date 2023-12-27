@@ -428,7 +428,7 @@ extension RID: ExposableValue {
 
 extension Optional: ExposableValue where Wrapped : Object {
     public static var variantRepresentationType: Variant.RepresentationType { .object }
-    public static var exposedClassName: GodotStringName { Wrapped.exposedClassName }
+    public static var _exposedClassName: GodotStringName { Wrapped._exposedClassName }
     
     public consuming func copyToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer

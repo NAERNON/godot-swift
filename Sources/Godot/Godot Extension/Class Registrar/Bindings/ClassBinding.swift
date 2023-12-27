@@ -18,7 +18,7 @@ extension ClassRegistrar {
             self.level = level
             
             self.type = type
-            self.name = type.exposedClassName
+            self.name = type._exposedClassName
             
             self.callbacks = type._instanceBindingCallbacks()
         }

@@ -4,6 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
 import RegexBuilder
+import Utils
 
 public enum ExposableMacro: MemberMacro, ExtensionMacro, MemberAttributeMacro {
     public static func expansion(
@@ -32,12 +33,17 @@ public enum ExposableMacro: MemberMacro, ExtensionMacro, MemberAttributeMacro {
             $0 == .keyword(.final)
         })
         
+        let isPublic = classDeclSyntax.accessModifierInspector.isPublic()
+        let className = removeBackticks(classDeclSyntax.name.trimmedDescription)
+        
         // Syntax
-        let provider = ClassMacroDeclProvider(
+        let provider = ClassMacroDeclProvider.customClass(
             customClassDecl: classDeclSyntax,
             superclassName: inheritedElement.type.trimmedDescription, 
             isFinal: isFinal,
-            in: context
+            in: context,
+            isClassVisible: isPublic,
+            exposedClassName: isPublic ? className : "_" + context.makeUniqueName(className).trimmedDescription.replacingOccurrences(of: "$", with: "")
         ) {
             let memberExpositions = membersExpositions(of: classDeclSyntax, in: context)
             

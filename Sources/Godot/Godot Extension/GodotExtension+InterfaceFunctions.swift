@@ -137,7 +137,7 @@ extension GodotExtension {
         try loadInterfaceFunction(&gdextension_interface_classdb_construct_object, name: "classdb_construct_object")
         try loadInterfaceFunction(&gdextension_interface_classdb_get_method_bind, name: "classdb_get_method_bind")
         try loadInterfaceFunction(&gdextension_interface_classdb_get_class_tag, name: "classdb_get_class_tag")
-        try loadInterfaceFunction(&gdextension_interface_classdb_register_extension_class, name: "classdb_register_extension_class")
+        try loadInterfaceFunction(&gdextension_interface_classdb_register_extension_class2, name: "classdb_register_extension_class2")
         try loadInterfaceFunction(&gdextension_interface_classdb_register_extension_class_method, name: "classdb_register_extension_class_method")
         try loadInterfaceFunction(&gdextension_interface_classdb_register_extension_class_integer_constant, name: "classdb_register_extension_class_integer_constant")
         try loadInterfaceFunction(&gdextension_interface_classdb_register_extension_class_property, name: "classdb_register_extension_class_property")
@@ -293,6 +293,7 @@ internal var gdextension_interface_classdb_construct_object: GDExtensionInterfac
 internal var gdextension_interface_classdb_get_method_bind: GDExtensionInterfaceClassdbGetMethodBind!
 internal var gdextension_interface_classdb_get_class_tag: GDExtensionInterfaceClassdbGetClassTag!
 internal var gdextension_interface_classdb_register_extension_class: GDExtensionInterfaceClassdbRegisterExtensionClass!
+internal var gdextension_interface_classdb_register_extension_class2: GDExtensionInterfaceClassdbRegisterExtensionClass2!
 internal var gdextension_interface_classdb_register_extension_class_method: GDExtensionInterfaceClassdbRegisterExtensionClassMethod!
 internal var gdextension_interface_classdb_register_extension_class_integer_constant: GDExtensionInterfaceClassdbRegisterExtensionClassIntegerConstant!
 internal var gdextension_interface_classdb_register_extension_class_property: GDExtensionInterfaceClassdbRegisterExtensionClassProperty!

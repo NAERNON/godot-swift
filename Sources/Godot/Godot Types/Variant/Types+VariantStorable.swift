@@ -1443,7 +1443,7 @@ extension Object: VariantStorable {
         var description: String {
             switch self {
             case .cannotConvertToObject(let type):
-                "Error while retrieving an instance of type \(type.exposedClassName)."
+                "Error while retrieving an instance of type \(type._exposedClassName)."
             }
         }
     }
@@ -1696,11 +1696,11 @@ extension GodotArray: VariantStorable {
             
             // If the class name is not empty, we must check against
             // the underlying array.
-            if !Element.exposedClassName._isEmpty() {
+            if !Element._exposedClassName._isEmpty() {
                 let foundClassName = array._typedClassName()
-                guard foundClassName == Element.exposedClassName else {
+                guard foundClassName == Element._exposedClassName else {
                     throw VariantConversionError.incorrectClassName(
-                        expected: Element.exposedClassName,
+                        expected: Element._exposedClassName,
                         found: foundClassName
                     )
                 }

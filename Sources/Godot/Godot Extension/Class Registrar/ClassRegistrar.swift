@@ -89,16 +89,6 @@ public final class ClassRegistrar {
         classType(named: className) != nil
     }
     
-    /// Returns a Boolean value indicating whether the given class type
-    /// has the correct associated ``Object/exposedClassName``.
-    ///
-    /// If the class name is not correct, it indicates that the custom registered class
-    /// is not configured correctly. This might be a sign that the ``Exposable()``
-    /// macro is not used.
-    internal func classNameIsEquivalentToType<Class>(classType: Class.Type) -> Bool where Class : Object {
-        GodotStringName(swiftString: .init(describing: classType)) == classType.exposedClassName
-    }
-    
     /// Registers the given base Godot class.
     ///
     /// This function should only be used to register base classes, and not custom ones.
@@ -109,17 +99,12 @@ public final class ClassRegistrar {
             return nil
         }
         
-        guard classNameIsEquivalentToType(classType: classType) else {
-            gdDebugPrintError("Cannot register class \(classType) because the type and name don't match. The @Exposable macro should be applied to the class.")
-            return nil
-        }
-        
         let classBinding = ClassBinding(
             level: currentLevel,
             type: classType
         )
         
-        godotClassNameToClassBinding[classType.exposedClassName] = classBinding
+        godotClassNameToClassBinding[classType._exposedClassName] = classBinding
         return classBinding
     }
     
@@ -136,6 +121,7 @@ public final class ClassRegistrar {
     public func registerCustomClass<Class, Superclass>(
         ofType classType: Class.Type,
         superclassType: Superclass.Type,
+        isVisible: Bool,
         toStringFunction: GDExtensionClassToString,
         createInstanceFunction: GDExtensionClassCreateInstance,
         freeInstanceFunction: GDExtensionClassFreeInstance
@@ -145,11 +131,6 @@ public final class ClassRegistrar {
     {
         guard let currentLevel else {
             gdDebugPrintError("Cannot register class \(classType) because no initialization level was provided.")
-            return nil
-        }
-        
-        guard classNameIsEquivalentToType(classType: classType) else {
-            gdDebugPrintError("Cannot register class \(classType) because the type and name don't match. Make sure the @Exposable macro is applied to the class.")
             return nil
         }
         
@@ -183,22 +164,27 @@ public final class ClassRegistrar {
         
         customClassNameToClassBinding[className] = classBinding
         
-        let godotClassInfo = GDExtensionClassCreationInfo(
+        let godotClassInfo = GDExtensionClassCreationInfo2(
             is_virtual: 0,
             is_abstract: 0,
+            is_exposed: isVisible ? 1 : 0,
             set_func: nil,
             get_func: nil,
             get_property_list_func: nil,
             free_property_list_func: nil,
             property_can_revert_func: nil,
             property_get_revert_func: nil,
+            validate_property_func: nil,
             notification_func: nil,
             to_string_func: classBinding.toStringFunction,
             reference_func: nil,
             unreference_func: nil,
-            create_instance_func: classBinding.createInstanceFunction, // This one is mandatory.
-            free_instance_func: classBinding.freeInstanceFunction, // This one is mandatory.
-            get_virtual_func: { ClassRegistrar.virtualFuncCall(fromUserDataPtr: $0, methodNamePtr: $1) },
+            create_instance_func: classBinding.createInstanceFunction,
+            free_instance_func: classBinding.freeInstanceFunction,
+            recreate_instance_func: nil,
+            get_virtual_func: nil,
+            get_virtual_call_data_func: nil,
+            call_virtual_with_data_func: nil,
             get_rid_func: nil,
             class_userdata: Unmanaged.passUnretained(classBinding).toOpaque()
         )
@@ -206,8 +192,8 @@ public final class ClassRegistrar {
         className.withGodotUnsafeRawPointer { namePtr in
             superclassName.withGodotUnsafeRawPointer { superclassNamePtr in
                 withUnsafePointer(to: godotClassInfo) { classInfoPtr in
-                    gdextension_interface_classdb_register_extension_class(
-                        GodotExtension.libraryPtr, 
+                    gdextension_interface_classdb_register_extension_class2(
+                        GodotExtension.libraryPtr,
                         namePtr,
                         superclassNamePtr,
                         classInfoPtr
@@ -243,7 +229,7 @@ public final class ClassRegistrar {
         call: GDExtensionClassMethodCall,
         pointerCall: GDExtensionClassMethodPtrCall
     ) -> FunctionBinding? where Class : Object {
-        let className = classType.exposedClassName
+        let className = classType._exposedClassName
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
@@ -319,7 +305,7 @@ public final class ClassRegistrar {
         named swiftFunctionName: GodotStringName,
         insideType classType: Class.Type
     ) -> FunctionOverrideBinding? where Class : Object {
-        let className = classType.exposedClassName
+        let className = classType._exposedClassName
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
@@ -490,7 +476,7 @@ public final class ClassRegistrar {
     where Class : Object,
           Variable : ExposableValue
     {
-        let className = classType.exposedClassName
+        let className = classType._exposedClassName
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
@@ -585,7 +571,7 @@ public final class ClassRegistrar {
         prefix: GodotString,
         insideType classType: Class.Type
     ) -> Bool where Class : Object {
-        let className = classType.exposedClassName
+        let className = classType._exposedClassName
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
@@ -623,7 +609,7 @@ public final class ClassRegistrar {
         prefix: GodotString,
         insideType classType: Class.Type
     ) -> Bool where Class : Object {
-        let className = classType.exposedClassName
+        let className = classType._exposedClassName
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
@@ -665,7 +651,7 @@ public final class ClassRegistrar {
         isOptionSet: Bool,
         insideType classType: Class.Type
     ) -> EnumBinding? where Class : Object {
-        let className = classType.exposedClassName
+        let className = classType._exposedClassName
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {
@@ -721,7 +707,7 @@ public final class ClassRegistrar {
         insideType classType: Class.Type,
         argumentParameters: [FunctionParameter]
     ) -> SignalBinding? where Class : Object {
-        let className = classType.exposedClassName
+        let className = classType._exposedClassName
         
         guard let classBinding = customClassNameToClassBinding[className],
               classBinding.type == classType else {

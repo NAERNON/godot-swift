@@ -21,33 +21,65 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     let isFinal: Bool
     let exposeToGodotCustomDecl: (() throws -> CodeBlockItemListSyntax)?
     let context: Context
+    let isClassVisible: Bool
+    let exposedClassName: String
     
-    init(
+    private init(
         classDecl: ClassDeclSyntax,
         classType: ClassType,
-        in context: Context
+        superclassName: String?,
+        isFinal: Bool,
+        exposeToGodotCustomDecl: (() -> CodeBlockItemListSyntax)?,
+        context: Context,
+        isClassVisible: Bool,
+        exposedClassName: String
     ) {
         self.classDecl = classDecl
         self.classType = classType
-        self.superclassName = nil
-        self.isFinal = false
-        self.exposeToGodotCustomDecl = nil
-        self.context = context
-    }
-    
-    init(
-        customClassDecl: ClassDeclSyntax,
-        superclassName: String,
-        isFinal: Bool,
-        in context: Context,
-        @CodeBlockItemListBuilder exposeToGodotCustomDecl: @escaping () -> CodeBlockItemListSyntax
-    ) {
-        self.classDecl = customClassDecl
-        self.classType = .custom
         self.superclassName = superclassName
         self.isFinal = isFinal
         self.exposeToGodotCustomDecl = exposeToGodotCustomDecl
         self.context = context
+        self.isClassVisible = isClassVisible
+        self.exposedClassName = exposedClassName
+    }
+    
+    static func baseClass(
+        classDecl: ClassDeclSyntax,
+        classType: ClassType,
+        in context: Context
+    ) -> ClassMacroDeclProvider<Context> {
+        .init(
+            classDecl: classDecl,
+            classType: classType,
+            superclassName: nil,
+            isFinal: false,
+            exposeToGodotCustomDecl: nil,
+            context: context,
+            isClassVisible: true,
+            exposedClassName: removeBackticks(classDecl.name.trimmedDescription)
+        )
+    }
+    
+    static func customClass(
+        customClassDecl: ClassDeclSyntax,
+        superclassName: String,
+        isFinal: Bool,
+        in context: Context,
+        isClassVisible: Bool,
+        exposedClassName: String,
+        @CodeBlockItemListBuilder exposeToGodotCustomDecl: @escaping () -> CodeBlockItemListSyntax
+    ) -> ClassMacroDeclProvider<Context> {
+        .init(
+            classDecl: customClassDecl,
+            classType: .custom,
+            superclassName: superclassName,
+            isFinal: isFinal,
+            exposeToGodotCustomDecl: exposeToGodotCustomDecl,
+            context: context,
+            isClassVisible: isClassVisible,
+            exposedClassName: exposedClassName
+        )
     }
     
     var className: TokenSyntax {
@@ -88,28 +120,24 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     }
     
     private func staticProperties() -> DeclSyntax {
-        let className = removeBackticks(className.trimmedDescription)
-        
         switch classType {
-        case .root, .refCounted, .standard:
+        case .root, .refCounted, .standard, .refCountedRoot:
             return """
-            private static let _$exposedClassName: GodotStringName = \(literal: className)
-            open \(raw: overrideKeyword) class var exposedClassName: GodotStringName { _$exposedClassName }
+            private static let _$exposedClassName: GodotStringName = \(literal: exposedClassName)
+            private static var _$isClassRegistered: Bool = false
+            
+            open \(raw: overrideKeyword) class var _exposedClassType: Object.Type { Object.self }
+            open \(raw: overrideKeyword) class var _exposedClassName: GodotStringName { _$exposedClassName }
+            
             internal \(raw: overrideKeyword) class var lastDerivedExposedClassName: GodotStringName { _$exposedClassName }
-            private static var _isClassRegistered: Bool = false
-            """
-        case .refCountedRoot:
-            return """
-            private static let _$exposedClassName: GodotStringName = \(literal: className)
-            open \(raw: overrideKeyword) class var exposedClassName: GodotStringName { _$exposedClassName }
-            internal \(raw: overrideKeyword) class var lastDerivedExposedClassName: GodotStringName { _$exposedClassName }
-            private static var _isClassRegistered: Bool = false
             """
         case .custom:
             return """
-            private static let _$exposedClassName: Godot.GodotStringName = \(literal: className)
-            \(raw: openKeyword) \(raw: overrideKeyword) class var exposedClassName: Godot.GodotStringName { _$exposedClassName }
-            private static var _isClassRegistered: Bool = false
+            private static let _$exposedClassName: Godot.GodotStringName = \(literal: exposedClassName)
+            private static var _$isClassRegistered: Bool = false
+            
+            \(raw: openKeyword) \(raw: overrideKeyword) class var _exposedClassType: Godot.Object.Type { \(className).self }
+            \(raw: openKeyword) \(raw: overrideKeyword) class var _exposedClassName: Godot.GodotStringName { _$exposedClassName }
             """
         }
     }
@@ -121,11 +149,13 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             public required init() {
                 extensionObjectPtr = Self.makeNewExtensionObjectPtr()
                 
-                assert(GodotExtension.classRegistrar.classNameIsEquivalentToType(classType: Self.self),
-                    "Trying to instantiate a class not marked '@Exposable'")
+                assert(
+                    Self.self._exposedClassType == Self.self,
+                    "Trying to instantiate class \\(Self.self) but the class is not marked '@Exposable'."
+                )
                 
                 if self is ExposableObject {
-                    Self.exposedClassName.withGodotUnsafeRawPointer { classNamePtr in
+                    Self._exposedClassName.withGodotUnsafeRawPointer { classNamePtr in
                         gdextension_interface_object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
                     }
                 }
@@ -260,9 +290,9 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
     private func exposeToGodot() throws -> DeclSyntax {
         let signature = "\(openKeyword) \(overrideKeyword) class func _registerClassToGodot()"
         let functionDecl = try FunctionDeclSyntax("\(raw: signature)") {
-            "if _isClassRegistered { return }"
+            "if _$isClassRegistered { return }"
             
-            "_isClassRegistered = true"
+            "_$isClassRegistered = true"
             if classType != .root {
                 "super._registerClassToGodot()"
             }
@@ -276,7 +306,8 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 """
                 let classBinding = Godot.GodotExtension.classRegistrar.registerCustomClass(
                     ofType: \(className).self,
-                    superclassType: \(raw: superclassName ?? "").self
+                    superclassType: \(raw: superclassName ?? "").self,
+                    isVisible: \(literal: isClassVisible)
                 ) { instancePtr, isValid, out in
                     Godot.GodotExtension.description(
                         of: \(className).self,

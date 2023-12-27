@@ -24,6 +24,10 @@ public enum GodotRefCountedClassMacro: MemberMacro {
             return []
         }
         
-        return try ClassMacroDeclProvider(classDecl: classDecl, classType: .refCounted, in: context).decls()
+        return try ClassMacroDeclProvider.baseClass(
+            classDecl: classDecl,
+            classType: .refCounted,
+            in: context
+        ).decls()
     }
 }

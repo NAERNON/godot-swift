@@ -67,7 +67,7 @@ extension ClassRegistrar {
                 type: type,
                 name: name,
                 defaultValue: defaultValue,
-                className: Value.exposedClassName
+                className: Value._exposedClassName
             )
         }
         
@@ -80,7 +80,7 @@ extension ClassRegistrar {
                 type: type,
                 name: .init(),
                 defaultValue: nil,
-                className: Value.exposedClassName
+                className: Value._exposedClassName
             )
         }
         

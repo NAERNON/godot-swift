@@ -24,6 +24,10 @@ public enum GodotClassMacro: MemberMacro {
             return []
         }
         
-        return try ClassMacroDeclProvider(classDecl: classDecl, classType: .standard, in: context).decls()
+        return try ClassMacroDeclProvider.baseClass(
+            classDecl: classDecl,
+            classType: .standard,
+            in: context
+        ).decls()
     }
 }
