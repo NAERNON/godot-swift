@@ -70,9 +70,9 @@ public enum ExposableMacro: MemberMacro, ExtensionMacro, MemberAttributeMacro {
         conformingTo protocols: [TypeSyntax],
         in context: some MacroExpansionContext
     ) throws -> [ExtensionDeclSyntax] {
-        let extensionSyntax = try ExtensionDeclSyntax("extension \(type): Godot.Exposable") {}
-        
-        return [extensionSyntax]
+        try protocols.map { protocolSyntax in
+            try ExtensionDeclSyntax("extension \(type): Godot.\(protocolSyntax)") {}
+        }
     }
     
     private static func membersExpositions(
