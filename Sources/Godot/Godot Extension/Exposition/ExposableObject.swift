@@ -1,16 +1,16 @@
 
 /// A type exposable to the Godot editor.
 ///
-/// Do not declare `Exposable` conformances yourself.
+/// Do not declare `ExposableObject` conformances yourself.
 /// Use the ``Exposable()`` macro instead.
-public protocol Exposable: Object {}
+public protocol ExposableObject: Object {}
 
 /// Enables a custom Godot class
 /// to be exposed to the Godot editor.
 ///
 /// Learn how to expose a custom class: <doc:CreatingCustomClass>.
 @attached(member, names: arbitrary)
-@attached(extension, conformances: Exposable)
+@attached(extension, conformances: ExposableObject)
 @attached(memberAttribute)
 public macro Exposable() = #externalMacro(module: "GodotMacros", type: "ExposableMacro")
 

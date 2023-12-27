@@ -8,7 +8,7 @@ extension GodotExtension {
         instancePtr: GDExtensionClassInstancePtr?,
         isValid: UnsafeMutablePointer<GDExtensionBool>?,
         out: GDExtensionStringPtr?
-    ) where Value : Exposable {
+    ) where Value : ExposableObject {
         guard let instancePtr else { return }
         
         isValid?.pointee = 1
@@ -21,14 +21,14 @@ extension GodotExtension {
     public static func makeNewInstanceManagedByGodot<Value>(
         of _: Value.Type
     ) -> UnsafeMutableRawPointer
-    where Value : Exposable {
+    where Value : ExposableObject {
         Value().withGodotUnsafeMutableRawPointer { $0 }
     }
     
     public static func makeNewInstanceManagedByGodot<Value>(
         of _: Value.Type
     ) -> UnsafeMutableRawPointer
-    where Value : Exposable & RefCounted {
+    where Value : ExposableObject & RefCounted {
         let instance = Value()
         
         _ = Unmanaged.passRetained(instance)
@@ -41,7 +41,7 @@ extension GodotExtension {
     public static func freeInstanceManagedByGodot<Value>(
         of _: Value.Type,
         instancePtr: UnsafeMutableRawPointer?
-    ) where Value : Exposable {
+    ) where Value : ExposableObject {
         guard let instancePtr else { return }
         
         Unmanaged<Value>.fromOpaque(instancePtr).release()
@@ -50,7 +50,7 @@ extension GodotExtension {
     public static func freeInstanceManagedByGodot<Value>(
         of _: Value.Type,
         instancePtr: UnsafeMutableRawPointer?
-    ) where Value : Exposable & RefCounted {
+    ) where Value : ExposableObject & RefCounted {
         guard let instancePtr else { return }
         
         let instance = Unmanaged<Value>.fromOpaque(instancePtr).takeRetainedValue()
@@ -63,7 +63,7 @@ extension GodotExtension {
         of _: Value.Type,
         instancePtr: UnsafeMutableRawPointer?,
         reference: UInt8
-    ) -> UInt8 where Value : Exposable {
+    ) -> UInt8 where Value : ExposableObject {
         return 1
     }
     
@@ -71,7 +71,7 @@ extension GodotExtension {
         of _: Value.Type,
         instancePtr: UnsafeMutableRawPointer?,
         reference: UInt8
-    ) -> UInt8 where Value : Exposable & RefCounted {
+    ) -> UInt8 where Value : ExposableObject & RefCounted {
         guard let instancePtr else { return 0 }
         
         let unmanaged = Unmanaged<Value>.fromOpaque(instancePtr)

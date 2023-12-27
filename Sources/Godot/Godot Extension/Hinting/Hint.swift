@@ -16,7 +16,7 @@ public struct Hint<Value> {
     public static func _defaultForValue<Class, Variable>(
         at _: KeyPath<Class, Variable>
     ) -> Self
-    where Class : Exposable,
+    where Class : ExposableObject,
           Variable : HintableValue,
           Variable.HintingValue == Value
     {

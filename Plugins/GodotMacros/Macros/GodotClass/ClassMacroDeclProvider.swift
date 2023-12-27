@@ -124,7 +124,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 assert(GodotExtension.classRegistrar.classNameIsEquivalentToType(classType: Self.self),
                     "Trying to instantiate a class not marked '@Exposable'")
                 
-                if self is Exposable {
+                if self is ExposableObject {
                     Self.exposedClassName.withGodotUnsafeRawPointer { classNamePtr in
                         gdextension_interface_object_set_instance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
                     }
@@ -164,7 +164,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             public required init() {
                 super.init()
             
-                if !(self is Exposable) {
+                if !(self is ExposableObject) {
                     _ = __reference()
                 }
             }
@@ -176,7 +176,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             }
             
             deinit {
-                if self is Exposable {
+                if self is ExposableObject {
                     if !isPointerFreed {
                         gdextension_interface_mem_free(extensionObjectPtr)
                     }
