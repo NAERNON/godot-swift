@@ -315,6 +315,11 @@ private var __method_binding_is_read_only: GDExtensionPtrBuiltInMethod = {
     }
 }()
 extension GodotArray {
+    internal static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+        let opaque = Opaque(size: 8, destructorPtr: __destructor)
+        opaque.withUnsafeMutableRawPointer(body)
+        return Self (opaque: opaque)
+    }
     static internal func _constructor() -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in

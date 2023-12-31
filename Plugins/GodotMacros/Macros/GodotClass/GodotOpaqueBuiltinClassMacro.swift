@@ -62,16 +62,10 @@ public enum GodotOpaqueBuiltinClassMacro: MemberMacro {
             try opaque.withUnsafeMutableRawPointer { try body($0) }
         }
         
-        public mutating func withGodotUnsafeMutableRawPointer<Result>(
+        internal mutating func withGodotUnsafeMutableRawPointer<Result>(
             _ body: (UnsafeMutableRawPointer) throws -> Result
         ) rethrows -> Result {
             try opaque.withUnsafeMutableRawPointer(body)
-        }
-        
-        static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
-            let value = Self()
-            value.opaque.withUnsafeMutableRawPointer(body)
-            return value
         }
         """)
         

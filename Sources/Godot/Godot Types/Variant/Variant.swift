@@ -52,7 +52,7 @@ public final class Variant {
     // MARK: Handle data
     
     /// Calls a closure with an extension type pointer of the underlying object.
-    func withGodotUnsafeRawPointer<Result>(
+    public func withGodotUnsafeRawPointer<Result>(
         _ body: (UnsafeRawPointer) throws -> Result
     ) rethrows -> Result {
         try storage.withGodotUnsafeRawPointer {

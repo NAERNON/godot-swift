@@ -305,6 +305,18 @@ struct GodotBuiltinClass: Decodable {
     
     @MemberBlockItemListBuilder
     func constructorsSyntax(classSize: Int) throws -> MemberBlockItemListSyntax {
+        if useOpaque {
+            let destructorPtr = hasDestructor ? "__destructor" : "nil"
+            
+            """
+            internal static func fromMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
+                let opaque = Opaque(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))
+                opaque.withUnsafeMutableRawPointer(body)
+                return Self(opaque: opaque)
+            }
+            """
+        }
+        
         for constructor in constructors {
             try constructorSyntax(constructor, classSize: classSize)
                 .with(\.trailingTrivia, .newlines(2))
