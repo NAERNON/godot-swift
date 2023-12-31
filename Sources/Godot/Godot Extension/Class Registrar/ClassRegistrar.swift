@@ -182,7 +182,7 @@ public final class ClassRegistrar {
             create_instance_func: classBinding.createInstanceFunction,
             free_instance_func: classBinding.freeInstanceFunction,
             recreate_instance_func: nil,
-            get_virtual_func: nil,
+            get_virtual_func: { ClassRegistrar.virtualFuncCall(fromUserDataPtr: $0, methodNamePtr: $1) },
             get_virtual_call_data_func: nil,
             call_virtual_with_data_func: nil,
             get_rid_func: nil,
@@ -297,7 +297,7 @@ public final class ClassRegistrar {
     /// custom class to expose it to the Godot editor.
     ///
     /// - Parameters:
-    ///   - swiftFunctionName: The Swift name of the function that is overriden.
+    ///   - swiftFunctionName: The Swift name of the function that is overridden.
     ///   - classType: The type of the class the function is part of.
     /// - Returns: The newly created function override binding, or `nil` if the function wasn't registered.
     @discardableResult
