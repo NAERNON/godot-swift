@@ -5,12 +5,34 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ButtonGroup: Resource {
-    public func pressed(button: Godot.BaseButton?) {
-        pressedConnector.emit(button)
+    public struct PressedSignalInput: Godot.SignalInput {
+        public let button: Godot.BaseButton?
+        fileprivate init(button: Godot.BaseButton?) {
+            self.button = button
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, button)
+        }
     }
-
-    public private (set) lazy var pressedConnector: Godot.SignalConnector<Godot.BaseButton?> = {
-        .init(self, "pressed")
+    public func pressed(button: Godot.BaseButton?) {
+        _ = pressedSignal.emit(.init(button: button))
+    }
+    public lazy var pressedSignal: Godot.SignalEmitter<PressedSignalInput> = {
+        .init(object: self, signalName: "pressed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(button: Godot.BaseButton?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_get_pressed_button: GDExtensionMethodBindPtr = {

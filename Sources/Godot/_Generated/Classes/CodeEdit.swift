@@ -44,38 +44,131 @@ open class CodeEdit: TextEdit {
         }
     }
 
+    public struct BreakpointToggledSignalInput: Godot.SignalInput {
+        public let line: Int
+        fileprivate init(line: Int) {
+            self.line = line
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, line)
+        }
+    }
     public func breakpointToggled(line: Int) {
-        breakpointToggledConnector.emit(line)
+        _ = breakpointToggledSignal.emit(.init(line: line))
     }
-
-    public private (set) lazy var breakpointToggledConnector: Godot.SignalConnector<Int> = {
-        .init(self, "breakpoint_toggled")
+    public lazy var breakpointToggledSignal: Godot.SignalEmitter<BreakpointToggledSignalInput> = {
+        .init(object: self, signalName: "breakpoint_toggled") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(line: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<BreakpointToggledSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct CodeCompletionRequestedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func codeCompletionRequested() {
-        codeCompletionRequestedConnector.emit()
+        _ = codeCompletionRequestedSignal.emit(.init())
     }
-
-    public private (set) lazy var codeCompletionRequestedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "code_completion_requested")
+    public lazy var codeCompletionRequestedSignal: Godot.SignalEmitter<CodeCompletionRequestedSignalInput> = {
+        .init(object: self, signalName: "code_completion_requested") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<CodeCompletionRequestedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<CodeCompletionRequestedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<CodeCompletionRequestedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
+    public struct SymbolLookupSignalInput: Godot.SignalInput {
+        public let symbol: Godot.GodotString
+        public let line: Int
+        public let column: Int
+        fileprivate init(symbol: Godot.GodotString, line: Int, column: Int) {
+            self.symbol = symbol
+            self.line = line
+            self.column = column
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, symbol, line, column)
+        }
+    }
     public func symbolLookup(symbol: Godot.GodotString, line: Int, column: Int) {
-        symbolLookupConnector.emit(symbol, line, column)
+        _ = symbolLookupSignal.emit(.init(symbol: symbol,
+                line: line,
+                column: column))
     }
-
-    public private (set) lazy var symbolLookupConnector: Godot.SignalConnector<Godot.GodotString, Int, Int> = {
-        .init(self, "symbol_lookup")
+    public lazy var symbolLookupSignal: Godot.SignalEmitter<SymbolLookupSignalInput> = {
+        .init(object: self, signalName: "symbol_lookup") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(symbol: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    line: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    column: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SymbolLookupSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func symbolValidate(symbol: Godot.GodotString) {
-        symbolValidateConnector.emit(symbol)
+    public struct SymbolValidateSignalInput: Godot.SignalInput {
+        public let symbol: Godot.GodotString
+        fileprivate init(symbol: Godot.GodotString) {
+            self.symbol = symbol
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, symbol)
+        }
     }
-
-    public private (set) lazy var symbolValidateConnector: Godot.SignalConnector<Godot.GodotString> = {
-        .init(self, "symbol_validate")
+    public func symbolValidate(symbol: Godot.GodotString) {
+        _ = symbolValidateSignal.emit(.init(symbol: symbol))
+    }
+    public lazy var symbolValidateSignal: Godot.SignalEmitter<SymbolValidateSignalInput> = {
+        .init(object: self, signalName: "symbol_validate") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(symbol: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SymbolValidateSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     open func _confirmCodeCompletion(replace: Bool) {

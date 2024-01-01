@@ -5,12 +5,34 @@
 import GodotExtensionHeaders
 @GodotClass
 open class XRNode3D: Node3D {
-    public func trackingChanged(tracking: Bool) {
-        trackingChangedConnector.emit(tracking)
+    public struct TrackingChangedSignalInput: Godot.SignalInput {
+        public let tracking: Bool
+        fileprivate init(tracking: Bool) {
+            self.tracking = tracking
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, tracking)
+        }
     }
-
-    public private (set) lazy var trackingChangedConnector: Godot.SignalConnector<Bool> = {
-        .init(self, "tracking_changed")
+    public func trackingChanged(tracking: Bool) {
+        _ = trackingChangedSignal.emit(.init(tracking: tracking))
+    }
+    public lazy var trackingChangedSignal: Godot.SignalEmitter<TrackingChangedSignalInput> = {
+        .init(object: self, signalName: "tracking_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TrackingChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(tracking: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TrackingChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TrackingChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_set_tracker: GDExtensionMethodBindPtr = {

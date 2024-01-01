@@ -24,44 +24,170 @@ open class ItemList: Control {
         }
     }
 
+    public struct ItemSelectedSignalInput: Godot.SignalInput {
+        public let index: Int
+        fileprivate init(index: Int) {
+            self.index = index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, index)
+        }
+    }
     public func itemSelected(index: Int) {
-        itemSelectedConnector.emit(index)
+        _ = itemSelectedSignal.emit(.init(index: index))
     }
-
-    public private (set) lazy var itemSelectedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "item_selected")
+    public lazy var itemSelectedSignal: Godot.SignalEmitter<ItemSelectedSignalInput> = {
+        .init(object: self, signalName: "item_selected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ItemSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ItemSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ItemSelectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func emptyClicked(atPosition: Godot.Vector2, mouseButtonIndex: Int) {
-        emptyClickedConnector.emit(atPosition, mouseButtonIndex)
+    public struct EmptyClickedSignalInput: Godot.SignalInput {
+        public let at_position: Godot.Vector2
+        public let mouse_button_index: Int
+        fileprivate init(at_position: Godot.Vector2, mouse_button_index: Int) {
+            self.at_position = at_position
+            self.mouse_button_index = mouse_button_index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, at_position, mouse_button_index)
+        }
     }
-
-    public private (set) lazy var emptyClickedConnector: Godot.SignalConnector<Godot.Vector2, Int> = {
-        .init(self, "empty_clicked")
+    public func emptyClicked(at_position: Godot.Vector2, mouse_button_index: Int) {
+        _ = emptyClickedSignal.emit(.init(at_position: at_position,
+                mouse_button_index: mouse_button_index))
+    }
+    public lazy var emptyClickedSignal: Godot.SignalEmitter<EmptyClickedSignalInput> = {
+        .init(object: self, signalName: "empty_clicked") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<EmptyClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(at_position: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    mouse_button_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<EmptyClickedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<EmptyClickedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func itemClicked(index: Int, atPosition: Godot.Vector2, mouseButtonIndex: Int) {
-        itemClickedConnector.emit(index, atPosition, mouseButtonIndex)
+    public struct ItemClickedSignalInput: Godot.SignalInput {
+        public let index: Int
+        public let at_position: Godot.Vector2
+        public let mouse_button_index: Int
+        fileprivate init(index: Int, at_position: Godot.Vector2, mouse_button_index: Int) {
+            self.index = index
+            self.at_position = at_position
+            self.mouse_button_index = mouse_button_index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, index, at_position, mouse_button_index)
+        }
     }
-
-    public private (set) lazy var itemClickedConnector: Godot.SignalConnector<Int, Godot.Vector2, Int> = {
-        .init(self, "item_clicked")
+    public func itemClicked(index: Int, at_position: Godot.Vector2, mouse_button_index: Int) {
+        _ = itemClickedSignal.emit(.init(index: index,
+                at_position: at_position,
+                mouse_button_index: mouse_button_index))
+    }
+    public lazy var itemClickedSignal: Godot.SignalEmitter<ItemClickedSignalInput> = {
+        .init(object: self, signalName: "item_clicked") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ItemClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    at_position: Godot.Vector2.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    mouse_button_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ItemClickedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ItemClickedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct MultiSelectedSignalInput: Godot.SignalInput {
+        public let index: Int
+        public let selected: Bool
+        fileprivate init(index: Int, selected: Bool) {
+            self.index = index
+            self.selected = selected
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, index, selected)
+        }
+    }
     public func multiSelected(index: Int, selected: Bool) {
-        multiSelectedConnector.emit(index, selected)
+        _ = multiSelectedSignal.emit(.init(index: index,
+                selected: selected))
     }
-
-    public private (set) lazy var multiSelectedConnector: Godot.SignalConnector<Int, Bool> = {
-        .init(self, "multi_selected")
+    public lazy var multiSelectedSignal: Godot.SignalEmitter<MultiSelectedSignalInput> = {
+        .init(object: self, signalName: "multi_selected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MultiSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    selected: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MultiSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MultiSelectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func itemActivated(index: Int) {
-        itemActivatedConnector.emit(index)
+    public struct ItemActivatedSignalInput: Godot.SignalInput {
+        public let index: Int
+        fileprivate init(index: Int) {
+            self.index = index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, index)
+        }
     }
-
-    public private (set) lazy var itemActivatedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "item_activated")
+    public func itemActivated(index: Int) {
+        _ = itemActivatedSignal.emit(.init(index: index))
+    }
+    public lazy var itemActivatedSignal: Godot.SignalEmitter<ItemActivatedSignalInput> = {
+        .init(object: self, signalName: "item_activated") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ItemActivatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ItemActivatedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ItemActivatedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_add_item: GDExtensionMethodBindPtr = {

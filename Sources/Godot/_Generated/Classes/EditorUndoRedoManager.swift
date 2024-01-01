@@ -17,25 +17,63 @@ open class EditorUndoRedoManager: Object {
         }
     }
 
+    public struct HistoryChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func historyChanged() {
-        historyChangedConnector.emit()
+        _ = historyChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var historyChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "history_changed")
+    public lazy var historyChangedSignal: Godot.SignalEmitter<HistoryChangedSignalInput> = {
+        .init(object: self, signalName: "history_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<HistoryChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<HistoryChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<HistoryChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct VersionChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func versionChanged() {
-        versionChangedConnector.emit()
+        _ = versionChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var versionChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "version_changed")
+    public lazy var versionChangedSignal: Godot.SignalEmitter<VersionChangedSignalInput> = {
+        .init(object: self, signalName: "version_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<VersionChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<VersionChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<VersionChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_create_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

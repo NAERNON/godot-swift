@@ -41,28 +41,94 @@ open class EditorFileDialog: ConfirmationDialog {
         }
     }
 
+    public struct FileSelectedSignalInput: Godot.SignalInput {
+        public let path: Godot.GodotString
+        fileprivate init(path: Godot.GodotString) {
+            self.path = path
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, path)
+        }
+    }
     public func fileSelected(path: Godot.GodotString) {
-        fileSelectedConnector.emit(path)
+        _ = fileSelectedSignal.emit(.init(path: path))
     }
-
-    public private (set) lazy var fileSelectedConnector: Godot.SignalConnector<Godot.GodotString> = {
-        .init(self, "file_selected")
+    public lazy var fileSelectedSignal: Godot.SignalEmitter<FileSelectedSignalInput> = {
+        .init(object: self, signalName: "file_selected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FileSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(path: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FileSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FileSelectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct FilesSelectedSignalInput: Godot.SignalInput {
+        public let paths: Godot.PackedStringArray
+        fileprivate init(paths: Godot.PackedStringArray) {
+            self.paths = paths
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, paths)
+        }
+    }
     public func filesSelected(paths: Godot.PackedStringArray) {
-        filesSelectedConnector.emit(paths)
+        _ = filesSelectedSignal.emit(.init(paths: paths))
     }
-
-    public private (set) lazy var filesSelectedConnector: Godot.SignalConnector<Godot.PackedStringArray> = {
-        .init(self, "files_selected")
+    public lazy var filesSelectedSignal: Godot.SignalEmitter<FilesSelectedSignalInput> = {
+        .init(object: self, signalName: "files_selected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(paths: Godot.PackedStringArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func dirSelected(dir: Godot.GodotString) {
-        dirSelectedConnector.emit(dir)
+    public struct DirSelectedSignalInput: Godot.SignalInput {
+        public let dir: Godot.GodotString
+        fileprivate init(dir: Godot.GodotString) {
+            self.dir = dir
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, dir)
+        }
     }
-
-    public private (set) lazy var dirSelectedConnector: Godot.SignalConnector<Godot.GodotString> = {
-        .init(self, "dir_selected")
+    public func dirSelected(dir: Godot.GodotString) {
+        _ = dirSelectedSignal.emit(.init(dir: dir))
+    }
+    public lazy var dirSelectedSignal: Godot.SignalEmitter<DirSelectedSignalInput> = {
+        .init(object: self, signalName: "dir_selected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<DirSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(dir: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<DirSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<DirSelectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_clear_filters: GDExtensionMethodBindPtr = {

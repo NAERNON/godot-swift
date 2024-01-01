@@ -5,20 +5,64 @@
 import GodotExtensionHeaders
 @GodotClass
 open class OptionButton: Button {
-    public func itemSelected(index: Int) {
-        itemSelectedConnector.emit(index)
+    public struct ItemSelectedSignalInput: Godot.SignalInput {
+        public let index: Int
+        fileprivate init(index: Int) {
+            self.index = index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, index)
+        }
     }
-
-    public private (set) lazy var itemSelectedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "item_selected")
+    public func itemSelected(index: Int) {
+        _ = itemSelectedSignal.emit(.init(index: index))
+    }
+    public lazy var itemSelectedSignal: Godot.SignalEmitter<ItemSelectedSignalInput> = {
+        .init(object: self, signalName: "item_selected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ItemSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ItemSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ItemSelectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func itemFocused(index: Int) {
-        itemFocusedConnector.emit(index)
+    public struct ItemFocusedSignalInput: Godot.SignalInput {
+        public let index: Int
+        fileprivate init(index: Int) {
+            self.index = index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, index)
+        }
     }
-
-    public private (set) lazy var itemFocusedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "item_focused")
+    public func itemFocused(index: Int) {
+        _ = itemFocusedSignal.emit(.init(index: index))
+    }
+    public lazy var itemFocusedSignal: Godot.SignalEmitter<ItemFocusedSignalInput> = {
+        .init(object: self, signalName: "item_focused") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ItemFocusedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ItemFocusedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ItemFocusedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_add_item: GDExtensionMethodBindPtr = {

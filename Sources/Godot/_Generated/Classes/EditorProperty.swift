@@ -5,92 +5,378 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorProperty: Container {
+    public struct PropertyChangedSignalInput: Godot.SignalInput {
+        public let property: Godot.GodotStringName
+        public let value: Godot.Variant
+        public let field: Godot.GodotStringName
+        public let changing: Bool
+        fileprivate init(property: Godot.GodotStringName, value: Godot.Variant, field: Godot.GodotStringName, changing: Bool) {
+            self.property = property
+            self.value = value
+            self.field = field
+            self.changing = changing
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, property, value, field, changing)
+        }
+    }
     public func propertyChanged(property: Godot.GodotStringName, value: Godot.Variant, field: Godot.GodotStringName, changing: Bool) {
-        propertyChangedConnector.emit(property, value, field, changing)
+        _ = propertyChangedSignal.emit(.init(property: property,
+                value: value,
+                field: field,
+                changing: changing))
     }
-
-    public private (set) lazy var propertyChangedConnector: Godot.SignalConnector<Godot.GodotStringName, Godot.Variant, Godot.GodotStringName, Bool> = {
-        .init(self, "property_changed")
+    public lazy var propertyChangedSignal: Godot.SignalEmitter<PropertyChangedSignalInput> = {
+        .init(object: self, signalName: "property_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PropertyChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(property: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    value: Godot.Variant.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    field: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    changing: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PropertyChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PropertyChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct MultiplePropertiesChangedSignalInput: Godot.SignalInput {
+        public let properties: Godot.PackedStringArray
+        public let value: Godot.AnyGodotArray
+        fileprivate init(properties: Godot.PackedStringArray, value: Godot.AnyGodotArray) {
+            self.properties = properties
+            self.value = value
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, properties, value)
+        }
+    }
     public func multiplePropertiesChanged(properties: Godot.PackedStringArray, value: Godot.AnyGodotArray) {
-        multiplePropertiesChangedConnector.emit(properties, value)
+        _ = multiplePropertiesChangedSignal.emit(.init(properties: properties,
+                value: value))
     }
-
-    public private (set) lazy var multiplePropertiesChangedConnector: Godot.SignalConnector<Godot.PackedStringArray, Godot.AnyGodotArray> = {
-        .init(self, "multiple_properties_changed")
+    public lazy var multiplePropertiesChangedSignal: Godot.SignalEmitter<MultiplePropertiesChangedSignalInput> = {
+        .init(object: self, signalName: "multiple_properties_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MultiplePropertiesChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(properties: Godot.PackedStringArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    value: Godot.AnyGodotArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MultiplePropertiesChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MultiplePropertiesChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct PropertyKeyedSignalInput: Godot.SignalInput {
+        public let property: Godot.GodotStringName
+        fileprivate init(property: Godot.GodotStringName) {
+            self.property = property
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, property)
+        }
+    }
     public func propertyKeyed(property: Godot.GodotStringName) {
-        propertyKeyedConnector.emit(property)
+        _ = propertyKeyedSignal.emit(.init(property: property))
     }
-
-    public private (set) lazy var propertyKeyedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
-        .init(self, "property_keyed")
+    public lazy var propertyKeyedSignal: Godot.SignalEmitter<PropertyKeyedSignalInput> = {
+        .init(object: self, signalName: "property_keyed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PropertyKeyedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(property: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PropertyKeyedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PropertyKeyedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct PropertyDeletedSignalInput: Godot.SignalInput {
+        public let property: Godot.GodotStringName
+        fileprivate init(property: Godot.GodotStringName) {
+            self.property = property
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, property)
+        }
+    }
     public func propertyDeleted(property: Godot.GodotStringName) {
-        propertyDeletedConnector.emit(property)
+        _ = propertyDeletedSignal.emit(.init(property: property))
     }
-
-    public private (set) lazy var propertyDeletedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
-        .init(self, "property_deleted")
+    public lazy var propertyDeletedSignal: Godot.SignalEmitter<PropertyDeletedSignalInput> = {
+        .init(object: self, signalName: "property_deleted") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PropertyDeletedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(property: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PropertyDeletedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PropertyDeletedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct PropertyKeyedWithValueSignalInput: Godot.SignalInput {
+        public let property: Godot.GodotStringName
+        public let value: Godot.Variant
+        fileprivate init(property: Godot.GodotStringName, value: Godot.Variant) {
+            self.property = property
+            self.value = value
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, property, value)
+        }
+    }
     public func propertyKeyedWithValue(property: Godot.GodotStringName, value: Godot.Variant) {
-        propertyKeyedWithValueConnector.emit(property, value)
+        _ = propertyKeyedWithValueSignal.emit(.init(property: property,
+                value: value))
     }
-
-    public private (set) lazy var propertyKeyedWithValueConnector: Godot.SignalConnector<Godot.GodotStringName, Godot.Variant> = {
-        .init(self, "property_keyed_with_value")
+    public lazy var propertyKeyedWithValueSignal: Godot.SignalEmitter<PropertyKeyedWithValueSignalInput> = {
+        .init(object: self, signalName: "property_keyed_with_value") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PropertyKeyedWithValueSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(property: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    value: Godot.Variant.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PropertyKeyedWithValueSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PropertyKeyedWithValueSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct PropertyCheckedSignalInput: Godot.SignalInput {
+        public let property: Godot.GodotStringName
+        public let checked: Bool
+        fileprivate init(property: Godot.GodotStringName, checked: Bool) {
+            self.property = property
+            self.checked = checked
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, property, checked)
+        }
+    }
     public func propertyChecked(property: Godot.GodotStringName, checked: Bool) {
-        propertyCheckedConnector.emit(property, checked)
+        _ = propertyCheckedSignal.emit(.init(property: property,
+                checked: checked))
     }
-
-    public private (set) lazy var propertyCheckedConnector: Godot.SignalConnector<Godot.GodotStringName, Bool> = {
-        .init(self, "property_checked")
+    public lazy var propertyCheckedSignal: Godot.SignalEmitter<PropertyCheckedSignalInput> = {
+        .init(object: self, signalName: "property_checked") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PropertyCheckedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(property: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    checked: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PropertyCheckedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PropertyCheckedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct PropertyPinnedSignalInput: Godot.SignalInput {
+        public let property: Godot.GodotStringName
+        public let pinned: Bool
+        fileprivate init(property: Godot.GodotStringName, pinned: Bool) {
+            self.property = property
+            self.pinned = pinned
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, property, pinned)
+        }
+    }
     public func propertyPinned(property: Godot.GodotStringName, pinned: Bool) {
-        propertyPinnedConnector.emit(property, pinned)
+        _ = propertyPinnedSignal.emit(.init(property: property,
+                pinned: pinned))
     }
-
-    public private (set) lazy var propertyPinnedConnector: Godot.SignalConnector<Godot.GodotStringName, Bool> = {
-        .init(self, "property_pinned")
+    public lazy var propertyPinnedSignal: Godot.SignalEmitter<PropertyPinnedSignalInput> = {
+        .init(object: self, signalName: "property_pinned") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PropertyPinnedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(property: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    pinned: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PropertyPinnedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PropertyPinnedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func propertyCanRevertChanged(property: Godot.GodotStringName, canRevert: Bool) {
-        propertyCanRevertChangedConnector.emit(property, canRevert)
+    public struct PropertyCanRevertChangedSignalInput: Godot.SignalInput {
+        public let property: Godot.GodotStringName
+        public let can_revert: Bool
+        fileprivate init(property: Godot.GodotStringName, can_revert: Bool) {
+            self.property = property
+            self.can_revert = can_revert
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, property, can_revert)
+        }
     }
-
-    public private (set) lazy var propertyCanRevertChangedConnector: Godot.SignalConnector<Godot.GodotStringName, Bool> = {
-        .init(self, "property_can_revert_changed")
+    public func propertyCanRevertChanged(property: Godot.GodotStringName, can_revert: Bool) {
+        _ = propertyCanRevertChangedSignal.emit(.init(property: property,
+                can_revert: can_revert))
+    }
+    public lazy var propertyCanRevertChangedSignal: Godot.SignalEmitter<PropertyCanRevertChangedSignalInput> = {
+        .init(object: self, signalName: "property_can_revert_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PropertyCanRevertChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(property: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    can_revert: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PropertyCanRevertChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PropertyCanRevertChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ResourceSelectedSignalInput: Godot.SignalInput {
+        public let path: Godot.GodotString
+        public let resource: Godot.Resource?
+        fileprivate init(path: Godot.GodotString, resource: Godot.Resource?) {
+            self.path = path
+            self.resource = resource
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, path, resource)
+        }
+    }
     public func resourceSelected(path: Godot.GodotString, resource: Godot.Resource?) {
-        resourceSelectedConnector.emit(path, resource)
+        _ = resourceSelectedSignal.emit(.init(path: path,
+                resource: resource))
     }
-
-    public private (set) lazy var resourceSelectedConnector: Godot.SignalConnector<Godot.GodotString, Godot.Resource?> = {
-        .init(self, "resource_selected")
+    public lazy var resourceSelectedSignal: Godot.SignalEmitter<ResourceSelectedSignalInput> = {
+        .init(object: self, signalName: "resource_selected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(path: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    resource: Godot.Resource?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ObjectIdSelectedSignalInput: Godot.SignalInput {
+        public let property: Godot.GodotStringName
+        public let id: Int
+        fileprivate init(property: Godot.GodotStringName, id: Int) {
+            self.property = property
+            self.id = id
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, property, id)
+        }
+    }
     public func objectIdSelected(property: Godot.GodotStringName, id: Int) {
-        objectIdSelectedConnector.emit(property, id)
+        _ = objectIdSelectedSignal.emit(.init(property: property,
+                id: id))
     }
-
-    public private (set) lazy var objectIdSelectedConnector: Godot.SignalConnector<Godot.GodotStringName, Int> = {
-        .init(self, "object_id_selected")
+    public lazy var objectIdSelectedSignal: Godot.SignalEmitter<ObjectIdSelectedSignalInput> = {
+        .init(object: self, signalName: "object_id_selected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ObjectIdSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(property: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ObjectIdSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ObjectIdSelectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func selected(path: Godot.GodotString, focusableIdx: Int) {
-        selectedConnector.emit(path, focusableIdx)
+    public struct SelectedSignalInput: Godot.SignalInput {
+        public let path: Godot.GodotString
+        public let focusable_idx: Int
+        fileprivate init(path: Godot.GodotString, focusable_idx: Int) {
+            self.path = path
+            self.focusable_idx = focusable_idx
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, path, focusable_idx)
+        }
     }
-
-    public private (set) lazy var selectedConnector: Godot.SignalConnector<Godot.GodotString, Int> = {
-        .init(self, "selected")
+    public func selected(path: Godot.GodotString, focusable_idx: Int) {
+        _ = selectedSignal.emit(.init(path: path,
+                focusable_idx: focusable_idx))
+    }
+    public lazy var selectedSignal: Godot.SignalEmitter<SelectedSignalInput> = {
+        .init(object: self, signalName: "selected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(path: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    focusable_idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SelectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SelectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     open func _updateProperty() {

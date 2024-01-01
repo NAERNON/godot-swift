@@ -5,41 +5,123 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Skeleton3D: Node3D {
+    public struct PoseUpdatedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func poseUpdated() {
-        poseUpdatedConnector.emit()
+        _ = poseUpdatedSignal.emit(.init())
     }
-
-    public private (set) lazy var poseUpdatedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "pose_updated")
+    public lazy var poseUpdatedSignal: Godot.SignalEmitter<PoseUpdatedSignalInput> = {
+        .init(object: self, signalName: "pose_updated") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PoseUpdatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PoseUpdatedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PoseUpdatedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
-    public func bonePoseChanged(boneIdx: Int) {
-        bonePoseChangedConnector.emit(boneIdx)
+    public struct BonePoseChangedSignalInput: Godot.SignalInput {
+        public let bone_idx: Int
+        fileprivate init(bone_idx: Int) {
+            self.bone_idx = bone_idx
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, bone_idx)
+        }
     }
-
-    public private (set) lazy var bonePoseChangedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "bone_pose_changed")
+    public func bonePoseChanged(bone_idx: Int) {
+        _ = bonePoseChangedSignal.emit(.init(bone_idx: bone_idx))
+    }
+    public lazy var bonePoseChangedSignal: Godot.SignalEmitter<BonePoseChangedSignalInput> = {
+        .init(object: self, signalName: "bone_pose_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<BonePoseChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(bone_idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<BonePoseChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<BonePoseChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func boneEnabledChanged(boneIdx: Int) {
-        boneEnabledChangedConnector.emit(boneIdx)
+    public struct BoneEnabledChangedSignalInput: Godot.SignalInput {
+        public let bone_idx: Int
+        fileprivate init(bone_idx: Int) {
+            self.bone_idx = bone_idx
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, bone_idx)
+        }
     }
-
-    public private (set) lazy var boneEnabledChangedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "bone_enabled_changed")
+    public func boneEnabledChanged(bone_idx: Int) {
+        _ = boneEnabledChangedSignal.emit(.init(bone_idx: bone_idx))
+    }
+    public lazy var boneEnabledChangedSignal: Godot.SignalEmitter<BoneEnabledChangedSignalInput> = {
+        .init(object: self, signalName: "bone_enabled_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<BoneEnabledChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(bone_idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<BoneEnabledChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<BoneEnabledChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ShowRestOnlyChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func showRestOnlyChanged() {
-        showRestOnlyChangedConnector.emit()
+        _ = showRestOnlyChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var showRestOnlyChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "show_rest_only_changed")
+    public lazy var showRestOnlyChangedSignal: Godot.SignalEmitter<ShowRestOnlyChangedSignalInput> = {
+        .init(object: self, signalName: "show_rest_only_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ShowRestOnlyChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ShowRestOnlyChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ShowRestOnlyChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_add_bone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

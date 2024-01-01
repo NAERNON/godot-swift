@@ -5,15 +5,34 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ThemeDB: Object {
-    public func fallbackChanged() {
-        fallbackChangedConnector.emit()
+    public struct FallbackChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var fallbackChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "fallback_changed")
+    public func fallbackChanged() {
+        _ = fallbackChangedSignal.emit(.init())
+    }
+    public lazy var fallbackChangedSignal: Godot.SignalEmitter<FallbackChangedSignalInput> = {
+        .init(object: self, signalName: "fallback_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FallbackChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FallbackChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FallbackChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_get_default_theme: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

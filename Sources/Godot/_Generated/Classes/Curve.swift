@@ -17,15 +17,34 @@ open class Curve: Resource {
         }
     }
 
-    public func rangeChanged() {
-        rangeChangedConnector.emit()
+    public struct RangeChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var rangeChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "range_changed")
+    public func rangeChanged() {
+        _ = rangeChangedSignal.emit(.init())
+    }
+    public lazy var rangeChangedSignal: Godot.SignalEmitter<RangeChangedSignalInput> = {
+        .init(object: self, signalName: "range_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<RangeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<RangeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<RangeChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

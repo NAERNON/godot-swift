@@ -5,25 +5,63 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Sprite2D: Node2D {
+    public struct FrameChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func frameChanged() {
-        frameChangedConnector.emit()
+        _ = frameChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var frameChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "frame_changed")
+    public lazy var frameChangedSignal: Godot.SignalEmitter<FrameChangedSignalInput> = {
+        .init(object: self, signalName: "frame_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FrameChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FrameChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FrameChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct TextureChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func textureChanged() {
-        textureChangedConnector.emit()
+        _ = textureChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var textureChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "texture_changed")
+    public lazy var textureChangedSignal: Godot.SignalEmitter<TextureChangedSignalInput> = {
+        .init(object: self, signalName: "texture_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TextureChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TextureChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TextureChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

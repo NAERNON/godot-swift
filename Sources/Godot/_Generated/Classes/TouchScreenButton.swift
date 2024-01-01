@@ -15,25 +15,63 @@ open class TouchScreenButton: Node2D {
         }
     }
 
+    public struct PressedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func pressed() {
-        pressedConnector.emit()
+        _ = pressedSignal.emit(.init())
     }
-
-    public private (set) lazy var pressedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "pressed")
+    public lazy var pressedSignal: Godot.SignalEmitter<PressedSignalInput> = {
+        .init(object: self, signalName: "pressed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ReleasedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func released() {
-        releasedConnector.emit()
+        _ = releasedSignal.emit(.init())
     }
-
-    public private (set) lazy var releasedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "released")
+    public lazy var releasedSignal: Godot.SignalEmitter<ReleasedSignalInput> = {
+        .init(object: self, signalName: "released") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ReleasedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ReleasedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ReleasedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_set_texture_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

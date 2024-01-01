@@ -21,68 +21,292 @@ open class Area2D: CollisionObject2D {
         }
     }
 
-    public func bodyShapeEntered(bodyRid: Godot.RID, body: Godot.Node2D?, bodyShapeIndex: Int, localShapeIndex: Int) {
-        bodyShapeEnteredConnector.emit(bodyRid, body, bodyShapeIndex, localShapeIndex)
+    public struct BodyShapeEnteredSignalInput: Godot.SignalInput {
+        public let body_rid: Godot.RID
+        public let body: Godot.Node2D?
+        public let body_shape_index: Int
+        public let local_shape_index: Int
+        fileprivate init(body_rid: Godot.RID, body: Godot.Node2D?, body_shape_index: Int, local_shape_index: Int) {
+            self.body_rid = body_rid
+            self.body = body
+            self.body_shape_index = body_shape_index
+            self.local_shape_index = local_shape_index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, body_rid, body, body_shape_index, local_shape_index)
+        }
     }
-
-    public private (set) lazy var bodyShapeEnteredConnector: Godot.SignalConnector<Godot.RID, Godot.Node2D?, Int, Int> = {
-        .init(self, "body_shape_entered")
+    public func bodyShapeEntered(body_rid: Godot.RID, body: Godot.Node2D?, body_shape_index: Int, local_shape_index: Int) {
+        _ = bodyShapeEnteredSignal.emit(.init(body_rid: body_rid,
+                body: body,
+                body_shape_index: body_shape_index,
+                local_shape_index: local_shape_index))
+    }
+    public lazy var bodyShapeEnteredSignal: Godot.SignalEmitter<BodyShapeEnteredSignalInput> = {
+        .init(object: self, signalName: "body_shape_entered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(body_rid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    body: Godot.Node2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    body_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    local_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<BodyShapeEnteredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func bodyShapeExited(bodyRid: Godot.RID, body: Godot.Node2D?, bodyShapeIndex: Int, localShapeIndex: Int) {
-        bodyShapeExitedConnector.emit(bodyRid, body, bodyShapeIndex, localShapeIndex)
+    public struct BodyShapeExitedSignalInput: Godot.SignalInput {
+        public let body_rid: Godot.RID
+        public let body: Godot.Node2D?
+        public let body_shape_index: Int
+        public let local_shape_index: Int
+        fileprivate init(body_rid: Godot.RID, body: Godot.Node2D?, body_shape_index: Int, local_shape_index: Int) {
+            self.body_rid = body_rid
+            self.body = body
+            self.body_shape_index = body_shape_index
+            self.local_shape_index = local_shape_index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, body_rid, body, body_shape_index, local_shape_index)
+        }
     }
-
-    public private (set) lazy var bodyShapeExitedConnector: Godot.SignalConnector<Godot.RID, Godot.Node2D?, Int, Int> = {
-        .init(self, "body_shape_exited")
+    public func bodyShapeExited(body_rid: Godot.RID, body: Godot.Node2D?, body_shape_index: Int, local_shape_index: Int) {
+        _ = bodyShapeExitedSignal.emit(.init(body_rid: body_rid,
+                body: body,
+                body_shape_index: body_shape_index,
+                local_shape_index: local_shape_index))
+    }
+    public lazy var bodyShapeExitedSignal: Godot.SignalEmitter<BodyShapeExitedSignalInput> = {
+        .init(object: self, signalName: "body_shape_exited") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(body_rid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    body: Godot.Node2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    body_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    local_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<BodyShapeExitedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct BodyEnteredSignalInput: Godot.SignalInput {
+        public let body: Godot.Node2D?
+        fileprivate init(body: Godot.Node2D?) {
+            self.body = body
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, body)
+        }
+    }
     public func bodyEntered(body: Godot.Node2D?) {
-        bodyEnteredConnector.emit(body)
+        _ = bodyEnteredSignal.emit(.init(body: body))
     }
-
-    public private (set) lazy var bodyEnteredConnector: Godot.SignalConnector<Godot.Node2D?> = {
-        .init(self, "body_entered")
+    public lazy var bodyEnteredSignal: Godot.SignalEmitter<BodyEnteredSignalInput> = {
+        .init(object: self, signalName: "body_entered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<BodyEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(body: Godot.Node2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<BodyEnteredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<BodyEnteredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct BodyExitedSignalInput: Godot.SignalInput {
+        public let body: Godot.Node2D?
+        fileprivate init(body: Godot.Node2D?) {
+            self.body = body
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, body)
+        }
+    }
     public func bodyExited(body: Godot.Node2D?) {
-        bodyExitedConnector.emit(body)
+        _ = bodyExitedSignal.emit(.init(body: body))
     }
-
-    public private (set) lazy var bodyExitedConnector: Godot.SignalConnector<Godot.Node2D?> = {
-        .init(self, "body_exited")
+    public lazy var bodyExitedSignal: Godot.SignalEmitter<BodyExitedSignalInput> = {
+        .init(object: self, signalName: "body_exited") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<BodyExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(body: Godot.Node2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<BodyExitedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<BodyExitedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func areaShapeEntered(areaRid: Godot.RID, area: Godot.Area2D?, areaShapeIndex: Int, localShapeIndex: Int) {
-        areaShapeEnteredConnector.emit(areaRid, area, areaShapeIndex, localShapeIndex)
+    public struct AreaShapeEnteredSignalInput: Godot.SignalInput {
+        public let area_rid: Godot.RID
+        public let area: Godot.Area2D?
+        public let area_shape_index: Int
+        public let local_shape_index: Int
+        fileprivate init(area_rid: Godot.RID, area: Godot.Area2D?, area_shape_index: Int, local_shape_index: Int) {
+            self.area_rid = area_rid
+            self.area = area
+            self.area_shape_index = area_shape_index
+            self.local_shape_index = local_shape_index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, area_rid, area, area_shape_index, local_shape_index)
+        }
     }
-
-    public private (set) lazy var areaShapeEnteredConnector: Godot.SignalConnector<Godot.RID, Godot.Area2D?, Int, Int> = {
-        .init(self, "area_shape_entered")
+    public func areaShapeEntered(area_rid: Godot.RID, area: Godot.Area2D?, area_shape_index: Int, local_shape_index: Int) {
+        _ = areaShapeEnteredSignal.emit(.init(area_rid: area_rid,
+                area: area,
+                area_shape_index: area_shape_index,
+                local_shape_index: local_shape_index))
+    }
+    public lazy var areaShapeEnteredSignal: Godot.SignalEmitter<AreaShapeEnteredSignalInput> = {
+        .init(object: self, signalName: "area_shape_entered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<AreaShapeEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(area_rid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    area: Godot.Area2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    area_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    local_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<AreaShapeEnteredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<AreaShapeEnteredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func areaShapeExited(areaRid: Godot.RID, area: Godot.Area2D?, areaShapeIndex: Int, localShapeIndex: Int) {
-        areaShapeExitedConnector.emit(areaRid, area, areaShapeIndex, localShapeIndex)
+    public struct AreaShapeExitedSignalInput: Godot.SignalInput {
+        public let area_rid: Godot.RID
+        public let area: Godot.Area2D?
+        public let area_shape_index: Int
+        public let local_shape_index: Int
+        fileprivate init(area_rid: Godot.RID, area: Godot.Area2D?, area_shape_index: Int, local_shape_index: Int) {
+            self.area_rid = area_rid
+            self.area = area
+            self.area_shape_index = area_shape_index
+            self.local_shape_index = local_shape_index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, area_rid, area, area_shape_index, local_shape_index)
+        }
     }
-
-    public private (set) lazy var areaShapeExitedConnector: Godot.SignalConnector<Godot.RID, Godot.Area2D?, Int, Int> = {
-        .init(self, "area_shape_exited")
+    public func areaShapeExited(area_rid: Godot.RID, area: Godot.Area2D?, area_shape_index: Int, local_shape_index: Int) {
+        _ = areaShapeExitedSignal.emit(.init(area_rid: area_rid,
+                area: area,
+                area_shape_index: area_shape_index,
+                local_shape_index: local_shape_index))
+    }
+    public lazy var areaShapeExitedSignal: Godot.SignalEmitter<AreaShapeExitedSignalInput> = {
+        .init(object: self, signalName: "area_shape_exited") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<AreaShapeExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(area_rid: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    area: Godot.Area2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    area_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    local_shape_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<AreaShapeExitedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<AreaShapeExitedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct AreaEnteredSignalInput: Godot.SignalInput {
+        public let area: Godot.Area2D?
+        fileprivate init(area: Godot.Area2D?) {
+            self.area = area
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, area)
+        }
+    }
     public func areaEntered(area: Godot.Area2D?) {
-        areaEnteredConnector.emit(area)
+        _ = areaEnteredSignal.emit(.init(area: area))
     }
-
-    public private (set) lazy var areaEnteredConnector: Godot.SignalConnector<Godot.Area2D?> = {
-        .init(self, "area_entered")
+    public lazy var areaEnteredSignal: Godot.SignalEmitter<AreaEnteredSignalInput> = {
+        .init(object: self, signalName: "area_entered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<AreaEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(area: Godot.Area2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<AreaEnteredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<AreaEnteredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func areaExited(area: Godot.Area2D?) {
-        areaExitedConnector.emit(area)
+    public struct AreaExitedSignalInput: Godot.SignalInput {
+        public let area: Godot.Area2D?
+        fileprivate init(area: Godot.Area2D?) {
+            self.area = area
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, area)
+        }
     }
-
-    public private (set) lazy var areaExitedConnector: Godot.SignalConnector<Godot.Area2D?> = {
-        .init(self, "area_exited")
+    public func areaExited(area: Godot.Area2D?) {
+        _ = areaExitedSignal.emit(.init(area: area))
+    }
+    public lazy var areaExitedSignal: Godot.SignalEmitter<AreaExitedSignalInput> = {
+        .init(object: self, signalName: "area_exited") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<AreaExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(area: Godot.Area2D?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<AreaExitedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<AreaExitedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_set_gravity_space_override_mode: GDExtensionMethodBindPtr = {

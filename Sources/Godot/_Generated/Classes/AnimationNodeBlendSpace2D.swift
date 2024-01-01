@@ -17,15 +17,34 @@ open class AnimationNodeBlendSpace2D: AnimationRootNode {
         }
     }
 
-    public func trianglesUpdated() {
-        trianglesUpdatedConnector.emit()
+    public struct TrianglesUpdatedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var trianglesUpdatedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "triangles_updated")
+    public func trianglesUpdated() {
+        _ = trianglesUpdatedSignal.emit(.init())
+    }
+    public lazy var trianglesUpdatedSignal: Godot.SignalEmitter<TrianglesUpdatedSignalInput> = {
+        .init(object: self, signalName: "triangles_updated") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TrianglesUpdatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TrianglesUpdatedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TrianglesUpdatedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_add_blend_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

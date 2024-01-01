@@ -5,23 +5,64 @@
 import GodotExtensionHeaders
 @GodotClass
 open class NavigationServer2D: Object {
+    public struct MapChangedSignalInput: Godot.SignalInput {
+        public let map: Godot.RID
+        fileprivate init(map: Godot.RID) {
+            self.map = map
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, map)
+        }
+    }
     public func mapChanged(map: Godot.RID) {
-        mapChangedConnector.emit(map)
+        _ = mapChangedSignal.emit(.init(map: map))
     }
-
-    public private (set) lazy var mapChangedConnector: Godot.SignalConnector<Godot.RID> = {
-        .init(self, "map_changed")
+    public lazy var mapChangedSignal: Godot.SignalEmitter<MapChangedSignalInput> = {
+        .init(object: self, signalName: "map_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(map: Godot.RID.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct NavigationDebugChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func navigationDebugChanged() {
-        navigationDebugChangedConnector.emit()
+        _ = navigationDebugChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var navigationDebugChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "navigation_debug_changed")
+    public lazy var navigationDebugChangedSignal: Godot.SignalEmitter<NavigationDebugChangedSignalInput> = {
+        .init(object: self, signalName: "navigation_debug_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<NavigationDebugChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<NavigationDebugChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<NavigationDebugChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_get_maps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

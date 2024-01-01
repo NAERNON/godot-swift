@@ -21,15 +21,34 @@ open class GDExtensionManager: Object {
         }
     }
 
-    public func extensionsReloaded() {
-        extensionsReloadedConnector.emit()
+    public struct ExtensionsReloadedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var extensionsReloadedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "extensions_reloaded")
+    public func extensionsReloaded() {
+        _ = extensionsReloadedSignal.emit(.init())
+    }
+    public lazy var extensionsReloadedSignal: Godot.SignalEmitter<ExtensionsReloadedSignalInput> = {
+        .init(object: self, signalName: "extensions_reloaded") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ExtensionsReloadedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ExtensionsReloadedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ExtensionsReloadedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_load_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

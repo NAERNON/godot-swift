@@ -203,33 +203,16 @@ struct GodotClass: Decodable {
     
     @MemberBlockItemListBuilder
     func signalSyntax(_ signal: Signal) throws -> MemberBlockItemListSyntax {
-        let functionName = signal.name.translated(from: .snake, to: .camel)
-        let connectorName = functionName + "Connector"
+        let signalInspector = SignalInspector(
+            functionName: signal.name.translated(from: .snake, to: .camel),
+            signalCName: signal.name,
+            arguments: (signal.arguments ?? []).map { ($0.name, $0.type.syntax(options: syntaxOptions)) },
+            isPublic: true
+        )
         
-        let argumentsString = (signal.arguments ?? [])
-            .map { argument -> String in
-                let name = argument.name.translated(from: .snake, to: .camel)
-                return "\(name): \(argument.type.syntax(options: syntaxOptions))"
-            }
-            .joined(separator: ", ")
-        
-        let genericSyntax = (signal.arguments ?? [])
-            .map { $0.type.syntax(options: syntaxOptions) }
-            .joined(separator: ", ")
-        
-        let emitCallSyntax = (signal.arguments ?? [])
-            .map { $0.name.translated(from: .snake, to: .camel) }
-            .joined(separator: ", ")
-        
-        """
-        public func \(raw: functionName)(\(raw: argumentsString)) {
-            \(raw: connectorName).emit(\(raw: emitCallSyntax))
-        }
-        
-        public private(set) lazy var \(raw: connectorName): Godot.SignalConnector<\(raw: genericSyntax)> = {
-            .init(self, \(literal: signal.name))
-        }()
-        """
+        try signalInspector.signalInputDeclSyntax()
+        try signalInspector.signalFunctionDeclSyntax()
+        signalInspector.emitterDeclSyntax()
     }
     
     @MemberBlockItemListBuilder

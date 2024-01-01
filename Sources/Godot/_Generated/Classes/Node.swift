@@ -73,88 +73,268 @@ open class Node: Object {
         }
     }
 
+    public struct ReadySignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func ready() {
-        readyConnector.emit()
+        _ = readySignal.emit(.init())
     }
-
-    public private (set) lazy var readyConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "ready")
+    public lazy var readySignal: Godot.SignalEmitter<ReadySignalInput> = {
+        .init(object: self, signalName: "ready") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ReadySignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ReadySignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ReadySignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct RenamedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func renamed() {
-        renamedConnector.emit()
+        _ = renamedSignal.emit(.init())
     }
-
-    public private (set) lazy var renamedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "renamed")
+    public lazy var renamedSignal: Godot.SignalEmitter<RenamedSignalInput> = {
+        .init(object: self, signalName: "renamed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<RenamedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<RenamedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<RenamedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct TreeEnteredSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func treeEntered() {
-        treeEnteredConnector.emit()
+        _ = treeEnteredSignal.emit(.init())
     }
-
-    public private (set) lazy var treeEnteredConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "tree_entered")
+    public lazy var treeEnteredSignal: Godot.SignalEmitter<TreeEnteredSignalInput> = {
+        .init(object: self, signalName: "tree_entered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TreeEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TreeEnteredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TreeEnteredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct TreeExitingSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func treeExiting() {
-        treeExitingConnector.emit()
+        _ = treeExitingSignal.emit(.init())
     }
-
-    public private (set) lazy var treeExitingConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "tree_exiting")
+    public lazy var treeExitingSignal: Godot.SignalEmitter<TreeExitingSignalInput> = {
+        .init(object: self, signalName: "tree_exiting") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TreeExitingSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TreeExitingSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TreeExitingSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct TreeExitedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func treeExited() {
-        treeExitedConnector.emit()
+        _ = treeExitedSignal.emit(.init())
     }
-
-    public private (set) lazy var treeExitedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "tree_exited")
+    public lazy var treeExitedSignal: Godot.SignalEmitter<TreeExitedSignalInput> = {
+        .init(object: self, signalName: "tree_exited") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TreeExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TreeExitedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TreeExitedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
+    public struct ChildEnteredTreeSignalInput: Godot.SignalInput {
+        public let node: Godot.Node?
+        fileprivate init(node: Godot.Node?) {
+            self.node = node
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, node)
+        }
+    }
     public func childEnteredTree(node: Godot.Node?) {
-        childEnteredTreeConnector.emit(node)
+        _ = childEnteredTreeSignal.emit(.init(node: node))
     }
-
-    public private (set) lazy var childEnteredTreeConnector: Godot.SignalConnector<Godot.Node?> = {
-        .init(self, "child_entered_tree")
+    public lazy var childEnteredTreeSignal: Godot.SignalEmitter<ChildEnteredTreeSignalInput> = {
+        .init(object: self, signalName: "child_entered_tree") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ChildEnteredTreeSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ChildExitingTreeSignalInput: Godot.SignalInput {
+        public let node: Godot.Node?
+        fileprivate init(node: Godot.Node?) {
+            self.node = node
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, node)
+        }
+    }
     public func childExitingTree(node: Godot.Node?) {
-        childExitingTreeConnector.emit(node)
+        _ = childExitingTreeSignal.emit(.init(node: node))
     }
-
-    public private (set) lazy var childExitingTreeConnector: Godot.SignalConnector<Godot.Node?> = {
-        .init(self, "child_exiting_tree")
+    public lazy var childExitingTreeSignal: Godot.SignalEmitter<ChildExitingTreeSignalInput> = {
+        .init(object: self, signalName: "child_exiting_tree") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ChildExitingTreeSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ChildOrderChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func childOrderChanged() {
-        childOrderChangedConnector.emit()
+        _ = childOrderChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var childOrderChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "child_order_changed")
+    public lazy var childOrderChangedSignal: Godot.SignalEmitter<ChildOrderChangedSignalInput> = {
+        .init(object: self, signalName: "child_order_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ChildOrderChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ChildOrderChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ChildOrderChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
-    public func replacingBy(node: Godot.Node?) {
-        replacingByConnector.emit(node)
+    public struct ReplacingBySignalInput: Godot.SignalInput {
+        public let node: Godot.Node?
+        fileprivate init(node: Godot.Node?) {
+            self.node = node
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, node)
+        }
     }
-
-    public private (set) lazy var replacingByConnector: Godot.SignalConnector<Godot.Node?> = {
-        .init(self, "replacing_by")
+    public func replacingBy(node: Godot.Node?) {
+        _ = replacingBySignal.emit(.init(node: node))
+    }
+    public lazy var replacingBySignal: Godot.SignalEmitter<ReplacingBySignalInput> = {
+        .init(object: self, signalName: "replacing_by") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ReplacingBySignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     open func _process(delta: Double) {

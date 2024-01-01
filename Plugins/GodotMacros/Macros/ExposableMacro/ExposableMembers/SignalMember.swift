@@ -87,33 +87,17 @@ struct SignalMember: ExposableMember {
         isContextPublic: Bool,
         in context: some MacroExpansionContext
     ) -> [DeclSyntax] {
-        let propertyName = functionName + "Connector"
-        
-        let signalGenericArgument = signalArguments
-            .map { $0.type.trimmedDescription }
-            .joined(separator: ", ")
-        
-        let functionArgumentsInput = signalArguments
-            .map { $0.name + ": " + $0.type.trimmedDescription }
-            .joined(separator: ", ")
-        
-        let functionCallArguments = signalArguments
-            .map { $0.name }
-            .joined(separator: ", ")
-        
-        let funcDecl = try! FunctionDeclSyntax(
-            "public func \(raw: functionName)(\(raw: functionArgumentsInput))"
-        ) {
-            "\(raw: propertyName).emit(\(raw: functionCallArguments))"
-        }
+        let signalInspector = SignalInspector(
+            functionName: functionName,
+            signalCName: cName,
+            arguments: signalArguments.map { ($0.name, $0.type.trimmedDescription) },
+            isPublic: isContextPublic
+        )
         
         return [
-            DeclSyntax(funcDecl),
-            """
-            public private(set) lazy var \(raw: propertyName): Godot.SignalConnector<\(raw: signalGenericArgument)> = {
-                .init(self, \(literal: cName))
-            }()
-            """
+            DeclSyntax(try! signalInspector.signalInputDeclSyntax()),
+            DeclSyntax(try! signalInspector.signalFunctionDeclSyntax()),
+            signalInspector.emitterDeclSyntax()
         ]
     }
 }

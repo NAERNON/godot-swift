@@ -5,12 +5,34 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ScriptCreateDialog: ConfirmationDialog {
-    public func scriptCreated(script: Godot.Script?) {
-        scriptCreatedConnector.emit(script)
+    public struct ScriptCreatedSignalInput: Godot.SignalInput {
+        public let script: Godot.Script?
+        fileprivate init(script: Godot.Script?) {
+            self.script = script
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, script)
+        }
     }
-
-    public private (set) lazy var scriptCreatedConnector: Godot.SignalConnector<Godot.Script?> = {
-        .init(self, "script_created")
+    public func scriptCreated(script: Godot.Script?) {
+        _ = scriptCreatedSignal.emit(.init(script: script))
+    }
+    public lazy var scriptCreatedSignal: Godot.SignalEmitter<ScriptCreatedSignalInput> = {
+        .init(object: self, signalName: "script_created") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ScriptCreatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(script: Godot.Script?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ScriptCreatedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ScriptCreatedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_config: GDExtensionMethodBindPtr = {

@@ -218,22 +218,63 @@ open class Viewport: Node {
         }
     }
 
-    public func sizeChanged() {
-        sizeChangedConnector.emit()
-    }
+    public struct SizeChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
-    public private (set) lazy var sizeChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "size_changed")
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
+    public func sizeChanged() {
+        _ = sizeChangedSignal.emit(.init())
+    }
+    public lazy var sizeChangedSignal: Godot.SignalEmitter<SizeChangedSignalInput> = {
+        .init(object: self, signalName: "size_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SizeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SizeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SizeChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
-    public func guiFocusChanged(node: Godot.Control?) {
-        guiFocusChangedConnector.emit(node)
+    public struct GuiFocusChangedSignalInput: Godot.SignalInput {
+        public let node: Godot.Control?
+        fileprivate init(node: Godot.Control?) {
+            self.node = node
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, node)
+        }
     }
-
-    public private (set) lazy var guiFocusChangedConnector: Godot.SignalConnector<Godot.Control?> = {
-        .init(self, "gui_focus_changed")
+    public func guiFocusChanged(node: Godot.Control?) {
+        _ = guiFocusChangedSignal.emit(.init(node: node))
+    }
+    public lazy var guiFocusChangedSignal: Godot.SignalEmitter<GuiFocusChangedSignalInput> = {
+        .init(object: self, signalName: "gui_focus_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<GuiFocusChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(node: Godot.Control?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<GuiFocusChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<GuiFocusChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_set_world_2d: GDExtensionMethodBindPtr = {

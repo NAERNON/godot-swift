@@ -17,32 +17,92 @@ open class MultiplayerSynchronizer: Node {
         }
     }
 
+    public struct SynchronizedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func synchronized() {
-        synchronizedConnector.emit()
+        _ = synchronizedSignal.emit(.init())
     }
-
-    public private (set) lazy var synchronizedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "synchronized")
+    public lazy var synchronizedSignal: Godot.SignalEmitter<SynchronizedSignalInput> = {
+        .init(object: self, signalName: "synchronized") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SynchronizedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SynchronizedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SynchronizedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct DeltaSynchronizedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func deltaSynchronized() {
-        deltaSynchronizedConnector.emit()
+        _ = deltaSynchronizedSignal.emit(.init())
     }
-
-    public private (set) lazy var deltaSynchronizedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "delta_synchronized")
+    public lazy var deltaSynchronizedSignal: Godot.SignalEmitter<DeltaSynchronizedSignalInput> = {
+        .init(object: self, signalName: "delta_synchronized") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<DeltaSynchronizedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<DeltaSynchronizedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<DeltaSynchronizedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
-    public func visibilityChanged(forPeer: Int) {
-        visibilityChangedConnector.emit(forPeer)
+    public struct VisibilityChangedSignalInput: Godot.SignalInput {
+        public let for_peer: Int
+        fileprivate init(for_peer: Int) {
+            self.for_peer = for_peer
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, for_peer)
+        }
     }
-
-    public private (set) lazy var visibilityChangedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "visibility_changed")
+    public func visibilityChanged(for_peer: Int) {
+        _ = visibilityChangedSignal.emit(.init(for_peer: for_peer))
+    }
+    public lazy var visibilityChangedSignal: Godot.SignalEmitter<VisibilityChangedSignalInput> = {
+        .init(object: self, signalName: "visibility_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<VisibilityChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(for_peer: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<VisibilityChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<VisibilityChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_set_root_path: GDExtensionMethodBindPtr = {

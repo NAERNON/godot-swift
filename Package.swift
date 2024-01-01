@@ -38,7 +38,9 @@ let package = Package(
         
         .target(
             name: "Utils",
-            dependencies: [],
+            dependencies: [
+                .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
+            ],
             path: "Utils"
         ),
         

@@ -94,28 +94,94 @@ open class LineEdit: Control {
         }
     }
 
-    public func textChanged(newText: Godot.GodotString) {
-        textChangedConnector.emit(newText)
+    public struct TextChangedSignalInput: Godot.SignalInput {
+        public let new_text: Godot.GodotString
+        fileprivate init(new_text: Godot.GodotString) {
+            self.new_text = new_text
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, new_text)
+        }
     }
-
-    public private (set) lazy var textChangedConnector: Godot.SignalConnector<Godot.GodotString> = {
-        .init(self, "text_changed")
+    public func textChanged(new_text: Godot.GodotString) {
+        _ = textChangedSignal.emit(.init(new_text: new_text))
+    }
+    public lazy var textChangedSignal: Godot.SignalEmitter<TextChangedSignalInput> = {
+        .init(object: self, signalName: "text_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TextChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(new_text: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TextChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TextChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func textChangeRejected(rejectedSubstring: Godot.GodotString) {
-        textChangeRejectedConnector.emit(rejectedSubstring)
+    public struct TextChangeRejectedSignalInput: Godot.SignalInput {
+        public let rejected_substring: Godot.GodotString
+        fileprivate init(rejected_substring: Godot.GodotString) {
+            self.rejected_substring = rejected_substring
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, rejected_substring)
+        }
     }
-
-    public private (set) lazy var textChangeRejectedConnector: Godot.SignalConnector<Godot.GodotString> = {
-        .init(self, "text_change_rejected")
+    public func textChangeRejected(rejected_substring: Godot.GodotString) {
+        _ = textChangeRejectedSignal.emit(.init(rejected_substring: rejected_substring))
+    }
+    public lazy var textChangeRejectedSignal: Godot.SignalEmitter<TextChangeRejectedSignalInput> = {
+        .init(object: self, signalName: "text_change_rejected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TextChangeRejectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(rejected_substring: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TextChangeRejectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TextChangeRejectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func textSubmitted(newText: Godot.GodotString) {
-        textSubmittedConnector.emit(newText)
+    public struct TextSubmittedSignalInput: Godot.SignalInput {
+        public let new_text: Godot.GodotString
+        fileprivate init(new_text: Godot.GodotString) {
+            self.new_text = new_text
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, new_text)
+        }
     }
-
-    public private (set) lazy var textSubmittedConnector: Godot.SignalConnector<Godot.GodotString> = {
-        .init(self, "text_submitted")
+    public func textSubmitted(new_text: Godot.GodotString) {
+        _ = textSubmittedSignal.emit(.init(new_text: new_text))
+    }
+    public lazy var textSubmittedSignal: Godot.SignalEmitter<TextSubmittedSignalInput> = {
+        .init(object: self, signalName: "text_submitted") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TextSubmittedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(new_text: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TextSubmittedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TextSubmittedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {

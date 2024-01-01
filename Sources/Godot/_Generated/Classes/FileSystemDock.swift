@@ -5,71 +5,252 @@
 import GodotExtensionHeaders
 @GodotClass
 open class FileSystemDock: VBoxContainer {
+    public struct InheritSignalInput: Godot.SignalInput {
+        public let file: Godot.GodotString
+        fileprivate init(file: Godot.GodotString) {
+            self.file = file
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, file)
+        }
+    }
     public func inherit(file: Godot.GodotString) {
-        inheritConnector.emit(file)
+        _ = inheritSignal.emit(.init(file: file))
     }
-
-    public private (set) lazy var inheritConnector: Godot.SignalConnector<Godot.GodotString> = {
-        .init(self, "inherit")
+    public lazy var inheritSignal: Godot.SignalEmitter<InheritSignalInput> = {
+        .init(object: self, signalName: "inherit") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<InheritSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(file: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<InheritSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<InheritSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct InstantiateSignalInput: Godot.SignalInput {
+        public let files: Godot.PackedStringArray
+        fileprivate init(files: Godot.PackedStringArray) {
+            self.files = files
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, files)
+        }
+    }
     public func instantiate(files: Godot.PackedStringArray) {
-        instantiateConnector.emit(files)
+        _ = instantiateSignal.emit(.init(files: files))
     }
-
-    public private (set) lazy var instantiateConnector: Godot.SignalConnector<Godot.PackedStringArray> = {
-        .init(self, "instantiate")
+    public lazy var instantiateSignal: Godot.SignalEmitter<InstantiateSignalInput> = {
+        .init(object: self, signalName: "instantiate") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(files: Godot.PackedStringArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ResourceRemovedSignalInput: Godot.SignalInput {
+        public let resource: Godot.Resource?
+        fileprivate init(resource: Godot.Resource?) {
+            self.resource = resource
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, resource)
+        }
+    }
     public func resourceRemoved(resource: Godot.Resource?) {
-        resourceRemovedConnector.emit(resource)
+        _ = resourceRemovedSignal.emit(.init(resource: resource))
     }
-
-    public private (set) lazy var resourceRemovedConnector: Godot.SignalConnector<Godot.Resource?> = {
-        .init(self, "resource_removed")
+    public lazy var resourceRemovedSignal: Godot.SignalEmitter<ResourceRemovedSignalInput> = {
+        .init(object: self, signalName: "resource_removed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ResourceRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(resource: Godot.Resource?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ResourceRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ResourceRemovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct FileRemovedSignalInput: Godot.SignalInput {
+        public let file: Godot.GodotString
+        fileprivate init(file: Godot.GodotString) {
+            self.file = file
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, file)
+        }
+    }
     public func fileRemoved(file: Godot.GodotString) {
-        fileRemovedConnector.emit(file)
+        _ = fileRemovedSignal.emit(.init(file: file))
     }
-
-    public private (set) lazy var fileRemovedConnector: Godot.SignalConnector<Godot.GodotString> = {
-        .init(self, "file_removed")
+    public lazy var fileRemovedSignal: Godot.SignalEmitter<FileRemovedSignalInput> = {
+        .init(object: self, signalName: "file_removed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FileRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(file: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FileRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FileRemovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct FolderRemovedSignalInput: Godot.SignalInput {
+        public let folder: Godot.GodotString
+        fileprivate init(folder: Godot.GodotString) {
+            self.folder = folder
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, folder)
+        }
+    }
     public func folderRemoved(folder: Godot.GodotString) {
-        folderRemovedConnector.emit(folder)
+        _ = folderRemovedSignal.emit(.init(folder: folder))
     }
-
-    public private (set) lazy var folderRemovedConnector: Godot.SignalConnector<Godot.GodotString> = {
-        .init(self, "folder_removed")
+    public lazy var folderRemovedSignal: Godot.SignalEmitter<FolderRemovedSignalInput> = {
+        .init(object: self, signalName: "folder_removed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FolderRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(folder: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FolderRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FolderRemovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func filesMoved(oldFile: Godot.GodotString, newFile: Godot.GodotString) {
-        filesMovedConnector.emit(oldFile, newFile)
+    public struct FilesMovedSignalInput: Godot.SignalInput {
+        public let old_file: Godot.GodotString
+        public let new_file: Godot.GodotString
+        fileprivate init(old_file: Godot.GodotString, new_file: Godot.GodotString) {
+            self.old_file = old_file
+            self.new_file = new_file
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, old_file, new_file)
+        }
     }
-
-    public private (set) lazy var filesMovedConnector: Godot.SignalConnector<Godot.GodotString, Godot.GodotString> = {
-        .init(self, "files_moved")
+    public func filesMoved(old_file: Godot.GodotString, new_file: Godot.GodotString) {
+        _ = filesMovedSignal.emit(.init(old_file: old_file,
+                new_file: new_file))
+    }
+    public lazy var filesMovedSignal: Godot.SignalEmitter<FilesMovedSignalInput> = {
+        .init(object: self, signalName: "files_moved") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FilesMovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(old_file: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    new_file: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FilesMovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FilesMovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func folderMoved(oldFolder: Godot.GodotString, newFolder: Godot.GodotString) {
-        folderMovedConnector.emit(oldFolder, newFolder)
+    public struct FolderMovedSignalInput: Godot.SignalInput {
+        public let old_folder: Godot.GodotString
+        public let new_folder: Godot.GodotString
+        fileprivate init(old_folder: Godot.GodotString, new_folder: Godot.GodotString) {
+            self.old_folder = old_folder
+            self.new_folder = new_folder
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, old_folder, new_folder)
+        }
     }
-
-    public private (set) lazy var folderMovedConnector: Godot.SignalConnector<Godot.GodotString, Godot.GodotString> = {
-        .init(self, "folder_moved")
+    public func folderMoved(old_folder: Godot.GodotString, new_folder: Godot.GodotString) {
+        _ = folderMovedSignal.emit(.init(old_folder: old_folder,
+                new_folder: new_folder))
+    }
+    public lazy var folderMovedSignal: Godot.SignalEmitter<FolderMovedSignalInput> = {
+        .init(object: self, signalName: "folder_moved") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FolderMovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(old_folder: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    new_folder: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FolderMovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FolderMovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct DisplayModeChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func displayModeChanged() {
-        displayModeChangedConnector.emit()
+        _ = displayModeChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var displayModeChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "display_mode_changed")
+    public lazy var displayModeChangedSignal: Godot.SignalEmitter<DisplayModeChangedSignalInput> = {
+        .init(object: self, signalName: "display_mode_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<DisplayModeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<DisplayModeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<DisplayModeChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_navigate_to_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

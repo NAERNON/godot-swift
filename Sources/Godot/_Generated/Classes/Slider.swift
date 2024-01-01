@@ -5,22 +5,63 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Slider: Range {
-    public func dragStarted() {
-        dragStartedConnector.emit()
-    }
+    public struct DragStartedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
-    public private (set) lazy var dragStartedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "drag_started")
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
+    public func dragStarted() {
+        _ = dragStartedSignal.emit(.init())
+    }
+    public lazy var dragStartedSignal: Godot.SignalEmitter<DragStartedSignalInput> = {
+        .init(object: self, signalName: "drag_started") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<DragStartedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<DragStartedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<DragStartedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
-    public func dragEnded(valueChanged: Bool) {
-        dragEndedConnector.emit(valueChanged)
+    public struct DragEndedSignalInput: Godot.SignalInput {
+        public let value_changed: Bool
+        fileprivate init(value_changed: Bool) {
+            self.value_changed = value_changed
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, value_changed)
+        }
     }
-
-    public private (set) lazy var dragEndedConnector: Godot.SignalConnector<Bool> = {
-        .init(self, "drag_ended")
+    public func dragEnded(value_changed: Bool) {
+        _ = dragEndedSignal.emit(.init(value_changed: value_changed))
+    }
+    public lazy var dragEndedSignal: Godot.SignalEmitter<DragEndedSignalInput> = {
+        .init(object: self, signalName: "drag_ended") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<DragEndedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(value_changed: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<DragEndedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<DragEndedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_set_ticks: GDExtensionMethodBindPtr = {

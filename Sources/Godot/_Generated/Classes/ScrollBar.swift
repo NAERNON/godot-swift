@@ -5,15 +5,34 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ScrollBar: Range {
-    public func scrolling() {
-        scrollingConnector.emit()
+    public struct ScrollingSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var scrollingConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "scrolling")
+    public func scrolling() {
+        _ = scrollingSignal.emit(.init())
+    }
+    public lazy var scrollingSignal: Godot.SignalEmitter<ScrollingSignalInput> = {
+        .init(object: self, signalName: "scrolling") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ScrollingSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ScrollingSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ScrollingSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_set_custom_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -17,15 +17,34 @@ open class Node3D: Node {
         }
     }
 
-    public func visibilityChanged() {
-        visibilityChangedConnector.emit()
+    public struct VisibilityChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var visibilityChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "visibility_changed")
+    public func visibilityChanged() {
+        _ = visibilityChangedSignal.emit(.init())
+    }
+    public lazy var visibilityChangedSignal: Godot.SignalEmitter<VisibilityChangedSignalInput> = {
+        .init(object: self, signalName: "visibility_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<VisibilityChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<VisibilityChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<VisibilityChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_set_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

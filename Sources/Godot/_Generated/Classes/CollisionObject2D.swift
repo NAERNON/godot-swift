@@ -17,48 +17,160 @@ open class CollisionObject2D: Node2D {
         }
     }
 
-    public func inputEvent(viewport: Godot.Node?, event: Godot.InputEvent?, shapeIdx: Int) {
-        inputEventConnector.emit(viewport, event, shapeIdx)
+    public struct InputEventSignalInput: Godot.SignalInput {
+        public let viewport: Godot.Node?
+        public let event: Godot.InputEvent?
+        public let shape_idx: Int
+        fileprivate init(viewport: Godot.Node?, event: Godot.InputEvent?, shape_idx: Int) {
+            self.viewport = viewport
+            self.event = event
+            self.shape_idx = shape_idx
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, viewport, event, shape_idx)
+        }
     }
-
-    public private (set) lazy var inputEventConnector: Godot.SignalConnector<Godot.Node?, Godot.InputEvent?, Int> = {
-        .init(self, "input_event")
+    public func inputEvent(viewport: Godot.Node?, event: Godot.InputEvent?, shape_idx: Int) {
+        _ = inputEventSignal.emit(.init(viewport: viewport,
+                event: event,
+                shape_idx: shape_idx))
+    }
+    public lazy var inputEventSignal: Godot.SignalEmitter<InputEventSignalInput> = {
+        .init(object: self, signalName: "input_event") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(viewport: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    event: Godot.InputEvent?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    shape_idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct MouseEnteredSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func mouseEntered() {
-        mouseEnteredConnector.emit()
+        _ = mouseEnteredSignal.emit(.init())
     }
-
-    public private (set) lazy var mouseEnteredConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "mouse_entered")
+    public lazy var mouseEnteredSignal: Godot.SignalEmitter<MouseEnteredSignalInput> = {
+        .init(object: self, signalName: "mouse_entered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MouseEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MouseEnteredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MouseEnteredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct MouseExitedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func mouseExited() {
-        mouseExitedConnector.emit()
+        _ = mouseExitedSignal.emit(.init())
     }
-
-    public private (set) lazy var mouseExitedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "mouse_exited")
+    public lazy var mouseExitedSignal: Godot.SignalEmitter<MouseExitedSignalInput> = {
+        .init(object: self, signalName: "mouse_exited") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MouseExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MouseExitedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MouseExitedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
-    public func mouseShapeEntered(shapeIdx: Int) {
-        mouseShapeEnteredConnector.emit(shapeIdx)
+    public struct MouseShapeEnteredSignalInput: Godot.SignalInput {
+        public let shape_idx: Int
+        fileprivate init(shape_idx: Int) {
+            self.shape_idx = shape_idx
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, shape_idx)
+        }
     }
-
-    public private (set) lazy var mouseShapeEnteredConnector: Godot.SignalConnector<Int> = {
-        .init(self, "mouse_shape_entered")
+    public func mouseShapeEntered(shape_idx: Int) {
+        _ = mouseShapeEnteredSignal.emit(.init(shape_idx: shape_idx))
+    }
+    public lazy var mouseShapeEnteredSignal: Godot.SignalEmitter<MouseShapeEnteredSignalInput> = {
+        .init(object: self, signalName: "mouse_shape_entered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MouseShapeEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(shape_idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MouseShapeEnteredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MouseShapeEnteredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func mouseShapeExited(shapeIdx: Int) {
-        mouseShapeExitedConnector.emit(shapeIdx)
+    public struct MouseShapeExitedSignalInput: Godot.SignalInput {
+        public let shape_idx: Int
+        fileprivate init(shape_idx: Int) {
+            self.shape_idx = shape_idx
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, shape_idx)
+        }
     }
-
-    public private (set) lazy var mouseShapeExitedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "mouse_shape_exited")
+    public func mouseShapeExited(shape_idx: Int) {
+        _ = mouseShapeExitedSignal.emit(.init(shape_idx: shape_idx))
+    }
+    public lazy var mouseShapeExitedSignal: Godot.SignalEmitter<MouseShapeExitedSignalInput> = {
+        .init(object: self, signalName: "mouse_shape_exited") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MouseShapeExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(shape_idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MouseShapeExitedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MouseShapeExitedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     open func _inputEvent(viewport: Godot.Viewport?, event: Godot.InputEvent?, shapeIdx: Int32) {

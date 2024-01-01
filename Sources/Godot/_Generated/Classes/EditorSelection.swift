@@ -5,15 +5,34 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorSelection: Object {
-    public func selectionChanged() {
-        selectionChangedConnector.emit()
+    public struct SelectionChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var selectionChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "selection_changed")
+    public func selectionChanged() {
+        _ = selectionChangedSignal.emit(.init())
+    }
+    public lazy var selectionChangedSignal: Godot.SignalEmitter<SelectionChangedSignalInput> = {
+        .init(object: self, signalName: "selection_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SelectionChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SelectionChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SelectionChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

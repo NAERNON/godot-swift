@@ -68,31 +68,94 @@ open class Tween: RefCounted {
         }
     }
 
+    public struct StepFinishedSignalInput: Godot.SignalInput {
+        public let idx: Int
+        fileprivate init(idx: Int) {
+            self.idx = idx
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, idx)
+        }
+    }
     public func stepFinished(idx: Int) {
-        stepFinishedConnector.emit(idx)
+        _ = stepFinishedSignal.emit(.init(idx: idx))
     }
-
-    public private (set) lazy var stepFinishedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "step_finished")
+    public lazy var stepFinishedSignal: Godot.SignalEmitter<StepFinishedSignalInput> = {
+        .init(object: self, signalName: "step_finished") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<StepFinishedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<StepFinishedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<StepFinishedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func loopFinished(loopCount: Int) {
-        loopFinishedConnector.emit(loopCount)
+    public struct LoopFinishedSignalInput: Godot.SignalInput {
+        public let loop_count: Int
+        fileprivate init(loop_count: Int) {
+            self.loop_count = loop_count
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, loop_count)
+        }
     }
-
-    public private (set) lazy var loopFinishedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "loop_finished")
+    public func loopFinished(loop_count: Int) {
+        _ = loopFinishedSignal.emit(.init(loop_count: loop_count))
+    }
+    public lazy var loopFinishedSignal: Godot.SignalEmitter<LoopFinishedSignalInput> = {
+        .init(object: self, signalName: "loop_finished") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<LoopFinishedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(loop_count: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<LoopFinishedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<LoopFinishedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct FinishedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func finished() {
-        finishedConnector.emit()
+        _ = finishedSignal.emit(.init())
     }
-
-    public private (set) lazy var finishedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "finished")
+    public lazy var finishedSignal: Godot.SignalEmitter<FinishedSignalInput> = {
+        .init(object: self, signalName: "finished") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FinishedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FinishedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FinishedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_tween_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

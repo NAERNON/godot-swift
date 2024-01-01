@@ -5,45 +5,121 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorSpinSlider: Range {
+    public struct GrabbedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func grabbed() {
-        grabbedConnector.emit()
+        _ = grabbedSignal.emit(.init())
     }
-
-    public private (set) lazy var grabbedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "grabbed")
+    public lazy var grabbedSignal: Godot.SignalEmitter<GrabbedSignalInput> = {
+        .init(object: self, signalName: "grabbed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<GrabbedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<GrabbedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<GrabbedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct UngrabbedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func ungrabbed() {
-        ungrabbedConnector.emit()
+        _ = ungrabbedSignal.emit(.init())
     }
-
-    public private (set) lazy var ungrabbedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "ungrabbed")
+    public lazy var ungrabbedSignal: Godot.SignalEmitter<UngrabbedSignalInput> = {
+        .init(object: self, signalName: "ungrabbed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<UngrabbedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<UngrabbedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<UngrabbedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ValueFocusEnteredSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func valueFocusEntered() {
-        valueFocusEnteredConnector.emit()
+        _ = valueFocusEnteredSignal.emit(.init())
     }
-
-    public private (set) lazy var valueFocusEnteredConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "value_focus_entered")
+    public lazy var valueFocusEnteredSignal: Godot.SignalEmitter<ValueFocusEnteredSignalInput> = {
+        .init(object: self, signalName: "value_focus_entered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ValueFocusEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ValueFocusEnteredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ValueFocusEnteredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ValueFocusExitedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func valueFocusExited() {
-        valueFocusExitedConnector.emit()
+        _ = valueFocusExitedSignal.emit(.init())
     }
-
-    public private (set) lazy var valueFocusExitedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "value_focus_exited")
+    public lazy var valueFocusExitedSignal: Godot.SignalEmitter<ValueFocusExitedSignalInput> = {
+        .init(object: self, signalName: "value_focus_exited") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ValueFocusExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ValueFocusExitedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ValueFocusExitedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_set_label: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

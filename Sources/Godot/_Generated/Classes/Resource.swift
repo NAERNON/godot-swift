@@ -5,25 +5,63 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Resource: RefCounted {
+    public struct ChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func changed() {
-        changedConnector.emit()
+        _ = changedSignal.emit(.init())
     }
-
-    public private (set) lazy var changedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "changed")
+    public lazy var changedSignal: Godot.SignalEmitter<ChangedSignalInput> = {
+        .init(object: self, signalName: "changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct SetupLocalToSceneRequestedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func setupLocalToSceneRequested() {
-        setupLocalToSceneRequestedConnector.emit()
+        _ = setupLocalToSceneRequestedSignal.emit(.init())
     }
-
-    public private (set) lazy var setupLocalToSceneRequestedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "setup_local_to_scene_requested")
+    public lazy var setupLocalToSceneRequestedSignal: Godot.SignalEmitter<SetupLocalToSceneRequestedSignalInput> = {
+        .init(object: self, signalName: "setup_local_to_scene_requested") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SetupLocalToSceneRequestedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SetupLocalToSceneRequestedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SetupLocalToSceneRequestedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     open func _setupLocalToScene() {
     }

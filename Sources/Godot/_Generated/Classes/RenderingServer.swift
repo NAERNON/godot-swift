@@ -1239,25 +1239,63 @@ open class RenderingServer: Object {
         }
     }
 
+    public struct FramePreDrawSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func framePreDraw() {
-        framePreDrawConnector.emit()
+        _ = framePreDrawSignal.emit(.init())
     }
-
-    public private (set) lazy var framePreDrawConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "frame_pre_draw")
+    public lazy var framePreDrawSignal: Godot.SignalEmitter<FramePreDrawSignalInput> = {
+        .init(object: self, signalName: "frame_pre_draw") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FramePreDrawSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FramePreDrawSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FramePreDrawSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct FramePostDrawSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func framePostDraw() {
-        framePostDrawConnector.emit()
+        _ = framePostDrawSignal.emit(.init())
     }
-
-    public private (set) lazy var framePostDrawConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "frame_post_draw")
+    public lazy var framePostDrawSignal: Godot.SignalEmitter<FramePostDrawSignalInput> = {
+        .init(object: self, signalName: "frame_post_draw") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FramePostDrawSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FramePostDrawSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FramePostDrawSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_texture_2d_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -57,39 +57,124 @@ open class RichTextLabel: Control {
         }
     }
 
+    public struct MetaClickedSignalInput: Godot.SignalInput {
+        public let meta: Godot.Variant
+        fileprivate init(meta: Godot.Variant) {
+            self.meta = meta
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, meta)
+        }
+    }
     public func metaClicked(meta: Godot.Variant) {
-        metaClickedConnector.emit(meta)
+        _ = metaClickedSignal.emit(.init(meta: meta))
     }
-
-    public private (set) lazy var metaClickedConnector: Godot.SignalConnector<Godot.Variant> = {
-        .init(self, "meta_clicked")
+    public lazy var metaClickedSignal: Godot.SignalEmitter<MetaClickedSignalInput> = {
+        .init(object: self, signalName: "meta_clicked") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MetaClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(meta: Godot.Variant.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MetaClickedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MetaClickedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct MetaHoverStartedSignalInput: Godot.SignalInput {
+        public let meta: Godot.Variant
+        fileprivate init(meta: Godot.Variant) {
+            self.meta = meta
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, meta)
+        }
+    }
     public func metaHoverStarted(meta: Godot.Variant) {
-        metaHoverStartedConnector.emit(meta)
+        _ = metaHoverStartedSignal.emit(.init(meta: meta))
     }
-
-    public private (set) lazy var metaHoverStartedConnector: Godot.SignalConnector<Godot.Variant> = {
-        .init(self, "meta_hover_started")
+    public lazy var metaHoverStartedSignal: Godot.SignalEmitter<MetaHoverStartedSignalInput> = {
+        .init(object: self, signalName: "meta_hover_started") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MetaHoverStartedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(meta: Godot.Variant.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MetaHoverStartedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MetaHoverStartedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct MetaHoverEndedSignalInput: Godot.SignalInput {
+        public let meta: Godot.Variant
+        fileprivate init(meta: Godot.Variant) {
+            self.meta = meta
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, meta)
+        }
+    }
     public func metaHoverEnded(meta: Godot.Variant) {
-        metaHoverEndedConnector.emit(meta)
+        _ = metaHoverEndedSignal.emit(.init(meta: meta))
     }
-
-    public private (set) lazy var metaHoverEndedConnector: Godot.SignalConnector<Godot.Variant> = {
-        .init(self, "meta_hover_ended")
+    public lazy var metaHoverEndedSignal: Godot.SignalEmitter<MetaHoverEndedSignalInput> = {
+        .init(object: self, signalName: "meta_hover_ended") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MetaHoverEndedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(meta: Godot.Variant.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MetaHoverEndedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MetaHoverEndedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct FinishedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func finished() {
-        finishedConnector.emit()
+        _ = finishedSignal.emit(.init())
     }
-
-    public private (set) lazy var finishedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "finished")
+    public lazy var finishedSignal: Godot.SignalEmitter<FinishedSignalInput> = {
+        .init(object: self, signalName: "finished") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<FinishedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<FinishedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<FinishedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_get_parsed_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

@@ -5,15 +5,34 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Path3D: Node3D {
-    public func curveChanged() {
-        curveChangedConnector.emit()
+    public struct CurveChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var curveChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "curve_changed")
+    public func curveChanged() {
+        _ = curveChangedSignal.emit(.init())
+    }
+    public lazy var curveChangedSignal: Godot.SignalEmitter<CurveChangedSignalInput> = {
+        .init(object: self, signalName: "curve_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<CurveChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<CurveChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<CurveChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_set_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

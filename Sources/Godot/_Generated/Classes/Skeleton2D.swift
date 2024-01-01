@@ -5,15 +5,34 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Skeleton2D: Node2D {
-    public func boneSetupChanged() {
-        boneSetupChangedConnector.emit()
+    public struct BoneSetupChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var boneSetupChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "bone_setup_changed")
+    public func boneSetupChanged() {
+        _ = boneSetupChangedSignal.emit(.init())
+    }
+    public lazy var boneSetupChangedSignal: Godot.SignalEmitter<BoneSetupChangedSignalInput> = {
+        .init(object: self, signalName: "bone_setup_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<BoneSetupChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<BoneSetupChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<BoneSetupChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_get_bone_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

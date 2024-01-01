@@ -34,28 +34,94 @@ open class ColorPicker: VBoxContainer {
         }
     }
 
+    public struct ColorChangedSignalInput: Godot.SignalInput {
+        public let color: Godot.Color
+        fileprivate init(color: Godot.Color) {
+            self.color = color
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, color)
+        }
+    }
     public func colorChanged(color: Godot.Color) {
-        colorChangedConnector.emit(color)
+        _ = colorChangedSignal.emit(.init(color: color))
     }
-
-    public private (set) lazy var colorChangedConnector: Godot.SignalConnector<Godot.Color> = {
-        .init(self, "color_changed")
+    public lazy var colorChangedSignal: Godot.SignalEmitter<ColorChangedSignalInput> = {
+        .init(object: self, signalName: "color_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(color: Godot.Color.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct PresetAddedSignalInput: Godot.SignalInput {
+        public let color: Godot.Color
+        fileprivate init(color: Godot.Color) {
+            self.color = color
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, color)
+        }
+    }
     public func presetAdded(color: Godot.Color) {
-        presetAddedConnector.emit(color)
+        _ = presetAddedSignal.emit(.init(color: color))
     }
-
-    public private (set) lazy var presetAddedConnector: Godot.SignalConnector<Godot.Color> = {
-        .init(self, "preset_added")
+    public lazy var presetAddedSignal: Godot.SignalEmitter<PresetAddedSignalInput> = {
+        .init(object: self, signalName: "preset_added") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(color: Godot.Color.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PresetAddedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func presetRemoved(color: Godot.Color) {
-        presetRemovedConnector.emit(color)
+    public struct PresetRemovedSignalInput: Godot.SignalInput {
+        public let color: Godot.Color
+        fileprivate init(color: Godot.Color) {
+            self.color = color
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, color)
+        }
     }
-
-    public private (set) lazy var presetRemovedConnector: Godot.SignalConnector<Godot.Color> = {
-        .init(self, "preset_removed")
+    public func presetRemoved(color: Godot.Color) {
+        _ = presetRemovedSignal.emit(.init(color: color))
+    }
+    public lazy var presetRemovedSignal: Godot.SignalEmitter<PresetRemovedSignalInput> = {
+        .init(object: self, signalName: "preset_removed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(color: Godot.Color.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PresetRemovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_set_pick_color: GDExtensionMethodBindPtr = {

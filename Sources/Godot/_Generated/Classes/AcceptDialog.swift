@@ -5,32 +5,92 @@
 import GodotExtensionHeaders
 @GodotClass
 open class AcceptDialog: Window {
+    public struct ConfirmedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func confirmed() {
-        confirmedConnector.emit()
+        _ = confirmedSignal.emit(.init())
     }
-
-    public private (set) lazy var confirmedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "confirmed")
+    public lazy var confirmedSignal: Godot.SignalEmitter<ConfirmedSignalInput> = {
+        .init(object: self, signalName: "confirmed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ConfirmedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ConfirmedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ConfirmedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct CanceledSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func canceled() {
-        canceledConnector.emit()
+        _ = canceledSignal.emit(.init())
     }
-
-    public private (set) lazy var canceledConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "canceled")
+    public lazy var canceledSignal: Godot.SignalEmitter<CanceledSignalInput> = {
+        .init(object: self, signalName: "canceled") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<CanceledSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<CanceledSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<CanceledSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
-    public func customAction(action: Godot.GodotStringName) {
-        customActionConnector.emit(action)
+    public struct CustomActionSignalInput: Godot.SignalInput {
+        public let action: Godot.GodotStringName
+        fileprivate init(action: Godot.GodotStringName) {
+            self.action = action
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, action)
+        }
     }
-
-    public private (set) lazy var customActionConnector: Godot.SignalConnector<Godot.GodotStringName> = {
-        .init(self, "custom_action")
+    public func customAction(action: Godot.GodotStringName) {
+        _ = customActionSignal.emit(.init(action: action))
+    }
+    public lazy var customActionSignal: Godot.SignalEmitter<CustomActionSignalInput> = {
+        .init(object: self, signalName: "custom_action") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(action: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<CustomActionSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_get_ok_button: GDExtensionMethodBindPtr = {

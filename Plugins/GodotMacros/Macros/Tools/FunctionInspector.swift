@@ -153,18 +153,6 @@ struct FunctionInspector {
         return true
     }
     
-    func hasSignalMacro() -> Bool {
-        return declSyntax.attributes.contains(where: {
-            $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Signal" }
-        )
-    }
-    
-    func hasReceiverMacro() -> Bool {
-        return declSyntax.attributes.contains(where: {
-            $0.as(AttributeSyntax.self)?.attributeName.trimmedDescription == "Receiver" }
-        )
-    }
-    
     // MARK: Arguments
     
     struct Argument {

@@ -112,55 +112,150 @@ open class OpenXRInterface: XRInterface {
         }
     }
 
+    public struct SessionBegunSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func sessionBegun() {
-        sessionBegunConnector.emit()
+        _ = sessionBegunSignal.emit(.init())
     }
-
-    public private (set) lazy var sessionBegunConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "session_begun")
+    public lazy var sessionBegunSignal: Godot.SignalEmitter<SessionBegunSignalInput> = {
+        .init(object: self, signalName: "session_begun") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SessionBegunSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SessionBegunSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SessionBegunSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct SessionStoppingSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func sessionStopping() {
-        sessionStoppingConnector.emit()
+        _ = sessionStoppingSignal.emit(.init())
     }
-
-    public private (set) lazy var sessionStoppingConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "session_stopping")
+    public lazy var sessionStoppingSignal: Godot.SignalEmitter<SessionStoppingSignalInput> = {
+        .init(object: self, signalName: "session_stopping") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SessionStoppingSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SessionStoppingSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SessionStoppingSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct SessionFocussedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func sessionFocussed() {
-        sessionFocussedConnector.emit()
+        _ = sessionFocussedSignal.emit(.init())
     }
-
-    public private (set) lazy var sessionFocussedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "session_focussed")
+    public lazy var sessionFocussedSignal: Godot.SignalEmitter<SessionFocussedSignalInput> = {
+        .init(object: self, signalName: "session_focussed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SessionFocussedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SessionFocussedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SessionFocussedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct SessionVisibleSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func sessionVisible() {
-        sessionVisibleConnector.emit()
+        _ = sessionVisibleSignal.emit(.init())
     }
-
-    public private (set) lazy var sessionVisibleConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "session_visible")
+    public lazy var sessionVisibleSignal: Godot.SignalEmitter<SessionVisibleSignalInput> = {
+        .init(object: self, signalName: "session_visible") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SessionVisibleSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SessionVisibleSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SessionVisibleSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct PoseRecenteredSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func poseRecentered() {
-        poseRecenteredConnector.emit()
+        _ = poseRecenteredSignal.emit(.init())
     }
-
-    public private (set) lazy var poseRecenteredConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "pose_recentered")
+    public lazy var poseRecenteredSignal: Godot.SignalEmitter<PoseRecenteredSignalInput> = {
+        .init(object: self, signalName: "pose_recentered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PoseRecenteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PoseRecenteredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PoseRecenteredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_get_display_refresh_rate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

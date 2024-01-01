@@ -6,18 +6,15 @@ import Utils
 
 struct FunctionMember: ExposableMember {
     let functionDeclSyntax: FunctionDeclSyntax
-    let isReceiver: Bool
     
     init?(declSyntax: some DeclSyntaxProtocol) {
         guard let functionDeclSyntax = declSyntax.as(FunctionDeclSyntax.self),
-              !functionDeclSyntax.inspector.isOverride(),
-              !functionDeclSyntax.inspector.hasSignalMacro()
+              !functionDeclSyntax.inspector.isOverride()
         else {
             return nil
         }
         
         self.functionDeclSyntax = functionDeclSyntax
-        self.isReceiver = functionDeclSyntax.inspector.hasReceiverMacro()
     }
     
     var attributes: AttributeListSyntax? {
@@ -28,10 +25,6 @@ struct FunctionMember: ExposableMember {
         className: TokenSyntax,
         isContextPublic: Bool
     ) -> Result<Void, CheckExpositionError> {
-        if isReceiver {
-            return .success(())
-        }
-        
         if isContextPublic {
             if functionDeclSyntax.accessModifierInspector.isPublic() {
                 return .success(())
@@ -49,13 +42,6 @@ struct FunctionMember: ExposableMember {
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
-        if isReceiver && isContextPublic {
-            if functionDeclSyntax.accessModifierInspector.diagnoseIfNotPublic(
-                "The receiver must be public because '\(className.trimmedDescription)' is public",
-                in: context
-            ) { return nil }
-        }
-        
         if functionDeclSyntax.inspector.diagnoseIfThrows(
             "Exposed function cannot throw",
             in: context
@@ -135,24 +121,7 @@ struct FunctionMember: ExposableMember {
         isContextPublic: Bool,
         in context: some MacroExpansionContext
     ) -> [DeclSyntax] {
-        guard isReceiver else {
-            return []
-        }
-        
-        let functionName = removeBackticks(functionDeclSyntax.name.trimmedDescription)
-        let variableName = functionName + "Receiver"
-        let receiverName = translatedFunctionName
-        
-        let typesParameterPack = functionDeclSyntax.inspector.arguments()
-            .map { $0.type }.joined(separator: ", ")
-        
-        let varDecl: DeclSyntax = """
-        public private(set) lazy var \(raw: variableName): Godot.SignalReceiver<\(raw: typesParameterPack)> = {
-            .init(self, \(literal: receiverName))
-        }()
-        """
-        
-        return [varDecl]
+        []
     }
     
     var translatedFunctionName: String {

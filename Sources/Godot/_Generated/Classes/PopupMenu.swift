@@ -5,39 +5,124 @@
 import GodotExtensionHeaders
 @GodotClass
 open class PopupMenu: Popup {
+    public struct IdPressedSignalInput: Godot.SignalInput {
+        public let id: Int
+        fileprivate init(id: Int) {
+            self.id = id
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, id)
+        }
+    }
     public func idPressed(id: Int) {
-        idPressedConnector.emit(id)
+        _ = idPressedSignal.emit(.init(id: id))
     }
-
-    public private (set) lazy var idPressedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "id_pressed")
+    public lazy var idPressedSignal: Godot.SignalEmitter<IdPressedSignalInput> = {
+        .init(object: self, signalName: "id_pressed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<IdPressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<IdPressedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<IdPressedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct IdFocusedSignalInput: Godot.SignalInput {
+        public let id: Int
+        fileprivate init(id: Int) {
+            self.id = id
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, id)
+        }
+    }
     public func idFocused(id: Int) {
-        idFocusedConnector.emit(id)
+        _ = idFocusedSignal.emit(.init(id: id))
     }
-
-    public private (set) lazy var idFocusedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "id_focused")
+    public lazy var idFocusedSignal: Godot.SignalEmitter<IdFocusedSignalInput> = {
+        .init(object: self, signalName: "id_focused") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<IdFocusedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<IdFocusedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<IdFocusedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct IndexPressedSignalInput: Godot.SignalInput {
+        public let index: Int
+        fileprivate init(index: Int) {
+            self.index = index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, index)
+        }
+    }
     public func indexPressed(index: Int) {
-        indexPressedConnector.emit(index)
+        _ = indexPressedSignal.emit(.init(index: index))
     }
-
-    public private (set) lazy var indexPressedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "index_pressed")
+    public lazy var indexPressedSignal: Godot.SignalEmitter<IndexPressedSignalInput> = {
+        .init(object: self, signalName: "index_pressed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<IndexPressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<IndexPressedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<IndexPressedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct MenuChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func menuChanged() {
-        menuChangedConnector.emit()
+        _ = menuChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var menuChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "menu_changed")
+    public lazy var menuChangedSignal: Godot.SignalEmitter<MenuChangedSignalInput> = {
+        .init(object: self, signalName: "menu_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MenuChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MenuChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MenuChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_activate_item_by_event: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

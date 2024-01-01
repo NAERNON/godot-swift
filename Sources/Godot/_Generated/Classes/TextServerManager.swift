@@ -5,20 +5,64 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TextServerManager: Object {
-    public func interfaceAdded(interfaceName: Godot.GodotStringName) {
-        interfaceAddedConnector.emit(interfaceName)
+    public struct InterfaceAddedSignalInput: Godot.SignalInput {
+        public let interface_name: Godot.GodotStringName
+        fileprivate init(interface_name: Godot.GodotStringName) {
+            self.interface_name = interface_name
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, interface_name)
+        }
     }
-
-    public private (set) lazy var interfaceAddedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
-        .init(self, "interface_added")
+    public func interfaceAdded(interface_name: Godot.GodotStringName) {
+        _ = interfaceAddedSignal.emit(.init(interface_name: interface_name))
+    }
+    public lazy var interfaceAddedSignal: Godot.SignalEmitter<InterfaceAddedSignalInput> = {
+        .init(object: self, signalName: "interface_added") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(interface_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func interfaceRemoved(interfaceName: Godot.GodotStringName) {
-        interfaceRemovedConnector.emit(interfaceName)
+    public struct InterfaceRemovedSignalInput: Godot.SignalInput {
+        public let interface_name: Godot.GodotStringName
+        fileprivate init(interface_name: Godot.GodotStringName) {
+            self.interface_name = interface_name
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, interface_name)
+        }
     }
-
-    public private (set) lazy var interfaceRemovedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
-        .init(self, "interface_removed")
+    public func interfaceRemoved(interface_name: Godot.GodotStringName) {
+        _ = interfaceRemovedSignal.emit(.init(interface_name: interface_name))
+    }
+    public lazy var interfaceRemovedSignal: Godot.SignalEmitter<InterfaceRemovedSignalInput> = {
+        .init(object: self, signalName: "interface_removed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(interface_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_add_interface: GDExtensionMethodBindPtr = {

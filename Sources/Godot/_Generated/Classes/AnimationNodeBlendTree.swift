@@ -5,12 +5,34 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationNodeBlendTree: AnimationRootNode {
-    public func nodeChanged(nodeName: Godot.GodotStringName) {
-        nodeChangedConnector.emit(nodeName)
+    public struct NodeChangedSignalInput: Godot.SignalInput {
+        public let node_name: Godot.GodotStringName
+        fileprivate init(node_name: Godot.GodotStringName) {
+            self.node_name = node_name
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, node_name)
+        }
     }
-
-    public private (set) lazy var nodeChangedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
-        .init(self, "node_changed")
+    public func nodeChanged(node_name: Godot.GodotStringName) {
+        _ = nodeChangedSignal.emit(.init(node_name: node_name))
+    }
+    public lazy var nodeChangedSignal: Godot.SignalEmitter<NodeChangedSignalInput> = {
+        .init(object: self, signalName: "node_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<NodeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(node_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<NodeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<NodeChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_add_node: GDExtensionMethodBindPtr = {

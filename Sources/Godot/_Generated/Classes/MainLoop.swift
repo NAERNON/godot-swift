@@ -5,12 +5,38 @@
 import GodotExtensionHeaders
 @GodotClass
 open class MainLoop: Object {
-    public func onRequestPermissionsResult(permission: Godot.GodotString, granted: Bool) {
-        onRequestPermissionsResultConnector.emit(permission, granted)
+    public struct OnRequestPermissionsResultSignalInput: Godot.SignalInput {
+        public let permission: Godot.GodotString
+        public let granted: Bool
+        fileprivate init(permission: Godot.GodotString, granted: Bool) {
+            self.permission = permission
+            self.granted = granted
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, permission, granted)
+        }
     }
-
-    public private (set) lazy var onRequestPermissionsResultConnector: Godot.SignalConnector<Godot.GodotString, Bool> = {
-        .init(self, "on_request_permissions_result")
+    public func onRequestPermissionsResult(permission: Godot.GodotString, granted: Bool) {
+        _ = onRequestPermissionsResultSignal.emit(.init(permission: permission,
+                granted: granted))
+    }
+    public lazy var onRequestPermissionsResultSignal: Godot.SignalEmitter<OnRequestPermissionsResultSignalInput> = {
+        .init(object: self, signalName: "on_request_permissions_result") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<OnRequestPermissionsResultSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(permission: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    granted: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<OnRequestPermissionsResultSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<OnRequestPermissionsResultSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     open func _initialize() {

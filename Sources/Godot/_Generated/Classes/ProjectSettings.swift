@@ -5,15 +5,34 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ProjectSettings: Object {
-    public func settingsChanged() {
-        settingsChangedConnector.emit()
+    public struct SettingsChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var settingsChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "settings_changed")
+    public func settingsChanged() {
+        _ = settingsChangedSignal.emit(.init())
+    }
+    public lazy var settingsChangedSignal: Godot.SignalEmitter<SettingsChangedSignalInput> = {
+        .init(object: self, signalName: "settings_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SettingsChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SettingsChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SettingsChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_has_setting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

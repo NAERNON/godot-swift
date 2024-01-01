@@ -5,58 +5,181 @@
 import GodotExtensionHeaders
 @GodotClass
 open class NavigationAgent3D: Node {
+    public struct PathChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func pathChanged() {
-        pathChangedConnector.emit()
+        _ = pathChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var pathChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "path_changed")
+    public lazy var pathChangedSignal: Godot.SignalEmitter<PathChangedSignalInput> = {
+        .init(object: self, signalName: "path_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PathChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PathChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PathChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct TargetReachedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func targetReached() {
-        targetReachedConnector.emit()
+        _ = targetReachedSignal.emit(.init())
     }
-
-    public private (set) lazy var targetReachedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "target_reached")
+    public lazy var targetReachedSignal: Godot.SignalEmitter<TargetReachedSignalInput> = {
+        .init(object: self, signalName: "target_reached") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TargetReachedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TargetReachedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TargetReachedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
+    public struct WaypointReachedSignalInput: Godot.SignalInput {
+        public let details: Godot.AnyGodotDictionary
+        fileprivate init(details: Godot.AnyGodotDictionary) {
+            self.details = details
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, details)
+        }
+    }
     public func waypointReached(details: Godot.AnyGodotDictionary) {
-        waypointReachedConnector.emit(details)
+        _ = waypointReachedSignal.emit(.init(details: details))
     }
-
-    public private (set) lazy var waypointReachedConnector: Godot.SignalConnector<Godot.AnyGodotDictionary> = {
-        .init(self, "waypoint_reached")
+    public lazy var waypointReachedSignal: Godot.SignalEmitter<WaypointReachedSignalInput> = {
+        .init(object: self, signalName: "waypoint_reached") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<WaypointReachedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(details: Godot.AnyGodotDictionary.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<WaypointReachedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<WaypointReachedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct LinkReachedSignalInput: Godot.SignalInput {
+        public let details: Godot.AnyGodotDictionary
+        fileprivate init(details: Godot.AnyGodotDictionary) {
+            self.details = details
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, details)
+        }
+    }
     public func linkReached(details: Godot.AnyGodotDictionary) {
-        linkReachedConnector.emit(details)
+        _ = linkReachedSignal.emit(.init(details: details))
     }
-
-    public private (set) lazy var linkReachedConnector: Godot.SignalConnector<Godot.AnyGodotDictionary> = {
-        .init(self, "link_reached")
+    public lazy var linkReachedSignal: Godot.SignalEmitter<LinkReachedSignalInput> = {
+        .init(object: self, signalName: "link_reached") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<LinkReachedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(details: Godot.AnyGodotDictionary.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<LinkReachedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<LinkReachedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct NavigationFinishedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func navigationFinished() {
-        navigationFinishedConnector.emit()
+        _ = navigationFinishedSignal.emit(.init())
     }
-
-    public private (set) lazy var navigationFinishedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "navigation_finished")
+    public lazy var navigationFinishedSignal: Godot.SignalEmitter<NavigationFinishedSignalInput> = {
+        .init(object: self, signalName: "navigation_finished") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<NavigationFinishedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<NavigationFinishedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<NavigationFinishedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
-    public func velocityComputed(safeVelocity: Godot.Vector3) {
-        velocityComputedConnector.emit(safeVelocity)
+    public struct VelocityComputedSignalInput: Godot.SignalInput {
+        public let safe_velocity: Godot.Vector3
+        fileprivate init(safe_velocity: Godot.Vector3) {
+            self.safe_velocity = safe_velocity
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, safe_velocity)
+        }
     }
-
-    public private (set) lazy var velocityComputedConnector: Godot.SignalConnector<Godot.Vector3> = {
-        .init(self, "velocity_computed")
+    public func velocityComputed(safe_velocity: Godot.Vector3) {
+        _ = velocityComputedSignal.emit(.init(safe_velocity: safe_velocity))
+    }
+    public lazy var velocityComputedSignal: Godot.SignalEmitter<VelocityComputedSignalInput> = {
+        .init(object: self, signalName: "velocity_computed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<VelocityComputedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(safe_velocity: Godot.Vector3.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<VelocityComputedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<VelocityComputedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_get_rid: GDExtensionMethodBindPtr = {

@@ -17,20 +17,64 @@ open class CameraServer: Object {
         }
     }
 
-    public func cameraFeedAdded(id: Int) {
-        cameraFeedAddedConnector.emit(id)
+    public struct CameraFeedAddedSignalInput: Godot.SignalInput {
+        public let id: Int
+        fileprivate init(id: Int) {
+            self.id = id
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, id)
+        }
     }
-
-    public private (set) lazy var cameraFeedAddedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "camera_feed_added")
+    public func cameraFeedAdded(id: Int) {
+        _ = cameraFeedAddedSignal.emit(.init(id: id))
+    }
+    public lazy var cameraFeedAddedSignal: Godot.SignalEmitter<CameraFeedAddedSignalInput> = {
+        .init(object: self, signalName: "camera_feed_added") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<CameraFeedAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<CameraFeedAddedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<CameraFeedAddedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func cameraFeedRemoved(id: Int) {
-        cameraFeedRemovedConnector.emit(id)
+    public struct CameraFeedRemovedSignalInput: Godot.SignalInput {
+        public let id: Int
+        fileprivate init(id: Int) {
+            self.id = id
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, id)
+        }
     }
-
-    public private (set) lazy var cameraFeedRemovedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "camera_feed_removed")
+    public func cameraFeedRemoved(id: Int) {
+        _ = cameraFeedRemovedSignal.emit(.init(id: id))
+    }
+    public lazy var cameraFeedRemovedSignal: Godot.SignalEmitter<CameraFeedRemovedSignalInput> = {
+        .init(object: self, signalName: "camera_feed_removed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<CameraFeedRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<CameraFeedRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<CameraFeedRemovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_get_feed: GDExtensionMethodBindPtr = {

@@ -66,12 +66,34 @@ open class XRInterface: RefCounted {
         }
     }
 
-    public func playAreaChanged(mode: Int) {
-        playAreaChangedConnector.emit(mode)
+    public struct PlayAreaChangedSignalInput: Godot.SignalInput {
+        public let mode: Int
+        fileprivate init(mode: Int) {
+            self.mode = mode
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, mode)
+        }
     }
-
-    public private (set) lazy var playAreaChangedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "play_area_changed")
+    public func playAreaChanged(mode: Int) {
+        _ = playAreaChangedSignal.emit(.init(mode: mode))
+    }
+    public lazy var playAreaChangedSignal: Godot.SignalEmitter<PlayAreaChangedSignalInput> = {
+        .init(object: self, signalName: "play_area_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PlayAreaChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(mode: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PlayAreaChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PlayAreaChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_get_name: GDExtensionMethodBindPtr = {

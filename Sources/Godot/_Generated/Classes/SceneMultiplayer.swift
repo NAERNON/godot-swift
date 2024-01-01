@@ -5,28 +5,98 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class SceneMultiplayer: MultiplayerAPI {
+    public struct PeerAuthenticatingSignalInput: Godot.SignalInput {
+        public let id: Int
+        fileprivate init(id: Int) {
+            self.id = id
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, id)
+        }
+    }
     public func peerAuthenticating(id: Int) {
-        peerAuthenticatingConnector.emit(id)
+        _ = peerAuthenticatingSignal.emit(.init(id: id))
     }
-
-    public private (set) lazy var peerAuthenticatingConnector: Godot.SignalConnector<Int> = {
-        .init(self, "peer_authenticating")
+    public lazy var peerAuthenticatingSignal: Godot.SignalEmitter<PeerAuthenticatingSignalInput> = {
+        .init(object: self, signalName: "peer_authenticating") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PeerAuthenticatingSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PeerAuthenticatingSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PeerAuthenticatingSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct PeerAuthenticationFailedSignalInput: Godot.SignalInput {
+        public let id: Int
+        fileprivate init(id: Int) {
+            self.id = id
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, id)
+        }
+    }
     public func peerAuthenticationFailed(id: Int) {
-        peerAuthenticationFailedConnector.emit(id)
+        _ = peerAuthenticationFailedSignal.emit(.init(id: id))
     }
-
-    public private (set) lazy var peerAuthenticationFailedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "peer_authentication_failed")
+    public lazy var peerAuthenticationFailedSignal: Godot.SignalEmitter<PeerAuthenticationFailedSignalInput> = {
+        .init(object: self, signalName: "peer_authentication_failed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PeerAuthenticationFailedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PeerAuthenticationFailedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PeerAuthenticationFailedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func peerPacket(id: Int, packet: Godot.PackedByteArray) {
-        peerPacketConnector.emit(id, packet)
+    public struct PeerPacketSignalInput: Godot.SignalInput {
+        public let id: Int
+        public let packet: Godot.PackedByteArray
+        fileprivate init(id: Int, packet: Godot.PackedByteArray) {
+            self.id = id
+            self.packet = packet
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, id, packet)
+        }
     }
-
-    public private (set) lazy var peerPacketConnector: Godot.SignalConnector<Int, Godot.PackedByteArray> = {
-        .init(self, "peer_packet")
+    public func peerPacket(id: Int, packet: Godot.PackedByteArray) {
+        _ = peerPacketSignal.emit(.init(id: id,
+                packet: packet))
+    }
+    public lazy var peerPacketSignal: Godot.SignalEmitter<PeerPacketSignalInput> = {
+        .init(object: self, signalName: "peer_packet") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PeerPacketSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    packet: Godot.PackedByteArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PeerPacketSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PeerPacketSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_set_root_path: GDExtensionMethodBindPtr = {

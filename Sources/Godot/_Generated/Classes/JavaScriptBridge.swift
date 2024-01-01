@@ -5,15 +5,34 @@
 import GodotExtensionHeaders
 @GodotClass
 open class JavaScriptBridge: Object {
-    public func pwaUpdateAvailable() {
-        pwaUpdateAvailableConnector.emit()
+    public struct PwaUpdateAvailableSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var pwaUpdateAvailableConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "pwa_update_available")
+    public func pwaUpdateAvailable() {
+        _ = pwaUpdateAvailableSignal.emit(.init())
+    }
+    public lazy var pwaUpdateAvailableSignal: Godot.SignalEmitter<PwaUpdateAvailableSignalInput> = {
+        .init(object: self, signalName: "pwa_update_available") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PwaUpdateAvailableSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PwaUpdateAvailableSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PwaUpdateAvailableSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_eval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

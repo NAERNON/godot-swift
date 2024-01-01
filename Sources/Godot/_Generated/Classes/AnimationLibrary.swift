@@ -5,36 +5,128 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AnimationLibrary: Resource {
+    public struct AnimationAddedSignalInput: Godot.SignalInput {
+        public let name: Godot.GodotStringName
+        fileprivate init(name: Godot.GodotStringName) {
+            self.name = name
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, name)
+        }
+    }
     public func animationAdded(name: Godot.GodotStringName) {
-        animationAddedConnector.emit(name)
+        _ = animationAddedSignal.emit(.init(name: name))
     }
-
-    public private (set) lazy var animationAddedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
-        .init(self, "animation_added")
+    public lazy var animationAddedSignal: Godot.SignalEmitter<AnimationAddedSignalInput> = {
+        .init(object: self, signalName: "animation_added") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<AnimationAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<AnimationAddedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<AnimationAddedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct AnimationRemovedSignalInput: Godot.SignalInput {
+        public let name: Godot.GodotStringName
+        fileprivate init(name: Godot.GodotStringName) {
+            self.name = name
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, name)
+        }
+    }
     public func animationRemoved(name: Godot.GodotStringName) {
-        animationRemovedConnector.emit(name)
+        _ = animationRemovedSignal.emit(.init(name: name))
     }
-
-    public private (set) lazy var animationRemovedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
-        .init(self, "animation_removed")
+    public lazy var animationRemovedSignal: Godot.SignalEmitter<AnimationRemovedSignalInput> = {
+        .init(object: self, signalName: "animation_removed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<AnimationRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<AnimationRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<AnimationRemovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func animationRenamed(name: Godot.GodotStringName, toName: Godot.GodotStringName) {
-        animationRenamedConnector.emit(name, toName)
+    public struct AnimationRenamedSignalInput: Godot.SignalInput {
+        public let name: Godot.GodotStringName
+        public let to_name: Godot.GodotStringName
+        fileprivate init(name: Godot.GodotStringName, to_name: Godot.GodotStringName) {
+            self.name = name
+            self.to_name = to_name
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, name, to_name)
+        }
     }
-
-    public private (set) lazy var animationRenamedConnector: Godot.SignalConnector<Godot.GodotStringName, Godot.GodotStringName> = {
-        .init(self, "animation_renamed")
+    public func animationRenamed(name: Godot.GodotStringName, to_name: Godot.GodotStringName) {
+        _ = animationRenamedSignal.emit(.init(name: name,
+                to_name: to_name))
+    }
+    public lazy var animationRenamedSignal: Godot.SignalEmitter<AnimationRenamedSignalInput> = {
+        .init(object: self, signalName: "animation_renamed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<AnimationRenamedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    to_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<AnimationRenamedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<AnimationRenamedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct AnimationChangedSignalInput: Godot.SignalInput {
+        public let name: Godot.GodotStringName
+        fileprivate init(name: Godot.GodotStringName) {
+            self.name = name
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, name)
+        }
+    }
     public func animationChanged(name: Godot.GodotStringName) {
-        animationChangedConnector.emit(name)
+        _ = animationChangedSignal.emit(.init(name: name))
     }
-
-    public private (set) lazy var animationChangedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
-        .init(self, "animation_changed")
+    public lazy var animationChangedSignal: Godot.SignalEmitter<AnimationChangedSignalInput> = {
+        .init(object: self, signalName: "animation_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<AnimationChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<AnimationChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<AnimationChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_add_animation: GDExtensionMethodBindPtr = {

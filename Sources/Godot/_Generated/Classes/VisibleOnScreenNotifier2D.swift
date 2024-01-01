@@ -5,25 +5,63 @@
 import GodotExtensionHeaders
 @GodotClass
 open class VisibleOnScreenNotifier2D: Node2D {
+    public struct ScreenEnteredSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func screenEntered() {
-        screenEnteredConnector.emit()
+        _ = screenEnteredSignal.emit(.init())
     }
-
-    public private (set) lazy var screenEnteredConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "screen_entered")
+    public lazy var screenEnteredSignal: Godot.SignalEmitter<ScreenEnteredSignalInput> = {
+        .init(object: self, signalName: "screen_entered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ScreenEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ScreenEnteredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ScreenEnteredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ScreenExitedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func screenExited() {
-        screenExitedConnector.emit()
+        _ = screenExitedSignal.emit(.init())
     }
-
-    public private (set) lazy var screenExitedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "screen_exited")
+    public lazy var screenExitedSignal: Godot.SignalEmitter<ScreenExitedSignalInput> = {
+        .init(object: self, signalName: "screen_exited") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ScreenExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ScreenExitedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ScreenExitedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_set_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

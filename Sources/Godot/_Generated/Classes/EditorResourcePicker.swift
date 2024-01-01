@@ -5,20 +5,68 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorResourcePicker: HBoxContainer {
-    public func resourceSelected(resource: Godot.Resource?, inspect: Bool) {
-        resourceSelectedConnector.emit(resource, inspect)
+    public struct ResourceSelectedSignalInput: Godot.SignalInput {
+        public let resource: Godot.Resource?
+        public let inspect: Bool
+        fileprivate init(resource: Godot.Resource?, inspect: Bool) {
+            self.resource = resource
+            self.inspect = inspect
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, resource, inspect)
+        }
     }
-
-    public private (set) lazy var resourceSelectedConnector: Godot.SignalConnector<Godot.Resource?, Bool> = {
-        .init(self, "resource_selected")
+    public func resourceSelected(resource: Godot.Resource?, inspect: Bool) {
+        _ = resourceSelectedSignal.emit(.init(resource: resource,
+                inspect: inspect))
+    }
+    public lazy var resourceSelectedSignal: Godot.SignalEmitter<ResourceSelectedSignalInput> = {
+        .init(object: self, signalName: "resource_selected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(resource: Godot.Resource?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    inspect: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func resourceChanged(resource: Godot.Resource?) {
-        resourceChangedConnector.emit(resource)
+    public struct ResourceChangedSignalInput: Godot.SignalInput {
+        public let resource: Godot.Resource?
+        fileprivate init(resource: Godot.Resource?) {
+            self.resource = resource
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, resource)
+        }
     }
-
-    public private (set) lazy var resourceChangedConnector: Godot.SignalConnector<Godot.Resource?> = {
-        .init(self, "resource_changed")
+    public func resourceChanged(resource: Godot.Resource?) {
+        _ = resourceChangedSignal.emit(.init(resource: resource))
+    }
+    public lazy var resourceChangedSignal: Godot.SignalEmitter<ResourceChangedSignalInput> = {
+        .init(object: self, signalName: "resource_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(resource: Godot.Resource?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     open func _setCreateOptions(menuNode: Godot.Object?) {

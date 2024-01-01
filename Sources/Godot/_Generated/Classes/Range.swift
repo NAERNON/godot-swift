@@ -5,23 +5,64 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Range: Control {
+    public struct ValueChangedSignalInput: Godot.SignalInput {
+        public let value: Double
+        fileprivate init(value: Double) {
+            self.value = value
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, value)
+        }
+    }
     public func valueChanged(value: Double) {
-        valueChangedConnector.emit(value)
+        _ = valueChangedSignal.emit(.init(value: value))
     }
-
-    public private (set) lazy var valueChangedConnector: Godot.SignalConnector<Double> = {
-        .init(self, "value_changed")
+    public lazy var valueChangedSignal: Godot.SignalEmitter<ValueChangedSignalInput> = {
+        .init(object: self, signalName: "value_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ValueChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(value: Double.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ValueChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ValueChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func changed() {
-        changedConnector.emit()
+        _ = changedSignal.emit(.init())
     }
-
-    public private (set) lazy var changedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "changed")
+    public lazy var changedSignal: Godot.SignalEmitter<ChangedSignalInput> = {
+        .init(object: self, signalName: "changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     open func _valueChanged(newValue: Double) {
     }

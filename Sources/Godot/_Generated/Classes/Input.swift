@@ -60,12 +60,38 @@ open class Input: Object {
         }
     }
 
-    public func joyConnectionChanged(device: Int, connected: Bool) {
-        joyConnectionChangedConnector.emit(device, connected)
+    public struct JoyConnectionChangedSignalInput: Godot.SignalInput {
+        public let device: Int
+        public let connected: Bool
+        fileprivate init(device: Int, connected: Bool) {
+            self.device = device
+            self.connected = connected
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, device, connected)
+        }
     }
-
-    public private (set) lazy var joyConnectionChangedConnector: Godot.SignalConnector<Int, Bool> = {
-        .init(self, "joy_connection_changed")
+    public func joyConnectionChanged(device: Int, connected: Bool) {
+        _ = joyConnectionChangedSignal.emit(.init(device: device,
+                connected: connected))
+    }
+    public lazy var joyConnectionChangedSignal: Godot.SignalEmitter<JoyConnectionChangedSignalInput> = {
+        .init(object: self, signalName: "joy_connection_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(device: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    connected: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<JoyConnectionChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_is_anything_pressed: GDExtensionMethodBindPtr = {

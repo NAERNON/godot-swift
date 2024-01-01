@@ -17,51 +17,152 @@ open class MultiplayerAPI: RefCounted {
         }
     }
 
+    public struct PeerConnectedSignalInput: Godot.SignalInput {
+        public let id: Int
+        fileprivate init(id: Int) {
+            self.id = id
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, id)
+        }
+    }
     public func peerConnected(id: Int) {
-        peerConnectedConnector.emit(id)
+        _ = peerConnectedSignal.emit(.init(id: id))
     }
-
-    public private (set) lazy var peerConnectedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "peer_connected")
+    public lazy var peerConnectedSignal: Godot.SignalEmitter<PeerConnectedSignalInput> = {
+        .init(object: self, signalName: "peer_connected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PeerConnectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PeerConnectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PeerConnectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct PeerDisconnectedSignalInput: Godot.SignalInput {
+        public let id: Int
+        fileprivate init(id: Int) {
+            self.id = id
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, id)
+        }
+    }
     public func peerDisconnected(id: Int) {
-        peerDisconnectedConnector.emit(id)
+        _ = peerDisconnectedSignal.emit(.init(id: id))
     }
-
-    public private (set) lazy var peerDisconnectedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "peer_disconnected")
+    public lazy var peerDisconnectedSignal: Godot.SignalEmitter<PeerDisconnectedSignalInput> = {
+        .init(object: self, signalName: "peer_disconnected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PeerDisconnectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(id: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PeerDisconnectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PeerDisconnectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ConnectedToServerSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func connectedToServer() {
-        connectedToServerConnector.emit()
+        _ = connectedToServerSignal.emit(.init())
     }
-
-    public private (set) lazy var connectedToServerConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "connected_to_server")
+    public lazy var connectedToServerSignal: Godot.SignalEmitter<ConnectedToServerSignalInput> = {
+        .init(object: self, signalName: "connected_to_server") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ConnectedToServerSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ConnectedToServerSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ConnectedToServerSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ConnectionFailedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func connectionFailed() {
-        connectionFailedConnector.emit()
+        _ = connectionFailedSignal.emit(.init())
     }
-
-    public private (set) lazy var connectionFailedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "connection_failed")
+    public lazy var connectionFailedSignal: Godot.SignalEmitter<ConnectionFailedSignalInput> = {
+        .init(object: self, signalName: "connection_failed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ConnectionFailedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ConnectionFailedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ConnectionFailedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ServerDisconnectedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func serverDisconnected() {
-        serverDisconnectedConnector.emit()
+        _ = serverDisconnectedSignal.emit(.init())
     }
-
-    public private (set) lazy var serverDisconnectedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "server_disconnected")
+    public lazy var serverDisconnectedSignal: Godot.SignalEmitter<ServerDisconnectedSignalInput> = {
+        .init(object: self, signalName: "server_disconnected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ServerDisconnectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ServerDisconnectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ServerDisconnectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_has_multiplayer_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

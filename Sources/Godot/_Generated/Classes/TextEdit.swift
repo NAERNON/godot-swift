@@ -141,71 +141,218 @@ open class TextEdit: Control {
         }
     }
 
+    public struct TextSetSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func textSet() {
-        textSetConnector.emit()
+        _ = textSetSignal.emit(.init())
     }
-
-    public private (set) lazy var textSetConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "text_set")
+    public lazy var textSetSignal: Godot.SignalEmitter<TextSetSignalInput> = {
+        .init(object: self, signalName: "text_set") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TextSetSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TextSetSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TextSetSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct TextChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func textChanged() {
-        textChangedConnector.emit()
+        _ = textChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var textChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "text_changed")
+    public lazy var textChangedSignal: Godot.SignalEmitter<TextChangedSignalInput> = {
+        .init(object: self, signalName: "text_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TextChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TextChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TextChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
-    public func linesEditedFrom(fromLine: Int, toLine: Int) {
-        linesEditedFromConnector.emit(fromLine, toLine)
+    public struct LinesEditedFromSignalInput: Godot.SignalInput {
+        public let from_line: Int
+        public let to_line: Int
+        fileprivate init(from_line: Int, to_line: Int) {
+            self.from_line = from_line
+            self.to_line = to_line
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, from_line, to_line)
+        }
     }
-
-    public private (set) lazy var linesEditedFromConnector: Godot.SignalConnector<Int, Int> = {
-        .init(self, "lines_edited_from")
+    public func linesEditedFrom(from_line: Int, to_line: Int) {
+        _ = linesEditedFromSignal.emit(.init(from_line: from_line,
+                to_line: to_line))
+    }
+    public lazy var linesEditedFromSignal: Godot.SignalEmitter<LinesEditedFromSignalInput> = {
+        .init(object: self, signalName: "lines_edited_from") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<LinesEditedFromSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(from_line: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    to_line: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<LinesEditedFromSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<LinesEditedFromSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct CaretChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func caretChanged() {
-        caretChangedConnector.emit()
+        _ = caretChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var caretChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "caret_changed")
+    public lazy var caretChangedSignal: Godot.SignalEmitter<CaretChangedSignalInput> = {
+        .init(object: self, signalName: "caret_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<CaretChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<CaretChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<CaretChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
+    public struct GutterClickedSignalInput: Godot.SignalInput {
+        public let line: Int
+        public let gutter: Int
+        fileprivate init(line: Int, gutter: Int) {
+            self.line = line
+            self.gutter = gutter
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, line, gutter)
+        }
+    }
     public func gutterClicked(line: Int, gutter: Int) {
-        gutterClickedConnector.emit(line, gutter)
+        _ = gutterClickedSignal.emit(.init(line: line,
+                gutter: gutter))
     }
-
-    public private (set) lazy var gutterClickedConnector: Godot.SignalConnector<Int, Int> = {
-        .init(self, "gutter_clicked")
+    public lazy var gutterClickedSignal: Godot.SignalEmitter<GutterClickedSignalInput> = {
+        .init(object: self, signalName: "gutter_clicked") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<GutterClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(line: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    gutter: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<GutterClickedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<GutterClickedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct GutterAddedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func gutterAdded() {
-        gutterAddedConnector.emit()
+        _ = gutterAddedSignal.emit(.init())
     }
-
-    public private (set) lazy var gutterAddedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "gutter_added")
+    public lazy var gutterAddedSignal: Godot.SignalEmitter<GutterAddedSignalInput> = {
+        .init(object: self, signalName: "gutter_added") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<GutterAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<GutterAddedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<GutterAddedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct GutterRemovedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func gutterRemoved() {
-        gutterRemovedConnector.emit()
+        _ = gutterRemovedSignal.emit(.init())
     }
-
-    public private (set) lazy var gutterRemovedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "gutter_removed")
+    public lazy var gutterRemovedSignal: Godot.SignalEmitter<GutterRemovedSignalInput> = {
+        .init(object: self, signalName: "gutter_removed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<GutterRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<GutterRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<GutterRemovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     open func _handleUnicodeInput(unicodeChar: Int32, caretIndex: Int32) {
     }

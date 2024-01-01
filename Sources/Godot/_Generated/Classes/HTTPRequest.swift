@@ -39,12 +39,46 @@ open class HTTPRequest: Node {
         }
     }
 
-    public func requestCompleted(result: Int, responseCode: Int, headers: Godot.PackedStringArray, body: Godot.PackedByteArray) {
-        requestCompletedConnector.emit(result, responseCode, headers, body)
+    public struct RequestCompletedSignalInput: Godot.SignalInput {
+        public let result: Int
+        public let response_code: Int
+        public let headers: Godot.PackedStringArray
+        public let body: Godot.PackedByteArray
+        fileprivate init(result: Int, response_code: Int, headers: Godot.PackedStringArray, body: Godot.PackedByteArray) {
+            self.result = result
+            self.response_code = response_code
+            self.headers = headers
+            self.body = body
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, result, response_code, headers, body)
+        }
     }
-
-    public private (set) lazy var requestCompletedConnector: Godot.SignalConnector<Int, Int, Godot.PackedStringArray, Godot.PackedByteArray> = {
-        .init(self, "request_completed")
+    public func requestCompleted(result: Int, response_code: Int, headers: Godot.PackedStringArray, body: Godot.PackedByteArray) {
+        _ = requestCompletedSignal.emit(.init(result: result,
+                response_code: response_code,
+                headers: headers,
+                body: body))
+    }
+    public lazy var requestCompletedSignal: Godot.SignalEmitter<RequestCompletedSignalInput> = {
+        .init(object: self, signalName: "request_completed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<RequestCompletedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(result: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    response_code: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    headers: Godot.PackedStringArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    body: Godot.PackedByteArray.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<RequestCompletedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<RequestCompletedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_request: GDExtensionMethodBindPtr = {

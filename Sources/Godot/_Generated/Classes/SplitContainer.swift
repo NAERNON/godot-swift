@@ -17,12 +17,34 @@ open class SplitContainer: Container {
         }
     }
 
-    public func dragged(offset: Int) {
-        draggedConnector.emit(offset)
+    public struct DraggedSignalInput: Godot.SignalInput {
+        public let offset: Int
+        fileprivate init(offset: Int) {
+            self.offset = offset
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, offset)
+        }
     }
-
-    public private (set) lazy var draggedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "dragged")
+    public func dragged(offset: Int) {
+        _ = draggedSignal.emit(.init(offset: offset))
+    }
+    public lazy var draggedSignal: Godot.SignalEmitter<DraggedSignalInput> = {
+        .init(object: self, signalName: "dragged") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<DraggedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(offset: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<DraggedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<DraggedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_set_split_offset: GDExtensionMethodBindPtr = {

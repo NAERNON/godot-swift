@@ -19,25 +19,63 @@ open class Object {
         }
     }
 
+    public struct ScriptChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func scriptChanged() {
-        scriptChangedConnector.emit()
+        _ = scriptChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var scriptChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "script_changed")
+    public lazy var scriptChangedSignal: Godot.SignalEmitter<ScriptChangedSignalInput> = {
+        .init(object: self, signalName: "script_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ScriptChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ScriptChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ScriptChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct PropertyListChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func propertyListChanged() {
-        propertyListChangedConnector.emit()
+        _ = propertyListChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var propertyListChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "property_list_changed")
+    public lazy var propertyListChangedSignal: Godot.SignalEmitter<PropertyListChangedSignalInput> = {
+        .init(object: self, signalName: "property_list_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PropertyListChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PropertyListChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PropertyListChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_get_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

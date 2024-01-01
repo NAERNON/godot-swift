@@ -5,15 +5,34 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class VisualShaderNodeInput: VisualShaderNode {
-    public func inputTypeChanged() {
-        inputTypeChangedConnector.emit()
+    public struct InputTypeChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var inputTypeChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "input_type_changed")
+    public func inputTypeChanged() {
+        _ = inputTypeChangedSignal.emit(.init())
+    }
+    public lazy var inputTypeChangedSignal: Godot.SignalEmitter<InputTypeChangedSignalInput> = {
+        .init(object: self, signalName: "input_type_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<InputTypeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<InputTypeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<InputTypeChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_set_input_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

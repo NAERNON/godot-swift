@@ -5,12 +5,34 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GraphNode: GraphElement {
-    public func slotUpdated(slotIndex: Int) {
-        slotUpdatedConnector.emit(slotIndex)
+    public struct SlotUpdatedSignalInput: Godot.SignalInput {
+        public let slot_index: Int
+        fileprivate init(slot_index: Int) {
+            self.slot_index = slot_index
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, slot_index)
+        }
     }
-
-    public private (set) lazy var slotUpdatedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "slot_updated")
+    public func slotUpdated(slot_index: Int) {
+        _ = slotUpdatedSignal.emit(.init(slot_index: slot_index))
+    }
+    public lazy var slotUpdatedSignal: Godot.SignalEmitter<SlotUpdatedSignalInput> = {
+        .init(object: self, signalName: "slot_updated") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(slot_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SlotUpdatedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     open func _drawPort(slotIndex: Int32, position: Godot.Vector2i, left: Bool, color: Godot.Color) {

@@ -51,28 +51,106 @@ open class WebRTCPeerConnection: RefCounted {
         }
     }
 
+    public struct SessionDescriptionCreatedSignalInput: Godot.SignalInput {
+        public let type: Godot.GodotString
+        public let sdp: Godot.GodotString
+        fileprivate init(type: Godot.GodotString, sdp: Godot.GodotString) {
+            self.type = type
+            self.sdp = sdp
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, type, sdp)
+        }
+    }
     public func sessionDescriptionCreated(type: Godot.GodotString, sdp: Godot.GodotString) {
-        sessionDescriptionCreatedConnector.emit(type, sdp)
+        _ = sessionDescriptionCreatedSignal.emit(.init(type: type,
+                sdp: sdp))
     }
-
-    public private (set) lazy var sessionDescriptionCreatedConnector: Godot.SignalConnector<Godot.GodotString, Godot.GodotString> = {
-        .init(self, "session_description_created")
+    public lazy var sessionDescriptionCreatedSignal: Godot.SignalEmitter<SessionDescriptionCreatedSignalInput> = {
+        .init(object: self, signalName: "session_description_created") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SessionDescriptionCreatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(type: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    sdp: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SessionDescriptionCreatedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SessionDescriptionCreatedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct IceCandidateCreatedSignalInput: Godot.SignalInput {
+        public let media: Godot.GodotString
+        public let index: Int
+        public let name: Godot.GodotString
+        fileprivate init(media: Godot.GodotString, index: Int, name: Godot.GodotString) {
+            self.media = media
+            self.index = index
+            self.name = name
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, media, index, name)
+        }
+    }
     public func iceCandidateCreated(media: Godot.GodotString, index: Int, name: Godot.GodotString) {
-        iceCandidateCreatedConnector.emit(media, index, name)
+        _ = iceCandidateCreatedSignal.emit(.init(media: media,
+                index: index,
+                name: name))
     }
-
-    public private (set) lazy var iceCandidateCreatedConnector: Godot.SignalConnector<Godot.GodotString, Int, Godot.GodotString> = {
-        .init(self, "ice_candidate_created")
+    public lazy var iceCandidateCreatedSignal: Godot.SignalEmitter<IceCandidateCreatedSignalInput> = {
+        .init(object: self, signalName: "ice_candidate_created") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<IceCandidateCreatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(media: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    name: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<IceCandidateCreatedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<IceCandidateCreatedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func dataChannelReceived(channel: Godot.WebRTCDataChannel?) {
-        dataChannelReceivedConnector.emit(channel)
+    public struct DataChannelReceivedSignalInput: Godot.SignalInput {
+        public let channel: Godot.WebRTCDataChannel?
+        fileprivate init(channel: Godot.WebRTCDataChannel?) {
+            self.channel = channel
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, channel)
+        }
     }
-
-    public private (set) lazy var dataChannelReceivedConnector: Godot.SignalConnector<Godot.WebRTCDataChannel?> = {
-        .init(self, "data_channel_received")
+    public func dataChannelReceived(channel: Godot.WebRTCDataChannel?) {
+        _ = dataChannelReceivedSignal.emit(.init(channel: channel))
+    }
+    public lazy var dataChannelReceivedSignal: Godot.SignalEmitter<DataChannelReceivedSignalInput> = {
+        .init(object: self, signalName: "data_channel_received") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<DataChannelReceivedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(channel: Godot.WebRTCDataChannel?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<DataChannelReceivedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<DataChannelReceivedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_set_default_extension: GDExtensionMethodBindPtr = {

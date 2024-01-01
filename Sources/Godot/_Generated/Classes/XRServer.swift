@@ -36,44 +36,166 @@ open class XRServer: Object {
         }
     }
 
-    public func interfaceAdded(interfaceName: Godot.GodotStringName) {
-        interfaceAddedConnector.emit(interfaceName)
+    public struct InterfaceAddedSignalInput: Godot.SignalInput {
+        public let interface_name: Godot.GodotStringName
+        fileprivate init(interface_name: Godot.GodotStringName) {
+            self.interface_name = interface_name
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, interface_name)
+        }
     }
-
-    public private (set) lazy var interfaceAddedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
-        .init(self, "interface_added")
+    public func interfaceAdded(interface_name: Godot.GodotStringName) {
+        _ = interfaceAddedSignal.emit(.init(interface_name: interface_name))
+    }
+    public lazy var interfaceAddedSignal: Godot.SignalEmitter<InterfaceAddedSignalInput> = {
+        .init(object: self, signalName: "interface_added") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(interface_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<InterfaceAddedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func interfaceRemoved(interfaceName: Godot.GodotStringName) {
-        interfaceRemovedConnector.emit(interfaceName)
+    public struct InterfaceRemovedSignalInput: Godot.SignalInput {
+        public let interface_name: Godot.GodotStringName
+        fileprivate init(interface_name: Godot.GodotStringName) {
+            self.interface_name = interface_name
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, interface_name)
+        }
     }
-
-    public private (set) lazy var interfaceRemovedConnector: Godot.SignalConnector<Godot.GodotStringName> = {
-        .init(self, "interface_removed")
+    public func interfaceRemoved(interface_name: Godot.GodotStringName) {
+        _ = interfaceRemovedSignal.emit(.init(interface_name: interface_name))
+    }
+    public lazy var interfaceRemovedSignal: Godot.SignalEmitter<InterfaceRemovedSignalInput> = {
+        .init(object: self, signalName: "interface_removed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(interface_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<InterfaceRemovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func trackerAdded(trackerName: Godot.GodotStringName, type: Int) {
-        trackerAddedConnector.emit(trackerName, type)
+    public struct TrackerAddedSignalInput: Godot.SignalInput {
+        public let tracker_name: Godot.GodotStringName
+        public let type: Int
+        fileprivate init(tracker_name: Godot.GodotStringName, type: Int) {
+            self.tracker_name = tracker_name
+            self.type = type
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, tracker_name, type)
+        }
     }
-
-    public private (set) lazy var trackerAddedConnector: Godot.SignalConnector<Godot.GodotStringName, Int> = {
-        .init(self, "tracker_added")
+    public func trackerAdded(tracker_name: Godot.GodotStringName, type: Int) {
+        _ = trackerAddedSignal.emit(.init(tracker_name: tracker_name,
+                type: type))
+    }
+    public lazy var trackerAddedSignal: Godot.SignalEmitter<TrackerAddedSignalInput> = {
+        .init(object: self, signalName: "tracker_added") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TrackerAddedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(tracker_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    type: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TrackerAddedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TrackerAddedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func trackerUpdated(trackerName: Godot.GodotStringName, type: Int) {
-        trackerUpdatedConnector.emit(trackerName, type)
+    public struct TrackerUpdatedSignalInput: Godot.SignalInput {
+        public let tracker_name: Godot.GodotStringName
+        public let type: Int
+        fileprivate init(tracker_name: Godot.GodotStringName, type: Int) {
+            self.tracker_name = tracker_name
+            self.type = type
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, tracker_name, type)
+        }
     }
-
-    public private (set) lazy var trackerUpdatedConnector: Godot.SignalConnector<Godot.GodotStringName, Int> = {
-        .init(self, "tracker_updated")
+    public func trackerUpdated(tracker_name: Godot.GodotStringName, type: Int) {
+        _ = trackerUpdatedSignal.emit(.init(tracker_name: tracker_name,
+                type: type))
+    }
+    public lazy var trackerUpdatedSignal: Godot.SignalEmitter<TrackerUpdatedSignalInput> = {
+        .init(object: self, signalName: "tracker_updated") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TrackerUpdatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(tracker_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    type: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TrackerUpdatedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TrackerUpdatedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func trackerRemoved(trackerName: Godot.GodotStringName, type: Int) {
-        trackerRemovedConnector.emit(trackerName, type)
+    public struct TrackerRemovedSignalInput: Godot.SignalInput {
+        public let tracker_name: Godot.GodotStringName
+        public let type: Int
+        fileprivate init(tracker_name: Godot.GodotStringName, type: Int) {
+            self.tracker_name = tracker_name
+            self.type = type
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, tracker_name, type)
+        }
     }
-
-    public private (set) lazy var trackerRemovedConnector: Godot.SignalConnector<Godot.GodotStringName, Int> = {
-        .init(self, "tracker_removed")
+    public func trackerRemoved(tracker_name: Godot.GodotStringName, type: Int) {
+        _ = trackerRemovedSignal.emit(.init(tracker_name: tracker_name,
+                type: type))
+    }
+    public lazy var trackerRemovedSignal: Godot.SignalEmitter<TrackerRemovedSignalInput> = {
+        .init(object: self, signalName: "tracker_removed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TrackerRemovedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(tracker_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    type: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TrackerRemovedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TrackerRemovedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_get_world_scale: GDExtensionMethodBindPtr = {

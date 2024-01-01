@@ -17,15 +17,34 @@ open class AnimationTree: AnimationMixer {
         }
     }
 
-    public func animationPlayerChanged() {
-        animationPlayerChangedConnector.emit()
+    public struct AnimationPlayerChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
     }
-
-    public private (set) lazy var animationPlayerChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "animation_player_changed")
+    public func animationPlayerChanged() {
+        _ = animationPlayerChangedSignal.emit(.init())
+    }
+    public lazy var animationPlayerChangedSignal: Godot.SignalEmitter<AnimationPlayerChangedSignalInput> = {
+        .init(object: self, signalName: "animation_player_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<AnimationPlayerChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<AnimationPlayerChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<AnimationPlayerChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_set_tree_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

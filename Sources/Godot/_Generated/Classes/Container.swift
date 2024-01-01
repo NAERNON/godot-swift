@@ -5,25 +5,63 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Container: Control {
+    public struct PreSortChildrenSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func preSortChildren() {
-        preSortChildrenConnector.emit()
+        _ = preSortChildrenSignal.emit(.init())
     }
-
-    public private (set) lazy var preSortChildrenConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "pre_sort_children")
+    public lazy var preSortChildrenSignal: Godot.SignalEmitter<PreSortChildrenSignalInput> = {
+        .init(object: self, signalName: "pre_sort_children") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PreSortChildrenSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PreSortChildrenSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PreSortChildrenSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct SortChildrenSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func sortChildren() {
-        sortChildrenConnector.emit()
+        _ = sortChildrenSignal.emit(.init())
     }
-
-    public private (set) lazy var sortChildrenConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "sort_children")
+    public lazy var sortChildrenSignal: Godot.SignalEmitter<SortChildrenSignalInput> = {
+        .init(object: self, signalName: "sort_children") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SortChildrenSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SortChildrenSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SortChildrenSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     open func _getAllowedSizeFlagsHorizontal() -> Godot.PackedInt32Array {
         Godot.PackedInt32Array()

@@ -5,20 +5,64 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ScriptEditor: PanelContainer {
-    public func editorScriptChanged(script: Godot.Script?) {
-        editorScriptChangedConnector.emit(script)
+    public struct EditorScriptChangedSignalInput: Godot.SignalInput {
+        public let script: Godot.Script?
+        fileprivate init(script: Godot.Script?) {
+            self.script = script
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, script)
+        }
     }
-
-    public private (set) lazy var editorScriptChangedConnector: Godot.SignalConnector<Godot.Script?> = {
-        .init(self, "editor_script_changed")
+    public func editorScriptChanged(script: Godot.Script?) {
+        _ = editorScriptChangedSignal.emit(.init(script: script))
+    }
+    public lazy var editorScriptChangedSignal: Godot.SignalEmitter<EditorScriptChangedSignalInput> = {
+        .init(object: self, signalName: "editor_script_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<EditorScriptChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(script: Godot.Script?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<EditorScriptChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<EditorScriptChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func scriptClose(script: Godot.Script?) {
-        scriptCloseConnector.emit(script)
+    public struct ScriptCloseSignalInput: Godot.SignalInput {
+        public let script: Godot.Script?
+        fileprivate init(script: Godot.Script?) {
+            self.script = script
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, script)
+        }
     }
-
-    public private (set) lazy var scriptCloseConnector: Godot.SignalConnector<Godot.Script?> = {
-        .init(self, "script_close")
+    public func scriptClose(script: Godot.Script?) {
+        _ = scriptCloseSignal.emit(.init(script: script))
+    }
+    public lazy var scriptCloseSignal: Godot.SignalEmitter<ScriptCloseSignalInput> = {
+        .init(object: self, signalName: "script_close") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ScriptCloseSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(script: Godot.Script?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ScriptCloseSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ScriptCloseSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_get_current_editor: GDExtensionMethodBindPtr = {

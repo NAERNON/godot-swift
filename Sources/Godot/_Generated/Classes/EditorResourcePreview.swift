@@ -5,12 +5,34 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorResourcePreview: Node {
-    public func previewInvalidated(path: Godot.GodotString) {
-        previewInvalidatedConnector.emit(path)
+    public struct PreviewInvalidatedSignalInput: Godot.SignalInput {
+        public let path: Godot.GodotString
+        fileprivate init(path: Godot.GodotString) {
+            self.path = path
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, path)
+        }
     }
-
-    public private (set) lazy var previewInvalidatedConnector: Godot.SignalConnector<Godot.GodotString> = {
-        .init(self, "preview_invalidated")
+    public func previewInvalidated(path: Godot.GodotString) {
+        _ = previewInvalidatedSignal.emit(.init(path: path))
+    }
+    public lazy var previewInvalidatedSignal: Godot.SignalEmitter<PreviewInvalidatedSignalInput> = {
+        .init(object: self, signalName: "preview_invalidated") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PreviewInvalidatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(path: Godot.GodotString.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PreviewInvalidatedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PreviewInvalidatedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_queue_resource_preview: GDExtensionMethodBindPtr = {

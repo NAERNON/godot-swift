@@ -5,20 +5,64 @@
 import GodotExtensionHeaders
 @GodotClass
 open class MultiplayerSpawner: Node {
-    public func despawned(node: Godot.Node?) {
-        despawnedConnector.emit(node)
+    public struct DespawnedSignalInput: Godot.SignalInput {
+        public let node: Godot.Node?
+        fileprivate init(node: Godot.Node?) {
+            self.node = node
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, node)
+        }
     }
-
-    public private (set) lazy var despawnedConnector: Godot.SignalConnector<Godot.Node?> = {
-        .init(self, "despawned")
+    public func despawned(node: Godot.Node?) {
+        _ = despawnedSignal.emit(.init(node: node))
+    }
+    public lazy var despawnedSignal: Godot.SignalEmitter<DespawnedSignalInput> = {
+        .init(object: self, signalName: "despawned") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<DespawnedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<DespawnedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<DespawnedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-    public func spawned(node: Godot.Node?) {
-        spawnedConnector.emit(node)
+    public struct SpawnedSignalInput: Godot.SignalInput {
+        public let node: Godot.Node?
+        fileprivate init(node: Godot.Node?) {
+            self.node = node
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, node)
+        }
     }
-
-    public private (set) lazy var spawnedConnector: Godot.SignalConnector<Godot.Node?> = {
-        .init(self, "spawned")
+    public func spawned(node: Godot.Node?) {
+        _ = spawnedSignal.emit(.init(node: node))
+    }
+    public lazy var spawnedSignal: Godot.SignalEmitter<SpawnedSignalInput> = {
+        .init(object: self, signalName: "spawned") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<SpawnedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(node: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<SpawnedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<SpawnedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_add_spawnable_scene: GDExtensionMethodBindPtr = {

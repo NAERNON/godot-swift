@@ -5,63 +5,214 @@
 import GodotExtensionHeaders
 @GodotClass
 open class TabContainer: Container {
-    public func activeTabRearranged(idxTo: Int) {
-        activeTabRearrangedConnector.emit(idxTo)
+    public struct ActiveTabRearrangedSignalInput: Godot.SignalInput {
+        public let idx_to: Int
+        fileprivate init(idx_to: Int) {
+            self.idx_to = idx_to
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, idx_to)
+        }
     }
-
-    public private (set) lazy var activeTabRearrangedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "active_tab_rearranged")
+    public func activeTabRearranged(idx_to: Int) {
+        _ = activeTabRearrangedSignal.emit(.init(idx_to: idx_to))
+    }
+    public lazy var activeTabRearrangedSignal: Godot.SignalEmitter<ActiveTabRearrangedSignalInput> = {
+        .init(object: self, signalName: "active_tab_rearranged") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(idx_to: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct TabChangedSignalInput: Godot.SignalInput {
+        public let tab: Int
+        fileprivate init(tab: Int) {
+            self.tab = tab
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, tab)
+        }
+    }
     public func tabChanged(tab: Int) {
-        tabChangedConnector.emit(tab)
+        _ = tabChangedSignal.emit(.init(tab: tab))
     }
-
-    public private (set) lazy var tabChangedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "tab_changed")
+    public lazy var tabChangedSignal: Godot.SignalEmitter<TabChangedSignalInput> = {
+        .init(object: self, signalName: "tab_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct TabClickedSignalInput: Godot.SignalInput {
+        public let tab: Int
+        fileprivate init(tab: Int) {
+            self.tab = tab
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, tab)
+        }
+    }
     public func tabClicked(tab: Int) {
-        tabClickedConnector.emit(tab)
+        _ = tabClickedSignal.emit(.init(tab: tab))
     }
-
-    public private (set) lazy var tabClickedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "tab_clicked")
+    public lazy var tabClickedSignal: Godot.SignalEmitter<TabClickedSignalInput> = {
+        .init(object: self, signalName: "tab_clicked") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct TabHoveredSignalInput: Godot.SignalInput {
+        public let tab: Int
+        fileprivate init(tab: Int) {
+            self.tab = tab
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, tab)
+        }
+    }
     public func tabHovered(tab: Int) {
-        tabHoveredConnector.emit(tab)
+        _ = tabHoveredSignal.emit(.init(tab: tab))
     }
-
-    public private (set) lazy var tabHoveredConnector: Godot.SignalConnector<Int> = {
-        .init(self, "tab_hovered")
+    public lazy var tabHoveredSignal: Godot.SignalEmitter<TabHoveredSignalInput> = {
+        .init(object: self, signalName: "tab_hovered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct TabSelectedSignalInput: Godot.SignalInput {
+        public let tab: Int
+        fileprivate init(tab: Int) {
+            self.tab = tab
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, tab)
+        }
+    }
     public func tabSelected(tab: Int) {
-        tabSelectedConnector.emit(tab)
+        _ = tabSelectedSignal.emit(.init(tab: tab))
     }
-
-    public private (set) lazy var tabSelectedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "tab_selected")
+    public lazy var tabSelectedSignal: Godot.SignalEmitter<TabSelectedSignalInput> = {
+        .init(object: self, signalName: "tab_selected") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct TabButtonPressedSignalInput: Godot.SignalInput {
+        public let tab: Int
+        fileprivate init(tab: Int) {
+            self.tab = tab
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, tab)
+        }
+    }
     public func tabButtonPressed(tab: Int) {
-        tabButtonPressedConnector.emit(tab)
+        _ = tabButtonPressedSignal.emit(.init(tab: tab))
     }
-
-    public private (set) lazy var tabButtonPressedConnector: Godot.SignalConnector<Int> = {
-        .init(self, "tab_button_pressed")
+    public lazy var tabButtonPressedSignal: Godot.SignalEmitter<TabButtonPressedSignalInput> = {
+        .init(object: self, signalName: "tab_button_pressed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(tab: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct PrePopupPressedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func prePopupPressed() {
-        prePopupPressedConnector.emit()
+        _ = prePopupPressedSignal.emit(.init())
     }
-
-    public private (set) lazy var prePopupPressedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "pre_popup_pressed")
+    public lazy var prePopupPressedSignal: Godot.SignalEmitter<PrePopupPressedSignalInput> = {
+        .init(object: self, signalName: "pre_popup_pressed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PrePopupPressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PrePopupPressedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PrePopupPressedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_get_tab_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

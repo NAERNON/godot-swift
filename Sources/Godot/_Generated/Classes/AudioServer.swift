@@ -19,22 +19,71 @@ open class AudioServer: Object {
         }
     }
 
-    public func busLayoutChanged() {
-        busLayoutChangedConnector.emit()
-    }
+    public struct BusLayoutChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
-    public private (set) lazy var busLayoutChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "bus_layout_changed")
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
+    public func busLayoutChanged() {
+        _ = busLayoutChangedSignal.emit(.init())
+    }
+    public lazy var busLayoutChangedSignal: Godot.SignalEmitter<BusLayoutChangedSignalInput> = {
+        .init(object: self, signalName: "bus_layout_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<BusLayoutChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<BusLayoutChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<BusLayoutChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
-    public func busRenamed(busIndex: Int, oldName: Godot.GodotStringName, newName: Godot.GodotStringName) {
-        busRenamedConnector.emit(busIndex, oldName, newName)
+    public struct BusRenamedSignalInput: Godot.SignalInput {
+        public let bus_index: Int
+        public let old_name: Godot.GodotStringName
+        public let new_name: Godot.GodotStringName
+        fileprivate init(bus_index: Int, old_name: Godot.GodotStringName, new_name: Godot.GodotStringName) {
+            self.bus_index = bus_index
+            self.old_name = old_name
+            self.new_name = new_name
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, bus_index, old_name, new_name)
+        }
     }
-
-    public private (set) lazy var busRenamedConnector: Godot.SignalConnector<Int, Godot.GodotStringName, Godot.GodotStringName> = {
-        .init(self, "bus_renamed")
+    public func busRenamed(bus_index: Int, old_name: Godot.GodotStringName, new_name: Godot.GodotStringName) {
+        _ = busRenamedSignal.emit(.init(bus_index: bus_index,
+                old_name: old_name,
+                new_name: new_name))
+    }
+    public lazy var busRenamedSignal: Godot.SignalEmitter<BusRenamedSignalInput> = {
+        .init(object: self, signalName: "bus_renamed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<BusRenamedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(bus_index: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    old_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    new_name: Godot.GodotStringName.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<BusRenamedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<BusRenamedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     private static var __method_binding_set_bus_count: GDExtensionMethodBindPtr = {

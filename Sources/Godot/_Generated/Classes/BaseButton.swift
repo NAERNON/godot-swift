@@ -30,42 +30,121 @@ open class BaseButton: Control {
         }
     }
 
+    public struct PressedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func pressed() {
-        pressedConnector.emit()
+        _ = pressedSignal.emit(.init())
     }
-
-    public private (set) lazy var pressedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "pressed")
+    public lazy var pressedSignal: Godot.SignalEmitter<PressedSignalInput> = {
+        .init(object: self, signalName: "pressed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<PressedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ButtonUpSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func buttonUp() {
-        buttonUpConnector.emit()
+        _ = buttonUpSignal.emit(.init())
     }
-
-    public private (set) lazy var buttonUpConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "button_up")
+    public lazy var buttonUpSignal: Godot.SignalEmitter<ButtonUpSignalInput> = {
+        .init(object: self, signalName: "button_up") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ButtonUpSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ButtonUpSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ButtonUpSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct ButtonDownSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func buttonDown() {
-        buttonDownConnector.emit()
+        _ = buttonDownSignal.emit(.init())
     }
-
-    public private (set) lazy var buttonDownConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "button_down")
+    public lazy var buttonDownSignal: Godot.SignalEmitter<ButtonDownSignalInput> = {
+        .init(object: self, signalName: "button_down") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ButtonDownSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ButtonDownSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ButtonDownSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
-
-    public func toggled(toggledOn: Bool) {
-        toggledConnector.emit(toggledOn)
+    public struct ToggledSignalInput: Godot.SignalInput {
+        public let toggled_on: Bool
+        fileprivate init(toggled_on: Bool) {
+            self.toggled_on = toggled_on
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, toggled_on)
+        }
     }
-
-    public private (set) lazy var toggledConnector: Godot.SignalConnector<Bool> = {
-        .init(self, "toggled")
+    public func toggled(toggled_on: Bool) {
+        _ = toggledSignal.emit(.init(toggled_on: toggled_on))
+    }
+    public lazy var toggledSignal: Godot.SignalEmitter<ToggledSignalInput> = {
+        .init(object: self, signalName: "toggled") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<ToggledSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(toggled_on: Bool.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<ToggledSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<ToggledSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
     open func _pressed() {

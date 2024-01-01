@@ -5,25 +5,63 @@
 import GodotExtensionHeaders
 @GodotClass
 open class NavigationRegion3D: Node3D {
+    public struct NavigationMeshChangedSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func navigationMeshChanged() {
-        navigationMeshChangedConnector.emit()
+        _ = navigationMeshChangedSignal.emit(.init())
     }
-
-    public private (set) lazy var navigationMeshChangedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "navigation_mesh_changed")
+    public lazy var navigationMeshChangedSignal: Godot.SignalEmitter<NavigationMeshChangedSignalInput> = {
+        .init(object: self, signalName: "navigation_mesh_changed") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<NavigationMeshChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<NavigationMeshChangedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<NavigationMeshChangedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct BakeFinishedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func bakeFinished() {
-        bakeFinishedConnector.emit()
+        _ = bakeFinishedSignal.emit(.init())
     }
-
-    public private (set) lazy var bakeFinishedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "bake_finished")
+    public lazy var bakeFinishedSignal: Godot.SignalEmitter<BakeFinishedSignalInput> = {
+        .init(object: self, signalName: "bake_finished") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<BakeFinishedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<BakeFinishedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<BakeFinishedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     private static var __method_binding_get_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in

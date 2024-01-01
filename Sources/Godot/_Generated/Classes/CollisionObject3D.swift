@@ -17,33 +17,109 @@ open class CollisionObject3D: Node3D {
         }
     }
 
-    public func inputEvent(camera: Godot.Node?, event: Godot.InputEvent?, position: Godot.Vector3, normal: Godot.Vector3, shapeIdx: Int) {
-        inputEventConnector.emit(camera, event, position, normal, shapeIdx)
+    public struct InputEventSignalInput: Godot.SignalInput {
+        public let camera: Godot.Node?
+        public let event: Godot.InputEvent?
+        public let position: Godot.Vector3
+        public let normal: Godot.Vector3
+        public let shape_idx: Int
+        fileprivate init(camera: Godot.Node?, event: Godot.InputEvent?, position: Godot.Vector3, normal: Godot.Vector3, shape_idx: Int) {
+            self.camera = camera
+            self.event = event
+            self.position = position
+            self.normal = normal
+            self.shape_idx = shape_idx
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName, camera, event, position, normal, shape_idx)
+        }
     }
-
-    public private (set) lazy var inputEventConnector: Godot.SignalConnector<Godot.Node?, Godot.InputEvent?, Godot.Vector3, Godot.Vector3, Int> = {
-        .init(self, "input_event")
+    public func inputEvent(camera: Godot.Node?, event: Godot.InputEvent?, position: Godot.Vector3, normal: Godot.Vector3, shape_idx: Int) {
+        _ = inputEventSignal.emit(.init(camera: camera,
+                event: event,
+                position: position,
+                normal: normal,
+                shape_idx: shape_idx))
+    }
+    public lazy var inputEventSignal: Godot.SignalEmitter<InputEventSignalInput> = {
+        .init(object: self, signalName: "input_event") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init(camera: Godot.Node?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 0).pointee!)),
+                    event: Godot.InputEvent?.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 1).pointee!)),
+                    position: Godot.Vector3.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 2).pointee!)),
+                    normal: Godot.Vector3.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 3).pointee!)),
+                    shape_idx: Int.convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: 4).pointee!))))
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<InputEventSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct MouseEnteredSignalInput: Godot.SignalInput {
+        fileprivate init() {
+
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func mouseEntered() {
-        mouseEnteredConnector.emit()
+        _ = mouseEnteredSignal.emit(.init())
     }
-
-    public private (set) lazy var mouseEnteredConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "mouse_entered")
+    public lazy var mouseEnteredSignal: Godot.SignalEmitter<MouseEnteredSignalInput> = {
+        .init(object: self, signalName: "mouse_entered") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MouseEnteredSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MouseEnteredSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MouseEnteredSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
 
+    public struct MouseExitedSignalInput: Godot.SignalInput {
+        fileprivate init() {
 
+        }
+        public func _emit(
+            _ signalName: Godot.GodotStringName,
+            on object: Godot.Object
+        ) -> Godot.ErrorType {
+            object.emitSignal(signalName)
+        }
+    }
     public func mouseExited() {
-        mouseExitedConnector.emit()
+        _ = mouseExitedSignal.emit(.init())
     }
-
-    public private (set) lazy var mouseExitedConnector: Godot.SignalConnector
-    <> = {
-        .init(self, "mouse_exited")
+    public lazy var mouseExitedSignal: Godot.SignalEmitter<MouseExitedSignalInput> = {
+        .init(object: self, signalName: "mouse_exited") { callablePtr, args, _, _, _ in
+            Unmanaged<Godot.SignalReceiver<MouseExitedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: .init())
+        } freeFunc: { callablePtr in
+            Unmanaged<Godot.SignalReceiver<MouseExitedSignalInput>>.fromOpaque(callablePtr!).release()
+        } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
+            resultPtr?.pointee = 1
+            Godot.GodotString(describing:
+                Unmanaged<Godot.SignalReceiver<MouseExitedSignalInput>>.fromOpaque(callablePtr!)
+                    .takeUnretainedValue()
+            ).copyToGodot(unsafePointer: stringResultPtr!)
+        }
     }()
-
 
     open func _inputEvent(camera: Godot.Camera3D?, event: Godot.InputEvent?, position: Godot.Vector3, normal: Godot.Vector3, shapeIdx: Int32) {
     }
