@@ -23,6 +23,10 @@ public struct SignalInspector {
         isPublic ? "public" : "internal"
     }
     
+    public var usesEmptyEmitter: Bool {
+        arguments.isEmpty
+    }
+    
     public var emitterName: String {
         functionName + "Signal"
     }
@@ -31,8 +35,12 @@ public struct SignalInspector {
         (emitterName + "Input").translated(from: .camel, to: .pascal)
     }
     
-    public func signalInputDeclSyntax() throws -> StructDeclSyntax {
-        try StructDeclSyntax("\(raw: accessModifier) struct \(raw: signalInputStructName): Godot.SignalInput") {
+    public func signalInputDeclSyntax() throws -> DeclSyntax {
+        if usesEmptyEmitter {
+            return ""
+        }
+        
+        let structDecl = try StructDeclSyntax("\(raw: accessModifier) struct \(raw: signalInputStructName): Godot.SignalInput") {
             for argument in arguments {
                 "\(raw: accessModifier) let \(raw: argument.name): \(raw: argument.type)"
             }
@@ -59,6 +67,8 @@ public struct SignalInspector {
             }
             """
         }
+        
+        return DeclSyntax(structDecl)
     }
     
     public func signalFunctionDeclSyntax() throws -> FunctionDeclSyntax {
@@ -69,33 +79,48 @@ public struct SignalInspector {
         return try FunctionDeclSyntax(
             "\(raw: accessModifier) func \(raw: functionName)(\(raw: functionArgumentsInput))"
         ) {
-            let argumentsInput = arguments
-                .map { "\($0.name): \($0.name)" }
-                .joined(separator: ",\n")
-            
-            "_ = \(raw: emitterName).emit(.init(\(raw: argumentsInput)))"
+            if usesEmptyEmitter {
+                "_ = \(raw: emitterName).emit()"
+            } else {
+                let argumentsInput = arguments
+                    .map { "\($0.name): \($0.name)" }
+                    .joined(separator: ",\n")
+                
+                "_ = \(raw: emitterName).emit(.init(\(raw: argumentsInput)))"
+            }
         }
     }
     
     public func emitterDeclSyntax() -> DeclSyntax {
-        let inputInitSyntax = arguments
-            .enumerated()
-            .map { (index, argument) in
-                argument.name + ": " + "\(argument.type).convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: \(index)).pointee!))"
-            }
-            .joined(separator: ",\n")
+        let inputInitSyntax: String
+        let receiverTypeSyntax: String
+        let emitterTypeSyntax: String
+        if usesEmptyEmitter {
+            inputInitSyntax = ""
+            receiverTypeSyntax = "Godot.EmptySignalReceiver"
+            emitterTypeSyntax = "Godot.EmptySignalEmitter"
+        } else {
+            inputInitSyntax = "with: .init(" + arguments
+                .enumerated()
+                .map { (index, argument) in
+                    argument.name + ": " + "\(argument.type).convertFromCheckedStorage(consuming: Variant.Storage(godotExtensionPointer: args!.advanced(by: \(index)).pointee!))"
+                }
+                .joined(separator: ",\n") + ")"
+            receiverTypeSyntax = "Godot.SignalReceiver<\(signalInputStructName)>"
+            emitterTypeSyntax = "Godot.SignalEmitter<\(signalInputStructName)>"
+        }
         
         return """
-        \(raw: accessModifier) lazy var \(raw: emitterName): Godot.SignalEmitter<\(raw: signalInputStructName)> = {
+        \(raw: accessModifier) lazy var \(raw: emitterName): \(raw: emitterTypeSyntax) = {
             .init(object: self, signalName: \(literal: signalCName)) { callablePtr, args, _, _, _ in
-                Unmanaged<Godot.SignalReceiver<\(raw: signalInputStructName)>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                    .call(with: .init(\(raw: inputInitSyntax)))
+                Unmanaged<\(raw: receiverTypeSyntax)>.fromOpaque(callablePtr!).takeUnretainedValue()
+                    .call(\(raw: inputInitSyntax))
             } freeFunc: { callablePtr in
-                Unmanaged<Godot.SignalReceiver<\(raw: signalInputStructName)>>.fromOpaque(callablePtr!).release()
+                Unmanaged<\(raw: receiverTypeSyntax)>.fromOpaque(callablePtr!).release()
             } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
                 resultPtr?.pointee = 1
                 Godot.GodotString(describing:
-                    Unmanaged<Godot.SignalReceiver<\(raw: signalInputStructName)>>.fromOpaque(callablePtr!)
+                    Unmanaged<\(raw: receiverTypeSyntax)>.fromOpaque(callablePtr!)
                         .takeUnretainedValue()
                 ).copyToGodot(unsafePointer: stringResultPtr!)
             }

@@ -19,59 +19,37 @@ open class ScrollContainer: Container {
         }
     }
 
-    public struct ScrollStartedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func scrollStarted() {
-        _ = scrollStartedSignal.emit(.init())
+        _ = scrollStartedSignal.emit()
     }
-    public lazy var scrollStartedSignal: Godot.SignalEmitter<ScrollStartedSignalInput> = {
+    public lazy var scrollStartedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "scroll_started") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ScrollStartedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ScrollStartedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ScrollStartedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct ScrollEndedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func scrollEnded() {
-        _ = scrollEndedSignal.emit(.init())
+        _ = scrollEndedSignal.emit()
     }
-    public lazy var scrollEndedSignal: Godot.SignalEmitter<ScrollEndedSignalInput> = {
+    public lazy var scrollEndedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "scroll_ended") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ScrollEndedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ScrollEndedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ScrollEndedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

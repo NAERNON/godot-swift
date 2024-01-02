@@ -223,30 +223,19 @@ open class FileSystemDock: VBoxContainer {
         }
     }()
 
-    public struct DisplayModeChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func displayModeChanged() {
-        _ = displayModeChangedSignal.emit(.init())
+        _ = displayModeChangedSignal.emit()
     }
-    public lazy var displayModeChangedSignal: Godot.SignalEmitter<DisplayModeChangedSignalInput> = {
+    public lazy var displayModeChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "display_mode_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<DisplayModeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<DisplayModeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<DisplayModeChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

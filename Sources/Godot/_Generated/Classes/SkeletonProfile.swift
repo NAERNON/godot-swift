@@ -17,30 +17,19 @@ open class SkeletonProfile: Resource {
         }
     }
 
-    public struct ProfileUpdatedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func profileUpdated() {
-        _ = profileUpdatedSignal.emit(.init())
+        _ = profileUpdatedSignal.emit()
     }
-    public lazy var profileUpdatedSignal: Godot.SignalEmitter<ProfileUpdatedSignalInput> = {
+    public lazy var profileUpdatedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "profile_updated") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ProfileUpdatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ProfileUpdatedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ProfileUpdatedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

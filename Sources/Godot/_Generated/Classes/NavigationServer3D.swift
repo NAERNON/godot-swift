@@ -59,59 +59,37 @@ open class NavigationServer3D: Object {
         }
     }()
 
-    public struct NavigationDebugChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func navigationDebugChanged() {
-        _ = navigationDebugChangedSignal.emit(.init())
+        _ = navigationDebugChangedSignal.emit()
     }
-    public lazy var navigationDebugChangedSignal: Godot.SignalEmitter<NavigationDebugChangedSignalInput> = {
+    public lazy var navigationDebugChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "navigation_debug_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<NavigationDebugChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<NavigationDebugChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<NavigationDebugChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct AvoidanceDebugChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func avoidanceDebugChanged() {
-        _ = avoidanceDebugChangedSignal.emit(.init())
+        _ = avoidanceDebugChangedSignal.emit()
     }
-    public lazy var avoidanceDebugChangedSignal: Godot.SignalEmitter<AvoidanceDebugChangedSignalInput> = {
+    public lazy var avoidanceDebugChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "avoidance_debug_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<AvoidanceDebugChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<AvoidanceDebugChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<AvoidanceDebugChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

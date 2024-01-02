@@ -5,30 +5,19 @@
 import GodotExtensionHeaders
 @GodotClass
 open class JavaScriptBridge: Object {
-    public struct PwaUpdateAvailableSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func pwaUpdateAvailable() {
-        _ = pwaUpdateAvailableSignal.emit(.init())
+        _ = pwaUpdateAvailableSignal.emit()
     }
-    public lazy var pwaUpdateAvailableSignal: Godot.SignalEmitter<PwaUpdateAvailableSignalInput> = {
+    public lazy var pwaUpdateAvailableSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "pwa_update_available") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PwaUpdateAvailableSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PwaUpdateAvailableSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PwaUpdateAvailableSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

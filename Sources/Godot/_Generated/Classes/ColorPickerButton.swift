@@ -35,59 +35,37 @@ open class ColorPickerButton: Button {
         }
     }()
 
-    public struct PopupClosedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func popupClosed() {
-        _ = popupClosedSignal.emit(.init())
+        _ = popupClosedSignal.emit()
     }
-    public lazy var popupClosedSignal: Godot.SignalEmitter<PopupClosedSignalInput> = {
+    public lazy var popupClosedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "popup_closed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PopupClosedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PopupClosedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PopupClosedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct PickerCreatedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func pickerCreated() {
-        _ = pickerCreatedSignal.emit(.init())
+        _ = pickerCreatedSignal.emit()
     }
-    public lazy var pickerCreatedSignal: Godot.SignalEmitter<PickerCreatedSignalInput> = {
+    public lazy var pickerCreatedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "picker_created") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PickerCreatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PickerCreatedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PickerCreatedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

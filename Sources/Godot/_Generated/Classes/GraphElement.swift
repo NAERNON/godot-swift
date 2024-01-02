@@ -5,117 +5,73 @@
 import GodotExtensionHeaders
 @GodotClass
 open class GraphElement: Container {
-    public struct NodeSelectedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func nodeSelected() {
-        _ = nodeSelectedSignal.emit(.init())
+        _ = nodeSelectedSignal.emit()
     }
-    public lazy var nodeSelectedSignal: Godot.SignalEmitter<NodeSelectedSignalInput> = {
+    public lazy var nodeSelectedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "node_selected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<NodeSelectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<NodeSelectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<NodeSelectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct NodeDeselectedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func nodeDeselected() {
-        _ = nodeDeselectedSignal.emit(.init())
+        _ = nodeDeselectedSignal.emit()
     }
-    public lazy var nodeDeselectedSignal: Godot.SignalEmitter<NodeDeselectedSignalInput> = {
+    public lazy var nodeDeselectedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "node_deselected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<NodeDeselectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<NodeDeselectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<NodeDeselectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct RaiseRequestSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func raiseRequest() {
-        _ = raiseRequestSignal.emit(.init())
+        _ = raiseRequestSignal.emit()
     }
-    public lazy var raiseRequestSignal: Godot.SignalEmitter<RaiseRequestSignalInput> = {
+    public lazy var raiseRequestSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "raise_request") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<RaiseRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<RaiseRequestSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<RaiseRequestSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct DeleteRequestSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func deleteRequest() {
-        _ = deleteRequestSignal.emit(.init())
+        _ = deleteRequestSignal.emit()
     }
-    public lazy var deleteRequestSignal: Godot.SignalEmitter<DeleteRequestSignalInput> = {
+    public lazy var deleteRequestSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "delete_request") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<DeleteRequestSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<DeleteRequestSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<DeleteRequestSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -185,30 +141,19 @@ open class GraphElement: Container {
         }
     }()
 
-    public struct PositionOffsetChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func positionOffsetChanged() {
-        _ = positionOffsetChangedSignal.emit(.init())
+        _ = positionOffsetChangedSignal.emit()
     }
-    public lazy var positionOffsetChangedSignal: Godot.SignalEmitter<PositionOffsetChangedSignalInput> = {
+    public lazy var positionOffsetChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "position_offset_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PositionOffsetChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PositionOffsetChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PositionOffsetChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

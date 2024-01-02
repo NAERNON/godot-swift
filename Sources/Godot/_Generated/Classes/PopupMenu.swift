@@ -95,30 +95,19 @@ open class PopupMenu: Popup {
         }
     }()
 
-    public struct MenuChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func menuChanged() {
-        _ = menuChangedSignal.emit(.init())
+        _ = menuChangedSignal.emit()
     }
-    public lazy var menuChangedSignal: Godot.SignalEmitter<MenuChangedSignalInput> = {
+    public lazy var menuChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "menu_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<MenuChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<MenuChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<MenuChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

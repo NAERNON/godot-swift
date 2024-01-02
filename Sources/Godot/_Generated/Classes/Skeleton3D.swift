@@ -5,30 +5,19 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Skeleton3D: Node3D {
-    public struct PoseUpdatedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func poseUpdated() {
-        _ = poseUpdatedSignal.emit(.init())
+        _ = poseUpdatedSignal.emit()
     }
-    public lazy var poseUpdatedSignal: Godot.SignalEmitter<PoseUpdatedSignalInput> = {
+    public lazy var poseUpdatedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "pose_updated") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PoseUpdatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PoseUpdatedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PoseUpdatedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -94,30 +83,19 @@ open class Skeleton3D: Node3D {
         }
     }()
 
-    public struct ShowRestOnlyChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func showRestOnlyChanged() {
-        _ = showRestOnlyChangedSignal.emit(.init())
+        _ = showRestOnlyChangedSignal.emit()
     }
-    public lazy var showRestOnlyChangedSignal: Godot.SignalEmitter<ShowRestOnlyChangedSignalInput> = {
+    public lazy var showRestOnlyChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "show_rest_only_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ShowRestOnlyChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ShowRestOnlyChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ShowRestOnlyChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

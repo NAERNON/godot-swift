@@ -19,30 +19,19 @@ open class AnimationNode: Resource {
         }
     }
 
-    public struct TreeChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func treeChanged() {
-        _ = treeChangedSignal.emit(.init())
+        _ = treeChangedSignal.emit()
     }
-    public lazy var treeChangedSignal: Godot.SignalEmitter<TreeChangedSignalInput> = {
+    public lazy var treeChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "tree_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<TreeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<TreeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<TreeChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

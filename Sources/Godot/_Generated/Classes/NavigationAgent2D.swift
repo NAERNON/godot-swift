@@ -5,59 +5,37 @@
 import GodotExtensionHeaders
 @GodotClass
 open class NavigationAgent2D: Node {
-    public struct PathChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func pathChanged() {
-        _ = pathChangedSignal.emit(.init())
+        _ = pathChangedSignal.emit()
     }
-    public lazy var pathChangedSignal: Godot.SignalEmitter<PathChangedSignalInput> = {
+    public lazy var pathChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "path_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PathChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PathChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PathChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct TargetReachedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func targetReached() {
-        _ = targetReachedSignal.emit(.init())
+        _ = targetReachedSignal.emit()
     }
-    public lazy var targetReachedSignal: Godot.SignalEmitter<TargetReachedSignalInput> = {
+    public lazy var targetReachedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "target_reached") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<TargetReachedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<TargetReachedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<TargetReachedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -123,30 +101,19 @@ open class NavigationAgent2D: Node {
         }
     }()
 
-    public struct NavigationFinishedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func navigationFinished() {
-        _ = navigationFinishedSignal.emit(.init())
+        _ = navigationFinishedSignal.emit()
     }
-    public lazy var navigationFinishedSignal: Godot.SignalEmitter<NavigationFinishedSignalInput> = {
+    public lazy var navigationFinishedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "navigation_finished") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<NavigationFinishedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<NavigationFinishedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<NavigationFinishedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

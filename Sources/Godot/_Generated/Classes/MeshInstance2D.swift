@@ -5,30 +5,19 @@
 import GodotExtensionHeaders
 @GodotClass
 open class MeshInstance2D: Node2D {
-    public struct TextureChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func textureChanged() {
-        _ = textureChangedSignal.emit(.init())
+        _ = textureChangedSignal.emit()
     }
-    public lazy var textureChangedSignal: Godot.SignalEmitter<TextureChangedSignalInput> = {
+    public lazy var textureChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "texture_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<TextureChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<TextureChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<TextureChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

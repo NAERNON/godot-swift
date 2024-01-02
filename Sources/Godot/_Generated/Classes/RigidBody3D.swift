@@ -177,30 +177,19 @@ open class RigidBody3D: PhysicsBody3D {
         }
     }()
 
-    public struct SleepingStateChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func sleepingStateChanged() {
-        _ = sleepingStateChangedSignal.emit(.init())
+        _ = sleepingStateChangedSignal.emit()
     }
-    public lazy var sleepingStateChangedSignal: Godot.SignalEmitter<SleepingStateChangedSignalInput> = {
+    public lazy var sleepingStateChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "sleeping_state_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<SleepingStateChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<SleepingStateChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<SleepingStateChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

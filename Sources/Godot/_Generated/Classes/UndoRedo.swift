@@ -17,30 +17,19 @@ open class UndoRedo: Object {
         }
     }
 
-    public struct VersionChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func versionChanged() {
-        _ = versionChangedSignal.emit(.init())
+        _ = versionChangedSignal.emit()
     }
-    public lazy var versionChangedSignal: Godot.SignalEmitter<VersionChangedSignalInput> = {
+    public lazy var versionChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "version_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<VersionChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<VersionChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<VersionChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

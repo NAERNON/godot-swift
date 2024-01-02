@@ -5,59 +5,37 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Container: Control {
-    public struct PreSortChildrenSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func preSortChildren() {
-        _ = preSortChildrenSignal.emit(.init())
+        _ = preSortChildrenSignal.emit()
     }
-    public lazy var preSortChildrenSignal: Godot.SignalEmitter<PreSortChildrenSignalInput> = {
+    public lazy var preSortChildrenSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "pre_sort_children") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PreSortChildrenSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PreSortChildrenSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PreSortChildrenSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct SortChildrenSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func sortChildren() {
-        _ = sortChildrenSignal.emit(.init())
+        _ = sortChildrenSignal.emit()
     }
-    public lazy var sortChildrenSignal: Godot.SignalEmitter<SortChildrenSignalInput> = {
+    public lazy var sortChildrenSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "sort_children") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<SortChildrenSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<SortChildrenSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<SortChildrenSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

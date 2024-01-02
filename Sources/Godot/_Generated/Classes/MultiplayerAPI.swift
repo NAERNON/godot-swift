@@ -77,88 +77,55 @@ open class MultiplayerAPI: RefCounted {
         }
     }()
 
-    public struct ConnectedToServerSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func connectedToServer() {
-        _ = connectedToServerSignal.emit(.init())
+        _ = connectedToServerSignal.emit()
     }
-    public lazy var connectedToServerSignal: Godot.SignalEmitter<ConnectedToServerSignalInput> = {
+    public lazy var connectedToServerSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "connected_to_server") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ConnectedToServerSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ConnectedToServerSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ConnectedToServerSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct ConnectionFailedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func connectionFailed() {
-        _ = connectionFailedSignal.emit(.init())
+        _ = connectionFailedSignal.emit()
     }
-    public lazy var connectionFailedSignal: Godot.SignalEmitter<ConnectionFailedSignalInput> = {
+    public lazy var connectionFailedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "connection_failed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ConnectionFailedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ConnectionFailedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ConnectionFailedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct ServerDisconnectedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func serverDisconnected() {
-        _ = serverDisconnectedSignal.emit(.init())
+        _ = serverDisconnectedSignal.emit()
     }
-    public lazy var serverDisconnectedSignal: Godot.SignalEmitter<ServerDisconnectedSignalInput> = {
+    public lazy var serverDisconnectedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "server_disconnected") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ServerDisconnectedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ServerDisconnectedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ServerDisconnectedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

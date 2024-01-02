@@ -28,30 +28,19 @@ open class AnimationNodeStateMachineTransition: Resource {
         }
     }
 
-    public struct AdvanceConditionChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func advanceConditionChanged() {
-        _ = advanceConditionChangedSignal.emit(.init())
+        _ = advanceConditionChangedSignal.emit()
     }
-    public lazy var advanceConditionChangedSignal: Godot.SignalEmitter<AdvanceConditionChangedSignalInput> = {
+    public lazy var advanceConditionChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "advance_condition_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<AdvanceConditionChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<AdvanceConditionChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<AdvanceConditionChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

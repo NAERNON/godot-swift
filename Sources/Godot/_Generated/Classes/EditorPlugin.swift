@@ -189,30 +189,19 @@ open class EditorPlugin: Node {
         }
     }()
 
-    public struct ProjectSettingsChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func projectSettingsChanged() {
-        _ = projectSettingsChangedSignal.emit(.init())
+        _ = projectSettingsChangedSignal.emit()
     }
-    public lazy var projectSettingsChangedSignal: Godot.SignalEmitter<ProjectSettingsChangedSignalInput> = {
+    public lazy var projectSettingsChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "project_settings_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ProjectSettingsChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ProjectSettingsChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ProjectSettingsChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

@@ -218,30 +218,19 @@ open class Viewport: Node {
         }
     }
 
-    public struct SizeChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func sizeChanged() {
-        _ = sizeChangedSignal.emit(.init())
+        _ = sizeChangedSignal.emit()
     }
-    public lazy var sizeChangedSignal: Godot.SignalEmitter<SizeChangedSignalInput> = {
+    public lazy var sizeChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "size_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<SizeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<SizeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<SizeChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

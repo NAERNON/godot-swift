@@ -17,30 +17,19 @@ open class Curve: Resource {
         }
     }
 
-    public struct RangeChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func rangeChanged() {
-        _ = rangeChangedSignal.emit(.init())
+        _ = rangeChangedSignal.emit()
     }
-    public lazy var rangeChangedSignal: Godot.SignalEmitter<RangeChangedSignalInput> = {
+    public lazy var rangeChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "range_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<RangeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<RangeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<RangeChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

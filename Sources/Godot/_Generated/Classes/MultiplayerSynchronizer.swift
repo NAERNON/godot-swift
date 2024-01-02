@@ -17,59 +17,37 @@ open class MultiplayerSynchronizer: Node {
         }
     }
 
-    public struct SynchronizedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func synchronized() {
-        _ = synchronizedSignal.emit(.init())
+        _ = synchronizedSignal.emit()
     }
-    public lazy var synchronizedSignal: Godot.SignalEmitter<SynchronizedSignalInput> = {
+    public lazy var synchronizedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "synchronized") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<SynchronizedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<SynchronizedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<SynchronizedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct DeltaSynchronizedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func deltaSynchronized() {
-        _ = deltaSynchronizedSignal.emit(.init())
+        _ = deltaSynchronizedSignal.emit()
     }
-    public lazy var deltaSynchronizedSignal: Godot.SignalEmitter<DeltaSynchronizedSignalInput> = {
+    public lazy var deltaSynchronizedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "delta_synchronized") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<DeltaSynchronizedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<DeltaSynchronizedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<DeltaSynchronizedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

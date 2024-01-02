@@ -5,59 +5,37 @@
 import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Resource: RefCounted {
-    public struct ChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func changed() {
-        _ = changedSignal.emit(.init())
+        _ = changedSignal.emit()
     }
-    public lazy var changedSignal: Godot.SignalEmitter<ChangedSignalInput> = {
+    public lazy var changedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct SetupLocalToSceneRequestedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func setupLocalToSceneRequested() {
-        _ = setupLocalToSceneRequestedSignal.emit(.init())
+        _ = setupLocalToSceneRequestedSignal.emit()
     }
-    public lazy var setupLocalToSceneRequestedSignal: Godot.SignalEmitter<SetupLocalToSceneRequestedSignalInput> = {
+    public lazy var setupLocalToSceneRequestedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "setup_local_to_scene_requested") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<SetupLocalToSceneRequestedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<SetupLocalToSceneRequestedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<SetupLocalToSceneRequestedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

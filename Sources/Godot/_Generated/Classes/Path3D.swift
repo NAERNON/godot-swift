@@ -5,30 +5,19 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Path3D: Node3D {
-    public struct CurveChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func curveChanged() {
-        _ = curveChangedSignal.emit(.init())
+        _ = curveChangedSignal.emit()
     }
-    public lazy var curveChangedSignal: Godot.SignalEmitter<CurveChangedSignalInput> = {
+    public lazy var curveChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "curve_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<CurveChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<CurveChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<CurveChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

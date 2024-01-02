@@ -5,59 +5,37 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorFileSystem: Node {
-    public struct FilesystemChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func filesystemChanged() {
-        _ = filesystemChangedSignal.emit(.init())
+        _ = filesystemChangedSignal.emit()
     }
-    public lazy var filesystemChangedSignal: Godot.SignalEmitter<FilesystemChangedSignalInput> = {
+    public lazy var filesystemChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "filesystem_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<FilesystemChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<FilesystemChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<FilesystemChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct ScriptClassesUpdatedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func scriptClassesUpdated() {
-        _ = scriptClassesUpdatedSignal.emit(.init())
+        _ = scriptClassesUpdatedSignal.emit()
     }
-    public lazy var scriptClassesUpdatedSignal: Godot.SignalEmitter<ScriptClassesUpdatedSignalInput> = {
+    public lazy var scriptClassesUpdatedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "script_classes_updated") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ScriptClassesUpdatedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ScriptClassesUpdatedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ScriptClassesUpdatedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

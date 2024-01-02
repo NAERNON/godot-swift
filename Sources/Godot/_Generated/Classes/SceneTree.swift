@@ -19,59 +19,37 @@ open class SceneTree: MainLoop {
         }
     }
 
-    public struct TreeChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func treeChanged() {
-        _ = treeChangedSignal.emit(.init())
+        _ = treeChangedSignal.emit()
     }
-    public lazy var treeChangedSignal: Godot.SignalEmitter<TreeChangedSignalInput> = {
+    public lazy var treeChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "tree_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<TreeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<TreeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<TreeChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct TreeProcessModeChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func treeProcessModeChanged() {
-        _ = treeProcessModeChangedSignal.emit(.init())
+        _ = treeProcessModeChangedSignal.emit()
     }
-    public lazy var treeProcessModeChangedSignal: Godot.SignalEmitter<TreeProcessModeChangedSignalInput> = {
+    public lazy var treeProcessModeChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "tree_process_mode_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<TreeProcessModeChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<TreeProcessModeChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<TreeProcessModeChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -197,59 +175,37 @@ open class SceneTree: MainLoop {
         }
     }()
 
-    public struct ProcessFrameSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func processFrame() {
-        _ = processFrameSignal.emit(.init())
+        _ = processFrameSignal.emit()
     }
-    public lazy var processFrameSignal: Godot.SignalEmitter<ProcessFrameSignalInput> = {
+    public lazy var processFrameSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "process_frame") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ProcessFrameSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ProcessFrameSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ProcessFrameSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct PhysicsFrameSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func physicsFrame() {
-        _ = physicsFrameSignal.emit(.init())
+        _ = physicsFrameSignal.emit()
     }
-    public lazy var physicsFrameSignal: Godot.SignalEmitter<PhysicsFrameSignalInput> = {
+    public lazy var physicsFrameSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "physics_frame") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PhysicsFrameSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PhysicsFrameSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PhysicsFrameSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

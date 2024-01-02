@@ -5,30 +5,19 @@
 import GodotExtensionHeaders
 @GodotClass
 open class ThemeDB: Object {
-    public struct FallbackChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func fallbackChanged() {
-        _ = fallbackChangedSignal.emit(.init())
+        _ = fallbackChangedSignal.emit()
     }
-    public lazy var fallbackChangedSignal: Godot.SignalEmitter<FallbackChangedSignalInput> = {
+    public lazy var fallbackChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "fallback_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<FallbackChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<FallbackChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<FallbackChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

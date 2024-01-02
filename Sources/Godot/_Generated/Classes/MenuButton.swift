@@ -5,30 +5,19 @@
 import GodotExtensionHeaders
 @GodotClass
 open class MenuButton: Button {
-    public struct AboutToPopupSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func aboutToPopup() {
-        _ = aboutToPopupSignal.emit(.init())
+        _ = aboutToPopupSignal.emit()
     }
-    public lazy var aboutToPopupSignal: Godot.SignalEmitter<AboutToPopupSignalInput> = {
+    public lazy var aboutToPopupSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "about_to_popup") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<AboutToPopupSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<AboutToPopupSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<AboutToPopupSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

@@ -5,30 +5,19 @@
 import GodotExtensionHeaders
 @GodotClass
 open class EditorSelection: Object {
-    public struct SelectionChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func selectionChanged() {
-        _ = selectionChangedSignal.emit(.init())
+        _ = selectionChangedSignal.emit()
     }
-    public lazy var selectionChangedSignal: Godot.SignalEmitter<SelectionChangedSignalInput> = {
+    public lazy var selectionChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "selection_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<SelectionChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<SelectionChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<SelectionChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

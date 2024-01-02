@@ -74,30 +74,19 @@ open class CodeEdit: TextEdit {
         }
     }()
 
-    public struct CodeCompletionRequestedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func codeCompletionRequested() {
-        _ = codeCompletionRequestedSignal.emit(.init())
+        _ = codeCompletionRequestedSignal.emit()
     }
-    public lazy var codeCompletionRequestedSignal: Godot.SignalEmitter<CodeCompletionRequestedSignalInput> = {
+    public lazy var codeCompletionRequestedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "code_completion_requested") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<CodeCompletionRequestedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<CodeCompletionRequestedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<CodeCompletionRequestedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

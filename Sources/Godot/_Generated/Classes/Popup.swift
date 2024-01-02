@@ -5,30 +5,19 @@
 import GodotExtensionHeaders
 @GodotClass
 open class Popup: Window {
-    public struct PopupHideSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func popupHide() {
-        _ = popupHideSignal.emit(.init())
+        _ = popupHideSignal.emit()
     }
-    public lazy var popupHideSignal: Godot.SignalEmitter<PopupHideSignalInput> = {
+    public lazy var popupHideSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "popup_hide") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<PopupHideSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<PopupHideSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<PopupHideSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

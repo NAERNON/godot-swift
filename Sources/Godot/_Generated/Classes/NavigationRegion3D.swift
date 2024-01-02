@@ -5,59 +5,37 @@
 import GodotExtensionHeaders
 @GodotClass
 open class NavigationRegion3D: Node3D {
-    public struct NavigationMeshChangedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func navigationMeshChanged() {
-        _ = navigationMeshChangedSignal.emit(.init())
+        _ = navigationMeshChangedSignal.emit()
     }
-    public lazy var navigationMeshChangedSignal: Godot.SignalEmitter<NavigationMeshChangedSignalInput> = {
+    public lazy var navigationMeshChangedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "navigation_mesh_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<NavigationMeshChangedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<NavigationMeshChangedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<NavigationMeshChangedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
     }()
 
-    public struct BakeFinishedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func bakeFinished() {
-        _ = bakeFinishedSignal.emit(.init())
+        _ = bakeFinishedSignal.emit()
     }
-    public lazy var bakeFinishedSignal: Godot.SignalEmitter<BakeFinishedSignalInput> = {
+    public lazy var bakeFinishedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "bake_finished") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<BakeFinishedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<BakeFinishedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<BakeFinishedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

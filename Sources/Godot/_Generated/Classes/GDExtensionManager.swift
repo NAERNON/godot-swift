@@ -21,30 +21,19 @@ open class GDExtensionManager: Object {
         }
     }
 
-    public struct ExtensionsReloadedSignalInput: Godot.SignalInput {
-        fileprivate init() {
-
-        }
-        public func _emit(
-            _ signalName: Godot.GodotStringName,
-            on object: Godot.Object
-        ) -> Godot.ErrorType {
-            object.emitSignal(signalName)
-        }
-    }
     public func extensionsReloaded() {
-        _ = extensionsReloadedSignal.emit(.init())
+        _ = extensionsReloadedSignal.emit()
     }
-    public lazy var extensionsReloadedSignal: Godot.SignalEmitter<ExtensionsReloadedSignalInput> = {
+    public lazy var extensionsReloadedSignal: Godot.EmptySignalEmitter = {
         .init(object: self, signalName: "extensions_reloaded") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.SignalReceiver<ExtensionsReloadedSignalInput>>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init())
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call()
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.SignalReceiver<ExtensionsReloadedSignalInput>>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.SignalReceiver<ExtensionsReloadedSignalInput>>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
