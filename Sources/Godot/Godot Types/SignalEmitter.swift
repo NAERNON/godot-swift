@@ -46,11 +46,10 @@ public struct SignalEmitter<Input> {
     }
     
     @discardableResult
-    public func connect<Destination>(
-        to object: Destination,
+    public func connect(
+        to object: Object? = nil,
         body: @escaping (Input) -> Void
-    ) -> SignalConnection
-    where Destination : Object {
+    ) -> SignalConnection {
         let receiver = SignalReceiver(call: body)
         
         let callable = registerCustomCallable(
@@ -65,36 +64,23 @@ public struct SignalEmitter<Input> {
         
         return SignalConnection(
             sourceObject: sourceObject,
-            destinationObject: object,
             signalName: signalName,
             errorType: errorType,
             callable: callable
         )
     }
     
-    @discardableResult
-    public func connect(
-        body: @escaping (Input) -> Void
-    ) -> SignalConnection {
-        let receiver = SignalReceiver(call: body)
-        
-        let callable = registerCustomCallable(
-            on: nil,
-            receiver: receiver,
-            callFunc: callFunc,
-            freeFunc: freeFunc,
-            toStringFunc: toStringFunc
-        )
-        
-        let errorType = sourceObject.connect(signal: signalName, callable: callable)
-        
-        return SignalConnection(
-            sourceObject: sourceObject,
-            destinationObject: nil,
-            signalName: signalName,
-            errorType: errorType,
-            callable: callable
-        )
+    public func connections() -> [SignalConnection] {
+        Signal(object: sourceObject, signal: signalName).connections().map { info in
+            let infoDictionary = info.unwrap(assuming: AnyGodotDictionary.self)
+            
+            return SignalConnection(
+                sourceObject: sourceObject,
+                signalName: signalName,
+                errorType: .ok,
+                callable: infoDictionary["callable"]!.unwrap(assuming: Callable.self)
+            )
+        }
     }
 }
 

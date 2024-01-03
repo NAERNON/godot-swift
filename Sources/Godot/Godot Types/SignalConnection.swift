@@ -1,7 +1,6 @@
 
 public struct SignalConnection {
     private(set) weak var sourceObject: Object?
-    private(set) weak var destinationObject: Object?
     public let signalName: GodotStringName
     public let errorType: ErrorType
     
@@ -9,13 +8,11 @@ public struct SignalConnection {
     
     init(
         sourceObject: Object,
-        destinationObject: Object?,
         signalName: GodotStringName,
         errorType: ErrorType,
         callable: Callable
     ) {
         self.sourceObject = sourceObject
-        self.destinationObject = destinationObject
         self.signalName = signalName
         self.errorType = errorType
         self.callable = callable
@@ -32,13 +29,13 @@ public struct SignalConnection {
 
 extension SignalConnection: CustomStringConvertible {
     public var description: String {
-        "SignalConnection(source: \(sourceObject.signalDescription), destination: \(destinationObject.signalDescription) signal: \(signalName))"
+        "SignalConnection(source: \(sourceObject.signalDescription), signal: \"\(signalName)\")"
     }
 }
 
 extension SignalConnection: CustomDebugStringConvertible {
     public var debugDescription: String {
-        "SignalConnection(source: \(sourceObject.signalDescription), destination: \(destinationObject.signalDescription) signal: \(signalName))"
+        "SignalConnection(source: \(sourceObject.signalDescription), signal: \"\(signalName)\")"
     }
 }
 
