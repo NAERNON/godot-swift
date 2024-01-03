@@ -8,16 +8,16 @@ open class NavigationRegion3D: Node3D {
     public func navigationMeshChanged() {
         _ = navigationMeshChangedSignal.emit()
     }
-    public lazy var navigationMeshChangedSignal: Godot.EmptySignalEmitter = {
+    public lazy var navigationMeshChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "navigation_mesh_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call()
+            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -26,16 +26,16 @@ open class NavigationRegion3D: Node3D {
     public func bakeFinished() {
         _ = bakeFinishedSignal.emit()
     }
-    public lazy var bakeFinishedSignal: Godot.EmptySignalEmitter = {
+    public lazy var bakeFinishedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "bake_finished") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call()
+            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

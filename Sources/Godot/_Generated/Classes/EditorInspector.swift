@@ -234,16 +234,16 @@ open class EditorInspector: ScrollContainer {
     public func editedObjectChanged() {
         _ = editedObjectChangedSignal.emit()
     }
-    public lazy var editedObjectChangedSignal: Godot.EmptySignalEmitter = {
+    public lazy var editedObjectChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "edited_object_changed") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call()
+            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }
@@ -252,16 +252,16 @@ open class EditorInspector: ScrollContainer {
     public func restartRequested() {
         _ = restartRequestedSignal.emit()
     }
-    public lazy var restartRequestedSignal: Godot.EmptySignalEmitter = {
+    public lazy var restartRequestedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "restart_requested") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call()
+            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

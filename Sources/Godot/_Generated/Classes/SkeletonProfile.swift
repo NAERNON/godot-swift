@@ -20,16 +20,16 @@ open class SkeletonProfile: Resource {
     public func profileUpdated() {
         _ = profileUpdatedSignal.emit()
     }
-    public lazy var profileUpdatedSignal: Godot.EmptySignalEmitter = {
+    public lazy var profileUpdatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "profile_updated") { callablePtr, args, _, _, _ in
-            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).takeUnretainedValue()
-                .call()
+            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).takeUnretainedValue()
+                .call(with: ())
         } freeFunc: { callablePtr in
-            Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!).release()
+            Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
             resultPtr?.pointee = 1
             Godot.GodotString(describing:
-                Unmanaged<Godot.EmptySignalReceiver>.fromOpaque(callablePtr!)
+                Unmanaged<Godot.SignalReceiver<Void>>.fromOpaque(callablePtr!)
                     .takeUnretainedValue()
             ).copyToGodot(unsafePointer: stringResultPtr!)
         }

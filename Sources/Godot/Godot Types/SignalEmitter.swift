@@ -8,7 +8,7 @@ public protocol SignalInput {
 
 // MARK: - Receiver
 
-public final class SignalReceiver<Input> where Input : SignalInput {
+public final class SignalReceiver<Input> {
     private let _call: (Input) -> Void
     
     fileprivate init(call: @escaping (Input) -> Void) {
@@ -20,24 +20,10 @@ public final class SignalReceiver<Input> where Input : SignalInput {
     }
 }
 
-// MARK: - Empty Receiver
-
-public final class EmptySignalReceiver {
-    private let _call: () -> Void
-    
-    fileprivate init(call: @escaping () -> Void) {
-        self._call = call
-    }
-    
-    public func call() {
-        self._call()
-    }
-}
-
 // MARK: - Emitter
 
 // TODO: Doc warn unowned
-public struct SignalEmitter<Input : SignalInput> {
+public struct SignalEmitter<Input> {
     unowned let sourceObject: Object
     let signalName: GodotStringName
     
@@ -57,10 +43,6 @@ public struct SignalEmitter<Input : SignalInput> {
         self.callFunc = callFunc
         self.freeFunc = freeFunc
         self.toStringFunc = toStringFunc
-    }
-    
-    public func emit(_ input: Input) -> ErrorType {
-        input._emit(signalName, on: sourceObject)
     }
     
     @discardableResult
@@ -116,85 +98,15 @@ public struct SignalEmitter<Input : SignalInput> {
     }
 }
 
-// MARK: - Empty Emitter
+public extension SignalEmitter where Input : SignalInput {
+    func emit(_ input: Input) -> ErrorType {
+        input._emit(signalName, on: sourceObject)
+    }
+}
 
-// TODO: Doc warn unowned
-public struct EmptySignalEmitter {
-    unowned let sourceObject: Object
-    let signalName: GodotStringName
-    
-    let callFunc: GDExtensionCallableCustomCall
-    let freeFunc: GDExtensionCallableCustomFree
-    let toStringFunc: GDExtensionCallableCustomToString
-    
-    public init(
-        object: Object,
-        signalName: GodotStringName,
-        callFunc: GDExtensionCallableCustomCall,
-        freeFunc: GDExtensionCallableCustomFree,
-        toStringFunc: GDExtensionCallableCustomToString
-    ) {
-        self.sourceObject = object
-        self.signalName = signalName
-        self.callFunc = callFunc
-        self.freeFunc = freeFunc
-        self.toStringFunc = toStringFunc
-    }
-    
-    public func emit() -> ErrorType {
+public extension SignalEmitter where Input == Void {
+    func emit() -> ErrorType {
         sourceObject.emitSignal(signalName)
-    }
-    
-    @discardableResult
-    public func connect<Destination>(
-        to object: Destination,
-        body: @escaping () -> Void
-    ) -> SignalConnection
-    where Destination : Object {
-        let receiver = EmptySignalReceiver(call: body)
-        
-        let callable = registerCustomCallable(
-            on: object,
-            receiver: receiver,
-            callFunc: callFunc,
-            freeFunc: freeFunc,
-            toStringFunc: toStringFunc
-        )
-        
-        let errorType = sourceObject.connect(signal: signalName, callable: callable)
-        
-        return SignalConnection(
-            sourceObject: sourceObject,
-            destinationObject: object,
-            signalName: signalName,
-            errorType: errorType,
-            callable: callable
-        )
-    }
-    
-    @discardableResult
-    public func connect(
-        body: @escaping () -> Void
-    ) -> SignalConnection {
-        let receiver = EmptySignalReceiver(call: body)
-        
-        let callable = registerCustomCallable(
-            on: nil,
-            receiver: receiver,
-            callFunc: callFunc,
-            freeFunc: freeFunc,
-            toStringFunc: toStringFunc
-        )
-        
-        let errorType = sourceObject.connect(signal: signalName, callable: callable)
-        
-        return SignalConnection(
-            sourceObject: sourceObject,
-            destinationObject: nil,
-            signalName: signalName,
-            errorType: errorType,
-            callable: callable
-        )
     }
 }
 
