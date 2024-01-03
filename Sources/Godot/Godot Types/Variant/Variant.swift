@@ -181,3 +181,33 @@ extension Variant: Hashable {
         hasher.combine(storage.hashValue)
     }
 }
+
+extension Variant: ExpressibleByFloatLiteral {
+    convenience public init(floatLiteral value: Double) {
+        self.init(value)
+    }
+}
+
+extension Variant: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
+    convenience public init(stringLiteral value: Swift.String) {
+        self.init(value)
+    }
+}
+
+extension Variant: ExpressibleByIntegerLiteral {
+    convenience public init(integerLiteral value: Int) {
+        self.init(value)
+    }
+}
+
+extension Variant: ExpressibleByBooleanLiteral {
+    convenience public init(booleanLiteral value: BooleanLiteralType) {
+        self.init(value)
+    }
+}
+
+extension Variant: ExpressibleByNilLiteral {
+    convenience public init(nilLiteral: ()) {
+        self.init()
+    }
+}
