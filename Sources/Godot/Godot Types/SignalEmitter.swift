@@ -70,6 +70,19 @@ public struct SignalEmitter<Input> {
         )
     }
     
+    // TODO: Warn it is an infinite sequence, even if the signal doesn't emit anymore.
+    public func connectStream(to object: Object? = nil) -> AsyncStream<Input> {
+        AsyncStream { continuation in
+            let connection = self.connect(to: object) { input in
+                continuation.yield(input)
+            }
+            
+            continuation.onTermination = { @Sendable _ in
+                connection.disconnect()
+            }
+        }
+    }
+    
     public func connections() -> [SignalConnection] {
         Signal(object: sourceObject, signal: signalName).connections().map { info in
             let infoDictionary = info.unwrap(assuming: AnyGodotDictionary.self)
