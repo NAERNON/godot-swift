@@ -6,11 +6,11 @@ public struct Signal {}
 extension Signal {
     // MARK: Constructors
     
-    public init() {
+    internal init() {
         self = Self._constructor()
     }
     
-    public init(object: Object, signal: GodotStringName) {
+    internal init(object: Object, signal: GodotStringName) {
         self = Self._constructor_object_godotstringname(object: object, signal: signal)
     }
     
@@ -39,23 +39,23 @@ extension Signal {
     }
     
     @discardableResult
-    mutating public func connect(_ callable: Callable, flags: Int = 0) -> Int {
+    internal mutating func connect(_ callable: Callable, flags: Int = 0) -> Int {
         _connect(callable: callable, flags: flags)
     }
     
-    mutating public func disconnect(_ callable: Callable) {
+    internal mutating func disconnect(_ callable: Callable) {
         _disconnect(callable: callable)
     }
     
-    public func isConnected(to callable: Callable) -> Bool {
+    internal func isConnected(to callable: Callable) -> Bool {
         _isConnected(callable: callable)
     }
     
-    public func connections() -> GodotArray<Variant> {
+    internal func connections() -> GodotArray<Variant> {
         _connections()
     }
     
-    public func emit<each VariantRest : VariantStorableIn>(_ rest: repeat each VariantRest) {
+    internal func emit<each VariantRest : VariantStorableIn>(_ rest: repeat each VariantRest) {
         _emit(repeat each rest)
     }
 }

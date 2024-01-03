@@ -6,11 +6,11 @@ public struct Callable {}
 extension Callable {
     // MARK: Constructors
     
-    public init() {
+    internal init() {
         self = Self._constructor()
     }
     
-    public init(object: Object, method: GodotStringName) {
+    internal init(object: Object, method: GodotStringName) {
         self = Self._constructor_object_godotstringname(object: object, method: method)
     }
     
@@ -22,7 +22,7 @@ extension Callable {
     
     // MARK: Methods & variables
     
-    public func callv<Value>(arguments: GodotArray<Value>) -> Variant
+    internal func callv<Value>(arguments: GodotArray<Value>) -> Variant
     where Value : VariantStorable {
         Variant(storage: _callv(arguments: arguments))
     }
@@ -63,22 +63,22 @@ extension Callable {
         _boundArguments()
     }
     
-    mutating public func bindv<Value>(arguments: GodotArray<Value>) -> Callable
+    internal mutating func bindv<Value>(arguments: GodotArray<Value>) -> Callable
     where Value : VariantStorable {
         _bindv(arguments: arguments)
     }
     
-    public func unbind(argcount: Int) -> Callable {
+    internal func unbind(argcount: Int) -> Callable {
         _unbind(argcount: argcount)
     }
     
-    public func call<each VariantRest : VariantStorableIn>(
+    internal func call<each VariantRest : VariantStorableIn>(
         _ rest: repeat each VariantRest
     ) -> Variant {
         Variant(storage: _call(repeat each rest))
     }
     
-    public func callDeferred<each VariantRest : VariantStorableIn>(
+    internal func callDeferred<each VariantRest : VariantStorableIn>(
         _ rest: repeat each VariantRest
     ) {
         _callDeferred(repeat each rest)
@@ -97,7 +97,7 @@ extension Callable {
         _rpcId(peerId: peerId, repeat each rest)
     }
     
-    public func bind<each VariantRest : VariantStorableIn>(
+    internal func bind<each VariantRest : VariantStorableIn>(
         _ rest: repeat each VariantRest
     ) -> Callable {
         _bind(repeat each rest)
